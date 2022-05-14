@@ -1,0 +1,32 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_38@pointer" {
+"1000112" [label="(Call,tstate = regs->tstate)"];
+"1000126" [label="(Call,tstate & TSTATE_PRIV)"];
+"1000130" [label="(Literal,\"stdfmna from kernel\")"];
+"1000113" [label="(Identifier,tstate)"];
+"1000133" [label="(Identifier,PERF_COUNT_SW_ALIGNMENT_FAULTS)"];
+"1000125" [label="(ControlStructure,if (tstate & TSTATE_PRIV))"];
+"1000114" [label="(Call,regs->tstate)"];
+"1000128" [label="(Identifier,TSTATE_PRIV)"];
+"1000112" [label="(Call,tstate = regs->tstate)"];
+"1000126" [label="(Call,tstate & TSTATE_PRIV)"];
+"1000269" [label="(MethodReturn,void)"];
+"1000104" [label="(Block,)"];
+"1000127" [label="(Identifier,tstate)"];
+"1000123" [label="(Identifier,f)"];
+"1000112" -> "1000104"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000123" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000269"  [label="DDG: regs->tstate"];
+"1000112" -> "1000126"  [label="DDG: tstate"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="CFG: "];
+"1000133" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000269"  [label="DDG: TSTATE_PRIV"];
+"1000126" -> "1000269"  [label="DDG: tstate & TSTATE_PRIV"];
+"1000126" -> "1000269"  [label="DDG: tstate"];
+}

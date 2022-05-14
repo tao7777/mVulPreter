@@ -1,0 +1,33 @@
+digraph "0_openssl_470990fee0182566d439ef7e82d1abf18b7085d7@API" {
+"1000244" [label="(Call,pitem_free(item))"];
+"1000221" [label="(Call,item = pqueue_pop(s->d1->sent_messages))"];
+"1000223" [label="(Call,pqueue_pop(s->d1->sent_messages))"];
+"1000229" [label="(Identifier,NULL)"];
+"1000224" [label="(Call,s->d1->sent_messages)"];
+"1000223" [label="(Call,pqueue_pop(s->d1->sent_messages))"];
+"1000244" [label="(Call,pitem_free(item))"];
+"1000275" [label="(MethodReturn,static void)"];
+"1000230" [label="(Block,)"];
+"1000222" [label="(Identifier,item)"];
+"1000221" [label="(Call,item = pqueue_pop(s->d1->sent_messages))"];
+"1000245" [label="(Identifier,item)"];
+"1000220" [label="(Call,(item = pqueue_pop(s->d1->sent_messages)) != NULL)"];
+"1000244" -> "1000230"  [label="AST: "];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000222" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000275"  [label="DDG: pitem_free(item)"];
+"1000221" -> "1000244"  [label="DDG: item"];
+"1000221" -> "1000220"  [label="AST: "];
+"1000221" -> "1000223"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000223" -> "1000221"  [label="AST: "];
+"1000229" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000275"  [label="DDG: pqueue_pop(s->d1->sent_messages)"];
+"1000221" -> "1000220"  [label="DDG: item"];
+"1000223" -> "1000221"  [label="DDG: s->d1->sent_messages"];
+"1000223" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000223" -> "1000275"  [label="DDG: s->d1->sent_messages"];
+"1000223" -> "1000220"  [label="DDG: s->d1->sent_messages"];
+}

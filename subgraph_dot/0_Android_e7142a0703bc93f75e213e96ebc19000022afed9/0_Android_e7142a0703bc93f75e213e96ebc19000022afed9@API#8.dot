@@ -1,0 +1,31 @@
+digraph "0_Android_e7142a0703bc93f75e213e96ebc19000022afed9@API" {
+"1001665" [label="(Call,data_offset + sizeof(buffer))"];
+"1001572" [label="(Call,mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)))"];
+"1001662" [label="(Call,*offset = data_offset + sizeof(buffer))"];
+"1001571" [label="(Call,mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)) < (ssize_t)sizeof(buffer))"];
+"1001573" [label="(Identifier,data_offset)"];
+"1001574" [label="(Identifier,buffer)"];
+"1003275" [label="(MethodReturn,status_t)"];
+"1001575" [label="(Call,sizeof(buffer))"];
+"1001572" [label="(Call,mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)))"];
+"1001665" [label="(Call,data_offset + sizeof(buffer))"];
+"1001667" [label="(Call,sizeof(buffer))"];
+"1001666" [label="(Identifier,data_offset)"];
+"1001665" -> "1001662"  [label="AST: "];
+"1001665" -> "1001667"  [label="CFG: "];
+"1001666" -> "1001665"  [label="AST: "];
+"1001667" -> "1001665"  [label="AST: "];
+"1001662" -> "1001665"  [label="CFG: "];
+"1001665" -> "1003275"  [label="DDG: data_offset"];
+"1001572" -> "1001665"  [label="DDG: data_offset"];
+"1001572" -> "1001571"  [label="AST: "];
+"1001572" -> "1001575"  [label="CFG: "];
+"1001573" -> "1001572"  [label="AST: "];
+"1001574" -> "1001572"  [label="AST: "];
+"1001575" -> "1001572"  [label="AST: "];
+"1001578" -> "1001572"  [label="CFG: "];
+"1001572" -> "1003275"  [label="DDG: data_offset"];
+"1001572" -> "1001571"  [label="DDG: data_offset"];
+"1001572" -> "1001571"  [label="DDG: buffer"];
+"1001572" -> "1001662"  [label="DDG: data_offset"];
+}

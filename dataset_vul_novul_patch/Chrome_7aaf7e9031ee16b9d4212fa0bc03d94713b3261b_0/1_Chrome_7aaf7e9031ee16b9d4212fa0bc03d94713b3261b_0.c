@@ -1,0 +1,20 @@
+Response DOMHandler::SetFileInputFiles(
+    std::unique_ptr<protocol::Array<std::string>> files,
+     Maybe<DOM::NodeId> node_id,
+     Maybe<DOM::BackendNodeId> backend_node_id,
+     Maybe<String> in_object_id) {
+   if (host_) {
+     for (size_t i = 0; i < files->length(); i++) {
+ #if defined(OS_WIN)
+      ChildProcessSecurityPolicyImpl::GetInstance()->GrantReadFile(
+          host_->GetProcess()->GetID(),
+          base::FilePath(base::UTF8ToUTF16(files->get(i))));
+#else
+      ChildProcessSecurityPolicyImpl::GetInstance()->GrantReadFile(
+          host_->GetProcess()->GetID(),
+          base::FilePath(files->get(i)));
+#endif  // OS_WIN
+    }
+  }
+  return Response::FallThrough();
+}

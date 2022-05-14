@@ -1,0 +1,3 @@
+ IndexedDBCursor::~IndexedDBCursor() {
+   Close();
+ }

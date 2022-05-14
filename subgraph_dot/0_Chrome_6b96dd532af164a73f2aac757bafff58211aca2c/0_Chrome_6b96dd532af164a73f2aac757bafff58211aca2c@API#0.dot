@@ -1,0 +1,31 @@
+digraph "0_Chrome_6b96dd532af164a73f2aac757bafff58211aca2c@API" {
+"1000167" [label="(Call,delete new_contents)"];
+"1000114" [label="(Call,TabHelpers::AttachTabHelpers(new_contents))"];
+"1000102" [label="(MethodParameterIn,WebContents* new_contents)"];
+"1000107" [label="(Block,)"];
+"1000115" [label="(Identifier,new_contents)"];
+"1000168" [label="(Identifier,new_contents)"];
+"1000102" [label="(MethodParameterIn,WebContents* new_contents)"];
+"1000118" [label="(Identifier,env)"];
+"1000167" [label="(Call,delete new_contents)"];
+"1000169" [label="(MethodReturn,void)"];
+"1000164" [label="(ControlStructure,if (!handled))"];
+"1000114" [label="(Call,TabHelpers::AttachTabHelpers(new_contents))"];
+"1000167" -> "1000164"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000169" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000169"  [label="DDG: new_contents"];
+"1000167" -> "1000169"  [label="DDG: delete new_contents"];
+"1000114" -> "1000167"  [label="DDG: new_contents"];
+"1000102" -> "1000167"  [label="DDG: new_contents"];
+"1000114" -> "1000107"  [label="AST: "];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000118" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000169"  [label="DDG: TabHelpers::AttachTabHelpers(new_contents)"];
+"1000114" -> "1000169"  [label="DDG: new_contents"];
+"1000102" -> "1000114"  [label="DDG: new_contents"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000169"  [label="DDG: new_contents"];
+}

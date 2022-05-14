@@ -1,0 +1,31 @@
+digraph "0_linux_363b02dab09b3226f3bd1420dad9c72b79a42a76_8@pointer" {
+"1000411" [label="(Call,zapowner = key->user)"];
+"1000451" [label="(Call,key_user_put(zapowner))"];
+"1000449" [label="(ControlStructure,if (zapowner))"];
+"1000411" [label="(Call,zapowner = key->user)"];
+"1000113" [label="(Call,*zapowner = NULL)"];
+"1000413" [label="(Call,key->user)"];
+"1000453" [label="(JumpTarget,error:)"];
+"1000412" [label="(Identifier,zapowner)"];
+"1000260" [label="(Block,)"];
+"1000452" [label="(Identifier,zapowner)"];
+"1000470" [label="(MethodReturn,long)"];
+"1000462" [label="(Call,zapowner = newowner)"];
+"1000418" [label="(Identifier,key)"];
+"1000451" [label="(Call,key_user_put(zapowner))"];
+"1000411" -> "1000260"  [label="AST: "];
+"1000411" -> "1000413"  [label="CFG: "];
+"1000412" -> "1000411"  [label="AST: "];
+"1000413" -> "1000411"  [label="AST: "];
+"1000418" -> "1000411"  [label="CFG: "];
+"1000411" -> "1000470"  [label="DDG: zapowner"];
+"1000411" -> "1000451"  [label="DDG: zapowner"];
+"1000451" -> "1000449"  [label="AST: "];
+"1000451" -> "1000452"  [label="CFG: "];
+"1000452" -> "1000451"  [label="AST: "];
+"1000453" -> "1000451"  [label="CFG: "];
+"1000451" -> "1000470"  [label="DDG: zapowner"];
+"1000451" -> "1000470"  [label="DDG: key_user_put(zapowner)"];
+"1000113" -> "1000451"  [label="DDG: zapowner"];
+"1000462" -> "1000451"  [label="DDG: zapowner"];
+}

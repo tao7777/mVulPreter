@@ -1,0 +1,26 @@
+digraph "0_linux_23adbe12ef7d3d4195e80800ab36b37bee28cd03_2@pointer" {
+"1000110" [label="(Call,dir->i_mode & S_ISVTX)"];
+"1000109" [label="(Call,!(dir->i_mode & S_ISVTX))"];
+"1000114" [label="(Identifier,S_ISVTX)"];
+"1000110" [label="(Call,dir->i_mode & S_ISVTX)"];
+"1000111" [label="(Call,dir->i_mode)"];
+"1000109" [label="(Call,!(dir->i_mode & S_ISVTX))"];
+"1000120" [label="(Identifier,inode)"];
+"1000116" [label="(Literal,0)"];
+"1000108" [label="(ControlStructure,if (!(dir->i_mode & S_ISVTX)))"];
+"1000138" [label="(MethodReturn,static inline int)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000114"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000114" -> "1000110"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000138"  [label="DDG: S_ISVTX"];
+"1000110" -> "1000138"  [label="DDG: dir->i_mode"];
+"1000110" -> "1000109"  [label="DDG: dir->i_mode"];
+"1000110" -> "1000109"  [label="DDG: S_ISVTX"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000116" -> "1000109"  [label="CFG: "];
+"1000120" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000138"  [label="DDG: dir->i_mode & S_ISVTX"];
+"1000109" -> "1000138"  [label="DDG: !(dir->i_mode & S_ISVTX)"];
+}

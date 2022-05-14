@@ -1,0 +1,26 @@
+digraph "0_linux_7932c0bd7740f4cd2aa168d3ce0199e7af7d72d5@array" {
+"1000313" [label="(Call,mutex_lock(&d->vqs[i]->mutex))"];
+"1000333" [label="(Call,mutex_unlock(&d->vqs[i]->mutex))"];
+"1000313" [label="(Call,mutex_lock(&d->vqs[i]->mutex))"];
+"1000313" [label="(Call,mutex_lock(&d->vqs[i]->mutex))"];
+"1000334" [label="(Call,&d->vqs[i]->mutex)"];
+"1000333" [label="(Call,mutex_unlock(&d->vqs[i]->mutex))"];
+"1000360" [label="(MethodReturn,long)"];
+"1000311" [label="(Identifier,i)"];
+"1000326" [label="(Identifier,d)"];
+"1000314" [label="(Call,&d->vqs[i]->mutex)"];
+"1000312" [label="(Block,)"];
+"1000313" -> "1000312"  [label="AST: "];
+"1000313" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000313"  [label="AST: "];
+"1000326" -> "1000313"  [label="CFG: "];
+"1000313" -> "1000360"  [label="DDG: mutex_lock(&d->vqs[i]->mutex)"];
+"1000333" -> "1000313"  [label="DDG: &d->vqs[i]->mutex"];
+"1000313" -> "1000333"  [label="DDG: &d->vqs[i]->mutex"];
+"1000333" -> "1000312"  [label="AST: "];
+"1000333" -> "1000334"  [label="CFG: "];
+"1000334" -> "1000333"  [label="AST: "];
+"1000311" -> "1000333"  [label="CFG: "];
+"1000333" -> "1000360"  [label="DDG: &d->vqs[i]->mutex"];
+"1000333" -> "1000360"  [label="DDG: mutex_unlock(&d->vqs[i]->mutex)"];
+}

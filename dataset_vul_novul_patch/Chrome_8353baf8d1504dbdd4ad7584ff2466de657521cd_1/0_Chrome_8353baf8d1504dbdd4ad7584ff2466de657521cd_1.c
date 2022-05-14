@@ -1,0 +1,1 @@
+bool Frame::canHaveSecureChild() const

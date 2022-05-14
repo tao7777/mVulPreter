@@ -1,0 +1,32 @@
+digraph "0_linux_1137b5e2529a8f5ca8ee709288ecba3e68044df2_1@pointer" {
+"1000164" [label="(Call,nlh->nlmsg_flags & NLM_F_DUMP)"];
+"1000152" [label="(Call,(type == (XFRM_MSG_GETSA - XFRM_MSG_BASE) ||\n\t     type == (XFRM_MSG_GETPOLICY - XFRM_MSG_BASE)) &&\n\t    (nlh->nlmsg_flags & NLM_F_DUMP))"];
+"1000153" [label="(Call,type == (XFRM_MSG_GETSA - XFRM_MSG_BASE) ||\n\t     type == (XFRM_MSG_GETPOLICY - XFRM_MSG_BASE))"];
+"1000173" [label="(Identifier,link)"];
+"1000152" [label="(Call,(type == (XFRM_MSG_GETSA - XFRM_MSG_BASE) ||\n\t     type == (XFRM_MSG_GETPOLICY - XFRM_MSG_BASE)) &&\n\t    (nlh->nlmsg_flags & NLM_F_DUMP))"];
+"1000194" [label="(Identifier,err)"];
+"1000212" [label="(MethodReturn,static int)"];
+"1000164" [label="(Call,nlh->nlmsg_flags & NLM_F_DUMP)"];
+"1000168" [label="(Identifier,NLM_F_DUMP)"];
+"1000151" [label="(ControlStructure,if ((type == (XFRM_MSG_GETSA - XFRM_MSG_BASE) ||\n\t     type == (XFRM_MSG_GETPOLICY - XFRM_MSG_BASE)) &&\n\t    (nlh->nlmsg_flags & NLM_F_DUMP)))"];
+"1000165" [label="(Call,nlh->nlmsg_flags)"];
+"1000164" -> "1000152"  [label="AST: "];
+"1000164" -> "1000168"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000168" -> "1000164"  [label="AST: "];
+"1000152" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000212"  [label="DDG: NLM_F_DUMP"];
+"1000164" -> "1000212"  [label="DDG: nlh->nlmsg_flags"];
+"1000164" -> "1000152"  [label="DDG: nlh->nlmsg_flags"];
+"1000164" -> "1000152"  [label="DDG: NLM_F_DUMP"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000173" -> "1000152"  [label="CFG: "];
+"1000194" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000212"  [label="DDG: (type == (XFRM_MSG_GETSA - XFRM_MSG_BASE) ||\n\t     type == (XFRM_MSG_GETPOLICY - XFRM_MSG_BASE)) &&\n\t    (nlh->nlmsg_flags & NLM_F_DUMP)"];
+"1000152" -> "1000212"  [label="DDG: type == (XFRM_MSG_GETSA - XFRM_MSG_BASE) ||\n\t     type == (XFRM_MSG_GETPOLICY - XFRM_MSG_BASE)"];
+"1000152" -> "1000212"  [label="DDG: nlh->nlmsg_flags & NLM_F_DUMP"];
+"1000153" -> "1000152"  [label="DDG: type == (XFRM_MSG_GETSA - XFRM_MSG_BASE)"];
+"1000153" -> "1000152"  [label="DDG: type == (XFRM_MSG_GETPOLICY - XFRM_MSG_BASE)"];
+}

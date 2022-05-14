@@ -1,0 +1,35 @@
+digraph "0_radare2_796dd28aaa6b9fa76d99c42c4d5ff8b257cc2191_0@pointer" {
+"1000241" [label="(Call,fdiro->ino = grub_le_to_cpu32 (dirent.inode))"];
+"1000245" [label="(Call,grub_le_to_cpu32 (dirent.inode))"];
+"1000303" [label="(Call,grub_le_to_cpu32 (dirent.inode))"];
+"1000246" [label="(Call,dirent.inode)"];
+"1000242" [label="(Call,fdiro->ino)"];
+"1000299" [label="(Call,grub_ext2_read_inode (diro->data,\n                                     grub_le_to_cpu32 (dirent.inode),\n \t\t\t\t    &fdiro->inode))"];
+"1000245" [label="(Call,grub_le_to_cpu32 (dirent.inode))"];
+"1000241" [label="(Call,fdiro->ino = grub_le_to_cpu32 (dirent.inode))"];
+"1000251" [label="(Identifier,filename)"];
+"1000303" [label="(Call,grub_le_to_cpu32 (dirent.inode))"];
+"1000309" [label="(Identifier,fdiro)"];
+"1000181" [label="(Block,)"];
+"1000390" [label="(MethodReturn,RET)"];
+"1000304" [label="(Call,dirent.inode)"];
+"1000241" -> "1000181"  [label="AST: "];
+"1000241" -> "1000245"  [label="CFG: "];
+"1000242" -> "1000241"  [label="AST: "];
+"1000245" -> "1000241"  [label="AST: "];
+"1000251" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000390"  [label="DDG: fdiro->ino"];
+"1000241" -> "1000390"  [label="DDG: grub_le_to_cpu32 (dirent.inode)"];
+"1000245" -> "1000241"  [label="DDG: dirent.inode"];
+"1000245" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000245"  [label="AST: "];
+"1000245" -> "1000390"  [label="DDG: dirent.inode"];
+"1000303" -> "1000245"  [label="DDG: dirent.inode"];
+"1000245" -> "1000303"  [label="DDG: dirent.inode"];
+"1000303" -> "1000299"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000309" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000390"  [label="DDG: dirent.inode"];
+"1000303" -> "1000299"  [label="DDG: dirent.inode"];
+}

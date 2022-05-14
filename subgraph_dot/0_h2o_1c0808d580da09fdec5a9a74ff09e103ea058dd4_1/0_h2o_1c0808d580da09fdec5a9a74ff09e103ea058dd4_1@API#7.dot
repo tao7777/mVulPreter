@@ -1,0 +1,28 @@
+digraph "0_h2o_1c0808d580da09fdec5a9a74ff09e103ea058dd4_1@API" {
+"1000248" [label="(Call,h2o_socket_read_start(conn->sock, on_read))"];
+"1000244" [label="(Call,h2o_socket_is_reading(conn->sock))"];
+"1000249" [label="(Call,conn->sock)"];
+"1000245" [label="(Call,conn->sock)"];
+"1000242" [label="(ControlStructure,if (!h2o_socket_is_reading(conn->sock)))"];
+"1000248" [label="(Call,h2o_socket_read_start(conn->sock, on_read))"];
+"1000243" [label="(Call,!h2o_socket_is_reading(conn->sock))"];
+"1000267" [label="(MethodReturn,static int)"];
+"1000244" [label="(Call,h2o_socket_is_reading(conn->sock))"];
+"1000252" [label="(Identifier,on_read)"];
+"1000254" [label="(Literal,0)"];
+"1000248" -> "1000242"  [label="AST: "];
+"1000248" -> "1000252"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000252" -> "1000248"  [label="AST: "];
+"1000254" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000267"  [label="DDG: h2o_socket_read_start(conn->sock, on_read)"];
+"1000248" -> "1000267"  [label="DDG: on_read"];
+"1000248" -> "1000267"  [label="DDG: conn->sock"];
+"1000244" -> "1000248"  [label="DDG: conn->sock"];
+"1000244" -> "1000243"  [label="AST: "];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000243" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000267"  [label="DDG: conn->sock"];
+"1000244" -> "1000243"  [label="DDG: conn->sock"];
+}

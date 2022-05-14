@@ -1,0 +1,31 @@
+digraph "0_linux_5f8e44741f9f216e33736ea4ec65ca9ac03036e6@pointer" {
+"1000101" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000154" [label="(Call,nla_put(skb, IFLA_MAP, sizeof(map), &map))"];
+"1000156" [label="(Identifier,IFLA_MAP)"];
+"1000157" [label="(Call,sizeof(map))"];
+"1000165" [label="(Literal,0)"];
+"1000159" [label="(Call,&map)"];
+"1000105" [label="(Call,memset(&map, 0, sizeof(map)))"];
+"1000155" [label="(Identifier,skb)"];
+"1000153" [label="(ControlStructure,if (nla_put(skb, IFLA_MAP, sizeof(map), &map)))"];
+"1000101" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000163" [label="(Identifier,EMSGSIZE)"];
+"1000166" [label="(MethodReturn,static int)"];
+"1000154" [label="(Call,nla_put(skb, IFLA_MAP, sizeof(map), &map))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000166"  [label="DDG: skb"];
+"1000101" -> "1000154"  [label="DDG: skb"];
+"1000154" -> "1000153"  [label="AST: "];
+"1000154" -> "1000159"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000156" -> "1000154"  [label="AST: "];
+"1000157" -> "1000154"  [label="AST: "];
+"1000159" -> "1000154"  [label="AST: "];
+"1000163" -> "1000154"  [label="CFG: "];
+"1000165" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000166"  [label="DDG: &map"];
+"1000154" -> "1000166"  [label="DDG: nla_put(skb, IFLA_MAP, sizeof(map), &map)"];
+"1000154" -> "1000166"  [label="DDG: IFLA_MAP"];
+"1000154" -> "1000166"  [label="DDG: skb"];
+"1000105" -> "1000154"  [label="DDG: &map"];
+}

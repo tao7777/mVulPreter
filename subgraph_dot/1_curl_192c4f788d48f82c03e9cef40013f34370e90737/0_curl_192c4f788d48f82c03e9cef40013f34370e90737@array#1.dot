@@ -1,0 +1,33 @@
+digraph "0_curl_192c4f788d48f82c03e9cef40013f34370e90737@array" {
+"1000237" [label="(Call,ns[strindex]=0)"];
+"1000250" [label="(Call,*ostring = ns)"];
+"1000251" [label="(Call,*ostring)"];
+"1000229" [label="(Call,ns[strindex++] = in)"];
+"1000253" [label="(Identifier,ns)"];
+"1000243" [label="(Identifier,olen)"];
+"1000237" [label="(Call,ns[strindex]=0)"];
+"1000255" [label="(Identifier,CURLE_OK)"];
+"1000137" [label="(Call,!ns)"];
+"1000241" [label="(Literal,0)"];
+"1000113" [label="(Block,)"];
+"1000256" [label="(MethodReturn,CURLcode)"];
+"1000238" [label="(Call,ns[strindex])"];
+"1000250" [label="(Call,*ostring = ns)"];
+"1000248" [label="(ControlStructure,if(ostring))"];
+"1000237" -> "1000113"  [label="AST: "];
+"1000237" -> "1000241"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000241" -> "1000237"  [label="AST: "];
+"1000243" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000256"  [label="DDG: ns[strindex]"];
+"1000237" -> "1000250"  [label="DDG: ns[strindex]"];
+"1000250" -> "1000248"  [label="AST: "];
+"1000250" -> "1000253"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000253" -> "1000250"  [label="AST: "];
+"1000255" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000256"  [label="DDG: *ostring"];
+"1000250" -> "1000256"  [label="DDG: ns"];
+"1000229" -> "1000250"  [label="DDG: ns[strindex++]"];
+"1000137" -> "1000250"  [label="DDG: ns"];
+}

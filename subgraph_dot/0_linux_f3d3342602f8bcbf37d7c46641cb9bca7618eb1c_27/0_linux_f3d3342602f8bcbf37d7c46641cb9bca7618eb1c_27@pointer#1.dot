@@ -1,0 +1,27 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_27@pointer" {
+"1000342" [label="(Call,sin->sin_port = inc->i_hdr.h_sport)"];
+"1000251" [label="(Call,ntohs(inc->i_hdr.h_sport))"];
+"1000384" [label="(MethodReturn,int)"];
+"1000346" [label="(Call,inc->i_hdr.h_sport)"];
+"1000336" [label="(Block,)"];
+"1000252" [label="(Call,inc->i_hdr.h_sport)"];
+"1000354" [label="(Identifier,sin)"];
+"1000342" [label="(Call,sin->sin_port = inc->i_hdr.h_sport)"];
+"1000343" [label="(Call,sin->sin_port)"];
+"1000242" [label="(Call,rdsdebug(\"copying inc %p from %pI4:%u to user\n\", inc,\n\t\t\t &inc->i_conn->c_faddr,\n\t\t\t ntohs(inc->i_hdr.h_sport)))"];
+"1000251" [label="(Call,ntohs(inc->i_hdr.h_sport))"];
+"1000342" -> "1000336"  [label="AST: "];
+"1000342" -> "1000346"  [label="CFG: "];
+"1000343" -> "1000342"  [label="AST: "];
+"1000346" -> "1000342"  [label="AST: "];
+"1000354" -> "1000342"  [label="CFG: "];
+"1000342" -> "1000384"  [label="DDG: sin->sin_port"];
+"1000342" -> "1000384"  [label="DDG: inc->i_hdr.h_sport"];
+"1000251" -> "1000342"  [label="DDG: inc->i_hdr.h_sport"];
+"1000251" -> "1000242"  [label="AST: "];
+"1000251" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000242" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000384"  [label="DDG: inc->i_hdr.h_sport"];
+"1000251" -> "1000242"  [label="DDG: inc->i_hdr.h_sport"];
+}

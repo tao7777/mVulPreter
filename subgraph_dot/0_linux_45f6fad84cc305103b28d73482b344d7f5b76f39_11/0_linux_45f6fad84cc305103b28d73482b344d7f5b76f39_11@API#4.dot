@@ -1,0 +1,35 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_11@API" {
+"1000410" [label="(Call,kfree_skb(pktopt))"];
+"1000402" [label="(Call,pktopt = xchg(&np->pktoptions, NULL))"];
+"1000404" [label="(Call,xchg(&np->pktoptions, NULL))"];
+"1000410" [label="(Call,kfree_skb(pktopt))"];
+"1000403" [label="(Identifier,pktopt)"];
+"1000414" [label="(Identifier,sk)"];
+"1000402" [label="(Call,pktopt = xchg(&np->pktoptions, NULL))"];
+"1000203" [label="(Block,)"];
+"1000404" [label="(Call,xchg(&np->pktoptions, NULL))"];
+"1000409" [label="(Identifier,NULL)"];
+"1002065" [label="(MethodReturn,static int)"];
+"1000405" [label="(Call,&np->pktoptions)"];
+"1000411" [label="(Identifier,pktopt)"];
+"1000410" -> "1000203"  [label="AST: "];
+"1000410" -> "1000411"  [label="CFG: "];
+"1000411" -> "1000410"  [label="AST: "];
+"1000414" -> "1000410"  [label="CFG: "];
+"1000410" -> "1002065"  [label="DDG: pktopt"];
+"1000410" -> "1002065"  [label="DDG: kfree_skb(pktopt)"];
+"1000402" -> "1000410"  [label="DDG: pktopt"];
+"1000402" -> "1000203"  [label="AST: "];
+"1000402" -> "1000404"  [label="CFG: "];
+"1000403" -> "1000402"  [label="AST: "];
+"1000404" -> "1000402"  [label="AST: "];
+"1000411" -> "1000402"  [label="CFG: "];
+"1000402" -> "1002065"  [label="DDG: xchg(&np->pktoptions, NULL)"];
+"1000404" -> "1000402"  [label="DDG: &np->pktoptions"];
+"1000404" -> "1000402"  [label="DDG: NULL"];
+"1000404" -> "1000409"  [label="CFG: "];
+"1000405" -> "1000404"  [label="AST: "];
+"1000409" -> "1000404"  [label="AST: "];
+"1000404" -> "1002065"  [label="DDG: &np->pktoptions"];
+"1000404" -> "1002065"  [label="DDG: NULL"];
+}

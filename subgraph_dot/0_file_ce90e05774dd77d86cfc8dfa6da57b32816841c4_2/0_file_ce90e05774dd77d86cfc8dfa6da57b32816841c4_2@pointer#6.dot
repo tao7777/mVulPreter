@@ -1,0 +1,27 @@
+digraph "0_file_ce90e05774dd77d86cfc8dfa6da57b32816841c4_2@pointer" {
+"1000469" [label="(Call,memcpy(&desc, &nbuf[doff], sizeof(desc)))"];
+"1000467" [label="(Call,(void)memcpy(&desc, &nbuf[doff], sizeof(desc)))"];
+"1000507" [label="(MethodReturn,int)"];
+"1000452" [label="(Block,)"];
+"1000472" [label="(Call,&nbuf[doff])"];
+"1000469" [label="(Call,memcpy(&desc, &nbuf[doff], sizeof(desc)))"];
+"1000467" [label="(Call,(void)memcpy(&desc, &nbuf[doff], sizeof(desc)))"];
+"1000470" [label="(Call,&desc)"];
+"1000476" [label="(Call,sizeof(desc))"];
+"1000479" [label="(Identifier,desc)"];
+"1000469" -> "1000467"  [label="AST: "];
+"1000469" -> "1000476"  [label="CFG: "];
+"1000470" -> "1000469"  [label="AST: "];
+"1000472" -> "1000469"  [label="AST: "];
+"1000476" -> "1000469"  [label="AST: "];
+"1000467" -> "1000469"  [label="CFG: "];
+"1000469" -> "1000507"  [label="DDG: &nbuf[doff]"];
+"1000469" -> "1000507"  [label="DDG: &desc"];
+"1000469" -> "1000467"  [label="DDG: &desc"];
+"1000469" -> "1000467"  [label="DDG: &nbuf[doff]"];
+"1000467" -> "1000452"  [label="AST: "];
+"1000468" -> "1000467"  [label="AST: "];
+"1000479" -> "1000467"  [label="CFG: "];
+"1000467" -> "1000507"  [label="DDG: (void)memcpy(&desc, &nbuf[doff], sizeof(desc))"];
+"1000467" -> "1000507"  [label="DDG: memcpy(&desc, &nbuf[doff], sizeof(desc))"];
+}

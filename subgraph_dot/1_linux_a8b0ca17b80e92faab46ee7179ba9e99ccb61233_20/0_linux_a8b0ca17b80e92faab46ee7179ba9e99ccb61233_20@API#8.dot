@@ -1,0 +1,32 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_20@API" {
+"1000223" [label="(Call,!down_read_trylock(&mm->mmap_sem))"];
+"1000224" [label="(Call,down_read_trylock(&mm->mmap_sem))"];
+"1000247" [label="(Identifier,vma)"];
+"1000234" [label="(Identifier,regs)"];
+"1000224" [label="(Call,down_read_trylock(&mm->mmap_sem))"];
+"1000557" [label="(MethodReturn,int __kprobes)"];
+"1000474" [label="(Call,up_read(&mm->mmap_sem))"];
+"1000223" [label="(Call,!down_read_trylock(&mm->mmap_sem))"];
+"1000225" [label="(Call,&mm->mmap_sem)"];
+"1000502" [label="(Call,up_read(&mm->mmap_sem))"];
+"1000517" [label="(Call,up_read(&mm->mmap_sem))"];
+"1000241" [label="(Call,down_read(&mm->mmap_sem))"];
+"1000222" [label="(ControlStructure,if (!down_read_trylock(&mm->mmap_sem)))"];
+"1000466" [label="(Call,up_read(&mm->mmap_sem))"];
+"1000223" -> "1000222"  [label="AST: "];
+"1000223" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000234" -> "1000223"  [label="CFG: "];
+"1000247" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000557"  [label="DDG: !down_read_trylock(&mm->mmap_sem)"];
+"1000223" -> "1000557"  [label="DDG: down_read_trylock(&mm->mmap_sem)"];
+"1000224" -> "1000223"  [label="DDG: &mm->mmap_sem"];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000224" -> "1000557"  [label="DDG: &mm->mmap_sem"];
+"1000224" -> "1000241"  [label="DDG: &mm->mmap_sem"];
+"1000224" -> "1000466"  [label="DDG: &mm->mmap_sem"];
+"1000224" -> "1000474"  [label="DDG: &mm->mmap_sem"];
+"1000224" -> "1000502"  [label="DDG: &mm->mmap_sem"];
+"1000224" -> "1000517"  [label="DDG: &mm->mmap_sem"];
+}

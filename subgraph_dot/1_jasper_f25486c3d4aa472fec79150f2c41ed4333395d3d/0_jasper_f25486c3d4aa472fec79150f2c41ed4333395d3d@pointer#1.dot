@@ -1,0 +1,26 @@
+digraph "0_jasper_f25486c3d4aa472fec79150f2c41ed4333395d3d@pointer" {
+"1000426" [label="(Call,++pi->picomp)"];
+"1000392" [label="(Call,pi->picomp = &pi->picomps[pi->compno])"];
+"1000421" [label="(Block,)"];
+"1000396" [label="(Call,&pi->picomps[pi->compno])"];
+"1000407" [label="(Identifier,pi)"];
+"1000384" [label="(Block,)"];
+"1000426" [label="(Call,++pi->picomp)"];
+"1000427" [label="(Call,pi->picomp)"];
+"1000716" [label="(MethodReturn,static int)"];
+"1000393" [label="(Call,pi->picomp)"];
+"1000392" [label="(Call,pi->picomp = &pi->picomps[pi->compno])"];
+"1000426" -> "1000421"  [label="AST: "];
+"1000426" -> "1000427"  [label="CFG: "];
+"1000427" -> "1000426"  [label="AST: "];
+"1000407" -> "1000426"  [label="CFG: "];
+"1000426" -> "1000716"  [label="DDG: pi->picomp"];
+"1000392" -> "1000426"  [label="DDG: pi->picomp"];
+"1000392" -> "1000384"  [label="AST: "];
+"1000392" -> "1000396"  [label="CFG: "];
+"1000393" -> "1000392"  [label="AST: "];
+"1000396" -> "1000392"  [label="AST: "];
+"1000407" -> "1000392"  [label="CFG: "];
+"1000392" -> "1000716"  [label="DDG: &pi->picomps[pi->compno]"];
+"1000392" -> "1000716"  [label="DDG: pi->picomp"];
+}

@@ -1,0 +1,24 @@
+digraph "1_linux_b5a663aa426f4884c71cd8580adae73f33570f0d_1@del" {
+"1000251" [label="(Call,spin_unlock_irq(&slave_active_lock))"];
+"1000227" [label="(Call,spin_lock_irq(&slave_active_lock))"];
+"1000226" [label="(Block,)"];
+"1000256" [label="(Identifier,register_mutex)"];
+"1000251" [label="(Call,spin_unlock_irq(&slave_active_lock))"];
+"1000252" [label="(Call,&slave_active_lock)"];
+"1000227" [label="(Call,spin_lock_irq(&slave_active_lock))"];
+"1000228" [label="(Call,&slave_active_lock)"];
+"1000231" [label="(Identifier,slave)"];
+"1000278" [label="(MethodReturn,int)"];
+"1000251" -> "1000226"  [label="AST: "];
+"1000251" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000256" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000278"  [label="DDG: spin_unlock_irq(&slave_active_lock)"];
+"1000251" -> "1000278"  [label="DDG: &slave_active_lock"];
+"1000227" -> "1000251"  [label="DDG: &slave_active_lock"];
+"1000227" -> "1000226"  [label="AST: "];
+"1000227" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000227"  [label="AST: "];
+"1000231" -> "1000227"  [label="CFG: "];
+"1000227" -> "1000278"  [label="DDG: spin_lock_irq(&slave_active_lock)"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_82939d7999dfc1f1998c4b1c12e2f19edbdff272_0@API" {
+"1000219" [label="(Call,kvfree(sbi->s_group_desc))"];
+"1000213" [label="(Call,brelse(sbi->s_group_desc[i]))"];
+"1000220" [label="(Call,sbi->s_group_desc)"];
+"1000202" [label="(ControlStructure,for (i = 0; i < sbi->s_gdb_count; i++))"];
+"1000212" [label="(Identifier,i)"];
+"1000213" [label="(Call,brelse(sbi->s_group_desc[i]))"];
+"1000105" [label="(Block,)"];
+"1000214" [label="(Call,sbi->s_group_desc[i])"];
+"1000364" [label="(MethodReturn,static void)"];
+"1000219" [label="(Call,kvfree(sbi->s_group_desc))"];
+"1000225" [label="(Identifier,sbi)"];
+"1000219" -> "1000105"  [label="AST: "];
+"1000219" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000219"  [label="AST: "];
+"1000225" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000364"  [label="DDG: kvfree(sbi->s_group_desc)"];
+"1000219" -> "1000364"  [label="DDG: sbi->s_group_desc"];
+"1000213" -> "1000219"  [label="DDG: sbi->s_group_desc[i]"];
+"1000213" -> "1000202"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000212" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000364"  [label="DDG: sbi->s_group_desc[i]"];
+"1000213" -> "1000364"  [label="DDG: brelse(sbi->s_group_desc[i])"];
+}

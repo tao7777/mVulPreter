@@ -1,0 +1,23 @@
+digraph "0_lxcfs_a8b6c3e0537e90fba3c55910fd1b7229d54a60a7_0@pointer" {
+"1000105" [label="(MethodParameterIn,struct stat *sb)"];
+"1000142" [label="(Call,memset(sb, 0, sizeof(struct stat)))"];
+"1000143" [label="(Identifier,sb)"];
+"1000144" [label="(Literal,0)"];
+"1000150" [label="(Identifier,CLOCK_REALTIME)"];
+"1000106" [label="(Block,)"];
+"1000457" [label="(MethodReturn,static int)"];
+"1000145" [label="(Call,sizeof(struct stat))"];
+"1000142" [label="(Call,memset(sb, 0, sizeof(struct stat)))"];
+"1000105" [label="(MethodParameterIn,struct stat *sb)"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000457"  [label="DDG: sb"];
+"1000105" -> "1000142"  [label="DDG: sb"];
+"1000142" -> "1000106"  [label="AST: "];
+"1000142" -> "1000145"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="AST: "];
+"1000145" -> "1000142"  [label="AST: "];
+"1000150" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000457"  [label="DDG: memset(sb, 0, sizeof(struct stat))"];
+"1000142" -> "1000457"  [label="DDG: sb"];
+}

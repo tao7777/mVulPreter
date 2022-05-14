@@ -1,0 +1,37 @@
+digraph "0_miniupnp_140ee8d2204b383279f854802b27bdb41c1d5d1a@pointer" {
+"1000474" [label="(Call,serv = serv->entries.le_next)"];
+"1000469" [label="(Call,serv && (nrep < 255))"];
+"1000463" [label="(ControlStructure,for(serv = servicelisthead.lh_first;\n\t\t    serv && (nrep < 255);\n\t\t    serv = serv->entries.le_next))"];
+"1000464" [label="(Call,serv = servicelisthead.lh_first)"];
+"1000487" [label="(Identifier,serv)"];
+"1000252" [label="(Call,d && (nrep < 255))"];
+"1001055" [label="(MethodReturn,void)"];
+"1000470" [label="(Identifier,serv)"];
+"1000474" [label="(Call,serv = serv->entries.le_next)"];
+"1000476" [label="(Call,serv->entries.le_next)"];
+"1000471" [label="(Call,nrep < 255)"];
+"1000469" [label="(Call,serv && (nrep < 255))"];
+"1000600" [label="(Identifier,rbuf)"];
+"1000475" [label="(Identifier,serv)"];
+"1000474" -> "1000463"  [label="AST: "];
+"1000474" -> "1000476"  [label="CFG: "];
+"1000475" -> "1000474"  [label="AST: "];
+"1000476" -> "1000474"  [label="AST: "];
+"1000470" -> "1000474"  [label="CFG: "];
+"1000474" -> "1001055"  [label="DDG: serv->entries.le_next"];
+"1000474" -> "1000469"  [label="DDG: serv"];
+"1000469" -> "1000463"  [label="AST: "];
+"1000469" -> "1000470"  [label="CFG: "];
+"1000469" -> "1000471"  [label="CFG: "];
+"1000470" -> "1000469"  [label="AST: "];
+"1000471" -> "1000469"  [label="AST: "];
+"1000487" -> "1000469"  [label="CFG: "];
+"1000600" -> "1000469"  [label="CFG: "];
+"1000469" -> "1001055"  [label="DDG: serv && (nrep < 255)"];
+"1000469" -> "1001055"  [label="DDG: nrep < 255"];
+"1000469" -> "1001055"  [label="DDG: serv"];
+"1000464" -> "1000469"  [label="DDG: serv"];
+"1000471" -> "1000469"  [label="DDG: nrep"];
+"1000471" -> "1000469"  [label="DDG: 255"];
+"1000252" -> "1000469"  [label="DDG: nrep < 255"];
+}

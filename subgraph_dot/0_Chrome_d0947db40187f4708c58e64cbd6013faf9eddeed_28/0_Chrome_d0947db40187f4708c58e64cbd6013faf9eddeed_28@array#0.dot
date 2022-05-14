@@ -1,0 +1,28 @@
+digraph "0_Chrome_d0947db40187f4708c58e64cbd6013faf9eddeed_28@array" {
+"1000264" [label="(Call,buffer[len] = 0)"];
+"1000269" [label="(Return,return(buffer);)"];
+"1000160" [label="(Block,)"];
+"1000268" [label="(Literal,0)"];
+"1000269" [label="(Return,return(buffer);)"];
+"1000270" [label="(Identifier,buffer)"];
+"1000253" [label="(Call,COPY_BUF(l,buffer,len,c))"];
+"1000187" [label="(Call,memcpy(buffer, buf, len))"];
+"1000281" [label="(MethodReturn,RET)"];
+"1000265" [label="(Call,buffer[len])"];
+"1000264" [label="(Call,buffer[len] = 0)"];
+"1000264" -> "1000160"  [label="AST: "];
+"1000264" -> "1000268"  [label="CFG: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000268" -> "1000264"  [label="AST: "];
+"1000270" -> "1000264"  [label="CFG: "];
+"1000264" -> "1000281"  [label="DDG: buffer[len]"];
+"1000264" -> "1000269"  [label="DDG: buffer[len]"];
+"1000269" -> "1000160"  [label="AST: "];
+"1000269" -> "1000270"  [label="CFG: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000281" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000281"  [label="DDG: <RET>"];
+"1000270" -> "1000269"  [label="DDG: buffer"];
+"1000187" -> "1000269"  [label="DDG: buffer"];
+"1000253" -> "1000269"  [label="DDG: buffer"];
+}

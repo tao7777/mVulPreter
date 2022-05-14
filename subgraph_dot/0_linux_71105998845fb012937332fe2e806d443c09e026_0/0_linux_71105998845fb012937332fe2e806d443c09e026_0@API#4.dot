@@ -1,0 +1,24 @@
+digraph "0_linux_71105998845fb012937332fe2e806d443c09e026_0@API" {
+"1000207" [label="(Call,mutex_lock(&client->ports_mutex))"];
+"1000273" [label="(Call,mutex_unlock(&client->ports_mutex))"];
+"1000208" [label="(Call,&client->ports_mutex)"];
+"1000280" [label="(MethodReturn,struct snd_seq_client_port *)"];
+"1000274" [label="(Call,&client->ports_mutex)"];
+"1000110" [label="(Block,)"];
+"1000215" [label="(Identifier,client)"];
+"1000207" [label="(Call,mutex_lock(&client->ports_mutex))"];
+"1000273" [label="(Call,mutex_unlock(&client->ports_mutex))"];
+"1000279" [label="(Identifier,new_port)"];
+"1000207" -> "1000110"  [label="AST: "];
+"1000207" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000215" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000280"  [label="DDG: mutex_lock(&client->ports_mutex)"];
+"1000207" -> "1000273"  [label="DDG: &client->ports_mutex"];
+"1000273" -> "1000110"  [label="AST: "];
+"1000273" -> "1000274"  [label="CFG: "];
+"1000274" -> "1000273"  [label="AST: "];
+"1000279" -> "1000273"  [label="CFG: "];
+"1000273" -> "1000280"  [label="DDG: &client->ports_mutex"];
+"1000273" -> "1000280"  [label="DDG: mutex_unlock(&client->ports_mutex)"];
+}

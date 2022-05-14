@@ -1,0 +1,29 @@
+digraph "0_linux_295dc39d941dc2ae53d5c170365af4c9d5c16212@pointer" {
+"1000203" [label="(Call,mutex_unlock(&dir->d_inode->i_mutex))"];
+"1000168" [label="(Call,mutex_lock(&dir->d_inode->i_mutex))"];
+"1000168" [label="(Call,mutex_lock(&dir->d_inode->i_mutex))"];
+"1000198" [label="(Block,)"];
+"1000299" [label="(MethodReturn,RET)"];
+"1000169" [label="(Call,&dir->d_inode->i_mutex)"];
+"1000105" [label="(Block,)"];
+"1000204" [label="(Call,&dir->d_inode->i_mutex)"];
+"1000210" [label="(ControlStructure,goto out;)"];
+"1000237" [label="(Call,mutex_unlock(&dir->d_inode->i_mutex))"];
+"1000176" [label="(Identifier,dentry)"];
+"1000229" [label="(Call,mutex_unlock(&dir->d_inode->i_mutex))"];
+"1000203" [label="(Call,mutex_unlock(&dir->d_inode->i_mutex))"];
+"1000203" -> "1000198"  [label="AST: "];
+"1000203" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000210" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000299"  [label="DDG: mutex_unlock(&dir->d_inode->i_mutex)"];
+"1000203" -> "1000299"  [label="DDG: &dir->d_inode->i_mutex"];
+"1000168" -> "1000203"  [label="DDG: &dir->d_inode->i_mutex"];
+"1000168" -> "1000105"  [label="AST: "];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000176" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000299"  [label="DDG: mutex_lock(&dir->d_inode->i_mutex)"];
+"1000168" -> "1000229"  [label="DDG: &dir->d_inode->i_mutex"];
+"1000168" -> "1000237"  [label="DDG: &dir->d_inode->i_mutex"];
+}

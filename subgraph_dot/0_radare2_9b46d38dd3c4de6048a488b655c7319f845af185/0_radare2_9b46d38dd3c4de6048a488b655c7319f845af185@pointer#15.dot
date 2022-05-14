@@ -1,0 +1,29 @@
+digraph "0_radare2_9b46d38dd3c4de6048a488b655c7319f845af185@pointer" {
+"1000807" [label="(Call,a->num->value == 0)"];
+"1000803" [label="(Call,a->num && a->num->value == 0)"];
+"1000819" [label="(Identifier,op)"];
+"1000944" [label="(MethodReturn,static int)"];
+"1000813" [label="(Literal,0)"];
+"1000802" [label="(ControlStructure,if (a->num && a->num->value == 0))"];
+"1000808" [label="(Call,a->num->value)"];
+"1000807" [label="(Call,a->num->value == 0)"];
+"1000804" [label="(Call,a->num)"];
+"1000803" [label="(Call,a->num && a->num->value == 0)"];
+"1000816" [label="(Identifier,nextpos)"];
+"1000807" -> "1000803"  [label="AST: "];
+"1000807" -> "1000813"  [label="CFG: "];
+"1000808" -> "1000807"  [label="AST: "];
+"1000813" -> "1000807"  [label="AST: "];
+"1000803" -> "1000807"  [label="CFG: "];
+"1000807" -> "1000944"  [label="DDG: a->num->value"];
+"1000807" -> "1000803"  [label="DDG: a->num->value"];
+"1000807" -> "1000803"  [label="DDG: 0"];
+"1000803" -> "1000802"  [label="AST: "];
+"1000803" -> "1000804"  [label="CFG: "];
+"1000804" -> "1000803"  [label="AST: "];
+"1000816" -> "1000803"  [label="CFG: "];
+"1000819" -> "1000803"  [label="CFG: "];
+"1000803" -> "1000944"  [label="DDG: a->num->value == 0"];
+"1000803" -> "1000944"  [label="DDG: a->num && a->num->value == 0"];
+"1000803" -> "1000944"  [label="DDG: a->num"];
+}

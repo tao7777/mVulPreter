@@ -1,0 +1,34 @@
+digraph "0_libarchive_65a23f5dbee4497064e9bb467f81138a62b0dae1@pointer" {
+"1000124" [label="(Call,zip->codec == _7Z_COPY)"];
+"1000123" [label="(Call,zip->codec == _7Z_COPY && zip->codec2 == (unsigned long)-1)"];
+"1000195" [label="(Identifier,zip)"];
+"1000125" [label="(Call,zip->codec)"];
+"1000124" [label="(Call,zip->codec == _7Z_COPY)"];
+"1000122" [label="(ControlStructure,if (zip->codec == _7Z_COPY && zip->codec2 == (unsigned long)-1))"];
+"1000128" [label="(Identifier,_7Z_COPY)"];
+"1000140" [label="(Identifier,buff)"];
+"1000131" [label="(Identifier,zip)"];
+"1000129" [label="(Call,zip->codec2 == (unsigned long)-1)"];
+"1000262" [label="(MethodReturn,RET)"];
+"1000123" [label="(Call,zip->codec == _7Z_COPY && zip->codec2 == (unsigned long)-1)"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000128"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000128" -> "1000124"  [label="AST: "];
+"1000131" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000262"  [label="DDG: zip->codec"];
+"1000124" -> "1000262"  [label="DDG: _7Z_COPY"];
+"1000124" -> "1000123"  [label="DDG: zip->codec"];
+"1000124" -> "1000123"  [label="DDG: _7Z_COPY"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000123"  [label="AST: "];
+"1000140" -> "1000123"  [label="CFG: "];
+"1000195" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000262"  [label="DDG: zip->codec == _7Z_COPY && zip->codec2 == (unsigned long)-1"];
+"1000123" -> "1000262"  [label="DDG: zip->codec2 == (unsigned long)-1"];
+"1000123" -> "1000262"  [label="DDG: zip->codec == _7Z_COPY"];
+"1000129" -> "1000123"  [label="DDG: zip->codec2"];
+"1000129" -> "1000123"  [label="DDG: (unsigned long)-1"];
+}

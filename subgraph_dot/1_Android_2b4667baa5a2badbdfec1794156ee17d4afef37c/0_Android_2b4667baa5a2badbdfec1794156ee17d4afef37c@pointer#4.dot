@@ -1,0 +1,28 @@
+digraph "0_Android_2b4667baa5a2badbdfec1794156ee17d4afef37c@pointer" {
+"1000108" [label="(MethodParameterIn,size_t *encryptedbytes)"];
+"1000201" [label="(Call,memcpy(ret->encryptedbytes, encryptedbytes, numsubsamples * sizeof(size_t)))"];
+"1000206" [label="(Call,numsubsamples * sizeof(size_t))"];
+"1000201" [label="(Call,memcpy(ret->encryptedbytes, encryptedbytes, numsubsamples * sizeof(size_t)))"];
+"1000108" [label="(MethodParameterIn,size_t *encryptedbytes)"];
+"1000205" [label="(Identifier,encryptedbytes)"];
+"1000183" [label="(Call,ret->encryptedbytes = ret->clearbytes + numsubsamples)"];
+"1000212" [label="(MethodReturn,AMediaCodecCryptoInfo *)"];
+"1000202" [label="(Call,ret->encryptedbytes)"];
+"1000211" [label="(Identifier,ret)"];
+"1000109" [label="(Block,)"];
+"1000108" -> "1000102"  [label="AST: "];
+"1000108" -> "1000212"  [label="DDG: encryptedbytes"];
+"1000108" -> "1000201"  [label="DDG: encryptedbytes"];
+"1000201" -> "1000109"  [label="AST: "];
+"1000201" -> "1000206"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="AST: "];
+"1000206" -> "1000201"  [label="AST: "];
+"1000211" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000212"  [label="DDG: memcpy(ret->encryptedbytes, encryptedbytes, numsubsamples * sizeof(size_t))"];
+"1000201" -> "1000212"  [label="DDG: numsubsamples * sizeof(size_t)"];
+"1000201" -> "1000212"  [label="DDG: encryptedbytes"];
+"1000201" -> "1000212"  [label="DDG: ret->encryptedbytes"];
+"1000183" -> "1000201"  [label="DDG: ret->encryptedbytes"];
+"1000206" -> "1000201"  [label="DDG: numsubsamples"];
+}

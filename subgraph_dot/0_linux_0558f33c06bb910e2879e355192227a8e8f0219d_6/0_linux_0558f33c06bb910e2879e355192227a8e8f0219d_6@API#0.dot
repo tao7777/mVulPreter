@@ -1,0 +1,29 @@
+digraph "0_linux_0558f33c06bb910e2879e355192227a8e8f0219d_6@API" {
+"1000147" [label="(Call,list_move_tail(&dev->disco_list_node, &port->destroy_list))"];
+"1000115" [label="(Call,list_empty(&dev->disco_list_node))"];
+"1000147" [label="(Call,list_move_tail(&dev->disco_list_node, &port->destroy_list))"];
+"1000148" [label="(Call,&dev->disco_list_node)"];
+"1000152" [label="(Call,&port->destroy_list)"];
+"1000121" [label="(Call,list_del_init(&dev->disco_list_node))"];
+"1000156" [label="(MethodReturn,void)"];
+"1000116" [label="(Call,&dev->disco_list_node)"];
+"1000115" [label="(Call,list_empty(&dev->disco_list_node))"];
+"1000142" [label="(Block,)"];
+"1000114" [label="(Call,!list_empty(&dev->disco_list_node))"];
+"1000147" -> "1000142"  [label="AST: "];
+"1000147" -> "1000152"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000152" -> "1000147"  [label="AST: "];
+"1000156" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000156"  [label="DDG: &port->destroy_list"];
+"1000147" -> "1000156"  [label="DDG: &dev->disco_list_node"];
+"1000147" -> "1000156"  [label="DDG: list_move_tail(&dev->disco_list_node, &port->destroy_list)"];
+"1000115" -> "1000147"  [label="DDG: &dev->disco_list_node"];
+"1000115" -> "1000114"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000156"  [label="DDG: &dev->disco_list_node"];
+"1000115" -> "1000114"  [label="DDG: &dev->disco_list_node"];
+"1000115" -> "1000121"  [label="DDG: &dev->disco_list_node"];
+}

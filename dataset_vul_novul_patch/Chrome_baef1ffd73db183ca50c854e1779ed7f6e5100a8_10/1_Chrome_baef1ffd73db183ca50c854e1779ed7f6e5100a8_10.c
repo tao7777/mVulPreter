@@ -1,0 +1,25 @@
+  void SetUpCacheWithVariousFiles() {
+    CreateFile(persistent_directory_.AppendASCII("id_foo.md5foo"));
+    CreateFile(persistent_directory_.AppendASCII("id_bar.local"));
+    CreateFile(persistent_directory_.AppendASCII("id_baz.local"));
+    CreateFile(persistent_directory_.AppendASCII("id_bad.md5bad"));
+    CreateSymbolicLink(FilePath::FromUTF8Unsafe(util::kSymLinkToDevNull),
+                       persistent_directory_.AppendASCII("id_symlink"));
+    CreateFile(tmp_directory_.AppendASCII("id_qux.md5qux"));
+    CreateFile(tmp_directory_.AppendASCII("id_quux.local"));
+    CreateSymbolicLink(FilePath::FromUTF8Unsafe(util::kSymLinkToDevNull),
+                       tmp_directory_.AppendASCII("id_symlink_tmp"));
+    CreateSymbolicLink(persistent_directory_.AppendASCII("id_foo.md5foo"),
+                       pinned_directory_.AppendASCII("id_foo"));
+    CreateSymbolicLink(FilePath::FromUTF8Unsafe(util::kSymLinkToDevNull),
+                       pinned_directory_.AppendASCII("id_corge"));
+    CreateSymbolicLink(persistent_directory_.AppendASCII("id_dangling.md5foo"),
+                       pinned_directory_.AppendASCII("id_dangling"));
+    CreateSymbolicLink(tmp_directory_.AppendASCII("id_qux.md5qux"),
+                       pinned_directory_.AppendASCII("id_outside"));
+    CreateFile(pinned_directory_.AppendASCII("id_not_symlink"));
+    CreateSymbolicLink(persistent_directory_.AppendASCII("id_bar.local"),
+                       outgoing_directory_.AppendASCII("id_bar"));
+    CreateSymbolicLink(persistent_directory_.AppendASCII("id_foo.md5foo"),
+                       outgoing_directory_.AppendASCII("id_foo"));
+   }

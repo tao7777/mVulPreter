@@ -1,0 +1,32 @@
+digraph "0_linux_ea25f914dc164c8d56b36147ecc86bc65f83c469@array" {
+"1000312" [label="(Call,state->stack[spi].slot_type[slot % BPF_REG_SIZE] !=\n\t\t\tSTACK_MISC)"];
+"1000306" [label="(Call,state->allocated_stack <= slot ||\n\t\t    state->stack[spi].slot_type[slot % BPF_REG_SIZE] !=\n\t\t\tSTACK_MISC)"];
+"1000312" [label="(Call,state->stack[spi].slot_type[slot % BPF_REG_SIZE] !=\n\t\t\tSTACK_MISC)"];
+"1000337" [label="(MethodReturn,static int)"];
+"1000307" [label="(Call,state->allocated_stack <= slot)"];
+"1000327" [label="(Identifier,env)"];
+"1000313" [label="(Call,state->stack[spi].slot_type[slot % BPF_REG_SIZE])"];
+"1000305" [label="(ControlStructure,if (state->allocated_stack <= slot ||\n\t\t    state->stack[spi].slot_type[slot % BPF_REG_SIZE] !=\n\t\t\tSTACK_MISC))"];
+"1000324" [label="(Identifier,STACK_MISC)"];
+"1000306" [label="(Call,state->allocated_stack <= slot ||\n\t\t    state->stack[spi].slot_type[slot % BPF_REG_SIZE] !=\n\t\t\tSTACK_MISC)"];
+"1000290" [label="(Identifier,i)"];
+"1000312" -> "1000306"  [label="AST: "];
+"1000312" -> "1000324"  [label="CFG: "];
+"1000313" -> "1000312"  [label="AST: "];
+"1000324" -> "1000312"  [label="AST: "];
+"1000306" -> "1000312"  [label="CFG: "];
+"1000312" -> "1000337"  [label="DDG: state->stack[spi].slot_type[slot % BPF_REG_SIZE]"];
+"1000312" -> "1000337"  [label="DDG: STACK_MISC"];
+"1000312" -> "1000306"  [label="DDG: state->stack[spi].slot_type[slot % BPF_REG_SIZE]"];
+"1000312" -> "1000306"  [label="DDG: STACK_MISC"];
+"1000306" -> "1000305"  [label="AST: "];
+"1000306" -> "1000307"  [label="CFG: "];
+"1000307" -> "1000306"  [label="AST: "];
+"1000327" -> "1000306"  [label="CFG: "];
+"1000290" -> "1000306"  [label="CFG: "];
+"1000306" -> "1000337"  [label="DDG: state->stack[spi].slot_type[slot % BPF_REG_SIZE] !=\n\t\t\tSTACK_MISC"];
+"1000306" -> "1000337"  [label="DDG: state->allocated_stack <= slot"];
+"1000306" -> "1000337"  [label="DDG: state->allocated_stack <= slot ||\n\t\t    state->stack[spi].slot_type[slot % BPF_REG_SIZE] !=\n\t\t\tSTACK_MISC"];
+"1000307" -> "1000306"  [label="DDG: state->allocated_stack"];
+"1000307" -> "1000306"  [label="DDG: slot"];
+}

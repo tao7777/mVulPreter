@@ -1,0 +1,33 @@
+digraph "0_Chrome_5472db1c7eca35822219d03be5c817d9a9258c11@pointer" {
+"1000144" [label="(Call,* frame = GetLayoutBox()->GetFrame())"];
+"1000148" [label="(Call,frame && frame->View() &&\n          frame->View()->HasViewportConstrainedObjects())"];
+"1000146" [label="(Call,GetLayoutBox()->GetFrame())"];
+"1000144" [label="(Call,* frame = GetLayoutBox()->GetFrame())"];
+"1000150" [label="(Call,frame->View() &&\n          frame->View()->HasViewportConstrainedObjects())"];
+"1000149" [label="(Identifier,frame)"];
+"1000145" [label="(Identifier,frame)"];
+"1000158" [label="(MethodReturn,void)"];
+"1000148" [label="(Call,frame && frame->View() &&\n          frame->View()->HasViewportConstrainedObjects())"];
+"1000147" [label="(ControlStructure,if (frame && frame->View() &&\n          frame->View()->HasViewportConstrainedObjects()))"];
+"1000154" [label="(Call,Layer()->SetNeedsCompositingInputsUpdate())"];
+"1000142" [label="(Block,)"];
+"1000144" -> "1000142"  [label="AST: "];
+"1000144" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000149" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000158"  [label="DDG: GetLayoutBox()->GetFrame()"];
+"1000144" -> "1000148"  [label="DDG: frame"];
+"1000148" -> "1000147"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000148" -> "1000150"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000150" -> "1000148"  [label="AST: "];
+"1000154" -> "1000148"  [label="CFG: "];
+"1000158" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000158"  [label="DDG: frame->View() &&\n          frame->View()->HasViewportConstrainedObjects()"];
+"1000148" -> "1000158"  [label="DDG: frame"];
+"1000148" -> "1000158"  [label="DDG: frame && frame->View() &&\n          frame->View()->HasViewportConstrainedObjects()"];
+"1000150" -> "1000148"  [label="DDG: frame->View()"];
+"1000150" -> "1000148"  [label="DDG: frame->View()->HasViewportConstrainedObjects()"];
+}

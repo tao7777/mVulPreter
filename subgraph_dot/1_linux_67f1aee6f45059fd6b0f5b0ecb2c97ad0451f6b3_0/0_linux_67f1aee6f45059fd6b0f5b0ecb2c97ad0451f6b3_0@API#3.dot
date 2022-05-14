@@ -1,0 +1,23 @@
+digraph "0_linux_67f1aee6f45059fd6b0f5b0ecb2c97ad0451f6b3_0@API" {
+"1000121" [label="(Call,kfree_skb(skb))"];
+"1000102" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000136" [label="(Call,kfree_skb(skb))"];
+"1000120" [label="(Block,)"];
+"1000121" [label="(Call,kfree_skb(skb))"];
+"1000122" [label="(Identifier,skb)"];
+"1000128" [label="(Call,l2t_send(tdev, skb, l2e))"];
+"1000125" [label="(Identifier,EIO)"];
+"1000102" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000140" [label="(MethodReturn,static int)"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000140"  [label="DDG: kfree_skb(skb)"];
+"1000121" -> "1000140"  [label="DDG: skb"];
+"1000102" -> "1000121"  [label="DDG: skb"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000140"  [label="DDG: skb"];
+"1000102" -> "1000128"  [label="DDG: skb"];
+"1000102" -> "1000136"  [label="DDG: skb"];
+}

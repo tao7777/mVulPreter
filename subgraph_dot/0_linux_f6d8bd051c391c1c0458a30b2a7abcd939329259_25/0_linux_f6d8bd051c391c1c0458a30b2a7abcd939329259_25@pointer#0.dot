@@ -1,0 +1,36 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_25@pointer" {
+"1000308" [label="(Call,inet->uc_ttl == -1 ?\n\t\t       sysctl_ip_default_ttl :\n\t\t       inet->uc_ttl)"];
+"1000309" [label="(Call,inet->uc_ttl == -1)"];
+"1000313" [label="(Call,-1)"];
+"1000309" [label="(Call,inet->uc_ttl == -1)"];
+"1000313" [label="(Call,-1)"];
+"1000308" [label="(Call,inet->uc_ttl == -1 ?\n\t\t       sysctl_ip_default_ttl :\n\t\t       inet->uc_ttl)"];
+"1000706" [label="(MethodReturn,static int)"];
+"1000317" [label="(Identifier,inet)"];
+"1000315" [label="(Identifier,sysctl_ip_default_ttl)"];
+"1000314" [label="(Literal,1)"];
+"1000316" [label="(Call,inet->uc_ttl)"];
+"1000306" [label="(Call,val = (inet->uc_ttl == -1 ?\n\t\t       sysctl_ip_default_ttl :\n\t\t       inet->uc_ttl))"];
+"1000310" [label="(Call,inet->uc_ttl)"];
+"1000308" -> "1000306"  [label="AST: "];
+"1000308" -> "1000315"  [label="CFG: "];
+"1000308" -> "1000316"  [label="CFG: "];
+"1000309" -> "1000308"  [label="AST: "];
+"1000315" -> "1000308"  [label="AST: "];
+"1000316" -> "1000308"  [label="AST: "];
+"1000306" -> "1000308"  [label="CFG: "];
+"1000308" -> "1000706"  [label="DDG: inet->uc_ttl == -1"];
+"1000308" -> "1000706"  [label="DDG: sysctl_ip_default_ttl"];
+"1000308" -> "1000706"  [label="DDG: inet->uc_ttl"];
+"1000309" -> "1000308"  [label="DDG: inet->uc_ttl"];
+"1000309" -> "1000313"  [label="CFG: "];
+"1000310" -> "1000309"  [label="AST: "];
+"1000313" -> "1000309"  [label="AST: "];
+"1000315" -> "1000309"  [label="CFG: "];
+"1000317" -> "1000309"  [label="CFG: "];
+"1000309" -> "1000706"  [label="DDG: -1"];
+"1000309" -> "1000306"  [label="DDG: inet->uc_ttl"];
+"1000313" -> "1000309"  [label="DDG: 1"];
+"1000313" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000313"  [label="AST: "];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_07f4d9d74a04aa7c72c5dae0ef97565f28f17b92_3@pointer" {
+"1000110" [label="(MethodParameterIn,const char *xid)"];
+"1000166" [label="(Call,strlcpy(card->id, xid, sizeof(card->id)))"];
+"1000418" [label="(MethodReturn,int)"];
+"1000110" [label="(MethodParameterIn,const char *xid)"];
+"1000171" [label="(Call,sizeof(card->id))"];
+"1000176" [label="(Identifier,err)"];
+"1000164" [label="(ControlStructure,if (xid))"];
+"1000167" [label="(Call,card->id)"];
+"1000170" [label="(Identifier,xid)"];
+"1000166" [label="(Call,strlcpy(card->id, xid, sizeof(card->id)))"];
+"1000110" -> "1000107"  [label="AST: "];
+"1000110" -> "1000418"  [label="DDG: xid"];
+"1000110" -> "1000166"  [label="DDG: xid"];
+"1000166" -> "1000164"  [label="AST: "];
+"1000166" -> "1000171"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000170" -> "1000166"  [label="AST: "];
+"1000171" -> "1000166"  [label="AST: "];
+"1000176" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000418"  [label="DDG: strlcpy(card->id, xid, sizeof(card->id))"];
+"1000166" -> "1000418"  [label="DDG: card->id"];
+"1000166" -> "1000418"  [label="DDG: xid"];
+}

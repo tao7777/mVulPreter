@@ -1,0 +1,22 @@
+digraph "0_linux_9a5467bf7b6e9e02ec9c3da4e23747c05faeaac6_7@pointer" {
+"1000148" [label="(Call,ualg->cru_refcnt = atomic_read(&alg->cra_refcnt))"];
+"1000152" [label="(Call,atomic_read(&alg->cra_refcnt))"];
+"1000149" [label="(Call,ualg->cru_refcnt)"];
+"1000153" [label="(Call,&alg->cra_refcnt)"];
+"1000152" [label="(Call,atomic_read(&alg->cra_refcnt))"];
+"1000159" [label="(Identifier,skb)"];
+"1000104" [label="(Block,)"];
+"1000237" [label="(MethodReturn,static int)"];
+"1000148" [label="(Call,ualg->cru_refcnt = atomic_read(&alg->cra_refcnt))"];
+"1000148" -> "1000104"  [label="AST: "];
+"1000148" -> "1000152"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000152" -> "1000148"  [label="AST: "];
+"1000159" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000237"  [label="DDG: atomic_read(&alg->cra_refcnt)"];
+"1000148" -> "1000237"  [label="DDG: ualg->cru_refcnt"];
+"1000152" -> "1000148"  [label="DDG: &alg->cra_refcnt"];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000152" -> "1000237"  [label="DDG: &alg->cra_refcnt"];
+}

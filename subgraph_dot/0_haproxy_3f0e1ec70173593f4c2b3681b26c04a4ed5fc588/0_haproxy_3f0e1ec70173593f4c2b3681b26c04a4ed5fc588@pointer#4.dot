@@ -1,0 +1,32 @@
+digraph "0_haproxy_3f0e1ec70173593f4c2b3681b26c04a4ed5fc588@pointer" {
+"1000839" [label="(Call,h2c->rcvd_c > 0)"];
+"1000838" [label="(Call,h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)))"];
+"1000843" [label="(Literal,0)"];
+"1000839" [label="(Call,h2c->rcvd_c > 0)"];
+"1000840" [label="(Call,h2c->rcvd_c)"];
+"1000837" [label="(ControlStructure,if (h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM))))"];
+"1000855" [label="(Identifier,h2c)"];
+"1000847" [label="(Identifier,h2c)"];
+"1000844" [label="(Call,!(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)))"];
+"1000856" [label="(JumpTarget,fail:)"];
+"1000858" [label="(MethodReturn,static void)"];
+"1000838" [label="(Call,h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)))"];
+"1000839" -> "1000838"  [label="AST: "];
+"1000839" -> "1000843"  [label="CFG: "];
+"1000840" -> "1000839"  [label="AST: "];
+"1000843" -> "1000839"  [label="AST: "];
+"1000847" -> "1000839"  [label="CFG: "];
+"1000838" -> "1000839"  [label="CFG: "];
+"1000839" -> "1000858"  [label="DDG: h2c->rcvd_c"];
+"1000839" -> "1000838"  [label="DDG: h2c->rcvd_c"];
+"1000839" -> "1000838"  [label="DDG: 0"];
+"1000838" -> "1000837"  [label="AST: "];
+"1000838" -> "1000844"  [label="CFG: "];
+"1000844" -> "1000838"  [label="AST: "];
+"1000855" -> "1000838"  [label="CFG: "];
+"1000856" -> "1000838"  [label="CFG: "];
+"1000838" -> "1000858"  [label="DDG: h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM))"];
+"1000838" -> "1000858"  [label="DDG: !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM))"];
+"1000838" -> "1000858"  [label="DDG: h2c->rcvd_c > 0"];
+"1000844" -> "1000838"  [label="DDG: h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)"];
+}

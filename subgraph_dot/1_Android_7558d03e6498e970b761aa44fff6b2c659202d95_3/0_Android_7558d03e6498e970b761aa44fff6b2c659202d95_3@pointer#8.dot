@@ -1,0 +1,25 @@
+digraph "0_Android_7558d03e6498e970b761aa44fff6b2c659202d95_3@pointer" {
+"1000373" [label="(Call,omx->output_use_buffer && !omx->m_use_output_pmem)"];
+"1000377" [label="(Call,!omx->m_use_output_pmem)"];
+"1000383" [label="(Literal,\"memcpy() for o/p Heap UseBuffer\")"];
+"1000374" [label="(Call,omx->output_use_buffer)"];
+"1000445" [label="(MethodReturn,int)"];
+"1000378" [label="(Call,omx->m_use_output_pmem)"];
+"1000377" [label="(Call,!omx->m_use_output_pmem)"];
+"1000372" [label="(ControlStructure,if (omx->output_use_buffer && !omx->m_use_output_pmem))"];
+"1000373" [label="(Call,omx->output_use_buffer && !omx->m_use_output_pmem)"];
+"1000373" -> "1000372"  [label="AST: "];
+"1000373" -> "1000374"  [label="CFG: "];
+"1000373" -> "1000377"  [label="CFG: "];
+"1000374" -> "1000373"  [label="AST: "];
+"1000377" -> "1000373"  [label="AST: "];
+"1000383" -> "1000373"  [label="CFG: "];
+"1000417" -> "1000373"  [label="CFG: "];
+"1000373" -> "1000445"  [label="DDG: omx->output_use_buffer && !omx->m_use_output_pmem"];
+"1000373" -> "1000445"  [label="DDG: !omx->m_use_output_pmem"];
+"1000373" -> "1000445"  [label="DDG: omx->output_use_buffer"];
+"1000377" -> "1000373"  [label="DDG: omx->m_use_output_pmem"];
+"1000377" -> "1000378"  [label="CFG: "];
+"1000378" -> "1000377"  [label="AST: "];
+"1000377" -> "1000445"  [label="DDG: omx->m_use_output_pmem"];
+}

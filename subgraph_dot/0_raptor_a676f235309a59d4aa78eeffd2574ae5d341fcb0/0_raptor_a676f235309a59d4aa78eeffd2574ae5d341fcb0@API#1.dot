@@ -1,0 +1,36 @@
+digraph "0_raptor_a676f235309a59d4aa78eeffd2574ae5d341fcb0@API" {
+"1000123" [label="(Call,context->wb_allocated + 1)"];
+"1000108" [label="(Call,context->wb_allocated = sizeof(char) * READ_BUFFER_SIZE)"];
+"1000112" [label="(Call,sizeof(char) * READ_BUFFER_SIZE)"];
+"1000109" [label="(Call,context->wb_allocated)"];
+"1000103" [label="(Block,)"];
+"1000115" [label="(Identifier,READ_BUFFER_SIZE)"];
+"1000124" [label="(Call,context->wb_allocated)"];
+"1000108" [label="(Call,context->wb_allocated = sizeof(char) * READ_BUFFER_SIZE)"];
+"1000113" [label="(Call,sizeof(char))"];
+"1000123" [label="(Call,context->wb_allocated + 1)"];
+"1000122" [label="(Call,malloc(context->wb_allocated + 1))"];
+"1000112" [label="(Call,sizeof(char) * READ_BUFFER_SIZE)"];
+"1000269" [label="(MethodReturn,int)"];
+"1000118" [label="(Identifier,context)"];
+"1000127" [label="(Literal,1)"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000127"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000269"  [label="DDG: context->wb_allocated"];
+"1000108" -> "1000123"  [label="DDG: context->wb_allocated"];
+"1000108" -> "1000103"  [label="AST: "];
+"1000108" -> "1000112"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="AST: "];
+"1000118" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000269"  [label="DDG: sizeof(char) * READ_BUFFER_SIZE"];
+"1000112" -> "1000108"  [label="DDG: READ_BUFFER_SIZE"];
+"1000108" -> "1000122"  [label="DDG: context->wb_allocated"];
+"1000112" -> "1000115"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000115" -> "1000112"  [label="AST: "];
+"1000112" -> "1000269"  [label="DDG: READ_BUFFER_SIZE"];
+}

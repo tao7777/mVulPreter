@@ -1,0 +1,1 @@
+void UserSelectionScreen::FillUserMojoStruct(

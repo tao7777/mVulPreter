@@ -1,0 +1,24 @@
+digraph "0_linux_b66c5984017533316fd1951770302649baf1aa33@API" {
+"1000150" [label="(Call,read_unlock(&entries_lock))"];
+"1000135" [label="(Call,read_lock(&entries_lock))"];
+"1000155" [label="(Identifier,fmt)"];
+"1000355" [label="(MethodReturn,static int)"];
+"1000135" [label="(Call,read_lock(&entries_lock))"];
+"1000110" [label="(Block,)"];
+"1000139" [label="(Identifier,fmt)"];
+"1000150" [label="(Call,read_unlock(&entries_lock))"];
+"1000151" [label="(Call,&entries_lock)"];
+"1000136" [label="(Call,&entries_lock)"];
+"1000150" -> "1000110"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000155" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000355"  [label="DDG: &entries_lock"];
+"1000150" -> "1000355"  [label="DDG: read_unlock(&entries_lock)"];
+"1000135" -> "1000150"  [label="DDG: &entries_lock"];
+"1000135" -> "1000110"  [label="AST: "];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000139" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000355"  [label="DDG: read_lock(&entries_lock)"];
+}

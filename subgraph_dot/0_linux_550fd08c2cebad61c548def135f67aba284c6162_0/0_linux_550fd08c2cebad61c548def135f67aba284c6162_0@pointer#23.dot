@@ -1,0 +1,28 @@
+digraph "0_linux_550fd08c2cebad61c548def135f67aba284c6162_0@pointer" {
+"1000704" [label="(Call,!bond->params.arp_interval)"];
+"1000699" [label="(Call,(link_reporting == -1) && !bond->params.arp_interval)"];
+"1000705" [label="(Call,bond->params.arp_interval)"];
+"1000704" [label="(Call,!bond->params.arp_interval)"];
+"1000722" [label="(Identifier,link_reporting)"];
+"1000698" [label="(ControlStructure,if ((link_reporting == -1) && !bond->params.arp_interval))"];
+"1000699" [label="(Call,(link_reporting == -1) && !bond->params.arp_interval)"];
+"1000700" [label="(Call,link_reporting == -1)"];
+"1001091" [label="(MethodReturn,int)"];
+"1000712" [label="(Literal,\"%s: Warning: MII and ETHTOOL support not available for interface %s, and arp_interval/arp_ip_target module parameters not specified, thus bonding will not detect link failures! see bonding.txt for details.\n\")"];
+"1000704" -> "1000699"  [label="AST: "];
+"1000704" -> "1000705"  [label="CFG: "];
+"1000705" -> "1000704"  [label="AST: "];
+"1000699" -> "1000704"  [label="CFG: "];
+"1000704" -> "1001091"  [label="DDG: bond->params.arp_interval"];
+"1000704" -> "1000699"  [label="DDG: bond->params.arp_interval"];
+"1000699" -> "1000698"  [label="AST: "];
+"1000699" -> "1000700"  [label="CFG: "];
+"1000700" -> "1000699"  [label="AST: "];
+"1000712" -> "1000699"  [label="CFG: "];
+"1000722" -> "1000699"  [label="CFG: "];
+"1000699" -> "1001091"  [label="DDG: link_reporting == -1"];
+"1000699" -> "1001091"  [label="DDG: (link_reporting == -1) && !bond->params.arp_interval"];
+"1000699" -> "1001091"  [label="DDG: !bond->params.arp_interval"];
+"1000700" -> "1000699"  [label="DDG: link_reporting"];
+"1000700" -> "1000699"  [label="DDG: -1"];
+}

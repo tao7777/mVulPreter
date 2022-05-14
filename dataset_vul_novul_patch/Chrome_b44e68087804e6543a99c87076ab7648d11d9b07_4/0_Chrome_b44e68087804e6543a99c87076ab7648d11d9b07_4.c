@@ -1,0 +1,1 @@
+void MemoryInstrumentation::GetVmRegionsForHeapProfiler(

@@ -1,0 +1,31 @@
+digraph "0_qemu_fe3c546c5ff2a6210f9a4d8561cc64051ca8603e@API" {
+"1000164" [label="(Call,sizeof(rndis_query_cmplt_type) +\n            ((infobuflen < 0) ? 0 : infobuflen))"];
+"1000168" [label="(Call,infobuflen < 0)"];
+"1000203" [label="(Call,infobuflen < 0)"];
+"1000259" [label="(MethodReturn,static int)"];
+"1000171" [label="(Literal,0)"];
+"1000162" [label="(Call,resplen = sizeof(rndis_query_cmplt_type) +\n            ((infobuflen < 0) ? 0 : infobuflen))"];
+"1000164" [label="(Call,sizeof(rndis_query_cmplt_type) +\n            ((infobuflen < 0) ? 0 : infobuflen))"];
+"1000168" [label="(Call,infobuflen < 0)"];
+"1000169" [label="(Identifier,infobuflen)"];
+"1000172" [label="(Identifier,infobuflen)"];
+"1000165" [label="(Call,sizeof(rndis_query_cmplt_type))"];
+"1000167" [label="(Call,(infobuflen < 0) ? 0 : infobuflen)"];
+"1000170" [label="(Literal,0)"];
+"1000164" -> "1000162"  [label="AST: "];
+"1000164" -> "1000167"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000167" -> "1000164"  [label="AST: "];
+"1000162" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000259"  [label="DDG: (infobuflen < 0) ? 0 : infobuflen"];
+"1000168" -> "1000164"  [label="DDG: infobuflen"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000170"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000170" -> "1000168"  [label="AST: "];
+"1000171" -> "1000168"  [label="CFG: "];
+"1000172" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000162"  [label="DDG: infobuflen"];
+"1000168" -> "1000167"  [label="DDG: infobuflen"];
+"1000168" -> "1000203"  [label="DDG: infobuflen"];
+}

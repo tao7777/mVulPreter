@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1011730" [label="(Call,s->cpuid_ext_features & CPUID_EXT_POPCNT)"];
+"1011729" [label="(Call,!(s->cpuid_ext_features & CPUID_EXT_POPCNT))"];
+"1011730" [label="(Call,s->cpuid_ext_features & CPUID_EXT_POPCNT)"];
+"1011731" [label="(Call,s->cpuid_ext_features)"];
+"1011737" [label="(Identifier,modrm)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1011729" [label="(Call,!(s->cpuid_ext_features & CPUID_EXT_POPCNT))"];
+"1011735" [label="(ControlStructure,goto illegal_op;)"];
+"1011728" [label="(ControlStructure,if (!(s->cpuid_ext_features & CPUID_EXT_POPCNT)))"];
+"1011734" [label="(Identifier,CPUID_EXT_POPCNT)"];
+"1011730" -> "1011729"  [label="AST: "];
+"1011730" -> "1011734"  [label="CFG: "];
+"1011731" -> "1011730"  [label="AST: "];
+"1011734" -> "1011730"  [label="AST: "];
+"1011729" -> "1011730"  [label="CFG: "];
+"1011730" -> "1011840"  [label="DDG: CPUID_EXT_POPCNT"];
+"1011730" -> "1011840"  [label="DDG: s->cpuid_ext_features"];
+"1011730" -> "1011729"  [label="DDG: s->cpuid_ext_features"];
+"1011730" -> "1011729"  [label="DDG: CPUID_EXT_POPCNT"];
+"1011729" -> "1011728"  [label="AST: "];
+"1011735" -> "1011729"  [label="CFG: "];
+"1011737" -> "1011729"  [label="CFG: "];
+"1011729" -> "1011840"  [label="DDG: !(s->cpuid_ext_features & CPUID_EXT_POPCNT)"];
+"1011729" -> "1011840"  [label="DDG: s->cpuid_ext_features & CPUID_EXT_POPCNT"];
+}

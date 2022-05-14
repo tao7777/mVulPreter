@@ -1,0 +1,27 @@
+digraph "0_Chrome_db93178bcaaf7e99ebb18bd51fa99b2feaf47e1f_0@pointer" {
+"1000105" [label="(Call,* registry = ExtensionRegistry::Get(profile))"];
+"1000107" [label="(Call,ExtensionRegistry::Get(profile))"];
+"1000101" [label="(MethodParameterIn,Profile* profile)"];
+"1000106" [label="(Identifier,registry)"];
+"1000101" [label="(MethodParameterIn,Profile* profile)"];
+"1000111" [label="(Identifier,extension)"];
+"1000105" [label="(Call,* registry = ExtensionRegistry::Get(profile))"];
+"1000107" [label="(Call,ExtensionRegistry::Get(profile))"];
+"1000108" [label="(Identifier,profile)"];
+"1000116" [label="(MethodReturn,const extensions::Extension*)"];
+"1000103" [label="(Block,)"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000111" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000116"  [label="DDG: ExtensionRegistry::Get(profile)"];
+"1000105" -> "1000116"  [label="DDG: registry"];
+"1000107" -> "1000105"  [label="DDG: profile"];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000107" -> "1000116"  [label="DDG: profile"];
+"1000101" -> "1000107"  [label="DDG: profile"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000116"  [label="DDG: profile"];
+}

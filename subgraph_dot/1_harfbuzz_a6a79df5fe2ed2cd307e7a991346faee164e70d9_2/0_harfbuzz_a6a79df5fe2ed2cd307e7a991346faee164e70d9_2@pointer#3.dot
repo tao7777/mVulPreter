@@ -1,0 +1,38 @@
+digraph "0_harfbuzz_a6a79df5fe2ed2cd307e7a991346faee164e70d9_2@pointer" {
+"1000108" [label="(Call,buffer->out_info == buffer->info)"];
+"1000150" [label="(Call,memcpy (buffer->out_info, buffer->info, buffer->out_len * sizeof (buffer->out_info[0])))"];
+"1000108" [label="(Call,buffer->out_info == buffer->info)"];
+"1000107" [label="(ControlStructure,if (buffer->out_info == buffer->info))"];
+"1000167" [label="(MethodReturn,RET)"];
+"1000150" [label="(Call,memcpy (buffer->out_info, buffer->info, buffer->out_len * sizeof (buffer->out_info[0])))"];
+"1000115" [label="(Block,)"];
+"1000112" [label="(Call,buffer->info)"];
+"1000109" [label="(Call,buffer->out_info)"];
+"1000154" [label="(Call,buffer->info)"];
+"1000118" [label="(Identifier,buffer)"];
+"1000141" [label="(Call,buffer->out_info = (hb_internal_glyph_info_t *) buffer->pos)"];
+"1000151" [label="(Call,buffer->out_info)"];
+"1000157" [label="(Call,buffer->out_len * sizeof (buffer->out_info[0]))"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000108" -> "1000112"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="AST: "];
+"1000118" -> "1000108"  [label="CFG: "];
+"1000167" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000167"  [label="DDG: buffer->out_info == buffer->info"];
+"1000108" -> "1000167"  [label="DDG: buffer->info"];
+"1000108" -> "1000167"  [label="DDG: buffer->out_info"];
+"1000108" -> "1000150"  [label="DDG: buffer->info"];
+"1000150" -> "1000115"  [label="AST: "];
+"1000150" -> "1000157"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000154" -> "1000150"  [label="AST: "];
+"1000157" -> "1000150"  [label="AST: "];
+"1000167" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000167"  [label="DDG: buffer->out_info"];
+"1000150" -> "1000167"  [label="DDG: buffer->out_len * sizeof (buffer->out_info[0])"];
+"1000150" -> "1000167"  [label="DDG: buffer->info"];
+"1000150" -> "1000167"  [label="DDG: memcpy (buffer->out_info, buffer->info, buffer->out_len * sizeof (buffer->out_info[0]))"];
+"1000141" -> "1000150"  [label="DDG: buffer->out_info"];
+"1000157" -> "1000150"  [label="DDG: buffer->out_len"];
+}

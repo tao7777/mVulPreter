@@ -1,0 +1,30 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_4@pointer" {
+"1000279" [label="(Call,*replySize != sizeof(effect_config_t))"];
+"1000275" [label="(Call,pReplyData == NULL ||\n                *replySize != sizeof(effect_config_t))"];
+"1000279" [label="(Call,*replySize != sizeof(effect_config_t))"];
+"1001424" [label="(MethodReturn,int)"];
+"1000280" [label="(Call,*replySize)"];
+"1000276" [label="(Call,pReplyData == NULL)"];
+"1000291" [label="(Identifier,pContext)"];
+"1000274" [label="(ControlStructure,if (pReplyData == NULL ||\n                *replySize != sizeof(effect_config_t)))"];
+"1000286" [label="(Literal,\"\tLVM_ERROR : Effect_command cmdCode Case: \"\n                         \"EFFECT_CMD_GET_CONFIG: ERROR\")"];
+"1000282" [label="(Call,sizeof(effect_config_t))"];
+"1000275" [label="(Call,pReplyData == NULL ||\n                *replySize != sizeof(effect_config_t))"];
+"1000279" -> "1000275"  [label="AST: "];
+"1000279" -> "1000282"  [label="CFG: "];
+"1000280" -> "1000279"  [label="AST: "];
+"1000282" -> "1000279"  [label="AST: "];
+"1000275" -> "1000279"  [label="CFG: "];
+"1000279" -> "1001424"  [label="DDG: *replySize"];
+"1000279" -> "1000275"  [label="DDG: *replySize"];
+"1000275" -> "1000274"  [label="AST: "];
+"1000275" -> "1000276"  [label="CFG: "];
+"1000276" -> "1000275"  [label="AST: "];
+"1000286" -> "1000275"  [label="CFG: "];
+"1000291" -> "1000275"  [label="CFG: "];
+"1000275" -> "1001424"  [label="DDG: pReplyData == NULL ||\n                *replySize != sizeof(effect_config_t)"];
+"1000275" -> "1001424"  [label="DDG: pReplyData == NULL"];
+"1000275" -> "1001424"  [label="DDG: *replySize != sizeof(effect_config_t)"];
+"1000276" -> "1000275"  [label="DDG: pReplyData"];
+"1000276" -> "1000275"  [label="DDG: NULL"];
+}

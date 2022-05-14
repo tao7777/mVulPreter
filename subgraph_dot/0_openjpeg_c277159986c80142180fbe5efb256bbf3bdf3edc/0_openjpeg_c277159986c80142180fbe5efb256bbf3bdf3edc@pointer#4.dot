@@ -1,0 +1,31 @@
+digraph "0_openjpeg_c277159986c80142180fbe5efb256bbf3bdf3edc@pointer" {
+"1000607" [label="(Call,res->ph == 0)"];
+"1000601" [label="(Call,(res->pw == 0) || (res->ph == 0))"];
+"1000617" [label="(Identifier,trx0)"];
+"1000766" [label="(MethodReturn,static opj_bool)"];
+"1000611" [label="(Literal,0)"];
+"1000600" [label="(ControlStructure,if ((res->pw == 0) || (res->ph == 0)))"];
+"1000602" [label="(Call,res->pw == 0)"];
+"1000601" [label="(Call,(res->pw == 0) || (res->ph == 0))"];
+"1000607" [label="(Call,res->ph == 0)"];
+"1000608" [label="(Call,res->ph)"];
+"1000613" [label="(ControlStructure,continue;)"];
+"1000607" -> "1000601"  [label="AST: "];
+"1000607" -> "1000611"  [label="CFG: "];
+"1000608" -> "1000607"  [label="AST: "];
+"1000611" -> "1000607"  [label="AST: "];
+"1000601" -> "1000607"  [label="CFG: "];
+"1000607" -> "1000766"  [label="DDG: res->ph"];
+"1000607" -> "1000601"  [label="DDG: res->ph"];
+"1000607" -> "1000601"  [label="DDG: 0"];
+"1000601" -> "1000600"  [label="AST: "];
+"1000601" -> "1000602"  [label="CFG: "];
+"1000602" -> "1000601"  [label="AST: "];
+"1000613" -> "1000601"  [label="CFG: "];
+"1000617" -> "1000601"  [label="CFG: "];
+"1000601" -> "1000766"  [label="DDG: res->ph == 0"];
+"1000601" -> "1000766"  [label="DDG: res->pw == 0"];
+"1000601" -> "1000766"  [label="DDG: (res->pw == 0) || (res->ph == 0)"];
+"1000602" -> "1000601"  [label="DDG: res->pw"];
+"1000602" -> "1000601"  [label="DDG: 0"];
+}

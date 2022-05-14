@@ -1,0 +1,32 @@
+digraph "0_Android_9d4853418ab2f754c2b63e091c29c5529b8b86ca_3@API" {
+"1000227" [label="(Call,mainprog_ptr->bg_red = mainprog_ptr->bg_green =\n                     mainprog_ptr->bg_blue = pBackground->gray? 255 : 0)"];
+"1000231" [label="(Call,mainprog_ptr->bg_green =\n                     mainprog_ptr->bg_blue = pBackground->gray? 255 : 0)"];
+"1000235" [label="(Call,mainprog_ptr->bg_blue = pBackground->gray? 255 : 0)"];
+"1000405" [label="(MethodReturn,static void)"];
+"1000239" [label="(Call,pBackground->gray? 255 : 0)"];
+"1000235" [label="(Call,mainprog_ptr->bg_blue = pBackground->gray? 255 : 0)"];
+"1000227" [label="(Call,mainprog_ptr->bg_red = mainprog_ptr->bg_green =\n                     mainprog_ptr->bg_blue = pBackground->gray? 255 : 0)"];
+"1000228" [label="(Call,mainprog_ptr->bg_red)"];
+"1000236" [label="(Call,mainprog_ptr->bg_blue)"];
+"1000223" [label="(ControlStructure,if (bit_depth == 1))"];
+"1000320" [label="(Identifier,color_type)"];
+"1000232" [label="(Call,mainprog_ptr->bg_green)"];
+"1000231" [label="(Call,mainprog_ptr->bg_green =\n                     mainprog_ptr->bg_blue = pBackground->gray? 255 : 0)"];
+"1000227" -> "1000223"  [label="AST: "];
+"1000227" -> "1000231"  [label="CFG: "];
+"1000228" -> "1000227"  [label="AST: "];
+"1000231" -> "1000227"  [label="AST: "];
+"1000320" -> "1000227"  [label="CFG: "];
+"1000227" -> "1000405"  [label="DDG: mainprog_ptr->bg_red"];
+"1000231" -> "1000227"  [label="DDG: mainprog_ptr->bg_green"];
+"1000231" -> "1000235"  [label="CFG: "];
+"1000232" -> "1000231"  [label="AST: "];
+"1000235" -> "1000231"  [label="AST: "];
+"1000231" -> "1000405"  [label="DDG: mainprog_ptr->bg_green"];
+"1000235" -> "1000231"  [label="DDG: mainprog_ptr->bg_blue"];
+"1000235" -> "1000239"  [label="CFG: "];
+"1000236" -> "1000235"  [label="AST: "];
+"1000239" -> "1000235"  [label="AST: "];
+"1000235" -> "1000405"  [label="DDG: mainprog_ptr->bg_blue"];
+"1000235" -> "1000405"  [label="DDG: pBackground->gray? 255 : 0"];
+}

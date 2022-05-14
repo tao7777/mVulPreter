@@ -1,0 +1,36 @@
+digraph "0_mstdlib_db124b8f607dd0a40a9aef2d4d468fad433522a7_1@API" {
+"1000214" [label="(Call,M_fs_file_close(fd_old))"];
+"1000178" [label="(Call,M_fs_info_file(&info, fd_old, M_FS_PATH_INFO_FLAGS_NONE))"];
+"1000182" [label="(Identifier,M_FS_PATH_INFO_FLAGS_NONE)"];
+"1000178" [label="(Call,M_fs_info_file(&info, fd_old, M_FS_PATH_INFO_FLAGS_NONE))"];
+"1000223" [label="(Call,M_fs_file_read(fd_old, temp, sizeof(temp), &read_len, M_FS_FILE_RW_NORMAL))"];
+"1000213" [label="(Block,)"];
+"1000214" [label="(Call,M_fs_file_close(fd_old))"];
+"1000188" [label="(Call,M_fs_file_close(fd_old))"];
+"1000181" [label="(Identifier,fd_old)"];
+"1000179" [label="(Call,&info)"];
+"1000332" [label="(MethodReturn,static M_fs_error_t)"];
+"1000215" [label="(Identifier,fd_old)"];
+"1000176" [label="(Call,res = M_fs_info_file(&info, fd_old, M_FS_PATH_INFO_FLAGS_NONE))"];
+"1000217" [label="(Identifier,res)"];
+"1000214" -> "1000213"  [label="AST: "];
+"1000214" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000217" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000332"  [label="DDG: M_fs_file_close(fd_old)"];
+"1000214" -> "1000332"  [label="DDG: fd_old"];
+"1000178" -> "1000214"  [label="DDG: fd_old"];
+"1000178" -> "1000176"  [label="AST: "];
+"1000178" -> "1000182"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000181" -> "1000178"  [label="AST: "];
+"1000182" -> "1000178"  [label="AST: "];
+"1000176" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000332"  [label="DDG: &info"];
+"1000178" -> "1000332"  [label="DDG: M_FS_PATH_INFO_FLAGS_NONE"];
+"1000178" -> "1000176"  [label="DDG: &info"];
+"1000178" -> "1000176"  [label="DDG: fd_old"];
+"1000178" -> "1000176"  [label="DDG: M_FS_PATH_INFO_FLAGS_NONE"];
+"1000178" -> "1000188"  [label="DDG: fd_old"];
+"1000178" -> "1000223"  [label="DDG: fd_old"];
+}

@@ -1,0 +1,35 @@
+digraph "0_jasper_634ce8e8a5accc0fa05dd2c20d42b4749d4b2735_3@pointer" {
+"1000127" [label="(Call,jas_stream_putc(stream, *bufptr))"];
+"1000101" [label="(MethodParameterIn,jas_stream_t *stream)"];
+"1000126" [label="(Call,jas_stream_putc(stream, *bufptr) == EOF)"];
+"1000136" [label="(Identifier,bufptr)"];
+"1000131" [label="(Identifier,EOF)"];
+"1000134" [label="(Identifier,n)"];
+"1000127" [label="(Call,jas_stream_putc(stream, *bufptr))"];
+"1000128" [label="(Identifier,stream)"];
+"1000125" [label="(ControlStructure,if (jas_stream_putc(stream, *bufptr) == EOF))"];
+"1000126" [label="(Call,jas_stream_putc(stream, *bufptr) == EOF)"];
+"1000141" [label="(MethodReturn,int)"];
+"1000101" [label="(MethodParameterIn,jas_stream_t *stream)"];
+"1000129" [label="(Call,*bufptr)"];
+"1000127" -> "1000126"  [label="AST: "];
+"1000127" -> "1000129"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000129" -> "1000127"  [label="AST: "];
+"1000131" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000141"  [label="DDG: stream"];
+"1000127" -> "1000141"  [label="DDG: *bufptr"];
+"1000127" -> "1000126"  [label="DDG: stream"];
+"1000127" -> "1000126"  [label="DDG: *bufptr"];
+"1000101" -> "1000127"  [label="DDG: stream"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000141"  [label="DDG: stream"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000126"  [label="AST: "];
+"1000134" -> "1000126"  [label="CFG: "];
+"1000136" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000141"  [label="DDG: jas_stream_putc(stream, *bufptr) == EOF"];
+"1000126" -> "1000141"  [label="DDG: jas_stream_putc(stream, *bufptr)"];
+"1000126" -> "1000141"  [label="DDG: EOF"];
+}

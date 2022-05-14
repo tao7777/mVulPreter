@@ -1,0 +1,30 @@
+digraph "0_busybox_74d9f1ba37010face4bd1449df4d60dd84450b06@pointer" {
+"1000122" [label="(Call,r = NULL)"];
+"1000125" [label="(Return,return r;)"];
+"1000114" [label="(Call,r[-OPT_DATA + OPT_LEN] != 4)"];
+"1000122" [label="(Call,r = NULL)"];
+"1000103" [label="(Block,)"];
+"1000113" [label="(ControlStructure,if (r[-OPT_DATA + OPT_LEN] != 4))"];
+"1000124" [label="(Identifier,NULL)"];
+"1000125" [label="(Return,return r;)"];
+"1000123" [label="(Identifier,r)"];
+"1000105" [label="(Call,*r = udhcp_get_option(packet, code))"];
+"1000126" [label="(Identifier,r)"];
+"1000127" [label="(MethodReturn,FAST_FUNC)"];
+"1000122" -> "1000113"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000127"  [label="DDG: r"];
+"1000122" -> "1000127"  [label="DDG: NULL"];
+"1000122" -> "1000125"  [label="DDG: r"];
+"1000125" -> "1000103"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000127"  [label="DDG: <RET>"];
+"1000126" -> "1000125"  [label="DDG: r"];
+"1000114" -> "1000125"  [label="DDG: r[-OPT_DATA + OPT_LEN]"];
+"1000105" -> "1000125"  [label="DDG: r"];
+}

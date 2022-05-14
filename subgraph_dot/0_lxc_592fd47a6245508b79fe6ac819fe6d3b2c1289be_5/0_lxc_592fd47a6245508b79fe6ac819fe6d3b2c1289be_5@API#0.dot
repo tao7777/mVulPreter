@@ -1,0 +1,35 @@
+digraph "0_lxc_592fd47a6245508b79fe6ac819fe6d3b2c1289be_5@API" {
+"1000129" [label="(Call,strerror(errno))"];
+"1000125" [label="(Call,INFO(\"failed to mount '%s' on '%s' (optional): %s\", fsname,\n \t\t\t     target, strerror(errno)))"];
+"1000127" [label="(Identifier,fsname)"];
+"1000129" [label="(Call,strerror(errno))"];
+"1000132" [label="(Literal,0)"];
+"1000130" [label="(Identifier,errno)"];
+"1000128" [label="(Identifier,target)"];
+"1000126" [label="(Literal,\"failed to mount '%s' on '%s' (optional): %s\")"];
+"1000102" [label="(MethodParameterIn,const char *fsname)"];
+"1000103" [label="(MethodParameterIn,const char *target)"];
+"1000125" [label="(Call,INFO(\"failed to mount '%s' on '%s' (optional): %s\", fsname,\n \t\t\t     target, strerror(errno)))"];
+"1000124" [label="(Block,)"];
+"1000112" [label="(Call,safe_mount(fsname, target, fstype, mountflags & ~MS_REMOUNT, data, rootfs))"];
+"1000290" [label="(MethodReturn,static int)"];
+"1000129" -> "1000125"  [label="AST: "];
+"1000129" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000125" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000290"  [label="DDG: "];
+"1000129" -> "1000125"  [label="DDG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000128" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000290"  [label="DDG: "];
+"1000125" -> "1000290"  [label="DDG: "];
+"1000125" -> "1000290"  [label="DDG: "];
+"1000125" -> "1000290"  [label="DDG: "];
+"1000112" -> "1000125"  [label="DDG: "];
+"1000112" -> "1000125"  [label="DDG: "];
+"1000102" -> "1000125"  [label="DDG: "];
+"1000103" -> "1000125"  [label="DDG: "];
+}

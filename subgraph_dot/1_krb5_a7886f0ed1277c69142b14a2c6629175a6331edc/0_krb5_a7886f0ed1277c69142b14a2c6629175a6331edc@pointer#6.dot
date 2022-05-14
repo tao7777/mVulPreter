@@ -1,0 +1,38 @@
+digraph "0_krb5_a7886f0ed1277c69142b14a2c6629175a6331edc@pointer" {
+"1000162" [label="(Call,*ptr == HEADER_ID)"];
+"1000187" [label="(Call,*ptr != (CONTEXT | 0x01))"];
+"1000186" [label="(ControlStructure,if (*ptr != (CONTEXT | 0x01)))"];
+"1000262" [label="(MethodReturn,RET)"];
+"1000163" [label="(Call,*ptr)"];
+"1000162" [label="(Call,*ptr == HEADER_ID)"];
+"1000168" [label="(Identifier,ret)"];
+"1000161" [label="(ControlStructure,if (*ptr == HEADER_ID))"];
+"1000190" [label="(Call,CONTEXT | 0x01)"];
+"1000188" [label="(Call,*ptr)"];
+"1000195" [label="(Identifier,GSS_S_DEFECTIVE_TOKEN)"];
+"1000197" [label="(Identifier,ret)"];
+"1000165" [label="(Identifier,HEADER_ID)"];
+"1000189" [label="(Identifier,ptr)"];
+"1000187" [label="(Call,*ptr != (CONTEXT | 0x01))"];
+"1000162" -> "1000161"  [label="AST: "];
+"1000162" -> "1000165"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000165" -> "1000162"  [label="AST: "];
+"1000168" -> "1000162"  [label="CFG: "];
+"1000189" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000262"  [label="DDG: *ptr"];
+"1000162" -> "1000262"  [label="DDG: *ptr == HEADER_ID"];
+"1000162" -> "1000262"  [label="DDG: HEADER_ID"];
+"1000162" -> "1000187"  [label="DDG: *ptr"];
+"1000187" -> "1000186"  [label="AST: "];
+"1000187" -> "1000190"  [label="CFG: "];
+"1000188" -> "1000187"  [label="AST: "];
+"1000190" -> "1000187"  [label="AST: "];
+"1000195" -> "1000187"  [label="CFG: "];
+"1000197" -> "1000187"  [label="CFG: "];
+"1000187" -> "1000262"  [label="DDG: *ptr"];
+"1000187" -> "1000262"  [label="DDG: *ptr != (CONTEXT | 0x01)"];
+"1000187" -> "1000262"  [label="DDG: CONTEXT | 0x01"];
+"1000190" -> "1000187"  [label="DDG: CONTEXT"];
+"1000190" -> "1000187"  [label="DDG: 0x01"];
+}

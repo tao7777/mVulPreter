@@ -1,0 +1,38 @@
+digraph "0_linux_0d0138ebe24b94065580bd2601f8bb7eb6152f56@pointer" {
+"1000111" [label="(Call,*regs = task_pt_regs(child))"];
+"1000113" [label="(Call,task_pt_regs(child))"];
+"1000108" [label="(Call,task_thread_info(child))"];
+"1000102" [label="(MethodParameterIn,struct task_struct *child)"];
+"1000186" [label="(MethodReturn,int)"];
+"1000109" [label="(Identifier,child)"];
+"1000113" [label="(Call,task_pt_regs(child))"];
+"1000111" [label="(Call,*regs = task_pt_regs(child))"];
+"1000102" [label="(MethodParameterIn,struct task_struct *child)"];
+"1000108" [label="(Call,task_thread_info(child))"];
+"1000112" [label="(Identifier,regs)"];
+"1000104" [label="(Block,)"];
+"1000117" [label="(Identifier,xtregs)"];
+"1000106" [label="(Call,*ti = task_thread_info(child))"];
+"1000114" [label="(Identifier,child)"];
+"1000111" -> "1000104"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000186"  [label="DDG: regs"];
+"1000111" -> "1000186"  [label="DDG: task_pt_regs(child)"];
+"1000113" -> "1000111"  [label="DDG: child"];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000113" -> "1000186"  [label="DDG: child"];
+"1000108" -> "1000113"  [label="DDG: child"];
+"1000102" -> "1000113"  [label="DDG: child"];
+"1000108" -> "1000106"  [label="AST: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000106"  [label="DDG: child"];
+"1000102" -> "1000108"  [label="DDG: child"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000186"  [label="DDG: child"];
+}

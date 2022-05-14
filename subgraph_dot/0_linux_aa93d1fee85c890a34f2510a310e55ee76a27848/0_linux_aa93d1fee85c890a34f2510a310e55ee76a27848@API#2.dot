@@ -1,0 +1,27 @@
+digraph "0_linux_aa93d1fee85c890a34f2510a310e55ee76a27848@API" {
+"1000133" [label="(Call,mutex_init(&s->v4l2_lock))"];
+"1000534" [label="(Call,s->vdev.lock = &s->v4l2_lock)"];
+"1000134" [label="(Call,&s->v4l2_lock)"];
+"1000545" [label="(Identifier,ret)"];
+"1000141" [label="(Identifier,s)"];
+"1000534" [label="(Call,s->vdev.lock = &s->v4l2_lock)"];
+"1000108" [label="(Block,)"];
+"1000597" [label="(MethodReturn,static int)"];
+"1000133" [label="(Call,mutex_init(&s->v4l2_lock))"];
+"1000540" [label="(Call,&s->v4l2_lock)"];
+"1000535" [label="(Call,s->vdev.lock)"];
+"1000133" -> "1000108"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000141" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000597"  [label="DDG: &s->v4l2_lock"];
+"1000133" -> "1000597"  [label="DDG: mutex_init(&s->v4l2_lock)"];
+"1000133" -> "1000534"  [label="DDG: &s->v4l2_lock"];
+"1000534" -> "1000108"  [label="AST: "];
+"1000534" -> "1000540"  [label="CFG: "];
+"1000535" -> "1000534"  [label="AST: "];
+"1000540" -> "1000534"  [label="AST: "];
+"1000545" -> "1000534"  [label="CFG: "];
+"1000534" -> "1000597"  [label="DDG: &s->v4l2_lock"];
+"1000534" -> "1000597"  [label="DDG: s->vdev.lock"];
+}

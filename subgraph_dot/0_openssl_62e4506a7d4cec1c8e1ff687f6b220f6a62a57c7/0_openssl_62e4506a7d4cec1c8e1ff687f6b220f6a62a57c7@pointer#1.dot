@@ -1,0 +1,27 @@
+digraph "0_openssl_62e4506a7d4cec1c8e1ff687f6b220f6a62a57c7@pointer" {
+"1000192" [label="(Call,!pkey->ameth->item_verify)"];
+"1000187" [label="(Call,!pkey->ameth || !pkey->ameth->item_verify)"];
+"1000193" [label="(Call,pkey->ameth->item_verify)"];
+"1000200" [label="(Identifier,ASN1_F_ASN1_ITEM_VERIFY)"];
+"1000204" [label="(Identifier,ret)"];
+"1000291" [label="(MethodReturn,int)"];
+"1000188" [label="(Call,!pkey->ameth)"];
+"1000186" [label="(ControlStructure,if (!pkey->ameth || !pkey->ameth->item_verify))"];
+"1000187" [label="(Call,!pkey->ameth || !pkey->ameth->item_verify)"];
+"1000192" [label="(Call,!pkey->ameth->item_verify)"];
+"1000192" -> "1000187"  [label="AST: "];
+"1000192" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000187" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000291"  [label="DDG: pkey->ameth->item_verify"];
+"1000192" -> "1000187"  [label="DDG: pkey->ameth->item_verify"];
+"1000187" -> "1000186"  [label="AST: "];
+"1000187" -> "1000188"  [label="CFG: "];
+"1000188" -> "1000187"  [label="AST: "];
+"1000200" -> "1000187"  [label="CFG: "];
+"1000204" -> "1000187"  [label="CFG: "];
+"1000187" -> "1000291"  [label="DDG: !pkey->ameth"];
+"1000187" -> "1000291"  [label="DDG: !pkey->ameth || !pkey->ameth->item_verify"];
+"1000187" -> "1000291"  [label="DDG: !pkey->ameth->item_verify"];
+"1000188" -> "1000187"  [label="DDG: pkey->ameth"];
+}

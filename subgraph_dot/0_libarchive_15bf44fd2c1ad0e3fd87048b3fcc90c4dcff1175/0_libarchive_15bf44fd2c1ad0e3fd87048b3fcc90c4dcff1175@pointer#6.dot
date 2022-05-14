@@ -1,0 +1,31 @@
+digraph "0_libarchive_15bf44fd2c1ad0e3fd87048b3fcc90c4dcff1175@pointer" {
+"1000174" [label="(Call,*text != '\0')"];
+"1000170" [label="(Call,text != NULL &&  *text != '\0')"];
+"1000175" [label="(Call,*text)"];
+"1000174" [label="(Call,*text != '\0')"];
+"1000169" [label="(ControlStructure,while (text != NULL &&  *text != '\0'))"];
+"1001003" [label="(Identifier,acl)"];
+"1001007" [label="(MethodReturn,RET)"];
+"1000180" [label="(Identifier,fields)"];
+"1000177" [label="(Literal,'\0')"];
+"1000171" [label="(Call,text != NULL)"];
+"1000170" [label="(Call,text != NULL &&  *text != '\0')"];
+"1000174" -> "1000170"  [label="AST: "];
+"1000174" -> "1000177"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000177" -> "1000174"  [label="AST: "];
+"1000170" -> "1000174"  [label="CFG: "];
+"1000174" -> "1001007"  [label="DDG: *text"];
+"1000174" -> "1000170"  [label="DDG: *text"];
+"1000174" -> "1000170"  [label="DDG: '\0'"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000170"  [label="AST: "];
+"1000180" -> "1000170"  [label="CFG: "];
+"1001003" -> "1000170"  [label="CFG: "];
+"1000170" -> "1001007"  [label="DDG: text != NULL"];
+"1000170" -> "1001007"  [label="DDG: text != NULL &&  *text != '\0'"];
+"1000170" -> "1001007"  [label="DDG: *text != '\0'"];
+"1000171" -> "1000170"  [label="DDG: text"];
+"1000171" -> "1000170"  [label="DDG: NULL"];
+}

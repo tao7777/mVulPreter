@@ -1,0 +1,29 @@
+digraph "0_lxc_16af238036a5464ae8f2420ed3af214f0de875f9@API" {
+"1000206" [label="(Call,strerror(errno))"];
+"1000203" [label="(Call,usernic_error(\"Failed to setns() to the network namespace of \"\n\t\t\t      \"the container with PID %d: %s.\n\",\n\t\t\t      pid, strerror(errno)))"];
+"1000203" [label="(Call,usernic_error(\"Failed to setns() to the network namespace of \"\n\t\t\t      \"the container with PID %d: %s.\n\",\n\t\t\t      pid, strerror(errno)))"];
+"1000207" [label="(Identifier,errno)"];
+"1000202" [label="(Block,)"];
+"1000208" [label="(ControlStructure,goto do_partial_cleanup;)"];
+"1000205" [label="(Identifier,pid)"];
+"1000206" [label="(Call,strerror(errno))"];
+"1000204" [label="(Literal,\"Failed to setns() to the network namespace of \"\n\t\t\t      \"the container with PID %d: %s.\n\")"];
+"1000156" [label="(Call,lxc_preserve_ns(pid, \"net\"))"];
+"1000107" [label="(MethodParameterIn,int pid)"];
+"1000354" [label="(MethodReturn,static int)"];
+"1000206" -> "1000203"  [label="AST: "];
+"1000206" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000203" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000354"  [label="DDG: "];
+"1000206" -> "1000203"  [label="DDG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000203"  [label="AST: "];
+"1000208" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000354"  [label="DDG: "];
+"1000203" -> "1000354"  [label="DDG: "];
+"1000203" -> "1000354"  [label="DDG: "];
+"1000156" -> "1000203"  [label="DDG: "];
+"1000107" -> "1000203"  [label="DDG: "];
+}

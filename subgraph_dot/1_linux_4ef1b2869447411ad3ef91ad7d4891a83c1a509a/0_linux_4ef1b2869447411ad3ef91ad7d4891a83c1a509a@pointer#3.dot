@@ -1,0 +1,32 @@
+digraph "0_linux_4ef1b2869447411ad3ef91ad7d4891a83c1a509a@pointer" {
+"1000162" [label="(Call,sk->sk_type == SOCK_STREAM)"];
+"1000156" [label="(Call,sk->sk_protocol == IPPROTO_TCP &&\n\t\t    sk->sk_type == SOCK_STREAM)"];
+"1000166" [label="(Identifier,SOCK_STREAM)"];
+"1000185" [label="(MethodReturn,static void)"];
+"1000163" [label="(Call,sk->sk_type)"];
+"1000157" [label="(Call,sk->sk_protocol == IPPROTO_TCP)"];
+"1000177" [label="(Identifier,err)"];
+"1000156" [label="(Call,sk->sk_protocol == IPPROTO_TCP &&\n\t\t    sk->sk_type == SOCK_STREAM)"];
+"1000170" [label="(Identifier,serr)"];
+"1000155" [label="(ControlStructure,if (sk->sk_protocol == IPPROTO_TCP &&\n\t\t    sk->sk_type == SOCK_STREAM))"];
+"1000162" [label="(Call,sk->sk_type == SOCK_STREAM)"];
+"1000162" -> "1000156"  [label="AST: "];
+"1000162" -> "1000166"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="AST: "];
+"1000156" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000185"  [label="DDG: SOCK_STREAM"];
+"1000162" -> "1000185"  [label="DDG: sk->sk_type"];
+"1000162" -> "1000156"  [label="DDG: sk->sk_type"];
+"1000162" -> "1000156"  [label="DDG: SOCK_STREAM"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000170" -> "1000156"  [label="CFG: "];
+"1000177" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000185"  [label="DDG: sk->sk_protocol == IPPROTO_TCP"];
+"1000156" -> "1000185"  [label="DDG: sk->sk_protocol == IPPROTO_TCP &&\n\t\t    sk->sk_type == SOCK_STREAM"];
+"1000156" -> "1000185"  [label="DDG: sk->sk_type == SOCK_STREAM"];
+"1000157" -> "1000156"  [label="DDG: sk->sk_protocol"];
+"1000157" -> "1000156"  [label="DDG: IPPROTO_TCP"];
+}

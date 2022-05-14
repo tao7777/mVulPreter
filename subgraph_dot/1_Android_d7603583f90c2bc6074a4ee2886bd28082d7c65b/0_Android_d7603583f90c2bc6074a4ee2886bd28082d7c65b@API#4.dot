@@ -1,0 +1,27 @@
+digraph "0_Android_d7603583f90c2bc6074a4ee2886bd28082d7c65b@API" {
+"1000144" [label="(Call,!strcmp(de->d_name, \"..\"))"];
+"1000137" [label="(Call,!strcmp(de->d_name, \".\") || !strcmp(de->d_name, \"..\"))"];
+"1000145" [label="(Call,strcmp(de->d_name, \"..\"))"];
+"1000144" [label="(Call,!strcmp(de->d_name, \"..\"))"];
+"1000155" [label="(Identifier,tid)"];
+"1000151" [label="(ControlStructure,continue;)"];
+"1000137" [label="(Call,!strcmp(de->d_name, \".\") || !strcmp(de->d_name, \"..\"))"];
+"1000136" [label="(ControlStructure,if (!strcmp(de->d_name, \".\") || !strcmp(de->d_name, \"..\")))"];
+"1000138" [label="(Call,!strcmp(de->d_name, \".\"))"];
+"1000191" [label="(MethodReturn,static void)"];
+"1000144" -> "1000137"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000137" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000191"  [label="DDG: "];
+"1000144" -> "1000137"  [label="DDG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000151" -> "1000137"  [label="CFG: "];
+"1000155" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000191"  [label="DDG: "];
+"1000137" -> "1000191"  [label="DDG: "];
+"1000137" -> "1000191"  [label="DDG: "];
+"1000138" -> "1000137"  [label="DDG: "];
+}

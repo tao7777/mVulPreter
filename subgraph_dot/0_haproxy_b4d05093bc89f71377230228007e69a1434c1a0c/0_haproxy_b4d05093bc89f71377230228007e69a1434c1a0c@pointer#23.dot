@@ -1,0 +1,36 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c@pointer" {
+"1000372" [label="(Call,LIST_ISEMPTY(&s->fe->logformat))"];
+"1000371" [label="(Call,!LIST_ISEMPTY(&s->fe->logformat))"];
+"1000370" [label="(Call,!LIST_ISEMPTY(&s->fe->logformat) && s->logs.logwait &&\n\t    !(s->flags & SN_MONITOR) &&\n\t    (!(s->fe->options & PR_O_NULLNOLOG) || s->req->total))"];
+"1000369" [label="(ControlStructure,if (!LIST_ISEMPTY(&s->fe->logformat) && s->logs.logwait &&\n\t    !(s->flags & SN_MONITOR) &&\n\t    (!(s->fe->options & PR_O_NULLNOLOG) || s->req->total)))"];
+"1000410" [label="(Identifier,s)"];
+"1000371" [label="(Call,!LIST_ISEMPTY(&s->fe->logformat))"];
+"1000373" [label="(Call,&s->fe->logformat)"];
+"1000903" [label="(MethodReturn,void)"];
+"1000370" [label="(Call,!LIST_ISEMPTY(&s->fe->logformat) && s->logs.logwait &&\n\t    !(s->flags & SN_MONITOR) &&\n\t    (!(s->fe->options & PR_O_NULLNOLOG) || s->req->total))"];
+"1000408" [label="(Identifier,s)"];
+"1000379" [label="(Call,s->logs.logwait &&\n\t    !(s->flags & SN_MONITOR) &&\n\t    (!(s->fe->options & PR_O_NULLNOLOG) || s->req->total))"];
+"1000372" [label="(Call,LIST_ISEMPTY(&s->fe->logformat))"];
+"1000382" [label="(Identifier,s)"];
+"1000372" -> "1000371"  [label="AST: "];
+"1000372" -> "1000373"  [label="CFG: "];
+"1000373" -> "1000372"  [label="AST: "];
+"1000371" -> "1000372"  [label="CFG: "];
+"1000372" -> "1000903"  [label="DDG: &s->fe->logformat"];
+"1000372" -> "1000371"  [label="DDG: &s->fe->logformat"];
+"1000371" -> "1000370"  [label="AST: "];
+"1000382" -> "1000371"  [label="CFG: "];
+"1000370" -> "1000371"  [label="CFG: "];
+"1000371" -> "1000903"  [label="DDG: LIST_ISEMPTY(&s->fe->logformat)"];
+"1000371" -> "1000370"  [label="DDG: LIST_ISEMPTY(&s->fe->logformat)"];
+"1000370" -> "1000369"  [label="AST: "];
+"1000370" -> "1000379"  [label="CFG: "];
+"1000379" -> "1000370"  [label="AST: "];
+"1000408" -> "1000370"  [label="CFG: "];
+"1000410" -> "1000370"  [label="CFG: "];
+"1000370" -> "1000903"  [label="DDG: !LIST_ISEMPTY(&s->fe->logformat) && s->logs.logwait &&\n\t    !(s->flags & SN_MONITOR) &&\n\t    (!(s->fe->options & PR_O_NULLNOLOG) || s->req->total)"];
+"1000370" -> "1000903"  [label="DDG: s->logs.logwait &&\n\t    !(s->flags & SN_MONITOR) &&\n\t    (!(s->fe->options & PR_O_NULLNOLOG) || s->req->total)"];
+"1000370" -> "1000903"  [label="DDG: !LIST_ISEMPTY(&s->fe->logformat)"];
+"1000379" -> "1000370"  [label="DDG: s->logs.logwait"];
+"1000379" -> "1000370"  [label="DDG: !(s->flags & SN_MONITOR) &&\n\t    (!(s->fe->options & PR_O_NULLNOLOG) || s->req->total)"];
+}

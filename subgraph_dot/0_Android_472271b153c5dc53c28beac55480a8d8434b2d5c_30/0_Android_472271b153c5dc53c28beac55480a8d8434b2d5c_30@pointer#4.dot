@@ -1,0 +1,28 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_30@pointer" {
+"1000128" [label="(Call,!sock->server)"];
+"1000124" [label="(Call,(flags & SOCK_THREAD_FD_RD) && !sock->server)"];
+"1000129" [label="(Call,sock->server)"];
+"1000128" [label="(Call,!sock->server)"];
+"1000123" [label="(ControlStructure,if ((flags & SOCK_THREAD_FD_RD) && !sock->server))"];
+"1000135" [label="(Identifier,sock)"];
+"1000298" [label="(MethodReturn,void)"];
+"1000125" [label="(Call,flags & SOCK_THREAD_FD_RD)"];
+"1000124" [label="(Call,(flags & SOCK_THREAD_FD_RD) && !sock->server)"];
+"1000245" [label="(Identifier,flags)"];
+"1000128" -> "1000124"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000124" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000298"  [label="DDG: sock->server"];
+"1000128" -> "1000124"  [label="DDG: sock->server"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000135" -> "1000124"  [label="CFG: "];
+"1000245" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000298"  [label="DDG: flags & SOCK_THREAD_FD_RD"];
+"1000124" -> "1000298"  [label="DDG: !sock->server"];
+"1000124" -> "1000298"  [label="DDG: (flags & SOCK_THREAD_FD_RD) && !sock->server"];
+"1000125" -> "1000124"  [label="DDG: flags"];
+"1000125" -> "1000124"  [label="DDG: SOCK_THREAD_FD_RD"];
+}

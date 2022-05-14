@@ -1,0 +1,31 @@
+digraph "0_linux_e9c6a182649f4259db704ae15a91ac820e63b0ca@pointer" {
+"1000124" [label="(Call,(ps->next_free + 1) * store->chunk_size)"];
+"1000122" [label="(Call,size < ((ps->next_free + 1) * store->chunk_size))"];
+"1000156" [label="(MethodReturn,static int)"];
+"1000130" [label="(Call,store->chunk_size)"];
+"1000112" [label="(Call,size = get_dev_size(dm_snap_cow(store->snap)->bdev))"];
+"1000122" [label="(Call,size < ((ps->next_free + 1) * store->chunk_size))"];
+"1000125" [label="(Call,ps->next_free + 1)"];
+"1000124" [label="(Call,(ps->next_free + 1) * store->chunk_size)"];
+"1000138" [label="(Identifier,e)"];
+"1000135" [label="(Identifier,ENOSPC)"];
+"1000123" [label="(Identifier,size)"];
+"1000121" [label="(ControlStructure,if (size < ((ps->next_free + 1) * store->chunk_size)))"];
+"1000124" -> "1000122"  [label="AST: "];
+"1000124" -> "1000130"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000130" -> "1000124"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000156"  [label="DDG: ps->next_free + 1"];
+"1000124" -> "1000156"  [label="DDG: store->chunk_size"];
+"1000124" -> "1000122"  [label="DDG: ps->next_free + 1"];
+"1000124" -> "1000122"  [label="DDG: store->chunk_size"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000135" -> "1000122"  [label="CFG: "];
+"1000138" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000156"  [label="DDG: size"];
+"1000122" -> "1000156"  [label="DDG: (ps->next_free + 1) * store->chunk_size"];
+"1000122" -> "1000156"  [label="DDG: size < ((ps->next_free + 1) * store->chunk_size)"];
+"1000112" -> "1000122"  [label="DDG: size"];
+}

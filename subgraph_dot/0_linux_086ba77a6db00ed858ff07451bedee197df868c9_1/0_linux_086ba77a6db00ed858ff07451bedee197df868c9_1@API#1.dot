@@ -1,0 +1,27 @@
+digraph "0_linux_086ba77a6db00ed858ff07451bedee197df868c9_1@API" {
+"1000154" [label="(Call,sizeof(unsigned long) * sys_data->nb_args + sizeof(*rec))"];
+"1000155" [label="(Call,sizeof(unsigned long) * sys_data->nb_args)"];
+"1000152" [label="(Call,size = sizeof(unsigned long) * sys_data->nb_args + sizeof(*rec))"];
+"1000158" [label="(Call,sys_data->nb_args)"];
+"1000154" [label="(Call,sizeof(unsigned long) * sys_data->nb_args + sizeof(*rec))"];
+"1000161" [label="(Call,sizeof(*rec))"];
+"1000224" [label="(MethodReturn,static void)"];
+"1000156" [label="(Call,sizeof(unsigned long))"];
+"1000155" [label="(Call,sizeof(unsigned long) * sys_data->nb_args)"];
+"1000202" [label="(Call,syscall_get_arguments(current, regs, 0, sys_data->nb_args,\n\t\t\t       (unsigned long *)&rec->args))"];
+"1000163" [label="(Identifier,rec)"];
+"1000154" -> "1000152"  [label="AST: "];
+"1000154" -> "1000161"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000161" -> "1000154"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000224"  [label="DDG: sizeof(unsigned long) * sys_data->nb_args"];
+"1000155" -> "1000154"  [label="DDG: sys_data->nb_args"];
+"1000155" -> "1000158"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000158" -> "1000155"  [label="AST: "];
+"1000163" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000224"  [label="DDG: sys_data->nb_args"];
+"1000155" -> "1000152"  [label="DDG: sys_data->nb_args"];
+"1000155" -> "1000202"  [label="DDG: sys_data->nb_args"];
+}

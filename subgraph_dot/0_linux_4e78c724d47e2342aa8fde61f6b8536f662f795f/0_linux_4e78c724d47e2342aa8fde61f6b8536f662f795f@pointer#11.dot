@@ -1,0 +1,27 @@
+digraph "0_linux_4e78c724d47e2342aa8fde61f6b8536f662f795f@pointer" {
+"1000338" [label="(Call,r->param.mount.dir = &rdir)"];
+"1000179" [label="(Call,tomoyo_fill_path_info(&rdir))"];
+"1000185" [label="(Identifier,type)"];
+"1000180" [label="(Call,&rdir)"];
+"1000179" [label="(Call,tomoyo_fill_path_info(&rdir))"];
+"1000392" [label="(MethodReturn,static int)"];
+"1000352" [label="(Identifier,r)"];
+"1000339" [label="(Call,r->param.mount.dir)"];
+"1000346" [label="(Call,&rdir)"];
+"1000115" [label="(Block,)"];
+"1000338" [label="(Call,r->param.mount.dir = &rdir)"];
+"1000338" -> "1000115"  [label="AST: "];
+"1000338" -> "1000346"  [label="CFG: "];
+"1000339" -> "1000338"  [label="AST: "];
+"1000346" -> "1000338"  [label="AST: "];
+"1000352" -> "1000338"  [label="CFG: "];
+"1000338" -> "1000392"  [label="DDG: r->param.mount.dir"];
+"1000338" -> "1000392"  [label="DDG: &rdir"];
+"1000179" -> "1000338"  [label="DDG: &rdir"];
+"1000179" -> "1000115"  [label="AST: "];
+"1000179" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000185" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000392"  [label="DDG: tomoyo_fill_path_info(&rdir)"];
+"1000179" -> "1000392"  [label="DDG: &rdir"];
+}

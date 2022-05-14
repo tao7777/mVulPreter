@@ -1,0 +1,26 @@
+digraph "0_frr_943d595a018e69b550db08cccba1d0778a86705a_0@pointer" {
+"1000326" [label="(Call,CHECK_FLAG(\n\t\t\t\t\t    peer->flags,\n\t\t\t\t\t    PEER_FLAG_LOCAL_AS_REPLACE_AS))"];
+"1000325" [label="(Call,!CHECK_FLAG(\n\t\t\t\t\t    peer->flags,\n\t\t\t\t\t    PEER_FLAG_LOCAL_AS_REPLACE_AS))"];
+"1000340" [label="(Identifier,aspath)"];
+"1000324" [label="(ControlStructure,if (!CHECK_FLAG(\n\t\t\t\t\t    peer->flags,\n\t\t\t\t\t    PEER_FLAG_LOCAL_AS_REPLACE_AS)))"];
+"1000330" [label="(Identifier,PEER_FLAG_LOCAL_AS_REPLACE_AS)"];
+"1000326" [label="(Call,CHECK_FLAG(\n\t\t\t\t\t    peer->flags,\n\t\t\t\t\t    PEER_FLAG_LOCAL_AS_REPLACE_AS))"];
+"1000333" [label="(Identifier,aspath)"];
+"1000325" [label="(Call,!CHECK_FLAG(\n\t\t\t\t\t    peer->flags,\n\t\t\t\t\t    PEER_FLAG_LOCAL_AS_REPLACE_AS))"];
+"1001316" [label="(MethodReturn,bgp_size_t)"];
+"1000327" [label="(Call,peer->flags)"];
+"1000326" -> "1000325"  [label="AST: "];
+"1000326" -> "1000330"  [label="CFG: "];
+"1000327" -> "1000326"  [label="AST: "];
+"1000330" -> "1000326"  [label="AST: "];
+"1000325" -> "1000326"  [label="CFG: "];
+"1000326" -> "1001316"  [label="DDG: PEER_FLAG_LOCAL_AS_REPLACE_AS"];
+"1000326" -> "1001316"  [label="DDG: peer->flags"];
+"1000326" -> "1000325"  [label="DDG: peer->flags"];
+"1000326" -> "1000325"  [label="DDG: PEER_FLAG_LOCAL_AS_REPLACE_AS"];
+"1000325" -> "1000324"  [label="AST: "];
+"1000333" -> "1000325"  [label="CFG: "];
+"1000340" -> "1000325"  [label="CFG: "];
+"1000325" -> "1001316"  [label="DDG: CHECK_FLAG(\n\t\t\t\t\t    peer->flags,\n\t\t\t\t\t    PEER_FLAG_LOCAL_AS_REPLACE_AS)"];
+"1000325" -> "1001316"  [label="DDG: !CHECK_FLAG(\n\t\t\t\t\t    peer->flags,\n\t\t\t\t\t    PEER_FLAG_LOCAL_AS_REPLACE_AS)"];
+}

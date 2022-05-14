@@ -1,0 +1,29 @@
+digraph "0_linux_a430c9166312e1aa3d80bce32374233bdbfeba32@pointer" {
+"1000752" [label="(Call,unlikely(ctxt->ud))"];
+"1000751" [label="(Call,unlikely(ctxt->ud) && likely(!(ctxt->d & EmulateOnUD)))"];
+"1000760" [label="(Identifier,ctxt)"];
+"1000764" [label="(Identifier,EMULATION_FAILED)"];
+"1000756" [label="(Call,likely(!(ctxt->d & EmulateOnUD)))"];
+"1000750" [label="(ControlStructure,if (unlikely(ctxt->ud) && likely(!(ctxt->d & EmulateOnUD))))"];
+"1000751" [label="(Call,unlikely(ctxt->ud) && likely(!(ctxt->d & EmulateOnUD)))"];
+"1000753" [label="(Call,ctxt->ud)"];
+"1000752" [label="(Call,unlikely(ctxt->ud))"];
+"1000769" [label="(Identifier,ctxt)"];
+"1001017" [label="(MethodReturn,int)"];
+"1000752" -> "1000751"  [label="AST: "];
+"1000752" -> "1000753"  [label="CFG: "];
+"1000753" -> "1000752"  [label="AST: "];
+"1000760" -> "1000752"  [label="CFG: "];
+"1000751" -> "1000752"  [label="CFG: "];
+"1000752" -> "1001017"  [label="DDG: ctxt->ud"];
+"1000752" -> "1000751"  [label="DDG: ctxt->ud"];
+"1000751" -> "1000750"  [label="AST: "];
+"1000751" -> "1000756"  [label="CFG: "];
+"1000756" -> "1000751"  [label="AST: "];
+"1000764" -> "1000751"  [label="CFG: "];
+"1000769" -> "1000751"  [label="CFG: "];
+"1000751" -> "1001017"  [label="DDG: unlikely(ctxt->ud) && likely(!(ctxt->d & EmulateOnUD))"];
+"1000751" -> "1001017"  [label="DDG: unlikely(ctxt->ud)"];
+"1000751" -> "1001017"  [label="DDG: likely(!(ctxt->d & EmulateOnUD))"];
+"1000756" -> "1000751"  [label="DDG: !(ctxt->d & EmulateOnUD)"];
+}

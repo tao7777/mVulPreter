@@ -1,0 +1,33 @@
+digraph "0_qemu_e907746266721f305d67bc0718795fedee2e824c@pointer" {
+"1000123" [label="(Call,fdctrl->fifo[pos] & 0x80)"];
+"1000132" [label="(Call,fdctrl->fifo[pos] & 0x40)"];
+"1000169" [label="(Identifier,fdctrl)"];
+"1000138" [label="(Literal,0x40)"];
+"1000192" [label="(MethodReturn,static void)"];
+"1000129" [label="(Literal,0x80)"];
+"1000131" [label="(ControlStructure,if (fdctrl->fifo[pos] & 0x40))"];
+"1000132" [label="(Call,fdctrl->fifo[pos] & 0x40)"];
+"1000135" [label="(Identifier,fdctrl)"];
+"1000124" [label="(Call,fdctrl->fifo[pos])"];
+"1000123" [label="(Call,fdctrl->fifo[pos] & 0x80)"];
+"1000143" [label="(Identifier,fdctrl)"];
+"1000133" [label="(Call,fdctrl->fifo[pos])"];
+"1000122" [label="(ControlStructure,if (fdctrl->fifo[pos] & 0x80))"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000129"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000129" -> "1000123"  [label="AST: "];
+"1000135" -> "1000123"  [label="CFG: "];
+"1000169" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000192"  [label="DDG: fdctrl->fifo[pos]"];
+"1000123" -> "1000192"  [label="DDG: fdctrl->fifo[pos] & 0x80"];
+"1000123" -> "1000132"  [label="DDG: fdctrl->fifo[pos]"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000138"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000138" -> "1000132"  [label="AST: "];
+"1000143" -> "1000132"  [label="CFG: "];
+"1000192" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000192"  [label="DDG: fdctrl->fifo[pos] & 0x40"];
+"1000132" -> "1000192"  [label="DDG: fdctrl->fifo[pos]"];
+}

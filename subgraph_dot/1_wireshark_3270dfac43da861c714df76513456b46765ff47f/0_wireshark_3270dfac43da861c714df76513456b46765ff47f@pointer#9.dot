@@ -1,0 +1,38 @@
+digraph "0_wireshark_3270dfac43da861c714df76513456b46765ff47f@pointer" {
+"1000316" [label="(Call,phdr->len = pkt_len)"];
+"1000258" [label="(Call,pkt_len > WTAP_MAX_PACKET_SIZE)"];
+"1000260" [label="(Identifier,WTAP_MAX_PACKET_SIZE)"];
+"1000317" [label="(Call,phdr->len)"];
+"1000114" [label="(Block,)"];
+"1000320" [label="(Identifier,pkt_len)"];
+"1000323" [label="(Identifier,channel)"];
+"1000316" [label="(Call,phdr->len = pkt_len)"];
+"1000257" [label="(ControlStructure,if (pkt_len > WTAP_MAX_PACKET_SIZE))"];
+"1000399" [label="(Call,ws_buffer_assure_space(buf, pkt_len))"];
+"1000269" [label="(Call,g_strdup_printf(\"toshiba: File has %u-byte packet, bigger than maximum of %u\",\n\t\t    pkt_len, WTAP_MAX_PACKET_SIZE))"];
+"1000476" [label="(MethodReturn,RET)"];
+"1000277" [label="(Identifier,phdr)"];
+"1000259" [label="(Identifier,pkt_len)"];
+"1000311" [label="(Call,phdr->caplen = pkt_len)"];
+"1000264" [label="(Identifier,err)"];
+"1000258" [label="(Call,pkt_len > WTAP_MAX_PACKET_SIZE)"];
+"1000316" -> "1000114"  [label="AST: "];
+"1000316" -> "1000320"  [label="CFG: "];
+"1000317" -> "1000316"  [label="AST: "];
+"1000320" -> "1000316"  [label="AST: "];
+"1000323" -> "1000316"  [label="CFG: "];
+"1000316" -> "1000476"  [label="DDG: phdr->len"];
+"1000258" -> "1000316"  [label="DDG: pkt_len"];
+"1000258" -> "1000257"  [label="AST: "];
+"1000258" -> "1000260"  [label="CFG: "];
+"1000259" -> "1000258"  [label="AST: "];
+"1000260" -> "1000258"  [label="AST: "];
+"1000264" -> "1000258"  [label="CFG: "];
+"1000277" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000476"  [label="DDG: WTAP_MAX_PACKET_SIZE"];
+"1000258" -> "1000476"  [label="DDG: pkt_len > WTAP_MAX_PACKET_SIZE"];
+"1000258" -> "1000269"  [label="DDG: pkt_len"];
+"1000258" -> "1000269"  [label="DDG: WTAP_MAX_PACKET_SIZE"];
+"1000258" -> "1000311"  [label="DDG: pkt_len"];
+"1000258" -> "1000399"  [label="DDG: pkt_len"];
+}

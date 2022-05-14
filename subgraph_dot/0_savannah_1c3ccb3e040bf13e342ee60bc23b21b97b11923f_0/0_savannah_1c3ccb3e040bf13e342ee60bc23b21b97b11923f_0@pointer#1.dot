@@ -1,0 +1,33 @@
+digraph "0_savannah_1c3ccb3e040bf13e342ee60bc23b21b97b11923f_0@pointer" {
+"1000105" [label="(MethodParameterIn,unsigned char *str)"];
+"1000146" [label="(Call,memcpy (str, der + len_len, *str_len))"];
+"1000102" [label="(MethodParameterIn,const unsigned char *der)"];
+"1000122" [label="(Call,asn1_get_length_der (der, der_len, &len_len))"];
+"1000159" [label="(MethodReturn,RET)"];
+"1000146" [label="(Call,memcpy (str, der + len_len, *str_len))"];
+"1000147" [label="(Identifier,str)"];
+"1000142" [label="(Call,str_size >= *str_len)"];
+"1000105" [label="(MethodParameterIn,unsigned char *str)"];
+"1000110" [label="(Call,len_len = 0)"];
+"1000141" [label="(ControlStructure,if (str_size >= *str_len))"];
+"1000151" [label="(Call,*str_len)"];
+"1000158" [label="(Identifier,ASN1_SUCCESS)"];
+"1000148" [label="(Call,der + len_len)"];
+"1000105" -> "1000101"  [label="AST: "];
+"1000105" -> "1000159"  [label="DDG: str"];
+"1000105" -> "1000146"  [label="DDG: str"];
+"1000146" -> "1000141"  [label="AST: "];
+"1000146" -> "1000151"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000148" -> "1000146"  [label="AST: "];
+"1000151" -> "1000146"  [label="AST: "];
+"1000158" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000159"  [label="DDG: memcpy (str, der + len_len, *str_len)"];
+"1000146" -> "1000159"  [label="DDG: *str_len"];
+"1000146" -> "1000159"  [label="DDG: der + len_len"];
+"1000146" -> "1000159"  [label="DDG: str"];
+"1000122" -> "1000146"  [label="DDG: der"];
+"1000102" -> "1000146"  [label="DDG: der"];
+"1000110" -> "1000146"  [label="DDG: len_len"];
+"1000142" -> "1000146"  [label="DDG: *str_len"];
+}

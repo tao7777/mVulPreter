@@ -1,0 +1,22 @@
+digraph "0_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_9@API" {
+"1000142" [label="(Call,atomic_long_read(&n->nr_slabs))"];
+"1000141" [label="(Call,!atomic_long_read(&n->nr_slabs))"];
+"1000405" [label="(MethodReturn,static int)"];
+"1000142" [label="(Call,atomic_long_read(&n->nr_slabs))"];
+"1000143" [label="(Call,&n->nr_slabs)"];
+"1000151" [label="(Identifier,n)"];
+"1000147" [label="(ControlStructure,continue;)"];
+"1000141" [label="(Call,!atomic_long_read(&n->nr_slabs))"];
+"1000140" [label="(ControlStructure,if (!atomic_long_read(&n->nr_slabs)))"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000141" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000405"  [label="DDG: &n->nr_slabs"];
+"1000142" -> "1000141"  [label="DDG: &n->nr_slabs"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000147" -> "1000141"  [label="CFG: "];
+"1000151" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000405"  [label="DDG: !atomic_long_read(&n->nr_slabs)"];
+"1000141" -> "1000405"  [label="DDG: atomic_long_read(&n->nr_slabs)"];
+}

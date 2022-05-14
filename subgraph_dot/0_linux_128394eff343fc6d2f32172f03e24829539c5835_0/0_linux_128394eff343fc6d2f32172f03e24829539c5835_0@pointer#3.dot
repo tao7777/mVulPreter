@@ -1,0 +1,35 @@
+digraph "0_linux_128394eff343fc6d2f32172f03e24829539c5835_0@pointer" {
+"1000181" [label="(Call,scsi_block_when_processing_errors(sdp->device))"];
+"1000175" [label="(Call,(filp->f_flags & O_NONBLOCK) ||\n\t      scsi_block_when_processing_errors(sdp->device))"];
+"1000174" [label="(Call,!((filp->f_flags & O_NONBLOCK) ||\n\t      scsi_block_when_processing_errors(sdp->device)))"];
+"1000176" [label="(Call,filp->f_flags & O_NONBLOCK)"];
+"1000507" [label="(MethodReturn,RET)"];
+"1000174" [label="(Call,!((filp->f_flags & O_NONBLOCK) ||\n\t      scsi_block_when_processing_errors(sdp->device)))"];
+"1000191" [label="(Identifier,VERIFY_READ)"];
+"1000175" [label="(Call,(filp->f_flags & O_NONBLOCK) ||\n\t      scsi_block_when_processing_errors(sdp->device))"];
+"1000182" [label="(Call,sdp->device)"];
+"1000187" [label="(Identifier,ENXIO)"];
+"1000173" [label="(ControlStructure,if (!((filp->f_flags & O_NONBLOCK) ||\n\t      scsi_block_when_processing_errors(sdp->device))))"];
+"1000181" [label="(Call,scsi_block_when_processing_errors(sdp->device))"];
+"1000181" -> "1000175"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000175" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000507"  [label="DDG: sdp->device"];
+"1000181" -> "1000175"  [label="DDG: sdp->device"];
+"1000175" -> "1000174"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000174" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000507"  [label="DDG: scsi_block_when_processing_errors(sdp->device)"];
+"1000175" -> "1000507"  [label="DDG: filp->f_flags & O_NONBLOCK"];
+"1000175" -> "1000174"  [label="DDG: filp->f_flags & O_NONBLOCK"];
+"1000175" -> "1000174"  [label="DDG: scsi_block_when_processing_errors(sdp->device)"];
+"1000176" -> "1000175"  [label="DDG: filp->f_flags"];
+"1000176" -> "1000175"  [label="DDG: O_NONBLOCK"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000187" -> "1000174"  [label="CFG: "];
+"1000191" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000507"  [label="DDG: !((filp->f_flags & O_NONBLOCK) ||\n\t      scsi_block_when_processing_errors(sdp->device))"];
+"1000174" -> "1000507"  [label="DDG: (filp->f_flags & O_NONBLOCK) ||\n\t      scsi_block_when_processing_errors(sdp->device)"];
+}

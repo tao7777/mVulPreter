@@ -1,0 +1,31 @@
+digraph "0_ImageMagick_726812fa2fa7ce16bcf58f6e115f65427a1c0950_3@pointer" {
+"1000259" [label="(Call,q->point.y == p->point.y)"];
+"1000247" [label="(Call,(q->point.x == p->point.x) && (q->point.y == p->point.y))"];
+"1000270" [label="(Identifier,MagickTrue)"];
+"1000246" [label="(Call,(q->point.x == p->point.x) && (q->point.y == p->point.y) ?\n      MagickTrue : MagickFalse)"];
+"1000247" [label="(Call,(q->point.x == p->point.x) && (q->point.y == p->point.y))"];
+"1000248" [label="(Call,q->point.x == p->point.x)"];
+"1000260" [label="(Call,q->point.y)"];
+"1000271" [label="(Identifier,MagickFalse)"];
+"1000259" [label="(Call,q->point.y == p->point.y)"];
+"1000316" [label="(MethodReturn,static MagickBooleanType)"];
+"1000265" [label="(Call,p->point.y)"];
+"1000259" -> "1000247"  [label="AST: "];
+"1000259" -> "1000265"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000265" -> "1000259"  [label="AST: "];
+"1000247" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000316"  [label="DDG: q->point.y"];
+"1000259" -> "1000316"  [label="DDG: p->point.y"];
+"1000259" -> "1000247"  [label="DDG: q->point.y"];
+"1000259" -> "1000247"  [label="DDG: p->point.y"];
+"1000247" -> "1000246"  [label="AST: "];
+"1000247" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000270" -> "1000247"  [label="CFG: "];
+"1000271" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000316"  [label="DDG: q->point.y == p->point.y"];
+"1000247" -> "1000316"  [label="DDG: q->point.x == p->point.x"];
+"1000248" -> "1000247"  [label="DDG: q->point.x"];
+"1000248" -> "1000247"  [label="DDG: p->point.x"];
+}

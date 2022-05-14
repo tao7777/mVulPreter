@@ -1,0 +1,22 @@
+digraph "0_miniupnp_b238cade9a173c6f751a34acf8ccff838a62aa47_0@pointer" {
+"1000177" [label="(Call,strcmp(argv[i], \"-s\"))"];
+"1000105" [label="(MethodParameterIn,char * * argv)"];
+"1000177" [label="(Call,strcmp(argv[i], \"-s\"))"];
+"1000182" [label="(Call,sockpath = argv[++i])"];
+"1000599" [label="(MethodReturn,RET)"];
+"1000181" [label="(Literal,\"-s\")"];
+"1000105" [label="(MethodParameterIn,char * * argv)"];
+"1000175" [label="(Call,0==strcmp(argv[i], \"-s\"))"];
+"1000178" [label="(Call,argv[i])"];
+"1000177" -> "1000175"  [label="AST: "];
+"1000177" -> "1000181"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000181" -> "1000177"  [label="AST: "];
+"1000175" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000599"  [label="DDG: argv[i]"];
+"1000105" -> "1000177"  [label="DDG: argv"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000599"  [label="DDG: argv"];
+"1000105" -> "1000175"  [label="DDG: argv"];
+"1000105" -> "1000182"  [label="DDG: argv"];
+}

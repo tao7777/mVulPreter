@@ -1,0 +1,26 @@
+digraph "0_optee_os_d5c5b0b77b2b589666024d219a8007b3f5b6faeb@pointer" {
+"1000106" [label="(MethodParameterIn,struct tee_ta_session *called_sess)"];
+"1000167" [label="(Call,called_sess && is_pseudo_ta_ctx(called_sess->ctx))"];
+"1000483" [label="(MethodReturn,static TEE_Result)"];
+"1000175" [label="(Identifier,TEE_SUCCESS)"];
+"1000166" [label="(ControlStructure,if (called_sess && is_pseudo_ta_ctx(called_sess->ctx)))"];
+"1000168" [label="(Identifier,called_sess)"];
+"1000169" [label="(Call,is_pseudo_ta_ctx(called_sess->ctx))"];
+"1000178" [label="(Identifier,n)"];
+"1000106" [label="(MethodParameterIn,struct tee_ta_session *called_sess)"];
+"1000167" [label="(Call,called_sess && is_pseudo_ta_ctx(called_sess->ctx))"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000483"  [label="DDG: called_sess"];
+"1000106" -> "1000167"  [label="DDG: called_sess"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000169"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000169" -> "1000167"  [label="AST: "];
+"1000175" -> "1000167"  [label="CFG: "];
+"1000178" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000483"  [label="DDG: called_sess"];
+"1000167" -> "1000483"  [label="DDG: is_pseudo_ta_ctx(called_sess->ctx)"];
+"1000167" -> "1000483"  [label="DDG: called_sess && is_pseudo_ta_ctx(called_sess->ctx)"];
+"1000169" -> "1000167"  [label="DDG: called_sess->ctx"];
+}

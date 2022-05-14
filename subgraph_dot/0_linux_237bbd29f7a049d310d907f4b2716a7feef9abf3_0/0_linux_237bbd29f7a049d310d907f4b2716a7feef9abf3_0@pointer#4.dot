@@ -1,0 +1,22 @@
+digraph "0_linux_237bbd29f7a049d310d907f4b2716a7feef9abf3_0@pointer" {
+"1000182" [label="(Call,refcount_inc_not_zero(&keyring->usage))"];
+"1000181" [label="(Call,!refcount_inc_not_zero(&keyring->usage))"];
+"1000181" [label="(Call,!refcount_inc_not_zero(&keyring->usage))"];
+"1000187" [label="(ControlStructure,continue;)"];
+"1000180" [label="(ControlStructure,if (!refcount_inc_not_zero(&keyring->usage)))"];
+"1000183" [label="(Call,&keyring->usage)"];
+"1000207" [label="(MethodReturn,struct key *)"];
+"1000182" [label="(Call,refcount_inc_not_zero(&keyring->usage))"];
+"1000190" [label="(Identifier,keyring)"];
+"1000182" -> "1000181"  [label="AST: "];
+"1000182" -> "1000183"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000207"  [label="DDG: &keyring->usage"];
+"1000182" -> "1000181"  [label="DDG: &keyring->usage"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000187" -> "1000181"  [label="CFG: "];
+"1000190" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000207"  [label="DDG: !refcount_inc_not_zero(&keyring->usage)"];
+"1000181" -> "1000207"  [label="DDG: refcount_inc_not_zero(&keyring->usage)"];
+}

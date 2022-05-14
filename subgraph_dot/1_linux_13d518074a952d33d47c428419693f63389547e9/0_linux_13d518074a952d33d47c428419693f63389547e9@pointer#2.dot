@@ -1,0 +1,29 @@
+digraph "0_linux_13d518074a952d33d47c428419693f63389547e9@pointer" {
+"1000169" [label="(Call,!tfile->f_op)"];
+"1000168" [label="(Call,!tfile->f_op || !tfile->f_op->poll)"];
+"1000176" [label="(Identifier,tfile)"];
+"1000344" [label="(MethodReturn,RET)"];
+"1000181" [label="(Identifier,error)"];
+"1000168" [label="(Call,!tfile->f_op || !tfile->f_op->poll)"];
+"1000169" [label="(Call,!tfile->f_op)"];
+"1000179" [label="(ControlStructure,goto error_tgt_fput;)"];
+"1000173" [label="(Call,!tfile->f_op->poll)"];
+"1000167" [label="(ControlStructure,if (!tfile->f_op || !tfile->f_op->poll))"];
+"1000170" [label="(Call,tfile->f_op)"];
+"1000169" -> "1000168"  [label="AST: "];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000176" -> "1000169"  [label="CFG: "];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000344"  [label="DDG: tfile->f_op"];
+"1000169" -> "1000168"  [label="DDG: tfile->f_op"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000168"  [label="AST: "];
+"1000179" -> "1000168"  [label="CFG: "];
+"1000181" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000344"  [label="DDG: !tfile->f_op || !tfile->f_op->poll"];
+"1000168" -> "1000344"  [label="DDG: !tfile->f_op"];
+"1000168" -> "1000344"  [label="DDG: !tfile->f_op->poll"];
+"1000173" -> "1000168"  [label="DDG: tfile->f_op->poll"];
+}

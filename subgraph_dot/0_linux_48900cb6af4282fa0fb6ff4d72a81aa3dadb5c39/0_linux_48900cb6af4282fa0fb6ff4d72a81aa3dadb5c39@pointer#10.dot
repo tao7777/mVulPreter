@@ -1,0 +1,29 @@
+digraph "0_linux_48900cb6af4282fa0fb6ff4d72a81aa3dadb5c39@pointer" {
+"1000372" [label="(Call,INIT_WORK(&vi->config_work, virtnet_config_changed_work))"];
+"1000589" [label="(Call,schedule_work(&vi->config_work))"];
+"1000372" [label="(Call,INIT_WORK(&vi->config_work, virtnet_config_changed_work))"];
+"1000373" [label="(Call,&vi->config_work)"];
+"1000589" [label="(Call,schedule_work(&vi->config_work))"];
+"1000604" [label="(Literal,\"virtnet: registered device %s with %d RX and TX vq's\n\")"];
+"1000118" [label="(Block,)"];
+"1000377" [label="(Identifier,virtnet_config_changed_work)"];
+"1000586" [label="(Block,)"];
+"1000381" [label="(Identifier,vdev)"];
+"1000638" [label="(MethodReturn,static int)"];
+"1000590" [label="(Call,&vi->config_work)"];
+"1000372" -> "1000118"  [label="AST: "];
+"1000372" -> "1000377"  [label="CFG: "];
+"1000373" -> "1000372"  [label="AST: "];
+"1000377" -> "1000372"  [label="AST: "];
+"1000381" -> "1000372"  [label="CFG: "];
+"1000372" -> "1000638"  [label="DDG: virtnet_config_changed_work"];
+"1000372" -> "1000638"  [label="DDG: &vi->config_work"];
+"1000372" -> "1000638"  [label="DDG: INIT_WORK(&vi->config_work, virtnet_config_changed_work)"];
+"1000372" -> "1000589"  [label="DDG: &vi->config_work"];
+"1000589" -> "1000586"  [label="AST: "];
+"1000589" -> "1000590"  [label="CFG: "];
+"1000590" -> "1000589"  [label="AST: "];
+"1000604" -> "1000589"  [label="CFG: "];
+"1000589" -> "1000638"  [label="DDG: schedule_work(&vi->config_work)"];
+"1000589" -> "1000638"  [label="DDG: &vi->config_work"];
+}

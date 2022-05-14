@@ -1,0 +1,27 @@
+digraph "0_irssi_5e26325317c72a04c1610ad952974e206384d291@pointer" {
+"1000131" [label="(Call,str[len-1] = '\0')"];
+"1000138" [label="(Return,return str;)"];
+"1000102" [label="(Block,)"];
+"1000139" [label="(Identifier,str)"];
+"1000140" [label="(MethodReturn,char *)"];
+"1000137" [label="(Literal,'\0')"];
+"1000127" [label="(ControlStructure,if (len > 0))"];
+"1000125" [label="(Call,strlen(str))"];
+"1000132" [label="(Call,str[len-1])"];
+"1000131" [label="(Call,str[len-1] = '\0')"];
+"1000138" [label="(Return,return str;)"];
+"1000131" -> "1000127"  [label="AST: "];
+"1000131" -> "1000137"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000137" -> "1000131"  [label="AST: "];
+"1000139" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000140"  [label="DDG: str[len-1]"];
+"1000131" -> "1000138"  [label="DDG: str[len-1]"];
+"1000138" -> "1000102"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000140" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000140"  [label="DDG: <RET>"];
+"1000139" -> "1000138"  [label="DDG: str"];
+"1000125" -> "1000138"  [label="DDG: str"];
+}

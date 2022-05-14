@@ -1,0 +1,31 @@
+digraph "0_memcached_75cc83685e103bc8ba380a57468c8f04413033f9@pointer" {
+"1000137" [label="(Call,c->transport == udp_transport)"];
+"1000131" [label="(Call,c->protocol == negotiating_prot || c->transport == udp_transport)"];
+"1000132" [label="(Call,c->protocol == negotiating_prot)"];
+"1000130" [label="(ControlStructure,if (c->protocol == negotiating_prot || c->transport == udp_transport))"];
+"1000188" [label="(Identifier,c)"];
+"1000137" [label="(Call,c->transport == udp_transport)"];
+"1000138" [label="(Call,c->transport)"];
+"1000141" [label="(Identifier,udp_transport)"];
+"1000565" [label="(MethodReturn,static int)"];
+"1000131" [label="(Call,c->protocol == negotiating_prot || c->transport == udp_transport)"];
+"1000137" -> "1000131"  [label="AST: "];
+"1000137" -> "1000141"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000141" -> "1000137"  [label="AST: "];
+"1000131" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000565"  [label="DDG: udp_transport"];
+"1000137" -> "1000565"  [label="DDG: c->transport"];
+"1000137" -> "1000131"  [label="DDG: c->transport"];
+"1000137" -> "1000131"  [label="DDG: udp_transport"];
+"1000131" -> "1000130"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000146" -> "1000131"  [label="CFG: "];
+"1000188" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000565"  [label="DDG: c->protocol == negotiating_prot"];
+"1000131" -> "1000565"  [label="DDG: c->transport == udp_transport"];
+"1000131" -> "1000565"  [label="DDG: c->protocol == negotiating_prot || c->transport == udp_transport"];
+"1000132" -> "1000131"  [label="DDG: c->protocol"];
+"1000132" -> "1000131"  [label="DDG: negotiating_prot"];
+}

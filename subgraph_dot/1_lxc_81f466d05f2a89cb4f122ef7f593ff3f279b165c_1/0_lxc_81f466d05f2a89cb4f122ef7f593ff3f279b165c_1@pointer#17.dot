@@ -1,0 +1,31 @@
+digraph "0_lxc_81f466d05f2a89cb4f122ef7f593ff3f279b165c_1@pointer" {
+"1000562" [label="(Call,options->attach_flags & LXC_ATTACH_MOVE_TO_CGROUP)"];
+"1000561" [label="(Call,(options->attach_flags & LXC_ATTACH_MOVE_TO_CGROUP) && cgns_supported())"];
+"1000567" [label="(Call,cgns_supported())"];
+"1000562" [label="(Call,options->attach_flags & LXC_ATTACH_MOVE_TO_CGROUP)"];
+"1000560" [label="(ControlStructure,if ((options->attach_flags & LXC_ATTACH_MOVE_TO_CGROUP) && cgns_supported()))"];
+"1000695" [label="(MethodReturn,int)"];
+"1000566" [label="(Identifier,LXC_ATTACH_MOVE_TO_CGROUP)"];
+"1000574" [label="(Identifier,procfd)"];
+"1000570" [label="(Identifier,options)"];
+"1000563" [label="(Call,options->attach_flags)"];
+"1000561" [label="(Call,(options->attach_flags & LXC_ATTACH_MOVE_TO_CGROUP) && cgns_supported())"];
+"1000562" -> "1000561"  [label="AST: "];
+"1000562" -> "1000566"  [label="CFG: "];
+"1000563" -> "1000562"  [label="AST: "];
+"1000566" -> "1000562"  [label="AST: "];
+"1000567" -> "1000562"  [label="CFG: "];
+"1000561" -> "1000562"  [label="CFG: "];
+"1000562" -> "1000695"  [label="DDG: options->attach_flags"];
+"1000562" -> "1000695"  [label="DDG: LXC_ATTACH_MOVE_TO_CGROUP"];
+"1000562" -> "1000561"  [label="DDG: options->attach_flags"];
+"1000562" -> "1000561"  [label="DDG: LXC_ATTACH_MOVE_TO_CGROUP"];
+"1000561" -> "1000560"  [label="AST: "];
+"1000561" -> "1000567"  [label="CFG: "];
+"1000567" -> "1000561"  [label="AST: "];
+"1000570" -> "1000561"  [label="CFG: "];
+"1000574" -> "1000561"  [label="CFG: "];
+"1000561" -> "1000695"  [label="DDG: options->attach_flags & LXC_ATTACH_MOVE_TO_CGROUP"];
+"1000561" -> "1000695"  [label="DDG: cgns_supported()"];
+"1000561" -> "1000695"  [label="DDG: (options->attach_flags & LXC_ATTACH_MOVE_TO_CGROUP) && cgns_supported()"];
+}

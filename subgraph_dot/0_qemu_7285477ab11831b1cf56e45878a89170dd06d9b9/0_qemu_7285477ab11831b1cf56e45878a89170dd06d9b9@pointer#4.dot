@@ -1,0 +1,29 @@
+digraph "0_qemu_7285477ab11831b1cf56e45878a89170dd06d9b9@pointer" {
+"1000449" [label="(Call,req->cmd.buf[1] & 31)"];
+"1000448" [label="(Call,(req->cmd.buf[1] & 31) == SAI_READ_CAPACITY_16)"];
+"1000450" [label="(Call,req->cmd.buf[1])"];
+"1000458" [label="(Identifier,SAI_READ_CAPACITY_16)"];
+"1000625" [label="(Literal,\"Unsupported Service Action In\n\")"];
+"1000448" [label="(Call,(req->cmd.buf[1] & 31) == SAI_READ_CAPACITY_16)"];
+"1000682" [label="(MethodReturn,static int)"];
+"1000447" [label="(ControlStructure,if ((req->cmd.buf[1] & 31) == SAI_READ_CAPACITY_16))"];
+"1000461" [label="(Literal,\"SAI READ CAPACITY(16)\n\")"];
+"1000449" [label="(Call,req->cmd.buf[1] & 31)"];
+"1000457" [label="(Literal,31)"];
+"1000449" -> "1000448"  [label="AST: "];
+"1000449" -> "1000457"  [label="CFG: "];
+"1000450" -> "1000449"  [label="AST: "];
+"1000457" -> "1000449"  [label="AST: "];
+"1000458" -> "1000449"  [label="CFG: "];
+"1000449" -> "1000682"  [label="DDG: req->cmd.buf[1]"];
+"1000449" -> "1000448"  [label="DDG: req->cmd.buf[1]"];
+"1000449" -> "1000448"  [label="DDG: 31"];
+"1000448" -> "1000447"  [label="AST: "];
+"1000448" -> "1000458"  [label="CFG: "];
+"1000458" -> "1000448"  [label="AST: "];
+"1000461" -> "1000448"  [label="CFG: "];
+"1000625" -> "1000448"  [label="CFG: "];
+"1000448" -> "1000682"  [label="DDG: req->cmd.buf[1] & 31"];
+"1000448" -> "1000682"  [label="DDG: SAI_READ_CAPACITY_16"];
+"1000448" -> "1000682"  [label="DDG: (req->cmd.buf[1] & 31) == SAI_READ_CAPACITY_16"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_79549c6dfda0603dba9a70a53467ce62d9335c33@pointer" {
+"1000137" [label="(Call,atomic_read(&p->cred->usage))"];
+"1000132" [label="(Call,kdebug(\"share_creds(%p{%d,%d})\",\n\t\t       p->cred, atomic_read(&p->cred->usage),\n\t\t       read_cred_subscribers(p->cred)))"];
+"1000134" [label="(Call,p->cred)"];
+"1000137" [label="(Call,atomic_read(&p->cred->usage))"];
+"1000144" [label="(Call,read_cred_subscribers(p->cred))"];
+"1000230" [label="(MethodReturn,int)"];
+"1000132" [label="(Call,kdebug(\"share_creds(%p{%d,%d})\",\n\t\t       p->cred, atomic_read(&p->cred->usage),\n\t\t       read_cred_subscribers(p->cred)))"];
+"1000138" [label="(Call,&p->cred->usage)"];
+"1000153" [label="(Identifier,p)"];
+"1000114" [label="(Block,)"];
+"1000146" [label="(Identifier,p)"];
+"1000133" [label="(Literal,\"share_creds(%p{%d,%d})\")"];
+"1000137" -> "1000132"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000146" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000230"  [label="DDG: "];
+"1000137" -> "1000132"  [label="DDG: "];
+"1000132" -> "1000114"  [label="AST: "];
+"1000132" -> "1000144"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000134" -> "1000132"  [label="AST: "];
+"1000144" -> "1000132"  [label="AST: "];
+"1000153" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000230"  [label="DDG: "];
+"1000132" -> "1000230"  [label="DDG: "];
+"1000132" -> "1000230"  [label="DDG: "];
+"1000132" -> "1000230"  [label="DDG: "];
+"1000144" -> "1000132"  [label="DDG: "];
+}

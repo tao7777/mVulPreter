@@ -1,0 +1,24 @@
+digraph "0_samba_70aeb5fddd1b2f8e143276f8d5a085db16c593b9@API" {
+"1000299" [label="(Call,maybe_send_keepalive(time(NULL), MSK_ALLOW_FLUSH))"];
+"1000300" [label="(Call,time(NULL))"];
+"1000300" [label="(Call,time(NULL))"];
+"1000411" [label="(MethodReturn,int)"];
+"1000299" [label="(Call,maybe_send_keepalive(time(NULL), MSK_ALLOW_FLUSH))"];
+"1000297" [label="(ControlStructure,if (am_sender))"];
+"1000301" [label="(Identifier,NULL)"];
+"1000302" [label="(Identifier,MSK_ALLOW_FLUSH)"];
+"1000303" [label="(ControlStructure,goto read_loop;)"];
+"1000299" -> "1000297"  [label="AST: "];
+"1000299" -> "1000302"  [label="CFG: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000302" -> "1000299"  [label="AST: "];
+"1000303" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000411"  [label="DDG: maybe_send_keepalive(time(NULL), MSK_ALLOW_FLUSH)"];
+"1000299" -> "1000411"  [label="DDG: MSK_ALLOW_FLUSH"];
+"1000299" -> "1000411"  [label="DDG: time(NULL)"];
+"1000300" -> "1000299"  [label="DDG: NULL"];
+"1000300" -> "1000301"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000302" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000411"  [label="DDG: NULL"];
+}

@@ -1,0 +1,25 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_18@pointer" {
+"1000227" [label="(Call,msg->msg_namelen = addr_len = 0)"];
+"1000231" [label="(Call,addr_len = 0)"];
+"1000233" [label="(Literal,0)"];
+"1000235" [label="(Identifier,daddr)"];
+"1000477" [label="(Call,addr_len >= sizeof(struct sockaddr_in6))"];
+"1000232" [label="(Identifier,addr_len)"];
+"1000231" [label="(Call,addr_len = 0)"];
+"1000201" [label="(Block,)"];
+"1000227" [label="(Call,msg->msg_namelen = addr_len = 0)"];
+"1000228" [label="(Call,msg->msg_namelen)"];
+"1001034" [label="(MethodReturn,int)"];
+"1000227" -> "1000201"  [label="AST: "];
+"1000227" -> "1000231"  [label="CFG: "];
+"1000228" -> "1000227"  [label="AST: "];
+"1000231" -> "1000227"  [label="AST: "];
+"1000235" -> "1000227"  [label="CFG: "];
+"1000227" -> "1001034"  [label="DDG: msg->msg_namelen"];
+"1000231" -> "1000227"  [label="DDG: addr_len"];
+"1000231" -> "1000233"  [label="CFG: "];
+"1000232" -> "1000231"  [label="AST: "];
+"1000233" -> "1000231"  [label="AST: "];
+"1000231" -> "1001034"  [label="DDG: addr_len"];
+"1000231" -> "1000477"  [label="DDG: addr_len"];
+}

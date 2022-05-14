@@ -1,0 +1,24 @@
+digraph "0_linux_0a1d52994d440e21def1c2174932410b4f2a98a1@pointer" {
+"1000224" [label="(Call,spin_lock(&mm->page_table_lock))"];
+"1000262" [label="(Call,spin_unlock(&mm->page_table_lock))"];
+"1000262" [label="(Call,spin_unlock(&mm->page_table_lock))"];
+"1000282" [label="(MethodReturn,int)"];
+"1000232" [label="(Identifier,vma)"];
+"1000225" [label="(Call,&mm->page_table_lock)"];
+"1000263" [label="(Call,&mm->page_table_lock)"];
+"1000268" [label="(Identifier,vma)"];
+"1000224" [label="(Call,spin_lock(&mm->page_table_lock))"];
+"1000223" [label="(Block,)"];
+"1000224" -> "1000223"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000232" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000282"  [label="DDG: spin_lock(&mm->page_table_lock)"];
+"1000224" -> "1000262"  [label="DDG: &mm->page_table_lock"];
+"1000262" -> "1000223"  [label="AST: "];
+"1000262" -> "1000263"  [label="CFG: "];
+"1000263" -> "1000262"  [label="AST: "];
+"1000268" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000282"  [label="DDG: &mm->page_table_lock"];
+"1000262" -> "1000282"  [label="DDG: spin_unlock(&mm->page_table_lock)"];
+}

@@ -1,0 +1,23 @@
+digraph "0_libXi_19a9cd607de73947fcfb104682f203ffe4e1f4e5_1@API" {
+"1000326" [label="(Call,sizeof(XStringFeedbackState) +\n \t\t    (strf->num_syms_supported * sizeof(KeySym)))"];
+"1000329" [label="(Call,strf->num_syms_supported * sizeof(KeySym))"];
+"1000324" [label="(Call,size += sizeof(XStringFeedbackState) +\n \t\t    (strf->num_syms_supported * sizeof(KeySym)))"];
+"1000333" [label="(Call,sizeof(KeySym))"];
+"1000330" [label="(Call,strf->num_syms_supported)"];
+"1000326" [label="(Call,sizeof(XStringFeedbackState) +\n \t\t    (strf->num_syms_supported * sizeof(KeySym)))"];
+"1000329" [label="(Call,strf->num_syms_supported * sizeof(KeySym))"];
+"1000775" [label="(MethodReturn,RET)"];
+"1000327" [label="(Call,sizeof(XStringFeedbackState))"];
+"1000326" -> "1000324"  [label="AST: "];
+"1000326" -> "1000329"  [label="CFG: "];
+"1000327" -> "1000326"  [label="AST: "];
+"1000329" -> "1000326"  [label="AST: "];
+"1000324" -> "1000326"  [label="CFG: "];
+"1000326" -> "1000775"  [label="DDG: strf->num_syms_supported * sizeof(KeySym)"];
+"1000329" -> "1000326"  [label="DDG: strf->num_syms_supported"];
+"1000329" -> "1000333"  [label="CFG: "];
+"1000330" -> "1000329"  [label="AST: "];
+"1000333" -> "1000329"  [label="AST: "];
+"1000329" -> "1000775"  [label="DDG: strf->num_syms_supported"];
+"1000329" -> "1000324"  [label="DDG: strf->num_syms_supported"];
+}

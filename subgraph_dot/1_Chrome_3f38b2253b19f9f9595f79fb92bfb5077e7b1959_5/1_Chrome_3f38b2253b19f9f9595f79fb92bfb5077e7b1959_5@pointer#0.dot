@@ -1,0 +1,26 @@
+digraph "1_Chrome_3f38b2253b19f9f9595f79fb92bfb5077e7b1959_5@pointer" {
+"1000122" [label="(Call,DCHECK_NE(kResultHistogram, data->name))"];
+"1000118" [label="(Call,StatisticsRecorder::ForgetHistogramForTesting(data->name))"];
+"1000119" [label="(Call,data->name)"];
+"1000129" [label="(Identifier,g_histogram_allocator)"];
+"1000134" [label="(MethodReturn,RET)"];
+"1000122" [label="(Call,DCHECK_NE(kResultHistogram, data->name))"];
+"1000118" [label="(Call,StatisticsRecorder::ForgetHistogramForTesting(data->name))"];
+"1000123" [label="(Identifier,kResultHistogram)"];
+"1000117" [label="(Block,)"];
+"1000124" [label="(Call,data->name)"];
+"1000122" -> "1000117"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000129" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000134"  [label="DDG: DCHECK_NE(kResultHistogram, data->name)"];
+"1000122" -> "1000134"  [label="DDG: data->name"];
+"1000122" -> "1000134"  [label="DDG: kResultHistogram"];
+"1000118" -> "1000122"  [label="DDG: data->name"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000123" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000134"  [label="DDG: StatisticsRecorder::ForgetHistogramForTesting(data->name)"];
+}

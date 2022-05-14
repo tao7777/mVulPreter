@@ -1,0 +1,22 @@
+digraph "0_radare2_ad55822430a03fe075221b543efb434567e9e431@pointer" {
+"1001016" [label="(Call,pos->address + paddr)"];
+"1000116" [label="(MethodParameterIn,int paddr)"];
+"1000116" [label="(MethodParameterIn,int paddr)"];
+"1001185" [label="(MethodReturn,static void)"];
+"1001020" [label="(Identifier,paddr)"];
+"1001021" [label="(Identifier,offset)"];
+"1001017" [label="(Call,pos->address)"];
+"1001015" [label="(Call,sdb_itoa (pos->address + paddr, offset, 16))"];
+"1001016" [label="(Call,pos->address + paddr)"];
+"1001016" -> "1001015"  [label="AST: "];
+"1001016" -> "1001020"  [label="CFG: "];
+"1001017" -> "1001016"  [label="AST: "];
+"1001020" -> "1001016"  [label="AST: "];
+"1001021" -> "1001016"  [label="CFG: "];
+"1001016" -> "1001185"  [label="DDG: paddr"];
+"1001016" -> "1001185"  [label="DDG: pos->address"];
+"1000116" -> "1001016"  [label="DDG: paddr"];
+"1000116" -> "1000110"  [label="AST: "];
+"1000116" -> "1001185"  [label="DDG: paddr"];
+"1000116" -> "1001015"  [label="DDG: paddr"];
+}

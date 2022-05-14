@@ -1,0 +1,24 @@
+digraph "0_FFmpeg_e8714f6f93d1a32f4e4655209960afcf4c185214@pointer" {
+"1000101" [label="(MethodParameterIn,H264Context *h)"];
+"1000206" [label="(Call,ff_h264_unref_picture(h, &h->DPB[i]))"];
+"1000191" [label="(Call,free_rbsp && h->DPB)"];
+"1000382" [label="(MethodReturn,void)"];
+"1000197" [label="(ControlStructure,for (i = 0; i < H264_MAX_PICTURE_COUNT; i++))"];
+"1000208" [label="(Call,&h->DPB[i])"];
+"1000207" [label="(Identifier,h)"];
+"1000101" [label="(MethodParameterIn,H264Context *h)"];
+"1000206" [label="(Call,ff_h264_unref_picture(h, &h->DPB[i]))"];
+"1000205" [label="(Identifier,i)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000382"  [label="DDG: h"];
+"1000101" -> "1000206"  [label="DDG: h"];
+"1000206" -> "1000197"  [label="AST: "];
+"1000206" -> "1000208"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000208" -> "1000206"  [label="AST: "];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000382"  [label="DDG: ff_h264_unref_picture(h, &h->DPB[i])"];
+"1000206" -> "1000382"  [label="DDG: &h->DPB[i]"];
+"1000206" -> "1000382"  [label="DDG: h"];
+"1000191" -> "1000206"  [label="DDG: h->DPB"];
+}

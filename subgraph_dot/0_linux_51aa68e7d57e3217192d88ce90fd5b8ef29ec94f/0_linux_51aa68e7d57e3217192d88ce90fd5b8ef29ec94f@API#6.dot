@@ -1,0 +1,29 @@
+digraph "0_linux_51aa68e7d57e3217192d88ce90fd5b8ef29ec94f@API" {
+"1000720" [label="(Call,vmcs_write64(GUEST_IA32_PAT, vmcs12->guest_ia32_pat))"];
+"1000725" [label="(Call,vcpu->arch.pat = vmcs12->guest_ia32_pat)"];
+"1000720" [label="(Call,vmcs_write64(GUEST_IA32_PAT, vmcs12->guest_ia32_pat))"];
+"1001021" [label="(MethodReturn,static int)"];
+"1000731" [label="(Call,vmcs12->guest_ia32_pat)"];
+"1000725" [label="(Call,vcpu->arch.pat = vmcs12->guest_ia32_pat)"];
+"1000722" [label="(Call,vmcs12->guest_ia32_pat)"];
+"1000721" [label="(Identifier,GUEST_IA32_PAT)"];
+"1000726" [label="(Call,vcpu->arch.pat)"];
+"1000752" [label="(Identifier,vmx)"];
+"1000719" [label="(Block,)"];
+"1000728" [label="(Identifier,vcpu)"];
+"1000720" -> "1000719"  [label="AST: "];
+"1000720" -> "1000722"  [label="CFG: "];
+"1000721" -> "1000720"  [label="AST: "];
+"1000722" -> "1000720"  [label="AST: "];
+"1000728" -> "1000720"  [label="CFG: "];
+"1000720" -> "1001021"  [label="DDG: GUEST_IA32_PAT"];
+"1000720" -> "1001021"  [label="DDG: vmcs_write64(GUEST_IA32_PAT, vmcs12->guest_ia32_pat)"];
+"1000720" -> "1000725"  [label="DDG: vmcs12->guest_ia32_pat"];
+"1000725" -> "1000719"  [label="AST: "];
+"1000725" -> "1000731"  [label="CFG: "];
+"1000726" -> "1000725"  [label="AST: "];
+"1000731" -> "1000725"  [label="AST: "];
+"1000752" -> "1000725"  [label="CFG: "];
+"1000725" -> "1001021"  [label="DDG: vmcs12->guest_ia32_pat"];
+"1000725" -> "1001021"  [label="DDG: vcpu->arch.pat"];
+}

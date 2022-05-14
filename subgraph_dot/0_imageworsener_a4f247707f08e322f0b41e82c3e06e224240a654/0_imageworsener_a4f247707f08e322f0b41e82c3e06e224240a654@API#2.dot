@@ -1,0 +1,27 @@
+digraph "0_imageworsener_a4f247707f08e322f0b41e82c3e06e224240a654@API" {
+"1000208" [label="(Call,bmpr_read_rle_internal(rctx))"];
+"1000101" [label="(MethodParameterIn,struct iwbmprcontext *rctx)"];
+"1000207" [label="(Call,!bmpr_read_rle_internal(rctx))"];
+"1000208" [label="(Call,bmpr_read_rle_internal(rctx))"];
+"1000206" [label="(ControlStructure,if(!bmpr_read_rle_internal(rctx)))"];
+"1000215" [label="(Identifier,rctx)"];
+"1000209" [label="(Identifier,rctx)"];
+"1000207" [label="(Call,!bmpr_read_rle_internal(rctx))"];
+"1000101" [label="(MethodParameterIn,struct iwbmprcontext *rctx)"];
+"1000210" [label="(ControlStructure,goto done;)"];
+"1000228" [label="(MethodReturn,static int)"];
+"1000208" -> "1000207"  [label="AST: "];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000207" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000228"  [label="DDG: rctx"];
+"1000208" -> "1000207"  [label="DDG: rctx"];
+"1000101" -> "1000208"  [label="DDG: rctx"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000228"  [label="DDG: rctx"];
+"1000207" -> "1000206"  [label="AST: "];
+"1000210" -> "1000207"  [label="CFG: "];
+"1000215" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000228"  [label="DDG: bmpr_read_rle_internal(rctx)"];
+"1000207" -> "1000228"  [label="DDG: !bmpr_read_rle_internal(rctx)"];
+}

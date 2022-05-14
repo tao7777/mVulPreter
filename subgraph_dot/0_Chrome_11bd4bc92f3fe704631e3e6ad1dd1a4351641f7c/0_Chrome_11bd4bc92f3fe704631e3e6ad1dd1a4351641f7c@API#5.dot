@@ -1,0 +1,33 @@
+digraph "0_Chrome_11bd4bc92f3fe704631e3e6ad1dd1a4351641f7c@API" {
+"1000306" [label="(Call,!slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid())"];
+"1000307" [label="(Call,!slice.copying_memory_size.IsValid())"];
+"1000309" [label="(Call,!slice.total_memory_size.IsValid())"];
+"1000306" [label="(Call,!slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid())"];
+"1000308" [label="(Call,slice.copying_memory_size.IsValid())"];
+"1000305" [label="(ControlStructure,if (!slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid()))"];
+"1000309" [label="(Call,!slice.total_memory_size.IsValid())"];
+"1000310" [label="(Call,slice.total_memory_size.IsValid())"];
+"1000317" [label="(Identifier,checked_total_memory_size)"];
+"1000313" [label="(Identifier,status)"];
+"1000468" [label="(MethodReturn,RET)"];
+"1000307" [label="(Call,!slice.copying_memory_size.IsValid())"];
+"1000306" -> "1000305"  [label="AST: "];
+"1000306" -> "1000307"  [label="CFG: "];
+"1000306" -> "1000309"  [label="CFG: "];
+"1000307" -> "1000306"  [label="AST: "];
+"1000309" -> "1000306"  [label="AST: "];
+"1000313" -> "1000306"  [label="CFG: "];
+"1000317" -> "1000306"  [label="CFG: "];
+"1000306" -> "1000468"  [label="DDG: !slice.total_memory_size.IsValid()"];
+"1000306" -> "1000468"  [label="DDG: !slice.copying_memory_size.IsValid()"];
+"1000306" -> "1000468"  [label="DDG: !slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid()"];
+"1000307" -> "1000306"  [label="DDG: slice.copying_memory_size.IsValid()"];
+"1000309" -> "1000306"  [label="DDG: slice.total_memory_size.IsValid()"];
+"1000307" -> "1000308"  [label="CFG: "];
+"1000308" -> "1000307"  [label="AST: "];
+"1000310" -> "1000307"  [label="CFG: "];
+"1000307" -> "1000468"  [label="DDG: slice.copying_memory_size.IsValid()"];
+"1000309" -> "1000310"  [label="CFG: "];
+"1000310" -> "1000309"  [label="AST: "];
+"1000309" -> "1000468"  [label="DDG: slice.total_memory_size.IsValid()"];
+}

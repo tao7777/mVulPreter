@@ -1,0 +1,29 @@
+digraph "0_linux_295dc39d941dc2ae53d5c170365af4c9d5c16212@pointer" {
+"1000247" [label="(Call,!dentry->d_inode)"];
+"1000246" [label="(Call,!dentry->d_inode || d_is_negative(dentry))"];
+"1000296" [label="(MethodReturn,RET)"];
+"1000245" [label="(ControlStructure,if (!dentry->d_inode || d_is_negative(dentry)))"];
+"1000247" [label="(Call,!dentry->d_inode)"];
+"1000246" [label="(Call,!dentry->d_inode || d_is_negative(dentry))"];
+"1000263" [label="(Identifier,path)"];
+"1000248" [label="(Call,dentry->d_inode)"];
+"1000252" [label="(Identifier,dentry)"];
+"1000251" [label="(Call,d_is_negative(dentry))"];
+"1000255" [label="(Identifier,error)"];
+"1000247" -> "1000246"  [label="AST: "];
+"1000247" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000252" -> "1000247"  [label="CFG: "];
+"1000246" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000296"  [label="DDG: dentry->d_inode"];
+"1000247" -> "1000246"  [label="DDG: dentry->d_inode"];
+"1000246" -> "1000245"  [label="AST: "];
+"1000246" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000246"  [label="AST: "];
+"1000255" -> "1000246"  [label="CFG: "];
+"1000263" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000296"  [label="DDG: d_is_negative(dentry)"];
+"1000246" -> "1000296"  [label="DDG: !dentry->d_inode || d_is_negative(dentry)"];
+"1000246" -> "1000296"  [label="DDG: !dentry->d_inode"];
+"1000251" -> "1000246"  [label="DDG: dentry"];
+}

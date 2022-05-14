@@ -1,0 +1,29 @@
+digraph "0_Chrome_971548cdca2d4c0a6fedd3db0c94372c2a27eac3_1@API" {
+"1000118" [label="(Call,std::move(request))"];
+"1000104" [label="(MethodParameterIn,mojom::MediaStreamDispatcherHostRequest request)"];
+"1000108" [label="(Call,mojo::MakeStrongBinding(\n      std::make_unique<MediaStreamDispatcherHost>(\n          render_process_id, render_frame_id, media_stream_manager),\n      std::move(request)))"];
+"1000104" [label="(MethodParameterIn,mojom::MediaStreamDispatcherHostRequest request)"];
+"1000109" [label="(Call,std::make_unique<MediaStreamDispatcherHost>(\n          render_process_id, render_frame_id, media_stream_manager))"];
+"1000120" [label="(MethodReturn,void)"];
+"1000119" [label="(Identifier,request)"];
+"1000108" [label="(Call,mojo::MakeStrongBinding(\n      std::make_unique<MediaStreamDispatcherHost>(\n          render_process_id, render_frame_id, media_stream_manager),\n      std::move(request)))"];
+"1000105" [label="(Block,)"];
+"1000118" [label="(Call,std::move(request))"];
+"1000118" -> "1000108"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000108" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000120"  [label="DDG: request"];
+"1000118" -> "1000108"  [label="DDG: request"];
+"1000104" -> "1000118"  [label="DDG: request"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000120"  [label="DDG: request"];
+"1000108" -> "1000105"  [label="AST: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000120" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000120"  [label="DDG: mojo::MakeStrongBinding(\n      std::make_unique<MediaStreamDispatcherHost>(\n          render_process_id, render_frame_id, media_stream_manager),\n      std::move(request))"];
+"1000108" -> "1000120"  [label="DDG: std::move(request)"];
+"1000108" -> "1000120"  [label="DDG: std::make_unique<MediaStreamDispatcherHost>(\n          render_process_id, render_frame_id, media_stream_manager)"];
+"1000109" -> "1000108"  [label="DDG: std::make_unique"];
+"1000109" -> "1000108"  [label="DDG: MediaStreamDispatcherHost>(\n          render_process_id, render_frame_id, media_stream_manager)"];
+}

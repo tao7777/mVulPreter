@@ -1,0 +1,24 @@
+digraph "0_FFmpeg_fa19fbcf712a6a6cc5a5cfdc3254a97b9bce6582@pointer" {
+"1000375" [label="(Call,track->audio_vbr ? -2 : 0)"];
+"1000379" [label="(Call,-2)"];
+"1000373" [label="(Call,avio_wb16(pb, track->audio_vbr ? -2 : 0))"];
+"1000379" [label="(Call,-2)"];
+"1000375" [label="(Call,track->audio_vbr ? -2 : 0)"];
+"1000376" [label="(Call,track->audio_vbr)"];
+"1000380" [label="(Literal,2)"];
+"1000381" [label="(Literal,0)"];
+"1000760" [label="(MethodReturn,static int)"];
+"1000375" -> "1000373"  [label="AST: "];
+"1000375" -> "1000379"  [label="CFG: "];
+"1000375" -> "1000381"  [label="CFG: "];
+"1000376" -> "1000375"  [label="AST: "];
+"1000379" -> "1000375"  [label="AST: "];
+"1000381" -> "1000375"  [label="AST: "];
+"1000373" -> "1000375"  [label="CFG: "];
+"1000375" -> "1000760"  [label="DDG: track->audio_vbr"];
+"1000375" -> "1000760"  [label="DDG: -2"];
+"1000379" -> "1000375"  [label="DDG: 2"];
+"1000379" -> "1000380"  [label="CFG: "];
+"1000380" -> "1000379"  [label="AST: "];
+"1000379" -> "1000373"  [label="DDG: 2"];
+}

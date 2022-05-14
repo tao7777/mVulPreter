@@ -1,0 +1,32 @@
+digraph "0_FreeRDP_fc80ab45621bd966f70594c0b7393ec005a94007_0@pointer" {
+"1000201" [label="(Call,rect->bottom > srcPtr->top)"];
+"1000197" [label="(Call,(srcPtr < endPtr) && (rect->bottom > srcPtr->top))"];
+"1000352" [label="(MethodReturn,BOOL)"];
+"1000201" [label="(Call,rect->bottom > srcPtr->top)"];
+"1000191" [label="(ControlStructure,for (endPtr = srcPtr + nbRects; (srcPtr < endPtr) && (rect->bottom > srcPtr->top); srcPtr++))"];
+"1000198" [label="(Call,srcPtr < endPtr)"];
+"1000205" [label="(Call,srcPtr->top)"];
+"1000213" [label="(Identifier,srcPtr)"];
+"1000202" [label="(Call,rect->bottom)"];
+"1000197" [label="(Call,(srcPtr < endPtr) && (rect->bottom > srcPtr->top))"];
+"1000282" [label="(Identifier,newItems)"];
+"1000201" -> "1000197"  [label="AST: "];
+"1000201" -> "1000205"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="AST: "];
+"1000197" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000352"  [label="DDG: srcPtr->top"];
+"1000201" -> "1000352"  [label="DDG: rect->bottom"];
+"1000201" -> "1000197"  [label="DDG: rect->bottom"];
+"1000201" -> "1000197"  [label="DDG: srcPtr->top"];
+"1000197" -> "1000191"  [label="AST: "];
+"1000197" -> "1000198"  [label="CFG: "];
+"1000198" -> "1000197"  [label="AST: "];
+"1000213" -> "1000197"  [label="CFG: "];
+"1000282" -> "1000197"  [label="CFG: "];
+"1000197" -> "1000352"  [label="DDG: rect->bottom > srcPtr->top"];
+"1000197" -> "1000352"  [label="DDG: (srcPtr < endPtr) && (rect->bottom > srcPtr->top)"];
+"1000197" -> "1000352"  [label="DDG: srcPtr < endPtr"];
+"1000198" -> "1000197"  [label="DDG: srcPtr"];
+"1000198" -> "1000197"  [label="DDG: endPtr"];
+}

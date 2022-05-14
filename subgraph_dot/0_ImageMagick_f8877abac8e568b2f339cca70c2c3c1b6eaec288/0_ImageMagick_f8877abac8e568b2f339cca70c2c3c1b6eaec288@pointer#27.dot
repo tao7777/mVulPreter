@@ -1,0 +1,23 @@
+digraph "0_ImageMagick_f8877abac8e568b2f339cca70c2c3c1b6eaec288@pointer" {
+"1000857" [label="(Call,image->orientation=(OrientationType) orientation)"];
+"1000861" [label="(Call,(OrientationType) orientation)"];
+"1000867" [label="(Identifier,tiff)"];
+"1000857" [label="(Call,image->orientation=(OrientationType) orientation)"];
+"1000861" [label="(Call,(OrientationType) orientation)"];
+"1003399" [label="(MethodReturn,static Image *)"];
+"1000858" [label="(Call,image->orientation)"];
+"1000863" [label="(Identifier,orientation)"];
+"1000849" [label="(ControlStructure,if (TIFFGetFieldDefaulted(tiff,TIFFTAG_ORIENTATION,&orientation) == 1))"];
+"1000857" -> "1000849"  [label="AST: "];
+"1000857" -> "1000861"  [label="CFG: "];
+"1000858" -> "1000857"  [label="AST: "];
+"1000861" -> "1000857"  [label="AST: "];
+"1000867" -> "1000857"  [label="CFG: "];
+"1000857" -> "1003399"  [label="DDG: image->orientation"];
+"1000857" -> "1003399"  [label="DDG: (OrientationType) orientation"];
+"1000861" -> "1000857"  [label="DDG: orientation"];
+"1000861" -> "1000863"  [label="CFG: "];
+"1000862" -> "1000861"  [label="AST: "];
+"1000863" -> "1000861"  [label="AST: "];
+"1000861" -> "1003399"  [label="DDG: orientation"];
+}

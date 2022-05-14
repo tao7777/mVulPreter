@@ -1,0 +1,1 @@
+InputMethodStatusConnection* ChromeOSMonitorInputMethodStatus(

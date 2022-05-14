@@ -1,0 +1,1 @@
+    ShouldCancelAndIgnore(NavigationHandle* handle) {

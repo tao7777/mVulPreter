@@ -1,0 +1,25 @@
+digraph "0_linux_48900cb6af4282fa0fb6ff4d72a81aa3dadb5c39@array" {
+"1000533" [label="(Call,vi->rq[i].vq->num_free ==\n\t\t    virtqueue_get_vring_size(vi->rq[i].vq))"];
+"1000543" [label="(Call,virtqueue_get_vring_size(vi->rq[i].vq))"];
+"1000521" [label="(Identifier,i)"];
+"1000534" [label="(Call,vi->rq[i].vq->num_free)"];
+"1000544" [label="(Call,vi->rq[i].vq)"];
+"1000532" [label="(ControlStructure,if (vi->rq[i].vq->num_free ==\n\t\t    virtqueue_get_vring_size(vi->rq[i].vq)))"];
+"1000533" [label="(Call,vi->rq[i].vq->num_free ==\n\t\t    virtqueue_get_vring_size(vi->rq[i].vq))"];
+"1000553" [label="(Identifier,vi)"];
+"1000638" [label="(MethodReturn,static int)"];
+"1000543" [label="(Call,virtqueue_get_vring_size(vi->rq[i].vq))"];
+"1000533" -> "1000532"  [label="AST: "];
+"1000533" -> "1000543"  [label="CFG: "];
+"1000534" -> "1000533"  [label="AST: "];
+"1000543" -> "1000533"  [label="AST: "];
+"1000553" -> "1000533"  [label="CFG: "];
+"1000521" -> "1000533"  [label="CFG: "];
+"1000533" -> "1000638"  [label="DDG: vi->rq[i].vq->num_free ==\n\t\t    virtqueue_get_vring_size(vi->rq[i].vq)"];
+"1000533" -> "1000638"  [label="DDG: virtqueue_get_vring_size(vi->rq[i].vq)"];
+"1000533" -> "1000638"  [label="DDG: vi->rq[i].vq->num_free"];
+"1000543" -> "1000533"  [label="DDG: vi->rq[i].vq"];
+"1000543" -> "1000544"  [label="CFG: "];
+"1000544" -> "1000543"  [label="AST: "];
+"1000543" -> "1000638"  [label="DDG: vi->rq[i].vq"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_c06cfb08b88dfbe13be44a69ae2fdc3a7c902d81_2@pointer" {
+"1000300" [label="(Call,test_bit(KEY_FLAG_TRUSTED_ONLY, &keyring->flags))"];
+"1000295" [label="(Call,!prep.trusted && test_bit(KEY_FLAG_TRUSTED_ONLY, &keyring->flags))"];
+"1000295" [label="(Call,!prep.trusted && test_bit(KEY_FLAG_TRUSTED_ONLY, &keyring->flags))"];
+"1000300" [label="(Call,test_bit(KEY_FLAG_TRUSTED_ONLY, &keyring->flags))"];
+"1000294" [label="(ControlStructure,if (!prep.trusted && test_bit(KEY_FLAG_TRUSTED_ONLY, &keyring->flags)))"];
+"1000296" [label="(Call,!prep.trusted)"];
+"1000498" [label="(MethodReturn,key_ref_t)"];
+"1000302" [label="(Call,&keyring->flags)"];
+"1000301" [label="(Identifier,KEY_FLAG_TRUSTED_ONLY)"];
+"1000308" [label="(Identifier,flags)"];
+"1000306" [label="(ControlStructure,goto error_free_prep;)"];
+"1000300" -> "1000295"  [label="AST: "];
+"1000300" -> "1000302"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000302" -> "1000300"  [label="AST: "];
+"1000295" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000498"  [label="DDG: KEY_FLAG_TRUSTED_ONLY"];
+"1000300" -> "1000498"  [label="DDG: &keyring->flags"];
+"1000300" -> "1000295"  [label="DDG: KEY_FLAG_TRUSTED_ONLY"];
+"1000300" -> "1000295"  [label="DDG: &keyring->flags"];
+"1000295" -> "1000294"  [label="AST: "];
+"1000295" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000295"  [label="AST: "];
+"1000306" -> "1000295"  [label="CFG: "];
+"1000308" -> "1000295"  [label="CFG: "];
+"1000295" -> "1000498"  [label="DDG: !prep.trusted"];
+"1000295" -> "1000498"  [label="DDG: test_bit(KEY_FLAG_TRUSTED_ONLY, &keyring->flags)"];
+"1000295" -> "1000498"  [label="DDG: !prep.trusted && test_bit(KEY_FLAG_TRUSTED_ONLY, &keyring->flags)"];
+"1000296" -> "1000295"  [label="DDG: prep.trusted"];
+}

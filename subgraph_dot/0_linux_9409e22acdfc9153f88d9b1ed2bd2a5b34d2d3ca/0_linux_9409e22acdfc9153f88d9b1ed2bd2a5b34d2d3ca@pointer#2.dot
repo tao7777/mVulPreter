@@ -1,0 +1,26 @@
+digraph "0_linux_9409e22acdfc9153f88d9b1ed2bd2a5b34d2d3ca@pointer" {
+"1000441" [label="(Call,old_dir->i_sb->s_type->fs_flags & FS_RENAME_DOES_D_MOVE)"];
+"1000440" [label="(Call,!(old_dir->i_sb->s_type->fs_flags & FS_RENAME_DOES_D_MOVE))"];
+"1000518" [label="(MethodReturn,int)"];
+"1000441" [label="(Call,old_dir->i_sb->s_type->fs_flags & FS_RENAME_DOES_D_MOVE)"];
+"1000449" [label="(Identifier,FS_RENAME_DOES_D_MOVE)"];
+"1000439" [label="(ControlStructure,if (!(old_dir->i_sb->s_type->fs_flags & FS_RENAME_DOES_D_MOVE)))"];
+"1000440" [label="(Call,!(old_dir->i_sb->s_type->fs_flags & FS_RENAME_DOES_D_MOVE))"];
+"1000454" [label="(Identifier,flags)"];
+"1000463" [label="(JumpTarget,out:)"];
+"1000442" [label="(Call,old_dir->i_sb->s_type->fs_flags)"];
+"1000441" -> "1000440"  [label="AST: "];
+"1000441" -> "1000449"  [label="CFG: "];
+"1000442" -> "1000441"  [label="AST: "];
+"1000449" -> "1000441"  [label="AST: "];
+"1000440" -> "1000441"  [label="CFG: "];
+"1000441" -> "1000518"  [label="DDG: old_dir->i_sb->s_type->fs_flags"];
+"1000441" -> "1000518"  [label="DDG: FS_RENAME_DOES_D_MOVE"];
+"1000441" -> "1000440"  [label="DDG: old_dir->i_sb->s_type->fs_flags"];
+"1000441" -> "1000440"  [label="DDG: FS_RENAME_DOES_D_MOVE"];
+"1000440" -> "1000439"  [label="AST: "];
+"1000454" -> "1000440"  [label="CFG: "];
+"1000463" -> "1000440"  [label="CFG: "];
+"1000440" -> "1000518"  [label="DDG: !(old_dir->i_sb->s_type->fs_flags & FS_RENAME_DOES_D_MOVE)"];
+"1000440" -> "1000518"  [label="DDG: old_dir->i_sb->s_type->fs_flags & FS_RENAME_DOES_D_MOVE"];
+}

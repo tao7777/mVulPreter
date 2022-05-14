@@ -1,0 +1,33 @@
+digraph "0_FFmpeg_e43a0a232dbf6d3c161823c2e07c52e76227a1bc_4@array" {
+"1000184" [label="(Call,in->data[plane] && in->linesize[plane])"];
+"1000180" [label="(Call,plane < 4 && in->data[plane] && in->linesize[plane])"];
+"1000185" [label="(Call,in->data[plane])"];
+"1000200" [label="(Identifier,width)"];
+"1000176" [label="(ControlStructure,for (plane = 0; plane < 4 && in->data[plane] && in->linesize[plane]; plane++))"];
+"1000443" [label="(MethodReturn,static int)"];
+"1000180" [label="(Call,plane < 4 && in->data[plane] && in->linesize[plane])"];
+"1000438" [label="(Identifier,in)"];
+"1000184" [label="(Call,in->data[plane] && in->linesize[plane])"];
+"1000190" [label="(Call,in->linesize[plane])"];
+"1000181" [label="(Call,plane < 4)"];
+"1000184" -> "1000180"  [label="AST: "];
+"1000184" -> "1000185"  [label="CFG: "];
+"1000184" -> "1000190"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000190" -> "1000184"  [label="AST: "];
+"1000180" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000443"  [label="DDG: in->data[plane]"];
+"1000184" -> "1000443"  [label="DDG: in->linesize[plane]"];
+"1000184" -> "1000180"  [label="DDG: in->data[plane]"];
+"1000184" -> "1000180"  [label="DDG: in->linesize[plane]"];
+"1000180" -> "1000176"  [label="AST: "];
+"1000180" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000200" -> "1000180"  [label="CFG: "];
+"1000438" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000443"  [label="DDG: in->data[plane] && in->linesize[plane]"];
+"1000180" -> "1000443"  [label="DDG: plane < 4"];
+"1000180" -> "1000443"  [label="DDG: plane < 4 && in->data[plane] && in->linesize[plane]"];
+"1000181" -> "1000180"  [label="DDG: plane"];
+"1000181" -> "1000180"  [label="DDG: 4"];
+}

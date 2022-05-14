@@ -1,0 +1,37 @@
+digraph "0_libmspack_18b6a2cc0b87536015bedd4f7763e6b02d5aa4f3@pointer" {
+"1000578" [label="(Call,lzx->intel_started = 1)"];
+"1001574" [label="(Call,lzx->intel_started && lzx->intel_filesize &&\n\t(lzx->frame <= 32768) && (frame_size > 10))"];
+"1001573" [label="(ControlStructure,if (lzx->intel_started && lzx->intel_filesize &&\n\t(lzx->frame <= 32768) && (frame_size > 10)))"];
+"1001886" [label="(MethodReturn,int)"];
+"1000579" [label="(Call,lzx->intel_started)"];
+"1000584" [label="(Literal,16)"];
+"1001575" [label="(Call,lzx->intel_started)"];
+"1000518" [label="(Block,)"];
+"1000565" [label="(Call,lzx->intel_started = 1)"];
+"1001574" [label="(Call,lzx->intel_started && lzx->intel_filesize &&\n\t(lzx->frame <= 32768) && (frame_size > 10))"];
+"1001578" [label="(Call,lzx->intel_filesize &&\n\t(lzx->frame <= 32768) && (frame_size > 10))"];
+"1001594" [label="(Identifier,data)"];
+"1000582" [label="(Literal,1)"];
+"1001751" [label="(Identifier,lzx)"];
+"1000578" [label="(Call,lzx->intel_started = 1)"];
+"1000578" -> "1000518"  [label="AST: "];
+"1000578" -> "1000582"  [label="CFG: "];
+"1000579" -> "1000578"  [label="AST: "];
+"1000582" -> "1000578"  [label="AST: "];
+"1000584" -> "1000578"  [label="CFG: "];
+"1000578" -> "1001886"  [label="DDG: lzx->intel_started"];
+"1000578" -> "1001574"  [label="DDG: lzx->intel_started"];
+"1001574" -> "1001573"  [label="AST: "];
+"1001574" -> "1001575"  [label="CFG: "];
+"1001574" -> "1001578"  [label="CFG: "];
+"1001575" -> "1001574"  [label="AST: "];
+"1001578" -> "1001574"  [label="AST: "];
+"1001594" -> "1001574"  [label="CFG: "];
+"1001751" -> "1001574"  [label="CFG: "];
+"1001574" -> "1001886"  [label="DDG: lzx->intel_started && lzx->intel_filesize &&\n\t(lzx->frame <= 32768) && (frame_size > 10)"];
+"1001574" -> "1001886"  [label="DDG: lzx->intel_filesize &&\n\t(lzx->frame <= 32768) && (frame_size > 10)"];
+"1001574" -> "1001886"  [label="DDG: lzx->intel_started"];
+"1000565" -> "1001574"  [label="DDG: lzx->intel_started"];
+"1001578" -> "1001574"  [label="DDG: lzx->intel_filesize"];
+"1001578" -> "1001574"  [label="DDG: (lzx->frame <= 32768) && (frame_size > 10)"];
+}

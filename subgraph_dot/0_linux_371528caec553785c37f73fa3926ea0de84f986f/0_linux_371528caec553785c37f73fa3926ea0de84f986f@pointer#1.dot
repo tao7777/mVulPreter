@@ -1,0 +1,30 @@
+digraph "0_linux_371528caec553785c37f73fa3926ea0de84f986f@pointer" {
+"1000273" [label="(Call,thresholds->spare = thresholds->primary)"];
+"1000162" [label="(Call,!thresholds->primary)"];
+"1000162" [label="(Call,!thresholds->primary)"];
+"1000277" [label="(Call,thresholds->primary)"];
+"1000168" [label="(Identifier,usage)"];
+"1000166" [label="(ControlStructure,goto unlock;)"];
+"1000287" [label="(MethodReturn,static void)"];
+"1000280" [label="(Call,synchronize_rcu())"];
+"1000112" [label="(Block,)"];
+"1000273" [label="(Call,thresholds->spare = thresholds->primary)"];
+"1000274" [label="(Call,thresholds->spare)"];
+"1000161" [label="(ControlStructure,if (!thresholds->primary))"];
+"1000163" [label="(Call,thresholds->primary)"];
+"1000273" -> "1000112"  [label="AST: "];
+"1000273" -> "1000277"  [label="CFG: "];
+"1000274" -> "1000273"  [label="AST: "];
+"1000277" -> "1000273"  [label="AST: "];
+"1000280" -> "1000273"  [label="CFG: "];
+"1000273" -> "1000287"  [label="DDG: thresholds->spare"];
+"1000273" -> "1000287"  [label="DDG: thresholds->primary"];
+"1000162" -> "1000273"  [label="DDG: thresholds->primary"];
+"1000162" -> "1000161"  [label="AST: "];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="CFG: "];
+"1000168" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000287"  [label="DDG: thresholds->primary"];
+"1000162" -> "1000287"  [label="DDG: !thresholds->primary"];
+}

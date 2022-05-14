@@ -1,0 +1,35 @@
+digraph "0_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_2@API" {
+"1000232" [label="(Call,assert_spin_locked(&ulp->lock))"];
+"1000212" [label="(Call,spin_lock(&ulp->lock))"];
+"1000245" [label="(Call,spin_unlock(&ulp->lock))"];
+"1000233" [label="(Call,&ulp->lock)"];
+"1000258" [label="(MethodReturn,static struct sem_undo *)"];
+"1000241" [label="(Identifier,sma)"];
+"1000246" [label="(Call,&ulp->lock)"];
+"1000109" [label="(Block,)"];
+"1000212" [label="(Call,spin_lock(&ulp->lock))"];
+"1000245" [label="(Call,spin_unlock(&ulp->lock))"];
+"1000213" [label="(Call,&ulp->lock)"];
+"1000250" [label="(Call,rcu_read_lock())"];
+"1000218" [label="(Identifier,un)"];
+"1000232" [label="(Call,assert_spin_locked(&ulp->lock))"];
+"1000232" -> "1000109"  [label="AST: "];
+"1000232" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000232"  [label="AST: "];
+"1000241" -> "1000232"  [label="CFG: "];
+"1000232" -> "1000258"  [label="DDG: assert_spin_locked(&ulp->lock)"];
+"1000212" -> "1000232"  [label="DDG: &ulp->lock"];
+"1000232" -> "1000245"  [label="DDG: &ulp->lock"];
+"1000212" -> "1000109"  [label="AST: "];
+"1000212" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000218" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000258"  [label="DDG: spin_lock(&ulp->lock)"];
+"1000212" -> "1000245"  [label="DDG: &ulp->lock"];
+"1000245" -> "1000109"  [label="AST: "];
+"1000245" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000245"  [label="AST: "];
+"1000250" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000258"  [label="DDG: spin_unlock(&ulp->lock)"];
+"1000245" -> "1000258"  [label="DDG: &ulp->lock"];
+}

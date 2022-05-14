@@ -1,0 +1,31 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_10@pointer" {
+"1000103" [label="(MethodParameterIn,struct path *path)"];
+"1000172" [label="(Call,nfs4_close_sync(path, state, nd->intent.open.flags))"];
+"1000109" [label="(Call,nd->intent.open.flags & FMODE_EXEC)"];
+"1000104" [label="(MethodParameterIn,struct nfs4_state *state)"];
+"1000105" [label="(Block,)"];
+"1000174" [label="(Identifier,state)"];
+"1000175" [label="(Call,nd->intent.open.flags)"];
+"1000183" [label="(Identifier,ret)"];
+"1000172" [label="(Call,nfs4_close_sync(path, state, nd->intent.open.flags))"];
+"1000121" [label="(Call,nfs_may_open(state->inode,\n \t\t\t\tstate->owner->so_cred,\n \t\t\t\tnd->intent.open.flags))"];
+"1000173" [label="(Identifier,path)"];
+"1000184" [label="(MethodReturn,static int)"];
+"1000103" [label="(MethodParameterIn,struct path *path)"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000184"  [label="DDG: path"];
+"1000103" -> "1000172"  [label="DDG: path"];
+"1000172" -> "1000105"  [label="AST: "];
+"1000172" -> "1000175"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000174" -> "1000172"  [label="AST: "];
+"1000175" -> "1000172"  [label="AST: "];
+"1000183" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000184"  [label="DDG: nfs4_close_sync(path, state, nd->intent.open.flags)"];
+"1000172" -> "1000184"  [label="DDG: path"];
+"1000172" -> "1000184"  [label="DDG: state"];
+"1000172" -> "1000184"  [label="DDG: nd->intent.open.flags"];
+"1000104" -> "1000172"  [label="DDG: state"];
+"1000121" -> "1000172"  [label="DDG: nd->intent.open.flags"];
+"1000109" -> "1000172"  [label="DDG: nd->intent.open.flags"];
+}

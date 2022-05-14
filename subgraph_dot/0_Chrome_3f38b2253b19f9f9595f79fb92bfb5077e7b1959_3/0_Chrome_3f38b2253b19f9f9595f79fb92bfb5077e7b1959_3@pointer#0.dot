@@ -1,0 +1,19 @@
+digraph "0_Chrome_3f38b2253b19f9f9595f79fb92bfb5077e7b1959_3@pointer" {
+"1000123" [label="(Call,CreateHistogram(data))"];
+"1000122" [label="(Return,return CreateHistogram(data);)"];
+"1000124" [label="(Identifier,data)"];
+"1000125" [label="(MethodReturn,std::unique_ptr<HistogramBase>)"];
+"1000122" [label="(Return,return CreateHistogram(data);)"];
+"1000102" [label="(Block,)"];
+"1000123" [label="(Call,CreateHistogram(data))"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000125"  [label="DDG: CreateHistogram(data)"];
+"1000123" -> "1000125"  [label="DDG: data"];
+"1000123" -> "1000122"  [label="DDG: CreateHistogram(data)"];
+"1000122" -> "1000102"  [label="AST: "];
+"1000125" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000125"  [label="DDG: <RET>"];
+}

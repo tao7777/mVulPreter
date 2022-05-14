@@ -1,0 +1,35 @@
+digraph "0_libgd_c18263e0e0769faee96a5d0ee04b750c442783c6@pointer" {
+"1000102" [label="(MethodParameterIn,gdIOCtx * outfile)"];
+"1000277" [label="(Call,gdPutBuf(out, out_size, outfile))"];
+"1000281" [label="(Call,free(out))"];
+"1000280" [label="(Identifier,outfile)"];
+"1000277" [label="(Call,gdPutBuf(out, out_size, outfile))"];
+"1000286" [label="(MethodReturn,void)"];
+"1000104" [label="(Block,)"];
+"1000282" [label="(Identifier,out)"];
+"1000269" [label="(Call,out_size == 0)"];
+"1000102" [label="(MethodParameterIn,gdIOCtx * outfile)"];
+"1000278" [label="(Identifier,out)"];
+"1000281" [label="(Call,free(out))"];
+"1000283" [label="(JumpTarget,freeargb:)"];
+"1000279" [label="(Identifier,out_size)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000286"  [label="DDG: outfile"];
+"1000102" -> "1000277"  [label="DDG: outfile"];
+"1000277" -> "1000104"  [label="AST: "];
+"1000277" -> "1000280"  [label="CFG: "];
+"1000278" -> "1000277"  [label="AST: "];
+"1000279" -> "1000277"  [label="AST: "];
+"1000280" -> "1000277"  [label="AST: "];
+"1000282" -> "1000277"  [label="CFG: "];
+"1000277" -> "1000286"  [label="DDG: out_size"];
+"1000277" -> "1000286"  [label="DDG: outfile"];
+"1000277" -> "1000286"  [label="DDG: gdPutBuf(out, out_size, outfile)"];
+"1000269" -> "1000277"  [label="DDG: out_size"];
+"1000277" -> "1000281"  [label="DDG: out"];
+"1000281" -> "1000104"  [label="AST: "];
+"1000281" -> "1000282"  [label="CFG: "];
+"1000282" -> "1000281"  [label="AST: "];
+"1000283" -> "1000281"  [label="CFG: "];
+"1000281" -> "1000286"  [label="DDG: out"];
+}

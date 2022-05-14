@@ -1,0 +1,33 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_18@API" {
+"1000105" [label="(Call,sizeof(struct ip_options_rcu) + ((optlen + 3) & ~3))"];
+"1000108" [label="(Call,(optlen + 3) & ~3)"];
+"1000101" [label="(MethodParameterIn,const int optlen)"];
+"1000113" [label="(Identifier,GFP_KERNEL)"];
+"1000109" [label="(Call,optlen + 3)"];
+"1000114" [label="(MethodReturn,static struct ip_options_rcu *)"];
+"1000106" [label="(Call,sizeof(struct ip_options_rcu))"];
+"1000112" [label="(Identifier,~3)"];
+"1000105" [label="(Call,sizeof(struct ip_options_rcu) + ((optlen + 3) & ~3))"];
+"1000101" [label="(MethodParameterIn,const int optlen)"];
+"1000104" [label="(Call,kzalloc(sizeof(struct ip_options_rcu) + ((optlen + 3) & ~3),\n \t\t       GFP_KERNEL))"];
+"1000108" [label="(Call,(optlen + 3) & ~3)"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000108"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000108" -> "1000105"  [label="AST: "];
+"1000113" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000114"  [label="DDG: (optlen + 3) & ~3"];
+"1000108" -> "1000105"  [label="DDG: optlen + 3"];
+"1000108" -> "1000105"  [label="DDG: ~3"];
+"1000108" -> "1000112"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="AST: "];
+"1000108" -> "1000114"  [label="DDG: ~3"];
+"1000108" -> "1000114"  [label="DDG: optlen + 3"];
+"1000108" -> "1000104"  [label="DDG: optlen + 3"];
+"1000108" -> "1000104"  [label="DDG: ~3"];
+"1000101" -> "1000108"  [label="DDG: optlen"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000114"  [label="DDG: optlen"];
+"1000101" -> "1000109"  [label="DDG: optlen"];
+}

@@ -1,0 +1,28 @@
+digraph "0_samba_b000da128b5fb519d2d3f2e7fd20e4a25b7dae7d@pointer" {
+"1000120" [label="(Call,*domain_dn = ldb_get_default_basedn(ldb_module_get_ctx(ac->module)))"];
+"1000122" [label="(Call,ldb_get_default_basedn(ldb_module_get_ctx(ac->module)))"];
+"1000123" [label="(Call,ldb_module_get_ctx(ac->module))"];
+"1000129" [label="(Identifier,ldb)"];
+"1000122" [label="(Call,ldb_get_default_basedn(ldb_module_get_ctx(ac->module)))"];
+"1000130" [label="(Call,ldb_module_get_ctx(ac->module))"];
+"1000105" [label="(Block,)"];
+"1000121" [label="(Identifier,domain_dn)"];
+"1000123" [label="(Call,ldb_module_get_ctx(ac->module))"];
+"1000124" [label="(Call,ac->module)"];
+"1000120" [label="(Call,*domain_dn = ldb_get_default_basedn(ldb_module_get_ctx(ac->module)))"];
+"1000144" [label="(MethodReturn,static int)"];
+"1000120" -> "1000105"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000129" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000144"  [label="DDG: domain_dn"];
+"1000120" -> "1000144"  [label="DDG: ldb_get_default_basedn(ldb_module_get_ctx(ac->module))"];
+"1000122" -> "1000120"  [label="DDG: ldb_module_get_ctx(ac->module)"];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000122"  [label="DDG: ac->module"];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000123" -> "1000130"  [label="DDG: ac->module"];
+}

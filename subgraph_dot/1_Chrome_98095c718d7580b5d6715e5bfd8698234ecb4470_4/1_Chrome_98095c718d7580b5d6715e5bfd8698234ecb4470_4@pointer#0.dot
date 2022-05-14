@@ -1,0 +1,31 @@
+digraph "1_Chrome_98095c718d7580b5d6715e5bfd8698234ecb4470_4@pointer" {
+"1000101" [label="(MethodParameterIn,WebGLVertexArrayObject* vertex_array)"];
+"1000106" [label="(Call,!vertex_array)"];
+"1000104" [label="(Call,isContextLost() || !vertex_array)"];
+"1000107" [label="(Identifier,vertex_array)"];
+"1000112" [label="(Call,vertex_array->HasEverBeenBound())"];
+"1000109" [label="(Literal,0)"];
+"1000103" [label="(ControlStructure,if (isContextLost() || !vertex_array))"];
+"1000118" [label="(MethodReturn,GLboolean)"];
+"1000104" [label="(Call,isContextLost() || !vertex_array)"];
+"1000106" [label="(Call,!vertex_array)"];
+"1000101" [label="(MethodParameterIn,WebGLVertexArrayObject* vertex_array)"];
+"1000105" [label="(Call,isContextLost())"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000118"  [label="DDG: vertex_array"];
+"1000101" -> "1000106"  [label="DDG: vertex_array"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000118"  [label="DDG: vertex_array"];
+"1000106" -> "1000104"  [label="DDG: vertex_array"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000112" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000118"  [label="DDG: isContextLost() || !vertex_array"];
+"1000104" -> "1000118"  [label="DDG: isContextLost()"];
+"1000104" -> "1000118"  [label="DDG: !vertex_array"];
+}

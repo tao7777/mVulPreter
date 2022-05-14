@@ -1,0 +1,30 @@
+digraph "0_linux_a430c9166312e1aa3d80bce32374233bdbfeba32@pointer" {
+"1000169" [label="(Call,ctxt->_eip = ctxt->eip)"];
+"1000996" [label="(Call,ctxt->memopp->addr.mem.ea += ctxt->_eip)"];
+"1000133" [label="(Block,)"];
+"1001009" [label="(JumpTarget,done:)"];
+"1001006" [label="(Call,ctxt->_eip)"];
+"1000992" [label="(ControlStructure,if (ctxt->rip_relative))"];
+"1000169" [label="(Call,ctxt->_eip = ctxt->eip)"];
+"1000179" [label="(Identifier,ctxt)"];
+"1000996" [label="(Call,ctxt->memopp->addr.mem.ea += ctxt->_eip)"];
+"1000173" [label="(Call,ctxt->eip)"];
+"1001017" [label="(MethodReturn,int)"];
+"1000997" [label="(Call,ctxt->memopp->addr.mem.ea)"];
+"1000170" [label="(Call,ctxt->_eip)"];
+"1000169" -> "1000133"  [label="AST: "];
+"1000169" -> "1000173"  [label="CFG: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000173" -> "1000169"  [label="AST: "];
+"1000179" -> "1000169"  [label="CFG: "];
+"1000169" -> "1001017"  [label="DDG: ctxt->eip"];
+"1000169" -> "1001017"  [label="DDG: ctxt->_eip"];
+"1000169" -> "1000996"  [label="DDG: ctxt->_eip"];
+"1000996" -> "1000992"  [label="AST: "];
+"1000996" -> "1001006"  [label="CFG: "];
+"1000997" -> "1000996"  [label="AST: "];
+"1001006" -> "1000996"  [label="AST: "];
+"1001009" -> "1000996"  [label="CFG: "];
+"1000996" -> "1001017"  [label="DDG: ctxt->memopp->addr.mem.ea"];
+"1000996" -> "1001017"  [label="DDG: ctxt->_eip"];
+}

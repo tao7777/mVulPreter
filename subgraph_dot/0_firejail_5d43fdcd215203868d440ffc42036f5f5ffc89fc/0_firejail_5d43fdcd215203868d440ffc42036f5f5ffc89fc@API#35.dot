@@ -1,0 +1,38 @@
+digraph "0_firejail_5d43fdcd215203868d440ffc42036f5f5ffc89fc@API" {
+"1000204" [label="(Call,strcmp(command, \"clear\") == 0)"];
+"1000102" [label="(MethodParameterIn,const char *command)"];
+"1000193" [label="(Call,strcmp(command, \"set\"))"];
+"1000332" [label="(Call,strcmp(command, \"set\") == 0)"];
+"1000340" [label="(Call,asprintf(&cmd, \"%s/firejail/fshaper.sh --%s %s %d %d\",\n\t\t\t\tLIBDIR, command, devname, down, up))"];
+"1000204" [label="(Call,strcmp(command, \"clear\") == 0)"];
+"1000372" [label="(Call,asprintf(&cmd, \"%s/firejail/fshaper.sh --%s\", LIBDIR, command))"];
+"1000210" [label="(Identifier,pid)"];
+"1000333" [label="(Call,strcmp(command, \"set\"))"];
+"1000203" [label="(ControlStructure,if (strcmp(command, \"clear\") == 0))"];
+"1000214" [label="(Identifier,devname)"];
+"1000208" [label="(Literal,0)"];
+"1000428" [label="(MethodReturn,void)"];
+"1000192" [label="(Call,strcmp(command, \"set\") == 0)"];
+"1000357" [label="(Call,asprintf(&cmd, \"%s/firejail/fshaper.sh --%s %s\",\n\t\t\t\tLIBDIR, command, devname))"];
+"1000205" [label="(Call,strcmp(command, \"clear\"))"];
+"1000102" [label="(MethodParameterIn,const char *command)"];
+"1000204" -> "1000203"  [label="AST: "];
+"1000204" -> "1000208"  [label="CFG: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000208" -> "1000204"  [label="AST: "];
+"1000210" -> "1000204"  [label="CFG: "];
+"1000214" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000428"  [label="DDG: "];
+"1000204" -> "1000428"  [label="DDG: "];
+"1000102" -> "1000204"  [label="DDG: "];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000428"  [label="DDG: "];
+"1000102" -> "1000192"  [label="DDG: "];
+"1000102" -> "1000193"  [label="DDG: "];
+"1000102" -> "1000205"  [label="DDG: "];
+"1000102" -> "1000332"  [label="DDG: "];
+"1000102" -> "1000333"  [label="DDG: "];
+"1000102" -> "1000340"  [label="DDG: "];
+"1000102" -> "1000357"  [label="DDG: "];
+"1000102" -> "1000372"  [label="DDG: "];
+}

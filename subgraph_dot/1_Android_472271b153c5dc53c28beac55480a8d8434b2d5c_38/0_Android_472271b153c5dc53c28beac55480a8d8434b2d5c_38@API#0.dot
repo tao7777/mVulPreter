@@ -1,0 +1,24 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_38@API" {
+"1000157" [label="(Call,pthread_mutex_lock(&thread_slot_lock))"];
+"1000162" [label="(Call,pthread_mutex_unlock(&thread_slot_lock))"];
+"1000166" [label="(Identifier,TRUE)"];
+"1000157" [label="(Call,pthread_mutex_lock(&thread_slot_lock))"];
+"1000162" [label="(Call,pthread_mutex_unlock(&thread_slot_lock))"];
+"1000158" [label="(Call,&thread_slot_lock)"];
+"1000161" [label="(Identifier,h)"];
+"1000163" [label="(Call,&thread_slot_lock)"];
+"1000149" [label="(Block,)"];
+"1000169" [label="(MethodReturn,int)"];
+"1000157" -> "1000149"  [label="AST: "];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000161" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000169"  [label="DDG: pthread_mutex_lock(&thread_slot_lock)"];
+"1000157" -> "1000162"  [label="DDG: &thread_slot_lock"];
+"1000162" -> "1000149"  [label="AST: "];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000169"  [label="DDG: &thread_slot_lock"];
+"1000162" -> "1000169"  [label="DDG: pthread_mutex_unlock(&thread_slot_lock)"];
+}

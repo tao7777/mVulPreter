@@ -1,0 +1,38 @@
+digraph "0_Chrome_baef1ffd73db183ca50c854e1779ed7f6e5100a8_1@API" {
+"1000213" [label="(Call,unlink(symlink_path.value().c_str()))"];
+"1000212" [label="(Call,HANDLE_EINTR(unlink(symlink_path.value().c_str())))"];
+"1000211" [label="(Call,HANDLE_EINTR(unlink(symlink_path.value().c_str())) == 0)"];
+"1000209" [label="(Call,deleted = HANDLE_EINTR(unlink(symlink_path.value().c_str())) == 0)"];
+"1000210" [label="(Identifier,deleted)"];
+"1000215" [label="(Literal,0)"];
+"1000213" [label="(Call,unlink(symlink_path.value().c_str()))"];
+"1000217" [label="(Identifier,deleted)"];
+"1000214" [label="(Call,symlink_path.value().c_str())"];
+"1000279" [label="(MethodReturn,base::PlatformFileError)"];
+"1000212" [label="(Call,HANDLE_EINTR(unlink(symlink_path.value().c_str())))"];
+"1000211" [label="(Call,HANDLE_EINTR(unlink(symlink_path.value().c_str())) == 0)"];
+"1000209" [label="(Call,deleted = HANDLE_EINTR(unlink(symlink_path.value().c_str())) == 0)"];
+"1000124" [label="(Block,)"];
+"1000213" -> "1000212"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000212" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000279"  [label="DDG: symlink_path.value().c_str()"];
+"1000213" -> "1000212"  [label="DDG: symlink_path.value().c_str()"];
+"1000212" -> "1000211"  [label="AST: "];
+"1000215" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000279"  [label="DDG: unlink(symlink_path.value().c_str())"];
+"1000212" -> "1000211"  [label="DDG: unlink(symlink_path.value().c_str())"];
+"1000211" -> "1000209"  [label="AST: "];
+"1000211" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000211"  [label="AST: "];
+"1000209" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000279"  [label="DDG: HANDLE_EINTR(unlink(symlink_path.value().c_str()))"];
+"1000211" -> "1000209"  [label="DDG: HANDLE_EINTR(unlink(symlink_path.value().c_str()))"];
+"1000211" -> "1000209"  [label="DDG: 0"];
+"1000209" -> "1000124"  [label="AST: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000217" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000279"  [label="DDG: deleted"];
+"1000209" -> "1000279"  [label="DDG: HANDLE_EINTR(unlink(symlink_path.value().c_str())) == 0"];
+}

@@ -1,0 +1,34 @@
+digraph "0_ImageMagick_01843366d6a7b96e22ad7bb67f3df7d9fd4d5d74@pointer" {
+"1000237" [label="(Call,clone_image->columns=image->columns)"];
+"1000153" [label="(Call,image->columns == 0)"];
+"1000152" [label="(Call,(image->columns == 0) || (image->rows == 0))"];
+"1000241" [label="(Call,image->columns)"];
+"1000237" [label="(Call,clone_image->columns=image->columns)"];
+"1000238" [label="(Call,clone_image->columns)"];
+"1000617" [label="(Call,columns == image->columns)"];
+"1000154" [label="(Call,image->columns)"];
+"1000246" [label="(Identifier,clone_image)"];
+"1000844" [label="(MethodReturn,MagickExport Image *)"];
+"1000157" [label="(Literal,0)"];
+"1000108" [label="(Block,)"];
+"1000153" [label="(Call,image->columns == 0)"];
+"1000160" [label="(Identifier,image)"];
+"1000237" -> "1000108"  [label="AST: "];
+"1000237" -> "1000241"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000241" -> "1000237"  [label="AST: "];
+"1000246" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000844"  [label="DDG: clone_image->columns"];
+"1000237" -> "1000844"  [label="DDG: image->columns"];
+"1000153" -> "1000237"  [label="DDG: image->columns"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000157"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000157" -> "1000153"  [label="AST: "];
+"1000160" -> "1000153"  [label="CFG: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000844"  [label="DDG: image->columns"];
+"1000153" -> "1000152"  [label="DDG: image->columns"];
+"1000153" -> "1000152"  [label="DDG: 0"];
+"1000153" -> "1000617"  [label="DDG: image->columns"];
+}

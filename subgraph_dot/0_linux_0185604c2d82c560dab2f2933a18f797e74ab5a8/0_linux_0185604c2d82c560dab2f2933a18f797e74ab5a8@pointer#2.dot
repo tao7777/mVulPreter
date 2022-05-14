@@ -1,0 +1,24 @@
+digraph "0_linux_0185604c2d82c560dab2f2933a18f797e74ab5a8@pointer" {
+"1000102" [label="(MethodParameterIn,struct kvm_pit_state *ps)"];
+"1000116" [label="(Call,memcpy(&kvm->arch.vpit->pit_state, ps, sizeof(struct kvm_pit_state)))"];
+"1000126" [label="(Call,sizeof(struct kvm_pit_state))"];
+"1000117" [label="(Call,&kvm->arch.vpit->pit_state)"];
+"1000125" [label="(Identifier,ps)"];
+"1000103" [label="(Block,)"];
+"1000161" [label="(MethodReturn,static int)"];
+"1000102" [label="(MethodParameterIn,struct kvm_pit_state *ps)"];
+"1000116" [label="(Call,memcpy(&kvm->arch.vpit->pit_state, ps, sizeof(struct kvm_pit_state)))"];
+"1000130" [label="(Identifier,i)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000161"  [label="DDG: ps"];
+"1000102" -> "1000116"  [label="DDG: ps"];
+"1000116" -> "1000103"  [label="AST: "];
+"1000116" -> "1000126"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000125" -> "1000116"  [label="AST: "];
+"1000126" -> "1000116"  [label="AST: "];
+"1000130" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000161"  [label="DDG: &kvm->arch.vpit->pit_state"];
+"1000116" -> "1000161"  [label="DDG: ps"];
+"1000116" -> "1000161"  [label="DDG: memcpy(&kvm->arch.vpit->pit_state, ps, sizeof(struct kvm_pit_state))"];
+}

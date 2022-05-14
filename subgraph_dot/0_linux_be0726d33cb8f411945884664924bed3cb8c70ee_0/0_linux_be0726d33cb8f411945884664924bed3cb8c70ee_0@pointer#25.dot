@@ -1,0 +1,22 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_0@pointer" {
+"1000604" [label="(Call,ext2_max_size(sb->s_blocksize_bits))"];
+"1000600" [label="(Call,sb->s_maxbytes = ext2_max_size(sb->s_blocksize_bits))"];
+"1000610" [label="(Identifier,sb)"];
+"1000605" [label="(Call,sb->s_blocksize_bits)"];
+"1001382" [label="(MethodReturn,static int)"];
+"1000600" [label="(Call,sb->s_maxbytes = ext2_max_size(sb->s_blocksize_bits))"];
+"1000604" [label="(Call,ext2_max_size(sb->s_blocksize_bits))"];
+"1000113" [label="(Block,)"];
+"1000601" [label="(Call,sb->s_maxbytes)"];
+"1000604" -> "1000600"  [label="AST: "];
+"1000604" -> "1000605"  [label="CFG: "];
+"1000605" -> "1000604"  [label="AST: "];
+"1000600" -> "1000604"  [label="CFG: "];
+"1000604" -> "1001382"  [label="DDG: sb->s_blocksize_bits"];
+"1000604" -> "1000600"  [label="DDG: sb->s_blocksize_bits"];
+"1000600" -> "1000113"  [label="AST: "];
+"1000601" -> "1000600"  [label="AST: "];
+"1000610" -> "1000600"  [label="CFG: "];
+"1000600" -> "1001382"  [label="DDG: ext2_max_size(sb->s_blocksize_bits)"];
+"1000600" -> "1001382"  [label="DDG: sb->s_maxbytes"];
+}

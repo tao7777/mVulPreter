@@ -1,0 +1,28 @@
+digraph "0_linux_78c9c4dfbf8c04883941445a195276bb4bb92c76_3@pointer" {
+"1000274" [label="(Call,new_timer->it_pid = get_pid(task_tgid(current)))"];
+"1000278" [label="(Call,get_pid(task_tgid(current)))"];
+"1000279" [label="(Call,task_tgid(current))"];
+"1000361" [label="(MethodReturn,static int)"];
+"1000285" [label="(Identifier,new_timer)"];
+"1000274" [label="(Call,new_timer->it_pid = get_pid(task_tgid(current)))"];
+"1000280" [label="(Identifier,current)"];
+"1000234" [label="(Block,)"];
+"1000279" [label="(Call,task_tgid(current))"];
+"1000275" [label="(Call,new_timer->it_pid)"];
+"1000278" [label="(Call,get_pid(task_tgid(current)))"];
+"1000274" -> "1000234"  [label="AST: "];
+"1000274" -> "1000278"  [label="CFG: "];
+"1000275" -> "1000274"  [label="AST: "];
+"1000278" -> "1000274"  [label="AST: "];
+"1000285" -> "1000274"  [label="CFG: "];
+"1000274" -> "1000361"  [label="DDG: new_timer->it_pid"];
+"1000274" -> "1000361"  [label="DDG: get_pid(task_tgid(current))"];
+"1000278" -> "1000274"  [label="DDG: task_tgid(current)"];
+"1000278" -> "1000279"  [label="CFG: "];
+"1000279" -> "1000278"  [label="AST: "];
+"1000278" -> "1000361"  [label="DDG: task_tgid(current)"];
+"1000279" -> "1000278"  [label="DDG: current"];
+"1000279" -> "1000280"  [label="CFG: "];
+"1000280" -> "1000279"  [label="AST: "];
+"1000279" -> "1000361"  [label="DDG: current"];
+}

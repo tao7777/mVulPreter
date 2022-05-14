@@ -1,0 +1,35 @@
+digraph "0_ImageMagick_14e606db148d6ebcaae20f1e1d6d71903ca4a556@API" {
+"1000540" [label="(Call,4*sizeof(*pixel))"];
+"1000538" [label="(Call,(ssize_t) (4*sizeof(*pixel)))"];
+"1000536" [label="(Call,count != (ssize_t) (4*sizeof(*pixel)))"];
+"1000873" [label="(MethodReturn,static MagickBooleanType)"];
+"1000545" [label="(ControlStructure,break;)"];
+"1000537" [label="(Identifier,count)"];
+"1000538" [label="(Call,(ssize_t) (4*sizeof(*pixel)))"];
+"1000525" [label="(Call,count=WriteBlob(image,4*sizeof(*pixel),pixel))"];
+"1000536" [label="(Call,count != (ssize_t) (4*sizeof(*pixel)))"];
+"1000535" [label="(ControlStructure,if (count != (ssize_t) (4*sizeof(*pixel))))"];
+"1000542" [label="(Call,sizeof(*pixel))"];
+"1000547" [label="(Identifier,i)"];
+"1000540" [label="(Call,4*sizeof(*pixel))"];
+"1000541" [label="(Literal,4)"];
+"1000540" -> "1000538"  [label="AST: "];
+"1000540" -> "1000542"  [label="CFG: "];
+"1000541" -> "1000540"  [label="AST: "];
+"1000542" -> "1000540"  [label="AST: "];
+"1000538" -> "1000540"  [label="CFG: "];
+"1000540" -> "1000538"  [label="DDG: 4"];
+"1000538" -> "1000536"  [label="AST: "];
+"1000539" -> "1000538"  [label="AST: "];
+"1000536" -> "1000538"  [label="CFG: "];
+"1000538" -> "1000873"  [label="DDG: 4*sizeof(*pixel)"];
+"1000538" -> "1000536"  [label="DDG: 4*sizeof(*pixel)"];
+"1000536" -> "1000535"  [label="AST: "];
+"1000537" -> "1000536"  [label="AST: "];
+"1000545" -> "1000536"  [label="CFG: "];
+"1000547" -> "1000536"  [label="CFG: "];
+"1000536" -> "1000873"  [label="DDG: count != (ssize_t) (4*sizeof(*pixel))"];
+"1000536" -> "1000873"  [label="DDG: (ssize_t) (4*sizeof(*pixel))"];
+"1000536" -> "1000873"  [label="DDG: count"];
+"1000525" -> "1000536"  [label="DDG: count"];
+}

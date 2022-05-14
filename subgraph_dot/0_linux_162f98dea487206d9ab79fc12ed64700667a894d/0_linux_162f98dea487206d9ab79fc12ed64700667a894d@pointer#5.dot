@@ -1,0 +1,33 @@
+digraph "0_linux_162f98dea487206d9ab79fc12ed64700667a894d@pointer" {
+"1000343" [label="(Call,usb_get_extra_descriptor(usbinterface->cur_altsetting,\n\t\t\t\t     HID_DEVICE_TYPE, &hid_desc))"];
+"1000342" [label="(Call,usb_get_extra_descriptor(usbinterface->cur_altsetting,\n\t\t\t\t     HID_DEVICE_TYPE, &hid_desc) != 0)"];
+"1000350" [label="(Literal,0)"];
+"1000347" [label="(Identifier,HID_DEVICE_TYPE)"];
+"1000342" [label="(Call,usb_get_extra_descriptor(usbinterface->cur_altsetting,\n\t\t\t\t     HID_DEVICE_TYPE, &hid_desc) != 0)"];
+"1000343" [label="(Call,usb_get_extra_descriptor(usbinterface->cur_altsetting,\n\t\t\t\t     HID_DEVICE_TYPE, &hid_desc))"];
+"1000631" [label="(MethodReturn,static int)"];
+"1000355" [label="(Identifier,usbinterface)"];
+"1000344" [label="(Call,usbinterface->cur_altsetting)"];
+"1000366" [label="(Identifier,usbinterface)"];
+"1000348" [label="(Call,&hid_desc)"];
+"1000341" [label="(ControlStructure,if (usb_get_extra_descriptor(usbinterface->cur_altsetting,\n\t\t\t\t     HID_DEVICE_TYPE, &hid_desc) != 0))"];
+"1000343" -> "1000342"  [label="AST: "];
+"1000343" -> "1000348"  [label="CFG: "];
+"1000344" -> "1000343"  [label="AST: "];
+"1000347" -> "1000343"  [label="AST: "];
+"1000348" -> "1000343"  [label="AST: "];
+"1000350" -> "1000343"  [label="CFG: "];
+"1000343" -> "1000631"  [label="DDG: usbinterface->cur_altsetting"];
+"1000343" -> "1000631"  [label="DDG: &hid_desc"];
+"1000343" -> "1000631"  [label="DDG: HID_DEVICE_TYPE"];
+"1000343" -> "1000342"  [label="DDG: usbinterface->cur_altsetting"];
+"1000343" -> "1000342"  [label="DDG: HID_DEVICE_TYPE"];
+"1000343" -> "1000342"  [label="DDG: &hid_desc"];
+"1000342" -> "1000341"  [label="AST: "];
+"1000342" -> "1000350"  [label="CFG: "];
+"1000350" -> "1000342"  [label="AST: "];
+"1000355" -> "1000342"  [label="CFG: "];
+"1000366" -> "1000342"  [label="CFG: "];
+"1000342" -> "1000631"  [label="DDG: usb_get_extra_descriptor(usbinterface->cur_altsetting,\n\t\t\t\t     HID_DEVICE_TYPE, &hid_desc)"];
+"1000342" -> "1000631"  [label="DDG: usb_get_extra_descriptor(usbinterface->cur_altsetting,\n\t\t\t\t     HID_DEVICE_TYPE, &hid_desc) != 0"];
+}

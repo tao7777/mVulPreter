@@ -1,0 +1,24 @@
+digraph "0_linux_1f461dcdd296eecedaffffc6bae2bfa90bd7eb89@pointer" {
+"1000178" [label="(Call,spin_lock_bh(&pn->all_channels_lock))"];
+"1000205" [label="(Call,spin_unlock_bh(&pn->all_channels_lock))"];
+"1000205" [label="(Call,spin_unlock_bh(&pn->all_channels_lock))"];
+"1000212" [label="(MethodReturn,int)"];
+"1000103" [label="(Block,)"];
+"1000179" [label="(Call,&pn->all_channels_lock)"];
+"1000211" [label="(Literal,0)"];
+"1000206" [label="(Call,&pn->all_channels_lock)"];
+"1000186" [label="(Identifier,pch)"];
+"1000178" [label="(Call,spin_lock_bh(&pn->all_channels_lock))"];
+"1000178" -> "1000103"  [label="AST: "];
+"1000178" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000186" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000212"  [label="DDG: spin_lock_bh(&pn->all_channels_lock)"];
+"1000178" -> "1000205"  [label="DDG: &pn->all_channels_lock"];
+"1000205" -> "1000103"  [label="AST: "];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000211" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000212"  [label="DDG: &pn->all_channels_lock"];
+"1000205" -> "1000212"  [label="DDG: spin_unlock_bh(&pn->all_channels_lock)"];
+}

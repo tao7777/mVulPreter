@@ -1,0 +1,36 @@
+digraph "0_linux_e159332b9af4b04d882dbcfe1bb0117f0a6d4b58@pointer" {
+"1000773" [label="(Call,le64_to_cpu(fe->logicalBlocksRecorded))"];
+"1000772" [label="(Call,le64_to_cpu(fe->logicalBlocksRecorded) <<\n\t\t\t(inode->i_sb->s_blocksize_bits - 9))"];
+"1000768" [label="(Call,inode->i_blocks = le64_to_cpu(fe->logicalBlocksRecorded) <<\n\t\t\t(inode->i_sb->s_blocksize_bits - 9))"];
+"1000774" [label="(Call,fe->logicalBlocksRecorded)"];
+"1000777" [label="(Call,inode->i_sb->s_blocksize_bits - 9)"];
+"1000768" [label="(Call,inode->i_blocks = le64_to_cpu(fe->logicalBlocksRecorded) <<\n\t\t\t(inode->i_sb->s_blocksize_bits - 9))"];
+"1000773" [label="(Call,le64_to_cpu(fe->logicalBlocksRecorded))"];
+"1000767" [label="(Block,)"];
+"1000769" [label="(Call,inode->i_blocks)"];
+"1000772" [label="(Call,le64_to_cpu(fe->logicalBlocksRecorded) <<\n\t\t\t(inode->i_sb->s_blocksize_bits - 9))"];
+"1001226" [label="(MethodReturn,static int)"];
+"1000780" [label="(Identifier,inode)"];
+"1000789" [label="(Identifier,inode)"];
+"1000773" -> "1000772"  [label="AST: "];
+"1000773" -> "1000774"  [label="CFG: "];
+"1000774" -> "1000773"  [label="AST: "];
+"1000780" -> "1000773"  [label="CFG: "];
+"1000773" -> "1001226"  [label="DDG: fe->logicalBlocksRecorded"];
+"1000773" -> "1000772"  [label="DDG: fe->logicalBlocksRecorded"];
+"1000772" -> "1000768"  [label="AST: "];
+"1000772" -> "1000777"  [label="CFG: "];
+"1000777" -> "1000772"  [label="AST: "];
+"1000768" -> "1000772"  [label="CFG: "];
+"1000772" -> "1001226"  [label="DDG: le64_to_cpu(fe->logicalBlocksRecorded)"];
+"1000772" -> "1001226"  [label="DDG: inode->i_sb->s_blocksize_bits - 9"];
+"1000772" -> "1000768"  [label="DDG: le64_to_cpu(fe->logicalBlocksRecorded)"];
+"1000772" -> "1000768"  [label="DDG: inode->i_sb->s_blocksize_bits - 9"];
+"1000777" -> "1000772"  [label="DDG: inode->i_sb->s_blocksize_bits"];
+"1000777" -> "1000772"  [label="DDG: 9"];
+"1000768" -> "1000767"  [label="AST: "];
+"1000769" -> "1000768"  [label="AST: "];
+"1000789" -> "1000768"  [label="CFG: "];
+"1000768" -> "1001226"  [label="DDG: inode->i_blocks"];
+"1000768" -> "1001226"  [label="DDG: le64_to_cpu(fe->logicalBlocksRecorded) <<\n\t\t\t(inode->i_sb->s_blocksize_bits - 9)"];
+}

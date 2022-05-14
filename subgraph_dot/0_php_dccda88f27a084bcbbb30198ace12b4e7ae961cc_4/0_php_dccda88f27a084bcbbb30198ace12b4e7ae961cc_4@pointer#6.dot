@@ -1,0 +1,30 @@
+digraph "0_php_dccda88f27a084bcbbb30198ace12b4e7ae961cc_4@pointer" {
+"1000210" [label="(Call,! parser->skipwhite)"];
+"1000208" [label="(Call,doprint || (! parser->skipwhite))"];
+"1000217" [label="(Identifier,parser)"];
+"1000471" [label="(MethodReturn,void)"];
+"1000210" [label="(Call,! parser->skipwhite)"];
+"1000208" [label="(Call,doprint || (! parser->skipwhite))"];
+"1000470" [label="(Identifier,decoded_value)"];
+"1000209" [label="(Identifier,doprint)"];
+"1000207" [label="(ControlStructure,if (doprint || (! parser->skipwhite)))"];
+"1000199" [label="(Call,doprint = 1)"];
+"1000211" [label="(Call,parser->skipwhite)"];
+"1000164" [label="(Call,doprint = 0)"];
+"1000210" -> "1000208"  [label="AST: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000208" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000471"  [label="DDG: parser->skipwhite"];
+"1000210" -> "1000208"  [label="DDG: parser->skipwhite"];
+"1000208" -> "1000207"  [label="AST: "];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000217" -> "1000208"  [label="CFG: "];
+"1000470" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000471"  [label="DDG: doprint"];
+"1000208" -> "1000471"  [label="DDG: ! parser->skipwhite"];
+"1000208" -> "1000471"  [label="DDG: doprint || (! parser->skipwhite)"];
+"1000199" -> "1000208"  [label="DDG: doprint"];
+"1000164" -> "1000208"  [label="DDG: doprint"];
+}

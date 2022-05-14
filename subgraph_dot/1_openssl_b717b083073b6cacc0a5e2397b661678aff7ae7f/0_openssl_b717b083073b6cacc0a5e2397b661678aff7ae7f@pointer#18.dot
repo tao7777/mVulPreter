@@ -1,0 +1,30 @@
+digraph "0_openssl_b717b083073b6cacc0a5e2397b661678aff7ae7f@pointer" {
+"1000606" [label="(Call,aux && (aux->flags & ASN1_AFLG_BROKEN))"];
+"1000608" [label="(Call,aux->flags & ASN1_AFLG_BROKEN)"];
+"1000609" [label="(Call,aux->flags)"];
+"1000612" [label="(Identifier,ASN1_AFLG_BROKEN)"];
+"1000627" [label="(Identifier,seq_nolen)"];
+"1000873" [label="(MethodReturn,int)"];
+"1000605" [label="(ControlStructure,if (aux && (aux->flags & ASN1_AFLG_BROKEN)))"];
+"1000608" [label="(Call,aux->flags & ASN1_AFLG_BROKEN)"];
+"1000607" [label="(Identifier,aux)"];
+"1000606" [label="(Call,aux && (aux->flags & ASN1_AFLG_BROKEN))"];
+"1000615" [label="(Identifier,len)"];
+"1000606" -> "1000605"  [label="AST: "];
+"1000606" -> "1000607"  [label="CFG: "];
+"1000606" -> "1000608"  [label="CFG: "];
+"1000607" -> "1000606"  [label="AST: "];
+"1000608" -> "1000606"  [label="AST: "];
+"1000615" -> "1000606"  [label="CFG: "];
+"1000627" -> "1000606"  [label="CFG: "];
+"1000606" -> "1000873"  [label="DDG: aux"];
+"1000606" -> "1000873"  [label="DDG: aux->flags & ASN1_AFLG_BROKEN"];
+"1000606" -> "1000873"  [label="DDG: aux && (aux->flags & ASN1_AFLG_BROKEN)"];
+"1000608" -> "1000606"  [label="DDG: aux->flags"];
+"1000608" -> "1000606"  [label="DDG: ASN1_AFLG_BROKEN"];
+"1000608" -> "1000612"  [label="CFG: "];
+"1000609" -> "1000608"  [label="AST: "];
+"1000612" -> "1000608"  [label="AST: "];
+"1000608" -> "1000873"  [label="DDG: aux->flags"];
+"1000608" -> "1000873"  [label="DDG: ASN1_AFLG_BROKEN"];
+}

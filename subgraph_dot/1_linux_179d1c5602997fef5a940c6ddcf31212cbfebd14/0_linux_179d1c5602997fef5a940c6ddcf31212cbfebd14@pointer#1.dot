@@ -1,0 +1,37 @@
+digraph "0_linux_179d1c5602997fef5a940c6ddcf31212cbfebd14@pointer" {
+"1000286" [label="(Call,range_within(rold, rcur))"];
+"1000285" [label="(Call,range_within(rold, rcur) &&\n\t\t       tnum_in(rold->var_off, rcur->var_off))"];
+"1000284" [label="(Return,return range_within(rold, rcur) &&\n\t\t       tnum_in(rold->var_off, rcur->var_off);)"];
+"1000285" [label="(Call,range_within(rold, rcur) &&\n\t\t       tnum_in(rold->var_off, rcur->var_off))"];
+"1000284" [label="(Return,return range_within(rold, rcur) &&\n\t\t       tnum_in(rold->var_off, rcur->var_off);)"];
+"1000288" [label="(Identifier,rcur)"];
+"1000307" [label="(MethodReturn,static bool)"];
+"1000287" [label="(Identifier,rold)"];
+"1000286" [label="(Call,range_within(rold, rcur))"];
+"1000150" [label="(Block,)"];
+"1000289" [label="(Call,tnum_in(rold->var_off, rcur->var_off))"];
+"1000291" [label="(Identifier,rold)"];
+"1000286" -> "1000285"  [label="AST: "];
+"1000286" -> "1000288"  [label="CFG: "];
+"1000287" -> "1000286"  [label="AST: "];
+"1000288" -> "1000286"  [label="AST: "];
+"1000291" -> "1000286"  [label="CFG: "];
+"1000285" -> "1000286"  [label="CFG: "];
+"1000286" -> "1000307"  [label="DDG: rold"];
+"1000286" -> "1000307"  [label="DDG: rcur"];
+"1000286" -> "1000285"  [label="DDG: rold"];
+"1000286" -> "1000285"  [label="DDG: rcur"];
+"1000285" -> "1000284"  [label="AST: "];
+"1000285" -> "1000289"  [label="CFG: "];
+"1000289" -> "1000285"  [label="AST: "];
+"1000284" -> "1000285"  [label="CFG: "];
+"1000285" -> "1000307"  [label="DDG: range_within(rold, rcur)"];
+"1000285" -> "1000307"  [label="DDG: range_within(rold, rcur) &&\n\t\t       tnum_in(rold->var_off, rcur->var_off)"];
+"1000285" -> "1000307"  [label="DDG: tnum_in(rold->var_off, rcur->var_off)"];
+"1000285" -> "1000284"  [label="DDG: range_within(rold, rcur) &&\n\t\t       tnum_in(rold->var_off, rcur->var_off)"];
+"1000289" -> "1000285"  [label="DDG: rold->var_off"];
+"1000289" -> "1000285"  [label="DDG: rcur->var_off"];
+"1000284" -> "1000150"  [label="AST: "];
+"1000307" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000307"  [label="DDG: <RET>"];
+}

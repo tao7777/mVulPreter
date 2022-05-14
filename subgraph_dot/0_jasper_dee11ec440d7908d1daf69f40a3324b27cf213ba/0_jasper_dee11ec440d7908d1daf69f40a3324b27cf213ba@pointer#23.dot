@@ -1,0 +1,26 @@
+digraph "0_jasper_dee11ec440d7908d1daf69f40a3324b27cf213ba@pointer" {
+"1000110" [label="(MethodParameterIn,jpc_dec_tile_t *tile)"];
+"1000125" [label="(Call,jpc_dec_decodecblks(dec, tile))"];
+"1000125" [label="(Call,jpc_dec_decodecblks(dec, tile))"];
+"1000124" [label="(ControlStructure,if (jpc_dec_decodecblks(dec, tile)))"];
+"1000110" [label="(MethodParameterIn,jpc_dec_tile_t *tile)"];
+"1000130" [label="(Literal,\"jpc_dec_decodecblks failed\n\")"];
+"1000127" [label="(Identifier,tile)"];
+"1000109" [label="(MethodParameterIn,jpc_dec_t *dec)"];
+"1000137" [label="(Identifier,compno)"];
+"1000126" [label="(Identifier,dec)"];
+"1000699" [label="(MethodReturn,static int)"];
+"1000110" -> "1000108"  [label="AST: "];
+"1000110" -> "1000699"  [label="DDG: tile"];
+"1000110" -> "1000125"  [label="DDG: tile"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000130" -> "1000125"  [label="CFG: "];
+"1000137" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000699"  [label="DDG: dec"];
+"1000125" -> "1000699"  [label="DDG: jpc_dec_decodecblks(dec, tile)"];
+"1000125" -> "1000699"  [label="DDG: tile"];
+"1000109" -> "1000125"  [label="DDG: dec"];
+}

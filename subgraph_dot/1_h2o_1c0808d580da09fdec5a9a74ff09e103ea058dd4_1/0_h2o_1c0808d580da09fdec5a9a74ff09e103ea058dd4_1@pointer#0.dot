@@ -1,0 +1,34 @@
+digraph "0_h2o_1c0808d580da09fdec5a9a74ff09e103ea058dd4_1@pointer" {
+"1000147" [label="(Call,conn->state < H2O_HTTP2_CONN_STATE_IS_CLOSING)"];
+"1000146" [label="(Call,conn->state < H2O_HTTP2_CONN_STATE_IS_CLOSING && conn->sock->input->size != 0)"];
+"1000246" [label="(Identifier,conn)"];
+"1000148" [label="(Call,conn->state)"];
+"1000145" [label="(ControlStructure,while (conn->state < H2O_HTTP2_CONN_STATE_IS_CLOSING && conn->sock->input->size != 0))"];
+"1000146" [label="(Call,conn->state < H2O_HTTP2_CONN_STATE_IS_CLOSING && conn->sock->input->size != 0)"];
+"1000264" [label="(MethodReturn,static void)"];
+"1000151" [label="(Identifier,H2O_HTTP2_CONN_STATE_IS_CLOSING)"];
+"1000152" [label="(Call,conn->sock->input->size != 0)"];
+"1000147" [label="(Call,conn->state < H2O_HTTP2_CONN_STATE_IS_CLOSING)"];
+"1000156" [label="(Identifier,conn)"];
+"1000165" [label="(Identifier,perform_early_exit)"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000151" -> "1000147"  [label="AST: "];
+"1000156" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000264"  [label="DDG: H2O_HTTP2_CONN_STATE_IS_CLOSING"];
+"1000147" -> "1000264"  [label="DDG: conn->state"];
+"1000147" -> "1000146"  [label="DDG: conn->state"];
+"1000147" -> "1000146"  [label="DDG: H2O_HTTP2_CONN_STATE_IS_CLOSING"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000146"  [label="AST: "];
+"1000165" -> "1000146"  [label="CFG: "];
+"1000246" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000264"  [label="DDG: conn->sock->input->size != 0"];
+"1000146" -> "1000264"  [label="DDG: conn->state < H2O_HTTP2_CONN_STATE_IS_CLOSING && conn->sock->input->size != 0"];
+"1000146" -> "1000264"  [label="DDG: conn->state < H2O_HTTP2_CONN_STATE_IS_CLOSING"];
+"1000152" -> "1000146"  [label="DDG: conn->sock->input->size"];
+"1000152" -> "1000146"  [label="DDG: 0"];
+}

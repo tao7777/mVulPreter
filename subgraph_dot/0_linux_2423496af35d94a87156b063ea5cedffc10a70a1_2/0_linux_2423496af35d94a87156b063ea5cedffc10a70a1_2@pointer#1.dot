@@ -1,0 +1,28 @@
+digraph "0_linux_2423496af35d94a87156b063ea5cedffc10a70a1_2@pointer" {
+"1000169" [label="(Call,dev_net(skb->dev))"];
+"1000168" [label="(Call,ipv6_proxy_select_ident(dev_net(skb->dev), skb))"];
+"1000170" [label="(Call,skb->dev)"];
+"1000175" [label="(Identifier,segs)"];
+"1000173" [label="(Identifier,skb)"];
+"1000162" [label="(ControlStructure,if (!skb_shinfo(skb)->ip6_frag_id))"];
+"1000165" [label="(Call,skb_shinfo(skb))"];
+"1000168" [label="(Call,ipv6_proxy_select_ident(dev_net(skb->dev), skb))"];
+"1000403" [label="(MethodReturn,static struct sk_buff *)"];
+"1000108" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000169" [label="(Call,dev_net(skb->dev))"];
+"1000169" -> "1000168"  [label="AST: "];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000173" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000403"  [label="DDG: skb->dev"];
+"1000169" -> "1000168"  [label="DDG: skb->dev"];
+"1000168" -> "1000162"  [label="AST: "];
+"1000168" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000168"  [label="AST: "];
+"1000175" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000403"  [label="DDG: ipv6_proxy_select_ident(dev_net(skb->dev), skb)"];
+"1000168" -> "1000403"  [label="DDG: dev_net(skb->dev)"];
+"1000168" -> "1000403"  [label="DDG: skb"];
+"1000165" -> "1000168"  [label="DDG: skb"];
+"1000108" -> "1000168"  [label="DDG: skb"];
+}

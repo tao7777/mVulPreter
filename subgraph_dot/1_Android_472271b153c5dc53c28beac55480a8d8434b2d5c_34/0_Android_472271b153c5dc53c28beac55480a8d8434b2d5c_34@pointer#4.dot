@@ -1,0 +1,29 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_34@pointer" {
+"1000192" [label="(Call,!slot->f.connected)"];
+"1000191" [label="(Call,!slot->f.connected || !flush_incoming_que_on_wr_signal(slot))"];
+"1000192" [label="(Call,!slot->f.connected)"];
+"1000198" [label="(Call,!flush_incoming_que_on_wr_signal(slot))"];
+"1000190" [label="(ControlStructure,if (!slot->f.connected || !flush_incoming_que_on_wr_signal(slot)))"];
+"1000246" [label="(MethodReturn,void)"];
+"1000193" [label="(Call,slot->f.connected)"];
+"1000191" [label="(Call,!slot->f.connected || !flush_incoming_que_on_wr_signal(slot))"];
+"1000216" [label="(Identifier,need_close)"];
+"1000203" [label="(Literal,\"%s socket signaled for write while disconnected (or write failure), slot: %d, channel: %d\")"];
+"1000200" [label="(Identifier,slot)"];
+"1000192" -> "1000191"  [label="AST: "];
+"1000192" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000200" -> "1000192"  [label="CFG: "];
+"1000191" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000246"  [label="DDG: slot->f.connected"];
+"1000192" -> "1000191"  [label="DDG: slot->f.connected"];
+"1000191" -> "1000190"  [label="AST: "];
+"1000191" -> "1000198"  [label="CFG: "];
+"1000198" -> "1000191"  [label="AST: "];
+"1000203" -> "1000191"  [label="CFG: "];
+"1000216" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000246"  [label="DDG: !slot->f.connected || !flush_incoming_que_on_wr_signal(slot)"];
+"1000191" -> "1000246"  [label="DDG: !slot->f.connected"];
+"1000191" -> "1000246"  [label="DDG: !flush_incoming_que_on_wr_signal(slot)"];
+"1000198" -> "1000191"  [label="DDG: flush_incoming_que_on_wr_signal(slot)"];
+}

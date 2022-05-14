@@ -1,0 +1,33 @@
+digraph "0_linux_1b53cf9815bb4744958d41f3795d5d5a1d365e2d_1@API" {
+"1000121" [label="(Call,res = fscrypt_initialize(inode->i_sb->s_cop->flags))"];
+"1000123" [label="(Call,fscrypt_initialize(inode->i_sb->s_cop->flags))"];
+"1000133" [label="(Return,return res;)"];
+"1000133" [label="(Return,return res;)"];
+"1000134" [label="(Identifier,res)"];
+"1000419" [label="(MethodReturn,int)"];
+"1000104" [label="(Block,)"];
+"1000122" [label="(Identifier,res)"];
+"1000121" [label="(Call,res = fscrypt_initialize(inode->i_sb->s_cop->flags))"];
+"1000132" [label="(Identifier,res)"];
+"1000123" [label="(Call,fscrypt_initialize(inode->i_sb->s_cop->flags))"];
+"1000124" [label="(Call,inode->i_sb->s_cop->flags)"];
+"1000131" [label="(ControlStructure,if (res))"];
+"1000121" -> "1000104"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000132" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000419"  [label="DDG: fscrypt_initialize(inode->i_sb->s_cop->flags)"];
+"1000121" -> "1000419"  [label="DDG: res"];
+"1000123" -> "1000121"  [label="DDG: inode->i_sb->s_cop->flags"];
+"1000121" -> "1000133"  [label="DDG: res"];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000123" -> "1000419"  [label="DDG: inode->i_sb->s_cop->flags"];
+"1000133" -> "1000131"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000419" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000419"  [label="DDG: <RET>"];
+"1000134" -> "1000133"  [label="DDG: res"];
+}

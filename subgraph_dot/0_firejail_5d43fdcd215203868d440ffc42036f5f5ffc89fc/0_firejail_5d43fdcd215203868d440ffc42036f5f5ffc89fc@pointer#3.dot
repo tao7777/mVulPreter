@@ -1,0 +1,31 @@
+digraph "0_firejail_5d43fdcd215203868d440ffc42036f5f5ffc89fc@pointer" {
+"1000153" [label="(Call,stat(name, &s))"];
+"1000152" [label="(Call,stat(name, &s) == -1)"];
+"1000153" [label="(Call,stat(name, &s))"];
+"1000157" [label="(Call,-1)"];
+"1000169" [label="(Identifier,pid)"];
+"1000155" [label="(Call,&s)"];
+"1000152" [label="(Call,stat(name, &s) == -1)"];
+"1000161" [label="(Identifier,stderr)"];
+"1000151" [label="(ControlStructure,if (stat(name, &s) == -1))"];
+"1000154" [label="(Identifier,name)"];
+"1000428" [label="(MethodReturn,void)"];
+"1000158" [label="(Literal,1)"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000155"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000155" -> "1000153"  [label="AST: "];
+"1000158" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000428"  [label="DDG: &s"];
+"1000153" -> "1000428"  [label="DDG: name"];
+"1000153" -> "1000152"  [label="DDG: name"];
+"1000153" -> "1000152"  [label="DDG: &s"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000152"  [label="AST: "];
+"1000161" -> "1000152"  [label="CFG: "];
+"1000169" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000428"  [label="DDG: stat(name, &s) == -1"];
+"1000152" -> "1000428"  [label="DDG: stat(name, &s)"];
+"1000157" -> "1000152"  [label="DDG: 1"];
+}

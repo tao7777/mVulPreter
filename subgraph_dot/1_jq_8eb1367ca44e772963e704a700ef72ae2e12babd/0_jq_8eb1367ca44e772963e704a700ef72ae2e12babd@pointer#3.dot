@@ -1,0 +1,38 @@
+digraph "0_jq_8eb1367ca44e772963e704a700ef72ae2e12babd@pointer" {
+"1000126" [label="(Call,pattern = \"true\")"];
+"1000180" [label="(Call,p->tokenbuf[i] != pattern[i])"];
+"1000179" [label="(ControlStructure,if (p->tokenbuf[i] != pattern[i]))"];
+"1000181" [label="(Call,p->tokenbuf[i])"];
+"1000126" [label="(Call,pattern = \"true\")"];
+"1000180" [label="(Call,p->tokenbuf[i] != pattern[i])"];
+"1000124" [label="(Block,)"];
+"1000186" [label="(Call,pattern[i])"];
+"1000190" [label="(Literal,\"Invalid literal\")"];
+"1000178" [label="(Identifier,i)"];
+"1000148" [label="(Call,pattern = \"null\")"];
+"1000137" [label="(Call,pattern = \"false\")"];
+"1000127" [label="(Identifier,pattern)"];
+"1000113" [label="(Call,* pattern = 0)"];
+"1000128" [label="(Literal,\"true\")"];
+"1000246" [label="(MethodReturn,static pfunc)"];
+"1000130" [label="(Identifier,plen)"];
+"1000126" -> "1000124"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000246"  [label="DDG: pattern"];
+"1000126" -> "1000180"  [label="DDG: pattern"];
+"1000180" -> "1000179"  [label="AST: "];
+"1000180" -> "1000186"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000186" -> "1000180"  [label="AST: "];
+"1000190" -> "1000180"  [label="CFG: "];
+"1000178" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000246"  [label="DDG: p->tokenbuf[i]"];
+"1000180" -> "1000246"  [label="DDG: pattern[i]"];
+"1000180" -> "1000246"  [label="DDG: p->tokenbuf[i] != pattern[i]"];
+"1000113" -> "1000180"  [label="DDG: pattern"];
+"1000148" -> "1000180"  [label="DDG: pattern"];
+"1000137" -> "1000180"  [label="DDG: pattern"];
+}

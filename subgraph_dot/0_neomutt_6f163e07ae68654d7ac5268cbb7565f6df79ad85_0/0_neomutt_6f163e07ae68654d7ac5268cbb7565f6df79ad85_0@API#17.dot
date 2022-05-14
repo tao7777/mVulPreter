@@ -1,0 +1,37 @@
+digraph "0_neomutt_6f163e07ae68654d7ac5268cbb7565f6df79ad85_0@API" {
+"1000691" [label="(Call,sizeof(buf1) - 2)"];
+"1000683" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000694" [label="(Literal,2)"];
+"1000577" [label="(Call,(long *) send_token.value)"];
+"1000688" [label="(Call,send_token.length)"];
+"1000692" [label="(Call,sizeof(buf1))"];
+"1000696" [label="(Literal,2)"];
+"1000433" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000621" [label="(Call,buf1[0] = GSS_AUTH_P_NONE)"];
+"1000683" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000786" [label="(MethodReturn,enum ImapAuthRes)"];
+"1000312" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000685" [label="(Call,send_token.value)"];
+"1000120" [label="(Block,)"];
+"1000691" [label="(Call,sizeof(buf1) - 2)"];
+"1000684" [label="(Identifier,buf1)"];
+"1000691" -> "1000683"  [label="AST: "];
+"1000691" -> "1000694"  [label="CFG: "];
+"1000692" -> "1000691"  [label="AST: "];
+"1000694" -> "1000691"  [label="AST: "];
+"1000683" -> "1000691"  [label="CFG: "];
+"1000691" -> "1000683"  [label="DDG: 2"];
+"1000683" -> "1000120"  [label="AST: "];
+"1000684" -> "1000683"  [label="AST: "];
+"1000685" -> "1000683"  [label="AST: "];
+"1000688" -> "1000683"  [label="AST: "];
+"1000696" -> "1000683"  [label="CFG: "];
+"1000683" -> "1000786"  [label="DDG: mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2)"];
+"1000683" -> "1000786"  [label="DDG: send_token.value"];
+"1000683" -> "1000786"  [label="DDG: send_token.length"];
+"1000683" -> "1000786"  [label="DDG: sizeof(buf1) - 2"];
+"1000621" -> "1000683"  [label="DDG: buf1[0]"];
+"1000577" -> "1000683"  [label="DDG: send_token.value"];
+"1000433" -> "1000683"  [label="DDG: send_token.length"];
+"1000312" -> "1000683"  [label="DDG: send_token.length"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_29@API" {
+"1000249" [label="(Call,writeaccess ? FAULT_FLAG_WRITE : 0)"];
+"1000113" [label="(MethodParameterIn,unsigned long writeaccess)"];
+"1000245" [label="(Call,handle_mm_fault(mm, vma, address, writeaccess ? FAULT_FLAG_WRITE : 0))"];
+"1000384" [label="(Call,die(\"Oops\", regs, writeaccess))"];
+"1000250" [label="(Identifier,writeaccess)"];
+"1000113" [label="(MethodParameterIn,unsigned long writeaccess)"];
+"1000251" [label="(Identifier,FAULT_FLAG_WRITE)"];
+"1000249" [label="(Call,writeaccess ? FAULT_FLAG_WRITE : 0)"];
+"1000443" [label="(MethodReturn,asmlinkage void __kprobes)"];
+"1000252" [label="(Literal,0)"];
+"1000249" -> "1000245"  [label="AST: "];
+"1000249" -> "1000251"  [label="CFG: "];
+"1000249" -> "1000252"  [label="CFG: "];
+"1000250" -> "1000249"  [label="AST: "];
+"1000251" -> "1000249"  [label="AST: "];
+"1000252" -> "1000249"  [label="AST: "];
+"1000245" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000443"  [label="DDG: FAULT_FLAG_WRITE"];
+"1000249" -> "1000443"  [label="DDG: writeaccess"];
+"1000113" -> "1000249"  [label="DDG: writeaccess"];
+"1000113" -> "1000111"  [label="AST: "];
+"1000113" -> "1000443"  [label="DDG: writeaccess"];
+"1000113" -> "1000245"  [label="DDG: writeaccess"];
+"1000113" -> "1000384"  [label="DDG: writeaccess"];
+}

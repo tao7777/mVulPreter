@@ -1,0 +1,34 @@
+digraph "1_src_3095060f479b86288e31c79ecbc5131a66bcd2f9_7@pointer" {
+"1000145" [label="(Call,comp = &ssh->state->newkeys[mode]->comp)"];
+"1000158" [label="(Call,comp && comp->enabled &&\n\t\t    (r = ssh_packet_init_compression(ssh)) != 0)"];
+"1000158" [label="(Call,comp && comp->enabled &&\n\t\t    (r = ssh_packet_init_compression(ssh)) != 0)"];
+"1000174" [label="(MethodReturn,RET)"];
+"1000157" [label="(ControlStructure,if (comp && comp->enabled &&\n\t\t    (r = ssh_packet_init_compression(ssh)) != 0))"];
+"1000147" [label="(Call,&ssh->state->newkeys[mode]->comp)"];
+"1000146" [label="(Identifier,comp)"];
+"1000145" [label="(Call,comp = &ssh->state->newkeys[mode]->comp)"];
+"1000160" [label="(Call,comp->enabled &&\n\t\t    (r = ssh_packet_init_compression(ssh)) != 0)"];
+"1000132" [label="(Identifier,mode)"];
+"1000133" [label="(Block,)"];
+"1000159" [label="(Identifier,comp)"];
+"1000171" [label="(Identifier,r)"];
+"1000145" -> "1000133"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000159" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000174"  [label="DDG: &ssh->state->newkeys[mode]->comp"];
+"1000145" -> "1000158"  [label="DDG: comp"];
+"1000158" -> "1000157"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000158" -> "1000160"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000160" -> "1000158"  [label="AST: "];
+"1000171" -> "1000158"  [label="CFG: "];
+"1000132" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000174"  [label="DDG: comp->enabled &&\n\t\t    (r = ssh_packet_init_compression(ssh)) != 0"];
+"1000158" -> "1000174"  [label="DDG: comp"];
+"1000158" -> "1000174"  [label="DDG: comp && comp->enabled &&\n\t\t    (r = ssh_packet_init_compression(ssh)) != 0"];
+"1000160" -> "1000158"  [label="DDG: comp->enabled"];
+"1000160" -> "1000158"  [label="DDG: (r = ssh_packet_init_compression(ssh)) != 0"];
+}

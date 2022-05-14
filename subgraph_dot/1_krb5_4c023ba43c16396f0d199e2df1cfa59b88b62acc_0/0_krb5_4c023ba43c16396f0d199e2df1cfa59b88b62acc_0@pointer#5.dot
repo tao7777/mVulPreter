@@ -1,0 +1,31 @@
+digraph "0_krb5_4c023ba43c16396f0d199e2df1cfa59b88b62acc_0@pointer" {
+"1000117" [label="(Call,*hostname = NULL)"];
+"1000217" [label="(Call,free(hostname))"];
+"1000122" [label="(Identifier,srealm)"];
+"1000221" [label="(MethodReturn,RET)"];
+"1000217" [label="(Call,free(hostname))"];
+"1000117" [label="(Call,*hostname = NULL)"];
+"1000119" [label="(Identifier,NULL)"];
+"1000161" [label="(Call,krb5_get_host_realm(kdc_context, hostname, &realms))"];
+"1000220" [label="(Identifier,retval)"];
+"1000144" [label="(Call,hostname == NULL)"];
+"1000107" [label="(Block,)"];
+"1000118" [label="(Identifier,hostname)"];
+"1000154" [label="(Call,strchr(hostname, '.'))"];
+"1000218" [label="(Identifier,hostname)"];
+"1000117" -> "1000107"  [label="AST: "];
+"1000117" -> "1000119"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000119" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000221"  [label="DDG: NULL"];
+"1000117" -> "1000217"  [label="DDG: hostname"];
+"1000217" -> "1000107"  [label="AST: "];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000220" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000221"  [label="DDG: hostname"];
+"1000154" -> "1000217"  [label="DDG: hostname"];
+"1000144" -> "1000217"  [label="DDG: hostname"];
+"1000161" -> "1000217"  [label="DDG: hostname"];
+}

@@ -1,0 +1,22 @@
+digraph "0_linux_da48524eb20662618854bb3df2db01fc65f3070c_0@pointer" {
+"1000136" [label="(Call,info->si_signo = sig)"];
+"1000106" [label="(MethodParameterIn,int sig)"];
+"1000108" [label="(Block,)"];
+"1000106" [label="(MethodParameterIn,int sig)"];
+"1000136" [label="(Call,info->si_signo = sig)"];
+"1000140" [label="(Identifier,sig)"];
+"1000143" [label="(Identifier,tgid)"];
+"1000142" [label="(Call,do_send_specific(tgid, pid, sig, info))"];
+"1000147" [label="(MethodReturn,long)"];
+"1000137" [label="(Call,info->si_signo)"];
+"1000136" -> "1000108"  [label="AST: "];
+"1000136" -> "1000140"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000140" -> "1000136"  [label="AST: "];
+"1000143" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000147"  [label="DDG: info->si_signo"];
+"1000106" -> "1000136"  [label="DDG: sig"];
+"1000106" -> "1000103"  [label="AST: "];
+"1000106" -> "1000147"  [label="DDG: sig"];
+"1000106" -> "1000142"  [label="DDG: sig"];
+}

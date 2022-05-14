@@ -1,0 +1,36 @@
+digraph "0_linux_6b0d6a9b4296fa16a28d10d416db7a770fc03287@pointer" {
+"1000121" [label="(Call,netif_running(br->dev))"];
+"1000120" [label="(Call,!netif_running(br->dev))"];
+"1000119" [label="(Call,!netif_running(br->dev) ||\n\t    (port && port->state == BR_STATE_DISABLED))"];
+"1000118" [label="(ControlStructure,if (!netif_running(br->dev) ||\n\t    (port && port->state == BR_STATE_DISABLED)))"];
+"1000304" [label="(MethodReturn,static int)"];
+"1000121" [label="(Call,netif_running(br->dev))"];
+"1000132" [label="(ControlStructure,goto out;)"];
+"1000126" [label="(Identifier,port)"];
+"1000125" [label="(Call,port && port->state == BR_STATE_DISABLED)"];
+"1000119" [label="(Call,!netif_running(br->dev) ||\n\t    (port && port->state == BR_STATE_DISABLED))"];
+"1000122" [label="(Call,br->dev)"];
+"1000120" [label="(Call,!netif_running(br->dev))"];
+"1000134" [label="(Identifier,mp)"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000304"  [label="DDG: br->dev"];
+"1000121" -> "1000120"  [label="DDG: br->dev"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000126" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000304"  [label="DDG: netif_running(br->dev)"];
+"1000120" -> "1000119"  [label="DDG: netif_running(br->dev)"];
+"1000119" -> "1000118"  [label="AST: "];
+"1000119" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000119"  [label="AST: "];
+"1000132" -> "1000119"  [label="CFG: "];
+"1000134" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000304"  [label="DDG: port && port->state == BR_STATE_DISABLED"];
+"1000119" -> "1000304"  [label="DDG: !netif_running(br->dev)"];
+"1000119" -> "1000304"  [label="DDG: !netif_running(br->dev) ||\n\t    (port && port->state == BR_STATE_DISABLED)"];
+"1000125" -> "1000119"  [label="DDG: port"];
+"1000125" -> "1000119"  [label="DDG: port->state == BR_STATE_DISABLED"];
+}

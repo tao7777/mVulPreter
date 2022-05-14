@@ -1,0 +1,29 @@
+digraph "1_linux_b769f49463711205d57286e64cf535ed4daf59e9_0@pointer" {
+"1000128" [label="(Call,addr + offs)"];
+"1000104" [label="(MethodParameterIn,const char __user *addr)"];
+"1000105" [label="(MethodParameterIn,int offs)"];
+"1000166" [label="(MethodReturn,static int)"];
+"1000129" [label="(Identifier,addr)"];
+"1000104" [label="(MethodParameterIn,const char __user *addr)"];
+"1000130" [label="(Identifier,offs)"];
+"1000105" [label="(MethodParameterIn,int offs)"];
+"1000133" [label="(Identifier,ins)"];
+"1000128" [label="(Call,addr + offs)"];
+"1000120" [label="(Call,copy_from_user(&((char *) &ins)[offs], addr + offs, sizeof(ins) - offs))"];
+"1000131" [label="(Call,sizeof(ins) - offs)"];
+"1000128" -> "1000120"  [label="AST: "];
+"1000128" -> "1000130"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000130" -> "1000128"  [label="AST: "];
+"1000133" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000166"  [label="DDG: addr"];
+"1000104" -> "1000128"  [label="DDG: addr"];
+"1000105" -> "1000128"  [label="DDG: offs"];
+"1000104" -> "1000101"  [label="AST: "];
+"1000104" -> "1000166"  [label="DDG: addr"];
+"1000104" -> "1000120"  [label="DDG: addr"];
+"1000105" -> "1000101"  [label="AST: "];
+"1000105" -> "1000166"  [label="DDG: offs"];
+"1000105" -> "1000120"  [label="DDG: offs"];
+"1000105" -> "1000131"  [label="DDG: offs"];
+}

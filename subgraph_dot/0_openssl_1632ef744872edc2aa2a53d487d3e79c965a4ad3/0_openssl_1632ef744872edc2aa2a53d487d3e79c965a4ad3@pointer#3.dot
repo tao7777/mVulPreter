@@ -1,0 +1,24 @@
+digraph "0_openssl_1632ef744872edc2aa2a53d487d3e79c965a4ad3@pointer" {
+"1000219" [label="(Call,memcpy(&(frag->msg_header), msg_hdr, sizeof(*msg_hdr)))"];
+"1000104" [label="(MethodParameterIn,struct hm_header_st* msg_hdr)"];
+"1000224" [label="(Identifier,msg_hdr)"];
+"1000104" [label="(MethodParameterIn,struct hm_header_st* msg_hdr)"];
+"1000206" [label="(Block,)"];
+"1000281" [label="(MethodReturn,RET)"];
+"1000231" [label="(Identifier,frag)"];
+"1000225" [label="(Call,sizeof(*msg_hdr))"];
+"1000220" [label="(Call,&(frag->msg_header))"];
+"1000219" [label="(Call,memcpy(&(frag->msg_header), msg_hdr, sizeof(*msg_hdr)))"];
+"1000219" -> "1000206"  [label="AST: "];
+"1000219" -> "1000225"  [label="CFG: "];
+"1000220" -> "1000219"  [label="AST: "];
+"1000224" -> "1000219"  [label="AST: "];
+"1000225" -> "1000219"  [label="AST: "];
+"1000231" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000281"  [label="DDG: memcpy(&(frag->msg_header), msg_hdr, sizeof(*msg_hdr))"];
+"1000219" -> "1000281"  [label="DDG: &(frag->msg_header)"];
+"1000219" -> "1000281"  [label="DDG: msg_hdr"];
+"1000104" -> "1000219"  [label="DDG: msg_hdr"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000281"  [label="DDG: msg_hdr"];
+}

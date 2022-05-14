@@ -1,0 +1,24 @@
+digraph "0_linux_9c895160d25a76c21b65bad141b08e8d4f99afef@API" {
+"1000283" [label="(Call,mutex_lock(&kvm->slots_lock))"];
+"1000302" [label="(Call,mutex_unlock(&kvm->slots_lock))"];
+"1000283" [label="(Call,mutex_lock(&kvm->slots_lock))"];
+"1000303" [label="(Call,&kvm->slots_lock)"];
+"1000913" [label="(MethodReturn,long)"];
+"1000302" [label="(Call,mutex_unlock(&kvm->slots_lock))"];
+"1000307" [label="(JumpTarget,create_irqchip_unlock:)"];
+"1000291" [label="(Identifier,kvm)"];
+"1000284" [label="(Call,&kvm->slots_lock)"];
+"1000282" [label="(Block,)"];
+"1000283" -> "1000282"  [label="AST: "];
+"1000283" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000283"  [label="AST: "];
+"1000291" -> "1000283"  [label="CFG: "];
+"1000283" -> "1000913"  [label="DDG: mutex_lock(&kvm->slots_lock)"];
+"1000283" -> "1000302"  [label="DDG: &kvm->slots_lock"];
+"1000302" -> "1000282"  [label="AST: "];
+"1000302" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000302"  [label="AST: "];
+"1000307" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000913"  [label="DDG: &kvm->slots_lock"];
+"1000302" -> "1000913"  [label="DDG: mutex_unlock(&kvm->slots_lock)"];
+}

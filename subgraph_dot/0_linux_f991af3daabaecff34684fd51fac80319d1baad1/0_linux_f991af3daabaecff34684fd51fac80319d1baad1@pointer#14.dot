@@ -1,0 +1,22 @@
+digraph "0_linux_f991af3daabaecff34684fd51fac80319d1baad1@pointer" {
+"1000436" [label="(Call,info->notify_user_ns = get_user_ns(current_user_ns()))"];
+"1000440" [label="(Call,get_user_ns(current_user_ns()))"];
+"1000436" [label="(Call,info->notify_user_ns = get_user_ns(current_user_ns()))"];
+"1000440" [label="(Call,get_user_ns(current_user_ns()))"];
+"1000441" [label="(Call,current_user_ns())"];
+"1000437" [label="(Call,info->notify_user_ns)"];
+"1000362" [label="(Block,)"];
+"1000444" [label="(Identifier,inode)"];
+"1000473" [label="(MethodReturn,static int)"];
+"1000436" -> "1000362"  [label="AST: "];
+"1000436" -> "1000440"  [label="CFG: "];
+"1000437" -> "1000436"  [label="AST: "];
+"1000440" -> "1000436"  [label="AST: "];
+"1000444" -> "1000436"  [label="CFG: "];
+"1000436" -> "1000473"  [label="DDG: info->notify_user_ns"];
+"1000436" -> "1000473"  [label="DDG: get_user_ns(current_user_ns())"];
+"1000440" -> "1000436"  [label="DDG: current_user_ns()"];
+"1000440" -> "1000441"  [label="CFG: "];
+"1000441" -> "1000440"  [label="AST: "];
+"1000440" -> "1000473"  [label="DDG: current_user_ns()"];
+}

@@ -1,0 +1,32 @@
+digraph "0_Chrome_a03d4448faf2c40f4ef444a88cb9aace5b98e8c4_2@API" {
+"1000225" [label="(Call,service && service->is_ready())"];
+"1000221" [label="(Call,* service = profile->GetExtensionService())"];
+"1000224" [label="(ControlStructure,if (service && service->is_ready()))"];
+"1000227" [label="(Call,service->is_ready())"];
+"1000223" [label="(Call,profile->GetExtensionService())"];
+"1000225" [label="(Call,service && service->is_ready())"];
+"1000226" [label="(Identifier,service)"];
+"1000230" [label="(Identifier,profile)"];
+"1000359" [label="(MethodReturn,void)"];
+"1000216" [label="(Block,)"];
+"1000221" [label="(Call,* service = profile->GetExtensionService())"];
+"1000222" [label="(Identifier,service)"];
+"1000237" [label="(Call,extension->id())"];
+"1000225" -> "1000224"  [label="AST: "];
+"1000225" -> "1000226"  [label="CFG: "];
+"1000225" -> "1000227"  [label="CFG: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000227" -> "1000225"  [label="AST: "];
+"1000230" -> "1000225"  [label="CFG: "];
+"1000237" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000359"  [label="DDG: service && service->is_ready()"];
+"1000225" -> "1000359"  [label="DDG: service->is_ready()"];
+"1000225" -> "1000359"  [label="DDG: service"];
+"1000221" -> "1000225"  [label="DDG: service"];
+"1000221" -> "1000216"  [label="AST: "];
+"1000221" -> "1000223"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000223" -> "1000221"  [label="AST: "];
+"1000226" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000359"  [label="DDG: profile->GetExtensionService()"];
+}

@@ -1,0 +1,34 @@
+digraph "0_wildmidi_660b513d99bced8783a4a5984ac2f742c74ebbdd@array" {
+"1000334" [label="(Call,hmi_track_offset[0] = *hmi_data)"];
+"1001264" [label="(Call,free(hmi_track_offset))"];
+"1000342" [label="(Identifier,i)"];
+"1000264" [label="(Call,hmi_track_offset = (uint32_t *)malloc(sizeof(uint32_t) * hmi_track_cnt))"];
+"1001286" [label="(MethodReturn,RET)"];
+"1000338" [label="(Call,*hmi_data)"];
+"1001265" [label="(Identifier,hmi_track_offset)"];
+"1000375" [label="(Call,hmi_track_offset[i] += (*hmi_data++ << 24))"];
+"1001267" [label="(Identifier,hmi_track_header_length)"];
+"1000334" [label="(Call,hmi_track_offset[0] = *hmi_data)"];
+"1001140" [label="(Call,hmi_track_offset[i]++)"];
+"1000335" [label="(Call,hmi_track_offset[0])"];
+"1000104" [label="(Block,)"];
+"1000519" [label="(Call,hmi_track_offset[i]++)"];
+"1001264" [label="(Call,free(hmi_track_offset))"];
+"1000334" -> "1000104"  [label="AST: "];
+"1000334" -> "1000338"  [label="CFG: "];
+"1000335" -> "1000334"  [label="AST: "];
+"1000338" -> "1000334"  [label="AST: "];
+"1000342" -> "1000334"  [label="CFG: "];
+"1000334" -> "1001286"  [label="DDG: *hmi_data"];
+"1000334" -> "1001286"  [label="DDG: hmi_track_offset[0]"];
+"1000334" -> "1001264"  [label="DDG: hmi_track_offset[0]"];
+"1001264" -> "1000104"  [label="AST: "];
+"1001264" -> "1001265"  [label="CFG: "];
+"1001265" -> "1001264"  [label="AST: "];
+"1001267" -> "1001264"  [label="CFG: "];
+"1001264" -> "1001286"  [label="DDG: hmi_track_offset"];
+"1000519" -> "1001264"  [label="DDG: hmi_track_offset[i]"];
+"1001140" -> "1001264"  [label="DDG: hmi_track_offset[i]"];
+"1000264" -> "1001264"  [label="DDG: hmi_track_offset"];
+"1000375" -> "1001264"  [label="DDG: hmi_track_offset[i]"];
+}

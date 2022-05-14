@@ -1,0 +1,24 @@
+digraph "0_linux_84ac7260236a49c79eede91617700174c2c19b0c@pointer" {
+"1000448" [label="(Call,spin_lock_bh(&rb_queue->lock))"];
+"1000479" [label="(Call,spin_unlock_bh(&rb_queue->lock))"];
+"1000587" [label="(MethodReturn,static int)"];
+"1000479" [label="(Call,spin_unlock_bh(&rb_queue->lock))"];
+"1000449" [label="(Call,&rb_queue->lock)"];
+"1000480" [label="(Call,&rb_queue->lock)"];
+"1000448" [label="(Call,spin_lock_bh(&rb_queue->lock))"];
+"1000455" [label="(Identifier,rb)"];
+"1000444" [label="(Block,)"];
+"1000486" [label="(Identifier,rb)"];
+"1000448" -> "1000444"  [label="AST: "];
+"1000448" -> "1000449"  [label="CFG: "];
+"1000449" -> "1000448"  [label="AST: "];
+"1000455" -> "1000448"  [label="CFG: "];
+"1000448" -> "1000587"  [label="DDG: spin_lock_bh(&rb_queue->lock)"];
+"1000448" -> "1000479"  [label="DDG: &rb_queue->lock"];
+"1000479" -> "1000444"  [label="AST: "];
+"1000479" -> "1000480"  [label="CFG: "];
+"1000480" -> "1000479"  [label="AST: "];
+"1000486" -> "1000479"  [label="CFG: "];
+"1000479" -> "1000587"  [label="DDG: spin_unlock_bh(&rb_queue->lock)"];
+"1000479" -> "1000587"  [label="DDG: &rb_queue->lock"];
+}

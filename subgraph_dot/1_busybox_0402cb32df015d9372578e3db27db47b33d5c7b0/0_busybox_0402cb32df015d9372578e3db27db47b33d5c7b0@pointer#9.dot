@@ -1,0 +1,31 @@
+digraph "0_busybox_0402cb32df015d9372578e3db27db47b33d5c7b0@pointer" {
+"1000821" [label="(Call,bd->inbufPos++)"];
+"1000791" [label="(Call,bd->inbufPos == bd->inbufCount)"];
+"1000821" [label="(Call,bd->inbufPos++)"];
+"1000821" [label="(Call,bd->inbufPos++)"];
+"1000792" [label="(Call,bd->inbufPos)"];
+"1000790" [label="(ControlStructure,if (bd->inbufPos == bd->inbufCount))"];
+"1000817" [label="(Call,bd->inbuf[bd->inbufPos++])"];
+"1000800" [label="(Identifier,nextSym)"];
+"1000822" [label="(Call,bd->inbufPos)"];
+"1001173" [label="(MethodReturn,static int)"];
+"1000791" [label="(Call,bd->inbufPos == bd->inbufCount)"];
+"1000795" [label="(Call,bd->inbufCount)"];
+"1000809" [label="(Identifier,bd)"];
+"1000821" -> "1000817"  [label="AST: "];
+"1000821" -> "1000822"  [label="CFG: "];
+"1000822" -> "1000821"  [label="AST: "];
+"1000817" -> "1000821"  [label="CFG: "];
+"1000821" -> "1001173"  [label="DDG: bd->inbufPos"];
+"1000821" -> "1000791"  [label="DDG: bd->inbufPos"];
+"1000791" -> "1000821"  [label="DDG: bd->inbufPos"];
+"1000791" -> "1000790"  [label="AST: "];
+"1000791" -> "1000795"  [label="CFG: "];
+"1000792" -> "1000791"  [label="AST: "];
+"1000795" -> "1000791"  [label="AST: "];
+"1000800" -> "1000791"  [label="CFG: "];
+"1000809" -> "1000791"  [label="CFG: "];
+"1000791" -> "1001173"  [label="DDG: bd->inbufPos"];
+"1000791" -> "1001173"  [label="DDG: bd->inbufPos == bd->inbufCount"];
+"1000791" -> "1001173"  [label="DDG: bd->inbufCount"];
+}

@@ -1,0 +1,28 @@
+digraph "0_linux_eee5cc2702929fd41cce28058dc6d6717f723f87_8@API" {
+"1000112" [label="(Call,file_free(file))"];
+"1000110" [label="(Call,security_file_free(file))"];
+"1000101" [label="(MethodParameterIn,struct file *file)"];
+"1000109" [label="(Block,)"];
+"1000113" [label="(Identifier,file)"];
+"1000101" [label="(MethodParameterIn,struct file *file)"];
+"1000111" [label="(Identifier,file)"];
+"1000112" [label="(Call,file_free(file))"];
+"1000114" [label="(MethodReturn,void)"];
+"1000110" [label="(Call,security_file_free(file))"];
+"1000112" -> "1000109"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000114"  [label="DDG: file_free(file)"];
+"1000112" -> "1000114"  [label="DDG: file"];
+"1000110" -> "1000112"  [label="DDG: file"];
+"1000101" -> "1000112"  [label="DDG: file"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000113" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000114"  [label="DDG: security_file_free(file)"];
+"1000101" -> "1000110"  [label="DDG: file"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000114"  [label="DDG: file"];
+}

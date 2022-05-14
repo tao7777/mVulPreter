@@ -1,0 +1,30 @@
+digraph "1_linux_bf118a342f10dafe44b14451a1392c3254629a1f@pointer" {
+"1000112" [label="(Call,*localpage = NULL)"];
+"1000242" [label="(Call,__free_page(localpage))"];
+"1000114" [label="(Identifier,NULL)"];
+"1000243" [label="(Identifier,localpage)"];
+"1000118" [label="(Identifier,buflen)"];
+"1000112" [label="(Call,*localpage = NULL)"];
+"1000240" [label="(ControlStructure,if (localpage))"];
+"1000105" [label="(Block,)"];
+"1000246" [label="(MethodReturn,static ssize_t)"];
+"1000113" [label="(Identifier,localpage)"];
+"1000245" [label="(Identifier,ret)"];
+"1000242" [label="(Call,__free_page(localpage))"];
+"1000130" [label="(Call,localpage == NULL)"];
+"1000112" -> "1000105"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000118" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000246"  [label="DDG: NULL"];
+"1000112" -> "1000246"  [label="DDG: localpage"];
+"1000112" -> "1000242"  [label="DDG: localpage"];
+"1000242" -> "1000240"  [label="AST: "];
+"1000242" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000242"  [label="AST: "];
+"1000245" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000246"  [label="DDG: __free_page(localpage)"];
+"1000242" -> "1000246"  [label="DDG: localpage"];
+"1000130" -> "1000242"  [label="DDG: localpage"];
+}

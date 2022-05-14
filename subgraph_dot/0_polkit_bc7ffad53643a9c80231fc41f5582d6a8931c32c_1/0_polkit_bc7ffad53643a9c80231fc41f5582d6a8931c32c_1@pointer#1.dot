@@ -1,0 +1,33 @@
+digraph "0_polkit_bc7ffad53643a9c80231fc41f5582d6a8931c32c_1@pointer" {
+"1000108" [label="(Call,ret = NULL)"];
+"1000223" [label="(Return,return ret;)"];
+"1000108" [label="(Call,ret = NULL)"];
+"1000110" [label="(Identifier,NULL)"];
+"1000189" [label="(Block,)"];
+"1000206" [label="(Call,ret = polkit_unix_user_new (uid))"];
+"1000112" [label="(Identifier,matches)"];
+"1000109" [label="(Identifier,ret)"];
+"1000159" [label="(Call,ret = polkit_unix_user_new (subject_uid))"];
+"1000173" [label="(Call,ret = (PolkitIdentity*)polkit_system_bus_name_get_user_sync (POLKIT_SYSTEM_BUS_NAME (subject), NULL, error))"];
+"1000224" [label="(Identifier,ret)"];
+"1000105" [label="(Block,)"];
+"1000223" [label="(Return,return ret;)"];
+"1000232" [label="(MethodReturn,RET)"];
+"1000108" -> "1000105"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000232"  [label="DDG: NULL"];
+"1000108" -> "1000232"  [label="DDG: ret"];
+"1000108" -> "1000223"  [label="DDG: ret"];
+"1000223" -> "1000189"  [label="AST: "];
+"1000223" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000232" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000232"  [label="DDG: <RET>"];
+"1000224" -> "1000223"  [label="DDG: ret"];
+"1000159" -> "1000223"  [label="DDG: ret"];
+"1000206" -> "1000223"  [label="DDG: ret"];
+"1000173" -> "1000223"  [label="DDG: ret"];
+}

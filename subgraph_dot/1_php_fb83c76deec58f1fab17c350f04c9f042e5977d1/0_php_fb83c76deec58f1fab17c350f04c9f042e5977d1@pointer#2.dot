@@ -1,0 +1,28 @@
+digraph "0_php_fb83c76deec58f1fab17c350f04c9f042e5977d1@pointer" {
+"1000106" [label="(Call,*retval = NULL)"];
+"1000143" [label="(Return,return retval;)"];
+"1000143" [label="(Return,return retval;)"];
+"1000128" [label="(Call,retval = estrndup(Z_STRVAL_PP(val), Z_STRLEN_PP(val)))"];
+"1000145" [label="(MethodReturn,PHPAPI char *)"];
+"1000108" [label="(Identifier,NULL)"];
+"1000103" [label="(Block,)"];
+"1000106" [label="(Call,*retval = NULL)"];
+"1000107" [label="(Identifier,retval)"];
+"1000144" [label="(Identifier,retval)"];
+"1000110" [label="(Call,TSRMLS_FETCH())"];
+"1000106" -> "1000103"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000110" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000145"  [label="DDG: NULL"];
+"1000106" -> "1000145"  [label="DDG: retval"];
+"1000106" -> "1000143"  [label="DDG: retval"];
+"1000143" -> "1000103"  [label="AST: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000145" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000145"  [label="DDG: <RET>"];
+"1000144" -> "1000143"  [label="DDG: retval"];
+"1000128" -> "1000143"  [label="DDG: retval"];
+}

@@ -1,0 +1,37 @@
+digraph "0_linux_edbd58be15a957f6a760c4a514cd475217eb97fd@pointer" {
+"1000273" [label="(Call,sk->sk_type == SOCK_DGRAM)"];
+"1000197" [label="(Call,sk->sk_type != SOCK_DGRAM)"];
+"1000297" [label="(Identifier,maclen)"];
+"1000203" [label="(Identifier,skb)"];
+"1000214" [label="(Identifier,skb)"];
+"1000273" [label="(Call,sk->sk_type == SOCK_DGRAM)"];
+"1000196" [label="(ControlStructure,if (sk->sk_type != SOCK_DGRAM))"];
+"1000198" [label="(Call,sk->sk_type)"];
+"1000197" [label="(Call,sk->sk_type != SOCK_DGRAM)"];
+"1000274" [label="(Call,sk->sk_type)"];
+"1000280" [label="(Identifier,macoff)"];
+"1000201" [label="(Identifier,SOCK_DGRAM)"];
+"1001035" [label="(MethodReturn,static int)"];
+"1000277" [label="(Identifier,SOCK_DGRAM)"];
+"1000272" [label="(ControlStructure,if (sk->sk_type == SOCK_DGRAM))"];
+"1000273" -> "1000272"  [label="AST: "];
+"1000273" -> "1000277"  [label="CFG: "];
+"1000274" -> "1000273"  [label="AST: "];
+"1000277" -> "1000273"  [label="AST: "];
+"1000280" -> "1000273"  [label="CFG: "];
+"1000297" -> "1000273"  [label="CFG: "];
+"1000273" -> "1001035"  [label="DDG: sk->sk_type"];
+"1000273" -> "1001035"  [label="DDG: sk->sk_type == SOCK_DGRAM"];
+"1000273" -> "1001035"  [label="DDG: SOCK_DGRAM"];
+"1000197" -> "1000273"  [label="DDG: sk->sk_type"];
+"1000197" -> "1000273"  [label="DDG: SOCK_DGRAM"];
+"1000197" -> "1000196"  [label="AST: "];
+"1000197" -> "1000201"  [label="CFG: "];
+"1000198" -> "1000197"  [label="AST: "];
+"1000201" -> "1000197"  [label="AST: "];
+"1000203" -> "1000197"  [label="CFG: "];
+"1000214" -> "1000197"  [label="CFG: "];
+"1000197" -> "1001035"  [label="DDG: SOCK_DGRAM"];
+"1000197" -> "1001035"  [label="DDG: sk->sk_type != SOCK_DGRAM"];
+"1000197" -> "1001035"  [label="DDG: sk->sk_type"];
+}

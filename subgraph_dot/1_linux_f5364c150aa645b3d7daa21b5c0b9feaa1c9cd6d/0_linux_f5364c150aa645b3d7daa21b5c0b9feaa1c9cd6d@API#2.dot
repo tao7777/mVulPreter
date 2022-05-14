@@ -1,0 +1,27 @@
+digraph "0_linux_f5364c150aa645b3d7daa21b5c0b9feaa1c9cd6d@API" {
+"1000193" [label="(Call,mutex_unlock(&ecryptfs_kthread_ctl.mux))"];
+"1000177" [label="(Call,mutex_lock(&ecryptfs_kthread_ctl.mux))"];
+"1000177" [label="(Call,mutex_lock(&ecryptfs_kthread_ctl.mux))"];
+"1000194" [label="(Call,&ecryptfs_kthread_ctl.mux)"];
+"1000188" [label="(Block,)"];
+"1000208" [label="(Call,mutex_unlock(&ecryptfs_kthread_ctl.mux))"];
+"1000198" [label="(ControlStructure,goto out;)"];
+"1000106" [label="(Block,)"];
+"1000235" [label="(MethodReturn,int)"];
+"1000193" [label="(Call,mutex_unlock(&ecryptfs_kthread_ctl.mux))"];
+"1000185" [label="(Identifier,ecryptfs_kthread_ctl)"];
+"1000178" [label="(Call,&ecryptfs_kthread_ctl.mux)"];
+"1000193" -> "1000188"  [label="AST: "];
+"1000193" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000198" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000235"  [label="DDG: &ecryptfs_kthread_ctl.mux"];
+"1000193" -> "1000235"  [label="DDG: mutex_unlock(&ecryptfs_kthread_ctl.mux)"];
+"1000177" -> "1000193"  [label="DDG: &ecryptfs_kthread_ctl.mux"];
+"1000177" -> "1000106"  [label="AST: "];
+"1000177" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000185" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000235"  [label="DDG: mutex_lock(&ecryptfs_kthread_ctl.mux)"];
+"1000177" -> "1000208"  [label="DDG: &ecryptfs_kthread_ctl.mux"];
+}

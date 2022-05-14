@@ -1,0 +1,37 @@
+digraph "0_linux_9709674e68646cee5a24e3000b3558d25412203a@pointer" {
+"1000104" [label="(Call,*inet = inet_sk(sk))"];
+"1000106" [label="(Call,inet_sk(sk))"];
+"1000101" [label="(MethodParameterIn,struct sock *sk)"];
+"1000105" [label="(Identifier,inet)"];
+"1000101" [label="(MethodParameterIn,struct sock *sk)"];
+"1000111" [label="(Identifier,daddr)"];
+"1000196" [label="(Call,sk_dst_set(sk, dst))"];
+"1000107" [label="(Identifier,sk)"];
+"1000104" [label="(Call,*inet = inet_sk(sk))"];
+"1000162" [label="(Call,sock_net(sk))"];
+"1000121" [label="(Call,__sk_dst_get(sk))"];
+"1000200" [label="(MethodReturn,void)"];
+"1000102" [label="(Block,)"];
+"1000161" [label="(Call,ip_route_output_ports(sock_net(sk), &fl4, sk, daddr,\n \t\t\t\t   inet->inet_saddr, inet->inet_dport,\n \t\t\t\t   inet->inet_sport, sk->sk_protocol,\n \t\t\t\t   RT_CONN_FLAGS(sk), sk->sk_bound_dev_if))"];
+"1000106" [label="(Call,inet_sk(sk))"];
+"1000180" [label="(Call,RT_CONN_FLAGS(sk))"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000111" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000200"  [label="DDG: inet"];
+"1000104" -> "1000200"  [label="DDG: inet_sk(sk)"];
+"1000106" -> "1000104"  [label="DDG: sk"];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000101" -> "1000106"  [label="DDG: sk"];
+"1000106" -> "1000121"  [label="DDG: sk"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000200"  [label="DDG: sk"];
+"1000101" -> "1000121"  [label="DDG: sk"];
+"1000101" -> "1000162"  [label="DDG: sk"];
+"1000101" -> "1000161"  [label="DDG: sk"];
+"1000101" -> "1000180"  [label="DDG: sk"];
+"1000101" -> "1000196"  [label="DDG: sk"];
+}

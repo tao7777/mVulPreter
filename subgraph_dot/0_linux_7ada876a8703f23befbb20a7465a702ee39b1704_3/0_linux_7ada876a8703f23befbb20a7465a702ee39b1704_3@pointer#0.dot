@@ -1,0 +1,27 @@
+digraph "0_linux_7ada876a8703f23befbb20a7465a702ee39b1704_3@pointer" {
+"1000109" [label="(Call,plist_del(&q->list, &q->list.plist))"];
+"1000104" [label="(Call,plist_node_empty(&q->list))"];
+"1000109" [label="(Call,plist_del(&q->list, &q->list.plist))"];
+"1000114" [label="(Call,&q->list.plist)"];
+"1000105" [label="(Call,&q->list)"];
+"1000104" [label="(Call,plist_node_empty(&q->list))"];
+"1000102" [label="(Block,)"];
+"1000103" [label="(Call,WARN_ON(plist_node_empty(&q->list)))"];
+"1000138" [label="(MethodReturn,static void)"];
+"1000123" [label="(Identifier,q)"];
+"1000110" [label="(Call,&q->list)"];
+"1000109" -> "1000102"  [label="AST: "];
+"1000109" -> "1000114"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000114" -> "1000109"  [label="AST: "];
+"1000123" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000138"  [label="DDG: &q->list.plist"];
+"1000109" -> "1000138"  [label="DDG: plist_del(&q->list, &q->list.plist)"];
+"1000109" -> "1000138"  [label="DDG: &q->list"];
+"1000104" -> "1000109"  [label="DDG: &q->list"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000103"  [label="DDG: &q->list"];
+}

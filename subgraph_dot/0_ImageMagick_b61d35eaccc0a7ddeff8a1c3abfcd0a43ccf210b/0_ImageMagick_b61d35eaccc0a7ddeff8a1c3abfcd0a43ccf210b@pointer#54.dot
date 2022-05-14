@@ -1,0 +1,29 @@
+digraph "0_ImageMagick_b61d35eaccc0a7ddeff8a1c3abfcd0a43ccf210b@pointer" {
+"1000474" [label="(Call,image->ticks_per_second=(ssize_t) floor(geometry_info.sigma+0.5))"];
+"1000478" [label="(Call,(ssize_t) floor(geometry_info.sigma+0.5))"];
+"1000480" [label="(Call,floor(geometry_info.sigma+0.5))"];
+"1000468" [label="(ControlStructure,if ((flags & SigmaValue) != 0))"];
+"1000487" [label="(Identifier,MagickTrue)"];
+"1001257" [label="(MethodReturn,MagickExport MagickBooleanType)"];
+"1000478" [label="(Call,(ssize_t) floor(geometry_info.sigma+0.5))"];
+"1000474" [label="(Call,image->ticks_per_second=(ssize_t) floor(geometry_info.sigma+0.5))"];
+"1000481" [label="(Call,geometry_info.sigma+0.5)"];
+"1000480" [label="(Call,floor(geometry_info.sigma+0.5))"];
+"1000475" [label="(Call,image->ticks_per_second)"];
+"1000474" -> "1000468"  [label="AST: "];
+"1000474" -> "1000478"  [label="CFG: "];
+"1000475" -> "1000474"  [label="AST: "];
+"1000478" -> "1000474"  [label="AST: "];
+"1000487" -> "1000474"  [label="CFG: "];
+"1000474" -> "1001257"  [label="DDG: image->ticks_per_second"];
+"1000474" -> "1001257"  [label="DDG: (ssize_t) floor(geometry_info.sigma+0.5)"];
+"1000478" -> "1000474"  [label="DDG: floor(geometry_info.sigma+0.5)"];
+"1000478" -> "1000480"  [label="CFG: "];
+"1000479" -> "1000478"  [label="AST: "];
+"1000480" -> "1000478"  [label="AST: "];
+"1000478" -> "1001257"  [label="DDG: floor(geometry_info.sigma+0.5)"];
+"1000480" -> "1000478"  [label="DDG: geometry_info.sigma+0.5"];
+"1000480" -> "1000481"  [label="CFG: "];
+"1000481" -> "1000480"  [label="AST: "];
+"1000480" -> "1001257"  [label="DDG: geometry_info.sigma+0.5"];
+}

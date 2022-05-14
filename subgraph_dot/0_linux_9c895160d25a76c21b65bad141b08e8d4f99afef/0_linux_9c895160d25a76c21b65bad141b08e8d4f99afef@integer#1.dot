@@ -1,0 +1,29 @@
+digraph "0_linux_9c895160d25a76c21b65bad141b08e8d4f99afef@integer" {
+"1000866" [label="(Call,user_ns.clock = kvm->arch.kvmclock_offset + now_ns)"];
+"1000863" [label="(Call,now_ns = get_kernel_ns())"];
+"1000866" [label="(Call,user_ns.clock = kvm->arch.kvmclock_offset + now_ns)"];
+"1000859" [label="(Block,)"];
+"1000877" [label="(Call,local_irq_enable())"];
+"1000913" [label="(MethodReturn,long)"];
+"1000867" [label="(Call,user_ns.clock)"];
+"1000870" [label="(Call,kvm->arch.kvmclock_offset + now_ns)"];
+"1000864" [label="(Identifier,now_ns)"];
+"1000865" [label="(Call,get_kernel_ns())"];
+"1000868" [label="(Identifier,user_ns)"];
+"1000863" [label="(Call,now_ns = get_kernel_ns())"];
+"1000866" -> "1000859"  [label="AST: "];
+"1000866" -> "1000870"  [label="CFG: "];
+"1000867" -> "1000866"  [label="AST: "];
+"1000870" -> "1000866"  [label="AST: "];
+"1000877" -> "1000866"  [label="CFG: "];
+"1000866" -> "1000913"  [label="DDG: user_ns.clock"];
+"1000866" -> "1000913"  [label="DDG: kvm->arch.kvmclock_offset + now_ns"];
+"1000863" -> "1000866"  [label="DDG: now_ns"];
+"1000863" -> "1000859"  [label="AST: "];
+"1000863" -> "1000865"  [label="CFG: "];
+"1000864" -> "1000863"  [label="AST: "];
+"1000865" -> "1000863"  [label="AST: "];
+"1000868" -> "1000863"  [label="CFG: "];
+"1000863" -> "1000913"  [label="DDG: get_kernel_ns()"];
+"1000863" -> "1000870"  [label="DDG: now_ns"];
+}

@@ -1,0 +1,37 @@
+digraph "0_busybox_0402cb32df015d9372578e3db27db47b33d5c7b0@array" {
+"1001115" [label="(Call,tmp_count = byteCount[tmp_byte])"];
+"1001127" [label="(Call,byteCount[tmp_byte] = tmp_count + 1)"];
+"1001115" [label="(Call,tmp_count = byteCount[tmp_byte])"];
+"1001131" [label="(Call,tmp_count + 1)"];
+"1001115" [label="(Call,tmp_count = byteCount[tmp_byte])"];
+"1001105" [label="(Block,)"];
+"1001117" [label="(Call,byteCount[tmp_byte])"];
+"1001131" [label="(Call,tmp_count + 1)"];
+"1001133" [label="(Literal,1)"];
+"1001132" [label="(Identifier,tmp_count)"];
+"1001122" [label="(Identifier,dbuf)"];
+"1001127" [label="(Call,byteCount[tmp_byte] = tmp_count + 1)"];
+"1001116" [label="(Identifier,tmp_count)"];
+"1001177" [label="(MethodReturn,static int)"];
+"1001128" [label="(Call,byteCount[tmp_byte])"];
+"1001104" [label="(Identifier,i)"];
+"1001115" -> "1001105"  [label="AST: "];
+"1001115" -> "1001117"  [label="CFG: "];
+"1001116" -> "1001115"  [label="AST: "];
+"1001117" -> "1001115"  [label="AST: "];
+"1001122" -> "1001115"  [label="CFG: "];
+"1001127" -> "1001115"  [label="DDG: byteCount[tmp_byte]"];
+"1001115" -> "1001127"  [label="DDG: tmp_count"];
+"1001115" -> "1001131"  [label="DDG: tmp_count"];
+"1001127" -> "1001105"  [label="AST: "];
+"1001127" -> "1001131"  [label="CFG: "];
+"1001128" -> "1001127"  [label="AST: "];
+"1001131" -> "1001127"  [label="AST: "];
+"1001104" -> "1001127"  [label="CFG: "];
+"1001127" -> "1001177"  [label="DDG: byteCount[tmp_byte]"];
+"1001127" -> "1001177"  [label="DDG: tmp_count + 1"];
+"1001131" -> "1001133"  [label="CFG: "];
+"1001132" -> "1001131"  [label="AST: "];
+"1001133" -> "1001131"  [label="AST: "];
+"1001131" -> "1001177"  [label="DDG: tmp_count"];
+}

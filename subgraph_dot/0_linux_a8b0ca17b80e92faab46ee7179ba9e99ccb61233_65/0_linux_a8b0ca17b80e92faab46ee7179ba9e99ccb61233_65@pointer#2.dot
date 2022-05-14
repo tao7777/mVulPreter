@@ -1,0 +1,36 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_65@pointer" {
+"1000147" [label="(Call,event->attr.exclude_idle && current->pid == 0)"];
+"1000153" [label="(Call,current->pid == 0)"];
+"1000146" [label="(Call,!(event->attr.exclude_idle && current->pid == 0))"];
+"1000157" [label="(Literal,0)"];
+"1000154" [label="(Call,current->pid)"];
+"1000145" [label="(ControlStructure,if (!(event->attr.exclude_idle && current->pid == 0)))"];
+"1000168" [label="(Identifier,period)"];
+"1000153" [label="(Call,current->pid == 0)"];
+"1000146" [label="(Call,!(event->attr.exclude_idle && current->pid == 0))"];
+"1000147" [label="(Call,event->attr.exclude_idle && current->pid == 0)"];
+"1000160" [label="(Identifier,event)"];
+"1000183" [label="(MethodReturn,static enum hrtimer_restart)"];
+"1000148" [label="(Call,event->attr.exclude_idle)"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000147" -> "1000153"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000153" -> "1000147"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000183"  [label="DDG: event->attr.exclude_idle"];
+"1000147" -> "1000183"  [label="DDG: current->pid == 0"];
+"1000147" -> "1000146"  [label="DDG: event->attr.exclude_idle"];
+"1000147" -> "1000146"  [label="DDG: current->pid == 0"];
+"1000153" -> "1000147"  [label="DDG: current->pid"];
+"1000153" -> "1000147"  [label="DDG: 0"];
+"1000153" -> "1000157"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000157" -> "1000153"  [label="AST: "];
+"1000153" -> "1000183"  [label="DDG: current->pid"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000160" -> "1000146"  [label="CFG: "];
+"1000168" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000183"  [label="DDG: !(event->attr.exclude_idle && current->pid == 0)"];
+"1000146" -> "1000183"  [label="DDG: event->attr.exclude_idle && current->pid == 0"];
+}

@@ -1,0 +1,38 @@
+digraph "0_Chrome_7614790c80996d32a28218f4d1605b0908e9ddf6@pointer" {
+"1000336" [label="(Call,* parent_extension =\n        registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000338" [label="(Call,registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000341" [label="(Call,parent_extension && parent_extension->is_platform_app())"];
+"1000348" [label="(MethodReturn,RET)"];
+"1000341" [label="(Call,parent_extension && parent_extension->is_platform_app())"];
+"1000343" [label="(Call,parent_extension->is_platform_app())"];
+"1000339" [label="(Call,parent->GetSiteInstance()->GetSiteURL())"];
+"1000336" [label="(Call,* parent_extension =\n        registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000340" [label="(ControlStructure,if (parent_extension && parent_extension->is_platform_app()))"];
+"1000345" [label="(Identifier,content::NavigationThrottle::BLOCK_REQUEST)"];
+"1000337" [label="(Identifier,parent_extension)"];
+"1000342" [label="(Identifier,parent_extension)"];
+"1000347" [label="(Identifier,content::NavigationThrottle::PROCEED)"];
+"1000318" [label="(Block,)"];
+"1000338" [label="(Call,registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000336" -> "1000318"  [label="AST: "];
+"1000336" -> "1000338"  [label="CFG: "];
+"1000337" -> "1000336"  [label="AST: "];
+"1000338" -> "1000336"  [label="AST: "];
+"1000342" -> "1000336"  [label="CFG: "];
+"1000336" -> "1000348"  [label="DDG: registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL())"];
+"1000338" -> "1000336"  [label="DDG: parent->GetSiteInstance()->GetSiteURL()"];
+"1000336" -> "1000341"  [label="DDG: parent_extension"];
+"1000338" -> "1000339"  [label="CFG: "];
+"1000339" -> "1000338"  [label="AST: "];
+"1000338" -> "1000348"  [label="DDG: parent->GetSiteInstance()->GetSiteURL()"];
+"1000341" -> "1000340"  [label="AST: "];
+"1000341" -> "1000342"  [label="CFG: "];
+"1000341" -> "1000343"  [label="CFG: "];
+"1000342" -> "1000341"  [label="AST: "];
+"1000343" -> "1000341"  [label="AST: "];
+"1000345" -> "1000341"  [label="CFG: "];
+"1000347" -> "1000341"  [label="CFG: "];
+"1000341" -> "1000348"  [label="DDG: parent_extension->is_platform_app()"];
+"1000341" -> "1000348"  [label="DDG: parent_extension"];
+"1000341" -> "1000348"  [label="DDG: parent_extension && parent_extension->is_platform_app()"];
+}

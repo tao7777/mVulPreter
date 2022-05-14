@@ -1,0 +1,33 @@
+digraph "1_quassel_a4ca568cdf68cf4a0343eb161518dc8e50cea87d@del" {
+"1000112" [label="(Call,!_ignoreListManager->ctcpMatch(prefix, network()->networkName()))"];
+"1000113" [label="(Call,_ignoreListManager->ctcpMatch(prefix, network()->networkName()))"];
+"1000103" [label="(MethodParameterIn,const QString &prefix)"];
+"1000115" [label="(Call,network()->networkName())"];
+"1000120" [label="(Call,tr(\"Received unknown CTCP %1 by %2\").arg(cmd).arg(prefix))"];
+"1000111" [label="(ControlStructure,if(!_ignoreListManager->ctcpMatch(prefix, network()->networkName())))"];
+"1000114" [label="(Identifier,prefix)"];
+"1000103" [label="(MethodParameterIn,const QString &prefix)"];
+"1000119" [label="(Identifier,str)"];
+"1000113" [label="(Call,_ignoreListManager->ctcpMatch(prefix, network()->networkName()))"];
+"1000112" [label="(Call,!_ignoreListManager->ctcpMatch(prefix, network()->networkName()))"];
+"1000129" [label="(MethodReturn,void)"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000119" -> "1000112"  [label="CFG: "];
+"1000129" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000129"  [label="DDG: !_ignoreListManager->ctcpMatch(prefix, network()->networkName())"];
+"1000112" -> "1000129"  [label="DDG: _ignoreListManager->ctcpMatch(prefix, network()->networkName())"];
+"1000113" -> "1000112"  [label="DDG: prefix"];
+"1000113" -> "1000112"  [label="DDG: network()->networkName()"];
+"1000113" -> "1000115"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="AST: "];
+"1000113" -> "1000129"  [label="DDG: prefix"];
+"1000113" -> "1000129"  [label="DDG: network()->networkName()"];
+"1000103" -> "1000113"  [label="DDG: prefix"];
+"1000113" -> "1000120"  [label="DDG: prefix"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000129"  [label="DDG: prefix"];
+"1000103" -> "1000120"  [label="DDG: prefix"];
+}

@@ -1,0 +1,31 @@
+digraph "0_httpd_6a974059190b8a0c7e499f4ab12fe108127099cb@pointer" {
+"1000326" [label="(Call,r->method[0] == 'H')"];
+"1000320" [label="(Call,r->method_number == M_GET && r->method[0] == 'H')"];
+"1000635" [label="(MethodReturn,static int)"];
+"1000340" [label="(Identifier,r)"];
+"1000336" [label="(Identifier,r)"];
+"1000321" [label="(Call,r->method_number == M_GET)"];
+"1000332" [label="(Literal,'H')"];
+"1000326" [label="(Call,r->method[0] == 'H')"];
+"1000327" [label="(Call,r->method[0])"];
+"1000319" [label="(ControlStructure,if (r->method_number == M_GET && r->method[0] == 'H'))"];
+"1000320" [label="(Call,r->method_number == M_GET && r->method[0] == 'H')"];
+"1000326" -> "1000320"  [label="AST: "];
+"1000326" -> "1000332"  [label="CFG: "];
+"1000327" -> "1000326"  [label="AST: "];
+"1000332" -> "1000326"  [label="AST: "];
+"1000320" -> "1000326"  [label="CFG: "];
+"1000326" -> "1000635"  [label="DDG: r->method[0]"];
+"1000326" -> "1000320"  [label="DDG: r->method[0]"];
+"1000326" -> "1000320"  [label="DDG: 'H'"];
+"1000320" -> "1000319"  [label="AST: "];
+"1000320" -> "1000321"  [label="CFG: "];
+"1000321" -> "1000320"  [label="AST: "];
+"1000336" -> "1000320"  [label="CFG: "];
+"1000340" -> "1000320"  [label="CFG: "];
+"1000320" -> "1000635"  [label="DDG: r->method[0] == 'H'"];
+"1000320" -> "1000635"  [label="DDG: r->method_number == M_GET"];
+"1000320" -> "1000635"  [label="DDG: r->method_number == M_GET && r->method[0] == 'H'"];
+"1000321" -> "1000320"  [label="DDG: r->method_number"];
+"1000321" -> "1000320"  [label="DDG: M_GET"];
+}

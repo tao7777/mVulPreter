@@ -1,0 +1,34 @@
+digraph "0_libpcap_87d6bef033062f969e70fa40c43dfd945d5a20ab@pointer" {
+"1000406" [label="(Call,ps->max_blocksize = INITIAL_MAX_BLOCKSIZE)"];
+"1000662" [label="(Call,MAX_BLOCKSIZE_FOR_SNAPLEN(max_snaplen_for_dlt(p->linktype)) > ps->max_blocksize)"];
+"1000407" [label="(Call,ps->max_blocksize)"];
+"1000709" [label="(MethodReturn,RET)"];
+"1000406" [label="(Call,ps->max_blocksize = INITIAL_MAX_BLOCKSIZE)"];
+"1000661" [label="(ControlStructure,if (MAX_BLOCKSIZE_FOR_SNAPLEN(max_snaplen_for_dlt(p->linktype)) > ps->max_blocksize))"];
+"1000673" [label="(Identifier,ps)"];
+"1000410" [label="(Identifier,INITIAL_MAX_BLOCKSIZE)"];
+"1000412" [label="(Identifier,bhdrp)"];
+"1000663" [label="(Call,MAX_BLOCKSIZE_FOR_SNAPLEN(max_snaplen_for_dlt(p->linktype)))"];
+"1000138" [label="(Block,)"];
+"1000682" [label="(Identifier,p)"];
+"1000662" [label="(Call,MAX_BLOCKSIZE_FOR_SNAPLEN(max_snaplen_for_dlt(p->linktype)) > ps->max_blocksize)"];
+"1000668" [label="(Call,ps->max_blocksize)"];
+"1000406" -> "1000138"  [label="AST: "];
+"1000406" -> "1000410"  [label="CFG: "];
+"1000407" -> "1000406"  [label="AST: "];
+"1000410" -> "1000406"  [label="AST: "];
+"1000412" -> "1000406"  [label="CFG: "];
+"1000406" -> "1000709"  [label="DDG: ps->max_blocksize"];
+"1000406" -> "1000709"  [label="DDG: INITIAL_MAX_BLOCKSIZE"];
+"1000406" -> "1000662"  [label="DDG: ps->max_blocksize"];
+"1000662" -> "1000661"  [label="AST: "];
+"1000662" -> "1000668"  [label="CFG: "];
+"1000663" -> "1000662"  [label="AST: "];
+"1000668" -> "1000662"  [label="AST: "];
+"1000673" -> "1000662"  [label="CFG: "];
+"1000682" -> "1000662"  [label="CFG: "];
+"1000662" -> "1000709"  [label="DDG: MAX_BLOCKSIZE_FOR_SNAPLEN(max_snaplen_for_dlt(p->linktype))"];
+"1000662" -> "1000709"  [label="DDG: ps->max_blocksize"];
+"1000662" -> "1000709"  [label="DDG: MAX_BLOCKSIZE_FOR_SNAPLEN(max_snaplen_for_dlt(p->linktype)) > ps->max_blocksize"];
+"1000663" -> "1000662"  [label="DDG: max_snaplen_for_dlt(p->linktype)"];
+}

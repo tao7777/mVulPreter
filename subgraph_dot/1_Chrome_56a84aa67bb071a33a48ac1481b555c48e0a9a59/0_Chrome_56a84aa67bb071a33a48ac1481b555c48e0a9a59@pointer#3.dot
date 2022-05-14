@@ -1,0 +1,28 @@
+digraph "0_Chrome_56a84aa67bb071a33a48ac1481b555c48e0a9a59@pointer" {
+"1000108" [label="(Call,* nav_entry = nav_controller->GetVisibleEntry())"];
+"1000112" [label="(Call,!nav_entry)"];
+"1000108" [label="(Call,* nav_entry = nav_controller->GetVisibleEntry())"];
+"1000110" [label="(Call,nav_controller->GetVisibleEntry())"];
+"1000112" [label="(Call,!nav_entry)"];
+"1000109" [label="(Identifier,nav_entry)"];
+"1000111" [label="(ControlStructure,if (!nav_entry))"];
+"1000117" [label="(Identifier,url)"];
+"1000102" [label="(Block,)"];
+"1000113" [label="(Identifier,nav_entry)"];
+"1000193" [label="(MethodReturn,void)"];
+"1000114" [label="(Return,return;)"];
+"1000108" -> "1000102"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000113" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000193"  [label="DDG: nav_controller->GetVisibleEntry()"];
+"1000108" -> "1000112"  [label="DDG: nav_entry"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="CFG: "];
+"1000117" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000193"  [label="DDG: !nav_entry"];
+"1000112" -> "1000193"  [label="DDG: nav_entry"];
+}

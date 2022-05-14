@@ -1,0 +1,28 @@
+digraph "0_linux_c2183d1e9b3f313dd8ba2b1b0197c8d9fb86a7ae@array" {
+"1000199" [label="(Call,buf[outarg.namelen] = 0)"];
+"1000246" [label="(Call,kfree(buf))"];
+"1000186" [label="(Call,fuse_copy_one(cs, buf, outarg.namelen + 1))"];
+"1000208" [label="(Identifier,name)"];
+"1000249" [label="(Identifier,err)"];
+"1000257" [label="(MethodReturn,static int)"];
+"1000200" [label="(Call,buf[outarg.namelen])"];
+"1000205" [label="(Literal,0)"];
+"1000247" [label="(Identifier,buf)"];
+"1000246" [label="(Call,kfree(buf))"];
+"1000104" [label="(Block,)"];
+"1000199" [label="(Call,buf[outarg.namelen] = 0)"];
+"1000199" -> "1000104"  [label="AST: "];
+"1000199" -> "1000205"  [label="CFG: "];
+"1000200" -> "1000199"  [label="AST: "];
+"1000205" -> "1000199"  [label="AST: "];
+"1000208" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000257"  [label="DDG: buf[outarg.namelen]"];
+"1000199" -> "1000246"  [label="DDG: buf[outarg.namelen]"];
+"1000246" -> "1000104"  [label="AST: "];
+"1000246" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000246"  [label="AST: "];
+"1000249" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000257"  [label="DDG: kfree(buf)"];
+"1000246" -> "1000257"  [label="DDG: buf"];
+"1000186" -> "1000246"  [label="DDG: buf"];
+}

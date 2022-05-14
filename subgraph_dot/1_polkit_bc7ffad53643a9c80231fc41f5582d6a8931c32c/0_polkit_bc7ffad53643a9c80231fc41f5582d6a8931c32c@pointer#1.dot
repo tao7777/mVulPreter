@@ -1,0 +1,21 @@
+digraph "0_polkit_bc7ffad53643a9c80231fc41f5582d6a8931c32c@pointer" {
+"1000105" [label="(MethodParameterIn,PolkitAuthorizationResult            *result)"];
+"1000123" [label="(Call,polkit_authorization_result_get_is_authorized (result))"];
+"1000123" [label="(Call,polkit_authorization_result_get_is_authorized (result))"];
+"1000122" [label="(ControlStructure,if (polkit_authorization_result_get_is_authorized (result)))"];
+"1000105" [label="(MethodParameterIn,PolkitAuthorizationResult            *result)"];
+"1000208" [label="(MethodReturn,RET)"];
+"1000129" [label="(Identifier,user_of_subject)"];
+"1000126" [label="(Identifier,log_result_str)"];
+"1000124" [label="(Identifier,result)"];
+"1000105" -> "1000100"  [label="AST: "];
+"1000105" -> "1000208"  [label="DDG: result"];
+"1000105" -> "1000123"  [label="DDG: result"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000126" -> "1000123"  [label="CFG: "];
+"1000129" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000208"  [label="DDG: polkit_authorization_result_get_is_authorized (result)"];
+"1000123" -> "1000208"  [label="DDG: result"];
+}

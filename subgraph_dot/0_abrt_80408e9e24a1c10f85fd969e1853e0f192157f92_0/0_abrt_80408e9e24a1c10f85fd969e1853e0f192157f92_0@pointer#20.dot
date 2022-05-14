@@ -1,0 +1,37 @@
+digraph "0_abrt_80408e9e24a1c10f85fd969e1853e0f192157f92_0@pointer" {
+"1000637" [label="(Call,strcmp(rootdir, \"/\"))"];
+"1000626" [label="(Call,*rootdir = get_rootdir(pid))"];
+"1000628" [label="(Call,get_rootdir(pid))"];
+"1000639" [label="(Literal,\"/\")"];
+"1000626" [label="(Call,*rootdir = get_rootdir(pid))"];
+"1000628" [label="(Call,get_rootdir(pid))"];
+"1000640" [label="(Literal,0)"];
+"1000631" [label="(Identifier,dd)"];
+"1000629" [label="(Identifier,pid)"];
+"1000636" [label="(Call,strcmp(rootdir, \"/\") != 0)"];
+"1000627" [label="(Identifier,rootdir)"];
+"1000638" [label="(Identifier,rootdir)"];
+"1000650" [label="(Call,(long)pid)"];
+"1000624" [label="(Block,)"];
+"1000637" [label="(Call,strcmp(rootdir, \"/\"))"];
+"1000634" [label="(Call,rootdir && strcmp(rootdir, \"/\") != 0)"];
+"1001180" [label="(MethodReturn,int)"];
+"1000637" -> "1000636"  [label="AST: "];
+"1000637" -> "1000639"  [label="CFG: "];
+"1000638" -> "1000637"  [label="AST: "];
+"1000639" -> "1000637"  [label="AST: "];
+"1000640" -> "1000637"  [label="CFG: "];
+"1000626" -> "1000637"  [label="DDG: rootdir"];
+"1000626" -> "1000624"  [label="AST: "];
+"1000626" -> "1000628"  [label="CFG: "];
+"1000627" -> "1000626"  [label="AST: "];
+"1000628" -> "1000626"  [label="AST: "];
+"1000631" -> "1000626"  [label="CFG: "];
+"1000626" -> "1001180"  [label="DDG: get_rootdir(pid)"];
+"1000628" -> "1000626"  [label="DDG: pid"];
+"1000626" -> "1000634"  [label="DDG: rootdir"];
+"1000626" -> "1000636"  [label="DDG: rootdir"];
+"1000628" -> "1000629"  [label="CFG: "];
+"1000629" -> "1000628"  [label="AST: "];
+"1000628" -> "1000650"  [label="DDG: pid"];
+}

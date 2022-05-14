@@ -1,0 +1,26 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_29@pointer" {
+"1000338" [label="(Call,spin_unlock_bh(&call->lock))"];
+"1000333" [label="(Call,spin_lock_bh(&call->lock))"];
+"1000338" [label="(Call,spin_unlock_bh(&call->lock))"];
+"1000197" [label="(Block,)"];
+"1000338" [label="(Call,spin_unlock_bh(&call->lock))"];
+"1000341" [label="(Identifier,call)"];
+"1000333" [label="(Call,spin_lock_bh(&call->lock))"];
+"1000345" [label="(Identifier,RXRPC_CALL_RELEASED)"];
+"1000339" [label="(Call,&call->lock)"];
+"1000334" [label="(Call,&call->lock)"];
+"1001010" [label="(MethodReturn,int)"];
+"1000338" -> "1000197"  [label="AST: "];
+"1000338" -> "1000339"  [label="CFG: "];
+"1000339" -> "1000338"  [label="AST: "];
+"1000345" -> "1000338"  [label="CFG: "];
+"1000338" -> "1001010"  [label="DDG: &call->lock"];
+"1000338" -> "1001010"  [label="DDG: spin_unlock_bh(&call->lock)"];
+"1000338" -> "1000333"  [label="DDG: &call->lock"];
+"1000333" -> "1000338"  [label="DDG: &call->lock"];
+"1000333" -> "1000197"  [label="AST: "];
+"1000333" -> "1000334"  [label="CFG: "];
+"1000334" -> "1000333"  [label="AST: "];
+"1000341" -> "1000333"  [label="CFG: "];
+"1000333" -> "1001010"  [label="DDG: spin_lock_bh(&call->lock)"];
+}

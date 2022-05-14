@@ -1,0 +1,24 @@
+digraph "0_linux_0185604c2d82c560dab2f2933a18f797e74ab5a8@API" {
+"1000138" [label="(Call,mutex_unlock(&kvm->arch.vpit->pit_state.lock))"];
+"1000104" [label="(Call,mutex_lock(&kvm->arch.vpit->pit_state.lock))"];
+"1000120" [label="(Identifier,kvm)"];
+"1000150" [label="(Literal,0)"];
+"1000139" [label="(Call,&kvm->arch.vpit->pit_state.lock)"];
+"1000103" [label="(Block,)"];
+"1000138" [label="(Call,mutex_unlock(&kvm->arch.vpit->pit_state.lock))"];
+"1000104" [label="(Call,mutex_lock(&kvm->arch.vpit->pit_state.lock))"];
+"1000105" [label="(Call,&kvm->arch.vpit->pit_state.lock)"];
+"1000151" [label="(MethodReturn,static int)"];
+"1000138" -> "1000103"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000150" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000151"  [label="DDG: &kvm->arch.vpit->pit_state.lock"];
+"1000138" -> "1000151"  [label="DDG: mutex_unlock(&kvm->arch.vpit->pit_state.lock)"];
+"1000104" -> "1000138"  [label="DDG: &kvm->arch.vpit->pit_state.lock"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000120" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000151"  [label="DDG: mutex_lock(&kvm->arch.vpit->pit_state.lock)"];
+}

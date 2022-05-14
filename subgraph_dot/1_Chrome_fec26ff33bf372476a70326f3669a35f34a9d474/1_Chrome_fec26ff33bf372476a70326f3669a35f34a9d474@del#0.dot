@@ -1,0 +1,21 @@
+digraph "1_Chrome_fec26ff33bf372476a70326f3669a35f34a9d474@del" {
+"1000111" [label="(Call,UpdateOrAddToOrigins(resource_load_info.url, resource_load_info.network_info))"];
+"1000101" [label="(MethodParameterIn,const content::mojom::ResourceLoadInfo& resource_load_info)"];
+"1000115" [label="(Call,resource_load_info.network_info)"];
+"1000102" [label="(Block,)"];
+"1000111" [label="(Call,UpdateOrAddToOrigins(resource_load_info.url, resource_load_info.network_info))"];
+"1000118" [label="(MethodReturn,void)"];
+"1000112" [label="(Call,resource_load_info.url)"];
+"1000101" [label="(MethodParameterIn,const content::mojom::ResourceLoadInfo& resource_load_info)"];
+"1000111" -> "1000102"  [label="AST: "];
+"1000111" -> "1000115"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000115" -> "1000111"  [label="AST: "];
+"1000118" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000118"  [label="DDG: resource_load_info.network_info"];
+"1000111" -> "1000118"  [label="DDG: resource_load_info.url"];
+"1000111" -> "1000118"  [label="DDG: UpdateOrAddToOrigins(resource_load_info.url, resource_load_info.network_info)"];
+"1000101" -> "1000111"  [label="DDG: resource_load_info"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000118"  [label="DDG: resource_load_info"];
+}

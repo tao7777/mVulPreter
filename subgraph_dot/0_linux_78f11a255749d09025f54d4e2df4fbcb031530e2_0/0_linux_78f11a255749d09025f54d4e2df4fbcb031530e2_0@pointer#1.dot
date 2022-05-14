@@ -1,0 +1,27 @@
+digraph "0_linux_78f11a255749d09025f54d4e2df4fbcb031530e2_0@pointer" {
+"1000105" [label="(MethodParameterIn,struct vm_area_struct *vma)"];
+"1000133" [label="(Call,khugepaged_enter_vma_merge(vma))"];
+"1000132" [label="(Call,unlikely(khugepaged_enter_vma_merge(vma)))"];
+"1000133" [label="(Call,khugepaged_enter_vma_merge(vma))"];
+"1000137" [label="(Identifier,ENOMEM)"];
+"1000138" [label="(ControlStructure,break;)"];
+"1000131" [label="(ControlStructure,if (unlikely(khugepaged_enter_vma_merge(vma))))"];
+"1000134" [label="(Identifier,vma)"];
+"1000161" [label="(MethodReturn,int)"];
+"1000105" [label="(MethodParameterIn,struct vm_area_struct *vma)"];
+"1000132" [label="(Call,unlikely(khugepaged_enter_vma_merge(vma)))"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000161"  [label="DDG: vma"];
+"1000105" -> "1000133"  [label="DDG: vma"];
+"1000133" -> "1000132"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000161"  [label="DDG: vma"];
+"1000133" -> "1000132"  [label="DDG: vma"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000137" -> "1000132"  [label="CFG: "];
+"1000138" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000161"  [label="DDG: khugepaged_enter_vma_merge(vma)"];
+"1000132" -> "1000161"  [label="DDG: unlikely(khugepaged_enter_vma_merge(vma))"];
+}

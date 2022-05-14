@@ -1,0 +1,28 @@
+digraph "0_Chrome_18d67244984a574ba2dd8779faabc0e3e34f4b76_4@API" {
+"1000125" [label="(Call,base::PlatformThread::Sleep(swap_delay))"];
+"1000120" [label="(Call,swap_delay = GetSwapDelay())"];
+"1000130" [label="(MethodReturn,void)"];
+"1000102" [label="(Block,)"];
+"1000125" [label="(Call,base::PlatformThread::Sleep(swap_delay))"];
+"1000124" [label="(Call,swap_delay.ToInternalValue())"];
+"1000122" [label="(Call,GetSwapDelay())"];
+"1000128" [label="(Identifier,params)"];
+"1000123" [label="(ControlStructure,if (swap_delay.ToInternalValue()))"];
+"1000120" [label="(Call,swap_delay = GetSwapDelay())"];
+"1000121" [label="(Identifier,swap_delay)"];
+"1000126" [label="(Identifier,swap_delay)"];
+"1000125" -> "1000123"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000128" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000130"  [label="DDG: swap_delay"];
+"1000125" -> "1000130"  [label="DDG: base::PlatformThread::Sleep(swap_delay)"];
+"1000120" -> "1000125"  [label="DDG: swap_delay"];
+"1000120" -> "1000102"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000124" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000130"  [label="DDG: GetSwapDelay()"];
+"1000120" -> "1000130"  [label="DDG: swap_delay"];
+}

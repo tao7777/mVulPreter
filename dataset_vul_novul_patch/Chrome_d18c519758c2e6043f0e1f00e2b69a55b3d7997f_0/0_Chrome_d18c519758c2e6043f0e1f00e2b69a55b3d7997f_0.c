@@ -1,0 +1,3 @@
+ void WebContentsImpl::DidCallFocus() {
+  ForSecurityDropFullscreen();
+ }

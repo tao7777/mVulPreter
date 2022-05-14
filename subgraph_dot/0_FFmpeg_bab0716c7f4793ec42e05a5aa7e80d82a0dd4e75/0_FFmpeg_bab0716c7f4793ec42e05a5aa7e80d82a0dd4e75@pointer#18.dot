@@ -1,0 +1,29 @@
+digraph "0_FFmpeg_bab0716c7f4793ec42e05a5aa7e80d82a0dd4e75@pointer" {
+"1001468" [label="(Call,st->codecpar->codec_tag = mxf_get_codec_ul(ff_mxf_codec_tag_uls,\n                                                                   &descriptor->essence_codec_ul)->id)"];
+"1001483" [label="(Call,!st->codecpar->codec_tag)"];
+"1001494" [label="(Identifier,descriptor)"];
+"1001467" [label="(Block,)"];
+"1001483" [label="(Call,!st->codecpar->codec_tag)"];
+"1001482" [label="(ControlStructure,if (!st->codecpar->codec_tag))"];
+"1001474" [label="(Call,mxf_get_codec_ul(ff_mxf_codec_tag_uls,\n                                                                   &descriptor->essence_codec_ul)->id)"];
+"1001486" [label="(Identifier,st)"];
+"1001484" [label="(Call,st->codecpar->codec_tag)"];
+"1001518" [label="(Identifier,st)"];
+"1001468" [label="(Call,st->codecpar->codec_tag = mxf_get_codec_ul(ff_mxf_codec_tag_uls,\n                                                                   &descriptor->essence_codec_ul)->id)"];
+"1001991" [label="(MethodReturn,static int)"];
+"1001469" [label="(Call,st->codecpar->codec_tag)"];
+"1001468" -> "1001467"  [label="AST: "];
+"1001468" -> "1001474"  [label="CFG: "];
+"1001469" -> "1001468"  [label="AST: "];
+"1001474" -> "1001468"  [label="AST: "];
+"1001486" -> "1001468"  [label="CFG: "];
+"1001468" -> "1001991"  [label="DDG: mxf_get_codec_ul(ff_mxf_codec_tag_uls,\n                                                                   &descriptor->essence_codec_ul)->id"];
+"1001468" -> "1001483"  [label="DDG: st->codecpar->codec_tag"];
+"1001483" -> "1001482"  [label="AST: "];
+"1001483" -> "1001484"  [label="CFG: "];
+"1001484" -> "1001483"  [label="AST: "];
+"1001494" -> "1001483"  [label="CFG: "];
+"1001518" -> "1001483"  [label="CFG: "];
+"1001483" -> "1001991"  [label="DDG: !st->codecpar->codec_tag"];
+"1001483" -> "1001991"  [label="DDG: st->codecpar->codec_tag"];
+}

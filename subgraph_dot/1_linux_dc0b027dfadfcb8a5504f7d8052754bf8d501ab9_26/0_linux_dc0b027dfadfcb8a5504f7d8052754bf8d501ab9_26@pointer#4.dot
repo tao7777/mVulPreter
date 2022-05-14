@@ -1,0 +1,30 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_26@pointer" {
+"1000102" [label="(MethodParameterIn,struct path *path)"];
+"1000243" [label="(Call,nfs4_do_close(path, state, wait))"];
+"1000102" [label="(MethodParameterIn,struct path *path)"];
+"1000243" [label="(Call,nfs4_do_close(path, state, wait))"];
+"1000244" [label="(Identifier,path)"];
+"1000247" [label="(MethodReturn,static void)"];
+"1000226" [label="(Call,nfs4_state_set_mode_locked(state, newstate))"];
+"1000103" [label="(MethodParameterIn,struct nfs4_state *state)"];
+"1000246" [label="(Identifier,wait)"];
+"1000105" [label="(MethodParameterIn,int wait)"];
+"1000245" [label="(Identifier,state)"];
+"1000242" [label="(ControlStructure,else)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000247"  [label="DDG: path"];
+"1000102" -> "1000243"  [label="DDG: path"];
+"1000243" -> "1000242"  [label="AST: "];
+"1000243" -> "1000246"  [label="CFG: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000245" -> "1000243"  [label="AST: "];
+"1000246" -> "1000243"  [label="AST: "];
+"1000247" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000247"  [label="DDG: path"];
+"1000243" -> "1000247"  [label="DDG: state"];
+"1000243" -> "1000247"  [label="DDG: wait"];
+"1000243" -> "1000247"  [label="DDG: nfs4_do_close(path, state, wait)"];
+"1000226" -> "1000243"  [label="DDG: state"];
+"1000103" -> "1000243"  [label="DDG: state"];
+"1000105" -> "1000243"  [label="DDG: wait"];
+}

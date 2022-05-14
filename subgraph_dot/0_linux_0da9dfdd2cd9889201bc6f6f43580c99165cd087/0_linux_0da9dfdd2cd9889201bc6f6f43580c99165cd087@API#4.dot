@@ -1,0 +1,26 @@
+digraph "0_linux_0da9dfdd2cd9889201bc6f6f43580c99165cd087@API" {
+"1000270" [label="(Call,mutex_unlock(&key_user_keyring_mutex))"];
+"1000156" [label="(Call,mutex_lock(&key_user_keyring_mutex))"];
+"1000270" [label="(Call,mutex_unlock(&key_user_keyring_mutex))"];
+"1000157" [label="(Call,&key_user_keyring_mutex)"];
+"1000271" [label="(Call,&key_user_keyring_mutex)"];
+"1000160" [label="(Identifier,ret)"];
+"1000156" [label="(Call,mutex_lock(&key_user_keyring_mutex))"];
+"1000274" [label="(Literal,\" = %d\")"];
+"1000256" [label="(Call,mutex_unlock(&key_user_keyring_mutex))"];
+"1000106" [label="(Block,)"];
+"1000278" [label="(MethodReturn,int)"];
+"1000270" -> "1000106"  [label="AST: "];
+"1000270" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000270"  [label="AST: "];
+"1000274" -> "1000270"  [label="CFG: "];
+"1000270" -> "1000278"  [label="DDG: mutex_unlock(&key_user_keyring_mutex)"];
+"1000270" -> "1000278"  [label="DDG: &key_user_keyring_mutex"];
+"1000156" -> "1000270"  [label="DDG: &key_user_keyring_mutex"];
+"1000156" -> "1000106"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000160" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000278"  [label="DDG: mutex_lock(&key_user_keyring_mutex)"];
+"1000156" -> "1000256"  [label="DDG: &key_user_keyring_mutex"];
+}

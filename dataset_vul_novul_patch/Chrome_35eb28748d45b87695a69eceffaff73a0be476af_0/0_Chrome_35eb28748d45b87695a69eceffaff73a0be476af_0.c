@@ -1,0 +1,1 @@
+void RecordResourceCompletionUMA(bool image_complete,

@@ -1,0 +1,29 @@
+digraph "0_lxde_f99163c6ff8b2f57c5f37b1ce5d62cf7450d4648@API" {
+"1000130" [label="(Call,fd = socket(PF_UNIX, SOCK_STREAM, 0))"];
+"1000132" [label="(Call,socket(PF_UNIX, SOCK_STREAM, 0))"];
+"1000133" [label="(Identifier,PF_UNIX)"];
+"1000134" [label="(Identifier,SOCK_STREAM)"];
+"1000132" [label="(Call,socket(PF_UNIX, SOCK_STREAM, 0))"];
+"1000131" [label="(Identifier,fd)"];
+"1000336" [label="(MethodReturn,gboolean)"];
+"1000120" [label="(Block,)"];
+"1000138" [label="(Literal,\"Socket create failed: %s\n\")"];
+"1000135" [label="(Literal,0)"];
+"1000130" [label="(Call,fd = socket(PF_UNIX, SOCK_STREAM, 0))"];
+"1000130" -> "1000120"  [label="AST: "];
+"1000130" -> "1000132"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000132" -> "1000130"  [label="AST: "];
+"1000138" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000336"  [label="DDG: socket(PF_UNIX, SOCK_STREAM, 0)"];
+"1000130" -> "1000336"  [label="DDG: fd"];
+"1000132" -> "1000130"  [label="DDG: PF_UNIX"];
+"1000132" -> "1000130"  [label="DDG: SOCK_STREAM"];
+"1000132" -> "1000130"  [label="DDG: 0"];
+"1000132" -> "1000135"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000134" -> "1000132"  [label="AST: "];
+"1000135" -> "1000132"  [label="AST: "];
+"1000132" -> "1000336"  [label="DDG: SOCK_STREAM"];
+"1000132" -> "1000336"  [label="DDG: PF_UNIX"];
+}

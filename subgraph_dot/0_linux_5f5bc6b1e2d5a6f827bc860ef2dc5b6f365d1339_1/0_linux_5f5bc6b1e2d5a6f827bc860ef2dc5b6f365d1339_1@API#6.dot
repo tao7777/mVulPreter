@@ -1,0 +1,20 @@
+digraph "0_linux_5f5bc6b1e2d5a6f827bc860ef2dc5b6f365d1339_1@API" {
+"1000204" [label="(Call,mutex_is_locked(&inode->i_mutex))"];
+"1000203" [label="(Call,ASSERT(mutex_is_locked(&inode->i_mutex)))"];
+"1000477" [label="(MethodReturn,static int)"];
+"1000202" [label="(Block,)"];
+"1000203" [label="(Call,ASSERT(mutex_is_locked(&inode->i_mutex)))"];
+"1000204" [label="(Call,mutex_is_locked(&inode->i_mutex))"];
+"1000205" [label="(Call,&inode->i_mutex)"];
+"1000210" [label="(Identifier,di)"];
+"1000204" -> "1000203"  [label="AST: "];
+"1000204" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000203" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000477"  [label="DDG: &inode->i_mutex"];
+"1000204" -> "1000203"  [label="DDG: &inode->i_mutex"];
+"1000203" -> "1000202"  [label="AST: "];
+"1000210" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000477"  [label="DDG: ASSERT(mutex_is_locked(&inode->i_mutex))"];
+"1000203" -> "1000477"  [label="DDG: mutex_is_locked(&inode->i_mutex)"];
+}

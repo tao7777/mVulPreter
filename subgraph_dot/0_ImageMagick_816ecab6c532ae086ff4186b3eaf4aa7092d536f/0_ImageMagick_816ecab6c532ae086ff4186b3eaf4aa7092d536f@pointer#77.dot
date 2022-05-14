@@ -1,0 +1,33 @@
+digraph "0_ImageMagick_816ecab6c532ae086ff4186b3eaf4aa7092d536f@pointer" {
+"1007310" [label="(Call,mng_info->have_write_global_srgb == 0)"];
+"1007309" [label="(Call,(mng_info->have_write_global_srgb == 0) &&\n      ping_have_iCCP != MagickTrue &&\n      (ping_have_sRGB != MagickFalse ||\n      png_get_valid(ping,ping_info,PNG_INFO_sRGB)))"];
+"1007315" [label="(Call,ping_have_iCCP != MagickTrue &&\n      (ping_have_sRGB != MagickFalse ||\n      png_get_valid(ping,ping_info,PNG_INFO_sRGB)))"];
+"1007314" [label="(Literal,0)"];
+"1007310" [label="(Call,mng_info->have_write_global_srgb == 0)"];
+"1007308" [label="(ControlStructure,if ((mng_info->have_write_global_srgb == 0) &&\n      ping_have_iCCP != MagickTrue &&\n      (ping_have_sRGB != MagickFalse ||\n      png_get_valid(ping,ping_info,PNG_INFO_sRGB))))"];
+"1007359" [label="(Identifier,mng_info)"];
+"1007311" [label="(Call,mng_info->have_write_global_srgb)"];
+"1007309" [label="(Call,(mng_info->have_write_global_srgb == 0) &&\n      ping_have_iCCP != MagickTrue &&\n      (ping_have_sRGB != MagickFalse ||\n      png_get_valid(ping,ping_info,PNG_INFO_sRGB)))"];
+"1009779" [label="(MethodReturn,static MagickBooleanType)"];
+"1007317" [label="(Identifier,ping_have_iCCP)"];
+"1007330" [label="(Identifier,ping_exclude_sRGB)"];
+"1007310" -> "1007309"  [label="AST: "];
+"1007310" -> "1007314"  [label="CFG: "];
+"1007311" -> "1007310"  [label="AST: "];
+"1007314" -> "1007310"  [label="AST: "];
+"1007317" -> "1007310"  [label="CFG: "];
+"1007309" -> "1007310"  [label="CFG: "];
+"1007310" -> "1009779"  [label="DDG: mng_info->have_write_global_srgb"];
+"1007310" -> "1007309"  [label="DDG: mng_info->have_write_global_srgb"];
+"1007310" -> "1007309"  [label="DDG: 0"];
+"1007309" -> "1007308"  [label="AST: "];
+"1007309" -> "1007315"  [label="CFG: "];
+"1007315" -> "1007309"  [label="AST: "];
+"1007330" -> "1007309"  [label="CFG: "];
+"1007359" -> "1007309"  [label="CFG: "];
+"1007309" -> "1009779"  [label="DDG: mng_info->have_write_global_srgb == 0"];
+"1007309" -> "1009779"  [label="DDG: ping_have_iCCP != MagickTrue &&\n      (ping_have_sRGB != MagickFalse ||\n      png_get_valid(ping,ping_info,PNG_INFO_sRGB))"];
+"1007309" -> "1009779"  [label="DDG: (mng_info->have_write_global_srgb == 0) &&\n      ping_have_iCCP != MagickTrue &&\n      (ping_have_sRGB != MagickFalse ||\n      png_get_valid(ping,ping_info,PNG_INFO_sRGB))"];
+"1007315" -> "1007309"  [label="DDG: ping_have_iCCP != MagickTrue"];
+"1007315" -> "1007309"  [label="DDG: ping_have_sRGB != MagickFalse ||\n      png_get_valid(ping,ping_info,PNG_INFO_sRGB)"];
+}

@@ -1,0 +1,33 @@
+digraph "1_Android_acc192347665943ca674acf117e4f74a88436922_10@del" {
+"1000168" [label="(Call,getChannels() == 0)"];
+"1000167" [label="(Call,getChannels() == 0 || getChannels() > 8)"];
+"1000181" [label="(Call,getBitsPerSample())"];
+"1000169" [label="(Call,getChannels())"];
+"1000170" [label="(Literal,0)"];
+"1000167" [label="(Call,getChannels() == 0 || getChannels() > 8)"];
+"1000300" [label="(MethodReturn,status_t)"];
+"1000171" [label="(Call,getChannels() > 8)"];
+"1000166" [label="(ControlStructure,if (getChannels() == 0 || getChannels() > 8))"];
+"1000176" [label="(Literal,\"unsupported channel count %u\")"];
+"1000168" [label="(Call,getChannels() == 0)"];
+"1000172" [label="(Call,getChannels())"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000170"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000170" -> "1000168"  [label="AST: "];
+"1000172" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000300"  [label="DDG: getChannels()"];
+"1000168" -> "1000167"  [label="DDG: getChannels()"];
+"1000168" -> "1000167"  [label="DDG: 0"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000167"  [label="AST: "];
+"1000176" -> "1000167"  [label="CFG: "];
+"1000181" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000300"  [label="DDG: getChannels() == 0"];
+"1000167" -> "1000300"  [label="DDG: getChannels() == 0 || getChannels() > 8"];
+"1000167" -> "1000300"  [label="DDG: getChannels() > 8"];
+"1000171" -> "1000167"  [label="DDG: getChannels()"];
+"1000171" -> "1000167"  [label="DDG: 8"];
+}

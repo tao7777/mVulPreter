@@ -1,0 +1,24 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c@API" {
+"1000863" [label="(Call,channel_auto_close(s->req))"];
+"1000859" [label="(Call,channel_auto_read(s->req))"];
+"1000865" [label="(Identifier,s)"];
+"1000859" [label="(Call,channel_auto_read(s->req))"];
+"1000863" [label="(Call,channel_auto_close(s->req))"];
+"1000864" [label="(Call,s->req)"];
+"1000899" [label="(MethodReturn,void)"];
+"1000118" [label="(Block,)"];
+"1000860" [label="(Call,s->req)"];
+"1000869" [label="(Identifier,s)"];
+"1000863" -> "1000118"  [label="AST: "];
+"1000863" -> "1000864"  [label="CFG: "];
+"1000864" -> "1000863"  [label="AST: "];
+"1000869" -> "1000863"  [label="CFG: "];
+"1000863" -> "1000899"  [label="DDG: s->req"];
+"1000863" -> "1000899"  [label="DDG: channel_auto_close(s->req)"];
+"1000859" -> "1000863"  [label="DDG: s->req"];
+"1000859" -> "1000118"  [label="AST: "];
+"1000859" -> "1000860"  [label="CFG: "];
+"1000860" -> "1000859"  [label="AST: "];
+"1000865" -> "1000859"  [label="CFG: "];
+"1000859" -> "1000899"  [label="DDG: channel_auto_read(s->req)"];
+}

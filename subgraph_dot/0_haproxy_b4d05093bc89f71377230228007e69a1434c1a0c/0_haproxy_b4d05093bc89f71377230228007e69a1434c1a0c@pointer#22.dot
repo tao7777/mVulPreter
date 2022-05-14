@@ -1,0 +1,24 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c@pointer" {
+"1000602" [label="(Call,s->req->cons->prev_state = SI_ST_INI)"];
+"1000594" [label="(Call,s->req->cons->state     = s->req->cons->prev_state = SI_ST_INI)"];
+"1000610" [label="(Identifier,SI_ST_INI)"];
+"1000602" [label="(Call,s->req->cons->prev_state = SI_ST_INI)"];
+"1000903" [label="(MethodReturn,void)"];
+"1000615" [label="(Identifier,s)"];
+"1000603" [label="(Call,s->req->cons->prev_state)"];
+"1000594" [label="(Call,s->req->cons->state     = s->req->cons->prev_state = SI_ST_INI)"];
+"1000118" [label="(Block,)"];
+"1000595" [label="(Call,s->req->cons->state)"];
+"1000602" -> "1000594"  [label="AST: "];
+"1000602" -> "1000610"  [label="CFG: "];
+"1000603" -> "1000602"  [label="AST: "];
+"1000610" -> "1000602"  [label="AST: "];
+"1000594" -> "1000602"  [label="CFG: "];
+"1000602" -> "1000903"  [label="DDG: SI_ST_INI"];
+"1000602" -> "1000903"  [label="DDG: s->req->cons->prev_state"];
+"1000602" -> "1000594"  [label="DDG: s->req->cons->prev_state"];
+"1000594" -> "1000118"  [label="AST: "];
+"1000595" -> "1000594"  [label="AST: "];
+"1000615" -> "1000594"  [label="CFG: "];
+"1000594" -> "1000903"  [label="DDG: s->req->cons->state"];
+}

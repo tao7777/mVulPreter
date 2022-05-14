@@ -1,0 +1,26 @@
+digraph "0_linux_ea2bc483ff5caada7c4aa0d5fbf87d3a6590273d@pointer" {
+"1000250" [label="(Call,event = sctp_skb2event(skb))"];
+"1000252" [label="(Call,sctp_skb2event(skb))"];
+"1000249" [label="(Block,)"];
+"1000323" [label="(Call,sctp_skb2event(skb))"];
+"1000261" [label="(Call,sctp_sock_rfree(skb))"];
+"1000253" [label="(Identifier,skb)"];
+"1000252" [label="(Call,sctp_skb2event(skb))"];
+"1000251" [label="(Identifier,event)"];
+"1000384" [label="(MethodReturn,static void)"];
+"1000257" [label="(Identifier,event)"];
+"1000250" [label="(Call,event = sctp_skb2event(skb))"];
+"1000250" -> "1000249"  [label="AST: "];
+"1000250" -> "1000252"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000252" -> "1000250"  [label="AST: "];
+"1000257" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000384"  [label="DDG: event"];
+"1000250" -> "1000384"  [label="DDG: sctp_skb2event(skb)"];
+"1000252" -> "1000250"  [label="DDG: skb"];
+"1000252" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000252"  [label="AST: "];
+"1000252" -> "1000384"  [label="DDG: skb"];
+"1000252" -> "1000261"  [label="DDG: skb"];
+"1000252" -> "1000323"  [label="DDG: skb"];
+}

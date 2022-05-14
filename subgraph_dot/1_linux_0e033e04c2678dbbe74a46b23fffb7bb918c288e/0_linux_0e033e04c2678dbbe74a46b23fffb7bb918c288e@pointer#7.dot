@@ -1,0 +1,30 @@
+digraph "0_linux_0e033e04c2678dbbe74a46b23fffb7bb918c288e@pointer" {
+"1000197" [label="(Call,skb->encapsulation && skb_shinfo(skb)->gso_type & SKB_GSO_UDP_TUNNEL)"];
+"1000201" [label="(Call,skb_shinfo(skb)->gso_type & SKB_GSO_UDP_TUNNEL)"];
+"1000196" [label="(ControlStructure,if (skb->encapsulation && skb_shinfo(skb)->gso_type & SKB_GSO_UDP_TUNNEL))"];
+"1000215" [label="(Identifier,offset)"];
+"1000360" [label="(MethodReturn,static struct sk_buff *)"];
+"1000201" [label="(Call,skb_shinfo(skb)->gso_type & SKB_GSO_UDP_TUNNEL)"];
+"1000208" [label="(Identifier,segs)"];
+"1000202" [label="(Call,skb_shinfo(skb)->gso_type)"];
+"1000197" [label="(Call,skb->encapsulation && skb_shinfo(skb)->gso_type & SKB_GSO_UDP_TUNNEL)"];
+"1000198" [label="(Call,skb->encapsulation)"];
+"1000206" [label="(Identifier,SKB_GSO_UDP_TUNNEL)"];
+"1000197" -> "1000196"  [label="AST: "];
+"1000197" -> "1000198"  [label="CFG: "];
+"1000197" -> "1000201"  [label="CFG: "];
+"1000198" -> "1000197"  [label="AST: "];
+"1000201" -> "1000197"  [label="AST: "];
+"1000208" -> "1000197"  [label="CFG: "];
+"1000215" -> "1000197"  [label="CFG: "];
+"1000197" -> "1000360"  [label="DDG: skb_shinfo(skb)->gso_type & SKB_GSO_UDP_TUNNEL"];
+"1000197" -> "1000360"  [label="DDG: skb->encapsulation && skb_shinfo(skb)->gso_type & SKB_GSO_UDP_TUNNEL"];
+"1000197" -> "1000360"  [label="DDG: skb->encapsulation"];
+"1000201" -> "1000197"  [label="DDG: skb_shinfo(skb)->gso_type"];
+"1000201" -> "1000197"  [label="DDG: SKB_GSO_UDP_TUNNEL"];
+"1000201" -> "1000206"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000206" -> "1000201"  [label="AST: "];
+"1000201" -> "1000360"  [label="DDG: SKB_GSO_UDP_TUNNEL"];
+"1000201" -> "1000360"  [label="DDG: skb_shinfo(skb)->gso_type"];
+}

@@ -1,0 +1,27 @@
+digraph "0_spice_8af619009660b24e0b41ad26b30289eea288fcc2@API" {
+"1000153" [label="(Call,strlen(taTicket.password) == 0)"];
+"1000154" [label="(Call,strlen(taTicket.password))"];
+"1000172" [label="(Call,strncmp(password, taTicket.password, SPICE_MAX_PASSWORD_LENGTH))"];
+"1000155" [label="(Call,taTicket.password)"];
+"1000154" [label="(Call,strlen(taTicket.password))"];
+"1000170" [label="(Identifier,expired)"];
+"1000152" [label="(ControlStructure,if (strlen(taTicket.password) == 0))"];
+"1000197" [label="(MethodReturn,static void)"];
+"1000158" [label="(Literal,0)"];
+"1000161" [label="(Identifier,link)"];
+"1000153" [label="(Call,strlen(taTicket.password) == 0)"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000158"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000158" -> "1000153"  [label="AST: "];
+"1000161" -> "1000153"  [label="CFG: "];
+"1000170" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000197"  [label="DDG: strlen(taTicket.password)"];
+"1000153" -> "1000197"  [label="DDG: strlen(taTicket.password) == 0"];
+"1000154" -> "1000153"  [label="DDG: taTicket.password"];
+"1000154" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000158" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000197"  [label="DDG: taTicket.password"];
+"1000154" -> "1000172"  [label="DDG: taTicket.password"];
+}

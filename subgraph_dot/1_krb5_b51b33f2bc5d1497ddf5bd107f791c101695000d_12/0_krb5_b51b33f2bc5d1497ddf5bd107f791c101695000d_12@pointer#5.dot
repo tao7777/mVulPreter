@@ -1,0 +1,35 @@
+digraph "0_krb5_b51b33f2bc5d1497ddf5bd107f791c101695000d_12@pointer" {
+"1000429" [label="(Call,*context_handle = GSS_C_NO_CONTEXT)"];
+"1000208" [label="(Call,*context_handle == GSS_C_NO_CONTEXT)"];
+"1000430" [label="(Call,*context_handle)"];
+"1000230" [label="(Identifier,ret)"];
+"1000211" [label="(Identifier,GSS_C_NO_CONTEXT)"];
+"1000429" [label="(Call,*context_handle = GSS_C_NO_CONTEXT)"];
+"1000250" [label="(Call,(spnego_gss_ctx_id_t)*context_handle)"];
+"1000432" [label="(Identifier,GSS_C_NO_CONTEXT)"];
+"1000468" [label="(MethodReturn,RET)"];
+"1000207" [label="(ControlStructure,if (*context_handle == GSS_C_NO_CONTEXT))"];
+"1000208" [label="(Call,*context_handle == GSS_C_NO_CONTEXT)"];
+"1000435" [label="(Identifier,mechtok_in)"];
+"1000412" [label="(Block,)"];
+"1000209" [label="(Call,*context_handle)"];
+"1000214" [label="(Identifier,ret)"];
+"1000429" -> "1000412"  [label="AST: "];
+"1000429" -> "1000432"  [label="CFG: "];
+"1000430" -> "1000429"  [label="AST: "];
+"1000432" -> "1000429"  [label="AST: "];
+"1000435" -> "1000429"  [label="CFG: "];
+"1000429" -> "1000468"  [label="DDG: GSS_C_NO_CONTEXT"];
+"1000429" -> "1000468"  [label="DDG: *context_handle"];
+"1000208" -> "1000429"  [label="DDG: GSS_C_NO_CONTEXT"];
+"1000208" -> "1000207"  [label="AST: "];
+"1000208" -> "1000211"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000211" -> "1000208"  [label="AST: "];
+"1000214" -> "1000208"  [label="CFG: "];
+"1000230" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000468"  [label="DDG: *context_handle"];
+"1000208" -> "1000468"  [label="DDG: *context_handle == GSS_C_NO_CONTEXT"];
+"1000208" -> "1000468"  [label="DDG: GSS_C_NO_CONTEXT"];
+"1000208" -> "1000250"  [label="DDG: *context_handle"];
+}

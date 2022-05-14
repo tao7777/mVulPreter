@@ -1,0 +1,24 @@
+digraph "0_linux_0926f91083f34d047abc74f1ca4fa6a9c161f7db@array" {
+"1000186" [label="(Call,++table->refs[i])"];
+"1000159" [label="(Call,!table->refs[i])"];
+"1000186" [label="(Call,++table->refs[i])"];
+"1000192" [label="(ControlStructure,goto out;)"];
+"1000159" [label="(Call,!table->refs[i])"];
+"1000160" [label="(Call,table->refs[i])"];
+"1000181" [label="(Block,)"];
+"1000287" [label="(MethodReturn,int)"];
+"1000155" [label="(Call,free < 0 && !table->refs[i])"];
+"1000187" [label="(Call,table->refs[i])"];
+"1000186" -> "1000181"  [label="AST: "];
+"1000186" -> "1000187"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000192" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000287"  [label="DDG: table->refs[i]"];
+"1000159" -> "1000186"  [label="DDG: table->refs[i]"];
+"1000159" -> "1000155"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000155" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000287"  [label="DDG: table->refs[i]"];
+"1000159" -> "1000155"  [label="DDG: table->refs[i]"];
+}

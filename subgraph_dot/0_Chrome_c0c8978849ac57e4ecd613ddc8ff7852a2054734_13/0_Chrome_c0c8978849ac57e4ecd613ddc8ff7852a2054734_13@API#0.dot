@@ -1,0 +1,38 @@
+digraph "0_Chrome_c0c8978849ac57e4ecd613ddc8ff7852a2054734_13@API" {
+"1000119" [label="(Call,std::move(fusion_algorithm))"];
+"1000101" [label="(MethodParameterIn,std::unique_ptr<PlatformSensorFusionAlgorithm> fusion_algorithm)"];
+"1000115" [label="(Call,PlatformSensorFusion::Create(provider_->GetSensorReadingBuffer(type),\n                                 provider_.get(), std::move(fusion_algorithm),\n                                 callback))"];
+"1000121" [label="(Identifier,callback)"];
+"1000101" [label="(MethodParameterIn,std::unique_ptr<PlatformSensorFusionAlgorithm> fusion_algorithm)"];
+"1000120" [label="(Identifier,fusion_algorithm)"];
+"1000104" [label="(Call,callback =\n         base::Bind(&PlatformSensorFusionTest::PlatformSensorFusionCallback,\n                    base::Unretained(this)))"];
+"1000118" [label="(Call,provider_.get())"];
+"1000123" [label="(Identifier,platform_sensor_fusion_callback_called_)"];
+"1000116" [label="(Call,provider_->GetSensorReadingBuffer(type))"];
+"1000124" [label="(MethodReturn,void)"];
+"1000102" [label="(Block,)"];
+"1000119" [label="(Call,std::move(fusion_algorithm))"];
+"1000115" [label="(Call,PlatformSensorFusion::Create(provider_->GetSensorReadingBuffer(type),\n                                 provider_.get(), std::move(fusion_algorithm),\n                                 callback))"];
+"1000119" -> "1000115"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000124"  [label="DDG: fusion_algorithm"];
+"1000119" -> "1000115"  [label="DDG: fusion_algorithm"];
+"1000101" -> "1000119"  [label="DDG: fusion_algorithm"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000124"  [label="DDG: fusion_algorithm"];
+"1000115" -> "1000102"  [label="AST: "];
+"1000115" -> "1000121"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000118" -> "1000115"  [label="AST: "];
+"1000121" -> "1000115"  [label="AST: "];
+"1000123" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000124"  [label="DDG: provider_.get()"];
+"1000115" -> "1000124"  [label="DDG: std::move(fusion_algorithm)"];
+"1000115" -> "1000124"  [label="DDG: provider_->GetSensorReadingBuffer(type)"];
+"1000115" -> "1000124"  [label="DDG: PlatformSensorFusion::Create(provider_->GetSensorReadingBuffer(type),\n                                 provider_.get(), std::move(fusion_algorithm),\n                                 callback)"];
+"1000115" -> "1000124"  [label="DDG: callback"];
+"1000116" -> "1000115"  [label="DDG: type"];
+"1000104" -> "1000115"  [label="DDG: callback"];
+}

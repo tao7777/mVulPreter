@@ -1,0 +1,24 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_10@pointer" {
+"1000543" [label="(Call,header->h_refcount == cpu_to_le32(1))"];
+"1000547" [label="(Call,cpu_to_le32(1))"];
+"1000542" [label="(ControlStructure,if (header->h_refcount == cpu_to_le32(1)))"];
+"1000573" [label="(Identifier,bh)"];
+"1000547" [label="(Call,cpu_to_le32(1))"];
+"1000543" [label="(Call,header->h_refcount == cpu_to_le32(1))"];
+"1000548" [label="(Literal,1)"];
+"1001017" [label="(MethodReturn,RET)"];
+"1000552" [label="(Identifier,hash)"];
+"1000544" [label="(Call,header->h_refcount)"];
+"1000543" -> "1000542"  [label="AST: "];
+"1000543" -> "1000547"  [label="CFG: "];
+"1000544" -> "1000543"  [label="AST: "];
+"1000547" -> "1000543"  [label="AST: "];
+"1000552" -> "1000543"  [label="CFG: "];
+"1000573" -> "1000543"  [label="CFG: "];
+"1000543" -> "1001017"  [label="DDG: header->h_refcount == cpu_to_le32(1)"];
+"1000543" -> "1001017"  [label="DDG: cpu_to_le32(1)"];
+"1000543" -> "1001017"  [label="DDG: header->h_refcount"];
+"1000547" -> "1000543"  [label="DDG: 1"];
+"1000547" -> "1000548"  [label="CFG: "];
+"1000548" -> "1000547"  [label="AST: "];
+}

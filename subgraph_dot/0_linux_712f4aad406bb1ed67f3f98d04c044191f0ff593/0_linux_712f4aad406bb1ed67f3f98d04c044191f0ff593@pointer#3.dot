@@ -1,0 +1,25 @@
+digraph "0_linux_712f4aad406bb1ed67f3f98d04c044191f0ff593@pointer" {
+"1000201" [label="(Call,unix_inflight(scm->fp->fp[i]))"];
+"1000139" [label="(Call,unix_get_socket(scm->fp->fp[i]))"];
+"1000201" [label="(Call,unix_inflight(scm->fp->fp[i]))"];
+"1000211" [label="(MethodReturn,static int)"];
+"1000139" [label="(Call,unix_get_socket(scm->fp->fp[i]))"];
+"1000140" [label="(Call,scm->fp->fp[i])"];
+"1000186" [label="(ControlStructure,for (i = scm->fp->count - 1; i >= 0; i--))"];
+"1000202" [label="(Call,scm->fp->fp[i])"];
+"1000137" [label="(Call,*sk = unix_get_socket(scm->fp->fp[i]))"];
+"1000200" [label="(Identifier,i)"];
+"1000201" -> "1000186"  [label="AST: "];
+"1000201" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000211"  [label="DDG: unix_inflight(scm->fp->fp[i])"];
+"1000201" -> "1000211"  [label="DDG: scm->fp->fp[i]"];
+"1000139" -> "1000201"  [label="DDG: scm->fp->fp[i]"];
+"1000139" -> "1000137"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000211"  [label="DDG: scm->fp->fp[i]"];
+"1000139" -> "1000137"  [label="DDG: scm->fp->fp[i]"];
+}

@@ -1,0 +1,30 @@
+digraph "0_openssl_fb0bc2b273bcc2d5401dd883fe869af4fc74bb21@pointer" {
+"1000944" [label="(Call,!s->hit)"];
+"1000943" [label="(Call,!s->hit && tlsext_servername == 1)"];
+"1001000" [label="(Identifier,p)"];
+"1000942" [label="(ControlStructure,if (!s->hit && tlsext_servername == 1))"];
+"1001032" [label="(MethodReturn,static int)"];
+"1000944" [label="(Call,!s->hit)"];
+"1000948" [label="(Call,tlsext_servername == 1)"];
+"1000945" [label="(Call,s->hit)"];
+"1000949" [label="(Identifier,tlsext_servername)"];
+"1000943" [label="(Call,!s->hit && tlsext_servername == 1)"];
+"1000954" [label="(Identifier,s)"];
+"1000944" -> "1000943"  [label="AST: "];
+"1000944" -> "1000945"  [label="CFG: "];
+"1000945" -> "1000944"  [label="AST: "];
+"1000949" -> "1000944"  [label="CFG: "];
+"1000943" -> "1000944"  [label="CFG: "];
+"1000944" -> "1001032"  [label="DDG: s->hit"];
+"1000944" -> "1000943"  [label="DDG: s->hit"];
+"1000943" -> "1000942"  [label="AST: "];
+"1000943" -> "1000948"  [label="CFG: "];
+"1000948" -> "1000943"  [label="AST: "];
+"1000954" -> "1000943"  [label="CFG: "];
+"1001000" -> "1000943"  [label="CFG: "];
+"1000943" -> "1001032"  [label="DDG: !s->hit && tlsext_servername == 1"];
+"1000943" -> "1001032"  [label="DDG: tlsext_servername == 1"];
+"1000943" -> "1001032"  [label="DDG: !s->hit"];
+"1000948" -> "1000943"  [label="DDG: tlsext_servername"];
+"1000948" -> "1000943"  [label="DDG: 1"];
+}

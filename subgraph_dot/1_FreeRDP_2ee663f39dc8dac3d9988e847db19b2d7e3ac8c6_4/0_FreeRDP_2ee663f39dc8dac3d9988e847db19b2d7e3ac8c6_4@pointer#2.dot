@@ -1,0 +1,35 @@
+digraph "0_FreeRDP_2ee663f39dc8dac3d9988e847db19b2d7e3ac8c6_4@pointer" {
+"1000113" [label="(Call,fields->BufferOffset + fields->Len)"];
+"1000105" [label="(Call,fields->Len > 0)"];
+"1000109" [label="(Literal,0)"];
+"1000113" [label="(Call,fields->BufferOffset + fields->Len)"];
+"1000121" [label="(Identifier,s)"];
+"1000117" [label="(Call,fields->Len)"];
+"1000106" [label="(Call,fields->Len)"];
+"1000115" [label="(Identifier,fields)"];
+"1000158" [label="(MethodReturn,int)"];
+"1000157" [label="(Literal,1)"];
+"1000131" [label="(Call,malloc(fields->Len))"];
+"1000105" [label="(Call,fields->Len > 0)"];
+"1000104" [label="(ControlStructure,if (fields->Len > 0))"];
+"1000112" [label="(Call,(fields->BufferOffset + fields->Len) > Stream_Length(s))"];
+"1000114" [label="(Call,fields->BufferOffset)"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000117"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000117" -> "1000113"  [label="AST: "];
+"1000121" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000158"  [label="DDG: fields->Len"];
+"1000113" -> "1000158"  [label="DDG: fields->BufferOffset"];
+"1000105" -> "1000113"  [label="DDG: fields->Len"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000109"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000109" -> "1000105"  [label="AST: "];
+"1000115" -> "1000105"  [label="CFG: "];
+"1000157" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000158"  [label="DDG: fields->Len > 0"];
+"1000105" -> "1000158"  [label="DDG: fields->Len"];
+"1000105" -> "1000112"  [label="DDG: fields->Len"];
+"1000105" -> "1000131"  [label="DDG: fields->Len"];
+}

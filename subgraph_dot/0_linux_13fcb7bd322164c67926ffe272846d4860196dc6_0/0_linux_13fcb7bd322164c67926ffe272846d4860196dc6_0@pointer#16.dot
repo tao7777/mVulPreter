@@ -1,0 +1,26 @@
+digraph "0_linux_13fcb7bd322164c67926ffe272846d4860196dc6_0@pointer" {
+"1000827" [label="(Call,spin_unlock(&sk->sk_receive_queue.lock))"];
+"1000356" [label="(Call,spin_lock(&sk->sk_receive_queue.lock))"];
+"1000365" [label="(Identifier,h)"];
+"1000356" [label="(Call,spin_lock(&sk->sk_receive_queue.lock))"];
+"1000828" [label="(Call,&sk->sk_receive_queue.lock)"];
+"1000357" [label="(Call,&sk->sk_receive_queue.lock)"];
+"1000835" [label="(Identifier,sk)"];
+"1000413" [label="(Call,spin_unlock(&sk->sk_receive_queue.lock))"];
+"1000840" [label="(MethodReturn,static int)"];
+"1000827" [label="(Call,spin_unlock(&sk->sk_receive_queue.lock))"];
+"1000106" [label="(Block,)"];
+"1000827" -> "1000106"  [label="AST: "];
+"1000827" -> "1000828"  [label="CFG: "];
+"1000828" -> "1000827"  [label="AST: "];
+"1000835" -> "1000827"  [label="CFG: "];
+"1000827" -> "1000840"  [label="DDG: spin_unlock(&sk->sk_receive_queue.lock)"];
+"1000827" -> "1000840"  [label="DDG: &sk->sk_receive_queue.lock"];
+"1000356" -> "1000827"  [label="DDG: &sk->sk_receive_queue.lock"];
+"1000356" -> "1000106"  [label="AST: "];
+"1000356" -> "1000357"  [label="CFG: "];
+"1000357" -> "1000356"  [label="AST: "];
+"1000365" -> "1000356"  [label="CFG: "];
+"1000356" -> "1000840"  [label="DDG: spin_lock(&sk->sk_receive_queue.lock)"];
+"1000356" -> "1000413"  [label="DDG: &sk->sk_receive_queue.lock"];
+}

@@ -1,0 +1,33 @@
+digraph "0_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_2@integer" {
+"1000144" [label="(Call,cur_setting->it_interval = ns_to_timespec(timr->it.mmtimer.incr * sgi_clock_period))"];
+"1000148" [label="(Call,ns_to_timespec(timr->it.mmtimer.incr * sgi_clock_period))"];
+"1000149" [label="(Call,timr->it.mmtimer.incr * sgi_clock_period)"];
+"1000145" [label="(Call,cur_setting->it_interval)"];
+"1000157" [label="(Identifier,sgi_clock_period)"];
+"1000174" [label="(MethodReturn,static void)"];
+"1000163" [label="(Call,(timr->it.mmtimer.expires - rtc_time()) * sgi_clock_period)"];
+"1000103" [label="(Block,)"];
+"1000160" [label="(Identifier,cur_setting)"];
+"1000149" [label="(Call,timr->it.mmtimer.incr * sgi_clock_period)"];
+"1000148" [label="(Call,ns_to_timespec(timr->it.mmtimer.incr * sgi_clock_period))"];
+"1000144" [label="(Call,cur_setting->it_interval = ns_to_timespec(timr->it.mmtimer.incr * sgi_clock_period))"];
+"1000150" [label="(Call,timr->it.mmtimer.incr)"];
+"1000144" -> "1000103"  [label="AST: "];
+"1000144" -> "1000148"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000148" -> "1000144"  [label="AST: "];
+"1000160" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000174"  [label="DDG: ns_to_timespec(timr->it.mmtimer.incr * sgi_clock_period)"];
+"1000144" -> "1000174"  [label="DDG: cur_setting->it_interval"];
+"1000148" -> "1000144"  [label="DDG: timr->it.mmtimer.incr * sgi_clock_period"];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000148" -> "1000174"  [label="DDG: timr->it.mmtimer.incr * sgi_clock_period"];
+"1000149" -> "1000148"  [label="DDG: timr->it.mmtimer.incr"];
+"1000149" -> "1000148"  [label="DDG: sgi_clock_period"];
+"1000149" -> "1000157"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000157" -> "1000149"  [label="AST: "];
+"1000149" -> "1000174"  [label="DDG: timr->it.mmtimer.incr"];
+"1000149" -> "1000163"  [label="DDG: sgi_clock_period"];
+}

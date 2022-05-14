@@ -1,0 +1,33 @@
+digraph "0_lxc_592fd47a6245508b79fe6ac819fe6d3b2c1289be@API" {
+"1000120" [label="(Call,strlen(root) + sizeof(\"/sys/fs/cgroup\"))"];
+"1000121" [label="(Call,strlen(root))"];
+"1000114" [label="(MethodParameterIn,const char *root)"];
+"1000122" [label="(Identifier,root)"];
+"1000123" [label="(Call,sizeof(\"/sys/fs/cgroup\"))"];
+"1000214" [label="(Call,safe_mount(\"cgroup_root\", path, \"tmpfs\",\n\t\t\tMS_NOSUID|MS_NODEV|MS_NOEXEC|MS_RELATIME,\n\t\t\t\"size=10240k,mode=755\",\n\t\t\troot))"];
+"1000207" [label="(Call,snprintf(path, bufsz, \"%s/sys/fs/cgroup\", root))"];
+"1000121" [label="(Call,strlen(root))"];
+"1000118" [label="(Call,bufsz = strlen(root) + sizeof(\"/sys/fs/cgroup\"))"];
+"1000733" [label="(MethodReturn,static bool)"];
+"1000124" [label="(Literal,\"/sys/fs/cgroup\")"];
+"1000120" [label="(Call,strlen(root) + sizeof(\"/sys/fs/cgroup\"))"];
+"1000114" [label="(MethodParameterIn,const char *root)"];
+"1000120" -> "1000118"  [label="AST: "];
+"1000120" -> "1000123"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000123" -> "1000120"  [label="AST: "];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000733"  [label="DDG: strlen(root)"];
+"1000121" -> "1000120"  [label="DDG: root"];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000124" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000733"  [label="DDG: root"];
+"1000121" -> "1000118"  [label="DDG: root"];
+"1000114" -> "1000121"  [label="DDG: root"];
+"1000121" -> "1000207"  [label="DDG: root"];
+"1000114" -> "1000112"  [label="AST: "];
+"1000114" -> "1000733"  [label="DDG: root"];
+"1000114" -> "1000207"  [label="DDG: root"];
+"1000114" -> "1000214"  [label="DDG: root"];
+}

@@ -1,0 +1,28 @@
+digraph "0_linux_0e9a9a1ad619e7e987815d20262d36a2f95717ca@pointer" {
+"1000166" [label="(Call,list_del_init(&ei->i_orphan))"];
+"1000137" [label="(Call,list_empty(&ei->i_orphan))"];
+"1000166" [label="(Call,list_del_init(&ei->i_orphan))"];
+"1000104" [label="(Block,)"];
+"1000173" [label="(Identifier,handle)"];
+"1000142" [label="(ControlStructure,goto out;)"];
+"1000136" [label="(ControlStructure,if (list_empty(&ei->i_orphan)))"];
+"1000138" [label="(Call,&ei->i_orphan)"];
+"1000144" [label="(Identifier,ino_next)"];
+"1000137" [label="(Call,list_empty(&ei->i_orphan))"];
+"1000296" [label="(MethodReturn,int)"];
+"1000167" [label="(Call,&ei->i_orphan)"];
+"1000166" -> "1000104"  [label="AST: "];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000173" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000296"  [label="DDG: list_del_init(&ei->i_orphan)"];
+"1000166" -> "1000296"  [label="DDG: &ei->i_orphan"];
+"1000137" -> "1000166"  [label="DDG: &ei->i_orphan"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000142" -> "1000137"  [label="CFG: "];
+"1000144" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000296"  [label="DDG: &ei->i_orphan"];
+"1000137" -> "1000296"  [label="DDG: list_empty(&ei->i_orphan)"];
+}

@@ -1,0 +1,24 @@
+digraph "0_file_6713ca45e7757297381f4b4cdb9cf5e624a9ad36@pointer" {
+"1000101" [label="(MethodParameterIn,struct magic_set *ms)"];
+"1000140" [label="(Call,file_oomem(ms, len))"];
+"1000114" [label="(Call,len = (ms->c.len += 20) * sizeof(*ms->c.li))"];
+"1000101" [label="(MethodParameterIn,struct magic_set *ms)"];
+"1000145" [label="(Literal,1)"];
+"1000140" [label="(Call,file_oomem(ms, len))"];
+"1000142" [label="(Identifier,len)"];
+"1000139" [label="(Block,)"];
+"1000181" [label="(MethodReturn,RET)"];
+"1000141" [label="(Identifier,ms)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000181"  [label="DDG: ms"];
+"1000101" -> "1000140"  [label="DDG: ms"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000142"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000142" -> "1000140"  [label="AST: "];
+"1000145" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000181"  [label="DDG: len"];
+"1000140" -> "1000181"  [label="DDG: file_oomem(ms, len)"];
+"1000140" -> "1000181"  [label="DDG: ms"];
+"1000114" -> "1000140"  [label="DDG: len"];
+}

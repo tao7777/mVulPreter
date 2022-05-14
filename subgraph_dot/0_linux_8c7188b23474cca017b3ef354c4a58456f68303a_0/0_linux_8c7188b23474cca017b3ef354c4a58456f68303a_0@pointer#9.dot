@@ -1,0 +1,26 @@
+digraph "0_linux_8c7188b23474cca017b3ef354c4a58456f68303a_0@pointer" {
+"1000424" [label="(Call,!conn->c_trans->xmit_atomic)"];
+"1000418" [label="(Call,rm->atomic.op_active && !conn->c_trans->xmit_atomic)"];
+"1000419" [label="(Call,rm->atomic.op_active)"];
+"1000564" [label="(MethodReturn,int)"];
+"1000437" [label="(Identifier,conn)"];
+"1000417" [label="(ControlStructure,if (rm->atomic.op_active && !conn->c_trans->xmit_atomic))"];
+"1000432" [label="(Identifier,ret)"];
+"1000418" [label="(Call,rm->atomic.op_active && !conn->c_trans->xmit_atomic)"];
+"1000424" [label="(Call,!conn->c_trans->xmit_atomic)"];
+"1000425" [label="(Call,conn->c_trans->xmit_atomic)"];
+"1000424" -> "1000418"  [label="AST: "];
+"1000424" -> "1000425"  [label="CFG: "];
+"1000425" -> "1000424"  [label="AST: "];
+"1000418" -> "1000424"  [label="CFG: "];
+"1000424" -> "1000564"  [label="DDG: conn->c_trans->xmit_atomic"];
+"1000424" -> "1000418"  [label="DDG: conn->c_trans->xmit_atomic"];
+"1000418" -> "1000417"  [label="AST: "];
+"1000418" -> "1000419"  [label="CFG: "];
+"1000419" -> "1000418"  [label="AST: "];
+"1000432" -> "1000418"  [label="CFG: "];
+"1000437" -> "1000418"  [label="CFG: "];
+"1000418" -> "1000564"  [label="DDG: !conn->c_trans->xmit_atomic"];
+"1000418" -> "1000564"  [label="DDG: rm->atomic.op_active && !conn->c_trans->xmit_atomic"];
+"1000418" -> "1000564"  [label="DDG: rm->atomic.op_active"];
+}

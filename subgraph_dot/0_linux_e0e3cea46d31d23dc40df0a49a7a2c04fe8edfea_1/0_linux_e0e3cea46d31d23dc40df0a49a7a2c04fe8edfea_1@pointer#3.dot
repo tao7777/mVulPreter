@@ -1,0 +1,32 @@
+digraph "0_linux_e0e3cea46d31d23dc40df0a49a7a2c04fe8edfea_1@pointer" {
+"1000325" [label="(Call,other->sk_shutdown & RCV_SHUTDOWN)"];
+"1000321" [label="(Call,sock_flag(other, SOCK_DEAD) ||\n\t\t    (other->sk_shutdown & RCV_SHUTDOWN))"];
+"1000325" [label="(Call,other->sk_shutdown & RCV_SHUTDOWN)"];
+"1000321" [label="(Call,sock_flag(other, SOCK_DEAD) ||\n\t\t    (other->sk_shutdown & RCV_SHUTDOWN))"];
+"1000330" [label="(ControlStructure,goto pipe_err_free;)"];
+"1000320" [label="(ControlStructure,if (sock_flag(other, SOCK_DEAD) ||\n\t\t    (other->sk_shutdown & RCV_SHUTDOWN)))"];
+"1000332" [label="(Identifier,skb)"];
+"1000409" [label="(MethodReturn,static int)"];
+"1000326" [label="(Call,other->sk_shutdown)"];
+"1000329" [label="(Identifier,RCV_SHUTDOWN)"];
+"1000322" [label="(Call,sock_flag(other, SOCK_DEAD))"];
+"1000325" -> "1000321"  [label="AST: "];
+"1000325" -> "1000329"  [label="CFG: "];
+"1000326" -> "1000325"  [label="AST: "];
+"1000329" -> "1000325"  [label="AST: "];
+"1000321" -> "1000325"  [label="CFG: "];
+"1000325" -> "1000409"  [label="DDG: other->sk_shutdown"];
+"1000325" -> "1000409"  [label="DDG: RCV_SHUTDOWN"];
+"1000325" -> "1000321"  [label="DDG: other->sk_shutdown"];
+"1000325" -> "1000321"  [label="DDG: RCV_SHUTDOWN"];
+"1000321" -> "1000320"  [label="AST: "];
+"1000321" -> "1000322"  [label="CFG: "];
+"1000322" -> "1000321"  [label="AST: "];
+"1000330" -> "1000321"  [label="CFG: "];
+"1000332" -> "1000321"  [label="CFG: "];
+"1000321" -> "1000409"  [label="DDG: sock_flag(other, SOCK_DEAD)"];
+"1000321" -> "1000409"  [label="DDG: other->sk_shutdown & RCV_SHUTDOWN"];
+"1000321" -> "1000409"  [label="DDG: sock_flag(other, SOCK_DEAD) ||\n\t\t    (other->sk_shutdown & RCV_SHUTDOWN)"];
+"1000322" -> "1000321"  [label="DDG: other"];
+"1000322" -> "1000321"  [label="DDG: SOCK_DEAD"];
+}

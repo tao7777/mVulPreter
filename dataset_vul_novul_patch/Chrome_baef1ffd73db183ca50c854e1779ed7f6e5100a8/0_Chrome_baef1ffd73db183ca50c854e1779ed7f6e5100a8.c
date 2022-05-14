@@ -1,0 +1,1 @@
+bool GDataCache::CreateCacheDirectories(

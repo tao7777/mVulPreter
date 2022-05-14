@@ -1,0 +1,31 @@
+digraph "1_Chrome_98095c718d7580b5d6715e5bfd8698234ecb4470_3@pointer" {
+"1000101" [label="(MethodParameterIn,WebGLTransformFeedback* feedback)"];
+"1000106" [label="(Call,!feedback)"];
+"1000104" [label="(Call,isContextLost() || !feedback)"];
+"1000118" [label="(MethodReturn,GLboolean)"];
+"1000109" [label="(Literal,0)"];
+"1000104" [label="(Call,isContextLost() || !feedback)"];
+"1000106" [label="(Call,!feedback)"];
+"1000112" [label="(Call,feedback->HasEverBeenBound())"];
+"1000103" [label="(ControlStructure,if (isContextLost() || !feedback))"];
+"1000105" [label="(Call,isContextLost())"];
+"1000107" [label="(Identifier,feedback)"];
+"1000101" [label="(MethodParameterIn,WebGLTransformFeedback* feedback)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000118"  [label="DDG: feedback"];
+"1000101" -> "1000106"  [label="DDG: feedback"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000118"  [label="DDG: feedback"];
+"1000106" -> "1000104"  [label="DDG: feedback"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000112" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000118"  [label="DDG: isContextLost() || !feedback"];
+"1000104" -> "1000118"  [label="DDG: isContextLost()"];
+"1000104" -> "1000118"  [label="DDG: !feedback"];
+}

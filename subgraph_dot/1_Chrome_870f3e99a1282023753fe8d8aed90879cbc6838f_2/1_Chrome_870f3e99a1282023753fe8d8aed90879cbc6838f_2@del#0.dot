@@ -1,0 +1,36 @@
+digraph "1_Chrome_870f3e99a1282023753fe8d8aed90879cbc6838f_2@del" {
+"1000102" [label="(MethodParameterIn,const char* event_name)"];
+"1000109" [label="(Call,base::MatchPattern(event_name, \"whitelisted\"))"];
+"1000105" [label="(Call,base::MatchPattern(category_group_name, \"benchmark\") &&\n       base::MatchPattern(event_name, \"whitelisted\"))"];
+"1000111" [label="(Literal,\"whitelisted\")"];
+"1000104" [label="(ControlStructure,if (base::MatchPattern(category_group_name, \"benchmark\") &&\n       base::MatchPattern(event_name, \"whitelisted\")))"];
+"1000106" [label="(Call,base::MatchPattern(category_group_name, \"benchmark\"))"];
+"1000110" [label="(Identifier,event_name)"];
+"1000102" [label="(MethodParameterIn,const char* event_name)"];
+"1000109" [label="(Call,base::MatchPattern(event_name, \"whitelisted\"))"];
+"1000116" [label="(Identifier,false)"];
+"1000114" [label="(Identifier,true)"];
+"1000105" [label="(Call,base::MatchPattern(category_group_name, \"benchmark\") &&\n       base::MatchPattern(event_name, \"whitelisted\"))"];
+"1000117" [label="(MethodReturn,bool)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000117"  [label="DDG: "];
+"1000102" -> "1000109"  [label="DDG: "];
+"1000109" -> "1000105"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000105" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000117"  [label="DDG: "];
+"1000109" -> "1000105"  [label="DDG: "];
+"1000109" -> "1000105"  [label="DDG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000114" -> "1000105"  [label="CFG: "];
+"1000116" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000117"  [label="DDG: "];
+"1000105" -> "1000117"  [label="DDG: "];
+"1000105" -> "1000117"  [label="DDG: "];
+"1000106" -> "1000105"  [label="DDG: "];
+"1000106" -> "1000105"  [label="DDG: "];
+}

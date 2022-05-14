@@ -1,0 +1,20 @@
+digraph "0_linux_363b02dab09b3226f3bd1420dad9c72b79a42a76_0@pointer" {
+"1000101" [label="(MethodParameterIn,const struct key *key)"];
+"1000122" [label="(Call,key_is_positive(key))"];
+"1000121" [label="(ControlStructure,if (key_is_positive(key)))"];
+"1000123" [label="(Identifier,key)"];
+"1000125" [label="(Identifier,m)"];
+"1000122" [label="(Call,key_is_positive(key))"];
+"1000101" [label="(MethodParameterIn,const struct key *key)"];
+"1000134" [label="(MethodReturn,void)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000134"  [label="DDG: key"];
+"1000101" -> "1000122"  [label="DDG: key"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000125" -> "1000122"  [label="CFG: "];
+"1000134" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000134"  [label="DDG: key"];
+"1000122" -> "1000134"  [label="DDG: key_is_positive(key)"];
+}

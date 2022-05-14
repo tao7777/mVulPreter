@@ -1,0 +1,35 @@
+digraph "0_linux_07678eca2cf9c9a18584e546c2b2a0d0c9a3150c@pointer" {
+"1000345" [label="(Call,tmp = vmw_resource_reference(res))"];
+"1000347" [label="(Call,vmw_resource_reference(res))"];
+"1000244" [label="(Call,res = &user_srf->srf.res)"];
+"1000345" [label="(Call,tmp = vmw_resource_reference(res))"];
+"1000255" [label="(Identifier,req)"];
+"1000347" [label="(Call,vmw_resource_reference(res))"];
+"1000346" [label="(Identifier,tmp)"];
+"1000246" [label="(Call,&user_srf->srf.res)"];
+"1000350" [label="(Identifier,ret)"];
+"1000348" [label="(Identifier,res)"];
+"1000466" [label="(MethodReturn,int)"];
+"1000105" [label="(Block,)"];
+"1000245" [label="(Identifier,res)"];
+"1000244" [label="(Call,res = &user_srf->srf.res)"];
+"1000345" -> "1000105"  [label="AST: "];
+"1000345" -> "1000347"  [label="CFG: "];
+"1000346" -> "1000345"  [label="AST: "];
+"1000347" -> "1000345"  [label="AST: "];
+"1000350" -> "1000345"  [label="CFG: "];
+"1000345" -> "1000466"  [label="DDG: vmw_resource_reference(res)"];
+"1000345" -> "1000466"  [label="DDG: tmp"];
+"1000347" -> "1000345"  [label="DDG: res"];
+"1000347" -> "1000348"  [label="CFG: "];
+"1000348" -> "1000347"  [label="AST: "];
+"1000347" -> "1000466"  [label="DDG: res"];
+"1000244" -> "1000347"  [label="DDG: res"];
+"1000244" -> "1000105"  [label="AST: "];
+"1000244" -> "1000246"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000246" -> "1000244"  [label="AST: "];
+"1000255" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000466"  [label="DDG: res"];
+"1000244" -> "1000466"  [label="DDG: &user_srf->srf.res"];
+}

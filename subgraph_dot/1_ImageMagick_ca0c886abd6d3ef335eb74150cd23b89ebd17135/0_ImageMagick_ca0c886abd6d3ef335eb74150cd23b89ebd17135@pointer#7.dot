@@ -1,0 +1,31 @@
+digraph "0_ImageMagick_ca0c886abd6d3ef335eb74150cd23b89ebd17135@pointer" {
+"1000750" [label="(Call,image->depth <= 8)"];
+"1000514" [label="(Call,image->depth=viff_info.x_bits_per_pixel <= 8 ? 8UL :\n      MAGICKCORE_QUANTUM_DEPTH)"];
+"1000514" [label="(Call,image->depth=viff_info.x_bits_per_pixel <= 8 ? 8UL :\n      MAGICKCORE_QUANTUM_DEPTH)"];
+"1000215" [label="(Block,)"];
+"1000527" [label="(Identifier,number_pixels)"];
+"1000515" [label="(Call,image->depth)"];
+"1000754" [label="(Literal,8)"];
+"1000749" [label="(Call,image->depth <= 8 ? 256UL : 65536UL)"];
+"1000756" [label="(Literal,65536UL)"];
+"1000755" [label="(Literal,256UL)"];
+"1002330" [label="(MethodReturn,static Image *)"];
+"1000750" [label="(Call,image->depth <= 8)"];
+"1000751" [label="(Call,image->depth)"];
+"1000518" [label="(Call,viff_info.x_bits_per_pixel <= 8 ? 8UL :\n      MAGICKCORE_QUANTUM_DEPTH)"];
+"1000750" -> "1000749"  [label="AST: "];
+"1000750" -> "1000754"  [label="CFG: "];
+"1000751" -> "1000750"  [label="AST: "];
+"1000754" -> "1000750"  [label="AST: "];
+"1000755" -> "1000750"  [label="CFG: "];
+"1000756" -> "1000750"  [label="CFG: "];
+"1000750" -> "1002330"  [label="DDG: image->depth"];
+"1000514" -> "1000750"  [label="DDG: image->depth"];
+"1000514" -> "1000215"  [label="AST: "];
+"1000514" -> "1000518"  [label="CFG: "];
+"1000515" -> "1000514"  [label="AST: "];
+"1000518" -> "1000514"  [label="AST: "];
+"1000527" -> "1000514"  [label="CFG: "];
+"1000514" -> "1002330"  [label="DDG: viff_info.x_bits_per_pixel <= 8 ? 8UL :\n      MAGICKCORE_QUANTUM_DEPTH"];
+"1000514" -> "1002330"  [label="DDG: image->depth"];
+}

@@ -1,0 +1,35 @@
+digraph "0_linux_a1d47b262952a45aae62bd49cfaf33dd76c11a2c@API" {
+"1000151" [label="(Call,down_read(&iinfo->i_data_sem))"];
+"1000208" [label="(Call,up_read(&iinfo->i_data_sem))"];
+"1000222" [label="(Call,up_read(&iinfo->i_data_sem))"];
+"1000223" [label="(Call,&iinfo->i_data_sem)"];
+"1000151" [label="(Call,down_read(&iinfo->i_data_sem))"];
+"1000236" [label="(MethodReturn,static int)"];
+"1000159" [label="(Identifier,iinfo)"];
+"1000104" [label="(Block,)"];
+"1000208" [label="(Call,up_read(&iinfo->i_data_sem))"];
+"1000228" [label="(Identifier,page)"];
+"1000152" [label="(Call,&iinfo->i_data_sem)"];
+"1000214" [label="(Identifier,page)"];
+"1000222" [label="(Call,up_read(&iinfo->i_data_sem))"];
+"1000209" [label="(Call,&iinfo->i_data_sem)"];
+"1000151" -> "1000104"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000159" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000236"  [label="DDG: down_read(&iinfo->i_data_sem)"];
+"1000151" -> "1000208"  [label="DDG: &iinfo->i_data_sem"];
+"1000151" -> "1000222"  [label="DDG: &iinfo->i_data_sem"];
+"1000208" -> "1000104"  [label="AST: "];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000214" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000236"  [label="DDG: &iinfo->i_data_sem"];
+"1000208" -> "1000236"  [label="DDG: up_read(&iinfo->i_data_sem)"];
+"1000222" -> "1000104"  [label="AST: "];
+"1000222" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000228" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000236"  [label="DDG: &iinfo->i_data_sem"];
+"1000222" -> "1000236"  [label="DDG: up_read(&iinfo->i_data_sem)"];
+}

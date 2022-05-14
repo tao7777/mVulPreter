@@ -1,0 +1,26 @@
+digraph "0_radare2_f17bfd9f1da05f30f23a4dd05e9d2363e1406948@array" {
+"1000401" [label="(Call,0xb8 | op->operands[0].reg)"];
+"1000396" [label="(Call,data[l++] = 0xb8 | op->operands[0].reg)"];
+"1000412" [label="(Identifier,data)"];
+"1000402" [label="(Literal,0xb8)"];
+"1003220" [label="(MethodReturn,static int)"];
+"1000396" [label="(Call,data[l++] = 0xb8 | op->operands[0].reg)"];
+"1000403" [label="(Call,op->operands[0].reg)"];
+"1000104" [label="(MethodParameterIn,ut8 *data)"];
+"1000397" [label="(Call,data[l++])"];
+"1000401" [label="(Call,0xb8 | op->operands[0].reg)"];
+"1000395" [label="(Block,)"];
+"1000401" -> "1000396"  [label="AST: "];
+"1000401" -> "1000403"  [label="CFG: "];
+"1000402" -> "1000401"  [label="AST: "];
+"1000403" -> "1000401"  [label="AST: "];
+"1000396" -> "1000401"  [label="CFG: "];
+"1000401" -> "1003220"  [label="DDG: op->operands[0].reg"];
+"1000401" -> "1000396"  [label="DDG: 0xb8"];
+"1000401" -> "1000396"  [label="DDG: op->operands[0].reg"];
+"1000396" -> "1000395"  [label="AST: "];
+"1000397" -> "1000396"  [label="AST: "];
+"1000412" -> "1000396"  [label="CFG: "];
+"1000396" -> "1003220"  [label="DDG: 0xb8 | op->operands[0].reg"];
+"1000104" -> "1000396"  [label="DDG: data"];
+}

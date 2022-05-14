@@ -1,0 +1,38 @@
+digraph "0_krb5_8ee70ec63931d1e38567905387ab9b1d45734d81@pointer" {
+"1000284" [label="(Call,comp2->length+1)"];
+"1000270" [label="(Call,memchr(comp2->data, '.', comp2->length))"];
+"1000285" [label="(Call,comp2->length)"];
+"1000278" [label="(Identifier,NULL)"];
+"1000284" [label="(Call,comp2->length+1)"];
+"1000408" [label="(MethodReturn,RET)"];
+"1000288" [label="(Literal,1)"];
+"1000274" [label="(Literal,'.')"];
+"1000303" [label="(Call,memcpy(temp_buf, comp2->data, comp2->length))"];
+"1000275" [label="(Call,comp2->length)"];
+"1000271" [label="(Call,comp2->data)"];
+"1000282" [label="(Call,calloc(1, comp2->length+1))"];
+"1000269" [label="(Call,memchr(comp2->data, '.', comp2->length) == NULL)"];
+"1000298" [label="(Call,comp2->data != NULL)"];
+"1000270" [label="(Call,memchr(comp2->data, '.', comp2->length))"];
+"1000284" -> "1000282"  [label="AST: "];
+"1000284" -> "1000288"  [label="CFG: "];
+"1000285" -> "1000284"  [label="AST: "];
+"1000288" -> "1000284"  [label="AST: "];
+"1000282" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000408"  [label="DDG: comp2->length"];
+"1000270" -> "1000284"  [label="DDG: comp2->length"];
+"1000270" -> "1000269"  [label="AST: "];
+"1000270" -> "1000275"  [label="CFG: "];
+"1000271" -> "1000270"  [label="AST: "];
+"1000274" -> "1000270"  [label="AST: "];
+"1000275" -> "1000270"  [label="AST: "];
+"1000278" -> "1000270"  [label="CFG: "];
+"1000270" -> "1000408"  [label="DDG: comp2->length"];
+"1000270" -> "1000408"  [label="DDG: comp2->data"];
+"1000270" -> "1000269"  [label="DDG: comp2->data"];
+"1000270" -> "1000269"  [label="DDG: '.'"];
+"1000270" -> "1000269"  [label="DDG: comp2->length"];
+"1000270" -> "1000282"  [label="DDG: comp2->length"];
+"1000270" -> "1000298"  [label="DDG: comp2->data"];
+"1000270" -> "1000303"  [label="DDG: comp2->length"];
+}

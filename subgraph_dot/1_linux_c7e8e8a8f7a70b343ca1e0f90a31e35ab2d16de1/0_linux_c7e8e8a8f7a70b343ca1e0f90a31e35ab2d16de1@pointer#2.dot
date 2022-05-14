@@ -1,0 +1,31 @@
+digraph "0_linux_c7e8e8a8f7a70b343ca1e0f90a31e35ab2d16de1@pointer" {
+"1000229" [label="(Call,p->port->dev->ifindex != entry->ifindex)"];
+"1000224" [label="(Call,!p->port || p->port->dev->ifindex != entry->ifindex)"];
+"1000224" [label="(Call,!p->port || p->port->dev->ifindex != entry->ifindex)"];
+"1000305" [label="(MethodReturn,static int)"];
+"1000223" [label="(ControlStructure,if (!p->port || p->port->dev->ifindex != entry->ifindex))"];
+"1000240" [label="(ControlStructure,continue;)"];
+"1000230" [label="(Call,p->port->dev->ifindex)"];
+"1000245" [label="(Identifier,p)"];
+"1000237" [label="(Call,entry->ifindex)"];
+"1000225" [label="(Call,!p->port)"];
+"1000229" [label="(Call,p->port->dev->ifindex != entry->ifindex)"];
+"1000229" -> "1000224"  [label="AST: "];
+"1000229" -> "1000237"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000237" -> "1000229"  [label="AST: "];
+"1000224" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000305"  [label="DDG: entry->ifindex"];
+"1000229" -> "1000305"  [label="DDG: p->port->dev->ifindex"];
+"1000229" -> "1000224"  [label="DDG: p->port->dev->ifindex"];
+"1000229" -> "1000224"  [label="DDG: entry->ifindex"];
+"1000224" -> "1000223"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000240" -> "1000224"  [label="CFG: "];
+"1000245" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000305"  [label="DDG: !p->port"];
+"1000224" -> "1000305"  [label="DDG: p->port->dev->ifindex != entry->ifindex"];
+"1000224" -> "1000305"  [label="DDG: !p->port || p->port->dev->ifindex != entry->ifindex"];
+"1000225" -> "1000224"  [label="DDG: p->port"];
+}

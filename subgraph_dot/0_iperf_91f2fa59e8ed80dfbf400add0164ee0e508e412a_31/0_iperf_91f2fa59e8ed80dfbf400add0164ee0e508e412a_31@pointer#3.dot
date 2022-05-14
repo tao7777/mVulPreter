@@ -1,0 +1,25 @@
+digraph "0_iperf_91f2fa59e8ed80dfbf400add0164ee0e508e412a_31@pointer" {
+"1000124" [label="(Call,tolower(*s2))"];
+"1000120" [label="(Call,tolower(*s1) == tolower(*s2))"];
+"1000135" [label="(Identifier,s1)"];
+"1000124" [label="(Call,tolower(*s2))"];
+"1000121" [label="(Call,tolower(*s1))"];
+"1000119" [label="(ControlStructure,for(; tolower(*s1) == tolower(*s2); ++s1, ++s2))"];
+"1000125" [label="(Call,*s2)"];
+"1000151" [label="(MethodReturn,static int)"];
+"1000120" [label="(Call,tolower(*s1) == tolower(*s2))"];
+"1000124" -> "1000120"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000120" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000151"  [label="DDG: *s2"];
+"1000124" -> "1000120"  [label="DDG: *s2"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000135" -> "1000120"  [label="CFG: "];
+"1000144" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000151"  [label="DDG: tolower(*s1)"];
+"1000120" -> "1000151"  [label="DDG: tolower(*s1) == tolower(*s2)"];
+"1000120" -> "1000151"  [label="DDG: tolower(*s2)"];
+"1000121" -> "1000120"  [label="DDG: *s1"];
+}

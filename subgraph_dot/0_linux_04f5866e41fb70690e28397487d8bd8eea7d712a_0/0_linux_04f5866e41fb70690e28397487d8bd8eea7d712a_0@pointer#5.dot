@@ -1,0 +1,29 @@
+digraph "0_linux_04f5866e41fb70690e28397487d8bd8eea7d712a_0@pointer" {
+"1000286" [label="(Call,vma = mm->mmap)"];
+"1000303" [label="(Call,vma_set_page_prot(vma))"];
+"1000286" [label="(Call,vma = mm->mmap)"];
+"1000287" [label="(Identifier,vma)"];
+"1000303" [label="(Call,vma_set_page_prot(vma))"];
+"1000304" [label="(Identifier,vma)"];
+"1000285" [label="(ControlStructure,for (vma = mm->mmap; vma; vma = vma->vm_next))"];
+"1000288" [label="(Call,mm->mmap)"];
+"1000293" [label="(Identifier,vma)"];
+"1000297" [label="(Block,)"];
+"1000353" [label="(MethodReturn,static ssize_t)"];
+"1000292" [label="(Call,vma = vma->vm_next)"];
+"1000291" [label="(Identifier,vma)"];
+"1000286" -> "1000285"  [label="AST: "];
+"1000286" -> "1000288"  [label="CFG: "];
+"1000287" -> "1000286"  [label="AST: "];
+"1000288" -> "1000286"  [label="AST: "];
+"1000291" -> "1000286"  [label="CFG: "];
+"1000286" -> "1000353"  [label="DDG: vma"];
+"1000286" -> "1000353"  [label="DDG: mm->mmap"];
+"1000286" -> "1000303"  [label="DDG: vma"];
+"1000303" -> "1000297"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000293" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000353"  [label="DDG: vma_set_page_prot(vma)"];
+"1000292" -> "1000303"  [label="DDG: vma"];
+}

@@ -1,0 +1,34 @@
+digraph "0_optee_os_d5c5b0b77b2b589666024d219a8007b3f5b6faeb_0@pointer" {
+"1000223" [label="(Call,p->u[n].val.b = b)"];
+"1000139" [label="(Call,b = up->vals[n * 2 + 1])"];
+"1000234" [label="(ControlStructure,break;)"];
+"1000140" [label="(Identifier,b)"];
+"1000127" [label="(Block,)"];
+"1000233" [label="(Identifier,b)"];
+"1000253" [label="(MethodReturn,static TEE_Result)"];
+"1000202" [label="(Call,tee_mmu_check_access_rights(utc, flags, a, b))"];
+"1000139" [label="(Call,b = up->vals[n * 2 + 1])"];
+"1000160" [label="(Block,)"];
+"1000141" [label="(Call,up->vals[n * 2 + 1])"];
+"1000190" [label="(Call,p->u[n].mem.size = b)"];
+"1000152" [label="(Identifier,flags)"];
+"1000223" [label="(Call,p->u[n].val.b = b)"];
+"1000224" [label="(Call,p->u[n].val.b)"];
+"1000223" -> "1000160"  [label="AST: "];
+"1000223" -> "1000233"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000233" -> "1000223"  [label="AST: "];
+"1000234" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000253"  [label="DDG: b"];
+"1000223" -> "1000253"  [label="DDG: p->u[n].val.b"];
+"1000139" -> "1000223"  [label="DDG: b"];
+"1000139" -> "1000127"  [label="AST: "];
+"1000139" -> "1000141"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000141" -> "1000139"  [label="AST: "];
+"1000152" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000253"  [label="DDG: up->vals[n * 2 + 1]"];
+"1000139" -> "1000253"  [label="DDG: b"];
+"1000139" -> "1000190"  [label="DDG: b"];
+"1000139" -> "1000202"  [label="DDG: b"];
+}

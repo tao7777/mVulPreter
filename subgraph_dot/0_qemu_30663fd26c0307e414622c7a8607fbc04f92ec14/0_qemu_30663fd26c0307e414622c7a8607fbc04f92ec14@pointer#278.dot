@@ -1,0 +1,37 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1006807" [label="(Call,s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM)"];
+"1006806" [label="(Call,!(s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM))"];
+"1006803" [label="(Call,CODE64(s) && !(s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM))"];
+"1006808" [label="(Call,s->cpuid_ext3_features)"];
+"1006803" [label="(Call,CODE64(s) && !(s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM))"];
+"1006802" [label="(ControlStructure,if (CODE64(s) && !(s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM)))"];
+"1006806" [label="(Call,!(s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM))"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1006804" [label="(Call,CODE64(s))"];
+"1006807" [label="(Call,s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM)"];
+"1006812" [label="(ControlStructure,goto illegal_op;)"];
+"1006814" [label="(Identifier,s)"];
+"1006811" [label="(Identifier,CPUID_EXT3_LAHF_LM)"];
+"1006807" -> "1006806"  [label="AST: "];
+"1006807" -> "1006811"  [label="CFG: "];
+"1006808" -> "1006807"  [label="AST: "];
+"1006811" -> "1006807"  [label="AST: "];
+"1006806" -> "1006807"  [label="CFG: "];
+"1006807" -> "1011840"  [label="DDG: CPUID_EXT3_LAHF_LM"];
+"1006807" -> "1011840"  [label="DDG: s->cpuid_ext3_features"];
+"1006807" -> "1006806"  [label="DDG: s->cpuid_ext3_features"];
+"1006807" -> "1006806"  [label="DDG: CPUID_EXT3_LAHF_LM"];
+"1006806" -> "1006803"  [label="AST: "];
+"1006803" -> "1006806"  [label="CFG: "];
+"1006806" -> "1011840"  [label="DDG: s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM"];
+"1006806" -> "1006803"  [label="DDG: s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM"];
+"1006803" -> "1006802"  [label="AST: "];
+"1006803" -> "1006804"  [label="CFG: "];
+"1006804" -> "1006803"  [label="AST: "];
+"1006812" -> "1006803"  [label="CFG: "];
+"1006814" -> "1006803"  [label="CFG: "];
+"1006803" -> "1011840"  [label="DDG: !(s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM)"];
+"1006803" -> "1011840"  [label="DDG: CODE64(s) && !(s->cpuid_ext3_features & CPUID_EXT3_LAHF_LM)"];
+"1006803" -> "1011840"  [label="DDG: CODE64(s)"];
+"1006804" -> "1006803"  [label="DDG: s"];
+}

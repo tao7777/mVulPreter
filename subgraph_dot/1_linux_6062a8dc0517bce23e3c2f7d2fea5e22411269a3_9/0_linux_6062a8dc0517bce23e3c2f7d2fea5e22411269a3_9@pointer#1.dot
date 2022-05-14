@@ -1,0 +1,24 @@
+digraph "0_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_9@pointer" {
+"1000134" [label="(Call,spin_unlock(&ipcp->lock))"];
+"1000124" [label="(Call,spin_lock(&ipcp->lock))"];
+"1000135" [label="(Call,&ipcp->lock)"];
+"1000134" [label="(Call,spin_unlock(&ipcp->lock))"];
+"1000148" [label="(MethodReturn,static inline struct sem_array *)"];
+"1000132" [label="(Identifier,ipcp)"];
+"1000104" [label="(Block,)"];
+"1000140" [label="(Identifier,sma)"];
+"1000125" [label="(Call,&ipcp->lock)"];
+"1000124" [label="(Call,spin_lock(&ipcp->lock))"];
+"1000134" -> "1000104"  [label="AST: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000140" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000148"  [label="DDG: spin_unlock(&ipcp->lock)"];
+"1000134" -> "1000148"  [label="DDG: &ipcp->lock"];
+"1000124" -> "1000134"  [label="DDG: &ipcp->lock"];
+"1000124" -> "1000104"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000132" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000148"  [label="DDG: spin_lock(&ipcp->lock)"];
+}

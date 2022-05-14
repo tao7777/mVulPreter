@@ -1,0 +1,33 @@
+digraph "0_linux_aa93d1fee85c890a34f2510a310e55ee76a27848@pointer" {
+"1000524" [label="(Call,s->vdev.v4l2_dev = &s->v4l2_dev)"];
+"1000368" [label="(Call,v4l2_device_register(&intf->dev, &s->v4l2_dev))"];
+"1000368" [label="(Call,v4l2_device_register(&intf->dev, &s->v4l2_dev))"];
+"1000373" [label="(Call,&s->v4l2_dev)"];
+"1000366" [label="(Call,ret = v4l2_device_register(&intf->dev, &s->v4l2_dev))"];
+"1000108" [label="(Block,)"];
+"1000537" [label="(Identifier,s)"];
+"1000530" [label="(Call,&s->v4l2_dev)"];
+"1000597" [label="(MethodReturn,static int)"];
+"1000369" [label="(Call,&intf->dev)"];
+"1000524" [label="(Call,s->vdev.v4l2_dev = &s->v4l2_dev)"];
+"1000587" [label="(Call,v4l2_device_unregister(&s->v4l2_dev))"];
+"1000525" [label="(Call,s->vdev.v4l2_dev)"];
+"1000524" -> "1000108"  [label="AST: "];
+"1000524" -> "1000530"  [label="CFG: "];
+"1000525" -> "1000524"  [label="AST: "];
+"1000530" -> "1000524"  [label="AST: "];
+"1000537" -> "1000524"  [label="CFG: "];
+"1000524" -> "1000597"  [label="DDG: s->vdev.v4l2_dev"];
+"1000524" -> "1000597"  [label="DDG: &s->v4l2_dev"];
+"1000368" -> "1000524"  [label="DDG: &s->v4l2_dev"];
+"1000368" -> "1000366"  [label="AST: "];
+"1000368" -> "1000373"  [label="CFG: "];
+"1000369" -> "1000368"  [label="AST: "];
+"1000373" -> "1000368"  [label="AST: "];
+"1000366" -> "1000368"  [label="CFG: "];
+"1000368" -> "1000597"  [label="DDG: &intf->dev"];
+"1000368" -> "1000597"  [label="DDG: &s->v4l2_dev"];
+"1000368" -> "1000366"  [label="DDG: &intf->dev"];
+"1000368" -> "1000366"  [label="DDG: &s->v4l2_dev"];
+"1000368" -> "1000587"  [label="DDG: &s->v4l2_dev"];
+}

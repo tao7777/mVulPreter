@@ -1,0 +1,28 @@
+digraph "0_linux_59643d1535eb220668692a5359de22545af579f6@array" {
+"1000300" [label="(Call,cpu_buffer = buffer->buffers[cpu_id])"];
+"1000355" [label="(Call,rb_update_pages(cpu_buffer))"];
+"1000301" [label="(Identifier,cpu_buffer)"];
+"1000309" [label="(Identifier,nr_pages)"];
+"1000351" [label="(ControlStructure,if (!cpu_online(cpu_id)))"];
+"1000356" [label="(Identifier,cpu_buffer)"];
+"1000300" [label="(Call,cpu_buffer = buffer->buffers[cpu_id])"];
+"1000302" [label="(Call,buffer->buffers[cpu_id])"];
+"1000291" [label="(Block,)"];
+"1000355" [label="(Call,rb_update_pages(cpu_buffer))"];
+"1000372" [label="(Identifier,cpu_buffer)"];
+"1000450" [label="(MethodReturn,int)"];
+"1000300" -> "1000291"  [label="AST: "];
+"1000300" -> "1000302"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000302" -> "1000300"  [label="AST: "];
+"1000309" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000450"  [label="DDG: cpu_buffer"];
+"1000300" -> "1000450"  [label="DDG: buffer->buffers[cpu_id]"];
+"1000300" -> "1000355"  [label="DDG: cpu_buffer"];
+"1000355" -> "1000351"  [label="AST: "];
+"1000355" -> "1000356"  [label="CFG: "];
+"1000356" -> "1000355"  [label="AST: "];
+"1000372" -> "1000355"  [label="CFG: "];
+"1000355" -> "1000450"  [label="DDG: cpu_buffer"];
+"1000355" -> "1000450"  [label="DDG: rb_update_pages(cpu_buffer)"];
+}

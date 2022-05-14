@@ -1,0 +1,24 @@
+digraph "0_linux_c7e8e8a8f7a70b343ca1e0f90a31e35ab2d16de1@pointer" {
+"1000179" [label="(Call,spin_lock_bh(&br->multicast_lock))"];
+"1000302" [label="(Call,spin_unlock_bh(&br->multicast_lock))"];
+"1000309" [label="(MethodReturn,static int)"];
+"1000179" [label="(Call,spin_lock_bh(&br->multicast_lock))"];
+"1000103" [label="(Block,)"];
+"1000303" [label="(Call,&br->multicast_lock)"];
+"1000302" [label="(Call,spin_unlock_bh(&br->multicast_lock))"];
+"1000180" [label="(Call,&br->multicast_lock)"];
+"1000185" [label="(Identifier,mdb)"];
+"1000308" [label="(Identifier,err)"];
+"1000179" -> "1000103"  [label="AST: "];
+"1000179" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000185" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000309"  [label="DDG: spin_lock_bh(&br->multicast_lock)"];
+"1000179" -> "1000302"  [label="DDG: &br->multicast_lock"];
+"1000302" -> "1000103"  [label="AST: "];
+"1000302" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000302"  [label="AST: "];
+"1000308" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000309"  [label="DDG: &br->multicast_lock"];
+"1000302" -> "1000309"  [label="DDG: spin_unlock_bh(&br->multicast_lock)"];
+}

@@ -1,0 +1,35 @@
+digraph "0_Android_268068f25673242d1d5130d96202d3288c91b700_3@API" {
+"1000219" [label="(Call,remove_socket(s))"];
+"1000104" [label="(MethodParameterIn,asocket* s)"];
+"1000229" [label="(Call,insert_local_socket(s, &local_socket_closing_list))"];
+"1000104" [label="(MethodParameterIn,asocket* s)"];
+"1000219" [label="(Call,remove_socket(s))"];
+"1000220" [label="(Identifier,s)"];
+"1000231" [label="(Call,&local_socket_closing_list)"];
+"1000105" [label="(Block,)"];
+"1000242" [label="(MethodReturn,static void)"];
+"1000234" [label="(Identifier,FDE_WRITE)"];
+"1000222" [label="(Literal,\"LS(%d): put on socket_closing_list fd=%d\")"];
+"1000197" [label="(Call,local_socket_destroy(s))"];
+"1000230" [label="(Identifier,s)"];
+"1000229" [label="(Call,insert_local_socket(s, &local_socket_closing_list))"];
+"1000219" -> "1000105"  [label="AST: "];
+"1000219" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000219"  [label="AST: "];
+"1000222" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000242"  [label="DDG: remove_socket(s)"];
+"1000104" -> "1000219"  [label="DDG: s"];
+"1000219" -> "1000229"  [label="DDG: s"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000242"  [label="DDG: s"];
+"1000104" -> "1000197"  [label="DDG: s"];
+"1000104" -> "1000229"  [label="DDG: s"];
+"1000229" -> "1000105"  [label="AST: "];
+"1000229" -> "1000231"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000231" -> "1000229"  [label="AST: "];
+"1000234" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000242"  [label="DDG: &local_socket_closing_list"];
+"1000229" -> "1000242"  [label="DDG: insert_local_socket(s, &local_socket_closing_list)"];
+"1000229" -> "1000242"  [label="DDG: s"];
+}

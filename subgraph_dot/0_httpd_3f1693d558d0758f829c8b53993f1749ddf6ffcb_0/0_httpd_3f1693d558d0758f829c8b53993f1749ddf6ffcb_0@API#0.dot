@@ -1,0 +1,26 @@
+digraph "0_httpd_3f1693d558d0758f829c8b53993f1749ddf6ffcb_0@API" {
+"1000125" [label="(Call,ap_assert(provider_name != NULL))"];
+"1000126" [label="(Call,provider_name != NULL)"];
+"1000130" [label="(Identifier,spec)"];
+"1000125" [label="(Call,ap_assert(provider_name != NULL))"];
+"1000136" [label="(Call,spec != NULL)"];
+"1000182" [label="(MethodReturn,static const char *)"];
+"1000128" [label="(Identifier,NULL)"];
+"1000131" [label="(Call,apr_hash_get(lua_authz_providers, provider_name, APR_HASH_KEY_STRING))"];
+"1000104" [label="(Block,)"];
+"1000127" [label="(Identifier,provider_name)"];
+"1000126" [label="(Call,provider_name != NULL)"];
+"1000125" -> "1000104"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000130" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000182"  [label="DDG: ap_assert(provider_name != NULL)"];
+"1000125" -> "1000182"  [label="DDG: provider_name != NULL"];
+"1000126" -> "1000125"  [label="DDG: provider_name"];
+"1000126" -> "1000125"  [label="DDG: NULL"];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000126" -> "1000131"  [label="DDG: provider_name"];
+"1000126" -> "1000136"  [label="DDG: NULL"];
+}

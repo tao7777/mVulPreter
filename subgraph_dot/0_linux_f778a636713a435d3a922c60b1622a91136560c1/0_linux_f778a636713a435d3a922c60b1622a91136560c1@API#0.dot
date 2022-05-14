@@ -1,0 +1,23 @@
+digraph "0_linux_f778a636713a435d3a922c60b1622a91136560c1@API" {
+"1000104" [label="(Call,memset(p, 0, sizeof(*p)))"];
+"1000102" [label="(MethodParameterIn,struct xfrm_usersa_info *p)"];
+"1000103" [label="(Block,)"];
+"1000244" [label="(MethodReturn,static void)"];
+"1000102" [label="(MethodParameterIn,struct xfrm_usersa_info *p)"];
+"1000105" [label="(Identifier,p)"];
+"1000113" [label="(Identifier,p)"];
+"1000106" [label="(Literal,0)"];
+"1000104" [label="(Call,memset(p, 0, sizeof(*p)))"];
+"1000107" [label="(Call,sizeof(*p))"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000107"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000107" -> "1000104"  [label="AST: "];
+"1000113" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000244"  [label="DDG: memset(p, 0, sizeof(*p))"];
+"1000104" -> "1000244"  [label="DDG: p"];
+"1000102" -> "1000104"  [label="DDG: p"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000244"  [label="DDG: p"];
+}

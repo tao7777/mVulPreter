@@ -1,0 +1,31 @@
+digraph "0_linux_3cf521f7dc87c031617fd47e4b7aa2593c2f3daf@pointer" {
+"1000181" [label="(Call,session->peer_session_id == 0)"];
+"1000175" [label="(Call,(session->session_id == 0) &&\n\t    (session->peer_session_id == 0))"];
+"1000250" [label="(MethodReturn,static int)"];
+"1000175" [label="(Call,(session->session_id == 0) &&\n\t    (session->peer_session_id == 0))"];
+"1000176" [label="(Call,session->session_id == 0)"];
+"1000188" [label="(Identifier,err)"];
+"1000182" [label="(Call,session->peer_session_id)"];
+"1000216" [label="(Identifier,err)"];
+"1000181" [label="(Call,session->peer_session_id == 0)"];
+"1000185" [label="(Literal,0)"];
+"1000174" [label="(ControlStructure,if ((session->session_id == 0) &&\n\t    (session->peer_session_id == 0)))"];
+"1000181" -> "1000175"  [label="AST: "];
+"1000181" -> "1000185"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000185" -> "1000181"  [label="AST: "];
+"1000175" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000250"  [label="DDG: session->peer_session_id"];
+"1000181" -> "1000175"  [label="DDG: session->peer_session_id"];
+"1000181" -> "1000175"  [label="DDG: 0"];
+"1000175" -> "1000174"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000188" -> "1000175"  [label="CFG: "];
+"1000216" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000250"  [label="DDG: session->peer_session_id == 0"];
+"1000175" -> "1000250"  [label="DDG: session->session_id == 0"];
+"1000175" -> "1000250"  [label="DDG: (session->session_id == 0) &&\n\t    (session->peer_session_id == 0)"];
+"1000176" -> "1000175"  [label="DDG: session->session_id"];
+"1000176" -> "1000175"  [label="DDG: 0"];
+}

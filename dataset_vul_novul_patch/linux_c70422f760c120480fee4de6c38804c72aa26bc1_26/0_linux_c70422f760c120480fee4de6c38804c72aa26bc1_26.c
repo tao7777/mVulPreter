@@ -1,0 +1,1 @@
+void svc_rdma_xdr_encode_reply_array(struct rpcrdma_write_array *ary,

@@ -1,0 +1,38 @@
+digraph "0_Android_8e438e153f661e9df8db0ac41d587e940352df06@pointer" {
+"1001036" [label="(Call,outHeader->pBuffer + outHeader->nOffset)"];
+"1001019" [label="(Call,outHeader->nOffset != 0)"];
+"1001045" [label="(Identifier,samplesize)"];
+"1001018" [label="(ControlStructure,if (outHeader->nOffset != 0))"];
+"1001020" [label="(Call,outHeader->nOffset)"];
+"1001038" [label="(Identifier,outHeader)"];
+"1001036" [label="(Call,outHeader->pBuffer + outHeader->nOffset)"];
+"1001037" [label="(Call,outHeader->pBuffer)"];
+"1001006" [label="(Block,)"];
+"1001054" [label="(Call,outHeader->nOffset\n + mStreamInfo->frameSize * samplesize)"];
+"1001019" [label="(Call,outHeader->nOffset != 0)"];
+"1001369" [label="(Call,outHeader->pBuffer\n + outHeader->nOffset)"];
+"1001427" [label="(MethodReturn,void)"];
+"1001026" [label="(Literal,\"outHeader->nOffset != 0 is not handled\")"];
+"1001040" [label="(Call,outHeader->nOffset)"];
+"1001023" [label="(Literal,0)"];
+"1001053" [label="(Call,outHeader->nOffset\n + mStreamInfo->frameSize * samplesize\n > outHeader->nAllocLen)"];
+"1001036" -> "1001006"  [label="AST: "];
+"1001036" -> "1001040"  [label="CFG: "];
+"1001037" -> "1001036"  [label="AST: "];
+"1001040" -> "1001036"  [label="AST: "];
+"1001045" -> "1001036"  [label="CFG: "];
+"1001036" -> "1001427"  [label="DDG: outHeader->pBuffer + outHeader->nOffset"];
+"1001036" -> "1001427"  [label="DDG: outHeader->pBuffer"];
+"1001019" -> "1001036"  [label="DDG: outHeader->nOffset"];
+"1001019" -> "1001018"  [label="AST: "];
+"1001019" -> "1001023"  [label="CFG: "];
+"1001020" -> "1001019"  [label="AST: "];
+"1001023" -> "1001019"  [label="AST: "];
+"1001026" -> "1001019"  [label="CFG: "];
+"1001038" -> "1001019"  [label="CFG: "];
+"1001019" -> "1001427"  [label="DDG: outHeader->nOffset != 0"];
+"1001019" -> "1001427"  [label="DDG: outHeader->nOffset"];
+"1001019" -> "1001053"  [label="DDG: outHeader->nOffset"];
+"1001019" -> "1001054"  [label="DDG: outHeader->nOffset"];
+"1001019" -> "1001369"  [label="DDG: outHeader->nOffset"];
+}

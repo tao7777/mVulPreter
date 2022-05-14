@@ -1,0 +1,36 @@
+digraph "0_tor_3cea86eb2fbb65949673eb4ba8ebb695c87a57ce@API" {
+"1000111" [label="(Call,tor_assert(sz > chunk->memlen))"];
+"1000112" [label="(Call,sz > chunk->memlen)"];
+"1000102" [label="(MethodParameterIn,size_t sz)"];
+"1000168" [label="(MethodReturn,RET)"];
+"1000162" [label="(Call,CHUNK_ALLOC_SIZE(sz))"];
+"1000103" [label="(Block,)"];
+"1000112" [label="(Call,sz > chunk->memlen)"];
+"1000114" [label="(Call,chunk->memlen)"];
+"1000157" [label="(Call,CHUNK_ALLOC_SIZE(sz))"];
+"1000111" [label="(Call,tor_assert(sz > chunk->memlen))"];
+"1000132" [label="(Call,chunk->memlen = sz)"];
+"1000118" [label="(Identifier,offset)"];
+"1000102" [label="(MethodParameterIn,size_t sz)"];
+"1000113" [label="(Identifier,sz)"];
+"1000130" [label="(Call,CHUNK_ALLOC_SIZE(sz))"];
+"1000111" -> "1000103"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000118" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000168"  [label="DDG: sz > chunk->memlen"];
+"1000111" -> "1000168"  [label="DDG: tor_assert(sz > chunk->memlen)"];
+"1000112" -> "1000111"  [label="DDG: sz"];
+"1000112" -> "1000111"  [label="DDG: chunk->memlen"];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000102" -> "1000112"  [label="DDG: sz"];
+"1000112" -> "1000130"  [label="DDG: sz"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000168"  [label="DDG: sz"];
+"1000102" -> "1000130"  [label="DDG: sz"];
+"1000102" -> "1000132"  [label="DDG: sz"];
+"1000102" -> "1000157"  [label="DDG: sz"];
+"1000102" -> "1000162"  [label="DDG: sz"];
+}

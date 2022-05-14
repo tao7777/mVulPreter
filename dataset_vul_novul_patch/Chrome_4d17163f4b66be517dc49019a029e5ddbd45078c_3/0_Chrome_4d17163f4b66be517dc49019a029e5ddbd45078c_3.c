@@ -1,0 +1,1 @@
+void CSSDefaultStyleSheets::loadSimpleDefaultStyle()

@@ -1,0 +1,85 @@
+int git_pkt_parse_line(
+	git_pkt **head, const char *line, const char **out, size_t bufflen)
+{
+	int ret;
+	int32_t len;
+
+	/* Not even enough for the length */
+	if (bufflen > 0 && bufflen < PKT_LEN_SIZE)
+		return GIT_EBUFS;
+
+	len = parse_len(line);
+	if (len < 0) {
+		/*
+		 * If we fail to parse the length, it might be because the
+		 * server is trying to send us the packfile already.
+		 */
+		if (bufflen >= 4 && !git__prefixcmp(line, "PACK")) {
+			giterr_clear();
+			*out = line;
+			return pack_pkt(head);
+		}
+
+		return (int)len;
+	}
+
+	/*
+	 * If we were given a buffer length, then make sure there is
+	 * enough in the buffer to satisfy this line
+	 */
+	if (bufflen > 0 && bufflen < (size_t)len)
+		return GIT_EBUFS;
+
+	/*
+	 * The length has to be exactly 0 in case of a flush
+	 * packet or greater than PKT_LEN_SIZE, as the decoded
+	 * length includes its own encoded length of four bytes.
+	 */
+	if (len != 0 && len < PKT_LEN_SIZE)
+		return GIT_ERROR;
+ 
+ 	line += PKT_LEN_SIZE;
+ 	/*
+	 * The Git protocol does not specify empty lines as part
+	 * of the protocol. Not knowing what to do with an empty
+	 * line, we should return an error upon hitting one.
+ 	 */
+ 	if (len == PKT_LEN_SIZE) {
+		giterr_set_str(GITERR_NET, "Invalid empty packet");
+		return GIT_ERROR;
+ 	}
+ 
+ 	if (len == 0) { /* Flush pkt */
+		*out = line;
+		return flush_pkt(head);
+	}
+
+	len -= PKT_LEN_SIZE; /* the encoded length includes its own size */
+
+	if (*line == GIT_SIDE_BAND_DATA)
+		ret = data_pkt(head, line, len);
+	else if (*line == GIT_SIDE_BAND_PROGRESS)
+		ret = sideband_progress_pkt(head, line, len);
+	else if (*line == GIT_SIDE_BAND_ERROR)
+		ret = sideband_error_pkt(head, line, len);
+	else if (!git__prefixcmp(line, "ACK"))
+		ret = ack_pkt(head, line, len);
+	else if (!git__prefixcmp(line, "NAK"))
+		ret = nak_pkt(head);
+	else if (!git__prefixcmp(line, "ERR "))
+		ret = err_pkt(head, line, len);
+	else if (*line == '#')
+		ret = comment_pkt(head, line, len);
+	else if (!git__prefixcmp(line, "ok"))
+		ret = ok_pkt(head, line, len);
+	else if (!git__prefixcmp(line, "ng"))
+		ret = ng_pkt(head, line, len);
+	else if (!git__prefixcmp(line, "unpack"))
+		ret = unpack_pkt(head, line, len);
+	else
+		ret = ref_pkt(head, line, len);
+
+	*out = line + len;
+
+	return ret;
+}

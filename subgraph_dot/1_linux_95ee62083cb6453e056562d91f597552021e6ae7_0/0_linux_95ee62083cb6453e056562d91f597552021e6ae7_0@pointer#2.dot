@@ -1,0 +1,34 @@
+digraph "0_linux_95ee62083cb6453e056562d91f597552021e6ae7_0@pointer" {
+"1000112" [label="(Call,*np = inet6_sk(sk))"];
+"1000114" [label="(Call,inet6_sk(sk))"];
+"1000106" [label="(Call,*sk = skb->sk)"];
+"1000104" [label="(Block,)"];
+"1000263" [label="(MethodReturn,static int)"];
+"1000107" [label="(Identifier,sk)"];
+"1000159" [label="(Call,IP6_ECN_flow_xmit(sk, fl6.flowlabel))"];
+"1000119" [label="(Identifier,fl6)"];
+"1000108" [label="(Call,skb->sk)"];
+"1000113" [label="(Identifier,np)"];
+"1000106" [label="(Call,*sk = skb->sk)"];
+"1000115" [label="(Identifier,sk)"];
+"1000112" [label="(Call,*np = inet6_sk(sk))"];
+"1000114" [label="(Call,inet6_sk(sk))"];
+"1000112" -> "1000104"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000119" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000263"  [label="DDG: inet6_sk(sk)"];
+"1000112" -> "1000263"  [label="DDG: np"];
+"1000114" -> "1000112"  [label="DDG: sk"];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000106" -> "1000114"  [label="DDG: sk"];
+"1000114" -> "1000159"  [label="DDG: sk"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000113" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000263"  [label="DDG: skb->sk"];
+}

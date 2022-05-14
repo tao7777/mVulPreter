@@ -1,0 +1,31 @@
+digraph "1_Chrome_db93178bcaaf7e99ebb18bd51fa99b2feaf47e1f_5@pointer" {
+"1000120" [label="(Call,DCHECK(extension))"];
+"1000116" [label="(Call,* extension =\n      extensions::ExtensionSystem::Get(profile_)->extension_service()\n          ->GetInstalledExtension(app_id_))"];
+"1000118" [label="(Call,extensions::ExtensionSystem::Get(profile_)->extension_service()\n          ->GetInstalledExtension(app_id_))"];
+"1000130" [label="(MethodReturn,RET)"];
+"1000119" [label="(Identifier,app_id_)"];
+"1000105" [label="(Block,)"];
+"1000121" [label="(Identifier,extension)"];
+"1000120" [label="(Call,DCHECK(extension))"];
+"1000116" [label="(Call,* extension =\n      extensions::ExtensionSystem::Get(profile_)->extension_service()\n          ->GetInstalledExtension(app_id_))"];
+"1000118" [label="(Call,extensions::ExtensionSystem::Get(profile_)->extension_service()\n          ->GetInstalledExtension(app_id_))"];
+"1000123" [label="(Identifier,is_platform_app_)"];
+"1000117" [label="(Identifier,extension)"];
+"1000120" -> "1000105"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000123" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000130"  [label="DDG: extension"];
+"1000120" -> "1000130"  [label="DDG: DCHECK(extension)"];
+"1000116" -> "1000120"  [label="DDG: extension"];
+"1000116" -> "1000105"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000121" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000130"  [label="DDG: extensions::ExtensionSystem::Get(profile_)->extension_service()\n          ->GetInstalledExtension(app_id_)"];
+"1000118" -> "1000116"  [label="DDG: app_id_"];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000118" -> "1000130"  [label="DDG: app_id_"];
+}

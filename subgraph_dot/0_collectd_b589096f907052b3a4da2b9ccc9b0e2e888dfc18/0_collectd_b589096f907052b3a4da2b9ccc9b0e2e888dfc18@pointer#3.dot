@@ -1,0 +1,24 @@
+digraph "0_collectd_b589096f907052b3a4da2b9ccc9b0e2e888dfc18@pointer" {
+"1000110" [label="(MethodParameterIn,const char *username)"];
+"1000366" [label="(Call,network_dispatch_values (&vl, username))"];
+"1000369" [label="(Identifier,username)"];
+"1000367" [label="(Call,&vl)"];
+"1000110" [label="(MethodParameterIn,const char *username)"];
+"1000372" [label="(Identifier,vl)"];
+"1000817" [label="(MethodReturn,static int)"];
+"1000366" [label="(Call,network_dispatch_values (&vl, username))"];
+"1000134" [label="(Call,memset (&vl, '\0', sizeof (vl)))"];
+"1000345" [label="(Block,)"];
+"1000110" -> "1000105"  [label="AST: "];
+"1000110" -> "1000817"  [label="DDG: username"];
+"1000110" -> "1000366"  [label="DDG: username"];
+"1000366" -> "1000345"  [label="AST: "];
+"1000366" -> "1000369"  [label="CFG: "];
+"1000367" -> "1000366"  [label="AST: "];
+"1000369" -> "1000366"  [label="AST: "];
+"1000372" -> "1000366"  [label="CFG: "];
+"1000366" -> "1000817"  [label="DDG: username"];
+"1000366" -> "1000817"  [label="DDG: &vl"];
+"1000366" -> "1000817"  [label="DDG: network_dispatch_values (&vl, username)"];
+"1000134" -> "1000366"  [label="DDG: &vl"];
+}

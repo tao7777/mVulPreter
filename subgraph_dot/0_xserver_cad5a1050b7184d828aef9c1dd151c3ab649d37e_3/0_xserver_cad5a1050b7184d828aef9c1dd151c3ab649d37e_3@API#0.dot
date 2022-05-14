@@ -1,0 +1,34 @@
+digraph "0_xserver_cad5a1050b7184d828aef9c1dd151c3ab649d37e_3@API" {
+"1000116" [label="(Call,send_event = stuff->send_event)"];
+"1000284" [label="(Call,send_event && !i)"];
+"1000122" [label="(Identifier,result)"];
+"1000296" [label="(MethodReturn,RET)"];
+"1000117" [label="(Identifier,send_event)"];
+"1000284" [label="(Call,send_event && !i)"];
+"1000285" [label="(Identifier,send_event)"];
+"1000283" [label="(Call,(send_event && !i) ? 1 : 0)"];
+"1000286" [label="(Call,!i)"];
+"1000116" [label="(Call,send_event = stuff->send_event)"];
+"1000118" [label="(Call,stuff->send_event)"];
+"1000102" [label="(Block,)"];
+"1000288" [label="(Literal,1)"];
+"1000289" [label="(Literal,0)"];
+"1000116" -> "1000102"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000122" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000296"  [label="DDG: stuff->send_event"];
+"1000116" -> "1000296"  [label="DDG: send_event"];
+"1000116" -> "1000284"  [label="DDG: send_event"];
+"1000284" -> "1000283"  [label="AST: "];
+"1000284" -> "1000285"  [label="CFG: "];
+"1000284" -> "1000286"  [label="CFG: "];
+"1000285" -> "1000284"  [label="AST: "];
+"1000286" -> "1000284"  [label="AST: "];
+"1000288" -> "1000284"  [label="CFG: "];
+"1000289" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000296"  [label="DDG: !i"];
+"1000284" -> "1000296"  [label="DDG: send_event"];
+"1000286" -> "1000284"  [label="DDG: i"];
+}

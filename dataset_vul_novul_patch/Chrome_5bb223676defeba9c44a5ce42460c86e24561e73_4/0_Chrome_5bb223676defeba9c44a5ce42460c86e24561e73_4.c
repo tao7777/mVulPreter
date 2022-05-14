@@ -1,0 +1,1 @@
+void ExtensionsGuestViewMessageFilter::FrameNavigationHelper::FrameDeleted(

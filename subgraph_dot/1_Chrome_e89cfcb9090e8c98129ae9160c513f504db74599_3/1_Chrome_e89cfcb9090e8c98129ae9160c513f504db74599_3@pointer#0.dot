@@ -1,0 +1,25 @@
+digraph "1_Chrome_e89cfcb9090e8c98129ae9160c513f504db74599_3@pointer" {
+"1000101" [label="(MethodParameterIn,TabContents* contents)"];
+"1000111" [label="(Call,contents == chrome::GetActiveTabContents(this))"];
+"1000161" [label="(MethodReturn,void)"];
+"1000111" [label="(Call,contents == chrome::GetActiveTabContents(this))"];
+"1000101" [label="(MethodParameterIn,TabContents* contents)"];
+"1000113" [label="(Call,chrome::GetActiveTabContents(this))"];
+"1000118" [label="(Identifier,location_bar)"];
+"1000126" [label="(Call,tab_strip_model_->closing_all())"];
+"1000112" [label="(Identifier,contents)"];
+"1000110" [label="(ControlStructure,if (contents == chrome::GetActiveTabContents(this)))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000161"  [label="DDG: contents"];
+"1000101" -> "1000111"  [label="DDG: contents"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000118" -> "1000111"  [label="CFG: "];
+"1000126" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000161"  [label="DDG: contents"];
+"1000111" -> "1000161"  [label="DDG: chrome::GetActiveTabContents(this)"];
+"1000111" -> "1000161"  [label="DDG: contents == chrome::GetActiveTabContents(this)"];
+"1000113" -> "1000111"  [label="DDG: this"];
+}

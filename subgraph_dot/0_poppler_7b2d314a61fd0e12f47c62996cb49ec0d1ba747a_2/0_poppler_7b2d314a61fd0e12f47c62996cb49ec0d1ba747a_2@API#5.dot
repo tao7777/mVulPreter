@@ -1,0 +1,33 @@
+digraph "0_poppler_7b2d314a61fd0e12f47c62996cb49ec0d1ba747a_2@API" {
+"1000207" [label="(Call,delete maskImgStr)"];
+"1000118" [label="(Call,maskImgStr = new ImageStream(maskStr, maskWidth, 1, 1))"];
+"1000120" [label="(Call,new ImageStream(maskStr, maskWidth, 1, 1))"];
+"1000122" [label="(Call,maskImgStr->reset())"];
+"1000119" [label="(Identifier,maskImgStr)"];
+"1000363" [label="(MethodReturn,void)"];
+"1000207" [label="(Call,delete maskImgStr)"];
+"1000208" [label="(Identifier,maskImgStr)"];
+"1000121" [label="(Identifier,ImageStream)"];
+"1000116" [label="(Block,)"];
+"1000209" [label="(Call,maskStr->close())"];
+"1000227" [label="(Call,new ImageStream(str, width,\n\t\t\t   colorMap->getNumPixelComps(),\n\t\t\t   colorMap->getBits()))"];
+"1000118" [label="(Call,maskImgStr = new ImageStream(maskStr, maskWidth, 1, 1))"];
+"1000120" [label="(Call,new ImageStream(maskStr, maskWidth, 1, 1))"];
+"1000207" -> "1000116"  [label="AST: "];
+"1000207" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000209" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000363"  [label="DDG: maskImgStr"];
+"1000207" -> "1000363"  [label="DDG: delete maskImgStr"];
+"1000118" -> "1000207"  [label="DDG: maskImgStr"];
+"1000118" -> "1000116"  [label="AST: "];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000122" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000363"  [label="DDG: new ImageStream(maskStr, maskWidth, 1, 1)"];
+"1000120" -> "1000118"  [label="DDG: ImageStream"];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000120" -> "1000227"  [label="DDG: ImageStream"];
+}

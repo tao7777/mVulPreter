@@ -1,0 +1,30 @@
+digraph "0_Chrome_c0c8978849ac57e4ecd613ddc8ff7852a2054734_16@pointer" {
+"1000103" [label="(MethodParameterIn,SensorReadingSharedBuffer* reading_buffer)"];
+"1000144" [label="(Call,PlatformSensorFusion::Create(reading_buffer, this,\n                                  std::move(sensor_fusion_algorithm), callback))"];
+"1000149" [label="(Identifier,callback)"];
+"1000150" [label="(MethodReturn,void)"];
+"1000145" [label="(Identifier,reading_buffer)"];
+"1000146" [label="(Identifier,this)"];
+"1000144" [label="(Call,PlatformSensorFusion::Create(reading_buffer, this,\n                                  std::move(sensor_fusion_algorithm), callback))"];
+"1000103" [label="(MethodParameterIn,SensorReadingSharedBuffer* reading_buffer)"];
+"1000104" [label="(MethodParameterIn,const CreateSensorCallback& callback)"];
+"1000147" [label="(Call,std::move(sensor_fusion_algorithm))"];
+"1000135" [label="(Block,)"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000150"  [label="DDG: reading_buffer"];
+"1000103" -> "1000144"  [label="DDG: reading_buffer"];
+"1000144" -> "1000135"  [label="AST: "];
+"1000144" -> "1000149"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000147" -> "1000144"  [label="AST: "];
+"1000149" -> "1000144"  [label="AST: "];
+"1000150" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000150"  [label="DDG: this"];
+"1000144" -> "1000150"  [label="DDG: PlatformSensorFusion::Create(reading_buffer, this,\n                                  std::move(sensor_fusion_algorithm), callback)"];
+"1000144" -> "1000150"  [label="DDG: callback"];
+"1000144" -> "1000150"  [label="DDG: reading_buffer"];
+"1000144" -> "1000150"  [label="DDG: std::move(sensor_fusion_algorithm)"];
+"1000147" -> "1000144"  [label="DDG: sensor_fusion_algorithm"];
+"1000104" -> "1000144"  [label="DDG: callback"];
+}

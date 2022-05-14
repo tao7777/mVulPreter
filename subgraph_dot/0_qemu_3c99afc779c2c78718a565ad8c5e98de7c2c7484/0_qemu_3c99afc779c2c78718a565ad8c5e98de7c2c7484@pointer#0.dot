@@ -1,0 +1,33 @@
+digraph "0_qemu_3c99afc779c2c78718a565ad8c5e98de7c2c7484@pointer" {
+"1000113" [label="(Call,vmxnet_tx_pkt_init(&s->tx_pkt, s->max_tx_frags, s->peer_has_vhdr))"];
+"1000124" [label="(Call,vmxnet_rx_pkt_init(&s->rx_pkt, s->peer_has_vhdr))"];
+"1000113" [label="(Call,vmxnet_tx_pkt_init(&s->tx_pkt, s->max_tx_frags, s->peer_has_vhdr))"];
+"1000121" [label="(Call,s->peer_has_vhdr)"];
+"1000124" [label="(Call,vmxnet_rx_pkt_init(&s->rx_pkt, s->peer_has_vhdr))"];
+"1000125" [label="(Call,&s->rx_pkt)"];
+"1000134" [label="(Identifier,s)"];
+"1000127" [label="(Identifier,s)"];
+"1000129" [label="(Call,s->peer_has_vhdr)"];
+"1000118" [label="(Call,s->max_tx_frags)"];
+"1000103" [label="(Block,)"];
+"1000167" [label="(MethodReturn,static int)"];
+"1000114" [label="(Call,&s->tx_pkt)"];
+"1000113" -> "1000103"  [label="AST: "];
+"1000113" -> "1000121"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000118" -> "1000113"  [label="AST: "];
+"1000121" -> "1000113"  [label="AST: "];
+"1000127" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000167"  [label="DDG: &s->tx_pkt"];
+"1000113" -> "1000167"  [label="DDG: s->max_tx_frags"];
+"1000113" -> "1000167"  [label="DDG: vmxnet_tx_pkt_init(&s->tx_pkt, s->max_tx_frags, s->peer_has_vhdr)"];
+"1000113" -> "1000124"  [label="DDG: s->peer_has_vhdr"];
+"1000124" -> "1000103"  [label="AST: "];
+"1000124" -> "1000129"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000129" -> "1000124"  [label="AST: "];
+"1000134" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000167"  [label="DDG: &s->rx_pkt"];
+"1000124" -> "1000167"  [label="DDG: vmxnet_rx_pkt_init(&s->rx_pkt, s->peer_has_vhdr)"];
+"1000124" -> "1000167"  [label="DDG: s->peer_has_vhdr"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_de9f869616dd95e95c00bdd6b0fcd3421e8a4323@API" {
+"1000158" [label="(Call,mutex_unlock(&current->active_mm->context.lock))"];
+"1000124" [label="(Call,mutex_lock(&current->active_mm->context.lock))"];
+"1000159" [label="(Call,&current->active_mm->context.lock)"];
+"1000125" [label="(Call,&current->active_mm->context.lock)"];
+"1000168" [label="(Identifier,desc)"];
+"1000196" [label="(MethodReturn,static struct desc_struct *)"];
+"1000124" [label="(Call,mutex_lock(&current->active_mm->context.lock))"];
+"1000115" [label="(Block,)"];
+"1000158" [label="(Call,mutex_unlock(&current->active_mm->context.lock))"];
+"1000134" [label="(Identifier,ldt)"];
+"1000158" -> "1000115"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000168" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000196"  [label="DDG: &current->active_mm->context.lock"];
+"1000158" -> "1000196"  [label="DDG: mutex_unlock(&current->active_mm->context.lock)"];
+"1000124" -> "1000158"  [label="DDG: &current->active_mm->context.lock"];
+"1000124" -> "1000115"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000134" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000196"  [label="DDG: mutex_lock(&current->active_mm->context.lock)"];
+}

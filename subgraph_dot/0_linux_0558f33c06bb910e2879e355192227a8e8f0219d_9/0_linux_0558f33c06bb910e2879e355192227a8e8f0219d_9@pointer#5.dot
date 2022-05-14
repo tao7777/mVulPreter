@@ -1,0 +1,24 @@
+digraph "0_linux_0558f33c06bb910e2879e355192227a8e8f0219d_9@pointer" {
+"1000194" [label="(Call,spin_lock(&port->phy_list_lock))"];
+"1000271" [label="(Call,spin_unlock(&port->phy_list_lock))"];
+"1000194" [label="(Call,spin_lock(&port->phy_list_lock))"];
+"1000271" [label="(Call,spin_unlock(&port->phy_list_lock))"];
+"1000195" [label="(Call,&port->phy_list_lock)"];
+"1000104" [label="(Block,)"];
+"1000283" [label="(MethodReturn,void)"];
+"1000272" [label="(Call,&port->phy_list_lock)"];
+"1000279" [label="(Identifier,sas_ha)"];
+"1000202" [label="(Identifier,phy)"];
+"1000194" -> "1000104"  [label="AST: "];
+"1000194" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000202" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000283"  [label="DDG: spin_lock(&port->phy_list_lock)"];
+"1000194" -> "1000271"  [label="DDG: &port->phy_list_lock"];
+"1000271" -> "1000104"  [label="AST: "];
+"1000271" -> "1000272"  [label="CFG: "];
+"1000272" -> "1000271"  [label="AST: "];
+"1000279" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000283"  [label="DDG: &port->phy_list_lock"];
+"1000271" -> "1000283"  [label="DDG: spin_unlock(&port->phy_list_lock)"];
+}

@@ -1,0 +1,33 @@
+digraph "0_jasper_e96fc4fdd525fa0ede28074a7e2b1caf94b58b0d_0@pointer" {
+"1000112" [label="(Call,tmpstream = 0)"];
+"1000325" [label="(Call,jas_stream_close(tmpstream))"];
+"1000329" [label="(MethodReturn,jp2_box_t *)"];
+"1000297" [label="(Call,(*box->ops->getdata)(box, tmpstream))"];
+"1000113" [label="(Identifier,tmpstream)"];
+"1000261" [label="(Call,tmpstream = jas_stream_memopen(0, 0))"];
+"1000326" [label="(Identifier,tmpstream)"];
+"1000269" [label="(Call,jas_stream_copy(tmpstream, in, box->datalen))"];
+"1000114" [label="(Literal,0)"];
+"1000324" [label="(Block,)"];
+"1000118" [label="(Identifier,box)"];
+"1000102" [label="(Block,)"];
+"1000112" [label="(Call,tmpstream = 0)"];
+"1000328" [label="(Literal,0)"];
+"1000325" [label="(Call,jas_stream_close(tmpstream))"];
+"1000112" -> "1000102"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000118" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000329"  [label="DDG: tmpstream"];
+"1000112" -> "1000325"  [label="DDG: tmpstream"];
+"1000325" -> "1000324"  [label="AST: "];
+"1000325" -> "1000326"  [label="CFG: "];
+"1000326" -> "1000325"  [label="AST: "];
+"1000328" -> "1000325"  [label="CFG: "];
+"1000325" -> "1000329"  [label="DDG: tmpstream"];
+"1000325" -> "1000329"  [label="DDG: jas_stream_close(tmpstream)"];
+"1000297" -> "1000325"  [label="DDG: tmpstream"];
+"1000261" -> "1000325"  [label="DDG: tmpstream"];
+"1000269" -> "1000325"  [label="DDG: tmpstream"];
+}

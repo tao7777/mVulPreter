@@ -1,0 +1,29 @@
+digraph "0_linux_3a8b0677fc6180a467e26cc32ce6b0c09a32f9bb@pointer" {
+"1000156" [label="(Call,guest_irq >= irq_rt->nr_rt_entries)"];
+"1000106" [label="(MethodParameterIn,uint32_t guest_irq)"];
+"1000155" [label="(Call,BUG_ON(guest_irq >= irq_rt->nr_rt_entries))"];
+"1000108" [label="(Block,)"];
+"1000156" [label="(Call,guest_irq >= irq_rt->nr_rt_entries)"];
+"1000157" [label="(Identifier,guest_irq)"];
+"1000165" [label="(Identifier,e)"];
+"1000155" [label="(Call,BUG_ON(guest_irq >= irq_rt->nr_rt_entries))"];
+"1000158" [label="(Call,irq_rt->nr_rt_entries)"];
+"1000263" [label="(MethodReturn,static int)"];
+"1000106" [label="(MethodParameterIn,uint32_t guest_irq)"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000158"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000158" -> "1000156"  [label="AST: "];
+"1000155" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000263"  [label="DDG: guest_irq"];
+"1000156" -> "1000263"  [label="DDG: irq_rt->nr_rt_entries"];
+"1000156" -> "1000155"  [label="DDG: guest_irq"];
+"1000156" -> "1000155"  [label="DDG: irq_rt->nr_rt_entries"];
+"1000106" -> "1000156"  [label="DDG: guest_irq"];
+"1000106" -> "1000103"  [label="AST: "];
+"1000106" -> "1000263"  [label="DDG: guest_irq"];
+"1000155" -> "1000108"  [label="AST: "];
+"1000165" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000263"  [label="DDG: BUG_ON(guest_irq >= irq_rt->nr_rt_entries)"];
+"1000155" -> "1000263"  [label="DDG: guest_irq >= irq_rt->nr_rt_entries"];
+}

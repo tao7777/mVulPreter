@@ -1,0 +1,24 @@
+digraph "0_linux_0558f33c06bb910e2879e355192227a8e8f0219d_4@pointer" {
+"1000126" [label="(Call,spin_lock_irq(&port->dev_list_lock))"];
+"1000140" [label="(Call,spin_unlock_irq(&port->dev_list_lock))"];
+"1000140" [label="(Call,spin_unlock_irq(&port->dev_list_lock))"];
+"1000146" [label="(Identifier,port)"];
+"1000125" [label="(Block,)"];
+"1000134" [label="(Identifier,dev)"];
+"1000127" [label="(Call,&port->dev_list_lock)"];
+"1000141" [label="(Call,&port->dev_list_lock)"];
+"1000167" [label="(MethodReturn,static void)"];
+"1000126" [label="(Call,spin_lock_irq(&port->dev_list_lock))"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000134" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000167"  [label="DDG: spin_lock_irq(&port->dev_list_lock)"];
+"1000126" -> "1000140"  [label="DDG: &port->dev_list_lock"];
+"1000140" -> "1000125"  [label="AST: "];
+"1000140" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000146" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000167"  [label="DDG: &port->dev_list_lock"];
+"1000140" -> "1000167"  [label="DDG: spin_unlock_irq(&port->dev_list_lock)"];
+}

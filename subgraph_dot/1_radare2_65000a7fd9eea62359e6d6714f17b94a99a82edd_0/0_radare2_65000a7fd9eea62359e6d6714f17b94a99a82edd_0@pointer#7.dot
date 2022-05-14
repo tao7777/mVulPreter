@@ -1,0 +1,26 @@
+digraph "0_radare2_65000a7fd9eea62359e6d6714f17b94a99a82edd_0@pointer" {
+"1000138" [label="(Call,grub_le_to_cpu32(inode->flags))"];
+"1000137" [label="(Call,grub_le_to_cpu32(inode->flags) & EXT4_EXTENTS_FLAG)"];
+"1000138" [label="(Call,grub_le_to_cpu32(inode->flags))"];
+"1000136" [label="(ControlStructure,if (grub_le_to_cpu32(inode->flags) & EXT4_EXTENTS_FLAG))"];
+"1000429" [label="(MethodReturn,RET)"];
+"1000149" [label="(Identifier,leaf)"];
+"1000142" [label="(Identifier,EXT4_EXTENTS_FLAG)"];
+"1000139" [label="(Call,inode->flags)"];
+"1000137" [label="(Call,grub_le_to_cpu32(inode->flags) & EXT4_EXTENTS_FLAG)"];
+"1000263" [label="(Identifier,fileblock)"];
+"1000138" -> "1000137"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000142" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000429"  [label="DDG: inode->flags"];
+"1000138" -> "1000137"  [label="DDG: inode->flags"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000137"  [label="AST: "];
+"1000149" -> "1000137"  [label="CFG: "];
+"1000263" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000429"  [label="DDG: EXT4_EXTENTS_FLAG"];
+"1000137" -> "1000429"  [label="DDG: grub_le_to_cpu32(inode->flags)"];
+"1000137" -> "1000429"  [label="DDG: grub_le_to_cpu32(inode->flags) & EXT4_EXTENTS_FLAG"];
+}

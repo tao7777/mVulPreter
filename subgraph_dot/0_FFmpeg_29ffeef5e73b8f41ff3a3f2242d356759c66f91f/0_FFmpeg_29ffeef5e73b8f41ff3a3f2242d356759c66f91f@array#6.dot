@@ -1,0 +1,36 @@
+digraph "0_FFmpeg_29ffeef5e73b8f41ff3a3f2242d356759c66f91f@array" {
+"1000382" [label="(Call,h->sps            = *h0->sps_buffers[h->pps.sps_id])"];
+"1000506" [label="(Call,ff_h264_get_profile(&h->sps))"];
+"1000500" [label="(Call,h->avctx->profile = ff_h264_get_profile(&h->sps))"];
+"1000507" [label="(Call,&h->sps)"];
+"1000383" [label="(Call,h->sps)"];
+"1000386" [label="(Call,*h0->sps_buffers[h->pps.sps_id])"];
+"1000500" [label="(Call,h->avctx->profile = ff_h264_get_profile(&h->sps))"];
+"1000506" [label="(Call,ff_h264_get_profile(&h->sps))"];
+"1003426" [label="(MethodReturn,static int)"];
+"1000501" [label="(Call,h->avctx->profile)"];
+"1000371" [label="(Block,)"];
+"1000382" [label="(Call,h->sps            = *h0->sps_buffers[h->pps.sps_id])"];
+"1000400" [label="(Identifier,h)"];
+"1000514" [label="(Identifier,h)"];
+"1000127" [label="(Block,)"];
+"1000382" -> "1000371"  [label="AST: "];
+"1000382" -> "1000386"  [label="CFG: "];
+"1000383" -> "1000382"  [label="AST: "];
+"1000386" -> "1000382"  [label="AST: "];
+"1000400" -> "1000382"  [label="CFG: "];
+"1000382" -> "1003426"  [label="DDG: h->sps"];
+"1000382" -> "1003426"  [label="DDG: *h0->sps_buffers[h->pps.sps_id]"];
+"1000382" -> "1000506"  [label="DDG: h->sps"];
+"1000506" -> "1000500"  [label="AST: "];
+"1000506" -> "1000507"  [label="CFG: "];
+"1000507" -> "1000506"  [label="AST: "];
+"1000500" -> "1000506"  [label="CFG: "];
+"1000506" -> "1003426"  [label="DDG: &h->sps"];
+"1000506" -> "1000500"  [label="DDG: &h->sps"];
+"1000500" -> "1000127"  [label="AST: "];
+"1000501" -> "1000500"  [label="AST: "];
+"1000514" -> "1000500"  [label="CFG: "];
+"1000500" -> "1003426"  [label="DDG: ff_h264_get_profile(&h->sps)"];
+"1000500" -> "1003426"  [label="DDG: h->avctx->profile"];
+}

@@ -1,0 +1,28 @@
+digraph "0_linux_0449641130f5652b344ef6fa39fa019d7e94660a@pointer" {
+"1002126" [label="(Call,vfree(sbi->s_flex_groups))"];
+"1002122" [label="(Call,is_vmalloc_addr(sbi->s_flex_groups))"];
+"1002138" [label="(Identifier,sbi)"];
+"1002131" [label="(Call,kfree(sbi->s_flex_groups))"];
+"1002127" [label="(Call,sbi->s_flex_groups)"];
+"1002122" [label="(Call,is_vmalloc_addr(sbi->s_flex_groups))"];
+"1002121" [label="(ControlStructure,if (is_vmalloc_addr(sbi->s_flex_groups)))"];
+"1002133" [label="(Identifier,sbi)"];
+"1002126" [label="(Call,vfree(sbi->s_flex_groups))"];
+"1002128" [label="(Identifier,sbi)"];
+"1002123" [label="(Call,sbi->s_flex_groups)"];
+"1002222" [label="(MethodReturn,RET)"];
+"1002126" -> "1002121"  [label="AST: "];
+"1002126" -> "1002127"  [label="CFG: "];
+"1002127" -> "1002126"  [label="AST: "];
+"1002138" -> "1002126"  [label="CFG: "];
+"1002126" -> "1002222"  [label="DDG: vfree(sbi->s_flex_groups)"];
+"1002126" -> "1002222"  [label="DDG: sbi->s_flex_groups"];
+"1002122" -> "1002126"  [label="DDG: sbi->s_flex_groups"];
+"1002122" -> "1002121"  [label="AST: "];
+"1002122" -> "1002123"  [label="CFG: "];
+"1002123" -> "1002122"  [label="AST: "];
+"1002128" -> "1002122"  [label="CFG: "];
+"1002133" -> "1002122"  [label="CFG: "];
+"1002122" -> "1002222"  [label="DDG: is_vmalloc_addr(sbi->s_flex_groups)"];
+"1002122" -> "1002131"  [label="DDG: sbi->s_flex_groups"];
+}

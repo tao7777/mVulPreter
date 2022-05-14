@@ -1,0 +1,30 @@
+digraph "0_yara_053e67e3ec81cc9268ce30eaf0d6663d8639ed1e@pointer" {
+"1000790" [label="(Call,RULE_IS_GLOBAL(rule))"];
+"1000761" [label="(Call,rule = *(YR_RULE**)(ip + 1))"];
+"1000789" [label="(ControlStructure,if (RULE_IS_GLOBAL(rule)))"];
+"1000763" [label="(Call,*(YR_RULE**)(ip + 1))"];
+"1000770" [label="(Identifier,ip)"];
+"1000761" [label="(Call,rule = *(YR_RULE**)(ip + 1))"];
+"1000791" [label="(Identifier,rule)"];
+"1000790" [label="(Call,RULE_IS_GLOBAL(rule))"];
+"1000762" [label="(Identifier,rule)"];
+"1000803" [label="(Identifier,rule)"];
+"1000192" [label="(Block,)"];
+"1002727" [label="(MethodReturn,int)"];
+"1000796" [label="(Identifier,rule)"];
+"1000790" -> "1000789"  [label="AST: "];
+"1000790" -> "1000791"  [label="CFG: "];
+"1000791" -> "1000790"  [label="AST: "];
+"1000796" -> "1000790"  [label="CFG: "];
+"1000803" -> "1000790"  [label="CFG: "];
+"1000790" -> "1002727"  [label="DDG: rule"];
+"1000790" -> "1002727"  [label="DDG: RULE_IS_GLOBAL(rule)"];
+"1000761" -> "1000790"  [label="DDG: rule"];
+"1000761" -> "1000192"  [label="AST: "];
+"1000761" -> "1000763"  [label="CFG: "];
+"1000762" -> "1000761"  [label="AST: "];
+"1000763" -> "1000761"  [label="AST: "];
+"1000770" -> "1000761"  [label="CFG: "];
+"1000761" -> "1002727"  [label="DDG: rule"];
+"1000761" -> "1002727"  [label="DDG: *(YR_RULE**)(ip + 1)"];
+}

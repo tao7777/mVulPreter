@@ -1,0 +1,38 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_6@pointer" {
+"1000104" [label="(Call,*bh = NULL)"];
+"1000267" [label="(Call,brelse(bh))"];
+"1000168" [label="(Call,HDR(bh))"];
+"1000268" [label="(Identifier,bh)"];
+"1000255" [label="(Call,sync_dirty_buffer(bh))"];
+"1000112" [label="(Identifier,inode)"];
+"1000250" [label="(Call,mark_buffer_dirty(bh))"];
+"1000275" [label="(MethodReturn,RET)"];
+"1000132" [label="(Call,!bh)"];
+"1000102" [label="(Block,)"];
+"1000224" [label="(Call,unlock_buffer(bh))"];
+"1000104" [label="(Call,*bh = NULL)"];
+"1000106" [label="(Identifier,NULL)"];
+"1000267" [label="(Call,brelse(bh))"];
+"1000161" [label="(Call,HDR(bh))"];
+"1000105" [label="(Identifier,bh)"];
+"1000273" [label="(Identifier,inode)"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000112" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000275"  [label="DDG: NULL"];
+"1000104" -> "1000267"  [label="DDG: bh"];
+"1000267" -> "1000102"  [label="AST: "];
+"1000267" -> "1000268"  [label="CFG: "];
+"1000268" -> "1000267"  [label="AST: "];
+"1000273" -> "1000267"  [label="CFG: "];
+"1000267" -> "1000275"  [label="DDG: bh"];
+"1000267" -> "1000275"  [label="DDG: brelse(bh)"];
+"1000224" -> "1000267"  [label="DDG: bh"];
+"1000250" -> "1000267"  [label="DDG: bh"];
+"1000168" -> "1000267"  [label="DDG: bh"];
+"1000132" -> "1000267"  [label="DDG: bh"];
+"1000255" -> "1000267"  [label="DDG: bh"];
+"1000161" -> "1000267"  [label="DDG: bh"];
+}

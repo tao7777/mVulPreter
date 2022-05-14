@@ -1,0 +1,33 @@
+digraph "0_linux_f1e255d60ae66a9f672ff9a207ee6cd8e33d2679@pointer" {
+"1000103" [label="(MethodParameterIn,char __user *buffer)"];
+"1000167" [label="(Call,copy_to_user(buffer, in_buffer + *ppos, bytes_read - *ppos))"];
+"1000184" [label="(Identifier,retval)"];
+"1000167" [label="(Call,copy_to_user(buffer, in_buffer + *ppos, bytes_read - *ppos))"];
+"1000168" [label="(Identifier,buffer)"];
+"1000178" [label="(Identifier,retval)"];
+"1000161" [label="(Call,*ppos < bytes_read)"];
+"1000201" [label="(MethodReturn,static ssize_t)"];
+"1000166" [label="(ControlStructure,if (copy_to_user(buffer, in_buffer + *ppos, bytes_read - *ppos)))"];
+"1000169" [label="(Call,in_buffer + *ppos)"];
+"1000103" [label="(MethodParameterIn,char __user *buffer)"];
+"1000147" [label="(Call,snprintf(in_buffer, 20, \"%lld\n\", dev->bbu))"];
+"1000173" [label="(Call,bytes_read - *ppos)"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000201"  [label="DDG: buffer"];
+"1000103" -> "1000167"  [label="DDG: buffer"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000173"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000169" -> "1000167"  [label="AST: "];
+"1000173" -> "1000167"  [label="AST: "];
+"1000178" -> "1000167"  [label="CFG: "];
+"1000184" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000201"  [label="DDG: buffer"];
+"1000167" -> "1000201"  [label="DDG: in_buffer + *ppos"];
+"1000167" -> "1000201"  [label="DDG: copy_to_user(buffer, in_buffer + *ppos, bytes_read - *ppos)"];
+"1000167" -> "1000201"  [label="DDG: bytes_read - *ppos"];
+"1000147" -> "1000167"  [label="DDG: in_buffer"];
+"1000161" -> "1000167"  [label="DDG: *ppos"];
+"1000173" -> "1000167"  [label="DDG: bytes_read"];
+"1000173" -> "1000167"  [label="DDG: *ppos"];
+}

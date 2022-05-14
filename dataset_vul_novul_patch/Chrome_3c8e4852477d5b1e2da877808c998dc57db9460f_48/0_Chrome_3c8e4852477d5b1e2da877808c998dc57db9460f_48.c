@@ -1,0 +1,1 @@
+RenderProcessHost* SharedWorkerDevToolsAgentHost::GetProcess() {

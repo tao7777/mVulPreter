@@ -1,0 +1,35 @@
+digraph "0_linux_bfd0a56b90005f8c8a004baf407ad90045c2b11e@pointer" {
+"1000110" [label="(Call,*vmx = to_vmx(vcpu))"];
+"1000112" [label="(Call,to_vmx(vcpu))"];
+"1000102" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000110" [label="(Call,*vmx = to_vmx(vcpu))"];
+"1000103" [label="(Block,)"];
+"1000307" [label="(MethodReturn,static bool)"];
+"1000242" [label="(Call,nested_vmx_exit_handled_io(vcpu, vmcs12))"];
+"1000111" [label="(Identifier,vmx)"];
+"1000116" [label="(Identifier,vmcs12)"];
+"1000117" [label="(Call,get_vmcs12(vcpu))"];
+"1000102" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000232" [label="(Call,nested_vmx_exit_handled_cr(vcpu, vmcs12))"];
+"1000113" [label="(Identifier,vcpu)"];
+"1000248" [label="(Call,nested_vmx_exit_handled_msr(vcpu, vmcs12, exit_reason))"];
+"1000112" [label="(Call,to_vmx(vcpu))"];
+"1000110" -> "1000103"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000116" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000307"  [label="DDG: to_vmx(vcpu)"];
+"1000110" -> "1000307"  [label="DDG: vmx"];
+"1000112" -> "1000110"  [label="DDG: vcpu"];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000102" -> "1000112"  [label="DDG: vcpu"];
+"1000112" -> "1000117"  [label="DDG: vcpu"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000307"  [label="DDG: vcpu"];
+"1000102" -> "1000117"  [label="DDG: vcpu"];
+"1000102" -> "1000232"  [label="DDG: vcpu"];
+"1000102" -> "1000242"  [label="DDG: vcpu"];
+"1000102" -> "1000248"  [label="DDG: vcpu"];
+}

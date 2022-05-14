@@ -1,0 +1,22 @@
+digraph "0_Chrome_3f38b2253b19f9f9595f79fb92bfb5077e7b1959_0@pointer" {
+"1000144" [label="(Call,histogram_data->histogram_type = histogram_type)"];
+"1000102" [label="(MethodParameterIn,HistogramType histogram_type)"];
+"1000144" [label="(Call,histogram_data->histogram_type = histogram_type)"];
+"1000102" [label="(MethodParameterIn,HistogramType histogram_type)"];
+"1000135" [label="(Block,)"];
+"1000373" [label="(MethodReturn,std::unique_ptr<HistogramBase>)"];
+"1000145" [label="(Call,histogram_data->histogram_type)"];
+"1000151" [label="(Identifier,histogram_data)"];
+"1000157" [label="(Call,histogram_type != SPARSE_HISTOGRAM)"];
+"1000148" [label="(Identifier,histogram_type)"];
+"1000144" -> "1000135"  [label="AST: "];
+"1000144" -> "1000148"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000148" -> "1000144"  [label="AST: "];
+"1000151" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000373"  [label="DDG: histogram_data->histogram_type"];
+"1000102" -> "1000144"  [label="DDG: histogram_type"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000373"  [label="DDG: histogram_type"];
+"1000102" -> "1000157"  [label="DDG: histogram_type"];
+}

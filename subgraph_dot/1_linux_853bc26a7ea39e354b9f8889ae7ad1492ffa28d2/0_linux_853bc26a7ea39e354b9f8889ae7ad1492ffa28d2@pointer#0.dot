@@ -1,0 +1,24 @@
+digraph "0_linux_853bc26a7ea39e354b9f8889ae7ad1492ffa28d2@pointer" {
+"1000185" [label="(Call,write_lock(&cluster->cl_nodes_lock))"];
+"1000232" [label="(Call,write_unlock(&cluster->cl_nodes_lock))"];
+"1000185" [label="(Call,write_lock(&cluster->cl_nodes_lock))"];
+"1000238" [label="(Identifier,ret)"];
+"1000233" [label="(Call,&cluster->cl_nodes_lock)"];
+"1000232" [label="(Call,write_unlock(&cluster->cl_nodes_lock))"];
+"1000104" [label="(Block,)"];
+"1000252" [label="(MethodReturn,static ssize_t)"];
+"1000192" [label="(Identifier,cluster)"];
+"1000186" [label="(Call,&cluster->cl_nodes_lock)"];
+"1000185" -> "1000104"  [label="AST: "];
+"1000185" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000185"  [label="AST: "];
+"1000192" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000252"  [label="DDG: write_lock(&cluster->cl_nodes_lock)"];
+"1000185" -> "1000232"  [label="DDG: &cluster->cl_nodes_lock"];
+"1000232" -> "1000104"  [label="AST: "];
+"1000232" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000232"  [label="AST: "];
+"1000238" -> "1000232"  [label="CFG: "];
+"1000232" -> "1000252"  [label="DDG: &cluster->cl_nodes_lock"];
+"1000232" -> "1000252"  [label="DDG: write_unlock(&cluster->cl_nodes_lock)"];
+}

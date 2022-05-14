@@ -1,0 +1,18 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_22@API" {
+"1000216" [label="(Call,sizeof(path))"];
+"1000101" [label="(MethodParameterIn,sc_path_t path)"];
+"1000244" [label="(MethodReturn,static int)"];
+"1000217" [label="(Identifier,path)"];
+"1000211" [label="(Call,memcpy(&tmppath, &path, sizeof(path)))"];
+"1000101" [label="(MethodParameterIn,sc_path_t path)"];
+"1000216" [label="(Call,sizeof(path))"];
+"1000216" -> "1000211"  [label="AST: "];
+"1000216" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000211" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000244"  [label="DDG: path"];
+"1000101" -> "1000216"  [label="DDG: path"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000244"  [label="DDG: path"];
+"1000101" -> "1000211"  [label="DDG: path"];
+}

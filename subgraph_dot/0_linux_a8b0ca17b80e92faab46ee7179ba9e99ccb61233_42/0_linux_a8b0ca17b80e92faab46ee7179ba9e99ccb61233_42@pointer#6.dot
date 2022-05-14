@@ -1,0 +1,26 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_42@pointer" {
+"1001343" [label="(Call,memset(f->regs, 0, 32*sizeof(u32)))"];
+"1001348" [label="(Call,32*sizeof(u32))"];
+"1001367" [label="(Call,current_thread_info())"];
+"1001339" [label="(ControlStructure,if (freg < 32))"];
+"1001349" [label="(Literal,32)"];
+"1001343" [label="(Call,memset(f->regs, 0, 32*sizeof(u32)))"];
+"1001894" [label="(MethodReturn,int)"];
+"1001344" [label="(Call,f->regs)"];
+"1001348" [label="(Call,32*sizeof(u32))"];
+"1001350" [label="(Call,sizeof(u32))"];
+"1001347" [label="(Literal,0)"];
+"1001343" -> "1001339"  [label="AST: "];
+"1001343" -> "1001348"  [label="CFG: "];
+"1001344" -> "1001343"  [label="AST: "];
+"1001347" -> "1001343"  [label="AST: "];
+"1001348" -> "1001343"  [label="AST: "];
+"1001367" -> "1001343"  [label="CFG: "];
+"1001343" -> "1001894"  [label="DDG: memset(f->regs, 0, 32*sizeof(u32))"];
+"1001343" -> "1001894"  [label="DDG: 32*sizeof(u32)"];
+"1001343" -> "1001894"  [label="DDG: f->regs"];
+"1001348" -> "1001343"  [label="DDG: 32"];
+"1001348" -> "1001350"  [label="CFG: "];
+"1001349" -> "1001348"  [label="AST: "];
+"1001350" -> "1001348"  [label="AST: "];
+}

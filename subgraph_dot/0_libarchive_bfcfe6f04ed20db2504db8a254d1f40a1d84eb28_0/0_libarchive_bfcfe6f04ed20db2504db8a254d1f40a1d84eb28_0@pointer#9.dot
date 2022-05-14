@@ -1,0 +1,37 @@
+digraph "0_libarchive_bfcfe6f04ed20db2504db8a254d1f40a1d84eb28_0@pointer" {
+"1001461" [label="(Call,rar->mode & FILE_ATTRIBUTE_DIRECTORY)"];
+"1001452" [label="(Call,rar->mode = archive_le32dec(file_header.file_attr))"];
+"1001456" [label="(Call,archive_le32dec(file_header.file_attr))"];
+"1001453" [label="(Call,rar->mode)"];
+"1001463" [label="(Identifier,rar)"];
+"1001462" [label="(Call,rar->mode)"];
+"1001480" [label="(Identifier,rar)"];
+"1001465" [label="(Identifier,FILE_ATTRIBUTE_DIRECTORY)"];
+"1001448" [label="(Block,)"];
+"1001468" [label="(Identifier,rar)"];
+"1001754" [label="(MethodReturn,RET)"];
+"1001461" [label="(Call,rar->mode & FILE_ATTRIBUTE_DIRECTORY)"];
+"1001460" [label="(ControlStructure,if (rar->mode & FILE_ATTRIBUTE_DIRECTORY))"];
+"1001456" [label="(Call,archive_le32dec(file_header.file_attr))"];
+"1001457" [label="(Call,file_header.file_attr)"];
+"1001452" [label="(Call,rar->mode = archive_le32dec(file_header.file_attr))"];
+"1001461" -> "1001460"  [label="AST: "];
+"1001461" -> "1001465"  [label="CFG: "];
+"1001462" -> "1001461"  [label="AST: "];
+"1001465" -> "1001461"  [label="AST: "];
+"1001468" -> "1001461"  [label="CFG: "];
+"1001480" -> "1001461"  [label="CFG: "];
+"1001461" -> "1001754"  [label="DDG: rar->mode & FILE_ATTRIBUTE_DIRECTORY"];
+"1001461" -> "1001754"  [label="DDG: FILE_ATTRIBUTE_DIRECTORY"];
+"1001452" -> "1001461"  [label="DDG: rar->mode"];
+"1001452" -> "1001448"  [label="AST: "];
+"1001452" -> "1001456"  [label="CFG: "];
+"1001453" -> "1001452"  [label="AST: "];
+"1001456" -> "1001452"  [label="AST: "];
+"1001463" -> "1001452"  [label="CFG: "];
+"1001452" -> "1001754"  [label="DDG: archive_le32dec(file_header.file_attr)"];
+"1001456" -> "1001452"  [label="DDG: file_header.file_attr"];
+"1001456" -> "1001457"  [label="CFG: "];
+"1001457" -> "1001456"  [label="AST: "];
+"1001456" -> "1001754"  [label="DDG: file_header.file_attr"];
+}

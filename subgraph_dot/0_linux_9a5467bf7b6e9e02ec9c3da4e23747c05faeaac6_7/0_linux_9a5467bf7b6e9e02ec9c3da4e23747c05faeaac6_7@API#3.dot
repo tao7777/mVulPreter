@@ -1,0 +1,22 @@
+digraph "0_linux_9a5467bf7b6e9e02ec9c3da4e23747c05faeaac6_7@API" {
+"1000156" [label="(Call,ualg->cru_refcnt = atomic_read(&alg->cra_refcnt))"];
+"1000160" [label="(Call,atomic_read(&alg->cra_refcnt))"];
+"1000157" [label="(Call,ualg->cru_refcnt)"];
+"1000104" [label="(Block,)"];
+"1000247" [label="(MethodReturn,static int)"];
+"1000161" [label="(Call,&alg->cra_refcnt)"];
+"1000156" [label="(Call,ualg->cru_refcnt = atomic_read(&alg->cra_refcnt))"];
+"1000160" [label="(Call,atomic_read(&alg->cra_refcnt))"];
+"1000167" [label="(Identifier,skb)"];
+"1000156" -> "1000104"  [label="AST: "];
+"1000156" -> "1000160"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000160" -> "1000156"  [label="AST: "];
+"1000167" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000247"  [label="DDG: ualg->cru_refcnt"];
+"1000156" -> "1000247"  [label="DDG: atomic_read(&alg->cra_refcnt)"];
+"1000160" -> "1000156"  [label="DDG: &alg->cra_refcnt"];
+"1000160" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000160" -> "1000247"  [label="DDG: &alg->cra_refcnt"];
+}

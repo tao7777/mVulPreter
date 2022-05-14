@@ -1,0 +1,28 @@
+digraph "0_linux_4ab25786c87eb20857bbb715c3ae34ec8fd6a214_1@pointer" {
+"1000221" [label="(Call,udesc = &(hid_to_usb_dev(hdev)->descriptor))"];
+"1000229" [label="(Call,!udesc)"];
+"1000228" [label="(ControlStructure,if (!udesc))"];
+"1000223" [label="(Call,&(hid_to_usb_dev(hdev)->descriptor))"];
+"1000237" [label="(Identifier,bcdDevice)"];
+"1000229" [label="(Call,!udesc)"];
+"1000221" [label="(Call,udesc = &(hid_to_usb_dev(hdev)->descriptor))"];
+"1000222" [label="(Identifier,udesc)"];
+"1000219" [label="(Block,)"];
+"1000411" [label="(MethodReturn,static __u8 *)"];
+"1000233" [label="(Identifier,hdev)"];
+"1000230" [label="(Identifier,udesc)"];
+"1000221" -> "1000219"  [label="AST: "];
+"1000221" -> "1000223"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000223" -> "1000221"  [label="AST: "];
+"1000230" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000411"  [label="DDG: &(hid_to_usb_dev(hdev)->descriptor)"];
+"1000221" -> "1000229"  [label="DDG: udesc"];
+"1000229" -> "1000228"  [label="AST: "];
+"1000229" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000233" -> "1000229"  [label="CFG: "];
+"1000237" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000411"  [label="DDG: !udesc"];
+"1000229" -> "1000411"  [label="DDG: udesc"];
+}

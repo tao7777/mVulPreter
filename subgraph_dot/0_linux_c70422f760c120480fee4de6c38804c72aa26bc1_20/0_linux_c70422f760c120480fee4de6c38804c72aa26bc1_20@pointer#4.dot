@@ -1,0 +1,26 @@
+digraph "0_linux_c70422f760c120480fee4de6c38804c72aa26bc1_20@pointer" {
+"1000175" [label="(Call,module_put(serv->sv_ops->svo_module))"];
+"1000151" [label="(Call,__module_get(serv->sv_ops->svo_module))"];
+"1000176" [label="(Call,serv->sv_ops->svo_module)"];
+"1000123" [label="(Block,)"];
+"1000175" [label="(Call,module_put(serv->sv_ops->svo_module))"];
+"1000152" [label="(Call,serv->sv_ops->svo_module)"];
+"1000174" [label="(Block,)"];
+"1000211" [label="(MethodReturn,static int)"];
+"1000158" [label="(Identifier,task)"];
+"1000151" [label="(Call,__module_get(serv->sv_ops->svo_module))"];
+"1000182" [label="(Identifier,rqstp)"];
+"1000175" -> "1000174"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000182" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000211"  [label="DDG: serv->sv_ops->svo_module"];
+"1000175" -> "1000211"  [label="DDG: module_put(serv->sv_ops->svo_module)"];
+"1000151" -> "1000175"  [label="DDG: serv->sv_ops->svo_module"];
+"1000151" -> "1000123"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000158" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000211"  [label="DDG: __module_get(serv->sv_ops->svo_module)"];
+"1000151" -> "1000211"  [label="DDG: serv->sv_ops->svo_module"];
+}

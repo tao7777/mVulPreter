@@ -1,0 +1,37 @@
+digraph "0_ImageMagick_1cc6f0ccc92c20c7cab6c4a7335daf29c91f0d8e@pointer" {
+"1000679" [label="(Call,(ssize_t) image->colors)"];
+"1000677" [label="(Call,j < (ssize_t) image->colors)"];
+"1000684" [label="(Call,j++)"];
+"1000679" [label="(Call,(ssize_t) image->colors)"];
+"1000685" [label="(Identifier,j)"];
+"1000681" [label="(Call,image->colors)"];
+"1000691" [label="(Identifier,image)"];
+"1000674" [label="(Call,j=0)"];
+"1001037" [label="(MethodReturn,MagickExport MagickBooleanType)"];
+"1000836" [label="(Identifier,status)"];
+"1000673" [label="(ControlStructure,for (j=0; j < (ssize_t) image->colors; j++))"];
+"1000678" [label="(Identifier,j)"];
+"1000677" [label="(Call,j < (ssize_t) image->colors)"];
+"1000684" [label="(Call,j++)"];
+"1000679" -> "1000677"  [label="AST: "];
+"1000679" -> "1000681"  [label="CFG: "];
+"1000680" -> "1000679"  [label="AST: "];
+"1000681" -> "1000679"  [label="AST: "];
+"1000677" -> "1000679"  [label="CFG: "];
+"1000679" -> "1001037"  [label="DDG: image->colors"];
+"1000679" -> "1000677"  [label="DDG: image->colors"];
+"1000677" -> "1000673"  [label="AST: "];
+"1000678" -> "1000677"  [label="AST: "];
+"1000691" -> "1000677"  [label="CFG: "];
+"1000836" -> "1000677"  [label="CFG: "];
+"1000677" -> "1001037"  [label="DDG: j"];
+"1000677" -> "1001037"  [label="DDG: j < (ssize_t) image->colors"];
+"1000677" -> "1001037"  [label="DDG: (ssize_t) image->colors"];
+"1000684" -> "1000677"  [label="DDG: j"];
+"1000674" -> "1000677"  [label="DDG: j"];
+"1000677" -> "1000684"  [label="DDG: j"];
+"1000684" -> "1000673"  [label="AST: "];
+"1000684" -> "1000685"  [label="CFG: "];
+"1000685" -> "1000684"  [label="AST: "];
+"1000678" -> "1000684"  [label="CFG: "];
+}

@@ -1,0 +1,38 @@
+digraph "0_linux_550fd08c2cebad61c548def135f67aba284c6162@pointer" {
+"1000271" [label="(Call,lp->dialwait = 5 * HZ)"];
+"1000275" [label="(Call,5 * HZ)"];
+"1000235" [label="(Call,10 * HZ)"];
+"1000237" [label="(Identifier,HZ)"];
+"1000236" [label="(Literal,10)"];
+"1000231" [label="(Call,lp->slavedelay = 10 * HZ)"];
+"1000113" [label="(Block,)"];
+"1000288" [label="(MethodReturn,static void)"];
+"1000277" [label="(Identifier,HZ)"];
+"1000272" [label="(Call,lp->dialwait)"];
+"1000280" [label="(Identifier,lp)"];
+"1000271" [label="(Call,lp->dialwait = 5 * HZ)"];
+"1000276" [label="(Literal,5)"];
+"1000275" [label="(Call,5 * HZ)"];
+"1000235" [label="(Call,10 * HZ)"];
+"1000271" -> "1000113"  [label="AST: "];
+"1000271" -> "1000275"  [label="CFG: "];
+"1000272" -> "1000271"  [label="AST: "];
+"1000275" -> "1000271"  [label="AST: "];
+"1000280" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000288"  [label="DDG: 5 * HZ"];
+"1000271" -> "1000288"  [label="DDG: lp->dialwait"];
+"1000275" -> "1000271"  [label="DDG: 5"];
+"1000275" -> "1000271"  [label="DDG: HZ"];
+"1000275" -> "1000277"  [label="CFG: "];
+"1000276" -> "1000275"  [label="AST: "];
+"1000277" -> "1000275"  [label="AST: "];
+"1000275" -> "1000288"  [label="DDG: HZ"];
+"1000235" -> "1000275"  [label="DDG: HZ"];
+"1000235" -> "1000231"  [label="AST: "];
+"1000235" -> "1000237"  [label="CFG: "];
+"1000236" -> "1000235"  [label="AST: "];
+"1000237" -> "1000235"  [label="AST: "];
+"1000231" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000231"  [label="DDG: 10"];
+"1000235" -> "1000231"  [label="DDG: HZ"];
+}

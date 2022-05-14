@@ -1,0 +1,31 @@
+digraph "0_linux_4291086b1f081b869c6d79e5b7441633dc3ace00@pointer" {
+"1000124" [label="(Call,file->f_op->write != redirected_tty_write)"];
+"1000121" [label="(Call,L_TOSTOP(tty) && file->f_op->write != redirected_tty_write)"];
+"1000368" [label="(MethodReturn,static ssize_t)"];
+"1000120" [label="(ControlStructure,if (L_TOSTOP(tty) && file->f_op->write != redirected_tty_write))"];
+"1000124" [label="(Call,file->f_op->write != redirected_tty_write)"];
+"1000143" [label="(Identifier,tty)"];
+"1000121" [label="(Call,L_TOSTOP(tty) && file->f_op->write != redirected_tty_write)"];
+"1000125" [label="(Call,file->f_op->write)"];
+"1000133" [label="(Identifier,retval)"];
+"1000122" [label="(Call,L_TOSTOP(tty))"];
+"1000130" [label="(Identifier,redirected_tty_write)"];
+"1000124" -> "1000121"  [label="AST: "];
+"1000124" -> "1000130"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000130" -> "1000124"  [label="AST: "];
+"1000121" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000368"  [label="DDG: redirected_tty_write"];
+"1000124" -> "1000368"  [label="DDG: file->f_op->write"];
+"1000124" -> "1000121"  [label="DDG: file->f_op->write"];
+"1000124" -> "1000121"  [label="DDG: redirected_tty_write"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000133" -> "1000121"  [label="CFG: "];
+"1000143" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000368"  [label="DDG: L_TOSTOP(tty) && file->f_op->write != redirected_tty_write"];
+"1000121" -> "1000368"  [label="DDG: L_TOSTOP(tty)"];
+"1000121" -> "1000368"  [label="DDG: file->f_op->write != redirected_tty_write"];
+"1000122" -> "1000121"  [label="DDG: tty"];
+}

@@ -1,0 +1,34 @@
+digraph "0_Chrome_3ff403eecdd23a39853a4ebca52023fbba6c5d00_5@API" {
+"1000110" [label="(Call,IsNestingAllowedOnCurrentThread() ||\n         type_ != Type::kNestableTasksAllowed)"];
+"1000112" [label="(Call,type_ != Type::kNestableTasksAllowed)"];
+"1000109" [label="(Call,DCHECK(IsNestingAllowedOnCurrentThread() ||\n         type_ != Type::kNestableTasksAllowed))"];
+"1000110" [label="(Call,IsNestingAllowedOnCurrentThread() ||\n         type_ != Type::kNestableTasksAllowed)"];
+"1000114" [label="(Identifier,Type::kNestableTasksAllowed)"];
+"1000112" [label="(Call,type_ != Type::kNestableTasksAllowed)"];
+"1000109" [label="(Call,DCHECK(IsNestingAllowedOnCurrentThread() ||\n         type_ != Type::kNestableTasksAllowed))"];
+"1000113" [label="(Identifier,type_)"];
+"1000115" [label="(MethodReturn,RET)"];
+"1000111" [label="(Call,IsNestingAllowedOnCurrentThread())"];
+"1000102" [label="(Block,)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000115"  [label="DDG: type_ != Type::kNestableTasksAllowed"];
+"1000110" -> "1000115"  [label="DDG: IsNestingAllowedOnCurrentThread()"];
+"1000110" -> "1000109"  [label="DDG: IsNestingAllowedOnCurrentThread()"];
+"1000110" -> "1000109"  [label="DDG: type_ != Type::kNestableTasksAllowed"];
+"1000112" -> "1000110"  [label="DDG: type_"];
+"1000112" -> "1000110"  [label="DDG: Type::kNestableTasksAllowed"];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000112" -> "1000115"  [label="DDG: Type::kNestableTasksAllowed"];
+"1000112" -> "1000115"  [label="DDG: type_"];
+"1000109" -> "1000102"  [label="AST: "];
+"1000115" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000115"  [label="DDG: DCHECK(IsNestingAllowedOnCurrentThread() ||\n         type_ != Type::kNestableTasksAllowed)"];
+"1000109" -> "1000115"  [label="DDG: IsNestingAllowedOnCurrentThread() ||\n         type_ != Type::kNestableTasksAllowed"];
+}

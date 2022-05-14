@@ -1,0 +1,31 @@
+digraph "0_linux_e6bd18f57aad1a2d1ef40e646d03ed0f2515c9e3_3@API" {
+"1000404" [label="(Call,copy_to_user((void __user *)addr, &tinfo.tidcnt,\n\t\t\t\t\t sizeof(tinfo.tidcnt) +\n\t\t\t\t\t sizeof(tinfo.length)))"];
+"1000405" [label="(Call,(void __user *)addr)"];
+"1000405" [label="(Call,(void __user *)addr)"];
+"1000407" [label="(Identifier,addr)"];
+"1000404" [label="(Call,copy_to_user((void __user *)addr, &tinfo.tidcnt,\n\t\t\t\t\t sizeof(tinfo.tidcnt) +\n\t\t\t\t\t sizeof(tinfo.length)))"];
+"1000422" [label="(Identifier,ret)"];
+"1000410" [label="(Identifier,tinfo)"];
+"1000425" [label="(ControlStructure,break;)"];
+"1000672" [label="(MethodReturn,static ssize_t)"];
+"1000412" [label="(Call,sizeof(tinfo.tidcnt) +\n\t\t\t\t\t sizeof(tinfo.length))"];
+"1000408" [label="(Call,&tinfo.tidcnt)"];
+"1000403" [label="(ControlStructure,if (copy_to_user((void __user *)addr, &tinfo.tidcnt,\n\t\t\t\t\t sizeof(tinfo.tidcnt) +\n\t\t\t\t\t sizeof(tinfo.length))))"];
+"1000404" -> "1000403"  [label="AST: "];
+"1000404" -> "1000412"  [label="CFG: "];
+"1000405" -> "1000404"  [label="AST: "];
+"1000408" -> "1000404"  [label="AST: "];
+"1000412" -> "1000404"  [label="AST: "];
+"1000422" -> "1000404"  [label="CFG: "];
+"1000425" -> "1000404"  [label="CFG: "];
+"1000404" -> "1000672"  [label="DDG: (void __user *)addr"];
+"1000404" -> "1000672"  [label="DDG: sizeof(tinfo.tidcnt) +\n\t\t\t\t\t sizeof(tinfo.length)"];
+"1000404" -> "1000672"  [label="DDG: copy_to_user((void __user *)addr, &tinfo.tidcnt,\n\t\t\t\t\t sizeof(tinfo.tidcnt) +\n\t\t\t\t\t sizeof(tinfo.length))"];
+"1000404" -> "1000672"  [label="DDG: &tinfo.tidcnt"];
+"1000405" -> "1000404"  [label="DDG: addr"];
+"1000405" -> "1000407"  [label="CFG: "];
+"1000406" -> "1000405"  [label="AST: "];
+"1000407" -> "1000405"  [label="AST: "];
+"1000410" -> "1000405"  [label="CFG: "];
+"1000405" -> "1000672"  [label="DDG: addr"];
+}

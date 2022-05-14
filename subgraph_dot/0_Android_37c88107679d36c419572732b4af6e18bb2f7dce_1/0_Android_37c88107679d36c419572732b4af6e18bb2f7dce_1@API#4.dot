@@ -1,0 +1,38 @@
+digraph "0_Android_37c88107679d36c419572732b4af6e18bb2f7dce_1@API" {
+"1000169" [label="(Call,alarm_free(alarm_timer))"];
+"1000158" [label="(Call,!alarm_timer)"];
+"1000154" [label="(Call,alarm_timer = alarm_new())"];
+"1000157" [label="(ControlStructure,if (!alarm_timer))"];
+"1000154" [label="(Call,alarm_timer = alarm_new())"];
+"1000155" [label="(Identifier,alarm_timer)"];
+"1000169" [label="(Call,alarm_free(alarm_timer))"];
+"1000170" [label="(Identifier,alarm_timer)"];
+"1000167" [label="(Identifier,FUTURE_SUCCESS)"];
+"1000185" [label="(MethodReturn,static future_t *)"];
+"1000172" [label="(Identifier,config)"];
+"1000103" [label="(Block,)"];
+"1000158" [label="(Call,!alarm_timer)"];
+"1000162" [label="(Literal,\"%s unable to create alarm.\")"];
+"1000159" [label="(Identifier,alarm_timer)"];
+"1000156" [label="(Call,alarm_new())"];
+"1000169" -> "1000103"  [label="AST: "];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000172" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000185"  [label="DDG: alarm_free(alarm_timer)"];
+"1000158" -> "1000169"  [label="DDG: alarm_timer"];
+"1000158" -> "1000157"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="CFG: "];
+"1000167" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000185"  [label="DDG: alarm_timer"];
+"1000158" -> "1000185"  [label="DDG: !alarm_timer"];
+"1000154" -> "1000158"  [label="DDG: alarm_timer"];
+"1000154" -> "1000103"  [label="AST: "];
+"1000154" -> "1000156"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000156" -> "1000154"  [label="AST: "];
+"1000159" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000185"  [label="DDG: alarm_new()"];
+}

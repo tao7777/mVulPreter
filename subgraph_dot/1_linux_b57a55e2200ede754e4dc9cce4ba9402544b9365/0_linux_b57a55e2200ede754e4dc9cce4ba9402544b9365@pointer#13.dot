@@ -1,0 +1,22 @@
+digraph "0_linux_b57a55e2200ede754e4dc9cce4ba9402544b9365@pointer" {
+"1000309" [label="(Call,req->SecurityMode = cpu_to_le16(SMB2_NEGOTIATE_SIGNING_REQUIRED))"];
+"1000313" [label="(Call,cpu_to_le16(SMB2_NEGOTIATE_SIGNING_REQUIRED))"];
+"1000310" [label="(Call,req->SecurityMode)"];
+"1000313" [label="(Call,cpu_to_le16(SMB2_NEGOTIATE_SIGNING_REQUIRED))"];
+"1000314" [label="(Identifier,SMB2_NEGOTIATE_SIGNING_REQUIRED)"];
+"1000305" [label="(ControlStructure,if (ses->sign))"];
+"1000309" [label="(Call,req->SecurityMode = cpu_to_le16(SMB2_NEGOTIATE_SIGNING_REQUIRED))"];
+"1000831" [label="(MethodReturn,RET)"];
+"1000334" [label="(Identifier,req)"];
+"1000309" -> "1000305"  [label="AST: "];
+"1000309" -> "1000313"  [label="CFG: "];
+"1000310" -> "1000309"  [label="AST: "];
+"1000313" -> "1000309"  [label="AST: "];
+"1000334" -> "1000309"  [label="CFG: "];
+"1000309" -> "1000831"  [label="DDG: req->SecurityMode"];
+"1000309" -> "1000831"  [label="DDG: cpu_to_le16(SMB2_NEGOTIATE_SIGNING_REQUIRED)"];
+"1000313" -> "1000309"  [label="DDG: SMB2_NEGOTIATE_SIGNING_REQUIRED"];
+"1000313" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000313"  [label="AST: "];
+"1000313" -> "1000831"  [label="DDG: SMB2_NEGOTIATE_SIGNING_REQUIRED"];
+}

@@ -1,0 +1,35 @@
+digraph "0_FFmpeg_6b67d7f05918f7a1ee8fc6ff21355d7e8736aa10@API" {
+"1000944" [label="(Call,av_free(data))"];
+"1000154" [label="(Call,*data = NULL)"];
+"1000811" [label="(Call,avio_write(pb, data ? data : pkt->data, size))"];
+"1000948" [label="(Identifier,pb)"];
+"1000156" [label="(Identifier,NULL)"];
+"1000945" [label="(Identifier,data)"];
+"1000159" [label="(Identifier,flags)"];
+"1000950" [label="(MethodReturn,static int)"];
+"1000674" [label="(Call,data ? data : pkt->data)"];
+"1000109" [label="(Block,)"];
+"1000155" [label="(Identifier,data)"];
+"1000813" [label="(Call,data ? data : pkt->data)"];
+"1000154" [label="(Call,*data = NULL)"];
+"1000944" [label="(Call,av_free(data))"];
+"1000672" [label="(Call,avio_write(pb, data ? data : pkt->data, size))"];
+"1000944" -> "1000109"  [label="AST: "];
+"1000944" -> "1000945"  [label="CFG: "];
+"1000945" -> "1000944"  [label="AST: "];
+"1000948" -> "1000944"  [label="CFG: "];
+"1000944" -> "1000950"  [label="DDG: av_free(data)"];
+"1000944" -> "1000950"  [label="DDG: data"];
+"1000154" -> "1000944"  [label="DDG: data"];
+"1000154" -> "1000109"  [label="AST: "];
+"1000154" -> "1000156"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000156" -> "1000154"  [label="AST: "];
+"1000159" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000950"  [label="DDG: data"];
+"1000154" -> "1000950"  [label="DDG: NULL"];
+"1000154" -> "1000672"  [label="DDG: data"];
+"1000154" -> "1000674"  [label="DDG: data"];
+"1000154" -> "1000811"  [label="DDG: data"];
+"1000154" -> "1000813"  [label="DDG: data"];
+}

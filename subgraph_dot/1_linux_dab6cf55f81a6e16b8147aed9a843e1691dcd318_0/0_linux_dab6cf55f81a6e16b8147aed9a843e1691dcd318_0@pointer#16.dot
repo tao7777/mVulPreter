@@ -1,0 +1,33 @@
+digraph "0_linux_dab6cf55f81a6e16b8147aed9a843e1691dcd318_0@pointer" {
+"1000301" [label="(Call,(addr_t) &child->thread.acrs)"];
+"1000298" [label="(Call,(__u32*)((addr_t) &child->thread.acrs + offset))"];
+"1000300" [label="(Call,(addr_t) &child->thread.acrs + offset)"];
+"1000297" [label="(Call,*(__u32*)((addr_t) &child->thread.acrs + offset))"];
+"1000309" [label="(Identifier,offset)"];
+"1000284" [label="(Call,offset = addr - (addr_t) &dummy32->regs.acrs)"];
+"1000445" [label="(MethodReturn,static int)"];
+"1000301" [label="(Call,(addr_t) &child->thread.acrs)"];
+"1000303" [label="(Call,&child->thread.acrs)"];
+"1000300" [label="(Call,(addr_t) &child->thread.acrs + offset)"];
+"1000298" [label="(Call,(__u32*)((addr_t) &child->thread.acrs + offset))"];
+"1000301" -> "1000300"  [label="AST: "];
+"1000301" -> "1000303"  [label="CFG: "];
+"1000302" -> "1000301"  [label="AST: "];
+"1000303" -> "1000301"  [label="AST: "];
+"1000309" -> "1000301"  [label="CFG: "];
+"1000301" -> "1000445"  [label="DDG: &child->thread.acrs"];
+"1000301" -> "1000298"  [label="DDG: &child->thread.acrs"];
+"1000301" -> "1000300"  [label="DDG: &child->thread.acrs"];
+"1000298" -> "1000297"  [label="AST: "];
+"1000298" -> "1000300"  [label="CFG: "];
+"1000299" -> "1000298"  [label="AST: "];
+"1000300" -> "1000298"  [label="AST: "];
+"1000297" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000445"  [label="DDG: (addr_t) &child->thread.acrs + offset"];
+"1000284" -> "1000298"  [label="DDG: offset"];
+"1000300" -> "1000309"  [label="CFG: "];
+"1000309" -> "1000300"  [label="AST: "];
+"1000300" -> "1000445"  [label="DDG: offset"];
+"1000300" -> "1000445"  [label="DDG: (addr_t) &child->thread.acrs"];
+"1000284" -> "1000300"  [label="DDG: offset"];
+}

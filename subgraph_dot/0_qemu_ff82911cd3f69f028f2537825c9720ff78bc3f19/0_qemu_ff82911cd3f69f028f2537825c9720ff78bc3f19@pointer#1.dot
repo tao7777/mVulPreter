@@ -1,0 +1,27 @@
+digraph "0_qemu_ff82911cd3f69f028f2537825c9720ff78bc3f19@pointer" {
+"1000104" [label="(Call,*s = nbd_get_client_session(bs))"];
+"1000106" [label="(Call,nbd_get_client_session(bs))"];
+"1000101" [label="(MethodParameterIn,BlockDriverState *bs)"];
+"1000101" [label="(MethodParameterIn,BlockDriverState *bs)"];
+"1000102" [label="(Block,)"];
+"1000111" [label="(Identifier,i)"];
+"1000105" [label="(Identifier,s)"];
+"1000104" [label="(Call,*s = nbd_get_client_session(bs))"];
+"1000131" [label="(MethodReturn,static void)"];
+"1000106" [label="(Call,nbd_get_client_session(bs))"];
+"1000107" [label="(Identifier,bs)"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000111" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000131"  [label="DDG: s"];
+"1000104" -> "1000131"  [label="DDG: nbd_get_client_session(bs)"];
+"1000106" -> "1000104"  [label="DDG: bs"];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000106" -> "1000131"  [label="DDG: bs"];
+"1000101" -> "1000106"  [label="DDG: bs"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000131"  [label="DDG: bs"];
+}

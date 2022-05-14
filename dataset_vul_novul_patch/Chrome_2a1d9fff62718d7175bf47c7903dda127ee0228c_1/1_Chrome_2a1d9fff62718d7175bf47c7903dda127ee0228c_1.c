@@ -1,0 +1,3 @@
+ void SendTabToSelfInfoBarDelegate::OpenTab() {
+  NOTIMPLEMENTED();
+ }

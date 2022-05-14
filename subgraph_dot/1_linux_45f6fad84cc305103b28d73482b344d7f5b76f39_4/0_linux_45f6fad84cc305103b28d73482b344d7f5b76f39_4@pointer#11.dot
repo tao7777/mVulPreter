@@ -1,0 +1,26 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_4@pointer" {
+"1000234" [label="(Call,daddr = &usin->sin6_addr)"];
+"1000215" [label="(Call,ipv6_addr_type(&usin->sin6_addr))"];
+"1000234" [label="(Call,daddr = &usin->sin6_addr)"];
+"1000108" [label="(Block,)"];
+"1000236" [label="(Call,&usin->sin6_addr)"];
+"1000215" [label="(Call,ipv6_addr_type(&usin->sin6_addr))"];
+"1000597" [label="(MethodReturn,static int)"];
+"1000216" [label="(Call,&usin->sin6_addr)"];
+"1000235" [label="(Identifier,daddr)"];
+"1000213" [label="(Call,addr_type = ipv6_addr_type(&usin->sin6_addr))"];
+"1000242" [label="(Identifier,addr_type)"];
+"1000234" -> "1000108"  [label="AST: "];
+"1000234" -> "1000236"  [label="CFG: "];
+"1000235" -> "1000234"  [label="AST: "];
+"1000236" -> "1000234"  [label="AST: "];
+"1000242" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000597"  [label="DDG: &usin->sin6_addr"];
+"1000234" -> "1000597"  [label="DDG: daddr"];
+"1000215" -> "1000234"  [label="DDG: &usin->sin6_addr"];
+"1000215" -> "1000213"  [label="AST: "];
+"1000215" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000213" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000213"  [label="DDG: &usin->sin6_addr"];
+}

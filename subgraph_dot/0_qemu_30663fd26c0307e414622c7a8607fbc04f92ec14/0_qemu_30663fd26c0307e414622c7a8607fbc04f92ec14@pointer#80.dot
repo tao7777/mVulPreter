@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1005335" [label="(Call,s->cpuid_features & CPUID_CMOV)"];
+"1005334" [label="(Call,!(s->cpuid_features & CPUID_CMOV))"];
+"1005343" [label="(Identifier,op1)"];
+"1005336" [label="(Call,s->cpuid_features)"];
+"1005333" [label="(ControlStructure,if (!(s->cpuid_features & CPUID_CMOV)))"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1005335" [label="(Call,s->cpuid_features & CPUID_CMOV)"];
+"1005339" [label="(Identifier,CPUID_CMOV)"];
+"1005341" [label="(ControlStructure,goto illegal_op;)"];
+"1005334" [label="(Call,!(s->cpuid_features & CPUID_CMOV))"];
+"1005335" -> "1005334"  [label="AST: "];
+"1005335" -> "1005339"  [label="CFG: "];
+"1005336" -> "1005335"  [label="AST: "];
+"1005339" -> "1005335"  [label="AST: "];
+"1005334" -> "1005335"  [label="CFG: "];
+"1005335" -> "1011840"  [label="DDG: CPUID_CMOV"];
+"1005335" -> "1011840"  [label="DDG: s->cpuid_features"];
+"1005335" -> "1005334"  [label="DDG: s->cpuid_features"];
+"1005335" -> "1005334"  [label="DDG: CPUID_CMOV"];
+"1005334" -> "1005333"  [label="AST: "];
+"1005341" -> "1005334"  [label="CFG: "];
+"1005343" -> "1005334"  [label="CFG: "];
+"1005334" -> "1011840"  [label="DDG: s->cpuid_features & CPUID_CMOV"];
+"1005334" -> "1011840"  [label="DDG: !(s->cpuid_features & CPUID_CMOV)"];
+}

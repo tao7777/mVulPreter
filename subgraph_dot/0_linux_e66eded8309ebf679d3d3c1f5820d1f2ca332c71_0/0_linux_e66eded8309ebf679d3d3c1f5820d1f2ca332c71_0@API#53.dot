@@ -1,0 +1,22 @@
+digraph "0_linux_e66eded8309ebf679d3d3c1f5820d1f2ca332c71_0@API" {
+"1001049" [label="(Call,p->signal->tty = tty_kref_get(current->signal->tty))"];
+"1001055" [label="(Call,tty_kref_get(current->signal->tty))"];
+"1001227" [label="(MethodReturn,static struct task_struct *)"];
+"1001050" [label="(Call,p->signal->tty)"];
+"1001049" [label="(Call,p->signal->tty = tty_kref_get(current->signal->tty))"];
+"1001062" [label="(Identifier,p)"];
+"1001056" [label="(Call,current->signal->tty)"];
+"1001024" [label="(Block,)"];
+"1001055" [label="(Call,tty_kref_get(current->signal->tty))"];
+"1001049" -> "1001024"  [label="AST: "];
+"1001049" -> "1001055"  [label="CFG: "];
+"1001050" -> "1001049"  [label="AST: "];
+"1001055" -> "1001049"  [label="AST: "];
+"1001062" -> "1001049"  [label="CFG: "];
+"1001049" -> "1001227"  [label="DDG: tty_kref_get(current->signal->tty)"];
+"1001049" -> "1001227"  [label="DDG: p->signal->tty"];
+"1001055" -> "1001049"  [label="DDG: current->signal->tty"];
+"1001055" -> "1001056"  [label="CFG: "];
+"1001056" -> "1001055"  [label="AST: "];
+"1001055" -> "1001227"  [label="DDG: current->signal->tty"];
+}

@@ -1,0 +1,22 @@
+digraph "0_linux_2d45a02d0166caf2627fe91897c6ffc3b19514c4_0@pointer" {
+"1000410" [label="(Call,sp->pf = sctp_get_pf_specific(sk->sk_family))"];
+"1000414" [label="(Call,sctp_get_pf_specific(sk->sk_family))"];
+"1000118" [label="(Block,)"];
+"1000415" [label="(Call,sk->sk_family)"];
+"1000414" [label="(Call,sctp_get_pf_specific(sk->sk_family))"];
+"1000421" [label="(Identifier,sp)"];
+"1000520" [label="(MethodReturn,static int)"];
+"1000411" [label="(Call,sp->pf)"];
+"1000410" [label="(Call,sp->pf = sctp_get_pf_specific(sk->sk_family))"];
+"1000410" -> "1000118"  [label="AST: "];
+"1000410" -> "1000414"  [label="CFG: "];
+"1000411" -> "1000410"  [label="AST: "];
+"1000414" -> "1000410"  [label="AST: "];
+"1000421" -> "1000410"  [label="CFG: "];
+"1000410" -> "1000520"  [label="DDG: sp->pf"];
+"1000410" -> "1000520"  [label="DDG: sctp_get_pf_specific(sk->sk_family)"];
+"1000414" -> "1000410"  [label="DDG: sk->sk_family"];
+"1000414" -> "1000415"  [label="CFG: "];
+"1000415" -> "1000414"  [label="AST: "];
+"1000414" -> "1000520"  [label="DDG: sk->sk_family"];
+}

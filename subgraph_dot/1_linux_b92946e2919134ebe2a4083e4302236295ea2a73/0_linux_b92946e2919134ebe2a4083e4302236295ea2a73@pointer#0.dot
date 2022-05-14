@@ -1,0 +1,27 @@
+digraph "0_linux_b92946e2919134ebe2a4083e4302236295ea2a73@pointer" {
+"1000104" [label="(MethodParameterIn,struct msghdr *m)"];
+"1000224" [label="(Call,m && m->msg_control && sock_flag(&q->sk, SOCK_ZEROCOPY))"];
+"1000383" [label="(MethodReturn,static ssize_t)"];
+"1000224" [label="(Call,m && m->msg_control && sock_flag(&q->sk, SOCK_ZEROCOPY))"];
+"1000104" [label="(MethodParameterIn,struct msghdr *m)"];
+"1000237" [label="(Identifier,zerocopy)"];
+"1000225" [label="(Identifier,m)"];
+"1000223" [label="(ControlStructure,if (m && m->msg_control && sock_flag(&q->sk, SOCK_ZEROCOPY)))"];
+"1000240" [label="(Identifier,zerocopy)"];
+"1000226" [label="(Call,m->msg_control && sock_flag(&q->sk, SOCK_ZEROCOPY))"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000383"  [label="DDG: m"];
+"1000104" -> "1000224"  [label="DDG: m"];
+"1000224" -> "1000223"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000224" -> "1000226"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000226" -> "1000224"  [label="AST: "];
+"1000237" -> "1000224"  [label="CFG: "];
+"1000240" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000383"  [label="DDG: m"];
+"1000224" -> "1000383"  [label="DDG: m->msg_control && sock_flag(&q->sk, SOCK_ZEROCOPY)"];
+"1000224" -> "1000383"  [label="DDG: m && m->msg_control && sock_flag(&q->sk, SOCK_ZEROCOPY)"];
+"1000226" -> "1000224"  [label="DDG: m->msg_control"];
+"1000226" -> "1000224"  [label="DDG: sock_flag(&q->sk, SOCK_ZEROCOPY)"];
+}

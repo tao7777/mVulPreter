@@ -1,0 +1,36 @@
+digraph "0_Chrome_c0c8978849ac57e4ecd613ddc8ff7852a2054734_2@API" {
+"1000107" [label="(Call,shared_buffer_reader_ =\n        std::make_unique<SensorReadingSharedBufferReader>(reading_buffer_))"];
+"1000109" [label="(Call,std::make_unique<SensorReadingSharedBufferReader>(reading_buffer_))"];
+"1000111" [label="(Call,SensorReadingSharedBufferReader>(reading_buffer_))"];
+"1000106" [label="(Block,)"];
+"1000110" [label="(Identifier,std::make_unique)"];
+"1000111" [label="(Call,SensorReadingSharedBufferReader>(reading_buffer_))"];
+"1000112" [label="(Identifier,SensorReadingSharedBufferReader)"];
+"1000107" [label="(Call,shared_buffer_reader_ =\n        std::make_unique<SensorReadingSharedBufferReader>(reading_buffer_))"];
+"1000108" [label="(Identifier,shared_buffer_reader_)"];
+"1000116" [label="(Identifier,result)"];
+"1000117" [label="(MethodReturn,bool)"];
+"1000113" [label="(Identifier,reading_buffer_)"];
+"1000109" [label="(Call,std::make_unique<SensorReadingSharedBufferReader>(reading_buffer_))"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000116" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000117"  [label="DDG: shared_buffer_reader_"];
+"1000107" -> "1000117"  [label="DDG: std::make_unique<SensorReadingSharedBufferReader>(reading_buffer_)"];
+"1000109" -> "1000107"  [label="DDG: std::make_unique"];
+"1000109" -> "1000107"  [label="DDG: SensorReadingSharedBufferReader>(reading_buffer_)"];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000109" -> "1000117"  [label="DDG: std::make_unique"];
+"1000109" -> "1000117"  [label="DDG: SensorReadingSharedBufferReader>(reading_buffer_)"];
+"1000111" -> "1000109"  [label="DDG: SensorReadingSharedBufferReader"];
+"1000111" -> "1000109"  [label="DDG: reading_buffer_"];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000111" -> "1000117"  [label="DDG: SensorReadingSharedBufferReader"];
+"1000111" -> "1000117"  [label="DDG: reading_buffer_"];
+}

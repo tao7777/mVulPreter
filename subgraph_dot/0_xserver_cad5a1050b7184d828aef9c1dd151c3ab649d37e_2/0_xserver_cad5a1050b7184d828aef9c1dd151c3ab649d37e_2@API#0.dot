@@ -1,0 +1,36 @@
+digraph "0_xserver_cad5a1050b7184d828aef9c1dd151c3ab649d37e_2@API" {
+"1000140" [label="(Call,stuff->numSpecs * sizeof(specs[0]))"];
+"1000133" [label="(Call,swapl(&stuff->numSpecs))"];
+"1000138" [label="(Call,REQUEST_FIXED_SIZE(xXResQueryResourceBytesReq,\n                        stuff->numSpecs * sizeof(specs[0])))"];
+"1000139" [label="(Identifier,xXResQueryResourceBytesReq)"];
+"1000133" [label="(Call,swapl(&stuff->numSpecs))"];
+"1000134" [label="(Call,&stuff->numSpecs)"];
+"1000131" [label="(Call,REQUEST_AT_LEAST_SIZE(xXResQueryResourceBytesReq))"];
+"1000141" [label="(Call,stuff->numSpecs)"];
+"1000140" [label="(Call,stuff->numSpecs * sizeof(specs[0]))"];
+"1000102" [label="(Block,)"];
+"1000148" [label="(MethodReturn,RET)"];
+"1000138" [label="(Call,REQUEST_FIXED_SIZE(xXResQueryResourceBytesReq,\n                        stuff->numSpecs * sizeof(specs[0])))"];
+"1000144" [label="(Call,sizeof(specs[0]))"];
+"1000140" -> "1000138"  [label="AST: "];
+"1000140" -> "1000144"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000144" -> "1000140"  [label="AST: "];
+"1000138" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000148"  [label="DDG: stuff->numSpecs"];
+"1000140" -> "1000138"  [label="DDG: stuff->numSpecs"];
+"1000133" -> "1000140"  [label="DDG: &stuff->numSpecs"];
+"1000133" -> "1000102"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000139" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000148"  [label="DDG: swapl(&stuff->numSpecs)"];
+"1000133" -> "1000148"  [label="DDG: &stuff->numSpecs"];
+"1000138" -> "1000102"  [label="AST: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000148" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000148"  [label="DDG: stuff->numSpecs * sizeof(specs[0])"];
+"1000138" -> "1000148"  [label="DDG: xXResQueryResourceBytesReq"];
+"1000138" -> "1000148"  [label="DDG: REQUEST_FIXED_SIZE(xXResQueryResourceBytesReq,\n                        stuff->numSpecs * sizeof(specs[0]))"];
+"1000131" -> "1000138"  [label="DDG: xXResQueryResourceBytesReq"];
+}

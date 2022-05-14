@@ -1,0 +1,28 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_13@API" {
+"1000112" [label="(Call,*opt_to_free = NULL)"];
+"1000721" [label="(Call,txopt_put(opt_to_free))"];
+"1000114" [label="(Identifier,NULL)"];
+"1000110" [label="(Block,)"];
+"1000463" [label="(Call,opt_to_free = opt)"];
+"1000113" [label="(Identifier,opt_to_free)"];
+"1000747" [label="(MethodReturn,static int)"];
+"1000121" [label="(Identifier,inet)"];
+"1000112" [label="(Call,*opt_to_free = NULL)"];
+"1000722" [label="(Identifier,opt_to_free)"];
+"1000721" [label="(Call,txopt_put(opt_to_free))"];
+"1000726" [label="(Identifier,err)"];
+"1000112" -> "1000110"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000121" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000747"  [label="DDG: opt_to_free"];
+"1000112" -> "1000721"  [label="DDG: opt_to_free"];
+"1000721" -> "1000110"  [label="AST: "];
+"1000721" -> "1000722"  [label="CFG: "];
+"1000722" -> "1000721"  [label="AST: "];
+"1000726" -> "1000721"  [label="CFG: "];
+"1000721" -> "1000747"  [label="DDG: txopt_put(opt_to_free)"];
+"1000721" -> "1000747"  [label="DDG: opt_to_free"];
+"1000463" -> "1000721"  [label="DDG: opt_to_free"];
+}

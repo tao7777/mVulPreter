@@ -1,0 +1,31 @@
+digraph "0_cups_afa80cb2b457bf8d64f775bed307588610476c41@pointer" {
+"1000298" [label="(Call,a = (cupsd_alias_t *)cupsArrayFirst(ServerAlias))"];
+"1000300" [label="(Call,(cupsd_alias_t *)cupsArrayFirst(ServerAlias))"];
+"1000302" [label="(Call,cupsArrayFirst(ServerAlias))"];
+"1000299" [label="(Identifier,a)"];
+"1000302" [label="(Call,cupsArrayFirst(ServerAlias))"];
+"1000303" [label="(Identifier,ServerAlias)"];
+"1000304" [label="(Identifier,a)"];
+"1000298" [label="(Call,a = (cupsd_alias_t *)cupsArrayFirst(ServerAlias))"];
+"1000309" [label="(Call,cupsArrayNext(ServerAlias))"];
+"1000297" [label="(ControlStructure,for (a = (cupsd_alias_t *)cupsArrayFirst(ServerAlias);\n       a;\n       a = (cupsd_alias_t *)cupsArrayNext(ServerAlias)))"];
+"1000476" [label="(MethodReturn,RET)"];
+"1000300" [label="(Call,(cupsd_alias_t *)cupsArrayFirst(ServerAlias))"];
+"1000298" -> "1000297"  [label="AST: "];
+"1000298" -> "1000300"  [label="CFG: "];
+"1000299" -> "1000298"  [label="AST: "];
+"1000300" -> "1000298"  [label="AST: "];
+"1000304" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000476"  [label="DDG: a"];
+"1000298" -> "1000476"  [label="DDG: (cupsd_alias_t *)cupsArrayFirst(ServerAlias)"];
+"1000300" -> "1000298"  [label="DDG: cupsArrayFirst(ServerAlias)"];
+"1000300" -> "1000302"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000302" -> "1000300"  [label="AST: "];
+"1000300" -> "1000476"  [label="DDG: cupsArrayFirst(ServerAlias)"];
+"1000302" -> "1000300"  [label="DDG: ServerAlias"];
+"1000302" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000302"  [label="AST: "];
+"1000302" -> "1000476"  [label="DDG: ServerAlias"];
+"1000302" -> "1000309"  [label="DDG: ServerAlias"];
+}

@@ -1,0 +1,23 @@
+digraph "0_linux_2d8a041b7bfe1097af21441cb77d6af95f4f4680@API" {
+"1000504" [label="(Call,sizeof(*get) +\n\t\t\tsizeof(struct ip_vs_dest_entry) * get->num_dests)"];
+"1000508" [label="(Call,sizeof(struct ip_vs_dest_entry) * get->num_dests)"];
+"1000575" [label="(MethodReturn,RET)"];
+"1000505" [label="(Call,sizeof(*get))"];
+"1000509" [label="(Call,sizeof(struct ip_vs_dest_entry))"];
+"1000502" [label="(Call,size = sizeof(*get) +\n\t\t\tsizeof(struct ip_vs_dest_entry) * get->num_dests)"];
+"1000504" [label="(Call,sizeof(*get) +\n\t\t\tsizeof(struct ip_vs_dest_entry) * get->num_dests)"];
+"1000511" [label="(Call,get->num_dests)"];
+"1000508" [label="(Call,sizeof(struct ip_vs_dest_entry) * get->num_dests)"];
+"1000504" -> "1000502"  [label="AST: "];
+"1000504" -> "1000508"  [label="CFG: "];
+"1000505" -> "1000504"  [label="AST: "];
+"1000508" -> "1000504"  [label="AST: "];
+"1000502" -> "1000504"  [label="CFG: "];
+"1000504" -> "1000575"  [label="DDG: sizeof(struct ip_vs_dest_entry) * get->num_dests"];
+"1000508" -> "1000504"  [label="DDG: get->num_dests"];
+"1000508" -> "1000511"  [label="CFG: "];
+"1000509" -> "1000508"  [label="AST: "];
+"1000511" -> "1000508"  [label="AST: "];
+"1000508" -> "1000575"  [label="DDG: get->num_dests"];
+"1000508" -> "1000502"  [label="DDG: get->num_dests"];
+}

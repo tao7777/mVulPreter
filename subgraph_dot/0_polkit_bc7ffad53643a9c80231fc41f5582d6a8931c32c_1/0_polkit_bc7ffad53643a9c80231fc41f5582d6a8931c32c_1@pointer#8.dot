@@ -1,0 +1,28 @@
+digraph "0_polkit_bc7ffad53643a9c80231fc41f5582d6a8931c32c_1@pointer" {
+"1000103" [label="(MethodParameterIn,gboolean                     *result_matches)"];
+"1000215" [label="(Call,result_matches != NULL)"];
+"1000214" [label="(ControlStructure,if (result_matches != NULL))"];
+"1000177" [label="(Call,polkit_system_bus_name_get_user_sync (POLKIT_SYSTEM_BUS_NAME (subject), NULL, error))"];
+"1000151" [label="(Call,local_error != NULL)"];
+"1000216" [label="(Identifier,result_matches)"];
+"1000103" [label="(MethodParameterIn,gboolean                     *result_matches)"];
+"1000224" [label="(Identifier,ret)"];
+"1000215" [label="(Call,result_matches != NULL)"];
+"1000217" [label="(Identifier,NULL)"];
+"1000221" [label="(Identifier,result_matches)"];
+"1000232" [label="(MethodReturn,RET)"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000232"  [label="DDG: result_matches"];
+"1000103" -> "1000215"  [label="DDG: result_matches"];
+"1000215" -> "1000214"  [label="AST: "];
+"1000215" -> "1000217"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000217" -> "1000215"  [label="AST: "];
+"1000221" -> "1000215"  [label="CFG: "];
+"1000224" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000232"  [label="DDG: result_matches"];
+"1000215" -> "1000232"  [label="DDG: NULL"];
+"1000215" -> "1000232"  [label="DDG: result_matches != NULL"];
+"1000177" -> "1000215"  [label="DDG: NULL"];
+"1000151" -> "1000215"  [label="DDG: NULL"];
+}

@@ -1,0 +1,23 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_42@pointer" {
+"1000898" [label="(Call,win = (struct reg_window __user *)(regs->u_regs[UREG_FP] + STACK_BIAS))"];
+"1000900" [label="(Call,(struct reg_window __user *)(regs->u_regs[UREG_FP] + STACK_BIAS))"];
+"1000910" [label="(Identifier,XR)"];
+"1001895" [label="(MethodReturn,int)"];
+"1000898" [label="(Call,win = (struct reg_window __user *)(regs->u_regs[UREG_FP] + STACK_BIAS))"];
+"1000902" [label="(Call,regs->u_regs[UREG_FP] + STACK_BIAS)"];
+"1000895" [label="(Block,)"];
+"1000899" [label="(Identifier,win)"];
+"1000900" [label="(Call,(struct reg_window __user *)(regs->u_regs[UREG_FP] + STACK_BIAS))"];
+"1000898" -> "1000895"  [label="AST: "];
+"1000898" -> "1000900"  [label="CFG: "];
+"1000899" -> "1000898"  [label="AST: "];
+"1000900" -> "1000898"  [label="AST: "];
+"1000910" -> "1000898"  [label="CFG: "];
+"1000898" -> "1001895"  [label="DDG: win"];
+"1000898" -> "1001895"  [label="DDG: (struct reg_window __user *)(regs->u_regs[UREG_FP] + STACK_BIAS)"];
+"1000900" -> "1000898"  [label="DDG: regs->u_regs[UREG_FP] + STACK_BIAS"];
+"1000900" -> "1000902"  [label="CFG: "];
+"1000901" -> "1000900"  [label="AST: "];
+"1000902" -> "1000900"  [label="AST: "];
+"1000900" -> "1001895"  [label="DDG: regs->u_regs[UREG_FP] + STACK_BIAS"];
+}

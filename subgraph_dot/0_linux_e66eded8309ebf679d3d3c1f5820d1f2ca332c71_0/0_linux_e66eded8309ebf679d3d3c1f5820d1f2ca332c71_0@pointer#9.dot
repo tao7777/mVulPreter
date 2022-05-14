@@ -1,0 +1,29 @@
+digraph "0_linux_e66eded8309ebf679d3d3c1f5820d1f2ca332c71_0@pointer" {
+"1000890" [label="(Call,INIT_LIST_HEAD(&p->thread_group))"];
+"1000997" [label="(Call,list_add_tail_rcu(&p->thread_group, &p->group_leader->thread_group))"];
+"1000897" [label="(Identifier,p)"];
+"1000969" [label="(Block,)"];
+"1000890" [label="(Call,INIT_LIST_HEAD(&p->thread_group))"];
+"1001002" [label="(Call,&p->group_leader->thread_group)"];
+"1001011" [label="(Identifier,p)"];
+"1000998" [label="(Call,&p->thread_group)"];
+"1000997" [label="(Call,list_add_tail_rcu(&p->thread_group, &p->group_leader->thread_group))"];
+"1001227" [label="(MethodReturn,static struct task_struct *)"];
+"1000891" [label="(Call,&p->thread_group)"];
+"1000127" [label="(Block,)"];
+"1000890" -> "1000127"  [label="AST: "];
+"1000890" -> "1000891"  [label="CFG: "];
+"1000891" -> "1000890"  [label="AST: "];
+"1000897" -> "1000890"  [label="CFG: "];
+"1000890" -> "1001227"  [label="DDG: &p->thread_group"];
+"1000890" -> "1001227"  [label="DDG: INIT_LIST_HEAD(&p->thread_group)"];
+"1000890" -> "1000997"  [label="DDG: &p->thread_group"];
+"1000997" -> "1000969"  [label="AST: "];
+"1000997" -> "1001002"  [label="CFG: "];
+"1000998" -> "1000997"  [label="AST: "];
+"1001002" -> "1000997"  [label="AST: "];
+"1001011" -> "1000997"  [label="CFG: "];
+"1000997" -> "1001227"  [label="DDG: &p->thread_group"];
+"1000997" -> "1001227"  [label="DDG: list_add_tail_rcu(&p->thread_group, &p->group_leader->thread_group)"];
+"1000997" -> "1001227"  [label="DDG: &p->group_leader->thread_group"];
+}

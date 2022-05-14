@@ -1,0 +1,31 @@
+digraph "0_linux_74e98eb085889b0d2d4908f59f6e00026063014f@pointer" {
+"1000130" [label="(Call,*otrans = trans)"];
+"1000111" [label="(MethodParameterIn,struct rds_transport *trans)"];
+"1000299" [label="(Call,conn->c_trans = trans)"];
+"1000114" [label="(Block,)"];
+"1000495" [label="(MethodReturn,static struct rds_connection *)"];
+"1000286" [label="(Call,trans == NULL)"];
+"1000131" [label="(Identifier,otrans)"];
+"1000281" [label="(Call,trans = &rds_loop_transport)"];
+"1000442" [label="(Call,rds_conn_lookup(net, head, laddr, faddr, trans))"];
+"1000130" [label="(Call,*otrans = trans)"];
+"1000136" [label="(Identifier,is_outgoing)"];
+"1000132" [label="(Identifier,trans)"];
+"1000111" [label="(MethodParameterIn,struct rds_transport *trans)"];
+"1000146" [label="(Call,rds_conn_lookup(net, head, laddr, faddr, trans))"];
+"1000130" -> "1000114"  [label="AST: "];
+"1000130" -> "1000132"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000132" -> "1000130"  [label="AST: "];
+"1000136" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000495"  [label="DDG: trans"];
+"1000130" -> "1000495"  [label="DDG: otrans"];
+"1000111" -> "1000130"  [label="DDG: trans"];
+"1000111" -> "1000107"  [label="AST: "];
+"1000111" -> "1000495"  [label="DDG: trans"];
+"1000111" -> "1000146"  [label="DDG: trans"];
+"1000111" -> "1000281"  [label="DDG: trans"];
+"1000111" -> "1000286"  [label="DDG: trans"];
+"1000111" -> "1000299"  [label="DDG: trans"];
+"1000111" -> "1000442"  [label="DDG: trans"];
+}

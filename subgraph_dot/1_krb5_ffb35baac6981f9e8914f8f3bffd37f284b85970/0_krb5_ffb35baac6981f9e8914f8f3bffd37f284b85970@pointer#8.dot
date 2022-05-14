@@ -1,0 +1,28 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970@pointer" {
+"1000720" [label="(Call,memset(state->reply.enc_part.ciphertext.data, 0,\n           state->reply.enc_part.ciphertext.length))"];
+"1000740" [label="(Call,free(state->reply.enc_part.ciphertext.data))"];
+"1000731" [label="(Call,state->reply.enc_part.ciphertext.length)"];
+"1001161" [label="(MethodReturn,RET)"];
+"1000117" [label="(Block,)"];
+"1000721" [label="(Call,state->reply.enc_part.ciphertext.data)"];
+"1000720" [label="(Call,memset(state->reply.enc_part.ciphertext.data, 0,\n           state->reply.enc_part.ciphertext.length))"];
+"1000740" [label="(Call,free(state->reply.enc_part.ciphertext.data))"];
+"1000741" [label="(Call,state->reply.enc_part.ciphertext.data)"];
+"1000751" [label="(Identifier,kdc_context)"];
+"1000730" [label="(Literal,0)"];
+"1000745" [label="(Identifier,state)"];
+"1000720" -> "1000117"  [label="AST: "];
+"1000720" -> "1000731"  [label="CFG: "];
+"1000721" -> "1000720"  [label="AST: "];
+"1000730" -> "1000720"  [label="AST: "];
+"1000731" -> "1000720"  [label="AST: "];
+"1000745" -> "1000720"  [label="CFG: "];
+"1000720" -> "1001161"  [label="DDG: state->reply.enc_part.ciphertext.length"];
+"1000720" -> "1001161"  [label="DDG: memset(state->reply.enc_part.ciphertext.data, 0,\n           state->reply.enc_part.ciphertext.length)"];
+"1000720" -> "1000740"  [label="DDG: state->reply.enc_part.ciphertext.data"];
+"1000740" -> "1000117"  [label="AST: "];
+"1000740" -> "1000741"  [label="CFG: "];
+"1000741" -> "1000740"  [label="AST: "];
+"1000751" -> "1000740"  [label="CFG: "];
+"1000740" -> "1001161"  [label="DDG: state->reply.enc_part.ciphertext.data"];
+}

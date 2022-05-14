@@ -1,0 +1,34 @@
+digraph "0_monkey_b2d0e6f92310bb14a15aa2f8e96e1fb5379776dd@pointer" {
+"1000206" [label="(Call,memcpy(&sr->file_info, &finfo, sizeof(struct file_info)))"];
+"1000147" [label="(Call,mk_file_get_info(entry->real_path, &finfo))"];
+"1000211" [label="(Call,&finfo)"];
+"1000217" [label="(Identifier,cs)"];
+"1000206" [label="(Call,memcpy(&sr->file_info, &finfo, sizeof(struct file_info)))"];
+"1000207" [label="(Call,&sr->file_info)"];
+"1000213" [label="(Call,sizeof(struct file_info))"];
+"1000467" [label="(MethodReturn,int)"];
+"1000145" [label="(Call,ret = mk_file_get_info(entry->real_path, &finfo))"];
+"1000162" [label="(Call,open(entry->real_path, config->open_flags))"];
+"1000151" [label="(Call,&finfo)"];
+"1000136" [label="(Block,)"];
+"1000148" [label="(Call,entry->real_path)"];
+"1000147" [label="(Call,mk_file_get_info(entry->real_path, &finfo))"];
+"1000206" -> "1000136"  [label="AST: "];
+"1000206" -> "1000213"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000211" -> "1000206"  [label="AST: "];
+"1000213" -> "1000206"  [label="AST: "];
+"1000217" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000467"  [label="DDG: memcpy(&sr->file_info, &finfo, sizeof(struct file_info))"];
+"1000206" -> "1000467"  [label="DDG: &sr->file_info"];
+"1000206" -> "1000467"  [label="DDG: &finfo"];
+"1000147" -> "1000206"  [label="DDG: &finfo"];
+"1000147" -> "1000145"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000151" -> "1000147"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000145"  [label="DDG: entry->real_path"];
+"1000147" -> "1000145"  [label="DDG: &finfo"];
+"1000147" -> "1000162"  [label="DDG: entry->real_path"];
+}

@@ -1,0 +1,38 @@
+digraph "0_Chrome_3c8e4852477d5b1e2da877808c998dc57db9460f_40@pointer" {
+"1000110" [label="(Call,* emulation_handler =\n      new protocol::EmulationHandler())"];
+"1000112" [label="(Call,new protocol::EmulationHandler())"];
+"1000123" [label="(Call,base::WrapUnique(emulation_handler))"];
+"1000122" [label="(Call,session->AddHandler(base::WrapUnique(emulation_handler)))"];
+"1000102" [label="(Block,)"];
+"1000189" [label="(MethodReturn,void)"];
+"1000117" [label="(Identifier,protocol::BrowserHandler)"];
+"1000110" [label="(Call,* emulation_handler =\n      new protocol::EmulationHandler())"];
+"1000112" [label="(Call,new protocol::EmulationHandler())"];
+"1000111" [label="(Identifier,emulation_handler)"];
+"1000113" [label="(Identifier,protocol::EmulationHandler)"];
+"1000123" [label="(Call,base::WrapUnique(emulation_handler))"];
+"1000124" [label="(Identifier,emulation_handler)"];
+"1000128" [label="(Identifier,protocol::InputHandler)"];
+"1000122" [label="(Call,session->AddHandler(base::WrapUnique(emulation_handler)))"];
+"1000110" -> "1000102"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000117" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000189"  [label="DDG: new protocol::EmulationHandler()"];
+"1000112" -> "1000110"  [label="DDG: protocol::EmulationHandler"];
+"1000110" -> "1000123"  [label="DDG: emulation_handler"];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000112" -> "1000189"  [label="DDG: protocol::EmulationHandler"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000189"  [label="DDG: emulation_handler"];
+"1000123" -> "1000122"  [label="DDG: emulation_handler"];
+"1000122" -> "1000102"  [label="AST: "];
+"1000128" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000189"  [label="DDG: base::WrapUnique(emulation_handler)"];
+"1000122" -> "1000189"  [label="DDG: session->AddHandler(base::WrapUnique(emulation_handler))"];
+}

@@ -1,0 +1,35 @@
+digraph "0_FreeRDP_445a5a42c500ceb80f8fa7f2c11f3682538033f3@API" {
+"1000119" [label="(Call,Stream_GetRemainingLength(s) < 2)"];
+"1000120" [label="(Call,Stream_GetRemainingLength(s))"];
+"1000104" [label="(MethodParameterIn,wStream* s)"];
+"1000125" [label="(Identifier,s)"];
+"1000124" [label="(Call,Stream_Read_UINT16(s, bitmapUpdate->number))"];
+"1000122" [label="(Literal,2)"];
+"1000213" [label="(Call,update_read_bitmap_data(update, s, &bitmapUpdate->rectangles[i]))"];
+"1000233" [label="(MethodReturn,BITMAP_UPDATE*)"];
+"1000119" [label="(Call,Stream_GetRemainingLength(s) < 2)"];
+"1000121" [label="(Identifier,s)"];
+"1000120" [label="(Call,Stream_GetRemainingLength(s))"];
+"1000104" [label="(MethodParameterIn,wStream* s)"];
+"1000118" [label="(ControlStructure,if (Stream_GetRemainingLength(s) < 2))"];
+"1000123" [label="(ControlStructure,goto fail;)"];
+"1000119" -> "1000118"  [label="AST: "];
+"1000119" -> "1000122"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000122" -> "1000119"  [label="AST: "];
+"1000123" -> "1000119"  [label="CFG: "];
+"1000125" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000233"  [label="DDG: Stream_GetRemainingLength(s)"];
+"1000119" -> "1000233"  [label="DDG: Stream_GetRemainingLength(s) < 2"];
+"1000120" -> "1000119"  [label="DDG: s"];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000233"  [label="DDG: s"];
+"1000104" -> "1000120"  [label="DDG: s"];
+"1000120" -> "1000124"  [label="DDG: s"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000233"  [label="DDG: s"];
+"1000104" -> "1000124"  [label="DDG: s"];
+"1000104" -> "1000213"  [label="DDG: s"];
+}

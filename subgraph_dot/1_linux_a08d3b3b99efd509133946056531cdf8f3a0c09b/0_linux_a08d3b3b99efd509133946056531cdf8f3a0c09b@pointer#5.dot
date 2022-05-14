@@ -1,0 +1,24 @@
+digraph "0_linux_a08d3b3b99efd509133946056531cdf8f3a0c09b@pointer" {
+"1000208" [label="(Call,complete_emulated_io(vcpu))"];
+"1000105" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000207" [label="(Return,return complete_emulated_io(vcpu);)"];
+"1000208" [label="(Call,complete_emulated_io(vcpu))"];
+"1000190" [label="(Block,)"];
+"1000105" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000271" [label="(MethodReturn,static int)"];
+"1000209" [label="(Identifier,vcpu)"];
+"1000207" [label="(Return,return complete_emulated_io(vcpu);)"];
+"1000208" -> "1000207"  [label="AST: "];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000207" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000271"  [label="DDG: complete_emulated_io(vcpu)"];
+"1000208" -> "1000271"  [label="DDG: vcpu"];
+"1000208" -> "1000207"  [label="DDG: complete_emulated_io(vcpu)"];
+"1000105" -> "1000208"  [label="DDG: vcpu"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000271"  [label="DDG: vcpu"];
+"1000207" -> "1000190"  [label="AST: "];
+"1000271" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000271"  [label="DDG: <RET>"];
+}

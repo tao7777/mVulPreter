@@ -1,0 +1,32 @@
+digraph "0_VeraCrypt_f30f9339c9a0b9bbcc6f5ad38804af39db1f479e@pointer" {
+"1003094" [label="(Call,request->BootDriveFilterExtension = GetBootDriveFilterExtension())"];
+"1003100" [label="(Call,IsBootDriveMounted() && request->BootDriveFilterExtension)"];
+"1003098" [label="(Call,GetBootDriveFilterExtension())"];
+"1003102" [label="(Call,request->BootDriveFilterExtension)"];
+"1003094" [label="(Call,request->BootDriveFilterExtension = GetBootDriveFilterExtension())"];
+"1003200" [label="(MethodReturn,NTSTATUS)"];
+"1003095" [label="(Call,request->BootDriveFilterExtension)"];
+"1003132" [label="(Identifier,Irp)"];
+"1003099" [label="(ControlStructure,if (IsBootDriveMounted() && request->BootDriveFilterExtension))"];
+"1003108" [label="(Identifier,request)"];
+"1003083" [label="(Block,)"];
+"1003101" [label="(Call,IsBootDriveMounted())"];
+"1003100" [label="(Call,IsBootDriveMounted() && request->BootDriveFilterExtension)"];
+"1003094" -> "1003083"  [label="AST: "];
+"1003094" -> "1003098"  [label="CFG: "];
+"1003095" -> "1003094"  [label="AST: "];
+"1003098" -> "1003094"  [label="AST: "];
+"1003101" -> "1003094"  [label="CFG: "];
+"1003094" -> "1003200"  [label="DDG: GetBootDriveFilterExtension()"];
+"1003094" -> "1003100"  [label="DDG: request->BootDriveFilterExtension"];
+"1003100" -> "1003099"  [label="AST: "];
+"1003100" -> "1003101"  [label="CFG: "];
+"1003100" -> "1003102"  [label="CFG: "];
+"1003101" -> "1003100"  [label="AST: "];
+"1003102" -> "1003100"  [label="AST: "];
+"1003108" -> "1003100"  [label="CFG: "];
+"1003132" -> "1003100"  [label="CFG: "];
+"1003100" -> "1003200"  [label="DDG: IsBootDriveMounted()"];
+"1003100" -> "1003200"  [label="DDG: IsBootDriveMounted() && request->BootDriveFilterExtension"];
+"1003100" -> "1003200"  [label="DDG: request->BootDriveFilterExtension"];
+}

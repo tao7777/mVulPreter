@@ -1,0 +1,20 @@
+digraph "0_Chrome_438b99bc730bc665eedfc62c4eb864c981e5c65f_0@API" {
+"1000119" [label="(Call,extension_service = extension_system->extension_service())"];
+"1000118" [label="(Call,!(extension_service = extension_system->extension_service()))"];
+"1000120" [label="(Identifier,extension_service)"];
+"1000118" [label="(Call,!(extension_service = extension_system->extension_service()))"];
+"1000145" [label="(MethodReturn,void)"];
+"1000121" [label="(Call,extension_system->extension_service())"];
+"1000119" [label="(Call,extension_service = extension_system->extension_service())"];
+"1000112" [label="(Call,!(extension_system = extensions::ExtensionSystem::Get(profile_)) ||\n      !(extension_service = extension_system->extension_service()))"];
+"1000119" -> "1000118"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000145"  [label="DDG: extension_system->extension_service()"];
+"1000119" -> "1000145"  [label="DDG: extension_service"];
+"1000119" -> "1000118"  [label="DDG: extension_service"];
+"1000118" -> "1000112"  [label="AST: "];
+"1000112" -> "1000118"  [label="CFG: "];
+}

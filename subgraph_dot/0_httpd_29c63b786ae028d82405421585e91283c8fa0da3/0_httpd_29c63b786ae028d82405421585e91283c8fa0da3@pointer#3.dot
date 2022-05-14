@@ -1,0 +1,30 @@
+digraph "0_httpd_29c63b786ae028d82405421585e91283c8fa0da3@pointer" {
+"1000101" [label="(MethodParameterIn,nghttp2_session *ngh2)"];
+"1000167" [label="(Call,nghttp2_submit_rst_stream(ngh2, NGHTTP2_FLAG_NONE, stream->id,\n                                  NGHTTP2_INTERNAL_ERROR))"];
+"1000167" [label="(Call,nghttp2_submit_rst_stream(ngh2, NGHTTP2_FLAG_NONE, stream->id,\n                                  NGHTTP2_INTERNAL_ERROR))"];
+"1000153" [label="(Call,ap_log_cerror(APLOG_MARK, APLOG_TRACE1, status, session->c,\n                      \"h2-stream(%ld-%d): on_header, reset stream\",\n                      session->id, stream->id))"];
+"1000169" [label="(Identifier,NGHTTP2_FLAG_NONE)"];
+"1000101" [label="(MethodParameterIn,nghttp2_session *ngh2)"];
+"1000152" [label="(Block,)"];
+"1000170" [label="(Call,stream->id)"];
+"1000168" [label="(Identifier,ngh2)"];
+"1000187" [label="(Literal,0)"];
+"1000188" [label="(MethodReturn,static int)"];
+"1000173" [label="(Identifier,NGHTTP2_INTERNAL_ERROR)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000188"  [label="DDG: ngh2"];
+"1000101" -> "1000167"  [label="DDG: ngh2"];
+"1000167" -> "1000152"  [label="AST: "];
+"1000167" -> "1000173"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000169" -> "1000167"  [label="AST: "];
+"1000170" -> "1000167"  [label="AST: "];
+"1000173" -> "1000167"  [label="AST: "];
+"1000187" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000188"  [label="DDG: ngh2"];
+"1000167" -> "1000188"  [label="DDG: NGHTTP2_FLAG_NONE"];
+"1000167" -> "1000188"  [label="DDG: nghttp2_submit_rst_stream(ngh2, NGHTTP2_FLAG_NONE, stream->id,\n                                  NGHTTP2_INTERNAL_ERROR)"];
+"1000167" -> "1000188"  [label="DDG: NGHTTP2_INTERNAL_ERROR"];
+"1000167" -> "1000188"  [label="DDG: stream->id"];
+"1000153" -> "1000167"  [label="DDG: stream->id"];
+}

@@ -1,0 +1,38 @@
+digraph "0_linux_321027c1fe77f892f4ea07846aeae08cefbbb290@pointer" {
+"1000545" [label="(Call,group_leader->ctx->task != ctx->task)"];
+"1000650" [label="(Call,ctx->task == TASK_TOMBSTONE)"];
+"1000654" [label="(Identifier,TASK_TOMBSTONE)"];
+"1000664" [label="(Identifier,event)"];
+"1000651" [label="(Call,ctx->task)"];
+"1000631" [label="(Call,gctx->task == TASK_TOMBSTONE)"];
+"1000546" [label="(Call,group_leader->ctx->task)"];
+"1000558" [label="(Identifier,group_leader)"];
+"1000544" [label="(ControlStructure,if (group_leader->ctx->task != ctx->task))"];
+"1000545" [label="(Call,group_leader->ctx->task != ctx->task)"];
+"1000650" [label="(Call,ctx->task == TASK_TOMBSTONE)"];
+"1000551" [label="(Call,ctx->task)"];
+"1000657" [label="(Identifier,err)"];
+"1000649" [label="(ControlStructure,if (ctx->task == TASK_TOMBSTONE))"];
+"1000554" [label="(ControlStructure,goto err_context;)"];
+"1000843" [label="(MethodReturn,RET)"];
+"1000545" -> "1000544"  [label="AST: "];
+"1000545" -> "1000551"  [label="CFG: "];
+"1000546" -> "1000545"  [label="AST: "];
+"1000551" -> "1000545"  [label="AST: "];
+"1000554" -> "1000545"  [label="CFG: "];
+"1000558" -> "1000545"  [label="CFG: "];
+"1000545" -> "1000843"  [label="DDG: group_leader->ctx->task"];
+"1000545" -> "1000843"  [label="DDG: ctx->task"];
+"1000545" -> "1000843"  [label="DDG: group_leader->ctx->task != ctx->task"];
+"1000545" -> "1000650"  [label="DDG: ctx->task"];
+"1000650" -> "1000649"  [label="AST: "];
+"1000650" -> "1000654"  [label="CFG: "];
+"1000651" -> "1000650"  [label="AST: "];
+"1000654" -> "1000650"  [label="AST: "];
+"1000657" -> "1000650"  [label="CFG: "];
+"1000664" -> "1000650"  [label="CFG: "];
+"1000650" -> "1000843"  [label="DDG: ctx->task == TASK_TOMBSTONE"];
+"1000650" -> "1000843"  [label="DDG: ctx->task"];
+"1000650" -> "1000843"  [label="DDG: TASK_TOMBSTONE"];
+"1000631" -> "1000650"  [label="DDG: TASK_TOMBSTONE"];
+}

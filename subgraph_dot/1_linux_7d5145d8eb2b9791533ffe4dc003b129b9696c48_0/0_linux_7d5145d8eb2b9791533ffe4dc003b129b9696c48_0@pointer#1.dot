@@ -1,0 +1,32 @@
+digraph "0_linux_7d5145d8eb2b9791533ffe4dc003b129b9696c48_0@pointer" {
+"1000162" [label="(Call,put_page(netbk->mmap_pages[pending_idx]))"];
+"1000109" [label="(Call,netbk->mmap_pages[pending_idx] == NULL)"];
+"1000110" [label="(Call,netbk->mmap_pages[pending_idx])"];
+"1000118" [label="(Identifier,pending_tx_info)"];
+"1000109" [label="(Call,netbk->mmap_pages[pending_idx] == NULL)"];
+"1000171" [label="(Identifier,netbk)"];
+"1000104" [label="(Block,)"];
+"1000108" [label="(ControlStructure,if (netbk->mmap_pages[pending_idx] == NULL))"];
+"1000175" [label="(MethodReturn,static void)"];
+"1000115" [label="(Identifier,NULL)"];
+"1000116" [label="(Return,return;)"];
+"1000168" [label="(Call,netbk->mmap_pages[pending_idx] = NULL)"];
+"1000162" [label="(Call,put_page(netbk->mmap_pages[pending_idx]))"];
+"1000163" [label="(Call,netbk->mmap_pages[pending_idx])"];
+"1000162" -> "1000104"  [label="AST: "];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000171" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000175"  [label="DDG: put_page(netbk->mmap_pages[pending_idx])"];
+"1000109" -> "1000162"  [label="DDG: netbk->mmap_pages[pending_idx]"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000115"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000115" -> "1000109"  [label="AST: "];
+"1000116" -> "1000109"  [label="CFG: "];
+"1000118" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000175"  [label="DDG: NULL"];
+"1000109" -> "1000175"  [label="DDG: netbk->mmap_pages[pending_idx]"];
+"1000109" -> "1000175"  [label="DDG: netbk->mmap_pages[pending_idx] == NULL"];
+"1000109" -> "1000168"  [label="DDG: NULL"];
+}

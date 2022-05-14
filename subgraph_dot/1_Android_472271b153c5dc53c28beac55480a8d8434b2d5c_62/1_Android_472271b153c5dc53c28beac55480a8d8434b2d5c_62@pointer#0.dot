@@ -1,0 +1,36 @@
+digraph "1_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_62@pointer" {
+"1000113" [label="(Call,ioctl(socket->fd, FIONREAD, &size))"];
+"1000112" [label="(Call,ioctl(socket->fd, FIONREAD, &size) == -1)"];
+"1000121" [label="(Literal,1)"];
+"1000127" [label="(MethodReturn,ssize_t)"];
+"1000114" [label="(Call,socket->fd)"];
+"1000112" [label="(Call,ioctl(socket->fd, FIONREAD, &size) == -1)"];
+"1000126" [label="(Identifier,size)"];
+"1000124" [label="(Literal,1)"];
+"1000111" [label="(ControlStructure,if (ioctl(socket->fd, FIONREAD, &size) == -1))"];
+"1000113" [label="(Call,ioctl(socket->fd, FIONREAD, &size))"];
+"1000118" [label="(Call,&size)"];
+"1000117" [label="(Identifier,FIONREAD)"];
+"1000120" [label="(Call,-1)"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000118"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000117" -> "1000113"  [label="AST: "];
+"1000118" -> "1000113"  [label="AST: "];
+"1000121" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000127"  [label="DDG: FIONREAD"];
+"1000113" -> "1000127"  [label="DDG: socket->fd"];
+"1000113" -> "1000127"  [label="DDG: &size"];
+"1000113" -> "1000112"  [label="DDG: socket->fd"];
+"1000113" -> "1000112"  [label="DDG: FIONREAD"];
+"1000113" -> "1000112"  [label="DDG: &size"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000112"  [label="AST: "];
+"1000124" -> "1000112"  [label="CFG: "];
+"1000126" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000127"  [label="DDG: ioctl(socket->fd, FIONREAD, &size) == -1"];
+"1000112" -> "1000127"  [label="DDG: ioctl(socket->fd, FIONREAD, &size)"];
+"1000112" -> "1000127"  [label="DDG: -1"];
+"1000120" -> "1000112"  [label="DDG: 1"];
+}

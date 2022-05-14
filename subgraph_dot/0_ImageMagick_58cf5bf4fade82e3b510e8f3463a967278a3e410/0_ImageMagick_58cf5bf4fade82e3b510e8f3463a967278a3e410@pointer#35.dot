@@ -1,0 +1,35 @@
+digraph "0_ImageMagick_58cf5bf4fade82e3b510e8f3463a967278a3e410@pointer" {
+"1001236" [label="(Call,image->colormap[i].green=image->colormap[i].red)"];
+"1001220" [label="(Call,image->colormap[i].red=ScaleCharToQuantum(jpeg_info.colormap[0][i]))"];
+"1001228" [label="(Call,ScaleCharToQuantum(jpeg_info.colormap[0][i]))"];
+"1001251" [label="(Call,image->colormap[i].blue=image->colormap[i].red)"];
+"1001255" [label="(Identifier,image)"];
+"1001229" [label="(Call,jpeg_info.colormap[0][i])"];
+"1001244" [label="(Call,image->colormap[i].red)"];
+"1001853" [label="(MethodReturn,static Image *)"];
+"1001240" [label="(Identifier,image)"];
+"1001219" [label="(Block,)"];
+"1001220" [label="(Call,image->colormap[i].red=ScaleCharToQuantum(jpeg_info.colormap[0][i]))"];
+"1001228" [label="(Call,ScaleCharToQuantum(jpeg_info.colormap[0][i]))"];
+"1001236" [label="(Call,image->colormap[i].green=image->colormap[i].red)"];
+"1001237" [label="(Call,image->colormap[i].green)"];
+"1001221" [label="(Call,image->colormap[i].red)"];
+"1001236" -> "1001219"  [label="AST: "];
+"1001236" -> "1001244"  [label="CFG: "];
+"1001237" -> "1001236"  [label="AST: "];
+"1001244" -> "1001236"  [label="AST: "];
+"1001255" -> "1001236"  [label="CFG: "];
+"1001236" -> "1001853"  [label="DDG: image->colormap[i].green"];
+"1001220" -> "1001236"  [label="DDG: image->colormap[i].red"];
+"1001220" -> "1001219"  [label="AST: "];
+"1001220" -> "1001228"  [label="CFG: "];
+"1001221" -> "1001220"  [label="AST: "];
+"1001228" -> "1001220"  [label="AST: "];
+"1001240" -> "1001220"  [label="CFG: "];
+"1001220" -> "1001853"  [label="DDG: ScaleCharToQuantum(jpeg_info.colormap[0][i])"];
+"1001228" -> "1001220"  [label="DDG: jpeg_info.colormap[0][i]"];
+"1001220" -> "1001251"  [label="DDG: image->colormap[i].red"];
+"1001228" -> "1001229"  [label="CFG: "];
+"1001229" -> "1001228"  [label="AST: "];
+"1001228" -> "1001853"  [label="DDG: jpeg_info.colormap[0][i]"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_8b74d439e1697110c5e5c600643e823eb1dd0762@pointer" {
+"1000147" [label="(Call,sk->sk_state == TCP_LISTEN)"];
+"1000146" [label="(Call,unlikely(sk->sk_state == TCP_LISTEN))"];
+"1000151" [label="(Identifier,TCP_LISTEN)"];
+"1000148" [label="(Call,sk->sk_state)"];
+"1000147" [label="(Call,sk->sk_state == TCP_LISTEN)"];
+"1000145" [label="(ControlStructure,if (unlikely(sk->sk_state == TCP_LISTEN)))"];
+"1000175" [label="(Identifier,skb)"];
+"1000225" [label="(MethodReturn,void)"];
+"1000155" [label="(Identifier,newsk)"];
+"1000146" [label="(Call,unlikely(sk->sk_state == TCP_LISTEN))"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000151" -> "1000147"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000225"  [label="DDG: TCP_LISTEN"];
+"1000147" -> "1000225"  [label="DDG: sk->sk_state"];
+"1000147" -> "1000146"  [label="DDG: sk->sk_state"];
+"1000147" -> "1000146"  [label="DDG: TCP_LISTEN"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000155" -> "1000146"  [label="CFG: "];
+"1000175" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000225"  [label="DDG: unlikely(sk->sk_state == TCP_LISTEN)"];
+"1000146" -> "1000225"  [label="DDG: sk->sk_state == TCP_LISTEN"];
+}

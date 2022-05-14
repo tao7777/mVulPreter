@@ -1,0 +1,34 @@
+digraph "0_linux_2117d5398c81554fbf803f5fd1dc55eb78216c0c_0@pointer" {
+"1000146" [label="(Call,ctxt->mode >= X86EMUL_MODE_PROT16)"];
+"1000145" [label="(Call,ctxt->mode >= X86EMUL_MODE_PROT16 && (cs & 3) > cpl)"];
+"1000150" [label="(Identifier,X86EMUL_MODE_PROT16)"];
+"1000145" [label="(Call,ctxt->mode >= X86EMUL_MODE_PROT16 && (cs & 3) > cpl)"];
+"1000153" [label="(Identifier,cs)"];
+"1000146" [label="(Call,ctxt->mode >= X86EMUL_MODE_PROT16)"];
+"1000157" [label="(Identifier,X86EMUL_UNHANDLEABLE)"];
+"1000191" [label="(MethodReturn,static int)"];
+"1000151" [label="(Call,(cs & 3) > cpl)"];
+"1000144" [label="(ControlStructure,if (ctxt->mode >= X86EMUL_MODE_PROT16 && (cs & 3) > cpl))"];
+"1000159" [label="(Identifier,rc)"];
+"1000147" [label="(Call,ctxt->mode)"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000150"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000150" -> "1000146"  [label="AST: "];
+"1000153" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000191"  [label="DDG: X86EMUL_MODE_PROT16"];
+"1000146" -> "1000191"  [label="DDG: ctxt->mode"];
+"1000146" -> "1000145"  [label="DDG: ctxt->mode"];
+"1000146" -> "1000145"  [label="DDG: X86EMUL_MODE_PROT16"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000145" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000145"  [label="AST: "];
+"1000157" -> "1000145"  [label="CFG: "];
+"1000159" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000191"  [label="DDG: (cs & 3) > cpl"];
+"1000145" -> "1000191"  [label="DDG: ctxt->mode >= X86EMUL_MODE_PROT16 && (cs & 3) > cpl"];
+"1000145" -> "1000191"  [label="DDG: ctxt->mode >= X86EMUL_MODE_PROT16"];
+"1000151" -> "1000145"  [label="DDG: cs & 3"];
+"1000151" -> "1000145"  [label="DDG: cpl"];
+}

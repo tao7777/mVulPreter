@@ -1,0 +1,32 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_72" {
+"1000106" [label="(MethodReturn,static void)"];
+"1000101" [label="(MethodParameterIn,struct perf_event *bp)"];
+"1000116" [label="(MethodParameterOut,struct perf_event *bp)"];
+"1000102" [label="(MethodParameterIn,struct perf_sample_data *data)"];
+"1000117" [label="(MethodParameterOut,struct perf_sample_data *data)"];
+"1000103" [label="(MethodParameterIn,struct pt_regs *regs)"];
+"1000118" [label="(MethodParameterOut,struct pt_regs *regs)"];
+"1000104" [label="(Block,)"];
+"1000105" [label="(Call,dump_stack())"];
+"1000106" -> "1000100"  [label="AST: "];
+"1000106" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000106"  [label="DDG: dump_stack()"];
+"1000103" -> "1000106"  [label="DDG: regs"];
+"1000102" -> "1000106"  [label="DDG: data"];
+"1000101" -> "1000106"  [label="DDG: bp"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000106"  [label="DDG: bp"];
+"1000116" -> "1000100"  [label="AST: "];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000106"  [label="DDG: data"];
+"1000117" -> "1000100"  [label="AST: "];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000106"  [label="DDG: regs"];
+"1000118" -> "1000100"  [label="AST: "];
+"1000104" -> "1000100"  [label="AST: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000100"  [label="CFG: "];
+"1000106" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000106"  [label="DDG: dump_stack()"];
+}

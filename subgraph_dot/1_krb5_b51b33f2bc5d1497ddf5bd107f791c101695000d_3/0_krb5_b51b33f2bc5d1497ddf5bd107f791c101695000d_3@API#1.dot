@@ -1,0 +1,37 @@
+digraph "0_krb5_b51b33f2bc5d1497ddf5bd107f791c101695000d_3@API" {
+"1000142" [label="(Call,sendTokenInit = 0)"];
+"1000403" [label="(Call,return_token == INIT_TOKEN_SEND && sendTokenInit)"];
+"1000144" [label="(Literal,0)"];
+"1000282" [label="(Call,sendTokenInit = 1)"];
+"1000407" [label="(Identifier,sendTokenInit)"];
+"1000566" [label="(MethodReturn,RET)"];
+"1000434" [label="(Identifier,return_token)"];
+"1000403" [label="(Call,return_token == INIT_TOKEN_SEND && sendTokenInit)"];
+"1000404" [label="(Call,return_token == INIT_TOKEN_SEND)"];
+"1000121" [label="(Block,)"];
+"1000147" [label="(Identifier,mechtok_in)"];
+"1000402" [label="(ControlStructure,if (return_token == INIT_TOKEN_SEND && sendTokenInit))"];
+"1000143" [label="(Identifier,sendTokenInit)"];
+"1000142" [label="(Call,sendTokenInit = 0)"];
+"1000411" [label="(Identifier,sc)"];
+"1000142" -> "1000121"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="AST: "];
+"1000147" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000566"  [label="DDG: sendTokenInit"];
+"1000142" -> "1000403"  [label="DDG: sendTokenInit"];
+"1000403" -> "1000402"  [label="AST: "];
+"1000403" -> "1000404"  [label="CFG: "];
+"1000403" -> "1000407"  [label="CFG: "];
+"1000404" -> "1000403"  [label="AST: "];
+"1000407" -> "1000403"  [label="AST: "];
+"1000411" -> "1000403"  [label="CFG: "];
+"1000434" -> "1000403"  [label="CFG: "];
+"1000403" -> "1000566"  [label="DDG: return_token == INIT_TOKEN_SEND"];
+"1000403" -> "1000566"  [label="DDG: sendTokenInit"];
+"1000403" -> "1000566"  [label="DDG: return_token == INIT_TOKEN_SEND && sendTokenInit"];
+"1000404" -> "1000403"  [label="DDG: return_token"];
+"1000404" -> "1000403"  [label="DDG: INIT_TOKEN_SEND"];
+"1000282" -> "1000403"  [label="DDG: sendTokenInit"];
+}

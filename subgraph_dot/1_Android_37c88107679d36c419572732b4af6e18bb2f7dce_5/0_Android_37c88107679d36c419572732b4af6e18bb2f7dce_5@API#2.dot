@@ -1,0 +1,22 @@
+digraph "0_Android_37c88107679d36c419572732b4af6e18bb2f7dce_5@API" {
+"1000263" [label="(Call,hal_open(callbacks_get_adapter_struct()))"];
+"1000262" [label="(Call,!hal_open(callbacks_get_adapter_struct()))"];
+"1000503" [label="(MethodReturn,int)"];
+"1000267" [label="(Literal,\"Unable to open Bluetooth HAL.\n\")"];
+"1000261" [label="(ControlStructure,if (!hal_open(callbacks_get_adapter_struct())))"];
+"1000264" [label="(Call,callbacks_get_adapter_struct())"];
+"1000262" [label="(Call,!hal_open(callbacks_get_adapter_struct()))"];
+"1000263" [label="(Call,hal_open(callbacks_get_adapter_struct()))"];
+"1000272" [label="(Call,btsocket_init())"];
+"1000263" -> "1000262"  [label="AST: "];
+"1000263" -> "1000264"  [label="CFG: "];
+"1000264" -> "1000263"  [label="AST: "];
+"1000262" -> "1000263"  [label="CFG: "];
+"1000263" -> "1000503"  [label="DDG: callbacks_get_adapter_struct()"];
+"1000263" -> "1000262"  [label="DDG: callbacks_get_adapter_struct()"];
+"1000262" -> "1000261"  [label="AST: "];
+"1000267" -> "1000262"  [label="CFG: "];
+"1000272" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000503"  [label="DDG: hal_open(callbacks_get_adapter_struct())"];
+"1000262" -> "1000503"  [label="DDG: !hal_open(callbacks_get_adapter_struct())"];
+}

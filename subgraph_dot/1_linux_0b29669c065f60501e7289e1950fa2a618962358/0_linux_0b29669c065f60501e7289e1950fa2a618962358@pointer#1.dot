@@ -1,0 +1,31 @@
+digraph "0_linux_0b29669c065f60501e7289e1950fa2a618962358@pointer" {
+"1000262" [label="(Call,mem=q->bufs[first]->priv)"];
+"1000272" [label="(Call,!mem)"];
+"1000271" [label="(Call,BUG_ON (!mem))"];
+"1000263" [label="(Identifier,mem)"];
+"1000271" [label="(Call,BUG_ON (!mem))"];
+"1000264" [label="(Call,q->bufs[first]->priv)"];
+"1000276" [label="(Identifier,mem)"];
+"1000106" [label="(Block,)"];
+"1000272" [label="(Call,!mem)"];
+"1000262" [label="(Call,mem=q->bufs[first]->priv)"];
+"1000273" [label="(Identifier,mem)"];
+"1000360" [label="(MethodReturn,static int)"];
+"1000262" -> "1000106"  [label="AST: "];
+"1000262" -> "1000264"  [label="CFG: "];
+"1000263" -> "1000262"  [label="AST: "];
+"1000264" -> "1000262"  [label="AST: "];
+"1000273" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000360"  [label="DDG: q->bufs[first]->priv"];
+"1000262" -> "1000272"  [label="DDG: mem"];
+"1000272" -> "1000271"  [label="AST: "];
+"1000272" -> "1000273"  [label="CFG: "];
+"1000273" -> "1000272"  [label="AST: "];
+"1000271" -> "1000272"  [label="CFG: "];
+"1000272" -> "1000360"  [label="DDG: mem"];
+"1000272" -> "1000271"  [label="DDG: mem"];
+"1000271" -> "1000106"  [label="AST: "];
+"1000276" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000360"  [label="DDG: !mem"];
+"1000271" -> "1000360"  [label="DDG: BUG_ON (!mem)"];
+}

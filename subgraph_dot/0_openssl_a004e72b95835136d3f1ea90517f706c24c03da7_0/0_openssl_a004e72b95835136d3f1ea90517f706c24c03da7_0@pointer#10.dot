@@ -1,0 +1,34 @@
+digraph "0_openssl_a004e72b95835136d3f1ea90517f706c24c03da7_0@pointer" {
+"1000351" [label="(Call,s->verify_mode & SSL_VERIFY_PEER)"];
+"1000350" [label="(Call,(s->verify_mode & SSL_VERIFY_PEER) && s->sid_ctx_length == 0)"];
+"1000363" [label="(Identifier,SSL_F_SSL_GET_PREV_SESSION)"];
+"1000516" [label="(MethodReturn,int)"];
+"1000351" [label="(Call,s->verify_mode & SSL_VERIFY_PEER)"];
+"1000372" [label="(Identifier,ret)"];
+"1000358" [label="(Identifier,s)"];
+"1000349" [label="(ControlStructure,if ((s->verify_mode & SSL_VERIFY_PEER) && s->sid_ctx_length == 0))"];
+"1000352" [label="(Call,s->verify_mode)"];
+"1000356" [label="(Call,s->sid_ctx_length == 0)"];
+"1000350" [label="(Call,(s->verify_mode & SSL_VERIFY_PEER) && s->sid_ctx_length == 0)"];
+"1000355" [label="(Identifier,SSL_VERIFY_PEER)"];
+"1000351" -> "1000350"  [label="AST: "];
+"1000351" -> "1000355"  [label="CFG: "];
+"1000352" -> "1000351"  [label="AST: "];
+"1000355" -> "1000351"  [label="AST: "];
+"1000358" -> "1000351"  [label="CFG: "];
+"1000350" -> "1000351"  [label="CFG: "];
+"1000351" -> "1000516"  [label="DDG: s->verify_mode"];
+"1000351" -> "1000516"  [label="DDG: SSL_VERIFY_PEER"];
+"1000351" -> "1000350"  [label="DDG: s->verify_mode"];
+"1000351" -> "1000350"  [label="DDG: SSL_VERIFY_PEER"];
+"1000350" -> "1000349"  [label="AST: "];
+"1000350" -> "1000356"  [label="CFG: "];
+"1000356" -> "1000350"  [label="AST: "];
+"1000363" -> "1000350"  [label="CFG: "];
+"1000372" -> "1000350"  [label="CFG: "];
+"1000350" -> "1000516"  [label="DDG: s->sid_ctx_length == 0"];
+"1000350" -> "1000516"  [label="DDG: s->verify_mode & SSL_VERIFY_PEER"];
+"1000350" -> "1000516"  [label="DDG: (s->verify_mode & SSL_VERIFY_PEER) && s->sid_ctx_length == 0"];
+"1000356" -> "1000350"  [label="DDG: s->sid_ctx_length"];
+"1000356" -> "1000350"  [label="DDG: 0"];
+}

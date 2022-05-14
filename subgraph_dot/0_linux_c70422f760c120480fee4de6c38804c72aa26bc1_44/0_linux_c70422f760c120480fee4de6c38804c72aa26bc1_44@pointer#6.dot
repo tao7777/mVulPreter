@@ -1,0 +1,24 @@
+digraph "0_linux_c70422f760c120480fee4de6c38804c72aa26bc1_44@pointer" {
+"1000168" [label="(Call,spin_unlock_bh(&listen_rdma->sc_lock))"];
+"1000135" [label="(Call,spin_lock_bh(&listen_rdma->sc_lock))"];
+"1000817" [label="(MethodReturn,static struct svc_xprt *)"];
+"1000175" [label="(Identifier,newxprt)"];
+"1000113" [label="(Block,)"];
+"1000168" [label="(Call,spin_unlock_bh(&listen_rdma->sc_lock))"];
+"1000135" [label="(Call,spin_lock_bh(&listen_rdma->sc_lock))"];
+"1000136" [label="(Call,&listen_rdma->sc_lock)"];
+"1000145" [label="(Identifier,listen_rdma)"];
+"1000169" [label="(Call,&listen_rdma->sc_lock)"];
+"1000168" -> "1000113"  [label="AST: "];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000175" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000817"  [label="DDG: spin_unlock_bh(&listen_rdma->sc_lock)"];
+"1000168" -> "1000817"  [label="DDG: &listen_rdma->sc_lock"];
+"1000135" -> "1000168"  [label="DDG: &listen_rdma->sc_lock"];
+"1000135" -> "1000113"  [label="AST: "];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000145" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000817"  [label="DDG: spin_lock_bh(&listen_rdma->sc_lock)"];
+}

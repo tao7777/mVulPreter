@@ -1,0 +1,34 @@
+digraph "0_FFmpeg_fe448cd28d674c3eff3072552eae366d0b659ce9@pointer" {
+"1000214" [label="(Call,band->coord[0][0] == band->coord[0][1])"];
+"1000213" [label="(Call,band->coord[0][0] == band->coord[0][1] ||\n                    band->coord[1][0] == band->coord[1][1])"];
+"1000233" [label="(Identifier,band)"];
+"1000213" [label="(Call,band->coord[0][0] == band->coord[0][1] ||\n                    band->coord[1][0] == band->coord[1][1])"];
+"1000244" [label="(ControlStructure,continue;)"];
+"1000214" [label="(Call,band->coord[0][0] == band->coord[0][1])"];
+"1000215" [label="(Call,band->coord[0][0])"];
+"1000246" [label="(Identifier,nb_precincts)"];
+"1000229" [label="(Call,band->coord[1][0] == band->coord[1][1])"];
+"1000212" [label="(ControlStructure,if (band->coord[0][0] == band->coord[0][1] ||\n                    band->coord[1][0] == band->coord[1][1]))"];
+"1001090" [label="(MethodReturn,static int)"];
+"1000222" [label="(Call,band->coord[0][1])"];
+"1000214" -> "1000213"  [label="AST: "];
+"1000214" -> "1000222"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000222" -> "1000214"  [label="AST: "];
+"1000233" -> "1000214"  [label="CFG: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1001090"  [label="DDG: band->coord[0][1]"];
+"1000214" -> "1001090"  [label="DDG: band->coord[0][0]"];
+"1000214" -> "1000213"  [label="DDG: band->coord[0][0]"];
+"1000214" -> "1000213"  [label="DDG: band->coord[0][1]"];
+"1000213" -> "1000212"  [label="AST: "];
+"1000213" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000213"  [label="AST: "];
+"1000244" -> "1000213"  [label="CFG: "];
+"1000246" -> "1000213"  [label="CFG: "];
+"1000213" -> "1001090"  [label="DDG: band->coord[0][0] == band->coord[0][1]"];
+"1000213" -> "1001090"  [label="DDG: band->coord[1][0] == band->coord[1][1]"];
+"1000213" -> "1001090"  [label="DDG: band->coord[0][0] == band->coord[0][1] ||\n                    band->coord[1][0] == band->coord[1][1]"];
+"1000229" -> "1000213"  [label="DDG: band->coord[1][0]"];
+"1000229" -> "1000213"  [label="DDG: band->coord[1][1]"];
+}

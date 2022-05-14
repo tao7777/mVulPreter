@@ -1,0 +1,29 @@
+digraph "0_Android_063be1485e0099bc81ace3a08b0ec9186dcad693@pointer" {
+"1000700" [label="(Call,pbi->fragments = ctx->fragments)"];
+"1000132" [label="(Call,!ctx->fragments.enabled)"];
+"1000700" [label="(Call,pbi->fragments = ctx->fragments)"];
+"1000701" [label="(Call,pbi->fragments)"];
+"1000131" [label="(Call,!ctx->fragments.enabled && (data == NULL && data_sz == 0))"];
+"1000132" [label="(Call,!ctx->fragments.enabled)"];
+"1000738" [label="(MethodReturn,static vpx_codec_err_t)"];
+"1000140" [label="(Identifier,data)"];
+"1000709" [label="(Identifier,ctx)"];
+"1000394" [label="(Block,)"];
+"1000133" [label="(Call,ctx->fragments.enabled)"];
+"1000704" [label="(Call,ctx->fragments)"];
+"1000700" -> "1000394"  [label="AST: "];
+"1000700" -> "1000704"  [label="CFG: "];
+"1000701" -> "1000700"  [label="AST: "];
+"1000704" -> "1000700"  [label="AST: "];
+"1000709" -> "1000700"  [label="CFG: "];
+"1000700" -> "1000738"  [label="DDG: pbi->fragments"];
+"1000700" -> "1000738"  [label="DDG: ctx->fragments"];
+"1000132" -> "1000700"  [label="DDG: ctx->fragments.enabled"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000140" -> "1000132"  [label="CFG: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000738"  [label="DDG: ctx->fragments.enabled"];
+"1000132" -> "1000131"  [label="DDG: ctx->fragments.enabled"];
+}

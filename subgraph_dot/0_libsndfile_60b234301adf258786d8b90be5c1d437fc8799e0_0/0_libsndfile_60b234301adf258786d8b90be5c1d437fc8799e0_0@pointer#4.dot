@@ -1,0 +1,32 @@
+digraph "0_libsndfile_60b234301adf258786d8b90be5c1d437fc8799e0_0@pointer" {
+"1000162" [label="(Call,pflac->bufferpos < pflac->frame->header.blocksize)"];
+"1000156" [label="(Call,pflac->frame != NULL && pflac->bufferpos < pflac->frame->header.blocksize)"];
+"1000156" [label="(Call,pflac->frame != NULL && pflac->bufferpos < pflac->frame->header.blocksize)"];
+"1000155" [label="(ControlStructure,if (pflac->frame != NULL && pflac->bufferpos < pflac->frame->header.blocksize))"];
+"1000163" [label="(Call,pflac->bufferpos)"];
+"1000174" [label="(Identifier,psf)"];
+"1000178" [label="(Identifier,pflac)"];
+"1000157" [label="(Call,pflac->frame != NULL)"];
+"1000162" [label="(Call,pflac->bufferpos < pflac->frame->header.blocksize)"];
+"1000166" [label="(Call,pflac->frame->header.blocksize)"];
+"1000224" [label="(MethodReturn,RET)"];
+"1000162" -> "1000156"  [label="AST: "];
+"1000162" -> "1000166"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="AST: "];
+"1000156" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000224"  [label="DDG: pflac->frame->header.blocksize"];
+"1000162" -> "1000224"  [label="DDG: pflac->bufferpos"];
+"1000162" -> "1000156"  [label="DDG: pflac->bufferpos"];
+"1000162" -> "1000156"  [label="DDG: pflac->frame->header.blocksize"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000174" -> "1000156"  [label="CFG: "];
+"1000178" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000224"  [label="DDG: pflac->frame != NULL"];
+"1000156" -> "1000224"  [label="DDG: pflac->frame != NULL && pflac->bufferpos < pflac->frame->header.blocksize"];
+"1000156" -> "1000224"  [label="DDG: pflac->bufferpos < pflac->frame->header.blocksize"];
+"1000157" -> "1000156"  [label="DDG: pflac->frame"];
+"1000157" -> "1000156"  [label="DDG: NULL"];
+}

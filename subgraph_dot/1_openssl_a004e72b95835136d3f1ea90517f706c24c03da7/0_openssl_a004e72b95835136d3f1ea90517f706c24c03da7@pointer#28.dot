@@ -1,0 +1,31 @@
+digraph "0_openssl_a004e72b95835136d3f1ea90517f706c24c03da7@pointer" {
+"1001064" [label="(Call,s->hit = 1)"];
+"1001381" [label="(Call,!s->hit)"];
+"1001522" [label="(Identifier,SSL_CIPHER)"];
+"1001013" [label="(Call,!s->hit)"];
+"1001381" [label="(Call,!s->hit)"];
+"1001068" [label="(Literal,1)"];
+"1001064" [label="(Call,s->hit = 1)"];
+"1001072" [label="(Identifier,s)"];
+"1001380" [label="(ControlStructure,if (!s->hit))"];
+"1001389" [label="(Identifier,s)"];
+"1001063" [label="(Block,)"];
+"1001065" [label="(Call,s->hit)"];
+"1001694" [label="(MethodReturn,int)"];
+"1001382" [label="(Call,s->hit)"];
+"1001064" -> "1001063"  [label="AST: "];
+"1001064" -> "1001068"  [label="CFG: "];
+"1001065" -> "1001064"  [label="AST: "];
+"1001068" -> "1001064"  [label="AST: "];
+"1001072" -> "1001064"  [label="CFG: "];
+"1001064" -> "1001694"  [label="DDG: s->hit"];
+"1001064" -> "1001381"  [label="DDG: s->hit"];
+"1001381" -> "1001380"  [label="AST: "];
+"1001381" -> "1001382"  [label="CFG: "];
+"1001382" -> "1001381"  [label="AST: "];
+"1001389" -> "1001381"  [label="CFG: "];
+"1001522" -> "1001381"  [label="CFG: "];
+"1001381" -> "1001694"  [label="DDG: s->hit"];
+"1001381" -> "1001694"  [label="DDG: !s->hit"];
+"1001013" -> "1001381"  [label="DDG: s->hit"];
+}

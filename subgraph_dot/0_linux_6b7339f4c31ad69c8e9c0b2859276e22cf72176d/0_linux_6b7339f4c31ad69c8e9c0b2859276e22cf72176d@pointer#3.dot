@@ -1,0 +1,22 @@
+digraph "0_linux_6b7339f4c31ad69c8e9c0b2859276e22cf72176d@pointer" {
+"1000165" [label="(Call,pte_none(*page_table))"];
+"1000164" [label="(Call,!pte_none(*page_table))"];
+"1000168" [label="(ControlStructure,goto unlock;)"];
+"1000169" [label="(ControlStructure,goto setpte;)"];
+"1000163" [label="(ControlStructure,if (!pte_none(*page_table)))"];
+"1000269" [label="(MethodReturn,static int)"];
+"1000166" [label="(Call,*page_table)"];
+"1000164" [label="(Call,!pte_none(*page_table))"];
+"1000165" [label="(Call,pte_none(*page_table))"];
+"1000165" -> "1000164"  [label="AST: "];
+"1000165" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000165"  [label="AST: "];
+"1000164" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000269"  [label="DDG: *page_table"];
+"1000165" -> "1000164"  [label="DDG: *page_table"];
+"1000164" -> "1000163"  [label="AST: "];
+"1000168" -> "1000164"  [label="CFG: "];
+"1000169" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000269"  [label="DDG: !pte_none(*page_table)"];
+"1000164" -> "1000269"  [label="DDG: pte_none(*page_table)"];
+}

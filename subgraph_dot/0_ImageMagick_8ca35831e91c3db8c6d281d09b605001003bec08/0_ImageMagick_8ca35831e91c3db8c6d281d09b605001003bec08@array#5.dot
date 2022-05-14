@@ -1,0 +1,26 @@
+digraph "0_ImageMagick_8ca35831e91c3db8c6d281d09b605001003bec08@array" {
+"1004700" [label="(Call,!mng_info->frozen[object_id])"];
+"1004698" [label="(Call,object_id && !mng_info->frozen[object_id])"];
+"1004711" [label="(Identifier,mng_info)"];
+"1004697" [label="(ControlStructure,if (object_id && !mng_info->frozen[object_id]))"];
+"1004700" [label="(Call,!mng_info->frozen[object_id])"];
+"1005492" [label="(MethodReturn,static Image *)"];
+"1004701" [label="(Call,mng_info->frozen[object_id])"];
+"1005008" [label="(Identifier,image)"];
+"1004699" [label="(Identifier,object_id)"];
+"1004698" [label="(Call,object_id && !mng_info->frozen[object_id])"];
+"1004700" -> "1004698"  [label="AST: "];
+"1004700" -> "1004701"  [label="CFG: "];
+"1004701" -> "1004700"  [label="AST: "];
+"1004698" -> "1004700"  [label="CFG: "];
+"1004700" -> "1005492"  [label="DDG: mng_info->frozen[object_id]"];
+"1004700" -> "1004698"  [label="DDG: mng_info->frozen[object_id]"];
+"1004698" -> "1004697"  [label="AST: "];
+"1004698" -> "1004699"  [label="CFG: "];
+"1004699" -> "1004698"  [label="AST: "];
+"1004711" -> "1004698"  [label="CFG: "];
+"1005008" -> "1004698"  [label="CFG: "];
+"1004698" -> "1005492"  [label="DDG: !mng_info->frozen[object_id]"];
+"1004698" -> "1005492"  [label="DDG: object_id"];
+"1004698" -> "1005492"  [label="DDG: object_id && !mng_info->frozen[object_id]"];
+}

@@ -1,0 +1,1 @@
+bool WebMediaPlayerImpl::DidGetOpaqueResponseFromServiceWorker() const {

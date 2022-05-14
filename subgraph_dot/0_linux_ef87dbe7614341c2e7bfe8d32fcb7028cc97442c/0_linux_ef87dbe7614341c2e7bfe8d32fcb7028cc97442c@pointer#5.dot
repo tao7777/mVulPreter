@@ -1,0 +1,23 @@
+digraph "0_linux_ef87dbe7614341c2e7bfe8d32fcb7028cc97442c@pointer" {
+"1000104" [label="(MethodParameterIn,struct floppy_raw_cmd **rcmd)"];
+"1000273" [label="(Call,rcmd = &(ptr->next))"];
+"1000104" [label="(MethodParameterIn,struct floppy_raw_cmd **rcmd)"];
+"1000272" [label="(Block,)"];
+"1000281" [label="(Identifier,ptr)"];
+"1000287" [label="(MethodReturn,static int)"];
+"1000138" [label="(Call,ptr->next = NULL)"];
+"1000273" [label="(Call,rcmd = &(ptr->next))"];
+"1000275" [label="(Call,&(ptr->next))"];
+"1000274" [label="(Identifier,rcmd)"];
+"1000104" -> "1000101"  [label="AST: "];
+"1000104" -> "1000287"  [label="DDG: rcmd"];
+"1000104" -> "1000273"  [label="DDG: rcmd"];
+"1000273" -> "1000272"  [label="AST: "];
+"1000273" -> "1000275"  [label="CFG: "];
+"1000274" -> "1000273"  [label="AST: "];
+"1000275" -> "1000273"  [label="AST: "];
+"1000281" -> "1000273"  [label="CFG: "];
+"1000273" -> "1000287"  [label="DDG: &(ptr->next)"];
+"1000273" -> "1000287"  [label="DDG: rcmd"];
+"1000138" -> "1000273"  [label="DDG: ptr->next"];
+}

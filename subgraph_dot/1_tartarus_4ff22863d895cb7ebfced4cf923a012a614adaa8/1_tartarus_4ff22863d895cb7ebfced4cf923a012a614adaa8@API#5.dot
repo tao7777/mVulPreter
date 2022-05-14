@@ -1,0 +1,32 @@
+digraph "1_tartarus_4ff22863d895cb7ebfced4cf923a012a614adaa8@API" {
+"1000314" [label="(Call,c->closes & CLOSES_RCVD_EOF)"];
+"1000304" [label="(Call,c->u.a.outstanding_requests == 0 && (c->closes & CLOSES_RCVD_EOF))"];
+"1000303" [label="(ControlStructure,if (c->u.a.outstanding_requests == 0 && (c->closes & CLOSES_RCVD_EOF)))"];
+"1000314" [label="(Call,c->closes & CLOSES_RCVD_EOF)"];
+"1000304" [label="(Call,c->u.a.outstanding_requests == 0 && (c->closes & CLOSES_RCVD_EOF))"];
+"1000318" [label="(Identifier,CLOSES_RCVD_EOF)"];
+"1000325" [label="(Identifier,c)"];
+"1000376" [label="(MethodReturn,static void)"];
+"1000305" [label="(Call,c->u.a.outstanding_requests == 0)"];
+"1000315" [label="(Call,c->closes)"];
+"1000320" [label="(Identifier,c)"];
+"1000314" -> "1000304"  [label="AST: "];
+"1000314" -> "1000318"  [label="CFG: "];
+"1000315" -> "1000314"  [label="AST: "];
+"1000318" -> "1000314"  [label="AST: "];
+"1000304" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000376"  [label="DDG: c->closes"];
+"1000314" -> "1000376"  [label="DDG: CLOSES_RCVD_EOF"];
+"1000314" -> "1000304"  [label="DDG: c->closes"];
+"1000314" -> "1000304"  [label="DDG: CLOSES_RCVD_EOF"];
+"1000304" -> "1000303"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000304"  [label="AST: "];
+"1000320" -> "1000304"  [label="CFG: "];
+"1000325" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000376"  [label="DDG: c->u.a.outstanding_requests == 0 && (c->closes & CLOSES_RCVD_EOF)"];
+"1000304" -> "1000376"  [label="DDG: c->u.a.outstanding_requests == 0"];
+"1000304" -> "1000376"  [label="DDG: c->closes & CLOSES_RCVD_EOF"];
+"1000305" -> "1000304"  [label="DDG: c->u.a.outstanding_requests"];
+"1000305" -> "1000304"  [label="DDG: 0"];
+}

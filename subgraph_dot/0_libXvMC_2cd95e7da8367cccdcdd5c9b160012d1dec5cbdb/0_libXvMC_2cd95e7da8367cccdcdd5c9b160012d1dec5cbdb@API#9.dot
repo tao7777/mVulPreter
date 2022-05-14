@@ -1,0 +1,34 @@
+digraph "0_libXvMC_2cd95e7da8367cccdcdd5c9b160012d1dec5cbdb@API" {
+"1000223" [label="(Call,1024 / sizeof(CARD32))"];
+"1000221" [label="(Call,i = 1024 / sizeof(CARD32))"];
+"1000228" [label="(Call,i--)"];
+"1000227" [label="(ControlStructure,while(i--))"];
+"1000224" [label="(Literal,1024)"];
+"1000490" [label="(MethodReturn,Status)"];
+"1000198" [label="(Block,)"];
+"1000223" [label="(Call,1024 / sizeof(CARD32))"];
+"1000221" [label="(Call,i = 1024 / sizeof(CARD32))"];
+"1000229" [label="(Identifier,i)"];
+"1000228" [label="(Call,i--)"];
+"1000225" [label="(Call,sizeof(CARD32))"];
+"1000222" [label="(Identifier,i)"];
+"1000234" [label="(Identifier,shMemC)"];
+"1000250" [label="(Identifier,dpy)"];
+"1000223" -> "1000221"  [label="AST: "];
+"1000223" -> "1000225"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000225" -> "1000223"  [label="AST: "];
+"1000221" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000221"  [label="DDG: 1024"];
+"1000221" -> "1000198"  [label="AST: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000229" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000490"  [label="DDG: 1024 / sizeof(CARD32)"];
+"1000221" -> "1000228"  [label="DDG: i"];
+"1000228" -> "1000227"  [label="AST: "];
+"1000228" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000234" -> "1000228"  [label="CFG: "];
+"1000250" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000490"  [label="DDG: i"];
+}

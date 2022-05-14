@@ -1,0 +1,24 @@
+digraph "0_atheme_87580d767868360d2fed503980129504da84b63e@API" {
+"1000210" [label="(Call,strncpy(outbuffer, s->str, XMLRPC_BUFSIZE))"];
+"1000101" [label="(MethodParameterIn,char *outbuffer)"];
+"1000212" [label="(Call,s->str)"];
+"1000103" [label="(Block,)"];
+"1000216" [label="(MethodReturn,void)"];
+"1000101" [label="(MethodParameterIn,char *outbuffer)"];
+"1000211" [label="(Identifier,outbuffer)"];
+"1000215" [label="(Identifier,XMLRPC_BUFSIZE)"];
+"1000210" [label="(Call,strncpy(outbuffer, s->str, XMLRPC_BUFSIZE))"];
+"1000210" -> "1000103"  [label="AST: "];
+"1000210" -> "1000215"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000212" -> "1000210"  [label="AST: "];
+"1000215" -> "1000210"  [label="AST: "];
+"1000216" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000216"  [label="DDG: s->str"];
+"1000210" -> "1000216"  [label="DDG: XMLRPC_BUFSIZE"];
+"1000210" -> "1000216"  [label="DDG: strncpy(outbuffer, s->str, XMLRPC_BUFSIZE)"];
+"1000210" -> "1000216"  [label="DDG: outbuffer"];
+"1000101" -> "1000210"  [label="DDG: outbuffer"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000216"  [label="DDG: outbuffer"];
+}

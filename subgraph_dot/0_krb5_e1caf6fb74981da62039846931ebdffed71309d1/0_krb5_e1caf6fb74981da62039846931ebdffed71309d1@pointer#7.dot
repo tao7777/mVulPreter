@@ -1,0 +1,28 @@
+digraph "0_krb5_e1caf6fb74981da62039846931ebdffed71309d1@pointer" {
+"1000475" [label="(Call,kdb->pw_expiration = ts_incr(now, polent.pw_max_life))"];
+"1000479" [label="(Call,ts_incr(now, polent.pw_max_life))"];
+"1000475" [label="(Call,kdb->pw_expiration = ts_incr(now, polent.pw_max_life))"];
+"1000752" [label="(MethodReturn,RET)"];
+"1000481" [label="(Call,polent.pw_max_life)"];
+"1000471" [label="(ControlStructure,if(polent.pw_max_life))"];
+"1000480" [label="(Identifier,now)"];
+"1000492" [label="(Identifier,mask)"];
+"1000535" [label="(Call,krb5_dbe_update_last_pwd_change(handle->context, kdb, now))"];
+"1000476" [label="(Call,kdb->pw_expiration)"];
+"1000479" [label="(Call,ts_incr(now, polent.pw_max_life))"];
+"1000475" -> "1000471"  [label="AST: "];
+"1000475" -> "1000479"  [label="CFG: "];
+"1000476" -> "1000475"  [label="AST: "];
+"1000479" -> "1000475"  [label="AST: "];
+"1000492" -> "1000475"  [label="CFG: "];
+"1000475" -> "1000752"  [label="DDG: kdb->pw_expiration"];
+"1000475" -> "1000752"  [label="DDG: ts_incr(now, polent.pw_max_life)"];
+"1000479" -> "1000475"  [label="DDG: now"];
+"1000479" -> "1000475"  [label="DDG: polent.pw_max_life"];
+"1000479" -> "1000481"  [label="CFG: "];
+"1000480" -> "1000479"  [label="AST: "];
+"1000481" -> "1000479"  [label="AST: "];
+"1000479" -> "1000752"  [label="DDG: now"];
+"1000479" -> "1000752"  [label="DDG: polent.pw_max_life"];
+"1000479" -> "1000535"  [label="DDG: now"];
+}

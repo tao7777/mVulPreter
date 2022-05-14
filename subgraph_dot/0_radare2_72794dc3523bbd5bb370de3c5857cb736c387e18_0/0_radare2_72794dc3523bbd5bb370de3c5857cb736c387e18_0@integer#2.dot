@@ -1,0 +1,30 @@
+digraph "0_radare2_72794dc3523bbd5bb370de3c5857cb736c387e18_0@integer" {
+"1000263" [label="(Call,got_table[i].data_offset = got_entry + BFLT_HDR_SIZE)"];
+"1000248" [label="(Call,VALID_GOT_ENTRY (got_entry))"];
+"1000249" [label="(Identifier,got_entry)"];
+"1000263" [label="(Call,got_table[i].data_offset = got_entry + BFLT_HDR_SIZE)"];
+"1000192" [label="(Identifier,offset)"];
+"1000248" [label="(Call,VALID_GOT_ENTRY (got_entry))"];
+"1000196" [label="(Block,)"];
+"1000256" [label="(Call,got_table[i].addr_to_patch = got_entry)"];
+"1000247" [label="(Call,!VALID_GOT_ENTRY (got_entry))"];
+"1000269" [label="(Call,got_entry + BFLT_HDR_SIZE)"];
+"1000568" [label="(MethodReturn,static RList *)"];
+"1000264" [label="(Call,got_table[i].data_offset)"];
+"1000263" -> "1000196"  [label="AST: "];
+"1000263" -> "1000269"  [label="CFG: "];
+"1000264" -> "1000263"  [label="AST: "];
+"1000269" -> "1000263"  [label="AST: "];
+"1000192" -> "1000263"  [label="CFG: "];
+"1000263" -> "1000568"  [label="DDG: got_entry + BFLT_HDR_SIZE"];
+"1000263" -> "1000568"  [label="DDG: got_table[i].data_offset"];
+"1000248" -> "1000263"  [label="DDG: got_entry"];
+"1000248" -> "1000247"  [label="AST: "];
+"1000248" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000247" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000568"  [label="DDG: got_entry"];
+"1000248" -> "1000247"  [label="DDG: got_entry"];
+"1000248" -> "1000256"  [label="DDG: got_entry"];
+"1000248" -> "1000269"  [label="DDG: got_entry"];
+}

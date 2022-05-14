@@ -1,0 +1,30 @@
+digraph "0_FFmpeg_bd27a9364ca274ca97f1df6d984e88a0700fb235_1@pointer" {
+"1000102" [label="(MethodParameterIn,AVCodecContext *avctx)"];
+"1000162" [label="(Call,ff_get_format(avctx, avctx->codec->pix_fmts))"];
+"1000158" [label="(Call,avctx->pix_fmt = ff_get_format(avctx, avctx->codec->pix_fmts))"];
+"1000159" [label="(Call,avctx->pix_fmt)"];
+"1000157" [label="(Return,return avctx->pix_fmt = ff_get_format(avctx, avctx->codec->pix_fmts);)"];
+"1000169" [label="(MethodReturn,static enum AVPixelFormat)"];
+"1000102" [label="(MethodParameterIn,AVCodecContext *avctx)"];
+"1000158" [label="(Call,avctx->pix_fmt = ff_get_format(avctx, avctx->codec->pix_fmts))"];
+"1000164" [label="(Call,avctx->codec->pix_fmts)"];
+"1000163" [label="(Identifier,avctx)"];
+"1000162" [label="(Call,ff_get_format(avctx, avctx->codec->pix_fmts))"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000169"  [label="DDG: avctx"];
+"1000102" -> "1000162"  [label="DDG: avctx"];
+"1000162" -> "1000158"  [label="AST: "];
+"1000162" -> "1000164"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000164" -> "1000162"  [label="AST: "];
+"1000158" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000169"  [label="DDG: avctx->codec->pix_fmts"];
+"1000162" -> "1000169"  [label="DDG: avctx"];
+"1000162" -> "1000158"  [label="DDG: avctx"];
+"1000162" -> "1000158"  [label="DDG: avctx->codec->pix_fmts"];
+"1000158" -> "1000157"  [label="AST: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000169"  [label="DDG: avctx->pix_fmt"];
+"1000158" -> "1000169"  [label="DDG: ff_get_format(avctx, avctx->codec->pix_fmts)"];
+}

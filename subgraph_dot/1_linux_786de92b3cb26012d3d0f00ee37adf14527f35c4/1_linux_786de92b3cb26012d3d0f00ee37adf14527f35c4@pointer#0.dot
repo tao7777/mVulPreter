@@ -1,0 +1,32 @@
+digraph "1_linux_786de92b3cb26012d3d0f00ee37adf14527f35c4@pointer" {
+"1000101" [label="(MethodParameterIn,struct usb_device *udev)"];
+"1000116" [label="(Call,usb_set_interface(udev,\n\t\t\tintf->altsetting[0].desc.bInterfaceNumber, alt))"];
+"1000115" [label="(Return,return usb_set_interface(udev,\n\t\t\tintf->altsetting[0].desc.bInterfaceNumber, alt);)"];
+"1000128" [label="(MethodReturn,static int)"];
+"1000110" [label="(Call,alt < 0)"];
+"1000103" [label="(Block,)"];
+"1000118" [label="(Call,intf->altsetting[0].desc.bInterfaceNumber)"];
+"1000117" [label="(Identifier,udev)"];
+"1000101" [label="(MethodParameterIn,struct usb_device *udev)"];
+"1000115" [label="(Return,return usb_set_interface(udev,\n\t\t\tintf->altsetting[0].desc.bInterfaceNumber, alt);)"];
+"1000127" [label="(Identifier,alt)"];
+"1000116" [label="(Call,usb_set_interface(udev,\n\t\t\tintf->altsetting[0].desc.bInterfaceNumber, alt))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000128"  [label="DDG: udev"];
+"1000101" -> "1000116"  [label="DDG: udev"];
+"1000116" -> "1000115"  [label="AST: "];
+"1000116" -> "1000127"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000127" -> "1000116"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000128"  [label="DDG: udev"];
+"1000116" -> "1000128"  [label="DDG: alt"];
+"1000116" -> "1000128"  [label="DDG: intf->altsetting[0].desc.bInterfaceNumber"];
+"1000116" -> "1000128"  [label="DDG: usb_set_interface(udev,\n\t\t\tintf->altsetting[0].desc.bInterfaceNumber, alt)"];
+"1000116" -> "1000115"  [label="DDG: usb_set_interface(udev,\n\t\t\tintf->altsetting[0].desc.bInterfaceNumber, alt)"];
+"1000110" -> "1000116"  [label="DDG: alt"];
+"1000115" -> "1000103"  [label="AST: "];
+"1000128" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000128"  [label="DDG: <RET>"];
+}

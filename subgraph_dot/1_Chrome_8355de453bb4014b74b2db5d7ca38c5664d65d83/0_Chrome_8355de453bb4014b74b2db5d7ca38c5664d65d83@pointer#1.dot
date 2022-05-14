@@ -1,0 +1,32 @@
+digraph "0_Chrome_8355de453bb4014b74b2db5d7ca38c5664d65d83@pointer" {
+"1000223" [label="(Call,* service_worker_context =\n        static_cast<ServiceWorkerContextWrapper*>(\n            partition->GetServiceWorkerContext()))"];
+"1000225" [label="(Call,static_cast<ServiceWorkerContextWrapper*>(\n            partition->GetServiceWorkerContext()))"];
+"1000228" [label="(Call,navigation_handle_->InitServiceWorkerHandle(service_worker_context))"];
+"1000233" [label="(Identifier,common_params_)"];
+"1000229" [label="(Identifier,service_worker_context)"];
+"1000228" [label="(Call,navigation_handle_->InitServiceWorkerHandle(service_worker_context))"];
+"1000221" [label="(Block,)"];
+"1000225" [label="(Call,static_cast<ServiceWorkerContextWrapper*>(\n            partition->GetServiceWorkerContext()))"];
+"1000227" [label="(Call,partition->GetServiceWorkerContext())"];
+"1000386" [label="(MethodReturn,void)"];
+"1000224" [label="(Identifier,service_worker_context)"];
+"1000223" [label="(Call,* service_worker_context =\n        static_cast<ServiceWorkerContextWrapper*>(\n            partition->GetServiceWorkerContext()))"];
+"1000223" -> "1000221"  [label="AST: "];
+"1000223" -> "1000225"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000225" -> "1000223"  [label="AST: "];
+"1000229" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000386"  [label="DDG: static_cast<ServiceWorkerContextWrapper*>(\n            partition->GetServiceWorkerContext())"];
+"1000225" -> "1000223"  [label="DDG: partition->GetServiceWorkerContext()"];
+"1000223" -> "1000228"  [label="DDG: service_worker_context"];
+"1000225" -> "1000227"  [label="CFG: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000227" -> "1000225"  [label="AST: "];
+"1000225" -> "1000386"  [label="DDG: partition->GetServiceWorkerContext()"];
+"1000228" -> "1000221"  [label="AST: "];
+"1000228" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000233" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000386"  [label="DDG: navigation_handle_->InitServiceWorkerHandle(service_worker_context)"];
+"1000228" -> "1000386"  [label="DDG: service_worker_context"];
+}

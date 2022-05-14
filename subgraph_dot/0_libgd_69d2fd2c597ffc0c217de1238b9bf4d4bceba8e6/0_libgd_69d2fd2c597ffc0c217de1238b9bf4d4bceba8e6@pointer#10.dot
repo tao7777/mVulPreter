@@ -1,0 +1,31 @@
+digraph "0_libgd_69d2fd2c597ffc0c217de1238b9bf4d4bceba8e6@pointer" {
+"1000443" [label="(Call,cidx[i].size < 0)"];
+"1000435" [label="(Call,cidx[i].offset < 0 || cidx[i].size < 0)"];
+"1000450" [label="(ControlStructure,goto fail2;)"];
+"1000406" [label="(Identifier,i)"];
+"1000444" [label="(Call,cidx[i].size)"];
+"1000449" [label="(Literal,0)"];
+"1000436" [label="(Call,cidx[i].offset < 0)"];
+"1000466" [label="(MethodReturn,RET)"];
+"1000443" [label="(Call,cidx[i].size < 0)"];
+"1000434" [label="(ControlStructure,if (cidx[i].offset < 0 || cidx[i].size < 0))"];
+"1000435" [label="(Call,cidx[i].offset < 0 || cidx[i].size < 0)"];
+"1000443" -> "1000435"  [label="AST: "];
+"1000443" -> "1000449"  [label="CFG: "];
+"1000444" -> "1000443"  [label="AST: "];
+"1000449" -> "1000443"  [label="AST: "];
+"1000435" -> "1000443"  [label="CFG: "];
+"1000443" -> "1000466"  [label="DDG: cidx[i].size"];
+"1000443" -> "1000435"  [label="DDG: cidx[i].size"];
+"1000443" -> "1000435"  [label="DDG: 0"];
+"1000435" -> "1000434"  [label="AST: "];
+"1000435" -> "1000436"  [label="CFG: "];
+"1000436" -> "1000435"  [label="AST: "];
+"1000450" -> "1000435"  [label="CFG: "];
+"1000406" -> "1000435"  [label="CFG: "];
+"1000435" -> "1000466"  [label="DDG: cidx[i].offset < 0"];
+"1000435" -> "1000466"  [label="DDG: cidx[i].size < 0"];
+"1000435" -> "1000466"  [label="DDG: cidx[i].offset < 0 || cidx[i].size < 0"];
+"1000436" -> "1000435"  [label="DDG: cidx[i].offset"];
+"1000436" -> "1000435"  [label="DDG: 0"];
+}

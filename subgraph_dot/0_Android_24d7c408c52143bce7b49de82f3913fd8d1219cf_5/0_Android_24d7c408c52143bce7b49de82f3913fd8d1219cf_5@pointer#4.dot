@@ -1,0 +1,29 @@
+digraph "0_Android_24d7c408c52143bce7b49de82f3913fd8d1219cf_5@pointer" {
+"1000121" [label="(Call,pWTVoice->phaseFrac + (pWTIntFrame->frame.phaseIncrement << SYNTH_UPDATE_PERIOD_IN_BITS))"];
+"1000125" [label="(Call,pWTIntFrame->frame.phaseIncrement << SYNTH_UPDATE_PERIOD_IN_BITS)"];
+"1000131" [label="(Identifier,SYNTH_UPDATE_PERIOD_IN_BITS)"];
+"1000126" [label="(Call,pWTIntFrame->frame.phaseIncrement)"];
+"1000121" [label="(Call,pWTVoice->phaseFrac + (pWTIntFrame->frame.phaseIncrement << SYNTH_UPDATE_PERIOD_IN_BITS))"];
+"1000125" [label="(Call,pWTIntFrame->frame.phaseIncrement << SYNTH_UPDATE_PERIOD_IN_BITS)"];
+"1000119" [label="(Call,endPhaseFrac = pWTVoice->phaseFrac + (pWTIntFrame->frame.phaseIncrement << SYNTH_UPDATE_PERIOD_IN_BITS))"];
+"1000122" [label="(Call,pWTVoice->phaseFrac)"];
+"1000231" [label="(MethodReturn,EAS_BOOL)"];
+"1000182" [label="(Call,numSamples / pWTIntFrame->frame.phaseIncrement)"];
+"1000121" -> "1000119"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000231"  [label="DDG: pWTIntFrame->frame.phaseIncrement << SYNTH_UPDATE_PERIOD_IN_BITS"];
+"1000121" -> "1000231"  [label="DDG: pWTVoice->phaseFrac"];
+"1000125" -> "1000121"  [label="DDG: pWTIntFrame->frame.phaseIncrement"];
+"1000125" -> "1000121"  [label="DDG: SYNTH_UPDATE_PERIOD_IN_BITS"];
+"1000125" -> "1000131"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000131" -> "1000125"  [label="AST: "];
+"1000125" -> "1000231"  [label="DDG: pWTIntFrame->frame.phaseIncrement"];
+"1000125" -> "1000231"  [label="DDG: SYNTH_UPDATE_PERIOD_IN_BITS"];
+"1000125" -> "1000119"  [label="DDG: pWTIntFrame->frame.phaseIncrement"];
+"1000125" -> "1000119"  [label="DDG: SYNTH_UPDATE_PERIOD_IN_BITS"];
+"1000125" -> "1000182"  [label="DDG: pWTIntFrame->frame.phaseIncrement"];
+}

@@ -1,0 +1,31 @@
+digraph "0_openssl_db82b8f9bd432a59aea8e1014694e15fc457c2bb@pointer" {
+"1000158" [label="(Call,*ctx2=NULL)"];
+"1000582" [label="(Call,BN_CTX_free(ctx2))"];
+"1000583" [label="(Identifier,ctx2)"];
+"1000599" [label="(MethodReturn,RSA *)"];
+"1000173" [label="(Call,ctx2 == NULL)"];
+"1000546" [label="(Call,BN_mod_inverse(NULL,rsa->q,rsa->p,ctx2))"];
+"1000159" [label="(Identifier,ctx2)"];
+"1000162" [label="(Identifier,ctx)"];
+"1000586" [label="(Identifier,ok)"];
+"1000158" [label="(Call,*ctx2=NULL)"];
+"1000119" [label="(Block,)"];
+"1000582" [label="(Call,BN_CTX_free(ctx2))"];
+"1000480" [label="(Call,BN_mod_inverse(NULL,rsa->e,r0,ctx2))"];
+"1000160" [label="(Identifier,NULL)"];
+"1000158" -> "1000119"  [label="AST: "];
+"1000158" -> "1000160"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000160" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000582"  [label="DDG: ctx2"];
+"1000582" -> "1000119"  [label="AST: "];
+"1000582" -> "1000583"  [label="CFG: "];
+"1000583" -> "1000582"  [label="AST: "];
+"1000586" -> "1000582"  [label="CFG: "];
+"1000582" -> "1000599"  [label="DDG: ctx2"];
+"1000582" -> "1000599"  [label="DDG: BN_CTX_free(ctx2)"];
+"1000480" -> "1000582"  [label="DDG: ctx2"];
+"1000546" -> "1000582"  [label="DDG: ctx2"];
+"1000173" -> "1000582"  [label="DDG: ctx2"];
+}

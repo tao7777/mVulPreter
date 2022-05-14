@@ -1,0 +1,1 @@
+const EffectPaintPropertyNode* e0() {

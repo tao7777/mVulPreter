@@ -1,0 +1,22 @@
+digraph "0_openssl_80bd7b41b30af6ee96f519e629463583318de3b0@pointer" {
+"1000181" [label="(Call,kssl_tgt_is_available(s->kssl_ctx))"];
+"1000180" [label="(Call,!kssl_tgt_is_available(s->kssl_ctx))"];
+"1000199" [label="(Identifier,s)"];
+"1000180" [label="(Call,!kssl_tgt_is_available(s->kssl_ctx))"];
+"1000237" [label="(MethodReturn,void)"];
+"1000188" [label="(Identifier,c)"];
+"1000182" [label="(Call,s->kssl_ctx)"];
+"1000181" [label="(Call,kssl_tgt_is_available(s->kssl_ctx))"];
+"1000179" [label="(ControlStructure,if (!kssl_tgt_is_available(s->kssl_ctx)))"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000180" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000237"  [label="DDG: s->kssl_ctx"];
+"1000181" -> "1000180"  [label="DDG: s->kssl_ctx"];
+"1000180" -> "1000179"  [label="AST: "];
+"1000188" -> "1000180"  [label="CFG: "];
+"1000199" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000237"  [label="DDG: kssl_tgt_is_available(s->kssl_ctx)"];
+"1000180" -> "1000237"  [label="DDG: !kssl_tgt_is_available(s->kssl_ctx)"];
+}

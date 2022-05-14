@@ -1,0 +1,31 @@
+digraph "0_linux_d558023207e008a4476a3b7bb8706b2a2bf5d84f@pointer" {
+"1000303" [label="(Call,percpu_ref_get(&ctx->users))"];
+"1000183" [label="(Call,percpu_ref_init(&ctx->users, free_ioctx_users))"];
+"1000189" [label="(ControlStructure,goto err;)"];
+"1000309" [label="(Identifier,err)"];
+"1000182" [label="(ControlStructure,if (percpu_ref_init(&ctx->users, free_ioctx_users)))"];
+"1000106" [label="(Block,)"];
+"1000303" [label="(Call,percpu_ref_get(&ctx->users))"];
+"1000304" [label="(Call,&ctx->users)"];
+"1000359" [label="(MethodReturn,static struct kioctx *)"];
+"1000183" [label="(Call,percpu_ref_init(&ctx->users, free_ioctx_users))"];
+"1000188" [label="(Identifier,free_ioctx_users)"];
+"1000184" [label="(Call,&ctx->users)"];
+"1000194" [label="(Identifier,ctx)"];
+"1000303" -> "1000106"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000309" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000359"  [label="DDG: &ctx->users"];
+"1000303" -> "1000359"  [label="DDG: percpu_ref_get(&ctx->users)"];
+"1000183" -> "1000303"  [label="DDG: &ctx->users"];
+"1000183" -> "1000182"  [label="AST: "];
+"1000183" -> "1000188"  [label="CFG: "];
+"1000184" -> "1000183"  [label="AST: "];
+"1000188" -> "1000183"  [label="AST: "];
+"1000189" -> "1000183"  [label="CFG: "];
+"1000194" -> "1000183"  [label="CFG: "];
+"1000183" -> "1000359"  [label="DDG: free_ioctx_users"];
+"1000183" -> "1000359"  [label="DDG: &ctx->users"];
+"1000183" -> "1000359"  [label="DDG: percpu_ref_init(&ctx->users, free_ioctx_users)"];
+}

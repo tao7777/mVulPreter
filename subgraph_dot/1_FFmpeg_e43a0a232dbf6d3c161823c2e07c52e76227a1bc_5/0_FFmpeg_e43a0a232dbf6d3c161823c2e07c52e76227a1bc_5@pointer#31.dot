@@ -1,0 +1,30 @@
+digraph "0_FFmpeg_e43a0a232dbf6d3c161823c2e07c52e76227a1bc_5@pointer" {
+"1000261" [label="(Call,plane == 0 ? inlink->h : FF_CEIL_RSHIFT(inlink->h, kerndeint->vsub))"];
+"1000268" [label="(Call,FF_CEIL_RSHIFT(inlink->h, kerndeint->vsub))"];
+"1000268" [label="(Call,FF_CEIL_RSHIFT(inlink->h, kerndeint->vsub))"];
+"1000259" [label="(Call,h = plane == 0 ? inlink->h : FF_CEIL_RSHIFT(inlink->h, kerndeint->vsub))"];
+"1000269" [label="(Call,inlink->h)"];
+"1000261" [label="(Call,plane == 0 ? inlink->h : FF_CEIL_RSHIFT(inlink->h, kerndeint->vsub))"];
+"1000262" [label="(Call,plane == 0)"];
+"1000265" [label="(Call,inlink->h)"];
+"1001153" [label="(MethodReturn,static int)"];
+"1000272" [label="(Call,kerndeint->vsub)"];
+"1000261" -> "1000259"  [label="AST: "];
+"1000261" -> "1000265"  [label="CFG: "];
+"1000261" -> "1000268"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000265" -> "1000261"  [label="AST: "];
+"1000268" -> "1000261"  [label="AST: "];
+"1000259" -> "1000261"  [label="CFG: "];
+"1000261" -> "1001153"  [label="DDG: inlink->h"];
+"1000261" -> "1001153"  [label="DDG: FF_CEIL_RSHIFT(inlink->h, kerndeint->vsub)"];
+"1000261" -> "1001153"  [label="DDG: plane == 0"];
+"1000268" -> "1000261"  [label="DDG: inlink->h"];
+"1000268" -> "1000261"  [label="DDG: kerndeint->vsub"];
+"1000268" -> "1000272"  [label="CFG: "];
+"1000269" -> "1000268"  [label="AST: "];
+"1000272" -> "1000268"  [label="AST: "];
+"1000268" -> "1001153"  [label="DDG: kerndeint->vsub"];
+"1000268" -> "1000259"  [label="DDG: inlink->h"];
+"1000268" -> "1000259"  [label="DDG: kerndeint->vsub"];
+}

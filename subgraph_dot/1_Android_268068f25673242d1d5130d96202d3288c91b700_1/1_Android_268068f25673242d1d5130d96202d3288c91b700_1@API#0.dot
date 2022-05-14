@@ -1,0 +1,23 @@
+digraph "1_Android_268068f25673242d1d5130d96202d3288c91b700_1@API" {
+"1000124" [label="(Call,adb_mutex_unlock(&socket_list_lock))"];
+"1000103" [label="(Call,adb_mutex_lock(&socket_list_lock))"];
+"1000104" [label="(Call,&socket_list_lock)"];
+"1000102" [label="(Block,)"];
+"1000127" [label="(MethodReturn,void)"];
+"1000125" [label="(Call,&socket_list_lock)"];
+"1000124" [label="(Call,adb_mutex_unlock(&socket_list_lock))"];
+"1000108" [label="(Identifier,s)"];
+"1000103" [label="(Call,adb_mutex_lock(&socket_list_lock))"];
+"1000124" -> "1000102"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000127" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000127"  [label="DDG: &socket_list_lock"];
+"1000124" -> "1000127"  [label="DDG: adb_mutex_unlock(&socket_list_lock)"];
+"1000103" -> "1000124"  [label="DDG: &socket_list_lock"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000108" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000127"  [label="DDG: adb_mutex_lock(&socket_list_lock)"];
+}

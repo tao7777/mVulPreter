@@ -1,0 +1,26 @@
+digraph "0_openssl_4b22cce3812052fe64fc3f6d58d8cc884e3cb834@pointer" {
+"1000112" [label="(Call,OBJ_obj2nid(sigalg->algorithm))"];
+"1000111" [label="(Call,OBJ_obj2nid(sigalg->algorithm) != NID_rsassaPss)"];
+"1000111" [label="(Call,OBJ_obj2nid(sigalg->algorithm) != NID_rsassaPss)"];
+"1000110" [label="(ControlStructure,if (OBJ_obj2nid(sigalg->algorithm) != NID_rsassaPss))"];
+"1000113" [label="(Call,sigalg->algorithm)"];
+"1000135" [label="(MethodReturn,static int)"];
+"1000119" [label="(Identifier,RSA_F_RSA_ITEM_VERIFY)"];
+"1000116" [label="(Identifier,NID_rsassaPss)"];
+"1000126" [label="(Identifier,ctx)"];
+"1000112" [label="(Call,OBJ_obj2nid(sigalg->algorithm))"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000116" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000135"  [label="DDG: sigalg->algorithm"];
+"1000112" -> "1000111"  [label="DDG: sigalg->algorithm"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000111"  [label="AST: "];
+"1000119" -> "1000111"  [label="CFG: "];
+"1000126" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000135"  [label="DDG: OBJ_obj2nid(sigalg->algorithm)"];
+"1000111" -> "1000135"  [label="DDG: OBJ_obj2nid(sigalg->algorithm) != NID_rsassaPss"];
+"1000111" -> "1000135"  [label="DDG: NID_rsassaPss"];
+}

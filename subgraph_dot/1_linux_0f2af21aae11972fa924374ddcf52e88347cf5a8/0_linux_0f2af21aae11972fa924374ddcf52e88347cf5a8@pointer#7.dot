@@ -1,0 +1,22 @@
+digraph "0_linux_0f2af21aae11972fa924374ddcf52e88347cf5a8@pointer" {
+"1000161" [label="(Call,S_ISREG(inode->i_mode))"];
+"1000160" [label="(Call,!S_ISREG(inode->i_mode))"];
+"1000161" [label="(Call,S_ISREG(inode->i_mode))"];
+"1000483" [label="(MethodReturn,static long)"];
+"1000162" [label="(Call,inode->i_mode)"];
+"1000159" [label="(ControlStructure,if (!S_ISREG(inode->i_mode)))"];
+"1000160" [label="(Call,!S_ISREG(inode->i_mode))"];
+"1000167" [label="(Identifier,EINVAL)"];
+"1000170" [label="(Identifier,inode)"];
+"1000161" -> "1000160"  [label="AST: "];
+"1000161" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000161"  [label="AST: "];
+"1000160" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000483"  [label="DDG: inode->i_mode"];
+"1000161" -> "1000160"  [label="DDG: inode->i_mode"];
+"1000160" -> "1000159"  [label="AST: "];
+"1000167" -> "1000160"  [label="CFG: "];
+"1000170" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000483"  [label="DDG: !S_ISREG(inode->i_mode)"];
+"1000160" -> "1000483"  [label="DDG: S_ISREG(inode->i_mode)"];
+}

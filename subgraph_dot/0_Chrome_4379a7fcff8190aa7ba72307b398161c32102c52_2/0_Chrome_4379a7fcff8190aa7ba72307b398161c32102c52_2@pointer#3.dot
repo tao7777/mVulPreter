@@ -1,0 +1,32 @@
+digraph "0_Chrome_4379a7fcff8190aa7ba72307b398161c32102c52_2@pointer" {
+"1000195" [label="(Call,*policy == kNavigationPolicyNewPopup)"];
+"1000191" [label="(Call,user_policy == kNavigationPolicyNewWindow &&\n      *policy == kNavigationPolicyNewPopup)"];
+"1000196" [label="(Call,*policy)"];
+"1000202" [label="(Identifier,policy)"];
+"1000198" [label="(Identifier,kNavigationPolicyNewPopup)"];
+"1000199" [label="(Return,return;)"];
+"1000190" [label="(ControlStructure,if (user_policy == kNavigationPolicyNewWindow &&\n      *policy == kNavigationPolicyNewPopup))"];
+"1000204" [label="(MethodReturn,void)"];
+"1000191" [label="(Call,user_policy == kNavigationPolicyNewWindow &&\n      *policy == kNavigationPolicyNewPopup)"];
+"1000195" [label="(Call,*policy == kNavigationPolicyNewPopup)"];
+"1000192" [label="(Call,user_policy == kNavigationPolicyNewWindow)"];
+"1000195" -> "1000191"  [label="AST: "];
+"1000195" -> "1000198"  [label="CFG: "];
+"1000196" -> "1000195"  [label="AST: "];
+"1000198" -> "1000195"  [label="AST: "];
+"1000191" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000204"  [label="DDG: kNavigationPolicyNewPopup"];
+"1000195" -> "1000204"  [label="DDG: *policy"];
+"1000195" -> "1000191"  [label="DDG: *policy"];
+"1000195" -> "1000191"  [label="DDG: kNavigationPolicyNewPopup"];
+"1000191" -> "1000190"  [label="AST: "];
+"1000191" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000191"  [label="AST: "];
+"1000199" -> "1000191"  [label="CFG: "];
+"1000202" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000204"  [label="DDG: *policy == kNavigationPolicyNewPopup"];
+"1000191" -> "1000204"  [label="DDG: user_policy == kNavigationPolicyNewWindow &&\n      *policy == kNavigationPolicyNewPopup"];
+"1000191" -> "1000204"  [label="DDG: user_policy == kNavigationPolicyNewWindow"];
+"1000192" -> "1000191"  [label="DDG: user_policy"];
+"1000192" -> "1000191"  [label="DDG: kNavigationPolicyNewWindow"];
+}

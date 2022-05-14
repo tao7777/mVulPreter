@@ -1,0 +1,24 @@
+digraph "1_linux_23adbe12ef7d3d4195e80800ab36b37bee28cd03_1@pointer" {
+"1000101" [label="(MethodParameterIn,const struct inode *inode)"];
+"1000112" [label="(Call,inode_capable(inode, CAP_FOWNER))"];
+"1000116" [label="(Identifier,true)"];
+"1000111" [label="(ControlStructure,if (inode_capable(inode, CAP_FOWNER)))"];
+"1000112" [label="(Call,inode_capable(inode, CAP_FOWNER))"];
+"1000118" [label="(Identifier,false)"];
+"1000114" [label="(Identifier,CAP_FOWNER)"];
+"1000119" [label="(MethodReturn,bool)"];
+"1000113" [label="(Identifier,inode)"];
+"1000101" [label="(MethodParameterIn,const struct inode *inode)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000119"  [label="DDG: inode"];
+"1000101" -> "1000112"  [label="DDG: inode"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000116" -> "1000112"  [label="CFG: "];
+"1000118" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000119"  [label="DDG: CAP_FOWNER"];
+"1000112" -> "1000119"  [label="DDG: inode_capable(inode, CAP_FOWNER)"];
+"1000112" -> "1000119"  [label="DDG: inode"];
+}

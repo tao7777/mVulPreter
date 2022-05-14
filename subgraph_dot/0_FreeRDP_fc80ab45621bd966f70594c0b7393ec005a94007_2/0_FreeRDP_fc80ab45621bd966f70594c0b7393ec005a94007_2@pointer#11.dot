@@ -1,0 +1,26 @@
+digraph "0_FreeRDP_fc80ab45621bd966f70594c0b7393ec005a94007_2@pointer" {
+"1000581" [label="(Call,dstExtents->left = MIN(rect->left, srcExtents->left))"];
+"1000585" [label="(Call,MIN(rect->left, srcExtents->left))"];
+"1000581" [label="(Call,dstExtents->left = MIN(rect->left, srcExtents->left))"];
+"1000114" [label="(Block,)"];
+"1000664" [label="(MethodReturn,BOOL)"];
+"1000586" [label="(Call,rect->left)"];
+"1000585" [label="(Call,MIN(rect->left, srcExtents->left))"];
+"1000582" [label="(Call,dstExtents->left)"];
+"1000594" [label="(Identifier,dstExtents)"];
+"1000589" [label="(Call,srcExtents->left)"];
+"1000581" -> "1000114"  [label="AST: "];
+"1000581" -> "1000585"  [label="CFG: "];
+"1000582" -> "1000581"  [label="AST: "];
+"1000585" -> "1000581"  [label="AST: "];
+"1000594" -> "1000581"  [label="CFG: "];
+"1000581" -> "1000664"  [label="DDG: dstExtents->left"];
+"1000581" -> "1000664"  [label="DDG: MIN(rect->left, srcExtents->left)"];
+"1000585" -> "1000581"  [label="DDG: rect->left"];
+"1000585" -> "1000581"  [label="DDG: srcExtents->left"];
+"1000585" -> "1000589"  [label="CFG: "];
+"1000586" -> "1000585"  [label="AST: "];
+"1000589" -> "1000585"  [label="AST: "];
+"1000585" -> "1000664"  [label="DDG: srcExtents->left"];
+"1000585" -> "1000664"  [label="DDG: rect->left"];
+}

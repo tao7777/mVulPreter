@@ -1,0 +1,24 @@
+digraph "0_linux_90481622d75715bfcb68501280a917dbfe516029_7@pointer" {
+"1000134" [label="(Call,spin_unlock(&inode->i_lock))"];
+"1000121" [label="(Call,spin_lock(&inode->i_lock))"];
+"1000152" [label="(MethodReturn,void)"];
+"1000134" [label="(Call,spin_unlock(&inode->i_lock))"];
+"1000122" [label="(Call,&inode->i_lock)"];
+"1000128" [label="(Identifier,inode)"];
+"1000141" [label="(Identifier,inode)"];
+"1000104" [label="(Block,)"];
+"1000135" [label="(Call,&inode->i_lock)"];
+"1000121" [label="(Call,spin_lock(&inode->i_lock))"];
+"1000134" -> "1000104"  [label="AST: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000141" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000152"  [label="DDG: spin_unlock(&inode->i_lock)"];
+"1000134" -> "1000152"  [label="DDG: &inode->i_lock"];
+"1000121" -> "1000134"  [label="DDG: &inode->i_lock"];
+"1000121" -> "1000104"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000128" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000152"  [label="DDG: spin_lock(&inode->i_lock)"];
+}

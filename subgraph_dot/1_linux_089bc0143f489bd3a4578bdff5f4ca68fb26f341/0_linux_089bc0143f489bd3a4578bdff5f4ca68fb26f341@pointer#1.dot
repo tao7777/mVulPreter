@@ -1,0 +1,30 @@
+digraph "0_linux_089bc0143f489bd3a4578bdff5f4ca68fb26f341@pointer" {
+"1000210" [label="(Call,spin_unlock_irqrestore(&ring->blk_ring_lock, flags))"];
+"1000126" [label="(Call,spin_lock_irqsave(&ring->blk_ring_lock, flags))"];
+"1000127" [label="(Call,&ring->blk_ring_lock)"];
+"1000106" [label="(Block,)"];
+"1000126" [label="(Call,spin_lock_irqsave(&ring->blk_ring_lock, flags))"];
+"1000133" [label="(Identifier,blk_rings)"];
+"1000211" [label="(Call,&ring->blk_ring_lock)"];
+"1000210" [label="(Call,spin_unlock_irqrestore(&ring->blk_ring_lock, flags))"];
+"1000131" [label="(Identifier,flags)"];
+"1000222" [label="(MethodReturn,static void)"];
+"1000215" [label="(Identifier,flags)"];
+"1000217" [label="(Identifier,notify)"];
+"1000210" -> "1000106"  [label="AST: "];
+"1000210" -> "1000215"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000215" -> "1000210"  [label="AST: "];
+"1000217" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000222"  [label="DDG: spin_unlock_irqrestore(&ring->blk_ring_lock, flags)"];
+"1000210" -> "1000222"  [label="DDG: &ring->blk_ring_lock"];
+"1000210" -> "1000222"  [label="DDG: flags"];
+"1000126" -> "1000210"  [label="DDG: &ring->blk_ring_lock"];
+"1000126" -> "1000210"  [label="DDG: flags"];
+"1000126" -> "1000106"  [label="AST: "];
+"1000126" -> "1000131"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000131" -> "1000126"  [label="AST: "];
+"1000133" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000222"  [label="DDG: spin_lock_irqsave(&ring->blk_ring_lock, flags)"];
+}

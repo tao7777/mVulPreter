@@ -1,0 +1,36 @@
+digraph "0_FFmpeg_3a2d21bc5f97aa0161db3ae731fc2732be6108b8@pointer" {
+"1000955" [label="(Call,trk->start_dts + trk->track_duration)"];
+"1000933" [label="(Call,trk->start_dts != AV_NOPTS_VALUE)"];
+"1000934" [label="(Call,trk->start_dts)"];
+"1000928" [label="(Call,!trk->entry && trk->start_dts != AV_NOPTS_VALUE)"];
+"1001008" [label="(Call,pkt->dts - trk->start_dts)"];
+"1000937" [label="(Identifier,AV_NOPTS_VALUE)"];
+"1000956" [label="(Call,trk->start_dts)"];
+"1001015" [label="(Call,trk->end_pts = AV_NOPTS_VALUE)"];
+"1000945" [label="(Call,trk->cluster[trk->entry].dts = trk->start_dts + trk->track_duration)"];
+"1001032" [label="(Call,trk->start_dts == AV_NOPTS_VALUE)"];
+"1000955" [label="(Call,trk->start_dts + trk->track_duration)"];
+"1001064" [label="(Call,trk->start_dts == AV_NOPTS_VALUE)"];
+"1000959" [label="(Call,trk->track_duration)"];
+"1000933" [label="(Call,trk->start_dts != AV_NOPTS_VALUE)"];
+"1000955" -> "1000945"  [label="AST: "];
+"1000955" -> "1000959"  [label="CFG: "];
+"1000956" -> "1000955"  [label="AST: "];
+"1000959" -> "1000955"  [label="AST: "];
+"1000945" -> "1000955"  [label="CFG: "];
+"1000933" -> "1000955"  [label="DDG: trk->start_dts"];
+"1000933" -> "1000928"  [label="AST: "];
+"1000933" -> "1000937"  [label="CFG: "];
+"1000934" -> "1000933"  [label="AST: "];
+"1000937" -> "1000933"  [label="AST: "];
+"1000928" -> "1000933"  [label="CFG: "];
+"1000933" -> "1000928"  [label="DDG: trk->start_dts"];
+"1000933" -> "1000928"  [label="DDG: AV_NOPTS_VALUE"];
+"1000933" -> "1000945"  [label="DDG: trk->start_dts"];
+"1000933" -> "1001008"  [label="DDG: trk->start_dts"];
+"1000933" -> "1001015"  [label="DDG: AV_NOPTS_VALUE"];
+"1000933" -> "1001032"  [label="DDG: trk->start_dts"];
+"1000933" -> "1001032"  [label="DDG: AV_NOPTS_VALUE"];
+"1000933" -> "1001064"  [label="DDG: trk->start_dts"];
+"1000933" -> "1001064"  [label="DDG: AV_NOPTS_VALUE"];
+}

@@ -1,0 +1,27 @@
+digraph "0_linux_ea25f914dc164c8d56b36147ecc86bc65f83c469@pointer" {
+"1000275" [label="(Call,meta->regno = regno)"];
+"1000104" [label="(MethodParameterIn,int regno)"];
+"1000337" [label="(MethodReturn,static int)"];
+"1000281" [label="(Literal,0)"];
+"1000269" [label="(Block,)"];
+"1000276" [label="(Call,meta->regno)"];
+"1000104" [label="(MethodParameterIn,int regno)"];
+"1000279" [label="(Identifier,regno)"];
+"1000183" [label="(Call,verbose(env, \"invalid variable stack read R%d var_off=%s\n\",\n \t\t\tregno, tn_buf))"];
+"1000233" [label="(Call,verbose(env, \"invalid stack type R%d off=%d access_size=%d\n\",\n\t\t\tregno, off, access_size))"];
+"1000147" [label="(Call,verbose(env, \"R%d type=%s expected=%s\n\", regno,\n\t\t\treg_type_str[regs[regno].type],\n\t\t\treg_type_str[PTR_TO_STACK]))"];
+"1000275" [label="(Call,meta->regno = regno)"];
+"1000275" -> "1000269"  [label="AST: "];
+"1000275" -> "1000279"  [label="CFG: "];
+"1000276" -> "1000275"  [label="AST: "];
+"1000279" -> "1000275"  [label="AST: "];
+"1000281" -> "1000275"  [label="CFG: "];
+"1000275" -> "1000337"  [label="DDG: meta->regno"];
+"1000275" -> "1000337"  [label="DDG: regno"];
+"1000104" -> "1000275"  [label="DDG: regno"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000337"  [label="DDG: regno"];
+"1000104" -> "1000147"  [label="DDG: regno"];
+"1000104" -> "1000183"  [label="DDG: regno"];
+"1000104" -> "1000233"  [label="DDG: regno"];
+}

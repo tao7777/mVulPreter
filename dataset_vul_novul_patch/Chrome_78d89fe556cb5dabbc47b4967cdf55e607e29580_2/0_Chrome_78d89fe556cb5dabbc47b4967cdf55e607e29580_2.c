@@ -1,0 +1,1 @@
+void AcceleratedStaticBitmapImage::CheckThread() {

@@ -1,0 +1,37 @@
+digraph "0_FreeRDP_baee520e3dd9be6511c45a14c5f5e77784de1471_6@pointer" {
+"1000162" [label="(Call,Stream_Release(channel->dvc_data))"];
+"1000151" [label="(Call,Stream_Capacity(channel->dvc_data))"];
+"1000146" [label="(Call,Stream_GetPosition(channel->dvc_data))"];
+"1000146" [label="(Call,Stream_GetPosition(channel->dvc_data))"];
+"1000155" [label="(Block,)"];
+"1000152" [label="(Call,channel->dvc_data)"];
+"1000162" [label="(Call,Stream_Release(channel->dvc_data))"];
+"1000173" [label="(Call,Stream_Copy(data, channel->dvc_data, dataSize))"];
+"1000145" [label="(Call,Stream_GetPosition(channel->dvc_data) + dataSize)"];
+"1000150" [label="(Identifier,dataSize)"];
+"1000168" [label="(Identifier,channel)"];
+"1000163" [label="(Call,channel->dvc_data)"];
+"1000151" [label="(Call,Stream_Capacity(channel->dvc_data))"];
+"1000147" [label="(Call,channel->dvc_data)"];
+"1000227" [label="(MethodReturn,static UINT)"];
+"1000144" [label="(Call,Stream_GetPosition(channel->dvc_data) + dataSize > Stream_Capacity(channel->dvc_data))"];
+"1000162" -> "1000155"  [label="AST: "];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000168" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000227"  [label="DDG: Stream_Release(channel->dvc_data)"];
+"1000151" -> "1000162"  [label="DDG: channel->dvc_data"];
+"1000151" -> "1000144"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000144" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000144"  [label="DDG: channel->dvc_data"];
+"1000146" -> "1000151"  [label="DDG: channel->dvc_data"];
+"1000151" -> "1000173"  [label="DDG: channel->dvc_data"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000150" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000144"  [label="DDG: channel->dvc_data"];
+"1000146" -> "1000145"  [label="DDG: channel->dvc_data"];
+}

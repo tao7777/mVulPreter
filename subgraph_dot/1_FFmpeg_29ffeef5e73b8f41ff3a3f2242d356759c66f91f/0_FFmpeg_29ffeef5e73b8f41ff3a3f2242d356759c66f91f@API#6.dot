@@ -1,0 +1,36 @@
+digraph "0_FFmpeg_29ffeef5e73b8f41ff3a3f2242d356759c66f91f@API" {
+"1002903" [label="(Call,memcpy(h0->last_ref_count, h0->ref_count, sizeof(h0->last_ref_count)))"];
+"1002280" [label="(Call,memcmp(h0->last_ref_count, h0->ref_count, sizeof(h0->ref_count)))"];
+"1002910" [label="(Call,sizeof(h0->last_ref_count))"];
+"1002904" [label="(Call,h0->last_ref_count)"];
+"1000127" [label="(Block,)"];
+"1002280" [label="(Call,memcmp(h0->last_ref_count, h0->ref_count, sizeof(h0->ref_count)))"];
+"1002281" [label="(Call,h0->last_ref_count)"];
+"1002274" [label="(Call,slice_type != h0->last_slice_type ||\n         memcmp(h0->last_ref_count, h0->ref_count, sizeof(h0->ref_count)))"];
+"1003435" [label="(MethodReturn,static int)"];
+"1002907" [label="(Call,h0->ref_count)"];
+"1002903" [label="(Call,memcpy(h0->last_ref_count, h0->ref_count, sizeof(h0->last_ref_count)))"];
+"1002284" [label="(Call,h0->ref_count)"];
+"1002287" [label="(Call,sizeof(h0->ref_count))"];
+"1002916" [label="(Identifier,h)"];
+"1002903" -> "1000127"  [label="AST: "];
+"1002903" -> "1002910"  [label="CFG: "];
+"1002904" -> "1002903"  [label="AST: "];
+"1002907" -> "1002903"  [label="AST: "];
+"1002910" -> "1002903"  [label="AST: "];
+"1002916" -> "1002903"  [label="CFG: "];
+"1002903" -> "1003435"  [label="DDG: memcpy(h0->last_ref_count, h0->ref_count, sizeof(h0->last_ref_count))"];
+"1002903" -> "1003435"  [label="DDG: h0->ref_count"];
+"1002903" -> "1003435"  [label="DDG: h0->last_ref_count"];
+"1002280" -> "1002903"  [label="DDG: h0->ref_count"];
+"1002280" -> "1002274"  [label="AST: "];
+"1002280" -> "1002287"  [label="CFG: "];
+"1002281" -> "1002280"  [label="AST: "];
+"1002284" -> "1002280"  [label="AST: "];
+"1002287" -> "1002280"  [label="AST: "];
+"1002274" -> "1002280"  [label="CFG: "];
+"1002280" -> "1003435"  [label="DDG: h0->ref_count"];
+"1002280" -> "1003435"  [label="DDG: h0->last_ref_count"];
+"1002280" -> "1002274"  [label="DDG: h0->last_ref_count"];
+"1002280" -> "1002274"  [label="DDG: h0->ref_count"];
+}

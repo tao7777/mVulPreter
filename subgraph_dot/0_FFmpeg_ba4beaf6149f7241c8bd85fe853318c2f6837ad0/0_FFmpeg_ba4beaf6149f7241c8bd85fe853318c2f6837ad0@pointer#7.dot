@@ -1,0 +1,32 @@
+digraph "0_FFmpeg_ba4beaf6149f7241c8bd85fe853318c2f6837ad0@pointer" {
+"1000531" [label="(Call,s->frameflags & APE_FRAMECODE_PSEUDO_STEREO)"];
+"1000525" [label="(Call,(s->channels == 1) || (s->frameflags & APE_FRAMECODE_PSEUDO_STEREO))"];
+"1000532" [label="(Call,s->frameflags)"];
+"1000524" [label="(ControlStructure,if ((s->channels == 1) || (s->frameflags & APE_FRAMECODE_PSEUDO_STEREO)))"];
+"1000531" [label="(Call,s->frameflags & APE_FRAMECODE_PSEUDO_STEREO)"];
+"1000719" [label="(MethodReturn,static int)"];
+"1000541" [label="(Identifier,s)"];
+"1000535" [label="(Identifier,APE_FRAMECODE_PSEUDO_STEREO)"];
+"1000526" [label="(Call,s->channels == 1)"];
+"1000525" [label="(Call,(s->channels == 1) || (s->frameflags & APE_FRAMECODE_PSEUDO_STEREO))"];
+"1000537" [label="(Identifier,s)"];
+"1000531" -> "1000525"  [label="AST: "];
+"1000531" -> "1000535"  [label="CFG: "];
+"1000532" -> "1000531"  [label="AST: "];
+"1000535" -> "1000531"  [label="AST: "];
+"1000525" -> "1000531"  [label="CFG: "];
+"1000531" -> "1000719"  [label="DDG: APE_FRAMECODE_PSEUDO_STEREO"];
+"1000531" -> "1000719"  [label="DDG: s->frameflags"];
+"1000531" -> "1000525"  [label="DDG: s->frameflags"];
+"1000531" -> "1000525"  [label="DDG: APE_FRAMECODE_PSEUDO_STEREO"];
+"1000525" -> "1000524"  [label="AST: "];
+"1000525" -> "1000526"  [label="CFG: "];
+"1000526" -> "1000525"  [label="AST: "];
+"1000537" -> "1000525"  [label="CFG: "];
+"1000541" -> "1000525"  [label="CFG: "];
+"1000525" -> "1000719"  [label="DDG: (s->channels == 1) || (s->frameflags & APE_FRAMECODE_PSEUDO_STEREO)"];
+"1000525" -> "1000719"  [label="DDG: s->frameflags & APE_FRAMECODE_PSEUDO_STEREO"];
+"1000525" -> "1000719"  [label="DDG: s->channels == 1"];
+"1000526" -> "1000525"  [label="DDG: s->channels"];
+"1000526" -> "1000525"  [label="DDG: 1"];
+}

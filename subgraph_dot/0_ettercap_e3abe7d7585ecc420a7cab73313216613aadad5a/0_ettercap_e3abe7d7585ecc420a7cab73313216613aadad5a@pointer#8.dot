@@ -1,0 +1,36 @@
+digraph "0_ettercap_e3abe7d7585ecc420a7cab73313216613aadad5a@pointer" {
+"1000218" [label="(Call,(struct postgresql_status *) s->data)"];
+"1000209" [label="(Call,SAFE_CALLOC(s->data, 1, sizeof(struct postgresql_status)))"];
+"1000216" [label="(Call,conn_status = (struct postgresql_status *) s->data)"];
+"1000209" [label="(Call,SAFE_CALLOC(s->data, 1, sizeof(struct postgresql_status)))"];
+"1000213" [label="(Literal,1)"];
+"1000225" [label="(Identifier,conn_status)"];
+"1000216" [label="(Call,conn_status = (struct postgresql_status *) s->data)"];
+"1000202" [label="(Block,)"];
+"1000592" [label="(MethodReturn,RET)"];
+"1000220" [label="(Call,s->data)"];
+"1000214" [label="(Call,sizeof(struct postgresql_status))"];
+"1000217" [label="(Identifier,conn_status)"];
+"1000218" [label="(Call,(struct postgresql_status *) s->data)"];
+"1000210" [label="(Call,s->data)"];
+"1000218" -> "1000216"  [label="AST: "];
+"1000218" -> "1000220"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000220" -> "1000218"  [label="AST: "];
+"1000216" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000592"  [label="DDG: s->data"];
+"1000218" -> "1000216"  [label="DDG: s->data"];
+"1000209" -> "1000218"  [label="DDG: s->data"];
+"1000209" -> "1000202"  [label="AST: "];
+"1000209" -> "1000214"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000213" -> "1000209"  [label="AST: "];
+"1000214" -> "1000209"  [label="AST: "];
+"1000217" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000592"  [label="DDG: SAFE_CALLOC(s->data, 1, sizeof(struct postgresql_status))"];
+"1000216" -> "1000202"  [label="AST: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000225" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000592"  [label="DDG: conn_status"];
+"1000216" -> "1000592"  [label="DDG: (struct postgresql_status *) s->data"];
+}

@@ -1,0 +1,37 @@
+digraph "0_krb5_4c023ba43c16396f0d199e2df1cfa59b88b62acc@pointer" {
+"1000215" [label="(Call,server_ptr == NULL)"];
+"1000105" [label="(MethodParameterIn,krb5_db_entry **server_ptr)"];
+"1000211" [label="(Call,retval == 0 && server_ptr == NULL)"];
+"1000223" [label="(Identifier,retval)"];
+"1000212" [label="(Call,retval == 0)"];
+"1000216" [label="(Identifier,server_ptr)"];
+"1000217" [label="(Identifier,NULL)"];
+"1000105" [label="(MethodParameterIn,krb5_db_entry **server_ptr)"];
+"1000219" [label="(Identifier,retval)"];
+"1000211" [label="(Call,retval == 0 && server_ptr == NULL)"];
+"1000215" [label="(Call,server_ptr == NULL)"];
+"1000237" [label="(MethodReturn,RET)"];
+"1000210" [label="(ControlStructure,if (retval == 0 && server_ptr == NULL))"];
+"1000215" -> "1000211"  [label="AST: "];
+"1000215" -> "1000217"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000217" -> "1000215"  [label="AST: "];
+"1000211" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000237"  [label="DDG: server_ptr"];
+"1000215" -> "1000237"  [label="DDG: NULL"];
+"1000215" -> "1000211"  [label="DDG: server_ptr"];
+"1000215" -> "1000211"  [label="DDG: NULL"];
+"1000105" -> "1000215"  [label="DDG: server_ptr"];
+"1000105" -> "1000102"  [label="AST: "];
+"1000105" -> "1000237"  [label="DDG: server_ptr"];
+"1000211" -> "1000210"  [label="AST: "];
+"1000211" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000219" -> "1000211"  [label="CFG: "];
+"1000223" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000237"  [label="DDG: retval == 0"];
+"1000211" -> "1000237"  [label="DDG: retval == 0 && server_ptr == NULL"];
+"1000211" -> "1000237"  [label="DDG: server_ptr == NULL"];
+"1000212" -> "1000211"  [label="DDG: retval"];
+"1000212" -> "1000211"  [label="DDG: 0"];
+}

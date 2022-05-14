@@ -1,0 +1,26 @@
+digraph "0_abrt_8939398b82006ba1fec4ed491339fc075f43fc7c@API" {
+"1000267" [label="(Call,close(STDOUT_FILENO))"];
+"1000269" [label="(Call,xdup2(STDERR_FILENO, STDOUT_FILENO))"];
+"1000268" [label="(Identifier,STDOUT_FILENO)"];
+"1000267" [label="(Call,close(STDOUT_FILENO))"];
+"1000115" [label="(Block,)"];
+"1000274" [label="(Identifier,g_settings_nMaxCrashReportsSize)"];
+"1000271" [label="(Identifier,STDOUT_FILENO)"];
+"1000291" [label="(MethodReturn,static int)"];
+"1000270" [label="(Identifier,STDERR_FILENO)"];
+"1000269" [label="(Call,xdup2(STDERR_FILENO, STDOUT_FILENO))"];
+"1000267" -> "1000115"  [label="AST: "];
+"1000267" -> "1000268"  [label="CFG: "];
+"1000268" -> "1000267"  [label="AST: "];
+"1000270" -> "1000267"  [label="CFG: "];
+"1000267" -> "1000291"  [label="DDG: close(STDOUT_FILENO)"];
+"1000267" -> "1000269"  [label="DDG: STDOUT_FILENO"];
+"1000269" -> "1000115"  [label="AST: "];
+"1000269" -> "1000271"  [label="CFG: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000271" -> "1000269"  [label="AST: "];
+"1000274" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000291"  [label="DDG: xdup2(STDERR_FILENO, STDOUT_FILENO)"];
+"1000269" -> "1000291"  [label="DDG: STDERR_FILENO"];
+"1000269" -> "1000291"  [label="DDG: STDOUT_FILENO"];
+}

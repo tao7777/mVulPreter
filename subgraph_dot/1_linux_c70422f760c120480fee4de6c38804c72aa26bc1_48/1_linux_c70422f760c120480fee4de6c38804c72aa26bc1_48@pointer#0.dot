@@ -1,0 +1,23 @@
+digraph "1_linux_c70422f760c120480fee4de6c38804c72aa26bc1_48@pointer" {
+"1000104" [label="(Call,spin_lock(&xprt->sc_map_lock))"];
+"1000118" [label="(Call,spin_unlock(&xprt->sc_map_lock))"];
+"1000104" [label="(Call,spin_lock(&xprt->sc_map_lock))"];
+"1000119" [label="(Call,&xprt->sc_map_lock)"];
+"1000105" [label="(Call,&xprt->sc_map_lock)"];
+"1000103" [label="(Block,)"];
+"1000123" [label="(MethodReturn,void)"];
+"1000118" [label="(Call,spin_unlock(&xprt->sc_map_lock))"];
+"1000112" [label="(Identifier,map)"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000112" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000123"  [label="DDG: spin_lock(&xprt->sc_map_lock)"];
+"1000104" -> "1000118"  [label="DDG: &xprt->sc_map_lock"];
+"1000118" -> "1000103"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000123" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000123"  [label="DDG: spin_unlock(&xprt->sc_map_lock)"];
+"1000118" -> "1000123"  [label="DDG: &xprt->sc_map_lock"];
+}

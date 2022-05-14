@@ -1,0 +1,26 @@
+digraph "0_linux_2b7e8665b4ff51c034c55df3cff76518d1a9ee3a@pointer" {
+"1000211" [label="(Call,mm->flags = current->mm->flags & MMF_INIT_MASK)"];
+"1000215" [label="(Call,current->mm->flags & MMF_INIT_MASK)"];
+"1000224" [label="(Identifier,mm)"];
+"1000216" [label="(Call,current->mm->flags)"];
+"1000221" [label="(Identifier,MMF_INIT_MASK)"];
+"1000270" [label="(MethodReturn,static struct mm_struct *)"];
+"1000212" [label="(Call,mm->flags)"];
+"1000211" [label="(Call,mm->flags = current->mm->flags & MMF_INIT_MASK)"];
+"1000210" [label="(Block,)"];
+"1000215" [label="(Call,current->mm->flags & MMF_INIT_MASK)"];
+"1000211" -> "1000210"  [label="AST: "];
+"1000211" -> "1000215"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000215" -> "1000211"  [label="AST: "];
+"1000224" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000270"  [label="DDG: mm->flags"];
+"1000211" -> "1000270"  [label="DDG: current->mm->flags & MMF_INIT_MASK"];
+"1000215" -> "1000211"  [label="DDG: current->mm->flags"];
+"1000215" -> "1000211"  [label="DDG: MMF_INIT_MASK"];
+"1000215" -> "1000221"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000221" -> "1000215"  [label="AST: "];
+"1000215" -> "1000270"  [label="DDG: current->mm->flags"];
+"1000215" -> "1000270"  [label="DDG: MMF_INIT_MASK"];
+}

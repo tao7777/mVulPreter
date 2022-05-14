@@ -1,0 +1,25 @@
+digraph "0_linux_712f4aad406bb1ed67f3f98d04c044191f0ff593_1@pointer" {
+"1000131" [label="(Call,list_del_init(&u->link))"];
+"1000120" [label="(Call,list_empty(&u->link))"];
+"1000120" [label="(Call,list_empty(&u->link))"];
+"1000137" [label="(Identifier,unix_tot_inflight)"];
+"1000131" [label="(Call,list_del_init(&u->link))"];
+"1000149" [label="(MethodReturn,void)"];
+"1000132" [label="(Call,&u->link)"];
+"1000119" [label="(Call,BUG_ON(list_empty(&u->link)))"];
+"1000121" [label="(Call,&u->link)"];
+"1000125" [label="(ControlStructure,if (atomic_long_dec_and_test(&u->inflight)))"];
+"1000131" -> "1000125"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000137" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000149"  [label="DDG: list_del_init(&u->link)"];
+"1000131" -> "1000149"  [label="DDG: &u->link"];
+"1000120" -> "1000131"  [label="DDG: &u->link"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000149"  [label="DDG: &u->link"];
+"1000120" -> "1000119"  [label="DDG: &u->link"];
+}

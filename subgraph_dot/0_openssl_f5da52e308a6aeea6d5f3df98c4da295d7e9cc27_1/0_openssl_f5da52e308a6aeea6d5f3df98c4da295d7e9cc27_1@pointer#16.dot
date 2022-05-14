@@ -1,0 +1,32 @@
+digraph "0_openssl_f5da52e308a6aeea6d5f3df98c4da295d7e9cc27_1@pointer" {
+"1000367" [label="(Call,strtmp->flags & ASN1_STRING_FLAG_NDEF)"];
+"1000361" [label="(Call,(it->size == ASN1_TFLG_NDEF)\n            && (strtmp->flags & ASN1_STRING_FLAG_NDEF))"];
+"1000367" [label="(Call,strtmp->flags & ASN1_STRING_FLAG_NDEF)"];
+"1000360" [label="(ControlStructure,if ((it->size == ASN1_TFLG_NDEF)\n            && (strtmp->flags & ASN1_STRING_FLAG_NDEF)))"];
+"1000410" [label="(MethodReturn,int)"];
+"1000371" [label="(Identifier,ASN1_STRING_FLAG_NDEF)"];
+"1000361" [label="(Call,(it->size == ASN1_TFLG_NDEF)\n            && (strtmp->flags & ASN1_STRING_FLAG_NDEF))"];
+"1000390" [label="(Identifier,cont)"];
+"1000362" [label="(Call,it->size == ASN1_TFLG_NDEF)"];
+"1000374" [label="(Identifier,cout)"];
+"1000368" [label="(Call,strtmp->flags)"];
+"1000367" -> "1000361"  [label="AST: "];
+"1000367" -> "1000371"  [label="CFG: "];
+"1000368" -> "1000367"  [label="AST: "];
+"1000371" -> "1000367"  [label="AST: "];
+"1000361" -> "1000367"  [label="CFG: "];
+"1000367" -> "1000410"  [label="DDG: strtmp->flags"];
+"1000367" -> "1000410"  [label="DDG: ASN1_STRING_FLAG_NDEF"];
+"1000367" -> "1000361"  [label="DDG: strtmp->flags"];
+"1000367" -> "1000361"  [label="DDG: ASN1_STRING_FLAG_NDEF"];
+"1000361" -> "1000360"  [label="AST: "];
+"1000361" -> "1000362"  [label="CFG: "];
+"1000362" -> "1000361"  [label="AST: "];
+"1000374" -> "1000361"  [label="CFG: "];
+"1000390" -> "1000361"  [label="CFG: "];
+"1000361" -> "1000410"  [label="DDG: (it->size == ASN1_TFLG_NDEF)\n            && (strtmp->flags & ASN1_STRING_FLAG_NDEF)"];
+"1000361" -> "1000410"  [label="DDG: strtmp->flags & ASN1_STRING_FLAG_NDEF"];
+"1000361" -> "1000410"  [label="DDG: it->size == ASN1_TFLG_NDEF"];
+"1000362" -> "1000361"  [label="DDG: it->size"];
+"1000362" -> "1000361"  [label="DDG: ASN1_TFLG_NDEF"];
+}

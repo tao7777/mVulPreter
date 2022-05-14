@@ -1,0 +1,33 @@
+digraph "1_ImageMagick_d7325bac173492b358417a0ad49fabad44447d52_8@pointer" {
+"1000114" [label="(Call,value->y = MinF(1.0f,MaxF(0.0f,value->y)))"];
+"1000118" [label="(Call,MinF(1.0f,MaxF(0.0f,value->y)))"];
+"1000120" [label="(Call,MaxF(0.0f,value->y))"];
+"1000136" [label="(MethodReturn,static inline void)"];
+"1000120" [label="(Call,MaxF(0.0f,value->y))"];
+"1000115" [label="(Call,value->y)"];
+"1000127" [label="(Identifier,value)"];
+"1000122" [label="(Call,value->y)"];
+"1000119" [label="(Literal,1.0f)"];
+"1000102" [label="(Block,)"];
+"1000118" [label="(Call,MinF(1.0f,MaxF(0.0f,value->y)))"];
+"1000121" [label="(Literal,0.0f)"];
+"1000114" [label="(Call,value->y = MinF(1.0f,MaxF(0.0f,value->y)))"];
+"1000114" -> "1000102"  [label="AST: "];
+"1000114" -> "1000118"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000118" -> "1000114"  [label="AST: "];
+"1000127" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000136"  [label="DDG: value->y"];
+"1000114" -> "1000136"  [label="DDG: MinF(1.0f,MaxF(0.0f,value->y))"];
+"1000118" -> "1000114"  [label="DDG: 1.0f"];
+"1000118" -> "1000114"  [label="DDG: MaxF(0.0f,value->y)"];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000118" -> "1000136"  [label="DDG: MaxF(0.0f,value->y)"];
+"1000120" -> "1000118"  [label="DDG: 0.0f"];
+"1000120" -> "1000118"  [label="DDG: value->y"];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+}

@@ -1,0 +1,29 @@
+digraph "0_Chrome_517ac71c9ee27f856f9becde8abea7d1604af9d4@pointer" {
+"1000101" [label="(MethodParameterIn,Parse *pParse)"];
+"1000138" [label="(Call,addModuleArgument(pParse, pParse->pNewTable, sqlite3DbStrNDup(db, z, n)))"];
+"1000104" [label="(Call,pParse->sArg.z && pParse->pNewTable)"];
+"1000113" [label="(Block,)"];
+"1000143" [label="(Call,sqlite3DbStrNDup(db, z, n))"];
+"1000138" [label="(Call,addModuleArgument(pParse, pParse->pNewTable, sqlite3DbStrNDup(db, z, n)))"];
+"1000139" [label="(Identifier,pParse)"];
+"1000147" [label="(MethodReturn,static void)"];
+"1000101" [label="(MethodParameterIn,Parse *pParse)"];
+"1000140" [label="(Call,pParse->pNewTable)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000147"  [label="DDG: pParse"];
+"1000101" -> "1000138"  [label="DDG: pParse"];
+"1000138" -> "1000113"  [label="AST: "];
+"1000138" -> "1000143"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000140" -> "1000138"  [label="AST: "];
+"1000143" -> "1000138"  [label="AST: "];
+"1000147" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000147"  [label="DDG: pParse"];
+"1000138" -> "1000147"  [label="DDG: pParse->pNewTable"];
+"1000138" -> "1000147"  [label="DDG: addModuleArgument(pParse, pParse->pNewTable, sqlite3DbStrNDup(db, z, n))"];
+"1000138" -> "1000147"  [label="DDG: sqlite3DbStrNDup(db, z, n)"];
+"1000104" -> "1000138"  [label="DDG: pParse->pNewTable"];
+"1000143" -> "1000138"  [label="DDG: db"];
+"1000143" -> "1000138"  [label="DDG: z"];
+"1000143" -> "1000138"  [label="DDG: n"];
+}

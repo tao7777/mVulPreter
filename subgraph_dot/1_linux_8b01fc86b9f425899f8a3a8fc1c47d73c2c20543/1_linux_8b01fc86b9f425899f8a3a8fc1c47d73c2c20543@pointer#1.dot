@@ -1,0 +1,35 @@
+digraph "1_linux_8b01fc86b9f425899f8a3a8fc1c47d73c2c20543@pointer" {
+"1000184" [label="(Call,bprm->cred->euid = inode->i_uid)"];
+"1000155" [label="(Call,kuid_has_mapping(bprm->cred->user_ns, inode->i_uid))"];
+"1000190" [label="(Call,inode->i_uid)"];
+"1000247" [label="(MethodReturn,int)"];
+"1000178" [label="(Block,)"];
+"1000185" [label="(Call,bprm->cred->euid)"];
+"1000164" [label="(Call,kgid_has_mapping(bprm->cred->user_ns, inode->i_gid))"];
+"1000161" [label="(Call,inode->i_uid)"];
+"1000156" [label="(Call,bprm->cred->user_ns)"];
+"1000167" [label="(Identifier,bprm)"];
+"1000154" [label="(Call,kuid_has_mapping(bprm->cred->user_ns, inode->i_uid) &&\n\t    kgid_has_mapping(bprm->cred->user_ns, inode->i_gid))"];
+"1000184" [label="(Call,bprm->cred->euid = inode->i_uid)"];
+"1000196" [label="(Identifier,mode)"];
+"1000155" [label="(Call,kuid_has_mapping(bprm->cred->user_ns, inode->i_uid))"];
+"1000184" -> "1000178"  [label="AST: "];
+"1000184" -> "1000190"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000190" -> "1000184"  [label="AST: "];
+"1000196" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000247"  [label="DDG: bprm->cred->euid"];
+"1000184" -> "1000247"  [label="DDG: inode->i_uid"];
+"1000155" -> "1000184"  [label="DDG: inode->i_uid"];
+"1000155" -> "1000154"  [label="AST: "];
+"1000155" -> "1000161"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000161" -> "1000155"  [label="AST: "];
+"1000167" -> "1000155"  [label="CFG: "];
+"1000154" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000247"  [label="DDG: bprm->cred->user_ns"];
+"1000155" -> "1000247"  [label="DDG: inode->i_uid"];
+"1000155" -> "1000154"  [label="DDG: bprm->cred->user_ns"];
+"1000155" -> "1000154"  [label="DDG: inode->i_uid"];
+"1000155" -> "1000164"  [label="DDG: bprm->cred->user_ns"];
+}

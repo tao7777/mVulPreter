@@ -1,0 +1,24 @@
+digraph "0_linux_ee73f656a604d5aa9df86a97102e4e462dd79924@pointer" {
+"1000151" [label="(Call,mutex_lock(&pit_state->lock))"];
+"1000311" [label="(Call,mutex_unlock(&pit_state->lock))"];
+"1000317" [label="(Literal,0)"];
+"1000151" [label="(Call,mutex_lock(&pit_state->lock))"];
+"1000311" [label="(Call,mutex_unlock(&pit_state->lock))"];
+"1000105" [label="(Block,)"];
+"1000152" [label="(Call,&pit_state->lock)"];
+"1000158" [label="(Identifier,s)"];
+"1000318" [label="(MethodReturn,static int)"];
+"1000312" [label="(Call,&pit_state->lock)"];
+"1000151" -> "1000105"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000158" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000318"  [label="DDG: mutex_lock(&pit_state->lock)"];
+"1000151" -> "1000311"  [label="DDG: &pit_state->lock"];
+"1000311" -> "1000105"  [label="AST: "];
+"1000311" -> "1000312"  [label="CFG: "];
+"1000312" -> "1000311"  [label="AST: "];
+"1000317" -> "1000311"  [label="CFG: "];
+"1000311" -> "1000318"  [label="DDG: &pit_state->lock"];
+"1000311" -> "1000318"  [label="DDG: mutex_unlock(&pit_state->lock)"];
+}

@@ -1,0 +1,27 @@
+digraph "0_linux_d199fab63c11998a602205f7ee7ff7c05c97164b@pointer" {
+"1000362" [label="(Call,list_add(&match->list, &fanout_list))"];
+"1000296" [label="(Call,INIT_LIST_HEAD(&match->list))"];
+"1000370" [label="(Identifier,err)"];
+"1000296" [label="(Call,INIT_LIST_HEAD(&match->list))"];
+"1000456" [label="(MethodReturn,static int)"];
+"1000367" [label="(Call,&fanout_list)"];
+"1000304" [label="(Identifier,match)"];
+"1000363" [label="(Call,&match->list)"];
+"1000297" [label="(Call,&match->list)"];
+"1000258" [label="(Block,)"];
+"1000362" [label="(Call,list_add(&match->list, &fanout_list))"];
+"1000362" -> "1000258"  [label="AST: "];
+"1000362" -> "1000367"  [label="CFG: "];
+"1000363" -> "1000362"  [label="AST: "];
+"1000367" -> "1000362"  [label="AST: "];
+"1000370" -> "1000362"  [label="CFG: "];
+"1000362" -> "1000456"  [label="DDG: &fanout_list"];
+"1000362" -> "1000456"  [label="DDG: list_add(&match->list, &fanout_list)"];
+"1000362" -> "1000456"  [label="DDG: &match->list"];
+"1000296" -> "1000362"  [label="DDG: &match->list"];
+"1000296" -> "1000258"  [label="AST: "];
+"1000296" -> "1000297"  [label="CFG: "];
+"1000297" -> "1000296"  [label="AST: "];
+"1000304" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000456"  [label="DDG: INIT_LIST_HEAD(&match->list)"];
+}

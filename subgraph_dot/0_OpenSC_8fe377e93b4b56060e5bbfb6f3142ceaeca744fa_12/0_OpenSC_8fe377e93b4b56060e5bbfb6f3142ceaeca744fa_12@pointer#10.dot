@@ -1,0 +1,38 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_12@pointer" {
+"1000223" [label="(Call,memcpy(&tmp_file->path, &auth_current_df->path, sizeof(struct sc_path)))"];
+"1000157" [label="(Call,sc_print_path(&auth_current_df->path))"];
+"1000228" [label="(Call,&auth_current_df->path)"];
+"1000157" [label="(Call,sc_print_path(&auth_current_df->path))"];
+"1000542" [label="(Call,sc_compare_path(&path, &auth_current_df->path))"];
+"1000222" [label="(Block,)"];
+"1000232" [label="(Call,sizeof(struct sc_path))"];
+"1000224" [label="(Call,&tmp_file->path)"];
+"1000436" [label="(Call,memcpy(&tmp_path, &auth_current_df->path,  sizeof(struct sc_path)))"];
+"1000147" [label="(Call,sc_log(card->ctx, \"current path; type=%d, path=%s\",\n\t\t\tauth_current_df->path.type, sc_print_path(&auth_current_df->path)))"];
+"1000264" [label="(Call,sc_concatenate_path(&tmp_file->path, &auth_current_df->path, &path))"];
+"1000570" [label="(MethodReturn,RET)"];
+"1000289" [label="(Call,sc_concatenate_path(&auth_current_ef->path, &auth_current_df->path, &path))"];
+"1000158" [label="(Call,&auth_current_df->path)"];
+"1000223" [label="(Call,memcpy(&tmp_file->path, &auth_current_df->path, sizeof(struct sc_path)))"];
+"1000238" [label="(Identifier,tmp_file)"];
+"1000223" -> "1000222"  [label="AST: "];
+"1000223" -> "1000232"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000228" -> "1000223"  [label="AST: "];
+"1000232" -> "1000223"  [label="AST: "];
+"1000238" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000570"  [label="DDG: memcpy(&tmp_file->path, &auth_current_df->path, sizeof(struct sc_path))"];
+"1000223" -> "1000570"  [label="DDG: &auth_current_df->path"];
+"1000223" -> "1000570"  [label="DDG: &tmp_file->path"];
+"1000157" -> "1000223"  [label="DDG: &auth_current_df->path"];
+"1000157" -> "1000147"  [label="AST: "];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000147" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000570"  [label="DDG: &auth_current_df->path"];
+"1000157" -> "1000147"  [label="DDG: &auth_current_df->path"];
+"1000157" -> "1000264"  [label="DDG: &auth_current_df->path"];
+"1000157" -> "1000289"  [label="DDG: &auth_current_df->path"];
+"1000157" -> "1000436"  [label="DDG: &auth_current_df->path"];
+"1000157" -> "1000542"  [label="DDG: &auth_current_df->path"];
+}

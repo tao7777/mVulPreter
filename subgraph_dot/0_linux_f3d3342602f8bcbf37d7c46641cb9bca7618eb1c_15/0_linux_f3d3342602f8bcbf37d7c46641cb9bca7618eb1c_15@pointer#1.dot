@@ -1,0 +1,23 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_15@pointer" {
+"1000123" [label="(Call,(struct sockaddr_ipx *)msg->msg_name)"];
+"1000121" [label="(Call,*sipx = (struct sockaddr_ipx *)msg->msg_name)"];
+"1000122" [label="(Identifier,sipx)"];
+"1000130" [label="(Identifier,ipx)"];
+"1000108" [label="(Block,)"];
+"1000121" [label="(Call,*sipx = (struct sockaddr_ipx *)msg->msg_name)"];
+"1000125" [label="(Call,msg->msg_name)"];
+"1000123" [label="(Call,(struct sockaddr_ipx *)msg->msg_name)"];
+"1000330" [label="(MethodReturn,static int)"];
+"1000123" -> "1000121"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000330"  [label="DDG: msg->msg_name"];
+"1000123" -> "1000121"  [label="DDG: msg->msg_name"];
+"1000121" -> "1000108"  [label="AST: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000130" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000330"  [label="DDG: (struct sockaddr_ipx *)msg->msg_name"];
+"1000121" -> "1000330"  [label="DDG: sipx"];
+}

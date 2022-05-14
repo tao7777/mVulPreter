@@ -1,0 +1,29 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_29@pointer" {
+"1000162" [label="(Call,regs->sr & SR_IMASK)"];
+"1000161" [label="(Call,(regs->sr & SR_IMASK) != SR_IMASK)"];
+"1000163" [label="(Call,regs->sr)"];
+"1000162" [label="(Call,regs->sr & SR_IMASK)"];
+"1000166" [label="(Identifier,SR_IMASK)"];
+"1000167" [label="(Identifier,SR_IMASK)"];
+"1000170" [label="(Identifier,PERF_COUNT_SW_PAGE_FAULTS)"];
+"1000160" [label="(ControlStructure,if ((regs->sr & SR_IMASK) != SR_IMASK))"];
+"1000446" [label="(MethodReturn,asmlinkage void __kprobes)"];
+"1000168" [label="(Call,local_irq_enable())"];
+"1000161" [label="(Call,(regs->sr & SR_IMASK) != SR_IMASK)"];
+"1000162" -> "1000161"  [label="AST: "];
+"1000162" -> "1000166"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="AST: "];
+"1000167" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000446"  [label="DDG: regs->sr"];
+"1000162" -> "1000161"  [label="DDG: regs->sr"];
+"1000162" -> "1000161"  [label="DDG: SR_IMASK"];
+"1000161" -> "1000160"  [label="AST: "];
+"1000161" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000161"  [label="AST: "];
+"1000168" -> "1000161"  [label="CFG: "];
+"1000170" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000446"  [label="DDG: SR_IMASK"];
+"1000161" -> "1000446"  [label="DDG: regs->sr & SR_IMASK"];
+"1000161" -> "1000446"  [label="DDG: (regs->sr & SR_IMASK) != SR_IMASK"];
+}

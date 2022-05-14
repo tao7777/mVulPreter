@@ -1,0 +1,19 @@
+digraph "0_linux_4dcc29e1574d88f4465ba865ed82800032f76418@pointer" {
+"1000109" [label="(MethodParameterIn,char **cmdline_p)"];
+"1000200" [label="(Call,platform_setup(cmdline_p))"];
+"1000110" [label="(Block,)"];
+"1000202" [label="(Call,paging_init())"];
+"1000200" [label="(Call,platform_setup(cmdline_p))"];
+"1000201" [label="(Identifier,cmdline_p)"];
+"1000109" [label="(MethodParameterIn,char **cmdline_p)"];
+"1000203" [label="(MethodReturn,RET)"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000203"  [label="DDG: cmdline_p"];
+"1000109" -> "1000200"  [label="DDG: cmdline_p"];
+"1000200" -> "1000110"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000202" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000203"  [label="DDG: cmdline_p"];
+"1000200" -> "1000203"  [label="DDG: platform_setup(cmdline_p)"];
+}

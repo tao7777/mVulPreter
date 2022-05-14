@@ -1,0 +1,32 @@
+digraph "0_Android_28a566f7731b4cb76d2a9ba16d997ac5aeb07dad@pointer" {
+"1000207" [label="(Call,pMap->range_count = range_count)"];
+"1000195" [label="(Call,range_count == 0)"];
+"1000211" [label="(Identifier,range_count)"];
+"1000197" [label="(Literal,0)"];
+"1000207" [label="(Call,pMap->range_count = range_count)"];
+"1000196" [label="(Identifier,range_count)"];
+"1000189" [label="(Call,blocks > SIZE_MAX / blksize || range_count == 0)"];
+"1000103" [label="(Block,)"];
+"1000475" [label="(MethodReturn,static int)"];
+"1000208" [label="(Call,pMap->range_count)"];
+"1000199" [label="(Call,LOGE(\"invalid data in block map file: size %zu, blksize %u, range_count %u\n\",\n             size, blksize, range_count))"];
+"1000216" [label="(Call,calloc(range_count, sizeof(MappedRange)))"];
+"1000214" [label="(Identifier,pMap)"];
+"1000195" [label="(Call,range_count == 0)"];
+"1000207" -> "1000103"  [label="AST: "];
+"1000207" -> "1000211"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000211" -> "1000207"  [label="AST: "];
+"1000214" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000475"  [label="DDG: pMap->range_count"];
+"1000195" -> "1000207"  [label="DDG: range_count"];
+"1000195" -> "1000189"  [label="AST: "];
+"1000195" -> "1000197"  [label="CFG: "];
+"1000196" -> "1000195"  [label="AST: "];
+"1000197" -> "1000195"  [label="AST: "];
+"1000189" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000189"  [label="DDG: range_count"];
+"1000195" -> "1000189"  [label="DDG: 0"];
+"1000195" -> "1000199"  [label="DDG: range_count"];
+"1000195" -> "1000216"  [label="DDG: range_count"];
+}

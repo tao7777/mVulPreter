@@ -1,0 +1,31 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970_3@pointer" {
+"1000146" [label="(Call,tgs_subkey ? tgs_subkey :\n                                         tgs_session)"];
+"1000104" [label="(MethodParameterIn,krb5_keyblock *tgs_subkey)"];
+"1000105" [label="(MethodParameterIn,krb5_keyblock *tgs_session)"];
+"1000147" [label="(Identifier,tgs_subkey)"];
+"1000144" [label="(Call,verify_s4u_x509_user_checksum(context,\n                                          tgs_subkey ? tgs_subkey :\n                                         tgs_session,\n                                         &req_data,\n                                         request->nonce, *s4u_x509_user))"];
+"1000148" [label="(Identifier,tgs_subkey)"];
+"1000149" [label="(Identifier,tgs_session)"];
+"1000213" [label="(MethodReturn,RET)"];
+"1000146" [label="(Call,tgs_subkey ? tgs_subkey :\n                                         tgs_session)"];
+"1000104" [label="(MethodParameterIn,krb5_keyblock *tgs_subkey)"];
+"1000105" [label="(MethodParameterIn,krb5_keyblock *tgs_session)"];
+"1000151" [label="(Identifier,req_data)"];
+"1000146" -> "1000144"  [label="AST: "];
+"1000146" -> "1000148"  [label="CFG: "];
+"1000146" -> "1000149"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000148" -> "1000146"  [label="AST: "];
+"1000149" -> "1000146"  [label="AST: "];
+"1000151" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000213"  [label="DDG: tgs_session"];
+"1000146" -> "1000213"  [label="DDG: tgs_subkey"];
+"1000104" -> "1000146"  [label="DDG: tgs_subkey"];
+"1000105" -> "1000146"  [label="DDG: tgs_session"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000213"  [label="DDG: tgs_subkey"];
+"1000104" -> "1000144"  [label="DDG: tgs_subkey"];
+"1000105" -> "1000100"  [label="AST: "];
+"1000105" -> "1000213"  [label="DDG: tgs_session"];
+"1000105" -> "1000144"  [label="DDG: tgs_session"];
+}

@@ -1,0 +1,25 @@
+digraph "0_linux_179d1c5602997fef5a940c6ddcf31212cbfebd14@pointer" {
+"1000228" [label="(Call,check_ids(rold->id, rcur->id, idmap))"];
+"1000227" [label="(Return,return check_ids(rold->id, rcur->id, idmap);)"];
+"1000229" [label="(Call,rold->id)"];
+"1000307" [label="(MethodReturn,static bool)"];
+"1000150" [label="(Block,)"];
+"1000235" [label="(Identifier,idmap)"];
+"1000228" [label="(Call,check_ids(rold->id, rcur->id, idmap))"];
+"1000232" [label="(Call,rcur->id)"];
+"1000227" [label="(Return,return check_ids(rold->id, rcur->id, idmap);)"];
+"1000228" -> "1000227"  [label="AST: "];
+"1000228" -> "1000235"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000232" -> "1000228"  [label="AST: "];
+"1000235" -> "1000228"  [label="AST: "];
+"1000227" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000307"  [label="DDG: idmap"];
+"1000228" -> "1000307"  [label="DDG: check_ids(rold->id, rcur->id, idmap)"];
+"1000228" -> "1000307"  [label="DDG: rold->id"];
+"1000228" -> "1000307"  [label="DDG: rcur->id"];
+"1000228" -> "1000227"  [label="DDG: check_ids(rold->id, rcur->id, idmap)"];
+"1000227" -> "1000150"  [label="AST: "];
+"1000307" -> "1000227"  [label="CFG: "];
+"1000227" -> "1000307"  [label="DDG: <RET>"];
+}

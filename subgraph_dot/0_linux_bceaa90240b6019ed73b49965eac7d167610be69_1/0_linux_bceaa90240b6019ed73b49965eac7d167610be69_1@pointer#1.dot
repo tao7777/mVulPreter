@@ -1,0 +1,38 @@
+digraph "0_linux_bceaa90240b6019ed73b49965eac7d167610be69_1@pointer" {
+"1000172" [label="(Call,msg->msg_flags |= MSG_TRUNC)"];
+"1000243" [label="(Call,flags & MSG_TRUNC)"];
+"1000152" [label="(Call,skb_recv_datagram(sk, flags, noblock, &err))"];
+"1000244" [label="(Identifier,flags)"];
+"1000171" [label="(Block,)"];
+"1000243" [label="(Call,flags & MSG_TRUNC)"];
+"1000178" [label="(Identifier,copied)"];
+"1000173" [label="(Call,msg->msg_flags)"];
+"1000176" [label="(Identifier,MSG_TRUNC)"];
+"1000242" [label="(ControlStructure,if (flags & MSG_TRUNC))"];
+"1000247" [label="(Identifier,copied)"];
+"1000107" [label="(MethodParameterIn,int flags)"];
+"1000262" [label="(MethodReturn,static int)"];
+"1000251" [label="(JumpTarget,done:)"];
+"1000245" [label="(Identifier,MSG_TRUNC)"];
+"1000172" [label="(Call,msg->msg_flags |= MSG_TRUNC)"];
+"1000172" -> "1000171"  [label="AST: "];
+"1000172" -> "1000176"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000176" -> "1000172"  [label="AST: "];
+"1000178" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000262"  [label="DDG: msg->msg_flags |= MSG_TRUNC"];
+"1000172" -> "1000262"  [label="DDG: MSG_TRUNC"];
+"1000172" -> "1000262"  [label="DDG: msg->msg_flags"];
+"1000172" -> "1000243"  [label="DDG: MSG_TRUNC"];
+"1000243" -> "1000242"  [label="AST: "];
+"1000243" -> "1000245"  [label="CFG: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000245" -> "1000243"  [label="AST: "];
+"1000247" -> "1000243"  [label="CFG: "];
+"1000251" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000262"  [label="DDG: flags"];
+"1000243" -> "1000262"  [label="DDG: MSG_TRUNC"];
+"1000243" -> "1000262"  [label="DDG: flags & MSG_TRUNC"];
+"1000152" -> "1000243"  [label="DDG: flags"];
+"1000107" -> "1000243"  [label="DDG: flags"];
+}

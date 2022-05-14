@@ -1,0 +1,22 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_14@pointer" {
+"1000247" [label="(Call,ntohs(th->dest))"];
+"1000243" [label="(Call,ireq->ir_num = ntohs(th->dest))"];
+"1000560" [label="(MethodReturn,struct sock *)"];
+"1000247" [label="(Call,ntohs(th->dest))"];
+"1000248" [label="(Call,th->dest)"];
+"1000253" [label="(Identifier,ireq)"];
+"1000244" [label="(Call,ireq->ir_num)"];
+"1000106" [label="(Block,)"];
+"1000243" [label="(Call,ireq->ir_num = ntohs(th->dest))"];
+"1000247" -> "1000243"  [label="AST: "];
+"1000247" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000243" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000560"  [label="DDG: th->dest"];
+"1000247" -> "1000243"  [label="DDG: th->dest"];
+"1000243" -> "1000106"  [label="AST: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000253" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000560"  [label="DDG: ireq->ir_num"];
+"1000243" -> "1000560"  [label="DDG: ntohs(th->dest)"];
+}

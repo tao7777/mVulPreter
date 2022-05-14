@@ -1,0 +1,27 @@
+digraph "0_openssl_77c77f0a1b9f15b869ca3342186dfbedd1119d0e@pointer" {
+"1000171" [label="(Call,!s->in_handshake)"];
+"1000168" [label="(Call,SSL_in_init(s) && !s->in_handshake)"];
+"1000199" [label="(Identifier,len)"];
+"1000177" [label="(Identifier,i)"];
+"1000845" [label="(MethodReturn,int)"];
+"1000168" [label="(Call,SSL_in_init(s) && !s->in_handshake)"];
+"1000171" [label="(Call,!s->in_handshake)"];
+"1000169" [label="(Call,SSL_in_init(s))"];
+"1000167" [label="(ControlStructure,if (SSL_in_init(s) && !s->in_handshake))"];
+"1000172" [label="(Call,s->in_handshake)"];
+"1000171" -> "1000168"  [label="AST: "];
+"1000171" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000168" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000845"  [label="DDG: s->in_handshake"];
+"1000171" -> "1000168"  [label="DDG: s->in_handshake"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000177" -> "1000168"  [label="CFG: "];
+"1000199" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000845"  [label="DDG: SSL_in_init(s) && !s->in_handshake"];
+"1000168" -> "1000845"  [label="DDG: SSL_in_init(s)"];
+"1000168" -> "1000845"  [label="DDG: !s->in_handshake"];
+"1000169" -> "1000168"  [label="DDG: s"];
+}

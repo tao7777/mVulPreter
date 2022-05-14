@@ -1,0 +1,27 @@
+digraph "0_openssl_62e4506a7d4cec1c8e1ff687f6b220f6a62a57c7@pointer" {
+"1000152" [label="(Call,EVP_PKEY_type(pknid) != pkey->ameth->pkey_id)"];
+"1000153" [label="(Call,EVP_PKEY_type(pknid))"];
+"1000154" [label="(Identifier,pknid)"];
+"1000155" [label="(Call,pkey->ameth->pkey_id)"];
+"1000152" [label="(Call,EVP_PKEY_type(pknid) != pkey->ameth->pkey_id)"];
+"1000153" [label="(Call,EVP_PKEY_type(pknid))"];
+"1000291" [label="(MethodReturn,int)"];
+"1000157" [label="(Identifier,pkey)"];
+"1000151" [label="(ControlStructure,if (EVP_PKEY_type(pknid) != pkey->ameth->pkey_id))"];
+"1000162" [label="(Identifier,ASN1_F_ASN1_ITEM_VERIFY)"];
+"1000169" [label="(Identifier,ctx)"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000155"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000155" -> "1000152"  [label="AST: "];
+"1000162" -> "1000152"  [label="CFG: "];
+"1000169" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000291"  [label="DDG: EVP_PKEY_type(pknid) != pkey->ameth->pkey_id"];
+"1000152" -> "1000291"  [label="DDG: pkey->ameth->pkey_id"];
+"1000152" -> "1000291"  [label="DDG: EVP_PKEY_type(pknid)"];
+"1000153" -> "1000152"  [label="DDG: pknid"];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000157" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000291"  [label="DDG: pknid"];
+}

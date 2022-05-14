@@ -1,0 +1,32 @@
+digraph "0_heimdal_1a6a6e462dc2ac6111f9e02c6852ddec4849b887@pointer" {
+"1001737" [label="(Call,kdc_time + config->kdc_warn_pwexpire)"];
+"1001731" [label="(Call,config->kdc_warn_pwexpire == 0)"];
+"1001738" [label="(Identifier,kdc_time)"];
+"1001737" [label="(Call,kdc_time + config->kdc_warn_pwexpire)"];
+"1001730" [label="(Call,config->kdc_warn_pwexpire == 0\n\t    || kdc_time + config->kdc_warn_pwexpire >= *r->client->entry.pw_end)"];
+"1001732" [label="(Call,config->kdc_warn_pwexpire)"];
+"1001731" [label="(Call,config->kdc_warn_pwexpire == 0)"];
+"1001746" [label="(Identifier,r)"];
+"1001736" [label="(Call,kdc_time + config->kdc_warn_pwexpire >= *r->client->entry.pw_end)"];
+"1002698" [label="(MethodReturn,RET)"];
+"1001739" [label="(Call,config->kdc_warn_pwexpire)"];
+"1001735" [label="(Literal,0)"];
+"1001737" -> "1001736"  [label="AST: "];
+"1001737" -> "1001739"  [label="CFG: "];
+"1001738" -> "1001737"  [label="AST: "];
+"1001739" -> "1001737"  [label="AST: "];
+"1001746" -> "1001737"  [label="CFG: "];
+"1001737" -> "1002698"  [label="DDG: kdc_time"];
+"1001737" -> "1002698"  [label="DDG: config->kdc_warn_pwexpire"];
+"1001731" -> "1001737"  [label="DDG: config->kdc_warn_pwexpire"];
+"1001731" -> "1001730"  [label="AST: "];
+"1001731" -> "1001735"  [label="CFG: "];
+"1001732" -> "1001731"  [label="AST: "];
+"1001735" -> "1001731"  [label="AST: "];
+"1001738" -> "1001731"  [label="CFG: "];
+"1001730" -> "1001731"  [label="CFG: "];
+"1001731" -> "1002698"  [label="DDG: config->kdc_warn_pwexpire"];
+"1001731" -> "1001730"  [label="DDG: config->kdc_warn_pwexpire"];
+"1001731" -> "1001730"  [label="DDG: 0"];
+"1001731" -> "1001736"  [label="DDG: config->kdc_warn_pwexpire"];
+}

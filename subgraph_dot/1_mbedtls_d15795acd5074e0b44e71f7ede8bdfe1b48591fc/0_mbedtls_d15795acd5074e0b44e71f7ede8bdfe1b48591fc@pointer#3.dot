@@ -1,0 +1,29 @@
+digraph "0_mbedtls_d15795acd5074e0b44e71f7ede8bdfe1b48591fc@pointer" {
+"1000246" [label="(Call,MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ))"];
+"1000245" [label="(Call,MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ) == 0)"];
+"1000246" [label="(Call,MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ))"];
+"1000304" [label="(Identifier,name)"];
+"1000259" [label="(Identifier,name)"];
+"1000247" [label="(Identifier,MBEDTLS_OID_AT_CN)"];
+"1000252" [label="(Literal,0)"];
+"1000244" [label="(ControlStructure,if( MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ) == 0 ))"];
+"1000245" [label="(Call,MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ) == 0)"];
+"1000474" [label="(MethodReturn,int)"];
+"1000248" [label="(Call,&name->oid)"];
+"1000246" -> "1000245"  [label="AST: "];
+"1000246" -> "1000248"  [label="CFG: "];
+"1000247" -> "1000246"  [label="AST: "];
+"1000248" -> "1000246"  [label="AST: "];
+"1000252" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000474"  [label="DDG: &name->oid"];
+"1000246" -> "1000474"  [label="DDG: MBEDTLS_OID_AT_CN"];
+"1000246" -> "1000245"  [label="DDG: MBEDTLS_OID_AT_CN"];
+"1000246" -> "1000245"  [label="DDG: &name->oid"];
+"1000245" -> "1000244"  [label="AST: "];
+"1000245" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000245"  [label="AST: "];
+"1000259" -> "1000245"  [label="CFG: "];
+"1000304" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000474"  [label="DDG: MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ) == 0"];
+"1000245" -> "1000474"  [label="DDG: MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid )"];
+}

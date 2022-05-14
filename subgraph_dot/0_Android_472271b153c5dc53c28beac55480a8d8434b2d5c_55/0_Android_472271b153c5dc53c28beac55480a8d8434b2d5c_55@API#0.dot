@@ -1,0 +1,26 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_55@API" {
+"1000103" [label="(Call,pthread_mutex_lock(&commands_pending_response_lock))"];
+"1000120" [label="(Call,pthread_mutex_unlock(&commands_pending_response_lock))"];
+"1000108" [label="(Identifier,commands_pending_response)"];
+"1000120" [label="(Call,pthread_mutex_unlock(&commands_pending_response_lock))"];
+"1000103" [label="(Call,pthread_mutex_lock(&commands_pending_response_lock))"];
+"1000124" [label="(Literal,\"%s hci layer timeout waiting for response to a command. opcode: 0x%x\")"];
+"1000102" [label="(Block,)"];
+"1000138" [label="(MethodReturn,static void)"];
+"1000104" [label="(Call,&commands_pending_response_lock)"];
+"1000121" [label="(Call,&commands_pending_response_lock)"];
+"1000114" [label="(Block,)"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000108" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000138"  [label="DDG: &commands_pending_response_lock"];
+"1000103" -> "1000138"  [label="DDG: pthread_mutex_lock(&commands_pending_response_lock)"];
+"1000103" -> "1000120"  [label="DDG: &commands_pending_response_lock"];
+"1000120" -> "1000114"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000124" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000138"  [label="DDG: &commands_pending_response_lock"];
+"1000120" -> "1000138"  [label="DDG: pthread_mutex_unlock(&commands_pending_response_lock)"];
+}

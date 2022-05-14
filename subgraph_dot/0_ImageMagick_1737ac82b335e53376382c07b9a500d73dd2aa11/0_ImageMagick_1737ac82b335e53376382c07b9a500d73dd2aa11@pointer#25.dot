@@ -1,0 +1,31 @@
+digraph "0_ImageMagick_1737ac82b335e53376382c07b9a500d73dd2aa11@pointer" {
+"1000627" [label="(Call,image->interlace=jpeg_info.process == JPROC_PROGRESSIVE ?\n    JPEGInterlace : NoInterlace)"];
+"1000993" [label="(Call,image->interlace != NoInterlace)"];
+"1000628" [label="(Call,image->interlace)"];
+"1000111" [label="(Block,)"];
+"1000994" [label="(Call,image->interlace)"];
+"1001897" [label="(MethodReturn,static Image *)"];
+"1000997" [label="(Identifier,NoInterlace)"];
+"1000992" [label="(ControlStructure,if (image->interlace != NoInterlace))"];
+"1000641" [label="(Identifier,image)"];
+"1000631" [label="(Call,jpeg_info.process == JPROC_PROGRESSIVE ?\n    JPEGInterlace : NoInterlace)"];
+"1000627" [label="(Call,image->interlace=jpeg_info.process == JPROC_PROGRESSIVE ?\n    JPEGInterlace : NoInterlace)"];
+"1000993" [label="(Call,image->interlace != NoInterlace)"];
+"1000627" -> "1000111"  [label="AST: "];
+"1000627" -> "1000631"  [label="CFG: "];
+"1000628" -> "1000627"  [label="AST: "];
+"1000631" -> "1000627"  [label="AST: "];
+"1000641" -> "1000627"  [label="CFG: "];
+"1000627" -> "1001897"  [label="DDG: jpeg_info.process == JPROC_PROGRESSIVE ?\n    JPEGInterlace : NoInterlace"];
+"1000627" -> "1001897"  [label="DDG: image->interlace"];
+"1000627" -> "1000993"  [label="DDG: image->interlace"];
+"1000993" -> "1000992"  [label="AST: "];
+"1000993" -> "1000997"  [label="CFG: "];
+"1000994" -> "1000993"  [label="AST: "];
+"1000997" -> "1000993"  [label="AST: "];
+"1000999" -> "1000993"  [label="CFG: "];
+"1001006" -> "1000993"  [label="CFG: "];
+"1000993" -> "1001897"  [label="DDG: image->interlace != NoInterlace"];
+"1000993" -> "1001897"  [label="DDG: NoInterlace"];
+"1000993" -> "1001897"  [label="DDG: image->interlace"];
+}

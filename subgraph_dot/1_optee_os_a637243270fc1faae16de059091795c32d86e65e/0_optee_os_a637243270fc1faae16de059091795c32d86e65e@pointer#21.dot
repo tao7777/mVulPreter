@@ -1,0 +1,30 @@
+digraph "0_optee_os_a637243270fc1faae16de059091795c32d86e65e@pointer" {
+"1000518" [label="(Call,sk->key_size = pt_secret_len)"];
+"1000497" [label="(Call,pt_secret_len = sk->alloc_size)"];
+"1000498" [label="(Identifier,pt_secret_len)"];
+"1000503" [label="(Identifier,res)"];
+"1000359" [label="(Block,)"];
+"1000522" [label="(Identifier,pt_secret_len)"];
+"1000849" [label="(MethodReturn,TEE_Result)"];
+"1000499" [label="(Call,sk->alloc_size)"];
+"1000517" [label="(Block,)"];
+"1000519" [label="(Call,sk->key_size)"];
+"1000497" [label="(Call,pt_secret_len = sk->alloc_size)"];
+"1000518" [label="(Call,sk->key_size = pt_secret_len)"];
+"1000526" [label="(Identifier,so)"];
+"1000518" -> "1000517"  [label="AST: "];
+"1000518" -> "1000522"  [label="CFG: "];
+"1000519" -> "1000518"  [label="AST: "];
+"1000522" -> "1000518"  [label="AST: "];
+"1000526" -> "1000518"  [label="CFG: "];
+"1000518" -> "1000849"  [label="DDG: pt_secret_len"];
+"1000518" -> "1000849"  [label="DDG: sk->key_size"];
+"1000497" -> "1000518"  [label="DDG: pt_secret_len"];
+"1000497" -> "1000359"  [label="AST: "];
+"1000497" -> "1000499"  [label="CFG: "];
+"1000498" -> "1000497"  [label="AST: "];
+"1000499" -> "1000497"  [label="AST: "];
+"1000503" -> "1000497"  [label="CFG: "];
+"1000497" -> "1000849"  [label="DDG: pt_secret_len"];
+"1000497" -> "1000849"  [label="DDG: sk->alloc_size"];
+}

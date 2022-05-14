@@ -1,0 +1,27 @@
+digraph "0_ImageMagick_4cc6ec8a4197d4c008577127736bf7985d632323@array" {
+"1002414" [label="(Call,ClampToQuantum(image->colormap[i].green))"];
+"1002413" [label="(Call,ScaleQuantumToChar(ClampToQuantum(image->colormap[i].green)))"];
+"1002409" [label="(Call,*q++=ScaleQuantumToChar(ClampToQuantum(image->colormap[i].green)))"];
+"1002413" [label="(Call,ScaleQuantumToChar(ClampToQuantum(image->colormap[i].green)))"];
+"1002414" [label="(Call,ClampToQuantum(image->colormap[i].green))"];
+"1002409" [label="(Call,*q++=ScaleQuantumToChar(ClampToQuantum(image->colormap[i].green)))"];
+"1002596" [label="(MethodReturn,static MagickBooleanType)"];
+"1002395" [label="(Block,)"];
+"1002425" [label="(Identifier,q)"];
+"1002410" [label="(Call,*q++)"];
+"1002415" [label="(Call,image->colormap[i].green)"];
+"1002414" -> "1002413"  [label="AST: "];
+"1002414" -> "1002415"  [label="CFG: "];
+"1002415" -> "1002414"  [label="AST: "];
+"1002413" -> "1002414"  [label="CFG: "];
+"1002414" -> "1002596"  [label="DDG: image->colormap[i].green"];
+"1002414" -> "1002413"  [label="DDG: image->colormap[i].green"];
+"1002413" -> "1002409"  [label="AST: "];
+"1002409" -> "1002413"  [label="CFG: "];
+"1002413" -> "1002596"  [label="DDG: ClampToQuantum(image->colormap[i].green)"];
+"1002413" -> "1002409"  [label="DDG: ClampToQuantum(image->colormap[i].green)"];
+"1002409" -> "1002395"  [label="AST: "];
+"1002410" -> "1002409"  [label="AST: "];
+"1002425" -> "1002409"  [label="CFG: "];
+"1002409" -> "1002596"  [label="DDG: ScaleQuantumToChar(ClampToQuantum(image->colormap[i].green))"];
+}

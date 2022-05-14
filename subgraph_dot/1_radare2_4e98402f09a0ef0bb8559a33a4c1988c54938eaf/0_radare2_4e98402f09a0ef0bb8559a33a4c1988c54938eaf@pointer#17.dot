@@ -1,0 +1,29 @@
+digraph "0_radare2_4e98402f09a0ef0bb8559a33a4c1988c54938eaf@pointer" {
+"1000722" [label="(Call,sizeof (ret->path) - 1)"];
+"1000717" [label="(Call,strncpy (ret->path, libname, sizeof (ret->path) - 1))"];
+"1000717" [label="(Call,strncpy (ret->path, libname, sizeof (ret->path) - 1))"];
+"1000727" [label="(Literal,1)"];
+"1000718" [label="(Call,ret->path)"];
+"1000730" [label="(Identifier,ret)"];
+"1000316" [label="(Call,libname = (char *)(bin->b->buf + image_infos[idx].pathFileOffset))"];
+"1000113" [label="(Block,)"];
+"1000723" [label="(Call,sizeof (ret->path))"];
+"1000722" [label="(Call,sizeof (ret->path) - 1)"];
+"1000721" [label="(Identifier,libname)"];
+"1000735" [label="(MethodReturn,struct r_bin_dyldcache_lib_t *)"];
+"1000722" -> "1000717"  [label="AST: "];
+"1000722" -> "1000727"  [label="CFG: "];
+"1000723" -> "1000722"  [label="AST: "];
+"1000727" -> "1000722"  [label="AST: "];
+"1000717" -> "1000722"  [label="CFG: "];
+"1000722" -> "1000717"  [label="DDG: 1"];
+"1000717" -> "1000113"  [label="AST: "];
+"1000718" -> "1000717"  [label="AST: "];
+"1000721" -> "1000717"  [label="AST: "];
+"1000730" -> "1000717"  [label="CFG: "];
+"1000717" -> "1000735"  [label="DDG: strncpy (ret->path, libname, sizeof (ret->path) - 1)"];
+"1000717" -> "1000735"  [label="DDG: libname"];
+"1000717" -> "1000735"  [label="DDG: ret->path"];
+"1000717" -> "1000735"  [label="DDG: sizeof (ret->path) - 1"];
+"1000316" -> "1000717"  [label="DDG: libname"];
+}

@@ -1,0 +1,35 @@
+digraph "0_Chrome_f7038db6ef172459f14b1b67a5155b8dd210be0f@API" {
+"1000258" [label="(Call,readColorProfile(info()))"];
+"1000256" [label="(Call,colorProfile = readColorProfile(info()))"];
+"1000260" [label="(Call,createColorTransform(colorProfile, colorSpaceHasAlpha(m_info.out_color_space)))"];
+"1000254" [label="(Block,)"];
+"1000525" [label="(MethodReturn,bool)"];
+"1000258" [label="(Call,readColorProfile(info()))"];
+"1000259" [label="(Call,info())"];
+"1000260" [label="(Call,createColorTransform(colorProfile, colorSpaceHasAlpha(m_info.out_color_space)))"];
+"1000257" [label="(Identifier,colorProfile)"];
+"1000261" [label="(Identifier,colorProfile)"];
+"1000262" [label="(Call,colorSpaceHasAlpha(m_info.out_color_space))"];
+"1000256" [label="(Call,colorProfile = readColorProfile(info()))"];
+"1000268" [label="(Identifier,m_transform)"];
+"1000258" -> "1000256"  [label="AST: "];
+"1000258" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000258"  [label="AST: "];
+"1000256" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000525"  [label="DDG: info()"];
+"1000258" -> "1000256"  [label="DDG: info()"];
+"1000256" -> "1000254"  [label="AST: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000261" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000525"  [label="DDG: readColorProfile(info())"];
+"1000256" -> "1000260"  [label="DDG: colorProfile"];
+"1000260" -> "1000254"  [label="AST: "];
+"1000260" -> "1000262"  [label="CFG: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000262" -> "1000260"  [label="AST: "];
+"1000268" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000525"  [label="DDG: createColorTransform(colorProfile, colorSpaceHasAlpha(m_info.out_color_space))"];
+"1000260" -> "1000525"  [label="DDG: colorSpaceHasAlpha(m_info.out_color_space)"];
+"1000260" -> "1000525"  [label="DDG: colorProfile"];
+"1000262" -> "1000260"  [label="DDG: m_info.out_color_space"];
+}

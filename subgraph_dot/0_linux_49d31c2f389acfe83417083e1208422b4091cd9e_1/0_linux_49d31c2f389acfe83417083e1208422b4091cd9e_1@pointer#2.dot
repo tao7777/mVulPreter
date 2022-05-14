@@ -1,0 +1,26 @@
+digraph "0_linux_49d31c2f389acfe83417083e1208422b4091cd9e_1@pointer" {
+"1000122" [label="(Call,dentry->d_flags & DCACHE_FSNOTIFY_PARENT_WATCHED)"];
+"1000121" [label="(Call,!(dentry->d_flags & DCACHE_FSNOTIFY_PARENT_WATCHED))"];
+"1000122" [label="(Call,dentry->d_flags & DCACHE_FSNOTIFY_PARENT_WATCHED)"];
+"1000128" [label="(Literal,0)"];
+"1000121" [label="(Call,!(dentry->d_flags & DCACHE_FSNOTIFY_PARENT_WATCHED))"];
+"1000195" [label="(MethodReturn,int)"];
+"1000120" [label="(ControlStructure,if (!(dentry->d_flags & DCACHE_FSNOTIFY_PARENT_WATCHED)))"];
+"1000123" [label="(Call,dentry->d_flags)"];
+"1000130" [label="(Identifier,parent)"];
+"1000126" [label="(Identifier,DCACHE_FSNOTIFY_PARENT_WATCHED)"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000126"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000195"  [label="DDG: DCACHE_FSNOTIFY_PARENT_WATCHED"];
+"1000122" -> "1000195"  [label="DDG: dentry->d_flags"];
+"1000122" -> "1000121"  [label="DDG: dentry->d_flags"];
+"1000122" -> "1000121"  [label="DDG: DCACHE_FSNOTIFY_PARENT_WATCHED"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000128" -> "1000121"  [label="CFG: "];
+"1000130" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000195"  [label="DDG: !(dentry->d_flags & DCACHE_FSNOTIFY_PARENT_WATCHED)"];
+"1000121" -> "1000195"  [label="DDG: dentry->d_flags & DCACHE_FSNOTIFY_PARENT_WATCHED"];
+}

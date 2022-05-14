@@ -1,0 +1,26 @@
+digraph "0_linux_0a0b98734479aa5b3c671d5190e86273372cab95@pointer" {
+"1000111" [label="(Call,copy_from_user(&tx32, utp, sizeof(struct compat_timex)))"];
+"1000102" [label="(MethodParameterIn,const struct compat_timex __user *utp)"];
+"1000111" [label="(Call,copy_from_user(&tx32, utp, sizeof(struct compat_timex)))"];
+"1000270" [label="(MethodReturn,int)"];
+"1000122" [label="(Identifier,txc)"];
+"1000112" [label="(Call,&tx32)"];
+"1000102" [label="(MethodParameterIn,const struct compat_timex __user *utp)"];
+"1000114" [label="(Identifier,utp)"];
+"1000110" [label="(ControlStructure,if (copy_from_user(&tx32, utp, sizeof(struct compat_timex))))"];
+"1000115" [label="(Call,sizeof(struct compat_timex))"];
+"1000119" [label="(Identifier,EFAULT)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000115"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000114" -> "1000111"  [label="AST: "];
+"1000115" -> "1000111"  [label="AST: "];
+"1000119" -> "1000111"  [label="CFG: "];
+"1000122" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000270"  [label="DDG: utp"];
+"1000111" -> "1000270"  [label="DDG: &tx32"];
+"1000111" -> "1000270"  [label="DDG: copy_from_user(&tx32, utp, sizeof(struct compat_timex))"];
+"1000102" -> "1000111"  [label="DDG: utp"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000270"  [label="DDG: utp"];
+}

@@ -1,0 +1,33 @@
+digraph "0_openmpt_492022c7297ede682161d9c0ec2de15526424e76@pointer" {
+"1001467" [label="(Call,pChn->nOldTempo = static_cast<uint8>(tempo.GetInt()))"];
+"1001471" [label="(Call,static_cast<uint8>(tempo.GetInt()))"];
+"1001475" [label="(Call,tempo.Set(pChn->nOldTempo))"];
+"1001465" [label="(ControlStructure,if (tempo.GetInt()))"];
+"1001468" [label="(Call,pChn->nOldTempo)"];
+"1001471" [label="(Call,static_cast<uint8>(tempo.GetInt()))"];
+"1001467" [label="(Call,pChn->nOldTempo = static_cast<uint8>(tempo.GetInt()))"];
+"1001481" [label="(Call,tempo.GetInt())"];
+"1001474" [label="(ControlStructure,else)"];
+"1003923" [label="(MethodReturn,std::vector<GetLengthType>)"];
+"1001473" [label="(Call,tempo.GetInt())"];
+"1001476" [label="(Call,pChn->nOldTempo)"];
+"1001475" [label="(Call,tempo.Set(pChn->nOldTempo))"];
+"1001467" -> "1001465"  [label="AST: "];
+"1001467" -> "1001471"  [label="CFG: "];
+"1001468" -> "1001467"  [label="AST: "];
+"1001471" -> "1001467"  [label="AST: "];
+"1001481" -> "1001467"  [label="CFG: "];
+"1001467" -> "1003923"  [label="DDG: pChn->nOldTempo"];
+"1001467" -> "1003923"  [label="DDG: static_cast<uint8>(tempo.GetInt())"];
+"1001471" -> "1001467"  [label="DDG: tempo.GetInt()"];
+"1001467" -> "1001475"  [label="DDG: pChn->nOldTempo"];
+"1001471" -> "1001473"  [label="CFG: "];
+"1001472" -> "1001471"  [label="AST: "];
+"1001473" -> "1001471"  [label="AST: "];
+"1001475" -> "1001474"  [label="AST: "];
+"1001475" -> "1001476"  [label="CFG: "];
+"1001476" -> "1001475"  [label="AST: "];
+"1001481" -> "1001475"  [label="CFG: "];
+"1001475" -> "1003923"  [label="DDG: tempo.Set(pChn->nOldTempo)"];
+"1001475" -> "1003923"  [label="DDG: pChn->nOldTempo"];
+}

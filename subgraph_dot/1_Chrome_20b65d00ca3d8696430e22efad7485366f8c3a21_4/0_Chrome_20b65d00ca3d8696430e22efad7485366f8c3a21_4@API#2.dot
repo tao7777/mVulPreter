@@ -1,0 +1,22 @@
+digraph "0_Chrome_20b65d00ca3d8696430e22efad7485366f8c3a21_4@API" {
+"1000107" [label="(Call,* gc_info = ThreadHeap::GcInfo(GcInfoIndex()))"];
+"1000109" [label="(Call,ThreadHeap::GcInfo(GcInfoIndex()))"];
+"1000109" [label="(Call,ThreadHeap::GcInfo(GcInfoIndex()))"];
+"1000118" [label="(MethodReturn,void)"];
+"1000110" [label="(Call,GcInfoIndex())"];
+"1000108" [label="(Identifier,gc_info)"];
+"1000112" [label="(Call,gc_info->HasFinalizer())"];
+"1000103" [label="(Block,)"];
+"1000107" [label="(Call,* gc_info = ThreadHeap::GcInfo(GcInfoIndex()))"];
+"1000107" -> "1000103"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000112" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000118"  [label="DDG: gc_info"];
+"1000107" -> "1000118"  [label="DDG: ThreadHeap::GcInfo(GcInfoIndex())"];
+"1000109" -> "1000107"  [label="DDG: GcInfoIndex()"];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000109" -> "1000118"  [label="DDG: GcInfoIndex()"];
+}

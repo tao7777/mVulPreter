@@ -1,0 +1,32 @@
+digraph "0_memcached_75cc83685e103bc8ba380a57468c8f04413033f9@pointer" {
+"1000556" [label="(Call,c->rbuf + c->rsize)"];
+"1000145" [label="(Call,(unsigned char)c->rbuf[0])"];
+"1000147" [label="(Call,c->rbuf[0])"];
+"1000217" [label="(Call,memmove(c->rbuf, c->rcurr, c->rbytes))"];
+"1000552" [label="(Call,c->rcurr <= (c->rbuf + c->rsize))"];
+"1000560" [label="(Call,c->rsize)"];
+"1000144" [label="(Call,(unsigned char)c->rbuf[0] == (unsigned char)PROTOCOL_BINARY_REQ)"];
+"1000556" [label="(Call,c->rbuf + c->rsize)"];
+"1000227" [label="(Call,c->rcurr = c->rbuf)"];
+"1000565" [label="(MethodReturn,static int)"];
+"1000145" [label="(Call,(unsigned char)c->rbuf[0])"];
+"1000557" [label="(Call,c->rbuf)"];
+"1000556" -> "1000552"  [label="AST: "];
+"1000556" -> "1000560"  [label="CFG: "];
+"1000557" -> "1000556"  [label="AST: "];
+"1000560" -> "1000556"  [label="AST: "];
+"1000552" -> "1000556"  [label="CFG: "];
+"1000556" -> "1000565"  [label="DDG: c->rsize"];
+"1000556" -> "1000565"  [label="DDG: c->rbuf"];
+"1000145" -> "1000556"  [label="DDG: c->rbuf[0]"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000153" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000565"  [label="DDG: c->rbuf[0]"];
+"1000145" -> "1000144"  [label="DDG: c->rbuf[0]"];
+"1000145" -> "1000217"  [label="DDG: c->rbuf[0]"];
+"1000145" -> "1000227"  [label="DDG: c->rbuf[0]"];
+"1000145" -> "1000552"  [label="DDG: c->rbuf[0]"];
+}

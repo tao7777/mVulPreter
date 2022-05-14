@@ -1,0 +1,27 @@
+digraph "0_linux_3d4405226d27b3a215e4d03cfa51f536244e5de7@API" {
+"1000123" [label="(Call,get_random_bytes(buf, nbytes))"];
+"1000101" [label="(MethodParameterIn,void *buf)"];
+"1000102" [label="(MethodParameterIn,int nbytes)"];
+"1000102" [label="(MethodParameterIn,int nbytes)"];
+"1000105" [label="(Block,)"];
+"1000138" [label="(MethodReturn,bool)"];
+"1000128" [label="(Identifier,done)"];
+"1000101" [label="(MethodParameterIn,void *buf)"];
+"1000123" [label="(Call,get_random_bytes(buf, nbytes))"];
+"1000124" [label="(Identifier,buf)"];
+"1000125" [label="(Identifier,nbytes)"];
+"1000123" -> "1000105"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000128" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000138"  [label="DDG: nbytes"];
+"1000123" -> "1000138"  [label="DDG: get_random_bytes(buf, nbytes)"];
+"1000123" -> "1000138"  [label="DDG: buf"];
+"1000101" -> "1000123"  [label="DDG: buf"];
+"1000102" -> "1000123"  [label="DDG: nbytes"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000138"  [label="DDG: buf"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000138"  [label="DDG: nbytes"];
+}

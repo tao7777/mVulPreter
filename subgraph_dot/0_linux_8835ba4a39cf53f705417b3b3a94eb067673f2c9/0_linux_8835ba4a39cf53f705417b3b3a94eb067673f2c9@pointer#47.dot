@@ -1,0 +1,33 @@
+digraph "0_linux_8835ba4a39cf53f705417b3b3a94eb067673f2c9@pointer" {
+"1000739" [label="(Call,data_interface->cur_altsetting->desc.bNumEndpoints < 2)"];
+"1000738" [label="(Call,data_interface->cur_altsetting->desc.bNumEndpoints < 2 ||\n\t    control_interface->cur_altsetting->desc.bNumEndpoints == 0)"];
+"1000761" [label="(Identifier,epctrl)"];
+"1000737" [label="(ControlStructure,if (data_interface->cur_altsetting->desc.bNumEndpoints < 2 ||\n\t    control_interface->cur_altsetting->desc.bNumEndpoints == 0))"];
+"1000739" [label="(Call,data_interface->cur_altsetting->desc.bNumEndpoints < 2)"];
+"1000759" [label="(Identifier,EINVAL)"];
+"1000747" [label="(Literal,2)"];
+"1000738" [label="(Call,data_interface->cur_altsetting->desc.bNumEndpoints < 2 ||\n\t    control_interface->cur_altsetting->desc.bNumEndpoints == 0)"];
+"1000748" [label="(Call,control_interface->cur_altsetting->desc.bNumEndpoints == 0)"];
+"1001615" [label="(MethodReturn,static int)"];
+"1000752" [label="(Identifier,control_interface)"];
+"1000740" [label="(Call,data_interface->cur_altsetting->desc.bNumEndpoints)"];
+"1000739" -> "1000738"  [label="AST: "];
+"1000739" -> "1000747"  [label="CFG: "];
+"1000740" -> "1000739"  [label="AST: "];
+"1000747" -> "1000739"  [label="AST: "];
+"1000752" -> "1000739"  [label="CFG: "];
+"1000738" -> "1000739"  [label="CFG: "];
+"1000739" -> "1001615"  [label="DDG: data_interface->cur_altsetting->desc.bNumEndpoints"];
+"1000739" -> "1000738"  [label="DDG: data_interface->cur_altsetting->desc.bNumEndpoints"];
+"1000739" -> "1000738"  [label="DDG: 2"];
+"1000738" -> "1000737"  [label="AST: "];
+"1000738" -> "1000748"  [label="CFG: "];
+"1000748" -> "1000738"  [label="AST: "];
+"1000759" -> "1000738"  [label="CFG: "];
+"1000761" -> "1000738"  [label="CFG: "];
+"1000738" -> "1001615"  [label="DDG: control_interface->cur_altsetting->desc.bNumEndpoints == 0"];
+"1000738" -> "1001615"  [label="DDG: data_interface->cur_altsetting->desc.bNumEndpoints < 2"];
+"1000738" -> "1001615"  [label="DDG: data_interface->cur_altsetting->desc.bNumEndpoints < 2 ||\n\t    control_interface->cur_altsetting->desc.bNumEndpoints == 0"];
+"1000748" -> "1000738"  [label="DDG: control_interface->cur_altsetting->desc.bNumEndpoints"];
+"1000748" -> "1000738"  [label="DDG: 0"];
+}

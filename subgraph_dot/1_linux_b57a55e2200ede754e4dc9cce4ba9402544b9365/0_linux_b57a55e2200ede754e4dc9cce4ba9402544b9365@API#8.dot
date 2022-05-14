@@ -1,0 +1,31 @@
+digraph "0_linux_b57a55e2200ede754e4dc9cce4ba9402544b9365@API" {
+"1000381" [label="(Call,strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING) == 0)"];
+"1000371" [label="(Call,(ses->server->vals->protocol_id == SMB311_PROT_ID) ||\n\t\t    (strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING) == 0))"];
+"1000393" [label="(Identifier,req)"];
+"1000399" [label="(Identifier,iov)"];
+"1000391" [label="(Literal,0)"];
+"1000831" [label="(MethodReturn,RET)"];
+"1000381" [label="(Call,strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING) == 0)"];
+"1000372" [label="(Call,ses->server->vals->protocol_id == SMB311_PROT_ID)"];
+"1000370" [label="(ControlStructure,if ((ses->server->vals->protocol_id == SMB311_PROT_ID) ||\n\t\t    (strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING) == 0)))"];
+"1000382" [label="(Call,strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING))"];
+"1000371" [label="(Call,(ses->server->vals->protocol_id == SMB311_PROT_ID) ||\n\t\t    (strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING) == 0))"];
+"1000381" -> "1000371"  [label="AST: "];
+"1000381" -> "1000391"  [label="CFG: "];
+"1000382" -> "1000381"  [label="AST: "];
+"1000391" -> "1000381"  [label="AST: "];
+"1000371" -> "1000381"  [label="CFG: "];
+"1000381" -> "1000831"  [label="DDG: strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING)"];
+"1000381" -> "1000371"  [label="DDG: strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING)"];
+"1000381" -> "1000371"  [label="DDG: 0"];
+"1000371" -> "1000370"  [label="AST: "];
+"1000371" -> "1000372"  [label="CFG: "];
+"1000372" -> "1000371"  [label="AST: "];
+"1000393" -> "1000371"  [label="CFG: "];
+"1000399" -> "1000371"  [label="CFG: "];
+"1000371" -> "1000831"  [label="DDG: ses->server->vals->protocol_id == SMB311_PROT_ID"];
+"1000371" -> "1000831"  [label="DDG: strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING) == 0"];
+"1000371" -> "1000831"  [label="DDG: (ses->server->vals->protocol_id == SMB311_PROT_ID) ||\n\t\t    (strcmp(ses->server->vals->version_string,\n\t\t     SMBDEFAULT_VERSION_STRING) == 0)"];
+"1000372" -> "1000371"  [label="DDG: ses->server->vals->protocol_id"];
+"1000372" -> "1000371"  [label="DDG: SMB311_PROT_ID"];
+}

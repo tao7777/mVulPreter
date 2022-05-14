@@ -1,0 +1,33 @@
+digraph "0_nefarious2_f50a84bad996d438e7b31b9e74c32a41e43f8be5@array" {
+"1000248" [label="(Call,*parv[1] == ':')"];
+"1000247" [label="(Call,*parv[1] == ':' || strchr(parv[1], ' '))"];
+"1000463" [label="(MethodReturn,int)"];
+"1000246" [label="(ControlStructure,if (*parv[1] == ':' || strchr(parv[1], ' ')))"];
+"1000247" [label="(Call,*parv[1] == ':' || strchr(parv[1], ' '))"];
+"1000256" [label="(Identifier,parv)"];
+"1000253" [label="(Literal,':')"];
+"1000249" [label="(Call,*parv[1])"];
+"1000261" [label="(Identifier,cptr)"];
+"1000269" [label="(Identifier,cptr)"];
+"1000254" [label="(Call,strchr(parv[1], ' '))"];
+"1000248" [label="(Call,*parv[1] == ':')"];
+"1000248" -> "1000247"  [label="AST: "];
+"1000248" -> "1000253"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000253" -> "1000248"  [label="AST: "];
+"1000256" -> "1000248"  [label="CFG: "];
+"1000247" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000463"  [label="DDG: *parv[1]"];
+"1000248" -> "1000247"  [label="DDG: *parv[1]"];
+"1000248" -> "1000247"  [label="DDG: ':'"];
+"1000247" -> "1000246"  [label="AST: "];
+"1000247" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000247"  [label="AST: "];
+"1000261" -> "1000247"  [label="CFG: "];
+"1000269" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000463"  [label="DDG: *parv[1] == ':'"];
+"1000247" -> "1000463"  [label="DDG: strchr(parv[1], ' ')"];
+"1000247" -> "1000463"  [label="DDG: *parv[1] == ':' || strchr(parv[1], ' ')"];
+"1000254" -> "1000247"  [label="DDG: parv[1]"];
+"1000254" -> "1000247"  [label="DDG: ' '"];
+}

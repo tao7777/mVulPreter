@@ -1,0 +1,34 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_4@pointer" {
+"1000122" [label="(Call,sk->sk_type == SOCK_STREAM)"];
+"1000121" [label="(Call,sk->sk_type == SOCK_STREAM && sk->sk_state != TCP_CLOSE)"];
+"1000122" [label="(Call,sk->sk_type == SOCK_STREAM)"];
+"1000184" [label="(MethodReturn,void)"];
+"1000127" [label="(Call,sk->sk_state != TCP_CLOSE)"];
+"1000123" [label="(Call,sk->sk_type)"];
+"1000121" [label="(Call,sk->sk_type == SOCK_STREAM && sk->sk_state != TCP_CLOSE)"];
+"1000143" [label="(Identifier,sk)"];
+"1000129" [label="(Identifier,sk)"];
+"1000126" [label="(Identifier,SOCK_STREAM)"];
+"1000120" [label="(ControlStructure,if (sk->sk_type == SOCK_STREAM && sk->sk_state != TCP_CLOSE))"];
+"1000134" [label="(Literal,\"Attempt to release TCP socket in state %d %p\n\")"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000126"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="AST: "];
+"1000129" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000184"  [label="DDG: SOCK_STREAM"];
+"1000122" -> "1000184"  [label="DDG: sk->sk_type"];
+"1000122" -> "1000121"  [label="DDG: sk->sk_type"];
+"1000122" -> "1000121"  [label="DDG: SOCK_STREAM"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000121"  [label="AST: "];
+"1000134" -> "1000121"  [label="CFG: "];
+"1000143" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000184"  [label="DDG: sk->sk_type == SOCK_STREAM && sk->sk_state != TCP_CLOSE"];
+"1000121" -> "1000184"  [label="DDG: sk->sk_state != TCP_CLOSE"];
+"1000121" -> "1000184"  [label="DDG: sk->sk_type == SOCK_STREAM"];
+"1000127" -> "1000121"  [label="DDG: sk->sk_state"];
+"1000127" -> "1000121"  [label="DDG: TCP_CLOSE"];
+}

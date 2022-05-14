@@ -1,0 +1,24 @@
+digraph "0_linux_a5598bd9c087dc0efc250a5221e5d0e6f584ee88@pointer" {
+"1000437" [label="(Call,spin_unlock_bh(&iucv->message_q.lock))"];
+"1000353" [label="(Call,spin_lock_bh(&iucv->message_q.lock))"];
+"1000438" [label="(Call,&iucv->message_q.lock)"];
+"1000354" [label="(Call,&iucv->message_q.lock)"];
+"1000298" [label="(Block,)"];
+"1000444" [label="(JumpTarget,done:)"];
+"1000460" [label="(MethodReturn,static int)"];
+"1000353" [label="(Call,spin_lock_bh(&iucv->message_q.lock))"];
+"1000361" [label="(Identifier,rskb)"];
+"1000437" [label="(Call,spin_unlock_bh(&iucv->message_q.lock))"];
+"1000437" -> "1000298"  [label="AST: "];
+"1000437" -> "1000438"  [label="CFG: "];
+"1000438" -> "1000437"  [label="AST: "];
+"1000444" -> "1000437"  [label="CFG: "];
+"1000437" -> "1000460"  [label="DDG: spin_unlock_bh(&iucv->message_q.lock)"];
+"1000437" -> "1000460"  [label="DDG: &iucv->message_q.lock"];
+"1000353" -> "1000437"  [label="DDG: &iucv->message_q.lock"];
+"1000353" -> "1000298"  [label="AST: "];
+"1000353" -> "1000354"  [label="CFG: "];
+"1000354" -> "1000353"  [label="AST: "];
+"1000361" -> "1000353"  [label="CFG: "];
+"1000353" -> "1000460"  [label="DDG: spin_lock_bh(&iucv->message_q.lock)"];
+}

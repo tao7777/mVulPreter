@@ -1,0 +1,32 @@
+digraph "0_linux_e66eded8309ebf679d3d3c1f5820d1f2ca332c71_0@API" {
+"1001035" [label="(Call,p->signal->flags |= SIGNAL_UNKILLABLE)"];
+"1000189" [label="(Call,current->signal->flags & SIGNAL_UNKILLABLE)"];
+"1001045" [label="(Identifier,p)"];
+"1000195" [label="(Identifier,SIGNAL_UNKILLABLE)"];
+"1000190" [label="(Call,current->signal->flags)"];
+"1000189" [label="(Call,current->signal->flags & SIGNAL_UNKILLABLE)"];
+"1001036" [label="(Call,p->signal->flags)"];
+"1001028" [label="(Block,)"];
+"1000185" [label="(Call,(clone_flags & CLONE_PARENT) &&\n\t\t\t\tcurrent->signal->flags & SIGNAL_UNKILLABLE)"];
+"1001035" [label="(Call,p->signal->flags |= SIGNAL_UNKILLABLE)"];
+"1001227" [label="(MethodReturn,static struct task_struct *)"];
+"1001041" [label="(Identifier,SIGNAL_UNKILLABLE)"];
+"1001035" -> "1001028"  [label="AST: "];
+"1001035" -> "1001041"  [label="CFG: "];
+"1001036" -> "1001035"  [label="AST: "];
+"1001041" -> "1001035"  [label="AST: "];
+"1001045" -> "1001035"  [label="CFG: "];
+"1001035" -> "1001227"  [label="DDG: SIGNAL_UNKILLABLE"];
+"1001035" -> "1001227"  [label="DDG: p->signal->flags"];
+"1001035" -> "1001227"  [label="DDG: p->signal->flags |= SIGNAL_UNKILLABLE"];
+"1000189" -> "1001035"  [label="DDG: SIGNAL_UNKILLABLE"];
+"1000189" -> "1000185"  [label="AST: "];
+"1000189" -> "1000195"  [label="CFG: "];
+"1000190" -> "1000189"  [label="AST: "];
+"1000195" -> "1000189"  [label="AST: "];
+"1000185" -> "1000189"  [label="CFG: "];
+"1000189" -> "1001227"  [label="DDG: current->signal->flags"];
+"1000189" -> "1001227"  [label="DDG: SIGNAL_UNKILLABLE"];
+"1000189" -> "1000185"  [label="DDG: current->signal->flags"];
+"1000189" -> "1000185"  [label="DDG: SIGNAL_UNKILLABLE"];
+}

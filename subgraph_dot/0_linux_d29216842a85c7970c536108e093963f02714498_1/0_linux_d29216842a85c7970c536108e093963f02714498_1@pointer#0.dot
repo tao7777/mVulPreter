@@ -1,0 +1,30 @@
+digraph "0_linux_d29216842a85c7970c536108e093963f02714498_1@pointer" {
+"1000135" [label="(Call,list_splice(&head, n->list.prev))"];
+"1000123" [label="(Call,list_add_tail(&head, &mnt->mnt_list))"];
+"1000124" [label="(Call,&head)"];
+"1000126" [label="(Call,&mnt->mnt_list)"];
+"1000132" [label="(Identifier,m)"];
+"1000145" [label="(Identifier,n)"];
+"1000103" [label="(Block,)"];
+"1000161" [label="(MethodReturn,static void)"];
+"1000136" [label="(Call,&head)"];
+"1000138" [label="(Call,n->list.prev)"];
+"1000135" [label="(Call,list_splice(&head, n->list.prev))"];
+"1000123" [label="(Call,list_add_tail(&head, &mnt->mnt_list))"];
+"1000135" -> "1000103"  [label="AST: "];
+"1000135" -> "1000138"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000138" -> "1000135"  [label="AST: "];
+"1000145" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000161"  [label="DDG: list_splice(&head, n->list.prev)"];
+"1000135" -> "1000161"  [label="DDG: &head"];
+"1000135" -> "1000161"  [label="DDG: n->list.prev"];
+"1000123" -> "1000135"  [label="DDG: &head"];
+"1000123" -> "1000103"  [label="AST: "];
+"1000123" -> "1000126"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000126" -> "1000123"  [label="AST: "];
+"1000132" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000161"  [label="DDG: list_add_tail(&head, &mnt->mnt_list)"];
+"1000123" -> "1000161"  [label="DDG: &mnt->mnt_list"];
+}

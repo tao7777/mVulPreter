@@ -1,0 +1,27 @@
+digraph "0_linux_cc9b17ad29ecaa20bfe426a8d4dbfb94b13ff1cc@API" {
+"1000173" [label="(Call,atomic_read(&sk->sk_wmem_alloc) < sk->sk_sndbuf)"];
+"1000174" [label="(Call,atomic_read(&sk->sk_wmem_alloc))"];
+"1000175" [label="(Call,&sk->sk_wmem_alloc)"];
+"1000180" [label="(Identifier,sk)"];
+"1000263" [label="(Identifier,SOCK_ASYNC_NOSPACE)"];
+"1000184" [label="(Identifier,skb)"];
+"1000173" [label="(Call,atomic_read(&sk->sk_wmem_alloc) < sk->sk_sndbuf)"];
+"1000179" [label="(Call,sk->sk_sndbuf)"];
+"1000312" [label="(MethodReturn,struct sk_buff *)"];
+"1000174" [label="(Call,atomic_read(&sk->sk_wmem_alloc))"];
+"1000172" [label="(ControlStructure,if (atomic_read(&sk->sk_wmem_alloc) < sk->sk_sndbuf))"];
+"1000173" -> "1000172"  [label="AST: "];
+"1000173" -> "1000179"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000179" -> "1000173"  [label="AST: "];
+"1000184" -> "1000173"  [label="CFG: "];
+"1000263" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000312"  [label="DDG: sk->sk_sndbuf"];
+"1000173" -> "1000312"  [label="DDG: atomic_read(&sk->sk_wmem_alloc) < sk->sk_sndbuf"];
+"1000173" -> "1000312"  [label="DDG: atomic_read(&sk->sk_wmem_alloc)"];
+"1000174" -> "1000173"  [label="DDG: &sk->sk_wmem_alloc"];
+"1000174" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000180" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000312"  [label="DDG: &sk->sk_wmem_alloc"];
+}

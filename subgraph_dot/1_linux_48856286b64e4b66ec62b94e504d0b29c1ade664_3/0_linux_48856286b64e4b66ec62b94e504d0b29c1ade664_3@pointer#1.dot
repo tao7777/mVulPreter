@@ -1,0 +1,34 @@
+digraph "0_linux_48856286b64e4b66ec62b94e504d0b29c1ade664_3@pointer" {
+"1000127" [label="(Call,list_empty(&netbk->net_schedule_list))"];
+"1000126" [label="(Call,!list_empty(&netbk->net_schedule_list))"];
+"1000119" [label="(Call,((nr_pending_reqs(netbk) + MAX_SKB_FRAGS) < MAX_PENDING_REQS) &&\n\t\t!list_empty(&netbk->net_schedule_list))"];
+"1000144" [label="(Identifier,vif)"];
+"1000119" [label="(Call,((nr_pending_reqs(netbk) + MAX_SKB_FRAGS) < MAX_PENDING_REQS) &&\n\t\t!list_empty(&netbk->net_schedule_list))"];
+"1000128" [label="(Call,&netbk->net_schedule_list)"];
+"1000120" [label="(Call,(nr_pending_reqs(netbk) + MAX_SKB_FRAGS) < MAX_PENDING_REQS)"];
+"1000650" [label="(Identifier,gop)"];
+"1000654" [label="(MethodReturn,static unsigned)"];
+"1000127" [label="(Call,list_empty(&netbk->net_schedule_list))"];
+"1000118" [label="(ControlStructure,while (((nr_pending_reqs(netbk) + MAX_SKB_FRAGS) < MAX_PENDING_REQS) &&\n\t\t!list_empty(&netbk->net_schedule_list)))"];
+"1000126" [label="(Call,!list_empty(&netbk->net_schedule_list))"];
+"1000127" -> "1000126"  [label="AST: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000654"  [label="DDG: &netbk->net_schedule_list"];
+"1000127" -> "1000126"  [label="DDG: &netbk->net_schedule_list"];
+"1000126" -> "1000119"  [label="AST: "];
+"1000119" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000654"  [label="DDG: list_empty(&netbk->net_schedule_list)"];
+"1000126" -> "1000119"  [label="DDG: list_empty(&netbk->net_schedule_list)"];
+"1000119" -> "1000118"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000144" -> "1000119"  [label="CFG: "];
+"1000650" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000654"  [label="DDG: !list_empty(&netbk->net_schedule_list)"];
+"1000119" -> "1000654"  [label="DDG: (nr_pending_reqs(netbk) + MAX_SKB_FRAGS) < MAX_PENDING_REQS"];
+"1000119" -> "1000654"  [label="DDG: ((nr_pending_reqs(netbk) + MAX_SKB_FRAGS) < MAX_PENDING_REQS) &&\n\t\t!list_empty(&netbk->net_schedule_list)"];
+"1000120" -> "1000119"  [label="DDG: nr_pending_reqs(netbk) + MAX_SKB_FRAGS"];
+"1000120" -> "1000119"  [label="DDG: MAX_PENDING_REQS"];
+}

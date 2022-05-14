@@ -1,0 +1,32 @@
+digraph "0_linux_c55aee1bf0e6b6feec8b2927b43f7a09a6d5f754@pointer" {
+"1000171" [label="(Call,is_frwd(serial->dev))"];
+"1000170" [label="(Call,!is_frwd(serial->dev))"];
+"1000175" [label="(Call,usb_reset_configuration(serial->dev))"];
+"1000177" [label="(Identifier,serial)"];
+"1000176" [label="(Call,serial->dev)"];
+"1000170" [label="(Call,!is_frwd(serial->dev))"];
+"1000172" [label="(Call,serial->dev)"];
+"1000181" [label="(Identifier,priv)"];
+"1000284" [label="(MethodReturn,static int)"];
+"1000171" [label="(Call,is_frwd(serial->dev))"];
+"1000175" [label="(Call,usb_reset_configuration(serial->dev))"];
+"1000169" [label="(ControlStructure,if (!is_frwd(serial->dev)))"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000284"  [label="DDG: serial->dev"];
+"1000171" -> "1000170"  [label="DDG: serial->dev"];
+"1000171" -> "1000175"  [label="DDG: serial->dev"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000177" -> "1000170"  [label="CFG: "];
+"1000181" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000284"  [label="DDG: is_frwd(serial->dev)"];
+"1000170" -> "1000284"  [label="DDG: !is_frwd(serial->dev)"];
+"1000175" -> "1000169"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000181" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000284"  [label="DDG: serial->dev"];
+"1000175" -> "1000284"  [label="DDG: usb_reset_configuration(serial->dev)"];
+}

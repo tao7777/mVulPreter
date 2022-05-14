@@ -1,0 +1,29 @@
+digraph "0_linux_3f68ba07b1da811bf383b4b701b129bfcb2e4988@pointer" {
+"1000119" [label="(Call,*hdev = hci_pi(sk)->hdev)"];
+"1000130" [label="(Call,!hdev)"];
+"1000136" [label="(Identifier,sk)"];
+"1000120" [label="(Identifier,hdev)"];
+"1000131" [label="(Identifier,hdev)"];
+"1000130" [label="(Call,!hdev)"];
+"1000129" [label="(ControlStructure,if (!hdev))"];
+"1000134" [label="(Identifier,EBADFD)"];
+"1000119" [label="(Call,*hdev = hci_pi(sk)->hdev)"];
+"1000164" [label="(MethodReturn,static int)"];
+"1000126" [label="(Literal,\"sock %p sk %p\")"];
+"1000105" [label="(Block,)"];
+"1000121" [label="(Call,hci_pi(sk)->hdev)"];
+"1000119" -> "1000105"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000126" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000164"  [label="DDG: hci_pi(sk)->hdev"];
+"1000119" -> "1000130"  [label="DDG: hdev"];
+"1000130" -> "1000129"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000134" -> "1000130"  [label="CFG: "];
+"1000136" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000164"  [label="DDG: !hdev"];
+"1000130" -> "1000164"  [label="DDG: hdev"];
+}

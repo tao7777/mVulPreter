@@ -1,0 +1,28 @@
+digraph "0_savannah_79972af4f0485a11dcb19551356c45245749fc5b@pointer" {
+"1000537" [label="(Call,vec->x /= 3)"];
+"1000481" [label="(Call,vec->x *= 3)"];
+"1000485" [label="(Literal,3)"];
+"1000536" [label="(Identifier,vec)"];
+"1000482" [label="(Call,vec->x)"];
+"1000480" [label="(Identifier,vec)"];
+"1000609" [label="(MethodReturn,RET)"];
+"1000472" [label="(ControlStructure,for ( vec = points; vec < points_end; vec++ ))"];
+"1000481" [label="(Call,vec->x *= 3)"];
+"1000538" [label="(Call,vec->x)"];
+"1000528" [label="(ControlStructure,for ( vec = points; vec < points_end; vec++ ))"];
+"1000541" [label="(Literal,3)"];
+"1000537" [label="(Call,vec->x /= 3)"];
+"1000537" -> "1000528"  [label="AST: "];
+"1000537" -> "1000541"  [label="CFG: "];
+"1000538" -> "1000537"  [label="AST: "];
+"1000541" -> "1000537"  [label="AST: "];
+"1000536" -> "1000537"  [label="CFG: "];
+"1000537" -> "1000609"  [label="DDG: vec->x"];
+"1000481" -> "1000537"  [label="DDG: vec->x"];
+"1000481" -> "1000472"  [label="AST: "];
+"1000481" -> "1000485"  [label="CFG: "];
+"1000482" -> "1000481"  [label="AST: "];
+"1000485" -> "1000481"  [label="AST: "];
+"1000480" -> "1000481"  [label="CFG: "];
+"1000481" -> "1000609"  [label="DDG: vec->x"];
+}

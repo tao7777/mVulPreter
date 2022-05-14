@@ -1,0 +1,22 @@
+digraph "0_linux_fda4e2e85589191b123d31cdc21fd33ee70f50fd_3@pointer" {
+"1000430" [label="(Call,irqchip_in_kernel(vcpu->kvm))"];
+"1000429" [label="(Call,!irqchip_in_kernel(vcpu->kvm))"];
+"1000431" [label="(Call,vcpu->kvm)"];
+"1000429" [label="(Call,!irqchip_in_kernel(vcpu->kvm))"];
+"1000436" [label="(Identifier,r)"];
+"1000434" [label="(ControlStructure,goto out;)"];
+"1000430" [label="(Call,irqchip_in_kernel(vcpu->kvm))"];
+"1000795" [label="(MethodReturn,long)"];
+"1000428" [label="(ControlStructure,if (!irqchip_in_kernel(vcpu->kvm)))"];
+"1000430" -> "1000429"  [label="AST: "];
+"1000430" -> "1000431"  [label="CFG: "];
+"1000431" -> "1000430"  [label="AST: "];
+"1000429" -> "1000430"  [label="CFG: "];
+"1000430" -> "1000795"  [label="DDG: vcpu->kvm"];
+"1000430" -> "1000429"  [label="DDG: vcpu->kvm"];
+"1000429" -> "1000428"  [label="AST: "];
+"1000434" -> "1000429"  [label="CFG: "];
+"1000436" -> "1000429"  [label="CFG: "];
+"1000429" -> "1000795"  [label="DDG: irqchip_in_kernel(vcpu->kvm)"];
+"1000429" -> "1000795"  [label="DDG: !irqchip_in_kernel(vcpu->kvm)"];
+}

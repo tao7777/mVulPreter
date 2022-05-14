@@ -1,0 +1,35 @@
+digraph "0_busybox_0402cb32df015d9372578e3db27db47b33d5c7b0@array" {
+"1001048" [label="(Call,dbuf[dbufCount++] = (uint32_t)uc)"];
+"1001053" [label="(Call,(uint32_t)uc)"];
+"1001039" [label="(Call,uc = symToByte[uc])"];
+"1001046" [label="(Identifier,byteCount)"];
+"1001055" [label="(Identifier,uc)"];
+"1001049" [label="(Call,dbuf[dbufCount++])"];
+"1001040" [label="(Identifier,uc)"];
+"1000735" [label="(Block,)"];
+"1001056" [label="(JumpTarget,end_of_huffman_loop:)"];
+"1001053" [label="(Call,(uint32_t)uc)"];
+"1001173" [label="(MethodReturn,static int)"];
+"1001041" [label="(Call,symToByte[uc])"];
+"1001048" [label="(Call,dbuf[dbufCount++] = (uint32_t)uc)"];
+"1001039" [label="(Call,uc = symToByte[uc])"];
+"1001048" -> "1000735"  [label="AST: "];
+"1001048" -> "1001053"  [label="CFG: "];
+"1001049" -> "1001048"  [label="AST: "];
+"1001053" -> "1001048"  [label="AST: "];
+"1001056" -> "1001048"  [label="CFG: "];
+"1001048" -> "1001173"  [label="DDG: dbuf[dbufCount++]"];
+"1001048" -> "1001173"  [label="DDG: (uint32_t)uc"];
+"1001053" -> "1001048"  [label="DDG: uc"];
+"1001053" -> "1001055"  [label="CFG: "];
+"1001054" -> "1001053"  [label="AST: "];
+"1001055" -> "1001053"  [label="AST: "];
+"1001053" -> "1001173"  [label="DDG: uc"];
+"1001039" -> "1001053"  [label="DDG: uc"];
+"1001039" -> "1000735"  [label="AST: "];
+"1001039" -> "1001041"  [label="CFG: "];
+"1001040" -> "1001039"  [label="AST: "];
+"1001041" -> "1001039"  [label="AST: "];
+"1001046" -> "1001039"  [label="CFG: "];
+"1001039" -> "1001173"  [label="DDG: symToByte[uc]"];
+}

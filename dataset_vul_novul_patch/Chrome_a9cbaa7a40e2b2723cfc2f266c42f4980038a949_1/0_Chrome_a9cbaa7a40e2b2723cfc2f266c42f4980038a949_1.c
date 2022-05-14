@@ -1,0 +1,1 @@
+bool WebMediaPlayerMS::HasSingleSecurityOrigin() const {

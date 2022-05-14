@@ -1,0 +1,37 @@
+digraph "0_linux_3e4c56d41eef5595035872a2ec5a483f42e8917f@pointer" {
+"1000417" [label="(Call,list_empty(&wc->w_unwritten_list))"];
+"1000416" [label="(Call,!list_empty(&wc->w_unwritten_list))"];
+"1000442" [label="(Call,list_splice_tail_init(&wc->w_unwritten_list, &dwc->dw_zero_list))"];
+"1000494" [label="(MethodReturn,static int)"];
+"1000442" [label="(Call,list_splice_tail_init(&wc->w_unwritten_list, &dwc->dw_zero_list))"];
+"1000456" [label="(Identifier,ret)"];
+"1000447" [label="(Call,&dwc->dw_zero_list)"];
+"1000425" [label="(Identifier,ue)"];
+"1000422" [label="(Block,)"];
+"1000453" [label="(Identifier,dwc)"];
+"1000416" [label="(Call,!list_empty(&wc->w_unwritten_list))"];
+"1000417" [label="(Call,list_empty(&wc->w_unwritten_list))"];
+"1000443" [label="(Call,&wc->w_unwritten_list)"];
+"1000418" [label="(Call,&wc->w_unwritten_list)"];
+"1000415" [label="(ControlStructure,if (!list_empty(&wc->w_unwritten_list)))"];
+"1000417" -> "1000416"  [label="AST: "];
+"1000417" -> "1000418"  [label="CFG: "];
+"1000418" -> "1000417"  [label="AST: "];
+"1000416" -> "1000417"  [label="CFG: "];
+"1000417" -> "1000494"  [label="DDG: &wc->w_unwritten_list"];
+"1000417" -> "1000416"  [label="DDG: &wc->w_unwritten_list"];
+"1000417" -> "1000442"  [label="DDG: &wc->w_unwritten_list"];
+"1000416" -> "1000415"  [label="AST: "];
+"1000425" -> "1000416"  [label="CFG: "];
+"1000456" -> "1000416"  [label="CFG: "];
+"1000416" -> "1000494"  [label="DDG: !list_empty(&wc->w_unwritten_list)"];
+"1000416" -> "1000494"  [label="DDG: list_empty(&wc->w_unwritten_list)"];
+"1000442" -> "1000422"  [label="AST: "];
+"1000442" -> "1000447"  [label="CFG: "];
+"1000443" -> "1000442"  [label="AST: "];
+"1000447" -> "1000442"  [label="AST: "];
+"1000453" -> "1000442"  [label="CFG: "];
+"1000442" -> "1000494"  [label="DDG: list_splice_tail_init(&wc->w_unwritten_list, &dwc->dw_zero_list)"];
+"1000442" -> "1000494"  [label="DDG: &wc->w_unwritten_list"];
+"1000442" -> "1000494"  [label="DDG: &dwc->dw_zero_list"];
+}

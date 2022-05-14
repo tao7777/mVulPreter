@@ -1,0 +1,22 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_35@pointer" {
+"1000345" [label="(Call,siocb->scm->fp = scm_fp_dup(UNIXCB(skb).fp))"];
+"1000351" [label="(Call,scm_fp_dup(UNIXCB(skb).fp))"];
+"1000388" [label="(MethodReturn,static int)"];
+"1000352" [label="(Call,UNIXCB(skb).fp)"];
+"1000357" [label="(Identifier,err)"];
+"1000345" [label="(Call,siocb->scm->fp = scm_fp_dup(UNIXCB(skb).fp))"];
+"1000340" [label="(ControlStructure,if (UNIXCB(skb).fp))"];
+"1000351" [label="(Call,scm_fp_dup(UNIXCB(skb).fp))"];
+"1000346" [label="(Call,siocb->scm->fp)"];
+"1000345" -> "1000340"  [label="AST: "];
+"1000345" -> "1000351"  [label="CFG: "];
+"1000346" -> "1000345"  [label="AST: "];
+"1000351" -> "1000345"  [label="AST: "];
+"1000357" -> "1000345"  [label="CFG: "];
+"1000345" -> "1000388"  [label="DDG: scm_fp_dup(UNIXCB(skb).fp)"];
+"1000345" -> "1000388"  [label="DDG: siocb->scm->fp"];
+"1000351" -> "1000345"  [label="DDG: UNIXCB(skb).fp"];
+"1000351" -> "1000352"  [label="CFG: "];
+"1000352" -> "1000351"  [label="AST: "];
+"1000351" -> "1000388"  [label="DDG: UNIXCB(skb).fp"];
+}

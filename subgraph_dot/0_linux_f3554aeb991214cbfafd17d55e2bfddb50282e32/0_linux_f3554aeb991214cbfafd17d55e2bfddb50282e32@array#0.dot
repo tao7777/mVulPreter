@@ -1,0 +1,24 @@
+digraph "0_linux_f3554aeb991214cbfafd17d55e2bfddb50282e32@array" {
+"1000222" [label="(Call,floppy_sizes[cnt] = floppy_sizes[cnt + 0x80] =\n\t\t\t    floppy_type[type].size + 1)"];
+"1000226" [label="(Call,floppy_sizes[cnt + 0x80] =\n\t\t\t    floppy_type[type].size + 1)"];
+"1000386" [label="(MethodReturn,static int)"];
+"1000226" [label="(Call,floppy_sizes[cnt + 0x80] =\n\t\t\t    floppy_type[type].size + 1)"];
+"1000232" [label="(Call,floppy_type[type].size + 1)"];
+"1000222" [label="(Call,floppy_sizes[cnt] = floppy_sizes[cnt + 0x80] =\n\t\t\t    floppy_type[type].size + 1)"];
+"1000207" [label="(ControlStructure,for (cnt = type << 2; cnt < (type << 2) + 4; cnt++))"];
+"1000221" [label="(Identifier,cnt)"];
+"1000227" [label="(Call,floppy_sizes[cnt + 0x80])"];
+"1000223" [label="(Call,floppy_sizes[cnt])"];
+"1000222" -> "1000207"  [label="AST: "];
+"1000222" -> "1000226"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000226" -> "1000222"  [label="AST: "];
+"1000221" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000386"  [label="DDG: floppy_sizes[cnt]"];
+"1000226" -> "1000222"  [label="DDG: floppy_sizes[cnt + 0x80]"];
+"1000226" -> "1000232"  [label="CFG: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000232" -> "1000226"  [label="AST: "];
+"1000226" -> "1000386"  [label="DDG: floppy_sizes[cnt + 0x80]"];
+"1000226" -> "1000386"  [label="DDG: floppy_type[type].size + 1"];
+}

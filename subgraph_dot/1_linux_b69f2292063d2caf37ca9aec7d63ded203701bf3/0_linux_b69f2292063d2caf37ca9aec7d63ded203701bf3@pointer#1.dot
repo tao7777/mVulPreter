@@ -1,0 +1,30 @@
+digraph "0_linux_b69f2292063d2caf37ca9aec7d63ded203701bf3@pointer" {
+"1000126" [label="(Call,ioc->aic && ioc->aic->exit)"];
+"1000135" [label="(Call,ioc->aic->exit(ioc->aic))"];
+"1000130" [label="(Call,ioc->aic->exit)"];
+"1000135" [label="(Call,ioc->aic->exit(ioc->aic))"];
+"1000126" [label="(Call,ioc->aic && ioc->aic->exit)"];
+"1000136" [label="(Call,ioc->aic)"];
+"1000125" [label="(ControlStructure,if (ioc->aic && ioc->aic->exit))"];
+"1000140" [label="(Identifier,ioc)"];
+"1000137" [label="(Identifier,ioc)"];
+"1000143" [label="(MethodReturn,void)"];
+"1000127" [label="(Call,ioc->aic)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000130"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="AST: "];
+"1000137" -> "1000126"  [label="CFG: "];
+"1000140" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000143"  [label="DDG: ioc->aic"];
+"1000126" -> "1000143"  [label="DDG: ioc->aic->exit"];
+"1000126" -> "1000143"  [label="DDG: ioc->aic && ioc->aic->exit"];
+"1000126" -> "1000135"  [label="DDG: ioc->aic"];
+"1000135" -> "1000125"  [label="AST: "];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000140" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000143"  [label="DDG: ioc->aic"];
+"1000135" -> "1000143"  [label="DDG: ioc->aic->exit(ioc->aic)"];
+}

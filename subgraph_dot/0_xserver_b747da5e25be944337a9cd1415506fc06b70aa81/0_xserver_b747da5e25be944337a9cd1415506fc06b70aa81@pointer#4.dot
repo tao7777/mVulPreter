@@ -1,0 +1,27 @@
+digraph "0_xserver_b747da5e25be944337a9cd1415506fc06b70aa81@pointer" {
+"1000174" [label="(Call,SendConnSetup(client, reason))"];
+"1000101" [label="(MethodParameterIn,ClientPtr client)"];
+"1000173" [label="(Return,return (SendConnSetup(client, reason));)"];
+"1000176" [label="(Identifier,reason)"];
+"1000101" [label="(MethodParameterIn,ClientPtr client)"];
+"1000177" [label="(MethodReturn,RET)"];
+"1000172" [label="(ControlStructure,else)"];
+"1000175" [label="(Identifier,client)"];
+"1000174" [label="(Call,SendConnSetup(client, reason))"];
+"1000173" [label="(Return,return (SendConnSetup(client, reason));)"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000174" -> "1000176"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000176" -> "1000174"  [label="AST: "];
+"1000173" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000177"  [label="DDG: reason"];
+"1000174" -> "1000177"  [label="DDG: SendConnSetup(client, reason)"];
+"1000174" -> "1000177"  [label="DDG: client"];
+"1000174" -> "1000173"  [label="DDG: SendConnSetup(client, reason)"];
+"1000101" -> "1000174"  [label="DDG: client"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000177"  [label="DDG: client"];
+"1000173" -> "1000172"  [label="AST: "];
+"1000177" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000177"  [label="DDG: <RET>"];
+}

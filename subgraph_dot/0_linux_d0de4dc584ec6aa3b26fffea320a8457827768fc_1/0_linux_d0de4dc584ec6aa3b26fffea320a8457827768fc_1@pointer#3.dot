@@ -1,0 +1,26 @@
+digraph "0_linux_d0de4dc584ec6aa3b26fffea320a8457827768fc_1@pointer" {
+"1000156" [label="(Call,atomic_inc_return(&group->inotify_data.user->inotify_devs))"];
+"1000155" [label="(Call,atomic_inc_return(&group->inotify_data.user->inotify_devs) >\n\t    inotify_max_user_instances)"];
+"1000168" [label="(Identifier,group)"];
+"1000157" [label="(Call,&group->inotify_data.user->inotify_devs)"];
+"1000165" [label="(Identifier,inotify_max_user_instances)"];
+"1000154" [label="(ControlStructure,if (atomic_inc_return(&group->inotify_data.user->inotify_devs) >\n\t    inotify_max_user_instances))"];
+"1000175" [label="(MethodReturn,static struct fsnotify_group *)"];
+"1000174" [label="(Identifier,group)"];
+"1000156" [label="(Call,atomic_inc_return(&group->inotify_data.user->inotify_devs))"];
+"1000155" [label="(Call,atomic_inc_return(&group->inotify_data.user->inotify_devs) >\n\t    inotify_max_user_instances)"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000165" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000175"  [label="DDG: &group->inotify_data.user->inotify_devs"];
+"1000156" -> "1000155"  [label="DDG: &group->inotify_data.user->inotify_devs"];
+"1000155" -> "1000154"  [label="AST: "];
+"1000155" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000155"  [label="AST: "];
+"1000168" -> "1000155"  [label="CFG: "];
+"1000174" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000175"  [label="DDG: atomic_inc_return(&group->inotify_data.user->inotify_devs)"];
+"1000155" -> "1000175"  [label="DDG: inotify_max_user_instances"];
+"1000155" -> "1000175"  [label="DDG: atomic_inc_return(&group->inotify_data.user->inotify_devs) >\n\t    inotify_max_user_instances"];
+}

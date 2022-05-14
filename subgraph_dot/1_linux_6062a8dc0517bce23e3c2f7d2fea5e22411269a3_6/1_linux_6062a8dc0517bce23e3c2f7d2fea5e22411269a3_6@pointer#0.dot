@@ -1,0 +1,19 @@
+digraph "1_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_6@pointer" {
+"1000101" [label="(MethodParameterIn,struct sem_array *sma)"];
+"1000103" [label="(Call,ipc_rcu_getref(sma))"];
+"1000102" [label="(Block,)"];
+"1000103" [label="(Call,ipc_rcu_getref(sma))"];
+"1000110" [label="(MethodReturn,static inline void)"];
+"1000101" [label="(MethodParameterIn,struct sem_array *sma)"];
+"1000104" [label="(Identifier,sma)"];
+"1000108" [label="(Identifier,sma)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000110"  [label="DDG: sma"];
+"1000101" -> "1000103"  [label="DDG: sma"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000108" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000110"  [label="DDG: sma"];
+"1000103" -> "1000110"  [label="DDG: ipc_rcu_getref(sma)"];
+}

@@ -1,0 +1,26 @@
+digraph "0_Chrome_d18c519758c2e6043f0e1f00e2b69a55b3d7997f@pointer" {
+"1000178" [label="(Call,* partition = BrowserContext::GetStoragePartition(\n      GetBrowserContext(), site_instance.get()))"];
+"1000180" [label="(Call,BrowserContext::GetStoragePartition(\n      GetBrowserContext(), site_instance.get()))"];
+"1000185" [label="(Identifier,dom_storage_context)"];
+"1000181" [label="(Call,GetBrowserContext())"];
+"1000180" [label="(Call,BrowserContext::GetStoragePartition(\n      GetBrowserContext(), site_instance.get()))"];
+"1000111" [label="(Block,)"];
+"1000178" [label="(Call,* partition = BrowserContext::GetStoragePartition(\n      GetBrowserContext(), site_instance.get()))"];
+"1000182" [label="(Call,site_instance.get())"];
+"1000179" [label="(Identifier,partition)"];
+"1000464" [label="(MethodReturn,void)"];
+"1000178" -> "1000111"  [label="AST: "];
+"1000178" -> "1000180"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000180" -> "1000178"  [label="AST: "];
+"1000185" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000464"  [label="DDG: partition"];
+"1000178" -> "1000464"  [label="DDG: BrowserContext::GetStoragePartition(\n      GetBrowserContext(), site_instance.get())"];
+"1000180" -> "1000178"  [label="DDG: GetBrowserContext()"];
+"1000180" -> "1000178"  [label="DDG: site_instance.get()"];
+"1000180" -> "1000182"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000182" -> "1000180"  [label="AST: "];
+"1000180" -> "1000464"  [label="DDG: site_instance.get()"];
+"1000180" -> "1000464"  [label="DDG: GetBrowserContext()"];
+}

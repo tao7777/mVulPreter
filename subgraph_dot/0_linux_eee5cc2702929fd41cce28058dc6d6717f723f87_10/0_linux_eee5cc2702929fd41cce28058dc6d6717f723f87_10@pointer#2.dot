@@ -1,0 +1,27 @@
+digraph "0_linux_eee5cc2702929fd41cce28058dc6d6717f723f87_10@pointer" {
+"1000256" [label="(Call,mutex_init(&s->s_vfs_rename_mutex))"];
+"1000261" [label="(Call,lockdep_set_class(&s->s_vfs_rename_mutex, &type->s_vfs_rename_key))"];
+"1000104" [label="(Block,)"];
+"1000274" [label="(Identifier,s)"];
+"1000261" [label="(Call,lockdep_set_class(&s->s_vfs_rename_mutex, &type->s_vfs_rename_key))"];
+"1000266" [label="(Call,&type->s_vfs_rename_key)"];
+"1000264" [label="(Identifier,s)"];
+"1000257" [label="(Call,&s->s_vfs_rename_mutex)"];
+"1000355" [label="(MethodReturn,static struct super_block *)"];
+"1000262" [label="(Call,&s->s_vfs_rename_mutex)"];
+"1000256" [label="(Call,mutex_init(&s->s_vfs_rename_mutex))"];
+"1000256" -> "1000104"  [label="AST: "];
+"1000256" -> "1000257"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000264" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000355"  [label="DDG: mutex_init(&s->s_vfs_rename_mutex)"];
+"1000256" -> "1000261"  [label="DDG: &s->s_vfs_rename_mutex"];
+"1000261" -> "1000104"  [label="AST: "];
+"1000261" -> "1000266"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000266" -> "1000261"  [label="AST: "];
+"1000274" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000355"  [label="DDG: &type->s_vfs_rename_key"];
+"1000261" -> "1000355"  [label="DDG: &s->s_vfs_rename_mutex"];
+"1000261" -> "1000355"  [label="DDG: lockdep_set_class(&s->s_vfs_rename_mutex, &type->s_vfs_rename_key)"];
+}

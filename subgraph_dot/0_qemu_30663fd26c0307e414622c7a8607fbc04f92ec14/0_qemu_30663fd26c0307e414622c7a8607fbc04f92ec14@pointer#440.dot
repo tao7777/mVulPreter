@@ -1,0 +1,30 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1008562" [label="(Call,s->cpl != 0)"];
+"1008555" [label="(Call,!(s->cpuid_ext_features & CPUID_EXT_MONITOR) || s->cpl != 0)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1008562" [label="(Call,s->cpl != 0)"];
+"1008556" [label="(Call,!(s->cpuid_ext_features & CPUID_EXT_MONITOR))"];
+"1008563" [label="(Call,s->cpl)"];
+"1008568" [label="(ControlStructure,goto illegal_op;)"];
+"1008555" [label="(Call,!(s->cpuid_ext_features & CPUID_EXT_MONITOR) || s->cpl != 0)"];
+"1008566" [label="(Literal,0)"];
+"1008554" [label="(ControlStructure,if (!(s->cpuid_ext_features & CPUID_EXT_MONITOR) || s->cpl != 0))"];
+"1008570" [label="(Identifier,s)"];
+"1008562" -> "1008555"  [label="AST: "];
+"1008562" -> "1008566"  [label="CFG: "];
+"1008563" -> "1008562"  [label="AST: "];
+"1008566" -> "1008562"  [label="AST: "];
+"1008555" -> "1008562"  [label="CFG: "];
+"1008562" -> "1011840"  [label="DDG: s->cpl"];
+"1008562" -> "1008555"  [label="DDG: s->cpl"];
+"1008562" -> "1008555"  [label="DDG: 0"];
+"1008555" -> "1008554"  [label="AST: "];
+"1008555" -> "1008556"  [label="CFG: "];
+"1008556" -> "1008555"  [label="AST: "];
+"1008568" -> "1008555"  [label="CFG: "];
+"1008570" -> "1008555"  [label="CFG: "];
+"1008555" -> "1011840"  [label="DDG: s->cpl != 0"];
+"1008555" -> "1011840"  [label="DDG: !(s->cpuid_ext_features & CPUID_EXT_MONITOR)"];
+"1008555" -> "1011840"  [label="DDG: !(s->cpuid_ext_features & CPUID_EXT_MONITOR) || s->cpl != 0"];
+"1008556" -> "1008555"  [label="DDG: s->cpuid_ext_features & CPUID_EXT_MONITOR"];
+}

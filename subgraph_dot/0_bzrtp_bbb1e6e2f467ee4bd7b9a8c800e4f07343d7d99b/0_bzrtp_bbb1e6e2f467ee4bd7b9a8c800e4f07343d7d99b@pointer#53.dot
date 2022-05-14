@@ -1,0 +1,33 @@
+digraph "0_bzrtp_bbb1e6e2f467ee4bd7b9a8c800e4f07343d7d99b@pointer" {
+"1001080" [label="(Call,input+ZRTP_PACKET_HEADER_LENGTH)"];
+"1000194" [label="(MethodParameterIn,const uint8_t * input)"];
+"1001084" [label="(Identifier,zrtpPacket)"];
+"1000588" [label="(Call,memcpy(zrtpPacket->packetString, input, inputLength))"];
+"1000204" [label="(Call,input+ZRTP_PACKET_HEADER_LENGTH+ZRTP_MESSAGE_HEADER_LENGTH)"];
+"1001080" [label="(Call,input+ZRTP_PACKET_HEADER_LENGTH)"];
+"1001081" [label="(Identifier,input)"];
+"1000891" [label="(Call,memcpy(zrtpPacket->packetString, input, inputLength))"];
+"1001082" [label="(Identifier,ZRTP_PACKET_HEADER_LENGTH)"];
+"1001915" [label="(Call,memcpy(zrtpPacket->packetString, input, inputLength))"];
+"1001966" [label="(MethodReturn,int)"];
+"1001078" [label="(Call,memcpy(DHPartHelloMessageString, input+ZRTP_PACKET_HEADER_LENGTH, zrtpPacket->messageLength))"];
+"1001285" [label="(Call,memcpy(zrtpPacket->packetString, input, inputLength))"];
+"1000202" [label="(Call,(uint8_t *)(input+ZRTP_PACKET_HEADER_LENGTH+ZRTP_MESSAGE_HEADER_LENGTH))"];
+"1000194" [label="(MethodParameterIn,const uint8_t * input)"];
+"1001080" -> "1001078"  [label="AST: "];
+"1001080" -> "1001082"  [label="CFG: "];
+"1001081" -> "1001080"  [label="AST: "];
+"1001082" -> "1001080"  [label="AST: "];
+"1001084" -> "1001080"  [label="CFG: "];
+"1001080" -> "1001966"  [label="DDG: input"];
+"1000194" -> "1001080"  [label="DDG: input"];
+"1000194" -> "1000191"  [label="AST: "];
+"1000194" -> "1001966"  [label="DDG: input"];
+"1000194" -> "1000202"  [label="DDG: input"];
+"1000194" -> "1000204"  [label="DDG: input"];
+"1000194" -> "1000588"  [label="DDG: input"];
+"1000194" -> "1000891"  [label="DDG: input"];
+"1000194" -> "1001078"  [label="DDG: input"];
+"1000194" -> "1001285"  [label="DDG: input"];
+"1000194" -> "1001915"  [label="DDG: input"];
+}

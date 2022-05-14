@@ -1,0 +1,31 @@
+digraph "0_openssl_3c66a669dfc7b3792f7af0758ea26fe8502ce70c@pointer" {
+"1001374" [label="(Call,clnt_pub_pkey->type != EVP_PKEY_EC)"];
+"1001363" [label="(Call,((clnt_pub_pkey = X509_get_pubkey(s->session->peer))\n                 == NULL) || (clnt_pub_pkey->type != EVP_PKEY_EC))"];
+"1001362" [label="(ControlStructure,if (((clnt_pub_pkey = X509_get_pubkey(s->session->peer))\n                 == NULL) || (clnt_pub_pkey->type != EVP_PKEY_EC)))"];
+"1001363" [label="(Call,((clnt_pub_pkey = X509_get_pubkey(s->session->peer))\n                 == NULL) || (clnt_pub_pkey->type != EVP_PKEY_EC))"];
+"1001364" [label="(Call,(clnt_pub_pkey = X509_get_pubkey(s->session->peer))\n                 == NULL)"];
+"1002162" [label="(MethodReturn,int)"];
+"1001375" [label="(Call,clnt_pub_pkey->type)"];
+"1001378" [label="(Identifier,EVP_PKEY_EC)"];
+"1001390" [label="(Identifier,clnt_ecpoint)"];
+"1001381" [label="(Identifier,al)"];
+"1001374" [label="(Call,clnt_pub_pkey->type != EVP_PKEY_EC)"];
+"1001374" -> "1001363"  [label="AST: "];
+"1001374" -> "1001378"  [label="CFG: "];
+"1001375" -> "1001374"  [label="AST: "];
+"1001378" -> "1001374"  [label="AST: "];
+"1001363" -> "1001374"  [label="CFG: "];
+"1001374" -> "1002162"  [label="DDG: clnt_pub_pkey->type"];
+"1001374" -> "1002162"  [label="DDG: EVP_PKEY_EC"];
+"1001374" -> "1001363"  [label="DDG: clnt_pub_pkey->type"];
+"1001374" -> "1001363"  [label="DDG: EVP_PKEY_EC"];
+"1001363" -> "1001362"  [label="AST: "];
+"1001363" -> "1001364"  [label="CFG: "];
+"1001364" -> "1001363"  [label="AST: "];
+"1001381" -> "1001363"  [label="CFG: "];
+"1001390" -> "1001363"  [label="CFG: "];
+"1001363" -> "1002162"  [label="DDG: ((clnt_pub_pkey = X509_get_pubkey(s->session->peer))\n                 == NULL) || (clnt_pub_pkey->type != EVP_PKEY_EC)"];
+"1001363" -> "1002162"  [label="DDG: (clnt_pub_pkey = X509_get_pubkey(s->session->peer))\n                 == NULL"];
+"1001363" -> "1002162"  [label="DDG: clnt_pub_pkey->type != EVP_PKEY_EC"];
+"1001364" -> "1001363"  [label="DDG: NULL"];
+}

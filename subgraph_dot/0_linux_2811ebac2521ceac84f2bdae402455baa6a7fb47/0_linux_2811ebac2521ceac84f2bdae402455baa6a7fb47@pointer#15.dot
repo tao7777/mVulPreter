@@ -1,0 +1,33 @@
+digraph "0_linux_2811ebac2521ceac84f2bdae402455baa6a7fb47@pointer" {
+"1000220" [label="(Call,np->cork.opt->tot_len = opt->tot_len)"];
+"1000201" [label="(Call,kzalloc(opt->tot_len, sk->sk_allocation))"];
+"1000195" [label="(Call,np->cork.opt = kzalloc(opt->tot_len, sk->sk_allocation))"];
+"1000205" [label="(Call,sk->sk_allocation)"];
+"1000201" [label="(Call,kzalloc(opt->tot_len, sk->sk_allocation))"];
+"1001341" [label="(MethodReturn,int)"];
+"1000261" [label="(Call,ip6_opt_dup(opt->dst0opt,\n\t\t\t\t\t\t\t    sk->sk_allocation))"];
+"1000235" [label="(Identifier,np)"];
+"1000221" [label="(Call,np->cork.opt->tot_len)"];
+"1000220" [label="(Call,np->cork.opt->tot_len = opt->tot_len)"];
+"1000202" [label="(Call,opt->tot_len)"];
+"1000184" [label="(Block,)"];
+"1000228" [label="(Call,opt->tot_len)"];
+"1000220" -> "1000184"  [label="AST: "];
+"1000220" -> "1000228"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000228" -> "1000220"  [label="AST: "];
+"1000235" -> "1000220"  [label="CFG: "];
+"1000220" -> "1001341"  [label="DDG: np->cork.opt->tot_len"];
+"1000220" -> "1001341"  [label="DDG: opt->tot_len"];
+"1000201" -> "1000220"  [label="DDG: opt->tot_len"];
+"1000201" -> "1000195"  [label="AST: "];
+"1000201" -> "1000205"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="AST: "];
+"1000195" -> "1000201"  [label="CFG: "];
+"1000201" -> "1001341"  [label="DDG: sk->sk_allocation"];
+"1000201" -> "1001341"  [label="DDG: opt->tot_len"];
+"1000201" -> "1000195"  [label="DDG: opt->tot_len"];
+"1000201" -> "1000195"  [label="DDG: sk->sk_allocation"];
+"1000201" -> "1000261"  [label="DDG: sk->sk_allocation"];
+}

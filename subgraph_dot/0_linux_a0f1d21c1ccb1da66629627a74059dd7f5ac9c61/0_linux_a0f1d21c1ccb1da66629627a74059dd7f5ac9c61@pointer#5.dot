@@ -1,0 +1,27 @@
+digraph "0_linux_a0f1d21c1ccb1da66629627a74059dd7f5ac9c61@pointer" {
+"1000186" [label="(Call,mutex_unlock(&kvm->lock))"];
+"1000169" [label="(Call,mutex_lock(&kvm->lock))"];
+"1000169" [label="(Call,mutex_lock(&kvm->lock))"];
+"1000260" [label="(MethodReturn,static int)"];
+"1000186" [label="(Call,mutex_unlock(&kvm->lock))"];
+"1000185" [label="(Block,)"];
+"1000204" [label="(Call,mutex_unlock(&kvm->lock))"];
+"1000170" [label="(Call,&kvm->lock)"];
+"1000175" [label="(Identifier,ret)"];
+"1000103" [label="(Block,)"];
+"1000187" [label="(Call,&kvm->lock)"];
+"1000192" [label="(Identifier,dev)"];
+"1000186" -> "1000185"  [label="AST: "];
+"1000186" -> "1000187"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000192" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000260"  [label="DDG: mutex_unlock(&kvm->lock)"];
+"1000186" -> "1000260"  [label="DDG: &kvm->lock"];
+"1000169" -> "1000186"  [label="DDG: &kvm->lock"];
+"1000169" -> "1000103"  [label="AST: "];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000175" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000260"  [label="DDG: mutex_lock(&kvm->lock)"];
+"1000169" -> "1000204"  [label="DDG: &kvm->lock"];
+}

@@ -1,0 +1,32 @@
+digraph "0_Android_771ab014c24a682b32990da08e87e2f0ab765bd2_0@pointer" {
+"1000102" [label="(MethodParameterIn,SocketClient *c)"];
+"1000186" [label="(Call,dispatchCommand(c, buffer + offset))"];
+"1000186" [label="(Call,dispatchCommand(c, buffer + offset))"];
+"1000109" [label="(Call,read(c->getSocket(), buffer, sizeof(buffer)))"];
+"1000134" [label="(Call,buffer[len-1] != '\0')"];
+"1000192" [label="(Identifier,offset)"];
+"1000102" [label="(MethodParameterIn,SocketClient *c)"];
+"1000191" [label="(Call,offset = i + 1)"];
+"1000172" [label="(Call,buffer[i] == '\0')"];
+"1000201" [label="(MethodReturn,bool)"];
+"1000188" [label="(Call,buffer + offset)"];
+"1000157" [label="(Call,offset = 0)"];
+"1000187" [label="(Identifier,c)"];
+"1000185" [label="(Block,)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000201"  [label="DDG: c"];
+"1000102" -> "1000186"  [label="DDG: c"];
+"1000186" -> "1000185"  [label="AST: "];
+"1000186" -> "1000188"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000188" -> "1000186"  [label="AST: "];
+"1000192" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000201"  [label="DDG: buffer + offset"];
+"1000186" -> "1000201"  [label="DDG: dispatchCommand(c, buffer + offset)"];
+"1000186" -> "1000201"  [label="DDG: c"];
+"1000109" -> "1000186"  [label="DDG: buffer"];
+"1000134" -> "1000186"  [label="DDG: buffer[len-1]"];
+"1000172" -> "1000186"  [label="DDG: buffer[i]"];
+"1000157" -> "1000186"  [label="DDG: offset"];
+"1000191" -> "1000186"  [label="DDG: offset"];
+}

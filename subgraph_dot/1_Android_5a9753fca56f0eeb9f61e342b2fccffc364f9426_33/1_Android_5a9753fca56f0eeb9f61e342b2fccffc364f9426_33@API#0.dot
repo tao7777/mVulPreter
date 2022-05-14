@@ -1,0 +1,32 @@
+digraph "1_Android_5a9753fca56f0eeb9f61e342b2fccffc364f9426_33@API" {
+"1000111" [label="(Call,assert(output_width <= 64))"];
+"1000112" [label="(Call,output_width <= 64)"];
+"1000107" [label="(MethodParameterIn,unsigned int output_width)"];
+"1000135" [label="(MethodReturn,void)"];
+"1000119" [label="(Call,filter_block2d_8_c(src_ptr, src_stride, HFilter, VFilter, tmp, 64,\n                      output_width, output_height))"];
+"1000112" [label="(Call,output_width <= 64)"];
+"1000114" [label="(Literal,64)"];
+"1000128" [label="(Call,block2d_average_c(tmp, 64, dst_ptr, dst_stride,\n                     output_width, output_height))"];
+"1000109" [label="(Block,)"];
+"1000111" [label="(Call,assert(output_width <= 64))"];
+"1000113" [label="(Identifier,output_width)"];
+"1000117" [label="(Identifier,output_height)"];
+"1000107" [label="(MethodParameterIn,unsigned int output_width)"];
+"1000111" -> "1000109"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000135"  [label="DDG: output_width <= 64"];
+"1000111" -> "1000135"  [label="DDG: assert(output_width <= 64)"];
+"1000112" -> "1000111"  [label="DDG: output_width"];
+"1000112" -> "1000111"  [label="DDG: 64"];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000107" -> "1000112"  [label="DDG: output_width"];
+"1000112" -> "1000119"  [label="DDG: output_width"];
+"1000107" -> "1000100"  [label="AST: "];
+"1000107" -> "1000135"  [label="DDG: output_width"];
+"1000107" -> "1000119"  [label="DDG: output_width"];
+"1000107" -> "1000128"  [label="DDG: output_width"];
+}

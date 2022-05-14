@@ -1,0 +1,32 @@
+digraph "0_openssl_2c0d295e26306e15a92eb23a84a1802005c1c137@pointer" {
+"1001007" [label="(Call,s->tlsext_status_type == TLSEXT_STATUSTYPE_ocsp)"];
+"1000997" [label="(Call,s->tlsext_status_type = *data++)"];
+"1001007" [label="(Call,s->tlsext_status_type == TLSEXT_STATUSTYPE_ocsp)"];
+"1000998" [label="(Call,s->tlsext_status_type)"];
+"1001001" [label="(Call,*data++)"];
+"1001006" [label="(ControlStructure,if (s->tlsext_status_type == TLSEXT_STATUSTYPE_ocsp))"];
+"1001100" [label="(Identifier,s)"];
+"1000991" [label="(Block,)"];
+"1001005" [label="(Identifier,size)"];
+"1001008" [label="(Call,s->tlsext_status_type)"];
+"1001011" [label="(Identifier,TLSEXT_STATUSTYPE_ocsp)"];
+"1001016" [label="(Identifier,data)"];
+"1000997" [label="(Call,s->tlsext_status_type = *data++)"];
+"1001283" [label="(MethodReturn,int)"];
+"1001007" -> "1001006"  [label="AST: "];
+"1001007" -> "1001011"  [label="CFG: "];
+"1001008" -> "1001007"  [label="AST: "];
+"1001011" -> "1001007"  [label="AST: "];
+"1001016" -> "1001007"  [label="CFG: "];
+"1001100" -> "1001007"  [label="CFG: "];
+"1001007" -> "1001283"  [label="DDG: s->tlsext_status_type"];
+"1001007" -> "1001283"  [label="DDG: s->tlsext_status_type == TLSEXT_STATUSTYPE_ocsp"];
+"1001007" -> "1001283"  [label="DDG: TLSEXT_STATUSTYPE_ocsp"];
+"1000997" -> "1001007"  [label="DDG: s->tlsext_status_type"];
+"1000997" -> "1000991"  [label="AST: "];
+"1000997" -> "1001001"  [label="CFG: "];
+"1000998" -> "1000997"  [label="AST: "];
+"1001001" -> "1000997"  [label="AST: "];
+"1001005" -> "1000997"  [label="CFG: "];
+"1000997" -> "1001283"  [label="DDG: *data++"];
+}

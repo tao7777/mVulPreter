@@ -1,0 +1,27 @@
+digraph "0_linux_6b3a707736301c2128ca85ce85fb13f60b5e350a_2@API" {
+"1000173" [label="(Call,!ipipe->writers)"];
+"1000168" [label="(Call,!ipipe->nrbufs && !ipipe->writers)"];
+"1000182" [label="(Identifier,ipipe)"];
+"1000174" [label="(Call,ipipe->writers)"];
+"1000168" [label="(Call,!ipipe->nrbufs && !ipipe->writers)"];
+"1000351" [label="(MethodReturn,static int)"];
+"1000169" [label="(Call,!ipipe->nrbufs)"];
+"1000167" [label="(ControlStructure,if (!ipipe->nrbufs && !ipipe->writers))"];
+"1000177" [label="(ControlStructure,break;)"];
+"1000173" [label="(Call,!ipipe->writers)"];
+"1000173" -> "1000168"  [label="AST: "];
+"1000173" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000168" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000351"  [label="DDG: ipipe->writers"];
+"1000173" -> "1000168"  [label="DDG: ipipe->writers"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000177" -> "1000168"  [label="CFG: "];
+"1000182" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000351"  [label="DDG: !ipipe->nrbufs && !ipipe->writers"];
+"1000168" -> "1000351"  [label="DDG: !ipipe->nrbufs"];
+"1000168" -> "1000351"  [label="DDG: !ipipe->writers"];
+"1000169" -> "1000168"  [label="DDG: ipipe->nrbufs"];
+}

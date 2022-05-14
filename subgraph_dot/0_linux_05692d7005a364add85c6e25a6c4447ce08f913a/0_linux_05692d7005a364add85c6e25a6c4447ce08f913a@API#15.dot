@@ -1,0 +1,31 @@
+digraph "0_linux_05692d7005a364add85c6e25a6c4447ce08f913a@API" {
+"1000684" [label="(Call,copy_to_user((void __user *)arg, &info, minsz) ?\n\t\t\t-EFAULT : 0)"];
+"1000692" [label="(Call,-EFAULT)"];
+"1000683" [label="(Return,return copy_to_user((void __user *)arg, &info, minsz) ?\n\t\t\t-EFAULT : 0;)"];
+"1000693" [label="(Identifier,EFAULT)"];
+"1000603" [label="(Block,)"];
+"1001380" [label="(MethodReturn,static long)"];
+"1000694" [label="(Literal,0)"];
+"1000692" [label="(Call,-EFAULT)"];
+"1000684" [label="(Call,copy_to_user((void __user *)arg, &info, minsz) ?\n\t\t\t-EFAULT : 0)"];
+"1000683" [label="(Return,return copy_to_user((void __user *)arg, &info, minsz) ?\n\t\t\t-EFAULT : 0;)"];
+"1000685" [label="(Call,copy_to_user((void __user *)arg, &info, minsz))"];
+"1000684" -> "1000683"  [label="AST: "];
+"1000684" -> "1000692"  [label="CFG: "];
+"1000684" -> "1000694"  [label="CFG: "];
+"1000685" -> "1000684"  [label="AST: "];
+"1000692" -> "1000684"  [label="AST: "];
+"1000694" -> "1000684"  [label="AST: "];
+"1000683" -> "1000684"  [label="CFG: "];
+"1000684" -> "1001380"  [label="DDG: copy_to_user((void __user *)arg, &info, minsz) ?\n\t\t\t-EFAULT : 0"];
+"1000684" -> "1001380"  [label="DDG: copy_to_user((void __user *)arg, &info, minsz)"];
+"1000684" -> "1001380"  [label="DDG: -EFAULT"];
+"1000684" -> "1000683"  [label="DDG: copy_to_user((void __user *)arg, &info, minsz) ?\n\t\t\t-EFAULT : 0"];
+"1000692" -> "1000684"  [label="DDG: EFAULT"];
+"1000692" -> "1000693"  [label="CFG: "];
+"1000693" -> "1000692"  [label="AST: "];
+"1000692" -> "1001380"  [label="DDG: EFAULT"];
+"1000683" -> "1000603"  [label="AST: "];
+"1001380" -> "1000683"  [label="CFG: "];
+"1000683" -> "1001380"  [label="DDG: <RET>"];
+}

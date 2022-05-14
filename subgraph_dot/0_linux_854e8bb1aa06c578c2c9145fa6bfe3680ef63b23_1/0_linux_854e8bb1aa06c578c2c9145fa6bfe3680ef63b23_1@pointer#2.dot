@@ -1,0 +1,29 @@
+digraph "0_linux_854e8bb1aa06c578c2c9145fa6bfe3680ef63b23_1@pointer" {
+"1000103" [label="(MethodParameterIn,struct msr_data *msr)"];
+"1000134" [label="(Call,kvm_x86_ops->set_msr(vcpu, msr))"];
+"1000133" [label="(Return,return kvm_x86_ops->set_msr(vcpu, msr);)"];
+"1000133" [label="(Return,return kvm_x86_ops->set_msr(vcpu, msr);)"];
+"1000135" [label="(Identifier,vcpu)"];
+"1000104" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000134" [label="(Call,kvm_x86_ops->set_msr(vcpu, msr))"];
+"1000137" [label="(MethodReturn,int)"];
+"1000103" [label="(MethodParameterIn,struct msr_data *msr)"];
+"1000136" [label="(Identifier,msr)"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000137"  [label="DDG: msr"];
+"1000103" -> "1000134"  [label="DDG: msr"];
+"1000134" -> "1000133"  [label="AST: "];
+"1000134" -> "1000136"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000136" -> "1000134"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000137"  [label="DDG: vcpu"];
+"1000134" -> "1000137"  [label="DDG: msr"];
+"1000134" -> "1000137"  [label="DDG: kvm_x86_ops->set_msr(vcpu, msr)"];
+"1000134" -> "1000133"  [label="DDG: kvm_x86_ops->set_msr(vcpu, msr)"];
+"1000102" -> "1000134"  [label="DDG: vcpu"];
+"1000133" -> "1000104"  [label="AST: "];
+"1000137" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000137"  [label="DDG: <RET>"];
+}

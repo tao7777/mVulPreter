@@ -1,0 +1,26 @@
+digraph "0_linux_ea3d7209ca01da209cda6f0dea8be9cc4b7a933b_2@API" {
+"1000123" [label="(Call,write = vmf->flags & FAULT_FLAG_WRITE)"];
+"1000125" [label="(Call,vmf->flags & FAULT_FLAG_WRITE)"];
+"1000126" [label="(Call,vmf->flags)"];
+"1000123" [label="(Call,write = vmf->flags & FAULT_FLAG_WRITE)"];
+"1000199" [label="(MethodReturn,static int)"];
+"1000131" [label="(Identifier,write)"];
+"1000124" [label="(Identifier,write)"];
+"1000125" [label="(Call,vmf->flags & FAULT_FLAG_WRITE)"];
+"1000129" [label="(Identifier,FAULT_FLAG_WRITE)"];
+"1000103" [label="(Block,)"];
+"1000123" -> "1000103"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000131" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000199"  [label="DDG: write"];
+"1000123" -> "1000199"  [label="DDG: vmf->flags & FAULT_FLAG_WRITE"];
+"1000125" -> "1000123"  [label="DDG: vmf->flags"];
+"1000125" -> "1000123"  [label="DDG: FAULT_FLAG_WRITE"];
+"1000125" -> "1000129"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000129" -> "1000125"  [label="AST: "];
+"1000125" -> "1000199"  [label="DDG: vmf->flags"];
+"1000125" -> "1000199"  [label="DDG: FAULT_FLAG_WRITE"];
+}

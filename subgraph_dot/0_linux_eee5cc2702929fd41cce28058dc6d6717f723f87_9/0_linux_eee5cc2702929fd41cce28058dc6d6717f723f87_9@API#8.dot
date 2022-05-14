@@ -1,0 +1,23 @@
+digraph "0_linux_eee5cc2702929fd41cce28058dc6d6717f723f87_9@API" {
+"1000243" [label="(Call,!open)"];
+"1000103" [label="(MethodParameterIn,int (*open)(struct inode *, struct file *))"];
+"1000244" [label="(Identifier,open)"];
+"1000243" [label="(Call,!open)"];
+"1000253" [label="(Identifier,open)"];
+"1000357" [label="(MethodReturn,static int)"];
+"1000242" [label="(ControlStructure,if (!open))"];
+"1000246" [label="(Identifier,open)"];
+"1000245" [label="(Call,open = f->f_op->open)"];
+"1000103" [label="(MethodParameterIn,int (*open)(struct inode *, struct file *))"];
+"1000243" -> "1000242"  [label="AST: "];
+"1000243" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000246" -> "1000243"  [label="CFG: "];
+"1000253" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000357"  [label="DDG: open"];
+"1000243" -> "1000357"  [label="DDG: !open"];
+"1000103" -> "1000243"  [label="DDG: open"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000357"  [label="DDG: open"];
+"1000103" -> "1000245"  [label="DDG: open"];
+}

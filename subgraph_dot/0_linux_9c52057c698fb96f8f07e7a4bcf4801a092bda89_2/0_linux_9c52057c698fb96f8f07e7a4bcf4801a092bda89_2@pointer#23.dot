@@ -1,0 +1,36 @@
+digraph "0_linux_9c52057c698fb96f8f07e7a4bcf4801a092bda89_2@pointer" {
+"1000439" [label="(Call,memcpy(new_root_item->parent_uuid, root->root_item.uuid,\n\t\t\tBTRFS_UUID_SIZE))"];
+"1000431" [label="(Call,memcpy(new_root_item->uuid, new_uuid.b, BTRFS_UUID_SIZE))"];
+"1000435" [label="(Call,new_uuid.b)"];
+"1000452" [label="(Identifier,new_root_item)"];
+"1000438" [label="(Identifier,BTRFS_UUID_SIZE)"];
+"1000440" [label="(Call,new_root_item->parent_uuid)"];
+"1000781" [label="(MethodReturn,static noinline int)"];
+"1000431" [label="(Call,memcpy(new_root_item->uuid, new_uuid.b, BTRFS_UUID_SIZE))"];
+"1000448" [label="(Identifier,BTRFS_UUID_SIZE)"];
+"1000114" [label="(Block,)"];
+"1000439" [label="(Call,memcpy(new_root_item->parent_uuid, root->root_item.uuid,\n\t\t\tBTRFS_UUID_SIZE))"];
+"1000443" [label="(Call,root->root_item.uuid)"];
+"1000432" [label="(Call,new_root_item->uuid)"];
+"1000441" [label="(Identifier,new_root_item)"];
+"1000439" -> "1000114"  [label="AST: "];
+"1000439" -> "1000448"  [label="CFG: "];
+"1000440" -> "1000439"  [label="AST: "];
+"1000443" -> "1000439"  [label="AST: "];
+"1000448" -> "1000439"  [label="AST: "];
+"1000452" -> "1000439"  [label="CFG: "];
+"1000439" -> "1000781"  [label="DDG: root->root_item.uuid"];
+"1000439" -> "1000781"  [label="DDG: new_root_item->parent_uuid"];
+"1000439" -> "1000781"  [label="DDG: BTRFS_UUID_SIZE"];
+"1000439" -> "1000781"  [label="DDG: memcpy(new_root_item->parent_uuid, root->root_item.uuid,\n\t\t\tBTRFS_UUID_SIZE)"];
+"1000431" -> "1000439"  [label="DDG: BTRFS_UUID_SIZE"];
+"1000431" -> "1000114"  [label="AST: "];
+"1000431" -> "1000438"  [label="CFG: "];
+"1000432" -> "1000431"  [label="AST: "];
+"1000435" -> "1000431"  [label="AST: "];
+"1000438" -> "1000431"  [label="AST: "];
+"1000441" -> "1000431"  [label="CFG: "];
+"1000431" -> "1000781"  [label="DDG: new_root_item->uuid"];
+"1000431" -> "1000781"  [label="DDG: memcpy(new_root_item->uuid, new_uuid.b, BTRFS_UUID_SIZE)"];
+"1000431" -> "1000781"  [label="DDG: new_uuid.b"];
+}

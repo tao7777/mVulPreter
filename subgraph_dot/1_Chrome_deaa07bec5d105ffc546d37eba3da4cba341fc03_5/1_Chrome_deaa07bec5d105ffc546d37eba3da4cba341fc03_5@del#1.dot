@@ -1,0 +1,26 @@
+digraph "1_Chrome_deaa07bec5d105ffc546d37eba3da4cba341fc03_5@del" {
+"1000117" [label="(Call,logo ? &logo.value() : nullptr)"];
+"1000104" [label="(MethodParameterIn,const base::Optional<Logo>& logo)"];
+"1000117" [label="(Call,logo ? &logo.value() : nullptr)"];
+"1000118" [label="(Identifier,logo)"];
+"1000119" [label="(Call,&logo.value())"];
+"1000104" [label="(MethodParameterIn,const base::Optional<Logo>& logo)"];
+"1000122" [label="(Identifier,from_cache)"];
+"1000121" [label="(Identifier,nullptr)"];
+"1000116" [label="(Call,observer->OnLogoAvailable(logo ? &logo.value() : nullptr, from_cache))"];
+"1000129" [label="(MethodReturn,void)"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000119"  [label="CFG: "];
+"1000117" -> "1000121"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000119" -> "1000117"  [label="AST: "];
+"1000121" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000129"  [label="DDG: nullptr"];
+"1000117" -> "1000129"  [label="DDG: logo"];
+"1000117" -> "1000129"  [label="DDG: &logo.value()"];
+"1000104" -> "1000117"  [label="DDG: logo"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000129"  [label="DDG: logo"];
+"1000104" -> "1000116"  [label="DDG: logo"];
+}

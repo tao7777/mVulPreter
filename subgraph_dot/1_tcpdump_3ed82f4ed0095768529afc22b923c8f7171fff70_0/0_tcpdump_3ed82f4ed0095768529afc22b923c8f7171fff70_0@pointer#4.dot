@@ -1,0 +1,32 @@
+digraph "0_tcpdump_3ed82f4ed0095768529afc22b923c8f7171fff70_0@pointer" {
+"1000148" [label="(Call,ND_TTEST(*ps))"];
+"1000147" [label="(Call,!ND_TTEST(*ps))"];
+"1000142" [label="(Call,--n >= 0 && !ND_TTEST(*ps))"];
+"1000143" [label="(Call,--n >= 0)"];
+"1000252" [label="(MethodReturn,RET)"];
+"1000149" [label="(Call,*ps)"];
+"1000141" [label="(ControlStructure,while (--n >= 0 && !ND_TTEST(*ps)))"];
+"1000147" [label="(Call,!ND_TTEST(*ps))"];
+"1000142" [label="(Call,--n >= 0 && !ND_TTEST(*ps))"];
+"1000148" [label="(Call,ND_TTEST(*ps))"];
+"1000156" [label="(Identifier,c)"];
+"1000148" -> "1000147"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000252"  [label="DDG: *ps"];
+"1000148" -> "1000147"  [label="DDG: *ps"];
+"1000147" -> "1000142"  [label="AST: "];
+"1000142" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000252"  [label="DDG: ND_TTEST(*ps)"];
+"1000147" -> "1000142"  [label="DDG: ND_TTEST(*ps)"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000156" -> "1000142"  [label="CFG: "];
+"1000246" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000252"  [label="DDG: !ND_TTEST(*ps)"];
+"1000142" -> "1000252"  [label="DDG: --n >= 0 && !ND_TTEST(*ps)"];
+"1000142" -> "1000252"  [label="DDG: --n >= 0"];
+"1000143" -> "1000142"  [label="DDG: 0"];
+}

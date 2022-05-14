@@ -1,0 +1,28 @@
+digraph "0_linux_05692d7005a364add85c6e25a6c4447ce08f913a_0@pointer" {
+"1000174" [label="(Call,vdev->irq_type = msix ? VFIO_PCI_MSIX_IRQ_INDEX :\n\t\t\t\tVFIO_PCI_MSI_IRQ_INDEX)"];
+"1000105" [label="(MethodParameterIn,bool msix)"];
+"1000116" [label="(Call,msix ? PCI_IRQ_MSIX : PCI_IRQ_MSI)"];
+"1000174" [label="(Call,vdev->irq_type = msix ? VFIO_PCI_MSIX_IRQ_INDEX :\n\t\t\t\tVFIO_PCI_MSI_IRQ_INDEX)"];
+"1000114" [label="(Call,flag = msix ? PCI_IRQ_MSIX : PCI_IRQ_MSI)"];
+"1000106" [label="(Block,)"];
+"1000105" [label="(MethodParameterIn,bool msix)"];
+"1000175" [label="(Call,vdev->irq_type)"];
+"1000200" [label="(MethodReturn,static int)"];
+"1000183" [label="(Call,!msix)"];
+"1000184" [label="(Identifier,msix)"];
+"1000178" [label="(Call,msix ? VFIO_PCI_MSIX_IRQ_INDEX :\n\t\t\t\tVFIO_PCI_MSI_IRQ_INDEX)"];
+"1000174" -> "1000106"  [label="AST: "];
+"1000174" -> "1000178"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000178" -> "1000174"  [label="AST: "];
+"1000184" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000200"  [label="DDG: msix ? VFIO_PCI_MSIX_IRQ_INDEX :\n\t\t\t\tVFIO_PCI_MSI_IRQ_INDEX"];
+"1000174" -> "1000200"  [label="DDG: vdev->irq_type"];
+"1000105" -> "1000174"  [label="DDG: msix"];
+"1000105" -> "1000102"  [label="AST: "];
+"1000105" -> "1000200"  [label="DDG: msix"];
+"1000105" -> "1000114"  [label="DDG: msix"];
+"1000105" -> "1000116"  [label="DDG: msix"];
+"1000105" -> "1000178"  [label="DDG: msix"];
+"1000105" -> "1000183"  [label="DDG: msix"];
+}

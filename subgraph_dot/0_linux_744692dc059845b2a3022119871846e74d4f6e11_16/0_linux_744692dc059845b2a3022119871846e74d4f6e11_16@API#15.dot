@@ -1,0 +1,31 @@
+digraph "0_linux_744692dc059845b2a3022119871846e74d4f6e11_16@API" {
+"1001208" [label="(Call,sbi->s_proc = proc_mkdir(sb->s_id, ext4_proc_root))"];
+"1001212" [label="(Call,proc_mkdir(sb->s_id, ext4_proc_root))"];
+"1001902" [label="(Call,kobject_init_and_add(&sbi->s_kobj, &ext4_ktype, NULL,\n\t\t\t\t   \"%s\", sb->s_id))"];
+"1002090" [label="(Call,remove_proc_entry(sb->s_id, ext4_proc_root))"];
+"1001212" [label="(Call,proc_mkdir(sb->s_id, ext4_proc_root))"];
+"1001208" [label="(Call,sbi->s_proc = proc_mkdir(sb->s_id, ext4_proc_root))"];
+"1001206" [label="(ControlStructure,if (ext4_proc_root))"];
+"1001209" [label="(Call,sbi->s_proc)"];
+"1001213" [label="(Call,sb->s_id)"];
+"1001216" [label="(Identifier,ext4_proc_root)"];
+"1001219" [label="(Identifier,sbi)"];
+"1002129" [label="(MethodReturn,RET)"];
+"1001208" -> "1001206"  [label="AST: "];
+"1001208" -> "1001212"  [label="CFG: "];
+"1001209" -> "1001208"  [label="AST: "];
+"1001212" -> "1001208"  [label="AST: "];
+"1001219" -> "1001208"  [label="CFG: "];
+"1001208" -> "1002129"  [label="DDG: sbi->s_proc"];
+"1001208" -> "1002129"  [label="DDG: proc_mkdir(sb->s_id, ext4_proc_root)"];
+"1001212" -> "1001208"  [label="DDG: sb->s_id"];
+"1001212" -> "1001208"  [label="DDG: ext4_proc_root"];
+"1001212" -> "1001216"  [label="CFG: "];
+"1001213" -> "1001212"  [label="AST: "];
+"1001216" -> "1001212"  [label="AST: "];
+"1001212" -> "1002129"  [label="DDG: sb->s_id"];
+"1001212" -> "1002129"  [label="DDG: ext4_proc_root"];
+"1001212" -> "1001902"  [label="DDG: sb->s_id"];
+"1001212" -> "1002090"  [label="DDG: sb->s_id"];
+"1001212" -> "1002090"  [label="DDG: ext4_proc_root"];
+}

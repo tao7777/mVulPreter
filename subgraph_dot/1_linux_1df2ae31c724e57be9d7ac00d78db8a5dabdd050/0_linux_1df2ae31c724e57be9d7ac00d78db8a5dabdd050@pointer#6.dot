@@ -1,0 +1,37 @@
+digraph "0_linux_1df2ae31c724e57be9d7ac00d78db8a5dabdd050@pointer" {
+"1000111" [label="(Call,*sbi = UDF_SB(sb))"];
+"1000113" [label="(Call,UDF_SB(sb))"];
+"1000101" [label="(MethodParameterIn,struct super_block *sb)"];
+"1000680" [label="(Call,udf_load_logicalvolint(sb, leea_to_cpu(lvd->integritySeqExt)))"];
+"1000399" [label="(Call,udf_read_tagged(sb, loc, loc,\n\t\t\t\t\t\t\t     &ident))"];
+"1000114" [label="(Identifier,sb)"];
+"1000101" [label="(MethodParameterIn,struct super_block *sb)"];
+"1000113" [label="(Call,UDF_SB(sb))"];
+"1000104" [label="(Block,)"];
+"1000691" [label="(MethodReturn,static int)"];
+"1000164" [label="(Call,udf_err(sb, \"error loading logical volume descriptor: \"\n\t\t\t\"Partition table too long (%u > %lu)\n\", table_len,\n\t\t\tsb->s_blocksize - sizeof(*lvd)))"];
+"1000121" [label="(Identifier,ret)"];
+"1000111" [label="(Call,*sbi = UDF_SB(sb))"];
+"1000178" [label="(Call,udf_sb_alloc_partition_maps(sb, le32_to_cpu(lvd->numPartitionMaps)))"];
+"1000125" [label="(Call,udf_read_tagged(sb, block, block, &ident))"];
+"1000112" [label="(Identifier,sbi)"];
+"1000111" -> "1000104"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000121" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000691"  [label="DDG: sbi"];
+"1000111" -> "1000691"  [label="DDG: UDF_SB(sb)"];
+"1000113" -> "1000111"  [label="DDG: sb"];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000101" -> "1000113"  [label="DDG: sb"];
+"1000113" -> "1000125"  [label="DDG: sb"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000691"  [label="DDG: sb"];
+"1000101" -> "1000125"  [label="DDG: sb"];
+"1000101" -> "1000164"  [label="DDG: sb"];
+"1000101" -> "1000178"  [label="DDG: sb"];
+"1000101" -> "1000399"  [label="DDG: sb"];
+"1000101" -> "1000680"  [label="DDG: sb"];
+}

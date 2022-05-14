@@ -1,0 +1,37 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_10@pointer" {
+"1000266" [label="(Call,header->h_blocks != cpu_to_le32(1))"];
+"1000270" [label="(Call,cpu_to_le32(1))"];
+"1000259" [label="(Call,header->h_magic != cpu_to_le32(EXT2_XATTR_MAGIC) ||\n\t\t    header->h_blocks != cpu_to_le32(1))"];
+"1000267" [label="(Call,header->h_blocks)"];
+"1000260" [label="(Call,header->h_magic != cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000273" [label="(JumpTarget,bad_block:)"];
+"1000271" [label="(Literal,1)"];
+"1000266" [label="(Call,header->h_blocks != cpu_to_le32(1))"];
+"1000270" [label="(Call,cpu_to_le32(1))"];
+"1001017" [label="(MethodReturn,RET)"];
+"1000258" [label="(ControlStructure,if (header->h_magic != cpu_to_le32(EXT2_XATTR_MAGIC) ||\n\t\t    header->h_blocks != cpu_to_le32(1)))"];
+"1000259" [label="(Call,header->h_magic != cpu_to_le32(EXT2_XATTR_MAGIC) ||\n\t\t    header->h_blocks != cpu_to_le32(1))"];
+"1000291" [label="(Identifier,here)"];
+"1000266" -> "1000259"  [label="AST: "];
+"1000266" -> "1000270"  [label="CFG: "];
+"1000267" -> "1000266"  [label="AST: "];
+"1000270" -> "1000266"  [label="AST: "];
+"1000259" -> "1000266"  [label="CFG: "];
+"1000266" -> "1001017"  [label="DDG: header->h_blocks"];
+"1000266" -> "1001017"  [label="DDG: cpu_to_le32(1)"];
+"1000266" -> "1000259"  [label="DDG: header->h_blocks"];
+"1000266" -> "1000259"  [label="DDG: cpu_to_le32(1)"];
+"1000270" -> "1000266"  [label="DDG: 1"];
+"1000270" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000270"  [label="AST: "];
+"1000259" -> "1000258"  [label="AST: "];
+"1000259" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000273" -> "1000259"  [label="CFG: "];
+"1000291" -> "1000259"  [label="CFG: "];
+"1000259" -> "1001017"  [label="DDG: header->h_magic != cpu_to_le32(EXT2_XATTR_MAGIC) ||\n\t\t    header->h_blocks != cpu_to_le32(1)"];
+"1000259" -> "1001017"  [label="DDG: header->h_magic != cpu_to_le32(EXT2_XATTR_MAGIC)"];
+"1000259" -> "1001017"  [label="DDG: header->h_blocks != cpu_to_le32(1)"];
+"1000260" -> "1000259"  [label="DDG: header->h_magic"];
+"1000260" -> "1000259"  [label="DDG: cpu_to_le32(EXT2_XATTR_MAGIC)"];
+}

@@ -1,0 +1,37 @@
+digraph "0_linux_dab6cf55f81a6e16b8147aed9a843e1691dcd318_0@pointer" {
+"1000250" [label="(Call,regs->psw.mask & ~PSW_MASK_BA)"];
+"1000249" [label="(Call,(regs->psw.mask & ~PSW_MASK_BA) |\n\t\t\t\t(__u64)(tmp & PSW32_ADDR_AMODE))"];
+"1000243" [label="(Call,regs->psw.mask = (regs->psw.mask & ~PSW_MASK_BA) |\n\t\t\t\t(__u64)(tmp & PSW32_ADDR_AMODE))"];
+"1000257" [label="(Call,(__u64)(tmp & PSW32_ADDR_AMODE))"];
+"1000231" [label="(Block,)"];
+"1000244" [label="(Call,regs->psw.mask)"];
+"1000243" [label="(Call,regs->psw.mask = (regs->psw.mask & ~PSW_MASK_BA) |\n\t\t\t\t(__u64)(tmp & PSW32_ADDR_AMODE))"];
+"1000250" [label="(Call,regs->psw.mask & ~PSW_MASK_BA)"];
+"1000455" [label="(MethodReturn,static int)"];
+"1000251" [label="(Call,regs->psw.mask)"];
+"1000256" [label="(Identifier,~PSW_MASK_BA)"];
+"1000249" [label="(Call,(regs->psw.mask & ~PSW_MASK_BA) |\n\t\t\t\t(__u64)(tmp & PSW32_ADDR_AMODE))"];
+"1000454" [label="(Literal,0)"];
+"1000250" -> "1000249"  [label="AST: "];
+"1000250" -> "1000256"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000256" -> "1000250"  [label="AST: "];
+"1000258" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000455"  [label="DDG: ~PSW_MASK_BA"];
+"1000250" -> "1000249"  [label="DDG: regs->psw.mask"];
+"1000250" -> "1000249"  [label="DDG: ~PSW_MASK_BA"];
+"1000249" -> "1000243"  [label="AST: "];
+"1000249" -> "1000257"  [label="CFG: "];
+"1000257" -> "1000249"  [label="AST: "];
+"1000243" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000455"  [label="DDG: (__u64)(tmp & PSW32_ADDR_AMODE)"];
+"1000249" -> "1000455"  [label="DDG: regs->psw.mask & ~PSW_MASK_BA"];
+"1000249" -> "1000243"  [label="DDG: regs->psw.mask & ~PSW_MASK_BA"];
+"1000249" -> "1000243"  [label="DDG: (__u64)(tmp & PSW32_ADDR_AMODE)"];
+"1000257" -> "1000249"  [label="DDG: tmp & PSW32_ADDR_AMODE"];
+"1000243" -> "1000231"  [label="AST: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000454" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000455"  [label="DDG: regs->psw.mask"];
+"1000243" -> "1000455"  [label="DDG: (regs->psw.mask & ~PSW_MASK_BA) |\n\t\t\t\t(__u64)(tmp & PSW32_ADDR_AMODE)"];
+}

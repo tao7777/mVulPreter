@@ -1,0 +1,30 @@
+digraph "0_Chrome_a46bcef82b29d30836a0f26226e3d4aca4fa9612_4@pointer" {
+"1000212" [label="(Call,clients_.push_back(client))"];
+"1000208" [label="(Call,* client = new ClientSession(\n      this, connection, desktop_environment_->event_executor(),\n       desktop_environment_->capturer()))"];
+"1000210" [label="(Call,new ClientSession(\n      this, connection, desktop_environment_->event_executor(),\n       desktop_environment_->capturer()))"];
+"1000211" [label="(Identifier,ClientSession)"];
+"1000213" [label="(Identifier,client)"];
+"1000214" [label="(MethodReturn,void)"];
+"1000208" [label="(Call,* client = new ClientSession(\n      this, connection, desktop_environment_->event_executor(),\n       desktop_environment_->capturer()))"];
+"1000209" [label="(Identifier,client)"];
+"1000104" [label="(Block,)"];
+"1000212" [label="(Call,clients_.push_back(client))"];
+"1000210" [label="(Call,new ClientSession(\n      this, connection, desktop_environment_->event_executor(),\n       desktop_environment_->capturer()))"];
+"1000212" -> "1000104"  [label="AST: "];
+"1000212" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000214" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000214"  [label="DDG: clients_.push_back(client)"];
+"1000212" -> "1000214"  [label="DDG: client"];
+"1000208" -> "1000212"  [label="DDG: client"];
+"1000208" -> "1000104"  [label="AST: "];
+"1000208" -> "1000210"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000210" -> "1000208"  [label="AST: "];
+"1000213" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000214"  [label="DDG: new ClientSession(\n      this, connection, desktop_environment_->event_executor(),\n       desktop_environment_->capturer())"];
+"1000210" -> "1000208"  [label="DDG: ClientSession"];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000210" -> "1000214"  [label="DDG: ClientSession"];
+}

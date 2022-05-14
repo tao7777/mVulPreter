@@ -1,0 +1,29 @@
+digraph "0_Chrome_08cb718ba7c3961c1006176c9faba0a5841ec792_2@pointer" {
+"1000103" [label="(MethodParameterIn,base::OffsetAdjuster::Adjustments* adjustments)"];
+"1000199" [label="(Call,converted_idn && adjustments)"];
+"1000200" [label="(Identifier,converted_idn)"];
+"1000182" [label="(Call,converted_idn =\n           IDNToUnicodeOneComponent(input16.data() + component_start,\n                                   component_length, is_tld_ascii, &out16))"];
+"1000103" [label="(MethodParameterIn,base::OffsetAdjuster::Adjustments* adjustments)"];
+"1000201" [label="(Identifier,adjustments)"];
+"1000205" [label="(Identifier,component_start)"];
+"1000174" [label="(Call,converted_idn = false)"];
+"1000199" [label="(Call,converted_idn && adjustments)"];
+"1000198" [label="(ControlStructure,if (converted_idn && adjustments))"];
+"1000216" [label="(MethodReturn,base::string16)"];
+"1000210" [label="(Identifier,component_end)"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000216"  [label="DDG: adjustments"];
+"1000103" -> "1000199"  [label="DDG: adjustments"];
+"1000199" -> "1000198"  [label="AST: "];
+"1000199" -> "1000200"  [label="CFG: "];
+"1000199" -> "1000201"  [label="CFG: "];
+"1000200" -> "1000199"  [label="AST: "];
+"1000201" -> "1000199"  [label="AST: "];
+"1000205" -> "1000199"  [label="CFG: "];
+"1000210" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000216"  [label="DDG: adjustments"];
+"1000199" -> "1000216"  [label="DDG: converted_idn"];
+"1000199" -> "1000216"  [label="DDG: converted_idn && adjustments"];
+"1000182" -> "1000199"  [label="DDG: converted_idn"];
+"1000174" -> "1000199"  [label="DDG: converted_idn"];
+}

@@ -1,0 +1,32 @@
+digraph "0_OpenSC_412a6142c27a5973c61ba540e33cdc22d5608e68@pointer" {
+"1000160" [label="(Call,*out = 0)"];
+"1000189" [label="(Call,*out |= ((*in >> (7 - i)) & 1) << i)"];
+"1000187" [label="(Identifier,i)"];
+"1000189" [label="(Call,*out |= ((*in >> (7 - i)) & 1) << i)"];
+"1000166" [label="(Identifier,octets_left)"];
+"1000190" [label="(Call,*out)"];
+"1000192" [label="(Call,((*in >> (7 - i)) & 1) << i)"];
+"1000160" [label="(Call,*out = 0)"];
+"1000161" [label="(Call,*out)"];
+"1000158" [label="(Block,)"];
+"1000163" [label="(Literal,0)"];
+"1000223" [label="(MethodReturn,static int)"];
+"1000188" [label="(Block,)"];
+"1000160" -> "1000158"  [label="AST: "];
+"1000160" -> "1000163"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000163" -> "1000160"  [label="AST: "];
+"1000166" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000223"  [label="DDG: *out"];
+"1000160" -> "1000189"  [label="DDG: *out"];
+"1000189" -> "1000188"  [label="AST: "];
+"1000189" -> "1000192"  [label="CFG: "];
+"1000190" -> "1000189"  [label="AST: "];
+"1000192" -> "1000189"  [label="AST: "];
+"1000187" -> "1000189"  [label="CFG: "];
+"1000189" -> "1000223"  [label="DDG: *out"];
+"1000189" -> "1000223"  [label="DDG: *out |= ((*in >> (7 - i)) & 1) << i"];
+"1000189" -> "1000223"  [label="DDG: ((*in >> (7 - i)) & 1) << i"];
+"1000192" -> "1000189"  [label="DDG: (*in >> (7 - i)) & 1"];
+"1000192" -> "1000189"  [label="DDG: i"];
+}

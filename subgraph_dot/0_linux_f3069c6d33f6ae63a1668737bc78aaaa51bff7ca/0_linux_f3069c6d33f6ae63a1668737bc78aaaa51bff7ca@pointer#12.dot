@@ -1,0 +1,30 @@
+digraph "0_linux_f3069c6d33f6ae63a1668737bc78aaaa51bff7ca@pointer" {
+"1000465" [label="(Call,spin_unlock_irqrestore(&rs->rs_rdma_lock, flags))"];
+"1000448" [label="(Call,spin_lock_irqsave(&rs->rs_rdma_lock, flags))"];
+"1000453" [label="(Identifier,flags)"];
+"1000465" [label="(Call,spin_unlock_irqrestore(&rs->rs_rdma_lock, flags))"];
+"1000506" [label="(MethodReturn,static int)"];
+"1000113" [label="(Block,)"];
+"1000466" [label="(Call,&rs->rs_rdma_lock)"];
+"1000449" [label="(Call,&rs->rs_rdma_lock)"];
+"1000455" [label="(Identifier,found)"];
+"1000473" [label="(Identifier,found)"];
+"1000470" [label="(Identifier,flags)"];
+"1000448" [label="(Call,spin_lock_irqsave(&rs->rs_rdma_lock, flags))"];
+"1000465" -> "1000113"  [label="AST: "];
+"1000465" -> "1000470"  [label="CFG: "];
+"1000466" -> "1000465"  [label="AST: "];
+"1000470" -> "1000465"  [label="AST: "];
+"1000473" -> "1000465"  [label="CFG: "];
+"1000465" -> "1000506"  [label="DDG: spin_unlock_irqrestore(&rs->rs_rdma_lock, flags)"];
+"1000465" -> "1000506"  [label="DDG: flags"];
+"1000465" -> "1000506"  [label="DDG: &rs->rs_rdma_lock"];
+"1000448" -> "1000465"  [label="DDG: &rs->rs_rdma_lock"];
+"1000448" -> "1000465"  [label="DDG: flags"];
+"1000448" -> "1000113"  [label="AST: "];
+"1000448" -> "1000453"  [label="CFG: "];
+"1000449" -> "1000448"  [label="AST: "];
+"1000453" -> "1000448"  [label="AST: "];
+"1000455" -> "1000448"  [label="CFG: "];
+"1000448" -> "1000506"  [label="DDG: spin_lock_irqsave(&rs->rs_rdma_lock, flags)"];
+}

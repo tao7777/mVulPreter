@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1003034" [label="(Call,s->cpuid_features & CPUID_CX8)"];
+"1003033" [label="(Call,!(s->cpuid_features & CPUID_CX8))"];
+"1003034" [label="(Call,s->cpuid_features & CPUID_CX8)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1003039" [label="(ControlStructure,goto illegal_op;)"];
+"1003038" [label="(Identifier,CPUID_CX8)"];
+"1003032" [label="(ControlStructure,if (!(s->cpuid_features & CPUID_CX8)))"];
+"1003041" [label="(Identifier,env)"];
+"1003033" [label="(Call,!(s->cpuid_features & CPUID_CX8))"];
+"1003035" [label="(Call,s->cpuid_features)"];
+"1003034" -> "1003033"  [label="AST: "];
+"1003034" -> "1003038"  [label="CFG: "];
+"1003035" -> "1003034"  [label="AST: "];
+"1003038" -> "1003034"  [label="AST: "];
+"1003033" -> "1003034"  [label="CFG: "];
+"1003034" -> "1011840"  [label="DDG: s->cpuid_features"];
+"1003034" -> "1011840"  [label="DDG: CPUID_CX8"];
+"1003034" -> "1003033"  [label="DDG: s->cpuid_features"];
+"1003034" -> "1003033"  [label="DDG: CPUID_CX8"];
+"1003033" -> "1003032"  [label="AST: "];
+"1003039" -> "1003033"  [label="CFG: "];
+"1003041" -> "1003033"  [label="CFG: "];
+"1003033" -> "1011840"  [label="DDG: !(s->cpuid_features & CPUID_CX8)"];
+"1003033" -> "1011840"  [label="DDG: s->cpuid_features & CPUID_CX8"];
+}

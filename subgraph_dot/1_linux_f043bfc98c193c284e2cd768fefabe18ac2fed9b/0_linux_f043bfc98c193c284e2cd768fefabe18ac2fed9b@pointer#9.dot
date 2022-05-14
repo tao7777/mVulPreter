@@ -1,0 +1,22 @@
+digraph "0_linux_f043bfc98c193c284e2cd768fefabe18ac2fed9b@pointer" {
+"1000216" [label="(Call,hid->version = le16_to_cpu(hdesc->bcdHID))"];
+"1000220" [label="(Call,le16_to_cpu(hdesc->bcdHID))"];
+"1000221" [label="(Call,hdesc->bcdHID)"];
+"1000103" [label="(Block,)"];
+"1000226" [label="(Identifier,hid)"];
+"1000342" [label="(MethodReturn,static int)"];
+"1000217" [label="(Call,hid->version)"];
+"1000220" [label="(Call,le16_to_cpu(hdesc->bcdHID))"];
+"1000216" [label="(Call,hid->version = le16_to_cpu(hdesc->bcdHID))"];
+"1000216" -> "1000103"  [label="AST: "];
+"1000216" -> "1000220"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000220" -> "1000216"  [label="AST: "];
+"1000226" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000342"  [label="DDG: hid->version"];
+"1000216" -> "1000342"  [label="DDG: le16_to_cpu(hdesc->bcdHID)"];
+"1000220" -> "1000216"  [label="DDG: hdesc->bcdHID"];
+"1000220" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000220" -> "1000342"  [label="DDG: hdesc->bcdHID"];
+}

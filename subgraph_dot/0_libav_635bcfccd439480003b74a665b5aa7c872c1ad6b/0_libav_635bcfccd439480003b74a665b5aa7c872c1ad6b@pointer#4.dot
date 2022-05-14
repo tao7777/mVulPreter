@@ -1,0 +1,27 @@
+digraph "0_libav_635bcfccd439480003b74a665b5aa7c872c1ad6b@pointer" {
+"1000126" [label="(Call,!c->sys)"];
+"1000123" [label="(Call,!as_pack || !c->sys)"];
+"1000122" [label="(ControlStructure,if (!as_pack || !c->sys))"];
+"1000123" [label="(Call,!as_pack || !c->sys)"];
+"1000127" [label="(Call,c->sys)"];
+"1000126" [label="(Call,!c->sys)"];
+"1000133" [label="(Identifier,c)"];
+"1000124" [label="(Call,!as_pack)"];
+"1000139" [label="(Identifier,smpls)"];
+"1000290" [label="(MethodReturn,static int)"];
+"1000126" -> "1000123"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000123" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000290"  [label="DDG: c->sys"];
+"1000126" -> "1000123"  [label="DDG: c->sys"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000133" -> "1000123"  [label="CFG: "];
+"1000139" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000290"  [label="DDG: !c->sys"];
+"1000123" -> "1000290"  [label="DDG: !as_pack || !c->sys"];
+"1000123" -> "1000290"  [label="DDG: !as_pack"];
+"1000124" -> "1000123"  [label="DDG: as_pack"];
+}

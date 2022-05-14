@@ -1,0 +1,27 @@
+digraph "0_linux_8e9faa15469ed7c7467423db4c62aeed3ff4cae3@pointer" {
+"1000101" [label="(MethodParameterIn,struct gpio_chip *chip)"];
+"1000107" [label="(Call,gpiochip_get_data(chip))"];
+"1000105" [label="(Call,*dev = gpiochip_get_data(chip))"];
+"1000105" [label="(Call,*dev = gpiochip_get_data(chip))"];
+"1000101" [label="(MethodParameterIn,struct gpio_chip *chip)"];
+"1000103" [label="(Block,)"];
+"1000111" [label="(Identifier,hdev)"];
+"1000195" [label="(MethodReturn,static int)"];
+"1000107" [label="(Call,gpiochip_get_data(chip))"];
+"1000106" [label="(Identifier,dev)"];
+"1000108" [label="(Identifier,chip)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000195"  [label="DDG: chip"];
+"1000101" -> "1000107"  [label="DDG: chip"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000195"  [label="DDG: chip"];
+"1000107" -> "1000105"  [label="DDG: chip"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000111" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000195"  [label="DDG: gpiochip_get_data(chip)"];
+"1000105" -> "1000195"  [label="DDG: dev"];
+}

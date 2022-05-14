@@ -1,0 +1,36 @@
+digraph "0_linux_dab6cf55f81a6e16b8147aed9a843e1691dcd318@pointer" {
+"1000184" [label="(Call,task_pt_regs(child))"];
+"1000150" [label="(Call,is_ri_task(child))"];
+"1000108" [label="(MethodParameterIn,struct task_struct *child)"];
+"1000183" [label="(Call,task_pt_regs(child)->psw)"];
+"1000153" [label="(Literal,0)"];
+"1000152" [label="(Identifier,PSW_MASK_RI)"];
+"1000150" [label="(Call,is_ri_task(child))"];
+"1000184" [label="(Call,task_pt_regs(child))"];
+"1000185" [label="(Identifier,child)"];
+"1000271" [label="(Call,task_pt_regs(child))"];
+"1000151" [label="(Identifier,child)"];
+"1000186" [label="(FieldIdentifier,psw)"];
+"1000149" [label="(Call,is_ri_task(child) ? PSW_MASK_RI : 0)"];
+"1000108" [label="(MethodParameterIn,struct task_struct *child)"];
+"1000392" [label="(MethodReturn,static int)"];
+"1000386" [label="(Call,__poke_user_per(child, addr, data))"];
+"1000184" -> "1000183"  [label="AST: "];
+"1000184" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000186" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000392"  [label="DDG: child"];
+"1000150" -> "1000184"  [label="DDG: child"];
+"1000108" -> "1000184"  [label="DDG: child"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000152" -> "1000150"  [label="CFG: "];
+"1000153" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000392"  [label="DDG: child"];
+"1000108" -> "1000150"  [label="DDG: child"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000108" -> "1000392"  [label="DDG: child"];
+"1000108" -> "1000271"  [label="DDG: child"];
+"1000108" -> "1000386"  [label="DDG: child"];
+}

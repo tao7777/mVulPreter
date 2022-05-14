@@ -1,0 +1,31 @@
+digraph "0_libav_2d1c0dea5f6b91bec7f5fa53ec050913d851e366@pointer" {
+"1000203" [label="(Call,sys->height == 720)"];
+"1000202" [label="(Call,sys->height == 720 && !(frame[1] & 0x0C))"];
+"1000204" [label="(Call,sys->height)"];
+"1000214" [label="(Literal,2)"];
+"1000211" [label="(Identifier,frame)"];
+"1000201" [label="(Call,(sys->height == 720 && !(frame[1] & 0x0C)) ? 2 : 0)"];
+"1000215" [label="(Literal,0)"];
+"1000202" [label="(Call,sys->height == 720 && !(frame[1] & 0x0C))"];
+"1000516" [label="(MethodReturn,static int)"];
+"1000203" [label="(Call,sys->height == 720)"];
+"1000207" [label="(Literal,720)"];
+"1000208" [label="(Call,!(frame[1] & 0x0C))"];
+"1000203" -> "1000202"  [label="AST: "];
+"1000203" -> "1000207"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000207" -> "1000203"  [label="AST: "];
+"1000211" -> "1000203"  [label="CFG: "];
+"1000202" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000516"  [label="DDG: sys->height"];
+"1000203" -> "1000202"  [label="DDG: sys->height"];
+"1000203" -> "1000202"  [label="DDG: 720"];
+"1000202" -> "1000201"  [label="AST: "];
+"1000202" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000202"  [label="AST: "];
+"1000214" -> "1000202"  [label="CFG: "];
+"1000215" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000516"  [label="DDG: sys->height == 720"];
+"1000202" -> "1000516"  [label="DDG: !(frame[1] & 0x0C)"];
+"1000208" -> "1000202"  [label="DDG: frame[1] & 0x0C"];
+}

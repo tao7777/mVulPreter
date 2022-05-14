@@ -1,0 +1,28 @@
+digraph "1_pacemaker_564f7cc2a51dcd2f28ab12a13394f31be5aa3c93_9@API" {
+"1000125" [label="(Call,close(private->command.socket))"];
+"1000111" [label="(Call,shutdown(private->command.socket, SHUT_RDWR))"];
+"1000125" [label="(Call,close(private->command.socket))"];
+"1000117" [label="(Identifier,SHUT_RDWR)"];
+"1000191" [label="(MethodReturn,RET)"];
+"1000112" [label="(Call,private->command.socket)"];
+"1000111" [label="(Call,shutdown(private->command.socket, SHUT_RDWR))"];
+"1000121" [label="(Identifier,private)"];
+"1000104" [label="(Block,)"];
+"1000134" [label="(Identifier,private)"];
+"1000118" [label="(Call,shutdown(private->callback.socket, SHUT_RDWR))"];
+"1000126" [label="(Call,private->command.socket)"];
+"1000125" -> "1000104"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000134" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000191"  [label="DDG: close(private->command.socket)"];
+"1000125" -> "1000191"  [label="DDG: private->command.socket"];
+"1000111" -> "1000125"  [label="DDG: private->command.socket"];
+"1000111" -> "1000104"  [label="AST: "];
+"1000111" -> "1000117"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="AST: "];
+"1000121" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000191"  [label="DDG: shutdown(private->command.socket, SHUT_RDWR)"];
+"1000111" -> "1000118"  [label="DDG: SHUT_RDWR"];
+}

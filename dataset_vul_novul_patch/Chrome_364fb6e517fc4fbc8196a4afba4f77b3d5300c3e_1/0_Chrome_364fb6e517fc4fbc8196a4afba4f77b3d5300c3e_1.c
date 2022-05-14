@@ -1,0 +1,3 @@
+  virtual ~MockInputMethodBase() {
+  virtual ~SimpleMockInputMethodBase() {
+   }

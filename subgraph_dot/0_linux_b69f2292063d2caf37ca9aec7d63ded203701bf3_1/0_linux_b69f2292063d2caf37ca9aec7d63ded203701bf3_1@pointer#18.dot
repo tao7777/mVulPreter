@@ -1,0 +1,27 @@
+digraph "0_linux_b69f2292063d2caf37ca9aec7d63ded203701bf3_1@pointer" {
+"1000711" [label="(Call,(clone_flags & CLONE_CHILD_SETTID) ? child_tidptr : NULL)"];
+"1000127" [label="(MethodParameterIn,int __user *child_tidptr)"];
+"1000711" [label="(Call,(clone_flags & CLONE_CHILD_SETTID) ? child_tidptr : NULL)"];
+"1001151" [label="(MethodReturn,static struct task_struct *)"];
+"1000712" [label="(Call,clone_flags & CLONE_CHILD_SETTID)"];
+"1000716" [label="(Identifier,NULL)"];
+"1000721" [label="(Call,(clone_flags & CLONE_CHILD_CLEARTID) ? child_tidptr: NULL)"];
+"1000707" [label="(Call,p->set_child_tid = (clone_flags & CLONE_CHILD_SETTID) ? child_tidptr : NULL)"];
+"1000715" [label="(Identifier,child_tidptr)"];
+"1000127" [label="(MethodParameterIn,int __user *child_tidptr)"];
+"1000717" [label="(Call,p->clear_child_tid = (clone_flags & CLONE_CHILD_CLEARTID) ? child_tidptr: NULL)"];
+"1000711" -> "1000707"  [label="AST: "];
+"1000711" -> "1000715"  [label="CFG: "];
+"1000711" -> "1000716"  [label="CFG: "];
+"1000712" -> "1000711"  [label="AST: "];
+"1000715" -> "1000711"  [label="AST: "];
+"1000716" -> "1000711"  [label="AST: "];
+"1000707" -> "1000711"  [label="CFG: "];
+"1000711" -> "1001151"  [label="DDG: clone_flags & CLONE_CHILD_SETTID"];
+"1000127" -> "1000711"  [label="DDG: child_tidptr"];
+"1000127" -> "1000122"  [label="AST: "];
+"1000127" -> "1001151"  [label="DDG: child_tidptr"];
+"1000127" -> "1000707"  [label="DDG: child_tidptr"];
+"1000127" -> "1000717"  [label="DDG: child_tidptr"];
+"1000127" -> "1000721"  [label="DDG: child_tidptr"];
+}

@@ -1,0 +1,33 @@
+digraph "0_ImageMagick_e5c063a1007506ba69e97a35effcdef944421c89@pointer" {
+"1001844" [label="(Call,p=p->next)"];
+"1001839" [label="(Call,p != (Image *) NULL)"];
+"1001840" [label="(Identifier,p)"];
+"1001845" [label="(Identifier,p)"];
+"1001841" [label="(Call,(Image *) NULL)"];
+"1001839" [label="(Call,p != (Image *) NULL)"];
+"1001857" [label="(Identifier,clone_info)"];
+"1001916" [label="(MethodReturn,static Image *)"];
+"1001836" [label="(Call,p=image)"];
+"1001846" [label="(Call,p->next)"];
+"1001851" [label="(Identifier,p)"];
+"1001835" [label="(ControlStructure,for (p=image; p != (Image *) NULL; p=p->next))"];
+"1001844" [label="(Call,p=p->next)"];
+"1001844" -> "1001835"  [label="AST: "];
+"1001844" -> "1001846"  [label="CFG: "];
+"1001845" -> "1001844"  [label="AST: "];
+"1001846" -> "1001844"  [label="AST: "];
+"1001840" -> "1001844"  [label="CFG: "];
+"1001844" -> "1001916"  [label="DDG: p->next"];
+"1001844" -> "1001839"  [label="DDG: p"];
+"1001839" -> "1001835"  [label="AST: "];
+"1001839" -> "1001841"  [label="CFG: "];
+"1001840" -> "1001839"  [label="AST: "];
+"1001841" -> "1001839"  [label="AST: "];
+"1001851" -> "1001839"  [label="CFG: "];
+"1001857" -> "1001839"  [label="CFG: "];
+"1001839" -> "1001916"  [label="DDG: p != (Image *) NULL"];
+"1001839" -> "1001916"  [label="DDG: (Image *) NULL"];
+"1001839" -> "1001916"  [label="DDG: p"];
+"1001836" -> "1001839"  [label="DDG: p"];
+"1001841" -> "1001839"  [label="DDG: NULL"];
+}

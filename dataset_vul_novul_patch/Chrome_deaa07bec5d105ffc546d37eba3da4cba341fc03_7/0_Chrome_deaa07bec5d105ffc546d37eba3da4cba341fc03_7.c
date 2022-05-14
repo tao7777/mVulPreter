@@ -1,0 +1,1 @@
+void RunCallbacksWithDisabled(LogoCallbacks callbacks) {

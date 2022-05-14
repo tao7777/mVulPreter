@@ -1,0 +1,1 @@
+void Chapters::Atom::Clear()

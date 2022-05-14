@@ -1,0 +1,35 @@
+digraph "0_FreeRDP_2ee663f39dc8dac3d9988e847db19b2d7e3ac8c6_5@API" {
+"1000105" [label="(Call,Stream_GetRemainingLength(s) < 12)"];
+"1000106" [label="(Call,Stream_GetRemainingLength(s))"];
+"1000101" [label="(MethodParameterIn,wStream* s)"];
+"1000139" [label="(MethodReturn,static int)"];
+"1000104" [label="(ControlStructure,if (Stream_GetRemainingLength(s) < 12))"];
+"1000111" [label="(Literal,1)"];
+"1000107" [label="(Identifier,s)"];
+"1000112" [label="(Call,Stream_Read(s, header->Signature, 8))"];
+"1000105" [label="(Call,Stream_GetRemainingLength(s) < 12)"];
+"1000113" [label="(Identifier,s)"];
+"1000106" [label="(Call,Stream_GetRemainingLength(s))"];
+"1000101" [label="(MethodParameterIn,wStream* s)"];
+"1000118" [label="(Call,Stream_Read_UINT32(s, header->MessageType))"];
+"1000108" [label="(Literal,12)"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000108"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000108" -> "1000105"  [label="AST: "];
+"1000111" -> "1000105"  [label="CFG: "];
+"1000113" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000139"  [label="DDG: Stream_GetRemainingLength(s) < 12"];
+"1000105" -> "1000139"  [label="DDG: Stream_GetRemainingLength(s)"];
+"1000106" -> "1000105"  [label="DDG: s"];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000139"  [label="DDG: s"];
+"1000101" -> "1000106"  [label="DDG: s"];
+"1000106" -> "1000112"  [label="DDG: s"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000139"  [label="DDG: s"];
+"1000101" -> "1000112"  [label="DDG: s"];
+"1000101" -> "1000118"  [label="DDG: s"];
+}

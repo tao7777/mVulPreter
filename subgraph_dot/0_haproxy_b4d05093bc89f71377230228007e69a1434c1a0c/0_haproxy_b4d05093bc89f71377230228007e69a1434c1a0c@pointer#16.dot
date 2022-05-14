@@ -1,0 +1,35 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c@pointer" {
+"1000775" [label="(Call,s->fe->options2 & PR_O2_NODELAY)"];
+"1000758" [label="(Call,s->fe->options2 & PR_O2_INDEPSTR)"];
+"1000757" [label="(ControlStructure,if (s->fe->options2 & PR_O2_INDEPSTR))"];
+"1000764" [label="(Identifier,PR_O2_INDEPSTR)"];
+"1000778" [label="(Identifier,s)"];
+"1000903" [label="(MethodReturn,void)"];
+"1000781" [label="(Identifier,PR_O2_NODELAY)"];
+"1000786" [label="(Identifier,s)"];
+"1000759" [label="(Call,s->fe->options2)"];
+"1000758" [label="(Call,s->fe->options2 & PR_O2_INDEPSTR)"];
+"1000801" [label="(Identifier,s)"];
+"1000774" [label="(ControlStructure,if (s->fe->options2 & PR_O2_NODELAY))"];
+"1000775" [label="(Call,s->fe->options2 & PR_O2_NODELAY)"];
+"1000776" [label="(Call,s->fe->options2)"];
+"1000769" [label="(Identifier,s)"];
+"1000775" -> "1000774"  [label="AST: "];
+"1000775" -> "1000781"  [label="CFG: "];
+"1000776" -> "1000775"  [label="AST: "];
+"1000781" -> "1000775"  [label="AST: "];
+"1000786" -> "1000775"  [label="CFG: "];
+"1000801" -> "1000775"  [label="CFG: "];
+"1000775" -> "1000903"  [label="DDG: PR_O2_NODELAY"];
+"1000775" -> "1000903"  [label="DDG: s->fe->options2"];
+"1000775" -> "1000903"  [label="DDG: s->fe->options2 & PR_O2_NODELAY"];
+"1000758" -> "1000775"  [label="DDG: s->fe->options2"];
+"1000758" -> "1000757"  [label="AST: "];
+"1000758" -> "1000764"  [label="CFG: "];
+"1000759" -> "1000758"  [label="AST: "];
+"1000764" -> "1000758"  [label="AST: "];
+"1000769" -> "1000758"  [label="CFG: "];
+"1000778" -> "1000758"  [label="CFG: "];
+"1000758" -> "1000903"  [label="DDG: s->fe->options2 & PR_O2_INDEPSTR"];
+"1000758" -> "1000903"  [label="DDG: PR_O2_INDEPSTR"];
+}

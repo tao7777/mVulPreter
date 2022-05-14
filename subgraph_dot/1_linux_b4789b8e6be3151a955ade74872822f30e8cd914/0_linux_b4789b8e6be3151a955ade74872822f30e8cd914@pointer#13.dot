@@ -1,0 +1,35 @@
+digraph "0_linux_b4789b8e6be3151a955ade74872822f30e8cd914@pointer" {
+"1000317" [label="(Call,srbcmd->flags\t = cpu_to_le32(flags))"];
+"1000321" [label="(Call,cpu_to_le32(flags))"];
+"1000274" [label="(Call,flags = user_srbcmd->flags)"];
+"1000318" [label="(Call,srbcmd->flags)"];
+"1000276" [label="(Call,user_srbcmd->flags)"];
+"1000281" [label="(Identifier,srbcmd)"];
+"1000348" [label="(Call,flags & (SRB_DataIn | SRB_DataOut))"];
+"1000321" [label="(Call,cpu_to_le32(flags))"];
+"1000275" [label="(Identifier,flags)"];
+"1001477" [label="(MethodReturn,static int)"];
+"1000322" [label="(Identifier,flags)"];
+"1000317" [label="(Call,srbcmd->flags\t = cpu_to_le32(flags))"];
+"1000274" [label="(Call,flags = user_srbcmd->flags)"];
+"1000118" [label="(Block,)"];
+"1000325" [label="(Identifier,srbcmd)"];
+"1000317" -> "1000118"  [label="AST: "];
+"1000317" -> "1000321"  [label="CFG: "];
+"1000318" -> "1000317"  [label="AST: "];
+"1000321" -> "1000317"  [label="AST: "];
+"1000325" -> "1000317"  [label="CFG: "];
+"1000317" -> "1001477"  [label="DDG: srbcmd->flags"];
+"1000317" -> "1001477"  [label="DDG: cpu_to_le32(flags)"];
+"1000321" -> "1000317"  [label="DDG: flags"];
+"1000321" -> "1000322"  [label="CFG: "];
+"1000322" -> "1000321"  [label="AST: "];
+"1000274" -> "1000321"  [label="DDG: flags"];
+"1000321" -> "1000348"  [label="DDG: flags"];
+"1000274" -> "1000118"  [label="AST: "];
+"1000274" -> "1000276"  [label="CFG: "];
+"1000275" -> "1000274"  [label="AST: "];
+"1000276" -> "1000274"  [label="AST: "];
+"1000281" -> "1000274"  [label="CFG: "];
+"1000274" -> "1001477"  [label="DDG: user_srbcmd->flags"];
+}

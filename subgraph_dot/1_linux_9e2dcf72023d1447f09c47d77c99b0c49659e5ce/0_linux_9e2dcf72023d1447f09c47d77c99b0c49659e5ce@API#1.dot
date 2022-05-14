@@ -1,0 +1,27 @@
+digraph "0_linux_9e2dcf72023d1447f09c47d77c99b0c49659e5ce@API" {
+"1000207" [label="(Call,atomic_read(&nf_init_frags.mem) > nf_init_frags.high_thresh)"];
+"1000208" [label="(Call,atomic_read(&nf_init_frags.mem))"];
+"1000206" [label="(ControlStructure,if (atomic_read(&nf_init_frags.mem) > nf_init_frags.high_thresh))"];
+"1000207" [label="(Call,atomic_read(&nf_init_frags.mem) > nf_init_frags.high_thresh)"];
+"1000213" [label="(Call,nf_init_frags.high_thresh)"];
+"1000218" [label="(Identifier,fq)"];
+"1000209" [label="(Call,&nf_init_frags.mem)"];
+"1000214" [label="(Identifier,nf_init_frags)"];
+"1000208" [label="(Call,atomic_read(&nf_init_frags.mem))"];
+"1000216" [label="(Call,nf_ct_frag6_evictor())"];
+"1000318" [label="(MethodReturn,struct sk_buff *)"];
+"1000207" -> "1000206"  [label="AST: "];
+"1000207" -> "1000213"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000213" -> "1000207"  [label="AST: "];
+"1000216" -> "1000207"  [label="CFG: "];
+"1000218" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000318"  [label="DDG: atomic_read(&nf_init_frags.mem)"];
+"1000207" -> "1000318"  [label="DDG: atomic_read(&nf_init_frags.mem) > nf_init_frags.high_thresh"];
+"1000207" -> "1000318"  [label="DDG: nf_init_frags.high_thresh"];
+"1000208" -> "1000207"  [label="DDG: &nf_init_frags.mem"];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000214" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000318"  [label="DDG: &nf_init_frags.mem"];
+}

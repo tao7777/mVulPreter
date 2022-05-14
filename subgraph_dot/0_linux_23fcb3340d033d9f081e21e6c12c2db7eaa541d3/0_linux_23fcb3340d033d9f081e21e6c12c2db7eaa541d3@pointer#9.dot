@@ -1,0 +1,28 @@
+digraph "0_linux_23fcb3340d033d9f081e21e6c12c2db7eaa541d3@pointer" {
+"1000165" [label="(Call,be64_to_cpu(dip->di_ino))"];
+"1000164" [label="(Call,be64_to_cpu(dip->di_ino) != ino)"];
+"1000177" [label="(Identifier,dip)"];
+"1000171" [label="(Identifier,__this_address)"];
+"1000169" [label="(Identifier,ino)"];
+"1000164" [label="(Call,be64_to_cpu(dip->di_ino) != ino)"];
+"1000163" [label="(ControlStructure,if (be64_to_cpu(dip->di_ino) != ino))"];
+"1000116" [label="(MethodParameterIn,xfs_ino_t\t\tino)"];
+"1000435" [label="(MethodReturn,RET)"];
+"1000165" [label="(Call,be64_to_cpu(dip->di_ino))"];
+"1000166" [label="(Call,dip->di_ino)"];
+"1000165" -> "1000164"  [label="AST: "];
+"1000165" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000165"  [label="AST: "];
+"1000169" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000435"  [label="DDG: dip->di_ino"];
+"1000165" -> "1000164"  [label="DDG: dip->di_ino"];
+"1000164" -> "1000163"  [label="AST: "];
+"1000164" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000164"  [label="AST: "];
+"1000171" -> "1000164"  [label="CFG: "];
+"1000177" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000435"  [label="DDG: be64_to_cpu(dip->di_ino) != ino"];
+"1000164" -> "1000435"  [label="DDG: ino"];
+"1000164" -> "1000435"  [label="DDG: be64_to_cpu(dip->di_ino)"];
+"1000116" -> "1000164"  [label="DDG: ino"];
+}

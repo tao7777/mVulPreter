@@ -1,0 +1,24 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_17@pointer" {
+"1000316" [label="(Call,memcpy(&p->attrs, attrs, sizeof(p->attrs)))"];
+"1000104" [label="(MethodParameterIn,const struct iattr *attrs)"];
+"1000322" [label="(Call,sizeof(p->attrs))"];
+"1000316" [label="(Call,memcpy(&p->attrs, attrs, sizeof(p->attrs)))"];
+"1000104" [label="(MethodParameterIn,const struct iattr *attrs)"];
+"1000303" [label="(Block,)"];
+"1000378" [label="(MethodReturn,static struct nfs4_opendata *)"];
+"1000317" [label="(Call,&p->attrs)"];
+"1000321" [label="(Identifier,attrs)"];
+"1000329" [label="(Identifier,p)"];
+"1000316" -> "1000303"  [label="AST: "];
+"1000316" -> "1000322"  [label="CFG: "];
+"1000317" -> "1000316"  [label="AST: "];
+"1000321" -> "1000316"  [label="AST: "];
+"1000322" -> "1000316"  [label="AST: "];
+"1000329" -> "1000316"  [label="CFG: "];
+"1000316" -> "1000378"  [label="DDG: memcpy(&p->attrs, attrs, sizeof(p->attrs))"];
+"1000316" -> "1000378"  [label="DDG: attrs"];
+"1000316" -> "1000378"  [label="DDG: &p->attrs"];
+"1000104" -> "1000316"  [label="DDG: attrs"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000378"  [label="DDG: attrs"];
+}

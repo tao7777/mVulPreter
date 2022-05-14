@@ -1,0 +1,26 @@
+digraph "1_ImageMagick_07eebcd72f45c8fd7563d3f9ec5d2bed48f65f36@del" {
+"1000113" [label="(Return,return(tolower(c));)"];
+"1000114" [label="(Call,tolower(c))"];
+"1000101" [label="(MethodParameterIn,const int c)"];
+"1000115" [label="(Identifier,c)"];
+"1000102" [label="(Block,)"];
+"1000114" [label="(Call,tolower(c))"];
+"1000113" [label="(Return,return(tolower(c));)"];
+"1000110" [label="(Call,tolower_l(c,c_locale))"];
+"1000116" [label="(MethodReturn,MagickExport int)"];
+"1000101" [label="(MethodParameterIn,const int c)"];
+"1000113" -> "1000102"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000116" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000116"  [label="DDG: <RET>"];
+"1000114" -> "1000113"  [label="DDG: tolower(c)"];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000114" -> "1000116"  [label="DDG: tolower(c)"];
+"1000114" -> "1000116"  [label="DDG: c"];
+"1000101" -> "1000114"  [label="DDG: c"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000116"  [label="DDG: c"];
+"1000101" -> "1000110"  [label="DDG: c"];
+}

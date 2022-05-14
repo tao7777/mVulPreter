@@ -1,0 +1,22 @@
+digraph "0_linux_17d68b763f09a9ce824ae23eb62c9efc57b69271@pointer" {
+"1000150" [label="(Call,kvm_apic_present(vcpu))"];
+"1000149" [label="(Call,!kvm_apic_present(vcpu))"];
+"1000152" [label="(ControlStructure,continue;)"];
+"1000237" [label="(MethodReturn,static void)"];
+"1000149" [label="(Call,!kvm_apic_present(vcpu))"];
+"1000150" [label="(Call,kvm_apic_present(vcpu))"];
+"1000148" [label="(ControlStructure,if (!kvm_apic_present(vcpu)))"];
+"1000151" [label="(Identifier,vcpu)"];
+"1000155" [label="(Identifier,apic)"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000149" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000237"  [label="DDG: vcpu"];
+"1000150" -> "1000149"  [label="DDG: vcpu"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000152" -> "1000149"  [label="CFG: "];
+"1000155" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000237"  [label="DDG: !kvm_apic_present(vcpu)"];
+"1000149" -> "1000237"  [label="DDG: kvm_apic_present(vcpu)"];
+}

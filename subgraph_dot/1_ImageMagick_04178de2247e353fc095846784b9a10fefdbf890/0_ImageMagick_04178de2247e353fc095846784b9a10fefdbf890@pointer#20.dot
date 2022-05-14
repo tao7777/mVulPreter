@@ -1,0 +1,31 @@
+digraph "0_ImageMagick_04178de2247e353fc095846784b9a10fefdbf890@pointer" {
+"1001881" [label="(Call,p->columns == 0)"];
+"1001875" [label="(Call,(p->rows == 0) || (p->columns == 0))"];
+"1001885" [label="(Literal,0)"];
+"1001888" [label="(Identifier,p)"];
+"1001875" [label="(Call,(p->rows == 0) || (p->columns == 0))"];
+"1001882" [label="(Call,p->columns)"];
+"1001881" [label="(Call,p->columns == 0)"];
+"1001876" [label="(Call,p->rows == 0)"];
+"1001874" [label="(ControlStructure,if ((p->rows == 0) || (p->columns == 0)))"];
+"1001898" [label="(Identifier,image)"];
+"1001984" [label="(MethodReturn,static Image *)"];
+"1001881" -> "1001875"  [label="AST: "];
+"1001881" -> "1001885"  [label="CFG: "];
+"1001882" -> "1001881"  [label="AST: "];
+"1001885" -> "1001881"  [label="AST: "];
+"1001875" -> "1001881"  [label="CFG: "];
+"1001881" -> "1001984"  [label="DDG: p->columns"];
+"1001881" -> "1001875"  [label="DDG: p->columns"];
+"1001881" -> "1001875"  [label="DDG: 0"];
+"1001875" -> "1001874"  [label="AST: "];
+"1001875" -> "1001876"  [label="CFG: "];
+"1001876" -> "1001875"  [label="AST: "];
+"1001888" -> "1001875"  [label="CFG: "];
+"1001898" -> "1001875"  [label="CFG: "];
+"1001875" -> "1001984"  [label="DDG: (p->rows == 0) || (p->columns == 0)"];
+"1001875" -> "1001984"  [label="DDG: p->columns == 0"];
+"1001875" -> "1001984"  [label="DDG: p->rows == 0"];
+"1001876" -> "1001875"  [label="DDG: p->rows"];
+"1001876" -> "1001875"  [label="DDG: 0"];
+}

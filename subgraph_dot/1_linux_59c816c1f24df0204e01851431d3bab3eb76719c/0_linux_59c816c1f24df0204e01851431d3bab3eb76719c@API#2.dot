@@ -1,0 +1,24 @@
+digraph "0_linux_59c816c1f24df0204e01851431d3bab3eb76719c@API" {
+"1000203" [label="(Call,mutex_unlock(&vhost_scsi_mutex))"];
+"1000193" [label="(Call,mutex_lock(&vhost_scsi_mutex))"];
+"1000203" [label="(Call,mutex_unlock(&vhost_scsi_mutex))"];
+"1000104" [label="(Block,)"];
+"1000211" [label="(MethodReturn,RET)"];
+"1000209" [label="(Identifier,tpg)"];
+"1000193" [label="(Call,mutex_lock(&vhost_scsi_mutex))"];
+"1000204" [label="(Call,&vhost_scsi_mutex)"];
+"1000199" [label="(Identifier,tpg)"];
+"1000194" [label="(Call,&vhost_scsi_mutex)"];
+"1000203" -> "1000104"  [label="AST: "];
+"1000203" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000209" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000211"  [label="DDG: mutex_unlock(&vhost_scsi_mutex)"];
+"1000203" -> "1000211"  [label="DDG: &vhost_scsi_mutex"];
+"1000193" -> "1000203"  [label="DDG: &vhost_scsi_mutex"];
+"1000193" -> "1000104"  [label="AST: "];
+"1000193" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000199" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000211"  [label="DDG: mutex_lock(&vhost_scsi_mutex)"];
+}

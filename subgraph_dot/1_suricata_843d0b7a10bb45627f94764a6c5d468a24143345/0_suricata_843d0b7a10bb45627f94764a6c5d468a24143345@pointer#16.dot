@@ -1,0 +1,34 @@
+digraph "0_suricata_843d0b7a10bb45627f94764a6c5d468a24143345@pointer" {
+"1000639" [label="(Call,ssn->state >= TCP_ESTABLISHED)"];
+"1000362" [label="(Call,ssn->state == TCP_NONE)"];
+"1000640" [label="(Call,ssn->state)"];
+"1000652" [label="(Identifier,ssn)"];
+"1000638" [label="(ControlStructure,if (ssn->state >= TCP_ESTABLISHED))"];
+"1000639" [label="(Call,ssn->state >= TCP_ESTABLISHED)"];
+"1000358" [label="(Call,ssn == NULL || ssn->state == TCP_NONE)"];
+"1000366" [label="(Identifier,TCP_NONE)"];
+"1000643" [label="(Identifier,TCP_ESTABLISHED)"];
+"1000363" [label="(Call,ssn->state)"];
+"1000884" [label="(MethodReturn,int)"];
+"1000362" [label="(Call,ssn->state == TCP_NONE)"];
+"1000647" [label="(Identifier,p)"];
+"1000639" -> "1000638"  [label="AST: "];
+"1000639" -> "1000643"  [label="CFG: "];
+"1000640" -> "1000639"  [label="AST: "];
+"1000643" -> "1000639"  [label="AST: "];
+"1000647" -> "1000639"  [label="CFG: "];
+"1000652" -> "1000639"  [label="CFG: "];
+"1000639" -> "1000884"  [label="DDG: TCP_ESTABLISHED"];
+"1000639" -> "1000884"  [label="DDG: ssn->state >= TCP_ESTABLISHED"];
+"1000639" -> "1000884"  [label="DDG: ssn->state"];
+"1000362" -> "1000639"  [label="DDG: ssn->state"];
+"1000362" -> "1000358"  [label="AST: "];
+"1000362" -> "1000366"  [label="CFG: "];
+"1000363" -> "1000362"  [label="AST: "];
+"1000366" -> "1000362"  [label="AST: "];
+"1000358" -> "1000362"  [label="CFG: "];
+"1000362" -> "1000884"  [label="DDG: TCP_NONE"];
+"1000362" -> "1000884"  [label="DDG: ssn->state"];
+"1000362" -> "1000358"  [label="DDG: ssn->state"];
+"1000362" -> "1000358"  [label="DDG: TCP_NONE"];
+}

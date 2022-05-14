@@ -1,0 +1,30 @@
+digraph "0_libgit2_1f9a8510e1d2f20ed7334eeeddb92c4dd8e7c649@array" {
+"1000173" [label="(Call,pkt->ref[len] = '\0')"];
+"1000247" [label="(Call,git__free(pkt->ref))"];
+"1000252" [label="(Identifier,pkt)"];
+"1000167" [label="(Call,memcpy(pkt->ref, line, len))"];
+"1000247" [label="(Call,git__free(pkt->ref))"];
+"1000117" [label="(Call,pkt->ref = NULL)"];
+"1000105" [label="(Block,)"];
+"1000173" [label="(Call,pkt->ref[len] = '\0')"];
+"1000256" [label="(MethodReturn,static int)"];
+"1000179" [label="(Literal,'\0')"];
+"1000248" [label="(Call,pkt->ref)"];
+"1000174" [label="(Call,pkt->ref[len])"];
+"1000182" [label="(Identifier,len)"];
+"1000173" -> "1000105"  [label="AST: "];
+"1000173" -> "1000179"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000179" -> "1000173"  [label="AST: "];
+"1000182" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000256"  [label="DDG: pkt->ref[len]"];
+"1000173" -> "1000247"  [label="DDG: pkt->ref[len]"];
+"1000247" -> "1000105"  [label="AST: "];
+"1000247" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000252" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000256"  [label="DDG: pkt->ref"];
+"1000247" -> "1000256"  [label="DDG: git__free(pkt->ref)"];
+"1000167" -> "1000247"  [label="DDG: pkt->ref"];
+"1000117" -> "1000247"  [label="DDG: pkt->ref"];
+}

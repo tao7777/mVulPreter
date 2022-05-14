@@ -1,0 +1,32 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_32@pointer" {
+"1000814" [label="(Call,test_bit(SOCK_NOSPACE, &sk->sk_socket->flags))"];
+"1000809" [label="(Call,err == -ENOBUFS || test_bit(SOCK_NOSPACE, &sk->sk_socket->flags))"];
+"1000815" [label="(Identifier,SOCK_NOSPACE)"];
+"1000825" [label="(Identifier,sk)"];
+"1000814" [label="(Call,test_bit(SOCK_NOSPACE, &sk->sk_socket->flags))"];
+"1000809" [label="(Call,err == -ENOBUFS || test_bit(SOCK_NOSPACE, &sk->sk_socket->flags))"];
+"1000850" [label="(MethodReturn,int)"];
+"1000829" [label="(Identifier,err)"];
+"1000816" [label="(Call,&sk->sk_socket->flags)"];
+"1000808" [label="(ControlStructure,if (err == -ENOBUFS || test_bit(SOCK_NOSPACE, &sk->sk_socket->flags)))"];
+"1000810" [label="(Call,err == -ENOBUFS)"];
+"1000814" -> "1000809"  [label="AST: "];
+"1000814" -> "1000816"  [label="CFG: "];
+"1000815" -> "1000814"  [label="AST: "];
+"1000816" -> "1000814"  [label="AST: "];
+"1000809" -> "1000814"  [label="CFG: "];
+"1000814" -> "1000850"  [label="DDG: &sk->sk_socket->flags"];
+"1000814" -> "1000850"  [label="DDG: SOCK_NOSPACE"];
+"1000814" -> "1000809"  [label="DDG: SOCK_NOSPACE"];
+"1000814" -> "1000809"  [label="DDG: &sk->sk_socket->flags"];
+"1000809" -> "1000808"  [label="AST: "];
+"1000809" -> "1000810"  [label="CFG: "];
+"1000810" -> "1000809"  [label="AST: "];
+"1000825" -> "1000809"  [label="CFG: "];
+"1000829" -> "1000809"  [label="CFG: "];
+"1000809" -> "1000850"  [label="DDG: err == -ENOBUFS"];
+"1000809" -> "1000850"  [label="DDG: test_bit(SOCK_NOSPACE, &sk->sk_socket->flags)"];
+"1000809" -> "1000850"  [label="DDG: err == -ENOBUFS || test_bit(SOCK_NOSPACE, &sk->sk_socket->flags)"];
+"1000810" -> "1000809"  [label="DDG: err"];
+"1000810" -> "1000809"  [label="DDG: -ENOBUFS"];
+}

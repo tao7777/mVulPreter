@@ -1,0 +1,30 @@
+digraph "0_linux_23567fd052a9abb6d67fe8e7a9ccdd9800a540f2@pointer" {
+"1000209" [label="(Call,ret = keyring->serial)"];
+"1000217" [label="(Return,return ret;)"];
+"1000226" [label="(MethodReturn,long)"];
+"1000210" [label="(Identifier,ret)"];
+"1000218" [label="(Identifier,ret)"];
+"1000215" [label="(Identifier,keyring)"];
+"1000135" [label="(Call,ret = serial)"];
+"1000132" [label="(Call,ret == 0)"];
+"1000107" [label="(Block,)"];
+"1000217" [label="(Return,return ret;)"];
+"1000209" [label="(Call,ret = keyring->serial)"];
+"1000211" [label="(Call,keyring->serial)"];
+"1000209" -> "1000107"  [label="AST: "];
+"1000209" -> "1000211"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000211" -> "1000209"  [label="AST: "];
+"1000215" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000226"  [label="DDG: ret"];
+"1000209" -> "1000226"  [label="DDG: keyring->serial"];
+"1000209" -> "1000217"  [label="DDG: ret"];
+"1000217" -> "1000107"  [label="AST: "];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000226" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000226"  [label="DDG: <RET>"];
+"1000218" -> "1000217"  [label="DDG: ret"];
+"1000132" -> "1000217"  [label="DDG: ret"];
+"1000135" -> "1000217"  [label="DDG: ret"];
+}

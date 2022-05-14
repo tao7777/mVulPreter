@@ -1,0 +1,31 @@
+digraph "0_linux_8f659a03a0ba9289b9aeb9b4470e6fb263d6f483@pointer" {
+"1000124" [label="(Call,*rt = NULL)"];
+"1000645" [label="(Call,ip_rt_put(rt))"];
+"1000130" [label="(Identifier,free)"];
+"1000646" [label="(Identifier,rt)"];
+"1000111" [label="(Block,)"];
+"1000125" [label="(Identifier,rt)"];
+"1000124" [label="(Call,*rt = NULL)"];
+"1000686" [label="(MethodReturn,static int)"];
+"1000645" [label="(Call,ip_rt_put(rt))"];
+"1000126" [label="(Identifier,NULL)"];
+"1000647" [label="(JumpTarget,out:)"];
+"1000505" [label="(Call,IS_ERR(rt))"];
+"1000512" [label="(Call,rt = NULL)"];
+"1000124" -> "1000111"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="AST: "];
+"1000130" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000686"  [label="DDG: NULL"];
+"1000124" -> "1000686"  [label="DDG: rt"];
+"1000124" -> "1000645"  [label="DDG: rt"];
+"1000645" -> "1000111"  [label="AST: "];
+"1000645" -> "1000646"  [label="CFG: "];
+"1000646" -> "1000645"  [label="AST: "];
+"1000647" -> "1000645"  [label="CFG: "];
+"1000645" -> "1000686"  [label="DDG: rt"];
+"1000645" -> "1000686"  [label="DDG: ip_rt_put(rt)"];
+"1000505" -> "1000645"  [label="DDG: rt"];
+"1000512" -> "1000645"  [label="DDG: rt"];
+}

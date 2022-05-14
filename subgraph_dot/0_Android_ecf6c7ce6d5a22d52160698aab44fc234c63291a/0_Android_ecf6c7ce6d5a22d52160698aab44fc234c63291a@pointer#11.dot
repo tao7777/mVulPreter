@@ -1,0 +1,30 @@
+digraph "0_Android_ecf6c7ce6d5a22d52160698aab44fc234c63291a@pointer" {
+"1000225" [label="(Call,memset(ps_dec->pv_scratch_sps_pps, 0, size))"];
+"1000218" [label="(Call,size = MAX(sizeof(dec_seq_params_t), sizeof(dec_pic_params_t)))"];
+"1000229" [label="(Literal,0)"];
+"1000227" [label="(Identifier,ps_dec)"];
+"1000232" [label="(Identifier,size)"];
+"1000225" [label="(Call,memset(ps_dec->pv_scratch_sps_pps, 0, size))"];
+"1000226" [label="(Call,ps_dec->pv_scratch_sps_pps)"];
+"1000230" [label="(Identifier,size)"];
+"1000121" [label="(Block,)"];
+"1000220" [label="(Call,MAX(sizeof(dec_seq_params_t), sizeof(dec_pic_params_t)))"];
+"1000956" [label="(MethodReturn,void)"];
+"1000219" [label="(Identifier,size)"];
+"1000218" [label="(Call,size = MAX(sizeof(dec_seq_params_t), sizeof(dec_pic_params_t)))"];
+"1000225" -> "1000121"  [label="AST: "];
+"1000225" -> "1000230"  [label="CFG: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000229" -> "1000225"  [label="AST: "];
+"1000230" -> "1000225"  [label="AST: "];
+"1000232" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000956"  [label="DDG: memset(ps_dec->pv_scratch_sps_pps, 0, size)"];
+"1000225" -> "1000956"  [label="DDG: ps_dec->pv_scratch_sps_pps"];
+"1000218" -> "1000225"  [label="DDG: size"];
+"1000218" -> "1000121"  [label="AST: "];
+"1000218" -> "1000220"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000220" -> "1000218"  [label="AST: "];
+"1000227" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000956"  [label="DDG: MAX(sizeof(dec_seq_params_t), sizeof(dec_pic_params_t))"];
+}

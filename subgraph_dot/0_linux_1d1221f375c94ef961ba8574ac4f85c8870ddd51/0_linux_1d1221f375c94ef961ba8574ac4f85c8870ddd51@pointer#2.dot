@@ -1,0 +1,30 @@
+digraph "0_linux_1d1221f375c94ef961ba8574ac4f85c8870ddd51@pointer" {
+"1000141" [label="(Call,task_io_accounting_add(&acct, &t->ioac))"];
+"1000132" [label="(Call,task_io_accounting_add(&acct, &task->signal->ioac))"];
+"1000141" [label="(Call,task_io_accounting_add(&acct, &t->ioac))"];
+"1000127" [label="(Block,)"];
+"1000144" [label="(Call,&t->ioac)"];
+"1000149" [label="(Identifier,task)"];
+"1000143" [label="(Identifier,acct)"];
+"1000135" [label="(Call,&task->signal->ioac)"];
+"1000142" [label="(Call,&acct)"];
+"1000191" [label="(MethodReturn,static int)"];
+"1000132" [label="(Call,task_io_accounting_add(&acct, &task->signal->ioac))"];
+"1000133" [label="(Call,&acct)"];
+"1000141" -> "1000127"  [label="AST: "];
+"1000141" -> "1000144"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000144" -> "1000141"  [label="AST: "];
+"1000149" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000191"  [label="DDG: &acct"];
+"1000141" -> "1000191"  [label="DDG: task_io_accounting_add(&acct, &t->ioac)"];
+"1000141" -> "1000191"  [label="DDG: &t->ioac"];
+"1000132" -> "1000141"  [label="DDG: &acct"];
+"1000132" -> "1000127"  [label="AST: "];
+"1000132" -> "1000135"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000135" -> "1000132"  [label="AST: "];
+"1000143" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000191"  [label="DDG: task_io_accounting_add(&acct, &task->signal->ioac)"];
+"1000132" -> "1000191"  [label="DDG: &task->signal->ioac"];
+}

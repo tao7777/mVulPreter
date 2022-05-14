@@ -1,0 +1,32 @@
+digraph "0_linux_ef85b67385436ddc1998f45f1d6a210f935b3388@pointer" {
+"1000343" [label="(Call,vcpu->arch.dr6 &= ~15)"];
+"1000350" [label="(Call,vcpu->arch.dr6 |= dr6 | DR6_RTM)"];
+"1000457" [label="(MethodReturn,static int)"];
+"1000343" [label="(Call,vcpu->arch.dr6 &= ~15)"];
+"1000342" [label="(Block,)"];
+"1000350" [label="(Call,vcpu->arch.dr6 |= dr6 | DR6_RTM)"];
+"1000349" [label="(Identifier,~15)"];
+"1000351" [label="(Call,vcpu->arch.dr6)"];
+"1000356" [label="(Call,dr6 | DR6_RTM)"];
+"1000353" [label="(Identifier,vcpu)"];
+"1000362" [label="(Identifier,dr6)"];
+"1000344" [label="(Call,vcpu->arch.dr6)"];
+"1000343" -> "1000342"  [label="AST: "];
+"1000343" -> "1000349"  [label="CFG: "];
+"1000344" -> "1000343"  [label="AST: "];
+"1000349" -> "1000343"  [label="AST: "];
+"1000353" -> "1000343"  [label="CFG: "];
+"1000343" -> "1000457"  [label="DDG: ~15"];
+"1000343" -> "1000457"  [label="DDG: vcpu->arch.dr6 &= ~15"];
+"1000343" -> "1000350"  [label="DDG: vcpu->arch.dr6"];
+"1000350" -> "1000342"  [label="AST: "];
+"1000350" -> "1000356"  [label="CFG: "];
+"1000351" -> "1000350"  [label="AST: "];
+"1000356" -> "1000350"  [label="AST: "];
+"1000362" -> "1000350"  [label="CFG: "];
+"1000350" -> "1000457"  [label="DDG: vcpu->arch.dr6"];
+"1000350" -> "1000457"  [label="DDG: dr6 | DR6_RTM"];
+"1000350" -> "1000457"  [label="DDG: vcpu->arch.dr6 |= dr6 | DR6_RTM"];
+"1000356" -> "1000350"  [label="DDG: dr6"];
+"1000356" -> "1000350"  [label="DDG: DR6_RTM"];
+}

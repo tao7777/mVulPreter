@@ -1,0 +1,35 @@
+digraph "0_linux_07678eca2cf9c9a18584e546c2b2a0d0c9a3150c@pointer" {
+"1000461" [label="(Call,rep->buffer_handle = SVGA3D_INVALID_ID)"];
+"1000256" [label="(Call,req->buffer_handle != SVGA3D_INVALID_ID)"];
+"1000450" [label="(Block,)"];
+"1000260" [label="(Identifier,SVGA3D_INVALID_ID)"];
+"1000255" [label="(ControlStructure,if (req->buffer_handle != SVGA3D_INVALID_ID))"];
+"1000320" [label="(Identifier,req)"];
+"1000477" [label="(MethodReturn,int)"];
+"1000465" [label="(Identifier,SVGA3D_INVALID_ID)"];
+"1000462" [label="(Call,rep->buffer_handle)"];
+"1000257" [label="(Call,req->buffer_handle)"];
+"1000461" [label="(Call,rep->buffer_handle = SVGA3D_INVALID_ID)"];
+"1000468" [label="(Identifier,res)"];
+"1000264" [label="(Call,vmw_user_dmabuf_lookup(tfile, req->buffer_handle,\n \t\t\t\t\t     &res->backup,\n \t\t\t\t\t     &user_srf->backup_base))"];
+"1000256" [label="(Call,req->buffer_handle != SVGA3D_INVALID_ID)"];
+"1000263" [label="(Identifier,ret)"];
+"1000461" -> "1000450"  [label="AST: "];
+"1000461" -> "1000465"  [label="CFG: "];
+"1000462" -> "1000461"  [label="AST: "];
+"1000465" -> "1000461"  [label="AST: "];
+"1000468" -> "1000461"  [label="CFG: "];
+"1000461" -> "1000477"  [label="DDG: SVGA3D_INVALID_ID"];
+"1000461" -> "1000477"  [label="DDG: rep->buffer_handle"];
+"1000256" -> "1000461"  [label="DDG: SVGA3D_INVALID_ID"];
+"1000256" -> "1000255"  [label="AST: "];
+"1000256" -> "1000260"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000260" -> "1000256"  [label="AST: "];
+"1000263" -> "1000256"  [label="CFG: "];
+"1000320" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000477"  [label="DDG: SVGA3D_INVALID_ID"];
+"1000256" -> "1000477"  [label="DDG: req->buffer_handle"];
+"1000256" -> "1000477"  [label="DDG: req->buffer_handle != SVGA3D_INVALID_ID"];
+"1000256" -> "1000264"  [label="DDG: req->buffer_handle"];
+}

@@ -1,0 +1,22 @@
+digraph "0_ImageMagick_f6e9d0d9955e85bdd7540b251cd50d598dacc5e6_13@pointer" {
+"1001241" [label="(Call,image->colormap[colors[i].pixel].blue=\n          ScaleShortToQuantum(colors[i].blue))"];
+"1001253" [label="(Call,ScaleShortToQuantum(colors[i].blue))"];
+"1001241" [label="(Call,image->colormap[colors[i].pixel].blue=\n          ScaleShortToQuantum(colors[i].blue))"];
+"1001254" [label="(Call,colors[i].blue)"];
+"1001253" [label="(Call,ScaleShortToQuantum(colors[i].blue))"];
+"1001548" [label="(MethodReturn,static Image *)"];
+"1001242" [label="(Call,image->colormap[colors[i].pixel].blue)"];
+"1001204" [label="(Block,)"];
+"1001203" [label="(Identifier,i)"];
+"1001241" -> "1001204"  [label="AST: "];
+"1001241" -> "1001253"  [label="CFG: "];
+"1001242" -> "1001241"  [label="AST: "];
+"1001253" -> "1001241"  [label="AST: "];
+"1001203" -> "1001241"  [label="CFG: "];
+"1001241" -> "1001548"  [label="DDG: ScaleShortToQuantum(colors[i].blue)"];
+"1001241" -> "1001548"  [label="DDG: image->colormap[colors[i].pixel].blue"];
+"1001253" -> "1001241"  [label="DDG: colors[i].blue"];
+"1001253" -> "1001254"  [label="CFG: "];
+"1001254" -> "1001253"  [label="AST: "];
+"1001253" -> "1001548"  [label="DDG: colors[i].blue"];
+}

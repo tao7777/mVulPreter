@@ -1,0 +1,33 @@
+digraph "0_linux_dab6cf55f81a6e16b8147aed9a843e1691dcd318_0@pointer" {
+"1000414" [label="(Call,(addr_t) &child->thread.fp_regs)"];
+"1000411" [label="(Call,(__u32 *)((addr_t) &child->thread.fp_regs + offset))"];
+"1000413" [label="(Call,(addr_t) &child->thread.fp_regs + offset)"];
+"1000422" [label="(Identifier,offset)"];
+"1000410" [label="(Call,*(__u32 *)((addr_t) &child->thread.fp_regs + offset))"];
+"1000413" [label="(Call,(addr_t) &child->thread.fp_regs + offset)"];
+"1000397" [label="(Call,offset = addr - (addr_t) &dummy32->regs.fp_regs)"];
+"1000414" [label="(Call,(addr_t) &child->thread.fp_regs)"];
+"1000416" [label="(Call,&child->thread.fp_regs)"];
+"1000455" [label="(MethodReturn,static int)"];
+"1000411" [label="(Call,(__u32 *)((addr_t) &child->thread.fp_regs + offset))"];
+"1000414" -> "1000413"  [label="AST: "];
+"1000414" -> "1000416"  [label="CFG: "];
+"1000415" -> "1000414"  [label="AST: "];
+"1000416" -> "1000414"  [label="AST: "];
+"1000422" -> "1000414"  [label="CFG: "];
+"1000414" -> "1000455"  [label="DDG: &child->thread.fp_regs"];
+"1000414" -> "1000411"  [label="DDG: &child->thread.fp_regs"];
+"1000414" -> "1000413"  [label="DDG: &child->thread.fp_regs"];
+"1000411" -> "1000410"  [label="AST: "];
+"1000411" -> "1000413"  [label="CFG: "];
+"1000412" -> "1000411"  [label="AST: "];
+"1000413" -> "1000411"  [label="AST: "];
+"1000410" -> "1000411"  [label="CFG: "];
+"1000411" -> "1000455"  [label="DDG: (addr_t) &child->thread.fp_regs + offset"];
+"1000397" -> "1000411"  [label="DDG: offset"];
+"1000413" -> "1000422"  [label="CFG: "];
+"1000422" -> "1000413"  [label="AST: "];
+"1000413" -> "1000455"  [label="DDG: (addr_t) &child->thread.fp_regs"];
+"1000413" -> "1000455"  [label="DDG: offset"];
+"1000397" -> "1000413"  [label="DDG: offset"];
+}

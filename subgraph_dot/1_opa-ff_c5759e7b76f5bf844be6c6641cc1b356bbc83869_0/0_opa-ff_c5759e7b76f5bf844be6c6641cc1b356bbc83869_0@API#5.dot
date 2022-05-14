@@ -1,0 +1,28 @@
+digraph "0_opa-ff_c5759e7b76f5bf844be6c6641cc1b356bbc83869_0@API" {
+"1000130" [label="(Call,strlen(hdl->c_path) >= sizeof(unix_addr.sun_path))"];
+"1000131" [label="(Call,strlen(hdl->c_path))"];
+"1000137" [label="(Identifier,unix_addr)"];
+"1000131" [label="(Call,strlen(hdl->c_path))"];
+"1000146" [label="(Identifier,unix_addr)"];
+"1000129" [label="(ControlStructure,if(strlen(hdl->c_path) >= sizeof(unix_addr.sun_path)))"];
+"1000135" [label="(Call,sizeof(unix_addr.sun_path))"];
+"1000141" [label="(Identifier,fd)"];
+"1000130" [label="(Call,strlen(hdl->c_path) >= sizeof(unix_addr.sun_path))"];
+"1000144" [label="(Call,snprintf(unix_addr.sun_path, sizeof(unix_addr.sun_path), \"%s\", hdl->c_path))"];
+"1000285" [label="(MethodReturn,RET)"];
+"1000132" [label="(Call,hdl->c_path)"];
+"1000130" -> "1000129"  [label="AST: "];
+"1000130" -> "1000135"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000135" -> "1000130"  [label="AST: "];
+"1000141" -> "1000130"  [label="CFG: "];
+"1000146" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000285"  [label="DDG: "];
+"1000130" -> "1000285"  [label="DDG: "];
+"1000131" -> "1000130"  [label="DDG: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000137" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000285"  [label="DDG: "];
+"1000131" -> "1000144"  [label="DDG: "];
+}

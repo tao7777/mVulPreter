@@ -1,0 +1,35 @@
+digraph "0_linux_132c94e31b8bca8ea921f9f96a57d684fa4ae0a9@pointer" {
+"1000333" [label="(Call,list_empty(&old->mnt_expire))"];
+"1000332" [label="(Call,!list_empty(&old->mnt_expire))"];
+"1000338" [label="(Call,list_add(&mnt->mnt_expire, &old->mnt_expire))"];
+"1000348" [label="(Identifier,mnt)"];
+"1000343" [label="(Call,&old->mnt_expire)"];
+"1000355" [label="(MethodReturn,static struct mount *)"];
+"1000334" [label="(Call,&old->mnt_expire)"];
+"1000332" [label="(Call,!list_empty(&old->mnt_expire))"];
+"1000341" [label="(Identifier,mnt)"];
+"1000339" [label="(Call,&mnt->mnt_expire)"];
+"1000331" [label="(ControlStructure,if (!list_empty(&old->mnt_expire)))"];
+"1000333" [label="(Call,list_empty(&old->mnt_expire))"];
+"1000338" [label="(Call,list_add(&mnt->mnt_expire, &old->mnt_expire))"];
+"1000333" -> "1000332"  [label="AST: "];
+"1000333" -> "1000334"  [label="CFG: "];
+"1000334" -> "1000333"  [label="AST: "];
+"1000332" -> "1000333"  [label="CFG: "];
+"1000333" -> "1000355"  [label="DDG: &old->mnt_expire"];
+"1000333" -> "1000332"  [label="DDG: &old->mnt_expire"];
+"1000333" -> "1000338"  [label="DDG: &old->mnt_expire"];
+"1000332" -> "1000331"  [label="AST: "];
+"1000341" -> "1000332"  [label="CFG: "];
+"1000348" -> "1000332"  [label="CFG: "];
+"1000332" -> "1000355"  [label="DDG: list_empty(&old->mnt_expire)"];
+"1000332" -> "1000355"  [label="DDG: !list_empty(&old->mnt_expire)"];
+"1000338" -> "1000331"  [label="AST: "];
+"1000338" -> "1000343"  [label="CFG: "];
+"1000339" -> "1000338"  [label="AST: "];
+"1000343" -> "1000338"  [label="AST: "];
+"1000348" -> "1000338"  [label="CFG: "];
+"1000338" -> "1000355"  [label="DDG: &mnt->mnt_expire"];
+"1000338" -> "1000355"  [label="DDG: &old->mnt_expire"];
+"1000338" -> "1000355"  [label="DDG: list_add(&mnt->mnt_expire, &old->mnt_expire)"];
+}

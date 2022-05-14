@@ -1,0 +1,38 @@
+digraph "1_krb5_93b4a6306a0026cf1cc31ac4bd8a49ba5d034ba7@del" {
+"1000322" [label="(Call,check_anon(kdc_active_realm, request->client, request->server))"];
+"1000114" [label="(MethodParameterIn,kdc_realm_t *kdc_active_realm)"];
+"1000321" [label="(Call,check_anon(kdc_active_realm, request->client, request->server) != 0)"];
+"1000374" [label="(MethodReturn,RET)"];
+"1000339" [label="(Identifier,ret)"];
+"1000327" [label="(Call,request->server)"];
+"1000324" [label="(Call,request->client)"];
+"1000330" [label="(Literal,0)"];
+"1000334" [label="(Identifier,status)"];
+"1000323" [label="(Identifier,kdc_active_realm)"];
+"1000321" [label="(Call,check_anon(kdc_active_realm, request->client, request->server) != 0)"];
+"1000320" [label="(ControlStructure,if (check_anon(kdc_active_realm, request->client, request->server) != 0))"];
+"1000322" [label="(Call,check_anon(kdc_active_realm, request->client, request->server))"];
+"1000114" [label="(MethodParameterIn,kdc_realm_t *kdc_active_realm)"];
+"1000322" -> "1000321"  [label="AST: "];
+"1000322" -> "1000327"  [label="CFG: "];
+"1000323" -> "1000322"  [label="AST: "];
+"1000324" -> "1000322"  [label="AST: "];
+"1000327" -> "1000322"  [label="AST: "];
+"1000330" -> "1000322"  [label="CFG: "];
+"1000322" -> "1000374"  [label="DDG: request->client"];
+"1000322" -> "1000374"  [label="DDG: kdc_active_realm"];
+"1000322" -> "1000374"  [label="DDG: request->server"];
+"1000322" -> "1000321"  [label="DDG: kdc_active_realm"];
+"1000322" -> "1000321"  [label="DDG: request->client"];
+"1000322" -> "1000321"  [label="DDG: request->server"];
+"1000114" -> "1000322"  [label="DDG: kdc_active_realm"];
+"1000114" -> "1000113"  [label="AST: "];
+"1000114" -> "1000374"  [label="DDG: kdc_active_realm"];
+"1000321" -> "1000320"  [label="AST: "];
+"1000321" -> "1000330"  [label="CFG: "];
+"1000330" -> "1000321"  [label="AST: "];
+"1000334" -> "1000321"  [label="CFG: "];
+"1000339" -> "1000321"  [label="CFG: "];
+"1000321" -> "1000374"  [label="DDG: check_anon(kdc_active_realm, request->client, request->server)"];
+"1000321" -> "1000374"  [label="DDG: check_anon(kdc_active_realm, request->client, request->server) != 0"];
+}

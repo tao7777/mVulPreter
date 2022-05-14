@@ -1,0 +1,32 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_32@pointer" {
+"1000651" [label="(Call,unlikely(up->pending))"];
+"1000209" [label="(Call,likely(up->pending))"];
+"1000210" [label="(Call,up->pending)"];
+"1000218" [label="(Identifier,up)"];
+"1000651" [label="(Call,unlikely(up->pending))"];
+"1000657" [label="(Identifier,sk)"];
+"1000229" [label="(Identifier,sk)"];
+"1000652" [label="(Call,up->pending)"];
+"1000208" [label="(ControlStructure,if (likely(up->pending)))"];
+"1000650" [label="(ControlStructure,if (unlikely(up->pending)))"];
+"1000664" [label="(Identifier,fl4)"];
+"1000216" [label="(Call,up->pending != AF_INET)"];
+"1000209" [label="(Call,likely(up->pending))"];
+"1000816" [label="(MethodReturn,int)"];
+"1000651" -> "1000650"  [label="AST: "];
+"1000651" -> "1000652"  [label="CFG: "];
+"1000652" -> "1000651"  [label="AST: "];
+"1000657" -> "1000651"  [label="CFG: "];
+"1000664" -> "1000651"  [label="CFG: "];
+"1000651" -> "1000816"  [label="DDG: unlikely(up->pending)"];
+"1000651" -> "1000816"  [label="DDG: up->pending"];
+"1000209" -> "1000651"  [label="DDG: up->pending"];
+"1000209" -> "1000208"  [label="AST: "];
+"1000209" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000218" -> "1000209"  [label="CFG: "];
+"1000229" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000816"  [label="DDG: likely(up->pending)"];
+"1000209" -> "1000816"  [label="DDG: up->pending"];
+"1000209" -> "1000216"  [label="DDG: up->pending"];
+}

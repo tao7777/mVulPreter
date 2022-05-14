@@ -1,0 +1,32 @@
+digraph "0_linux_e66eded8309ebf679d3d3c1f5820d1f2ca332c71@pointer" {
+"1000308" [label="(Call,new_cred = NULL)"];
+"1000314" [label="(Call,put_cred(new_cred))"];
+"1000310" [label="(Identifier,NULL)"];
+"1000308" [label="(Call,new_cred = NULL)"];
+"1000218" [label="(Call,unshare_nsproxy_namespaces(unshare_flags, &new_nsproxy,\n\t\t\t\t\t new_cred, new_fs))"];
+"1000305" [label="(Block,)"];
+"1000315" [label="(Identifier,new_cred)"];
+"1000309" [label="(Identifier,new_cred)"];
+"1000311" [label="(JumpTarget,bad_unshare_cleanup_cred:)"];
+"1000316" [label="(JumpTarget,bad_unshare_cleanup_fd:)"];
+"1000234" [label="(Call,new_cred || new_nsproxy)"];
+"1000329" [label="(MethodReturn,RET)"];
+"1000314" [label="(Call,put_cred(new_cred))"];
+"1000312" [label="(ControlStructure,if (new_cred))"];
+"1000308" -> "1000305"  [label="AST: "];
+"1000308" -> "1000310"  [label="CFG: "];
+"1000309" -> "1000308"  [label="AST: "];
+"1000310" -> "1000308"  [label="AST: "];
+"1000311" -> "1000308"  [label="CFG: "];
+"1000308" -> "1000329"  [label="DDG: NULL"];
+"1000308" -> "1000329"  [label="DDG: new_cred"];
+"1000308" -> "1000314"  [label="DDG: new_cred"];
+"1000314" -> "1000312"  [label="AST: "];
+"1000314" -> "1000315"  [label="CFG: "];
+"1000315" -> "1000314"  [label="AST: "];
+"1000316" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000329"  [label="DDG: new_cred"];
+"1000314" -> "1000329"  [label="DDG: put_cred(new_cred)"];
+"1000234" -> "1000314"  [label="DDG: new_cred"];
+"1000218" -> "1000314"  [label="DDG: new_cred"];
+}

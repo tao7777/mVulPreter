@@ -1,0 +1,22 @@
+digraph "0_Chrome_684a212a93141908bcc10f4bc57f3edb53d2d21f@pointer" {
+"1000160" [label="(Call,* extension_host =\n        ExtensionSystem::Get(GetProfile())\n             ->process_manager()\n             ->GetBackgroundHostForExtension(*debuggee_.extension_id))"];
+"1000162" [label="(Call,ExtensionSystem::Get(GetProfile())\n             ->process_manager()\n             ->GetBackgroundHostForExtension(*debuggee_.extension_id))"];
+"1000214" [label="(MethodReturn,bool)"];
+"1000163" [label="(Call,*debuggee_.extension_id)"];
+"1000160" [label="(Call,* extension_host =\n        ExtensionSystem::Get(GetProfile())\n             ->process_manager()\n             ->GetBackgroundHostForExtension(*debuggee_.extension_id))"];
+"1000161" [label="(Identifier,extension_host)"];
+"1000158" [label="(Block,)"];
+"1000168" [label="(Identifier,extension_host)"];
+"1000162" [label="(Call,ExtensionSystem::Get(GetProfile())\n             ->process_manager()\n             ->GetBackgroundHostForExtension(*debuggee_.extension_id))"];
+"1000160" -> "1000158"  [label="AST: "];
+"1000160" -> "1000162"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000162" -> "1000160"  [label="AST: "];
+"1000168" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000214"  [label="DDG: ExtensionSystem::Get(GetProfile())\n             ->process_manager()\n             ->GetBackgroundHostForExtension(*debuggee_.extension_id)"];
+"1000160" -> "1000214"  [label="DDG: extension_host"];
+"1000162" -> "1000160"  [label="DDG: *debuggee_.extension_id"];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000162" -> "1000214"  [label="DDG: *debuggee_.extension_id"];
+}

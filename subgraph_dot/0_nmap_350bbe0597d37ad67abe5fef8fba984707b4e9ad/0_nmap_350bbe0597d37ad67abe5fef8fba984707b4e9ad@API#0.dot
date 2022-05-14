@@ -1,0 +1,31 @@
+digraph "0_nmap_350bbe0597d37ad67abe5fef8fba984707b4e9ad@API" {
+"1000160" [label="(Call,libssh2_session_free(sshu->session))"];
+"1000128" [label="(Call,libssh2_session_handshake(sshu->session, sshu->sp[0]))"];
+"1000166" [label="(Identifier,sshu)"];
+"1000159" [label="(Block,)"];
+"1000128" [label="(Call,libssh2_session_handshake(sshu->session, sshu->sp[0]))"];
+"1000160" [label="(Call,libssh2_session_free(sshu->session))"];
+"1000125" [label="(Call,(rc = libssh2_session_handshake(sshu->session, sshu->sp[0])) == LIBSSH2_ERROR_EAGAIN)"];
+"1000178" [label="(MethodReturn,static int)"];
+"1000126" [label="(Call,rc = libssh2_session_handshake(sshu->session, sshu->sp[0]))"];
+"1000161" [label="(Call,sshu->session)"];
+"1000132" [label="(Call,sshu->sp[0])"];
+"1000129" [label="(Call,sshu->session)"];
+"1000160" -> "1000159"  [label="AST: "];
+"1000160" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000166" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000178"  [label="DDG: libssh2_session_free(sshu->session)"];
+"1000128" -> "1000160"  [label="DDG: sshu->session"];
+"1000128" -> "1000126"  [label="AST: "];
+"1000128" -> "1000132"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000132" -> "1000128"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000178"  [label="DDG: sshu->sp[0]"];
+"1000128" -> "1000178"  [label="DDG: sshu->session"];
+"1000128" -> "1000125"  [label="DDG: sshu->session"];
+"1000128" -> "1000125"  [label="DDG: sshu->sp[0]"];
+"1000128" -> "1000126"  [label="DDG: sshu->session"];
+"1000128" -> "1000126"  [label="DDG: sshu->sp[0]"];
+}

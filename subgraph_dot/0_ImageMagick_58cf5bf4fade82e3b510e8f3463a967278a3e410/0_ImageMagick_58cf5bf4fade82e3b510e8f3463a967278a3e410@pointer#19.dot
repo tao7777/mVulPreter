@@ -1,0 +1,22 @@
+digraph "0_ImageMagick_58cf5bf4fade82e3b510e8f3463a967278a3e410@pointer" {
+"1001306" [label="(Call,image->colormap[i].green=ScaleCharToQuantum(jpeg_info.colormap[1][i]))"];
+"1001314" [label="(Call,ScaleCharToQuantum(jpeg_info.colormap[1][i]))"];
+"1001289" [label="(Block,)"];
+"1001326" [label="(Identifier,image)"];
+"1001853" [label="(MethodReturn,static Image *)"];
+"1001306" [label="(Call,image->colormap[i].green=ScaleCharToQuantum(jpeg_info.colormap[1][i]))"];
+"1001315" [label="(Call,jpeg_info.colormap[1][i])"];
+"1001307" [label="(Call,image->colormap[i].green)"];
+"1001314" [label="(Call,ScaleCharToQuantum(jpeg_info.colormap[1][i]))"];
+"1001306" -> "1001289"  [label="AST: "];
+"1001306" -> "1001314"  [label="CFG: "];
+"1001307" -> "1001306"  [label="AST: "];
+"1001314" -> "1001306"  [label="AST: "];
+"1001326" -> "1001306"  [label="CFG: "];
+"1001306" -> "1001853"  [label="DDG: image->colormap[i].green"];
+"1001306" -> "1001853"  [label="DDG: ScaleCharToQuantum(jpeg_info.colormap[1][i])"];
+"1001314" -> "1001306"  [label="DDG: jpeg_info.colormap[1][i]"];
+"1001314" -> "1001315"  [label="CFG: "];
+"1001315" -> "1001314"  [label="AST: "];
+"1001314" -> "1001853"  [label="DDG: jpeg_info.colormap[1][i]"];
+}

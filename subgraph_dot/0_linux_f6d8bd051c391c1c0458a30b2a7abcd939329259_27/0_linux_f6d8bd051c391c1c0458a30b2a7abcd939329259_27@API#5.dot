@@ -1,0 +1,30 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_27@API" {
+"1000310" [label="(Call,ipc.opt = &opt_copy.opt)"];
+"1000567" [label="(Call,kfree(ipc.opt))"];
+"1000318" [label="(Call,rcu_read_unlock())"];
+"1000310" [label="(Call,ipc.opt = &opt_copy.opt)"];
+"1000568" [label="(Call,ipc.opt)"];
+"1000314" [label="(Call,&opt_copy.opt)"];
+"1000565" [label="(ControlStructure,if (free))"];
+"1000311" [label="(Call,ipc.opt)"];
+"1000296" [label="(Block,)"];
+"1000602" [label="(MethodReturn,static int)"];
+"1000572" [label="(Identifier,rt)"];
+"1000281" [label="(Call,!ipc.opt)"];
+"1000567" [label="(Call,kfree(ipc.opt))"];
+"1000310" -> "1000296"  [label="AST: "];
+"1000310" -> "1000314"  [label="CFG: "];
+"1000311" -> "1000310"  [label="AST: "];
+"1000314" -> "1000310"  [label="AST: "];
+"1000318" -> "1000310"  [label="CFG: "];
+"1000310" -> "1000602"  [label="DDG: ipc.opt"];
+"1000310" -> "1000602"  [label="DDG: &opt_copy.opt"];
+"1000310" -> "1000567"  [label="DDG: ipc.opt"];
+"1000567" -> "1000565"  [label="AST: "];
+"1000567" -> "1000568"  [label="CFG: "];
+"1000568" -> "1000567"  [label="AST: "];
+"1000572" -> "1000567"  [label="CFG: "];
+"1000567" -> "1000602"  [label="DDG: ipc.opt"];
+"1000567" -> "1000602"  [label="DDG: kfree(ipc.opt)"];
+"1000281" -> "1000567"  [label="DDG: ipc.opt"];
+}

@@ -1,0 +1,36 @@
+digraph "0_linux_ae7b4e1f213aa659aedf9c6ecad0bf5f0476e1e2@pointer" {
+"1000246" [label="(Call,sfn->parent = fn)"];
+"1000167" [label="(Call,IS_ERR(fn))"];
+"1000426" [label="(MethodReturn,int)"];
+"1000168" [label="(Identifier,fn)"];
+"1000179" [label="(Identifier,pn)"];
+"1000194" [label="(Block,)"];
+"1000404" [label="(Call,fn && !(fn->fn_flags & (RTN_RTINFO|RTN_ROOT)))"];
+"1000246" [label="(Call,sfn->parent = fn)"];
+"1000247" [label="(Call,sfn->parent)"];
+"1000288" [label="(Call,fib6_add_rt2node(fn, rt, info))"];
+"1000250" [label="(Identifier,fn)"];
+"1000166" [label="(ControlStructure,if (IS_ERR(fn)))"];
+"1000171" [label="(Identifier,err)"];
+"1000167" [label="(Call,IS_ERR(fn))"];
+"1000253" [label="(Identifier,fn)"];
+"1000172" [label="(Call,PTR_ERR(fn))"];
+"1000178" [label="(Call,pn = fn)"];
+"1000246" -> "1000194"  [label="AST: "];
+"1000246" -> "1000250"  [label="CFG: "];
+"1000247" -> "1000246"  [label="AST: "];
+"1000250" -> "1000246"  [label="AST: "];
+"1000253" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000426"  [label="DDG: sfn->parent"];
+"1000167" -> "1000246"  [label="DDG: fn"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000171" -> "1000167"  [label="CFG: "];
+"1000179" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000426"  [label="DDG: IS_ERR(fn)"];
+"1000167" -> "1000172"  [label="DDG: fn"];
+"1000167" -> "1000178"  [label="DDG: fn"];
+"1000167" -> "1000288"  [label="DDG: fn"];
+"1000167" -> "1000404"  [label="DDG: fn"];
+}

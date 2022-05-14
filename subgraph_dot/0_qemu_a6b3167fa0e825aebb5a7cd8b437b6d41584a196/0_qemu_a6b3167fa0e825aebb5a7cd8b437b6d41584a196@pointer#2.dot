@@ -1,0 +1,36 @@
+digraph "0_qemu_a6b3167fa0e825aebb5a7cd8b437b6d41584a196@pointer" {
+"1000279" [label="(Call,acb->task->xfer_dir == SCSI_XFER_WRITE)"];
+"1000364" [label="(Call,acb->task->xfer_dir == SCSI_XFER_READ)"];
+"1000420" [label="(MethodReturn,static BlockAIOCB *)"];
+"1000363" [label="(ControlStructure,if (acb->task->xfer_dir == SCSI_XFER_READ))"];
+"1000376" [label="(Identifier,acb)"];
+"1000280" [label="(Call,acb->task->xfer_dir)"];
+"1000335" [label="(Identifier,iscsi)"];
+"1000291" [label="(Identifier,acb)"];
+"1000414" [label="(Identifier,iscsilun)"];
+"1000364" [label="(Call,acb->task->xfer_dir == SCSI_XFER_READ)"];
+"1000365" [label="(Call,acb->task->xfer_dir)"];
+"1000370" [label="(Identifier,SCSI_XFER_READ)"];
+"1000278" [label="(ControlStructure,if (acb->task->xfer_dir == SCSI_XFER_WRITE))"];
+"1000279" [label="(Call,acb->task->xfer_dir == SCSI_XFER_WRITE)"];
+"1000285" [label="(Identifier,SCSI_XFER_WRITE)"];
+"1000279" -> "1000278"  [label="AST: "];
+"1000279" -> "1000285"  [label="CFG: "];
+"1000280" -> "1000279"  [label="AST: "];
+"1000285" -> "1000279"  [label="AST: "];
+"1000291" -> "1000279"  [label="CFG: "];
+"1000335" -> "1000279"  [label="CFG: "];
+"1000279" -> "1000420"  [label="DDG: SCSI_XFER_WRITE"];
+"1000279" -> "1000420"  [label="DDG: acb->task->xfer_dir"];
+"1000279" -> "1000420"  [label="DDG: acb->task->xfer_dir == SCSI_XFER_WRITE"];
+"1000279" -> "1000364"  [label="DDG: acb->task->xfer_dir"];
+"1000364" -> "1000363"  [label="AST: "];
+"1000364" -> "1000370"  [label="CFG: "];
+"1000365" -> "1000364"  [label="AST: "];
+"1000370" -> "1000364"  [label="AST: "];
+"1000376" -> "1000364"  [label="CFG: "];
+"1000414" -> "1000364"  [label="CFG: "];
+"1000364" -> "1000420"  [label="DDG: acb->task->xfer_dir"];
+"1000364" -> "1000420"  [label="DDG: SCSI_XFER_READ"];
+"1000364" -> "1000420"  [label="DDG: acb->task->xfer_dir == SCSI_XFER_READ"];
+}

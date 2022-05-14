@@ -1,0 +1,29 @@
+digraph "0_Chrome_47ae3dfdee9a0796a079cd4eadf2f75b34f257ae@pointer" {
+"1000170" [label="(Call,object.GetAsDictionary(&object_dict))"];
+"1000169" [label="(Call,object.GetAsDictionary(&object_dict) && IsValidObject(*object_dict))"];
+"1000171" [label="(Call,&object_dict)"];
+"1000175" [label="(Identifier,object_dict)"];
+"1000169" [label="(Call,object.GetAsDictionary(&object_dict) && IsValidObject(*object_dict))"];
+"1000195" [label="(MethodReturn,RET)"];
+"1000194" [label="(Identifier,results)"];
+"1000168" [label="(ControlStructure,if (object.GetAsDictionary(&object_dict) && IsValidObject(*object_dict)))"];
+"1000173" [label="(Call,IsValidObject(*object_dict))"];
+"1000179" [label="(Identifier,std::make_unique)"];
+"1000170" [label="(Call,object.GetAsDictionary(&object_dict))"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000170"  [label="AST: "];
+"1000175" -> "1000170"  [label="CFG: "];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000195"  [label="DDG: &object_dict"];
+"1000170" -> "1000169"  [label="DDG: &object_dict"];
+"1000169" -> "1000168"  [label="AST: "];
+"1000169" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000169"  [label="AST: "];
+"1000179" -> "1000169"  [label="CFG: "];
+"1000194" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000195"  [label="DDG: object.GetAsDictionary(&object_dict) && IsValidObject(*object_dict)"];
+"1000169" -> "1000195"  [label="DDG: IsValidObject(*object_dict)"];
+"1000169" -> "1000195"  [label="DDG: object.GetAsDictionary(&object_dict)"];
+"1000173" -> "1000169"  [label="DDG: *object_dict"];
+}

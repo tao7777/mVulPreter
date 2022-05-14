@@ -1,0 +1,31 @@
+digraph "0_libgd_2bb97f407c1145c850416a3bfbcc8cf124e68a19@array" {
+"1000402" [label="(Call,cidx[i].size < 0)"];
+"1000394" [label="(Call,cidx[i].offset < 0 || cidx[i].size < 0)"];
+"1000394" [label="(Call,cidx[i].offset < 0 || cidx[i].size < 0)"];
+"1000393" [label="(ControlStructure,if (cidx[i].offset < 0 || cidx[i].size < 0))"];
+"1000395" [label="(Call,cidx[i].offset < 0)"];
+"1000409" [label="(ControlStructure,goto fail2;)"];
+"1000425" [label="(MethodReturn,RET)"];
+"1000408" [label="(Literal,0)"];
+"1000365" [label="(Identifier,i)"];
+"1000403" [label="(Call,cidx[i].size)"];
+"1000402" [label="(Call,cidx[i].size < 0)"];
+"1000402" -> "1000394"  [label="AST: "];
+"1000402" -> "1000408"  [label="CFG: "];
+"1000403" -> "1000402"  [label="AST: "];
+"1000408" -> "1000402"  [label="AST: "];
+"1000394" -> "1000402"  [label="CFG: "];
+"1000402" -> "1000425"  [label="DDG: cidx[i].size"];
+"1000402" -> "1000394"  [label="DDG: cidx[i].size"];
+"1000402" -> "1000394"  [label="DDG: 0"];
+"1000394" -> "1000393"  [label="AST: "];
+"1000394" -> "1000395"  [label="CFG: "];
+"1000395" -> "1000394"  [label="AST: "];
+"1000409" -> "1000394"  [label="CFG: "];
+"1000365" -> "1000394"  [label="CFG: "];
+"1000394" -> "1000425"  [label="DDG: cidx[i].offset < 0 || cidx[i].size < 0"];
+"1000394" -> "1000425"  [label="DDG: cidx[i].size < 0"];
+"1000394" -> "1000425"  [label="DDG: cidx[i].offset < 0"];
+"1000395" -> "1000394"  [label="DDG: cidx[i].offset"];
+"1000395" -> "1000394"  [label="DDG: 0"];
+}

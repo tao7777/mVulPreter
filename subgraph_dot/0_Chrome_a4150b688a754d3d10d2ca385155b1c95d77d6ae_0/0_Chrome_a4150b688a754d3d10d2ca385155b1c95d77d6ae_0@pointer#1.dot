@@ -1,0 +1,29 @@
+digraph "0_Chrome_a4150b688a754d3d10d2ca385155b1c95d77d6ae_0@pointer" {
+"1000112" [label="(Call,* renderer_str =\n      reinterpret_cast<const char*>(glGetString(GL_RENDERER)))"];
+"1000114" [label="(Call,reinterpret_cast<const char*>(glGetString(GL_RENDERER)))"];
+"1000116" [label="(Call,glGetString(GL_RENDERER))"];
+"1000116" [label="(Call,glGetString(GL_RENDERER))"];
+"1000120" [label="(Identifier,gl::GLVersionInfo)"];
+"1002478" [label="(MethodReturn,void)"];
+"1000112" [label="(Call,* renderer_str =\n      reinterpret_cast<const char*>(glGetString(GL_RENDERER)))"];
+"1000117" [label="(Identifier,GL_RENDERER)"];
+"1000113" [label="(Identifier,renderer_str)"];
+"1000101" [label="(Block,)"];
+"1000114" [label="(Call,reinterpret_cast<const char*>(glGetString(GL_RENDERER)))"];
+"1000112" -> "1000101"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000120" -> "1000112"  [label="CFG: "];
+"1000112" -> "1002478"  [label="DDG: reinterpret_cast<const char*>(glGetString(GL_RENDERER))"];
+"1000112" -> "1002478"  [label="DDG: renderer_str"];
+"1000114" -> "1000112"  [label="DDG: glGetString(GL_RENDERER)"];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000114" -> "1002478"  [label="DDG: glGetString(GL_RENDERER)"];
+"1000116" -> "1000114"  [label="DDG: GL_RENDERER"];
+"1000116" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000116" -> "1002478"  [label="DDG: GL_RENDERER"];
+}

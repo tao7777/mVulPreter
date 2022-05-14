@@ -1,0 +1,34 @@
+digraph "1_ImageMagick6_4f31d78716ac94c85c244efcea368fea202e2ed4@pointer" {
+"1000171" [label="(Call,curr->columns != next->columns)"];
+"1000170" [label="(Call,curr->columns != next->columns || curr->rows != next->rows\n         || curr->page.x != next->page.x || curr->page.y != next->page.y)"];
+"1000284" [label="(MethodReturn,MagickExport void)"];
+"1000209" [label="(ControlStructure,continue;)"];
+"1000171" [label="(Call,curr->columns != next->columns)"];
+"1000175" [label="(Call,next->columns)"];
+"1000169" [label="(ControlStructure,if ( curr->columns != next->columns || curr->rows != next->rows\n         || curr->page.x != next->page.x || curr->page.y != next->page.y ))"];
+"1000178" [label="(Call,curr->rows != next->rows\n         || curr->page.x != next->page.x || curr->page.y != next->page.y)"];
+"1000172" [label="(Call,curr->columns)"];
+"1000211" [label="(Identifier,bounds)"];
+"1000181" [label="(Identifier,curr)"];
+"1000170" [label="(Call,curr->columns != next->columns || curr->rows != next->rows\n         || curr->page.x != next->page.x || curr->page.y != next->page.y)"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000175"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="AST: "];
+"1000181" -> "1000171"  [label="CFG: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000284"  [label="DDG: curr->columns"];
+"1000171" -> "1000284"  [label="DDG: next->columns"];
+"1000171" -> "1000170"  [label="DDG: curr->columns"];
+"1000171" -> "1000170"  [label="DDG: next->columns"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000170" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000170"  [label="AST: "];
+"1000209" -> "1000170"  [label="CFG: "];
+"1000211" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000284"  [label="DDG: curr->rows != next->rows\n         || curr->page.x != next->page.x || curr->page.y != next->page.y"];
+"1000170" -> "1000284"  [label="DDG: curr->columns != next->columns"];
+"1000170" -> "1000284"  [label="DDG: curr->columns != next->columns || curr->rows != next->rows\n         || curr->page.x != next->page.x || curr->page.y != next->page.y"];
+"1000178" -> "1000170"  [label="DDG: curr->rows != next->rows"];
+"1000178" -> "1000170"  [label="DDG: curr->page.x != next->page.x || curr->page.y != next->page.y"];
+}

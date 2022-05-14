@@ -1,0 +1,38 @@
+digraph "0_Android_9d4853418ab2f754c2b63e091c29c5529b8b86ca_8@API" {
+"1000813" [label="(Call,use_sleep = FALSE)"];
+"1000843" [label="(Call,use_sleep || gettimeofday(&now, NULL) != 0)"];
+"1000807" [label="(Block,)"];
+"1000845" [label="(Call,gettimeofday(&now, NULL) != 0)"];
+"1000883" [label="(Identifier,now)"];
+"1000844" [label="(Identifier,use_sleep)"];
+"1000814" [label="(Identifier,use_sleep)"];
+"1000843" [label="(Call,use_sleep || gettimeofday(&now, NULL) != 0)"];
+"1000815" [label="(Identifier,FALSE)"];
+"1000854" [label="(Identifier,i)"];
+"1000842" [label="(ControlStructure,if (use_sleep || gettimeofday(&now, NULL) != 0))"];
+"1000822" [label="(Identifier,display)"];
+"1000813" [label="(Call,use_sleep = FALSE)"];
+"1000817" [label="(Call,use_sleep = TRUE)"];
+"1001099" [label="(MethodReturn,int)"];
+"1000813" -> "1000807"  [label="AST: "];
+"1000813" -> "1000815"  [label="CFG: "];
+"1000814" -> "1000813"  [label="AST: "];
+"1000815" -> "1000813"  [label="AST: "];
+"1000822" -> "1000813"  [label="CFG: "];
+"1000813" -> "1001099"  [label="DDG: use_sleep"];
+"1000813" -> "1001099"  [label="DDG: FALSE"];
+"1000813" -> "1000843"  [label="DDG: use_sleep"];
+"1000843" -> "1000842"  [label="AST: "];
+"1000843" -> "1000844"  [label="CFG: "];
+"1000843" -> "1000845"  [label="CFG: "];
+"1000844" -> "1000843"  [label="AST: "];
+"1000845" -> "1000843"  [label="AST: "];
+"1000854" -> "1000843"  [label="CFG: "];
+"1000883" -> "1000843"  [label="CFG: "];
+"1000843" -> "1001099"  [label="DDG: use_sleep || gettimeofday(&now, NULL) != 0"];
+"1000843" -> "1001099"  [label="DDG: use_sleep"];
+"1000843" -> "1001099"  [label="DDG: gettimeofday(&now, NULL) != 0"];
+"1000817" -> "1000843"  [label="DDG: use_sleep"];
+"1000845" -> "1000843"  [label="DDG: gettimeofday(&now, NULL)"];
+"1000845" -> "1000843"  [label="DDG: 0"];
+}

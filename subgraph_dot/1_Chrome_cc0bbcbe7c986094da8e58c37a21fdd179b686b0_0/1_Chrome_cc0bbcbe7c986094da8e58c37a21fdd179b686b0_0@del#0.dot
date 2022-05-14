@@ -1,0 +1,37 @@
+digraph "1_Chrome_cc0bbcbe7c986094da8e58c37a21fdd179b686b0_0@del" {
+"1000102" [label="(MethodParameterIn,bool is_tld_ascii)"];
+"1000159" [label="(Call,!is_tld_ascii)"];
+"1000158" [label="(Call,!is_tld_ascii || !IsMadeOfLatinAlikeCyrillic(label_string))"];
+"1000157" [label="(Return,return !is_tld_ascii || !IsMadeOfLatinAlikeCyrillic(label_string);)"];
+"1000161" [label="(Call,!IsMadeOfLatinAlikeCyrillic(label_string))"];
+"1000156" [label="(Block,)"];
+"1000190" [label="(MethodReturn,bool)"];
+"1000102" [label="(MethodParameterIn,bool is_tld_ascii)"];
+"1000159" [label="(Call,!is_tld_ascii)"];
+"1000163" [label="(Identifier,label_string)"];
+"1000157" [label="(Return,return !is_tld_ascii || !IsMadeOfLatinAlikeCyrillic(label_string);)"];
+"1000158" [label="(Call,!is_tld_ascii || !IsMadeOfLatinAlikeCyrillic(label_string))"];
+"1000160" [label="(Identifier,is_tld_ascii)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000190"  [label="DDG: is_tld_ascii"];
+"1000102" -> "1000159"  [label="DDG: is_tld_ascii"];
+"1000159" -> "1000158"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000163" -> "1000159"  [label="CFG: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000190"  [label="DDG: is_tld_ascii"];
+"1000159" -> "1000158"  [label="DDG: is_tld_ascii"];
+"1000158" -> "1000157"  [label="AST: "];
+"1000158" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000158"  [label="AST: "];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000190"  [label="DDG: !is_tld_ascii"];
+"1000158" -> "1000190"  [label="DDG: !is_tld_ascii || !IsMadeOfLatinAlikeCyrillic(label_string)"];
+"1000158" -> "1000190"  [label="DDG: !IsMadeOfLatinAlikeCyrillic(label_string)"];
+"1000158" -> "1000157"  [label="DDG: !is_tld_ascii || !IsMadeOfLatinAlikeCyrillic(label_string)"];
+"1000161" -> "1000158"  [label="DDG: IsMadeOfLatinAlikeCyrillic(label_string)"];
+"1000157" -> "1000156"  [label="AST: "];
+"1000190" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000190"  [label="DDG: <RET>"];
+}

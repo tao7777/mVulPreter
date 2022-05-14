@@ -1,0 +1,34 @@
+digraph "0_FFmpeg_2aa9047486dbff12d9e040f917e5f799ed2fd78b@pointer" {
+"1000708" [label="(Call,s->avctx->has_b_frames = !s->low_delay)"];
+"1000714" [label="(Call,!s->low_delay)"];
+"1000703" [label="(Call,s->low_delay = 1)"];
+"1000108" [label="(Block,)"];
+"1000714" [label="(Call,!s->low_delay)"];
+"1000711" [label="(Identifier,s)"];
+"1000720" [label="(Identifier,s)"];
+"1000707" [label="(Literal,1)"];
+"1000715" [label="(Call,s->low_delay)"];
+"1000703" [label="(Call,s->low_delay = 1)"];
+"1000748" [label="(MethodReturn,int)"];
+"1000704" [label="(Call,s->low_delay)"];
+"1000709" [label="(Call,s->avctx->has_b_frames)"];
+"1000695" [label="(ControlStructure,if (s->avctx->flags & AV_CODEC_FLAG_LOW_DELAY))"];
+"1000708" [label="(Call,s->avctx->has_b_frames = !s->low_delay)"];
+"1000708" -> "1000108"  [label="AST: "];
+"1000708" -> "1000714"  [label="CFG: "];
+"1000709" -> "1000708"  [label="AST: "];
+"1000714" -> "1000708"  [label="AST: "];
+"1000720" -> "1000708"  [label="CFG: "];
+"1000708" -> "1000748"  [label="DDG: !s->low_delay"];
+"1000708" -> "1000748"  [label="DDG: s->avctx->has_b_frames"];
+"1000714" -> "1000708"  [label="DDG: s->low_delay"];
+"1000714" -> "1000715"  [label="CFG: "];
+"1000715" -> "1000714"  [label="AST: "];
+"1000714" -> "1000748"  [label="DDG: s->low_delay"];
+"1000703" -> "1000714"  [label="DDG: s->low_delay"];
+"1000703" -> "1000695"  [label="AST: "];
+"1000703" -> "1000707"  [label="CFG: "];
+"1000704" -> "1000703"  [label="AST: "];
+"1000707" -> "1000703"  [label="AST: "];
+"1000711" -> "1000703"  [label="CFG: "];
+}

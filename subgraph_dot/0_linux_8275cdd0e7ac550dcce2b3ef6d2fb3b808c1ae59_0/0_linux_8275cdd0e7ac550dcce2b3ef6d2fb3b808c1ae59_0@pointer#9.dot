@@ -1,0 +1,36 @@
+digraph "0_linux_8275cdd0e7ac550dcce2b3ef6d2fb3b808c1ae59_0@pointer" {
+"1000194" [label="(Call,args->flags & ATTR_CREATE)"];
+"1000171" [label="(Call,args->flags & ATTR_REPLACE)"];
+"1000208" [label="(Identifier,args)"];
+"1000538" [label="(MethodReturn,RET)"];
+"1000177" [label="(Identifier,retval)"];
+"1000194" [label="(Call,args->flags & ATTR_CREATE)"];
+"1000202" [label="(Identifier,args)"];
+"1000171" [label="(Call,args->flags & ATTR_REPLACE)"];
+"1000175" [label="(Identifier,ATTR_REPLACE)"];
+"1000198" [label="(Identifier,ATTR_CREATE)"];
+"1000172" [label="(Call,args->flags)"];
+"1000193" [label="(ControlStructure,if (args->flags & ATTR_CREATE))"];
+"1000170" [label="(Call,(args->flags & ATTR_REPLACE) && (retval == ENOATTR))"];
+"1000195" [label="(Call,args->flags)"];
+"1000194" -> "1000193"  [label="AST: "];
+"1000194" -> "1000198"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000198" -> "1000194"  [label="AST: "];
+"1000202" -> "1000194"  [label="CFG: "];
+"1000208" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000538"  [label="DDG: args->flags & ATTR_CREATE"];
+"1000194" -> "1000538"  [label="DDG: args->flags"];
+"1000194" -> "1000538"  [label="DDG: ATTR_CREATE"];
+"1000171" -> "1000194"  [label="DDG: args->flags"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000175"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="AST: "];
+"1000177" -> "1000171"  [label="CFG: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000538"  [label="DDG: args->flags"];
+"1000171" -> "1000538"  [label="DDG: ATTR_REPLACE"];
+"1000171" -> "1000170"  [label="DDG: args->flags"];
+"1000171" -> "1000170"  [label="DDG: ATTR_REPLACE"];
+}

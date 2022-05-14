@@ -1,0 +1,31 @@
+digraph "0_linux_3e0097499839e0fe3af380410eababe5a47c4cf9_0@pointer" {
+"1000962" [label="(Call,max_sectors_bytes(sdp->device->request_queue))"];
+"1000961" [label="(Call,put_user(max_sectors_bytes(sdp->device->request_queue),\n\t\t\t\tip))"];
+"1000960" [label="(Return,return put_user(max_sectors_bytes(sdp->device->request_queue),\n\t\t\t\tip);)"];
+"1000960" [label="(Return,return put_user(max_sectors_bytes(sdp->device->request_queue),\n\t\t\t\tip);)"];
+"1000962" [label="(Call,max_sectors_bytes(sdp->device->request_queue))"];
+"1000963" [label="(Call,sdp->device->request_queue)"];
+"1001060" [label="(MethodReturn,RET)"];
+"1000118" [label="(Call,*ip = p)"];
+"1000167" [label="(Block,)"];
+"1000968" [label="(Identifier,ip)"];
+"1000961" [label="(Call,put_user(max_sectors_bytes(sdp->device->request_queue),\n\t\t\t\tip))"];
+"1000962" -> "1000961"  [label="AST: "];
+"1000962" -> "1000963"  [label="CFG: "];
+"1000963" -> "1000962"  [label="AST: "];
+"1000968" -> "1000962"  [label="CFG: "];
+"1000962" -> "1001060"  [label="DDG: sdp->device->request_queue"];
+"1000962" -> "1000961"  [label="DDG: sdp->device->request_queue"];
+"1000961" -> "1000960"  [label="AST: "];
+"1000961" -> "1000968"  [label="CFG: "];
+"1000968" -> "1000961"  [label="AST: "];
+"1000960" -> "1000961"  [label="CFG: "];
+"1000961" -> "1001060"  [label="DDG: max_sectors_bytes(sdp->device->request_queue)"];
+"1000961" -> "1001060"  [label="DDG: put_user(max_sectors_bytes(sdp->device->request_queue),\n\t\t\t\tip)"];
+"1000961" -> "1001060"  [label="DDG: ip"];
+"1000961" -> "1000960"  [label="DDG: put_user(max_sectors_bytes(sdp->device->request_queue),\n\t\t\t\tip)"];
+"1000118" -> "1000961"  [label="DDG: ip"];
+"1000960" -> "1000167"  [label="AST: "];
+"1001060" -> "1000960"  [label="CFG: "];
+"1000960" -> "1001060"  [label="DDG: <RET>"];
+}

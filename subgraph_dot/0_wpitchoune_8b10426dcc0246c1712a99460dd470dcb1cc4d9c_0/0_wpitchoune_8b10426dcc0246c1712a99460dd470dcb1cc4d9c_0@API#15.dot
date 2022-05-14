@@ -1,0 +1,25 @@
+digraph "0_wpitchoune_8b10426dcc0246c1712a99460dd470dcb1cc4d9c_0@API" {
+"1000414" [label="(Call,psensor_free(server_data.cpu_usage))"];
+"1000382" [label="(Call,cpu_usage_sensor_update(server_data.cpu_usage))"];
+"1000383" [label="(Call,server_data.cpu_usage)"];
+"1000373" [label="(Block,)"];
+"1000388" [label="(Identifier,server_data)"];
+"1000104" [label="(Block,)"];
+"1000382" [label="(Call,cpu_usage_sensor_update(server_data.cpu_usage))"];
+"1000420" [label="(Identifier,server_data)"];
+"1000414" [label="(Call,psensor_free(server_data.cpu_usage))"];
+"1000415" [label="(Call,server_data.cpu_usage)"];
+"1000432" [label="(MethodReturn,int)"];
+"1000414" -> "1000104"  [label="AST: "];
+"1000414" -> "1000415"  [label="CFG: "];
+"1000415" -> "1000414"  [label="AST: "];
+"1000420" -> "1000414"  [label="CFG: "];
+"1000414" -> "1000432"  [label="DDG: psensor_free(server_data.cpu_usage)"];
+"1000414" -> "1000432"  [label="DDG: server_data.cpu_usage"];
+"1000382" -> "1000414"  [label="DDG: server_data.cpu_usage"];
+"1000382" -> "1000373"  [label="AST: "];
+"1000382" -> "1000383"  [label="CFG: "];
+"1000383" -> "1000382"  [label="AST: "];
+"1000388" -> "1000382"  [label="CFG: "];
+"1000382" -> "1000432"  [label="DDG: cpu_usage_sensor_update(server_data.cpu_usage)"];
+}

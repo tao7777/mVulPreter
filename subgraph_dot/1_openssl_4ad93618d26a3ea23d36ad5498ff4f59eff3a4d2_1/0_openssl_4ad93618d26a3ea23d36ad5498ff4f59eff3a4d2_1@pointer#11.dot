@@ -1,0 +1,30 @@
+digraph "0_openssl_4ad93618d26a3ea23d36ad5498ff4f59eff3a4d2_1@pointer" {
+"1000394" [label="(Call,!s->first_packet)"];
+"1000393" [label="(Call,!s->first_packet && version != s->version)"];
+"1000450" [label="(Identifier,version)"];
+"1000399" [label="(Identifier,version)"];
+"1000398" [label="(Call,version != s->version)"];
+"1000405" [label="(Identifier,SSL_F_SSL3_GET_RECORD)"];
+"1000394" [label="(Call,!s->first_packet)"];
+"1000393" [label="(Call,!s->first_packet && version != s->version)"];
+"1001197" [label="(MethodReturn,int)"];
+"1000395" [label="(Call,s->first_packet)"];
+"1000392" [label="(ControlStructure,if (!s->first_packet && version != s->version))"];
+"1000394" -> "1000393"  [label="AST: "];
+"1000394" -> "1000395"  [label="CFG: "];
+"1000395" -> "1000394"  [label="AST: "];
+"1000399" -> "1000394"  [label="CFG: "];
+"1000393" -> "1000394"  [label="CFG: "];
+"1000394" -> "1001197"  [label="DDG: s->first_packet"];
+"1000394" -> "1000393"  [label="DDG: s->first_packet"];
+"1000393" -> "1000392"  [label="AST: "];
+"1000393" -> "1000398"  [label="CFG: "];
+"1000398" -> "1000393"  [label="AST: "];
+"1000405" -> "1000393"  [label="CFG: "];
+"1000450" -> "1000393"  [label="CFG: "];
+"1000393" -> "1001197"  [label="DDG: !s->first_packet"];
+"1000393" -> "1001197"  [label="DDG: version != s->version"];
+"1000393" -> "1001197"  [label="DDG: !s->first_packet && version != s->version"];
+"1000398" -> "1000393"  [label="DDG: version"];
+"1000398" -> "1000393"  [label="DDG: s->version"];
+}

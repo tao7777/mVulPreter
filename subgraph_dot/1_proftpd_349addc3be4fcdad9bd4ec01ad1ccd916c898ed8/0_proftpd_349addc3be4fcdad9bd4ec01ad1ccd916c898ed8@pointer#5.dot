@@ -1,0 +1,33 @@
+digraph "0_proftpd_349addc3be4fcdad9bd4ec01ad1ccd916c898ed8@pointer" {
+"1000234" [label="(Call,*path != '/')"];
+"1000240" [label="(Call,*path == '~')"];
+"1000239" [label="(ControlStructure,if (*path == '~'))"];
+"1000237" [label="(Literal,'/')"];
+"1000263" [label="(Identifier,pathlen)"];
+"1000380" [label="(MethodReturn,static int)"];
+"1000242" [label="(Identifier,path)"];
+"1000240" [label="(Call,*path == '~')"];
+"1000248" [label="(Identifier,dir)"];
+"1000234" [label="(Call,*path != '/')"];
+"1000243" [label="(Literal,'~')"];
+"1000235" [label="(Call,*path)"];
+"1000233" [label="(ControlStructure,if (*path != '/'))"];
+"1000241" [label="(Call,*path)"];
+"1000234" -> "1000233"  [label="AST: "];
+"1000234" -> "1000237"  [label="CFG: "];
+"1000235" -> "1000234"  [label="AST: "];
+"1000237" -> "1000234"  [label="AST: "];
+"1000242" -> "1000234"  [label="CFG: "];
+"1000263" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000380"  [label="DDG: *path"];
+"1000234" -> "1000380"  [label="DDG: *path != '/'"];
+"1000234" -> "1000240"  [label="DDG: *path"];
+"1000240" -> "1000239"  [label="AST: "];
+"1000240" -> "1000243"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000243" -> "1000240"  [label="AST: "];
+"1000248" -> "1000240"  [label="CFG: "];
+"1000263" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000380"  [label="DDG: *path == '~'"];
+"1000240" -> "1000380"  [label="DDG: *path"];
+}

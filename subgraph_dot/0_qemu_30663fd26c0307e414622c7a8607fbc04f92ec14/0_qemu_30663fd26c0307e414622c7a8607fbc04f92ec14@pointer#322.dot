@@ -1,0 +1,27 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1008983" [label="(Call,!s->pe)"];
+"1008976" [label="(Call,!(s->flags & HF_SVME_MASK) || !s->pe)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1008975" [label="(ControlStructure,if (!(s->flags & HF_SVME_MASK) || !s->pe))"];
+"1008976" [label="(Call,!(s->flags & HF_SVME_MASK) || !s->pe)"];
+"1008988" [label="(ControlStructure,goto illegal_op;)"];
+"1008992" [label="(Identifier,s)"];
+"1008984" [label="(Call,s->pe)"];
+"1008983" [label="(Call,!s->pe)"];
+"1008977" [label="(Call,!(s->flags & HF_SVME_MASK))"];
+"1008983" -> "1008976"  [label="AST: "];
+"1008983" -> "1008984"  [label="CFG: "];
+"1008984" -> "1008983"  [label="AST: "];
+"1008976" -> "1008983"  [label="CFG: "];
+"1008983" -> "1011840"  [label="DDG: s->pe"];
+"1008983" -> "1008976"  [label="DDG: s->pe"];
+"1008976" -> "1008975"  [label="AST: "];
+"1008976" -> "1008977"  [label="CFG: "];
+"1008977" -> "1008976"  [label="AST: "];
+"1008988" -> "1008976"  [label="CFG: "];
+"1008992" -> "1008976"  [label="CFG: "];
+"1008976" -> "1011840"  [label="DDG: !(s->flags & HF_SVME_MASK)"];
+"1008976" -> "1011840"  [label="DDG: !(s->flags & HF_SVME_MASK) || !s->pe"];
+"1008976" -> "1011840"  [label="DDG: !s->pe"];
+"1008977" -> "1008976"  [label="DDG: s->flags & HF_SVME_MASK"];
+}

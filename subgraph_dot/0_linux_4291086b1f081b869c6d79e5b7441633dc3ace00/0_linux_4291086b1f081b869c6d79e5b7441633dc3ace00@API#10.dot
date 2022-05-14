@@ -1,0 +1,31 @@
+digraph "0_linux_4291086b1f081b869c6d79e5b7441633dc3ace00@API" {
+"1000160" [label="(Call,signal_pending(current))"];
+"1000112" [label="(Call,DECLARE_WAITQUEUE(wait, current))"];
+"1000161" [label="(Identifier,current)"];
+"1000368" [label="(MethodReturn,static ssize_t)"];
+"1000113" [label="(Identifier,wait)"];
+"1000171" [label="(Identifier,file)"];
+"1000118" [label="(Identifier,retval)"];
+"1000160" [label="(Call,signal_pending(current))"];
+"1000112" [label="(Call,DECLARE_WAITQUEUE(wait, current))"];
+"1000114" [label="(Identifier,current)"];
+"1000159" [label="(ControlStructure,if (signal_pending(current)))"];
+"1000164" [label="(Identifier,retval)"];
+"1000107" [label="(Block,)"];
+"1000160" -> "1000159"  [label="AST: "];
+"1000160" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000164" -> "1000160"  [label="CFG: "];
+"1000171" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000368"  [label="DDG: signal_pending(current)"];
+"1000160" -> "1000368"  [label="DDG: current"];
+"1000112" -> "1000160"  [label="DDG: current"];
+"1000112" -> "1000107"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000118" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000368"  [label="DDG: current"];
+"1000112" -> "1000368"  [label="DDG: DECLARE_WAITQUEUE(wait, current)"];
+"1000112" -> "1000368"  [label="DDG: wait"];
+}

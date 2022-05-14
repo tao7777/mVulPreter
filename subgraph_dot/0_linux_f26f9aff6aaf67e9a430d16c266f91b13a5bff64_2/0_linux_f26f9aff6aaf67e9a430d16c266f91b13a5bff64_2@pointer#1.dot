@@ -1,0 +1,28 @@
+digraph "0_linux_f26f9aff6aaf67e9a430d16c266f91b13a5bff64_2@pointer" {
+"1000265" [label="(Call,raw_spin_unlock_irq(&rq->lock))"];
+"1000137" [label="(Call,raw_spin_lock_irq(&rq->lock))"];
+"1000265" [label="(Call,raw_spin_unlock_irq(&rq->lock))"];
+"1000271" [label="(Identifier,rq)"];
+"1000266" [label="(Call,&rq->lock)"];
+"1000137" [label="(Call,raw_spin_lock_irq(&rq->lock))"];
+"1000143" [label="(Identifier,switch_count)"];
+"1000138" [label="(Call,&rq->lock)"];
+"1000105" [label="(Block,)"];
+"1000265" [label="(Call,raw_spin_unlock_irq(&rq->lock))"];
+"1000264" [label="(ControlStructure,else)"];
+"1000281" [label="(MethodReturn,asmlinkage void __sched)"];
+"1000265" -> "1000264"  [label="AST: "];
+"1000265" -> "1000266"  [label="CFG: "];
+"1000266" -> "1000265"  [label="AST: "];
+"1000271" -> "1000265"  [label="CFG: "];
+"1000265" -> "1000281"  [label="DDG: raw_spin_unlock_irq(&rq->lock)"];
+"1000265" -> "1000281"  [label="DDG: &rq->lock"];
+"1000265" -> "1000137"  [label="DDG: &rq->lock"];
+"1000137" -> "1000265"  [label="DDG: &rq->lock"];
+"1000137" -> "1000105"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000143" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000281"  [label="DDG: &rq->lock"];
+"1000137" -> "1000281"  [label="DDG: raw_spin_lock_irq(&rq->lock)"];
+}

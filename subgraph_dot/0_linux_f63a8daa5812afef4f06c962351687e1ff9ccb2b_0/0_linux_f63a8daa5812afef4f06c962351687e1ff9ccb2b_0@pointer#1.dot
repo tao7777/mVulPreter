@@ -1,0 +1,29 @@
+digraph "0_linux_f63a8daa5812afef4f06c962351687e1ff9ccb2b_0@pointer" {
+"1000123" [label="(Call,cpu_function_call(event->cpu, __perf_event_disable, event))"];
+"1000105" [label="(MethodParameterIn,struct perf_event *event)"];
+"1000133" [label="(Call,task_function_call(task, __perf_event_disable, event))"];
+"1000168" [label="(Call,update_group_times(event))"];
+"1000105" [label="(MethodParameterIn,struct perf_event *event)"];
+"1000180" [label="(MethodReturn,static void)"];
+"1000122" [label="(Block,)"];
+"1000123" [label="(Call,cpu_function_call(event->cpu, __perf_event_disable, event))"];
+"1000124" [label="(Call,event->cpu)"];
+"1000129" [label="(Return,return;)"];
+"1000127" [label="(Identifier,__perf_event_disable)"];
+"1000128" [label="(Identifier,event)"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000128"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000128" -> "1000123"  [label="AST: "];
+"1000129" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000180"  [label="DDG: __perf_event_disable"];
+"1000123" -> "1000180"  [label="DDG: event->cpu"];
+"1000123" -> "1000180"  [label="DDG: cpu_function_call(event->cpu, __perf_event_disable, event)"];
+"1000123" -> "1000180"  [label="DDG: event"];
+"1000105" -> "1000123"  [label="DDG: event"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000180"  [label="DDG: event"];
+"1000105" -> "1000133"  [label="DDG: event"];
+"1000105" -> "1000168"  [label="DDG: event"];
+}

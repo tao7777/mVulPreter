@@ -1,0 +1,35 @@
+digraph "0_libvips_ce684dd008532ea0bf9d4a1d89bacb35f4a83f4d@pointer" {
+"1000115" [label="(Call,*map = file->Image.ColorMap ?\n\t\tfile->Image.ColorMap : file->SColorMap)"];
+"1000230" [label="(Call,!gif->has_colour &&\n \t\tmap)"];
+"1000229" [label="(ControlStructure,if( !gif->has_colour &&\n \t\tmap ))"];
+"1000116" [label="(Identifier,map)"];
+"1000303" [label="(MethodReturn,RET)"];
+"1000117" [label="(Call,file->Image.ColorMap ?\n\t\tfile->Image.ColorMap : file->SColorMap)"];
+"1000115" [label="(Call,*map = file->Image.ColorMap ?\n\t\tfile->Image.ColorMap : file->SColorMap)"];
+"1000230" [label="(Call,!gif->has_colour &&\n \t\tmap)"];
+"1000292" [label="(Identifier,gif)"];
+"1000105" [label="(Block,)"];
+"1000231" [label="(Call,!gif->has_colour)"];
+"1000235" [label="(Identifier,map)"];
+"1000240" [label="(Identifier,i)"];
+"1000136" [label="(Identifier,gif)"];
+"1000115" -> "1000105"  [label="AST: "];
+"1000115" -> "1000117"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000136" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000303"  [label="DDG: file->Image.ColorMap ?\n\t\tfile->Image.ColorMap : file->SColorMap"];
+"1000115" -> "1000303"  [label="DDG: map"];
+"1000115" -> "1000230"  [label="DDG: map"];
+"1000230" -> "1000229"  [label="AST: "];
+"1000230" -> "1000231"  [label="CFG: "];
+"1000230" -> "1000235"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000235" -> "1000230"  [label="AST: "];
+"1000240" -> "1000230"  [label="CFG: "];
+"1000292" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000303"  [label="DDG: map"];
+"1000230" -> "1000303"  [label="DDG: !gif->has_colour"];
+"1000230" -> "1000303"  [label="DDG: !gif->has_colour &&\n \t\tmap"];
+"1000231" -> "1000230"  [label="DDG: gif->has_colour"];
+}

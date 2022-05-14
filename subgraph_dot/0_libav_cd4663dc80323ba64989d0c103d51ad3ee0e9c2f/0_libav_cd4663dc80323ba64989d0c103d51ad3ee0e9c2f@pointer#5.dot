@@ -1,0 +1,25 @@
+digraph "0_libav_cd4663dc80323ba64989d0c103d51ad3ee0e9c2f@pointer" {
+"1000140" [label="(Call,hc->bits[hc->current] = prefix)"];
+"1000105" [label="(MethodParameterIn,uint32_t prefix)"];
+"1000234" [label="(MethodReturn,static int)"];
+"1000152" [label="(Identifier,hc)"];
+"1000226" [label="(Call,prefix | (1 << (length - 1)))"];
+"1000213" [label="(Call,smacker_decode_tree(bc, hc, prefix, length))"];
+"1000141" [label="(Call,hc->bits[hc->current])"];
+"1000140" [label="(Call,hc->bits[hc->current] = prefix)"];
+"1000148" [label="(Identifier,prefix)"];
+"1000139" [label="(Block,)"];
+"1000105" [label="(MethodParameterIn,uint32_t prefix)"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000148"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000148" -> "1000140"  [label="AST: "];
+"1000152" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000234"  [label="DDG: hc->bits[hc->current]"];
+"1000140" -> "1000234"  [label="DDG: prefix"];
+"1000105" -> "1000140"  [label="DDG: prefix"];
+"1000105" -> "1000102"  [label="AST: "];
+"1000105" -> "1000234"  [label="DDG: prefix"];
+"1000105" -> "1000213"  [label="DDG: prefix"];
+"1000105" -> "1000226"  [label="DDG: prefix"];
+}

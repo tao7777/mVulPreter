@@ -1,0 +1,35 @@
+digraph "0_linux_74e98eb085889b0d2d4908f59f6e00026063014f@pointer" {
+"1000201" [label="(Call,INIT_HLIST_NODE(&conn->c_hash_node))"];
+"1000478" [label="(Call,hlist_add_head_rcu(&conn->c_hash_node, head))"];
+"1000485" [label="(Identifier,conn)"];
+"1000479" [label="(Call,&conn->c_hash_node)"];
+"1000201" [label="(Call,INIT_HLIST_NODE(&conn->c_hash_node))"];
+"1000495" [label="(MethodReturn,static struct rds_connection *)"];
+"1000114" [label="(Block,)"];
+"1000121" [label="(Call,*head = rds_conn_bucket(laddr, faddr))"];
+"1000442" [label="(Call,rds_conn_lookup(net, head, laddr, faddr, trans))"];
+"1000483" [label="(Identifier,head)"];
+"1000478" [label="(Call,hlist_add_head_rcu(&conn->c_hash_node, head))"];
+"1000477" [label="(Block,)"];
+"1000208" [label="(Identifier,conn)"];
+"1000202" [label="(Call,&conn->c_hash_node)"];
+"1000146" [label="(Call,rds_conn_lookup(net, head, laddr, faddr, trans))"];
+"1000201" -> "1000114"  [label="AST: "];
+"1000201" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000208" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000495"  [label="DDG: INIT_HLIST_NODE(&conn->c_hash_node)"];
+"1000201" -> "1000495"  [label="DDG: &conn->c_hash_node"];
+"1000201" -> "1000478"  [label="DDG: &conn->c_hash_node"];
+"1000478" -> "1000477"  [label="AST: "];
+"1000478" -> "1000483"  [label="CFG: "];
+"1000479" -> "1000478"  [label="AST: "];
+"1000483" -> "1000478"  [label="AST: "];
+"1000485" -> "1000478"  [label="CFG: "];
+"1000478" -> "1000495"  [label="DDG: head"];
+"1000478" -> "1000495"  [label="DDG: &conn->c_hash_node"];
+"1000478" -> "1000495"  [label="DDG: hlist_add_head_rcu(&conn->c_hash_node, head)"];
+"1000146" -> "1000478"  [label="DDG: head"];
+"1000121" -> "1000478"  [label="DDG: head"];
+"1000442" -> "1000478"  [label="DDG: head"];
+}

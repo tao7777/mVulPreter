@@ -1,0 +1,22 @@
+digraph "1_linux_b769f49463711205d57286e64cf535ed4daf59e9_0@API" {
+"1000111" [label="(Call,count <sizeof(ins))"];
+"1000106" [label="(MethodParameterIn,int count)"];
+"1000118" [label="(Identifier,EINVAL)"];
+"1000166" [label="(MethodReturn,static int)"];
+"1000113" [label="(Call,sizeof(ins))"];
+"1000111" [label="(Call,count <sizeof(ins))"];
+"1000112" [label="(Identifier,count)"];
+"1000110" [label="(ControlStructure,if (count <sizeof(ins)))"];
+"1000106" [label="(MethodParameterIn,int count)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000118" -> "1000111"  [label="CFG: "];
+"1000124" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000166"  [label="DDG: count"];
+"1000111" -> "1000166"  [label="DDG: count <sizeof(ins)"];
+"1000106" -> "1000111"  [label="DDG: count"];
+"1000106" -> "1000101"  [label="AST: "];
+"1000106" -> "1000166"  [label="DDG: count"];
+}

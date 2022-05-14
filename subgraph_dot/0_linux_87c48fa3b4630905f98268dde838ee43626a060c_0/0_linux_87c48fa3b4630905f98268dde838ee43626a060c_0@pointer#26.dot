@@ -1,0 +1,28 @@
+digraph "0_linux_87c48fa3b4630905f98268dde838ee43626a060c_0@pointer" {
+"1000457" [label="(Call,dst_allfrag(rt->dst.path))"];
+"1000429" [label="(Call,dst_mtu(rt->dst.path))"];
+"1000470" [label="(Identifier,cork)"];
+"1000430" [label="(Call,rt->dst.path)"];
+"1000416" [label="(Call,np->pmtudisc == IPV6_PMTUDISC_PROBE ?\n\t\t      rt->dst.dev->mtu : dst_mtu(rt->dst.path))"];
+"1000457" [label="(Call,dst_allfrag(rt->dst.path))"];
+"1001339" [label="(MethodReturn,int)"];
+"1000458" [label="(Call,rt->dst.path)"];
+"1000429" [label="(Call,dst_mtu(rt->dst.path))"];
+"1000456" [label="(ControlStructure,if (dst_allfrag(rt->dst.path)))"];
+"1000414" [label="(Call,mtu = np->pmtudisc == IPV6_PMTUDISC_PROBE ?\n\t\t      rt->dst.dev->mtu : dst_mtu(rt->dst.path))"];
+"1000465" [label="(Identifier,cork)"];
+"1000457" -> "1000456"  [label="AST: "];
+"1000457" -> "1000458"  [label="CFG: "];
+"1000458" -> "1000457"  [label="AST: "];
+"1000465" -> "1000457"  [label="CFG: "];
+"1000470" -> "1000457"  [label="CFG: "];
+"1000457" -> "1001339"  [label="DDG: dst_allfrag(rt->dst.path)"];
+"1000457" -> "1001339"  [label="DDG: rt->dst.path"];
+"1000429" -> "1000457"  [label="DDG: rt->dst.path"];
+"1000429" -> "1000416"  [label="AST: "];
+"1000429" -> "1000430"  [label="CFG: "];
+"1000430" -> "1000429"  [label="AST: "];
+"1000416" -> "1000429"  [label="CFG: "];
+"1000429" -> "1000414"  [label="DDG: rt->dst.path"];
+"1000429" -> "1000416"  [label="DDG: rt->dst.path"];
+}

@@ -1,0 +1,30 @@
+digraph "0_linux_a117dacde0288f3ec60b6e5bcedae8fa37ee0dfc@pointer" {
+"1000569" [label="(Call,tun->flags & TUN_TYPE_MASK)"];
+"1000568" [label="(Call,(tun->flags & TUN_TYPE_MASK) != TUN_TAP_DEV)"];
+"1000568" [label="(Call,(tun->flags & TUN_TYPE_MASK) != TUN_TAP_DEV)"];
+"1000567" [label="(ControlStructure,if ((tun->flags & TUN_TYPE_MASK) != TUN_TAP_DEV))"];
+"1000573" [label="(Identifier,TUN_TYPE_MASK)"];
+"1000569" [label="(Call,tun->flags & TUN_TYPE_MASK)"];
+"1000636" [label="(MethodReturn,static long)"];
+"1000577" [label="(Identifier,ret)"];
+"1000574" [label="(Identifier,TUN_TAP_DEV)"];
+"1000570" [label="(Call,tun->flags)"];
+"1000575" [label="(ControlStructure,break;)"];
+"1000569" -> "1000568"  [label="AST: "];
+"1000569" -> "1000573"  [label="CFG: "];
+"1000570" -> "1000569"  [label="AST: "];
+"1000573" -> "1000569"  [label="AST: "];
+"1000574" -> "1000569"  [label="CFG: "];
+"1000569" -> "1000636"  [label="DDG: tun->flags"];
+"1000569" -> "1000636"  [label="DDG: TUN_TYPE_MASK"];
+"1000569" -> "1000568"  [label="DDG: tun->flags"];
+"1000569" -> "1000568"  [label="DDG: TUN_TYPE_MASK"];
+"1000568" -> "1000567"  [label="AST: "];
+"1000568" -> "1000574"  [label="CFG: "];
+"1000574" -> "1000568"  [label="AST: "];
+"1000575" -> "1000568"  [label="CFG: "];
+"1000577" -> "1000568"  [label="CFG: "];
+"1000568" -> "1000636"  [label="DDG: tun->flags & TUN_TYPE_MASK"];
+"1000568" -> "1000636"  [label="DDG: (tun->flags & TUN_TYPE_MASK) != TUN_TAP_DEV"];
+"1000568" -> "1000636"  [label="DDG: TUN_TAP_DEV"];
+}

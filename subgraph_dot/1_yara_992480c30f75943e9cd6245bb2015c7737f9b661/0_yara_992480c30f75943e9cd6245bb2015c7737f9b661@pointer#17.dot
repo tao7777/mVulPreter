@@ -1,0 +1,26 @@
+digraph "0_yara_992480c30f75943e9cd6245bb2015c7737f9b661@pointer" {
+"1000442" [label="(Call,matches != NULL)"];
+"1000108" [label="(MethodParameterIn,int* matches)"];
+"1000441" [label="(ControlStructure,if (matches != NULL))"];
+"1000444" [label="(Identifier,NULL)"];
+"1000452" [label="(MethodReturn,int)"];
+"1000447" [label="(Identifier,matches)"];
+"1000443" [label="(Identifier,matches)"];
+"1000442" [label="(Call,matches != NULL)"];
+"1000451" [label="(Identifier,ERROR_SUCCESS)"];
+"1000236" [label="(Call,matches != NULL)"];
+"1000108" [label="(MethodParameterIn,int* matches)"];
+"1000442" -> "1000441"  [label="AST: "];
+"1000442" -> "1000444"  [label="CFG: "];
+"1000443" -> "1000442"  [label="AST: "];
+"1000444" -> "1000442"  [label="AST: "];
+"1000447" -> "1000442"  [label="CFG: "];
+"1000451" -> "1000442"  [label="CFG: "];
+"1000442" -> "1000452"  [label="DDG: matches != NULL"];
+"1000442" -> "1000452"  [label="DDG: matches"];
+"1000442" -> "1000452"  [label="DDG: NULL"];
+"1000108" -> "1000442"  [label="DDG: matches"];
+"1000108" -> "1000100"  [label="AST: "];
+"1000108" -> "1000452"  [label="DDG: matches"];
+"1000108" -> "1000236"  [label="DDG: matches"];
+}

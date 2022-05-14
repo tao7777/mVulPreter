@@ -1,0 +1,31 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_42@API" {
+"1000198" [label="(Call,close(cmd.fd))"];
+"1000181" [label="(Call,poll_slot->pfd.fd == cmd.fd)"];
+"1000199" [label="(Call,cmd.fd)"];
+"1000182" [label="(Call,poll_slot->pfd.fd)"];
+"1000180" [label="(ControlStructure,if (poll_slot->pfd.fd == cmd.fd))"];
+"1000140" [label="(Block,)"];
+"1000181" [label="(Call,poll_slot->pfd.fd == cmd.fd)"];
+"1000187" [label="(Call,cmd.fd)"];
+"1000202" [label="(ControlStructure,break;)"];
+"1000242" [label="(MethodReturn,static int)"];
+"1000167" [label="(Identifier,i)"];
+"1000192" [label="(Identifier,h)"];
+"1000198" [label="(Call,close(cmd.fd))"];
+"1000198" -> "1000140"  [label="AST: "];
+"1000198" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000198"  [label="AST: "];
+"1000202" -> "1000198"  [label="CFG: "];
+"1000198" -> "1000242"  [label="DDG: cmd.fd"];
+"1000198" -> "1000242"  [label="DDG: close(cmd.fd)"];
+"1000181" -> "1000198"  [label="DDG: cmd.fd"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000181" -> "1000187"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000187" -> "1000181"  [label="AST: "];
+"1000192" -> "1000181"  [label="CFG: "];
+"1000167" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000242"  [label="DDG: poll_slot->pfd.fd == cmd.fd"];
+"1000181" -> "1000242"  [label="DDG: poll_slot->pfd.fd"];
+"1000181" -> "1000242"  [label="DDG: cmd.fd"];
+}

@@ -1,0 +1,34 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_21@API" {
+"1000111" [label="(Call,send(signal_fds[1], &sig_on, sizeof(sig_on), 0))"];
+"1000110" [label="(Call,TEMP_FAILURE_RETRY(send(signal_fds[1], &sig_on, sizeof(sig_on), 0)))"];
+"1000109" [label="(Return,return TEMP_FAILURE_RETRY(send(signal_fds[1], &sig_on, sizeof(sig_on), 0));)"];
+"1000120" [label="(MethodReturn,static inline int)"];
+"1000117" [label="(Call,sizeof(sig_on))"];
+"1000119" [label="(Literal,0)"];
+"1000110" [label="(Call,TEMP_FAILURE_RETRY(send(signal_fds[1], &sig_on, sizeof(sig_on), 0)))"];
+"1000111" [label="(Call,send(signal_fds[1], &sig_on, sizeof(sig_on), 0))"];
+"1000102" [label="(Block,)"];
+"1000115" [label="(Call,&sig_on)"];
+"1000109" [label="(Return,return TEMP_FAILURE_RETRY(send(signal_fds[1], &sig_on, sizeof(sig_on), 0));)"];
+"1000112" [label="(Call,signal_fds[1])"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000119"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000115" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="AST: "];
+"1000119" -> "1000111"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000120"  [label="DDG: &sig_on"];
+"1000111" -> "1000120"  [label="DDG: signal_fds[1]"];
+"1000111" -> "1000110"  [label="DDG: signal_fds[1]"];
+"1000111" -> "1000110"  [label="DDG: &sig_on"];
+"1000111" -> "1000110"  [label="DDG: 0"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000120"  [label="DDG: send(signal_fds[1], &sig_on, sizeof(sig_on), 0)"];
+"1000110" -> "1000120"  [label="DDG: TEMP_FAILURE_RETRY(send(signal_fds[1], &sig_on, sizeof(sig_on), 0))"];
+"1000110" -> "1000109"  [label="DDG: TEMP_FAILURE_RETRY(send(signal_fds[1], &sig_on, sizeof(sig_on), 0))"];
+"1000109" -> "1000102"  [label="AST: "];
+"1000120" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000120"  [label="DDG: <RET>"];
+}

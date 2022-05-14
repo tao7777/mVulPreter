@@ -1,0 +1,27 @@
+digraph "0_linux_321027c1fe77f892f4ea07846aeae08cefbbb290@API" {
+"1000773" [label="(Call,mutex_unlock(&task->signal->cred_guard_mutex))"];
+"1000362" [label="(Call,mutex_lock_interruptible(&task->signal->cred_guard_mutex))"];
+"1000363" [label="(Call,&task->signal->cred_guard_mutex)"];
+"1000360" [label="(Call,err = mutex_lock_interruptible(&task->signal->cred_guard_mutex))"];
+"1000362" [label="(Call,mutex_lock_interruptible(&task->signal->cred_guard_mutex))"];
+"1000774" [label="(Call,&task->signal->cred_guard_mutex)"];
+"1000836" [label="(Call,mutex_unlock(&task->signal->cred_guard_mutex))"];
+"1000772" [label="(Block,)"];
+"1000781" [label="(Identifier,task)"];
+"1000773" [label="(Call,mutex_unlock(&task->signal->cred_guard_mutex))"];
+"1000858" [label="(MethodReturn,RET)"];
+"1000773" -> "1000772"  [label="AST: "];
+"1000773" -> "1000774"  [label="CFG: "];
+"1000774" -> "1000773"  [label="AST: "];
+"1000781" -> "1000773"  [label="CFG: "];
+"1000773" -> "1000858"  [label="DDG: mutex_unlock(&task->signal->cred_guard_mutex)"];
+"1000773" -> "1000858"  [label="DDG: &task->signal->cred_guard_mutex"];
+"1000362" -> "1000773"  [label="DDG: &task->signal->cred_guard_mutex"];
+"1000362" -> "1000360"  [label="AST: "];
+"1000362" -> "1000363"  [label="CFG: "];
+"1000363" -> "1000362"  [label="AST: "];
+"1000360" -> "1000362"  [label="CFG: "];
+"1000362" -> "1000858"  [label="DDG: &task->signal->cred_guard_mutex"];
+"1000362" -> "1000360"  [label="DDG: &task->signal->cred_guard_mutex"];
+"1000362" -> "1000836"  [label="DDG: &task->signal->cred_guard_mutex"];
+}

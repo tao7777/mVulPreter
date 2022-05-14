@@ -1,0 +1,28 @@
+digraph "0_linux_8fff105e13041e49b82f92eef034f363a6b1c071@pointer" {
+"1000151" [label="(Call,!event->attr.enable_on_exec)"];
+"1000145" [label="(Call,event->state == PERF_EVENT_STATE_OFF && !event->attr.enable_on_exec)"];
+"1000151" [label="(Call,!event->attr.enable_on_exec)"];
+"1000166" [label="(MethodReturn,RET)"];
+"1000144" [label="(ControlStructure,if (event->state == PERF_EVENT_STATE_OFF && !event->attr.enable_on_exec))"];
+"1000158" [label="(Literal,1)"];
+"1000162" [label="(Identifier,hw_events)"];
+"1000146" [label="(Call,event->state == PERF_EVENT_STATE_OFF)"];
+"1000145" [label="(Call,event->state == PERF_EVENT_STATE_OFF && !event->attr.enable_on_exec)"];
+"1000152" [label="(Call,event->attr.enable_on_exec)"];
+"1000151" -> "1000145"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000145" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000166"  [label="DDG: event->attr.enable_on_exec"];
+"1000151" -> "1000145"  [label="DDG: event->attr.enable_on_exec"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000158" -> "1000145"  [label="CFG: "];
+"1000162" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000166"  [label="DDG: !event->attr.enable_on_exec"];
+"1000145" -> "1000166"  [label="DDG: event->state == PERF_EVENT_STATE_OFF && !event->attr.enable_on_exec"];
+"1000145" -> "1000166"  [label="DDG: event->state == PERF_EVENT_STATE_OFF"];
+"1000146" -> "1000145"  [label="DDG: event->state"];
+"1000146" -> "1000145"  [label="DDG: PERF_EVENT_STATE_OFF"];
+}

@@ -1,0 +1,35 @@
+digraph "0_memcached_75cc83685e103bc8ba380a57468c8f04413033f9@pointer" {
+"1000425" [label="(Call,c->keylen = c->binary_header.request.keylen)"];
+"1000314" [label="(Call,c->binary_header.request.keylen = ntohs(req->request.keylen))"];
+"1000322" [label="(Call,ntohs(req->request.keylen))"];
+"1000322" [label="(Call,ntohs(req->request.keylen))"];
+"1000425" [label="(Call,c->keylen = c->binary_header.request.keylen)"];
+"1000603" [label="(MethodReturn,static int)"];
+"1000438" [label="(Identifier,c)"];
+"1000426" [label="(Call,c->keylen)"];
+"1000323" [label="(Call,req->request.keylen)"];
+"1000207" [label="(Block,)"];
+"1000332" [label="(Identifier,c)"];
+"1000429" [label="(Call,c->binary_header.request.keylen)"];
+"1000314" [label="(Call,c->binary_header.request.keylen = ntohs(req->request.keylen))"];
+"1000315" [label="(Call,c->binary_header.request.keylen)"];
+"1000425" -> "1000207"  [label="AST: "];
+"1000425" -> "1000429"  [label="CFG: "];
+"1000426" -> "1000425"  [label="AST: "];
+"1000429" -> "1000425"  [label="AST: "];
+"1000438" -> "1000425"  [label="CFG: "];
+"1000425" -> "1000603"  [label="DDG: c->keylen"];
+"1000425" -> "1000603"  [label="DDG: c->binary_header.request.keylen"];
+"1000314" -> "1000425"  [label="DDG: c->binary_header.request.keylen"];
+"1000314" -> "1000207"  [label="AST: "];
+"1000314" -> "1000322"  [label="CFG: "];
+"1000315" -> "1000314"  [label="AST: "];
+"1000322" -> "1000314"  [label="AST: "];
+"1000332" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000603"  [label="DDG: c->binary_header.request.keylen"];
+"1000314" -> "1000603"  [label="DDG: ntohs(req->request.keylen)"];
+"1000322" -> "1000314"  [label="DDG: req->request.keylen"];
+"1000322" -> "1000323"  [label="CFG: "];
+"1000323" -> "1000322"  [label="AST: "];
+"1000322" -> "1000603"  [label="DDG: req->request.keylen"];
+}

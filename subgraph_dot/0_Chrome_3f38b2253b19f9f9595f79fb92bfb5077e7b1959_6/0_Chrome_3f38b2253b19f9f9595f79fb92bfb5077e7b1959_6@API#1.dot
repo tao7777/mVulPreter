@@ -1,0 +1,20 @@
+digraph "0_Chrome_3f38b2253b19f9f9595f79fb92bfb5077e7b1959_6@API" {
+"1000102" [label="(Call,allocator_memory_.reset(new char[kAllocatorMemorySize]))"];
+"1000103" [label="(Call,new char[kAllocatorMemorySize])"];
+"1000103" [label="(Call,new char[kAllocatorMemorySize])"];
+"1000104" [label="(Identifier,char)"];
+"1000119" [label="(MethodReturn,void)"];
+"1000102" [label="(Call,allocator_memory_.reset(new char[kAllocatorMemorySize]))"];
+"1000101" [label="(Block,)"];
+"1000105" [label="(Call,GlobalHistogramAllocator::ReleaseForTesting())"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000102"  [label="AST: "];
+"1000105" -> "1000102"  [label="CFG: "];
+"1000102" -> "1000119"  [label="DDG: new char[kAllocatorMemorySize]"];
+"1000102" -> "1000119"  [label="DDG: allocator_memory_.reset(new char[kAllocatorMemorySize])"];
+"1000103" -> "1000102"  [label="DDG: char"];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000103" -> "1000119"  [label="DDG: char"];
+}

@@ -1,0 +1,28 @@
+digraph "0_Chrome_08f0d612f2a4039aaf6733d4e8d0a67614941378_1@pointer" {
+"1000202" [label="(Call,* tc = model->GetTabContentsAt(i)->tab_contents())"];
+"1000213" [label="(Call,CloseTabContents(tc))"];
+"1000214" [label="(Identifier,tc)"];
+"1000208" [label="(Identifier,chrome::kExtensionScheme)"];
+"1000199" [label="(Identifier,i)"];
+"1000212" [label="(Block,)"];
+"1000203" [label="(Identifier,tc)"];
+"1000204" [label="(Call,model->GetTabContentsAt(i)->tab_contents())"];
+"1000213" [label="(Call,CloseTabContents(tc))"];
+"1000410" [label="(MethodReturn,void)"];
+"1000200" [label="(Block,)"];
+"1000202" [label="(Call,* tc = model->GetTabContentsAt(i)->tab_contents())"];
+"1000202" -> "1000200"  [label="AST: "];
+"1000202" -> "1000204"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000204" -> "1000202"  [label="AST: "];
+"1000208" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000410"  [label="DDG: tc"];
+"1000202" -> "1000410"  [label="DDG: model->GetTabContentsAt(i)->tab_contents()"];
+"1000202" -> "1000213"  [label="DDG: tc"];
+"1000213" -> "1000212"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000199" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000410"  [label="DDG: tc"];
+"1000213" -> "1000410"  [label="DDG: CloseTabContents(tc)"];
+}

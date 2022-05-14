@@ -1,0 +1,30 @@
+digraph "0_heimdal_b1e699103f08d6a0ca46a122193c9da65f6cf837_1@API" {
+"1000294" [label="(Call,copy_PrincipalName(&tgt_name->name, &rep.cname))"];
+"1000800" [label="(Call,et.cname = tgt_name->name)"];
+"1000135" [label="(Block,)"];
+"1000306" [label="(Identifier,rep)"];
+"1000801" [label="(Call,et.cname)"];
+"1001122" [label="(MethodReturn,RET)"];
+"1000299" [label="(Call,&rep.cname)"];
+"1000809" [label="(Identifier,ek)"];
+"1000295" [label="(Call,&tgt_name->name)"];
+"1000804" [label="(Call,tgt_name->name)"];
+"1000800" [label="(Call,et.cname = tgt_name->name)"];
+"1000294" [label="(Call,copy_PrincipalName(&tgt_name->name, &rep.cname))"];
+"1000294" -> "1000135"  [label="AST: "];
+"1000294" -> "1000299"  [label="CFG: "];
+"1000295" -> "1000294"  [label="AST: "];
+"1000299" -> "1000294"  [label="AST: "];
+"1000306" -> "1000294"  [label="CFG: "];
+"1000294" -> "1001122"  [label="DDG: copy_PrincipalName(&tgt_name->name, &rep.cname)"];
+"1000294" -> "1001122"  [label="DDG: &rep.cname"];
+"1000294" -> "1001122"  [label="DDG: &tgt_name->name"];
+"1000294" -> "1000800"  [label="DDG: &tgt_name->name"];
+"1000800" -> "1000135"  [label="AST: "];
+"1000800" -> "1000804"  [label="CFG: "];
+"1000801" -> "1000800"  [label="AST: "];
+"1000804" -> "1000800"  [label="AST: "];
+"1000809" -> "1000800"  [label="CFG: "];
+"1000800" -> "1001122"  [label="DDG: tgt_name->name"];
+"1000800" -> "1001122"  [label="DDG: et.cname"];
+}

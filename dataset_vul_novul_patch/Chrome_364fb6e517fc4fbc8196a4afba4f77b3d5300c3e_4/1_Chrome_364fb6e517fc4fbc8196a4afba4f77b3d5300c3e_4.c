@@ -1,0 +1,2 @@
+void InputMethodIBus::OnInputLocaleChanged() {
+}

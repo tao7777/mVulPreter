@@ -1,0 +1,30 @@
+digraph "0_Chrome_04aaacb936a08d70862d6d9d7e8354721ae46be8_7@pointer" {
+"1000105" [label="(Call,records && records->empty())"];
+"1000102" [label="(MethodParameterIn,std::vector<EntryRecord>* records)"];
+"1000104" [label="(Call,DCHECK(records && records->empty()))"];
+"1000106" [label="(Identifier,records)"];
+"1000105" [label="(Call,records && records->empty())"];
+"1000139" [label="(MethodReturn,bool)"];
+"1000104" [label="(Call,DCHECK(records && records->empty()))"];
+"1000107" [label="(Call,records->empty())"];
+"1000103" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,std::vector<EntryRecord>* records)"];
+"1000111" [label="(Identifier,kDontCreate)"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000139"  [label="DDG: records->empty()"];
+"1000105" -> "1000139"  [label="DDG: records"];
+"1000105" -> "1000104"  [label="DDG: records"];
+"1000105" -> "1000104"  [label="DDG: records->empty()"];
+"1000102" -> "1000105"  [label="DDG: records"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000139"  [label="DDG: records"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000111" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000139"  [label="DDG: DCHECK(records && records->empty())"];
+"1000104" -> "1000139"  [label="DDG: records && records->empty()"];
+}

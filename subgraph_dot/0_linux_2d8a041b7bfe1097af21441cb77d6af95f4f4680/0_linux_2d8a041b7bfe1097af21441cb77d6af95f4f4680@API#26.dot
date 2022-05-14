@@ -1,0 +1,28 @@
+digraph "0_linux_2d8a041b7bfe1097af21441cb77d6af95f4f4680@API" {
+"1000305" [label="(Call,mutex_lock_interruptible(&__ip_vs_mutex))"];
+"1000570" [label="(Call,mutex_unlock(&__ip_vs_mutex))"];
+"1000306" [label="(Call,&__ip_vs_mutex)"];
+"1000304" [label="(ControlStructure,if (mutex_lock_interruptible(&__ip_vs_mutex)))"];
+"1000305" [label="(Call,mutex_lock_interruptible(&__ip_vs_mutex))"];
+"1000575" [label="(MethodReturn,RET)"];
+"1000571" [label="(Call,&__ip_vs_mutex)"];
+"1000106" [label="(Block,)"];
+"1000310" [label="(Identifier,ERESTARTSYS)"];
+"1000312" [label="(Identifier,cmd)"];
+"1000570" [label="(Call,mutex_unlock(&__ip_vs_mutex))"];
+"1000574" [label="(Identifier,ret)"];
+"1000305" -> "1000304"  [label="AST: "];
+"1000305" -> "1000306"  [label="CFG: "];
+"1000306" -> "1000305"  [label="AST: "];
+"1000310" -> "1000305"  [label="CFG: "];
+"1000312" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000575"  [label="DDG: mutex_lock_interruptible(&__ip_vs_mutex)"];
+"1000305" -> "1000575"  [label="DDG: &__ip_vs_mutex"];
+"1000305" -> "1000570"  [label="DDG: &__ip_vs_mutex"];
+"1000570" -> "1000106"  [label="AST: "];
+"1000570" -> "1000571"  [label="CFG: "];
+"1000571" -> "1000570"  [label="AST: "];
+"1000574" -> "1000570"  [label="CFG: "];
+"1000570" -> "1000575"  [label="DDG: &__ip_vs_mutex"];
+"1000570" -> "1000575"  [label="DDG: mutex_unlock(&__ip_vs_mutex)"];
+}

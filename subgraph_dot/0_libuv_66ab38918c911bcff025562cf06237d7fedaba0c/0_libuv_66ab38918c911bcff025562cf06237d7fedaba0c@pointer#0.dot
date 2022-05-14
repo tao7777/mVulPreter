@@ -1,0 +1,28 @@
+digraph "0_libuv_66ab38918c911bcff025562cf06237d7fedaba0c@pointer" {
+"1000293" [label="(Call,setuid(options->uid))"];
+"1000287" [label="(Call,(options->flags & UV_PROCESS_SETUID) && setuid(options->uid))"];
+"1000299" [label="(Identifier,error_fd)"];
+"1000309" [label="(Identifier,options)"];
+"1000286" [label="(ControlStructure,if ((options->flags & UV_PROCESS_SETUID) && setuid(options->uid)))"];
+"1000287" [label="(Call,(options->flags & UV_PROCESS_SETUID) && setuid(options->uid))"];
+"1000293" [label="(Call,setuid(options->uid))"];
+"1000288" [label="(Call,options->flags & UV_PROCESS_SETUID)"];
+"1000294" [label="(Call,options->uid)"];
+"1000333" [label="(MethodReturn,static void)"];
+"1000293" -> "1000287"  [label="AST: "];
+"1000293" -> "1000294"  [label="CFG: "];
+"1000294" -> "1000293"  [label="AST: "];
+"1000287" -> "1000293"  [label="CFG: "];
+"1000293" -> "1000333"  [label="DDG: options->uid"];
+"1000293" -> "1000287"  [label="DDG: options->uid"];
+"1000287" -> "1000286"  [label="AST: "];
+"1000287" -> "1000288"  [label="CFG: "];
+"1000288" -> "1000287"  [label="AST: "];
+"1000299" -> "1000287"  [label="CFG: "];
+"1000309" -> "1000287"  [label="CFG: "];
+"1000287" -> "1000333"  [label="DDG: setuid(options->uid)"];
+"1000287" -> "1000333"  [label="DDG: (options->flags & UV_PROCESS_SETUID) && setuid(options->uid)"];
+"1000287" -> "1000333"  [label="DDG: options->flags & UV_PROCESS_SETUID"];
+"1000288" -> "1000287"  [label="DDG: options->flags"];
+"1000288" -> "1000287"  [label="DDG: UV_PROCESS_SETUID"];
+}

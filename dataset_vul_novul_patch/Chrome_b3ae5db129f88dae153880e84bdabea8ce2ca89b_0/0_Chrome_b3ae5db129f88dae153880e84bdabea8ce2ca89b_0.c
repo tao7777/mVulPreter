@@ -1,0 +1,1 @@
+BurnLibrary* CrosLibrary::GetBurnLibrary() {

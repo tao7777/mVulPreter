@@ -1,0 +1,29 @@
+digraph "0_ImageMagick_b61d35eaccc0a7ddeff8a1c3abfcd0a43ccf210b@pointer" {
+"1000443" [label="(Call,image->delay=(ssize_t)\n                    floor(geometry_info.sigma+0.5))"];
+"1000447" [label="(Call,(ssize_t)\n                    floor(geometry_info.sigma+0.5))"];
+"1000449" [label="(Call,floor(geometry_info.sigma+0.5))"];
+"1000450" [label="(Call,geometry_info.sigma+0.5)"];
+"1000430" [label="(ControlStructure,if (image->delay < (size_t) floor(geometry_info.rho+0.5)))"];
+"1001257" [label="(MethodReturn,MagickExport MagickBooleanType)"];
+"1000447" [label="(Call,(ssize_t)\n                    floor(geometry_info.sigma+0.5))"];
+"1000443" [label="(Call,image->delay=(ssize_t)\n                    floor(geometry_info.sigma+0.5))"];
+"1000444" [label="(Call,image->delay)"];
+"1000471" [label="(Identifier,flags)"];
+"1000449" [label="(Call,floor(geometry_info.sigma+0.5))"];
+"1000443" -> "1000430"  [label="AST: "];
+"1000443" -> "1000447"  [label="CFG: "];
+"1000444" -> "1000443"  [label="AST: "];
+"1000447" -> "1000443"  [label="AST: "];
+"1000471" -> "1000443"  [label="CFG: "];
+"1000443" -> "1001257"  [label="DDG: (ssize_t)\n                    floor(geometry_info.sigma+0.5)"];
+"1000443" -> "1001257"  [label="DDG: image->delay"];
+"1000447" -> "1000443"  [label="DDG: floor(geometry_info.sigma+0.5)"];
+"1000447" -> "1000449"  [label="CFG: "];
+"1000448" -> "1000447"  [label="AST: "];
+"1000449" -> "1000447"  [label="AST: "];
+"1000447" -> "1001257"  [label="DDG: floor(geometry_info.sigma+0.5)"];
+"1000449" -> "1000447"  [label="DDG: geometry_info.sigma+0.5"];
+"1000449" -> "1000450"  [label="CFG: "];
+"1000450" -> "1000449"  [label="AST: "];
+"1000449" -> "1001257"  [label="DDG: geometry_info.sigma+0.5"];
+}

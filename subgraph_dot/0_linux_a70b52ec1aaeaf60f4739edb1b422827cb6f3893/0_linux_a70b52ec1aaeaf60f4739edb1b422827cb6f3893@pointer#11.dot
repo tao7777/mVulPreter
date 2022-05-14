@@ -1,0 +1,32 @@
+digraph "0_linux_a70b52ec1aaeaf60f4739edb1b422827cb6f3893@pointer" {
+"1000182" [label="(Call,file->f_mode & FMODE_WRITE)"];
+"1000181" [label="(Call,!(file->f_mode & FMODE_WRITE))"];
+"1000180" [label="(Call,unlikely(!(file->f_mode & FMODE_WRITE)))"];
+"1000180" [label="(Call,unlikely(!(file->f_mode & FMODE_WRITE)))"];
+"1000357" [label="(MethodReturn,static ssize_t)"];
+"1000187" [label="(ControlStructure,break;)"];
+"1000179" [label="(ControlStructure,if (unlikely(!(file->f_mode & FMODE_WRITE))))"];
+"1000183" [label="(Call,file->f_mode)"];
+"1000181" [label="(Call,!(file->f_mode & FMODE_WRITE))"];
+"1000182" [label="(Call,file->f_mode & FMODE_WRITE)"];
+"1000186" [label="(Identifier,FMODE_WRITE)"];
+"1000189" [label="(Identifier,ret)"];
+"1000182" -> "1000181"  [label="AST: "];
+"1000182" -> "1000186"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000186" -> "1000182"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000357"  [label="DDG: FMODE_WRITE"];
+"1000182" -> "1000357"  [label="DDG: file->f_mode"];
+"1000182" -> "1000181"  [label="DDG: file->f_mode"];
+"1000182" -> "1000181"  [label="DDG: FMODE_WRITE"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000180" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000357"  [label="DDG: file->f_mode & FMODE_WRITE"];
+"1000181" -> "1000180"  [label="DDG: file->f_mode & FMODE_WRITE"];
+"1000180" -> "1000179"  [label="AST: "];
+"1000187" -> "1000180"  [label="CFG: "];
+"1000189" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000357"  [label="DDG: !(file->f_mode & FMODE_WRITE)"];
+"1000180" -> "1000357"  [label="DDG: unlikely(!(file->f_mode & FMODE_WRITE))"];
+}

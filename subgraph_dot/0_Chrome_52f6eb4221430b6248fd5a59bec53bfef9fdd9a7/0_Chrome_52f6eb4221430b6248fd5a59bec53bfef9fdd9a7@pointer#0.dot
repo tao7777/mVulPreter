@@ -1,0 +1,25 @@
+digraph "0_Chrome_52f6eb4221430b6248fd5a59bec53bfef9fdd9a7@pointer" {
+"1000101" [label="(MethodParameterIn,content::WebUIDataSource* html_source)"];
+"1000121" [label="(Call,AddLocalizedStringsBulk(html_source, localized_strings,\n                          arraysize(localized_strings)))"];
+"1000123" [label="(Identifier,localized_strings)"];
+"1000102" [label="(Block,)"];
+"1000101" [label="(MethodParameterIn,content::WebUIDataSource* html_source)"];
+"1000122" [label="(Identifier,html_source)"];
+"1000124" [label="(Call,arraysize(localized_strings))"];
+"1000121" [label="(Call,AddLocalizedStringsBulk(html_source, localized_strings,\n                          arraysize(localized_strings)))"];
+"1000126" [label="(MethodReturn,void)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000126"  [label="DDG: html_source"];
+"1000101" -> "1000121"  [label="DDG: html_source"];
+"1000121" -> "1000102"  [label="AST: "];
+"1000121" -> "1000124"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000124" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000126"  [label="DDG: localized_strings"];
+"1000121" -> "1000126"  [label="DDG: html_source"];
+"1000121" -> "1000126"  [label="DDG: arraysize(localized_strings)"];
+"1000121" -> "1000126"  [label="DDG: AddLocalizedStringsBulk(html_source, localized_strings,\n                          arraysize(localized_strings))"];
+"1000124" -> "1000121"  [label="DDG: localized_strings"];
+}

@@ -1,0 +1,26 @@
+digraph "0_krb5_5bb8a6b9c9eb8dd22bc9526751610aaa255ead9c@API" {
+"1000295" [label="(Call,ret_freegc (AUTH_BADCRED))"];
+"1000315" [label="(Call,ret_freegc (AUTH_BADCRED))"];
+"1000295" [label="(Call,ret_freegc (AUTH_BADCRED))"];
+"1000297" [label="(ControlStructure,if (gc->gc_svc != RPCSEC_GSS_SVC_NONE &&\n\t    gc->gc_svc != RPCSEC_GSS_SVC_INTEGRITY &&\n\t    gc->gc_svc != RPCSEC_GSS_SVC_PRIVACY))"];
+"1000301" [label="(Identifier,gc)"];
+"1000296" [label="(Identifier,AUTH_BADCRED)"];
+"1000289" [label="(ControlStructure,if (gc->gc_v != RPCSEC_GSS_VERSION))"];
+"1000616" [label="(MethodReturn,RET)"];
+"1000315" [label="(Call,ret_freegc (AUTH_BADCRED))"];
+"1000316" [label="(Identifier,AUTH_BADCRED)"];
+"1000319" [label="(Identifier,gd)"];
+"1000295" -> "1000289"  [label="AST: "];
+"1000295" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000295"  [label="AST: "];
+"1000301" -> "1000295"  [label="CFG: "];
+"1000295" -> "1000616"  [label="DDG: AUTH_BADCRED"];
+"1000295" -> "1000616"  [label="DDG: ret_freegc (AUTH_BADCRED)"];
+"1000295" -> "1000315"  [label="DDG: AUTH_BADCRED"];
+"1000315" -> "1000297"  [label="AST: "];
+"1000315" -> "1000316"  [label="CFG: "];
+"1000316" -> "1000315"  [label="AST: "];
+"1000319" -> "1000315"  [label="CFG: "];
+"1000315" -> "1000616"  [label="DDG: ret_freegc (AUTH_BADCRED)"];
+"1000315" -> "1000616"  [label="DDG: AUTH_BADCRED"];
+}

@@ -1,0 +1,28 @@
+digraph "0_FFmpeg_c24bcb553650b91e9eff15ef6e54ca73de2453b7@API" {
+"1000355" [label="(Call,UINT_MAX / sizeof(uint32_t))"];
+"1000351" [label="(Call,(unsigned)table_entries_used >= UINT_MAX / sizeof(uint32_t))"];
+"1000350" [label="(ControlStructure,if((unsigned)table_entries_used >= UINT_MAX / sizeof(uint32_t)))"];
+"1000476" [label="(MethodReturn,static int)"];
+"1000357" [label="(Call,sizeof(uint32_t))"];
+"1000356" [label="(Identifier,UINT_MAX)"];
+"1000355" [label="(Call,UINT_MAX / sizeof(uint32_t))"];
+"1000361" [label="(Literal,1)"];
+"1000364" [label="(Identifier,nsv)"];
+"1000351" [label="(Call,(unsigned)table_entries_used >= UINT_MAX / sizeof(uint32_t))"];
+"1000352" [label="(Call,(unsigned)table_entries_used)"];
+"1000355" -> "1000351"  [label="AST: "];
+"1000355" -> "1000357"  [label="CFG: "];
+"1000356" -> "1000355"  [label="AST: "];
+"1000357" -> "1000355"  [label="AST: "];
+"1000351" -> "1000355"  [label="CFG: "];
+"1000355" -> "1000476"  [label="DDG: UINT_MAX"];
+"1000355" -> "1000351"  [label="DDG: UINT_MAX"];
+"1000351" -> "1000350"  [label="AST: "];
+"1000352" -> "1000351"  [label="AST: "];
+"1000361" -> "1000351"  [label="CFG: "];
+"1000364" -> "1000351"  [label="CFG: "];
+"1000351" -> "1000476"  [label="DDG: (unsigned)table_entries_used >= UINT_MAX / sizeof(uint32_t)"];
+"1000351" -> "1000476"  [label="DDG: (unsigned)table_entries_used"];
+"1000351" -> "1000476"  [label="DDG: UINT_MAX / sizeof(uint32_t)"];
+"1000352" -> "1000351"  [label="DDG: table_entries_used"];
+}

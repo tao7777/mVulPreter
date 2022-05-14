@@ -1,0 +1,27 @@
+digraph "0_qemu_e3737b820b45e54b059656dc3f914f895ac7a88b@integer" {
+"1000358" [label="(Call,extent_index = offset / s->extent_size)"];
+"1000360" [label="(Call,offset / s->extent_size)"];
+"1000366" [label="(Identifier,extent_offset)"];
+"1000110" [label="(Block,)"];
+"1000359" [label="(Identifier,extent_index)"];
+"1000361" [label="(Identifier,offset)"];
+"1000449" [label="(MethodReturn,static int)"];
+"1000358" [label="(Call,extent_index = offset / s->extent_size)"];
+"1000368" [label="(Call,offset % s->extent_size)"];
+"1000360" [label="(Call,offset / s->extent_size)"];
+"1000362" [label="(Call,s->extent_size)"];
+"1000358" -> "1000110"  [label="AST: "];
+"1000358" -> "1000360"  [label="CFG: "];
+"1000359" -> "1000358"  [label="AST: "];
+"1000360" -> "1000358"  [label="AST: "];
+"1000366" -> "1000358"  [label="CFG: "];
+"1000358" -> "1000449"  [label="DDG: offset / s->extent_size"];
+"1000358" -> "1000449"  [label="DDG: extent_index"];
+"1000360" -> "1000358"  [label="DDG: offset"];
+"1000360" -> "1000358"  [label="DDG: s->extent_size"];
+"1000360" -> "1000362"  [label="CFG: "];
+"1000361" -> "1000360"  [label="AST: "];
+"1000362" -> "1000360"  [label="AST: "];
+"1000360" -> "1000368"  [label="DDG: offset"];
+"1000360" -> "1000368"  [label="DDG: s->extent_size"];
+}

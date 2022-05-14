@@ -1,0 +1,24 @@
+digraph "0_linux_4ff67b720c02c36e54d55b88c2931879b7db1cd2_0@API" {
+"1000357" [label="(Call,mutex_unlock(&ses->session_mutex))"];
+"1000336" [label="(Call,mutex_lock(&ses->session_mutex))"];
+"1000342" [label="(Identifier,rc)"];
+"1000109" [label="(Block,)"];
+"1000363" [label="(Identifier,rc)"];
+"1000336" [label="(Call,mutex_lock(&ses->session_mutex))"];
+"1000337" [label="(Call,&ses->session_mutex)"];
+"1000357" [label="(Call,mutex_unlock(&ses->session_mutex))"];
+"1000358" [label="(Call,&ses->session_mutex)"];
+"1000392" [label="(MethodReturn,RET)"];
+"1000357" -> "1000109"  [label="AST: "];
+"1000357" -> "1000358"  [label="CFG: "];
+"1000358" -> "1000357"  [label="AST: "];
+"1000363" -> "1000357"  [label="CFG: "];
+"1000357" -> "1000392"  [label="DDG: mutex_unlock(&ses->session_mutex)"];
+"1000357" -> "1000392"  [label="DDG: &ses->session_mutex"];
+"1000336" -> "1000357"  [label="DDG: &ses->session_mutex"];
+"1000336" -> "1000109"  [label="AST: "];
+"1000336" -> "1000337"  [label="CFG: "];
+"1000337" -> "1000336"  [label="AST: "];
+"1000342" -> "1000336"  [label="CFG: "];
+"1000336" -> "1000392"  [label="DDG: mutex_lock(&ses->session_mutex)"];
+}

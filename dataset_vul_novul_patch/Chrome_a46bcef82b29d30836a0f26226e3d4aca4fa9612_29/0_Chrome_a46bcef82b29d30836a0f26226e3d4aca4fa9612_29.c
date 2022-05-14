@@ -1,0 +1,1 @@
+void ScreenRecorder::DoRemoveAllClients() {

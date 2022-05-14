@@ -1,0 +1,37 @@
+digraph "0_neomutt_6f163e07ae68654d7ac5268cbb7565f6df79ad85_0@API" {
+"1000687" [label="(Call,sizeof(buf1) - 2)"];
+"1000679" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000312" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000690" [label="(Literal,2)"];
+"1000680" [label="(Identifier,buf1)"];
+"1000573" [label="(Call,(long *) send_token.value)"];
+"1000782" [label="(MethodReturn,enum ImapAuthRes)"];
+"1000687" [label="(Call,sizeof(buf1) - 2)"];
+"1000681" [label="(Call,send_token.value)"];
+"1000617" [label="(Call,buf1[0] = GSS_AUTH_P_NONE)"];
+"1000431" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000684" [label="(Call,send_token.length)"];
+"1000692" [label="(Literal,2)"];
+"1000679" [label="(Call,mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2))"];
+"1000688" [label="(Call,sizeof(buf1))"];
+"1000120" [label="(Block,)"];
+"1000687" -> "1000679"  [label="AST: "];
+"1000687" -> "1000690"  [label="CFG: "];
+"1000688" -> "1000687"  [label="AST: "];
+"1000690" -> "1000687"  [label="AST: "];
+"1000679" -> "1000687"  [label="CFG: "];
+"1000687" -> "1000679"  [label="DDG: 2"];
+"1000679" -> "1000120"  [label="AST: "];
+"1000680" -> "1000679"  [label="AST: "];
+"1000681" -> "1000679"  [label="AST: "];
+"1000684" -> "1000679"  [label="AST: "];
+"1000692" -> "1000679"  [label="CFG: "];
+"1000679" -> "1000782"  [label="DDG: send_token.value"];
+"1000679" -> "1000782"  [label="DDG: send_token.length"];
+"1000679" -> "1000782"  [label="DDG: mutt_b64_encode(buf1, send_token.value, send_token.length, sizeof(buf1) - 2)"];
+"1000679" -> "1000782"  [label="DDG: sizeof(buf1) - 2"];
+"1000617" -> "1000679"  [label="DDG: buf1[0]"];
+"1000573" -> "1000679"  [label="DDG: send_token.value"];
+"1000431" -> "1000679"  [label="DDG: send_token.length"];
+"1000312" -> "1000679"  [label="DDG: send_token.length"];
+}

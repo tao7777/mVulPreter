@@ -1,0 +1,26 @@
+digraph "0_linux_c2c65cd2e14ada6de44cb527e7f1990bede24e15@pointer" {
+"1000158" [label="(Call,pd->state & OZ_PD_S_CONNECTED)"];
+"1000157" [label="(Call,!(pd->state & OZ_PD_S_CONNECTED))"];
+"1000336" [label="(MethodReturn,static ssize_t)"];
+"1000162" [label="(Identifier,OZ_PD_S_CONNECTED)"];
+"1000157" [label="(Call,!(pd->state & OZ_PD_S_CONNECTED))"];
+"1000167" [label="(Identifier,eb)"];
+"1000156" [label="(ControlStructure,if (!(pd->state & OZ_PD_S_CONNECTED)))"];
+"1000158" [label="(Call,pd->state & OZ_PD_S_CONNECTED)"];
+"1000159" [label="(Call,pd->state)"];
+"1000165" [label="(Identifier,EAGAIN)"];
+"1000158" -> "1000157"  [label="AST: "];
+"1000158" -> "1000162"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="AST: "];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000336"  [label="DDG: pd->state"];
+"1000158" -> "1000336"  [label="DDG: OZ_PD_S_CONNECTED"];
+"1000158" -> "1000157"  [label="DDG: pd->state"];
+"1000158" -> "1000157"  [label="DDG: OZ_PD_S_CONNECTED"];
+"1000157" -> "1000156"  [label="AST: "];
+"1000165" -> "1000157"  [label="CFG: "];
+"1000167" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000336"  [label="DDG: !(pd->state & OZ_PD_S_CONNECTED)"];
+"1000157" -> "1000336"  [label="DDG: pd->state & OZ_PD_S_CONNECTED"];
+}

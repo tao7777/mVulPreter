@@ -1,0 +1,32 @@
+digraph "0_linux_f3069c6d33f6ae63a1668737bc78aaaa51bff7ca@pointer" {
+"1000133" [label="(Call,rs->rs_bound_addr == 0)"];
+"1000132" [label="(Call,rs->rs_bound_addr == 0 || !rs->rs_transport)"];
+"1000131" [label="(ControlStructure,if (rs->rs_bound_addr == 0 || !rs->rs_transport))"];
+"1000152" [label="(Identifier,rs)"];
+"1000506" [label="(MethodReturn,static int)"];
+"1000140" [label="(Identifier,rs)"];
+"1000132" [label="(Call,rs->rs_bound_addr == 0 || !rs->rs_transport)"];
+"1000137" [label="(Literal,0)"];
+"1000133" [label="(Call,rs->rs_bound_addr == 0)"];
+"1000134" [label="(Call,rs->rs_bound_addr)"];
+"1000138" [label="(Call,!rs->rs_transport)"];
+"1000144" [label="(Identifier,ret)"];
+"1000133" -> "1000132"  [label="AST: "];
+"1000133" -> "1000137"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000137" -> "1000133"  [label="AST: "];
+"1000140" -> "1000133"  [label="CFG: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000506"  [label="DDG: rs->rs_bound_addr"];
+"1000133" -> "1000132"  [label="DDG: rs->rs_bound_addr"];
+"1000133" -> "1000132"  [label="DDG: 0"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000132"  [label="AST: "];
+"1000144" -> "1000132"  [label="CFG: "];
+"1000152" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000506"  [label="DDG: rs->rs_bound_addr == 0 || !rs->rs_transport"];
+"1000132" -> "1000506"  [label="DDG: rs->rs_bound_addr == 0"];
+"1000132" -> "1000506"  [label="DDG: !rs->rs_transport"];
+"1000138" -> "1000132"  [label="DDG: rs->rs_transport"];
+}

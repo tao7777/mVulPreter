@@ -1,0 +1,35 @@
+digraph "0_Chrome_935cb0dee7696d70880f96a71bf5687411bb8cb9@API" {
+"1000184" [label="(Call,!options.open_existing)"];
+"1000101" [label="(MethodParameterIn,const SharedMemoryCreateOptions& options)"];
+"1000104" [label="(Call,!options.executable)"];
+"1000141" [label="(Call,options.name == NULL)"];
+"1000184" [label="(Call,!options.open_existing)"];
+"1000194" [label="(MethodReturn,bool)"];
+"1000189" [label="(Call,Close())"];
+"1000170" [label="(Call,created_size_ = options.size)"];
+"1000130" [label="(Call,rounded_size < options.size)"];
+"1000193" [label="(Identifier,true)"];
+"1000123" [label="(Call,options.size + 0xffff)"];
+"1000101" [label="(MethodParameterIn,const SharedMemoryCreateOptions& options)"];
+"1000122" [label="(Call,(options.size + 0xffff) & ~0xffff)"];
+"1000185" [label="(Call,options.open_existing)"];
+"1000112" [label="(Call,options.size == 0)"];
+"1000183" [label="(ControlStructure,if (!options.open_existing))"];
+"1000184" -> "1000183"  [label="AST: "];
+"1000184" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000189" -> "1000184"  [label="CFG: "];
+"1000193" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000194"  [label="DDG: options.open_existing"];
+"1000184" -> "1000194"  [label="DDG: !options.open_existing"];
+"1000101" -> "1000184"  [label="DDG: options"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000194"  [label="DDG: options"];
+"1000101" -> "1000104"  [label="DDG: options"];
+"1000101" -> "1000112"  [label="DDG: options"];
+"1000101" -> "1000122"  [label="DDG: options"];
+"1000101" -> "1000123"  [label="DDG: options"];
+"1000101" -> "1000130"  [label="DDG: options"];
+"1000101" -> "1000141"  [label="DDG: options"];
+"1000101" -> "1000170"  [label="DDG: options"];
+}

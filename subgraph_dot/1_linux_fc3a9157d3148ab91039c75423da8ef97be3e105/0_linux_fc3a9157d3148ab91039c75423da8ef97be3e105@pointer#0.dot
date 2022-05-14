@@ -1,0 +1,33 @@
+digraph "0_linux_fc3a9157d3148ab91039c75423da8ef97be3e105@pointer" {
+"1000101" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000109" [label="(Call,trace_kvm_emulate_insn_failed(vcpu))"];
+"1000136" [label="(Call,kvm_queue_exception(vcpu, UD_VECTOR))"];
+"1000140" [label="(Identifier,EMULATE_FAIL)"];
+"1000110" [label="(Identifier,vcpu)"];
+"1000138" [label="(Identifier,UD_VECTOR)"];
+"1000109" [label="(Call,trace_kvm_emulate_insn_failed(vcpu))"];
+"1000141" [label="(MethodReturn,static int)"];
+"1000102" [label="(Block,)"];
+"1000136" [label="(Call,kvm_queue_exception(vcpu, UD_VECTOR))"];
+"1000137" [label="(Identifier,vcpu)"];
+"1000101" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000114" [label="(Identifier,vcpu)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000141"  [label="DDG: vcpu"];
+"1000101" -> "1000109"  [label="DDG: vcpu"];
+"1000101" -> "1000136"  [label="DDG: vcpu"];
+"1000109" -> "1000102"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000114" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000141"  [label="DDG: trace_kvm_emulate_insn_failed(vcpu)"];
+"1000109" -> "1000136"  [label="DDG: vcpu"];
+"1000136" -> "1000102"  [label="AST: "];
+"1000136" -> "1000138"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000138" -> "1000136"  [label="AST: "];
+"1000140" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000141"  [label="DDG: kvm_queue_exception(vcpu, UD_VECTOR)"];
+"1000136" -> "1000141"  [label="DDG: UD_VECTOR"];
+"1000136" -> "1000141"  [label="DDG: vcpu"];
+}

@@ -1,0 +1,4 @@
+ExtensionTtsController::~ExtensionTtsController() {
+  FinishCurrentUtterance();
+  ClearUtteranceQueue();
+}

@@ -1,0 +1,20 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_4@API" {
+"1000157" [label="(Call,atomic_read(&sk->sk_wmem_alloc))"];
+"1000156" [label="(Call,WARN_ON(atomic_read(&sk->sk_wmem_alloc)))"];
+"1000158" [label="(Call,&sk->sk_wmem_alloc)"];
+"1000102" [label="(Block,)"];
+"1000157" [label="(Call,atomic_read(&sk->sk_wmem_alloc))"];
+"1000184" [label="(MethodReturn,void)"];
+"1000156" [label="(Call,WARN_ON(atomic_read(&sk->sk_wmem_alloc)))"];
+"1000164" [label="(Identifier,sk)"];
+"1000157" -> "1000156"  [label="AST: "];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000184"  [label="DDG: &sk->sk_wmem_alloc"];
+"1000157" -> "1000156"  [label="DDG: &sk->sk_wmem_alloc"];
+"1000156" -> "1000102"  [label="AST: "];
+"1000164" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000184"  [label="DDG: atomic_read(&sk->sk_wmem_alloc)"];
+"1000156" -> "1000184"  [label="DDG: WARN_ON(atomic_read(&sk->sk_wmem_alloc))"];
+}

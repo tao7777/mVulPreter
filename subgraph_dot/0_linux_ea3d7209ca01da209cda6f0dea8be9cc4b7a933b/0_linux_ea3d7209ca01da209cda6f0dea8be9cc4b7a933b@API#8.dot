@@ -1,0 +1,24 @@
+digraph "0_linux_ea3d7209ca01da209cda6f0dea8be9cc4b7a933b@API" {
+"1000244" [label="(Call,down_write(&EXT4_I(inode)->i_mmap_sem))"];
+"1000381" [label="(Call,up_write(&EXT4_I(inode)->i_mmap_sem))"];
+"1000251" [label="(Identifier,inode)"];
+"1000388" [label="(Identifier,inode)"];
+"1000381" [label="(Call,up_write(&EXT4_I(inode)->i_mmap_sem))"];
+"1000245" [label="(Call,&EXT4_I(inode)->i_mmap_sem)"];
+"1000382" [label="(Call,&EXT4_I(inode)->i_mmap_sem)"];
+"1000397" [label="(MethodReturn,int)"];
+"1000244" [label="(Call,down_write(&EXT4_I(inode)->i_mmap_sem))"];
+"1000114" [label="(Block,)"];
+"1000244" -> "1000114"  [label="AST: "];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000251" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000397"  [label="DDG: down_write(&EXT4_I(inode)->i_mmap_sem)"];
+"1000244" -> "1000381"  [label="DDG: &EXT4_I(inode)->i_mmap_sem"];
+"1000381" -> "1000114"  [label="AST: "];
+"1000381" -> "1000382"  [label="CFG: "];
+"1000382" -> "1000381"  [label="AST: "];
+"1000388" -> "1000381"  [label="CFG: "];
+"1000381" -> "1000397"  [label="DDG: &EXT4_I(inode)->i_mmap_sem"];
+"1000381" -> "1000397"  [label="DDG: up_write(&EXT4_I(inode)->i_mmap_sem)"];
+}

@@ -1,0 +1,32 @@
+digraph "0_neomutt_6f163e07ae68654d7ac5268cbb7565f6df79ad85@API" {
+"1000238" [label="(Call,sizeof(ibuf) - 2)"];
+"1000233" [label="(Call,mutt_b64_encode(ibuf, obuf, strlen(obuf), sizeof(ibuf) - 2))"];
+"1000236" [label="(Call,strlen(obuf))"];
+"1000234" [label="(Identifier,ibuf)"];
+"1000282" [label="(MethodReturn,enum ImapAuthRes)"];
+"1000243" [label="(Identifier,ibuf)"];
+"1000233" [label="(Call,mutt_b64_encode(ibuf, obuf, strlen(obuf), sizeof(ibuf) - 2))"];
+"1000238" [label="(Call,sizeof(ibuf) - 2)"];
+"1000239" [label="(Call,sizeof(ibuf))"];
+"1000235" [label="(Identifier,obuf)"];
+"1000108" [label="(Block,)"];
+"1000241" [label="(Literal,2)"];
+"1000190" [label="(Call,obuf[len] = '\0')"];
+"1000238" -> "1000233"  [label="AST: "];
+"1000238" -> "1000241"  [label="CFG: "];
+"1000239" -> "1000238"  [label="AST: "];
+"1000241" -> "1000238"  [label="AST: "];
+"1000233" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000233"  [label="DDG: 2"];
+"1000233" -> "1000108"  [label="AST: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000235" -> "1000233"  [label="AST: "];
+"1000236" -> "1000233"  [label="AST: "];
+"1000243" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000282"  [label="DDG: strlen(obuf)"];
+"1000233" -> "1000282"  [label="DDG: mutt_b64_encode(ibuf, obuf, strlen(obuf), sizeof(ibuf) - 2)"];
+"1000233" -> "1000282"  [label="DDG: obuf"];
+"1000233" -> "1000282"  [label="DDG: sizeof(ibuf) - 2"];
+"1000236" -> "1000233"  [label="DDG: obuf"];
+"1000190" -> "1000233"  [label="DDG: obuf[len]"];
+}

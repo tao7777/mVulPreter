@@ -1,0 +1,32 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_25@pointer" {
+"1000167" [label="(Call,memcpy(optbuf, inet->opt,\n\t\t\t       sizeof(struct ip_options)+\n\t\t\t       inet->opt->optlen))"];
+"1000155" [label="(Call,(struct ip_options *)optbuf)"];
+"1000153" [label="(Call,* opt = (struct ip_options *)optbuf)"];
+"1000155" [label="(Call,(struct ip_options *)optbuf)"];
+"1000157" [label="(Identifier,optbuf)"];
+"1000698" [label="(MethodReturn,static int)"];
+"1000168" [label="(Identifier,optbuf)"];
+"1000163" [label="(ControlStructure,if (inet->opt))"];
+"1000172" [label="(Call,sizeof(struct ip_options)+\n\t\t\t       inet->opt->optlen)"];
+"1000169" [label="(Call,inet->opt)"];
+"1000181" [label="(Identifier,sk)"];
+"1000167" [label="(Call,memcpy(optbuf, inet->opt,\n\t\t\t       sizeof(struct ip_options)+\n\t\t\t       inet->opt->optlen))"];
+"1000167" -> "1000163"  [label="AST: "];
+"1000167" -> "1000172"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000169" -> "1000167"  [label="AST: "];
+"1000172" -> "1000167"  [label="AST: "];
+"1000181" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000698"  [label="DDG: optbuf"];
+"1000167" -> "1000698"  [label="DDG: sizeof(struct ip_options)+\n\t\t\t       inet->opt->optlen"];
+"1000167" -> "1000698"  [label="DDG: inet->opt"];
+"1000167" -> "1000698"  [label="DDG: memcpy(optbuf, inet->opt,\n\t\t\t       sizeof(struct ip_options)+\n\t\t\t       inet->opt->optlen)"];
+"1000155" -> "1000167"  [label="DDG: optbuf"];
+"1000155" -> "1000153"  [label="AST: "];
+"1000155" -> "1000157"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000157" -> "1000155"  [label="AST: "];
+"1000153" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000698"  [label="DDG: optbuf"];
+"1000155" -> "1000153"  [label="DDG: optbuf"];
+}

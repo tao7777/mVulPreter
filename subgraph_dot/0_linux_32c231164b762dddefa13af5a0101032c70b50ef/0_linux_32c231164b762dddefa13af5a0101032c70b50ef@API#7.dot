@@ -1,0 +1,26 @@
+digraph "0_linux_32c231164b762dddefa13af5a0101032c70b50ef@API" {
+"1000284" [label="(Call,read_unlock_bh(&l2tp_ip_lock))"];
+"1000145" [label="(Call,read_lock_bh(&l2tp_ip_lock))"];
+"1000150" [label="(Identifier,net)"];
+"1000288" [label="(Identifier,ret)"];
+"1000289" [label="(MethodReturn,static int)"];
+"1000145" [label="(Call,read_lock_bh(&l2tp_ip_lock))"];
+"1000146" [label="(Call,&l2tp_ip_lock)"];
+"1000285" [label="(Call,&l2tp_ip_lock)"];
+"1000105" [label="(Block,)"];
+"1000163" [label="(Call,read_unlock_bh(&l2tp_ip_lock))"];
+"1000284" [label="(Call,read_unlock_bh(&l2tp_ip_lock))"];
+"1000284" -> "1000105"  [label="AST: "];
+"1000284" -> "1000285"  [label="CFG: "];
+"1000285" -> "1000284"  [label="AST: "];
+"1000288" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000289"  [label="DDG: &l2tp_ip_lock"];
+"1000284" -> "1000289"  [label="DDG: read_unlock_bh(&l2tp_ip_lock)"];
+"1000145" -> "1000284"  [label="DDG: &l2tp_ip_lock"];
+"1000145" -> "1000105"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000150" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000289"  [label="DDG: read_lock_bh(&l2tp_ip_lock)"];
+"1000145" -> "1000163"  [label="DDG: &l2tp_ip_lock"];
+}

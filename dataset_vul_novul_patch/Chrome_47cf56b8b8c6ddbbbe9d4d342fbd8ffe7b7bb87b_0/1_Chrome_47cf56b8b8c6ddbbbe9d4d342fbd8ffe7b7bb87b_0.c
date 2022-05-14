@@ -1,0 +1,3 @@
+GURL GetFileManagerBaseUrl() {
+  return GetFileManagerUrl("/");
+}

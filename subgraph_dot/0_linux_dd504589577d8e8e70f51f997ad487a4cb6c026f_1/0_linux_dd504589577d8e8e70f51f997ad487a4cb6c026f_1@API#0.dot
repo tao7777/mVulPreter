@@ -1,0 +1,30 @@
+digraph "0_linux_dd504589577d8e8e70f51f997ad487a4cb6c026f_1@API" {
+"1000111" [label="(Call,kfree(tfm))"];
+"1000104" [label="(Call,*tfm = private)"];
+"1000101" [label="(MethodParameterIn,void *private)"];
+"1000102" [label="(Block,)"];
+"1000105" [label="(Identifier,tfm)"];
+"1000101" [label="(MethodParameterIn,void *private)"];
+"1000113" [label="(MethodReturn,static void)"];
+"1000111" [label="(Call,kfree(tfm))"];
+"1000109" [label="(Identifier,tfm)"];
+"1000112" [label="(Identifier,tfm)"];
+"1000104" [label="(Call,*tfm = private)"];
+"1000106" [label="(Identifier,private)"];
+"1000111" -> "1000102"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000113"  [label="DDG: tfm"];
+"1000111" -> "1000113"  [label="DDG: kfree(tfm)"];
+"1000104" -> "1000111"  [label="DDG: tfm"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000113"  [label="DDG: private"];
+"1000101" -> "1000104"  [label="DDG: private"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000113"  [label="DDG: private"];
+}

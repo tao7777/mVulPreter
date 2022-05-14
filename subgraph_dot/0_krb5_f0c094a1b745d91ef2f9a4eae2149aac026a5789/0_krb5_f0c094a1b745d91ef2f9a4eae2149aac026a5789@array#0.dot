@@ -1,0 +1,37 @@
+digraph "0_krb5_f0c094a1b745d91ef2f9a4eae2149aac026a5789@array" {
+"1000194" [label="(Call,data[count].length = strlen(component))"];
+"1000200" [label="(Call,strlen(component))"];
+"1000131" [label="(Call,*component = NULL)"];
+"1000193" [label="(Block,)"];
+"1000195" [label="(Call,data[count].length)"];
+"1000205" [label="(Identifier,data)"];
+"1000201" [label="(Identifier,component)"];
+"1000131" [label="(Call,*component = NULL)"];
+"1000109" [label="(Block,)"];
+"1000281" [label="(MethodReturn,RET)"];
+"1000135" [label="(Identifier,data)"];
+"1000133" [label="(Identifier,NULL)"];
+"1000208" [label="(Call,strdup(component))"];
+"1000200" [label="(Call,strlen(component))"];
+"1000194" [label="(Call,data[count].length = strlen(component))"];
+"1000132" [label="(Identifier,component)"];
+"1000194" -> "1000193"  [label="AST: "];
+"1000194" -> "1000200"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000200" -> "1000194"  [label="AST: "];
+"1000205" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000281"  [label="DDG: strlen(component)"];
+"1000194" -> "1000281"  [label="DDG: data[count].length"];
+"1000200" -> "1000194"  [label="DDG: component"];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000131" -> "1000200"  [label="DDG: component"];
+"1000200" -> "1000208"  [label="DDG: component"];
+"1000131" -> "1000109"  [label="AST: "];
+"1000131" -> "1000133"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000133" -> "1000131"  [label="AST: "];
+"1000135" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000281"  [label="DDG: component"];
+"1000131" -> "1000281"  [label="DDG: NULL"];
+}

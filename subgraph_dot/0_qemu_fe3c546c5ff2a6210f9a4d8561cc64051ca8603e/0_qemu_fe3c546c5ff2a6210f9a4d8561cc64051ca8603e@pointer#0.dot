@@ -1,0 +1,23 @@
+digraph "0_qemu_fe3c546c5ff2a6210f9a4d8561cc64051ca8603e@pointer" {
+"1000245" [label="(Call,resp->InformationBufferLength = cpu_to_le32(infobuflen))"];
+"1000249" [label="(Call,cpu_to_le32(infobuflen))"];
+"1000107" [label="(Block,)"];
+"1000246" [label="(Call,resp->InformationBufferLength)"];
+"1000253" [label="(Identifier,resp)"];
+"1000249" [label="(Call,cpu_to_le32(infobuflen))"];
+"1000259" [label="(MethodReturn,static int)"];
+"1000250" [label="(Identifier,infobuflen)"];
+"1000245" [label="(Call,resp->InformationBufferLength = cpu_to_le32(infobuflen))"];
+"1000251" [label="(Call,memcpy(resp + 1, infobuf, infobuflen))"];
+"1000245" -> "1000107"  [label="AST: "];
+"1000245" -> "1000249"  [label="CFG: "];
+"1000246" -> "1000245"  [label="AST: "];
+"1000249" -> "1000245"  [label="AST: "];
+"1000253" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000259"  [label="DDG: resp->InformationBufferLength"];
+"1000245" -> "1000259"  [label="DDG: cpu_to_le32(infobuflen)"];
+"1000249" -> "1000245"  [label="DDG: infobuflen"];
+"1000249" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000249"  [label="AST: "];
+"1000249" -> "1000251"  [label="DDG: infobuflen"];
+}

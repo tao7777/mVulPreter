@@ -1,0 +1,32 @@
+digraph "0_linux_468f6eafa6c44cb2c5d8aad35e12f06c240a812a@pointer" {
+"1000501" [label="(Call,dst_reg->smin_value < 0)"];
+"1000500" [label="(Call,dst_reg->smin_value < 0 || smin_val < 0)"];
+"1000524" [label="(Identifier,dst_reg)"];
+"1000500" [label="(Call,dst_reg->smin_value < 0 || smin_val < 0)"];
+"1000506" [label="(Call,smin_val < 0)"];
+"1000771" [label="(MethodReturn,static int)"];
+"1000505" [label="(Literal,0)"];
+"1000512" [label="(Identifier,dst_reg)"];
+"1000502" [label="(Call,dst_reg->smin_value)"];
+"1000501" [label="(Call,dst_reg->smin_value < 0)"];
+"1000499" [label="(ControlStructure,if (dst_reg->smin_value < 0 || smin_val < 0))"];
+"1000507" [label="(Identifier,smin_val)"];
+"1000501" -> "1000500"  [label="AST: "];
+"1000501" -> "1000505"  [label="CFG: "];
+"1000502" -> "1000501"  [label="AST: "];
+"1000505" -> "1000501"  [label="AST: "];
+"1000507" -> "1000501"  [label="CFG: "];
+"1000500" -> "1000501"  [label="CFG: "];
+"1000501" -> "1000500"  [label="DDG: dst_reg->smin_value"];
+"1000501" -> "1000500"  [label="DDG: 0"];
+"1000500" -> "1000499"  [label="AST: "];
+"1000500" -> "1000506"  [label="CFG: "];
+"1000506" -> "1000500"  [label="AST: "];
+"1000512" -> "1000500"  [label="CFG: "];
+"1000524" -> "1000500"  [label="CFG: "];
+"1000500" -> "1000771"  [label="DDG: smin_val < 0"];
+"1000500" -> "1000771"  [label="DDG: dst_reg->smin_value < 0 || smin_val < 0"];
+"1000500" -> "1000771"  [label="DDG: dst_reg->smin_value < 0"];
+"1000506" -> "1000500"  [label="DDG: smin_val"];
+"1000506" -> "1000500"  [label="DDG: 0"];
+}

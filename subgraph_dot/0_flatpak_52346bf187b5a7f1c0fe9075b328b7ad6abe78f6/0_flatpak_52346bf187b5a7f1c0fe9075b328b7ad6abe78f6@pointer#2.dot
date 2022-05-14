@@ -1,0 +1,38 @@
+digraph "0_flatpak_52346bf187b5a7f1c0fe9075b328b7ad6abe78f6@pointer" {
+"1000114" [label="(Call,original_size = client->auth_buffer->len)"];
+"1000189" [label="(Call,offset - original_size)"];
+"1000188" [label="(Return,return offset - original_size;)"];
+"1000116" [label="(Call,client->auth_buffer->len)"];
+"1000190" [label="(Identifier,offset)"];
+"1000166" [label="(Call,offset = (line_end + strlen (AUTH_LINE_SENTINEL) - line_start))"];
+"1000115" [label="(Identifier,original_size)"];
+"1000189" [label="(Call,offset - original_size)"];
+"1000114" [label="(Call,original_size = client->auth_buffer->len)"];
+"1000188" [label="(Return,return offset - original_size;)"];
+"1000191" [label="(Identifier,original_size)"];
+"1000185" [label="(ControlStructure,if (auth_line_is_begin (line_start)))"];
+"1000214" [label="(MethodReturn,RET)"];
+"1000108" [label="(Block,)"];
+"1000123" [label="(Identifier,client)"];
+"1000114" -> "1000108"  [label="AST: "];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000123" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000214"  [label="DDG: original_size"];
+"1000114" -> "1000214"  [label="DDG: client->auth_buffer->len"];
+"1000114" -> "1000189"  [label="DDG: original_size"];
+"1000189" -> "1000188"  [label="AST: "];
+"1000189" -> "1000191"  [label="CFG: "];
+"1000190" -> "1000189"  [label="AST: "];
+"1000191" -> "1000189"  [label="AST: "];
+"1000188" -> "1000189"  [label="CFG: "];
+"1000189" -> "1000214"  [label="DDG: offset"];
+"1000189" -> "1000214"  [label="DDG: offset - original_size"];
+"1000189" -> "1000214"  [label="DDG: original_size"];
+"1000189" -> "1000188"  [label="DDG: offset - original_size"];
+"1000166" -> "1000189"  [label="DDG: offset"];
+"1000188" -> "1000185"  [label="AST: "];
+"1000214" -> "1000188"  [label="CFG: "];
+"1000188" -> "1000214"  [label="DDG: <RET>"];
+}

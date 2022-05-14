@@ -1,0 +1,27 @@
+digraph "0_linux_20e2b791796bd68816fa115f12be5320de2b8021@pointer" {
+"1000167" [label="(Call,snd_rawmidi_receive(mpu->substream_input,\n\t\t\t\t\t\t    (unsigned char *)&val, 1))"];
+"1000171" [label="(Call,(unsigned char *)&val)"];
+"1000173" [label="(Call,&val)"];
+"1000168" [label="(Call,mpu->substream_input)"];
+"1000224" [label="(MethodReturn,void)"];
+"1000177" [label="(Identifier,wTmp)"];
+"1000171" [label="(Call,(unsigned char *)&val)"];
+"1000175" [label="(Literal,1)"];
+"1000167" [label="(Call,snd_rawmidi_receive(mpu->substream_input,\n\t\t\t\t\t\t    (unsigned char *)&val, 1))"];
+"1000160" [label="(ControlStructure,if (test_bit(MSNDMIDI_MODE_BIT_INPUT_TRIGGER,\n\t\t\t\t     &mpu->mode)))"];
+"1000167" -> "1000160"  [label="AST: "];
+"1000167" -> "1000175"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000171" -> "1000167"  [label="AST: "];
+"1000175" -> "1000167"  [label="AST: "];
+"1000177" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000224"  [label="DDG: mpu->substream_input"];
+"1000167" -> "1000224"  [label="DDG: snd_rawmidi_receive(mpu->substream_input,\n\t\t\t\t\t\t    (unsigned char *)&val, 1)"];
+"1000167" -> "1000224"  [label="DDG: (unsigned char *)&val"];
+"1000171" -> "1000167"  [label="DDG: &val"];
+"1000171" -> "1000173"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000173" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000224"  [label="DDG: &val"];
+}

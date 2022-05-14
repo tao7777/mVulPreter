@@ -1,0 +1,33 @@
+digraph "0_Android_268068f25673242d1d5130d96202d3288c91b700@API" {
+"1000107" [label="(Call,std::recursive_mutex> lock(local_socket_list_lock))"];
+"1000109" [label="(Call,lock(local_socket_list_lock))"];
+"1000105" [label="(Call,std::lock_guard<std::recursive_mutex> lock(local_socket_list_lock))"];
+"1000150" [label="(MethodReturn,void)"];
+"1000109" [label="(Call,lock(local_socket_list_lock))"];
+"1000111" [label="(JumpTarget,restart:)"];
+"1000110" [label="(Identifier,local_socket_list_lock)"];
+"1000108" [label="(Identifier,std::recursive_mutex)"];
+"1000103" [label="(Block,)"];
+"1000105" [label="(Call,std::lock_guard<std::recursive_mutex> lock(local_socket_list_lock))"];
+"1000106" [label="(Identifier,std::lock_guard)"];
+"1000107" [label="(Call,std::recursive_mutex> lock(local_socket_list_lock))"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000150"  [label="DDG: std::recursive_mutex"];
+"1000107" -> "1000150"  [label="DDG: lock(local_socket_list_lock)"];
+"1000107" -> "1000105"  [label="DDG: std::recursive_mutex"];
+"1000107" -> "1000105"  [label="DDG: lock(local_socket_list_lock)"];
+"1000109" -> "1000107"  [label="DDG: local_socket_list_lock"];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000109" -> "1000150"  [label="DDG: local_socket_list_lock"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000111" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000150"  [label="DDG: std::recursive_mutex> lock(local_socket_list_lock)"];
+"1000105" -> "1000150"  [label="DDG: std::lock_guard<std::recursive_mutex> lock(local_socket_list_lock)"];
+"1000105" -> "1000150"  [label="DDG: std::lock_guard"];
+}

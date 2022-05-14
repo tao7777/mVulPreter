@@ -1,0 +1,27 @@
+digraph "0_ImageMagick6_f663dfb8431c97d95682a2b533cca1c8233d21b4@pointer" {
+"1000886" [label="(Call,(unsigned char *) &colors[i].red)"];
+"1000885" [label="(Call,MSBOrderShort((unsigned char *) &colors[i].red,3*\n            sizeof(colors[i].red)))"];
+"1000895" [label="(Literal,3)"];
+"1000894" [label="(Call,3*\n            sizeof(colors[i].red))"];
+"1000885" [label="(Call,MSBOrderShort((unsigned char *) &colors[i].red,3*\n            sizeof(colors[i].red)))"];
+"1000869" [label="(Block,)"];
+"1000888" [label="(Call,&colors[i].red)"];
+"1000868" [label="(Identifier,i)"];
+"1000886" [label="(Call,(unsigned char *) &colors[i].red)"];
+"1001840" [label="(MethodReturn,static Image *)"];
+"1000886" -> "1000885"  [label="AST: "];
+"1000886" -> "1000888"  [label="CFG: "];
+"1000887" -> "1000886"  [label="AST: "];
+"1000888" -> "1000886"  [label="AST: "];
+"1000895" -> "1000886"  [label="CFG: "];
+"1000886" -> "1001840"  [label="DDG: &colors[i].red"];
+"1000886" -> "1000885"  [label="DDG: &colors[i].red"];
+"1000885" -> "1000869"  [label="AST: "];
+"1000885" -> "1000894"  [label="CFG: "];
+"1000894" -> "1000885"  [label="AST: "];
+"1000868" -> "1000885"  [label="CFG: "];
+"1000885" -> "1001840"  [label="DDG: MSBOrderShort((unsigned char *) &colors[i].red,3*\n            sizeof(colors[i].red))"];
+"1000885" -> "1001840"  [label="DDG: (unsigned char *) &colors[i].red"];
+"1000885" -> "1001840"  [label="DDG: 3*\n            sizeof(colors[i].red)"];
+"1000894" -> "1000885"  [label="DDG: 3"];
+}

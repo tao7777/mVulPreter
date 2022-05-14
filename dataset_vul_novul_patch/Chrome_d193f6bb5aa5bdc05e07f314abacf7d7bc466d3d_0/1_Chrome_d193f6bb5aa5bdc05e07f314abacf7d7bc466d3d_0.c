@@ -1,0 +1,25 @@
+PictureLayerImpl::PictureLayerImpl(LayerTreeImpl* tree_impl,
+                                   int id,
+                                   bool is_mask)
+     : LayerImpl(tree_impl, id),
+       twin_layer_(nullptr),
+       tilings_(CreatePictureLayerTilingSet()),
+      raster_source_(PicturePileImpl::Create()),
+       ideal_page_scale_(0.f),
+       ideal_device_scale_(0.f),
+       ideal_source_scale_(0.f),
+      ideal_contents_scale_(0.f),
+      raster_page_scale_(0.f),
+      raster_device_scale_(0.f),
+      raster_source_scale_(0.f),
+      raster_contents_scale_(0.f),
+      low_res_raster_contents_scale_(0.f),
+      raster_source_scale_is_fixed_(false),
+      was_screen_space_transform_animating_(false),
+      needs_post_commit_initialization_(true),
+      should_update_tile_priorities_(false),
+      only_used_low_res_last_append_quads_(false),
+      is_mask_(is_mask),
+      nearest_neighbor_(false) {
+  layer_tree_impl()->RegisterPictureLayerImpl(this);
+}

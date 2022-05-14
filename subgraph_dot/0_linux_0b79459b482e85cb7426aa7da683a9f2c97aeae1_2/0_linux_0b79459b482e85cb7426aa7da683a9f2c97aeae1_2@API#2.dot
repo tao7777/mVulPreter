@@ -1,0 +1,24 @@
+digraph "0_linux_0b79459b482e85cb7426aa7da683a9f2c97aeae1_2@API" {
+"1000513" [label="(Call,mutex_lock(&vcpu->kvm->lock))"];
+"1000526" [label="(Call,mutex_unlock(&vcpu->kvm->lock))"];
+"1000527" [label="(Call,&vcpu->kvm->lock)"];
+"1000632" [label="(MethodReturn,int)"];
+"1000521" [label="(Identifier,r)"];
+"1000534" [label="(Identifier,r)"];
+"1000511" [label="(Block,)"];
+"1000514" [label="(Call,&vcpu->kvm->lock)"];
+"1000513" [label="(Call,mutex_lock(&vcpu->kvm->lock))"];
+"1000526" [label="(Call,mutex_unlock(&vcpu->kvm->lock))"];
+"1000513" -> "1000511"  [label="AST: "];
+"1000513" -> "1000514"  [label="CFG: "];
+"1000514" -> "1000513"  [label="AST: "];
+"1000521" -> "1000513"  [label="CFG: "];
+"1000513" -> "1000632"  [label="DDG: mutex_lock(&vcpu->kvm->lock)"];
+"1000513" -> "1000526"  [label="DDG: &vcpu->kvm->lock"];
+"1000526" -> "1000511"  [label="AST: "];
+"1000526" -> "1000527"  [label="CFG: "];
+"1000527" -> "1000526"  [label="AST: "];
+"1000534" -> "1000526"  [label="CFG: "];
+"1000526" -> "1000632"  [label="DDG: mutex_unlock(&vcpu->kvm->lock)"];
+"1000526" -> "1000632"  [label="DDG: &vcpu->kvm->lock"];
+}

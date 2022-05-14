@@ -1,0 +1,22 @@
+digraph "1_Chrome_4ac4aff49c4c539bce6d8a0d8800c01324bb6bc0@del" {
+"1000137" [label="(Call,!document().contentSecurityPolicy()->allowFormAction(\n            submission->action()))"];
+"1000138" [label="(Call,document().contentSecurityPolicy()->allowFormAction(\n            submission->action()))"];
+"1000136" [label="(ControlStructure,if (!document().contentSecurityPolicy()->allowFormAction(\n            submission->action())))"];
+"1000139" [label="(Call,submission->action())"];
+"1000138" [label="(Call,document().contentSecurityPolicy()->allowFormAction(\n            submission->action()))"];
+"1000137" [label="(Call,!document().contentSecurityPolicy()->allowFormAction(\n            submission->action()))"];
+"1000142" [label="(Call,submission->action())"];
+"1000140" [label="(Return,return;)"];
+"1000202" [label="(MethodReturn,void)"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000140" -> "1000137"  [label="CFG: "];
+"1000142" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000202"  [label="DDG: document().contentSecurityPolicy()->allowFormAction(\n            submission->action())"];
+"1000137" -> "1000202"  [label="DDG: !document().contentSecurityPolicy()->allowFormAction(\n            submission->action())"];
+"1000138" -> "1000137"  [label="DDG: submission->action()"];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000138" -> "1000202"  [label="DDG: submission->action()"];
+}

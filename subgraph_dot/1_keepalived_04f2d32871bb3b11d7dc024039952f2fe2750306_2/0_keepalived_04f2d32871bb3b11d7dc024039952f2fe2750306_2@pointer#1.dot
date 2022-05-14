@@ -1,0 +1,32 @@
+digraph "0_keepalived_04f2d32871bb3b11d7dc024039952f2fe2750306_2@pointer" {
+"1000154" [label="(Call,ret[length] = '\0')"];
+"1000166" [label="(Return,return ret;)"];
+"1000158" [label="(Literal,'\0')"];
+"1000165" [label="(Identifier,f)"];
+"1000155" [label="(Call,ret[length])"];
+"1000166" [label="(Return,return ret;)"];
+"1000154" [label="(Call,ret[length] = '\0')"];
+"1000140" [label="(Block,)"];
+"1000168" [label="(MethodReturn,RET)"];
+"1000107" [label="(Call,*ret = NULL)"];
+"1000132" [label="(Call,ret = MALLOC(length + 1))"];
+"1000103" [label="(Block,)"];
+"1000167" [label="(Identifier,ret)"];
+"1000143" [label="(Call,fread(ret, length, 1, f))"];
+"1000154" -> "1000140"  [label="AST: "];
+"1000154" -> "1000158"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000158" -> "1000154"  [label="AST: "];
+"1000165" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000168"  [label="DDG: ret[length]"];
+"1000154" -> "1000166"  [label="DDG: ret[length]"];
+"1000166" -> "1000103"  [label="AST: "];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000168" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000168"  [label="DDG: <RET>"];
+"1000167" -> "1000166"  [label="DDG: ret"];
+"1000107" -> "1000166"  [label="DDG: ret"];
+"1000132" -> "1000166"  [label="DDG: ret"];
+"1000143" -> "1000166"  [label="DDG: ret"];
+}

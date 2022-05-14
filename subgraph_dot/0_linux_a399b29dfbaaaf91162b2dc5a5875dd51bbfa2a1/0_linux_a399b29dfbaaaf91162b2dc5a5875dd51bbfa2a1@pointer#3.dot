@@ -1,0 +1,26 @@
+digraph "0_linux_a399b29dfbaaaf91162b2dc5a5875dd51bbfa2a1@pointer" {
+"1000200" [label="(Call,ns_capable(ns->user_ns, CAP_IPC_LOCK))"];
+"1000199" [label="(Call,!ns_capable(ns->user_ns, CAP_IPC_LOCK))"];
+"1000204" [label="(Identifier,CAP_IPC_LOCK)"];
+"1000201" [label="(Call,ns->user_ns)"];
+"1000243" [label="(Identifier,shm_file)"];
+"1000360" [label="(MethodReturn,RET)"];
+"1000208" [label="(Identifier,euid)"];
+"1000198" [label="(ControlStructure,if (!ns_capable(ns->user_ns, CAP_IPC_LOCK)))"];
+"1000199" [label="(Call,!ns_capable(ns->user_ns, CAP_IPC_LOCK))"];
+"1000200" [label="(Call,ns_capable(ns->user_ns, CAP_IPC_LOCK))"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000200" -> "1000204"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000204" -> "1000200"  [label="AST: "];
+"1000199" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000360"  [label="DDG: ns->user_ns"];
+"1000200" -> "1000360"  [label="DDG: CAP_IPC_LOCK"];
+"1000200" -> "1000199"  [label="DDG: ns->user_ns"];
+"1000200" -> "1000199"  [label="DDG: CAP_IPC_LOCK"];
+"1000199" -> "1000198"  [label="AST: "];
+"1000208" -> "1000199"  [label="CFG: "];
+"1000243" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000360"  [label="DDG: ns_capable(ns->user_ns, CAP_IPC_LOCK)"];
+"1000199" -> "1000360"  [label="DDG: !ns_capable(ns->user_ns, CAP_IPC_LOCK)"];
+}

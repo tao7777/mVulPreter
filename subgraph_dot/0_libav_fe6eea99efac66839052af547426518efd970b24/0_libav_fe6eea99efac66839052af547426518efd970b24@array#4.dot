@@ -1,0 +1,28 @@
+digraph "0_libav_fe6eea99efac66839052af547426518efd970b24@array" {
+"1000566" [label="(Call,st[NSV_ST_AUDIO]->codecpar->channels = channels)"];
+"1000563" [label="(Call,channels = 1)"];
+"1000688" [label="(MethodReturn,static int)"];
+"1000565" [label="(Literal,1)"];
+"1000574" [label="(Identifier,channels)"];
+"1000526" [label="(Block,)"];
+"1000564" [label="(Identifier,channels)"];
+"1000584" [label="(Call,av_log(s, AV_LOG_TRACE, \"NSV RAWAUDIO: bps %\"PRIu8\", nchan %\"PRIu8\", srate %\"PRIu16\"\n\",\n                        bps, channels, samplerate))"];
+"1000567" [label="(Call,st[NSV_ST_AUDIO]->codecpar->channels)"];
+"1000570" [label="(Identifier,st)"];
+"1000579" [label="(Identifier,st)"];
+"1000566" [label="(Call,st[NSV_ST_AUDIO]->codecpar->channels = channels)"];
+"1000563" [label="(Call,channels = 1)"];
+"1000566" -> "1000526"  [label="AST: "];
+"1000566" -> "1000574"  [label="CFG: "];
+"1000567" -> "1000566"  [label="AST: "];
+"1000574" -> "1000566"  [label="AST: "];
+"1000579" -> "1000566"  [label="CFG: "];
+"1000566" -> "1000688"  [label="DDG: st[NSV_ST_AUDIO]->codecpar->channels"];
+"1000563" -> "1000566"  [label="DDG: channels"];
+"1000563" -> "1000526"  [label="AST: "];
+"1000563" -> "1000565"  [label="CFG: "];
+"1000564" -> "1000563"  [label="AST: "];
+"1000565" -> "1000563"  [label="AST: "];
+"1000570" -> "1000563"  [label="CFG: "];
+"1000563" -> "1000584"  [label="DDG: channels"];
+}

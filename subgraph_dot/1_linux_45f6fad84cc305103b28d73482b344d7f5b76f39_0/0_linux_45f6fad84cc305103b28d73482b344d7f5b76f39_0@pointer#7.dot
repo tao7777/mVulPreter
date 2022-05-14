@@ -1,0 +1,23 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_0@pointer" {
+"1000426" [label="(Call,newinet->inet_saddr = LOOPBACK4_IPV6)"];
+"1000422" [label="(Call,newinet->inet_daddr = newinet->inet_saddr = LOOPBACK4_IPV6)"];
+"1000507" [label="(MethodReturn,static struct sock *)"];
+"1000427" [label="(Call,newinet->inet_saddr)"];
+"1000422" [label="(Call,newinet->inet_daddr = newinet->inet_saddr = LOOPBACK4_IPV6)"];
+"1000423" [label="(Call,newinet->inet_daddr)"];
+"1000430" [label="(Identifier,LOOPBACK4_IPV6)"];
+"1000433" [label="(Identifier,newinet)"];
+"1000426" [label="(Call,newinet->inet_saddr = LOOPBACK4_IPV6)"];
+"1000115" [label="(Block,)"];
+"1000426" -> "1000422"  [label="AST: "];
+"1000426" -> "1000430"  [label="CFG: "];
+"1000427" -> "1000426"  [label="AST: "];
+"1000430" -> "1000426"  [label="AST: "];
+"1000422" -> "1000426"  [label="CFG: "];
+"1000426" -> "1000507"  [label="DDG: newinet->inet_saddr"];
+"1000426" -> "1000422"  [label="DDG: newinet->inet_saddr"];
+"1000422" -> "1000115"  [label="AST: "];
+"1000423" -> "1000422"  [label="AST: "];
+"1000433" -> "1000422"  [label="CFG: "];
+"1000422" -> "1000507"  [label="DDG: newinet->inet_daddr"];
+}

@@ -1,0 +1,26 @@
+digraph "0_tcpdump_88b2dac837e81cf56dce05e6e7b5989332c0092d@pointer" {
+"1000320" [label="(Call,EXTRACT_32BITS(&ddp->db_seq))"];
+"1000305" [label="(Call,ND_TCHECK(ddp->db_seq))"];
+"1000311" [label="(Identifier,ndo)"];
+"1000321" [label="(Call,&ddp->db_seq)"];
+"1000262" [label="(Block,)"];
+"1000305" [label="(Call,ND_TCHECK(ddp->db_seq))"];
+"1000306" [label="(Call,ddp->db_seq)"];
+"1000309" [label="(Call,ND_PRINT((ndo, \", MTU %u, DD-Sequence 0x%08x\",\n                       EXTRACT_16BITS(&ddp->db_mtu),\n                       EXTRACT_32BITS(&ddp->db_seq))))"];
+"1000320" [label="(Call,EXTRACT_32BITS(&ddp->db_seq))"];
+"1000509" [label="(MethodReturn,RET)"];
+"1000314" [label="(Block,)"];
+"1000320" -> "1000314"  [label="AST: "];
+"1000320" -> "1000321"  [label="CFG: "];
+"1000321" -> "1000320"  [label="AST: "];
+"1000309" -> "1000320"  [label="CFG: "];
+"1000320" -> "1000509"  [label="DDG: &ddp->db_seq"];
+"1000320" -> "1000509"  [label="DDG: EXTRACT_32BITS(&ddp->db_seq)"];
+"1000305" -> "1000320"  [label="DDG: ddp->db_seq"];
+"1000305" -> "1000262"  [label="AST: "];
+"1000305" -> "1000306"  [label="CFG: "];
+"1000306" -> "1000305"  [label="AST: "];
+"1000311" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000509"  [label="DDG: ND_TCHECK(ddp->db_seq)"];
+"1000305" -> "1000509"  [label="DDG: ddp->db_seq"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_2b7e8665b4ff51c034c55df3cff76518d1a9ee3a@pointer" {
+"1000201" [label="(Call,mm->pmd_huge_pte = NULL)"];
+"1000192" [label="(Call,RCU_INIT_POINTER(mm->exe_file, NULL))"];
+"1000192" [label="(Call,RCU_INIT_POINTER(mm->exe_file, NULL))"];
+"1000268" [label="(Return,return NULL;)"];
+"1000104" [label="(Block,)"];
+"1000202" [label="(Call,mm->pmd_huge_pte)"];
+"1000198" [label="(Identifier,mm)"];
+"1000208" [label="(Identifier,current)"];
+"1000270" [label="(MethodReturn,static struct mm_struct *)"];
+"1000196" [label="(Identifier,NULL)"];
+"1000201" [label="(Call,mm->pmd_huge_pte = NULL)"];
+"1000193" [label="(Call,mm->exe_file)"];
+"1000205" [label="(Identifier,NULL)"];
+"1000201" -> "1000104"  [label="AST: "];
+"1000201" -> "1000205"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="AST: "];
+"1000208" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000270"  [label="DDG: NULL"];
+"1000201" -> "1000270"  [label="DDG: mm->pmd_huge_pte"];
+"1000192" -> "1000201"  [label="DDG: NULL"];
+"1000192" -> "1000104"  [label="AST: "];
+"1000192" -> "1000196"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000196" -> "1000192"  [label="AST: "];
+"1000198" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000270"  [label="DDG: mm->exe_file"];
+"1000192" -> "1000270"  [label="DDG: RCU_INIT_POINTER(mm->exe_file, NULL)"];
+"1000192" -> "1000268"  [label="DDG: NULL"];
+}

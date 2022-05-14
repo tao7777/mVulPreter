@@ -1,0 +1,29 @@
+digraph "0_optee_os_70697bf3c5dc3d201341b01a1a8e5bc6d2fb48f8@pointer" {
+"1000255" [label="(Call,o->info.handleFlags & TEE_HANDLE_FLAG_INITIALIZED)"];
+"1000254" [label="(Call,(o->info.handleFlags & TEE_HANDLE_FLAG_INITIALIZED) == 0)"];
+"1000270" [label="(Identifier,cs)"];
+"1000256" [label="(Call,o->info.handleFlags)"];
+"1000253" [label="(ControlStructure,if ((o->info.handleFlags & TEE_HANDLE_FLAG_INITIALIZED) == 0))"];
+"1000539" [label="(MethodReturn,TEE_Result)"];
+"1000255" [label="(Call,o->info.handleFlags & TEE_HANDLE_FLAG_INITIALIZED)"];
+"1000254" [label="(Call,(o->info.handleFlags & TEE_HANDLE_FLAG_INITIALIZED) == 0)"];
+"1000261" [label="(Identifier,TEE_HANDLE_FLAG_INITIALIZED)"];
+"1000262" [label="(Literal,0)"];
+"1000265" [label="(Identifier,res)"];
+"1000255" -> "1000254"  [label="AST: "];
+"1000255" -> "1000261"  [label="CFG: "];
+"1000256" -> "1000255"  [label="AST: "];
+"1000261" -> "1000255"  [label="AST: "];
+"1000262" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000539"  [label="DDG: TEE_HANDLE_FLAG_INITIALIZED"];
+"1000255" -> "1000539"  [label="DDG: o->info.handleFlags"];
+"1000255" -> "1000254"  [label="DDG: o->info.handleFlags"];
+"1000255" -> "1000254"  [label="DDG: TEE_HANDLE_FLAG_INITIALIZED"];
+"1000254" -> "1000253"  [label="AST: "];
+"1000254" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000254"  [label="AST: "];
+"1000265" -> "1000254"  [label="CFG: "];
+"1000270" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000539"  [label="DDG: o->info.handleFlags & TEE_HANDLE_FLAG_INITIALIZED"];
+"1000254" -> "1000539"  [label="DDG: (o->info.handleFlags & TEE_HANDLE_FLAG_INITIALIZED) == 0"];
+}

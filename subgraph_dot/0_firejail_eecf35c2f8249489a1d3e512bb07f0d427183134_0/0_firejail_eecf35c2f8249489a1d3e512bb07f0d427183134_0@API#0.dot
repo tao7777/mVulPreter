@@ -1,0 +1,34 @@
+digraph "0_firejail_eecf35c2f8249489a1d3e512bb07f0d427183134_0@API" {
+"1000178" [label="(Call,create_empty_file_as_root(RUN_SECCOMP_PROTOCOL, 0644))"];
+"1000182" [label="(Call,set_perms(RUN_SECCOMP_PROTOCOL, getuid(), getgid(), 0644))"];
+"1000186" [label="(Literal,0644)"];
+"1000185" [label="(Call,getgid())"];
+"1000181" [label="(ControlStructure,if (set_perms(RUN_SECCOMP_PROTOCOL, getuid(), getgid(), 0644)))"];
+"1000180" [label="(Literal,0644)"];
+"1000184" [label="(Call,getuid())"];
+"1000190" [label="(Identifier,RUN_SECCOMP_POSTEXEC)"];
+"1000200" [label="(MethodReturn,void)"];
+"1000111" [label="(Block,)"];
+"1000178" [label="(Call,create_empty_file_as_root(RUN_SECCOMP_PROTOCOL, 0644))"];
+"1000183" [label="(Identifier,RUN_SECCOMP_PROTOCOL)"];
+"1000179" [label="(Identifier,RUN_SECCOMP_PROTOCOL)"];
+"1000182" [label="(Call,set_perms(RUN_SECCOMP_PROTOCOL, getuid(), getgid(), 0644))"];
+"1000188" [label="(Literal,\"set_perms\")"];
+"1000178" -> "1000111"  [label="AST: "];
+"1000178" -> "1000180"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000180" -> "1000178"  [label="AST: "];
+"1000183" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000200"  [label="DDG: create_empty_file_as_root(RUN_SECCOMP_PROTOCOL, 0644)"];
+"1000178" -> "1000182"  [label="DDG: RUN_SECCOMP_PROTOCOL"];
+"1000182" -> "1000181"  [label="AST: "];
+"1000182" -> "1000186"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000184" -> "1000182"  [label="AST: "];
+"1000185" -> "1000182"  [label="AST: "];
+"1000186" -> "1000182"  [label="AST: "];
+"1000188" -> "1000182"  [label="CFG: "];
+"1000190" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000200"  [label="DDG: RUN_SECCOMP_PROTOCOL"];
+"1000182" -> "1000200"  [label="DDG: set_perms(RUN_SECCOMP_PROTOCOL, getuid(), getgid(), 0644)"];
+}

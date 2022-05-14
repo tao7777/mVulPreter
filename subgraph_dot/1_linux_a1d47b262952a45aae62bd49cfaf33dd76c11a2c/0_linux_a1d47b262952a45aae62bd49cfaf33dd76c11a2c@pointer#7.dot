@@ -1,0 +1,35 @@
+digraph "0_linux_a1d47b262952a45aae62bd49cfaf33dd76c11a2c@pointer" {
+"1000129" [label="(Call,iinfo = UDF_I(inode))"];
+"1000131" [label="(Call,UDF_I(inode))"];
+"1000105" [label="(Call,*inode = page->mapping->host)"];
+"1000130" [label="(Identifier,iinfo)"];
+"1000132" [label="(Identifier,inode)"];
+"1000107" [label="(Call,page->mapping->host)"];
+"1000135" [label="(Call,udf_block_map(inode, 0))"];
+"1000103" [label="(Block,)"];
+"1000114" [label="(Identifier,bh)"];
+"1000106" [label="(Identifier,inode)"];
+"1000105" [label="(Call,*inode = page->mapping->host)"];
+"1000131" [label="(Call,UDF_I(inode))"];
+"1000129" [label="(Call,iinfo = UDF_I(inode))"];
+"1000217" [label="(MethodReturn,static int)"];
+"1000134" [label="(Identifier,pos)"];
+"1000129" -> "1000103"  [label="AST: "];
+"1000129" -> "1000131"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000131" -> "1000129"  [label="AST: "];
+"1000134" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000217"  [label="DDG: iinfo"];
+"1000129" -> "1000217"  [label="DDG: UDF_I(inode)"];
+"1000131" -> "1000129"  [label="DDG: inode"];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000105" -> "1000131"  [label="DDG: inode"];
+"1000131" -> "1000135"  [label="DDG: inode"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000114" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000217"  [label="DDG: page->mapping->host"];
+}

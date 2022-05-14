@@ -1,0 +1,24 @@
+digraph "0_Chrome_d30a8bd191f17b61938fc87890bffc80049b0774_1@pointer" {
+"1000123" [label="(Call,* registry = ExtensionRegistry::Get(profile_))"];
+"1000125" [label="(Call,ExtensionRegistry::Get(profile_))"];
+"1000107" [label="(Block,)"];
+"1000172" [label="(MethodReturn,void)"];
+"1000141" [label="(Call,ExtensionReenabler::PromptForReenable(\n          registry->disabled_extensions().GetByID(webstore_item_id),\n          profile_,\n          web_contents(),\n          requestor_url,\n           base::Bind(&TabHelper::OnReenableComplete,\n                     weak_ptr_factory_.GetWeakPtr(),\n                     install_id,\n                     return_route_id)))"];
+"1000130" [label="(Identifier,webstore_item_id)"];
+"1000126" [label="(Identifier,profile_)"];
+"1000125" [label="(Call,ExtensionRegistry::Get(profile_))"];
+"1000123" [label="(Call,* registry = ExtensionRegistry::Get(profile_))"];
+"1000124" [label="(Identifier,registry)"];
+"1000123" -> "1000107"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000130" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000172"  [label="DDG: ExtensionRegistry::Get(profile_)"];
+"1000123" -> "1000172"  [label="DDG: registry"];
+"1000125" -> "1000123"  [label="DDG: profile_"];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000125" -> "1000172"  [label="DDG: profile_"];
+"1000125" -> "1000141"  [label="DDG: profile_"];
+}

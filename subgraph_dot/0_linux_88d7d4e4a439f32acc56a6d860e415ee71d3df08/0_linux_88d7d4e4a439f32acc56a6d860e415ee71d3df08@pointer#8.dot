@@ -1,0 +1,37 @@
+digraph "0_linux_88d7d4e4a439f32acc56a6d860e415ee71d3df08@pointer" {
+"1000145" [label="(Call,*full_path = NULL)"];
+"1000492" [label="(Call,kfree(full_path))"];
+"1000319" [label="(Call,cifs_posix_open(full_path, &newInode,\n\t\t\t\t\tparent_dir_inode->i_sb,\n\t\t\t\t\tnd->intent.open.create_mode,\n\t\t\t\t\tnd->intent.open.file->f_flags, &oplock,\n\t\t\t\t\t&fileHandle, xid))"];
+"1000146" [label="(Identifier,full_path)"];
+"1000150" [label="(Identifier,xid)"];
+"1000501" [label="(MethodReturn,RET)"];
+"1000493" [label="(Identifier,full_path)"];
+"1000147" [label="(Identifier,NULL)"];
+"1000248" [label="(Call,full_path == NULL)"];
+"1000382" [label="(Call,cifs_get_inode_info_unix(&newInode, full_path,\n\t\t\t\t\t\tparent_dir_inode->i_sb, xid))"];
+"1000495" [label="(Identifier,tlink)"];
+"1000115" [label="(Block,)"];
+"1000492" [label="(Call,kfree(full_path))"];
+"1000272" [label="(Call,cFYI(1, \"Full path: %s inode = 0x%p\", full_path, direntry->d_inode))"];
+"1000393" [label="(Call,cifs_get_inode_info(&newInode, full_path, NULL,\n\t\t\t\tparent_dir_inode->i_sb, xid, NULL))"];
+"1000145" [label="(Call,*full_path = NULL)"];
+"1000145" -> "1000115"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000150" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000501"  [label="DDG: full_path"];
+"1000145" -> "1000501"  [label="DDG: NULL"];
+"1000145" -> "1000492"  [label="DDG: full_path"];
+"1000492" -> "1000115"  [label="AST: "];
+"1000492" -> "1000493"  [label="CFG: "];
+"1000493" -> "1000492"  [label="AST: "];
+"1000495" -> "1000492"  [label="CFG: "];
+"1000492" -> "1000501"  [label="DDG: full_path"];
+"1000492" -> "1000501"  [label="DDG: kfree(full_path)"];
+"1000393" -> "1000492"  [label="DDG: full_path"];
+"1000272" -> "1000492"  [label="DDG: full_path"];
+"1000319" -> "1000492"  [label="DDG: full_path"];
+"1000382" -> "1000492"  [label="DDG: full_path"];
+"1000248" -> "1000492"  [label="DDG: full_path"];
+}

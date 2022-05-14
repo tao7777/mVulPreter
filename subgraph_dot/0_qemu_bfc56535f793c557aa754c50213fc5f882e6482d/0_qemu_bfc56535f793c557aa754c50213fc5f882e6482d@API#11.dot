@@ -1,0 +1,32 @@
+digraph "0_qemu_bfc56535f793c557aa754c50213fc5f882e6482d@API" {
+"1000793" [label="(Call,update = 1)"];
+"1000810" [label="(Call,update |= vga_scanline_invalidated(s, y))"];
+"1000794" [label="(Identifier,update)"];
+"1000798" [label="(Call,update = memory_region_snapshot_get_dirty(&s->vram, snap,\n                                                      page0, page1 - page0))"];
+"1000795" [label="(Literal,1)"];
+"1000793" [label="(Call,update = 1)"];
+"1000792" [label="(Block,)"];
+"1000939" [label="(MethodReturn,static void)"];
+"1000811" [label="(Identifier,update)"];
+"1000810" [label="(Call,update |= vga_scanline_invalidated(s, y))"];
+"1000816" [label="(Identifier,update)"];
+"1000812" [label="(Call,vga_scanline_invalidated(s, y))"];
+"1000714" [label="(Block,)"];
+"1000793" -> "1000792"  [label="AST: "];
+"1000793" -> "1000795"  [label="CFG: "];
+"1000794" -> "1000793"  [label="AST: "];
+"1000795" -> "1000793"  [label="AST: "];
+"1000811" -> "1000793"  [label="CFG: "];
+"1000793" -> "1000810"  [label="DDG: update"];
+"1000810" -> "1000714"  [label="AST: "];
+"1000810" -> "1000812"  [label="CFG: "];
+"1000811" -> "1000810"  [label="AST: "];
+"1000812" -> "1000810"  [label="AST: "];
+"1000816" -> "1000810"  [label="CFG: "];
+"1000810" -> "1000939"  [label="DDG: update |= vga_scanline_invalidated(s, y)"];
+"1000810" -> "1000939"  [label="DDG: update"];
+"1000810" -> "1000939"  [label="DDG: vga_scanline_invalidated(s, y)"];
+"1000798" -> "1000810"  [label="DDG: update"];
+"1000812" -> "1000810"  [label="DDG: s"];
+"1000812" -> "1000810"  [label="DDG: y"];
+}

@@ -1,0 +1,24 @@
+digraph "0_cgminer_e1c5050734123973b99d181c45e74b2cbb00272e_2@API" {
+"1000222" [label="(Call,mutex_lock(&pool->stratum_lock))"];
+"1000260" [label="(Call,mutex_unlock(&pool->stratum_lock))"];
+"1000261" [label="(Call,&pool->stratum_lock)"];
+"1000268" [label="(Identifier,pool)"];
+"1000103" [label="(Block,)"];
+"1000222" [label="(Call,mutex_lock(&pool->stratum_lock))"];
+"1000276" [label="(MethodReturn,static bool)"];
+"1000228" [label="(Identifier,pool)"];
+"1000223" [label="(Call,&pool->stratum_lock)"];
+"1000260" [label="(Call,mutex_unlock(&pool->stratum_lock))"];
+"1000222" -> "1000103"  [label="AST: "];
+"1000222" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000228" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000276"  [label="DDG: mutex_lock(&pool->stratum_lock)"];
+"1000222" -> "1000260"  [label="DDG: &pool->stratum_lock"];
+"1000260" -> "1000103"  [label="AST: "];
+"1000260" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000268" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000276"  [label="DDG: mutex_unlock(&pool->stratum_lock)"];
+"1000260" -> "1000276"  [label="DDG: &pool->stratum_lock"];
+}

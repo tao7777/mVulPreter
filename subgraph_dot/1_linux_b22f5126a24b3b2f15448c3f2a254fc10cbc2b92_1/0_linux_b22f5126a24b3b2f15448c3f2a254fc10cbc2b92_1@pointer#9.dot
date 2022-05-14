@@ -1,0 +1,32 @@
+digraph "0_linux_b22f5126a24b3b2f15448c3f2a254fc10cbc2b92_1@pointer" {
+"1000272" [label="(Call,set_bit(IPS_ASSURED_BIT, &ct->status))"];
+"1000152" [label="(Call,test_bit(IPS_SEEN_REPLY_BIT, &ct->status))"];
+"1000152" [label="(Call,test_bit(IPS_SEEN_REPLY_BIT, &ct->status))"];
+"1000272" [label="(Call,set_bit(IPS_ASSURED_BIT, &ct->status))"];
+"1000151" [label="(Call,!test_bit(IPS_SEEN_REPLY_BIT, &ct->status))"];
+"1000274" [label="(Call,&ct->status)"];
+"1000451" [label="(MethodReturn,static int)"];
+"1000154" [label="(Call,&ct->status)"];
+"1000253" [label="(ControlStructure,if (old_state == CT_DCCP_RESPOND &&\n\t\t    type == DCCP_PKT_ACK &&\n\t\t    dccp_ack_seq(dh) == ct->proto.dccp.handshake_seq))"];
+"1000153" [label="(Identifier,IPS_SEEN_REPLY_BIT)"];
+"1000273" [label="(Identifier,IPS_ASSURED_BIT)"];
+"1000278" [label="(ControlStructure,break;)"];
+"1000272" -> "1000253"  [label="AST: "];
+"1000272" -> "1000274"  [label="CFG: "];
+"1000273" -> "1000272"  [label="AST: "];
+"1000274" -> "1000272"  [label="AST: "];
+"1000278" -> "1000272"  [label="CFG: "];
+"1000272" -> "1000451"  [label="DDG: &ct->status"];
+"1000272" -> "1000451"  [label="DDG: IPS_ASSURED_BIT"];
+"1000272" -> "1000451"  [label="DDG: set_bit(IPS_ASSURED_BIT, &ct->status)"];
+"1000152" -> "1000272"  [label="DDG: &ct->status"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000154" -> "1000152"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000451"  [label="DDG: IPS_SEEN_REPLY_BIT"];
+"1000152" -> "1000451"  [label="DDG: &ct->status"];
+"1000152" -> "1000151"  [label="DDG: IPS_SEEN_REPLY_BIT"];
+"1000152" -> "1000151"  [label="DDG: &ct->status"];
+}

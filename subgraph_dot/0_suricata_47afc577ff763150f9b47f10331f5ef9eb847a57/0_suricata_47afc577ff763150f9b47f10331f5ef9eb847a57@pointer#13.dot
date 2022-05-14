@@ -1,0 +1,29 @@
+digraph "0_suricata_47afc577ff763150f9b47f10331f5ef9eb847a57@pointer" {
+"1000151" [label="(Call,det_ctx->inspection_recursion_counter == de_ctx->inspection_recursion_limit)"];
+"1000146" [label="(Call,det_ctx->inspection_recursion_counter++)"];
+"1000151" [label="(Call,det_ctx->inspection_recursion_counter == de_ctx->inspection_recursion_limit)"];
+"1000146" [label="(Call,det_ctx->inspection_recursion_counter++)"];
+"1000155" [label="(Call,de_ctx->inspection_recursion_limit)"];
+"1000175" [label="(Identifier,smd)"];
+"1000143" [label="(Block,)"];
+"1000152" [label="(Call,det_ctx->inspection_recursion_counter)"];
+"1000153" [label="(Identifier,det_ctx)"];
+"1000150" [label="(ControlStructure,if (det_ctx->inspection_recursion_counter == de_ctx->inspection_recursion_limit))"];
+"1000161" [label="(Identifier,det_ctx)"];
+"1000147" [label="(Call,det_ctx->inspection_recursion_counter)"];
+"1001577" [label="(MethodReturn,int)"];
+"1000151" -> "1000150"  [label="AST: "];
+"1000151" -> "1000155"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000155" -> "1000151"  [label="AST: "];
+"1000161" -> "1000151"  [label="CFG: "];
+"1000175" -> "1000151"  [label="CFG: "];
+"1000151" -> "1001577"  [label="DDG: det_ctx->inspection_recursion_counter == de_ctx->inspection_recursion_limit"];
+"1000151" -> "1001577"  [label="DDG: det_ctx->inspection_recursion_counter"];
+"1000151" -> "1001577"  [label="DDG: de_ctx->inspection_recursion_limit"];
+"1000146" -> "1000151"  [label="DDG: det_ctx->inspection_recursion_counter"];
+"1000146" -> "1000143"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000153" -> "1000146"  [label="CFG: "];
+}

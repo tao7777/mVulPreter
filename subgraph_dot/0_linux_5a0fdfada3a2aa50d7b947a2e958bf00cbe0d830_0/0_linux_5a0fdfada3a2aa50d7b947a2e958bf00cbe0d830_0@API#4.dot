@@ -1,0 +1,28 @@
+digraph "0_linux_5a0fdfada3a2aa50d7b947a2e958bf00cbe0d830_0@API" {
+"1000237" [label="(Call,fatal_signal_pending(current))"];
+"1000233" [label="(Call,(fault & VM_FAULT_RETRY) && fatal_signal_pending(current))"];
+"1000238" [label="(Identifier,current)"];
+"1000240" [label="(Literal,0)"];
+"1000232" [label="(ControlStructure,if ((fault & VM_FAULT_RETRY) && fatal_signal_pending(current)))"];
+"1000234" [label="(Call,fault & VM_FAULT_RETRY)"];
+"1000356" [label="(MethodReturn,static int __kprobes)"];
+"1000237" [label="(Call,fatal_signal_pending(current))"];
+"1000242" [label="(Identifier,PERF_COUNT_SW_PAGE_FAULTS)"];
+"1000233" [label="(Call,(fault & VM_FAULT_RETRY) && fatal_signal_pending(current))"];
+"1000237" -> "1000233"  [label="AST: "];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000233" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000356"  [label="DDG: current"];
+"1000237" -> "1000233"  [label="DDG: current"];
+"1000233" -> "1000232"  [label="AST: "];
+"1000233" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000240" -> "1000233"  [label="CFG: "];
+"1000242" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000356"  [label="DDG: fatal_signal_pending(current)"];
+"1000233" -> "1000356"  [label="DDG: (fault & VM_FAULT_RETRY) && fatal_signal_pending(current)"];
+"1000233" -> "1000356"  [label="DDG: fault & VM_FAULT_RETRY"];
+"1000234" -> "1000233"  [label="DDG: fault"];
+"1000234" -> "1000233"  [label="DDG: VM_FAULT_RETRY"];
+}

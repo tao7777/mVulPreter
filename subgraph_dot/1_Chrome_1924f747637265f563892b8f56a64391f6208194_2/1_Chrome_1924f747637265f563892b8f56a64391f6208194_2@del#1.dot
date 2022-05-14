@@ -1,0 +1,29 @@
+digraph "1_Chrome_1924f747637265f563892b8f56a64391f6208194_2@del" {
+"1000122" [label="(Call,cast_config->StopCasting(activity.id))"];
+"1000107" [label="(Call,activity = item.second.activity)"];
+"1000115" [label="(Call,activity.allow_stop && activity.id.empty() == false)"];
+"1000105" [label="(Block,)"];
+"1000117" [label="(Identifier,activity)"];
+"1000107" [label="(Call,activity = item.second.activity)"];
+"1000114" [label="(ControlStructure,if (activity.allow_stop && activity.id.empty() == false))"];
+"1000126" [label="(MethodReturn,void)"];
+"1000123" [label="(Call,activity.id)"];
+"1000108" [label="(Identifier,activity)"];
+"1000122" [label="(Call,cast_config->StopCasting(activity.id))"];
+"1000109" [label="(Call,item.second.activity)"];
+"1000122" -> "1000114"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000126"  [label="DDG: activity.id"];
+"1000122" -> "1000126"  [label="DDG: cast_config->StopCasting(activity.id)"];
+"1000107" -> "1000122"  [label="DDG: activity"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000117" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000126"  [label="DDG: activity"];
+"1000107" -> "1000126"  [label="DDG: item.second.activity"];
+"1000107" -> "1000115"  [label="DDG: activity"];
+}

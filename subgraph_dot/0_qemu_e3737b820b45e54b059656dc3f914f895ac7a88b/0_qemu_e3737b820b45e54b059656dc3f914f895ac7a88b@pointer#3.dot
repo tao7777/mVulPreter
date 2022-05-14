@@ -1,0 +1,32 @@
+digraph "0_qemu_e3737b820b45e54b059656dc3f914f895ac7a88b@pointer" {
+"1000206" [label="(Call,bs->total_sectors = le64_to_cpu(bochs.extra.redolog.disk) / 512)"];
+"1000210" [label="(Call,le64_to_cpu(bochs.extra.redolog.disk) / 512)"];
+"1000211" [label="(Call,le64_to_cpu(bochs.extra.redolog.disk))"];
+"1000210" [label="(Call,le64_to_cpu(bochs.extra.redolog.disk) / 512)"];
+"1000207" [label="(Call,bs->total_sectors)"];
+"1000206" [label="(Call,bs->total_sectors = le64_to_cpu(bochs.extra.redolog.disk) / 512)"];
+"1000449" [label="(MethodReturn,static int)"];
+"1000222" [label="(Identifier,s)"];
+"1000205" [label="(Block,)"];
+"1000211" [label="(Call,le64_to_cpu(bochs.extra.redolog.disk))"];
+"1000219" [label="(Literal,512)"];
+"1000212" [label="(Call,bochs.extra.redolog.disk)"];
+"1000206" -> "1000205"  [label="AST: "];
+"1000206" -> "1000210"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000210" -> "1000206"  [label="AST: "];
+"1000222" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000449"  [label="DDG: le64_to_cpu(bochs.extra.redolog.disk) / 512"];
+"1000206" -> "1000449"  [label="DDG: bs->total_sectors"];
+"1000210" -> "1000206"  [label="DDG: le64_to_cpu(bochs.extra.redolog.disk)"];
+"1000210" -> "1000206"  [label="DDG: 512"];
+"1000210" -> "1000219"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000219" -> "1000210"  [label="AST: "];
+"1000210" -> "1000449"  [label="DDG: le64_to_cpu(bochs.extra.redolog.disk)"];
+"1000211" -> "1000210"  [label="DDG: bochs.extra.redolog.disk"];
+"1000211" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000219" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000449"  [label="DDG: bochs.extra.redolog.disk"];
+}

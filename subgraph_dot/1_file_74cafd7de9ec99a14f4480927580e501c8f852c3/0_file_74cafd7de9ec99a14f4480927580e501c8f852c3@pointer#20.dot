@@ -1,0 +1,28 @@
+digraph "0_file_74cafd7de9ec99a14f4480927580e501c8f852c3@pointer" {
+"1000785" [label="(Call,ms->flags & MAGIC_DEBUG)"];
+"1000784" [label="(Call,(ms->flags & MAGIC_DEBUG) != 0)"];
+"1000789" [label="(Identifier,MAGIC_DEBUG)"];
+"1000784" [label="(Call,(ms->flags & MAGIC_DEBUG) != 0)"];
+"1000834" [label="(ControlStructure,break;)"];
+"1000976" [label="(MethodReturn,RET)"];
+"1000785" [label="(Call,ms->flags & MAGIC_DEBUG)"];
+"1000786" [label="(Call,ms->flags)"];
+"1000790" [label="(Literal,0)"];
+"1000783" [label="(ControlStructure,if ((ms->flags & MAGIC_DEBUG) != 0))"];
+"1000785" -> "1000784"  [label="AST: "];
+"1000785" -> "1000789"  [label="CFG: "];
+"1000786" -> "1000785"  [label="AST: "];
+"1000789" -> "1000785"  [label="AST: "];
+"1000790" -> "1000785"  [label="CFG: "];
+"1000785" -> "1000976"  [label="DDG: MAGIC_DEBUG"];
+"1000785" -> "1000976"  [label="DDG: ms->flags"];
+"1000785" -> "1000784"  [label="DDG: ms->flags"];
+"1000785" -> "1000784"  [label="DDG: MAGIC_DEBUG"];
+"1000784" -> "1000783"  [label="AST: "];
+"1000784" -> "1000790"  [label="CFG: "];
+"1000790" -> "1000784"  [label="AST: "];
+"1000792" -> "1000784"  [label="CFG: "];
+"1000834" -> "1000784"  [label="CFG: "];
+"1000784" -> "1000976"  [label="DDG: ms->flags & MAGIC_DEBUG"];
+"1000784" -> "1000976"  [label="DDG: (ms->flags & MAGIC_DEBUG) != 0"];
+}

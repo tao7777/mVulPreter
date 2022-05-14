@@ -1,0 +1,24 @@
+digraph "0_linux_90481622d75715bfcb68501280a917dbfe516029_3@pointer" {
+"1000156" [label="(Call,buf->f_bfree = sbinfo->free_blocks)"];
+"1000152" [label="(Call,buf->f_bavail = buf->f_bfree = sbinfo->free_blocks)"];
+"1000157" [label="(Call,buf->f_bfree)"];
+"1000165" [label="(Identifier,buf)"];
+"1000144" [label="(Block,)"];
+"1000189" [label="(MethodReturn,static int)"];
+"1000152" [label="(Call,buf->f_bavail = buf->f_bfree = sbinfo->free_blocks)"];
+"1000156" [label="(Call,buf->f_bfree = sbinfo->free_blocks)"];
+"1000160" [label="(Call,sbinfo->free_blocks)"];
+"1000153" [label="(Call,buf->f_bavail)"];
+"1000156" -> "1000152"  [label="AST: "];
+"1000156" -> "1000160"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000160" -> "1000156"  [label="AST: "];
+"1000152" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000189"  [label="DDG: buf->f_bfree"];
+"1000156" -> "1000189"  [label="DDG: sbinfo->free_blocks"];
+"1000156" -> "1000152"  [label="DDG: buf->f_bfree"];
+"1000152" -> "1000144"  [label="AST: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000165" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000189"  [label="DDG: buf->f_bavail"];
+}

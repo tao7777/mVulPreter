@@ -1,0 +1,37 @@
+digraph "0_torque_3ed749263abe3d69fa3626d142a5789dcb5a5684@API" {
+"1000127" [label="(Call,assert(stream >= 0))"];
+"1000128" [label="(Call,stream >= 0)"];
+"1000107" [label="(MethodParameterIn,int       stream)"];
+"1000111" [label="(Block,)"];
+"1000133" [label="(Identifier,dis_getc)"];
+"1000184" [label="(Call,(*dis_gets)(stream, scratch, count))"];
+"1000278" [label="(Call,(*dis_gets)(stream, scratch + 1, count - 1))"];
+"1000128" [label="(Call,stream >= 0)"];
+"1000129" [label="(Identifier,stream)"];
+"1000171" [label="(Call,(*dis_getc)(stream))"];
+"1000377" [label="(MethodReturn,int)"];
+"1000130" [label="(Literal,0)"];
+"1000127" [label="(Call,assert(stream >= 0))"];
+"1000107" [label="(MethodParameterIn,int       stream)"];
+"1000348" [label="(Call,disrsi_(stream, negate, value, ndigs))"];
+"1000127" -> "1000111"  [label="AST: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000133" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000377"  [label="DDG: assert(stream >= 0)"];
+"1000127" -> "1000377"  [label="DDG: stream >= 0"];
+"1000128" -> "1000127"  [label="DDG: stream"];
+"1000128" -> "1000127"  [label="DDG: 0"];
+"1000128" -> "1000130"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000130" -> "1000128"  [label="AST: "];
+"1000128" -> "1000377"  [label="DDG: stream"];
+"1000107" -> "1000128"  [label="DDG: stream"];
+"1000128" -> "1000171"  [label="DDG: stream"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000377"  [label="DDG: stream"];
+"1000107" -> "1000171"  [label="DDG: stream"];
+"1000107" -> "1000184"  [label="DDG: stream"];
+"1000107" -> "1000278"  [label="DDG: stream"];
+"1000107" -> "1000348"  [label="DDG: stream"];
+}

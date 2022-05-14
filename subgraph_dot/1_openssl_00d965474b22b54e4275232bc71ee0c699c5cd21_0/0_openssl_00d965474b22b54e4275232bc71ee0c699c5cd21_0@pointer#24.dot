@@ -1,0 +1,33 @@
+digraph "0_openssl_00d965474b22b54e4275232bc71ee0c699c5cd21_0@pointer" {
+"1000412" [label="(Call,gctx->iv_gen == 0)"];
+"1000411" [label="(Call,gctx->iv_gen == 0 || gctx->key_set == 0\n            || EVP_CIPHER_CTX_encrypting(c))"];
+"1000416" [label="(Literal,0)"];
+"1000412" [label="(Call,gctx->iv_gen == 0)"];
+"1000430" [label="(Identifier,gctx)"];
+"1000417" [label="(Call,gctx->key_set == 0\n            || EVP_CIPHER_CTX_encrypting(c))"];
+"1000410" [label="(ControlStructure,if (gctx->iv_gen == 0 || gctx->key_set == 0\n            || EVP_CIPHER_CTX_encrypting(c)))"];
+"1000426" [label="(Literal,0)"];
+"1000614" [label="(MethodReturn,static int)"];
+"1000411" [label="(Call,gctx->iv_gen == 0 || gctx->key_set == 0\n            || EVP_CIPHER_CTX_encrypting(c))"];
+"1000420" [label="(Identifier,gctx)"];
+"1000413" [label="(Call,gctx->iv_gen)"];
+"1000412" -> "1000411"  [label="AST: "];
+"1000412" -> "1000416"  [label="CFG: "];
+"1000413" -> "1000412"  [label="AST: "];
+"1000416" -> "1000412"  [label="AST: "];
+"1000420" -> "1000412"  [label="CFG: "];
+"1000411" -> "1000412"  [label="CFG: "];
+"1000412" -> "1000614"  [label="DDG: gctx->iv_gen"];
+"1000412" -> "1000411"  [label="DDG: gctx->iv_gen"];
+"1000412" -> "1000411"  [label="DDG: 0"];
+"1000411" -> "1000410"  [label="AST: "];
+"1000411" -> "1000417"  [label="CFG: "];
+"1000417" -> "1000411"  [label="AST: "];
+"1000426" -> "1000411"  [label="CFG: "];
+"1000430" -> "1000411"  [label="CFG: "];
+"1000411" -> "1000614"  [label="DDG: gctx->iv_gen == 0 || gctx->key_set == 0\n            || EVP_CIPHER_CTX_encrypting(c)"];
+"1000411" -> "1000614"  [label="DDG: gctx->iv_gen == 0"];
+"1000411" -> "1000614"  [label="DDG: gctx->key_set == 0\n            || EVP_CIPHER_CTX_encrypting(c)"];
+"1000417" -> "1000411"  [label="DDG: gctx->key_set == 0"];
+"1000417" -> "1000411"  [label="DDG: EVP_CIPHER_CTX_encrypting(c)"];
+}

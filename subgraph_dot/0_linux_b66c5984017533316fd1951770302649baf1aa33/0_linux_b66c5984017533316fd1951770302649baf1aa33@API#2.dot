@@ -1,0 +1,23 @@
+digraph "0_linux_b66c5984017533316fd1951770302649baf1aa33@API" {
+"1000222" [label="(Call,allow_write_access(bprm->file))"];
+"1000226" [label="(Call,fput(bprm->file))"];
+"1000222" [label="(Call,allow_write_access(bprm->file))"];
+"1000360" [label="(MethodReturn,static int)"];
+"1000226" [label="(Call,fput(bprm->file))"];
+"1000227" [label="(Call,bprm->file)"];
+"1000232" [label="(Identifier,bprm)"];
+"1000221" [label="(Block,)"];
+"1000223" [label="(Call,bprm->file)"];
+"1000228" [label="(Identifier,bprm)"];
+"1000222" -> "1000221"  [label="AST: "];
+"1000222" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000228" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000360"  [label="DDG: allow_write_access(bprm->file)"];
+"1000222" -> "1000226"  [label="DDG: bprm->file"];
+"1000226" -> "1000221"  [label="AST: "];
+"1000226" -> "1000227"  [label="CFG: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000232" -> "1000226"  [label="CFG: "];
+"1000226" -> "1000360"  [label="DDG: fput(bprm->file)"];
+}

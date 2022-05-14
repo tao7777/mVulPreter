@@ -1,0 +1,6 @@
+void ext4_xattr_destroy_cache(struct mb_cache *cache)
+void ext4_xattr_destroy_cache(struct mb2_cache *cache)
+ {
+ 	if (cache)
+		mb2_cache_destroy(cache);
+ }

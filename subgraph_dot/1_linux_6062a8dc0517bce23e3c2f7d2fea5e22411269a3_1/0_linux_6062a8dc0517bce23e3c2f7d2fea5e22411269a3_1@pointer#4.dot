@@ -1,0 +1,22 @@
+digraph "0_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_1@pointer" {
+"1000130" [label="(Call,atomic_dec_and_test(&ulp->refcnt))"];
+"1000129" [label="(Call,!atomic_dec_and_test(&ulp->refcnt))"];
+"1000129" [label="(Call,!atomic_dec_and_test(&ulp->refcnt))"];
+"1000128" [label="(ControlStructure,if (!atomic_dec_and_test(&ulp->refcnt)))"];
+"1000143" [label="(Call,rcu_read_lock())"];
+"1000311" [label="(MethodReturn,void)"];
+"1000131" [label="(Call,&ulp->refcnt)"];
+"1000130" [label="(Call,atomic_dec_and_test(&ulp->refcnt))"];
+"1000135" [label="(Return,return;)"];
+"1000130" -> "1000129"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000129" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000311"  [label="DDG: &ulp->refcnt"];
+"1000130" -> "1000129"  [label="DDG: &ulp->refcnt"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000135" -> "1000129"  [label="CFG: "];
+"1000143" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000311"  [label="DDG: atomic_dec_and_test(&ulp->refcnt)"];
+"1000129" -> "1000311"  [label="DDG: !atomic_dec_and_test(&ulp->refcnt)"];
+}

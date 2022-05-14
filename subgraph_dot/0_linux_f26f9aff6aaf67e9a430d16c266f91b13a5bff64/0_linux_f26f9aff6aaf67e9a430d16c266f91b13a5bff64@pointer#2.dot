@@ -1,0 +1,22 @@
+digraph "0_linux_f26f9aff6aaf67e9a430d16c266f91b13a5bff64@pointer" {
+"1000146" [label="(Call,prop_local_init_single(&tsk->dirties))"];
+"1000144" [label="(Call,err = prop_local_init_single(&tsk->dirties))"];
+"1000104" [label="(Block,)"];
+"1000144" [label="(Call,err = prop_local_init_single(&tsk->dirties))"];
+"1000147" [label="(Call,&tsk->dirties)"];
+"1000152" [label="(Identifier,err)"];
+"1000208" [label="(MethodReturn,static struct task_struct *)"];
+"1000145" [label="(Identifier,err)"];
+"1000146" [label="(Call,prop_local_init_single(&tsk->dirties))"];
+"1000146" -> "1000144"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000144" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000208"  [label="DDG: &tsk->dirties"];
+"1000146" -> "1000144"  [label="DDG: &tsk->dirties"];
+"1000144" -> "1000104"  [label="AST: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000152" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000208"  [label="DDG: err"];
+"1000144" -> "1000208"  [label="DDG: prop_local_init_single(&tsk->dirties)"];
+}

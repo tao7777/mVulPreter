@@ -1,0 +1,24 @@
+digraph "0_linux_cb2595c1393b4a5211534e6f0a0fbad369e21ad8_0@API" {
+"1000254" [label="(Call,mutex_lock(&mut))"];
+"1000264" [label="(Call,mutex_unlock(&mut))"];
+"1000104" [label="(Block,)"];
+"1000270" [label="(Identifier,file)"];
+"1000265" [label="(Call,&mut)"];
+"1000255" [label="(Call,&mut)"];
+"1000319" [label="(MethodReturn,static ssize_t)"];
+"1000259" [label="(Identifier,multicast_idr)"];
+"1000264" [label="(Call,mutex_unlock(&mut))"];
+"1000254" [label="(Call,mutex_lock(&mut))"];
+"1000254" -> "1000104"  [label="AST: "];
+"1000254" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000259" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000319"  [label="DDG: mutex_lock(&mut)"];
+"1000254" -> "1000264"  [label="DDG: &mut"];
+"1000264" -> "1000104"  [label="AST: "];
+"1000264" -> "1000265"  [label="CFG: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000270" -> "1000264"  [label="CFG: "];
+"1000264" -> "1000319"  [label="DDG: &mut"];
+"1000264" -> "1000319"  [label="DDG: mutex_unlock(&mut)"];
+}

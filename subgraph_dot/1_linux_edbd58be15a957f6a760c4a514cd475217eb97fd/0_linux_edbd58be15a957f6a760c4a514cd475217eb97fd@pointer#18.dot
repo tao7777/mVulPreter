@@ -1,0 +1,22 @@
+digraph "0_linux_edbd58be15a957f6a760c4a514cd475217eb97fd@pointer" {
+"1000716" [label="(Call,ntohs(skb->vlan_proto))"];
+"1000710" [label="(Call,h.h2->tp_vlan_tpid = ntohs(skb->vlan_proto))"];
+"1000721" [label="(Identifier,status)"];
+"1000701" [label="(Block,)"];
+"1000717" [label="(Call,skb->vlan_proto)"];
+"1000711" [label="(Call,h.h2->tp_vlan_tpid)"];
+"1001022" [label="(MethodReturn,static int)"];
+"1000710" [label="(Call,h.h2->tp_vlan_tpid = ntohs(skb->vlan_proto))"];
+"1000716" [label="(Call,ntohs(skb->vlan_proto))"];
+"1000716" -> "1000710"  [label="AST: "];
+"1000716" -> "1000717"  [label="CFG: "];
+"1000717" -> "1000716"  [label="AST: "];
+"1000710" -> "1000716"  [label="CFG: "];
+"1000716" -> "1001022"  [label="DDG: skb->vlan_proto"];
+"1000716" -> "1000710"  [label="DDG: skb->vlan_proto"];
+"1000710" -> "1000701"  [label="AST: "];
+"1000711" -> "1000710"  [label="AST: "];
+"1000721" -> "1000710"  [label="CFG: "];
+"1000710" -> "1001022"  [label="DDG: ntohs(skb->vlan_proto)"];
+"1000710" -> "1001022"  [label="DDG: h.h2->tp_vlan_tpid"];
+}

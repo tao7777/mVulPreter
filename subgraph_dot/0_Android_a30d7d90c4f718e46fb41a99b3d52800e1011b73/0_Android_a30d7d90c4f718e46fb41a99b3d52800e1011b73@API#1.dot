@@ -1,0 +1,33 @@
+digraph "0_Android_a30d7d90c4f718e46fb41a99b3d52800e1011b73@API" {
+"1000133" [label="(Call,err = reply->write(item))"];
+"1000135" [label="(Call,reply->write(item))"];
+"1000139" [label="(Return,return err;)"];
+"1000137" [label="(ControlStructure,if (err))"];
+"1000139" [label="(Return,return err;)"];
+"1000134" [label="(Identifier,err)"];
+"1000140" [label="(Identifier,err)"];
+"1000135" [label="(Call,reply->write(item))"];
+"1000110" [label="(Block,)"];
+"1000515" [label="(MethodReturn,status_t)"];
+"1000136" [label="(Identifier,item)"];
+"1000133" [label="(Call,err = reply->write(item))"];
+"1000138" [label="(Identifier,err)"];
+"1000133" -> "1000110"  [label="AST: "];
+"1000133" -> "1000135"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000135" -> "1000133"  [label="AST: "];
+"1000138" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000515"  [label="DDG: err"];
+"1000133" -> "1000515"  [label="DDG: reply->write(item)"];
+"1000135" -> "1000133"  [label="DDG: item"];
+"1000133" -> "1000139"  [label="DDG: err"];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000135" -> "1000515"  [label="DDG: item"];
+"1000139" -> "1000137"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000515" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000515"  [label="DDG: <RET>"];
+"1000140" -> "1000139"  [label="DDG: err"];
+}

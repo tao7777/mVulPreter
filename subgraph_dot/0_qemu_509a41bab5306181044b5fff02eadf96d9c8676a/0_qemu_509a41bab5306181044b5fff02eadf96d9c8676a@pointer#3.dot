@@ -1,0 +1,27 @@
+digraph "0_qemu_509a41bab5306181044b5fff02eadf96d9c8676a@pointer" {
+"1000178" [label="(Call,error_setg(errp, \"block_size cannot be zero\"))"];
+"1000108" [label="(MethodParameterIn,Error **errp)"];
+"1000183" [label="(Identifier,EINVAL)"];
+"1000108" [label="(MethodParameterIn,Error **errp)"];
+"1000178" [label="(Call,error_setg(errp, \"block_size cannot be zero\"))"];
+"1000177" [label="(Block,)"];
+"1000180" [label="(Literal,\"block_size cannot be zero\")"];
+"1000191" [label="(Call,error_setg(errp, \"block_size %u must be %u MB or less\",\n                   s->block_size,\n                   MAX_BLOCK_SIZE / (1024 * 1024)))"];
+"1000300" [label="(MethodReturn,static int)"];
+"1000162" [label="(Call,error_setg(errp, \"block_size %u must be a multiple of 512\",\n                   s->block_size))"];
+"1000179" [label="(Identifier,errp)"];
+"1000244" [label="(Call,error_setg(errp, \"n_blocks %u must be %zu or less\",\n                   s->n_blocks,\n                   UINT32_MAX / sizeof(uint64_t)))"];
+"1000178" -> "1000177"  [label="AST: "];
+"1000178" -> "1000180"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000180" -> "1000178"  [label="AST: "];
+"1000183" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000300"  [label="DDG: "];
+"1000178" -> "1000300"  [label="DDG: "];
+"1000108" -> "1000178"  [label="DDG: "];
+"1000108" -> "1000104"  [label="AST: "];
+"1000108" -> "1000300"  [label="DDG: "];
+"1000108" -> "1000162"  [label="DDG: "];
+"1000108" -> "1000191"  [label="DDG: "];
+"1000108" -> "1000244"  [label="DDG: "];
+}

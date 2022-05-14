@@ -1,0 +1,30 @@
+digraph "0_linux_7d5145d8eb2b9791533ffe4dc003b129b9696c48@pointer" {
+"1000106" [label="(Call,*shinfo = skb_shinfo(skb))"];
+"1000108" [label="(Call,skb_shinfo(skb))"];
+"1000103" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000198" [label="(MethodReturn,static void)"];
+"1000106" [label="(Call,*shinfo = skb_shinfo(skb))"];
+"1000104" [label="(Block,)"];
+"1000158" [label="(Call,__skb_fill_page_desc(skb, i, page, txp->offset, txp->size))"];
+"1000108" [label="(Call,skb_shinfo(skb))"];
+"1000107" [label="(Identifier,shinfo)"];
+"1000103" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000112" [label="(Identifier,nr_frags)"];
+"1000109" [label="(Identifier,skb)"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000112" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000198"  [label="DDG: skb_shinfo(skb)"];
+"1000106" -> "1000198"  [label="DDG: shinfo"];
+"1000108" -> "1000106"  [label="DDG: skb"];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000108" -> "1000198"  [label="DDG: skb"];
+"1000103" -> "1000108"  [label="DDG: skb"];
+"1000108" -> "1000158"  [label="DDG: skb"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000198"  [label="DDG: skb"];
+"1000103" -> "1000158"  [label="DDG: skb"];
+}

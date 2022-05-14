@@ -1,0 +1,29 @@
+digraph "0_linux_7932c0bd7740f4cd2aa168d3ce0199e7af7d72d5@API" {
+"1000150" [label="(Call,copy_from_user(&p, argp, sizeof p))"];
+"1000106" [label="(MethodParameterIn,void __user *argp)"];
+"1000154" [label="(Call,sizeof p)"];
+"1000106" [label="(MethodParameterIn,void __user *argp)"];
+"1000151" [label="(Call,&p)"];
+"1000153" [label="(Identifier,argp)"];
+"1000158" [label="(Identifier,r)"];
+"1000360" [label="(MethodReturn,long)"];
+"1000150" [label="(Call,copy_from_user(&p, argp, sizeof p))"];
+"1000144" [label="(Call,vhost_set_memory(d, argp))"];
+"1000239" [label="(Call,(int __user *)argp)"];
+"1000149" [label="(ControlStructure,if (copy_from_user(&p, argp, sizeof p)))"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000154"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000153" -> "1000150"  [label="AST: "];
+"1000154" -> "1000150"  [label="AST: "];
+"1000158" -> "1000150"  [label="CFG: "];
+"1000165" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000360"  [label="DDG: &p"];
+"1000150" -> "1000360"  [label="DDG: argp"];
+"1000150" -> "1000360"  [label="DDG: copy_from_user(&p, argp, sizeof p)"];
+"1000106" -> "1000150"  [label="DDG: argp"];
+"1000106" -> "1000103"  [label="AST: "];
+"1000106" -> "1000360"  [label="DDG: argp"];
+"1000106" -> "1000144"  [label="DDG: argp"];
+"1000106" -> "1000239"  [label="DDG: argp"];
+}

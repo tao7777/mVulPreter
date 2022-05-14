@@ -1,0 +1,27 @@
+digraph "0_php_dccda88f27a084bcbbb30198ace12b4e7ae961cc_10@pointer" {
+"1000102" [label="(MethodParameterIn,xml_parser *parser)"];
+"1000111" [label="(Call,parser && handler && !EG(exception))"];
+"1000281" [label="(Identifier,i)"];
+"1000124" [label="(Identifier,args)"];
+"1000110" [label="(ControlStructure,if (parser && handler && !EG(exception)))"];
+"1000111" [label="(Call,parser && handler && !EG(exception))"];
+"1000102" [label="(MethodParameterIn,xml_parser *parser)"];
+"1000296" [label="(MethodReturn,static zval *)"];
+"1000113" [label="(Call,handler && !EG(exception))"];
+"1000112" [label="(Identifier,parser)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000296"  [label="DDG: parser"];
+"1000102" -> "1000111"  [label="DDG: parser"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000124" -> "1000111"  [label="CFG: "];
+"1000281" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000296"  [label="DDG: parser"];
+"1000111" -> "1000296"  [label="DDG: handler && !EG(exception)"];
+"1000111" -> "1000296"  [label="DDG: parser && handler && !EG(exception)"];
+"1000113" -> "1000111"  [label="DDG: handler"];
+"1000113" -> "1000111"  [label="DDG: !EG(exception)"];
+}

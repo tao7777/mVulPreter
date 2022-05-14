@@ -1,0 +1,1 @@
+PersistentHistogramAllocator::GetCreateHistogramResultHistogram() {

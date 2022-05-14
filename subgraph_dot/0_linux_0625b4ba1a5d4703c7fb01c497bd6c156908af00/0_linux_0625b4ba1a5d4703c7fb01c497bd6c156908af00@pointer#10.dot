@@ -1,0 +1,30 @@
+digraph "0_linux_0625b4ba1a5d4703c7fb01c497bd6c156908af00@pointer" {
+"1001390" [label="(Call,mlx5_ib_unlock_cqs(send_cq, recv_cq))"];
+"1001356" [label="(Call,mlx5_ib_lock_cqs(send_cq, recv_cq))"];
+"1001357" [label="(Identifier,send_cq)"];
+"1000111" [label="(Block,)"];
+"1001362" [label="(Identifier,qp)"];
+"1001396" [label="(Identifier,dev)"];
+"1001358" [label="(Identifier,recv_cq)"];
+"1001390" [label="(Call,mlx5_ib_unlock_cqs(send_cq, recv_cq))"];
+"1001392" [label="(Identifier,recv_cq)"];
+"1001391" [label="(Identifier,send_cq)"];
+"1001356" [label="(Call,mlx5_ib_lock_cqs(send_cq, recv_cq))"];
+"1001428" [label="(MethodReturn,static int)"];
+"1001390" -> "1000111"  [label="AST: "];
+"1001390" -> "1001392"  [label="CFG: "];
+"1001391" -> "1001390"  [label="AST: "];
+"1001392" -> "1001390"  [label="AST: "];
+"1001396" -> "1001390"  [label="CFG: "];
+"1001390" -> "1001428"  [label="DDG: recv_cq"];
+"1001390" -> "1001428"  [label="DDG: send_cq"];
+"1001390" -> "1001428"  [label="DDG: mlx5_ib_unlock_cqs(send_cq, recv_cq)"];
+"1001356" -> "1001390"  [label="DDG: send_cq"];
+"1001356" -> "1001390"  [label="DDG: recv_cq"];
+"1001356" -> "1000111"  [label="AST: "];
+"1001356" -> "1001358"  [label="CFG: "];
+"1001357" -> "1001356"  [label="AST: "];
+"1001358" -> "1001356"  [label="AST: "];
+"1001362" -> "1001356"  [label="CFG: "];
+"1001356" -> "1001428"  [label="DDG: mlx5_ib_lock_cqs(send_cq, recv_cq)"];
+}

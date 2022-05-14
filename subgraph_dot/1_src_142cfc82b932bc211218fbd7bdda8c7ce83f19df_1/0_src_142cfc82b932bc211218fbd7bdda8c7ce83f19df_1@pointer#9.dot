@@ -1,0 +1,27 @@
+digraph "0_src_142cfc82b932bc211218fbd7bdda8c7ce83f19df_1@pointer" {
+"1000443" [label="(Call,bufferevent_enable(clt->clt_bev, EV_READ|EV_WRITE))"];
+"1000447" [label="(Call,EV_READ|EV_WRITE)"];
+"1000452" [label="(Identifier,clt)"];
+"1000444" [label="(Call,clt->clt_bev)"];
+"1000448" [label="(Identifier,EV_READ)"];
+"1000111" [label="(Block,)"];
+"1000447" [label="(Call,EV_READ|EV_WRITE)"];
+"1000443" [label="(Call,bufferevent_enable(clt->clt_bev, EV_READ|EV_WRITE))"];
+"1000449" [label="(Identifier,EV_WRITE)"];
+"1000523" [label="(MethodReturn,RET)"];
+"1000443" -> "1000111"  [label="AST: "];
+"1000443" -> "1000447"  [label="CFG: "];
+"1000444" -> "1000443"  [label="AST: "];
+"1000447" -> "1000443"  [label="AST: "];
+"1000452" -> "1000443"  [label="CFG: "];
+"1000443" -> "1000523"  [label="DDG: bufferevent_enable(clt->clt_bev, EV_READ|EV_WRITE)"];
+"1000443" -> "1000523"  [label="DDG: EV_READ|EV_WRITE"];
+"1000443" -> "1000523"  [label="DDG: clt->clt_bev"];
+"1000447" -> "1000443"  [label="DDG: EV_READ"];
+"1000447" -> "1000443"  [label="DDG: EV_WRITE"];
+"1000447" -> "1000449"  [label="CFG: "];
+"1000448" -> "1000447"  [label="AST: "];
+"1000449" -> "1000447"  [label="AST: "];
+"1000447" -> "1000523"  [label="DDG: EV_WRITE"];
+"1000447" -> "1000523"  [label="DDG: EV_READ"];
+}

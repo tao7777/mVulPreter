@@ -1,0 +1,28 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1009129" [label="(Call,!s->pe)"];
+"1009115" [label="(Call,(!(s->flags & HF_SVME_MASK)\n                 && !(s->cpuid_ext3_features & CPUID_EXT3_SKINIT))\n                || !s->pe)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1009115" [label="(Call,(!(s->flags & HF_SVME_MASK)\n                 && !(s->cpuid_ext3_features & CPUID_EXT3_SKINIT))\n                || !s->pe)"];
+"1009129" [label="(Call,!s->pe)"];
+"1009116" [label="(Call,!(s->flags & HF_SVME_MASK)\n                 && !(s->cpuid_ext3_features & CPUID_EXT3_SKINIT))"];
+"1009130" [label="(Call,s->pe)"];
+"1009134" [label="(ControlStructure,goto illegal_op;)"];
+"1009114" [label="(ControlStructure,if ((!(s->flags & HF_SVME_MASK)\n                 && !(s->cpuid_ext3_features & CPUID_EXT3_SKINIT))\n                || !s->pe))"];
+"1009136" [label="(Identifier,s)"];
+"1009129" -> "1009115"  [label="AST: "];
+"1009129" -> "1009130"  [label="CFG: "];
+"1009130" -> "1009129"  [label="AST: "];
+"1009115" -> "1009129"  [label="CFG: "];
+"1009129" -> "1011840"  [label="DDG: s->pe"];
+"1009129" -> "1009115"  [label="DDG: s->pe"];
+"1009115" -> "1009114"  [label="AST: "];
+"1009115" -> "1009116"  [label="CFG: "];
+"1009116" -> "1009115"  [label="AST: "];
+"1009134" -> "1009115"  [label="CFG: "];
+"1009136" -> "1009115"  [label="CFG: "];
+"1009115" -> "1011840"  [label="DDG: !s->pe"];
+"1009115" -> "1011840"  [label="DDG: (!(s->flags & HF_SVME_MASK)\n                 && !(s->cpuid_ext3_features & CPUID_EXT3_SKINIT))\n                || !s->pe"];
+"1009115" -> "1011840"  [label="DDG: !(s->flags & HF_SVME_MASK)\n                 && !(s->cpuid_ext3_features & CPUID_EXT3_SKINIT)"];
+"1009116" -> "1009115"  [label="DDG: !(s->flags & HF_SVME_MASK)"];
+"1009116" -> "1009115"  [label="DDG: !(s->cpuid_ext3_features & CPUID_EXT3_SKINIT)"];
+}

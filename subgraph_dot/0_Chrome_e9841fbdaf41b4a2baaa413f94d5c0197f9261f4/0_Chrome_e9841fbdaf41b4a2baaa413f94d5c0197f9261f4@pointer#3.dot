@@ -1,0 +1,36 @@
+digraph "0_Chrome_e9841fbdaf41b4a2baaa413f94d5c0197f9261f4@pointer" {
+"1000162" [label="(Call,new_extension = NULL)"];
+"1000166" [label="(Call,new_extension &&\n      site_instance->HasProcess() &&\n      !service->process_map()->Contains(new_extension->id(),\n                                        site_instance->GetProcess()->GetID()))"];
+"1000155" [label="(Call,new_extension &&\n      new_extension->is_hosted_app() &&\n      new_extension->id() != extension_misc::kWebStoreAppId)"];
+"1000177" [label="(Identifier,false)"];
+"1000166" [label="(Call,new_extension &&\n      site_instance->HasProcess() &&\n      !service->process_map()->Contains(new_extension->id(),\n                                        site_instance->GetProcess()->GetID()))"];
+"1000167" [label="(Identifier,new_extension)"];
+"1000175" [label="(Identifier,true)"];
+"1000162" [label="(Call,new_extension = NULL)"];
+"1000165" [label="(ControlStructure,if (new_extension &&\n      site_instance->HasProcess() &&\n      !service->process_map()->Contains(new_extension->id(),\n                                        site_instance->GetProcess()->GetID())))"];
+"1000178" [label="(MethodReturn,bool)"];
+"1000168" [label="(Call,site_instance->HasProcess() &&\n      !service->process_map()->Contains(new_extension->id(),\n                                        site_instance->GetProcess()->GetID()))"];
+"1000164" [label="(Identifier,NULL)"];
+"1000154" [label="(ControlStructure,if (new_extension &&\n      new_extension->is_hosted_app() &&\n      new_extension->id() != extension_misc::kWebStoreAppId))"];
+"1000163" [label="(Identifier,new_extension)"];
+"1000162" -> "1000154"  [label="AST: "];
+"1000162" -> "1000164"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000164" -> "1000162"  [label="AST: "];
+"1000167" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000178"  [label="DDG: NULL"];
+"1000162" -> "1000166"  [label="DDG: new_extension"];
+"1000166" -> "1000165"  [label="AST: "];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000166" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000168" -> "1000166"  [label="AST: "];
+"1000175" -> "1000166"  [label="CFG: "];
+"1000177" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000178"  [label="DDG: site_instance->HasProcess() &&\n      !service->process_map()->Contains(new_extension->id(),\n                                        site_instance->GetProcess()->GetID())"];
+"1000166" -> "1000178"  [label="DDG: new_extension &&\n      site_instance->HasProcess() &&\n      !service->process_map()->Contains(new_extension->id(),\n                                        site_instance->GetProcess()->GetID())"];
+"1000166" -> "1000178"  [label="DDG: new_extension"];
+"1000155" -> "1000166"  [label="DDG: new_extension"];
+"1000168" -> "1000166"  [label="DDG: site_instance->HasProcess()"];
+"1000168" -> "1000166"  [label="DDG: !service->process_map()->Contains(new_extension->id(),\n                                        site_instance->GetProcess()->GetID())"];
+}

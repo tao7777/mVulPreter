@@ -1,0 +1,35 @@
+digraph "0_neomutt_36a29280448097f34ce9c94606195f2ac643fed1@pointer" {
+"1000135" [label="(Call,(unsigned char) *s)"];
+"1000134" [label="(Call,isdigit((unsigned char) *s))"];
+"1000128" [label="(Call,(idata->state >= IMAP_SELECTED) && isdigit((unsigned char) *s))"];
+"1000141" [label="(Identifier,pn)"];
+"1000128" [label="(Call,(idata->state >= IMAP_SELECTED) && isdigit((unsigned char) *s))"];
+"1000135" [label="(Call,(unsigned char) *s)"];
+"1000129" [label="(Call,idata->state >= IMAP_SELECTED)"];
+"1000137" [label="(Call,*s)"];
+"1000134" [label="(Call,isdigit((unsigned char) *s))"];
+"1000127" [label="(ControlStructure,if ((idata->state >= IMAP_SELECTED) && isdigit((unsigned char) *s)))"];
+"1000252" [label="(Literal,\"CAPABILITY\")"];
+"1000402" [label="(MethodReturn,static int)"];
+"1000135" -> "1000134"  [label="AST: "];
+"1000135" -> "1000137"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000137" -> "1000135"  [label="AST: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000402"  [label="DDG: *s"];
+"1000135" -> "1000134"  [label="DDG: *s"];
+"1000134" -> "1000128"  [label="AST: "];
+"1000128" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000402"  [label="DDG: (unsigned char) *s"];
+"1000134" -> "1000128"  [label="DDG: (unsigned char) *s"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000141" -> "1000128"  [label="CFG: "];
+"1000252" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000402"  [label="DDG: idata->state >= IMAP_SELECTED"];
+"1000128" -> "1000402"  [label="DDG: isdigit((unsigned char) *s)"];
+"1000128" -> "1000402"  [label="DDG: (idata->state >= IMAP_SELECTED) && isdigit((unsigned char) *s)"];
+"1000129" -> "1000128"  [label="DDG: idata->state"];
+"1000129" -> "1000128"  [label="DDG: IMAP_SELECTED"];
+}

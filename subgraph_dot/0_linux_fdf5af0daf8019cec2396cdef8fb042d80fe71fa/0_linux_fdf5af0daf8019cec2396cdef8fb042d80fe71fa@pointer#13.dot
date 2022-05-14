@@ -1,0 +1,33 @@
+digraph "0_linux_fdf5af0daf8019cec2396cdef8fb042d80fe71fa@pointer" {
+"1000361" [label="(Call,tp->linger2 < 0)"];
+"1000360" [label="(Call,tp->linger2 < 0 ||\n\t\t\t\t\t    (TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq &&\n\t\t\t\t\t     after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt)))"];
+"1000557" [label="(MethodReturn,int)"];
+"1000360" [label="(Call,tp->linger2 < 0 ||\n\t\t\t\t\t    (TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq &&\n\t\t\t\t\t     after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt)))"];
+"1000398" [label="(Identifier,tmo)"];
+"1000362" [label="(Call,tp->linger2)"];
+"1000370" [label="(Identifier,skb)"];
+"1000366" [label="(Call,TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq &&\n\t\t\t\t\t     after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt))"];
+"1000361" [label="(Call,tp->linger2 < 0)"];
+"1000365" [label="(Literal,0)"];
+"1000390" [label="(Identifier,sk)"];
+"1000359" [label="(ControlStructure,if (tp->linger2 < 0 ||\n\t\t\t\t\t    (TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq &&\n\t\t\t\t\t     after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt))))"];
+"1000361" -> "1000360"  [label="AST: "];
+"1000361" -> "1000365"  [label="CFG: "];
+"1000362" -> "1000361"  [label="AST: "];
+"1000365" -> "1000361"  [label="AST: "];
+"1000370" -> "1000361"  [label="CFG: "];
+"1000360" -> "1000361"  [label="CFG: "];
+"1000361" -> "1000557"  [label="DDG: tp->linger2"];
+"1000361" -> "1000360"  [label="DDG: tp->linger2"];
+"1000361" -> "1000360"  [label="DDG: 0"];
+"1000360" -> "1000359"  [label="AST: "];
+"1000360" -> "1000366"  [label="CFG: "];
+"1000366" -> "1000360"  [label="AST: "];
+"1000390" -> "1000360"  [label="CFG: "];
+"1000398" -> "1000360"  [label="CFG: "];
+"1000360" -> "1000557"  [label="DDG: tp->linger2 < 0"];
+"1000360" -> "1000557"  [label="DDG: TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq &&\n\t\t\t\t\t     after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt)"];
+"1000360" -> "1000557"  [label="DDG: tp->linger2 < 0 ||\n\t\t\t\t\t    (TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq &&\n\t\t\t\t\t     after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt))"];
+"1000366" -> "1000360"  [label="DDG: TCP_SKB_CB(skb)->end_seq != TCP_SKB_CB(skb)->seq"];
+"1000366" -> "1000360"  [label="DDG: after(TCP_SKB_CB(skb)->end_seq - th->fin, tp->rcv_nxt)"];
+}

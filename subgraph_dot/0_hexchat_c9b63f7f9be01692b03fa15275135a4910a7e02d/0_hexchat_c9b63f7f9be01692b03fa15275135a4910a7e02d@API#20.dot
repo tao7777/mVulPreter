@@ -1,0 +1,27 @@
+digraph "0_hexchat_c9b63f7f9be01692b03fa15275135a4910a7e02d@API" {
+"1000121" [label="(Call,SSL_connect (serv->ssl) <= 0)"];
+"1000122" [label="(Call,SSL_connect (serv->ssl))"];
+"1000188" [label="(Call,SSL_is_init_finished (serv->ssl))"];
+"1000185" [label="(Identifier,g_sess)"];
+"1000607" [label="(MethodReturn,RET)"];
+"1000126" [label="(Literal,0)"];
+"1000122" [label="(Call,SSL_connect (serv->ssl))"];
+"1000131" [label="(Identifier,g_sess)"];
+"1000123" [label="(Call,serv->ssl)"];
+"1000121" [label="(Call,SSL_connect (serv->ssl) <= 0)"];
+"1000120" [label="(ControlStructure,if (SSL_connect (serv->ssl) <= 0))"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000126"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="AST: "];
+"1000131" -> "1000121"  [label="CFG: "];
+"1000185" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000607"  [label="DDG: SSL_connect (serv->ssl) <= 0"];
+"1000121" -> "1000607"  [label="DDG: SSL_connect (serv->ssl)"];
+"1000122" -> "1000121"  [label="DDG: serv->ssl"];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000607"  [label="DDG: serv->ssl"];
+"1000122" -> "1000188"  [label="DDG: serv->ssl"];
+}

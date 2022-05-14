@@ -1,0 +1,31 @@
+digraph "0_suricata_843d0b7a10bb45627f94764a6c5d468a24143345_1@pointer" {
+"1000768" [label="(Call,ssn->server.flags |= STREAMTCP_STREAM_FLAG_TIMESTAMP)"];
+"1000750" [label="(Call,ssn->server.flags |= STREAMTCP_STREAM_FLAG_ZERO_TIMESTAMP)"];
+"1000756" [label="(Identifier,STREAMTCP_STREAM_FLAG_ZERO_TIMESTAMP)"];
+"1001128" [label="(MethodReturn,static int)"];
+"1000750" [label="(Call,ssn->server.flags |= STREAMTCP_STREAM_FLAG_ZERO_TIMESTAMP)"];
+"1000760" [label="(Identifier,ssn)"];
+"1000778" [label="(Identifier,ssn)"];
+"1000751" [label="(Call,ssn->server.flags)"];
+"1000774" [label="(Identifier,STREAMTCP_STREAM_FLAG_TIMESTAMP)"];
+"1000769" [label="(Call,ssn->server.flags)"];
+"1000725" [label="(Block,)"];
+"1000742" [label="(ControlStructure,if (ssn->server.last_ts == 0))"];
+"1000768" [label="(Call,ssn->server.flags |= STREAMTCP_STREAM_FLAG_TIMESTAMP)"];
+"1000768" -> "1000725"  [label="AST: "];
+"1000768" -> "1000774"  [label="CFG: "];
+"1000769" -> "1000768"  [label="AST: "];
+"1000774" -> "1000768"  [label="AST: "];
+"1000778" -> "1000768"  [label="CFG: "];
+"1000768" -> "1001128"  [label="DDG: ssn->server.flags"];
+"1000768" -> "1001128"  [label="DDG: STREAMTCP_STREAM_FLAG_TIMESTAMP"];
+"1000768" -> "1001128"  [label="DDG: ssn->server.flags |= STREAMTCP_STREAM_FLAG_TIMESTAMP"];
+"1000750" -> "1000768"  [label="DDG: ssn->server.flags"];
+"1000750" -> "1000742"  [label="AST: "];
+"1000750" -> "1000756"  [label="CFG: "];
+"1000751" -> "1000750"  [label="AST: "];
+"1000756" -> "1000750"  [label="AST: "];
+"1000760" -> "1000750"  [label="CFG: "];
+"1000750" -> "1001128"  [label="DDG: ssn->server.flags |= STREAMTCP_STREAM_FLAG_ZERO_TIMESTAMP"];
+"1000750" -> "1001128"  [label="DDG: STREAMTCP_STREAM_FLAG_ZERO_TIMESTAMP"];
+}

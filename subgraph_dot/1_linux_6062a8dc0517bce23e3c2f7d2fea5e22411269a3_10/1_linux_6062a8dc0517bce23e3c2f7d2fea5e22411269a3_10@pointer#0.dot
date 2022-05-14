@@ -1,0 +1,24 @@
+digraph "1_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_10@pointer" {
+"1000103" [label="(Call,ipc_lock_by_ptr(&sma->sem_perm))"];
+"1000110" [label="(Call,ipc_unlock(&(sma)->sem_perm))"];
+"1000109" [label="(Identifier,sma)"];
+"1000111" [label="(Call,&(sma)->sem_perm)"];
+"1000115" [label="(MethodReturn,static inline void)"];
+"1000102" [label="(Block,)"];
+"1000104" [label="(Call,&sma->sem_perm)"];
+"1000103" [label="(Call,ipc_lock_by_ptr(&sma->sem_perm))"];
+"1000110" [label="(Call,ipc_unlock(&(sma)->sem_perm))"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000109" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000115"  [label="DDG: &sma->sem_perm"];
+"1000103" -> "1000115"  [label="DDG: ipc_lock_by_ptr(&sma->sem_perm)"];
+"1000103" -> "1000110"  [label="DDG: &sma->sem_perm"];
+"1000110" -> "1000102"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000115" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000115"  [label="DDG: &(sma)->sem_perm"];
+"1000110" -> "1000115"  [label="DDG: ipc_unlock(&(sma)->sem_perm)"];
+}

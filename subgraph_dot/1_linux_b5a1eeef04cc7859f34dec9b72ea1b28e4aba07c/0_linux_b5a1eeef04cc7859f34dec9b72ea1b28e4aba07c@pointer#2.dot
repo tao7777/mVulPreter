@@ -1,0 +1,24 @@
+digraph "0_linux_b5a1eeef04cc7859f34dec9b72ea1b28e4aba07c@pointer" {
+"1000163" [label="(Call,spin_lock_bh(&socket_client->lock))"];
+"1000177" [label="(Call,spin_unlock_bh(&socket_client->lock))"];
+"1000164" [label="(Call,&socket_client->lock)"];
+"1000105" [label="(Block,)"];
+"1000207" [label="(MethodReturn,static ssize_t)"];
+"1000177" [label="(Call,spin_unlock_bh(&socket_client->lock))"];
+"1000183" [label="(Identifier,error)"];
+"1000178" [label="(Call,&socket_client->lock)"];
+"1000163" [label="(Call,spin_lock_bh(&socket_client->lock))"];
+"1000171" [label="(Identifier,socket_packet)"];
+"1000163" -> "1000105"  [label="AST: "];
+"1000163" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000163"  [label="AST: "];
+"1000171" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000207"  [label="DDG: spin_lock_bh(&socket_client->lock)"];
+"1000163" -> "1000177"  [label="DDG: &socket_client->lock"];
+"1000177" -> "1000105"  [label="AST: "];
+"1000177" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000183" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000207"  [label="DDG: &socket_client->lock"];
+"1000177" -> "1000207"  [label="DDG: spin_unlock_bh(&socket_client->lock)"];
+}

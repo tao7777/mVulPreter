@@ -1,0 +1,1 @@
+double VideoTrack::GetFrameRate() const

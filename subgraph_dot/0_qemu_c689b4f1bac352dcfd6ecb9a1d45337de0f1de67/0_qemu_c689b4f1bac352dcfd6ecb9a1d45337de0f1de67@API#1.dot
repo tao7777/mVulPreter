@@ -1,0 +1,30 @@
+digraph "0_qemu_c689b4f1bac352dcfd6ecb9a1d45337de0f1de67@API" {
+"1000126" [label="(Call,!ga_open_pidfile(pidfile))"];
+"1000127" [label="(Call,ga_open_pidfile(pidfile))"];
+"1000101" [label="(MethodParameterIn,const char *pidfile)"];
+"1000126" [label="(Call,!ga_open_pidfile(pidfile))"];
+"1000131" [label="(Literal,\"failed to create pidfile\")"];
+"1000171" [label="(MethodReturn,static void)"];
+"1000125" [label="(ControlStructure,if (!ga_open_pidfile(pidfile)))"];
+"1000127" [label="(Call,ga_open_pidfile(pidfile))"];
+"1000165" [label="(Call,unlink(pidfile))"];
+"1000128" [label="(Identifier,pidfile)"];
+"1000101" [label="(MethodParameterIn,const char *pidfile)"];
+"1000136" [label="(Identifier,S_IRWXG)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000131" -> "1000126"  [label="CFG: "];
+"1000136" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000171"  [label="DDG: ga_open_pidfile(pidfile)"];
+"1000126" -> "1000171"  [label="DDG: !ga_open_pidfile(pidfile)"];
+"1000127" -> "1000126"  [label="DDG: pidfile"];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000127" -> "1000171"  [label="DDG: pidfile"];
+"1000101" -> "1000127"  [label="DDG: pidfile"];
+"1000127" -> "1000165"  [label="DDG: pidfile"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000171"  [label="DDG: pidfile"];
+"1000101" -> "1000165"  [label="DDG: pidfile"];
+}

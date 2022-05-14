@@ -1,0 +1,34 @@
+digraph "0_linux_45e093ae2830cd1264677d47ff9a95a71f5d9f9c@pointer" {
+"1000229" [label="(Call,sock_put(&tsk->sk))"];
+"1000224" [label="(Call,release_sock(&tsk->sk))"];
+"1000205" [label="(Call,lock_sock(&tsk->sk))"];
+"1000229" [label="(Call,sock_put(&tsk->sk))"];
+"1000230" [label="(Call,&tsk->sk)"];
+"1000237" [label="(Identifier,cb)"];
+"1000206" [label="(Call,&tsk->sk)"];
+"1000205" [label="(Call,lock_sock(&tsk->sk))"];
+"1000232" [label="(Identifier,tsk)"];
+"1000224" [label="(Call,release_sock(&tsk->sk))"];
+"1000225" [label="(Call,&tsk->sk)"];
+"1000103" [label="(Block,)"];
+"1000211" [label="(Identifier,err)"];
+"1000259" [label="(MethodReturn,int)"];
+"1000229" -> "1000103"  [label="AST: "];
+"1000229" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000237" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000259"  [label="DDG: sock_put(&tsk->sk)"];
+"1000229" -> "1000259"  [label="DDG: &tsk->sk"];
+"1000224" -> "1000229"  [label="DDG: &tsk->sk"];
+"1000224" -> "1000103"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000232" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000259"  [label="DDG: release_sock(&tsk->sk)"];
+"1000205" -> "1000224"  [label="DDG: &tsk->sk"];
+"1000205" -> "1000103"  [label="AST: "];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000211" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000259"  [label="DDG: lock_sock(&tsk->sk)"];
+}

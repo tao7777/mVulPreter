@@ -1,0 +1,23 @@
+digraph "0_qemu_a6b3167fa0e825aebb5a7cd8b437b6d41584a196@pointer" {
+"1000151" [label="(Call,acb->ioh         = buf)"];
+"1000104" [label="(MethodParameterIn,void *buf)"];
+"1000155" [label="(Identifier,buf)"];
+"1000420" [label="(MethodReturn,static BlockAIOCB *)"];
+"1000152" [label="(Call,acb->ioh)"];
+"1000104" [label="(MethodParameterIn,void *buf)"];
+"1000151" [label="(Call,acb->ioh         = buf)"];
+"1000107" [label="(Block,)"];
+"1000161" [label="(Call,iscsi_ioctl_handle_emulated(acb, req, buf))"];
+"1000158" [label="(Identifier,req)"];
+"1000151" -> "1000107"  [label="AST: "];
+"1000151" -> "1000155"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000155" -> "1000151"  [label="AST: "];
+"1000158" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000420"  [label="DDG: acb->ioh"];
+"1000151" -> "1000420"  [label="DDG: buf"];
+"1000104" -> "1000151"  [label="DDG: buf"];
+"1000104" -> "1000101"  [label="AST: "];
+"1000104" -> "1000420"  [label="DDG: buf"];
+"1000104" -> "1000161"  [label="DDG: buf"];
+}

@@ -1,0 +1,38 @@
+digraph "0_linux_e6bd18f57aad1a2d1ef40e646d03ed0f2515c9e3_1@array" {
+"1000244" [label="(Call,!uverbs_cmd_table[command])"];
+"1000242" [label="(Call,ARRAY_SIZE(uverbs_cmd_table))"];
+"1000239" [label="(Call,command >= ARRAY_SIZE(uverbs_cmd_table) ||\n\t\t    !uverbs_cmd_table[command])"];
+"1000240" [label="(Call,command >= ARRAY_SIZE(uverbs_cmd_table))"];
+"1000244" [label="(Call,!uverbs_cmd_table[command])"];
+"1000238" [label="(ControlStructure,if (command >= ARRAY_SIZE(uverbs_cmd_table) ||\n\t\t    !uverbs_cmd_table[command]))"];
+"1000242" [label="(Call,ARRAY_SIZE(uverbs_cmd_table))"];
+"1000258" [label="(Identifier,hdr)"];
+"1000250" [label="(Identifier,ret)"];
+"1000239" [label="(Call,command >= ARRAY_SIZE(uverbs_cmd_table) ||\n\t\t    !uverbs_cmd_table[command])"];
+"1000243" [label="(Identifier,uverbs_cmd_table)"];
+"1000245" [label="(Call,uverbs_cmd_table[command])"];
+"1000540" [label="(MethodReturn,static ssize_t)"];
+"1000244" -> "1000239"  [label="AST: "];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000239" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000540"  [label="DDG: uverbs_cmd_table[command]"];
+"1000244" -> "1000239"  [label="DDG: uverbs_cmd_table[command]"];
+"1000242" -> "1000244"  [label="DDG: uverbs_cmd_table"];
+"1000242" -> "1000240"  [label="AST: "];
+"1000242" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000242"  [label="AST: "];
+"1000240" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000540"  [label="DDG: uverbs_cmd_table"];
+"1000242" -> "1000240"  [label="DDG: uverbs_cmd_table"];
+"1000239" -> "1000238"  [label="AST: "];
+"1000239" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000239"  [label="AST: "];
+"1000250" -> "1000239"  [label="CFG: "];
+"1000258" -> "1000239"  [label="CFG: "];
+"1000239" -> "1000540"  [label="DDG: command >= ARRAY_SIZE(uverbs_cmd_table) ||\n\t\t    !uverbs_cmd_table[command]"];
+"1000239" -> "1000540"  [label="DDG: command >= ARRAY_SIZE(uverbs_cmd_table)"];
+"1000239" -> "1000540"  [label="DDG: !uverbs_cmd_table[command]"];
+"1000240" -> "1000239"  [label="DDG: command"];
+"1000240" -> "1000239"  [label="DDG: ARRAY_SIZE(uverbs_cmd_table)"];
+}

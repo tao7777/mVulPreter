@@ -1,0 +1,1 @@
+bool Cues::LoadCuePoint() const

@@ -1,0 +1,31 @@
+digraph "0_linux_cc9b17ad29ecaa20bfe426a8d4dbfb94b13ff1cc@pointer" {
+"1000261" [label="(Call,set_bit(SOCK_NOSPACE, &sk->sk_socket->flags))"];
+"1000253" [label="(Call,set_bit(SOCK_ASYNC_NOSPACE, &sk->sk_socket->flags))"];
+"1000261" [label="(Call,set_bit(SOCK_NOSPACE, &sk->sk_socket->flags))"];
+"1000263" [label="(Call,&sk->sk_socket->flags)"];
+"1000303" [label="(MethodReturn,struct sk_buff *)"];
+"1000254" [label="(Identifier,SOCK_ASYNC_NOSPACE)"];
+"1000132" [label="(Block,)"];
+"1000261" [label="(Call,set_bit(SOCK_NOSPACE, &sk->sk_socket->flags))"];
+"1000255" [label="(Call,&sk->sk_socket->flags)"];
+"1000262" [label="(Identifier,SOCK_NOSPACE)"];
+"1000253" [label="(Call,set_bit(SOCK_ASYNC_NOSPACE, &sk->sk_socket->flags))"];
+"1000270" [label="(Identifier,err)"];
+"1000261" -> "1000132"  [label="AST: "];
+"1000261" -> "1000263"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000263" -> "1000261"  [label="AST: "];
+"1000270" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000303"  [label="DDG: &sk->sk_socket->flags"];
+"1000261" -> "1000303"  [label="DDG: SOCK_NOSPACE"];
+"1000261" -> "1000303"  [label="DDG: set_bit(SOCK_NOSPACE, &sk->sk_socket->flags)"];
+"1000261" -> "1000253"  [label="DDG: &sk->sk_socket->flags"];
+"1000253" -> "1000261"  [label="DDG: &sk->sk_socket->flags"];
+"1000253" -> "1000132"  [label="AST: "];
+"1000253" -> "1000255"  [label="CFG: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000255" -> "1000253"  [label="AST: "];
+"1000262" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000303"  [label="DDG: set_bit(SOCK_ASYNC_NOSPACE, &sk->sk_socket->flags)"];
+"1000253" -> "1000303"  [label="DDG: SOCK_ASYNC_NOSPACE"];
+}

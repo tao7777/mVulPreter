@@ -1,0 +1,1 @@
+void ObserverOnLogoAvailable(LogoObserver* observer,

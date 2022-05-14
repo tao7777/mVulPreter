@@ -1,0 +1,28 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_23@pointer" {
+"1000225" [label="(Call,inet->tos = ip_hdr(skb)->tos)"];
+"1000184" [label="(Call,RT_TOS(ip_hdr(skb)->tos))"];
+"1000229" [label="(Call,ip_hdr(skb)->tos)"];
+"1000177" [label="(Call,flowi4_init_output(&fl4, arg->bound_dev_if, 0,\n\t\t\t\t   RT_TOS(ip_hdr(skb)->tos),\n\t\t\t\t   RT_SCOPE_UNIVERSE, sk->sk_protocol,\n\t\t\t\t   ip_reply_arg_flowi_flags(arg),\n\t\t\t\t   daddr, rt->rt_spec_dst,\n\t\t\t\t   tcp_hdr(skb)->source, tcp_hdr(skb)->dest))"];
+"1000189" [label="(Identifier,RT_SCOPE_UNIVERSE)"];
+"1000225" [label="(Call,inet->tos = ip_hdr(skb)->tos)"];
+"1000226" [label="(Call,inet->tos)"];
+"1000106" [label="(Block,)"];
+"1000235" [label="(Identifier,sk)"];
+"1000316" [label="(MethodReturn,void)"];
+"1000185" [label="(Call,ip_hdr(skb)->tos)"];
+"1000184" [label="(Call,RT_TOS(ip_hdr(skb)->tos))"];
+"1000225" -> "1000106"  [label="AST: "];
+"1000225" -> "1000229"  [label="CFG: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000229" -> "1000225"  [label="AST: "];
+"1000235" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000316"  [label="DDG: inet->tos"];
+"1000225" -> "1000316"  [label="DDG: ip_hdr(skb)->tos"];
+"1000184" -> "1000225"  [label="DDG: ip_hdr(skb)->tos"];
+"1000184" -> "1000177"  [label="AST: "];
+"1000184" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000189" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000316"  [label="DDG: ip_hdr(skb)->tos"];
+"1000184" -> "1000177"  [label="DDG: ip_hdr(skb)->tos"];
+}

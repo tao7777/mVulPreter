@@ -1,0 +1,27 @@
+digraph "0_heimdal_b1e699103f08d6a0ca46a122193c9da65f6cf837@API" {
+"1000187" [label="(Call,num_realms + 1 > UINT_MAX/sizeof(*realms))"];
+"1000191" [label="(Call,UINT_MAX/sizeof(*realms))"];
+"1000191" [label="(Call,UINT_MAX/sizeof(*realms))"];
+"1000188" [label="(Call,num_realms + 1)"];
+"1000193" [label="(Call,sizeof(*realms))"];
+"1000192" [label="(Identifier,UINT_MAX)"];
+"1000187" [label="(Call,num_realms + 1 > UINT_MAX/sizeof(*realms))"];
+"1000401" [label="(MethodReturn,RET)"];
+"1000198" [label="(Identifier,ret)"];
+"1000202" [label="(Identifier,tmp)"];
+"1000186" [label="(ControlStructure,if (num_realms + 1 > UINT_MAX/sizeof(*realms)))"];
+"1000187" -> "1000186"  [label="AST: "];
+"1000187" -> "1000191"  [label="CFG: "];
+"1000188" -> "1000187"  [label="AST: "];
+"1000191" -> "1000187"  [label="AST: "];
+"1000198" -> "1000187"  [label="CFG: "];
+"1000202" -> "1000187"  [label="CFG: "];
+"1000187" -> "1000401"  [label="DDG: num_realms + 1"];
+"1000187" -> "1000401"  [label="DDG: num_realms + 1 > UINT_MAX/sizeof(*realms)"];
+"1000187" -> "1000401"  [label="DDG: UINT_MAX/sizeof(*realms)"];
+"1000191" -> "1000187"  [label="DDG: UINT_MAX"];
+"1000191" -> "1000193"  [label="CFG: "];
+"1000192" -> "1000191"  [label="AST: "];
+"1000193" -> "1000191"  [label="AST: "];
+"1000191" -> "1000401"  [label="DDG: UINT_MAX"];
+}

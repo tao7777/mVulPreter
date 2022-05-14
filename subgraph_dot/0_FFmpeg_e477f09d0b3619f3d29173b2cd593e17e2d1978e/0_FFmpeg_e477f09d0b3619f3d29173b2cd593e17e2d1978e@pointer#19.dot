@@ -1,0 +1,26 @@
+digraph "0_FFmpeg_e477f09d0b3619f3d29173b2cd593e17e2d1978e@pointer" {
+"1000171" [label="(Call,s->state & PNG_IDAT)"];
+"1000170" [label="(Call,!(s->state & PNG_IDAT))"];
+"1000177" [label="(Literal,0)"];
+"1000828" [label="(MethodReturn,static int)"];
+"1000170" [label="(Call,!(s->state & PNG_IDAT))"];
+"1000171" [label="(Call,s->state & PNG_IDAT)"];
+"1000179" [label="(ControlStructure,goto exit_loop;)"];
+"1000169" [label="(ControlStructure,if (!(s->state & PNG_IDAT)))"];
+"1000175" [label="(Identifier,PNG_IDAT)"];
+"1000172" [label="(Call,s->state)"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000175"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="AST: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000828"  [label="DDG: s->state"];
+"1000171" -> "1000828"  [label="DDG: PNG_IDAT"];
+"1000171" -> "1000170"  [label="DDG: s->state"];
+"1000171" -> "1000170"  [label="DDG: PNG_IDAT"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000177" -> "1000170"  [label="CFG: "];
+"1000179" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000828"  [label="DDG: s->state & PNG_IDAT"];
+"1000170" -> "1000828"  [label="DDG: !(s->state & PNG_IDAT)"];
+}

@@ -1,0 +1,34 @@
+digraph "0_linux_d4fdf8ba0e5808ba9ad6b44337783bd9935e0982@pointer" {
+"1000255" [label="(Call,f2fs_readonly(sbi->sb))"];
+"1000254" [label="(Call,!f2fs_readonly(sbi->sb))"];
+"1000250" [label="(Call,test_opt(sbi, FLUSH_MERGE) && !f2fs_readonly(sbi->sb))"];
+"1000255" [label="(Call,f2fs_readonly(sbi->sb))"];
+"1000256" [label="(Call,sbi->sb)"];
+"1000254" [label="(Call,!f2fs_readonly(sbi->sb))"];
+"1000316" [label="(MethodReturn,int)"];
+"1000261" [label="(Identifier,err)"];
+"1000250" [label="(Call,test_opt(sbi, FLUSH_MERGE) && !f2fs_readonly(sbi->sb))"];
+"1000249" [label="(ControlStructure,if (test_opt(sbi, FLUSH_MERGE) && !f2fs_readonly(sbi->sb)))"];
+"1000269" [label="(Identifier,err)"];
+"1000251" [label="(Call,test_opt(sbi, FLUSH_MERGE))"];
+"1000255" -> "1000254"  [label="AST: "];
+"1000255" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000255"  [label="AST: "];
+"1000254" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000316"  [label="DDG: sbi->sb"];
+"1000255" -> "1000254"  [label="DDG: sbi->sb"];
+"1000254" -> "1000250"  [label="AST: "];
+"1000250" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000316"  [label="DDG: f2fs_readonly(sbi->sb)"];
+"1000254" -> "1000250"  [label="DDG: f2fs_readonly(sbi->sb)"];
+"1000250" -> "1000249"  [label="AST: "];
+"1000250" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000261" -> "1000250"  [label="CFG: "];
+"1000269" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000316"  [label="DDG: test_opt(sbi, FLUSH_MERGE)"];
+"1000250" -> "1000316"  [label="DDG: !f2fs_readonly(sbi->sb)"];
+"1000250" -> "1000316"  [label="DDG: test_opt(sbi, FLUSH_MERGE) && !f2fs_readonly(sbi->sb)"];
+"1000251" -> "1000250"  [label="DDG: sbi"];
+"1000251" -> "1000250"  [label="DDG: FLUSH_MERGE"];
+}

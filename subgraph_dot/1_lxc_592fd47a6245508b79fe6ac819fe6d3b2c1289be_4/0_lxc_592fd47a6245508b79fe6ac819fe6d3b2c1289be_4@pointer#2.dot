@@ -1,0 +1,34 @@
+digraph "0_lxc_592fd47a6245508b79fe6ac819fe6d3b2c1289be_4@pointer" {
+"1000115" [label="(Call,rootfs->path ? strlen(rootfs->mount) : 0)"];
+"1000119" [label="(Call,strlen(rootfs->mount))"];
+"1000115" [label="(Call,rootfs->path ? strlen(rootfs->mount) : 0)"];
+"1000124" [label="(Literal,9)"];
+"1000183" [label="(Call,snprintf(path, clen, \"%s/dev/pts\", rootfs->path ? rootfs->mount : \"\"))"];
+"1000114" [label="(Call,(rootfs->path ? strlen(rootfs->mount) : 0) + 9)"];
+"1000131" [label="(Call,snprintf(path, clen, \"%s/dev\", rootfs->path ? rootfs->mount : \"\"))"];
+"1000187" [label="(Call,rootfs->path ? rootfs->mount : \"\")"];
+"1000112" [label="(Call,clen = (rootfs->path ? strlen(rootfs->mount) : 0) + 9)"];
+"1000120" [label="(Call,rootfs->mount)"];
+"1000119" [label="(Call,strlen(rootfs->mount))"];
+"1000236" [label="(MethodReturn,static int)"];
+"1000123" [label="(Literal,0)"];
+"1000135" [label="(Call,rootfs->path ? rootfs->mount : \"\")"];
+"1000116" [label="(Call,rootfs->path)"];
+"1000115" -> "1000114"  [label="AST: "];
+"1000115" -> "1000119"  [label="CFG: "];
+"1000115" -> "1000123"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000119" -> "1000115"  [label="AST: "];
+"1000123" -> "1000115"  [label="AST: "];
+"1000124" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000236"  [label="DDG: strlen(rootfs->mount)"];
+"1000119" -> "1000115"  [label="DDG: rootfs->mount"];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000119" -> "1000112"  [label="DDG: rootfs->mount"];
+"1000119" -> "1000114"  [label="DDG: rootfs->mount"];
+"1000119" -> "1000131"  [label="DDG: rootfs->mount"];
+"1000119" -> "1000135"  [label="DDG: rootfs->mount"];
+"1000119" -> "1000183"  [label="DDG: rootfs->mount"];
+"1000119" -> "1000187"  [label="DDG: rootfs->mount"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_15@API" {
+"1000622" [label="(Call,tp->rx_opt.mss_clamp = IPV6_MIN_MTU - sizeof(struct tcphdr) - sizeof(struct ipv6hdr))"];
+"1000628" [label="(Call,IPV6_MIN_MTU - sizeof(struct tcphdr) - sizeof(struct ipv6hdr))"];
+"1000716" [label="(MethodReturn,static int)"];
+"1000622" [label="(Call,tp->rx_opt.mss_clamp = IPV6_MIN_MTU - sizeof(struct tcphdr) - sizeof(struct ipv6hdr))"];
+"1000628" [label="(Call,IPV6_MIN_MTU - sizeof(struct tcphdr) - sizeof(struct ipv6hdr))"];
+"1000109" [label="(Block,)"];
+"1000637" [label="(Identifier,inet)"];
+"1000630" [label="(Call,sizeof(struct tcphdr) - sizeof(struct ipv6hdr))"];
+"1000623" [label="(Call,tp->rx_opt.mss_clamp)"];
+"1000629" [label="(Identifier,IPV6_MIN_MTU)"];
+"1000622" -> "1000109"  [label="AST: "];
+"1000622" -> "1000628"  [label="CFG: "];
+"1000623" -> "1000622"  [label="AST: "];
+"1000628" -> "1000622"  [label="AST: "];
+"1000637" -> "1000622"  [label="CFG: "];
+"1000622" -> "1000716"  [label="DDG: tp->rx_opt.mss_clamp"];
+"1000622" -> "1000716"  [label="DDG: IPV6_MIN_MTU - sizeof(struct tcphdr) - sizeof(struct ipv6hdr)"];
+"1000628" -> "1000622"  [label="DDG: IPV6_MIN_MTU"];
+"1000628" -> "1000622"  [label="DDG: sizeof(struct tcphdr) - sizeof(struct ipv6hdr)"];
+"1000628" -> "1000630"  [label="CFG: "];
+"1000629" -> "1000628"  [label="AST: "];
+"1000630" -> "1000628"  [label="AST: "];
+"1000628" -> "1000716"  [label="DDG: sizeof(struct tcphdr) - sizeof(struct ipv6hdr)"];
+"1000628" -> "1000716"  [label="DDG: IPV6_MIN_MTU"];
+}

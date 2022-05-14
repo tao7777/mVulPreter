@@ -1,0 +1,27 @@
+digraph "0_linux_c70422f760c120480fee4de6c38804c72aa26bc1_2@API" {
+"1000124" [label="(Call,signal_pending(current))"];
+"1000126" [label="(Call,flush_signals(current))"];
+"1000124" [label="(Call,signal_pending(current))"];
+"1000201" [label="(MethodReturn,RET)"];
+"1000125" [label="(Identifier,current)"];
+"1000124" [label="(Call,signal_pending(current))"];
+"1000131" [label="(Identifier,serv)"];
+"1000126" [label="(Call,flush_signals(current))"];
+"1000127" [label="(Identifier,current)"];
+"1000123" [label="(ControlStructure,if (signal_pending(current)))"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000127" -> "1000124"  [label="CFG: "];
+"1000131" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000201"  [label="DDG: current"];
+"1000124" -> "1000201"  [label="DDG: signal_pending(current)"];
+"1000126" -> "1000124"  [label="DDG: current"];
+"1000124" -> "1000126"  [label="DDG: current"];
+"1000126" -> "1000123"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000131" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000201"  [label="DDG: current"];
+"1000126" -> "1000201"  [label="DDG: flush_signals(current)"];
+}

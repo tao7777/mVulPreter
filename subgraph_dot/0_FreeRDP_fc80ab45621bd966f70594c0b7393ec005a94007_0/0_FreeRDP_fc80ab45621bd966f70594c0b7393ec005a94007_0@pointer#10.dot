@@ -1,0 +1,33 @@
+digraph "0_FreeRDP_fc80ab45621bd966f70594c0b7393ec005a94007_0@pointer" {
+"1000298" [label="(Call,dst->data->size > 0)"];
+"1000297" [label="(Call,(dst->data->size > 0) && (dst->data != &empty_region))"];
+"1000352" [label="(MethodReturn,BOOL)"];
+"1000307" [label="(Identifier,dst)"];
+"1000296" [label="(ControlStructure,if ((dst->data->size > 0) && (dst->data != &empty_region)))"];
+"1000297" [label="(Call,(dst->data->size > 0) && (dst->data != &empty_region))"];
+"1000313" [label="(Identifier,dst)"];
+"1000299" [label="(Call,dst->data->size)"];
+"1000304" [label="(Literal,0)"];
+"1000316" [label="(Identifier,data)"];
+"1000305" [label="(Call,dst->data != &empty_region)"];
+"1000298" [label="(Call,dst->data->size > 0)"];
+"1000298" -> "1000297"  [label="AST: "];
+"1000298" -> "1000304"  [label="CFG: "];
+"1000299" -> "1000298"  [label="AST: "];
+"1000304" -> "1000298"  [label="AST: "];
+"1000307" -> "1000298"  [label="CFG: "];
+"1000297" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000352"  [label="DDG: dst->data->size"];
+"1000298" -> "1000297"  [label="DDG: dst->data->size"];
+"1000298" -> "1000297"  [label="DDG: 0"];
+"1000297" -> "1000296"  [label="AST: "];
+"1000297" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000297"  [label="AST: "];
+"1000313" -> "1000297"  [label="CFG: "];
+"1000316" -> "1000297"  [label="CFG: "];
+"1000297" -> "1000352"  [label="DDG: dst->data->size > 0"];
+"1000297" -> "1000352"  [label="DDG: dst->data != &empty_region"];
+"1000297" -> "1000352"  [label="DDG: (dst->data->size > 0) && (dst->data != &empty_region)"];
+"1000305" -> "1000297"  [label="DDG: dst->data"];
+"1000305" -> "1000297"  [label="DDG: &empty_region"];
+}

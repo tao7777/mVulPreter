@@ -1,0 +1,31 @@
+digraph "0_libarchive_59357157706d47c365b2227739e17daba3607526@pointer" {
+"1000948" [label="(Call,**cpio->argv == '\0')"];
+"1000941" [label="(Call,*cpio->argv == NULL || **cpio->argv == '\0')"];
+"1000948" [label="(Call,**cpio->argv == '\0')"];
+"1000940" [label="(ControlStructure,if (*cpio->argv == NULL || **cpio->argv == '\0'))"];
+"1000941" [label="(Call,*cpio->argv == NULL || **cpio->argv == '\0')"];
+"1000954" [label="(Literal,'\0')"];
+"1000949" [label="(Call,**cpio->argv)"];
+"1000942" [label="(Call,*cpio->argv == NULL)"];
+"1000956" [label="(Literal,1)"];
+"1000960" [label="(Identifier,cpio)"];
+"1000995" [label="(MethodReturn,RET)"];
+"1000948" -> "1000941"  [label="AST: "];
+"1000948" -> "1000954"  [label="CFG: "];
+"1000949" -> "1000948"  [label="AST: "];
+"1000954" -> "1000948"  [label="AST: "];
+"1000941" -> "1000948"  [label="CFG: "];
+"1000948" -> "1000995"  [label="DDG: **cpio->argv"];
+"1000948" -> "1000941"  [label="DDG: **cpio->argv"];
+"1000948" -> "1000941"  [label="DDG: '\0'"];
+"1000941" -> "1000940"  [label="AST: "];
+"1000941" -> "1000942"  [label="CFG: "];
+"1000942" -> "1000941"  [label="AST: "];
+"1000956" -> "1000941"  [label="CFG: "];
+"1000960" -> "1000941"  [label="CFG: "];
+"1000941" -> "1000995"  [label="DDG: *cpio->argv == NULL"];
+"1000941" -> "1000995"  [label="DDG: *cpio->argv == NULL || **cpio->argv == '\0'"];
+"1000941" -> "1000995"  [label="DDG: **cpio->argv == '\0'"];
+"1000942" -> "1000941"  [label="DDG: *cpio->argv"];
+"1000942" -> "1000941"  [label="DDG: NULL"];
+}

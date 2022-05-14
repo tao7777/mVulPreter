@@ -1,0 +1,30 @@
+digraph "0_openssl_2b0532f3984324ebe1236a63d15893792384328d@pointer" {
+"1000509" [label="(Call,!s->new_session)"];
+"1000508" [label="(Call,!s->new_session && s->session && s->session->tlsext_tick)"];
+"1000515" [label="(Identifier,s)"];
+"1000508" [label="(Call,!s->new_session && s->session && s->session->tlsext_tick)"];
+"1001118" [label="(MethodReturn,unsigned char *)"];
+"1000509" [label="(Call,!s->new_session)"];
+"1000533" [label="(Identifier,s)"];
+"1000523" [label="(Identifier,ticklen)"];
+"1000513" [label="(Call,s->session && s->session->tlsext_tick)"];
+"1000510" [label="(Call,s->new_session)"];
+"1000507" [label="(ControlStructure,if (!s->new_session && s->session && s->session->tlsext_tick))"];
+"1000509" -> "1000508"  [label="AST: "];
+"1000509" -> "1000510"  [label="CFG: "];
+"1000510" -> "1000509"  [label="AST: "];
+"1000515" -> "1000509"  [label="CFG: "];
+"1000508" -> "1000509"  [label="CFG: "];
+"1000509" -> "1001118"  [label="DDG: s->new_session"];
+"1000509" -> "1000508"  [label="DDG: s->new_session"];
+"1000508" -> "1000507"  [label="AST: "];
+"1000508" -> "1000513"  [label="CFG: "];
+"1000513" -> "1000508"  [label="AST: "];
+"1000523" -> "1000508"  [label="CFG: "];
+"1000533" -> "1000508"  [label="CFG: "];
+"1000508" -> "1001118"  [label="DDG: !s->new_session"];
+"1000508" -> "1001118"  [label="DDG: s->session && s->session->tlsext_tick"];
+"1000508" -> "1001118"  [label="DDG: !s->new_session && s->session && s->session->tlsext_tick"];
+"1000513" -> "1000508"  [label="DDG: s->session"];
+"1000513" -> "1000508"  [label="DDG: s->session->tlsext_tick"];
+}

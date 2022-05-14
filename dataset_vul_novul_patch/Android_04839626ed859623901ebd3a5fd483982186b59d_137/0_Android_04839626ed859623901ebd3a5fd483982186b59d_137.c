@@ -1,0 +1,1 @@
+long Track::GetType() const

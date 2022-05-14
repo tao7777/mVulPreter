@@ -1,0 +1,29 @@
+digraph "0_openssl_f5c7f5dfbaf0d2f7d946d0fe86f08e6bcb36ed0d_0@pointer" {
+"1000674" [label="(Call,s->d1->timeout.num_alerts++)"];
+"1000696" [label="(Call,s->d1->timeout.num_alerts > DTLS1_TMO_ALERT_COUNT)"];
+"1000684" [label="(Identifier,s)"];
+"1000714" [label="(MethodReturn,void)"];
+"1000707" [label="(Identifier,SSL_F_DTLS1_CHECK_TIMEOUT_NUM)"];
+"1000696" [label="(Call,s->d1->timeout.num_alerts > DTLS1_TMO_ALERT_COUNT)"];
+"1000674" [label="(Call,s->d1->timeout.num_alerts++)"];
+"1000695" [label="(ControlStructure,if (s->d1->timeout.num_alerts > DTLS1_TMO_ALERT_COUNT))"];
+"1000697" [label="(Call,s->d1->timeout.num_alerts)"];
+"1000675" [label="(Call,s->d1->timeout.num_alerts)"];
+"1000672" [label="(Block,)"];
+"1000713" [label="(Literal,0)"];
+"1000704" [label="(Identifier,DTLS1_TMO_ALERT_COUNT)"];
+"1000674" -> "1000672"  [label="AST: "];
+"1000674" -> "1000675"  [label="CFG: "];
+"1000675" -> "1000674"  [label="AST: "];
+"1000684" -> "1000674"  [label="CFG: "];
+"1000674" -> "1000696"  [label="DDG: s->d1->timeout.num_alerts"];
+"1000696" -> "1000695"  [label="AST: "];
+"1000696" -> "1000704"  [label="CFG: "];
+"1000697" -> "1000696"  [label="AST: "];
+"1000704" -> "1000696"  [label="AST: "];
+"1000707" -> "1000696"  [label="CFG: "];
+"1000713" -> "1000696"  [label="CFG: "];
+"1000696" -> "1000714"  [label="DDG: s->d1->timeout.num_alerts > DTLS1_TMO_ALERT_COUNT"];
+"1000696" -> "1000714"  [label="DDG: s->d1->timeout.num_alerts"];
+"1000696" -> "1000714"  [label="DDG: DTLS1_TMO_ALERT_COUNT"];
+}

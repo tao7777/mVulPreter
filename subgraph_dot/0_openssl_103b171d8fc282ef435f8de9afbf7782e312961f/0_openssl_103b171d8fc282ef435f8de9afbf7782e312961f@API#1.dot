@@ -1,0 +1,33 @@
+digraph "0_openssl_103b171d8fc282ef435f8de9afbf7782e312961f@API" {
+"1000249" [label="(Call,memset(&(s->s3->rrec), 0, sizeof(SSL3_RECORD)))"];
+"1000182" [label="(Call,memcpy(&(rdata->rrec), &(s->s3->rrec), sizeof(SSL3_RECORD)))"];
+"1000197" [label="(Identifier,item)"];
+"1000107" [label="(Block,)"];
+"1000249" [label="(Call,memset(&(s->s3->rrec), 0, sizeof(SSL3_RECORD)))"];
+"1000262" [label="(Identifier,s)"];
+"1000187" [label="(Call,&(s->s3->rrec))"];
+"1000257" [label="(Call,sizeof(SSL3_RECORD))"];
+"1000250" [label="(Call,&(s->s3->rrec))"];
+"1000256" [label="(Literal,0)"];
+"1000183" [label="(Call,&(rdata->rrec))"];
+"1000193" [label="(Call,sizeof(SSL3_RECORD))"];
+"1000182" [label="(Call,memcpy(&(rdata->rrec), &(s->s3->rrec), sizeof(SSL3_RECORD)))"];
+"1000323" [label="(MethodReturn,RET)"];
+"1000249" -> "1000107"  [label="AST: "];
+"1000249" -> "1000257"  [label="CFG: "];
+"1000250" -> "1000249"  [label="AST: "];
+"1000256" -> "1000249"  [label="AST: "];
+"1000257" -> "1000249"  [label="AST: "];
+"1000262" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000323"  [label="DDG: &(s->s3->rrec)"];
+"1000249" -> "1000323"  [label="DDG: memset(&(s->s3->rrec), 0, sizeof(SSL3_RECORD))"];
+"1000182" -> "1000249"  [label="DDG: &(s->s3->rrec)"];
+"1000182" -> "1000107"  [label="AST: "];
+"1000182" -> "1000193"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000187" -> "1000182"  [label="AST: "];
+"1000193" -> "1000182"  [label="AST: "];
+"1000197" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000323"  [label="DDG: memcpy(&(rdata->rrec), &(s->s3->rrec), sizeof(SSL3_RECORD))"];
+"1000182" -> "1000323"  [label="DDG: &(rdata->rrec)"];
+}

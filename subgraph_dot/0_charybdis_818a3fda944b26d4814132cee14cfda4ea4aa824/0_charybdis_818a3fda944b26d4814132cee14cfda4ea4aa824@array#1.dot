@@ -1,0 +1,33 @@
+digraph "0_charybdis_818a3fda944b26d4814132cee14cfda4ea4aa824@array" {
+"1000140" [label="(Call,*parv[1] == ':')"];
+"1000139" [label="(Call,*parv[1] == ':' || strchr(parv[1], ' '))"];
+"1000153" [label="(Identifier,client_p)"];
+"1000160" [label="(Identifier,saslserv_p)"];
+"1000140" [label="(Call,*parv[1] == ':')"];
+"1000139" [label="(Call,*parv[1] == ':' || strchr(parv[1], ' '))"];
+"1000138" [label="(ControlStructure,if (*parv[1] == ':' || strchr(parv[1], ' ')))"];
+"1000148" [label="(Identifier,parv)"];
+"1000146" [label="(Call,strchr(parv[1], ' '))"];
+"1000141" [label="(Call,*parv[1])"];
+"1000396" [label="(MethodReturn,RET)"];
+"1000145" [label="(Literal,':')"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000145"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000145" -> "1000140"  [label="AST: "];
+"1000148" -> "1000140"  [label="CFG: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000396"  [label="DDG: *parv[1]"];
+"1000140" -> "1000139"  [label="DDG: *parv[1]"];
+"1000140" -> "1000139"  [label="DDG: ':'"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000139"  [label="AST: "];
+"1000153" -> "1000139"  [label="CFG: "];
+"1000160" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000396"  [label="DDG: *parv[1] == ':' || strchr(parv[1], ' ')"];
+"1000139" -> "1000396"  [label="DDG: *parv[1] == ':'"];
+"1000139" -> "1000396"  [label="DDG: strchr(parv[1], ' ')"];
+"1000146" -> "1000139"  [label="DDG: parv[1]"];
+"1000146" -> "1000139"  [label="DDG: ' '"];
+}

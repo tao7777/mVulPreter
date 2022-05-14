@@ -1,0 +1,38 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_23@pointer" {
+"1000108" [label="(Call,*inet = inet_sk(sk))"];
+"1000110" [label="(Call,inet_sk(sk))"];
+"1000102" [label="(MethodParameterIn,struct sock *sk)"];
+"1000109" [label="(Identifier,inet)"];
+"1000111" [label="(Identifier,sk)"];
+"1000231" [label="(Call,bh_lock_sock(sk))"];
+"1000106" [label="(Block,)"];
+"1000108" [label="(Call,*inet = inet_sk(sk))"];
+"1000102" [label="(MethodParameterIn,struct sock *sk)"];
+"1000320" [label="(Call,bh_unlock_sock(sk))"];
+"1000223" [label="(Call,sock_net(sk))"];
+"1000110" [label="(Call,inet_sk(sk))"];
+"1000318" [label="(Call,ip_push_pending_frames(sk))"];
+"1000263" [label="(Call,ip_append_data(sk, ip_reply_glue_bits, arg->iov->iov_base, len, 0,\n\t\t       &ipc, &rt, MSG_DONTWAIT))"];
+"1000117" [label="(Identifier,rt)"];
+"1000324" [label="(MethodReturn,void)"];
+"1000108" -> "1000106"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000117" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000324"  [label="DDG: inet_sk(sk)"];
+"1000108" -> "1000324"  [label="DDG: inet"];
+"1000110" -> "1000108"  [label="DDG: sk"];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000110" -> "1000324"  [label="DDG: sk"];
+"1000102" -> "1000110"  [label="DDG: sk"];
+"1000110" -> "1000223"  [label="DDG: sk"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000324"  [label="DDG: sk"];
+"1000102" -> "1000223"  [label="DDG: sk"];
+"1000102" -> "1000231"  [label="DDG: sk"];
+"1000102" -> "1000263"  [label="DDG: sk"];
+"1000102" -> "1000318"  [label="DDG: sk"];
+"1000102" -> "1000320"  [label="DDG: sk"];
+}

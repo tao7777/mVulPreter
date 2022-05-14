@@ -1,0 +1,28 @@
+digraph "0_qemu_e95c9a493a5a8d6f969e86c9f19f80ffe6587e19@pointer" {
+"1000304" [label="(Call,!pdu->cancelled)"];
+"1000299" [label="(Call,len == -EINTR && !pdu->cancelled)"];
+"1000310" [label="(Identifier,len)"];
+"1000305" [label="(Call,pdu->cancelled)"];
+"1000277" [label="(Identifier,len)"];
+"1000299" [label="(Call,len == -EINTR && !pdu->cancelled)"];
+"1000380" [label="(MethodReturn,static void)"];
+"1000304" [label="(Call,!pdu->cancelled)"];
+"1000274" [label="(ControlStructure,do)"];
+"1000300" [label="(Call,len == -EINTR)"];
+"1000304" -> "1000299"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000304"  [label="AST: "];
+"1000299" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000380"  [label="DDG: pdu->cancelled"];
+"1000304" -> "1000299"  [label="DDG: pdu->cancelled"];
+"1000299" -> "1000274"  [label="AST: "];
+"1000299" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000277" -> "1000299"  [label="CFG: "];
+"1000310" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000380"  [label="DDG: !pdu->cancelled"];
+"1000299" -> "1000380"  [label="DDG: len == -EINTR && !pdu->cancelled"];
+"1000299" -> "1000380"  [label="DDG: len == -EINTR"];
+"1000300" -> "1000299"  [label="DDG: len"];
+"1000300" -> "1000299"  [label="DDG: -EINTR"];
+}

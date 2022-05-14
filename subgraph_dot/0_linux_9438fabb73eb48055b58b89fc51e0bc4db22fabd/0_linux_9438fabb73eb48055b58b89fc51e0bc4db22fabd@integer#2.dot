@@ -1,0 +1,30 @@
+digraph "0_linux_9438fabb73eb48055b58b89fc51e0bc4db22fabd@integer" {
+"1000253" [label="(Call,pSMB->SearchCount =\n\t\tcpu_to_le16(CIFSMaxBufSize / sizeof(FILE_UNIX_INFO)))"];
+"1000257" [label="(Call,cpu_to_le16(CIFSMaxBufSize / sizeof(FILE_UNIX_INFO)))"];
+"1000258" [label="(Call,CIFSMaxBufSize / sizeof(FILE_UNIX_INFO))"];
+"1000264" [label="(Identifier,pSMB)"];
+"1000257" [label="(Call,cpu_to_le16(CIFSMaxBufSize / sizeof(FILE_UNIX_INFO)))"];
+"1000584" [label="(MethodReturn,int)"];
+"1000117" [label="(Block,)"];
+"1000253" [label="(Call,pSMB->SearchCount =\n\t\tcpu_to_le16(CIFSMaxBufSize / sizeof(FILE_UNIX_INFO)))"];
+"1000258" [label="(Call,CIFSMaxBufSize / sizeof(FILE_UNIX_INFO))"];
+"1000259" [label="(Identifier,CIFSMaxBufSize)"];
+"1000260" [label="(Call,sizeof(FILE_UNIX_INFO))"];
+"1000254" [label="(Call,pSMB->SearchCount)"];
+"1000253" -> "1000117"  [label="AST: "];
+"1000253" -> "1000257"  [label="CFG: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000257" -> "1000253"  [label="AST: "];
+"1000264" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000584"  [label="DDG: pSMB->SearchCount"];
+"1000253" -> "1000584"  [label="DDG: cpu_to_le16(CIFSMaxBufSize / sizeof(FILE_UNIX_INFO))"];
+"1000257" -> "1000253"  [label="DDG: CIFSMaxBufSize / sizeof(FILE_UNIX_INFO)"];
+"1000257" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000257"  [label="AST: "];
+"1000257" -> "1000584"  [label="DDG: CIFSMaxBufSize / sizeof(FILE_UNIX_INFO)"];
+"1000258" -> "1000257"  [label="DDG: CIFSMaxBufSize"];
+"1000258" -> "1000260"  [label="CFG: "];
+"1000259" -> "1000258"  [label="AST: "];
+"1000260" -> "1000258"  [label="AST: "];
+"1000258" -> "1000584"  [label="DDG: CIFSMaxBufSize"];
+}

@@ -1,0 +1,1 @@
+ExtensionsGuestViewMessageFilter::FrameNavigationHelper::GetGuestView() const {

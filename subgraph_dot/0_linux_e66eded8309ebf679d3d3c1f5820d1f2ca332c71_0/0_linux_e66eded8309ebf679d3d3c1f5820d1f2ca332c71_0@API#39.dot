@@ -1,0 +1,30 @@
+digraph "0_linux_e66eded8309ebf679d3d3c1f5820d1f2ca332c71_0@API" {
+"1001097" [label="(Call,nr_threads++)"];
+"1000310" [label="(Call,nr_threads >= max_threads)"];
+"1000309" [label="(ControlStructure,if (nr_threads >= max_threads))"];
+"1000312" [label="(Identifier,max_threads)"];
+"1000320" [label="(Identifier,p)"];
+"1001100" [label="(Identifier,total_forks)"];
+"1001098" [label="(Identifier,nr_threads)"];
+"1001013" [label="(Block,)"];
+"1000313" [label="(ControlStructure,goto bad_fork_cleanup_count;)"];
+"1001227" [label="(MethodReturn,static struct task_struct *)"];
+"1001097" [label="(Call,nr_threads++)"];
+"1000311" [label="(Identifier,nr_threads)"];
+"1000310" [label="(Call,nr_threads >= max_threads)"];
+"1001097" -> "1001013"  [label="AST: "];
+"1001097" -> "1001098"  [label="CFG: "];
+"1001098" -> "1001097"  [label="AST: "];
+"1001100" -> "1001097"  [label="CFG: "];
+"1001097" -> "1001227"  [label="DDG: nr_threads"];
+"1000310" -> "1001097"  [label="DDG: nr_threads"];
+"1000310" -> "1000309"  [label="AST: "];
+"1000310" -> "1000312"  [label="CFG: "];
+"1000311" -> "1000310"  [label="AST: "];
+"1000312" -> "1000310"  [label="AST: "];
+"1000313" -> "1000310"  [label="CFG: "];
+"1000320" -> "1000310"  [label="CFG: "];
+"1000310" -> "1001227"  [label="DDG: nr_threads >= max_threads"];
+"1000310" -> "1001227"  [label="DDG: max_threads"];
+"1000310" -> "1001227"  [label="DDG: nr_threads"];
+}

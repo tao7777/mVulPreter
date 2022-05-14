@@ -1,0 +1,28 @@
+digraph "0_linux_ea702b80e0bbb2448e201472127288beb82ca2fe_0@pointer" {
+"1000157" [label="(Call,dump_smb(iov[0].iov_base, iov[0].iov_len))"];
+"1000124" [label="(Call,get_rfc1002_length(iov[0].iov_base))"];
+"1000124" [label="(Call,get_rfc1002_length(iov[0].iov_base))"];
+"1000157" [label="(Call,dump_smb(iov[0].iov_base, iov[0].iov_len))"];
+"1000107" [label="(Block,)"];
+"1000125" [label="(Call,iov[0].iov_base)"];
+"1000158" [label="(Call,iov[0].iov_base)"];
+"1000163" [label="(Call,iov[0].iov_len)"];
+"1000122" [label="(Call,smb_buf_length = get_rfc1002_length(iov[0].iov_base))"];
+"1000169" [label="(Identifier,ssocket)"];
+"1000291" [label="(MethodReturn,RET)"];
+"1000157" -> "1000107"  [label="AST: "];
+"1000157" -> "1000163"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000163" -> "1000157"  [label="AST: "];
+"1000169" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000291"  [label="DDG: dump_smb(iov[0].iov_base, iov[0].iov_len)"];
+"1000157" -> "1000291"  [label="DDG: iov[0].iov_base"];
+"1000157" -> "1000291"  [label="DDG: iov[0].iov_len"];
+"1000124" -> "1000157"  [label="DDG: iov[0].iov_base"];
+"1000124" -> "1000122"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000291"  [label="DDG: iov[0].iov_base"];
+"1000124" -> "1000122"  [label="DDG: iov[0].iov_base"];
+}

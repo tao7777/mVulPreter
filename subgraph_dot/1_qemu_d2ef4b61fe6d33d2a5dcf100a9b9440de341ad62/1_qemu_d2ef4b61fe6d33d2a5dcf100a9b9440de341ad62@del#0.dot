@@ -1,0 +1,32 @@
+digraph "1_qemu_d2ef4b61fe6d33d2a5dcf100a9b9440de341ad62@del" {
+"1000112" [label="(Call,loaded <= *cur)"];
+"1000117" [label="(Call,*cur = loaded)"];
+"1000111" [label="(ControlStructure,if (loaded <= *cur))"];
+"1000123" [label="(MethodReturn,static int)"];
+"1000120" [label="(Identifier,loaded)"];
+"1000112" [label="(Call,loaded <= *cur)"];
+"1000113" [label="(Identifier,loaded)"];
+"1000116" [label="(Block,)"];
+"1000119" [label="(Identifier,cur)"];
+"1000114" [label="(Call,*cur)"];
+"1000122" [label="(Literal,0)"];
+"1000118" [label="(Call,*cur)"];
+"1000117" [label="(Call,*cur = loaded)"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000119" -> "1000112"  [label="CFG: "];
+"1000123" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000123"  [label="DDG: *cur"];
+"1000112" -> "1000123"  [label="DDG: loaded <= *cur"];
+"1000112" -> "1000123"  [label="DDG: loaded"];
+"1000112" -> "1000117"  [label="DDG: loaded"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000120"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000120" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000123"  [label="DDG: *cur"];
+"1000117" -> "1000123"  [label="DDG: loaded"];
+}

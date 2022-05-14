@@ -1,0 +1,24 @@
+digraph "0_linux_07f4d9d74a04aa7c72c5dae0ef97565f28f17b92_2@pointer" {
+"1000143" [label="(Call,mutex_lock(&ue->card->user_ctl_lock))"];
+"1000182" [label="(Call,mutex_unlock(&ue->card->user_ctl_lock))"];
+"1000183" [label="(Call,&ue->card->user_ctl_lock)"];
+"1000182" [label="(Call,mutex_unlock(&ue->card->user_ctl_lock))"];
+"1000256" [label="(Identifier,change)"];
+"1000122" [label="(Block,)"];
+"1000151" [label="(Identifier,change)"];
+"1000257" [label="(MethodReturn,static int)"];
+"1000143" [label="(Call,mutex_lock(&ue->card->user_ctl_lock))"];
+"1000144" [label="(Call,&ue->card->user_ctl_lock)"];
+"1000143" -> "1000122"  [label="AST: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000151" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000257"  [label="DDG: mutex_lock(&ue->card->user_ctl_lock)"];
+"1000143" -> "1000182"  [label="DDG: &ue->card->user_ctl_lock"];
+"1000182" -> "1000122"  [label="AST: "];
+"1000182" -> "1000183"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000256" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000257"  [label="DDG: mutex_unlock(&ue->card->user_ctl_lock)"];
+"1000182" -> "1000257"  [label="DDG: &ue->card->user_ctl_lock"];
+}

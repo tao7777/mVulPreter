@@ -1,0 +1,27 @@
+digraph "0_Chrome_697cd7e2ce2535696f1b9e5cfb474cc36a734747@API" {
+"1000321" [label="(Call,!update_url_.is_valid() ||\n        update_url_.has_ref())"];
+"1000322" [label="(Call,!update_url_.is_valid())"];
+"1000322" [label="(Call,!update_url_.is_valid())"];
+"1000320" [label="(ControlStructure,if (!update_url_.is_valid() ||\n        update_url_.has_ref()))"];
+"1000321" [label="(Call,!update_url_.is_valid() ||\n        update_url_.has_ref())"];
+"1000324" [label="(Call,update_url_.has_ref())"];
+"1002005" [label="(MethodReturn,bool)"];
+"1000336" [label="(Identifier,keys::kMinimumChromeVersion)"];
+"1000323" [label="(Call,update_url_.is_valid())"];
+"1000328" [label="(Identifier,error)"];
+"1000321" -> "1000320"  [label="AST: "];
+"1000321" -> "1000322"  [label="CFG: "];
+"1000321" -> "1000324"  [label="CFG: "];
+"1000322" -> "1000321"  [label="AST: "];
+"1000324" -> "1000321"  [label="AST: "];
+"1000328" -> "1000321"  [label="CFG: "];
+"1000336" -> "1000321"  [label="CFG: "];
+"1000321" -> "1002005"  [label="DDG: update_url_.has_ref()"];
+"1000321" -> "1002005"  [label="DDG: !update_url_.is_valid()"];
+"1000321" -> "1002005"  [label="DDG: !update_url_.is_valid() ||\n        update_url_.has_ref()"];
+"1000322" -> "1000321"  [label="DDG: update_url_.is_valid()"];
+"1000322" -> "1000323"  [label="CFG: "];
+"1000323" -> "1000322"  [label="AST: "];
+"1000324" -> "1000322"  [label="CFG: "];
+"1000322" -> "1002005"  [label="DDG: update_url_.is_valid()"];
+}

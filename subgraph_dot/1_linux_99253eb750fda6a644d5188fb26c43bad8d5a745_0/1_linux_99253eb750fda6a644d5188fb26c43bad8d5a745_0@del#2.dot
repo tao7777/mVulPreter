@@ -1,0 +1,32 @@
+digraph "1_linux_99253eb750fda6a644d5188fb26c43bad8d5a745_0@del" {
+"1000162" [label="(Call,inet_sk(sk)->inet_num != IPPROTO_ICMPV6)"];
+"1000156" [label="(Call,sk->sk_type != SOCK_RAW ||\n\t\t    inet_sk(sk)->inet_num != IPPROTO_ICMPV6)"];
+"1000162" [label="(Call,inet_sk(sk)->inet_num != IPPROTO_ICMPV6)"];
+"1000156" [label="(Call,sk->sk_type != SOCK_RAW ||\n\t\t    inet_sk(sk)->inet_num != IPPROTO_ICMPV6)"];
+"1000470" [label="(MethodReturn,int)"];
+"1000167" [label="(Identifier,IPPROTO_ICMPV6)"];
+"1000173" [label="(Identifier,optlen)"];
+"1000163" [label="(Call,inet_sk(sk)->inet_num)"];
+"1000157" [label="(Call,sk->sk_type != SOCK_RAW)"];
+"1000155" [label="(ControlStructure,if (sk->sk_type != SOCK_RAW ||\n\t\t    inet_sk(sk)->inet_num != IPPROTO_ICMPV6))"];
+"1000170" [label="(Identifier,EOPNOTSUPP)"];
+"1000162" -> "1000156"  [label="AST: "];
+"1000162" -> "1000167"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000167" -> "1000162"  [label="AST: "];
+"1000156" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000470"  [label="DDG: IPPROTO_ICMPV6"];
+"1000162" -> "1000470"  [label="DDG: inet_sk(sk)->inet_num"];
+"1000162" -> "1000156"  [label="DDG: inet_sk(sk)->inet_num"];
+"1000162" -> "1000156"  [label="DDG: IPPROTO_ICMPV6"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000170" -> "1000156"  [label="CFG: "];
+"1000173" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000470"  [label="DDG: sk->sk_type != SOCK_RAW"];
+"1000156" -> "1000470"  [label="DDG: sk->sk_type != SOCK_RAW ||\n\t\t    inet_sk(sk)->inet_num != IPPROTO_ICMPV6"];
+"1000156" -> "1000470"  [label="DDG: inet_sk(sk)->inet_num != IPPROTO_ICMPV6"];
+"1000157" -> "1000156"  [label="DDG: sk->sk_type"];
+"1000157" -> "1000156"  [label="DDG: SOCK_RAW"];
+}

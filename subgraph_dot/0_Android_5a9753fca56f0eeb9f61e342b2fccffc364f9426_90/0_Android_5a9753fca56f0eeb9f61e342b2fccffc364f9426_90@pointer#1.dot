@@ -1,0 +1,28 @@
+digraph "0_Android_5a9753fca56f0eeb9f61e342b2fccffc364f9426_90@pointer" {
+"1000105" [label="(MethodParameterIn,int16_t *out)"];
+"1000231" [label="(Call,vpx_fdct8x8_c(in, out, stride))"];
+"1000232" [label="(Identifier,in)"];
+"1000233" [label="(Identifier,out)"];
+"1000230" [label="(Block,)"];
+"1000106" [label="(MethodParameterIn,int stride)"];
+"1000235" [label="(MethodReturn,void)"];
+"1000105" [label="(MethodParameterIn,int16_t *out)"];
+"1000231" [label="(Call,vpx_fdct8x8_c(in, out, stride))"];
+"1000104" [label="(MethodParameterIn,const int16_t *in)"];
+"1000234" [label="(Identifier,stride)"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000235"  [label="DDG: out"];
+"1000105" -> "1000231"  [label="DDG: out"];
+"1000231" -> "1000230"  [label="AST: "];
+"1000231" -> "1000234"  [label="CFG: "];
+"1000232" -> "1000231"  [label="AST: "];
+"1000233" -> "1000231"  [label="AST: "];
+"1000234" -> "1000231"  [label="AST: "];
+"1000235" -> "1000231"  [label="CFG: "];
+"1000231" -> "1000235"  [label="DDG: in"];
+"1000231" -> "1000235"  [label="DDG: out"];
+"1000231" -> "1000235"  [label="DDG: vpx_fdct8x8_c(in, out, stride)"];
+"1000231" -> "1000235"  [label="DDG: stride"];
+"1000104" -> "1000231"  [label="DDG: in"];
+"1000106" -> "1000231"  [label="DDG: stride"];
+}

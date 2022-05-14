@@ -1,0 +1,34 @@
+digraph "0_FFmpeg_912ce9dd2080c5837285a471d750fa311e09b555_0@pointer" {
+"1000581" [label="(Call,2048 + qntsty->mant[gbandno])"];
+"1000620" [label="(Call,qntsty->mant[gbandno] / 2048.0)"];
+"1000583" [label="(Call,qntsty->mant[gbandno])"];
+"1000620" [label="(Call,qntsty->mant[gbandno] / 2048.0)"];
+"1000580" [label="(Call,SHL(2048 + qntsty->mant[gbandno],\n                                       2 + numbps - qntsty->expn[gbandno]))"];
+"1000626" [label="(Literal,2048.0)"];
+"1000619" [label="(Call,qntsty->mant[gbandno] / 2048.0 + 1.0)"];
+"1000615" [label="(Call,band->f_stepsize *= qntsty->mant[gbandno] / 2048.0 + 1.0)"];
+"1001573" [label="(MethodReturn,int)"];
+"1000627" [label="(Literal,1.0)"];
+"1000582" [label="(Literal,2048)"];
+"1000581" [label="(Call,2048 + qntsty->mant[gbandno])"];
+"1000621" [label="(Call,qntsty->mant[gbandno])"];
+"1000589" [label="(Literal,2)"];
+"1000581" -> "1000580"  [label="AST: "];
+"1000581" -> "1000583"  [label="CFG: "];
+"1000582" -> "1000581"  [label="AST: "];
+"1000583" -> "1000581"  [label="AST: "];
+"1000589" -> "1000581"  [label="CFG: "];
+"1000581" -> "1001573"  [label="DDG: qntsty->mant[gbandno]"];
+"1000620" -> "1000581"  [label="DDG: qntsty->mant[gbandno]"];
+"1000620" -> "1000619"  [label="AST: "];
+"1000620" -> "1000626"  [label="CFG: "];
+"1000621" -> "1000620"  [label="AST: "];
+"1000626" -> "1000620"  [label="AST: "];
+"1000627" -> "1000620"  [label="CFG: "];
+"1000620" -> "1001573"  [label="DDG: qntsty->mant[gbandno]"];
+"1000620" -> "1000580"  [label="DDG: qntsty->mant[gbandno]"];
+"1000620" -> "1000615"  [label="DDG: qntsty->mant[gbandno]"];
+"1000620" -> "1000615"  [label="DDG: 2048.0"];
+"1000620" -> "1000619"  [label="DDG: qntsty->mant[gbandno]"];
+"1000620" -> "1000619"  [label="DDG: 2048.0"];
+}

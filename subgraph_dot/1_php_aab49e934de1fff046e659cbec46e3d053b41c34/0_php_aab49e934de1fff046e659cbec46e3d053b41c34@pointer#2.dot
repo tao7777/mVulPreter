@@ -1,0 +1,29 @@
+digraph "0_php_aab49e934de1fff046e659cbec46e3d053b41c34@pointer" {
+"1000108" [label="(MethodParameterIn,const char *key)"];
+"1000152" [label="(Call,key++)"];
+"1000291" [label="(Call,key++)"];
+"1000153" [label="(Identifier,key)"];
+"1000108" [label="(MethodParameterIn,const char *key)"];
+"1000143" [label="(ControlStructure,if ((*q++ = *key << 1)))"];
+"1000152" [label="(Call,key++)"];
+"1000136" [label="(Identifier,q)"];
+"1000290" [label="(Call,*key++)"];
+"1000292" [label="(Identifier,key)"];
+"1000291" [label="(Call,key++)"];
+"1000540" [label="(MethodReturn,RET)"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000108" -> "1000540"  [label="DDG: key"];
+"1000108" -> "1000152"  [label="DDG: key"];
+"1000108" -> "1000291"  [label="DDG: key"];
+"1000152" -> "1000143"  [label="AST: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000136" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000540"  [label="DDG: key"];
+"1000152" -> "1000291"  [label="DDG: key"];
+"1000291" -> "1000290"  [label="AST: "];
+"1000291" -> "1000292"  [label="CFG: "];
+"1000292" -> "1000291"  [label="AST: "];
+"1000290" -> "1000291"  [label="CFG: "];
+"1000291" -> "1000540"  [label="DDG: key"];
+}

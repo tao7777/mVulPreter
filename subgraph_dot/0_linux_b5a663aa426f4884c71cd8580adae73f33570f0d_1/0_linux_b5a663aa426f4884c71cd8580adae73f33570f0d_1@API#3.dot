@@ -1,0 +1,24 @@
+digraph "0_linux_b5a663aa426f4884c71cd8580adae73f33570f0d_1@API" {
+"1000150" [label="(Call,mutex_lock(&register_mutex))"];
+"1000158" [label="(Call,mutex_unlock(&register_mutex))"];
+"1000128" [label="(Block,)"];
+"1000294" [label="(MethodReturn,int)"];
+"1000156" [label="(Identifier,timeri)"];
+"1000151" [label="(Call,&register_mutex)"];
+"1000273" [label="(JumpTarget,out:)"];
+"1000158" [label="(Call,mutex_unlock(&register_mutex))"];
+"1000150" [label="(Call,mutex_lock(&register_mutex))"];
+"1000159" [label="(Call,&register_mutex)"];
+"1000150" -> "1000128"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000156" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000294"  [label="DDG: mutex_lock(&register_mutex)"];
+"1000150" -> "1000158"  [label="DDG: &register_mutex"];
+"1000158" -> "1000128"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000273" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000294"  [label="DDG: &register_mutex"];
+"1000158" -> "1000294"  [label="DDG: mutex_unlock(&register_mutex)"];
+}

@@ -1,0 +1,26 @@
+digraph "0_axtls-8266_5efe2947ab45e81d84b5f707c51d1c64be52f36c_1@pointer" {
+"1000302" [label="(Call,cert->basic_constraint_present && \n                        !ca_cert_ctx->cert[i]->basic_constraint_cA)"];
+"1000306" [label="(Call,!ca_cert_ctx->cert[i]->basic_constraint_cA)"];
+"1000307" [label="(Call,ca_cert_ctx->cert[i]->basic_constraint_cA)"];
+"1000301" [label="(ControlStructure,if (cert->basic_constraint_present && \n                        !ca_cert_ctx->cert[i]->basic_constraint_cA))"];
+"1000302" [label="(Call,cert->basic_constraint_present && \n                        !ca_cert_ctx->cert[i]->basic_constraint_cA)"];
+"1000314" [label="(ControlStructure,continue;)"];
+"1000303" [label="(Call,cert->basic_constraint_present)"];
+"1000306" [label="(Call,!ca_cert_ctx->cert[i]->basic_constraint_cA)"];
+"1000496" [label="(MethodReturn,int)"];
+"1000319" [label="(Identifier,cert)"];
+"1000302" -> "1000301"  [label="AST: "];
+"1000302" -> "1000303"  [label="CFG: "];
+"1000302" -> "1000306"  [label="CFG: "];
+"1000303" -> "1000302"  [label="AST: "];
+"1000306" -> "1000302"  [label="AST: "];
+"1000314" -> "1000302"  [label="CFG: "];
+"1000319" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000496"  [label="DDG: "];
+"1000302" -> "1000496"  [label="DDG: "];
+"1000302" -> "1000496"  [label="DDG: "];
+"1000306" -> "1000302"  [label="DDG: "];
+"1000306" -> "1000307"  [label="CFG: "];
+"1000307" -> "1000306"  [label="AST: "];
+"1000306" -> "1000496"  [label="DDG: "];
+}

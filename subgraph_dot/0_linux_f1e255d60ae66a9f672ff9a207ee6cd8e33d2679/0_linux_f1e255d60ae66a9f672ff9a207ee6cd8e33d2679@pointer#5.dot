@@ -1,0 +1,26 @@
+digraph "0_linux_f1e255d60ae66a9f672ff9a207ee6cd8e33d2679@pointer" {
+"1000159" [label="(Call,mutex_unlock(&dev->io_mutex))"];
+"1000119" [label="(Call,mutex_lock(&dev->io_mutex))"];
+"1000120" [label="(Call,&dev->io_mutex)"];
+"1000119" [label="(Call,mutex_lock(&dev->io_mutex))"];
+"1000106" [label="(Block,)"];
+"1000171" [label="(MethodReturn,static ssize_t)"];
+"1000130" [label="(Call,mutex_unlock(&dev->io_mutex))"];
+"1000160" [label="(Call,&dev->io_mutex)"];
+"1000159" [label="(Call,mutex_unlock(&dev->io_mutex))"];
+"1000127" [label="(Identifier,dev)"];
+"1000166" [label="(Identifier,buffer)"];
+"1000159" -> "1000106"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000166" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000171"  [label="DDG: mutex_unlock(&dev->io_mutex)"];
+"1000159" -> "1000171"  [label="DDG: &dev->io_mutex"];
+"1000119" -> "1000159"  [label="DDG: &dev->io_mutex"];
+"1000119" -> "1000106"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000127" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000171"  [label="DDG: mutex_lock(&dev->io_mutex)"];
+"1000119" -> "1000130"  [label="DDG: &dev->io_mutex"];
+}

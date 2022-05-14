@@ -1,0 +1,25 @@
+digraph "0_linux_415e3d3e90ce9e18727e8843ae343eda5a58fad6_4@pointer" {
+"1000122" [label="(Call,atomic_long_inc_return(&u->inflight))"];
+"1000121" [label="(Call,atomic_long_inc_return(&u->inflight) == 1)"];
+"1000149" [label="(Identifier,u)"];
+"1000134" [label="(Identifier,u)"];
+"1000122" [label="(Call,atomic_long_inc_return(&u->inflight))"];
+"1000121" [label="(Call,atomic_long_inc_return(&u->inflight) == 1)"];
+"1000160" [label="(MethodReturn,void)"];
+"1000120" [label="(ControlStructure,if (atomic_long_inc_return(&u->inflight) == 1))"];
+"1000127" [label="(Literal,1)"];
+"1000123" [label="(Call,&u->inflight)"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000127" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000160"  [label="DDG: &u->inflight"];
+"1000122" -> "1000121"  [label="DDG: &u->inflight"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000121"  [label="AST: "];
+"1000134" -> "1000121"  [label="CFG: "];
+"1000149" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000160"  [label="DDG: atomic_long_inc_return(&u->inflight) == 1"];
+"1000121" -> "1000160"  [label="DDG: atomic_long_inc_return(&u->inflight)"];
+}

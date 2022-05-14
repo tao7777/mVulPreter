@@ -1,0 +1,22 @@
+digraph "0_linux_07678eca2cf9c9a18584e546c2b2a0d0c9a3150c@pointer" {
+"1000224" [label="(Call,user_srf->master = drm_master_get(file_priv->master))"];
+"1000228" [label="(Call,drm_master_get(file_priv->master))"];
+"1000224" [label="(Call,user_srf->master = drm_master_get(file_priv->master))"];
+"1000477" [label="(MethodReturn,int)"];
+"1000228" [label="(Call,drm_master_get(file_priv->master))"];
+"1000221" [label="(ControlStructure,if (drm_is_primary_client(file_priv)))"];
+"1000233" [label="(Identifier,ret)"];
+"1000225" [label="(Call,user_srf->master)"];
+"1000229" [label="(Call,file_priv->master)"];
+"1000224" -> "1000221"  [label="AST: "];
+"1000224" -> "1000228"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000228" -> "1000224"  [label="AST: "];
+"1000233" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000477"  [label="DDG: user_srf->master"];
+"1000224" -> "1000477"  [label="DDG: drm_master_get(file_priv->master)"];
+"1000228" -> "1000224"  [label="DDG: file_priv->master"];
+"1000228" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000228" -> "1000477"  [label="DDG: file_priv->master"];
+}

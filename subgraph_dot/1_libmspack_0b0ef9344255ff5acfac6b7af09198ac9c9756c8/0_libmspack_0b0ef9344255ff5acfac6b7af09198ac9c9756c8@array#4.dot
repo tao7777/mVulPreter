@@ -1,0 +1,24 @@
+digraph "0_libmspack_0b0ef9344255ff5acfac6b7af09198ac9c9756c8@array" {
+"1000351" [label="(Call,*fn = buf[i])"];
+"1000350" [label="(Call,!(*fn = buf[i]))"];
+"1000512" [label="(MethodReturn,static int)"];
+"1000357" [label="(ControlStructure,break;)"];
+"1000349" [label="(ControlStructure,if (!(*fn = buf[i])))"];
+"1000352" [label="(Call,*fn)"];
+"1000351" [label="(Call,*fn = buf[i])"];
+"1000354" [label="(Call,buf[i])"];
+"1000350" [label="(Call,!(*fn = buf[i]))"];
+"1000346" [label="(Identifier,i)"];
+"1000351" -> "1000350"  [label="AST: "];
+"1000351" -> "1000354"  [label="CFG: "];
+"1000352" -> "1000351"  [label="AST: "];
+"1000354" -> "1000351"  [label="AST: "];
+"1000350" -> "1000351"  [label="CFG: "];
+"1000351" -> "1000512"  [label="DDG: *fn"];
+"1000351" -> "1000512"  [label="DDG: buf[i]"];
+"1000351" -> "1000350"  [label="DDG: *fn"];
+"1000350" -> "1000349"  [label="AST: "];
+"1000357" -> "1000350"  [label="CFG: "];
+"1000346" -> "1000350"  [label="CFG: "];
+"1000350" -> "1000512"  [label="DDG: !(*fn = buf[i])"];
+}

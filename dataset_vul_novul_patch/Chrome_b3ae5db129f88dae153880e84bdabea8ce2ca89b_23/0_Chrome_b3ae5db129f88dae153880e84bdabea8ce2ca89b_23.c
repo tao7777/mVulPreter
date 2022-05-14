@@ -1,0 +1,1 @@
+void CrosLibrary::TestApi::SetScreenLockLibrary(

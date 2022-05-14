@@ -1,0 +1,26 @@
+digraph "0_Chrome_f837b6744eb9ca9d8e4f2e93d9118bf787ca5e24@array" {
+"1000144" [label="(Call,history_backend_->GetVisitsForURL(ix->id(),\n                                           &(visit_vectors[ix->id()])))"];
+"1000143" [label="(Call,!history_backend_->GetVisitsForURL(ix->id(),\n                                           &(visit_vectors[ix->id()])))"];
+"1000145" [label="(Call,ix->id())"];
+"1000146" [label="(Call,&(visit_vectors[ix->id()]))"];
+"1000142" [label="(ControlStructure,if (!history_backend_->GetVisitsForURL(ix->id(),\n                                           &(visit_vectors[ix->id()]))))"];
+"1000143" [label="(Call,!history_backend_->GetVisitsForURL(ix->id(),\n                                           &(visit_vectors[ix->id()])))"];
+"1000468" [label="(MethodReturn,bool)"];
+"1000153" [label="(Identifier,ERROR)"];
+"1000158" [label="(Call,visit_vectors[ix->id()].empty())"];
+"1000144" [label="(Call,history_backend_->GetVisitsForURL(ix->id(),\n                                           &(visit_vectors[ix->id()])))"];
+"1000144" -> "1000143"  [label="AST: "];
+"1000144" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000468"  [label="DDG: ix->id()"];
+"1000144" -> "1000468"  [label="DDG: &(visit_vectors[ix->id()])"];
+"1000144" -> "1000143"  [label="DDG: ix->id()"];
+"1000144" -> "1000143"  [label="DDG: &(visit_vectors[ix->id()])"];
+"1000143" -> "1000142"  [label="AST: "];
+"1000153" -> "1000143"  [label="CFG: "];
+"1000158" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000468"  [label="DDG: history_backend_->GetVisitsForURL(ix->id(),\n                                           &(visit_vectors[ix->id()]))"];
+"1000143" -> "1000468"  [label="DDG: !history_backend_->GetVisitsForURL(ix->id(),\n                                           &(visit_vectors[ix->id()]))"];
+}

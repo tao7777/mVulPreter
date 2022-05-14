@@ -1,0 +1,35 @@
+digraph "0_Android_8a3a2f6ea7defe1a81bb32b3c9f3537f84749b9d@API" {
+"1001779" [label="(Call,mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)) < (ssize_t)sizeof(buffer))"];
+"1001780" [label="(Call,mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)))"];
+"1001781" [label="(Identifier,data_offset)"];
+"1001794" [label="(Identifier,__unused)"];
+"1001847" [label="(Call,*offset = data_offset + sizeof(buffer))"];
+"1001778" [label="(ControlStructure,if (mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)) < (ssize_t)sizeof(buffer)))"];
+"1001782" [label="(Identifier,buffer)"];
+"1003923" [label="(MethodReturn,status_t)"];
+"1001850" [label="(Call,data_offset + sizeof(buffer))"];
+"1001780" [label="(Call,mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)))"];
+"1001791" [label="(Identifier,ERROR_IO)"];
+"1001785" [label="(Call,(ssize_t)sizeof(buffer))"];
+"1001779" [label="(Call,mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)) < (ssize_t)sizeof(buffer))"];
+"1001783" [label="(Call,sizeof(buffer))"];
+"1001779" -> "1001778"  [label="AST: "];
+"1001779" -> "1001785"  [label="CFG: "];
+"1001780" -> "1001779"  [label="AST: "];
+"1001785" -> "1001779"  [label="AST: "];
+"1001791" -> "1001779"  [label="CFG: "];
+"1001794" -> "1001779"  [label="CFG: "];
+"1001779" -> "1003923"  [label="DDG: mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer))"];
+"1001779" -> "1003923"  [label="DDG: mDataSource->readAt(\n                        data_offset, buffer, sizeof(buffer)) < (ssize_t)sizeof(buffer)"];
+"1001779" -> "1003923"  [label="DDG: (ssize_t)sizeof(buffer)"];
+"1001780" -> "1001779"  [label="DDG: data_offset"];
+"1001780" -> "1001779"  [label="DDG: buffer"];
+"1001780" -> "1001783"  [label="CFG: "];
+"1001781" -> "1001780"  [label="AST: "];
+"1001782" -> "1001780"  [label="AST: "];
+"1001783" -> "1001780"  [label="AST: "];
+"1001786" -> "1001780"  [label="CFG: "];
+"1001780" -> "1003923"  [label="DDG: data_offset"];
+"1001780" -> "1001847"  [label="DDG: data_offset"];
+"1001780" -> "1001850"  [label="DDG: data_offset"];
+}

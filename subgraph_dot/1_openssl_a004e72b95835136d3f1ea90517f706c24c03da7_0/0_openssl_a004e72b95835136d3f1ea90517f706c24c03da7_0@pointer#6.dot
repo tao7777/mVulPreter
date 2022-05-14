@@ -1,0 +1,29 @@
+digraph "0_openssl_a004e72b95835136d3f1ea90517f706c24c03da7_0@pointer" {
+"1000392" [label="(Call,ret->ssl_version >> 8)"];
+"1000391" [label="(Call,(ret->ssl_version >> 8) >= SSL3_VERSION_MAJOR)"];
+"1000390" [label="(ControlStructure,if ((ret->ssl_version >> 8) >= SSL3_VERSION_MAJOR))"];
+"1000411" [label="(Identifier,ret)"];
+"1000392" [label="(Call,ret->ssl_version >> 8)"];
+"1000397" [label="(Identifier,SSL3_VERSION_MAJOR)"];
+"1000391" [label="(Call,(ret->ssl_version >> 8) >= SSL3_VERSION_MAJOR)"];
+"1000516" [label="(MethodReturn,int)"];
+"1000400" [label="(Identifier,ret)"];
+"1000396" [label="(Literal,8)"];
+"1000393" [label="(Call,ret->ssl_version)"];
+"1000392" -> "1000391"  [label="AST: "];
+"1000392" -> "1000396"  [label="CFG: "];
+"1000393" -> "1000392"  [label="AST: "];
+"1000396" -> "1000392"  [label="AST: "];
+"1000397" -> "1000392"  [label="CFG: "];
+"1000392" -> "1000516"  [label="DDG: ret->ssl_version"];
+"1000392" -> "1000391"  [label="DDG: ret->ssl_version"];
+"1000392" -> "1000391"  [label="DDG: 8"];
+"1000391" -> "1000390"  [label="AST: "];
+"1000391" -> "1000397"  [label="CFG: "];
+"1000397" -> "1000391"  [label="AST: "];
+"1000400" -> "1000391"  [label="CFG: "];
+"1000411" -> "1000391"  [label="CFG: "];
+"1000391" -> "1000516"  [label="DDG: SSL3_VERSION_MAJOR"];
+"1000391" -> "1000516"  [label="DDG: ret->ssl_version >> 8"];
+"1000391" -> "1000516"  [label="DDG: (ret->ssl_version >> 8) >= SSL3_VERSION_MAJOR"];
+}

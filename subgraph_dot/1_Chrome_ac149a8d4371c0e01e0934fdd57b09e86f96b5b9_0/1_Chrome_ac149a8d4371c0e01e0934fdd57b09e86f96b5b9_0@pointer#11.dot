@@ -1,0 +1,27 @@
+digraph "1_Chrome_ac149a8d4371c0e01e0934fdd57b09e86f96b5b9_0@pointer" {
+"1000102" [label="(MethodParameterIn,struct hid_device_priv* dev)"];
+"1000267" [label="(Call,_hid_get_hid_descriptor(dev, hd, &tmp_size))"];
+"1000155" [label="(Call,hd = (struct libusb_hid_descriptor *)(tmp + LIBUSB_DT_CONFIG_SIZE\n\t\t+ LIBUSB_DT_INTERFACE_SIZE))"];
+"1000270" [label="(Call,&tmp_size)"];
+"1000102" [label="(MethodParameterIn,struct hid_device_priv* dev)"];
+"1000274" [label="(Identifier,dev)"];
+"1000105" [label="(Block,)"];
+"1000268" [label="(Identifier,dev)"];
+"1000269" [label="(Identifier,hd)"];
+"1000375" [label="(MethodReturn,static int)"];
+"1000267" [label="(Call,_hid_get_hid_descriptor(dev, hd, &tmp_size))"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000375"  [label="DDG: dev"];
+"1000102" -> "1000267"  [label="DDG: dev"];
+"1000267" -> "1000105"  [label="AST: "];
+"1000267" -> "1000270"  [label="CFG: "];
+"1000268" -> "1000267"  [label="AST: "];
+"1000269" -> "1000267"  [label="AST: "];
+"1000270" -> "1000267"  [label="AST: "];
+"1000274" -> "1000267"  [label="CFG: "];
+"1000267" -> "1000375"  [label="DDG: hd"];
+"1000267" -> "1000375"  [label="DDG: dev"];
+"1000267" -> "1000375"  [label="DDG: _hid_get_hid_descriptor(dev, hd, &tmp_size)"];
+"1000267" -> "1000375"  [label="DDG: &tmp_size"];
+"1000155" -> "1000267"  [label="DDG: hd"];
+}

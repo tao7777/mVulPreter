@@ -1,0 +1,31 @@
+digraph "0_linux_c3c87e770458aa004bd7ed3f29945ff436fd6511@pointer" {
+"1000415" [label="(Call,group_leader->group_flags & PERF_GROUP_SOFTWARE)"];
+"1000412" [label="(Call,is_software_event(group_leader) &&\n\t\t\t   (group_leader->group_flags & PERF_GROUP_SOFTWARE))"];
+"1000425" [label="(Identifier,ctx)"];
+"1000419" [label="(Identifier,PERF_GROUP_SOFTWARE)"];
+"1000415" [label="(Call,group_leader->group_flags & PERF_GROUP_SOFTWARE)"];
+"1000668" [label="(MethodReturn,RET)"];
+"1000413" [label="(Call,is_software_event(group_leader))"];
+"1000411" [label="(ControlStructure,if (is_software_event(group_leader) &&\n\t\t\t   (group_leader->group_flags & PERF_GROUP_SOFTWARE)))"];
+"1000412" [label="(Call,is_software_event(group_leader) &&\n\t\t\t   (group_leader->group_flags & PERF_GROUP_SOFTWARE))"];
+"1000416" [label="(Call,group_leader->group_flags)"];
+"1000422" [label="(Identifier,move_group)"];
+"1000415" -> "1000412"  [label="AST: "];
+"1000415" -> "1000419"  [label="CFG: "];
+"1000416" -> "1000415"  [label="AST: "];
+"1000419" -> "1000415"  [label="AST: "];
+"1000412" -> "1000415"  [label="CFG: "];
+"1000415" -> "1000668"  [label="DDG: group_leader->group_flags"];
+"1000415" -> "1000668"  [label="DDG: PERF_GROUP_SOFTWARE"];
+"1000415" -> "1000412"  [label="DDG: group_leader->group_flags"];
+"1000415" -> "1000412"  [label="DDG: PERF_GROUP_SOFTWARE"];
+"1000412" -> "1000411"  [label="AST: "];
+"1000412" -> "1000413"  [label="CFG: "];
+"1000413" -> "1000412"  [label="AST: "];
+"1000422" -> "1000412"  [label="CFG: "];
+"1000425" -> "1000412"  [label="CFG: "];
+"1000412" -> "1000668"  [label="DDG: is_software_event(group_leader) &&\n\t\t\t   (group_leader->group_flags & PERF_GROUP_SOFTWARE)"];
+"1000412" -> "1000668"  [label="DDG: is_software_event(group_leader)"];
+"1000412" -> "1000668"  [label="DDG: group_leader->group_flags & PERF_GROUP_SOFTWARE"];
+"1000413" -> "1000412"  [label="DDG: group_leader"];
+}

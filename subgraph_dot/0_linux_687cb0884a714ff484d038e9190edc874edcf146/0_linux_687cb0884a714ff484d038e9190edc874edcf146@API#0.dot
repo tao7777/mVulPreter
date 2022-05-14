@@ -1,0 +1,24 @@
+digraph "0_linux_687cb0884a714ff484d038e9190edc874edcf146@API" {
+"1000115" [label="(Call,mutex_lock(&oom_lock))"];
+"1000262" [label="(Call,mutex_unlock(&oom_lock))"];
+"1000115" [label="(Call,mutex_lock(&oom_lock))"];
+"1000116" [label="(Call,&oom_lock)"];
+"1000108" [label="(Block,)"];
+"1000267" [label="(MethodReturn,static bool)"];
+"1000266" [label="(Identifier,ret)"];
+"1000123" [label="(Identifier,mm)"];
+"1000263" [label="(Call,&oom_lock)"];
+"1000262" [label="(Call,mutex_unlock(&oom_lock))"];
+"1000115" -> "1000108"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000123" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000267"  [label="DDG: mutex_lock(&oom_lock)"];
+"1000115" -> "1000262"  [label="DDG: &oom_lock"];
+"1000262" -> "1000108"  [label="AST: "];
+"1000262" -> "1000263"  [label="CFG: "];
+"1000263" -> "1000262"  [label="AST: "];
+"1000266" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000267"  [label="DDG: &oom_lock"];
+"1000262" -> "1000267"  [label="DDG: mutex_unlock(&oom_lock)"];
+}

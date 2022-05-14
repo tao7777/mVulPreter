@@ -1,0 +1,1 @@
+void InspectorClientImpl::clearBrowserCache()

@@ -1,0 +1,20 @@
+digraph "0_linux_415e3d3e90ce9e18727e8843ae343eda5a58fad6_4@pointer" {
+"1000146" [label="(Call,list_empty(&u->link))"];
+"1000145" [label="(Call,BUG_ON(list_empty(&u->link)))"];
+"1000144" [label="(Block,)"];
+"1000152" [label="(Identifier,unix_tot_inflight)"];
+"1000146" [label="(Call,list_empty(&u->link))"];
+"1000147" [label="(Call,&u->link)"];
+"1000160" [label="(MethodReturn,void)"];
+"1000145" [label="(Call,BUG_ON(list_empty(&u->link)))"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000160"  [label="DDG: &u->link"];
+"1000146" -> "1000145"  [label="DDG: &u->link"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000152" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000160"  [label="DDG: list_empty(&u->link)"];
+"1000145" -> "1000160"  [label="DDG: BUG_ON(list_empty(&u->link))"];
+}

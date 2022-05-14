@@ -1,0 +1,25 @@
+digraph "0_libtiff_5c080298d59efa53264d7248bbe3a04660db6ef7_2@API" {
+"1000618" [label="(Call,strlen(inknames) + 1)"];
+"1000619" [label="(Call,strlen(inknames))"];
+"1000616" [label="(Call,inknameslen = strlen(inknames) + 1)"];
+"1000619" [label="(Call,strlen(inknames))"];
+"1000618" [label="(Call,strlen(inknames) + 1)"];
+"1000623" [label="(Call,* cp = inknames)"];
+"1000646" [label="(Call,TIFFSetField(out, TIFFTAG_INKNAMES, inknameslen, inknames))"];
+"1000620" [label="(Identifier,inknames)"];
+"1000750" [label="(MethodReturn,RET)"];
+"1000621" [label="(Literal,1)"];
+"1000618" -> "1000616"  [label="AST: "];
+"1000618" -> "1000621"  [label="CFG: "];
+"1000619" -> "1000618"  [label="AST: "];
+"1000621" -> "1000618"  [label="AST: "];
+"1000616" -> "1000618"  [label="CFG: "];
+"1000618" -> "1000750"  [label="DDG: strlen(inknames)"];
+"1000619" -> "1000618"  [label="DDG: inknames"];
+"1000619" -> "1000620"  [label="CFG: "];
+"1000620" -> "1000619"  [label="AST: "];
+"1000621" -> "1000619"  [label="CFG: "];
+"1000619" -> "1000616"  [label="DDG: inknames"];
+"1000619" -> "1000623"  [label="DDG: inknames"];
+"1000619" -> "1000646"  [label="DDG: inknames"];
+}

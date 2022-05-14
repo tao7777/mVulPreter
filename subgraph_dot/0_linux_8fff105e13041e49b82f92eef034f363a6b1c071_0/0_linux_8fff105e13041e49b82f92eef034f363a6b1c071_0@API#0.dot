@@ -1,0 +1,30 @@
+digraph "0_linux_8fff105e13041e49b82f92eef034f363a6b1c071_0@API" {
+"1000115" [label="(Call,memset(fake_used_mask, 0, sizeof(fake_used_mask)))"];
+"1000120" [label="(Call,fake_pmu.used_mask = fake_used_mask)"];
+"1000116" [label="(Identifier,fake_used_mask)"];
+"1000120" [label="(Call,fake_pmu.used_mask = fake_used_mask)"];
+"1000122" [label="(Identifier,fake_pmu)"];
+"1000129" [label="(Identifier,event)"];
+"1000118" [label="(Call,sizeof(fake_used_mask))"];
+"1000117" [label="(Literal,0)"];
+"1000103" [label="(Block,)"];
+"1000164" [label="(MethodReturn,RET)"];
+"1000121" [label="(Call,fake_pmu.used_mask)"];
+"1000115" [label="(Call,memset(fake_used_mask, 0, sizeof(fake_used_mask)))"];
+"1000124" [label="(Identifier,fake_used_mask)"];
+"1000115" -> "1000103"  [label="AST: "];
+"1000115" -> "1000118"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000118" -> "1000115"  [label="AST: "];
+"1000122" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000164"  [label="DDG: memset(fake_used_mask, 0, sizeof(fake_used_mask))"];
+"1000115" -> "1000120"  [label="DDG: fake_used_mask"];
+"1000120" -> "1000103"  [label="AST: "];
+"1000120" -> "1000124"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000124" -> "1000120"  [label="AST: "];
+"1000129" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000164"  [label="DDG: fake_pmu.used_mask"];
+"1000120" -> "1000164"  [label="DDG: fake_used_mask"];
+}

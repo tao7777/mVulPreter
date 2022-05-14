@@ -1,0 +1,26 @@
+digraph "0_linux_57e68e9cd65b4b8eb4045a1e0d0746458502554c_0@pointer" {
+"1000150" [label="(Call,spin_unlock_irq(&zone->lru_lock))"];
+"1000115" [label="(Call,spin_lock_irq(&zone->lru_lock))"];
+"1000150" [label="(Call,spin_unlock_irq(&zone->lru_lock))"];
+"1000115" [label="(Call,spin_lock_irq(&zone->lru_lock))"];
+"1000139" [label="(Call,spin_unlock_irq(&zone->lru_lock))"];
+"1000121" [label="(Identifier,nr_pages)"];
+"1000116" [label="(Call,&zone->lru_lock)"];
+"1000160" [label="(MethodReturn,unsigned int)"];
+"1000151" [label="(Call,&zone->lru_lock)"];
+"1000155" [label="(JumpTarget,out:)"];
+"1000104" [label="(Block,)"];
+"1000150" -> "1000104"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000155" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000160"  [label="DDG: spin_unlock_irq(&zone->lru_lock)"];
+"1000150" -> "1000160"  [label="DDG: &zone->lru_lock"];
+"1000115" -> "1000150"  [label="DDG: &zone->lru_lock"];
+"1000115" -> "1000104"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000121" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000160"  [label="DDG: spin_lock_irq(&zone->lru_lock)"];
+"1000115" -> "1000139"  [label="DDG: &zone->lru_lock"];
+}

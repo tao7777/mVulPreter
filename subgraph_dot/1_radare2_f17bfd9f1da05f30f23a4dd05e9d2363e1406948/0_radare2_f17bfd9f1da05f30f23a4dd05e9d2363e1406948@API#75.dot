@@ -1,0 +1,36 @@
+digraph "0_radare2_f17bfd9f1da05f30f23a4dd05e9d2363e1406948@API" {
+"1001759" [label="(Call,op->operands[1].reg << 3)"];
+"1001758" [label="(Call,op->operands[1].reg << 3 | 0x5)"];
+"1001753" [label="(Call,data[l++] = op->operands[1].reg << 3 | 0x5)"];
+"1001752" [label="(Block,)"];
+"1001753" [label="(Call,data[l++] = op->operands[1].reg << 3 | 0x5)"];
+"1001754" [label="(Call,data[l++])"];
+"1001759" [label="(Call,op->operands[1].reg << 3)"];
+"1000104" [label="(MethodParameterIn,ut8 *data)"];
+"1001767" [label="(Literal,3)"];
+"1003216" [label="(MethodReturn,static int)"];
+"1001768" [label="(Literal,0x5)"];
+"1001771" [label="(Identifier,data)"];
+"1001760" [label="(Call,op->operands[1].reg)"];
+"1001758" [label="(Call,op->operands[1].reg << 3 | 0x5)"];
+"1001759" -> "1001758"  [label="AST: "];
+"1001759" -> "1001767"  [label="CFG: "];
+"1001760" -> "1001759"  [label="AST: "];
+"1001767" -> "1001759"  [label="AST: "];
+"1001768" -> "1001759"  [label="CFG: "];
+"1001759" -> "1003216"  [label="DDG: op->operands[1].reg"];
+"1001759" -> "1001758"  [label="DDG: op->operands[1].reg"];
+"1001759" -> "1001758"  [label="DDG: 3"];
+"1001758" -> "1001753"  [label="AST: "];
+"1001758" -> "1001768"  [label="CFG: "];
+"1001768" -> "1001758"  [label="AST: "];
+"1001753" -> "1001758"  [label="CFG: "];
+"1001758" -> "1003216"  [label="DDG: op->operands[1].reg << 3"];
+"1001758" -> "1001753"  [label="DDG: op->operands[1].reg << 3"];
+"1001758" -> "1001753"  [label="DDG: 0x5"];
+"1001753" -> "1001752"  [label="AST: "];
+"1001754" -> "1001753"  [label="AST: "];
+"1001771" -> "1001753"  [label="CFG: "];
+"1001753" -> "1003216"  [label="DDG: op->operands[1].reg << 3 | 0x5"];
+"1000104" -> "1001753"  [label="DDG: data"];
+}

@@ -1,0 +1,36 @@
+digraph "0_pengutronix_84986ca024462058574432b5483f4bf9136c538d@API" {
+"1000122" [label="(Call,pkt + sizeof(struct rpc_reply))"];
+"1000111" [label="(Call,rpc_check_reply(pkt, 1))"];
+"1000102" [label="(MethodParameterIn,unsigned char *pkt)"];
+"1000120" [label="(Call,(uint32_t *)(pkt + sizeof(struct rpc_reply)))"];
+"1000109" [label="(Call,ret = rpc_check_reply(pkt, 1))"];
+"1000124" [label="(Call,sizeof(struct rpc_reply))"];
+"1000111" [label="(Call,rpc_check_reply(pkt, 1))"];
+"1000113" [label="(Literal,1)"];
+"1000102" [label="(MethodParameterIn,unsigned char *pkt)"];
+"1000140" [label="(MethodReturn,static int)"];
+"1000112" [label="(Identifier,pkt)"];
+"1000123" [label="(Identifier,pkt)"];
+"1000122" [label="(Call,pkt + sizeof(struct rpc_reply))"];
+"1000122" -> "1000120"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000140"  [label="DDG: pkt"];
+"1000111" -> "1000122"  [label="DDG: pkt"];
+"1000102" -> "1000122"  [label="DDG: pkt"];
+"1000111" -> "1000109"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000140"  [label="DDG: pkt"];
+"1000111" -> "1000109"  [label="DDG: pkt"];
+"1000111" -> "1000109"  [label="DDG: 1"];
+"1000102" -> "1000111"  [label="DDG: pkt"];
+"1000111" -> "1000120"  [label="DDG: pkt"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000140"  [label="DDG: pkt"];
+"1000102" -> "1000120"  [label="DDG: pkt"];
+}

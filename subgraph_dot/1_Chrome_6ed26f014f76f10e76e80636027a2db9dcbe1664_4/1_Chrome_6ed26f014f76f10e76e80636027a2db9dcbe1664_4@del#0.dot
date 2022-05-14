@@ -1,0 +1,26 @@
+digraph "1_Chrome_6ed26f014f76f10e76e80636027a2db9dcbe1664_4@del" {
+"1000160" [label="(Call,OriginClean() && !canvas_pattern->OriginClean())"];
+"1000162" [label="(Call,!canvas_pattern->OriginClean())"];
+"1000161" [label="(Call,OriginClean())"];
+"1000162" [label="(Call,!canvas_pattern->OriginClean())"];
+"1000168" [label="(Identifier,canvas_style)"];
+"1000159" [label="(ControlStructure,if (OriginClean() && !canvas_pattern->OriginClean()))"];
+"1000163" [label="(Call,canvas_pattern->OriginClean())"];
+"1000165" [label="(Call,SetOriginTainted())"];
+"1000160" [label="(Call,OriginClean() && !canvas_pattern->OriginClean())"];
+"1000178" [label="(MethodReturn,void)"];
+"1000160" -> "1000159"  [label="AST: "];
+"1000160" -> "1000161"  [label="CFG: "];
+"1000160" -> "1000162"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000162" -> "1000160"  [label="AST: "];
+"1000165" -> "1000160"  [label="CFG: "];
+"1000168" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000178"  [label="DDG: OriginClean() && !canvas_pattern->OriginClean()"];
+"1000160" -> "1000178"  [label="DDG: !canvas_pattern->OriginClean()"];
+"1000160" -> "1000178"  [label="DDG: OriginClean()"];
+"1000162" -> "1000160"  [label="DDG: canvas_pattern->OriginClean()"];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000162" -> "1000178"  [label="DDG: canvas_pattern->OriginClean()"];
+}

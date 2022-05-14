@@ -1,0 +1,29 @@
+digraph "0_mruby_778500563a9f7ceba996937dc886bd8cde29b42b@pointer" {
+"1000220" [label="(Call,c->stack+1)"];
+"1000206" [label="(Call,c->stend - c->stack)"];
+"1000204" [label="(Call,len >= c->stend - c->stack)"];
+"1000218" [label="(Call,b = c->stack+1)"];
+"1000221" [label="(Call,c->stack)"];
+"1000316" [label="(MethodReturn,RET)"];
+"1000206" [label="(Call,c->stend - c->stack)"];
+"1000210" [label="(Call,c->stack)"];
+"1000224" [label="(Literal,1)"];
+"1000220" [label="(Call,c->stack+1)"];
+"1000207" [label="(Call,c->stend)"];
+"1000220" -> "1000218"  [label="AST: "];
+"1000220" -> "1000224"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000224" -> "1000220"  [label="AST: "];
+"1000218" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000316"  [label="DDG: c->stack"];
+"1000206" -> "1000220"  [label="DDG: c->stack"];
+"1000206" -> "1000204"  [label="AST: "];
+"1000206" -> "1000210"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000210" -> "1000206"  [label="AST: "];
+"1000204" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000316"  [label="DDG: c->stend"];
+"1000206" -> "1000204"  [label="DDG: c->stend"];
+"1000206" -> "1000204"  [label="DDG: c->stack"];
+"1000206" -> "1000218"  [label="DDG: c->stack"];
+}

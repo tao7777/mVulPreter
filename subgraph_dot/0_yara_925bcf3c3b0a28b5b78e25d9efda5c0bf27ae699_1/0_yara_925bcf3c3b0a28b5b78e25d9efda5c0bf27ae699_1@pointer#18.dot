@@ -1,0 +1,28 @@
+digraph "0_yara_925bcf3c3b0a28b5b78e25d9efda5c0bf27ae699_1@pointer" {
+"1001898" [label="(Call,yymsg != yymsgbuf)"];
+"1001901" [label="(Call,YYSTACK_FREE (yymsg))"];
+"1001902" [label="(Identifier,yymsg)"];
+"1001900" [label="(Identifier,yymsgbuf)"];
+"1001899" [label="(Identifier,yymsg)"];
+"1001901" [label="(Call,YYSTACK_FREE (yymsg))"];
+"1001897" [label="(ControlStructure,if (yymsg != yymsgbuf))"];
+"1001904" [label="(Identifier,yyresult)"];
+"1001898" [label="(Call,yymsg != yymsgbuf)"];
+"1001905" [label="(MethodReturn,RET)"];
+"1001898" -> "1001897"  [label="AST: "];
+"1001898" -> "1001900"  [label="CFG: "];
+"1001899" -> "1001898"  [label="AST: "];
+"1001900" -> "1001898"  [label="AST: "];
+"1001902" -> "1001898"  [label="CFG: "];
+"1001904" -> "1001898"  [label="CFG: "];
+"1001898" -> "1001905"  [label="DDG: yymsgbuf"];
+"1001898" -> "1001905"  [label="DDG: yymsg != yymsgbuf"];
+"1001898" -> "1001905"  [label="DDG: yymsg"];
+"1001898" -> "1001901"  [label="DDG: yymsg"];
+"1001901" -> "1001897"  [label="AST: "];
+"1001901" -> "1001902"  [label="CFG: "];
+"1001902" -> "1001901"  [label="AST: "];
+"1001904" -> "1001901"  [label="CFG: "];
+"1001901" -> "1001905"  [label="DDG: yymsg"];
+"1001901" -> "1001905"  [label="DDG: YYSTACK_FREE (yymsg)"];
+}

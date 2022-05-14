@@ -1,0 +1,22 @@
+digraph "0_FFmpeg_4f05e2e2dc1a89f38cd9f0960a6561083d714f1e@pointer" {
+"1000179" [label="(Call,vst->avg_frame_rate    = av_inv_q(vst->time_base))"];
+"1000183" [label="(Call,av_inv_q(vst->time_base))"];
+"1000189" [label="(Identifier,vst)"];
+"1000179" [label="(Call,vst->avg_frame_rate    = av_inv_q(vst->time_base))"];
+"1000139" [label="(Block,)"];
+"1000625" [label="(MethodReturn,static int)"];
+"1000184" [label="(Call,vst->time_base)"];
+"1000183" [label="(Call,av_inv_q(vst->time_base))"];
+"1000180" [label="(Call,vst->avg_frame_rate)"];
+"1000179" -> "1000139"  [label="AST: "];
+"1000179" -> "1000183"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000183" -> "1000179"  [label="AST: "];
+"1000189" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000625"  [label="DDG: vst->avg_frame_rate"];
+"1000179" -> "1000625"  [label="DDG: av_inv_q(vst->time_base)"];
+"1000183" -> "1000179"  [label="DDG: vst->time_base"];
+"1000183" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000183"  [label="AST: "];
+"1000183" -> "1000625"  [label="DDG: vst->time_base"];
+}

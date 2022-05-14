@@ -1,0 +1,25 @@
+digraph "1_linux_7a9cdebdcc17e426fb5287e4a82db1dfe86339b2_0@API" {
+"1000110" [label="(Call,atomic_read(&mm->mm_users) == 1)"];
+"1000111" [label="(Call,atomic_read(&mm->mm_users))"];
+"1000109" [label="(ControlStructure,if (atomic_read(&mm->mm_users) == 1))"];
+"1000118" [label="(Call,rcu_read_lock())"];
+"1000111" [label="(Call,atomic_read(&mm->mm_users))"];
+"1000112" [label="(Call,&mm->mm_users)"];
+"1000110" [label="(Call,atomic_read(&mm->mm_users) == 1)"];
+"1000116" [label="(Literal,1)"];
+"1000129" [label="(MethodReturn,void)"];
+"1000117" [label="(Return,return;)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000116"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000116" -> "1000110"  [label="AST: "];
+"1000117" -> "1000110"  [label="CFG: "];
+"1000118" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000129"  [label="DDG: atomic_read(&mm->mm_users) == 1"];
+"1000110" -> "1000129"  [label="DDG: atomic_read(&mm->mm_users)"];
+"1000111" -> "1000110"  [label="DDG: &mm->mm_users"];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000116" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000129"  [label="DDG: &mm->mm_users"];
+}

@@ -1,0 +1,32 @@
+digraph "0_FFmpeg_a5d25faa3f4b18dac737fdb35d0dd68eb0dc2156@pointer" {
+"1000687" [label="(Call,c1->stream->feed == c->stream->feed)"];
+"1000681" [label="(Call,c1->state == HTTPSTATE_WAIT_FEED &&\n            c1->stream->feed == c->stream->feed)"];
+"1000680" [label="(ControlStructure,if (c1->state == HTTPSTATE_WAIT_FEED &&\n            c1->stream->feed == c->stream->feed))"];
+"1000681" [label="(Call,c1->state == HTTPSTATE_WAIT_FEED &&\n            c1->stream->feed == c->stream->feed)"];
+"1000675" [label="(Identifier,c1)"];
+"1000682" [label="(Call,c1->state == HTTPSTATE_WAIT_FEED)"];
+"1000706" [label="(MethodReturn,static int)"];
+"1000687" [label="(Call,c1->stream->feed == c->stream->feed)"];
+"1000693" [label="(Call,c->stream->feed)"];
+"1000688" [label="(Call,c1->stream->feed)"];
+"1000700" [label="(Identifier,c1)"];
+"1000687" -> "1000681"  [label="AST: "];
+"1000687" -> "1000693"  [label="CFG: "];
+"1000688" -> "1000687"  [label="AST: "];
+"1000693" -> "1000687"  [label="AST: "];
+"1000681" -> "1000687"  [label="CFG: "];
+"1000687" -> "1000706"  [label="DDG: c->stream->feed"];
+"1000687" -> "1000706"  [label="DDG: c1->stream->feed"];
+"1000687" -> "1000681"  [label="DDG: c1->stream->feed"];
+"1000687" -> "1000681"  [label="DDG: c->stream->feed"];
+"1000681" -> "1000680"  [label="AST: "];
+"1000681" -> "1000682"  [label="CFG: "];
+"1000682" -> "1000681"  [label="AST: "];
+"1000700" -> "1000681"  [label="CFG: "];
+"1000675" -> "1000681"  [label="CFG: "];
+"1000681" -> "1000706"  [label="DDG: c1->state == HTTPSTATE_WAIT_FEED &&\n            c1->stream->feed == c->stream->feed"];
+"1000681" -> "1000706"  [label="DDG: c1->state == HTTPSTATE_WAIT_FEED"];
+"1000681" -> "1000706"  [label="DDG: c1->stream->feed == c->stream->feed"];
+"1000682" -> "1000681"  [label="DDG: c1->state"];
+"1000682" -> "1000681"  [label="DDG: HTTPSTATE_WAIT_FEED"];
+}

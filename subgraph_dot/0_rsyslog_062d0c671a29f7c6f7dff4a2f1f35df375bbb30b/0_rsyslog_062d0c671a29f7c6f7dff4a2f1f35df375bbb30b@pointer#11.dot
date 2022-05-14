@@ -1,0 +1,35 @@
+digraph "0_rsyslog_062d0c671a29f7c6f7dff4a2f1f35df375bbb30b@pointer" {
+"1000352" [label="(Call,info->type == ZMQ_SUB)"];
+"1000113" [label="(Call,zsocket_new(s_context, info->type))"];
+"1000351" [label="(ControlStructure,if (info->type == ZMQ_SUB))"];
+"1000352" [label="(Call,info->type == ZMQ_SUB)"];
+"1000360" [label="(Identifier,sub)"];
+"1000353" [label="(Call,info->type)"];
+"1000113" [label="(Call,zsocket_new(s_context, info->type))"];
+"1000356" [label="(Identifier,ZMQ_SUB)"];
+"1000382" [label="(Identifier,info)"];
+"1000122" [label="(Call,errmsg.LogError(0,\n                        RS_RET_INVALID_PARAMS,\n                        \"zsocket_new failed: %s, for type %d\",\n                        zmq_strerror(errno),info->type))"];
+"1000110" [label="(Call,*sock = zsocket_new(s_context, info->type))"];
+"1000115" [label="(Call,info->type)"];
+"1000452" [label="(MethodReturn,static rsRetVal)"];
+"1000114" [label="(Identifier,s_context)"];
+"1000352" -> "1000351"  [label="AST: "];
+"1000352" -> "1000356"  [label="CFG: "];
+"1000353" -> "1000352"  [label="AST: "];
+"1000356" -> "1000352"  [label="AST: "];
+"1000360" -> "1000352"  [label="CFG: "];
+"1000382" -> "1000352"  [label="CFG: "];
+"1000352" -> "1000452"  [label="DDG: ZMQ_SUB"];
+"1000352" -> "1000452"  [label="DDG: info->type"];
+"1000352" -> "1000452"  [label="DDG: info->type == ZMQ_SUB"];
+"1000113" -> "1000352"  [label="DDG: info->type"];
+"1000113" -> "1000110"  [label="AST: "];
+"1000113" -> "1000115"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="AST: "];
+"1000110" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000452"  [label="DDG: s_context"];
+"1000113" -> "1000110"  [label="DDG: s_context"];
+"1000113" -> "1000110"  [label="DDG: info->type"];
+"1000113" -> "1000122"  [label="DDG: info->type"];
+}

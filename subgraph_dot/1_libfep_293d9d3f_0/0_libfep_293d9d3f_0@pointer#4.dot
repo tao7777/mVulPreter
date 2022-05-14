@@ -1,0 +1,33 @@
+digraph "0_libfep_293d9d3f_0@pointer" {
+"1000233" [label="(Return,return client;)"];
+"1000234" [label="(Identifier,client)"];
+"1000143" [label="(Call,client = xzalloc (sizeof(FepClient)))"];
+"1000150" [label="(Identifier,client)"];
+"1000234" [label="(Identifier,client)"];
+"1000143" [label="(Call,client = xzalloc (sizeof(FepClient)))"];
+"1000233" [label="(Return,return client;)"];
+"1000229" [label="(Call,free (client))"];
+"1000102" [label="(Block,)"];
+"1000145" [label="(Call,xzalloc (sizeof(FepClient)))"];
+"1000221" [label="(Call,retval < 0)"];
+"1000205" [label="(Call,free (client))"];
+"1000235" [label="(MethodReturn,RET)"];
+"1000144" [label="(Identifier,client)"];
+"1000233" -> "1000102"  [label="AST: "];
+"1000233" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000235" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000235"  [label="DDG: <RET>"];
+"1000234" -> "1000233"  [label="DDG: client"];
+"1000143" -> "1000233"  [label="DDG: client"];
+"1000234" -> "1000221"  [label="CFG: "];
+"1000143" -> "1000102"  [label="AST: "];
+"1000143" -> "1000145"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000145" -> "1000143"  [label="AST: "];
+"1000150" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000235"  [label="DDG: client"];
+"1000143" -> "1000235"  [label="DDG: xzalloc (sizeof(FepClient))"];
+"1000143" -> "1000205"  [label="DDG: client"];
+"1000143" -> "1000229"  [label="DDG: client"];
+}

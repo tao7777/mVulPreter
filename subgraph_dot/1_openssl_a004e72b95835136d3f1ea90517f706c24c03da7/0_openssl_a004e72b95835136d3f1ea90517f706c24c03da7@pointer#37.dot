@@ -1,0 +1,37 @@
+digraph "0_openssl_a004e72b95835136d3f1ea90517f706c24c03da7@pointer" {
+"1001638" [label="(Call,s->verify_mode & SSL_VERIFY_PEER)"];
+"1001637" [label="(Call,!(s->verify_mode & SSL_VERIFY_PEER))"];
+"1001633" [label="(Call,!SSL_USE_SIGALGS(s) || !(s->verify_mode & SSL_VERIFY_PEER))"];
+"1001633" [label="(Call,!SSL_USE_SIGALGS(s) || !(s->verify_mode & SSL_VERIFY_PEER))"];
+"1001634" [label="(Call,!SSL_USE_SIGALGS(s))"];
+"1001632" [label="(ControlStructure,if (!SSL_USE_SIGALGS(s) || !(s->verify_mode & SSL_VERIFY_PEER)))"];
+"1001647" [label="(Identifier,s)"];
+"1001642" [label="(Identifier,SSL_VERIFY_PEER)"];
+"1001652" [label="(Identifier,s)"];
+"1001637" [label="(Call,!(s->verify_mode & SSL_VERIFY_PEER))"];
+"1001694" [label="(MethodReturn,int)"];
+"1001639" [label="(Call,s->verify_mode)"];
+"1001638" [label="(Call,s->verify_mode & SSL_VERIFY_PEER)"];
+"1001638" -> "1001637"  [label="AST: "];
+"1001638" -> "1001642"  [label="CFG: "];
+"1001639" -> "1001638"  [label="AST: "];
+"1001642" -> "1001638"  [label="AST: "];
+"1001637" -> "1001638"  [label="CFG: "];
+"1001638" -> "1001694"  [label="DDG: SSL_VERIFY_PEER"];
+"1001638" -> "1001694"  [label="DDG: s->verify_mode"];
+"1001638" -> "1001637"  [label="DDG: s->verify_mode"];
+"1001638" -> "1001637"  [label="DDG: SSL_VERIFY_PEER"];
+"1001637" -> "1001633"  [label="AST: "];
+"1001633" -> "1001637"  [label="CFG: "];
+"1001637" -> "1001694"  [label="DDG: s->verify_mode & SSL_VERIFY_PEER"];
+"1001637" -> "1001633"  [label="DDG: s->verify_mode & SSL_VERIFY_PEER"];
+"1001633" -> "1001632"  [label="AST: "];
+"1001633" -> "1001634"  [label="CFG: "];
+"1001634" -> "1001633"  [label="AST: "];
+"1001647" -> "1001633"  [label="CFG: "];
+"1001652" -> "1001633"  [label="CFG: "];
+"1001633" -> "1001694"  [label="DDG: !SSL_USE_SIGALGS(s) || !(s->verify_mode & SSL_VERIFY_PEER)"];
+"1001633" -> "1001694"  [label="DDG: !(s->verify_mode & SSL_VERIFY_PEER)"];
+"1001633" -> "1001694"  [label="DDG: !SSL_USE_SIGALGS(s)"];
+"1001634" -> "1001633"  [label="DDG: SSL_USE_SIGALGS(s)"];
+}

@@ -1,0 +1,22 @@
+digraph "0_Chrome_3c8e4852477d5b1e2da877808c998dc57db9460f_11@API" {
+"1000111" [label="(Call,* remover =\n      content::BrowserContext::GetBrowsingDataRemover(\n          process_->GetBrowserContext()))"];
+"1000113" [label="(Call,content::BrowserContext::GetBrowsingDataRemover(\n          process_->GetBrowserContext()))"];
+"1000116" [label="(Call,base::Time())"];
+"1000102" [label="(Block,)"];
+"1000112" [label="(Identifier,remover)"];
+"1000122" [label="(MethodReturn,void)"];
+"1000114" [label="(Call,process_->GetBrowserContext())"];
+"1000111" [label="(Call,* remover =\n      content::BrowserContext::GetBrowsingDataRemover(\n          process_->GetBrowserContext()))"];
+"1000113" [label="(Call,content::BrowserContext::GetBrowsingDataRemover(\n          process_->GetBrowserContext()))"];
+"1000111" -> "1000102"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000116" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000122"  [label="DDG: remover"];
+"1000111" -> "1000122"  [label="DDG: content::BrowserContext::GetBrowsingDataRemover(\n          process_->GetBrowserContext())"];
+"1000113" -> "1000111"  [label="DDG: process_->GetBrowserContext()"];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000113" -> "1000122"  [label="DDG: process_->GetBrowserContext()"];
+}

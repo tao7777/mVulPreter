@@ -1,0 +1,28 @@
+digraph "0_linux_9c895160d25a76c21b65bad141b08e8d4f99afef_0@API" {
+"1000149" [label="(Call,atomic_read(&kvm->online_vcpus) == KVM_MAX_VCPUS)"];
+"1000150" [label="(Call,atomic_read(&kvm->online_vcpus))"];
+"1000179" [label="(Call,atomic_read(&kvm->online_vcpus))"];
+"1000155" [label="(Identifier,KVM_MAX_VCPUS)"];
+"1000233" [label="(MethodReturn,static int)"];
+"1000165" [label="(Identifier,v)"];
+"1000150" [label="(Call,atomic_read(&kvm->online_vcpus))"];
+"1000158" [label="(Identifier,r)"];
+"1000151" [label="(Call,&kvm->online_vcpus)"];
+"1000148" [label="(ControlStructure,if (atomic_read(&kvm->online_vcpus) == KVM_MAX_VCPUS))"];
+"1000149" [label="(Call,atomic_read(&kvm->online_vcpus) == KVM_MAX_VCPUS)"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000155"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000155" -> "1000149"  [label="AST: "];
+"1000158" -> "1000149"  [label="CFG: "];
+"1000165" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000233"  [label="DDG: KVM_MAX_VCPUS"];
+"1000149" -> "1000233"  [label="DDG: atomic_read(&kvm->online_vcpus) == KVM_MAX_VCPUS"];
+"1000149" -> "1000233"  [label="DDG: atomic_read(&kvm->online_vcpus)"];
+"1000150" -> "1000149"  [label="DDG: &kvm->online_vcpus"];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000155" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000233"  [label="DDG: &kvm->online_vcpus"];
+"1000150" -> "1000179"  [label="DDG: &kvm->online_vcpus"];
+}

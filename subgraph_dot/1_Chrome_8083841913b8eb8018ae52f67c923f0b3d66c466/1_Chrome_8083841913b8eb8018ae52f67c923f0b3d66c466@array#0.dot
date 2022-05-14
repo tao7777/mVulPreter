@@ -1,0 +1,38 @@
+digraph "1_Chrome_8083841913b8eb8018ae52f67c923f0b3d66c466@array" {
+"1000121" [label="(Call,file_permissions_[current_path] & permissions)"];
+"1000102" [label="(MethodParameterIn,int permissions)"];
+"1000120" [label="(Call,(file_permissions_[current_path] & permissions) == permissions)"];
+"1000119" [label="(Return,return (file_permissions_[current_path] & permissions) == permissions;)"];
+"1000102" [label="(MethodParameterIn,int permissions)"];
+"1000126" [label="(Identifier,permissions)"];
+"1000120" [label="(Call,(file_permissions_[current_path] & permissions) == permissions)"];
+"1000125" [label="(Identifier,permissions)"];
+"1000135" [label="(MethodReturn,bool)"];
+"1000121" [label="(Call,file_permissions_[current_path] & permissions)"];
+"1000119" [label="(Return,return (file_permissions_[current_path] & permissions) == permissions;)"];
+"1000114" [label="(ControlStructure,if (file_permissions_.find(current_path) != file_permissions_.end()))"];
+"1000122" [label="(Call,file_permissions_[current_path])"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000135"  [label="DDG: file_permissions_[current_path]"];
+"1000121" -> "1000120"  [label="DDG: file_permissions_[current_path]"];
+"1000121" -> "1000120"  [label="DDG: permissions"];
+"1000102" -> "1000121"  [label="DDG: permissions"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000135"  [label="DDG: permissions"];
+"1000102" -> "1000120"  [label="DDG: permissions"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000120" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000120"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000135"  [label="DDG: permissions"];
+"1000120" -> "1000135"  [label="DDG: file_permissions_[current_path] & permissions"];
+"1000120" -> "1000135"  [label="DDG: (file_permissions_[current_path] & permissions) == permissions"];
+"1000120" -> "1000119"  [label="DDG: (file_permissions_[current_path] & permissions) == permissions"];
+"1000119" -> "1000114"  [label="AST: "];
+"1000135" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000135"  [label="DDG: <RET>"];
+}

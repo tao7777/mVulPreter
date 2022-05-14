@@ -1,0 +1,36 @@
+digraph "0_enlightment_ce94edca1ccfbe314cb7cd9453433fad404ec7ef@pointer" {
+"1000444" [label="(Call,gaps[start] = 0)"];
+"1000470" [label="(Call,free(gaps))"];
+"1000110" [label="(Block,)"];
+"1000474" [label="(Identifier,y)"];
+"1000420" [label="(Call,gaps[x] > 0)"];
+"1000448" [label="(Literal,0)"];
+"1000319" [label="(Call,gaps[x] = 0)"];
+"1000377" [label="(Call,gaps[start] = x - start)"];
+"1000445" [label="(Call,gaps[start])"];
+"1000425" [label="(Call,gaps[x] < min)"];
+"1000444" [label="(Call,gaps[start] = 0)"];
+"1000275" [label="(Call,gaps = malloc(tw * sizeof(int)))"];
+"1000451" [label="(Identifier,x)"];
+"1000639" [label="(MethodReturn,RET)"];
+"1000471" [label="(Identifier,gaps)"];
+"1000443" [label="(Block,)"];
+"1000470" [label="(Call,free(gaps))"];
+"1000444" -> "1000443"  [label="AST: "];
+"1000444" -> "1000448"  [label="CFG: "];
+"1000445" -> "1000444"  [label="AST: "];
+"1000448" -> "1000444"  [label="AST: "];
+"1000451" -> "1000444"  [label="CFG: "];
+"1000444" -> "1000639"  [label="DDG: gaps[start]"];
+"1000444" -> "1000470"  [label="DDG: gaps[start]"];
+"1000470" -> "1000110"  [label="AST: "];
+"1000470" -> "1000471"  [label="CFG: "];
+"1000471" -> "1000470"  [label="AST: "];
+"1000474" -> "1000470"  [label="CFG: "];
+"1000470" -> "1000639"  [label="DDG: gaps"];
+"1000425" -> "1000470"  [label="DDG: gaps[x]"];
+"1000275" -> "1000470"  [label="DDG: gaps"];
+"1000377" -> "1000470"  [label="DDG: gaps[start]"];
+"1000420" -> "1000470"  [label="DDG: gaps[x]"];
+"1000319" -> "1000470"  [label="DDG: gaps[x]"];
+}

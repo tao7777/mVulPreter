@@ -1,0 +1,28 @@
+digraph "0_linux_b348d7dddb6c4fbfc810b7a0626e8ec9e29f7cbb@pointer" {
+"1000213" [label="(Call,usbip_event_add(ud, VDEV_EVENT_ERROR_TCP))"];
+"1000105" [label="(MethodParameterIn,struct usbip_device *ud)"];
+"1000208" [label="(Call,usbip_event_add(ud, SDEV_EVENT_ERROR_TCP))"];
+"1000214" [label="(Identifier,ud)"];
+"1000212" [label="(Block,)"];
+"1000213" [label="(Call,usbip_event_add(ud, VDEV_EVENT_ERROR_TCP))"];
+"1000218" [label="(Identifier,EPIPE)"];
+"1000105" [label="(MethodParameterIn,struct usbip_device *ud)"];
+"1000215" [label="(Identifier,VDEV_EVENT_ERROR_TCP)"];
+"1000164" [label="(Call,usbip_event_add(ud, SDEV_EVENT_ERROR_TCP))"];
+"1000221" [label="(MethodReturn,int)"];
+"1000171" [label="(Call,usbip_event_add(ud, VDEV_EVENT_ERROR_TCP))"];
+"1000213" -> "1000212"  [label="AST: "];
+"1000213" -> "1000215"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000215" -> "1000213"  [label="AST: "];
+"1000218" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000221"  [label="DDG: ud"];
+"1000213" -> "1000221"  [label="DDG: usbip_event_add(ud, VDEV_EVENT_ERROR_TCP)"];
+"1000213" -> "1000221"  [label="DDG: VDEV_EVENT_ERROR_TCP"];
+"1000105" -> "1000213"  [label="DDG: ud"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000221"  [label="DDG: ud"];
+"1000105" -> "1000164"  [label="DDG: ud"];
+"1000105" -> "1000171"  [label="DDG: ud"];
+"1000105" -> "1000208"  [label="DDG: ud"];
+}

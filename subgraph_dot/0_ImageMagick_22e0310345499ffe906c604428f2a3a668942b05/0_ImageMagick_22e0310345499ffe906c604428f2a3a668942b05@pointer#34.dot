@@ -1,0 +1,38 @@
+digraph "0_ImageMagick_22e0310345499ffe906c604428f2a3a668942b05@pointer" {
+"1004454" [label="(Call,image->page.y=mng_info->clip.top)"];
+"1004166" [label="(Call,mng_info->clip.top > 0)"];
+"1004455" [label="(Call,image->page.y)"];
+"1004454" [label="(Call,image->page.y=mng_info->clip.top)"];
+"1004175" [label="(Identifier,image_width)"];
+"1006290" [label="(Call,mng_minimum_box(crop_box,mng_info->clip))"];
+"1004460" [label="(Call,mng_info->clip.top)"];
+"1004165" [label="(Call,(mng_info->clip.top > 0) ||\n                (image_width < mng_info->mng_width) ||\n                (mng_info->clip.right < (ssize_t) mng_info->mng_width) ||\n                (image_height < mng_info->mng_height) ||\n                (mng_info->clip.bottom < (ssize_t) mng_info->mng_height))"];
+"1004361" [label="(Block,)"];
+"1004166" [label="(Call,mng_info->clip.top > 0)"];
+"1004467" [label="(Identifier,image)"];
+"1007383" [label="(MethodReturn,static Image *)"];
+"1004503" [label="(Call,(double) mng_info->clip.top)"];
+"1004167" [label="(Call,mng_info->clip.top)"];
+"1004172" [label="(Literal,0)"];
+"1002369" [label="(Call,mng_info->clip.bottom\n               -mng_info->clip.top)"];
+"1004454" -> "1004361"  [label="AST: "];
+"1004454" -> "1004460"  [label="CFG: "];
+"1004455" -> "1004454"  [label="AST: "];
+"1004460" -> "1004454"  [label="AST: "];
+"1004467" -> "1004454"  [label="CFG: "];
+"1004454" -> "1007383"  [label="DDG: image->page.y"];
+"1004454" -> "1007383"  [label="DDG: mng_info->clip.top"];
+"1004166" -> "1004454"  [label="DDG: mng_info->clip.top"];
+"1004166" -> "1004165"  [label="AST: "];
+"1004166" -> "1004172"  [label="CFG: "];
+"1004167" -> "1004166"  [label="AST: "];
+"1004172" -> "1004166"  [label="AST: "];
+"1004175" -> "1004166"  [label="CFG: "];
+"1004165" -> "1004166"  [label="CFG: "];
+"1004166" -> "1007383"  [label="DDG: mng_info->clip.top"];
+"1004166" -> "1002369"  [label="DDG: mng_info->clip.top"];
+"1004166" -> "1004165"  [label="DDG: mng_info->clip.top"];
+"1004166" -> "1004165"  [label="DDG: 0"];
+"1004166" -> "1004503"  [label="DDG: mng_info->clip.top"];
+"1004166" -> "1006290"  [label="DDG: mng_info->clip.top"];
+}

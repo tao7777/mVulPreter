@@ -1,0 +1,35 @@
+digraph "0_w3m_d43527cfa0dbb3ccefec4a6f7b32c1434739aa29@pointer" {
+"1000151" [label="(Call,GC_free(old))"];
+"1000140" [label="(Call,(void *)old)"];
+"1000104" [label="(Call,*old = x->ptr)"];
+"1000104" [label="(Call,*old = x->ptr)"];
+"1000140" [label="(Call,(void *)old)"];
+"1000111" [label="(Identifier,newlen)"];
+"1000102" [label="(Block,)"];
+"1000151" [label="(Call,GC_free(old))"];
+"1000105" [label="(Identifier,old)"];
+"1000152" [label="(Identifier,old)"];
+"1000106" [label="(Call,x->ptr)"];
+"1000139" [label="(Call,bcopy((void *)old, (void *)x->ptr, x->length))"];
+"1000142" [label="(Identifier,old)"];
+"1000153" [label="(MethodReturn,RET)"];
+"1000151" -> "1000102"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000153" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000153"  [label="DDG: GC_free(old)"];
+"1000151" -> "1000153"  [label="DDG: old"];
+"1000140" -> "1000151"  [label="DDG: old"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000142"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000142" -> "1000140"  [label="AST: "];
+"1000144" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="DDG: old"];
+"1000104" -> "1000140"  [label="DDG: old"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000111" -> "1000104"  [label="CFG: "];
+}

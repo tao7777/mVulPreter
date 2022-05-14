@@ -1,0 +1,34 @@
+digraph "0_linux_f647d7c155f069c1a068030255c300663516420e@API" {
+"1000298" [label="(Call,this_cpu_read(__preempt_count))"];
+"1000293" [label="(Call,task_thread_info(prev_p)->saved_preempt_count = this_cpu_read(__preempt_count))"];
+"1000300" [label="(Call,this_cpu_write(__preempt_count, task_thread_info(next_p)->saved_preempt_count))"];
+"1000302" [label="(Call,task_thread_info(next_p)->saved_preempt_count)"];
+"1000307" [label="(Identifier,kernel_stack)"];
+"1000114" [label="(Block,)"];
+"1000300" [label="(Call,this_cpu_write(__preempt_count, task_thread_info(next_p)->saved_preempt_count))"];
+"1000301" [label="(Identifier,__preempt_count)"];
+"1000298" [label="(Call,this_cpu_read(__preempt_count))"];
+"1000299" [label="(Identifier,__preempt_count)"];
+"1000293" [label="(Call,task_thread_info(prev_p)->saved_preempt_count = this_cpu_read(__preempt_count))"];
+"1000337" [label="(MethodReturn,RET)"];
+"1000294" [label="(Call,task_thread_info(prev_p)->saved_preempt_count)"];
+"1000298" -> "1000293"  [label="AST: "];
+"1000298" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000298"  [label="AST: "];
+"1000293" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000293"  [label="DDG: __preempt_count"];
+"1000298" -> "1000300"  [label="DDG: __preempt_count"];
+"1000293" -> "1000114"  [label="AST: "];
+"1000294" -> "1000293"  [label="AST: "];
+"1000301" -> "1000293"  [label="CFG: "];
+"1000293" -> "1000337"  [label="DDG: this_cpu_read(__preempt_count)"];
+"1000293" -> "1000337"  [label="DDG: task_thread_info(prev_p)->saved_preempt_count"];
+"1000300" -> "1000114"  [label="AST: "];
+"1000300" -> "1000302"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000302" -> "1000300"  [label="AST: "];
+"1000307" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000337"  [label="DDG: __preempt_count"];
+"1000300" -> "1000337"  [label="DDG: task_thread_info(next_p)->saved_preempt_count"];
+"1000300" -> "1000337"  [label="DDG: this_cpu_write(__preempt_count, task_thread_info(next_p)->saved_preempt_count)"];
+}

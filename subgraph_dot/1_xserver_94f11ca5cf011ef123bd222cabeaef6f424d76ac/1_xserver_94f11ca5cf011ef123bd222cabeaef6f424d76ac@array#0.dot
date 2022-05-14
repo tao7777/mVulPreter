@@ -1,0 +1,26 @@
+digraph "1_xserver_94f11ca5cf011ef123bd222cabeaef6f424d76ac@array" {
+"1000119" [label="(Call,rtrn = &textBuffer[tbNext])"];
+"1000128" [label="(Return,return rtrn;)"];
+"1000129" [label="(Identifier,rtrn)"];
+"1000130" [label="(MethodReturn,RET)"];
+"1000120" [label="(Identifier,rtrn)"];
+"1000119" [label="(Call,rtrn = &textBuffer[tbNext])"];
+"1000121" [label="(Call,&textBuffer[tbNext])"];
+"1000102" [label="(Block,)"];
+"1000128" [label="(Return,return rtrn;)"];
+"1000126" [label="(Identifier,tbNext)"];
+"1000119" -> "1000102"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000126" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000130"  [label="DDG: &textBuffer[tbNext]"];
+"1000119" -> "1000130"  [label="DDG: rtrn"];
+"1000119" -> "1000128"  [label="DDG: rtrn"];
+"1000128" -> "1000102"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000130" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000130"  [label="DDG: <RET>"];
+"1000129" -> "1000128"  [label="DDG: rtrn"];
+}

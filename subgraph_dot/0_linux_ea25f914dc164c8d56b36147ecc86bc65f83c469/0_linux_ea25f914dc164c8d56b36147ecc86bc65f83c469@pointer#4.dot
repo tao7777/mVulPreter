@@ -1,0 +1,25 @@
+digraph "0_linux_ea25f914dc164c8d56b36147ecc86bc65f83c469@pointer" {
+"1000264" [label="(Call,meta && meta->raw_mode)"];
+"1000107" [label="(MethodParameterIn,struct bpf_call_arg_meta *meta)"];
+"1000337" [label="(MethodReturn,static int)"];
+"1000107" [label="(MethodParameterIn,struct bpf_call_arg_meta *meta)"];
+"1000284" [label="(Identifier,i)"];
+"1000266" [label="(Call,meta->raw_mode)"];
+"1000264" [label="(Call,meta && meta->raw_mode)"];
+"1000272" [label="(Identifier,meta)"];
+"1000263" [label="(ControlStructure,if (meta && meta->raw_mode))"];
+"1000265" [label="(Identifier,meta)"];
+"1000264" -> "1000263"  [label="AST: "];
+"1000264" -> "1000265"  [label="CFG: "];
+"1000264" -> "1000266"  [label="CFG: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000266" -> "1000264"  [label="AST: "];
+"1000272" -> "1000264"  [label="CFG: "];
+"1000284" -> "1000264"  [label="CFG: "];
+"1000264" -> "1000337"  [label="DDG: meta"];
+"1000264" -> "1000337"  [label="DDG: meta && meta->raw_mode"];
+"1000264" -> "1000337"  [label="DDG: meta->raw_mode"];
+"1000107" -> "1000264"  [label="DDG: meta"];
+"1000107" -> "1000102"  [label="AST: "];
+"1000107" -> "1000337"  [label="DDG: meta"];
+}

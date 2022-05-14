@@ -1,0 +1,22 @@
+digraph "0_linux_0b79459b482e85cb7426aa7da683a9f2c97aeae1_1@pointer" {
+"1000101" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000120" [label="(Call,kvm_make_request(KVM_REQ_CLOCK_UPDATE, vcpu))"];
+"1000101" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000122" [label="(Identifier,vcpu)"];
+"1000121" [label="(Identifier,KVM_REQ_CLOCK_UPDATE)"];
+"1000124" [label="(Literal,0)"];
+"1000102" [label="(Block,)"];
+"1000125" [label="(MethodReturn,static int)"];
+"1000120" [label="(Call,kvm_make_request(KVM_REQ_CLOCK_UPDATE, vcpu))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000125"  [label="DDG: vcpu"];
+"1000101" -> "1000120"  [label="DDG: vcpu"];
+"1000120" -> "1000102"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000124" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000125"  [label="DDG: KVM_REQ_CLOCK_UPDATE"];
+"1000120" -> "1000125"  [label="DDG: vcpu"];
+"1000120" -> "1000125"  [label="DDG: kvm_make_request(KVM_REQ_CLOCK_UPDATE, vcpu)"];
+}

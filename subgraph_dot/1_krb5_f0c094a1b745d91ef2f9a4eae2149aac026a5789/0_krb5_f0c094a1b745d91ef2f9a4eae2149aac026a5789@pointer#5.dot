@@ -1,0 +1,33 @@
+digraph "0_krb5_f0c094a1b745d91ef2f9a4eae2149aac026a5789@pointer" {
+"1000262" [label="(Call,data = NULL)"];
+"1000280" [label="(Call,free(data))"];
+"1000178" [label="(Call,realloc(data, size * sizeof(krb5_data)))"];
+"1000142" [label="(Call,!data)"];
+"1000231" [label="(Block,)"];
+"1000280" [label="(Call,free(data))"];
+"1000267" [label="(Block,)"];
+"1000266" [label="(Identifier,data)"];
+"1000264" [label="(Identifier,NULL)"];
+"1000283" [label="(Identifier,r)"];
+"1000263" [label="(Identifier,data)"];
+"1000262" [label="(Call,data = NULL)"];
+"1000281" [label="(Identifier,data)"];
+"1000187" [label="(Call,data = new_data)"];
+"1000286" [label="(MethodReturn,RET)"];
+"1000262" -> "1000231"  [label="AST: "];
+"1000262" -> "1000264"  [label="CFG: "];
+"1000263" -> "1000262"  [label="AST: "];
+"1000264" -> "1000262"  [label="AST: "];
+"1000266" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000286"  [label="DDG: NULL"];
+"1000262" -> "1000286"  [label="DDG: data"];
+"1000262" -> "1000280"  [label="DDG: data"];
+"1000280" -> "1000267"  [label="AST: "];
+"1000280" -> "1000281"  [label="CFG: "];
+"1000281" -> "1000280"  [label="AST: "];
+"1000283" -> "1000280"  [label="CFG: "];
+"1000280" -> "1000286"  [label="DDG: data"];
+"1000187" -> "1000280"  [label="DDG: data"];
+"1000178" -> "1000280"  [label="DDG: data"];
+"1000142" -> "1000280"  [label="DDG: data"];
+}

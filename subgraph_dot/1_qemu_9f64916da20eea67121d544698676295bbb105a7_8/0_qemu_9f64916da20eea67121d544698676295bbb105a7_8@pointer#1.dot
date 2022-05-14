@@ -1,0 +1,30 @@
+digraph "0_qemu_9f64916da20eea67121d544698676295bbb105a7_8@pointer" {
+"1000132" [label="(Call,!vs->vd->lossy)"];
+"1000131" [label="(Call,!vs->vd->lossy || vs->tight.quality == (uint8_t)-1\n            || vs->tight.quality == 9)"];
+"1000133" [label="(Call,vs->vd->lossy)"];
+"1000172" [label="(Identifier,vs)"];
+"1000131" [label="(Call,!vs->vd->lossy || vs->tight.quality == (uint8_t)-1\n            || vs->tight.quality == 9)"];
+"1000158" [label="(Identifier,zywrle_level)"];
+"1000138" [label="(Call,vs->tight.quality == (uint8_t)-1\n            || vs->tight.quality == 9)"];
+"1000130" [label="(ControlStructure,if (!vs->vd->lossy || vs->tight.quality == (uint8_t)-1\n            || vs->tight.quality == 9))"];
+"1000492" [label="(MethodReturn,static int)"];
+"1000142" [label="(Identifier,vs)"];
+"1000132" [label="(Call,!vs->vd->lossy)"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000142" -> "1000132"  [label="CFG: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000492"  [label="DDG: vs->vd->lossy"];
+"1000132" -> "1000131"  [label="DDG: vs->vd->lossy"];
+"1000131" -> "1000130"  [label="AST: "];
+"1000131" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000131"  [label="AST: "];
+"1000158" -> "1000131"  [label="CFG: "];
+"1000172" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000492"  [label="DDG: !vs->vd->lossy"];
+"1000131" -> "1000492"  [label="DDG: vs->tight.quality == (uint8_t)-1\n            || vs->tight.quality == 9"];
+"1000131" -> "1000492"  [label="DDG: !vs->vd->lossy || vs->tight.quality == (uint8_t)-1\n            || vs->tight.quality == 9"];
+"1000138" -> "1000131"  [label="DDG: vs->tight.quality == (uint8_t)-1"];
+"1000138" -> "1000131"  [label="DDG: vs->tight.quality == 9"];
+}

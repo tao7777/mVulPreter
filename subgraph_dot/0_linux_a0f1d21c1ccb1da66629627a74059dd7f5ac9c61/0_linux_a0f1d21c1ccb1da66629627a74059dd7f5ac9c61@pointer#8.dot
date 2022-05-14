@@ -1,0 +1,26 @@
+digraph "0_linux_a0f1d21c1ccb1da66629627a74059dd7f5ac9c61@pointer" {
+"1000112" [label="(Call,cd->flags & KVM_CREATE_DEVICE_TEST)"];
+"1000110" [label="(Call,test = cd->flags & KVM_CREATE_DEVICE_TEST)"];
+"1000103" [label="(Block,)"];
+"1000260" [label="(MethodReturn,static int)"];
+"1000110" [label="(Call,test = cd->flags & KVM_CREATE_DEVICE_TEST)"];
+"1000112" [label="(Call,cd->flags & KVM_CREATE_DEVICE_TEST)"];
+"1000111" [label="(Identifier,test)"];
+"1000113" [label="(Call,cd->flags)"];
+"1000121" [label="(Identifier,cd)"];
+"1000116" [label="(Identifier,KVM_CREATE_DEVICE_TEST)"];
+"1000112" -> "1000110"  [label="AST: "];
+"1000112" -> "1000116"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000116" -> "1000112"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000260"  [label="DDG: cd->flags"];
+"1000112" -> "1000260"  [label="DDG: KVM_CREATE_DEVICE_TEST"];
+"1000112" -> "1000110"  [label="DDG: cd->flags"];
+"1000112" -> "1000110"  [label="DDG: KVM_CREATE_DEVICE_TEST"];
+"1000110" -> "1000103"  [label="AST: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000121" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000260"  [label="DDG: cd->flags & KVM_CREATE_DEVICE_TEST"];
+"1000110" -> "1000260"  [label="DDG: test"];
+}

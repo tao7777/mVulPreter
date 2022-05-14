@@ -1,0 +1,30 @@
+digraph "0_yara_053e67e3ec81cc9268ce30eaf0d6663d8639ed1e_0@API" {
+"1000200" [label="(Call,yr_object_copy(func->return_obj, &func_copy->return_obj))"];
+"1000199" [label="(Call,FAIL_ON_ERROR_WITH_CLEANUP(\n        yr_object_copy(func->return_obj, &func_copy->return_obj),\n        yr_object_destroy(copy)))"];
+"1000199" [label="(Call,FAIL_ON_ERROR_WITH_CLEANUP(\n        yr_object_copy(func->return_obj, &func_copy->return_obj),\n        yr_object_destroy(copy)))"];
+"1000204" [label="(Call,&func_copy->return_obj)"];
+"1000208" [label="(Call,yr_object_destroy(copy))"];
+"1000209" [label="(Identifier,copy)"];
+"1000201" [label="(Call,func->return_obj)"];
+"1000308" [label="(MethodReturn,int)"];
+"1000129" [label="(Block,)"];
+"1000200" [label="(Call,yr_object_copy(func->return_obj, &func_copy->return_obj))"];
+"1000212" [label="(Identifier,i)"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000200" -> "1000204"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000204" -> "1000200"  [label="AST: "];
+"1000209" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000308"  [label="DDG: func->return_obj"];
+"1000200" -> "1000308"  [label="DDG: &func_copy->return_obj"];
+"1000200" -> "1000199"  [label="DDG: func->return_obj"];
+"1000200" -> "1000199"  [label="DDG: &func_copy->return_obj"];
+"1000199" -> "1000129"  [label="AST: "];
+"1000199" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000199"  [label="AST: "];
+"1000212" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000308"  [label="DDG: yr_object_copy(func->return_obj, &func_copy->return_obj)"];
+"1000199" -> "1000308"  [label="DDG: yr_object_destroy(copy)"];
+"1000199" -> "1000308"  [label="DDG: FAIL_ON_ERROR_WITH_CLEANUP(\n        yr_object_copy(func->return_obj, &func_copy->return_obj),\n        yr_object_destroy(copy))"];
+"1000208" -> "1000199"  [label="DDG: copy"];
+}

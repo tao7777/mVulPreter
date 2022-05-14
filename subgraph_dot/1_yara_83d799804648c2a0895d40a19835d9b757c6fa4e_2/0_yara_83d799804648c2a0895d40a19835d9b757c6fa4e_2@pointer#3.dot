@@ -1,0 +1,36 @@
+digraph "0_yara_83d799804648c2a0895d40a19835d9b757c6fa4e_2@pointer" {
+"1000266" [label="(Call,callback_args.data = data)"];
+"1000103" [label="(MethodParameterIn,uint8_t* data)"];
+"1000107" [label="(Block,)"];
+"1000208" [label="(Call,data + offset)"];
+"1000168" [label="(Call,exec(\n         ac_match->forward_code,\n         data + offset,\n         data_size - offset,\n        offset > 0 ? flags | RE_FLAGS_NOT_AT_START : flags,\n         NULL,\n         NULL))"];
+"1000340" [label="(Call,data + offset)"];
+"1000307" [label="(Call,data + offset)"];
+"1000266" [label="(Call,callback_args.data = data)"];
+"1000270" [label="(Identifier,data)"];
+"1000349" [label="(MethodReturn,int)"];
+"1000103" [label="(MethodParameterIn,uint8_t* data)"];
+"1000339" [label="(Call,_yr_scan_match_callback(\n        data + offset, 0, flags, &callback_args))"];
+"1000172" [label="(Call,data + offset)"];
+"1000204" [label="(Call,exec(\n         ac_match->forward_code,\n         data + offset,\n         data_size - offset,\n        offset > 0 ? flags | RE_FLAGS_NOT_AT_START : flags,\n         NULL,\n         NULL))"];
+"1000267" [label="(Call,callback_args.data)"];
+"1000273" [label="(Identifier,callback_args)"];
+"1000303" [label="(Call,exec(\n         ac_match->backward_code,\n         data + offset,\n         offset,\n         flags | RE_FLAGS_BACKWARDS | RE_FLAGS_EXHAUSTIVE,\n         _yr_scan_match_callback,\n        (void*) &callback_args))"];
+"1000266" -> "1000107"  [label="AST: "];
+"1000266" -> "1000270"  [label="CFG: "];
+"1000267" -> "1000266"  [label="AST: "];
+"1000270" -> "1000266"  [label="AST: "];
+"1000273" -> "1000266"  [label="CFG: "];
+"1000266" -> "1000349"  [label="DDG: callback_args.data"];
+"1000103" -> "1000266"  [label="DDG: data"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000349"  [label="DDG: data"];
+"1000103" -> "1000168"  [label="DDG: data"];
+"1000103" -> "1000172"  [label="DDG: data"];
+"1000103" -> "1000204"  [label="DDG: data"];
+"1000103" -> "1000208"  [label="DDG: data"];
+"1000103" -> "1000303"  [label="DDG: data"];
+"1000103" -> "1000307"  [label="DDG: data"];
+"1000103" -> "1000339"  [label="DDG: data"];
+"1000103" -> "1000340"  [label="DDG: data"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_23fcb3340d033d9f081e21e6c12c2db7eaa541d3@pointer" {
+"1000177" [label="(Call,uuid_equal(&dip->di_uuid, &mp->m_sb.sb_meta_uuid))"];
+"1000176" [label="(Call,!uuid_equal(&dip->di_uuid, &mp->m_sb.sb_meta_uuid))"];
+"1000176" [label="(Call,!uuid_equal(&dip->di_uuid, &mp->m_sb.sb_meta_uuid))"];
+"1000189" [label="(Identifier,__this_address)"];
+"1000177" [label="(Call,uuid_equal(&dip->di_uuid, &mp->m_sb.sb_meta_uuid))"];
+"1000178" [label="(Call,&dip->di_uuid)"];
+"1000467" [label="(MethodReturn,RET)"];
+"1000175" [label="(ControlStructure,if (!uuid_equal(&dip->di_uuid, &mp->m_sb.sb_meta_uuid)))"];
+"1000182" [label="(Call,&mp->m_sb.sb_meta_uuid)"];
+"1000191" [label="(Identifier,di_size)"];
+"1000177" -> "1000176"  [label="AST: "];
+"1000177" -> "1000182"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000182" -> "1000177"  [label="AST: "];
+"1000176" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000467"  [label="DDG: &mp->m_sb.sb_meta_uuid"];
+"1000177" -> "1000467"  [label="DDG: &dip->di_uuid"];
+"1000177" -> "1000176"  [label="DDG: &dip->di_uuid"];
+"1000177" -> "1000176"  [label="DDG: &mp->m_sb.sb_meta_uuid"];
+"1000176" -> "1000175"  [label="AST: "];
+"1000189" -> "1000176"  [label="CFG: "];
+"1000191" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000467"  [label="DDG: !uuid_equal(&dip->di_uuid, &mp->m_sb.sb_meta_uuid)"];
+"1000176" -> "1000467"  [label="DDG: uuid_equal(&dip->di_uuid, &mp->m_sb.sb_meta_uuid)"];
+}

@@ -1,0 +1,22 @@
+digraph "0_altlinux_ffe7058c70253d574b1963c7c93002bd410fddc9@pointer" {
+"1000171" [label="(Call,setfsuid(pwd->pw_uid))"];
+"1000169" [label="(Call,fsuid = setfsuid(pwd->pw_uid))"];
+"1000114" [label="(Block,)"];
+"1000171" [label="(Call,setfsuid(pwd->pw_uid))"];
+"1000169" [label="(Call,fsuid = setfsuid(pwd->pw_uid))"];
+"1000316" [label="(MethodReturn,RET)"];
+"1000176" [label="(Identifier,fp)"];
+"1000172" [label="(Call,pwd->pw_uid)"];
+"1000170" [label="(Identifier,fsuid)"];
+"1000171" -> "1000169"  [label="AST: "];
+"1000171" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000169" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000316"  [label="DDG: pwd->pw_uid"];
+"1000171" -> "1000169"  [label="DDG: pwd->pw_uid"];
+"1000169" -> "1000114"  [label="AST: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000176" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000316"  [label="DDG: setfsuid(pwd->pw_uid)"];
+"1000169" -> "1000316"  [label="DDG: fsuid"];
+}

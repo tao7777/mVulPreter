@@ -1,0 +1,31 @@
+digraph "0_openssl_ce325c60c74b0fa784f5872404b722e120e5cab0_0@pointer" {
+"1000936" [label="(Call,s->session->sess_cert->peer_rsa_tmp=rsa)"];
+"1000800" [label="(Call,rsa=RSA_new())"];
+"1000802" [label="(Call,RSA_new())"];
+"1000946" [label="(Identifier,rsa)"];
+"1000799" [label="(Call,(rsa=RSA_new()) == NULL)"];
+"1000944" [label="(Identifier,rsa)"];
+"1000801" [label="(Identifier,rsa)"];
+"1000803" [label="(Identifier,NULL)"];
+"1000800" [label="(Call,rsa=RSA_new())"];
+"1001790" [label="(MethodReturn,int)"];
+"1001763" [label="(Call,rsa != NULL)"];
+"1000779" [label="(Block,)"];
+"1000937" [label="(Call,s->session->sess_cert->peer_rsa_tmp)"];
+"1000936" [label="(Call,s->session->sess_cert->peer_rsa_tmp=rsa)"];
+"1000936" -> "1000779"  [label="AST: "];
+"1000936" -> "1000944"  [label="CFG: "];
+"1000937" -> "1000936"  [label="AST: "];
+"1000944" -> "1000936"  [label="AST: "];
+"1000946" -> "1000936"  [label="CFG: "];
+"1000936" -> "1001790"  [label="DDG: s->session->sess_cert->peer_rsa_tmp"];
+"1000800" -> "1000936"  [label="DDG: rsa"];
+"1000800" -> "1000799"  [label="AST: "];
+"1000800" -> "1000802"  [label="CFG: "];
+"1000801" -> "1000800"  [label="AST: "];
+"1000802" -> "1000800"  [label="AST: "];
+"1000803" -> "1000800"  [label="CFG: "];
+"1000800" -> "1001790"  [label="DDG: RSA_new()"];
+"1000800" -> "1000799"  [label="DDG: rsa"];
+"1000800" -> "1001763"  [label="DDG: rsa"];
+}

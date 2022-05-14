@@ -1,0 +1,22 @@
+digraph "0_Chrome_96dbafe288dbe2f0cc45fa3c39daf6d0c37acbab_22@pointer" {
+"1000109" [label="(MethodParameterIn,double *array)"];
+"1000199" [label="(Call,array[amount++] = (double)cnt)"];
+"1000209" [label="(Identifier,amount)"];
+"1000109" [label="(MethodParameterIn,double *array)"];
+"1000216" [label="(MethodReturn,RET)"];
+"1000200" [label="(Call,array[amount++])"];
+"1000172" [label="(Block,)"];
+"1000204" [label="(Call,(double)cnt)"];
+"1000199" [label="(Call,array[amount++] = (double)cnt)"];
+"1000109" -> "1000104"  [label="AST: "];
+"1000109" -> "1000216"  [label="DDG: array"];
+"1000109" -> "1000199"  [label="DDG: array"];
+"1000199" -> "1000172"  [label="AST: "];
+"1000199" -> "1000204"  [label="CFG: "];
+"1000200" -> "1000199"  [label="AST: "];
+"1000204" -> "1000199"  [label="AST: "];
+"1000209" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000216"  [label="DDG: array[amount++]"];
+"1000199" -> "1000216"  [label="DDG: (double)cnt"];
+"1000204" -> "1000199"  [label="DDG: cnt"];
+}

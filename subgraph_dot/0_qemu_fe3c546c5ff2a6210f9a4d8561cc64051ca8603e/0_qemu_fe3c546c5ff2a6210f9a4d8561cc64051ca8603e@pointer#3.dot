@@ -1,0 +1,33 @@
+digraph "0_qemu_fe3c546c5ff2a6210f9a4d8561cc64051ca8603e@pointer" {
+"1000233" [label="(Call,resp->InformationBufferOffset =\n            cpu_to_le32(infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0))"];
+"1000237" [label="(Call,cpu_to_le32(infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0))"];
+"1000240" [label="(Call,sizeof(rndis_query_cmplt_type) - 8)"];
+"1000107" [label="(Block,)"];
+"1000234" [label="(Call,resp->InformationBufferOffset)"];
+"1000247" [label="(Identifier,resp)"];
+"1000259" [label="(MethodReturn,static int)"];
+"1000237" [label="(Call,cpu_to_le32(infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0))"];
+"1000243" [label="(Literal,8)"];
+"1000233" [label="(Call,resp->InformationBufferOffset =\n            cpu_to_le32(infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0))"];
+"1000238" [label="(Call,infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0)"];
+"1000241" [label="(Call,sizeof(rndis_query_cmplt_type))"];
+"1000240" [label="(Call,sizeof(rndis_query_cmplt_type) - 8)"];
+"1000233" -> "1000107"  [label="AST: "];
+"1000233" -> "1000237"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000237" -> "1000233"  [label="AST: "];
+"1000247" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000259"  [label="DDG: cpu_to_le32(infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0)"];
+"1000233" -> "1000259"  [label="DDG: resp->InformationBufferOffset"];
+"1000237" -> "1000233"  [label="DDG: infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0"];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000237" -> "1000259"  [label="DDG: infobuflen ? sizeof(rndis_query_cmplt_type) - 8 : 0"];
+"1000240" -> "1000237"  [label="DDG: 8"];
+"1000240" -> "1000238"  [label="AST: "];
+"1000240" -> "1000243"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000243" -> "1000240"  [label="AST: "];
+"1000238" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000238"  [label="DDG: 8"];
+}

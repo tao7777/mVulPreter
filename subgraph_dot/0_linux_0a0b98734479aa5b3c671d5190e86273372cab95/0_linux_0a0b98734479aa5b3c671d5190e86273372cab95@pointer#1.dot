@@ -1,0 +1,23 @@
+digraph "0_linux_0a0b98734479aa5b3c671d5190e86273372cab95@pointer" {
+"1000101" [label="(MethodParameterIn,struct timex *txc)"];
+"1000105" [label="(Call,memset(txc, 0, sizeof(struct timex)))"];
+"1000270" [label="(MethodReturn,int)"];
+"1000101" [label="(MethodParameterIn,struct timex *txc)"];
+"1000108" [label="(Call,sizeof(struct timex))"];
+"1000105" [label="(Call,memset(txc, 0, sizeof(struct timex)))"];
+"1000103" [label="(Block,)"];
+"1000106" [label="(Identifier,txc)"];
+"1000113" [label="(Identifier,tx32)"];
+"1000107" [label="(Literal,0)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000270"  [label="DDG: txc"];
+"1000101" -> "1000105"  [label="DDG: txc"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000108"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000108" -> "1000105"  [label="AST: "];
+"1000113" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000270"  [label="DDG: memset(txc, 0, sizeof(struct timex))"];
+"1000105" -> "1000270"  [label="DDG: txc"];
+}

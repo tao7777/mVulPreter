@@ -1,0 +1,35 @@
+digraph "0_savannah_59eb9f8cfe7d1df379a2318316d1f04f80fba54a@array" {
+"1000203" [label="(Call,points[i++] = (FT_UShort)( first += FT_GET_USHORT() ))"];
+"1000254" [label="(Return,return points;)"];
+"1000203" [label="(Call,points[i++] = (FT_UShort)( first += FT_GET_USHORT() ))"];
+"1000217" [label="(Call,points[i++] = FT_GET_BYTE())"];
+"1000202" [label="(Identifier,j)"];
+"1000177" [label="(Call,points[i++] = FT_GET_USHORT())"];
+"1000149" [label="(Call,FT_NEW_ARRAY( points, n ))"];
+"1000255" [label="(Identifier,points)"];
+"1000256" [label="(MethodReturn,RET)"];
+"1000104" [label="(Block,)"];
+"1000243" [label="(Call,points[i++] = (FT_UShort)( first += FT_GET_BYTE() ))"];
+"1000254" [label="(Return,return points;)"];
+"1000208" [label="(Call,(FT_UShort)( first += FT_GET_USHORT() ))"];
+"1000194" [label="(ControlStructure,for ( j = 0; j < runcnt; ++j ))"];
+"1000204" [label="(Call,points[i++])"];
+"1000203" -> "1000194"  [label="AST: "];
+"1000203" -> "1000208"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000208" -> "1000203"  [label="AST: "];
+"1000202" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000256"  [label="DDG: (FT_UShort)( first += FT_GET_USHORT() )"];
+"1000203" -> "1000256"  [label="DDG: points[i++]"];
+"1000203" -> "1000254"  [label="DDG: points[i++]"];
+"1000254" -> "1000104"  [label="AST: "];
+"1000254" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000256" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000256"  [label="DDG: <RET>"];
+"1000255" -> "1000254"  [label="DDG: points"];
+"1000177" -> "1000254"  [label="DDG: points[i++]"];
+"1000217" -> "1000254"  [label="DDG: points[i++]"];
+"1000243" -> "1000254"  [label="DDG: points[i++]"];
+"1000149" -> "1000254"  [label="DDG: points"];
+}

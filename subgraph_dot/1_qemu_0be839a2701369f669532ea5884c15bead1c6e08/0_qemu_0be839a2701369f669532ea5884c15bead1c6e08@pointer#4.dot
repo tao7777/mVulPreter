@@ -1,0 +1,31 @@
+digraph "0_qemu_0be839a2701369f669532ea5884c15bead1c6e08@pointer" {
+"1000158" [label="(Call,memory_region_get_ram_ptr(block->mr))"];
+"1000157" [label="(Call,memory_region_get_ram_ptr(block->mr) + offset)"];
+"1000156" [label="(Return,return memory_region_get_ram_ptr(block->mr) + offset;)"];
+"1000102" [label="(MethodParameterIn,ram_addr_t offset)"];
+"1000166" [label="(MethodReturn,static inline void *)"];
+"1000156" [label="(Return,return memory_region_get_ram_ptr(block->mr) + offset;)"];
+"1000159" [label="(Call,block->mr)"];
+"1000147" [label="(ControlStructure,if (!strncmp(id, block->idstr, sizeof(id))))"];
+"1000162" [label="(Identifier,offset)"];
+"1000158" [label="(Call,memory_region_get_ram_ptr(block->mr))"];
+"1000157" [label="(Call,memory_region_get_ram_ptr(block->mr) + offset)"];
+"1000158" -> "1000157"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000166"  [label="DDG: block->mr"];
+"1000158" -> "1000157"  [label="DDG: block->mr"];
+"1000157" -> "1000156"  [label="AST: "];
+"1000157" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000157"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000166"  [label="DDG: memory_region_get_ram_ptr(block->mr) + offset"];
+"1000157" -> "1000166"  [label="DDG: memory_region_get_ram_ptr(block->mr)"];
+"1000157" -> "1000166"  [label="DDG: offset"];
+"1000157" -> "1000156"  [label="DDG: memory_region_get_ram_ptr(block->mr) + offset"];
+"1000102" -> "1000157"  [label="DDG: offset"];
+"1000156" -> "1000147"  [label="AST: "];
+"1000166" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000166"  [label="DDG: <RET>"];
+}

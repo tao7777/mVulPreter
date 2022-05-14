@@ -1,0 +1,30 @@
+digraph "0_yara_053e67e3ec81cc9268ce30eaf0d6663d8639ed1e_0@API" {
+"1000205" [label="(Call,yr_object_copy(structure_member->object, &o))"];
+"1000204" [label="(Call,FAIL_ON_ERROR_WITH_CLEANUP(\n            yr_object_copy(structure_member->object, &o),\n            yr_object_destroy(copy)))"];
+"1000205" [label="(Call,yr_object_copy(structure_member->object, &o))"];
+"1000203" [label="(Block,)"];
+"1000206" [label="(Call,structure_member->object)"];
+"1000209" [label="(Call,&o)"];
+"1000204" [label="(Call,FAIL_ON_ERROR_WITH_CLEANUP(\n            yr_object_copy(structure_member->object, &o),\n            yr_object_destroy(copy)))"];
+"1000212" [label="(Identifier,copy)"];
+"1000268" [label="(MethodReturn,int)"];
+"1000211" [label="(Call,yr_object_destroy(copy))"];
+"1000215" [label="(Identifier,copy)"];
+"1000205" -> "1000204"  [label="AST: "];
+"1000205" -> "1000209"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000209" -> "1000205"  [label="AST: "];
+"1000212" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000268"  [label="DDG: &o"];
+"1000205" -> "1000268"  [label="DDG: structure_member->object"];
+"1000205" -> "1000204"  [label="DDG: structure_member->object"];
+"1000205" -> "1000204"  [label="DDG: &o"];
+"1000204" -> "1000203"  [label="AST: "];
+"1000204" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000204"  [label="AST: "];
+"1000215" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000268"  [label="DDG: yr_object_destroy(copy)"];
+"1000204" -> "1000268"  [label="DDG: yr_object_copy(structure_member->object, &o)"];
+"1000204" -> "1000268"  [label="DDG: FAIL_ON_ERROR_WITH_CLEANUP(\n            yr_object_copy(structure_member->object, &o),\n            yr_object_destroy(copy))"];
+"1000211" -> "1000204"  [label="DDG: copy"];
+}

@@ -1,0 +1,22 @@
+digraph "0_linux_e159332b9af4b04d882dbcfe1bb0117f0a6d4b58@pointer" {
+"1000863" [label="(Call,le32_to_cpu(fe->checkpoint))"];
+"1000859" [label="(Call,iinfo->i_checkpoint = le32_to_cpu(fe->checkpoint))"];
+"1000864" [label="(Call,fe->checkpoint)"];
+"1000859" [label="(Call,iinfo->i_checkpoint = le32_to_cpu(fe->checkpoint))"];
+"1000767" [label="(Block,)"];
+"1000860" [label="(Call,iinfo->i_checkpoint)"];
+"1000987" [label="(Identifier,inode)"];
+"1001226" [label="(MethodReturn,static int)"];
+"1000863" [label="(Call,le32_to_cpu(fe->checkpoint))"];
+"1000863" -> "1000859"  [label="AST: "];
+"1000863" -> "1000864"  [label="CFG: "];
+"1000864" -> "1000863"  [label="AST: "];
+"1000859" -> "1000863"  [label="CFG: "];
+"1000863" -> "1001226"  [label="DDG: fe->checkpoint"];
+"1000863" -> "1000859"  [label="DDG: fe->checkpoint"];
+"1000859" -> "1000767"  [label="AST: "];
+"1000860" -> "1000859"  [label="AST: "];
+"1000987" -> "1000859"  [label="CFG: "];
+"1000859" -> "1001226"  [label="DDG: iinfo->i_checkpoint"];
+"1000859" -> "1001226"  [label="DDG: le32_to_cpu(fe->checkpoint)"];
+}

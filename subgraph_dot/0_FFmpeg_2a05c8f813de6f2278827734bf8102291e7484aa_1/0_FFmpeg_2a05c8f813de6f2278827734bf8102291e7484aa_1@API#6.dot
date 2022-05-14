@@ -1,0 +1,31 @@
+digraph "0_FFmpeg_2a05c8f813de6f2278827734bf8102291e7484aa_1@API" {
+"1000251" [label="(Call,av_dict_free(&s->chained_options))"];
+"1000151" [label="(Call,av_dict_copy(&s->chained_options, *options, 0))"];
+"1000151" [label="(Call,av_dict_copy(&s->chained_options, *options, 0))"];
+"1000247" [label="(ControlStructure,if (ret < 0))"];
+"1000149" [label="(ControlStructure,if (options))"];
+"1000158" [label="(Literal,0)"];
+"1000156" [label="(Call,*options)"];
+"1000161" [label="(Identifier,s)"];
+"1000257" [label="(Identifier,ret)"];
+"1000258" [label="(MethodReturn,static int)"];
+"1000252" [label="(Call,&s->chained_options)"];
+"1000251" [label="(Call,av_dict_free(&s->chained_options))"];
+"1000152" [label="(Call,&s->chained_options)"];
+"1000251" -> "1000247"  [label="AST: "];
+"1000251" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000257" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000258"  [label="DDG: av_dict_free(&s->chained_options)"];
+"1000251" -> "1000258"  [label="DDG: &s->chained_options"];
+"1000151" -> "1000251"  [label="DDG: &s->chained_options"];
+"1000151" -> "1000149"  [label="AST: "];
+"1000151" -> "1000158"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000156" -> "1000151"  [label="AST: "];
+"1000158" -> "1000151"  [label="AST: "];
+"1000161" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000258"  [label="DDG: *options"];
+"1000151" -> "1000258"  [label="DDG: av_dict_copy(&s->chained_options, *options, 0)"];
+"1000151" -> "1000258"  [label="DDG: &s->chained_options"];
+}

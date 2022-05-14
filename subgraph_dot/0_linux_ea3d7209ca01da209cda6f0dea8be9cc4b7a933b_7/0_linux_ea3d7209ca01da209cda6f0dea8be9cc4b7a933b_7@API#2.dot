@@ -1,0 +1,24 @@
+digraph "0_linux_ea3d7209ca01da209cda6f0dea8be9cc4b7a933b_7@API" {
+"1000398" [label="(Call,down_write(&EXT4_I(inode)->i_data_sem))"];
+"1000431" [label="(Call,up_write(&EXT4_I(inode)->i_data_sem))"];
+"1000432" [label="(Call,&EXT4_I(inode)->i_data_sem)"];
+"1000351" [label="(Block,)"];
+"1000407" [label="(Identifier,inode)"];
+"1000541" [label="(MethodReturn,int)"];
+"1000438" [label="(Identifier,handle)"];
+"1000398" [label="(Call,down_write(&EXT4_I(inode)->i_data_sem))"];
+"1000431" [label="(Call,up_write(&EXT4_I(inode)->i_data_sem))"];
+"1000399" [label="(Call,&EXT4_I(inode)->i_data_sem)"];
+"1000398" -> "1000351"  [label="AST: "];
+"1000398" -> "1000399"  [label="CFG: "];
+"1000399" -> "1000398"  [label="AST: "];
+"1000407" -> "1000398"  [label="CFG: "];
+"1000398" -> "1000541"  [label="DDG: down_write(&EXT4_I(inode)->i_data_sem)"];
+"1000398" -> "1000431"  [label="DDG: &EXT4_I(inode)->i_data_sem"];
+"1000431" -> "1000351"  [label="AST: "];
+"1000431" -> "1000432"  [label="CFG: "];
+"1000432" -> "1000431"  [label="AST: "];
+"1000438" -> "1000431"  [label="CFG: "];
+"1000431" -> "1000541"  [label="DDG: &EXT4_I(inode)->i_data_sem"];
+"1000431" -> "1000541"  [label="DDG: up_write(&EXT4_I(inode)->i_data_sem)"];
+}

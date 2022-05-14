@@ -1,0 +1,31 @@
+digraph "0_linux_6c85501f2fabcfc4fc6ed976543d252c4eaf4be9_0@API" {
+"1000151" [label="(Call,copy_to_user(ru, &r, sizeof(struct rusage)))"];
+"1000149" [label="(Call,ru && copy_to_user(ru, &r, sizeof(struct rusage)))"];
+"1000153" [label="(Call,&r)"];
+"1000148" [label="(ControlStructure,if (ru && copy_to_user(ru, &r, sizeof(struct rusage))))"];
+"1000159" [label="(Identifier,EFAULT)"];
+"1000150" [label="(Identifier,ru)"];
+"1000155" [label="(Call,sizeof(struct rusage))"];
+"1000149" [label="(Call,ru && copy_to_user(ru, &r, sizeof(struct rusage)))"];
+"1000151" [label="(Call,copy_to_user(ru, &r, sizeof(struct rusage)))"];
+"1000162" [label="(Identifier,infop)"];
+"1000152" [label="(Identifier,ru)"];
+"1000224" [label="(MethodReturn,RET)"];
+"1000151" -> "1000149"  [label="AST: "];
+"1000151" -> "1000155"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000153" -> "1000151"  [label="AST: "];
+"1000155" -> "1000151"  [label="AST: "];
+"1000149" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000224"  [label="DDG: &r"];
+"1000151" -> "1000149"  [label="DDG: ru"];
+"1000151" -> "1000149"  [label="DDG: &r"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000159" -> "1000149"  [label="CFG: "];
+"1000162" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000224"  [label="DDG: copy_to_user(ru, &r, sizeof(struct rusage))"];
+"1000149" -> "1000224"  [label="DDG: ru && copy_to_user(ru, &r, sizeof(struct rusage))"];
+"1000149" -> "1000224"  [label="DDG: ru"];
+}

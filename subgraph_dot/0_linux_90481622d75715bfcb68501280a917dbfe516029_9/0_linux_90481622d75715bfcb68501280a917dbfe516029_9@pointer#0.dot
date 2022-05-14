@@ -1,0 +1,36 @@
+digraph "0_linux_90481622d75715bfcb68501280a917dbfe516029_9@pointer" {
+"1000107" [label="(MethodParameterIn,struct page *page)"];
+"1000158" [label="(Call,__unmap_hugepage_range(iter_vma,\n\t\t\t\taddress, address + huge_page_size(h),\n\t\t\t\tpage))"];
+"1000158" [label="(Call,__unmap_hugepage_range(iter_vma,\n\t\t\t\taddress, address + huge_page_size(h),\n\t\t\t\tpage))"];
+"1000155" [label="(Call,is_vma_resv_set(iter_vma, HPAGE_RESV_OWNER))"];
+"1000107" [label="(MethodParameterIn,struct page *page)"];
+"1000160" [label="(Identifier,address)"];
+"1000153" [label="(ControlStructure,if (!is_vma_resv_set(iter_vma, HPAGE_RESV_OWNER)))"];
+"1000173" [label="(MethodReturn,static int)"];
+"1000165" [label="(Identifier,page)"];
+"1000159" [label="(Identifier,iter_vma)"];
+"1000108" [label="(MethodParameterIn,unsigned long address)"];
+"1000169" [label="(Identifier,mapping)"];
+"1000127" [label="(Call,vma_hugecache_offset(h, vma, address))"];
+"1000161" [label="(Call,address + huge_page_size(h))"];
+"1000163" [label="(Call,huge_page_size(h))"];
+"1000107" -> "1000104"  [label="AST: "];
+"1000107" -> "1000173"  [label="DDG: page"];
+"1000107" -> "1000158"  [label="DDG: page"];
+"1000158" -> "1000153"  [label="AST: "];
+"1000158" -> "1000165"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000160" -> "1000158"  [label="AST: "];
+"1000161" -> "1000158"  [label="AST: "];
+"1000165" -> "1000158"  [label="AST: "];
+"1000169" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000173"  [label="DDG: iter_vma"];
+"1000158" -> "1000173"  [label="DDG: address"];
+"1000158" -> "1000173"  [label="DDG: __unmap_hugepage_range(iter_vma,\n\t\t\t\taddress, address + huge_page_size(h),\n\t\t\t\tpage)"];
+"1000158" -> "1000173"  [label="DDG: address + huge_page_size(h)"];
+"1000158" -> "1000173"  [label="DDG: page"];
+"1000155" -> "1000158"  [label="DDG: iter_vma"];
+"1000108" -> "1000158"  [label="DDG: address"];
+"1000127" -> "1000158"  [label="DDG: address"];
+"1000163" -> "1000158"  [label="DDG: h"];
+}

@@ -1,0 +1,2 @@
+ GpuChannel::~GpuChannel() {
+ }

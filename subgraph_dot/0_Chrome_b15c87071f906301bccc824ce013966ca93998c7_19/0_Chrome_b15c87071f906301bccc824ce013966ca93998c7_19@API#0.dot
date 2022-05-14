@@ -1,0 +1,22 @@
+digraph "0_Chrome_b15c87071f906301bccc824ce013966ca93998c7_19@API" {
+"1000220" [label="(Call,!ResumeThread(worker_thread))"];
+"1000221" [label="(Call,ResumeThread(worker_thread))"];
+"1000219" [label="(ControlStructure,if (!ResumeThread(worker_thread)))"];
+"1000220" [label="(Call,!ResumeThread(worker_thread))"];
+"1000226" [label="(Identifier,ERROR)"];
+"1000264" [label="(MethodReturn,bool)"];
+"1000236" [label="(Call,GetCurrentProcess())"];
+"1000222" [label="(Identifier,worker_thread)"];
+"1000221" [label="(Call,ResumeThread(worker_thread))"];
+"1000220" -> "1000219"  [label="AST: "];
+"1000220" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000226" -> "1000220"  [label="CFG: "];
+"1000236" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000264"  [label="DDG: ResumeThread(worker_thread)"];
+"1000220" -> "1000264"  [label="DDG: !ResumeThread(worker_thread)"];
+"1000221" -> "1000220"  [label="DDG: worker_thread"];
+"1000221" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000221" -> "1000264"  [label="DDG: worker_thread"];
+}

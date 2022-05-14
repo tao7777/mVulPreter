@@ -1,0 +1,35 @@
+digraph "0_linux_6fd99094de2b83d1d4c8457f2c83483b2828e75a@pointer" {
+"1000561" [label="(Call,in6_dev->cnf.hop_limit = ra_msg->icmph.icmp6_hop_limit)"];
+"1000549" [label="(Call,in6_dev->cnf.hop_limit < ra_msg->icmph.icmp6_hop_limit)"];
+"1000561" [label="(Call,in6_dev->cnf.hop_limit = ra_msg->icmph.icmp6_hop_limit)"];
+"1001104" [label="(MethodReturn,static void)"];
+"1000548" [label="(ControlStructure,if (in6_dev->cnf.hop_limit < ra_msg->icmph.icmp6_hop_limit))"];
+"1000579" [label="(Identifier,rt)"];
+"1000575" [label="(Literal,2)"];
+"1000562" [label="(Call,in6_dev->cnf.hop_limit)"];
+"1000560" [label="(Block,)"];
+"1000580" [label="(Call,dst_metric_set(&rt->dst, RTAX_HOPLIMIT,\n \t\t\t\t       ra_msg->icmph.icmp6_hop_limit))"];
+"1000564" [label="(Identifier,in6_dev)"];
+"1000550" [label="(Call,in6_dev->cnf.hop_limit)"];
+"1000567" [label="(Call,ra_msg->icmph.icmp6_hop_limit)"];
+"1000549" [label="(Call,in6_dev->cnf.hop_limit < ra_msg->icmph.icmp6_hop_limit)"];
+"1000555" [label="(Call,ra_msg->icmph.icmp6_hop_limit)"];
+"1000561" -> "1000560"  [label="AST: "];
+"1000561" -> "1000567"  [label="CFG: "];
+"1000562" -> "1000561"  [label="AST: "];
+"1000567" -> "1000561"  [label="AST: "];
+"1000579" -> "1000561"  [label="CFG: "];
+"1000561" -> "1001104"  [label="DDG: in6_dev->cnf.hop_limit"];
+"1000561" -> "1001104"  [label="DDG: ra_msg->icmph.icmp6_hop_limit"];
+"1000549" -> "1000561"  [label="DDG: ra_msg->icmph.icmp6_hop_limit"];
+"1000549" -> "1000548"  [label="AST: "];
+"1000549" -> "1000555"  [label="CFG: "];
+"1000550" -> "1000549"  [label="AST: "];
+"1000555" -> "1000549"  [label="AST: "];
+"1000564" -> "1000549"  [label="CFG: "];
+"1000575" -> "1000549"  [label="CFG: "];
+"1000549" -> "1001104"  [label="DDG: in6_dev->cnf.hop_limit"];
+"1000549" -> "1001104"  [label="DDG: ra_msg->icmph.icmp6_hop_limit"];
+"1000549" -> "1001104"  [label="DDG: in6_dev->cnf.hop_limit < ra_msg->icmph.icmp6_hop_limit"];
+"1000549" -> "1000580"  [label="DDG: ra_msg->icmph.icmp6_hop_limit"];
+}

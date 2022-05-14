@@ -1,0 +1,26 @@
+digraph "1_qemu_7285477ab11831b1cf56e45878a89170dd06d9b9_3@pointer" {
+"1000133" [label="(Call,r->iov.iov_base = qemu_blockalign(s->bs, SCSI_DMA_BUF_SIZE))"];
+"1000139" [label="(Call,qemu_blockalign(s->bs, SCSI_DMA_BUF_SIZE))"];
+"1000146" [label="(MethodReturn,static SCSIRequest *)"];
+"1000139" [label="(Call,qemu_blockalign(s->bs, SCSI_DMA_BUF_SIZE))"];
+"1000133" [label="(Call,r->iov.iov_base = qemu_blockalign(s->bs, SCSI_DMA_BUF_SIZE))"];
+"1000134" [label="(Call,r->iov.iov_base)"];
+"1000140" [label="(Call,s->bs)"];
+"1000145" [label="(Identifier,req)"];
+"1000105" [label="(Block,)"];
+"1000143" [label="(Identifier,SCSI_DMA_BUF_SIZE)"];
+"1000133" -> "1000105"  [label="AST: "];
+"1000133" -> "1000139"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000139" -> "1000133"  [label="AST: "];
+"1000145" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000146"  [label="DDG: qemu_blockalign(s->bs, SCSI_DMA_BUF_SIZE)"];
+"1000133" -> "1000146"  [label="DDG: r->iov.iov_base"];
+"1000139" -> "1000133"  [label="DDG: s->bs"];
+"1000139" -> "1000133"  [label="DDG: SCSI_DMA_BUF_SIZE"];
+"1000139" -> "1000143"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000143" -> "1000139"  [label="AST: "];
+"1000139" -> "1000146"  [label="DDG: s->bs"];
+"1000139" -> "1000146"  [label="DDG: SCSI_DMA_BUF_SIZE"];
+}

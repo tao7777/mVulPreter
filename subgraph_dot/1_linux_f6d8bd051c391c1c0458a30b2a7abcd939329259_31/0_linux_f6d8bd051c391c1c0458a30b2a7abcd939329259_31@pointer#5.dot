@@ -1,0 +1,26 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_31@pointer" {
+"1000230" [label="(Call,newtp->write_seq ^ jiffies)"];
+"1000226" [label="(Call,newinet->inet_id = newtp->write_seq ^ jiffies)"];
+"1000107" [label="(Block,)"];
+"1000226" [label="(Call,newinet->inet_id = newtp->write_seq ^ jiffies)"];
+"1000234" [label="(Identifier,jiffies)"];
+"1000227" [label="(Call,newinet->inet_id)"];
+"1000236" [label="(Identifier,newsk)"];
+"1000231" [label="(Call,newtp->write_seq)"];
+"1000230" [label="(Call,newtp->write_seq ^ jiffies)"];
+"1000346" [label="(MethodReturn,struct sock *)"];
+"1000230" -> "1000226"  [label="AST: "];
+"1000230" -> "1000234"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000234" -> "1000230"  [label="AST: "];
+"1000226" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000346"  [label="DDG: newtp->write_seq"];
+"1000230" -> "1000346"  [label="DDG: jiffies"];
+"1000230" -> "1000226"  [label="DDG: newtp->write_seq"];
+"1000230" -> "1000226"  [label="DDG: jiffies"];
+"1000226" -> "1000107"  [label="AST: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000236" -> "1000226"  [label="CFG: "];
+"1000226" -> "1000346"  [label="DDG: newinet->inet_id"];
+"1000226" -> "1000346"  [label="DDG: newtp->write_seq ^ jiffies"];
+}

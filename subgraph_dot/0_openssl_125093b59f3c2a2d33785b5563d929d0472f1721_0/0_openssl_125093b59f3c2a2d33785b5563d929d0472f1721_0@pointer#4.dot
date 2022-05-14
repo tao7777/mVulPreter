@@ -1,0 +1,32 @@
+digraph "0_openssl_125093b59f3c2a2d33785b5563d929d0472f1721_0@pointer" {
+"1000149" [label="(Call,rec->data += block_size)"];
+"1000106" [label="(MethodParameterIn,unsigned block_size)"];
+"1000150" [label="(Call,rec->data)"];
+"1000178" [label="(MethodReturn,int)"];
+"1000149" [label="(Call,rec->data += block_size)"];
+"1000154" [label="(Call,rec->input += block_size)"];
+"1000106" [label="(MethodParameterIn,unsigned block_size)"];
+"1000153" [label="(Identifier,block_size)"];
+"1000156" [label="(Identifier,rec)"];
+"1000134" [label="(Call,has_explicit_iv ? block_size : 0)"];
+"1000130" [label="(Call,1 /* padding length byte */ +\n\t\t\t\t  mac_size +\n\t\t\t\t  (has_explicit_iv ? block_size : 0))"];
+"1000148" [label="(Block,)"];
+"1000128" [label="(Call,overhead = 1 /* padding length byte */ +\n\t\t\t\t  mac_size +\n\t\t\t\t  (has_explicit_iv ? block_size : 0))"];
+"1000132" [label="(Call,mac_size +\n\t\t\t\t  (has_explicit_iv ? block_size : 0))"];
+"1000159" [label="(Call,rec->length -= block_size)"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000153"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000153" -> "1000149"  [label="AST: "];
+"1000156" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000178"  [label="DDG: rec->data"];
+"1000106" -> "1000149"  [label="DDG: block_size"];
+"1000106" -> "1000103"  [label="AST: "];
+"1000106" -> "1000178"  [label="DDG: block_size"];
+"1000106" -> "1000128"  [label="DDG: block_size"];
+"1000106" -> "1000130"  [label="DDG: block_size"];
+"1000106" -> "1000132"  [label="DDG: block_size"];
+"1000106" -> "1000134"  [label="DDG: block_size"];
+"1000106" -> "1000154"  [label="DDG: block_size"];
+"1000106" -> "1000159"  [label="DDG: block_size"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_21c5977a836e399fc710ff2c5367845ed5c2527f_0@API" {
+"1000176" [label="(Call,up_read(&uts_sem))"];
+"1000138" [label="(Call,down_read(&uts_sem))"];
+"1000179" [label="(JumpTarget,out:)"];
+"1000142" [label="(Identifier,res)"];
+"1000113" [label="(Block,)"];
+"1000177" [label="(Call,&uts_sem)"];
+"1000138" [label="(Call,down_read(&uts_sem))"];
+"1000139" [label="(Call,&uts_sem)"];
+"1000182" [label="(MethodReturn,RET)"];
+"1000176" [label="(Call,up_read(&uts_sem))"];
+"1000176" -> "1000113"  [label="AST: "];
+"1000176" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000176"  [label="AST: "];
+"1000179" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000182"  [label="DDG: up_read(&uts_sem)"];
+"1000176" -> "1000182"  [label="DDG: &uts_sem"];
+"1000138" -> "1000176"  [label="DDG: &uts_sem"];
+"1000138" -> "1000113"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000142" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000182"  [label="DDG: down_read(&uts_sem)"];
+}

@@ -1,0 +1,34 @@
+digraph "0_samba_70aeb5fddd1b2f8e143276f8d5a085db16c593b9@pointer" {
+"1000332" [label="(Call,flist = flist->next)"];
+"1000329" [label="(Call,flist != cur_flist)"];
+"1000325" [label="(ControlStructure,for (flist = first_flist; flist != cur_flist; flist = flist->next))"];
+"1000333" [label="(Identifier,flist)"];
+"1000330" [label="(Identifier,flist)"];
+"1000411" [label="(MethodReturn,int)"];
+"1000314" [label="(Call,cur_flist = flist)"];
+"1000332" [label="(Call,flist = flist->next)"];
+"1000334" [label="(Call,flist->next)"];
+"1000331" [label="(Identifier,cur_flist)"];
+"1000344" [label="(Identifier,iflags)"];
+"1000338" [label="(Identifier,file_old_total)"];
+"1000326" [label="(Call,flist = first_flist)"];
+"1000329" [label="(Call,flist != cur_flist)"];
+"1000332" -> "1000325"  [label="AST: "];
+"1000332" -> "1000334"  [label="CFG: "];
+"1000333" -> "1000332"  [label="AST: "];
+"1000334" -> "1000332"  [label="AST: "];
+"1000330" -> "1000332"  [label="CFG: "];
+"1000332" -> "1000411"  [label="DDG: flist->next"];
+"1000332" -> "1000329"  [label="DDG: flist"];
+"1000329" -> "1000325"  [label="AST: "];
+"1000329" -> "1000331"  [label="CFG: "];
+"1000330" -> "1000329"  [label="AST: "];
+"1000331" -> "1000329"  [label="AST: "];
+"1000338" -> "1000329"  [label="CFG: "];
+"1000344" -> "1000329"  [label="CFG: "];
+"1000329" -> "1000411"  [label="DDG: cur_flist"];
+"1000329" -> "1000411"  [label="DDG: flist != cur_flist"];
+"1000329" -> "1000411"  [label="DDG: flist"];
+"1000326" -> "1000329"  [label="DDG: flist"];
+"1000314" -> "1000329"  [label="DDG: cur_flist"];
+}

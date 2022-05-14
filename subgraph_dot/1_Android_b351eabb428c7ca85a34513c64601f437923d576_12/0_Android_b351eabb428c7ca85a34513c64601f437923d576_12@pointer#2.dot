@@ -1,0 +1,37 @@
+digraph "0_Android_b351eabb428c7ca85a34513c64601f437923d576_12@pointer" {
+"1000223" [label="(Call,CHECK_EQ(header->pAppPrivate, bufferMeta))"];
+"1000151" [label="(Call,*bufferMeta = new BufferMeta(graphicBuffer))"];
+"1000153" [label="(Call,new BufferMeta(graphicBuffer))"];
+"1000224" [label="(Call,header->pAppPrivate)"];
+"1000152" [label="(Identifier,bufferMeta)"];
+"1000227" [label="(Identifier,bufferMeta)"];
+"1000249" [label="(MethodReturn,status_t)"];
+"1000230" [label="(Identifier,buffer)"];
+"1000154" [label="(Identifier,BufferMeta)"];
+"1000151" [label="(Call,*bufferMeta = new BufferMeta(graphicBuffer))"];
+"1000104" [label="(Block,)"];
+"1000153" [label="(Call,new BufferMeta(graphicBuffer))"];
+"1000223" [label="(Call,CHECK_EQ(header->pAppPrivate, bufferMeta))"];
+"1000160" [label="(Identifier,ver)"];
+"1000198" [label="(Call,CLOG_ERROR(setParameter, err, \"%s(%#x): %s:%u meta=%p GB=%p\", name, index,\n                portString(portIndex), portIndex, bufferMeta, graphicBuffer->handle))"];
+"1000223" -> "1000104"  [label="AST: "];
+"1000223" -> "1000227"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000227" -> "1000223"  [label="AST: "];
+"1000230" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000249"  [label="DDG: bufferMeta"];
+"1000223" -> "1000249"  [label="DDG: CHECK_EQ(header->pAppPrivate, bufferMeta)"];
+"1000223" -> "1000249"  [label="DDG: header->pAppPrivate"];
+"1000151" -> "1000223"  [label="DDG: bufferMeta"];
+"1000151" -> "1000104"  [label="AST: "];
+"1000151" -> "1000153"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000153" -> "1000151"  [label="AST: "];
+"1000160" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000249"  [label="DDG: new BufferMeta(graphicBuffer)"];
+"1000153" -> "1000151"  [label="DDG: BufferMeta"];
+"1000151" -> "1000198"  [label="DDG: bufferMeta"];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000153" -> "1000249"  [label="DDG: BufferMeta"];
+}

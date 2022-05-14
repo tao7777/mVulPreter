@@ -1,0 +1,36 @@
+digraph "0_tcpdump_e01c9bf76740802025c9328901b55ee4a0c49ed6@pointer" {
+"1000144" [label="(Call,EXTRACT_16BITS(&lshp->ls_length))"];
+"1000115" [label="(Call,ND_TCHECK(lshp->ls_length))"];
+"1000143" [label="(Call,EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr))"];
+"1000121" [label="(Identifier,ndo)"];
+"1000144" [label="(Call,EXTRACT_16BITS(&lshp->ls_length))"];
+"1000119" [label="(Call,ND_PRINT((ndo, \"\n\t  Advertising Router %s, seq 0x%08x, age %us, length %u\",\n                ipaddr_string(ndo, &lshp->ls_router),\n               EXTRACT_32BITS(&lshp->ls_seq),\n               EXTRACT_16BITS(&lshp->ls_age),\n               EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr))))"];
+"1000115" [label="(Call,ND_TCHECK(lshp->ls_length))"];
+"1000116" [label="(Call,lshp->ls_length)"];
+"1000137" [label="(Block,)"];
+"1000149" [label="(Call,(u_int)sizeof(struct lsa6_hdr))"];
+"1000145" [label="(Call,&lshp->ls_length)"];
+"1000105" [label="(Block,)"];
+"1000169" [label="(MethodReturn,RET)"];
+"1000143" [label="(Call,EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr))"];
+"1000144" -> "1000143"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000150" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000169"  [label="DDG: &lshp->ls_length"];
+"1000144" -> "1000143"  [label="DDG: &lshp->ls_length"];
+"1000115" -> "1000144"  [label="DDG: lshp->ls_length"];
+"1000115" -> "1000105"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000121" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000169"  [label="DDG: ND_TCHECK(lshp->ls_length)"];
+"1000115" -> "1000169"  [label="DDG: lshp->ls_length"];
+"1000143" -> "1000137"  [label="AST: "];
+"1000143" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000143"  [label="AST: "];
+"1000119" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000169"  [label="DDG: (u_int)sizeof(struct lsa6_hdr)"];
+"1000143" -> "1000169"  [label="DDG: EXTRACT_16BITS(&lshp->ls_length)"];
+"1000143" -> "1000169"  [label="DDG: EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr)"];
+}

@@ -1,0 +1,24 @@
+digraph "1_linux_9899d11f654474d2d54ea52ceaa2a1f4db3abd68_2@pointer" {
+"1000128" [label="(Call,spin_lock_irq(&child->sighand->siglock))"];
+"1000153" [label="(Call,spin_unlock_irq(&child->sighand->siglock))"];
+"1000129" [label="(Call,&child->sighand->siglock)"];
+"1000154" [label="(Call,&child->sighand->siglock)"];
+"1000127" [label="(Block,)"];
+"1000180" [label="(MethodReturn,static int)"];
+"1000128" [label="(Call,spin_lock_irq(&child->sighand->siglock))"];
+"1000137" [label="(Identifier,child)"];
+"1000162" [label="(Identifier,tasklist_lock)"];
+"1000153" [label="(Call,spin_unlock_irq(&child->sighand->siglock))"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000137" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000180"  [label="DDG: spin_lock_irq(&child->sighand->siglock)"];
+"1000128" -> "1000153"  [label="DDG: &child->sighand->siglock"];
+"1000153" -> "1000127"  [label="AST: "];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000162" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000180"  [label="DDG: spin_unlock_irq(&child->sighand->siglock)"];
+"1000153" -> "1000180"  [label="DDG: &child->sighand->siglock"];
+}

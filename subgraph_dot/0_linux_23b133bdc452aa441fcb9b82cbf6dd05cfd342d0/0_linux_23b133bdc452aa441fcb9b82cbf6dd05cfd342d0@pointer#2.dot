@@ -1,0 +1,36 @@
+digraph "0_linux_23b133bdc452aa441fcb9b82cbf6dd05cfd342d0@pointer" {
+"1000620" [label="(Call,gid_valid(inode->i_gid))"];
+"1000619" [label="(Call,!gid_valid(inode->i_gid))"];
+"1000618" [label="(Call,!gid_valid(inode->i_gid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_SET))"];
+"1000620" [label="(Call,gid_valid(inode->i_gid))"];
+"1000621" [label="(Call,inode->i_gid)"];
+"1000637" [label="(Identifier,inode)"];
+"1000627" [label="(Identifier,inode)"];
+"1000617" [label="(ControlStructure,if (!gid_valid(inode->i_gid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_SET)))"];
+"1000650" [label="(Identifier,fe)"];
+"1000624" [label="(Call,UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_SET))"];
+"1001231" [label="(MethodReturn,static int)"];
+"1000618" [label="(Call,!gid_valid(inode->i_gid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_SET))"];
+"1000619" [label="(Call,!gid_valid(inode->i_gid))"];
+"1000620" -> "1000619"  [label="AST: "];
+"1000620" -> "1000621"  [label="CFG: "];
+"1000621" -> "1000620"  [label="AST: "];
+"1000619" -> "1000620"  [label="CFG: "];
+"1000620" -> "1001231"  [label="DDG: inode->i_gid"];
+"1000620" -> "1000619"  [label="DDG: inode->i_gid"];
+"1000619" -> "1000618"  [label="AST: "];
+"1000627" -> "1000619"  [label="CFG: "];
+"1000618" -> "1000619"  [label="CFG: "];
+"1000619" -> "1001231"  [label="DDG: gid_valid(inode->i_gid)"];
+"1000619" -> "1000618"  [label="DDG: gid_valid(inode->i_gid)"];
+"1000618" -> "1000617"  [label="AST: "];
+"1000618" -> "1000624"  [label="CFG: "];
+"1000624" -> "1000618"  [label="AST: "];
+"1000637" -> "1000618"  [label="CFG: "];
+"1000650" -> "1000618"  [label="CFG: "];
+"1000618" -> "1001231"  [label="DDG: !gid_valid(inode->i_gid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_SET)"];
+"1000618" -> "1001231"  [label="DDG: UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_SET)"];
+"1000618" -> "1001231"  [label="DDG: !gid_valid(inode->i_gid)"];
+"1000624" -> "1000618"  [label="DDG: UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_IGNORE)"];
+"1000624" -> "1000618"  [label="DDG: UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_GID_SET)"];
+}

@@ -1,0 +1,26 @@
+digraph "0_Android_268068f25673242d1d5130d96202d3288c91b700_3@API" {
+"1000167" [label="(Call,s->peer->close(s->peer))"];
+"1000141" [label="(Call,s->peer->shutdown(s->peer))"];
+"1000173" [label="(Identifier,s)"];
+"1000148" [label="(Identifier,s)"];
+"1000142" [label="(Call,s->peer)"];
+"1000141" [label="(Call,s->peer->shutdown(s->peer))"];
+"1000242" [label="(MethodReturn,static void)"];
+"1000161" [label="(Call,local_socket_close_locked(s->peer))"];
+"1000168" [label="(Call,s->peer)"];
+"1000166" [label="(Block,)"];
+"1000167" [label="(Call,s->peer->close(s->peer))"];
+"1000140" [label="(Block,)"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000173" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000242"  [label="DDG: s->peer->close(s->peer)"];
+"1000141" -> "1000167"  [label="DDG: s->peer"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000141" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000148" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000242"  [label="DDG: s->peer->shutdown(s->peer)"];
+"1000141" -> "1000161"  [label="DDG: s->peer"];
+}

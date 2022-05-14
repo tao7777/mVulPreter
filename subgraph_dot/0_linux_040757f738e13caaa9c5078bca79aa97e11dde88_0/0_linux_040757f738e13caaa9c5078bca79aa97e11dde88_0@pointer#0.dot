@@ -1,0 +1,32 @@
+digraph "0_linux_040757f738e13caaa9c5078bca79aa97e11dde88_0@pointer" {
+"1000101" [label="(MethodParameterIn,struct ucounts *ucounts)"];
+"1000124" [label="(Call,ucounts = NULL)"];
+"1000131" [label="(Call,kfree(ucounts))"];
+"1000102" [label="(Block,)"];
+"1000126" [label="(Identifier,NULL)"];
+"1000129" [label="(Identifier,ucounts_lock)"];
+"1000131" [label="(Call,kfree(ucounts))"];
+"1000132" [label="(Identifier,ucounts)"];
+"1000125" [label="(Identifier,ucounts)"];
+"1000124" [label="(Call,ucounts = NULL)"];
+"1000123" [label="(ControlStructure,else)"];
+"1000101" [label="(MethodParameterIn,struct ucounts *ucounts)"];
+"1000133" [label="(MethodReturn,static void)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000133"  [label="DDG: ucounts"];
+"1000101" -> "1000124"  [label="DDG: ucounts"];
+"1000101" -> "1000131"  [label="DDG: ucounts"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="AST: "];
+"1000129" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000133"  [label="DDG: NULL"];
+"1000124" -> "1000131"  [label="DDG: ucounts"];
+"1000131" -> "1000102"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000133" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000133"  [label="DDG: ucounts"];
+"1000131" -> "1000133"  [label="DDG: kfree(ucounts)"];
+}

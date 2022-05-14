@@ -1,0 +1,33 @@
+digraph "0_linux_71105998845fb012937332fe2e806d443c09e026@pointer" {
+"1000160" [label="(Call,port_idx = port->addr.port)"];
+"1000169" [label="(Call,snd_seq_delete_port(client, port_idx))"];
+"1000284" [label="(MethodReturn,static int)"];
+"1000161" [label="(Identifier,port_idx)"];
+"1000102" [label="(MethodParameterIn,struct snd_seq_client *client)"];
+"1000162" [label="(Call,port->addr.port)"];
+"1000168" [label="(Identifier,port)"];
+"1000170" [label="(Identifier,client)"];
+"1000169" [label="(Call,snd_seq_delete_port(client, port_idx))"];
+"1000171" [label="(Identifier,port_idx)"];
+"1000174" [label="(Identifier,EINVAL)"];
+"1000159" [label="(Block,)"];
+"1000127" [label="(Call,snd_seq_create_port(client, (info->flags & SNDRV_SEQ_PORT_FLG_GIVEN_PORT) ? info->addr.port : -1))"];
+"1000160" [label="(Call,port_idx = port->addr.port)"];
+"1000160" -> "1000159"  [label="AST: "];
+"1000160" -> "1000162"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000162" -> "1000160"  [label="AST: "];
+"1000168" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000284"  [label="DDG: port->addr.port"];
+"1000160" -> "1000169"  [label="DDG: port_idx"];
+"1000169" -> "1000159"  [label="AST: "];
+"1000169" -> "1000171"  [label="CFG: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000171" -> "1000169"  [label="AST: "];
+"1000174" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000284"  [label="DDG: snd_seq_delete_port(client, port_idx)"];
+"1000169" -> "1000284"  [label="DDG: port_idx"];
+"1000169" -> "1000284"  [label="DDG: client"];
+"1000127" -> "1000169"  [label="DDG: client"];
+"1000102" -> "1000169"  [label="DDG: client"];
+}

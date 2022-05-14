@@ -1,0 +1,36 @@
+digraph "0_linux_aa93d1fee85c890a34f2510a310e55ee76a27848@pointer" {
+"1000261" [label="(Call,s->vb_queue.io_modes = VB2_MMAP | VB2_USERPTR | VB2_READ)"];
+"1000267" [label="(Call,VB2_MMAP | VB2_USERPTR | VB2_READ)"];
+"1000269" [label="(Call,VB2_USERPTR | VB2_READ)"];
+"1000271" [label="(Identifier,VB2_READ)"];
+"1000261" [label="(Call,s->vb_queue.io_modes = VB2_MMAP | VB2_USERPTR | VB2_READ)"];
+"1000270" [label="(Identifier,VB2_USERPTR)"];
+"1000269" [label="(Call,VB2_USERPTR | VB2_READ)"];
+"1000108" [label="(Block,)"];
+"1000597" [label="(MethodReturn,static int)"];
+"1000268" [label="(Identifier,VB2_MMAP)"];
+"1000267" [label="(Call,VB2_MMAP | VB2_USERPTR | VB2_READ)"];
+"1000275" [label="(Identifier,s)"];
+"1000262" [label="(Call,s->vb_queue.io_modes)"];
+"1000261" -> "1000108"  [label="AST: "];
+"1000261" -> "1000267"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000267" -> "1000261"  [label="AST: "];
+"1000275" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000597"  [label="DDG: VB2_MMAP | VB2_USERPTR | VB2_READ"];
+"1000261" -> "1000597"  [label="DDG: s->vb_queue.io_modes"];
+"1000267" -> "1000261"  [label="DDG: VB2_MMAP"];
+"1000267" -> "1000261"  [label="DDG: VB2_USERPTR | VB2_READ"];
+"1000267" -> "1000269"  [label="CFG: "];
+"1000268" -> "1000267"  [label="AST: "];
+"1000269" -> "1000267"  [label="AST: "];
+"1000267" -> "1000597"  [label="DDG: VB2_USERPTR | VB2_READ"];
+"1000267" -> "1000597"  [label="DDG: VB2_MMAP"];
+"1000269" -> "1000267"  [label="DDG: VB2_USERPTR"];
+"1000269" -> "1000267"  [label="DDG: VB2_READ"];
+"1000269" -> "1000271"  [label="CFG: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000271" -> "1000269"  [label="AST: "];
+"1000269" -> "1000597"  [label="DDG: VB2_USERPTR"];
+"1000269" -> "1000597"  [label="DDG: VB2_READ"];
+}

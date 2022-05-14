@@ -1,0 +1,29 @@
+digraph "0_linux_ec0223ec48a90cb605244b45f7c62de856403729@pointer" {
+"1000334" [label="(Call,!net->sctp.auth_enable)"];
+"1000333" [label="(Call,!net->sctp.auth_enable || !new_asoc->peer.auth_capable)"];
+"1000363" [label="(Identifier,auth)"];
+"1000334" [label="(Call,!net->sctp.auth_enable)"];
+"1000335" [label="(Call,net->sctp.auth_enable)"];
+"1000332" [label="(ControlStructure,if (!net->sctp.auth_enable || !new_asoc->peer.auth_capable))"];
+"1000545" [label="(MethodReturn,sctp_disposition_t)"];
+"1000333" [label="(Call,!net->sctp.auth_enable || !new_asoc->peer.auth_capable)"];
+"1000349" [label="(Identifier,chunk)"];
+"1000340" [label="(Call,!new_asoc->peer.auth_capable)"];
+"1000343" [label="(Identifier,new_asoc)"];
+"1000334" -> "1000333"  [label="AST: "];
+"1000334" -> "1000335"  [label="CFG: "];
+"1000335" -> "1000334"  [label="AST: "];
+"1000343" -> "1000334"  [label="CFG: "];
+"1000333" -> "1000334"  [label="CFG: "];
+"1000334" -> "1000545"  [label="DDG: net->sctp.auth_enable"];
+"1000334" -> "1000333"  [label="DDG: net->sctp.auth_enable"];
+"1000333" -> "1000332"  [label="AST: "];
+"1000333" -> "1000340"  [label="CFG: "];
+"1000340" -> "1000333"  [label="AST: "];
+"1000349" -> "1000333"  [label="CFG: "];
+"1000363" -> "1000333"  [label="CFG: "];
+"1000333" -> "1000545"  [label="DDG: !net->sctp.auth_enable"];
+"1000333" -> "1000545"  [label="DDG: !net->sctp.auth_enable || !new_asoc->peer.auth_capable"];
+"1000333" -> "1000545"  [label="DDG: !new_asoc->peer.auth_capable"];
+"1000340" -> "1000333"  [label="DDG: new_asoc->peer.auth_capable"];
+}

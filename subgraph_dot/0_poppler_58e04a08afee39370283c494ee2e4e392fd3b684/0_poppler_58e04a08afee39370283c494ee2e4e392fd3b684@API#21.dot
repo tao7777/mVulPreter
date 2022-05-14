@@ -1,0 +1,22 @@
+digraph "0_poppler_58e04a08afee39370283c494ee2e4e392fd3b684@API" {
+"1000235" [label="(Call,!readUByte(&refSegs[i]))"];
+"1000236" [label="(Call,readUByte(&refSegs[i]))"];
+"1000234" [label="(ControlStructure,if (!readUByte(&refSegs[i])))"];
+"1000237" [label="(Call,&refSegs[i])"];
+"1000580" [label="(MethodReturn,void)"];
+"1000232" [label="(Identifier,i)"];
+"1000236" [label="(Call,readUByte(&refSegs[i]))"];
+"1000235" [label="(Call,!readUByte(&refSegs[i]))"];
+"1000242" [label="(ControlStructure,goto eofError2;)"];
+"1000235" -> "1000234"  [label="AST: "];
+"1000235" -> "1000236"  [label="CFG: "];
+"1000236" -> "1000235"  [label="AST: "];
+"1000242" -> "1000235"  [label="CFG: "];
+"1000232" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000580"  [label="DDG: readUByte(&refSegs[i])"];
+"1000235" -> "1000580"  [label="DDG: !readUByte(&refSegs[i])"];
+"1000236" -> "1000235"  [label="DDG: &refSegs[i]"];
+"1000236" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000236"  [label="AST: "];
+"1000236" -> "1000580"  [label="DDG: &refSegs[i]"];
+}

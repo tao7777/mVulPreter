@@ -1,0 +1,29 @@
+digraph "0_file_445c8fb0ebff85195be94cd9f7e1df89cade5c7f_0@API" {
+"1000224" [label="(Call,xph_filesz < sizeof(nbuf) ? xph_filesz\n\t\t\t    : sizeof(nbuf))"];
+"1000225" [label="(Call,xph_filesz < sizeof(nbuf))"];
+"1000229" [label="(Identifier,xph_filesz)"];
+"1000230" [label="(Call,sizeof(nbuf))"];
+"1000222" [label="(Call,len = xph_filesz < sizeof(nbuf) ? xph_filesz\n\t\t\t    : sizeof(nbuf))"];
+"1000224" [label="(Call,xph_filesz < sizeof(nbuf) ? xph_filesz\n\t\t\t    : sizeof(nbuf))"];
+"1000225" [label="(Call,xph_filesz < sizeof(nbuf))"];
+"1000227" [label="(Call,sizeof(nbuf))"];
+"1000357" [label="(MethodReturn,RET)"];
+"1000226" [label="(Identifier,xph_filesz)"];
+"1000231" [label="(Identifier,nbuf)"];
+"1000224" -> "1000222"  [label="AST: "];
+"1000224" -> "1000229"  [label="CFG: "];
+"1000224" -> "1000230"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000229" -> "1000224"  [label="AST: "];
+"1000230" -> "1000224"  [label="AST: "];
+"1000222" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000357"  [label="DDG: xph_filesz < sizeof(nbuf)"];
+"1000224" -> "1000357"  [label="DDG: xph_filesz"];
+"1000225" -> "1000224"  [label="DDG: xph_filesz"];
+"1000225" -> "1000227"  [label="CFG: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000227" -> "1000225"  [label="AST: "];
+"1000229" -> "1000225"  [label="CFG: "];
+"1000231" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000222"  [label="DDG: xph_filesz"];
+}

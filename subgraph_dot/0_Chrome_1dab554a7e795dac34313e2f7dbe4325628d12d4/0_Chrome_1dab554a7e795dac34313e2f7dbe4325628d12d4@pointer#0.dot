@@ -1,0 +1,24 @@
+digraph "0_Chrome_1dab554a7e795dac34313e2f7dbe4325628d12d4@pointer" {
+"1000101" [label="(MethodParameterIn,const Profile* profile)"];
+"1000121" [label="(Call,(*it)->profile() == profile)"];
+"1000125" [label="(Identifier,true)"];
+"1000121" [label="(Call,(*it)->profile() == profile)"];
+"1000123" [label="(Identifier,profile)"];
+"1000122" [label="(Call,(*it)->profile())"];
+"1000128" [label="(MethodReturn,bool)"];
+"1000101" [label="(MethodParameterIn,const Profile* profile)"];
+"1000118" [label="(Identifier,it)"];
+"1000120" [label="(ControlStructure,if ((*it)->profile() == profile))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000128"  [label="DDG: profile"];
+"1000101" -> "1000121"  [label="DDG: profile"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="CFG: "];
+"1000118" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000128"  [label="DDG: profile"];
+"1000121" -> "1000128"  [label="DDG: (*it)->profile()"];
+"1000121" -> "1000128"  [label="DDG: (*it)->profile() == profile"];
+}

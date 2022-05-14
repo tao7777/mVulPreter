@@ -1,0 +1,35 @@
+digraph "0_linux_84ac7260236a49c79eede91617700174c2c19b0c@pointer" {
+"1000173" [label="(Call,tx_ring ? &sk->sk_write_queue : &sk->sk_receive_queue)"];
+"1000111" [label="(MethodParameterIn,int tx_ring)"];
+"1000161" [label="(Call,tx_ring ? &po->tx_ring : &po->rx_ring)"];
+"1000587" [label="(MethodReturn,static int)"];
+"1000569" [label="(Call,!tx_ring)"];
+"1000111" [label="(MethodParameterIn,int tx_ring)"];
+"1000159" [label="(Call,rb = tx_ring ? &po->tx_ring : &po->rx_ring)"];
+"1000175" [label="(Call,&sk->sk_write_queue)"];
+"1000171" [label="(Call,rb_queue = tx_ring ? &sk->sk_write_queue : &sk->sk_receive_queue)"];
+"1000174" [label="(Identifier,tx_ring)"];
+"1000148" [label="(Call,tx_ring && (po->tp_version > TPACKET_V2))"];
+"1000173" [label="(Call,tx_ring ? &sk->sk_write_queue : &sk->sk_receive_queue)"];
+"1000371" [label="(Call,!tx_ring)"];
+"1000179" [label="(Call,&sk->sk_receive_queue)"];
+"1000173" -> "1000171"  [label="AST: "];
+"1000173" -> "1000175"  [label="CFG: "];
+"1000173" -> "1000179"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000175" -> "1000173"  [label="AST: "];
+"1000179" -> "1000173"  [label="AST: "];
+"1000171" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000587"  [label="DDG: &sk->sk_receive_queue"];
+"1000173" -> "1000587"  [label="DDG: tx_ring"];
+"1000173" -> "1000587"  [label="DDG: &sk->sk_write_queue"];
+"1000111" -> "1000173"  [label="DDG: tx_ring"];
+"1000111" -> "1000107"  [label="AST: "];
+"1000111" -> "1000587"  [label="DDG: tx_ring"];
+"1000111" -> "1000148"  [label="DDG: tx_ring"];
+"1000111" -> "1000159"  [label="DDG: tx_ring"];
+"1000111" -> "1000161"  [label="DDG: tx_ring"];
+"1000111" -> "1000171"  [label="DDG: tx_ring"];
+"1000111" -> "1000371"  [label="DDG: tx_ring"];
+"1000111" -> "1000569"  [label="DDG: tx_ring"];
+}

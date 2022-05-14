@@ -1,0 +1,25 @@
+digraph "0_abrt_3c1b60cfa62d39e5fff5a53a5bc53dae189e740e@API" {
+"1001421" [label="(Call,create_user_core(user_core_fd, pid, ulimit_c))"];
+"1001420" [label="(Return,return create_user_core(user_core_fd, pid, ulimit_c);)"];
+"1001447" [label="(MethodReturn,int)"];
+"1001422" [label="(Identifier,user_core_fd)"];
+"1001419" [label="(Block,)"];
+"1001424" [label="(Identifier,ulimit_c)"];
+"1001421" [label="(Call,create_user_core(user_core_fd, pid, ulimit_c))"];
+"1001423" [label="(Identifier,pid)"];
+"1001420" [label="(Return,return create_user_core(user_core_fd, pid, ulimit_c);)"];
+"1001421" -> "1001420"  [label="AST: "];
+"1001421" -> "1001424"  [label="CFG: "];
+"1001422" -> "1001421"  [label="AST: "];
+"1001423" -> "1001421"  [label="AST: "];
+"1001424" -> "1001421"  [label="AST: "];
+"1001420" -> "1001421"  [label="CFG: "];
+"1001421" -> "1001447"  [label="DDG: user_core_fd"];
+"1001421" -> "1001447"  [label="DDG: create_user_core(user_core_fd, pid, ulimit_c)"];
+"1001421" -> "1001447"  [label="DDG: pid"];
+"1001421" -> "1001447"  [label="DDG: ulimit_c"];
+"1001421" -> "1001420"  [label="DDG: create_user_core(user_core_fd, pid, ulimit_c)"];
+"1001420" -> "1001419"  [label="AST: "];
+"1001447" -> "1001420"  [label="CFG: "];
+"1001420" -> "1001447"  [label="DDG: <RET>"];
+}

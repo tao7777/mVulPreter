@@ -1,0 +1,35 @@
+digraph "0_Chrome_5b0d76edd5d6d4054b2e1263e23c852226c5f701@API" {
+"1000113" [label="(Call,BrowserThread::PostTask(\n      BrowserThread::UI,\n      FROM_HERE,\n      base::Bind(\n          &WriteObjectsOnUIThread, base::Owned(sanitized_objects.release()))))"];
+"1000116" [label="(Call,base::Bind(\n          &WriteObjectsOnUIThread, base::Owned(sanitized_objects.release())))"];
+"1000119" [label="(Call,base::Owned(sanitized_objects.release()))"];
+"1000102" [label="(Block,)"];
+"1000113" [label="(Call,BrowserThread::PostTask(\n      BrowserThread::UI,\n      FROM_HERE,\n      base::Bind(\n          &WriteObjectsOnUIThread, base::Owned(sanitized_objects.release()))))"];
+"1000116" [label="(Call,base::Bind(\n          &WriteObjectsOnUIThread, base::Owned(sanitized_objects.release())))"];
+"1000117" [label="(Call,&WriteObjectsOnUIThread)"];
+"1000115" [label="(Identifier,FROM_HERE)"];
+"1000119" [label="(Call,base::Owned(sanitized_objects.release()))"];
+"1000114" [label="(Identifier,BrowserThread::UI)"];
+"1000121" [label="(MethodReturn,void)"];
+"1000120" [label="(Call,sanitized_objects.release())"];
+"1000113" -> "1000102"  [label="AST: "];
+"1000113" -> "1000116"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="AST: "];
+"1000116" -> "1000113"  [label="AST: "];
+"1000121" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000121"  [label="DDG: BrowserThread::UI"];
+"1000113" -> "1000121"  [label="DDG: FROM_HERE"];
+"1000113" -> "1000121"  [label="DDG: BrowserThread::PostTask(\n      BrowserThread::UI,\n      FROM_HERE,\n      base::Bind(\n          &WriteObjectsOnUIThread, base::Owned(sanitized_objects.release())))"];
+"1000113" -> "1000121"  [label="DDG: base::Bind(\n          &WriteObjectsOnUIThread, base::Owned(sanitized_objects.release()))"];
+"1000116" -> "1000113"  [label="DDG: &WriteObjectsOnUIThread"];
+"1000116" -> "1000113"  [label="DDG: base::Owned(sanitized_objects.release())"];
+"1000116" -> "1000119"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000119" -> "1000116"  [label="AST: "];
+"1000116" -> "1000121"  [label="DDG: &WriteObjectsOnUIThread"];
+"1000116" -> "1000121"  [label="DDG: base::Owned(sanitized_objects.release())"];
+"1000119" -> "1000116"  [label="DDG: sanitized_objects.release()"];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000119" -> "1000121"  [label="DDG: sanitized_objects.release()"];
+}

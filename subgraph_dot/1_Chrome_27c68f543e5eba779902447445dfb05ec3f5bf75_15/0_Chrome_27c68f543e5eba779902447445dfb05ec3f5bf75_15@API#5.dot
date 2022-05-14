@@ -1,0 +1,30 @@
+digraph "0_Chrome_27c68f543e5eba779902447445dfb05ec3f5bf75_15@API" {
+"1000193" [label="(Call,fhdr->error_resilient_mode = reader_.ReadBool())"];
+"1000234" [label="(Call,!fhdr->error_resilient_mode)"];
+"1000240" [label="(Identifier,fhdr)"];
+"1000194" [label="(Call,fhdr->error_resilient_mode)"];
+"1000437" [label="(MethodReturn,bool)"];
+"1000246" [label="(Identifier,fhdr)"];
+"1000104" [label="(Block,)"];
+"1000234" [label="(Call,!fhdr->error_resilient_mode)"];
+"1000233" [label="(ControlStructure,if (!fhdr->error_resilient_mode))"];
+"1000193" [label="(Call,fhdr->error_resilient_mode = reader_.ReadBool())"];
+"1000197" [label="(Call,reader_.ReadBool())"];
+"1000199" [label="(Call,fhdr->IsKeyframe())"];
+"1000235" [label="(Call,fhdr->error_resilient_mode)"];
+"1000193" -> "1000104"  [label="AST: "];
+"1000193" -> "1000197"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000197" -> "1000193"  [label="AST: "];
+"1000199" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000437"  [label="DDG: fhdr->error_resilient_mode"];
+"1000193" -> "1000437"  [label="DDG: reader_.ReadBool()"];
+"1000193" -> "1000234"  [label="DDG: fhdr->error_resilient_mode"];
+"1000234" -> "1000233"  [label="AST: "];
+"1000234" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000234"  [label="AST: "];
+"1000240" -> "1000234"  [label="CFG: "];
+"1000246" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000437"  [label="DDG: fhdr->error_resilient_mode"];
+"1000234" -> "1000437"  [label="DDG: !fhdr->error_resilient_mode"];
+}

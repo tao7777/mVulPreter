@@ -1,0 +1,34 @@
+digraph "0_linux_ac6e780070e30e4c35bd395acfe9191e6268bdd3_0@pointer" {
+"1000172" [label="(Call,inet_sk(sk)->rx_dst_ifindex != skb->skb_iif)"];
+"1000171" [label="(Call,inet_sk(sk)->rx_dst_ifindex != skb->skb_iif ||\n\t\t\t    dst->ops->check(dst, np->rx_dst_cookie) == NULL)"];
+"1000177" [label="(Call,skb->skb_iif)"];
+"1000172" [label="(Call,inet_sk(sk)->rx_dst_ifindex != skb->skb_iif)"];
+"1000180" [label="(Call,dst->ops->check(dst, np->rx_dst_cookie) == NULL)"];
+"1000171" [label="(Call,inet_sk(sk)->rx_dst_ifindex != skb->skb_iif ||\n\t\t\t    dst->ops->check(dst, np->rx_dst_cookie) == NULL)"];
+"1000189" [label="(Identifier,dst)"];
+"1000196" [label="(Identifier,sk)"];
+"1000436" [label="(MethodReturn,static int)"];
+"1000182" [label="(Identifier,dst)"];
+"1000173" [label="(Call,inet_sk(sk)->rx_dst_ifindex)"];
+"1000170" [label="(ControlStructure,if (inet_sk(sk)->rx_dst_ifindex != skb->skb_iif ||\n\t\t\t    dst->ops->check(dst, np->rx_dst_cookie) == NULL))"];
+"1000172" -> "1000171"  [label="AST: "];
+"1000172" -> "1000177"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000177" -> "1000172"  [label="AST: "];
+"1000182" -> "1000172"  [label="CFG: "];
+"1000171" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000436"  [label="DDG: inet_sk(sk)->rx_dst_ifindex"];
+"1000172" -> "1000436"  [label="DDG: skb->skb_iif"];
+"1000172" -> "1000171"  [label="DDG: inet_sk(sk)->rx_dst_ifindex"];
+"1000172" -> "1000171"  [label="DDG: skb->skb_iif"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000171"  [label="AST: "];
+"1000189" -> "1000171"  [label="CFG: "];
+"1000196" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000436"  [label="DDG: inet_sk(sk)->rx_dst_ifindex != skb->skb_iif"];
+"1000171" -> "1000436"  [label="DDG: dst->ops->check(dst, np->rx_dst_cookie) == NULL"];
+"1000171" -> "1000436"  [label="DDG: inet_sk(sk)->rx_dst_ifindex != skb->skb_iif ||\n\t\t\t    dst->ops->check(dst, np->rx_dst_cookie) == NULL"];
+"1000180" -> "1000171"  [label="DDG: dst->ops->check(dst, np->rx_dst_cookie)"];
+"1000180" -> "1000171"  [label="DDG: NULL"];
+}

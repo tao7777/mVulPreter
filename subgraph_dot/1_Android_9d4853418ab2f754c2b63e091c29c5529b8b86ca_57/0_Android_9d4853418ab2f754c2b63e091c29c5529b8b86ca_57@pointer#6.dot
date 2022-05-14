@@ -1,0 +1,37 @@
+digraph "0_Android_9d4853418ab2f754c2b63e091c29c5529b8b86ca_57@pointer" {
+"1000208" [label="(Call,that->green = that->red)"];
+"1000122" [label="(Call,(display)\n\n /* At the end recalculate the digitized red green and blue values according\n    * to the current sample_depth of the pixel.\n    *\n    * The sample value is simply scaled to the maximum, checking for over\n    * and underflow (which can both happen for some image transforms,\n    * including simple size scaling, though libpng doesn't do that at present.\n\n     */\n    that->red)"];
+"1000204" [label="(Call,that->blue = that->green = that->red)"];
+"1000209" [label="(Call,that->green)"];
+"1000204" [label="(Call,that->blue = that->green = that->red)"];
+"1000203" [label="(Block,)"];
+"1000205" [label="(Call,that->blue)"];
+"1000124" [label="(Call,that->red)"];
+"1000122" [label="(Call,(display)\n\n /* At the end recalculate the digitized red green and blue values according\n    * to the current sample_depth of the pixel.\n    *\n    * The sample value is simply scaled to the maximum, checking for over\n    * and underflow (which can both happen for some image transforms,\n    * including simple size scaling, though libpng doesn't do that at present.\n\n     */\n    that->red)"];
+"1000212" [label="(Call,that->red)"];
+"1000208" [label="(Call,that->green = that->red)"];
+"1000121" [label="(Call,(display)\n\n /* At the end recalculate the digitized red green and blue values according\n    * to the current sample_depth of the pixel.\n    *\n    * The sample value is simply scaled to the maximum, checking for over\n    * and underflow (which can both happen for some image transforms,\n    * including simple size scaling, though libpng doesn't do that at present.\n\n     */\n    that->red = sample_scale(that->redf, scale))"];
+"1000291" [label="(MethodReturn,RET)"];
+"1000129" [label="(Identifier,that)"];
+"1000217" [label="(Identifier,that)"];
+"1000208" -> "1000204"  [label="AST: "];
+"1000208" -> "1000212"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000212" -> "1000208"  [label="AST: "];
+"1000204" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000291"  [label="DDG: that->green"];
+"1000208" -> "1000291"  [label="DDG: that->red"];
+"1000208" -> "1000204"  [label="DDG: that->green"];
+"1000122" -> "1000208"  [label="DDG: that->red"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000129" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000291"  [label="DDG: that->red"];
+"1000122" -> "1000204"  [label="DDG: that->red"];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000217" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000291"  [label="DDG: that->blue"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_b4789b8e6be3151a955ade74872822f30e8cd914@pointer" {
+"1000126" [label="(Call,*user_srbcmd = NULL)"];
+"1001449" [label="(Call,kfree(user_srbcmd))"];
+"1001453" [label="(Identifier,i)"];
+"1000127" [label="(Identifier,user_srbcmd)"];
+"1001477" [label="(MethodReturn,static int)"];
+"1000126" [label="(Call,*user_srbcmd = NULL)"];
+"1000250" [label="(Call,!user_srbcmd)"];
+"1000128" [label="(Identifier,NULL)"];
+"1001450" [label="(Identifier,user_srbcmd)"];
+"1001449" [label="(Call,kfree(user_srbcmd))"];
+"1000259" [label="(Call,copy_from_user(user_srbcmd, user_srb,fibsize))"];
+"1000118" [label="(Block,)"];
+"1000131" [label="(Identifier,user_srb)"];
+"1000126" -> "1000118"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000131" -> "1000126"  [label="CFG: "];
+"1000126" -> "1001477"  [label="DDG: user_srbcmd"];
+"1000126" -> "1001477"  [label="DDG: NULL"];
+"1000126" -> "1001449"  [label="DDG: user_srbcmd"];
+"1001449" -> "1000118"  [label="AST: "];
+"1001449" -> "1001450"  [label="CFG: "];
+"1001450" -> "1001449"  [label="AST: "];
+"1001453" -> "1001449"  [label="CFG: "];
+"1001449" -> "1001477"  [label="DDG: kfree(user_srbcmd)"];
+"1001449" -> "1001477"  [label="DDG: user_srbcmd"];
+"1000259" -> "1001449"  [label="DDG: user_srbcmd"];
+"1000250" -> "1001449"  [label="DDG: user_srbcmd"];
+}

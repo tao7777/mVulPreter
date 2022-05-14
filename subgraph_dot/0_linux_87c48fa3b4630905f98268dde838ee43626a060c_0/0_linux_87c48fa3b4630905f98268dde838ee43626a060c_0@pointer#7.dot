@@ -1,0 +1,34 @@
+digraph "0_linux_87c48fa3b4630905f98268dde838ee43626a060c_0@pointer" {
+"1000563" [label="(Call,opt ? opt->opt_nflen : 0)"];
+"1000122" [label="(MethodParameterIn,struct ipv6_txoptions *opt)"];
+"1000528" [label="(Call,opt = np->cork.opt)"];
+"1000122" [label="(MethodParameterIn,struct ipv6_txoptions *opt)"];
+"1000556" [label="(Call,sizeof(struct ipv6hdr) + rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0))"];
+"1001339" [label="(MethodReturn,int)"];
+"1000565" [label="(Call,opt->opt_nflen)"];
+"1000564" [label="(Identifier,opt)"];
+"1000563" [label="(Call,opt ? opt->opt_nflen : 0)"];
+"1000491" [label="(Call,(opt ? opt->opt_flen : 0) -\n\t\t\t    rt->rt6i_nfheader_len)"];
+"1000554" [label="(Call,fragheaderlen = sizeof(struct ipv6hdr) + rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0))"];
+"1000559" [label="(Call,rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0))"];
+"1000492" [label="(Call,opt ? opt->opt_flen : 0)"];
+"1000568" [label="(Literal,0)"];
+"1000563" -> "1000559"  [label="AST: "];
+"1000563" -> "1000565"  [label="CFG: "];
+"1000563" -> "1000568"  [label="CFG: "];
+"1000564" -> "1000563"  [label="AST: "];
+"1000565" -> "1000563"  [label="AST: "];
+"1000568" -> "1000563"  [label="AST: "];
+"1000559" -> "1000563"  [label="CFG: "];
+"1000563" -> "1001339"  [label="DDG: opt->opt_nflen"];
+"1000563" -> "1001339"  [label="DDG: opt"];
+"1000122" -> "1000563"  [label="DDG: opt"];
+"1000122" -> "1000114"  [label="AST: "];
+"1000122" -> "1001339"  [label="DDG: opt"];
+"1000122" -> "1000491"  [label="DDG: opt"];
+"1000122" -> "1000492"  [label="DDG: opt"];
+"1000122" -> "1000528"  [label="DDG: opt"];
+"1000122" -> "1000554"  [label="DDG: opt"];
+"1000122" -> "1000556"  [label="DDG: opt"];
+"1000122" -> "1000559"  [label="DDG: opt"];
+}

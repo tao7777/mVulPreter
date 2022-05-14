@@ -1,0 +1,31 @@
+digraph "0_Chrome_bc1f34b9be509f1404f0bb1ba1947614d5f0bcd1_3@API" {
+"1000228" [label="(Call,device_info.task_runner = base::ThreadTaskRunnerHandle::Get())"];
+"1000233" [label="(Call,packaged_services_connection_->AddEmbeddedService(device::mojom::kServiceName,\n                                                    device_info))"];
+"1000234" [label="(Identifier,device::mojom::kServiceName)"];
+"1000235" [label="(Identifier,device_info)"];
+"1000331" [label="(MethodReturn,RET)"];
+"1000229" [label="(Call,device_info.task_runner)"];
+"1000101" [label="(Block,)"];
+"1000228" [label="(Call,device_info.task_runner = base::ThreadTaskRunnerHandle::Get())"];
+"1000232" [label="(Call,base::ThreadTaskRunnerHandle::Get())"];
+"1000238" [label="(Identifier,features::kGlobalResourceCoordinator)"];
+"1000212" [label="(Call,device_info.factory =\n      base::Bind(&device::CreateDeviceService,\n                 BrowserThread::GetTaskRunnerForThread(BrowserThread::FILE),\n                 BrowserThread::GetTaskRunnerForThread(BrowserThread::IO),\n                 base::Bind(&WakeLockContextHost::GetNativeViewForContext),\n                 std::move(java_nfc_delegate)))"];
+"1000233" [label="(Call,packaged_services_connection_->AddEmbeddedService(device::mojom::kServiceName,\n                                                    device_info))"];
+"1000228" -> "1000101"  [label="AST: "];
+"1000228" -> "1000232"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000232" -> "1000228"  [label="AST: "];
+"1000234" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000331"  [label="DDG: device_info.task_runner"];
+"1000228" -> "1000331"  [label="DDG: base::ThreadTaskRunnerHandle::Get()"];
+"1000228" -> "1000233"  [label="DDG: device_info.task_runner"];
+"1000233" -> "1000101"  [label="AST: "];
+"1000233" -> "1000235"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000235" -> "1000233"  [label="AST: "];
+"1000238" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000331"  [label="DDG: packaged_services_connection_->AddEmbeddedService(device::mojom::kServiceName,\n                                                    device_info)"];
+"1000233" -> "1000331"  [label="DDG: device_info"];
+"1000233" -> "1000331"  [label="DDG: device::mojom::kServiceName"];
+"1000212" -> "1000233"  [label="DDG: device_info.factory"];
+}

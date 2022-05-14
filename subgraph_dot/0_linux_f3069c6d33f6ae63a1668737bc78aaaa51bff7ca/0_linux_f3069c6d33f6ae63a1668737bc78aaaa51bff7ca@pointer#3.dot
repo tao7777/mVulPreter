@@ -1,0 +1,28 @@
+digraph "0_linux_f3069c6d33f6ae63a1668737bc78aaaa51bff7ca@pointer" {
+"1000485" [label="(Call,refcount_inc(&mr->r_refcount))"];
+"1000236" [label="(Call,refcount_set(&mr->r_refcount, 1))"];
+"1000485" [label="(Call,refcount_inc(&mr->r_refcount))"];
+"1000506" [label="(MethodReturn,static int)"];
+"1000241" [label="(Literal,1)"];
+"1000486" [label="(Call,&mr->r_refcount)"];
+"1000113" [label="(Block,)"];
+"1000236" [label="(Call,refcount_set(&mr->r_refcount, 1))"];
+"1000245" [label="(Identifier,mr)"];
+"1000237" [label="(Call,&mr->r_refcount)"];
+"1000484" [label="(Block,)"];
+"1000492" [label="(Identifier,mr_ret)"];
+"1000485" -> "1000484"  [label="AST: "];
+"1000485" -> "1000486"  [label="CFG: "];
+"1000486" -> "1000485"  [label="AST: "];
+"1000492" -> "1000485"  [label="CFG: "];
+"1000485" -> "1000506"  [label="DDG: &mr->r_refcount"];
+"1000485" -> "1000506"  [label="DDG: refcount_inc(&mr->r_refcount)"];
+"1000236" -> "1000485"  [label="DDG: &mr->r_refcount"];
+"1000236" -> "1000113"  [label="AST: "];
+"1000236" -> "1000241"  [label="CFG: "];
+"1000237" -> "1000236"  [label="AST: "];
+"1000241" -> "1000236"  [label="AST: "];
+"1000245" -> "1000236"  [label="CFG: "];
+"1000236" -> "1000506"  [label="DDG: &mr->r_refcount"];
+"1000236" -> "1000506"  [label="DDG: refcount_set(&mr->r_refcount, 1)"];
+}

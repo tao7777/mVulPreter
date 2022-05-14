@@ -1,0 +1,25 @@
+digraph "0_linux_da99466ac243f15fbba65bd261bfc75ffa1532b6@pointer" {
+"1000380" [label="(Call,invalidate_drive(bdev))"];
+"1000110" [label="(MethodParameterIn,struct block_device *bdev)"];
+"1000354" [label="(ControlStructure,if (DRS->maxblock > user_params[drive].sect ||\n\t\t    DRS->maxtrack ||\n\t\t    ((user_params[drive].sect ^ oldStretch) &\n\t\t     (FD_SWAPSIDES | FD_SECTBASEMASK))))"];
+"1000258" [label="(Call,!bdev)"];
+"1000386" [label="(MethodReturn,static int)"];
+"1000380" [label="(Call,invalidate_drive(bdev))"];
+"1000251" [label="(Call,*bdev = opened_bdev[cnt])"];
+"1000110" [label="(MethodParameterIn,struct block_device *bdev)"];
+"1000269" [label="(Call,__invalidate_device(bdev, true))"];
+"1000385" [label="(Literal,0)"];
+"1000381" [label="(Identifier,bdev)"];
+"1000380" -> "1000354"  [label="AST: "];
+"1000380" -> "1000381"  [label="CFG: "];
+"1000381" -> "1000380"  [label="AST: "];
+"1000385" -> "1000380"  [label="CFG: "];
+"1000380" -> "1000386"  [label="DDG: invalidate_drive(bdev)"];
+"1000380" -> "1000386"  [label="DDG: bdev"];
+"1000110" -> "1000380"  [label="DDG: bdev"];
+"1000110" -> "1000105"  [label="AST: "];
+"1000110" -> "1000386"  [label="DDG: bdev"];
+"1000110" -> "1000251"  [label="DDG: bdev"];
+"1000110" -> "1000258"  [label="DDG: bdev"];
+"1000110" -> "1000269"  [label="DDG: bdev"];
+}

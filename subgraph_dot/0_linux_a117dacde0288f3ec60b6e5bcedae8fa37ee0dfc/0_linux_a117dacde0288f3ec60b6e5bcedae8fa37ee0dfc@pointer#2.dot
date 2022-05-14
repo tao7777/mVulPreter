@@ -1,0 +1,33 @@
+digraph "0_linux_a117dacde0288f3ec60b6e5bcedae8fa37ee0dfc@pointer" {
+"1000564" [label="(Call,tun->vnet_hdr_sz = vnet_hdr_sz)"];
+"1000552" [label="(Call,vnet_hdr_sz < (int)sizeof(struct virtio_net_hdr))"];
+"1000564" [label="(Call,tun->vnet_hdr_sz = vnet_hdr_sz)"];
+"1000565" [label="(Call,tun->vnet_hdr_sz)"];
+"1000554" [label="(Call,(int)sizeof(struct virtio_net_hdr))"];
+"1000553" [label="(Identifier,vnet_hdr_sz)"];
+"1000560" [label="(Identifier,ret)"];
+"1000644" [label="(MethodReturn,static long)"];
+"1000566" [label="(Identifier,tun)"];
+"1000551" [label="(ControlStructure,if (vnet_hdr_sz < (int)sizeof(struct virtio_net_hdr)))"];
+"1000552" [label="(Call,vnet_hdr_sz < (int)sizeof(struct virtio_net_hdr))"];
+"1000244" [label="(Block,)"];
+"1000569" [label="(ControlStructure,break;)"];
+"1000568" [label="(Identifier,vnet_hdr_sz)"];
+"1000564" -> "1000244"  [label="AST: "];
+"1000564" -> "1000568"  [label="CFG: "];
+"1000565" -> "1000564"  [label="AST: "];
+"1000568" -> "1000564"  [label="AST: "];
+"1000569" -> "1000564"  [label="CFG: "];
+"1000564" -> "1000644"  [label="DDG: vnet_hdr_sz"];
+"1000564" -> "1000644"  [label="DDG: tun->vnet_hdr_sz"];
+"1000552" -> "1000564"  [label="DDG: vnet_hdr_sz"];
+"1000552" -> "1000551"  [label="AST: "];
+"1000552" -> "1000554"  [label="CFG: "];
+"1000553" -> "1000552"  [label="AST: "];
+"1000554" -> "1000552"  [label="AST: "];
+"1000560" -> "1000552"  [label="CFG: "];
+"1000566" -> "1000552"  [label="CFG: "];
+"1000552" -> "1000644"  [label="DDG: vnet_hdr_sz"];
+"1000552" -> "1000644"  [label="DDG: (int)sizeof(struct virtio_net_hdr)"];
+"1000552" -> "1000644"  [label="DDG: vnet_hdr_sz < (int)sizeof(struct virtio_net_hdr)"];
+}

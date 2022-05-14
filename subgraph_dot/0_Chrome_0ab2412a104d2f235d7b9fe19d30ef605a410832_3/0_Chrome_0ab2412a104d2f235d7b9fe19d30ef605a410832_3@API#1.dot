@@ -1,0 +1,27 @@
+digraph "0_Chrome_0ab2412a104d2f235d7b9fe19d30ef605a410832_3@API" {
+"1000143" [label="(Call,frame_->HasReceivedUserGesture() ||\n                              frame_->HasReceivedUserGestureBeforeNavigation())"];
+"1000141" [label="(Call,user_gesture_bit_set = frame_->HasReceivedUserGesture() ||\n                              frame_->HasReceivedUserGestureBeforeNavigation())"];
+"1000144" [label="(Call,frame_->HasReceivedUserGesture())"];
+"1000109" [label="(Block,)"];
+"1000142" [label="(Identifier,user_gesture_bit_set)"];
+"1000148" [label="(Identifier,reason)"];
+"1000143" [label="(Call,frame_->HasReceivedUserGesture() ||\n                              frame_->HasReceivedUserGestureBeforeNavigation())"];
+"1000207" [label="(MethodReturn,void)"];
+"1000141" [label="(Call,user_gesture_bit_set = frame_->HasReceivedUserGesture() ||\n                              frame_->HasReceivedUserGestureBeforeNavigation())"];
+"1000145" [label="(Call,frame_->HasReceivedUserGestureBeforeNavigation())"];
+"1000143" -> "1000141"  [label="AST: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000143" -> "1000145"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000145" -> "1000143"  [label="AST: "];
+"1000141" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000207"  [label="DDG: frame_->HasReceivedUserGesture()"];
+"1000143" -> "1000207"  [label="DDG: frame_->HasReceivedUserGestureBeforeNavigation()"];
+"1000143" -> "1000141"  [label="DDG: frame_->HasReceivedUserGesture()"];
+"1000143" -> "1000141"  [label="DDG: frame_->HasReceivedUserGestureBeforeNavigation()"];
+"1000141" -> "1000109"  [label="AST: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000148" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000207"  [label="DDG: user_gesture_bit_set"];
+"1000141" -> "1000207"  [label="DDG: frame_->HasReceivedUserGesture() ||\n                              frame_->HasReceivedUserGestureBeforeNavigation()"];
+}

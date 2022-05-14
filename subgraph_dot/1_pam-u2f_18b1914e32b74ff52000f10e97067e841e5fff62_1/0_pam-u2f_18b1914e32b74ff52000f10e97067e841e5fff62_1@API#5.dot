@@ -1,0 +1,32 @@
+digraph "0_pam-u2f_18b1914e32b74ff52000f10e97067e841e5fff62_1@API" {
+"1000237" [label="(Call,strerror(errno))"];
+"1000231" [label="(Call,D(debug_file, \"Unable to retrieve credentials for uid %u, (%s)\", st.st_uid,\n       strerror(errno)))"];
+"1000237" [label="(Call,strerror(errno))"];
+"1000211" [label="(Call,getpwuid_r(st.st_uid, &pw_s, buffer, sizeof(buffer), &pw))"];
+"1000239" [label="(ControlStructure,goto err;)"];
+"1000107" [label="(MethodParameterIn,FILE *debug_file)"];
+"1000722" [label="(MethodReturn,int)"];
+"1000231" [label="(Call,D(debug_file, \"Unable to retrieve credentials for uid %u, (%s)\", st.st_uid,\n       strerror(errno)))"];
+"1000234" [label="(Call,st.st_uid)"];
+"1000230" [label="(Block,)"];
+"1000232" [label="(Identifier,debug_file)"];
+"1000238" [label="(Identifier,errno)"];
+"1000233" [label="(Literal,\"Unable to retrieve credentials for uid %u, (%s)\")"];
+"1000237" -> "1000231"  [label="AST: "];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000231" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000722"  [label="DDG: "];
+"1000237" -> "1000231"  [label="DDG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000232" -> "1000231"  [label="AST: "];
+"1000233" -> "1000231"  [label="AST: "];
+"1000234" -> "1000231"  [label="AST: "];
+"1000239" -> "1000231"  [label="CFG: "];
+"1000231" -> "1000722"  [label="DDG: "];
+"1000231" -> "1000722"  [label="DDG: "];
+"1000231" -> "1000722"  [label="DDG: "];
+"1000231" -> "1000722"  [label="DDG: "];
+"1000107" -> "1000231"  [label="DDG: "];
+"1000211" -> "1000231"  [label="DDG: "];
+}

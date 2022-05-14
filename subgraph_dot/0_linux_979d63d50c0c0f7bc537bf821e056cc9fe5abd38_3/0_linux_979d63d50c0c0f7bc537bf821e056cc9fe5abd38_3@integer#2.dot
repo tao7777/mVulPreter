@@ -1,0 +1,28 @@
+digraph "0_linux_979d63d50c0c0f7bc537bf821e056cc9fe5abd38_3@integer" {
+"1000845" [label="(Call,aux = &env->insn_aux_data[i + delta])"];
+"1000856" [label="(Call,bpf_map_ptr_poisoned(aux))"];
+"1000860" [label="(Identifier,map_ptr)"];
+"1000845" [label="(Call,aux = &env->insn_aux_data[i + delta])"];
+"1000858" [label="(ControlStructure,goto patch_call_imm;)"];
+"1000844" [label="(Block,)"];
+"1000847" [label="(Call,&env->insn_aux_data[i + delta])"];
+"1000857" [label="(Identifier,aux)"];
+"1000846" [label="(Identifier,aux)"];
+"1000856" [label="(Call,bpf_map_ptr_poisoned(aux))"];
+"1000855" [label="(ControlStructure,if (bpf_map_ptr_poisoned(aux)))"];
+"1001057" [label="(MethodReturn,static int)"];
+"1000845" -> "1000844"  [label="AST: "];
+"1000845" -> "1000847"  [label="CFG: "];
+"1000846" -> "1000845"  [label="AST: "];
+"1000847" -> "1000845"  [label="AST: "];
+"1000857" -> "1000845"  [label="CFG: "];
+"1000845" -> "1001057"  [label="DDG: &env->insn_aux_data[i + delta]"];
+"1000845" -> "1000856"  [label="DDG: aux"];
+"1000856" -> "1000855"  [label="AST: "];
+"1000856" -> "1000857"  [label="CFG: "];
+"1000857" -> "1000856"  [label="AST: "];
+"1000858" -> "1000856"  [label="CFG: "];
+"1000860" -> "1000856"  [label="CFG: "];
+"1000856" -> "1001057"  [label="DDG: aux"];
+"1000856" -> "1001057"  [label="DDG: bpf_map_ptr_poisoned(aux)"];
+}

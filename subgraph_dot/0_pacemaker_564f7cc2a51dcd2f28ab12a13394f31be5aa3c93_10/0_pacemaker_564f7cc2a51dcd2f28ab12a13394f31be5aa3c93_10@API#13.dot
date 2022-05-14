@@ -1,0 +1,23 @@
+digraph "0_pacemaker_564f7cc2a51dcd2f28ab12a13394f31be5aa3c93_10@API" {
+"1000383" [label="(Call,cib_tls_close(cib))"];
+"1000105" [label="(MethodParameterIn,cib_t * cib)"];
+"1000240" [label="(Call,cib_tls_close(cib))"];
+"1000382" [label="(Block,)"];
+"1000105" [label="(MethodParameterIn,cib_t * cib)"];
+"1000404" [label="(MethodReturn,RET)"];
+"1000393" [label="(Call,mainloop_add_fd(\"cib-remote\", G_PRIORITY_HIGH, connection->socket, cib, &cib_fd_callbacks))"];
+"1000384" [label="(Identifier,cib)"];
+"1000386" [label="(Identifier,rc)"];
+"1000383" [label="(Call,cib_tls_close(cib))"];
+"1000383" -> "1000382"  [label="AST: "];
+"1000383" -> "1000384"  [label="CFG: "];
+"1000384" -> "1000383"  [label="AST: "];
+"1000386" -> "1000383"  [label="CFG: "];
+"1000383" -> "1000404"  [label="DDG: cib_tls_close(cib)"];
+"1000383" -> "1000404"  [label="DDG: cib"];
+"1000105" -> "1000383"  [label="DDG: cib"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000404"  [label="DDG: cib"];
+"1000105" -> "1000240"  [label="DDG: cib"];
+"1000105" -> "1000393"  [label="DDG: cib"];
+}

@@ -1,0 +1,23 @@
+digraph "0_mruby_5c114c91d4ff31859fcd84cf8bf349b737b90d99@pointer" {
+"1000101" [label="(MethodParameterIn,mrb_state *mrb)"];
+"1000176" [label="(Call,mrb_gc_mark(mrb, mrb_basic_ptr(v)))"];
+"1000178" [label="(Call,mrb_basic_ptr(v))"];
+"1000206" [label="(MethodReturn,RET)"];
+"1000176" [label="(Call,mrb_gc_mark(mrb, mrb_basic_ptr(v)))"];
+"1000175" [label="(Block,)"];
+"1000161" [label="(Identifier,i)"];
+"1000101" [label="(MethodParameterIn,mrb_state *mrb)"];
+"1000177" [label="(Identifier,mrb)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000206"  [label="DDG: mrb"];
+"1000101" -> "1000176"  [label="DDG: mrb"];
+"1000176" -> "1000175"  [label="AST: "];
+"1000176" -> "1000178"  [label="CFG: "];
+"1000177" -> "1000176"  [label="AST: "];
+"1000178" -> "1000176"  [label="AST: "];
+"1000161" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000206"  [label="DDG: mrb_gc_mark(mrb, mrb_basic_ptr(v))"];
+"1000176" -> "1000206"  [label="DDG: mrb"];
+"1000176" -> "1000206"  [label="DDG: mrb_basic_ptr(v)"];
+"1000178" -> "1000176"  [label="DDG: v"];
+}

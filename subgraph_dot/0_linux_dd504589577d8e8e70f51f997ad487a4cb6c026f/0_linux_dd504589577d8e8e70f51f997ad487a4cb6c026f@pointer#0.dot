@@ -1,0 +1,35 @@
+digraph "0_linux_dd504589577d8e8e70f51f997ad487a4cb6c026f@pointer" {
+"1000214" [label="(Call,af_alg_init_completion(&ctx->completion))"];
+"1000230" [label="(Call,skcipher_request_set_callback(&ctx->req, CRYPTO_TFM_REQ_MAY_BACKLOG,\n \t\t\t\t      af_alg_complete, &ctx->completion))"];
+"1000224" [label="(Call,skcipher_request_set_tfm(&ctx->req, skcipher))"];
+"1000237" [label="(Call,&ctx->completion)"];
+"1000214" [label="(Call,af_alg_init_completion(&ctx->completion))"];
+"1000230" [label="(Call,skcipher_request_set_callback(&ctx->req, CRYPTO_TFM_REQ_MAY_BACKLOG,\n \t\t\t\t      af_alg_complete, &ctx->completion))"];
+"1000231" [label="(Call,&ctx->req)"];
+"1000243" [label="(Identifier,sk)"];
+"1000215" [label="(Call,&ctx->completion)"];
+"1000103" [label="(Block,)"];
+"1000236" [label="(Identifier,af_alg_complete)"];
+"1000221" [label="(Identifier,ask)"];
+"1000235" [label="(Identifier,CRYPTO_TFM_REQ_MAY_BACKLOG)"];
+"1000248" [label="(MethodReturn,static int)"];
+"1000214" -> "1000103"  [label="AST: "];
+"1000214" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000221" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000248"  [label="DDG: af_alg_init_completion(&ctx->completion)"];
+"1000214" -> "1000230"  [label="DDG: &ctx->completion"];
+"1000230" -> "1000103"  [label="AST: "];
+"1000230" -> "1000237"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000235" -> "1000230"  [label="AST: "];
+"1000236" -> "1000230"  [label="AST: "];
+"1000237" -> "1000230"  [label="AST: "];
+"1000243" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000248"  [label="DDG: &ctx->req"];
+"1000230" -> "1000248"  [label="DDG: &ctx->completion"];
+"1000230" -> "1000248"  [label="DDG: af_alg_complete"];
+"1000230" -> "1000248"  [label="DDG: CRYPTO_TFM_REQ_MAY_BACKLOG"];
+"1000230" -> "1000248"  [label="DDG: skcipher_request_set_callback(&ctx->req, CRYPTO_TFM_REQ_MAY_BACKLOG,\n \t\t\t\t      af_alg_complete, &ctx->completion)"];
+"1000224" -> "1000230"  [label="DDG: &ctx->req"];
+}

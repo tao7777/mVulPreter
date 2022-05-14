@@ -1,0 +1,1 @@
+SpeechSynthesisLibrary* CrosLibrary::GetSpeechSynthesisLibrary() {

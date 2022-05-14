@@ -1,0 +1,32 @@
+digraph "0_jasper_bdfe95a6e81ffb4b2fad31a76b57943695beed20@API" {
+"1000111" [label="(Call,assert(boxinfo))"];
+"1000105" [label="(Call,boxinfo = jp2_boxinfolookup(box->type))"];
+"1000107" [label="(Call,jp2_boxinfolookup(box->type))"];
+"1000114" [label="(Identifier,out)"];
+"1000106" [label="(Identifier,boxinfo)"];
+"1000140" [label="(MethodReturn,void)"];
+"1000111" [label="(Call,assert(boxinfo))"];
+"1000112" [label="(Identifier,boxinfo)"];
+"1000108" [label="(Call,box->type)"];
+"1000116" [label="(Call,fprintf(out, \"type=%c%s%c (0x%08\"PRIxFAST32\"); length=%\"PRIuFAST32\"\n\", '\"', boxinfo->name,\n\t  '\"', box->type, box->len))"];
+"1000105" [label="(Call,boxinfo = jp2_boxinfolookup(box->type))"];
+"1000107" [label="(Call,jp2_boxinfolookup(box->type))"];
+"1000103" [label="(Block,)"];
+"1000111" -> "1000103"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000114" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000140"  [label="DDG: boxinfo"];
+"1000111" -> "1000140"  [label="DDG: assert(boxinfo)"];
+"1000105" -> "1000111"  [label="DDG: boxinfo"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000112" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000140"  [label="DDG: jp2_boxinfolookup(box->type)"];
+"1000107" -> "1000105"  [label="DDG: box->type"];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000107" -> "1000116"  [label="DDG: box->type"];
+}

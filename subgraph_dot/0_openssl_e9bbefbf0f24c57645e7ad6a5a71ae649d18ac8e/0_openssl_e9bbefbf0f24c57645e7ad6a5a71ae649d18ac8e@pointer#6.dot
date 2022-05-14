@@ -1,0 +1,29 @@
+digraph "0_openssl_e9bbefbf0f24c57645e7ad6a5a71ae649d18ac8e@pointer" {
+"1001503" [label="(Call,s->d1->change_cipher_spec_ok = 0)"];
+"1001495" [label="(Call,!s->d1->change_cipher_spec_ok)"];
+"1001504" [label="(Call,s->d1->change_cipher_spec_ok)"];
+"1001506" [label="(Identifier,s)"];
+"1001513" [label="(Identifier,s)"];
+"1001502" [label="(ControlStructure,goto start;)"];
+"1001495" [label="(Call,!s->d1->change_cipher_spec_ok)"];
+"1001819" [label="(MethodReturn,int)"];
+"1001509" [label="(Literal,0)"];
+"1001496" [label="(Call,s->d1->change_cipher_spec_ok)"];
+"1001422" [label="(Block,)"];
+"1001494" [label="(ControlStructure,if (!s->d1->change_cipher_spec_ok))"];
+"1001503" [label="(Call,s->d1->change_cipher_spec_ok = 0)"];
+"1001503" -> "1001422"  [label="AST: "];
+"1001503" -> "1001509"  [label="CFG: "];
+"1001504" -> "1001503"  [label="AST: "];
+"1001509" -> "1001503"  [label="AST: "];
+"1001513" -> "1001503"  [label="CFG: "];
+"1001503" -> "1001819"  [label="DDG: s->d1->change_cipher_spec_ok"];
+"1001503" -> "1001495"  [label="DDG: s->d1->change_cipher_spec_ok"];
+"1001495" -> "1001494"  [label="AST: "];
+"1001495" -> "1001496"  [label="CFG: "];
+"1001496" -> "1001495"  [label="AST: "];
+"1001502" -> "1001495"  [label="CFG: "];
+"1001506" -> "1001495"  [label="CFG: "];
+"1001495" -> "1001819"  [label="DDG: !s->d1->change_cipher_spec_ok"];
+"1001495" -> "1001819"  [label="DDG: s->d1->change_cipher_spec_ok"];
+}

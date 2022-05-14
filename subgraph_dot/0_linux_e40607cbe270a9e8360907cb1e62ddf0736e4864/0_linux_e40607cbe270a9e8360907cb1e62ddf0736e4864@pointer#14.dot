@@ -1,0 +1,32 @@
+digraph "0_linux_e40607cbe270a9e8360907cb1e62ddf0736e4864@pointer" {
+"1000376" [label="(Call,asoc->peer.cookie_len =\n\t\t\tntohs(param.p->length) - sizeof(sctp_paramhdr_t))"];
+"1000382" [label="(Call,ntohs(param.p->length) - sizeof(sctp_paramhdr_t))"];
+"1000383" [label="(Call,ntohs(param.p->length))"];
+"1000383" [label="(Call,ntohs(param.p->length))"];
+"1000390" [label="(Identifier,sctp_paramhdr_t)"];
+"1000154" [label="(Block,)"];
+"1000376" [label="(Call,asoc->peer.cookie_len =\n\t\t\tntohs(param.p->length) - sizeof(sctp_paramhdr_t))"];
+"1000382" [label="(Call,ntohs(param.p->length) - sizeof(sctp_paramhdr_t))"];
+"1000384" [label="(Call,param.p->length)"];
+"1000394" [label="(Identifier,asoc)"];
+"1000377" [label="(Call,asoc->peer.cookie_len)"];
+"1000645" [label="(MethodReturn,static int)"];
+"1000389" [label="(Call,sizeof(sctp_paramhdr_t))"];
+"1000376" -> "1000154"  [label="AST: "];
+"1000376" -> "1000382"  [label="CFG: "];
+"1000377" -> "1000376"  [label="AST: "];
+"1000382" -> "1000376"  [label="AST: "];
+"1000394" -> "1000376"  [label="CFG: "];
+"1000376" -> "1000645"  [label="DDG: asoc->peer.cookie_len"];
+"1000376" -> "1000645"  [label="DDG: ntohs(param.p->length) - sizeof(sctp_paramhdr_t)"];
+"1000382" -> "1000376"  [label="DDG: ntohs(param.p->length)"];
+"1000382" -> "1000389"  [label="CFG: "];
+"1000383" -> "1000382"  [label="AST: "];
+"1000389" -> "1000382"  [label="AST: "];
+"1000382" -> "1000645"  [label="DDG: ntohs(param.p->length)"];
+"1000383" -> "1000382"  [label="DDG: param.p->length"];
+"1000383" -> "1000384"  [label="CFG: "];
+"1000384" -> "1000383"  [label="AST: "];
+"1000390" -> "1000383"  [label="CFG: "];
+"1000383" -> "1000645"  [label="DDG: param.p->length"];
+}

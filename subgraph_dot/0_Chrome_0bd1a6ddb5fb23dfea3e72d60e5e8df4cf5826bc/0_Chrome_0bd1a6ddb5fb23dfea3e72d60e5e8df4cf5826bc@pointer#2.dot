@@ -1,0 +1,30 @@
+digraph "0_Chrome_0bd1a6ddb5fb23dfea3e72d60e5e8df4cf5826bc@pointer" {
+"1000309" [label="(Call,image->bits_per_pixel != 32)"];
+"1000303" [label="(Call,!output->initialize(width, height, true) ||\n      image->bits_per_pixel != 32)"];
+"1000309" [label="(Call,image->bits_per_pixel != 32)"];
+"1000303" [label="(Call,!output->initialize(width, height, true) ||\n      image->bits_per_pixel != 32)"];
+"1000302" [label="(ControlStructure,if (!output->initialize(width, height, true) ||\n      image->bits_per_pixel != 32))"];
+"1000304" [label="(Call,!output->initialize(width, height, true))"];
+"1000317" [label="(Identifier,shared_memory_support_)"];
+"1000408" [label="(MethodReturn,bool)"];
+"1000313" [label="(Literal,32)"];
+"1000331" [label="(Identifier,bitmap)"];
+"1000310" [label="(Call,image->bits_per_pixel)"];
+"1000309" -> "1000303"  [label="AST: "];
+"1000309" -> "1000313"  [label="CFG: "];
+"1000310" -> "1000309"  [label="AST: "];
+"1000313" -> "1000309"  [label="AST: "];
+"1000303" -> "1000309"  [label="CFG: "];
+"1000309" -> "1000408"  [label="DDG: image->bits_per_pixel"];
+"1000309" -> "1000303"  [label="DDG: image->bits_per_pixel"];
+"1000309" -> "1000303"  [label="DDG: 32"];
+"1000303" -> "1000302"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000317" -> "1000303"  [label="CFG: "];
+"1000331" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000408"  [label="DDG: image->bits_per_pixel != 32"];
+"1000303" -> "1000408"  [label="DDG: !output->initialize(width, height, true)"];
+"1000303" -> "1000408"  [label="DDG: !output->initialize(width, height, true) ||\n      image->bits_per_pixel != 32"];
+"1000304" -> "1000303"  [label="DDG: output->initialize(width, height, true)"];
+}

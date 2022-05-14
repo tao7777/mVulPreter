@@ -1,0 +1,27 @@
+digraph "0_linux_237bbd29f7a049d310d907f4b2716a7feef9abf3@pointer" {
+"1000294" [label="(Call,init_rwsem(&key->sem))"];
+"1000299" [label="(Call,lockdep_set_class(&key->sem, &type->lock_class))"];
+"1000300" [label="(Call,&key->sem)"];
+"1000304" [label="(Call,&type->lock_class)"];
+"1000299" [label="(Call,lockdep_set_class(&key->sem, &type->lock_class))"];
+"1000505" [label="(MethodReturn,struct key *)"];
+"1000295" [label="(Call,&key->sem)"];
+"1000302" [label="(Identifier,key)"];
+"1000311" [label="(Identifier,key)"];
+"1000294" [label="(Call,init_rwsem(&key->sem))"];
+"1000114" [label="(Block,)"];
+"1000294" -> "1000114"  [label="AST: "];
+"1000294" -> "1000295"  [label="CFG: "];
+"1000295" -> "1000294"  [label="AST: "];
+"1000302" -> "1000294"  [label="CFG: "];
+"1000294" -> "1000505"  [label="DDG: init_rwsem(&key->sem)"];
+"1000294" -> "1000299"  [label="DDG: &key->sem"];
+"1000299" -> "1000114"  [label="AST: "];
+"1000299" -> "1000304"  [label="CFG: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000304" -> "1000299"  [label="AST: "];
+"1000311" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000505"  [label="DDG: &type->lock_class"];
+"1000299" -> "1000505"  [label="DDG: lockdep_set_class(&key->sem, &type->lock_class)"];
+"1000299" -> "1000505"  [label="DDG: &key->sem"];
+}

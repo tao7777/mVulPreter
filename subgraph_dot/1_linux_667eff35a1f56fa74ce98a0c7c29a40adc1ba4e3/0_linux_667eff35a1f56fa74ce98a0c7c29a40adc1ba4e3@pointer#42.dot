@@ -1,0 +1,27 @@
+digraph "0_linux_667eff35a1f56fa74ce98a0c7c29a40adc1ba4e3@pointer" {
+"1000184" [label="(Call,inode->i_size + inode->i_sb->s_blocksize - 1)"];
+"1000188" [label="(Call,inode->i_sb->s_blocksize - 1)"];
+"1000185" [label="(Call,inode->i_size)"];
+"1000183" [label="(Call,(inode->i_size + inode->i_sb->s_blocksize - 1) >>\n\t\tinode->i_sb->s_blocksize_bits)"];
+"1000189" [label="(Call,inode->i_sb->s_blocksize)"];
+"1000184" [label="(Call,inode->i_size + inode->i_sb->s_blocksize - 1)"];
+"1000188" [label="(Call,inode->i_sb->s_blocksize - 1)"];
+"1000194" [label="(Literal,1)"];
+"1001006" [label="(MethodReturn,static int)"];
+"1000197" [label="(Identifier,inode)"];
+"1000184" -> "1000183"  [label="AST: "];
+"1000184" -> "1000188"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000188" -> "1000184"  [label="AST: "];
+"1000197" -> "1000184"  [label="CFG: "];
+"1000184" -> "1001006"  [label="DDG: inode->i_sb->s_blocksize - 1"];
+"1000184" -> "1001006"  [label="DDG: inode->i_size"];
+"1000188" -> "1000184"  [label="DDG: inode->i_sb->s_blocksize"];
+"1000188" -> "1000184"  [label="DDG: 1"];
+"1000188" -> "1000194"  [label="CFG: "];
+"1000189" -> "1000188"  [label="AST: "];
+"1000194" -> "1000188"  [label="AST: "];
+"1000188" -> "1001006"  [label="DDG: inode->i_sb->s_blocksize"];
+"1000188" -> "1000183"  [label="DDG: inode->i_sb->s_blocksize"];
+"1000188" -> "1000183"  [label="DDG: 1"];
+}

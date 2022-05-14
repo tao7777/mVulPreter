@@ -1,0 +1,3 @@
+ AppModalDialog::~AppModalDialog() {
+  CompleteDialog();
+ }

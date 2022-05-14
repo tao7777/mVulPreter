@@ -1,0 +1,32 @@
+digraph "0_linux_b98b0bc8c431e3ceb4b26b0dfc8db509518fb290@pointer" {
+"1000510" [label="(Call,1 << sk->sk_state)"];
+"1000509" [label="(Call,(1 << sk->sk_state) &\n\t\t\t\t    (TCPF_CLOSE | TCPF_LISTEN))"];
+"1000508" [label="(ControlStructure,if ((1 << sk->sk_state) &\n\t\t\t\t    (TCPF_CLOSE | TCPF_LISTEN)))"];
+"1000520" [label="(Identifier,ret)"];
+"1000526" [label="(Identifier,sk)"];
+"1000890" [label="(MethodReturn,int)"];
+"1000510" [label="(Call,1 << sk->sk_state)"];
+"1000516" [label="(Identifier,TCPF_CLOSE)"];
+"1000512" [label="(Call,sk->sk_state)"];
+"1000515" [label="(Call,TCPF_CLOSE | TCPF_LISTEN)"];
+"1000511" [label="(Literal,1)"];
+"1000509" [label="(Call,(1 << sk->sk_state) &\n\t\t\t\t    (TCPF_CLOSE | TCPF_LISTEN))"];
+"1000510" -> "1000509"  [label="AST: "];
+"1000510" -> "1000512"  [label="CFG: "];
+"1000511" -> "1000510"  [label="AST: "];
+"1000512" -> "1000510"  [label="AST: "];
+"1000516" -> "1000510"  [label="CFG: "];
+"1000510" -> "1000890"  [label="DDG: sk->sk_state"];
+"1000510" -> "1000509"  [label="DDG: 1"];
+"1000510" -> "1000509"  [label="DDG: sk->sk_state"];
+"1000509" -> "1000508"  [label="AST: "];
+"1000509" -> "1000515"  [label="CFG: "];
+"1000515" -> "1000509"  [label="AST: "];
+"1000520" -> "1000509"  [label="CFG: "];
+"1000526" -> "1000509"  [label="CFG: "];
+"1000509" -> "1000890"  [label="DDG: (1 << sk->sk_state) &\n\t\t\t\t    (TCPF_CLOSE | TCPF_LISTEN)"];
+"1000509" -> "1000890"  [label="DDG: TCPF_CLOSE | TCPF_LISTEN"];
+"1000509" -> "1000890"  [label="DDG: 1 << sk->sk_state"];
+"1000515" -> "1000509"  [label="DDG: TCPF_CLOSE"];
+"1000515" -> "1000509"  [label="DDG: TCPF_LISTEN"];
+}

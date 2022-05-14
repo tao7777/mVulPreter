@@ -1,0 +1,37 @@
+digraph "0_ImageMagick6_91e58d967a92250439ede038ccfb0913a81e59fe@array" {
+"1000209" [label="(Call,GetMagickPixelPacket(images,&pixels[i][j]))"];
+"1000101" [label="(MethodParameterIn,const Image *images)"];
+"1000112" [label="(Call,GetImageListLength(images))"];
+"1000211" [label="(Call,&pixels[i][j])"];
+"1000101" [label="(MethodParameterIn,const Image *images)"];
+"1000113" [label="(Identifier,images)"];
+"1000143" [label="(Call,next=images)"];
+"1000208" [label="(Identifier,j)"];
+"1000219" [label="(MethodReturn,static MagickPixelPacket **)"];
+"1000111" [label="(Call,MagickMax(GetImageListLength(images),\n    (size_t) GetMagickResourceLimit(ThreadResource)))"];
+"1000209" [label="(Call,GetMagickPixelPacket(images,&pixels[i][j]))"];
+"1000210" [label="(Identifier,images)"];
+"1000112" [label="(Call,GetImageListLength(images))"];
+"1000198" [label="(ControlStructure,for (j=0; j < (ssize_t) columns; j++))"];
+"1000209" -> "1000198"  [label="AST: "];
+"1000209" -> "1000211"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000211" -> "1000209"  [label="AST: "];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000219"  [label="DDG: GetMagickPixelPacket(images,&pixels[i][j])"];
+"1000209" -> "1000219"  [label="DDG: images"];
+"1000209" -> "1000219"  [label="DDG: &pixels[i][j]"];
+"1000101" -> "1000209"  [label="DDG: images"];
+"1000112" -> "1000209"  [label="DDG: images"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000219"  [label="DDG: images"];
+"1000101" -> "1000112"  [label="DDG: images"];
+"1000101" -> "1000143"  [label="DDG: images"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000115" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000219"  [label="DDG: images"];
+"1000112" -> "1000111"  [label="DDG: images"];
+"1000112" -> "1000143"  [label="DDG: images"];
+}

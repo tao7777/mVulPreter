@@ -1,0 +1,37 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_7@pointer" {
+"1000359" [label="(Call,bh->b_data + le16_to_cpu(entry->e_value_offs))"];
+"1000363" [label="(Call,le16_to_cpu(entry->e_value_offs))"];
+"1000328" [label="(Call,le16_to_cpu(entry->e_value_offs))"];
+"1000327" [label="(Call,le16_to_cpu(entry->e_value_offs) + size)"];
+"1000364" [label="(Call,entry->e_value_offs)"];
+"1000329" [label="(Call,entry->e_value_offs)"];
+"1000360" [label="(Call,bh->b_data)"];
+"1000382" [label="(MethodReturn,RET)"];
+"1000328" [label="(Call,le16_to_cpu(entry->e_value_offs))"];
+"1000363" [label="(Call,le16_to_cpu(entry->e_value_offs))"];
+"1000357" [label="(Call,memcpy(buffer, bh->b_data + le16_to_cpu(entry->e_value_offs),\n\t\t\tsize))"];
+"1000326" [label="(Call,le16_to_cpu(entry->e_value_offs) + size > inode->i_sb->s_blocksize)"];
+"1000332" [label="(Identifier,size)"];
+"1000359" [label="(Call,bh->b_data + le16_to_cpu(entry->e_value_offs))"];
+"1000367" [label="(Identifier,size)"];
+"1000359" -> "1000357"  [label="AST: "];
+"1000359" -> "1000363"  [label="CFG: "];
+"1000360" -> "1000359"  [label="AST: "];
+"1000363" -> "1000359"  [label="AST: "];
+"1000367" -> "1000359"  [label="CFG: "];
+"1000359" -> "1000382"  [label="DDG: bh->b_data"];
+"1000359" -> "1000382"  [label="DDG: le16_to_cpu(entry->e_value_offs)"];
+"1000363" -> "1000359"  [label="DDG: entry->e_value_offs"];
+"1000363" -> "1000364"  [label="CFG: "];
+"1000364" -> "1000363"  [label="AST: "];
+"1000363" -> "1000382"  [label="DDG: entry->e_value_offs"];
+"1000363" -> "1000357"  [label="DDG: entry->e_value_offs"];
+"1000328" -> "1000363"  [label="DDG: entry->e_value_offs"];
+"1000328" -> "1000327"  [label="AST: "];
+"1000328" -> "1000329"  [label="CFG: "];
+"1000329" -> "1000328"  [label="AST: "];
+"1000332" -> "1000328"  [label="CFG: "];
+"1000328" -> "1000382"  [label="DDG: entry->e_value_offs"];
+"1000328" -> "1000326"  [label="DDG: entry->e_value_offs"];
+"1000328" -> "1000327"  [label="DDG: entry->e_value_offs"];
+}

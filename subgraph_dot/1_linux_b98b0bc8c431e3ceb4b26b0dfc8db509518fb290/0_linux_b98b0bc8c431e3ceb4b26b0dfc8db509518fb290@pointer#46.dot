@@ -1,0 +1,33 @@
+digraph "0_linux_b98b0bc8c431e3ceb4b26b0dfc8db509518fb290@pointer" {
+"1000399" [label="(Call,sk->sk_lingertime = MAX_SCHEDULE_TIMEOUT)"];
+"1000396" [label="(Call,MAX_SCHEDULE_TIMEOUT/HZ)"];
+"1000403" [label="(Identifier,MAX_SCHEDULE_TIMEOUT)"];
+"1000417" [label="(Identifier,sk)"];
+"1000389" [label="(ControlStructure,if ((unsigned int)ling.l_linger >= MAX_SCHEDULE_TIMEOUT/HZ))"];
+"1000390" [label="(Call,(unsigned int)ling.l_linger >= MAX_SCHEDULE_TIMEOUT/HZ)"];
+"1000890" [label="(MethodReturn,int)"];
+"1000396" [label="(Call,MAX_SCHEDULE_TIMEOUT/HZ)"];
+"1000397" [label="(Identifier,MAX_SCHEDULE_TIMEOUT)"];
+"1000409" [label="(Call,(unsigned int)ling.l_linger * HZ)"];
+"1000398" [label="(Identifier,HZ)"];
+"1000400" [label="(Call,sk->sk_lingertime)"];
+"1000399" [label="(Call,sk->sk_lingertime = MAX_SCHEDULE_TIMEOUT)"];
+"1000399" -> "1000389"  [label="AST: "];
+"1000399" -> "1000403"  [label="CFG: "];
+"1000400" -> "1000399"  [label="AST: "];
+"1000403" -> "1000399"  [label="AST: "];
+"1000417" -> "1000399"  [label="CFG: "];
+"1000399" -> "1000890"  [label="DDG: MAX_SCHEDULE_TIMEOUT"];
+"1000399" -> "1000890"  [label="DDG: sk->sk_lingertime"];
+"1000396" -> "1000399"  [label="DDG: MAX_SCHEDULE_TIMEOUT"];
+"1000396" -> "1000390"  [label="AST: "];
+"1000396" -> "1000398"  [label="CFG: "];
+"1000397" -> "1000396"  [label="AST: "];
+"1000398" -> "1000396"  [label="AST: "];
+"1000390" -> "1000396"  [label="CFG: "];
+"1000396" -> "1000890"  [label="DDG: MAX_SCHEDULE_TIMEOUT"];
+"1000396" -> "1000890"  [label="DDG: HZ"];
+"1000396" -> "1000390"  [label="DDG: MAX_SCHEDULE_TIMEOUT"];
+"1000396" -> "1000390"  [label="DDG: HZ"];
+"1000396" -> "1000409"  [label="DDG: HZ"];
+}

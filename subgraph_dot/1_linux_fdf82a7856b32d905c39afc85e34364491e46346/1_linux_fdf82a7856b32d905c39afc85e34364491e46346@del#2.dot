@@ -1,0 +1,34 @@
+digraph "1_linux_fdf82a7856b32d905c39afc85e34364491e46346@del" {
+"1000105" [label="(Call,boot_cpu_data.x86_vendor == X86_VENDOR_INTEL)"];
+"1000104" [label="(Call,boot_cpu_data.x86_vendor == X86_VENDOR_INTEL &&\n\t    boot_cpu_data.x86 == 6)"];
+"1000105" [label="(Call,boot_cpu_data.x86_vendor == X86_VENDOR_INTEL)"];
+"1000118" [label="(Identifier,boot_cpu_data)"];
+"1000106" [label="(Call,boot_cpu_data.x86_vendor)"];
+"1000103" [label="(ControlStructure,if (boot_cpu_data.x86_vendor == X86_VENDOR_INTEL &&\n\t    boot_cpu_data.x86 == 6))"];
+"1000104" [label="(Call,boot_cpu_data.x86_vendor == X86_VENDOR_INTEL &&\n\t    boot_cpu_data.x86 == 6)"];
+"1000109" [label="(Identifier,X86_VENDOR_INTEL)"];
+"1000112" [label="(Identifier,boot_cpu_data)"];
+"1000110" [label="(Call,boot_cpu_data.x86 == 6)"];
+"1000130" [label="(MethodReturn,static bool __init)"];
+"1000129" [label="(Identifier,false)"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000109"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000109" -> "1000105"  [label="AST: "];
+"1000112" -> "1000105"  [label="CFG: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000130"  [label="DDG: boot_cpu_data.x86_vendor"];
+"1000105" -> "1000130"  [label="DDG: X86_VENDOR_INTEL"];
+"1000105" -> "1000104"  [label="DDG: boot_cpu_data.x86_vendor"];
+"1000105" -> "1000104"  [label="DDG: X86_VENDOR_INTEL"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000104"  [label="AST: "];
+"1000118" -> "1000104"  [label="CFG: "];
+"1000129" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000130"  [label="DDG: boot_cpu_data.x86_vendor == X86_VENDOR_INTEL &&\n\t    boot_cpu_data.x86 == 6"];
+"1000104" -> "1000130"  [label="DDG: boot_cpu_data.x86_vendor == X86_VENDOR_INTEL"];
+"1000104" -> "1000130"  [label="DDG: boot_cpu_data.x86 == 6"];
+"1000110" -> "1000104"  [label="DDG: boot_cpu_data.x86"];
+"1000110" -> "1000104"  [label="DDG: 6"];
+}

@@ -1,0 +1,22 @@
+   DeviceRequest(
+       int requesting_process_id,
+       int requesting_frame_id,
+       int page_request_id,
+       bool user_gesture,
+       MediaStreamRequestType request_type,
+      const StreamControls& controls,
+      MediaDeviceSaltAndOrigin salt_and_origin,
+       DeviceStoppedCallback device_stopped_cb = DeviceStoppedCallback())
+       : requesting_process_id(requesting_process_id),
+         requesting_frame_id(requesting_frame_id),
+         page_request_id(page_request_id),
+         user_gesture(user_gesture),
+         controls(controls),
+        salt_and_origin(std::move(salt_and_origin)),
+        device_stopped_cb(std::move(device_stopped_cb)),
+        state_(NUM_MEDIA_TYPES, MEDIA_REQUEST_STATE_NOT_REQUESTED),
+        request_type_(request_type),
+        audio_type_(MEDIA_NO_SERVICE),
+        video_type_(MEDIA_NO_SERVICE),
+        target_process_id_(-1),
+        target_frame_id_(-1) {}

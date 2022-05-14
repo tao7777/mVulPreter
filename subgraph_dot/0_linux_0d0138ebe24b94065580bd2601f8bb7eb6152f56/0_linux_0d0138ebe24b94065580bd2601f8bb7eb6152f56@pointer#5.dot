@@ -1,0 +1,22 @@
+digraph "0_linux_0d0138ebe24b94065580bd2601f8bb7eb6152f56@pointer" {
+"1000116" [label="(Call,*xtregs = uregs)"];
+"1000103" [label="(MethodParameterIn,void __user *uregs)"];
+"1000186" [label="(MethodReturn,int)"];
+"1000118" [label="(Identifier,uregs)"];
+"1000121" [label="(Identifier,ret)"];
+"1000104" [label="(Block,)"];
+"1000103" [label="(MethodParameterIn,void __user *uregs)"];
+"1000117" [label="(Identifier,xtregs)"];
+"1000125" [label="(Call,access_ok(VERIFY_READ, uregs, sizeof(elf_xtregs_t)))"];
+"1000116" [label="(Call,*xtregs = uregs)"];
+"1000116" -> "1000104"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000121" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000186"  [label="DDG: xtregs"];
+"1000103" -> "1000116"  [label="DDG: uregs"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000186"  [label="DDG: uregs"];
+"1000103" -> "1000125"  [label="DDG: uregs"];
+}

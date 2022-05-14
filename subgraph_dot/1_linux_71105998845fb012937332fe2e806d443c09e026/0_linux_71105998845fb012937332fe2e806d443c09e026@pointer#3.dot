@@ -1,0 +1,25 @@
+digraph "0_linux_71105998845fb012937332fe2e806d443c09e026@pointer" {
+"1000128" [label="(Call,(info->flags & SNDRV_SEQ_PORT_FLG_GIVEN_PORT) ? info->addr.port : -1)"];
+"1000139" [label="(Call,-1)"];
+"1000129" [label="(Call,info->flags & SNDRV_SEQ_PORT_FLG_GIVEN_PORT)"];
+"1000134" [label="(Call,info->addr.port)"];
+"1000276" [label="(MethodReturn,static int)"];
+"1000128" [label="(Call,(info->flags & SNDRV_SEQ_PORT_FLG_GIVEN_PORT) ? info->addr.port : -1)"];
+"1000140" [label="(Literal,1)"];
+"1000126" [label="(Call,snd_seq_create_port(client, (info->flags & SNDRV_SEQ_PORT_FLG_GIVEN_PORT) ? info->addr.port : -1))"];
+"1000139" [label="(Call,-1)"];
+"1000128" -> "1000126"  [label="AST: "];
+"1000128" -> "1000134"  [label="CFG: "];
+"1000128" -> "1000139"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000134" -> "1000128"  [label="AST: "];
+"1000139" -> "1000128"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000276"  [label="DDG: -1"];
+"1000128" -> "1000276"  [label="DDG: info->flags & SNDRV_SEQ_PORT_FLG_GIVEN_PORT"];
+"1000128" -> "1000276"  [label="DDG: info->addr.port"];
+"1000139" -> "1000128"  [label="DDG: 1"];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000139" -> "1000126"  [label="DDG: 1"];
+}

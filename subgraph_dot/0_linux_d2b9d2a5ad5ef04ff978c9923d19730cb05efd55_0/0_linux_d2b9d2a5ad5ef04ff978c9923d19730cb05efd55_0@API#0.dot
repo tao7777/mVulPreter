@@ -1,0 +1,25 @@
+digraph "0_linux_d2b9d2a5ad5ef04ff978c9923d19730cb05efd55_0@API" {
+"1000501" [label="(Call,memset(&current->thread.vr_state, 0, 33 * sizeof(vector128)))"];
+"1000509" [label="(Call,33 * sizeof(vector128))"];
+"1000517" [label="(Identifier,current)"];
+"1000510" [label="(Literal,33)"];
+"1000509" [label="(Call,33 * sizeof(vector128))"];
+"1000501" [label="(Call,memset(&current->thread.vr_state, 0, 33 * sizeof(vector128)))"];
+"1000500" [label="(Block,)"];
+"1000719" [label="(MethodReturn,static long)"];
+"1000511" [label="(Call,sizeof(vector128))"];
+"1000508" [label="(Literal,0)"];
+"1000502" [label="(Call,&current->thread.vr_state)"];
+"1000501" -> "1000500"  [label="AST: "];
+"1000501" -> "1000509"  [label="CFG: "];
+"1000502" -> "1000501"  [label="AST: "];
+"1000508" -> "1000501"  [label="AST: "];
+"1000509" -> "1000501"  [label="AST: "];
+"1000517" -> "1000501"  [label="CFG: "];
+"1000501" -> "1000719"  [label="DDG: &current->thread.vr_state"];
+"1000501" -> "1000719"  [label="DDG: memset(&current->thread.vr_state, 0, 33 * sizeof(vector128))"];
+"1000509" -> "1000501"  [label="DDG: 33"];
+"1000509" -> "1000511"  [label="CFG: "];
+"1000510" -> "1000509"  [label="AST: "];
+"1000511" -> "1000509"  [label="AST: "];
+}

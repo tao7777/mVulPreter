@@ -1,0 +1,31 @@
+digraph "0_Android_8b5fd8f24eba5dd19ab2f80ea11a9125aa882ae2@pointer" {
+"1000350" [label="(Call,1 >= ps_dec->ps_cur_sps->u1_num_ref_frames)"];
+"1000346" [label="(Call,(I_SLICE == u1_slice_type)\n && (1 >= ps_dec->ps_cur_sps->u1_num_ref_frames))"];
+"1002568" [label="(MethodReturn,WORD32)"];
+"1000345" [label="(ControlStructure,if((I_SLICE == u1_slice_type)\n && (1 >= ps_dec->ps_cur_sps->u1_num_ref_frames)))"];
+"1000359" [label="(Identifier,skip)"];
+"1000352" [label="(Call,ps_dec->ps_cur_sps->u1_num_ref_frames)"];
+"1000351" [label="(Literal,1)"];
+"1000347" [label="(Call,I_SLICE == u1_slice_type)"];
+"1000346" [label="(Call,(I_SLICE == u1_slice_type)\n && (1 >= ps_dec->ps_cur_sps->u1_num_ref_frames))"];
+"1000350" [label="(Call,1 >= ps_dec->ps_cur_sps->u1_num_ref_frames)"];
+"1000369" [label="(Identifier,skip)"];
+"1000350" -> "1000346"  [label="AST: "];
+"1000350" -> "1000352"  [label="CFG: "];
+"1000351" -> "1000350"  [label="AST: "];
+"1000352" -> "1000350"  [label="AST: "];
+"1000346" -> "1000350"  [label="CFG: "];
+"1000350" -> "1002568"  [label="DDG: ps_dec->ps_cur_sps->u1_num_ref_frames"];
+"1000350" -> "1000346"  [label="DDG: 1"];
+"1000350" -> "1000346"  [label="DDG: ps_dec->ps_cur_sps->u1_num_ref_frames"];
+"1000346" -> "1000345"  [label="AST: "];
+"1000346" -> "1000347"  [label="CFG: "];
+"1000347" -> "1000346"  [label="AST: "];
+"1000359" -> "1000346"  [label="CFG: "];
+"1000369" -> "1000346"  [label="CFG: "];
+"1000346" -> "1002568"  [label="DDG: I_SLICE == u1_slice_type"];
+"1000346" -> "1002568"  [label="DDG: 1 >= ps_dec->ps_cur_sps->u1_num_ref_frames"];
+"1000346" -> "1002568"  [label="DDG: (I_SLICE == u1_slice_type)\n && (1 >= ps_dec->ps_cur_sps->u1_num_ref_frames)"];
+"1000347" -> "1000346"  [label="DDG: I_SLICE"];
+"1000347" -> "1000346"  [label="DDG: u1_slice_type"];
+}

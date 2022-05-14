@@ -1,0 +1,27 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_9@pointer" {
+"1001091" [label="(Call,!effect->aux_channels_on)"];
+"1001084" [label="(Call,*(uint32_t *)pCmdData != EFFECT_FEATURE_AUX_CHANNELS || !effect->aux_channels_on)"];
+"1001092" [label="(Call,effect->aux_channels_on)"];
+"1001110" [label="(Literal,\"PreProcessingFx_Command EFFECT_CMD_GET_FEATURE_CONFIG\")"];
+"1001085" [label="(Call,*(uint32_t *)pCmdData != EFFECT_FEATURE_AUX_CHANNELS)"];
+"1001091" [label="(Call,!effect->aux_channels_on)"];
+"1001083" [label="(ControlStructure,if (*(uint32_t *)pCmdData != EFFECT_FEATURE_AUX_CHANNELS || !effect->aux_channels_on))"];
+"1001084" [label="(Call,*(uint32_t *)pCmdData != EFFECT_FEATURE_AUX_CHANNELS || !effect->aux_channels_on)"];
+"1001318" [label="(MethodReturn,int)"];
+"1001091" -> "1001084"  [label="AST: "];
+"1001091" -> "1001092"  [label="CFG: "];
+"1001092" -> "1001091"  [label="AST: "];
+"1001084" -> "1001091"  [label="CFG: "];
+"1001091" -> "1001318"  [label="DDG: effect->aux_channels_on"];
+"1001091" -> "1001084"  [label="DDG: effect->aux_channels_on"];
+"1001084" -> "1001083"  [label="AST: "];
+"1001084" -> "1001085"  [label="CFG: "];
+"1001085" -> "1001084"  [label="AST: "];
+"1001099" -> "1001084"  [label="CFG: "];
+"1001110" -> "1001084"  [label="CFG: "];
+"1001084" -> "1001318"  [label="DDG: *(uint32_t *)pCmdData != EFFECT_FEATURE_AUX_CHANNELS"];
+"1001084" -> "1001318"  [label="DDG: !effect->aux_channels_on"];
+"1001084" -> "1001318"  [label="DDG: *(uint32_t *)pCmdData != EFFECT_FEATURE_AUX_CHANNELS || !effect->aux_channels_on"];
+"1001085" -> "1001084"  [label="DDG: *(uint32_t *)pCmdData"];
+"1001085" -> "1001084"  [label="DDG: EFFECT_FEATURE_AUX_CHANNELS"];
+}

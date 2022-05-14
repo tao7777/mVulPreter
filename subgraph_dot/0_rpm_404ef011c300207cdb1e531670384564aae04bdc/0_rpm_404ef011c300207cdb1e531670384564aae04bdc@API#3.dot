@@ -1,0 +1,31 @@
+digraph "0_rpm_404ef011c300207cdb1e531670384564aae04bdc@API" {
+"1000120" [label="(Call,old_umask = umask(0577))"];
+"1000122" [label="(Call,umask(0577))"];
+"1000132" [label="(Call,umask(old_umask))"];
+"1000122" [label="(Call,umask(0577))"];
+"1000123" [label="(Literal,0577)"];
+"1000133" [label="(Identifier,old_umask)"];
+"1000137" [label="(Identifier,exclusive)"];
+"1000118" [label="(Block,)"];
+"1000184" [label="(MethodReturn,static int)"];
+"1000125" [label="(Identifier,wfd)"];
+"1000132" [label="(Call,umask(old_umask))"];
+"1000121" [label="(Identifier,old_umask)"];
+"1000120" [label="(Call,old_umask = umask(0577))"];
+"1000120" -> "1000118"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000125" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000184"  [label="DDG: umask(0577)"];
+"1000122" -> "1000120"  [label="DDG: 0577"];
+"1000120" -> "1000132"  [label="DDG: old_umask"];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000132" -> "1000118"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000137" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000184"  [label="DDG: old_umask"];
+"1000132" -> "1000184"  [label="DDG: umask(old_umask)"];
+}

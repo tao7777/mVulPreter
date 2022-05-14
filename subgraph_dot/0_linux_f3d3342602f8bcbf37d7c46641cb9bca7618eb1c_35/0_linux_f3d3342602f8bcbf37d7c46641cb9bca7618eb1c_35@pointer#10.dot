@@ -1,0 +1,37 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_35@pointer" {
+"1000207" [label="(Call,wake_up_interruptible_sync_poll(&u->peer_wait,\n\t\t\t\t\tPOLLOUT | POLLWRNORM | POLLWRBAND))"];
+"1000212" [label="(Call,POLLOUT | POLLWRNORM | POLLWRBAND)"];
+"1000214" [label="(Call,POLLWRNORM | POLLWRBAND)"];
+"1000212" [label="(Call,POLLOUT | POLLWRNORM | POLLWRBAND)"];
+"1000219" [label="(Identifier,msg)"];
+"1000208" [label="(Call,&u->peer_wait)"];
+"1000388" [label="(MethodReturn,static int)"];
+"1000214" [label="(Call,POLLWRNORM | POLLWRBAND)"];
+"1000207" [label="(Call,wake_up_interruptible_sync_poll(&u->peer_wait,\n\t\t\t\t\tPOLLOUT | POLLWRNORM | POLLWRBAND))"];
+"1000216" [label="(Identifier,POLLWRBAND)"];
+"1000215" [label="(Identifier,POLLWRNORM)"];
+"1000213" [label="(Identifier,POLLOUT)"];
+"1000108" [label="(Block,)"];
+"1000207" -> "1000108"  [label="AST: "];
+"1000207" -> "1000212"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000212" -> "1000207"  [label="AST: "];
+"1000219" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000388"  [label="DDG: &u->peer_wait"];
+"1000207" -> "1000388"  [label="DDG: wake_up_interruptible_sync_poll(&u->peer_wait,\n\t\t\t\t\tPOLLOUT | POLLWRNORM | POLLWRBAND)"];
+"1000207" -> "1000388"  [label="DDG: POLLOUT | POLLWRNORM | POLLWRBAND"];
+"1000212" -> "1000207"  [label="DDG: POLLOUT"];
+"1000212" -> "1000207"  [label="DDG: POLLWRNORM | POLLWRBAND"];
+"1000212" -> "1000214"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000214" -> "1000212"  [label="AST: "];
+"1000212" -> "1000388"  [label="DDG: POLLWRNORM | POLLWRBAND"];
+"1000212" -> "1000388"  [label="DDG: POLLOUT"];
+"1000214" -> "1000212"  [label="DDG: POLLWRNORM"];
+"1000214" -> "1000212"  [label="DDG: POLLWRBAND"];
+"1000214" -> "1000216"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000216" -> "1000214"  [label="AST: "];
+"1000214" -> "1000388"  [label="DDG: POLLWRBAND"];
+"1000214" -> "1000388"  [label="DDG: POLLWRNORM"];
+}

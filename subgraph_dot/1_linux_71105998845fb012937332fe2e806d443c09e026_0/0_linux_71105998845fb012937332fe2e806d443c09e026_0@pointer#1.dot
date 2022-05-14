@@ -1,0 +1,30 @@
+digraph "0_linux_71105998845fb012937332fe2e806d443c09e026_0@pointer" {
+"1000256" [label="(Call,write_unlock_irqrestore(&client->ports_lock, flags))"];
+"1000207" [label="(Call,write_lock_irqsave(&client->ports_lock, flags))"];
+"1000257" [label="(Call,&client->ports_lock)"];
+"1000256" [label="(Call,write_unlock_irqrestore(&client->ports_lock, flags))"];
+"1000207" [label="(Call,write_lock_irqsave(&client->ports_lock, flags))"];
+"1000110" [label="(Block,)"];
+"1000208" [label="(Call,&client->ports_lock)"];
+"1000218" [label="(Identifier,p)"];
+"1000275" [label="(MethodReturn,struct snd_seq_client_port *)"];
+"1000261" [label="(Identifier,flags)"];
+"1000212" [label="(Identifier,flags)"];
+"1000265" [label="(Identifier,client)"];
+"1000256" -> "1000110"  [label="AST: "];
+"1000256" -> "1000261"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000261" -> "1000256"  [label="AST: "];
+"1000265" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000275"  [label="DDG: &client->ports_lock"];
+"1000256" -> "1000275"  [label="DDG: flags"];
+"1000256" -> "1000275"  [label="DDG: write_unlock_irqrestore(&client->ports_lock, flags)"];
+"1000207" -> "1000256"  [label="DDG: &client->ports_lock"];
+"1000207" -> "1000256"  [label="DDG: flags"];
+"1000207" -> "1000110"  [label="AST: "];
+"1000207" -> "1000212"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000212" -> "1000207"  [label="AST: "];
+"1000218" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000275"  [label="DDG: write_lock_irqsave(&client->ports_lock, flags)"];
+}

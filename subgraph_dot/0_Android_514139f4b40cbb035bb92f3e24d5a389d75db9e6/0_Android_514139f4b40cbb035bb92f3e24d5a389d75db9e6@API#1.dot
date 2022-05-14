@@ -1,0 +1,26 @@
+digraph "0_Android_514139f4b40cbb035bb92f3e24d5a389d75db9e6@API" {
+"1000109" [label="(Call,len + BTA_HH_MIN_OFFSET + sizeof(BT_HDR))"];
+"1000101" [label="(MethodParameterIn,UINT16 len)"];
+"1000111" [label="(Call,BTA_HH_MIN_OFFSET + sizeof(BT_HDR))"];
+"1000107" [label="(Call,(UINT16) (len + BTA_HH_MIN_OFFSET + sizeof(BT_HDR)))"];
+"1000109" [label="(Call,len + BTA_HH_MIN_OFFSET + sizeof(BT_HDR))"];
+"1000159" [label="(Call,memcpy(pbuf_data, data, len))"];
+"1000165" [label="(MethodReturn,static BT_HDR *)"];
+"1000110" [label="(Identifier,len)"];
+"1000101" [label="(MethodParameterIn,UINT16 len)"];
+"1000138" [label="(Call,p_buf->len = len)"];
+"1000116" [label="(Call,buflen < len)"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000165"  [label="DDG: BTA_HH_MIN_OFFSET + sizeof(BT_HDR)"];
+"1000101" -> "1000109"  [label="DDG: len"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000165"  [label="DDG: len"];
+"1000101" -> "1000107"  [label="DDG: len"];
+"1000101" -> "1000116"  [label="DDG: len"];
+"1000101" -> "1000138"  [label="DDG: len"];
+"1000101" -> "1000159"  [label="DDG: len"];
+}

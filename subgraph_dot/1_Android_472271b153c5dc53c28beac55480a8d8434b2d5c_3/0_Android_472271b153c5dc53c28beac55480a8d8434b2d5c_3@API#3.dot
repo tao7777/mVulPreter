@@ -1,0 +1,27 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_3@API" {
+"1000184" [label="(Call,pthread_mutex_unlock(&in->common.lock))"];
+"1000153" [label="(Call,pthread_mutex_lock(&in->common.lock))"];
+"1000153" [label="(Call,pthread_mutex_lock(&in->common.lock))"];
+"1000152" [label="(Block,)"];
+"1000154" [label="(Call,&in->common.lock)"];
+"1000194" [label="(Call,pthread_mutex_unlock(&in->common.lock))"];
+"1000273" [label="(MethodReturn,static ssize_t)"];
+"1000193" [label="(Literal,1)"];
+"1000168" [label="(Block,)"];
+"1000185" [label="(Call,&in->common.lock)"];
+"1000165" [label="(Identifier,in)"];
+"1000184" [label="(Call,pthread_mutex_unlock(&in->common.lock))"];
+"1000184" -> "1000168"  [label="AST: "];
+"1000184" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000193" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000273"  [label="DDG: &in->common.lock"];
+"1000184" -> "1000273"  [label="DDG: pthread_mutex_unlock(&in->common.lock)"];
+"1000153" -> "1000184"  [label="DDG: &in->common.lock"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000165" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000273"  [label="DDG: pthread_mutex_lock(&in->common.lock)"];
+"1000153" -> "1000194"  [label="DDG: &in->common.lock"];
+}

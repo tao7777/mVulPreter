@@ -1,0 +1,26 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_20@API" {
+"1000389" [label="(Call,can_crypt++)"];
+"1000210" [label="(Call,can_crypt=0)"];
+"1000390" [label="(Identifier,can_crypt)"];
+"1000383" [label="(ControlStructure,if(buf[i]==0xB8))"];
+"1000496" [label="(MethodReturn,static int)"];
+"1000212" [label="(Literal,0)"];
+"1000208" [label="(Call,can_sign=can_crypt=0)"];
+"1000366" [label="(Identifier,i)"];
+"1000211" [label="(Identifier,can_crypt)"];
+"1000389" [label="(Call,can_crypt++)"];
+"1000210" [label="(Call,can_crypt=0)"];
+"1000389" -> "1000383"  [label="AST: "];
+"1000389" -> "1000390"  [label="CFG: "];
+"1000390" -> "1000389"  [label="AST: "];
+"1000366" -> "1000389"  [label="CFG: "];
+"1000389" -> "1000496"  [label="DDG: can_crypt"];
+"1000210" -> "1000389"  [label="DDG: can_crypt"];
+"1000210" -> "1000208"  [label="AST: "];
+"1000210" -> "1000212"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000212" -> "1000210"  [label="AST: "];
+"1000208" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000496"  [label="DDG: can_crypt"];
+"1000210" -> "1000208"  [label="DDG: can_crypt"];
+}

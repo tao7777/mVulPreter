@@ -1,0 +1,38 @@
+digraph "0_poppler_8b6dc55e530b2f5ede6b9dfb64aafdd1d5836492@pointer" {
+"1000244" [label="(Call,path->flags[j] & splashPathLast)"];
+"1000243" [label="(Call,!(path->flags[j] & splashPathLast))"];
+"1000235" [label="(Call,j < path->length - 1 && !(path->flags[j] & splashPathLast))"];
+"1000539" [label="(MethodReturn,SplashPath *)"];
+"1000243" [label="(Call,!(path->flags[j] & splashPathLast))"];
+"1000250" [label="(Identifier,splashPathLast)"];
+"1000236" [label="(Call,j < path->length - 1)"];
+"1000244" [label="(Call,path->flags[j] & splashPathLast)"];
+"1000254" [label="(Identifier,lineDashOn)"];
+"1000235" [label="(Call,j < path->length - 1 && !(path->flags[j] & splashPathLast))"];
+"1000231" [label="(ControlStructure,for (j = i;\n\t j < path->length - 1 && !(path->flags[j] & splashPathLast);\n\t ++j))"];
+"1000245" [label="(Call,path->flags[j])"];
+"1000252" [label="(Identifier,j)"];
+"1000244" -> "1000243"  [label="AST: "];
+"1000244" -> "1000250"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000250" -> "1000244"  [label="AST: "];
+"1000243" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000539"  [label="DDG: splashPathLast"];
+"1000244" -> "1000539"  [label="DDG: path->flags[j]"];
+"1000244" -> "1000243"  [label="DDG: path->flags[j]"];
+"1000244" -> "1000243"  [label="DDG: splashPathLast"];
+"1000243" -> "1000235"  [label="AST: "];
+"1000235" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000539"  [label="DDG: path->flags[j] & splashPathLast"];
+"1000243" -> "1000235"  [label="DDG: path->flags[j] & splashPathLast"];
+"1000235" -> "1000231"  [label="AST: "];
+"1000235" -> "1000236"  [label="CFG: "];
+"1000236" -> "1000235"  [label="AST: "];
+"1000252" -> "1000235"  [label="CFG: "];
+"1000254" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000539"  [label="DDG: j < path->length - 1"];
+"1000235" -> "1000539"  [label="DDG: j < path->length - 1 && !(path->flags[j] & splashPathLast)"];
+"1000235" -> "1000539"  [label="DDG: !(path->flags[j] & splashPathLast)"];
+"1000236" -> "1000235"  [label="DDG: j"];
+"1000236" -> "1000235"  [label="DDG: path->length - 1"];
+}

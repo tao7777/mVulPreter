@@ -1,0 +1,27 @@
+digraph "0_linux_d2b9d2a5ad5ef04ff978c9923d19730cb05efd55@API" {
+"1000232" [label="(Call,memset(&current->thread.vr_state, 0,\n\t\t       ELF_NVRREG * sizeof(vector128)))"];
+"1000240" [label="(Call,ELF_NVRREG * sizeof(vector128))"];
+"1000233" [label="(Call,&current->thread.vr_state)"];
+"1000231" [label="(Block,)"];
+"1000242" [label="(Call,sizeof(vector128))"];
+"1000252" [label="(Call,ELF_NVRREG * sizeof(vector128))"];
+"1000239" [label="(Literal,0)"];
+"1000241" [label="(Identifier,ELF_NVRREG)"];
+"1000248" [label="(Identifier,current)"];
+"1000232" [label="(Call,memset(&current->thread.vr_state, 0,\n\t\t       ELF_NVRREG * sizeof(vector128)))"];
+"1000240" [label="(Call,ELF_NVRREG * sizeof(vector128))"];
+"1000533" [label="(MethodReturn,static long)"];
+"1000232" -> "1000231"  [label="AST: "];
+"1000232" -> "1000240"  [label="CFG: "];
+"1000233" -> "1000232"  [label="AST: "];
+"1000239" -> "1000232"  [label="AST: "];
+"1000240" -> "1000232"  [label="AST: "];
+"1000248" -> "1000232"  [label="CFG: "];
+"1000232" -> "1000533"  [label="DDG: &current->thread.vr_state"];
+"1000232" -> "1000533"  [label="DDG: memset(&current->thread.vr_state, 0,\n\t\t       ELF_NVRREG * sizeof(vector128))"];
+"1000240" -> "1000232"  [label="DDG: ELF_NVRREG"];
+"1000240" -> "1000242"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000242" -> "1000240"  [label="AST: "];
+"1000240" -> "1000252"  [label="DDG: ELF_NVRREG"];
+}

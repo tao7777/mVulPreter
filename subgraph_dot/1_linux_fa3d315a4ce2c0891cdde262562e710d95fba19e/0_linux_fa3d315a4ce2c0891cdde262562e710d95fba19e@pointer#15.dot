@@ -1,0 +1,30 @@
+digraph "0_linux_fa3d315a4ce2c0891cdde262562e710d95fba19e@pointer" {
+"1000217" [label="(Call,mem->flags &= ~KVM_MEM_LOG_DIRTY_PAGES)"];
+"1000237" [label="(Call,flags = mem->flags)"];
+"1000632" [label="(MethodReturn,int)"];
+"1000218" [label="(Call,mem->flags)"];
+"1000243" [label="(Identifier,r)"];
+"1000217" [label="(Call,mem->flags &= ~KVM_MEM_LOG_DIRTY_PAGES)"];
+"1000223" [label="(Identifier,old)"];
+"1000116" [label="(Block,)"];
+"1000237" [label="(Call,flags = mem->flags)"];
+"1000214" [label="(ControlStructure,if (!npages))"];
+"1000238" [label="(Identifier,flags)"];
+"1000239" [label="(Call,mem->flags)"];
+"1000221" [label="(Identifier,~KVM_MEM_LOG_DIRTY_PAGES)"];
+"1000217" -> "1000214"  [label="AST: "];
+"1000217" -> "1000221"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000221" -> "1000217"  [label="AST: "];
+"1000223" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000632"  [label="DDG: ~KVM_MEM_LOG_DIRTY_PAGES"];
+"1000217" -> "1000632"  [label="DDG: mem->flags &= ~KVM_MEM_LOG_DIRTY_PAGES"];
+"1000217" -> "1000237"  [label="DDG: mem->flags"];
+"1000237" -> "1000116"  [label="AST: "];
+"1000237" -> "1000239"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000239" -> "1000237"  [label="AST: "];
+"1000243" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000632"  [label="DDG: mem->flags"];
+"1000237" -> "1000632"  [label="DDG: flags"];
+}

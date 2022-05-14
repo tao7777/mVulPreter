@@ -1,0 +1,34 @@
+digraph "0_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_3@array" {
+"1000285" [label="(Call,spin_unlock_irqrestore(&timers[nodeid].lock, irqflags))"];
+"1000213" [label="(Call,spin_lock_irqsave(&timers[nodeid].lock, irqflags))"];
+"1000213" [label="(Call,spin_lock_irqsave(&timers[nodeid].lock, irqflags))"];
+"1000220" [label="(Identifier,irqflags)"];
+"1000286" [label="(Call,&timers[nodeid].lock)"];
+"1000315" [label="(MethodReturn,static int)"];
+"1000285" [label="(Call,spin_unlock_irqrestore(&timers[nodeid].lock, irqflags))"];
+"1000223" [label="(Identifier,base)"];
+"1000214" [label="(Call,&timers[nodeid].lock)"];
+"1000114" [label="(Block,)"];
+"1000284" [label="(Block,)"];
+"1000293" [label="(Call,preempt_enable())"];
+"1000292" [label="(Identifier,irqflags)"];
+"1000304" [label="(Call,spin_unlock_irqrestore(&timers[nodeid].lock, irqflags))"];
+"1000285" -> "1000284"  [label="AST: "];
+"1000285" -> "1000292"  [label="CFG: "];
+"1000286" -> "1000285"  [label="AST: "];
+"1000292" -> "1000285"  [label="AST: "];
+"1000293" -> "1000285"  [label="CFG: "];
+"1000285" -> "1000315"  [label="DDG: &timers[nodeid].lock"];
+"1000285" -> "1000315"  [label="DDG: irqflags"];
+"1000285" -> "1000315"  [label="DDG: spin_unlock_irqrestore(&timers[nodeid].lock, irqflags)"];
+"1000213" -> "1000285"  [label="DDG: &timers[nodeid].lock"];
+"1000213" -> "1000285"  [label="DDG: irqflags"];
+"1000213" -> "1000114"  [label="AST: "];
+"1000213" -> "1000220"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000220" -> "1000213"  [label="AST: "];
+"1000223" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000315"  [label="DDG: spin_lock_irqsave(&timers[nodeid].lock, irqflags)"];
+"1000213" -> "1000304"  [label="DDG: &timers[nodeid].lock"];
+"1000213" -> "1000304"  [label="DDG: irqflags"];
+}

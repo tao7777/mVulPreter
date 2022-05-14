@@ -1,0 +1,37 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_22@API" {
+"1000163" [label="(Call,strerror(errno))"];
+"1000160" [label="(Call,BTIF_TRACE_DEBUG(\"ioctl error:%d, errno:%s\", err, strerror(errno)))"];
+"1000167" [label="(Return,return err;)"];
+"1000161" [label="(Literal,\"ioctl error:%d, errno:%s\")"];
+"1000159" [label="(Block,)"];
+"1000200" [label="(MethodReturn,int)"];
+"1000166" [label="(Identifier,fd)"];
+"1000167" [label="(Return,return err;)"];
+"1000162" [label="(Identifier,err)"];
+"1000148" [label="(Call,err = TEMP_FAILURE_RETRY(ioctl(fd, TUNSETIFF, (void *) &ifr)))"];
+"1000168" [label="(Identifier,err)"];
+"1000160" [label="(Call,BTIF_TRACE_DEBUG(\"ioctl error:%d, errno:%s\", err, strerror(errno)))"];
+"1000164" [label="(Identifier,errno)"];
+"1000163" [label="(Call,strerror(errno))"];
+"1000163" -> "1000160"  [label="AST: "];
+"1000163" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000163"  [label="AST: "];
+"1000160" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000200"  [label="DDG: "];
+"1000163" -> "1000160"  [label="DDG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000162" -> "1000160"  [label="AST: "];
+"1000166" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000200"  [label="DDG: "];
+"1000160" -> "1000200"  [label="DDG: "];
+"1000160" -> "1000200"  [label="DDG: "];
+"1000148" -> "1000160"  [label="DDG: "];
+"1000160" -> "1000167"  [label="DDG: "];
+"1000167" -> "1000159"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000200" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000200"  [label="DDG: "];
+"1000168" -> "1000167"  [label="DDG: "];
+}

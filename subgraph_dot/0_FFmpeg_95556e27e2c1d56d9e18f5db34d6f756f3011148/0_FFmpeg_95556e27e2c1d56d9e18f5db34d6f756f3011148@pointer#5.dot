@@ -1,0 +1,36 @@
+digraph "0_FFmpeg_95556e27e2c1d56d9e18f5db34d6f756f3011148@pointer" {
+"1000221" [label="(Call,hdr->frame_type == EAC3_FRAME_TYPE_INDEPENDENT)"];
+"1000427" [label="(Call,hdr->frame_type != EAC3_FRAME_TYPE_DEPENDENT)"];
+"1000426" [label="(ControlStructure,if (hdr->frame_type != EAC3_FRAME_TYPE_DEPENDENT))"];
+"1000427" [label="(Call,hdr->frame_type != EAC3_FRAME_TYPE_DEPENDENT)"];
+"1000434" [label="(Identifier,ret)"];
+"1000220" [label="(ControlStructure,if (hdr->frame_type == EAC3_FRAME_TYPE_INDEPENDENT))"];
+"1000230" [label="(Identifier,hdr)"];
+"1000431" [label="(Identifier,EAC3_FRAME_TYPE_DEPENDENT)"];
+"1000298" [label="(Identifier,hdr)"];
+"1000683" [label="(MethodReturn,static int)"];
+"1000442" [label="(Identifier,info)"];
+"1000225" [label="(Identifier,EAC3_FRAME_TYPE_INDEPENDENT)"];
+"1000428" [label="(Call,hdr->frame_type)"];
+"1000222" [label="(Call,hdr->frame_type)"];
+"1000221" [label="(Call,hdr->frame_type == EAC3_FRAME_TYPE_INDEPENDENT)"];
+"1000221" -> "1000220"  [label="AST: "];
+"1000221" -> "1000225"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000225" -> "1000221"  [label="AST: "];
+"1000230" -> "1000221"  [label="CFG: "];
+"1000298" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000683"  [label="DDG: EAC3_FRAME_TYPE_INDEPENDENT"];
+"1000221" -> "1000683"  [label="DDG: hdr->frame_type == EAC3_FRAME_TYPE_INDEPENDENT"];
+"1000221" -> "1000683"  [label="DDG: hdr->frame_type"];
+"1000221" -> "1000427"  [label="DDG: hdr->frame_type"];
+"1000427" -> "1000426"  [label="AST: "];
+"1000427" -> "1000431"  [label="CFG: "];
+"1000428" -> "1000427"  [label="AST: "];
+"1000431" -> "1000427"  [label="AST: "];
+"1000434" -> "1000427"  [label="CFG: "];
+"1000442" -> "1000427"  [label="CFG: "];
+"1000427" -> "1000683"  [label="DDG: hdr->frame_type"];
+"1000427" -> "1000683"  [label="DDG: hdr->frame_type != EAC3_FRAME_TYPE_DEPENDENT"];
+"1000427" -> "1000683"  [label="DDG: EAC3_FRAME_TYPE_DEPENDENT"];
+}

@@ -1,0 +1,33 @@
+digraph "1_linux_d5aa407f59f5b83d2c50ec88f5bf56d40f1f8978_3@del" {
+"1000160" [label="(Call,xfrm6_tunnel_deregister(&xfrm46_tunnel_handler, AF_INET))"];
+"1000128" [label="(Call,xfrm6_tunnel_register(&xfrm46_tunnel_handler, AF_INET))"];
+"1000131" [label="(Identifier,AF_INET)"];
+"1000102" [label="(Block,)"];
+"1000177" [label="(MethodReturn,static int __init)"];
+"1000126" [label="(Call,rv = xfrm6_tunnel_register(&xfrm46_tunnel_handler, AF_INET))"];
+"1000161" [label="(Call,&xfrm46_tunnel_handler)"];
+"1000160" [label="(Call,xfrm6_tunnel_deregister(&xfrm46_tunnel_handler, AF_INET))"];
+"1000128" [label="(Call,xfrm6_tunnel_register(&xfrm46_tunnel_handler, AF_INET))"];
+"1000164" [label="(JumpTarget,dereg6:)"];
+"1000163" [label="(Identifier,AF_INET)"];
+"1000129" [label="(Call,&xfrm46_tunnel_handler)"];
+"1000160" -> "1000102"  [label="AST: "];
+"1000160" -> "1000163"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000163" -> "1000160"  [label="AST: "];
+"1000164" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000177"  [label="DDG: xfrm6_tunnel_deregister(&xfrm46_tunnel_handler, AF_INET)"];
+"1000160" -> "1000177"  [label="DDG: AF_INET"];
+"1000160" -> "1000177"  [label="DDG: &xfrm46_tunnel_handler"];
+"1000128" -> "1000160"  [label="DDG: &xfrm46_tunnel_handler"];
+"1000128" -> "1000160"  [label="DDG: AF_INET"];
+"1000128" -> "1000126"  [label="AST: "];
+"1000128" -> "1000131"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000131" -> "1000128"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000177"  [label="DDG: &xfrm46_tunnel_handler"];
+"1000128" -> "1000177"  [label="DDG: AF_INET"];
+"1000128" -> "1000126"  [label="DDG: &xfrm46_tunnel_handler"];
+"1000128" -> "1000126"  [label="DDG: AF_INET"];
+}

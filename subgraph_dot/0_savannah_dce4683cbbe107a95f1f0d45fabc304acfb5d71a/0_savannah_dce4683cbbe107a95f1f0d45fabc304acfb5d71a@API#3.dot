@@ -1,0 +1,24 @@
+digraph "0_savannah_dce4683cbbe107a95f1f0d45fabc304acfb5d71a@API" {
+"1000200" [label="(Call,close (ifd) != 0)"];
+"1000201" [label="(Call,close (ifd))"];
+"1000199" [label="(ControlStructure,if (close (ifd) != 0))"];
+"1000203" [label="(Literal,0)"];
+"1000204" [label="(Call,read_fatal ())"];
+"1000205" [label="(MethodReturn,RET)"];
+"1000200" [label="(Call,close (ifd) != 0)"];
+"1000201" [label="(Call,close (ifd))"];
+"1000202" [label="(Identifier,ifd)"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000200" -> "1000203"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000203" -> "1000200"  [label="AST: "];
+"1000204" -> "1000200"  [label="CFG: "];
+"1000205" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000205"  [label="DDG: close (ifd)"];
+"1000200" -> "1000205"  [label="DDG: close (ifd) != 0"];
+"1000201" -> "1000200"  [label="DDG: ifd"];
+"1000201" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000203" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000205"  [label="DDG: ifd"];
+}

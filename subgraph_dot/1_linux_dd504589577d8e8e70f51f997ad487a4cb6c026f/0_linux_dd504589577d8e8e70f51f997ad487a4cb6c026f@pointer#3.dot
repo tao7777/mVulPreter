@@ -1,0 +1,33 @@
+digraph "0_linux_dd504589577d8e8e70f51f997ad487a4cb6c026f@pointer" {
+"1000106" [label="(Call,*ask = alg_sk(sk))"];
+"1000108" [label="(Call,alg_sk(sk))"];
+"1000102" [label="(MethodParameterIn,struct sock *sk)"];
+"1000109" [label="(Identifier,sk)"];
+"1000230" [label="(MethodReturn,static int)"];
+"1000102" [label="(MethodParameterIn,struct sock *sk)"];
+"1000108" [label="(Call,alg_sk(sk))"];
+"1000121" [label="(Call,sock_kmalloc(sk, len, GFP_KERNEL))"];
+"1000112" [label="(Identifier,len)"];
+"1000103" [label="(Block,)"];
+"1000146" [label="(Call,sock_kfree_s(sk, ctx, len))"];
+"1000135" [label="(Call,sock_kmalloc(sk, crypto_skcipher_ivsize(private),\n \t\t\t       GFP_KERNEL))"];
+"1000106" [label="(Call,*ask = alg_sk(sk))"];
+"1000107" [label="(Identifier,ask)"];
+"1000106" -> "1000103"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000112" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000230"  [label="DDG: alg_sk(sk)"];
+"1000106" -> "1000230"  [label="DDG: ask"];
+"1000108" -> "1000106"  [label="DDG: sk"];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000102" -> "1000108"  [label="DDG: sk"];
+"1000108" -> "1000121"  [label="DDG: sk"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000230"  [label="DDG: sk"];
+"1000102" -> "1000121"  [label="DDG: sk"];
+"1000102" -> "1000135"  [label="DDG: sk"];
+"1000102" -> "1000146"  [label="DDG: sk"];
+}

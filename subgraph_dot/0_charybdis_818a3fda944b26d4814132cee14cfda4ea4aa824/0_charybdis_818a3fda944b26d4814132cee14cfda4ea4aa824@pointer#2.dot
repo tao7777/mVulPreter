@@ -1,0 +1,27 @@
+digraph "0_charybdis_818a3fda944b26d4814132cee14cfda4ea4aa824@pointer" {
+"1000229" [label="(Call,EmptyString(source_p->name) ? \"*\" : source_p->name)"];
+"1000230" [label="(Call,EmptyString(source_p->name))"];
+"1000229" [label="(Call,EmptyString(source_p->name) ? \"*\" : source_p->name)"];
+"1000234" [label="(Literal,\"*\")"];
+"1000222" [label="(Call,sendto_one(source_p, form_str(ERR_SASLTOOLONG), me.name, EmptyString(source_p->name) ? \"*\" : source_p->name))"];
+"1000231" [label="(Call,source_p->name)"];
+"1000235" [label="(Call,source_p->name)"];
+"1000230" [label="(Call,EmptyString(source_p->name))"];
+"1000396" [label="(MethodReturn,RET)"];
+"1000236" [label="(Identifier,source_p)"];
+"1000229" -> "1000222"  [label="AST: "];
+"1000229" -> "1000234"  [label="CFG: "];
+"1000229" -> "1000235"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000234" -> "1000229"  [label="AST: "];
+"1000235" -> "1000229"  [label="AST: "];
+"1000222" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000396"  [label="DDG: source_p->name"];
+"1000229" -> "1000396"  [label="DDG: EmptyString(source_p->name)"];
+"1000230" -> "1000229"  [label="DDG: source_p->name"];
+"1000230" -> "1000231"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000234" -> "1000230"  [label="CFG: "];
+"1000236" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000222"  [label="DDG: source_p->name"];
+}

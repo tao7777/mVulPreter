@@ -1,0 +1,34 @@
+digraph "0_ImageMagick_b0c5222ce31e8f941fa02ff9c7a040fb2db30dbc@array" {
+"1000627" [label="(Call,image->depth=jp2_image->comps[0].prec)"];
+"1000556" [label="(Call,jp2_image->comps[0].prec != jp2_image->comps[i].prec)"];
+"1000639" [label="(Identifier,status)"];
+"1000627" [label="(Call,image->depth=jp2_image->comps[0].prec)"];
+"1000556" [label="(Call,jp2_image->comps[0].prec != jp2_image->comps[i].prec)"];
+"1000564" [label="(Call,jp2_image->comps[i].prec)"];
+"1000827" [label="(Call,1UL << jp2_image->comps[i].prec)"];
+"1000108" [label="(Block,)"];
+"1000628" [label="(Call,image->depth)"];
+"1000555" [label="(Call,(jp2_image->comps[0].prec != jp2_image->comps[i].prec) ||\n         (jp2_image->comps[0].sgnd != jp2_image->comps[i].sgnd) ||\n        (jp2_image->comps[i].data == NULL))"];
+"1000557" [label="(Call,jp2_image->comps[0].prec)"];
+"1000576" [label="(Identifier,jp2_image)"];
+"1001016" [label="(MethodReturn,static Image *)"];
+"1000631" [label="(Call,jp2_image->comps[0].prec)"];
+"1000627" -> "1000108"  [label="AST: "];
+"1000627" -> "1000631"  [label="CFG: "];
+"1000628" -> "1000627"  [label="AST: "];
+"1000631" -> "1000627"  [label="AST: "];
+"1000639" -> "1000627"  [label="CFG: "];
+"1000627" -> "1001016"  [label="DDG: jp2_image->comps[0].prec"];
+"1000627" -> "1001016"  [label="DDG: image->depth"];
+"1000556" -> "1000627"  [label="DDG: jp2_image->comps[0].prec"];
+"1000556" -> "1000555"  [label="AST: "];
+"1000556" -> "1000564"  [label="CFG: "];
+"1000557" -> "1000556"  [label="AST: "];
+"1000564" -> "1000556"  [label="AST: "];
+"1000576" -> "1000556"  [label="CFG: "];
+"1000555" -> "1000556"  [label="CFG: "];
+"1000556" -> "1001016"  [label="DDG: jp2_image->comps[i].prec"];
+"1000556" -> "1000555"  [label="DDG: jp2_image->comps[0].prec"];
+"1000556" -> "1000555"  [label="DDG: jp2_image->comps[i].prec"];
+"1000556" -> "1000827"  [label="DDG: jp2_image->comps[i].prec"];
+}

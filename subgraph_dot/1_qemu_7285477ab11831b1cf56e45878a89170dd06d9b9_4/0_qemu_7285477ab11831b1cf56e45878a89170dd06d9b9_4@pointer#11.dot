@@ -1,0 +1,29 @@
+digraph "0_qemu_7285477ab11831b1cf56e45878a89170dd06d9b9_4@pointer" {
+"1000171" [label="(Call,printf(\" 0x%02x\", buf[i]))"];
+"1000106" [label="(MethodParameterIn,uint8_t *buf)"];
+"1000170" [label="(Block,)"];
+"1000171" [label="(Call,printf(\" 0x%02x\", buf[i]))"];
+"1000562" [label="(Call,DPRINTF(\"Unknown SCSI command (%2.2x)\n\", buf[0]))"];
+"1000173" [label="(Call,buf[i])"];
+"1000128" [label="(Call,command = buf[0])"];
+"1000172" [label="(Literal,\" 0x%02x\")"];
+"1000142" [label="(Call,DPRINTF(\"Command: lun=%d tag=0x%x data=0x%02x\", req->lun, req->tag, buf[0]))"];
+"1000106" [label="(MethodParameterIn,uint8_t *buf)"];
+"1000650" [label="(MethodReturn,static int32_t)"];
+"1000523" [label="(Call,buf[1] & 0x8)"];
+"1000169" [label="(Identifier,i)"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000173"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000173" -> "1000171"  [label="AST: "];
+"1000169" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000650"  [label="DDG: "];
+"1000171" -> "1000650"  [label="DDG: "];
+"1000106" -> "1000171"  [label="DDG: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000650"  [label="DDG: "];
+"1000106" -> "1000128"  [label="DDG: "];
+"1000106" -> "1000142"  [label="DDG: "];
+"1000106" -> "1000523"  [label="DDG: "];
+"1000106" -> "1000562"  [label="DDG: "];
+}

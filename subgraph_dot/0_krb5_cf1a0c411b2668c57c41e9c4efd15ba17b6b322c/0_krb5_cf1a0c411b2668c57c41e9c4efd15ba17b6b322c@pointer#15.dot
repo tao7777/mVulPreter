@@ -1,0 +1,22 @@
+digraph "0_krb5_cf1a0c411b2668c57c41e9c4efd15ba17b6b322c@pointer" {
+"1000712" [label="(Call,sin->sin_port = htons(remote_faddr->port))"];
+"1000716" [label="(Call,htons(remote_faddr->port))"];
+"1001260" [label="(MethodReturn,RET)"];
+"1000717" [label="(Call,remote_faddr->port)"];
+"1000689" [label="(Block,)"];
+"1000713" [label="(Call,sin->sin_port)"];
+"1000712" [label="(Call,sin->sin_port = htons(remote_faddr->port))"];
+"1000721" [label="(Identifier,salen)"];
+"1000716" [label="(Call,htons(remote_faddr->port))"];
+"1000712" -> "1000689"  [label="AST: "];
+"1000712" -> "1000716"  [label="CFG: "];
+"1000713" -> "1000712"  [label="AST: "];
+"1000716" -> "1000712"  [label="AST: "];
+"1000721" -> "1000712"  [label="CFG: "];
+"1000712" -> "1001260"  [label="DDG: htons(remote_faddr->port)"];
+"1000712" -> "1001260"  [label="DDG: sin->sin_port"];
+"1000716" -> "1000712"  [label="DDG: remote_faddr->port"];
+"1000716" -> "1000717"  [label="CFG: "];
+"1000717" -> "1000716"  [label="AST: "];
+"1000716" -> "1001260"  [label="DDG: remote_faddr->port"];
+}

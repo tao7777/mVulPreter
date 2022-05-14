@@ -1,0 +1,26 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c_0@pointer" {
+"1000261" [label="(Call,s->rep->flags & CF_READ_ATTACHED)"];
+"1000260" [label="(Call,!(s->rep->flags & CF_READ_ATTACHED))"];
+"1000279" [label="(Identifier,msg)"];
+"1000261" [label="(Call,s->rep->flags & CF_READ_ATTACHED)"];
+"1000260" [label="(Call,!(s->rep->flags & CF_READ_ATTACHED))"];
+"1001006" [label="(MethodReturn,int)"];
+"1000259" [label="(ControlStructure,if (!(s->rep->flags & CF_READ_ATTACHED)))"];
+"1000267" [label="(Identifier,CF_READ_ATTACHED)"];
+"1000262" [label="(Call,s->rep->flags)"];
+"1000270" [label="(Identifier,req)"];
+"1000261" -> "1000260"  [label="AST: "];
+"1000261" -> "1000267"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000267" -> "1000261"  [label="AST: "];
+"1000260" -> "1000261"  [label="CFG: "];
+"1000261" -> "1001006"  [label="DDG: CF_READ_ATTACHED"];
+"1000261" -> "1001006"  [label="DDG: s->rep->flags"];
+"1000261" -> "1000260"  [label="DDG: s->rep->flags"];
+"1000261" -> "1000260"  [label="DDG: CF_READ_ATTACHED"];
+"1000260" -> "1000259"  [label="AST: "];
+"1000270" -> "1000260"  [label="CFG: "];
+"1000279" -> "1000260"  [label="CFG: "];
+"1000260" -> "1001006"  [label="DDG: !(s->rep->flags & CF_READ_ATTACHED)"];
+"1000260" -> "1001006"  [label="DDG: s->rep->flags & CF_READ_ATTACHED"];
+}

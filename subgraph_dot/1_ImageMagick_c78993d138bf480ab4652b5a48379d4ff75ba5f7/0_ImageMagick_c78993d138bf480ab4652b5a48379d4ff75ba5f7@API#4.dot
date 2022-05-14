@@ -1,0 +1,25 @@
+digraph "0_ImageMagick_c78993d138bf480ab4652b5a48379d4ff75ba5f7@API" {
+"1000960" [label="(Call,3*\n            sizeof(colors[i].red))"];
+"1000951" [label="(Call,MSBOrderShort((unsigned char *) &colors[i].red,3*\n            sizeof(colors[i].red)))"];
+"1000960" [label="(Call,3*\n            sizeof(colors[i].red))"];
+"1000961" [label="(Literal,3)"];
+"1000935" [label="(Block,)"];
+"1000934" [label="(Identifier,i)"];
+"1000951" [label="(Call,MSBOrderShort((unsigned char *) &colors[i].red,3*\n            sizeof(colors[i].red)))"];
+"1000962" [label="(Call,sizeof(colors[i].red))"];
+"1000952" [label="(Call,(unsigned char *) &colors[i].red)"];
+"1001928" [label="(MethodReturn,static Image *)"];
+"1000960" -> "1000951"  [label="AST: "];
+"1000960" -> "1000962"  [label="CFG: "];
+"1000961" -> "1000960"  [label="AST: "];
+"1000962" -> "1000960"  [label="AST: "];
+"1000951" -> "1000960"  [label="CFG: "];
+"1000960" -> "1000951"  [label="DDG: 3"];
+"1000951" -> "1000935"  [label="AST: "];
+"1000952" -> "1000951"  [label="AST: "];
+"1000934" -> "1000951"  [label="CFG: "];
+"1000951" -> "1001928"  [label="DDG: (unsigned char *) &colors[i].red"];
+"1000951" -> "1001928"  [label="DDG: MSBOrderShort((unsigned char *) &colors[i].red,3*\n            sizeof(colors[i].red))"];
+"1000951" -> "1001928"  [label="DDG: 3*\n            sizeof(colors[i].red)"];
+"1000952" -> "1000951"  [label="DDG: &colors[i].red"];
+}

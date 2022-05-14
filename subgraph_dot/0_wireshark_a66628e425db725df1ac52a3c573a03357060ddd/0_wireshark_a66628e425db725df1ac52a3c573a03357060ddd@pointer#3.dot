@@ -1,0 +1,22 @@
+digraph "0_wireshark_a66628e425db725df1ac52a3c573a03357060ddd@pointer" {
+"1000370" [label="(Call,phdr->ts.secs = mktime(&tm))"];
+"1000376" [label="(Call,mktime(&tm))"];
+"1000370" [label="(Call,phdr->ts.secs = mktime(&tm))"];
+"1000697" [label="(MethodReturn,RET)"];
+"1000371" [label="(Call,phdr->ts.secs)"];
+"1000382" [label="(Identifier,phdr)"];
+"1000377" [label="(Call,&tm)"];
+"1000113" [label="(Block,)"];
+"1000376" [label="(Call,mktime(&tm))"];
+"1000370" -> "1000113"  [label="AST: "];
+"1000370" -> "1000376"  [label="CFG: "];
+"1000371" -> "1000370"  [label="AST: "];
+"1000376" -> "1000370"  [label="AST: "];
+"1000382" -> "1000370"  [label="CFG: "];
+"1000370" -> "1000697"  [label="DDG: mktime(&tm)"];
+"1000370" -> "1000697"  [label="DDG: phdr->ts.secs"];
+"1000376" -> "1000370"  [label="DDG: &tm"];
+"1000376" -> "1000377"  [label="CFG: "];
+"1000377" -> "1000376"  [label="AST: "];
+"1000376" -> "1000697"  [label="DDG: &tm"];
+}

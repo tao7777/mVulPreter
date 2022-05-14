@@ -1,0 +1,25 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_1@pointer" {
+"1000130" [label="(Call,skb->protocol == htons(ETH_P_IP))"];
+"1000134" [label="(Call,htons(ETH_P_IP))"];
+"1000134" [label="(Call,htons(ETH_P_IP))"];
+"1000129" [label="(ControlStructure,if (skb->protocol == htons(ETH_P_IP)))"];
+"1000138" [label="(Identifier,newsk)"];
+"1000135" [label="(Identifier,ETH_P_IP)"];
+"1000246" [label="(Identifier,opt)"];
+"1000131" [label="(Call,skb->protocol)"];
+"1000619" [label="(MethodReturn,static struct sock *)"];
+"1000130" [label="(Call,skb->protocol == htons(ETH_P_IP))"];
+"1000130" -> "1000129"  [label="AST: "];
+"1000130" -> "1000134"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000134" -> "1000130"  [label="AST: "];
+"1000138" -> "1000130"  [label="CFG: "];
+"1000246" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000619"  [label="DDG: skb->protocol == htons(ETH_P_IP)"];
+"1000130" -> "1000619"  [label="DDG: htons(ETH_P_IP)"];
+"1000130" -> "1000619"  [label="DDG: skb->protocol"];
+"1000134" -> "1000130"  [label="DDG: ETH_P_IP"];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000134" -> "1000619"  [label="DDG: ETH_P_IP"];
+}

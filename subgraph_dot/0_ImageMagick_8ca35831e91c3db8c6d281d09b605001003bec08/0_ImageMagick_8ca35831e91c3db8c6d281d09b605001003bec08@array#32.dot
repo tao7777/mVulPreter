@@ -1,0 +1,33 @@
+digraph "0_ImageMagick_8ca35831e91c3db8c6d281d09b605001003bec08@array" {
+"1004279" [label="(Call,ScaleQuantumToShort(image->colormap[x].red))"];
+"1004278" [label="(Call,ScaleQuantumToShort(image->colormap[x].red) ==\n                     transparent_color.alpha)"];
+"1004279" [label="(Call,ScaleQuantumToShort(image->colormap[x].red))"];
+"1000417" [label="(Call,transparent_color.alpha=65537)"];
+"1004278" [label="(Call,ScaleQuantumToShort(image->colormap[x].red) ==\n                     transparent_color.alpha)"];
+"1004277" [label="(ControlStructure,if (ScaleQuantumToShort(image->colormap[x].red) ==\n                     transparent_color.alpha))"];
+"1005492" [label="(MethodReturn,static Image *)"];
+"1004295" [label="(Identifier,image)"];
+"1002435" [label="(Call,(int) transparent_color.alpha)"];
+"1004288" [label="(Identifier,transparent_color)"];
+"1004275" [label="(Identifier,x)"];
+"1004280" [label="(Call,image->colormap[x].red)"];
+"1004287" [label="(Call,transparent_color.alpha)"];
+"1002405" [label="(Call,transparent_color.alpha= scale_to_short*ping_trans_color->gray)"];
+"1004279" -> "1004278"  [label="AST: "];
+"1004279" -> "1004280"  [label="CFG: "];
+"1004280" -> "1004279"  [label="AST: "];
+"1004288" -> "1004279"  [label="CFG: "];
+"1004279" -> "1005492"  [label="DDG: image->colormap[x].red"];
+"1004279" -> "1004278"  [label="DDG: image->colormap[x].red"];
+"1004278" -> "1004277"  [label="AST: "];
+"1004278" -> "1004287"  [label="CFG: "];
+"1004287" -> "1004278"  [label="AST: "];
+"1004295" -> "1004278"  [label="CFG: "];
+"1004275" -> "1004278"  [label="CFG: "];
+"1004278" -> "1005492"  [label="DDG: ScaleQuantumToShort(image->colormap[x].red) ==\n                     transparent_color.alpha"];
+"1004278" -> "1005492"  [label="DDG: transparent_color.alpha"];
+"1004278" -> "1005492"  [label="DDG: ScaleQuantumToShort(image->colormap[x].red)"];
+"1002405" -> "1004278"  [label="DDG: transparent_color.alpha"];
+"1000417" -> "1004278"  [label="DDG: transparent_color.alpha"];
+"1002435" -> "1004278"  [label="DDG: transparent_color.alpha"];
+}

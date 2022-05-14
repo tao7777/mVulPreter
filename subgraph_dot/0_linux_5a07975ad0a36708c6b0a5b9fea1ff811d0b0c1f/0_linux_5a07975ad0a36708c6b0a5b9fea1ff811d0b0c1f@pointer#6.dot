@@ -1,0 +1,24 @@
+digraph "0_linux_5a07975ad0a36708c6b0a5b9fea1ff811d0b0c1f@pointer" {
+"1000102" [label="(MethodParameterIn,struct usb_serial *serial)"];
+"1000237" [label="(Call,usb_set_serial_data(serial, serial_priv))"];
+"1000238" [label="(Identifier,serial)"];
+"1000239" [label="(Identifier,serial_priv)"];
+"1000103" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,struct usb_serial *serial)"];
+"1000191" [label="(Call,!serial_priv)"];
+"1000237" [label="(Call,usb_set_serial_data(serial, serial_priv))"];
+"1000241" [label="(Literal,0)"];
+"1000242" [label="(MethodReturn,static int)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000242"  [label="DDG: serial"];
+"1000102" -> "1000237"  [label="DDG: serial"];
+"1000237" -> "1000103"  [label="AST: "];
+"1000237" -> "1000239"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000239" -> "1000237"  [label="AST: "];
+"1000241" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000242"  [label="DDG: usb_set_serial_data(serial, serial_priv)"];
+"1000237" -> "1000242"  [label="DDG: serial_priv"];
+"1000237" -> "1000242"  [label="DDG: serial"];
+"1000191" -> "1000237"  [label="DDG: serial_priv"];
+}

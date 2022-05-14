@@ -1,0 +1,28 @@
+digraph "0_linux_fc9bbca8f650e5f738af8806317c0a041a48ae4a@pointer" {
+"1000120" [label="(Call,fb = info->fbops)"];
+"1000126" [label="(Call,!fb)"];
+"1000122" [label="(Call,info->fbops)"];
+"1000121" [label="(Identifier,fb)"];
+"1000125" [label="(ControlStructure,if (!fb))"];
+"1000226" [label="(MethodReturn,RET)"];
+"1000120" [label="(Call,fb = info->fbops)"];
+"1000104" [label="(Block,)"];
+"1000130" [label="(Identifier,ENODEV)"];
+"1000126" [label="(Call,!fb)"];
+"1000134" [label="(Identifier,info)"];
+"1000127" [label="(Identifier,fb)"];
+"1000120" -> "1000104"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000127" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000226"  [label="DDG: info->fbops"];
+"1000120" -> "1000126"  [label="DDG: fb"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="CFG: "];
+"1000134" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000226"  [label="DDG: fb"];
+"1000126" -> "1000226"  [label="DDG: !fb"];
+}

@@ -1,0 +1,29 @@
+digraph "0_spice_8af619009660b24e0b41ad26b30289eea288fcc2@API" {
+"1000203" [label="(Call,strlen(taTicket.password) == 0)"];
+"1000204" [label="(Call,strlen(taTicket.password))"];
+"1000211" [label="(Literal,\"Ticketing is enabled, but no password is set. \"\n                          \"please set a ticket first\")"];
+"1000215" [label="(Identifier,expired)"];
+"1000217" [label="(Call,strcmp(password, taTicket.password))"];
+"1000205" [label="(Call,taTicket.password)"];
+"1000204" [label="(Call,strlen(taTicket.password))"];
+"1000208" [label="(Literal,0)"];
+"1000246" [label="(MethodReturn,static void)"];
+"1000202" [label="(ControlStructure,if (strlen(taTicket.password) == 0))"];
+"1000216" [label="(Call,strcmp(password, taTicket.password) != 0)"];
+"1000203" [label="(Call,strlen(taTicket.password) == 0)"];
+"1000203" -> "1000202"  [label="AST: "];
+"1000203" -> "1000208"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000208" -> "1000203"  [label="AST: "];
+"1000211" -> "1000203"  [label="CFG: "];
+"1000215" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000246"  [label="DDG: strlen(taTicket.password) == 0"];
+"1000203" -> "1000246"  [label="DDG: strlen(taTicket.password)"];
+"1000204" -> "1000203"  [label="DDG: taTicket.password"];
+"1000204" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000208" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000246"  [label="DDG: taTicket.password"];
+"1000204" -> "1000216"  [label="DDG: taTicket.password"];
+"1000204" -> "1000217"  [label="DDG: taTicket.password"];
+}

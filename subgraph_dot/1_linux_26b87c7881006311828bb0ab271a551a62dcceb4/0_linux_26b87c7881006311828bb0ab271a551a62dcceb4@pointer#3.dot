@@ -1,0 +1,25 @@
+digraph "0_linux_26b87c7881006311828bb0ab271a551a62dcceb4@pointer" {
+"1000203" [label="(Call,entry = queue->in_chunk_list.next)"];
+"1000210" [label="(Call,list_del_init(entry))"];
+"1000204" [label="(Identifier,entry)"];
+"1000214" [label="(Identifier,chunk)"];
+"1000353" [label="(MethodReturn,struct sctp_chunk *)"];
+"1000211" [label="(Identifier,entry)"];
+"1000210" [label="(Call,list_del_init(entry))"];
+"1000193" [label="(Block,)"];
+"1000203" [label="(Call,entry = queue->in_chunk_list.next)"];
+"1000205" [label="(Call,queue->in_chunk_list.next)"];
+"1000203" -> "1000193"  [label="AST: "];
+"1000203" -> "1000205"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000203"  [label="AST: "];
+"1000211" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000353"  [label="DDG: queue->in_chunk_list.next"];
+"1000203" -> "1000210"  [label="DDG: entry"];
+"1000210" -> "1000193"  [label="AST: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000214" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000353"  [label="DDG: list_del_init(entry)"];
+"1000210" -> "1000353"  [label="DDG: entry"];
+}

@@ -1,0 +1,32 @@
+digraph "0_FFmpeg_3a2d21bc5f97aa0161db3ae731fc2732be6108b8@pointer" {
+"1001365" [label="(Call,trk->flags |= MOV_TRACK_STPS)"];
+"1001189" [label="(Call,trk->flags |= MOV_TRACK_CTTS)"];
+"1001198" [label="(Identifier,trk)"];
+"1001369" [label="(Identifier,MOV_TRACK_STPS)"];
+"1001189" [label="(Call,trk->flags |= MOV_TRACK_CTTS)"];
+"1001366" [label="(Call,trk->flags)"];
+"1001353" [label="(ControlStructure,if (trk->cluster[trk->entry].flags & MOV_PARTIAL_SYNC_SAMPLE))"];
+"1001365" [label="(Call,trk->flags |= MOV_TRACK_STPS)"];
+"1001193" [label="(Identifier,MOV_TRACK_CTTS)"];
+"1001190" [label="(Call,trk->flags)"];
+"1001388" [label="(Identifier,trk)"];
+"1001466" [label="(MethodReturn,int)"];
+"1001181" [label="(ControlStructure,if (pkt->dts != pkt->pts))"];
+"1001365" -> "1001353"  [label="AST: "];
+"1001365" -> "1001369"  [label="CFG: "];
+"1001366" -> "1001365"  [label="AST: "];
+"1001369" -> "1001365"  [label="AST: "];
+"1001388" -> "1001365"  [label="CFG: "];
+"1001365" -> "1001466"  [label="DDG: trk->flags"];
+"1001365" -> "1001466"  [label="DDG: trk->flags |= MOV_TRACK_STPS"];
+"1001365" -> "1001466"  [label="DDG: MOV_TRACK_STPS"];
+"1001189" -> "1001365"  [label="DDG: trk->flags"];
+"1001189" -> "1001181"  [label="AST: "];
+"1001189" -> "1001193"  [label="CFG: "];
+"1001190" -> "1001189"  [label="AST: "];
+"1001193" -> "1001189"  [label="AST: "];
+"1001198" -> "1001189"  [label="CFG: "];
+"1001189" -> "1001466"  [label="DDG: trk->flags |= MOV_TRACK_CTTS"];
+"1001189" -> "1001466"  [label="DDG: trk->flags"];
+"1001189" -> "1001466"  [label="DDG: MOV_TRACK_CTTS"];
+}

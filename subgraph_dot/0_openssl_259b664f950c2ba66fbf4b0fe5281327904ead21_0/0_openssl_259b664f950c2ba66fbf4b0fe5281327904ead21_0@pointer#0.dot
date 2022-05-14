@@ -1,0 +1,22 @@
+digraph "0_openssl_259b664f950c2ba66fbf4b0fe5281327904ead21_0@pointer" {
+"1000136" [label="(Call,strcmp(user->id, username))"];
+"1000104" [label="(MethodParameterIn,char *username)"];
+"1000135" [label="(Call,strcmp(user->id, username) == 0)"];
+"1000141" [label="(Literal,0)"];
+"1000146" [label="(MethodReturn,static SRP_user_pwd *)"];
+"1000104" [label="(MethodParameterIn,char *username)"];
+"1000140" [label="(Identifier,username)"];
+"1000136" [label="(Call,strcmp(user->id, username))"];
+"1000137" [label="(Call,user->id)"];
+"1000136" -> "1000135"  [label="AST: "];
+"1000136" -> "1000140"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000140" -> "1000136"  [label="AST: "];
+"1000141" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000146"  [label="DDG: username"];
+"1000136" -> "1000146"  [label="DDG: user->id"];
+"1000104" -> "1000136"  [label="DDG: username"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000146"  [label="DDG: username"];
+"1000104" -> "1000135"  [label="DDG: username"];
+}

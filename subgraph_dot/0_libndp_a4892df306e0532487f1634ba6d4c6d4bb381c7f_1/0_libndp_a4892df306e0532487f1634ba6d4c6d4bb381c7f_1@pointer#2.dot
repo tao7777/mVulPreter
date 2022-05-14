@@ -1,0 +1,25 @@
+digraph "0_libndp_a4892df306e0532487f1634ba6d4c6d4bb381c7f_1@pointer" {
+"1000201" [label="(Call,ndp_msg_type_by_raw_type(&msg_type, msg->icmp6_hdr->icmp6_type))"];
+"1000199" [label="(Call,err = ndp_msg_type_by_raw_type(&msg_type, msg->icmp6_hdr->icmp6_type))"];
+"1000210" [label="(Identifier,err)"];
+"1000102" [label="(Block,)"];
+"1000199" [label="(Call,err = ndp_msg_type_by_raw_type(&msg_type, msg->icmp6_hdr->icmp6_type))"];
+"1000204" [label="(Call,msg->icmp6_hdr->icmp6_type)"];
+"1000201" [label="(Call,ndp_msg_type_by_raw_type(&msg_type, msg->icmp6_hdr->icmp6_type))"];
+"1000202" [label="(Call,&msg_type)"];
+"1000261" [label="(MethodReturn,static int)"];
+"1000200" [label="(Identifier,err)"];
+"1000201" -> "1000199"  [label="AST: "];
+"1000201" -> "1000204"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000204" -> "1000201"  [label="AST: "];
+"1000199" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000261"  [label="DDG: &msg_type"];
+"1000201" -> "1000261"  [label="DDG: msg->icmp6_hdr->icmp6_type"];
+"1000201" -> "1000199"  [label="DDG: &msg_type"];
+"1000201" -> "1000199"  [label="DDG: msg->icmp6_hdr->icmp6_type"];
+"1000199" -> "1000102"  [label="AST: "];
+"1000200" -> "1000199"  [label="AST: "];
+"1000210" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000261"  [label="DDG: ndp_msg_type_by_raw_type(&msg_type, msg->icmp6_hdr->icmp6_type)"];
+}

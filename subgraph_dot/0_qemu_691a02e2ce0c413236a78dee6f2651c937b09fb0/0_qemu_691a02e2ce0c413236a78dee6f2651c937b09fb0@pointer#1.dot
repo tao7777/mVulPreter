@@ -1,0 +1,37 @@
+digraph "0_qemu_691a02e2ce0c413236a78dee6f2651c937b09fb0@pointer" {
+"1000120" [label="(Call,*env = &cpu->env)"];
+"1000171" [label="(Call,cpu_get_tb_cpu_state(env, &current_pc, &current_cs_base,\n                             &current_flags))"];
+"1000322" [label="(MethodReturn,static void)"];
+"1000177" [label="(Call,&current_flags)"];
+"1000130" [label="(Identifier,imm32)"];
+"1000171" [label="(Call,cpu_get_tb_cpu_state(env, &current_pc, &current_cs_base,\n                             &current_flags))"];
+"1000122" [label="(Call,&cpu->env)"];
+"1000173" [label="(Call,&current_pc)"];
+"1000179" [label="(Call,pause_all_vcpus())"];
+"1000175" [label="(Call,&current_cs_base)"];
+"1000113" [label="(Block,)"];
+"1000120" [label="(Call,*env = &cpu->env)"];
+"1000121" [label="(Identifier,env)"];
+"1000170" [label="(Block,)"];
+"1000172" [label="(Identifier,env)"];
+"1000120" -> "1000113"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000130" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000322"  [label="DDG: env"];
+"1000120" -> "1000322"  [label="DDG: &cpu->env"];
+"1000120" -> "1000171"  [label="DDG: env"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000177"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000173" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="AST: "];
+"1000177" -> "1000171"  [label="AST: "];
+"1000179" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000322"  [label="DDG: env"];
+"1000171" -> "1000322"  [label="DDG: &current_pc"];
+"1000171" -> "1000322"  [label="DDG: cpu_get_tb_cpu_state(env, &current_pc, &current_cs_base,\n                             &current_flags)"];
+"1000171" -> "1000322"  [label="DDG: &current_flags"];
+"1000171" -> "1000322"  [label="DDG: &current_cs_base"];
+}

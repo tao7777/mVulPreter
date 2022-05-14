@@ -1,0 +1,28 @@
+digraph "0_linux_59c816c1f24df0204e01851431d3bab3eb76719c@pointer" {
+"1000155" [label="(Call,INIT_LIST_HEAD(&tpg->tv_tpg_list))"];
+"1000196" [label="(Call,list_add_tail(&tpg->tv_tpg_list, &vhost_scsi_list))"];
+"1000155" [label="(Call,INIT_LIST_HEAD(&tpg->tv_tpg_list))"];
+"1000104" [label="(Block,)"];
+"1000211" [label="(MethodReturn,RET)"];
+"1000201" [label="(Call,&vhost_scsi_list)"];
+"1000197" [label="(Call,&tpg->tv_tpg_list)"];
+"1000156" [label="(Call,&tpg->tv_tpg_list)"];
+"1000205" [label="(Identifier,vhost_scsi_mutex)"];
+"1000162" [label="(Identifier,tpg)"];
+"1000196" [label="(Call,list_add_tail(&tpg->tv_tpg_list, &vhost_scsi_list))"];
+"1000155" -> "1000104"  [label="AST: "];
+"1000155" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000162" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000211"  [label="DDG: INIT_LIST_HEAD(&tpg->tv_tpg_list)"];
+"1000155" -> "1000211"  [label="DDG: &tpg->tv_tpg_list"];
+"1000155" -> "1000196"  [label="DDG: &tpg->tv_tpg_list"];
+"1000196" -> "1000104"  [label="AST: "];
+"1000196" -> "1000201"  [label="CFG: "];
+"1000197" -> "1000196"  [label="AST: "];
+"1000201" -> "1000196"  [label="AST: "];
+"1000205" -> "1000196"  [label="CFG: "];
+"1000196" -> "1000211"  [label="DDG: &tpg->tv_tpg_list"];
+"1000196" -> "1000211"  [label="DDG: list_add_tail(&tpg->tv_tpg_list, &vhost_scsi_list)"];
+"1000196" -> "1000211"  [label="DDG: &vhost_scsi_list"];
+}

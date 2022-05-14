@@ -1,0 +1,24 @@
+digraph "0_linux_81f9c4e4177d31ced6f52a89bb70e93bfb77ca03_0@pointer" {
+"1000121" [label="(Call,tr->current_trace != &nop_trace)"];
+"1000120" [label="(Call,WARN_ON_ONCE(tr->current_trace != &nop_trace))"];
+"1000153" [label="(MethodReturn,RET)"];
+"1000125" [label="(Call,&nop_trace)"];
+"1000122" [label="(Call,tr->current_trace)"];
+"1000119" [label="(Block,)"];
+"1000121" [label="(Call,tr->current_trace != &nop_trace)"];
+"1000120" [label="(Call,WARN_ON_ONCE(tr->current_trace != &nop_trace))"];
+"1000127" [label="(Return,return;)"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000153"  [label="DDG: &nop_trace"];
+"1000121" -> "1000153"  [label="DDG: tr->current_trace"];
+"1000121" -> "1000120"  [label="DDG: tr->current_trace"];
+"1000121" -> "1000120"  [label="DDG: &nop_trace"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000127" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000153"  [label="DDG: tr->current_trace != &nop_trace"];
+"1000120" -> "1000153"  [label="DDG: WARN_ON_ONCE(tr->current_trace != &nop_trace)"];
+}

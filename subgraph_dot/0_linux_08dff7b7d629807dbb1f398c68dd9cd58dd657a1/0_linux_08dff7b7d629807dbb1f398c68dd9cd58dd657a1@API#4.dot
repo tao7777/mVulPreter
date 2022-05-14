@@ -1,0 +1,26 @@
+digraph "0_linux_08dff7b7d629807dbb1f398c68dd9cd58dd657a1@API" {
+"1000233" [label="(Call,mutex_unlock(&zonelists_mutex))"];
+"1000175" [label="(Call,mutex_lock(&zonelists_mutex))"];
+"1000255" [label="(MethodReturn,int __ref)"];
+"1000176" [label="(Call,&zonelists_mutex)"];
+"1000105" [label="(Block,)"];
+"1000175" [label="(Call,mutex_lock(&zonelists_mutex))"];
+"1000236" [label="(Call,init_per_zone_wmark_min())"];
+"1000234" [label="(Call,&zonelists_mutex)"];
+"1000181" [label="(Identifier,zone)"];
+"1000233" [label="(Call,mutex_unlock(&zonelists_mutex))"];
+"1000196" [label="(Call,mutex_unlock(&zonelists_mutex))"];
+"1000233" -> "1000105"  [label="AST: "];
+"1000233" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000236" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000255"  [label="DDG: mutex_unlock(&zonelists_mutex)"];
+"1000233" -> "1000255"  [label="DDG: &zonelists_mutex"];
+"1000175" -> "1000233"  [label="DDG: &zonelists_mutex"];
+"1000175" -> "1000105"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000181" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000255"  [label="DDG: mutex_lock(&zonelists_mutex)"];
+"1000175" -> "1000196"  [label="DDG: &zonelists_mutex"];
+}

@@ -1,0 +1,25 @@
+digraph "0_neomutt_6f163e07ae68654d7ac5268cbb7565f6df79ad85_0@pointer" {
+"1000147" [label="(Call,mutt_account_getuser(&idata->conn->account))"];
+"1000146" [label="(Call,mutt_account_getuser(&idata->conn->account) < 0)"];
+"1000156" [label="(Identifier,IMAP_AUTH_FAILURE)"];
+"1000154" [label="(Literal,0)"];
+"1000782" [label="(MethodReturn,enum ImapAuthRes)"];
+"1000145" [label="(ControlStructure,if (mutt_account_getuser(&idata->conn->account) < 0))"];
+"1000147" [label="(Call,mutt_account_getuser(&idata->conn->account))"];
+"1000148" [label="(Call,&idata->conn->account)"];
+"1000146" [label="(Call,mutt_account_getuser(&idata->conn->account) < 0)"];
+"1000158" [label="(Identifier,buf1)"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000154" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000782"  [label="DDG: &idata->conn->account"];
+"1000147" -> "1000146"  [label="DDG: &idata->conn->account"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000146"  [label="AST: "];
+"1000156" -> "1000146"  [label="CFG: "];
+"1000158" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000782"  [label="DDG: mutt_account_getuser(&idata->conn->account) < 0"];
+"1000146" -> "1000782"  [label="DDG: mutt_account_getuser(&idata->conn->account)"];
+}

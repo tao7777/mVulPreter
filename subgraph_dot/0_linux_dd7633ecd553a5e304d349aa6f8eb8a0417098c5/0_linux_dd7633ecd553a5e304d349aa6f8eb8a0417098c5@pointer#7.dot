@@ -1,0 +1,29 @@
+digraph "0_linux_dd7633ecd553a5e304d349aa6f8eb8a0417098c5@pointer" {
+"1000246" [label="(Call,oldubufs = nvq->ubufs)"];
+"1000279" [label="(Call,vhost_net_ubuf_put_wait_and_free(oldubufs))"];
+"1000347" [label="(MethodReturn,static long)"];
+"1000113" [label="(Call,*oldubufs = NULL)"];
+"1000246" [label="(Call,oldubufs = nvq->ubufs)"];
+"1000253" [label="(Identifier,nvq)"];
+"1000205" [label="(Block,)"];
+"1000247" [label="(Identifier,oldubufs)"];
+"1000278" [label="(Block,)"];
+"1000280" [label="(Identifier,oldubufs)"];
+"1000248" [label="(Call,nvq->ubufs)"];
+"1000279" [label="(Call,vhost_net_ubuf_put_wait_and_free(oldubufs))"];
+"1000284" [label="(Identifier,vq)"];
+"1000246" -> "1000205"  [label="AST: "];
+"1000246" -> "1000248"  [label="CFG: "];
+"1000247" -> "1000246"  [label="AST: "];
+"1000248" -> "1000246"  [label="AST: "];
+"1000253" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000347"  [label="DDG: oldubufs"];
+"1000246" -> "1000279"  [label="DDG: oldubufs"];
+"1000279" -> "1000278"  [label="AST: "];
+"1000279" -> "1000280"  [label="CFG: "];
+"1000280" -> "1000279"  [label="AST: "];
+"1000284" -> "1000279"  [label="CFG: "];
+"1000279" -> "1000347"  [label="DDG: oldubufs"];
+"1000279" -> "1000347"  [label="DDG: vhost_net_ubuf_put_wait_and_free(oldubufs)"];
+"1000113" -> "1000279"  [label="DDG: oldubufs"];
+}

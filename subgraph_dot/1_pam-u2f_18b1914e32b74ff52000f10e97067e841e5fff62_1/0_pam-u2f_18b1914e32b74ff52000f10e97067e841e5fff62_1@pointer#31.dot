@@ -1,0 +1,33 @@
+digraph "0_pam-u2f_18b1914e32b74ff52000f10e97067e841e5fff62_1@pointer" {
+"1000259" [label="(Call,strcmp(username, \"root\"))"];
+"1000104" [label="(MethodParameterIn,const char *username)"];
+"1000243" [label="(Call,strcmp(pw->pw_name, username))"];
+"1000364" [label="(Call,strcmp(username, s_user) == 0)"];
+"1000365" [label="(Call,strcmp(username, s_user))"];
+"1000242" [label="(Call,strcmp(pw->pw_name, username) != 0)"];
+"1000264" [label="(Call,D(debug_file, \"The owner of the authentication file is neither %s nor root\",\n         username))"];
+"1000261" [label="(Literal,\"root\")"];
+"1000259" [label="(Call,strcmp(username, \"root\"))"];
+"1000722" [label="(MethodReturn,int)"];
+"1000648" [label="(Call,D(debug_file, \"Found %d device(s) for user %s\", *n_devs, username))"];
+"1000260" [label="(Identifier,username)"];
+"1000262" [label="(Literal,0)"];
+"1000258" [label="(Call,strcmp(username, \"root\") != 0)"];
+"1000104" [label="(MethodParameterIn,const char *username)"];
+"1000259" -> "1000258"  [label="AST: "];
+"1000259" -> "1000261"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000261" -> "1000259"  [label="AST: "];
+"1000262" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000722"  [label="DDG: "];
+"1000104" -> "1000259"  [label="DDG: "];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000722"  [label="DDG: "];
+"1000104" -> "1000242"  [label="DDG: "];
+"1000104" -> "1000243"  [label="DDG: "];
+"1000104" -> "1000258"  [label="DDG: "];
+"1000104" -> "1000264"  [label="DDG: "];
+"1000104" -> "1000364"  [label="DDG: "];
+"1000104" -> "1000365"  [label="DDG: "];
+"1000104" -> "1000648"  [label="DDG: "];
+}

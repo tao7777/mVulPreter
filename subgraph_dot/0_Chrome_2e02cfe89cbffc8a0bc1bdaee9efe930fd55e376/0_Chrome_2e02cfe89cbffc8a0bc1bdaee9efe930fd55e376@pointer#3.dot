@@ -1,0 +1,32 @@
+digraph "0_Chrome_2e02cfe89cbffc8a0bc1bdaee9efe930fd55e376@pointer" {
+"1000124" [label="(Call,*font = reinterpret_cast<LOGFONT*>(const_cast<char*>(data)))"];
+"1000126" [label="(Call,reinterpret_cast<LOGFONT*>(const_cast<char*>(data)))"];
+"1000128" [label="(Call,const_cast<char*>(data))"];
+"1000130" [label="(Identifier,data)"];
+"1000125" [label="(Identifier,font)"];
+"1000124" [label="(Call,*font = reinterpret_cast<LOGFONT*>(const_cast<char*>(data)))"];
+"1000122" [label="(Block,)"];
+"1000135" [label="(Identifier,font)"];
+"1000128" [label="(Call,const_cast<char*>(data))"];
+"1000140" [label="(Call,memcpy(r, data, sizeof(LOGFONT)))"];
+"1000150" [label="(MethodReturn,RET)"];
+"1000126" [label="(Call,reinterpret_cast<LOGFONT*>(const_cast<char*>(data)))"];
+"1000124" -> "1000122"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="AST: "];
+"1000135" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000150"  [label="DDG: font"];
+"1000124" -> "1000150"  [label="DDG: reinterpret_cast<LOGFONT*>(const_cast<char*>(data))"];
+"1000126" -> "1000124"  [label="DDG: const_cast<char*>(data)"];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000126" -> "1000150"  [label="DDG: const_cast<char*>(data)"];
+"1000128" -> "1000126"  [label="DDG: data"];
+"1000128" -> "1000130"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000130" -> "1000128"  [label="AST: "];
+"1000128" -> "1000150"  [label="DDG: data"];
+"1000128" -> "1000140"  [label="DDG: data"];
+}

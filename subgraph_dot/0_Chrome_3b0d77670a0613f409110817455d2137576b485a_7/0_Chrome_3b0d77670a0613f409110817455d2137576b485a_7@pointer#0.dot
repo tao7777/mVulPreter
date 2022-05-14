@@ -1,0 +1,37 @@
+digraph "0_Chrome_3b0d77670a0613f409110817455d2137576b485a_7@pointer" {
+"1000126" [label="(Call,args->urandom_fd = dup(base::GetUrandomFD()))"];
+"1000130" [label="(Call,dup(base::GetUrandomFD()))"];
+"1000133" [label="(Call,args->urandom_fd < 0)"];
+"1000133" [label="(Call,args->urandom_fd < 0)"];
+"1000135" [label="(Identifier,args)"];
+"1000126" [label="(Call,args->urandom_fd = dup(base::GetUrandomFD()))"];
+"1000131" [label="(Call,base::GetUrandomFD())"];
+"1000263" [label="(MethodReturn,void)"];
+"1000132" [label="(ControlStructure,if (args->urandom_fd < 0))"];
+"1000146" [label="(Identifier,args)"];
+"1000137" [label="(Literal,0)"];
+"1000127" [label="(Call,args->urandom_fd)"];
+"1000102" [label="(Block,)"];
+"1000134" [label="(Call,args->urandom_fd)"];
+"1000141" [label="(Identifier,ERROR)"];
+"1000130" [label="(Call,dup(base::GetUrandomFD()))"];
+"1000126" -> "1000102"  [label="AST: "];
+"1000126" -> "1000130"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="AST: "];
+"1000135" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000263"  [label="DDG: dup(base::GetUrandomFD())"];
+"1000130" -> "1000126"  [label="DDG: base::GetUrandomFD()"];
+"1000126" -> "1000133"  [label="DDG: args->urandom_fd"];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000130" -> "1000263"  [label="DDG: base::GetUrandomFD()"];
+"1000133" -> "1000132"  [label="AST: "];
+"1000133" -> "1000137"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000137" -> "1000133"  [label="AST: "];
+"1000141" -> "1000133"  [label="CFG: "];
+"1000146" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000263"  [label="DDG: args->urandom_fd"];
+"1000133" -> "1000263"  [label="DDG: args->urandom_fd < 0"];
+}

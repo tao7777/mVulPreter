@@ -1,0 +1,21 @@
+digraph "0_qemu_60253ed1e6ec6d8e5ef2efe7bf755f475dce9956@API" {
+"1000121" [label="(Call,req = g_malloc(sizeof(*req)))"];
+"1000102" [label="(MethodParameterIn,RngRequest *req)"];
+"1000121" [label="(Call,req = g_malloc(sizeof(*req)))"];
+"1000129" [label="(Identifier,req)"];
+"1000119" [label="(Block,)"];
+"1000158" [label="(MethodReturn,static void)"];
+"1000123" [label="(Call,g_malloc(sizeof(*req)))"];
+"1000122" [label="(Identifier,req)"];
+"1000102" [label="(MethodParameterIn,RngRequest *req)"];
+"1000121" -> "1000119"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000129" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000158"  [label="DDG: g_malloc(sizeof(*req))"];
+"1000121" -> "1000158"  [label="DDG: req"];
+"1000102" -> "1000121"  [label="DDG: req"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000158"  [label="DDG: req"];
+}

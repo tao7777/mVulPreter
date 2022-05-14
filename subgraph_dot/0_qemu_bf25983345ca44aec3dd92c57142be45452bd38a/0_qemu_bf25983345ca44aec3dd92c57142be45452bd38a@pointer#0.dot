@@ -1,0 +1,37 @@
+digraph "0_qemu_bf25983345ca44aec3dd92c57142be45452bd38a@pointer" {
+"1000126" [label="(Call,blit_region_is_unsafe(s, s->cirrus_blt_dstpitch,\n                               s->cirrus_blt_dstaddr & s->cirrus_addr_mask))"];
+"1000102" [label="(MethodParameterIn,struct CirrusVGAState *s)"];
+"1000131" [label="(Call,s->cirrus_blt_dstaddr & s->cirrus_addr_mask)"];
+"1000125" [label="(ControlStructure,if (blit_region_is_unsafe(s, s->cirrus_blt_dstpitch,\n                               s->cirrus_blt_dstaddr & s->cirrus_addr_mask)))"];
+"1000128" [label="(Call,s->cirrus_blt_dstpitch)"];
+"1000102" [label="(MethodParameterIn,struct CirrusVGAState *s)"];
+"1000132" [label="(Call,s->cirrus_blt_dstaddr)"];
+"1000140" [label="(Identifier,true)"];
+"1000142" [label="(Identifier,false)"];
+"1000135" [label="(Call,s->cirrus_addr_mask)"];
+"1000126" [label="(Call,blit_region_is_unsafe(s, s->cirrus_blt_dstpitch,\n                               s->cirrus_blt_dstaddr & s->cirrus_addr_mask))"];
+"1000143" [label="(MethodReturn,static bool)"];
+"1000127" [label="(Identifier,s)"];
+"1000131" [label="(Call,s->cirrus_blt_dstaddr & s->cirrus_addr_mask)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000131"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000131" -> "1000126"  [label="AST: "];
+"1000140" -> "1000126"  [label="CFG: "];
+"1000142" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000143"  [label="DDG: blit_region_is_unsafe(s, s->cirrus_blt_dstpitch,\n                               s->cirrus_blt_dstaddr & s->cirrus_addr_mask)"];
+"1000126" -> "1000143"  [label="DDG: s"];
+"1000126" -> "1000143"  [label="DDG: s->cirrus_blt_dstpitch"];
+"1000126" -> "1000143"  [label="DDG: s->cirrus_blt_dstaddr & s->cirrus_addr_mask"];
+"1000102" -> "1000126"  [label="DDG: s"];
+"1000131" -> "1000126"  [label="DDG: s->cirrus_blt_dstaddr"];
+"1000131" -> "1000126"  [label="DDG: s->cirrus_addr_mask"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000143"  [label="DDG: s"];
+"1000131" -> "1000135"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000135" -> "1000131"  [label="AST: "];
+"1000131" -> "1000143"  [label="DDG: s->cirrus_blt_dstaddr"];
+"1000131" -> "1000143"  [label="DDG: s->cirrus_addr_mask"];
+}

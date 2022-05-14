@@ -1,0 +1,26 @@
+digraph "0_linux_6d8c50dcb029872b298eea68cc6209c866fd3e14_0@pointer" {
+"1000132" [label="(Call,module_put(owner))"];
+"1000110" [label="(Call,*owner = sock->ops->owner)"];
+"1000133" [label="(Identifier,owner)"];
+"1000118" [label="(Identifier,inode)"];
+"1000160" [label="(MethodReturn,static void)"];
+"1000112" [label="(Call,sock->ops->owner)"];
+"1000138" [label="(Identifier,sock)"];
+"1000111" [label="(Identifier,owner)"];
+"1000108" [label="(Block,)"];
+"1000110" [label="(Call,*owner = sock->ops->owner)"];
+"1000132" [label="(Call,module_put(owner))"];
+"1000132" -> "1000108"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000138" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000160"  [label="DDG: module_put(owner)"];
+"1000132" -> "1000160"  [label="DDG: owner"];
+"1000110" -> "1000132"  [label="DDG: owner"];
+"1000110" -> "1000108"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000118" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000160"  [label="DDG: sock->ops->owner"];
+}

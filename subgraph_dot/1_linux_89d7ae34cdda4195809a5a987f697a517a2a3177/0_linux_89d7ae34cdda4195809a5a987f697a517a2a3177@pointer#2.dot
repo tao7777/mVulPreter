@@ -1,0 +1,26 @@
+digraph "0_linux_89d7ae34cdda4195809a5a987f697a517a2a3177@pointer" {
+"1000383" [label="(Call,skb->dev->flags & IFF_LOOPBACK)"];
+"1000382" [label="(Call,!(skb->dev->flags & IFF_LOOPBACK))"];
+"1000383" [label="(Call,skb->dev->flags & IFF_LOOPBACK)"];
+"1000397" [label="(Identifier,tag_len)"];
+"1000389" [label="(Identifier,IFF_LOOPBACK)"];
+"1000429" [label="(MethodReturn,int)"];
+"1000382" [label="(Call,!(skb->dev->flags & IFF_LOOPBACK))"];
+"1000381" [label="(ControlStructure,if (!(skb->dev->flags & IFF_LOOPBACK)))"];
+"1000392" [label="(Identifier,err_offset)"];
+"1000384" [label="(Call,skb->dev->flags)"];
+"1000383" -> "1000382"  [label="AST: "];
+"1000383" -> "1000389"  [label="CFG: "];
+"1000384" -> "1000383"  [label="AST: "];
+"1000389" -> "1000383"  [label="AST: "];
+"1000382" -> "1000383"  [label="CFG: "];
+"1000383" -> "1000429"  [label="DDG: IFF_LOOPBACK"];
+"1000383" -> "1000429"  [label="DDG: skb->dev->flags"];
+"1000383" -> "1000382"  [label="DDG: skb->dev->flags"];
+"1000383" -> "1000382"  [label="DDG: IFF_LOOPBACK"];
+"1000382" -> "1000381"  [label="AST: "];
+"1000392" -> "1000382"  [label="CFG: "];
+"1000397" -> "1000382"  [label="CFG: "];
+"1000382" -> "1000429"  [label="DDG: skb->dev->flags & IFF_LOOPBACK"];
+"1000382" -> "1000429"  [label="DDG: !(skb->dev->flags & IFF_LOOPBACK)"];
+}

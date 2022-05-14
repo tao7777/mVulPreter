@@ -1,0 +1,29 @@
+digraph "0_linux_299d7572e46f98534033a9e65973f13ad1ce9047@pointer" {
+"1000333" [label="(Call,tty->index = co->index)"];
+"1000244" [label="(Call,usb_serial_port_get_by_minor(co->index))"];
+"1000343" [label="(Identifier,tty)"];
+"1000253" [label="(Call,pr_err(\"No USB device connected to ttyUSB%i\n\", co->index))"];
+"1000244" [label="(Call,usb_serial_port_get_by_minor(co->index))"];
+"1000333" [label="(Call,tty->index = co->index)"];
+"1000334" [label="(Call,tty->index)"];
+"1000337" [label="(Call,co->index)"];
+"1000499" [label="(MethodReturn,static int)"];
+"1000306" [label="(Block,)"];
+"1000245" [label="(Call,co->index)"];
+"1000242" [label="(Call,port = usb_serial_port_get_by_minor(co->index))"];
+"1000333" -> "1000306"  [label="AST: "];
+"1000333" -> "1000337"  [label="CFG: "];
+"1000334" -> "1000333"  [label="AST: "];
+"1000337" -> "1000333"  [label="AST: "];
+"1000343" -> "1000333"  [label="CFG: "];
+"1000333" -> "1000499"  [label="DDG: tty->index"];
+"1000333" -> "1000499"  [label="DDG: co->index"];
+"1000244" -> "1000333"  [label="DDG: co->index"];
+"1000244" -> "1000242"  [label="AST: "];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000242" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000499"  [label="DDG: co->index"];
+"1000244" -> "1000242"  [label="DDG: co->index"];
+"1000244" -> "1000253"  [label="DDG: co->index"];
+}

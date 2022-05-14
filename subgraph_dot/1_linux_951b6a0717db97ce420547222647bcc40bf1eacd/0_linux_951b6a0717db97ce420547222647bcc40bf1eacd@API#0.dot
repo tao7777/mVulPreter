@@ -1,0 +1,24 @@
+digraph "0_linux_951b6a0717db97ce420547222647bcc40bf1eacd@API" {
+"1000173" [label="(Call,write_lock(&rfcomm_sk_list.lock))"];
+"1000215" [label="(Call,write_unlock(&rfcomm_sk_list.lock))"];
+"1000173" [label="(Call,write_lock(&rfcomm_sk_list.lock))"];
+"1000225" [label="(MethodReturn,static int)"];
+"1000174" [label="(Call,&rfcomm_sk_list.lock)"];
+"1000216" [label="(Call,&rfcomm_sk_list.lock)"];
+"1000105" [label="(Block,)"];
+"1000220" [label="(JumpTarget,done:)"];
+"1000215" [label="(Call,write_unlock(&rfcomm_sk_list.lock))"];
+"1000180" [label="(Identifier,chan)"];
+"1000173" -> "1000105"  [label="AST: "];
+"1000173" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000180" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000225"  [label="DDG: write_lock(&rfcomm_sk_list.lock)"];
+"1000173" -> "1000215"  [label="DDG: &rfcomm_sk_list.lock"];
+"1000215" -> "1000105"  [label="AST: "];
+"1000215" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000220" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000225"  [label="DDG: &rfcomm_sk_list.lock"];
+"1000215" -> "1000225"  [label="DDG: write_unlock(&rfcomm_sk_list.lock)"];
+}

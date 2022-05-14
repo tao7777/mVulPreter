@@ -1,0 +1,33 @@
+digraph "0_imageworsener_a4f247707f08e322f0b41e82c3e06e224240a654@pointer" {
+"1000213" [label="(Call,bmpr_has_transparency(rctx->img))"];
+"1000212" [label="(Call,!bmpr_has_transparency(rctx->img))"];
+"1000218" [label="(Call,bmpr_strip_alpha(rctx->img))"];
+"1000214" [label="(Call,rctx->img)"];
+"1000219" [label="(Call,rctx->img)"];
+"1000218" [label="(Call,bmpr_strip_alpha(rctx->img))"];
+"1000220" [label="(Identifier,rctx)"];
+"1000212" [label="(Call,!bmpr_has_transparency(rctx->img))"];
+"1000217" [label="(Block,)"];
+"1000213" [label="(Call,bmpr_has_transparency(rctx->img))"];
+"1000211" [label="(ControlStructure,if(!bmpr_has_transparency(rctx->img)))"];
+"1000228" [label="(MethodReturn,static int)"];
+"1000223" [label="(Identifier,retval)"];
+"1000213" -> "1000212"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000212" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000228"  [label="DDG: rctx->img"];
+"1000213" -> "1000212"  [label="DDG: rctx->img"];
+"1000213" -> "1000218"  [label="DDG: rctx->img"];
+"1000212" -> "1000211"  [label="AST: "];
+"1000220" -> "1000212"  [label="CFG: "];
+"1000223" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000228"  [label="DDG: !bmpr_has_transparency(rctx->img)"];
+"1000212" -> "1000228"  [label="DDG: bmpr_has_transparency(rctx->img)"];
+"1000218" -> "1000217"  [label="AST: "];
+"1000218" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000223" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000228"  [label="DDG: rctx->img"];
+"1000218" -> "1000228"  [label="DDG: bmpr_strip_alpha(rctx->img)"];
+}

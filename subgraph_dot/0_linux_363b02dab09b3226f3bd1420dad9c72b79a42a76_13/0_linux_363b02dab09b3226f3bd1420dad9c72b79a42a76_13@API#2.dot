@@ -1,0 +1,24 @@
+digraph "0_linux_363b02dab09b3226f3bd1420dad9c72b79a42a76_13@API" {
+"1000417" [label="(Call,down_read(&ctx.cred->request_key_auth->sem))"];
+"1000468" [label="(Call,up_read(&ctx.cred->request_key_auth->sem))"];
+"1000428" [label="(Identifier,KEY_FLAG_REVOKED)"];
+"1000418" [label="(Call,&ctx.cred->request_key_auth->sem)"];
+"1000417" [label="(Call,down_read(&ctx.cred->request_key_auth->sem))"];
+"1000479" [label="(Identifier,key)"];
+"1000468" [label="(Call,up_read(&ctx.cred->request_key_auth->sem))"];
+"1000469" [label="(Call,&ctx.cred->request_key_auth->sem)"];
+"1000130" [label="(Block,)"];
+"1000672" [label="(MethodReturn,key_ref_t)"];
+"1000417" -> "1000130"  [label="AST: "];
+"1000417" -> "1000418"  [label="CFG: "];
+"1000418" -> "1000417"  [label="AST: "];
+"1000428" -> "1000417"  [label="CFG: "];
+"1000417" -> "1000672"  [label="DDG: down_read(&ctx.cred->request_key_auth->sem)"];
+"1000417" -> "1000468"  [label="DDG: &ctx.cred->request_key_auth->sem"];
+"1000468" -> "1000130"  [label="AST: "];
+"1000468" -> "1000469"  [label="CFG: "];
+"1000469" -> "1000468"  [label="AST: "];
+"1000479" -> "1000468"  [label="CFG: "];
+"1000468" -> "1000672"  [label="DDG: up_read(&ctx.cred->request_key_auth->sem)"];
+"1000468" -> "1000672"  [label="DDG: &ctx.cred->request_key_auth->sem"];
+}

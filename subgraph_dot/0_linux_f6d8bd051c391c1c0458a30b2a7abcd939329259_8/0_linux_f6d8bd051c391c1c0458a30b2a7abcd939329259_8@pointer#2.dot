@@ -1,0 +1,32 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_8@pointer" {
+"1000106" [label="(Call,sk_inet = inet_sk(sk))"];
+"1000108" [label="(Call,inet_sk(sk))"];
+"1000101" [label="(MethodParameterIn,struct sock *sk)"];
+"1000107" [label="(Identifier,sk_inet)"];
+"1000108" [label="(Call,inet_sk(sk))"];
+"1000149" [label="(Call,inet_csk(sk))"];
+"1000156" [label="(Call,sk_conn->icsk_sync_mss(sk, sk_conn->icsk_pmtu_cookie))"];
+"1000109" [label="(Identifier,sk)"];
+"1000111" [label="(Identifier,opt)"];
+"1000161" [label="(MethodReturn,void)"];
+"1000106" [label="(Call,sk_inet = inet_sk(sk))"];
+"1000101" [label="(MethodParameterIn,struct sock *sk)"];
+"1000102" [label="(Block,)"];
+"1000106" -> "1000102"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000111" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000161"  [label="DDG: inet_sk(sk)"];
+"1000106" -> "1000161"  [label="DDG: sk_inet"];
+"1000108" -> "1000106"  [label="DDG: sk"];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000108" -> "1000161"  [label="DDG: sk"];
+"1000101" -> "1000108"  [label="DDG: sk"];
+"1000108" -> "1000149"  [label="DDG: sk"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000161"  [label="DDG: sk"];
+"1000101" -> "1000149"  [label="DDG: sk"];
+"1000101" -> "1000156"  [label="DDG: sk"];
+}

@@ -1,0 +1,29 @@
+digraph "0_ImageMagick_76401e172ea3a55182be2b8e2aca4d07270f6da6_0@pointer" {
+"1000366" [label="(Call,image->channel_mask & SyncChannels)"];
+"1000365" [label="(Call,(image->channel_mask & SyncChannels) != 0)"];
+"1000365" [label="(Call,(image->channel_mask & SyncChannels) != 0)"];
+"1000366" [label="(Call,image->channel_mask & SyncChannels)"];
+"1000371" [label="(Literal,0)"];
+"1000367" [label="(Call,image->channel_mask)"];
+"1000373" [label="(Identifier,intensity)"];
+"1000364" [label="(ControlStructure,if ((image->channel_mask & SyncChannels) != 0))"];
+"1000370" [label="(Identifier,SyncChannels)"];
+"1000968" [label="(MethodReturn,MagickExport MagickBooleanType)"];
+"1000379" [label="(Identifier,histogram)"];
+"1000366" -> "1000365"  [label="AST: "];
+"1000366" -> "1000370"  [label="CFG: "];
+"1000367" -> "1000366"  [label="AST: "];
+"1000370" -> "1000366"  [label="AST: "];
+"1000371" -> "1000366"  [label="CFG: "];
+"1000366" -> "1000968"  [label="DDG: SyncChannels"];
+"1000366" -> "1000968"  [label="DDG: image->channel_mask"];
+"1000366" -> "1000365"  [label="DDG: image->channel_mask"];
+"1000366" -> "1000365"  [label="DDG: SyncChannels"];
+"1000365" -> "1000364"  [label="AST: "];
+"1000365" -> "1000371"  [label="CFG: "];
+"1000371" -> "1000365"  [label="AST: "];
+"1000373" -> "1000365"  [label="CFG: "];
+"1000379" -> "1000365"  [label="CFG: "];
+"1000365" -> "1000968"  [label="DDG: (image->channel_mask & SyncChannels) != 0"];
+"1000365" -> "1000968"  [label="DDG: image->channel_mask & SyncChannels"];
+}

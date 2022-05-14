@@ -1,0 +1,31 @@
+digraph "0_openvpn_11d21349a4e7e38a025849479b36ace7c2eec2ee@pointer" {
+"1000407" [label="(Call,ASSERT (opt->packet_id))"];
+"1000508" [label="(Call,packet_id_persist_save_obj (opt->pid_persist, opt->packet_id))"];
+"1000408" [label="(Call,opt->packet_id)"];
+"1000499" [label="(Call,opt->pid_persist && (opt->flags & CO_PACKET_ID_LONG_FORM))"];
+"1000498" [label="(ControlStructure,if (opt->pid_persist && (opt->flags & CO_PACKET_ID_LONG_FORM)))"];
+"1000509" [label="(Call,opt->pid_persist)"];
+"1000399" [label="(Block,)"];
+"1000512" [label="(Call,opt->packet_id)"];
+"1000537" [label="(Identifier,buf)"];
+"1000508" [label="(Call,packet_id_persist_save_obj (opt->pid_persist, opt->packet_id))"];
+"1000407" [label="(Call,ASSERT (opt->packet_id))"];
+"1000556" [label="(MethodReturn,RET)"];
+"1000413" [label="(Identifier,b)"];
+"1000407" -> "1000399"  [label="AST: "];
+"1000407" -> "1000408"  [label="CFG: "];
+"1000408" -> "1000407"  [label="AST: "];
+"1000413" -> "1000407"  [label="CFG: "];
+"1000407" -> "1000556"  [label="DDG: ASSERT (opt->packet_id)"];
+"1000407" -> "1000556"  [label="DDG: opt->packet_id"];
+"1000407" -> "1000508"  [label="DDG: opt->packet_id"];
+"1000508" -> "1000498"  [label="AST: "];
+"1000508" -> "1000512"  [label="CFG: "];
+"1000509" -> "1000508"  [label="AST: "];
+"1000512" -> "1000508"  [label="AST: "];
+"1000537" -> "1000508"  [label="CFG: "];
+"1000508" -> "1000556"  [label="DDG: opt->pid_persist"];
+"1000508" -> "1000556"  [label="DDG: opt->packet_id"];
+"1000508" -> "1000556"  [label="DDG: packet_id_persist_save_obj (opt->pid_persist, opt->packet_id)"];
+"1000499" -> "1000508"  [label="DDG: opt->pid_persist"];
+}

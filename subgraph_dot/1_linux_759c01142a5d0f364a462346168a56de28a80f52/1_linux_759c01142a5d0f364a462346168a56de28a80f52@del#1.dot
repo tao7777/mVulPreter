@@ -1,0 +1,30 @@
+digraph "1_linux_759c01142a5d0f364a462346168a56de28a80f52@del" {
+"1000142" [label="(Call,pipe->buffers = PIPE_DEF_BUFFERS)"];
+"1000118" [label="(Call,sizeof(struct pipe_buffer) * PIPE_DEF_BUFFERS)"];
+"1000127" [label="(Block,)"];
+"1000121" [label="(Identifier,PIPE_DEF_BUFFERS)"];
+"1000150" [label="(Identifier,pipe)"];
+"1000146" [label="(Identifier,PIPE_DEF_BUFFERS)"];
+"1000142" [label="(Call,pipe->buffers = PIPE_DEF_BUFFERS)"];
+"1000158" [label="(MethodReturn,struct pipe_inode_info *)"];
+"1000119" [label="(Call,sizeof(struct pipe_buffer))"];
+"1000143" [label="(Call,pipe->buffers)"];
+"1000122" [label="(Identifier,GFP_KERNEL)"];
+"1000118" [label="(Call,sizeof(struct pipe_buffer) * PIPE_DEF_BUFFERS)"];
+"1000117" [label="(Call,kzalloc(sizeof(struct pipe_buffer) * PIPE_DEF_BUFFERS, GFP_KERNEL))"];
+"1000142" -> "1000127"  [label="AST: "];
+"1000142" -> "1000146"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000146" -> "1000142"  [label="AST: "];
+"1000150" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000158"  [label="DDG: PIPE_DEF_BUFFERS"];
+"1000142" -> "1000158"  [label="DDG: pipe->buffers"];
+"1000118" -> "1000142"  [label="DDG: PIPE_DEF_BUFFERS"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000121"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000121" -> "1000118"  [label="AST: "];
+"1000122" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000158"  [label="DDG: PIPE_DEF_BUFFERS"];
+"1000118" -> "1000117"  [label="DDG: PIPE_DEF_BUFFERS"];
+}

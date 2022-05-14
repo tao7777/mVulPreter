@@ -1,0 +1,35 @@
+digraph "1_linux_49d31c2f389acfe83417083e1208422b4091cd9e@API" {
+"1000178" [label="(Call,fsnotify_oldname_free(old_name))"];
+"1000157" [label="(Call,old_name = fsnotify_oldname_init(old_dentry->d_name.name))"];
+"1000159" [label="(Call,fsnotify_oldname_init(old_dentry->d_name.name))"];
+"1000166" [label="(Identifier,error)"];
+"1000217" [label="(MethodReturn,struct dentry *)"];
+"1000177" [label="(Block,)"];
+"1000108" [label="(Block,)"];
+"1000157" [label="(Call,old_name = fsnotify_oldname_init(old_dentry->d_name.name))"];
+"1000159" [label="(Call,fsnotify_oldname_init(old_dentry->d_name.name))"];
+"1000180" [label="(ControlStructure,goto exit;)"];
+"1000179" [label="(Identifier,old_name)"];
+"1000160" [label="(Call,old_dentry->d_name.name)"];
+"1000158" [label="(Identifier,old_name)"];
+"1000184" [label="(Call,fsnotify_move(d_inode(old_dir), d_inode(new_dir), old_name,\n \t\td_is_dir(old_dentry),\n \t\tNULL, old_dentry))"];
+"1000178" [label="(Call,fsnotify_oldname_free(old_name))"];
+"1000178" -> "1000177"  [label="AST: "];
+"1000178" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000180" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000217"  [label="DDG: fsnotify_oldname_free(old_name)"];
+"1000178" -> "1000217"  [label="DDG: old_name"];
+"1000157" -> "1000178"  [label="DDG: old_name"];
+"1000157" -> "1000108"  [label="AST: "];
+"1000157" -> "1000159"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000159" -> "1000157"  [label="AST: "];
+"1000166" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000217"  [label="DDG: fsnotify_oldname_init(old_dentry->d_name.name)"];
+"1000159" -> "1000157"  [label="DDG: old_dentry->d_name.name"];
+"1000157" -> "1000184"  [label="DDG: old_name"];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000159" -> "1000217"  [label="DDG: old_dentry->d_name.name"];
+}

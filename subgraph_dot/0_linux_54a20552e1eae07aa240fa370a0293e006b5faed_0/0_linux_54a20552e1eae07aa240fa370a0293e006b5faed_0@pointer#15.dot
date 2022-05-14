@@ -1,0 +1,36 @@
+digraph "0_linux_54a20552e1eae07aa240fa370a0293e006b5faed_0@pointer" {
+"1000335" [label="(Call,vcpu->guest_debug &\n\t\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP))"];
+"1000339" [label="(Call,KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)"];
+"1000334" [label="(Call,!(vcpu->guest_debug &\n\t\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)))"];
+"1000375" [label="(Identifier,kvm_run)"];
+"1000341" [label="(Identifier,KVM_GUESTDBG_USE_HW_BP)"];
+"1000333" [label="(ControlStructure,if (!(vcpu->guest_debug &\n\t\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP))))"];
+"1000339" [label="(Call,KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)"];
+"1000336" [label="(Call,vcpu->guest_debug)"];
+"1000340" [label="(Identifier,KVM_GUESTDBG_SINGLESTEP)"];
+"1000457" [label="(MethodReturn,static int)"];
+"1000334" [label="(Call,!(vcpu->guest_debug &\n\t\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)))"];
+"1000335" [label="(Call,vcpu->guest_debug &\n\t\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP))"];
+"1000346" [label="(Identifier,vcpu)"];
+"1000335" -> "1000334"  [label="AST: "];
+"1000335" -> "1000339"  [label="CFG: "];
+"1000336" -> "1000335"  [label="AST: "];
+"1000339" -> "1000335"  [label="AST: "];
+"1000334" -> "1000335"  [label="CFG: "];
+"1000335" -> "1000457"  [label="DDG: KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP"];
+"1000335" -> "1000457"  [label="DDG: vcpu->guest_debug"];
+"1000335" -> "1000334"  [label="DDG: vcpu->guest_debug"];
+"1000335" -> "1000334"  [label="DDG: KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP"];
+"1000339" -> "1000335"  [label="DDG: KVM_GUESTDBG_SINGLESTEP"];
+"1000339" -> "1000335"  [label="DDG: KVM_GUESTDBG_USE_HW_BP"];
+"1000339" -> "1000341"  [label="CFG: "];
+"1000340" -> "1000339"  [label="AST: "];
+"1000341" -> "1000339"  [label="AST: "];
+"1000339" -> "1000457"  [label="DDG: KVM_GUESTDBG_SINGLESTEP"];
+"1000339" -> "1000457"  [label="DDG: KVM_GUESTDBG_USE_HW_BP"];
+"1000334" -> "1000333"  [label="AST: "];
+"1000346" -> "1000334"  [label="CFG: "];
+"1000375" -> "1000334"  [label="CFG: "];
+"1000334" -> "1000457"  [label="DDG: !(vcpu->guest_debug &\n\t\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP))"];
+"1000334" -> "1000457"  [label="DDG: vcpu->guest_debug &\n\t\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)"];
+}

@@ -1,0 +1,35 @@
+digraph "0_openssl_2c0d295e26306e15a92eb23a84a1802005c1c137@pointer" {
+"1000136" [label="(Call,s->servername_done = 0)"];
+"1000308" [label="(Call,s->servername_done == 0)"];
+"1000312" [label="(Literal,0)"];
+"1000307" [label="(ControlStructure,if (s->servername_done == 0))"];
+"1000309" [label="(Call,s->servername_done)"];
+"1000413" [label="(Call,s->servername_done = s->session->tlsext_hostname\n                                && strlen(s->session->tlsext_hostname) == len\n                                && strncmp(s->session->tlsext_hostname,\n                                           (char *)sdata, len) == 0)"];
+"1000407" [label="(Call,s->servername_done = 1)"];
+"1000308" [label="(Call,s->servername_done == 0)"];
+"1001268" [label="(MethodReturn,int)"];
+"1000119" [label="(Block,)"];
+"1000143" [label="(Identifier,s)"];
+"1000448" [label="(Identifier,dsize)"];
+"1000140" [label="(Literal,0)"];
+"1000314" [label="(Identifier,servname_type)"];
+"1000136" [label="(Call,s->servername_done = 0)"];
+"1000137" [label="(Call,s->servername_done)"];
+"1000136" -> "1000119"  [label="AST: "];
+"1000136" -> "1000140"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000140" -> "1000136"  [label="AST: "];
+"1000143" -> "1000136"  [label="CFG: "];
+"1000136" -> "1001268"  [label="DDG: s->servername_done"];
+"1000136" -> "1000308"  [label="DDG: s->servername_done"];
+"1000308" -> "1000307"  [label="AST: "];
+"1000308" -> "1000312"  [label="CFG: "];
+"1000309" -> "1000308"  [label="AST: "];
+"1000312" -> "1000308"  [label="AST: "];
+"1000314" -> "1000308"  [label="CFG: "];
+"1000448" -> "1000308"  [label="CFG: "];
+"1000308" -> "1001268"  [label="DDG: s->servername_done"];
+"1000308" -> "1001268"  [label="DDG: s->servername_done == 0"];
+"1000407" -> "1000308"  [label="DDG: s->servername_done"];
+"1000413" -> "1000308"  [label="DDG: s->servername_done"];
+}

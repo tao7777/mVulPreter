@@ -1,0 +1,28 @@
+digraph "0_neomutt_9bfab35522301794483f8f9ed60820bdec9be59e_2@pointer" {
+"1000255" [label="(Call,h->content->length + h->content->offset - 1)"];
+"1000261" [label="(Call,h->content->offset - 1)"];
+"1000541" [label="(MethodReturn,static int)"];
+"1000261" [label="(Call,h->content->offset - 1)"];
+"1000267" [label="(Literal,1)"];
+"1000248" [label="(Call,mutt_progress_init(&progressbar, _(\"Fetching message...\"), MUTT_PROGRESS_SIZE,\n                        NetInc, h->content->length + h->content->offset - 1))"];
+"1000262" [label="(Call,h->content->offset)"];
+"1000255" [label="(Call,h->content->length + h->content->offset - 1)"];
+"1000256" [label="(Call,h->content->length)"];
+"1000513" [label="(Call,ftello(msg->fp) - h->content->offset)"];
+"1000255" -> "1000248"  [label="AST: "];
+"1000255" -> "1000261"  [label="CFG: "];
+"1000256" -> "1000255"  [label="AST: "];
+"1000261" -> "1000255"  [label="AST: "];
+"1000248" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000541"  [label="DDG: h->content->offset - 1"];
+"1000255" -> "1000541"  [label="DDG: h->content->length"];
+"1000261" -> "1000255"  [label="DDG: h->content->offset"];
+"1000261" -> "1000255"  [label="DDG: 1"];
+"1000261" -> "1000267"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000267" -> "1000261"  [label="AST: "];
+"1000261" -> "1000541"  [label="DDG: h->content->offset"];
+"1000261" -> "1000248"  [label="DDG: h->content->offset"];
+"1000261" -> "1000248"  [label="DDG: 1"];
+"1000261" -> "1000513"  [label="DDG: h->content->offset"];
+}

@@ -1,0 +1,31 @@
+digraph "0_Android_45c97f878bee15cd97262fe7f57ecea71990fed7@pointer" {
+"1000724" [label="(Call,COPY_DEFAULT_SCALING_LIST(ps_sps->pi2_scaling_mat))"];
+"1000742" [label="(Call,ihevcd_scaling_list_data(ps_codec, ps_sps->pi2_scaling_mat))"];
+"1000744" [label="(Call,ps_sps->pi2_scaling_mat)"];
+"1000723" [label="(Block,)"];
+"1000754" [label="(Literal,\"asymmetric_motion_partitions_enabled_flag\")"];
+"1000738" [label="(ControlStructure,if(ps_sps->i1_sps_scaling_list_data_present_flag))"];
+"1000743" [label="(Identifier,ps_codec)"];
+"1001319" [label="(MethodReturn,IHEVCD_ERROR_T)"];
+"1000725" [label="(Call,ps_sps->pi2_scaling_mat)"];
+"1000724" [label="(Call,COPY_DEFAULT_SCALING_LIST(ps_sps->pi2_scaling_mat))"];
+"1000742" [label="(Call,ihevcd_scaling_list_data(ps_codec, ps_sps->pi2_scaling_mat))"];
+"1000729" [label="(Literal,\"sps_scaling_list_data_present_flag\")"];
+"1000107" [label="(MethodParameterIn,codec_t *ps_codec)"];
+"1000724" -> "1000723"  [label="AST: "];
+"1000724" -> "1000725"  [label="CFG: "];
+"1000725" -> "1000724"  [label="AST: "];
+"1000729" -> "1000724"  [label="CFG: "];
+"1000724" -> "1001319"  [label="DDG: COPY_DEFAULT_SCALING_LIST(ps_sps->pi2_scaling_mat)"];
+"1000724" -> "1001319"  [label="DDG: ps_sps->pi2_scaling_mat"];
+"1000724" -> "1000742"  [label="DDG: ps_sps->pi2_scaling_mat"];
+"1000742" -> "1000738"  [label="AST: "];
+"1000742" -> "1000744"  [label="CFG: "];
+"1000743" -> "1000742"  [label="AST: "];
+"1000744" -> "1000742"  [label="AST: "];
+"1000754" -> "1000742"  [label="CFG: "];
+"1000742" -> "1001319"  [label="DDG: ihevcd_scaling_list_data(ps_codec, ps_sps->pi2_scaling_mat)"];
+"1000742" -> "1001319"  [label="DDG: ps_sps->pi2_scaling_mat"];
+"1000742" -> "1001319"  [label="DDG: ps_codec"];
+"1000107" -> "1000742"  [label="DDG: ps_codec"];
+}

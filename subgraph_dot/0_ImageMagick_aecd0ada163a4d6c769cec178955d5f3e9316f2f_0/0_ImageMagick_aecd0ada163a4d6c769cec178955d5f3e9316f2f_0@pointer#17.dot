@@ -1,0 +1,22 @@
+digraph "0_ImageMagick_aecd0ada163a4d6c769cec178955d5f3e9316f2f_0@pointer" {
+"1000504" [label="(Call,ReferenceBlob(image->blob))"];
+"1000500" [label="(Call,clone_image->blob=ReferenceBlob(image->blob))"];
+"1000501" [label="(Call,clone_image->blob)"];
+"1000496" [label="(ControlStructure,if (detach == MagickFalse))"];
+"1000768" [label="(MethodReturn,MagickExport Image *)"];
+"1000505" [label="(Call,image->blob)"];
+"1000504" [label="(Call,ReferenceBlob(image->blob))"];
+"1000500" [label="(Call,clone_image->blob=ReferenceBlob(image->blob))"];
+"1000530" [label="(Identifier,clone_image)"];
+"1000504" -> "1000500"  [label="AST: "];
+"1000504" -> "1000505"  [label="CFG: "];
+"1000505" -> "1000504"  [label="AST: "];
+"1000500" -> "1000504"  [label="CFG: "];
+"1000504" -> "1000768"  [label="DDG: image->blob"];
+"1000504" -> "1000500"  [label="DDG: image->blob"];
+"1000500" -> "1000496"  [label="AST: "];
+"1000501" -> "1000500"  [label="AST: "];
+"1000530" -> "1000500"  [label="CFG: "];
+"1000500" -> "1000768"  [label="DDG: clone_image->blob"];
+"1000500" -> "1000768"  [label="DDG: ReferenceBlob(image->blob)"];
+}

@@ -1,0 +1,23 @@
+digraph "0_FFmpeg_cced03dd667a5df6df8fd40d8de0bff477ee02e8@API" {
+"1000126" [label="(Call,sizeof(ff_asf_guid) * 2 + 22)"];
+"1000127" [label="(Call,sizeof(ff_asf_guid) * 2)"];
+"1000126" [label="(Call,sizeof(ff_asf_guid) * 2 + 22)"];
+"1000131" [label="(Literal,22)"];
+"1000127" [label="(Call,sizeof(ff_asf_guid) * 2)"];
+"1000128" [label="(Call,sizeof(ff_asf_guid))"];
+"1000495" [label="(MethodReturn,int)"];
+"1000122" [label="(Call,mms->asf_header_size < sizeof(ff_asf_guid) * 2 + 22)"];
+"1000130" [label="(Literal,2)"];
+"1000126" -> "1000122"  [label="AST: "];
+"1000126" -> "1000131"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000131" -> "1000126"  [label="AST: "];
+"1000122" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000495"  [label="DDG: sizeof(ff_asf_guid) * 2"];
+"1000127" -> "1000126"  [label="DDG: 2"];
+"1000127" -> "1000130"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000130" -> "1000127"  [label="AST: "];
+"1000131" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000122"  [label="DDG: 2"];
+}

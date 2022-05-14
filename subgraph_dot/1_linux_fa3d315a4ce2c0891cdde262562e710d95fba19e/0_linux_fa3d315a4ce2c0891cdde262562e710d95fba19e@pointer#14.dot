@@ -1,0 +1,35 @@
+digraph "0_linux_fa3d315a4ce2c0891cdde262562e710d95fba19e@pointer" {
+"1000488" [label="(Call,mem->slot + 1)"];
+"1000477" [label="(Call,mem->slot >= slots->nmemslots)"];
+"1000492" [label="(Literal,1)"];
+"1000495" [label="(Identifier,slots)"];
+"1000632" [label="(MethodReturn,int)"];
+"1000481" [label="(Call,slots->nmemslots)"];
+"1000478" [label="(Call,mem->slot)"];
+"1000484" [label="(Call,slots->nmemslots = mem->slot + 1)"];
+"1000558" [label="(Call,mem->slot >= slots->nmemslots)"];
+"1000477" [label="(Call,mem->slot >= slots->nmemslots)"];
+"1000476" [label="(ControlStructure,if (mem->slot >= slots->nmemslots))"];
+"1000486" [label="(Identifier,slots)"];
+"1000489" [label="(Call,mem->slot)"];
+"1000488" [label="(Call,mem->slot + 1)"];
+"1000488" -> "1000484"  [label="AST: "];
+"1000488" -> "1000492"  [label="CFG: "];
+"1000489" -> "1000488"  [label="AST: "];
+"1000492" -> "1000488"  [label="AST: "];
+"1000484" -> "1000488"  [label="CFG: "];
+"1000488" -> "1000632"  [label="DDG: mem->slot"];
+"1000477" -> "1000488"  [label="DDG: mem->slot"];
+"1000477" -> "1000476"  [label="AST: "];
+"1000477" -> "1000481"  [label="CFG: "];
+"1000478" -> "1000477"  [label="AST: "];
+"1000481" -> "1000477"  [label="AST: "];
+"1000486" -> "1000477"  [label="CFG: "];
+"1000495" -> "1000477"  [label="CFG: "];
+"1000477" -> "1000632"  [label="DDG: mem->slot >= slots->nmemslots"];
+"1000477" -> "1000632"  [label="DDG: slots->nmemslots"];
+"1000477" -> "1000632"  [label="DDG: mem->slot"];
+"1000477" -> "1000484"  [label="DDG: mem->slot"];
+"1000477" -> "1000558"  [label="DDG: mem->slot"];
+"1000477" -> "1000558"  [label="DDG: slots->nmemslots"];
+}

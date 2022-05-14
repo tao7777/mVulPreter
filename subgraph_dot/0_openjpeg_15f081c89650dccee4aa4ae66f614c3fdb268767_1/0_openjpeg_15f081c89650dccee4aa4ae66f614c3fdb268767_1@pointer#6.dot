@@ -1,0 +1,24 @@
+digraph "0_openjpeg_15f081c89650dccee4aa4ae66f614c3fdb268767_1@pointer" {
+"1000502" [label="(Call,img->comps[1].dy = img->comps[2].dy = img->comps[0].dy)"];
+"1000510" [label="(Call,img->comps[2].dy = img->comps[0].dy)"];
+"1000511" [label="(Call,img->comps[2].dy)"];
+"1000510" [label="(Call,img->comps[2].dy = img->comps[0].dy)"];
+"1000104" [label="(Block,)"];
+"1000502" [label="(Call,img->comps[1].dy = img->comps[2].dy = img->comps[0].dy)"];
+"1000503" [label="(Call,img->comps[1].dy)"];
+"1000527" [label="(Identifier,img)"];
+"1000518" [label="(Call,img->comps[0].dy)"];
+"1000538" [label="(MethodReturn,static void)"];
+"1000502" -> "1000104"  [label="AST: "];
+"1000502" -> "1000510"  [label="CFG: "];
+"1000503" -> "1000502"  [label="AST: "];
+"1000510" -> "1000502"  [label="AST: "];
+"1000527" -> "1000502"  [label="CFG: "];
+"1000502" -> "1000538"  [label="DDG: img->comps[1].dy"];
+"1000510" -> "1000502"  [label="DDG: img->comps[2].dy"];
+"1000510" -> "1000518"  [label="CFG: "];
+"1000511" -> "1000510"  [label="AST: "];
+"1000518" -> "1000510"  [label="AST: "];
+"1000510" -> "1000538"  [label="DDG: img->comps[2].dy"];
+"1000510" -> "1000538"  [label="DDG: img->comps[0].dy"];
+}

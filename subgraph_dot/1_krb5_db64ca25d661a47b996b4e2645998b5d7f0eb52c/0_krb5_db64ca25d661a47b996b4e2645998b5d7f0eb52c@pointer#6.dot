@@ -1,0 +1,38 @@
+digraph "0_krb5_db64ca25d661a47b996b4e2645998b5d7f0eb52c@pointer" {
+"1001333" [label="(Call,(krb5_octet *) out_data->data)"];
+"1001163" [label="(Call,(unsigned char *)out_data->data)"];
+"1001328" [label="(Call,(*send_pa)->contents = (krb5_octet *) out_data->data)"];
+"1000122" [label="(Block,)"];
+"1001165" [label="(Call,out_data->data)"];
+"1001329" [label="(Call,(*send_pa)->contents)"];
+"1001162" [label="(Call,print_buffer_bin((unsigned char *)out_data->data, out_data->length,\n                         \"/tmp/kdc_as_rep\"))"];
+"1001280" [label="(Call,free(out_data->data))"];
+"1001169" [label="(Identifier,out_data)"];
+"1001338" [label="(JumpTarget,cleanup:)"];
+"1001328" [label="(Call,(*send_pa)->contents = (krb5_octet *) out_data->data)"];
+"1001335" [label="(Call,out_data->data)"];
+"1001333" [label="(Call,(krb5_octet *) out_data->data)"];
+"1001409" [label="(MethodReturn,RET)"];
+"1001163" [label="(Call,(unsigned char *)out_data->data)"];
+"1001333" -> "1001328"  [label="AST: "];
+"1001333" -> "1001335"  [label="CFG: "];
+"1001334" -> "1001333"  [label="AST: "];
+"1001335" -> "1001333"  [label="AST: "];
+"1001328" -> "1001333"  [label="CFG: "];
+"1001333" -> "1001409"  [label="DDG: out_data->data"];
+"1001333" -> "1001328"  [label="DDG: out_data->data"];
+"1001163" -> "1001333"  [label="DDG: out_data->data"];
+"1001163" -> "1001162"  [label="AST: "];
+"1001163" -> "1001165"  [label="CFG: "];
+"1001164" -> "1001163"  [label="AST: "];
+"1001165" -> "1001163"  [label="AST: "];
+"1001169" -> "1001163"  [label="CFG: "];
+"1001163" -> "1001409"  [label="DDG: out_data->data"];
+"1001163" -> "1001162"  [label="DDG: out_data->data"];
+"1001163" -> "1001280"  [label="DDG: out_data->data"];
+"1001328" -> "1000122"  [label="AST: "];
+"1001329" -> "1001328"  [label="AST: "];
+"1001338" -> "1001328"  [label="CFG: "];
+"1001328" -> "1001409"  [label="DDG: (krb5_octet *) out_data->data"];
+"1001328" -> "1001409"  [label="DDG: (*send_pa)->contents"];
+}

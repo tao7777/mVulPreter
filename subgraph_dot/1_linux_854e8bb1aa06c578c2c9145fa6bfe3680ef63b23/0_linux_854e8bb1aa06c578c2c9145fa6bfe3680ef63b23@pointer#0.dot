@@ -1,0 +1,28 @@
+digraph "0_linux_854e8bb1aa06c578c2c9145fa6bfe3680ef63b23@pointer" {
+"1000163" [label="(Call,svm->next_rip = kvm_rip_read(&svm->vcpu) + 2)"];
+"1000168" [label="(Call,kvm_rip_read(&svm->vcpu))"];
+"1000167" [label="(Call,kvm_rip_read(&svm->vcpu) + 2)"];
+"1000168" [label="(Call,kvm_rip_read(&svm->vcpu))"];
+"1000173" [label="(Literal,2)"];
+"1000169" [label="(Call,&svm->vcpu)"];
+"1000164" [label="(Call,svm->next_rip)"];
+"1000102" [label="(Block,)"];
+"1000178" [label="(Identifier,svm)"];
+"1000175" [label="(Call,svm_set_msr(&svm->vcpu, &msr))"];
+"1000204" [label="(MethodReturn,static int)"];
+"1000163" [label="(Call,svm->next_rip = kvm_rip_read(&svm->vcpu) + 2)"];
+"1000163" -> "1000102"  [label="AST: "];
+"1000163" -> "1000167"  [label="CFG: "];
+"1000164" -> "1000163"  [label="AST: "];
+"1000167" -> "1000163"  [label="AST: "];
+"1000178" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000204"  [label="DDG: svm->next_rip"];
+"1000163" -> "1000204"  [label="DDG: kvm_rip_read(&svm->vcpu) + 2"];
+"1000168" -> "1000163"  [label="DDG: &svm->vcpu"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000173" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="DDG: &svm->vcpu"];
+"1000168" -> "1000175"  [label="DDG: &svm->vcpu"];
+}

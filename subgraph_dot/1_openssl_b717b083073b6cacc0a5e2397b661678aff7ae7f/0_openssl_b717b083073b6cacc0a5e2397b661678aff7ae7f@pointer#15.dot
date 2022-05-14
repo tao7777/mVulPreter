@@ -1,0 +1,29 @@
+digraph "0_openssl_b717b083073b6cacc0a5e2397b661678aff7ae7f@pointer" {
+"1000469" [label="(Call,!*pval)"];
+"1000468" [label="(Call,!*pval && !ASN1_item_ex_new(pval, it))"];
+"1000472" [label="(Call,!ASN1_item_ex_new(pval, it))"];
+"1000478" [label="(Identifier,ASN1_F_ASN1_ITEM_EX_D2I)"];
+"1000482" [label="(Identifier,ret)"];
+"1000873" [label="(MethodReturn,int)"];
+"1000470" [label="(Call,*pval)"];
+"1000474" [label="(Identifier,pval)"];
+"1000468" [label="(Call,!*pval && !ASN1_item_ex_new(pval, it))"];
+"1000467" [label="(ControlStructure,if (!*pval && !ASN1_item_ex_new(pval, it)))"];
+"1000469" [label="(Call,!*pval)"];
+"1000469" -> "1000468"  [label="AST: "];
+"1000469" -> "1000470"  [label="CFG: "];
+"1000470" -> "1000469"  [label="AST: "];
+"1000474" -> "1000469"  [label="CFG: "];
+"1000468" -> "1000469"  [label="CFG: "];
+"1000469" -> "1000873"  [label="DDG: *pval"];
+"1000469" -> "1000468"  [label="DDG: *pval"];
+"1000468" -> "1000467"  [label="AST: "];
+"1000468" -> "1000472"  [label="CFG: "];
+"1000472" -> "1000468"  [label="AST: "];
+"1000478" -> "1000468"  [label="CFG: "];
+"1000482" -> "1000468"  [label="CFG: "];
+"1000468" -> "1000873"  [label="DDG: !ASN1_item_ex_new(pval, it)"];
+"1000468" -> "1000873"  [label="DDG: !*pval && !ASN1_item_ex_new(pval, it)"];
+"1000468" -> "1000873"  [label="DDG: !*pval"];
+"1000472" -> "1000468"  [label="DDG: ASN1_item_ex_new(pval, it)"];
+}

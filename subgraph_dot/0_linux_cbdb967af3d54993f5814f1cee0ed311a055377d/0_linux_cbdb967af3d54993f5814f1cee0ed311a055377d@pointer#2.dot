@@ -1,0 +1,33 @@
+digraph "0_linux_cbdb967af3d54993f5814f1cee0ed311a055377d@pointer" {
+"1000155" [label="(Call,svm->vmcb->save.rflags &=\n \t\t\t\t~(X86_EFLAGS_TF | X86_EFLAGS_RF))"];
+"1000163" [label="(Call,~(X86_EFLAGS_TF | X86_EFLAGS_RF))"];
+"1000164" [label="(Call,X86_EFLAGS_TF | X86_EFLAGS_RF)"];
+"1000221" [label="(MethodReturn,static int)"];
+"1000164" [label="(Call,X86_EFLAGS_TF | X86_EFLAGS_RF)"];
+"1000156" [label="(Call,svm->vmcb->save.rflags)"];
+"1000146" [label="(ControlStructure,if (!(svm->vcpu.guest_debug & KVM_GUESTDBG_SINGLESTEP)))"];
+"1000165" [label="(Identifier,X86_EFLAGS_TF)"];
+"1000155" [label="(Call,svm->vmcb->save.rflags &=\n \t\t\t\t~(X86_EFLAGS_TF | X86_EFLAGS_RF))"];
+"1000171" [label="(Identifier,svm)"];
+"1000163" [label="(Call,~(X86_EFLAGS_TF | X86_EFLAGS_RF))"];
+"1000166" [label="(Identifier,X86_EFLAGS_RF)"];
+"1000155" -> "1000146"  [label="AST: "];
+"1000155" -> "1000163"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000163" -> "1000155"  [label="AST: "];
+"1000171" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000221"  [label="DDG: ~(X86_EFLAGS_TF | X86_EFLAGS_RF)"];
+"1000155" -> "1000221"  [label="DDG: svm->vmcb->save.rflags &=\n \t\t\t\t~(X86_EFLAGS_TF | X86_EFLAGS_RF)"];
+"1000155" -> "1000221"  [label="DDG: svm->vmcb->save.rflags"];
+"1000163" -> "1000155"  [label="DDG: X86_EFLAGS_TF | X86_EFLAGS_RF"];
+"1000163" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000163"  [label="AST: "];
+"1000163" -> "1000221"  [label="DDG: X86_EFLAGS_TF | X86_EFLAGS_RF"];
+"1000164" -> "1000163"  [label="DDG: X86_EFLAGS_TF"];
+"1000164" -> "1000163"  [label="DDG: X86_EFLAGS_RF"];
+"1000164" -> "1000166"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000166" -> "1000164"  [label="AST: "];
+"1000164" -> "1000221"  [label="DDG: X86_EFLAGS_RF"];
+"1000164" -> "1000221"  [label="DDG: X86_EFLAGS_TF"];
+}

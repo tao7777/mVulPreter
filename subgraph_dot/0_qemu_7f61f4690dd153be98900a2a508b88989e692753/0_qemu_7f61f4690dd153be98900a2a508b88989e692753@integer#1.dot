@@ -1,0 +1,26 @@
+digraph "0_qemu_7f61f4690dd153be98900a2a508b88989e692753@integer" {
+"1000125" [label="(Call,cmp_ring_size = ri->cmpRingNumPages * PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE)"];
+"1000127" [label="(Call,ri->cmpRingNumPages * PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE)"];
+"1000126" [label="(Identifier,cmp_ring_size)"];
+"1000133" [label="(Identifier,txr_len_log2)"];
+"1000131" [label="(Identifier,PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE)"];
+"1000125" [label="(Call,cmp_ring_size = ri->cmpRingNumPages * PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE)"];
+"1000127" [label="(Call,ri->cmpRingNumPages * PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE)"];
+"1000103" [label="(Block,)"];
+"1000128" [label="(Call,ri->cmpRingNumPages)"];
+"1000138" [label="(MethodReturn,RET)"];
+"1000125" -> "1000103"  [label="AST: "];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000133" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000138"  [label="DDG: cmp_ring_size"];
+"1000125" -> "1000138"  [label="DDG: ri->cmpRingNumPages * PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE"];
+"1000127" -> "1000125"  [label="DDG: ri->cmpRingNumPages"];
+"1000127" -> "1000125"  [label="DDG: PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE"];
+"1000127" -> "1000131"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000131" -> "1000127"  [label="AST: "];
+"1000127" -> "1000138"  [label="DDG: ri->cmpRingNumPages"];
+"1000127" -> "1000138"  [label="DDG: PVSCSI_MAX_NUM_CMP_ENTRIES_PER_PAGE"];
+}

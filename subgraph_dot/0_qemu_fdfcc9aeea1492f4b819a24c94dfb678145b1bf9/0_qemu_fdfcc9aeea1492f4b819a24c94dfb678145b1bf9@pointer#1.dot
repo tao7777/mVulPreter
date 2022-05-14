@@ -1,0 +1,24 @@
+digraph "0_qemu_fdfcc9aeea1492f4b819a24c94dfb678145b1bf9@pointer" {
+"1000202" [label="(Call,fidp->fs.fd == -1)"];
+"1000208" [label="(Call,-1)"];
+"1000201" [label="(ControlStructure,if (fidp->fs.fd == -1))"];
+"1000248" [label="(Identifier,qiov)"];
+"1000209" [label="(Literal,1)"];
+"1000208" [label="(Call,-1)"];
+"1000202" [label="(Call,fidp->fs.fd == -1)"];
+"1000203" [label="(Call,fidp->fs.fd)"];
+"1000212" [label="(Identifier,err)"];
+"1000371" [label="(MethodReturn,static void coroutine_fn)"];
+"1000202" -> "1000201"  [label="AST: "];
+"1000202" -> "1000208"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000208" -> "1000202"  [label="AST: "];
+"1000212" -> "1000202"  [label="CFG: "];
+"1000248" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000371"  [label="DDG: fidp->fs.fd"];
+"1000202" -> "1000371"  [label="DDG: -1"];
+"1000202" -> "1000371"  [label="DDG: fidp->fs.fd == -1"];
+"1000208" -> "1000202"  [label="DDG: 1"];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+}

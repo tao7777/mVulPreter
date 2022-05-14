@@ -1,0 +1,20 @@
+digraph "0_Chrome_0749ec24fae74ec32d0567eef0e5ec43c84dbcb9_9@API" {
+"1000104" [label="(Call,!getThreadState()->sweepForbidden())"];
+"1000103" [label="(Call,ASSERT(!getThreadState()->sweepForbidden()))"];
+"1000102" [label="(Block,)"];
+"1000103" [label="(Call,ASSERT(!getThreadState()->sweepForbidden()))"];
+"1000106" [label="(Call,header->checkHeader())"];
+"1000105" [label="(Call,getThreadState()->sweepForbidden())"];
+"1000104" [label="(Call,!getThreadState()->sweepForbidden())"];
+"1000165" [label="(MethodReturn,void)"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000165"  [label="DDG: getThreadState()->sweepForbidden()"];
+"1000104" -> "1000103"  [label="DDG: getThreadState()->sweepForbidden()"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000106" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000165"  [label="DDG: !getThreadState()->sweepForbidden()"];
+"1000103" -> "1000165"  [label="DDG: ASSERT(!getThreadState()->sweepForbidden())"];
+}

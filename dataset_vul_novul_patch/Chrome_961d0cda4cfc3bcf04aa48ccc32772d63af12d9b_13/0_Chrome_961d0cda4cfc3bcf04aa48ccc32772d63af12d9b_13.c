@@ -1,0 +1,1 @@
+void RecordGenerationDialogDismissal(bool accepted) {

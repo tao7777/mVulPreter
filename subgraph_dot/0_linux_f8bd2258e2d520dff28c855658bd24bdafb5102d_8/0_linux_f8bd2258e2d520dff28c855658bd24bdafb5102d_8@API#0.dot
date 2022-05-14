@@ -1,0 +1,24 @@
+digraph "0_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_8@API" {
+"1000673" [label="(Call,write_sequnlock_irq(&xtime_lock))"];
+"1000216" [label="(Call,write_seqlock_irq(&xtime_lock))"];
+"1000216" [label="(Call,write_seqlock_irq(&xtime_lock))"];
+"1000220" [label="(Identifier,result)"];
+"1000684" [label="(MethodReturn,int)"];
+"1000123" [label="(Block,)"];
+"1000673" [label="(Call,write_sequnlock_irq(&xtime_lock))"];
+"1000217" [label="(Call,&xtime_lock)"];
+"1000674" [label="(Call,&xtime_lock)"];
+"1000679" [label="(Identifier,txc)"];
+"1000673" -> "1000123"  [label="AST: "];
+"1000673" -> "1000674"  [label="CFG: "];
+"1000674" -> "1000673"  [label="AST: "];
+"1000679" -> "1000673"  [label="CFG: "];
+"1000673" -> "1000684"  [label="DDG: &xtime_lock"];
+"1000673" -> "1000684"  [label="DDG: write_sequnlock_irq(&xtime_lock)"];
+"1000216" -> "1000673"  [label="DDG: &xtime_lock"];
+"1000216" -> "1000123"  [label="AST: "];
+"1000216" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000220" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000684"  [label="DDG: write_seqlock_irq(&xtime_lock)"];
+}

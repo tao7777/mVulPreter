@@ -1,0 +1,34 @@
+digraph "0_miniupnp_b238cade9a173c6f751a34acf8ccff838a62aa47_0@API" {
+"1000264" [label="(Call,sizeof(command1) - 1)"];
+"1000262" [label="(Call,SENDCOMMAND(command1, sizeof(command1) - 1))"];
+"1000260" [label="(Call,n = SENDCOMMAND(command1, sizeof(command1) - 1))"];
+"1000264" [label="(Call,sizeof(command1) - 1)"];
+"1000267" [label="(Literal,1)"];
+"1000263" [label="(Identifier,command1)"];
+"1000599" [label="(MethodReturn,RET)"];
+"1000188" [label="(Call,command1[1] = sizeof(command1) - 3)"];
+"1000265" [label="(Call,sizeof(command1))"];
+"1000106" [label="(Block,)"];
+"1000261" [label="(Identifier,n)"];
+"1000260" [label="(Call,n = SENDCOMMAND(command1, sizeof(command1) - 1))"];
+"1000269" [label="(Identifier,n)"];
+"1000262" [label="(Call,SENDCOMMAND(command1, sizeof(command1) - 1))"];
+"1000264" -> "1000262"  [label="AST: "];
+"1000264" -> "1000267"  [label="CFG: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000267" -> "1000264"  [label="AST: "];
+"1000262" -> "1000264"  [label="CFG: "];
+"1000264" -> "1000262"  [label="DDG: 1"];
+"1000262" -> "1000260"  [label="AST: "];
+"1000263" -> "1000262"  [label="AST: "];
+"1000260" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000599"  [label="DDG: sizeof(command1) - 1"];
+"1000262" -> "1000599"  [label="DDG: command1"];
+"1000262" -> "1000260"  [label="DDG: command1"];
+"1000262" -> "1000260"  [label="DDG: sizeof(command1) - 1"];
+"1000188" -> "1000262"  [label="DDG: command1[1]"];
+"1000260" -> "1000106"  [label="AST: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000269" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000599"  [label="DDG: SENDCOMMAND(command1, sizeof(command1) - 1)"];
+}

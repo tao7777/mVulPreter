@@ -1,0 +1,23 @@
+digraph "0_linux_ef85b67385436ddc1998f45f1d6a210f935b3388_2@pointer" {
+"1000139" [label="(Call,kvm_before_handle_nmi(&vmx->vcpu))"];
+"1000146" [label="(Call,kvm_after_handle_nmi(&vmx->vcpu))"];
+"1000138" [label="(Block,)"];
+"1000147" [label="(Call,&vmx->vcpu)"];
+"1000139" [label="(Call,kvm_before_handle_nmi(&vmx->vcpu))"];
+"1000146" [label="(Call,kvm_after_handle_nmi(&vmx->vcpu))"];
+"1000140" [label="(Call,&vmx->vcpu)"];
+"1000145" [label="(Literal,\"int $2\")"];
+"1000151" [label="(MethodReturn,static void)"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000145" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000151"  [label="DDG: kvm_before_handle_nmi(&vmx->vcpu)"];
+"1000139" -> "1000146"  [label="DDG: &vmx->vcpu"];
+"1000146" -> "1000138"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000151" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000151"  [label="DDG: kvm_after_handle_nmi(&vmx->vcpu)"];
+"1000146" -> "1000151"  [label="DDG: &vmx->vcpu"];
+}

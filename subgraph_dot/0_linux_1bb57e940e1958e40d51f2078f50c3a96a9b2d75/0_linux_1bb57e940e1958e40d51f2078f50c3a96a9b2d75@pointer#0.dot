@@ -1,0 +1,33 @@
+digraph "0_linux_1bb57e940e1958e40d51f2078f50c3a96a9b2d75@pointer" {
+"1000107" [label="(Call,*np = netdev_priv(dev))"];
+"1000109" [label="(Call,netdev_priv(dev))"];
+"1000101" [label="(MethodParameterIn,struct net_device *dev)"];
+"1000110" [label="(Identifier,dev)"];
+"1000113" [label="(Identifier,miidata)"];
+"1000109" [label="(Call,netdev_priv(dev))"];
+"1000136" [label="(Call,mii_read (dev, phy_addr, miidata->reg_num))"];
+"1000108" [label="(Identifier,np)"];
+"1000104" [label="(Block,)"];
+"1000151" [label="(Call,mii_write (dev, phy_addr, miidata->reg_num, miidata->val_in))"];
+"1000167" [label="(MethodReturn,RET)"];
+"1000101" [label="(MethodParameterIn,struct net_device *dev)"];
+"1000107" [label="(Call,*np = netdev_priv(dev))"];
+"1000107" -> "1000104"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000113" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000167"  [label="DDG: np"];
+"1000107" -> "1000167"  [label="DDG: netdev_priv(dev)"];
+"1000109" -> "1000107"  [label="DDG: dev"];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000109" -> "1000167"  [label="DDG: dev"];
+"1000101" -> "1000109"  [label="DDG: dev"];
+"1000109" -> "1000136"  [label="DDG: dev"];
+"1000109" -> "1000151"  [label="DDG: dev"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000167"  [label="DDG: dev"];
+"1000101" -> "1000136"  [label="DDG: dev"];
+"1000101" -> "1000151"  [label="DDG: dev"];
+}

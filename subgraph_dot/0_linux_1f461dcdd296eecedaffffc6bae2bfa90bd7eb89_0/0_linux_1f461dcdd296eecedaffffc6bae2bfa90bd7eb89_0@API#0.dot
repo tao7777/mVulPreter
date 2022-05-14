@@ -1,0 +1,24 @@
+digraph "0_linux_1f461dcdd296eecedaffffc6bae2bfa90bd7eb89_0@API" {
+"1000121" [label="(Call,down_write(&pch->chan_sem))"];
+"1000141" [label="(Call,up_write(&pch->chan_sem))"];
+"1000142" [label="(Call,&pch->chan_sem)"];
+"1000122" [label="(Call,&pch->chan_sem)"];
+"1000121" [label="(Call,down_write(&pch->chan_sem))"];
+"1000202" [label="(MethodReturn,RET)"];
+"1000104" [label="(Block,)"];
+"1000129" [label="(Identifier,pch)"];
+"1000141" [label="(Call,up_write(&pch->chan_sem))"];
+"1000147" [label="(Identifier,pch)"];
+"1000121" -> "1000104"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000129" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000202"  [label="DDG: down_write(&pch->chan_sem)"];
+"1000121" -> "1000141"  [label="DDG: &pch->chan_sem"];
+"1000141" -> "1000104"  [label="AST: "];
+"1000141" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000147" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000202"  [label="DDG: &pch->chan_sem"];
+"1000141" -> "1000202"  [label="DDG: up_write(&pch->chan_sem)"];
+}

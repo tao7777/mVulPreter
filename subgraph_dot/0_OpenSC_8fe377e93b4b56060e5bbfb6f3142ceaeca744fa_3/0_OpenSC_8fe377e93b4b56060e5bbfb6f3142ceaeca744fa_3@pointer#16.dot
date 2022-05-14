@@ -1,0 +1,31 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_3@pointer" {
+"1000118" [label="(Call,* priv = CAC_DATA(card))"];
+"1000120" [label="(Call,CAC_DATA(card))"];
+"1000111" [label="(MethodParameterIn,sc_card_t *card)"];
+"1000121" [label="(Identifier,card)"];
+"1000243" [label="(Call,cac_read_file(card, CAC_FILE_TAG, &tl, &tl_len))"];
+"1000120" [label="(Call,CAC_DATA(card))"];
+"1000124" [label="(Identifier,r)"];
+"1000116" [label="(Block,)"];
+"1000258" [label="(Call,cac_read_file(card, CAC_FILE_VALUE, &val, &val_len))"];
+"1000118" [label="(Call,* priv = CAC_DATA(card))"];
+"1000633" [label="(MethodReturn,static int)"];
+"1000111" [label="(MethodParameterIn,sc_card_t *card)"];
+"1000119" [label="(Identifier,priv)"];
+"1000118" -> "1000116"  [label="AST: "];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000124" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000633"  [label="DDG: CAC_DATA(card)"];
+"1000118" -> "1000633"  [label="DDG: priv"];
+"1000120" -> "1000118"  [label="DDG: card"];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000111" -> "1000120"  [label="DDG: card"];
+"1000120" -> "1000243"  [label="DDG: card"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000633"  [label="DDG: card"];
+"1000111" -> "1000243"  [label="DDG: card"];
+"1000111" -> "1000258"  [label="DDG: card"];
+}

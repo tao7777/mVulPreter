@@ -1,0 +1,26 @@
+digraph "0_openssl_6ce9687b5aba5391fc0de50e18779eb676d0e04d@pointer" {
+"1000261" [label="(Call,s->options & SSL_OP_NO_SSLv2)"];
+"1000260" [label="(Call,!(s->options & SSL_OP_NO_SSLv2))"];
+"1000262" [label="(Call,s->options)"];
+"1000260" [label="(Call,!(s->options & SSL_OP_NO_SSLv2))"];
+"1000691" [label="(Identifier,s)"];
+"1000261" [label="(Call,s->options & SSL_OP_NO_SSLv2)"];
+"1000267" [label="(Identifier,type)"];
+"1000265" [label="(Identifier,SSL_OP_NO_SSLv2)"];
+"1000259" [label="(ControlStructure,if (!(s->options & SSL_OP_NO_SSLv2)))"];
+"1001246" [label="(MethodReturn,int)"];
+"1000261" -> "1000260"  [label="AST: "];
+"1000261" -> "1000265"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000265" -> "1000261"  [label="AST: "];
+"1000260" -> "1000261"  [label="CFG: "];
+"1000261" -> "1001246"  [label="DDG: SSL_OP_NO_SSLv2"];
+"1000261" -> "1001246"  [label="DDG: s->options"];
+"1000261" -> "1000260"  [label="DDG: s->options"];
+"1000261" -> "1000260"  [label="DDG: SSL_OP_NO_SSLv2"];
+"1000260" -> "1000259"  [label="AST: "];
+"1000267" -> "1000260"  [label="CFG: "];
+"1000691" -> "1000260"  [label="CFG: "];
+"1000260" -> "1001246"  [label="DDG: !(s->options & SSL_OP_NO_SSLv2)"];
+"1000260" -> "1001246"  [label="DDG: s->options & SSL_OP_NO_SSLv2"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_c4e490cf148e85ead0d1b1c2caaba833f1d5b29f@pointer" {
+"1000146" [label="(Call,state->rand = rand)"];
+"1000109" [label="(Call,rand = get_random_int())"];
+"1000128" [label="(Block,)"];
+"1000156" [label="(MethodReturn,static bool)"];
+"1000106" [label="(Block,)"];
+"1000150" [label="(Identifier,rand)"];
+"1000147" [label="(Call,state->rand)"];
+"1000152" [label="(Identifier,ret)"];
+"1000110" [label="(Identifier,rand)"];
+"1000118" [label="(Call,prandom_seed_state(&state->rnd_state, rand))"];
+"1000111" [label="(Call,get_random_int())"];
+"1000115" [label="(Identifier,cachep)"];
+"1000109" [label="(Call,rand = get_random_int())"];
+"1000146" [label="(Call,state->rand = rand)"];
+"1000146" -> "1000128"  [label="AST: "];
+"1000146" -> "1000150"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000150" -> "1000146"  [label="AST: "];
+"1000152" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000156"  [label="DDG: rand"];
+"1000146" -> "1000156"  [label="DDG: state->rand"];
+"1000109" -> "1000146"  [label="DDG: rand"];
+"1000109" -> "1000106"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000115" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000156"  [label="DDG: get_random_int()"];
+"1000109" -> "1000118"  [label="DDG: rand"];
+}

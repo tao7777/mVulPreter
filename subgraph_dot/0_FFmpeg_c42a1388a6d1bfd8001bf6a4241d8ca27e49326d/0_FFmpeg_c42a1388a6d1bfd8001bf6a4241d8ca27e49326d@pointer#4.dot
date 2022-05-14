@@ -1,0 +1,33 @@
+digraph "0_FFmpeg_c42a1388a6d1bfd8001bf6a4241d8ca27e49326d@pointer" {
+"1000168" [label="(Call,*value == 0)"];
+"1000167" [label="(Call,*value == 0 || value[strlen(value) - 1] == ',')"];
+"1000224" [label="(MethodReturn,static int)"];
+"1000182" [label="(Identifier,s)"];
+"1000166" [label="(ControlStructure,if (*value == 0 || value[strlen(value) - 1] == ','))"];
+"1000174" [label="(Identifier,value)"];
+"1000168" [label="(Call,*value == 0)"];
+"1000189" [label="(Identifier,par)"];
+"1000171" [label="(Literal,0)"];
+"1000169" [label="(Call,*value)"];
+"1000167" [label="(Call,*value == 0 || value[strlen(value) - 1] == ',')"];
+"1000172" [label="(Call,value[strlen(value) - 1] == ',')"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000171"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000171" -> "1000168"  [label="AST: "];
+"1000174" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000224"  [label="DDG: *value"];
+"1000168" -> "1000167"  [label="DDG: *value"];
+"1000168" -> "1000167"  [label="DDG: 0"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000167"  [label="AST: "];
+"1000182" -> "1000167"  [label="CFG: "];
+"1000189" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000224"  [label="DDG: *value == 0"];
+"1000167" -> "1000224"  [label="DDG: value[strlen(value) - 1] == ','"];
+"1000167" -> "1000224"  [label="DDG: *value == 0 || value[strlen(value) - 1] == ','"];
+"1000172" -> "1000167"  [label="DDG: value[strlen(value) - 1]"];
+"1000172" -> "1000167"  [label="DDG: ','"];
+}

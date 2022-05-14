@@ -1,0 +1,30 @@
+digraph "0_linux_d2f007dbe7e4c9583eea6eb04d60001e85c6f1bd@pointer" {
+"1000221" [label="(Call,*next_line = '\0')"];
+"1000228" [label="(Call,*next_line == '\0')"];
+"1000227" [label="(ControlStructure,if (*next_line == '\0'))"];
+"1000221" [label="(Call,*next_line = '\0')"];
+"1000233" [label="(Identifier,next_line)"];
+"1000236" [label="(Identifier,pos)"];
+"1000231" [label="(Literal,'\0')"];
+"1000228" [label="(Call,*next_line == '\0')"];
+"1000224" [label="(Literal,'\0')"];
+"1000220" [label="(Block,)"];
+"1000229" [label="(Call,*next_line)"];
+"1000577" [label="(MethodReturn,static ssize_t)"];
+"1000226" [label="(Identifier,next_line)"];
+"1000222" [label="(Call,*next_line)"];
+"1000221" -> "1000220"  [label="AST: "];
+"1000221" -> "1000224"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000224" -> "1000221"  [label="AST: "];
+"1000226" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000228"  [label="DDG: *next_line"];
+"1000228" -> "1000227"  [label="AST: "];
+"1000228" -> "1000231"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000231" -> "1000228"  [label="AST: "];
+"1000233" -> "1000228"  [label="CFG: "];
+"1000236" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000577"  [label="DDG: *next_line == '\0'"];
+"1000228" -> "1000577"  [label="DDG: *next_line"];
+}

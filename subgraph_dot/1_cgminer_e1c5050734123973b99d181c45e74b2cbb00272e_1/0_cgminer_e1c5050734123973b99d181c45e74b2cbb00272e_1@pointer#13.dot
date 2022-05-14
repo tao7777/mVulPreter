@@ -1,0 +1,24 @@
+digraph "0_cgminer_e1c5050734123973b99d181c45e74b2cbb00272e_1@pointer" {
+"1000622" [label="(Call,cg_wunlock(&pool->data_lock))"];
+"1000230" [label="(Call,cg_wlock(&pool->data_lock))"];
+"1000230" [label="(Call,cg_wlock(&pool->data_lock))"];
+"1000238" [label="(Identifier,pool)"];
+"1000628" [label="(Identifier,opt_protocol)"];
+"1000109" [label="(Block,)"];
+"1000231" [label="(Call,&pool->data_lock)"];
+"1000623" [label="(Call,&pool->data_lock)"];
+"1000622" [label="(Call,cg_wunlock(&pool->data_lock))"];
+"1000685" [label="(MethodReturn,static bool)"];
+"1000622" -> "1000109"  [label="AST: "];
+"1000622" -> "1000623"  [label="CFG: "];
+"1000623" -> "1000622"  [label="AST: "];
+"1000628" -> "1000622"  [label="CFG: "];
+"1000622" -> "1000685"  [label="DDG: cg_wunlock(&pool->data_lock)"];
+"1000622" -> "1000685"  [label="DDG: &pool->data_lock"];
+"1000230" -> "1000622"  [label="DDG: &pool->data_lock"];
+"1000230" -> "1000109"  [label="AST: "];
+"1000230" -> "1000231"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000238" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000685"  [label="DDG: cg_wlock(&pool->data_lock)"];
+}

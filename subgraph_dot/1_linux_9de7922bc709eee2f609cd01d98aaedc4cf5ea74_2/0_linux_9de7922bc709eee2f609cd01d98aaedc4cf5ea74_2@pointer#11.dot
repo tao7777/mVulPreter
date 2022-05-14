@@ -1,0 +1,27 @@
+digraph "0_linux_9de7922bc709eee2f609cd01d98aaedc4cf5ea74_2@pointer" {
+"1000159" [label="(Call,!asconf_ack->auth)"];
+"1000152" [label="(Call,!net->sctp.addip_noauth && !asconf_ack->auth)"];
+"1000151" [label="(ControlStructure,if (!net->sctp.addip_noauth && !asconf_ack->auth))"];
+"1000159" [label="(Call,!asconf_ack->auth)"];
+"1000152" [label="(Call,!net->sctp.addip_noauth && !asconf_ack->auth)"];
+"1000153" [label="(Call,!net->sctp.addip_noauth)"];
+"1000160" [label="(Call,asconf_ack->auth)"];
+"1000174" [label="(Identifier,asconf_ack)"];
+"1000383" [label="(MethodReturn,sctp_disposition_t)"];
+"1000165" [label="(Identifier,net)"];
+"1000159" -> "1000152"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000152" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000383"  [label="DDG: asconf_ack->auth"];
+"1000159" -> "1000152"  [label="DDG: asconf_ack->auth"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000165" -> "1000152"  [label="CFG: "];
+"1000174" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000383"  [label="DDG: !asconf_ack->auth"];
+"1000152" -> "1000383"  [label="DDG: !net->sctp.addip_noauth && !asconf_ack->auth"];
+"1000152" -> "1000383"  [label="DDG: !net->sctp.addip_noauth"];
+"1000153" -> "1000152"  [label="DDG: net->sctp.addip_noauth"];
+}

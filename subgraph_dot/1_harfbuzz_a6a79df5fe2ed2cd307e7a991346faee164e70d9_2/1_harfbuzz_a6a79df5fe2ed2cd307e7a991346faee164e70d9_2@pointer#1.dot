@@ -1,0 +1,24 @@
+digraph "1_harfbuzz_a6a79df5fe2ed2cd307e7a991346faee164e70d9_2@pointer" {
+"1000101" [label="(MethodParameterIn,hb_buffer_t *buffer)"];
+"1000104" [label="(Call,hb_buffer_ensure (buffer, size))"];
+"1000167" [label="(MethodReturn,RET)"];
+"1000110" [label="(Identifier,buffer)"];
+"1000103" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,unsigned int size)"];
+"1000104" [label="(Call,hb_buffer_ensure (buffer, size))"];
+"1000106" [label="(Identifier,size)"];
+"1000101" [label="(MethodParameterIn,hb_buffer_t *buffer)"];
+"1000105" [label="(Identifier,buffer)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000167"  [label="DDG: buffer"];
+"1000101" -> "1000104"  [label="DDG: buffer"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000110" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000167"  [label="DDG: hb_buffer_ensure (buffer, size)"];
+"1000104" -> "1000167"  [label="DDG: buffer"];
+"1000104" -> "1000167"  [label="DDG: size"];
+"1000102" -> "1000104"  [label="DDG: size"];
+}

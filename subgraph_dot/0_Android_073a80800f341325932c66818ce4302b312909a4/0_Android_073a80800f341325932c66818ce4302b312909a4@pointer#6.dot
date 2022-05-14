@@ -1,0 +1,36 @@
+digraph "0_Android_073a80800f341325932c66818ce4302b312909a4@pointer" {
+"1000341" [label="(Call,context->state != EFFECT_STATE_ACTIVE)"];
+"1000138" [label="(Call,context->state == EFFECT_STATE_UNINITIALIZED)"];
+"1000138" [label="(Call,context->state == EFFECT_STATE_UNINITIALIZED)"];
+"1000289" [label="(Call,context->state != EFFECT_STATE_INITIALIZED)"];
+"1000341" [label="(Call,context->state != EFFECT_STATE_ACTIVE)"];
+"1000345" [label="(Identifier,EFFECT_STATE_ACTIVE)"];
+"1000354" [label="(Identifier,context)"];
+"1000340" [label="(ControlStructure,if (context->state != EFFECT_STATE_ACTIVE))"];
+"1000134" [label="(Call,context == NULL || context->state == EFFECT_STATE_UNINITIALIZED)"];
+"1000348" [label="(Identifier,status)"];
+"1000342" [label="(Call,context->state)"];
+"1000725" [label="(MethodReturn,int)"];
+"1000139" [label="(Call,context->state)"];
+"1000142" [label="(Identifier,EFFECT_STATE_UNINITIALIZED)"];
+"1000341" -> "1000340"  [label="AST: "];
+"1000341" -> "1000345"  [label="CFG: "];
+"1000342" -> "1000341"  [label="AST: "];
+"1000345" -> "1000341"  [label="AST: "];
+"1000348" -> "1000341"  [label="CFG: "];
+"1000354" -> "1000341"  [label="CFG: "];
+"1000341" -> "1000725"  [label="DDG: context->state"];
+"1000341" -> "1000725"  [label="DDG: EFFECT_STATE_ACTIVE"];
+"1000341" -> "1000725"  [label="DDG: context->state != EFFECT_STATE_ACTIVE"];
+"1000138" -> "1000341"  [label="DDG: context->state"];
+"1000138" -> "1000134"  [label="AST: "];
+"1000138" -> "1000142"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000142" -> "1000138"  [label="AST: "];
+"1000134" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000725"  [label="DDG: EFFECT_STATE_UNINITIALIZED"];
+"1000138" -> "1000725"  [label="DDG: context->state"];
+"1000138" -> "1000134"  [label="DDG: context->state"];
+"1000138" -> "1000134"  [label="DDG: EFFECT_STATE_UNINITIALIZED"];
+"1000138" -> "1000289"  [label="DDG: context->state"];
+}

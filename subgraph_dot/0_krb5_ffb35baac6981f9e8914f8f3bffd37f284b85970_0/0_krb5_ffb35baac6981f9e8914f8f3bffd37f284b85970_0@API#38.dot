@@ -1,0 +1,22 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970_0@API" {
+"1000889" [label="(Call,assert(krb5_is_tgs_principal(header_ticket->server)))"];
+"1000890" [label="(Call,krb5_is_tgs_principal(header_ticket->server))"];
+"1000896" [label="(Identifier,client)"];
+"1000890" [label="(Call,krb5_is_tgs_principal(header_ticket->server))"];
+"1002500" [label="(MethodReturn,RET)"];
+"1000891" [label="(Call,header_ticket->server)"];
+"1000889" [label="(Call,assert(krb5_is_tgs_principal(header_ticket->server)))"];
+"1000803" [label="(Block,)"];
+"1001560" [label="(Call,krb5_realm_compare(kdc_context, header_ticket->server, tgs_server))"];
+"1000889" -> "1000803"  [label="AST: "];
+"1000889" -> "1000890"  [label="CFG: "];
+"1000890" -> "1000889"  [label="AST: "];
+"1000896" -> "1000889"  [label="CFG: "];
+"1000889" -> "1002500"  [label="DDG: krb5_is_tgs_principal(header_ticket->server)"];
+"1000889" -> "1002500"  [label="DDG: assert(krb5_is_tgs_principal(header_ticket->server))"];
+"1000890" -> "1000889"  [label="DDG: header_ticket->server"];
+"1000890" -> "1000891"  [label="CFG: "];
+"1000891" -> "1000890"  [label="AST: "];
+"1000890" -> "1002500"  [label="DDG: header_ticket->server"];
+"1000890" -> "1001560"  [label="DDG: header_ticket->server"];
+}

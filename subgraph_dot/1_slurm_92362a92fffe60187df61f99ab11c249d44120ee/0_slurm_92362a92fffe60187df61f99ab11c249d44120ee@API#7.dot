@@ -1,0 +1,27 @@
+digraph "0_slurm_92362a92fffe60187df61f99ab11c249d44120ee@API" {
+"1000241" [label="(Call,slurm_strerror(errno))"];
+"1000238" [label="(Call,error(\"Unable to open %s: %s\", path_name,\n\t\t      slurm_strerror(errno)))"];
+"1000241" [label="(Call,slurm_strerror(errno))"];
+"1000238" [label="(Call,error(\"Unable to open %s: %s\", path_name,\n\t\t      slurm_strerror(errno)))"];
+"1000237" [label="(Block,)"];
+"1000240" [label="(Identifier,path_name)"];
+"1000243" [label="(Return,return;)"];
+"1000239" [label="(Literal,\"Unable to open %s: %s\")"];
+"1000287" [label="(MethodReturn,RET)"];
+"1000242" [label="(Identifier,errno)"];
+"1000227" [label="(Call,open(path_name, (O_CREAT|O_APPEND|O_WRONLY), 0644))"];
+"1000241" -> "1000238"  [label="AST: "];
+"1000241" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000241"  [label="AST: "];
+"1000238" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000287"  [label="DDG: "];
+"1000241" -> "1000238"  [label="DDG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000239" -> "1000238"  [label="AST: "];
+"1000240" -> "1000238"  [label="AST: "];
+"1000243" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000287"  [label="DDG: "];
+"1000238" -> "1000287"  [label="DDG: "];
+"1000238" -> "1000287"  [label="DDG: "];
+"1000227" -> "1000238"  [label="DDG: "];
+}

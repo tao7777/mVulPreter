@@ -1,0 +1,25 @@
+digraph "0_FFmpeg_6b5d3fb26fb4be48e4966e4b1d97c2165538d4ef@pointer" {
+"1000703" [label="(Call,s->mv_bounds.mv_min.y   = -MARGIN)"];
+"1000711" [label="(Call,-MARGIN)"];
+"1000711" [label="(Call,-MARGIN)"];
+"1000703" [label="(Call,s->mv_bounds.mv_min.y   = -MARGIN)"];
+"1000704" [label="(Call,s->mv_bounds.mv_min.y)"];
+"1000713" [label="(Call,s->mv_bounds.mv_max.y   = ((s->mb_height - 1) << 6) + MARGIN)"];
+"1000721" [label="(Call,((s->mb_height - 1) << 6) + MARGIN)"];
+"1000108" [label="(Block,)"];
+"1000877" [label="(MethodReturn,int)"];
+"1000712" [label="(Identifier,MARGIN)"];
+"1000717" [label="(Identifier,s)"];
+"1000703" -> "1000108"  [label="AST: "];
+"1000703" -> "1000711"  [label="CFG: "];
+"1000704" -> "1000703"  [label="AST: "];
+"1000711" -> "1000703"  [label="AST: "];
+"1000717" -> "1000703"  [label="CFG: "];
+"1000703" -> "1000877"  [label="DDG: -MARGIN"];
+"1000703" -> "1000877"  [label="DDG: s->mv_bounds.mv_min.y"];
+"1000711" -> "1000703"  [label="DDG: MARGIN"];
+"1000711" -> "1000712"  [label="CFG: "];
+"1000712" -> "1000711"  [label="AST: "];
+"1000711" -> "1000713"  [label="DDG: MARGIN"];
+"1000711" -> "1000721"  [label="DDG: MARGIN"];
+}

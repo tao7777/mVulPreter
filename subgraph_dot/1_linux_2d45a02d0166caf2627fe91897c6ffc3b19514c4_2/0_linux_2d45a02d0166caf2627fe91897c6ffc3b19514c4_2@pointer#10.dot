@@ -1,0 +1,28 @@
+digraph "0_linux_2d45a02d0166caf2627fe91897c6ffc3b19514c4_2@pointer" {
+"1000214" [label="(Call,pp = sctp_sk(oldsk)->bind_hash)"];
+"1000226" [label="(Call,sctp_sk(newsk)->bind_hash = pp)"];
+"1000227" [label="(Call,sctp_sk(newsk)->bind_hash)"];
+"1000226" [label="(Call,sctp_sk(newsk)->bind_hash = pp)"];
+"1000119" [label="(Block,)"];
+"1000407" [label="(MethodReturn,static void)"];
+"1000216" [label="(Call,sctp_sk(oldsk)->bind_hash)"];
+"1000235" [label="(Identifier,newsk)"];
+"1000221" [label="(Identifier,newsk)"];
+"1000231" [label="(Identifier,pp)"];
+"1000215" [label="(Identifier,pp)"];
+"1000214" [label="(Call,pp = sctp_sk(oldsk)->bind_hash)"];
+"1000214" -> "1000119"  [label="AST: "];
+"1000214" -> "1000216"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000216" -> "1000214"  [label="AST: "];
+"1000221" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000407"  [label="DDG: sctp_sk(oldsk)->bind_hash"];
+"1000214" -> "1000226"  [label="DDG: pp"];
+"1000226" -> "1000119"  [label="AST: "];
+"1000226" -> "1000231"  [label="CFG: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000231" -> "1000226"  [label="AST: "];
+"1000235" -> "1000226"  [label="CFG: "];
+"1000226" -> "1000407"  [label="DDG: sctp_sk(newsk)->bind_hash"];
+"1000226" -> "1000407"  [label="DDG: pp"];
+}

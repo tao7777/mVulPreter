@@ -1,0 +1,59 @@
+IDNConversionResult IDNToUnicodeWithAdjustmentsImpl(
+    base::StringPiece host,
+    base::OffsetAdjuster::Adjustments* adjustments,
+    bool enable_spoof_checks) {
+  if (adjustments)
+    adjustments->clear();
+  base::string16 input16;
+   input16.reserve(host.length());
+   input16.insert(input16.end(), host.begin(), host.end());
+ 
+  base::StringPiece top_level_domain;
+   size_t last_dot = host.rfind('.');
+  if (last_dot != base::StringPiece::npos) {
+    top_level_domain = host.substr(last_dot);
+   }
+ 
+   IDNConversionResult result;
+  base::string16 out16;
+  for (size_t component_start = 0, component_end;
+       component_start < input16.length();
+       component_start = component_end + 1) {
+    component_end = input16.find('.', component_start);
+    if (component_end == base::string16::npos)
+      component_end = input16.length();  // For getting the last component.
+    size_t component_length = component_end - component_start;
+    size_t new_component_start = out16.length();
+    bool converted_idn = false;
+    if (component_end > component_start) {
+       bool has_idn_component = false;
+       converted_idn = IDNToUnicodeOneComponent(
+          input16.data() + component_start, component_length, top_level_domain,
+           enable_spoof_checks, &out16, &has_idn_component);
+       result.has_idn_component |= has_idn_component;
+     }
+    size_t new_component_length = out16.length() - new_component_start;
+
+    if (converted_idn && adjustments) {
+      adjustments->push_back(base::OffsetAdjuster::Adjustment(
+          component_start, component_length, new_component_length));
+    }
+
+    if (component_end < input16.length())
+      out16.push_back('.');
+  }
+
+  result.result = out16;
+
+  if (result.has_idn_component) {
+    result.matching_top_domain =
+        g_idn_spoof_checker.Get().GetSimilarTopDomain(out16);
+    if (enable_spoof_checks && !result.matching_top_domain.domain.empty()) {
+      if (adjustments)
+        adjustments->clear();
+      result.result = input16;
+    }
+  }
+
+  return result;
+}

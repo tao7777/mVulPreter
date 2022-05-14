@@ -1,0 +1,1 @@
+void SynchronousCompositorImpl::SetInputHandler(

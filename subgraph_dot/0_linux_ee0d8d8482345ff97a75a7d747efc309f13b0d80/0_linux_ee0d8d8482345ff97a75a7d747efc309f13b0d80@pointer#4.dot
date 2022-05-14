@@ -1,0 +1,23 @@
+digraph "0_linux_ee0d8d8482345ff97a75a7d747efc309f13b0d80@pointer" {
+"1000224" [label="(Call,sipx = (struct sockaddr_ipx *)&ifr.ifr_addr)"];
+"1000226" [label="(Call,(struct sockaddr_ipx *)&ifr.ifr_addr)"];
+"1000225" [label="(Identifier,sipx)"];
+"1000233" [label="(Identifier,dev)"];
+"1000208" [label="(Block,)"];
+"1000224" [label="(Call,sipx = (struct sockaddr_ipx *)&ifr.ifr_addr)"];
+"1000228" [label="(Call,&ifr.ifr_addr)"];
+"1000343" [label="(MethodReturn,static int)"];
+"1000226" [label="(Call,(struct sockaddr_ipx *)&ifr.ifr_addr)"];
+"1000224" -> "1000208"  [label="AST: "];
+"1000224" -> "1000226"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000226" -> "1000224"  [label="AST: "];
+"1000233" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000343"  [label="DDG: sipx"];
+"1000224" -> "1000343"  [label="DDG: (struct sockaddr_ipx *)&ifr.ifr_addr"];
+"1000226" -> "1000224"  [label="DDG: &ifr.ifr_addr"];
+"1000226" -> "1000228"  [label="CFG: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000228" -> "1000226"  [label="AST: "];
+"1000226" -> "1000343"  [label="DDG: &ifr.ifr_addr"];
+}

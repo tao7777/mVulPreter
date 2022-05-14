@@ -1,0 +1,35 @@
+digraph "0_linux_c55aee1bf0e6b6feec8b2927b43f7a09a6d5f754@pointer" {
+"1000156" [label="(Call,kfifo_alloc(&priv->write_fifo, CYPRESS_BUF_SIZE, GFP_KERNEL))"];
+"1000134" [label="(Call,kzalloc(sizeof(struct cypress_private), GFP_KERNEL))"];
+"1000173" [label="(Identifier,serial)"];
+"1000161" [label="(Identifier,CYPRESS_BUF_SIZE)"];
+"1000155" [label="(ControlStructure,if (kfifo_alloc(&priv->write_fifo, CYPRESS_BUF_SIZE, GFP_KERNEL)))"];
+"1000132" [label="(Call,priv = kzalloc(sizeof(struct cypress_private), GFP_KERNEL))"];
+"1000156" [label="(Call,kfifo_alloc(&priv->write_fifo, CYPRESS_BUF_SIZE, GFP_KERNEL))"];
+"1000135" [label="(Call,sizeof(struct cypress_private))"];
+"1000137" [label="(Identifier,GFP_KERNEL)"];
+"1000162" [label="(Identifier,GFP_KERNEL)"];
+"1000284" [label="(MethodReturn,static int)"];
+"1000157" [label="(Call,&priv->write_fifo)"];
+"1000134" [label="(Call,kzalloc(sizeof(struct cypress_private), GFP_KERNEL))"];
+"1000165" [label="(Identifier,priv)"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000162"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000161" -> "1000156"  [label="AST: "];
+"1000162" -> "1000156"  [label="AST: "];
+"1000165" -> "1000156"  [label="CFG: "];
+"1000173" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000284"  [label="DDG: CYPRESS_BUF_SIZE"];
+"1000156" -> "1000284"  [label="DDG: &priv->write_fifo"];
+"1000156" -> "1000284"  [label="DDG: kfifo_alloc(&priv->write_fifo, CYPRESS_BUF_SIZE, GFP_KERNEL)"];
+"1000156" -> "1000284"  [label="DDG: GFP_KERNEL"];
+"1000134" -> "1000156"  [label="DDG: GFP_KERNEL"];
+"1000134" -> "1000132"  [label="AST: "];
+"1000134" -> "1000137"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000137" -> "1000134"  [label="AST: "];
+"1000132" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000284"  [label="DDG: GFP_KERNEL"];
+"1000134" -> "1000132"  [label="DDG: GFP_KERNEL"];
+}

@@ -1,0 +1,36 @@
+digraph "0_linux_bb7f0f989ca7de1153bd128a40a71709e339fa03@pointer" {
+"1000373" [label="(Call,dst_reg->smin_value = smin_ptr)"];
+"1000148" [label="(Call,smin_ptr = ptr_reg->smin_value)"];
+"1000150" [label="(Call,ptr_reg->smin_value)"];
+"1000372" [label="(Block,)"];
+"1000373" [label="(Call,dst_reg->smin_value = smin_ptr)"];
+"1000377" [label="(Identifier,smin_ptr)"];
+"1000419" [label="(Call,signed_add_overflows(smin_ptr, smin_val))"];
+"1000380" [label="(Identifier,dst_reg)"];
+"1000797" [label="(MethodReturn,static int)"];
+"1000149" [label="(Identifier,smin_ptr)"];
+"1000121" [label="(Block,)"];
+"1000374" [label="(Call,dst_reg->smin_value)"];
+"1000583" [label="(Call,dst_reg->smin_value = smin_ptr)"];
+"1000148" [label="(Call,smin_ptr = ptr_reg->smin_value)"];
+"1000636" [label="(Call,signed_sub_overflows(smin_ptr, smax_val))"];
+"1000155" [label="(Identifier,smax_ptr)"];
+"1000373" -> "1000372"  [label="AST: "];
+"1000373" -> "1000377"  [label="CFG: "];
+"1000374" -> "1000373"  [label="AST: "];
+"1000377" -> "1000373"  [label="AST: "];
+"1000380" -> "1000373"  [label="CFG: "];
+"1000373" -> "1000797"  [label="DDG: smin_ptr"];
+"1000373" -> "1000797"  [label="DDG: dst_reg->smin_value"];
+"1000148" -> "1000373"  [label="DDG: smin_ptr"];
+"1000148" -> "1000121"  [label="AST: "];
+"1000148" -> "1000150"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000150" -> "1000148"  [label="AST: "];
+"1000155" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000797"  [label="DDG: smin_ptr"];
+"1000148" -> "1000797"  [label="DDG: ptr_reg->smin_value"];
+"1000148" -> "1000419"  [label="DDG: smin_ptr"];
+"1000148" -> "1000583"  [label="DDG: smin_ptr"];
+"1000148" -> "1000636"  [label="DDG: smin_ptr"];
+}

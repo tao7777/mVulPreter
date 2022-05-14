@@ -1,0 +1,36 @@
+digraph "0_linux_2a3f93459d689d990b3ecfbe782fec89b97d3279@pointer" {
+"1000241" [label="(Call,vcpu_el1_is_32bit(vcpu))"];
+"1000118" [label="(Call,vcpu_gp_regs(vcpu))"];
+"1000102" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000102" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000240" [label="(ControlStructure,if (vcpu_el1_is_32bit(vcpu)))"];
+"1000241" [label="(Call,vcpu_el1_is_32bit(vcpu))"];
+"1000231" [label="(Call,vcpu_el1_is_32bit(vcpu))"];
+"1000118" [label="(Call,vcpu_gp_regs(vcpu))"];
+"1000267" [label="(MethodReturn,static int)"];
+"1000242" [label="(Identifier,vcpu)"];
+"1000246" [label="(ControlStructure,break;)"];
+"1000119" [label="(Identifier,vcpu)"];
+"1000116" [label="(Call,*regs = vcpu_gp_regs(vcpu))"];
+"1000245" [label="(Identifier,EINVAL)"];
+"1000241" -> "1000240"  [label="AST: "];
+"1000241" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000241"  [label="AST: "];
+"1000245" -> "1000241"  [label="CFG: "];
+"1000246" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000267"  [label="DDG: vcpu"];
+"1000241" -> "1000267"  [label="DDG: vcpu_el1_is_32bit(vcpu)"];
+"1000118" -> "1000241"  [label="DDG: vcpu"];
+"1000102" -> "1000241"  [label="DDG: vcpu"];
+"1000118" -> "1000116"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000267"  [label="DDG: vcpu"];
+"1000118" -> "1000116"  [label="DDG: vcpu"];
+"1000102" -> "1000118"  [label="DDG: vcpu"];
+"1000118" -> "1000231"  [label="DDG: vcpu"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000267"  [label="DDG: vcpu"];
+"1000102" -> "1000231"  [label="DDG: vcpu"];
+}

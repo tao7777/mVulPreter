@@ -1,0 +1,30 @@
+digraph "0_enlightment_1f9b0b32728803a1578e658cd0955df773e34f49@pointer" {
+"1000451" [label="(Call,cmap = (gif->Image.ColorMap ? gif->Image.ColorMap : gif->SColorMap))"];
+"1000487" [label="(Call,!cmap)"];
+"1000445" [label="(Block,)"];
+"1000451" [label="(Call,cmap = (gif->Image.ColorMap ? gif->Image.ColorMap : gif->SColorMap))"];
+"1000453" [label="(Call,gif->Image.ColorMap ? gif->Image.ColorMap : gif->SColorMap)"];
+"1000486" [label="(ControlStructure,if (!cmap))"];
+"1000506" [label="(Identifier,ptr)"];
+"1000492" [label="(Identifier,im)"];
+"1000488" [label="(Identifier,cmap)"];
+"1000727" [label="(MethodReturn,RET)"];
+"1000469" [label="(Identifier,im)"];
+"1000452" [label="(Identifier,cmap)"];
+"1000487" [label="(Call,!cmap)"];
+"1000451" -> "1000445"  [label="AST: "];
+"1000451" -> "1000453"  [label="CFG: "];
+"1000452" -> "1000451"  [label="AST: "];
+"1000453" -> "1000451"  [label="AST: "];
+"1000469" -> "1000451"  [label="CFG: "];
+"1000451" -> "1000727"  [label="DDG: cmap"];
+"1000451" -> "1000727"  [label="DDG: gif->Image.ColorMap ? gif->Image.ColorMap : gif->SColorMap"];
+"1000451" -> "1000487"  [label="DDG: cmap"];
+"1000487" -> "1000486"  [label="AST: "];
+"1000487" -> "1000488"  [label="CFG: "];
+"1000488" -> "1000487"  [label="AST: "];
+"1000492" -> "1000487"  [label="CFG: "];
+"1000506" -> "1000487"  [label="CFG: "];
+"1000487" -> "1000727"  [label="DDG: cmap"];
+"1000487" -> "1000727"  [label="DDG: !cmap"];
+}

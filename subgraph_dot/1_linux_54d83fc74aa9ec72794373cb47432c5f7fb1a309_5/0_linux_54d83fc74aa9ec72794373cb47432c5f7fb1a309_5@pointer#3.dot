@@ -1,0 +1,23 @@
+digraph "0_linux_54d83fc74aa9ec72794373cb47432c5f7fb1a309_5@pointer" {
+"1000105" [label="(MethodParameterIn,const char *hookname)"];
+"1000195" [label="(Call,*chainname == hookname)"];
+"1000195" [label="(Call,*chainname == hookname)"];
+"1000203" [label="(Identifier,comments)"];
+"1000200" [label="(Identifier,comments)"];
+"1000194" [label="(Call,*chainname == hookname\n \t\t\t\t? comments[NF_IP_TRACE_COMMENT_POLICY]\n\t\t\t\t: comments[NF_IP_TRACE_COMMENT_RETURN])"];
+"1000213" [label="(MethodReturn,RET)"];
+"1000198" [label="(Identifier,hookname)"];
+"1000105" [label="(MethodParameterIn,const char *hookname)"];
+"1000196" [label="(Call,*chainname)"];
+"1000105" -> "1000102"  [label="AST: "];
+"1000105" -> "1000213"  [label="DDG: hookname"];
+"1000105" -> "1000195"  [label="DDG: hookname"];
+"1000195" -> "1000194"  [label="AST: "];
+"1000195" -> "1000198"  [label="CFG: "];
+"1000196" -> "1000195"  [label="AST: "];
+"1000198" -> "1000195"  [label="AST: "];
+"1000200" -> "1000195"  [label="CFG: "];
+"1000203" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000213"  [label="DDG: *chainname"];
+"1000195" -> "1000213"  [label="DDG: hookname"];
+}

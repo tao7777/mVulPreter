@@ -1,0 +1,33 @@
+digraph "0_php_124fb22a13fafa3648e4e15b4f207c7096d8155e@array" {
+"1000802" [label="(Call,what->mode[0] != 'r')"];
+"1000801" [label="(Call,what->mode[0] != 'r' || what->mode[1] == '+')"];
+"1000801" [label="(Call,what->mode[0] != 'r' || what->mode[1] == '+')"];
+"1000812" [label="(Identifier,what)"];
+"1000808" [label="(Literal,'r')"];
+"1000821" [label="(Identifier,ch)"];
+"1000835" [label="(Identifier,NULL)"];
+"1000802" [label="(Call,what->mode[0] != 'r')"];
+"1000809" [label="(Call,what->mode[1] == '+')"];
+"1000800" [label="(ControlStructure,if (what->mode[0] != 'r' || what->mode[1] == '+'))"];
+"1000803" [label="(Call,what->mode[0])"];
+"1001927" [label="(MethodReturn,static int)"];
+"1000802" -> "1000801"  [label="AST: "];
+"1000802" -> "1000808"  [label="CFG: "];
+"1000803" -> "1000802"  [label="AST: "];
+"1000808" -> "1000802"  [label="AST: "];
+"1000812" -> "1000802"  [label="CFG: "];
+"1000801" -> "1000802"  [label="CFG: "];
+"1000802" -> "1001927"  [label="DDG: what->mode[0]"];
+"1000802" -> "1000801"  [label="DDG: what->mode[0]"];
+"1000802" -> "1000801"  [label="DDG: 'r'"];
+"1000801" -> "1000800"  [label="AST: "];
+"1000801" -> "1000809"  [label="CFG: "];
+"1000809" -> "1000801"  [label="AST: "];
+"1000821" -> "1000801"  [label="CFG: "];
+"1000835" -> "1000801"  [label="CFG: "];
+"1000801" -> "1001927"  [label="DDG: what->mode[0] != 'r'"];
+"1000801" -> "1001927"  [label="DDG: what->mode[1] == '+'"];
+"1000801" -> "1001927"  [label="DDG: what->mode[0] != 'r' || what->mode[1] == '+'"];
+"1000809" -> "1000801"  [label="DDG: what->mode[1]"];
+"1000809" -> "1000801"  [label="DDG: '+'"];
+}

@@ -1,0 +1,36 @@
+digraph "1_qemu_7285477ab11831b1cf56e45878a89170dd06d9b9_2@pointer" {
+"1000103" [label="(Call,r->iov.iov_len = MIN(r->sector_count * 512, SCSI_DMA_BUF_SIZE))"];
+"1000109" [label="(Call,MIN(r->sector_count * 512, SCSI_DMA_BUF_SIZE))"];
+"1000110" [label="(Call,r->sector_count * 512)"];
+"1000109" [label="(Call,MIN(r->sector_count * 512, SCSI_DMA_BUF_SIZE))"];
+"1000111" [label="(Call,r->sector_count)"];
+"1000110" [label="(Call,r->sector_count * 512)"];
+"1000115" [label="(Identifier,SCSI_DMA_BUF_SIZE)"];
+"1000134" [label="(MethodReturn,static uint32_t)"];
+"1000103" [label="(Call,r->iov.iov_len = MIN(r->sector_count * 512, SCSI_DMA_BUF_SIZE))"];
+"1000102" [label="(Block,)"];
+"1000104" [label="(Call,r->iov.iov_len)"];
+"1000119" [label="(Identifier,r)"];
+"1000114" [label="(Literal,512)"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000109"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000109" -> "1000103"  [label="AST: "];
+"1000119" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000134"  [label="DDG: r->iov.iov_len"];
+"1000103" -> "1000134"  [label="DDG: MIN(r->sector_count * 512, SCSI_DMA_BUF_SIZE)"];
+"1000109" -> "1000103"  [label="DDG: r->sector_count * 512"];
+"1000109" -> "1000103"  [label="DDG: SCSI_DMA_BUF_SIZE"];
+"1000109" -> "1000115"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000115" -> "1000109"  [label="AST: "];
+"1000109" -> "1000134"  [label="DDG: SCSI_DMA_BUF_SIZE"];
+"1000109" -> "1000134"  [label="DDG: r->sector_count * 512"];
+"1000110" -> "1000109"  [label="DDG: r->sector_count"];
+"1000110" -> "1000109"  [label="DDG: 512"];
+"1000110" -> "1000114"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000114" -> "1000110"  [label="AST: "];
+"1000115" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000134"  [label="DDG: r->sector_count"];
+}

@@ -1,0 +1,30 @@
+digraph "0_mindrot_1bf477d3cdf1a864646d59820878783d42357a1d@pointer" {
+"1000103" [label="(MethodParameterIn,Buffer *b)"];
+"1000129" [label="(Call,buffer_len(b))"];
+"1000128" [label="(Call,buffer_len(b) < 12)"];
+"1000135" [label="(Literal,\"Initial X11 packet contains bad byte order byte: 0x%x\")"];
+"1000130" [label="(Identifier,b)"];
+"1000103" [label="(MethodParameterIn,Buffer *b)"];
+"1000133" [label="(Literal,0)"];
+"1000128" [label="(Call,buffer_len(b) < 12)"];
+"1000129" [label="(Call,buffer_len(b))"];
+"1000142" [label="(MethodReturn,RET)"];
+"1000131" [label="(Literal,12)"];
+"1000127" [label="(ControlStructure,if (buffer_len(b) < 12))"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000142"  [label="DDG: b"];
+"1000103" -> "1000129"  [label="DDG: b"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000129" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000131" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000142"  [label="DDG: b"];
+"1000129" -> "1000128"  [label="DDG: b"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000128"  [label="AST: "];
+"1000133" -> "1000128"  [label="CFG: "];
+"1000135" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000142"  [label="DDG: buffer_len(b) < 12"];
+"1000128" -> "1000142"  [label="DDG: buffer_len(b)"];
+}

@@ -1,0 +1,38 @@
+digraph "0_qemu_de594e47659029316bbf9391efb79da0a1a08e08@pointer" {
+"1000106" [label="(Call,*pci_dev = PCI_DEVICE(s))"];
+"1000108" [label="(Call,PCI_DEVICE(s))"];
+"1000103" [label="(MethodParameterIn,LSIState *s)"];
+"1000204" [label="(MethodReturn,static void)"];
+"1000109" [label="(Identifier,s)"];
+"1000177" [label="(Call,lsi_script_scsi_interrupt(s, LSI_SIST0_UDC, 0))"];
+"1000108" [label="(Call,PCI_DEVICE(s))"];
+"1000151" [label="(Call,lsi_disconnect(s))"];
+"1000104" [label="(Block,)"];
+"1000103" [label="(MethodParameterIn,LSIState *s)"];
+"1000147" [label="(Call,lsi_script_scsi_interrupt(s, LSI_SIST0_UDC, 0))"];
+"1000157" [label="(Call,read_dword(s, s->dsp))"];
+"1000106" [label="(Call,*pci_dev = PCI_DEVICE(s))"];
+"1000116" [label="(Identifier,insn_processed)"];
+"1000181" [label="(Call,lsi_disconnect(s))"];
+"1000107" [label="(Identifier,pci_dev)"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000116" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000204"  [label="DDG: PCI_DEVICE(s)"];
+"1000106" -> "1000204"  [label="DDG: pci_dev"];
+"1000108" -> "1000106"  [label="DDG: s"];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000103" -> "1000108"  [label="DDG: s"];
+"1000108" -> "1000147"  [label="DDG: s"];
+"1000108" -> "1000157"  [label="DDG: s"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000204"  [label="DDG: s"];
+"1000103" -> "1000147"  [label="DDG: s"];
+"1000103" -> "1000151"  [label="DDG: s"];
+"1000103" -> "1000157"  [label="DDG: s"];
+"1000103" -> "1000177"  [label="DDG: s"];
+"1000103" -> "1000181"  [label="DDG: s"];
+}

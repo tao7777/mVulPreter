@@ -1,0 +1,21 @@
+digraph "1_linux_8fff105e13041e49b82f92eef034f363a6b1c071@pointer" {
+"1000126" [label="(Call,is_software_event(event))"];
+"1000102" [label="(MethodParameterIn,struct perf_event *event)"];
+"1000126" [label="(Call,is_software_event(event))"];
+"1000166" [label="(MethodReturn,RET)"];
+"1000134" [label="(Identifier,event)"];
+"1000125" [label="(ControlStructure,if (is_software_event(event)))"];
+"1000129" [label="(Literal,1)"];
+"1000127" [label="(Identifier,event)"];
+"1000102" [label="(MethodParameterIn,struct perf_event *event)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000129" -> "1000126"  [label="CFG: "];
+"1000134" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000166"  [label="DDG: is_software_event(event)"];
+"1000126" -> "1000166"  [label="DDG: event"];
+"1000102" -> "1000126"  [label="DDG: event"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000166"  [label="DDG: event"];
+}

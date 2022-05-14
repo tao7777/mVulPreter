@@ -1,0 +1,30 @@
+digraph "0_ImageMagick_d23beebe7b1179fb75db1e85fbca3100e49593d9@pointer" {
+"1000311" [label="(Call,DeleteImageFromList(&image))"];
+"1000314" [label="(Call,AppendImageToList(&image,image2))"];
+"1000299" [label="(ControlStructure,if ((image->rows == 0) || (image->columns == 0)))"];
+"1000317" [label="(Identifier,image2)"];
+"1000316" [label="(Identifier,image)"];
+"1000113" [label="(Block,)"];
+"1000315" [label="(Call,&image)"];
+"1000328" [label="(MethodReturn,static Image *)"];
+"1000311" [label="(Call,DeleteImageFromList(&image))"];
+"1000314" [label="(Call,AppendImageToList(&image,image2))"];
+"1000289" [label="(Call,DestroyBlob(image2))"];
+"1000318" [label="(JumpTarget,FINISH_UNL:)"];
+"1000312" [label="(Call,&image)"];
+"1000311" -> "1000299"  [label="AST: "];
+"1000311" -> "1000312"  [label="CFG: "];
+"1000312" -> "1000311"  [label="AST: "];
+"1000316" -> "1000311"  [label="CFG: "];
+"1000311" -> "1000328"  [label="DDG: DeleteImageFromList(&image)"];
+"1000311" -> "1000314"  [label="DDG: &image"];
+"1000314" -> "1000113"  [label="AST: "];
+"1000314" -> "1000317"  [label="CFG: "];
+"1000315" -> "1000314"  [label="AST: "];
+"1000317" -> "1000314"  [label="AST: "];
+"1000318" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000328"  [label="DDG: &image"];
+"1000314" -> "1000328"  [label="DDG: AppendImageToList(&image,image2)"];
+"1000314" -> "1000328"  [label="DDG: image2"];
+"1000289" -> "1000314"  [label="DDG: image2"];
+}

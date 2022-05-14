@@ -1,0 +1,29 @@
+digraph "0_linux_208c72f4fe44fe09577e7975ba0e7fa0278f3d03_0@pointer" {
+"1000444" [label="(Call,request->channels[i] = chan)"];
+"1000425" [label="(Call,chan = &wiphy->bands[band]->channels[j])"];
+"1000426" [label="(Identifier,chan)"];
+"1000440" [label="(Identifier,chan)"];
+"1000427" [label="(Call,&wiphy->bands[band]->channels[j])"];
+"1000450" [label="(Identifier,chan)"];
+"1000425" [label="(Call,chan = &wiphy->bands[band]->channels[j])"];
+"1000598" [label="(MethodReturn,static int)"];
+"1000423" [label="(Block,)"];
+"1000444" [label="(Call,request->channels[i] = chan)"];
+"1000452" [label="(Identifier,i)"];
+"1000445" [label="(Call,request->channels[i])"];
+"1000444" -> "1000423"  [label="AST: "];
+"1000444" -> "1000450"  [label="CFG: "];
+"1000445" -> "1000444"  [label="AST: "];
+"1000450" -> "1000444"  [label="AST: "];
+"1000452" -> "1000444"  [label="CFG: "];
+"1000444" -> "1000598"  [label="DDG: chan"];
+"1000444" -> "1000598"  [label="DDG: request->channels[i]"];
+"1000425" -> "1000444"  [label="DDG: chan"];
+"1000425" -> "1000423"  [label="AST: "];
+"1000425" -> "1000427"  [label="CFG: "];
+"1000426" -> "1000425"  [label="AST: "];
+"1000427" -> "1000425"  [label="AST: "];
+"1000440" -> "1000425"  [label="CFG: "];
+"1000425" -> "1000598"  [label="DDG: &wiphy->bands[band]->channels[j]"];
+"1000425" -> "1000598"  [label="DDG: chan"];
+}

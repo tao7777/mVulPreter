@@ -1,0 +1,23 @@
+digraph "0_linux_81f9c4e4177d31ced6f52a89bb70e93bfb77ca03_0@pointer" {
+"1000128" [label="(Call,arch_spin_lock(&tr->max_lock))"];
+"1000148" [label="(Call,arch_spin_unlock(&tr->max_lock))"];
+"1000149" [label="(Call,&tr->max_lock)"];
+"1000153" [label="(MethodReturn,RET)"];
+"1000128" [label="(Call,arch_spin_lock(&tr->max_lock))"];
+"1000105" [label="(Block,)"];
+"1000129" [label="(Call,&tr->max_lock)"];
+"1000148" [label="(Call,arch_spin_unlock(&tr->max_lock))"];
+"1000136" [label="(Identifier,tr)"];
+"1000128" -> "1000105"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000136" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000153"  [label="DDG: arch_spin_lock(&tr->max_lock)"];
+"1000128" -> "1000148"  [label="DDG: &tr->max_lock"];
+"1000148" -> "1000105"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000153" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000153"  [label="DDG: &tr->max_lock"];
+"1000148" -> "1000153"  [label="DDG: arch_spin_unlock(&tr->max_lock)"];
+}

@@ -1,0 +1,36 @@
+digraph "0_VeraCrypt_f30f9339c9a0b9bbcc6f5ad38804af39db1f479e@pointer" {
+"1001837" [label="(Call,memset (&info->partInfo, 0, sizeof (info->partInfo)))"];
+"1001959" [label="(Call,memset (&info->partInfo, 0, sizeof (info->partInfo)))"];
+"1001960" [label="(Call,&info->partInfo)"];
+"1001838" [label="(Call,&info->partInfo)"];
+"1001843" [label="(Call,sizeof (info->partInfo))"];
+"1001958" [label="(Block,)"];
+"1001842" [label="(Literal,0)"];
+"1001916" [label="(Call,TCDeviceIoControl (info->deviceName, IOCTL_DISK_GET_PARTITION_INFO, NULL, 0, &info->partInfo, sizeof (info->partInfo)))"];
+"1001850" [label="(Identifier,info)"];
+"1003200" [label="(MethodReturn,NTSTATUS)"];
+"1001837" [label="(Call,memset (&info->partInfo, 0, sizeof (info->partInfo)))"];
+"1001959" [label="(Call,memset (&info->partInfo, 0, sizeof (info->partInfo)))"];
+"1001964" [label="(Literal,0)"];
+"1001965" [label="(Call,sizeof (info->partInfo))"];
+"1001836" [label="(Block,)"];
+"1001972" [label="(Identifier,info)"];
+"1001837" -> "1001836"  [label="AST: "];
+"1001837" -> "1001843"  [label="CFG: "];
+"1001838" -> "1001837"  [label="AST: "];
+"1001842" -> "1001837"  [label="AST: "];
+"1001843" -> "1001837"  [label="AST: "];
+"1001850" -> "1001837"  [label="CFG: "];
+"1001837" -> "1003200"  [label="DDG: &info->partInfo"];
+"1001837" -> "1003200"  [label="DDG: memset (&info->partInfo, 0, sizeof (info->partInfo))"];
+"1001837" -> "1001959"  [label="DDG: &info->partInfo"];
+"1001959" -> "1001958"  [label="AST: "];
+"1001959" -> "1001965"  [label="CFG: "];
+"1001960" -> "1001959"  [label="AST: "];
+"1001964" -> "1001959"  [label="AST: "];
+"1001965" -> "1001959"  [label="AST: "];
+"1001972" -> "1001959"  [label="CFG: "];
+"1001959" -> "1003200"  [label="DDG: memset (&info->partInfo, 0, sizeof (info->partInfo))"];
+"1001959" -> "1003200"  [label="DDG: &info->partInfo"];
+"1001916" -> "1001959"  [label="DDG: &info->partInfo"];
+}

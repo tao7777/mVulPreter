@@ -1,0 +1,26 @@
+digraph "0_jansson_8f80c2d83808150724d31793e6ade92749b1faa4_8@pointer" {
+"1000148" [label="(Return,return &object->json;)"];
+"1000121" [label="(Call,json_init(&object->json, JSON_OBJECT))"];
+"1000131" [label="(Identifier,object)"];
+"1000148" [label="(Return,return &object->json;)"];
+"1000122" [label="(Call,&object->json)"];
+"1000103" [label="(Block,)"];
+"1000149" [label="(Call,&object->json)"];
+"1000126" [label="(Identifier,JSON_OBJECT)"];
+"1000153" [label="(MethodReturn,json_t *)"];
+"1000121" [label="(Call,json_init(&object->json, JSON_OBJECT))"];
+"1000148" -> "1000103"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000153" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000153"  [label="DDG: <RET>"];
+"1000121" -> "1000148"  [label="DDG: &object->json"];
+"1000121" -> "1000103"  [label="AST: "];
+"1000121" -> "1000126"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="AST: "];
+"1000131" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000153"  [label="DDG: JSON_OBJECT"];
+"1000121" -> "1000153"  [label="DDG: json_init(&object->json, JSON_OBJECT)"];
+"1000121" -> "1000153"  [label="DDG: &object->json"];
+}

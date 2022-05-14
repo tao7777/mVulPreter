@@ -1,0 +1,26 @@
+digraph "0_linux_4dca6ea1d9432052afb06baf2e3ae78188a4410b@pointer" {
+"1000166" [label="(Call,test_bit(KEY_FLAG_REVOKED,\n\t\t\t\t\t      &authkey->flags))"];
+"1000165" [label="(Call,!test_bit(KEY_FLAG_REVOKED,\n\t\t\t\t\t      &authkey->flags))"];
+"1000166" [label="(Call,test_bit(KEY_FLAG_REVOKED,\n\t\t\t\t\t      &authkey->flags))"];
+"1000173" [label="(Identifier,dest_keyring)"];
+"1000165" [label="(Call,!test_bit(KEY_FLAG_REVOKED,\n\t\t\t\t\t      &authkey->flags))"];
+"1000168" [label="(Call,&authkey->flags)"];
+"1000164" [label="(ControlStructure,if (!test_bit(KEY_FLAG_REVOKED,\n\t\t\t\t\t      &authkey->flags)))"];
+"1000275" [label="(MethodReturn,static int)"];
+"1000181" [label="(Identifier,authkey)"];
+"1000167" [label="(Identifier,KEY_FLAG_REVOKED)"];
+"1000166" -> "1000165"  [label="AST: "];
+"1000166" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000168" -> "1000166"  [label="AST: "];
+"1000165" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000275"  [label="DDG: &authkey->flags"];
+"1000166" -> "1000275"  [label="DDG: KEY_FLAG_REVOKED"];
+"1000166" -> "1000165"  [label="DDG: KEY_FLAG_REVOKED"];
+"1000166" -> "1000165"  [label="DDG: &authkey->flags"];
+"1000165" -> "1000164"  [label="AST: "];
+"1000173" -> "1000165"  [label="CFG: "];
+"1000181" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000275"  [label="DDG: test_bit(KEY_FLAG_REVOKED,\n\t\t\t\t\t      &authkey->flags)"];
+"1000165" -> "1000275"  [label="DDG: !test_bit(KEY_FLAG_REVOKED,\n\t\t\t\t\t      &authkey->flags)"];
+}

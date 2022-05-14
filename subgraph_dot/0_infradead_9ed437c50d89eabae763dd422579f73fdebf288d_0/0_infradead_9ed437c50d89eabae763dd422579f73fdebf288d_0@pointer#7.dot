@@ -1,0 +1,21 @@
+digraph "0_infradead_9ed437c50d89eabae763dd422579f73fdebf288d_0@pointer" {
+"1000404" [label="(Call,++f->inocache->nlink)"];
+"1000398" [label="(Call,old_dentry->d_inode->i_nlink = ++f->inocache->nlink)"];
+"1000493" [label="(MethodReturn,static int)"];
+"1000399" [label="(Call,old_dentry->d_inode->i_nlink)"];
+"1000398" [label="(Call,old_dentry->d_inode->i_nlink = ++f->inocache->nlink)"];
+"1000405" [label="(Call,f->inocache->nlink)"];
+"1000413" [label="(Identifier,f)"];
+"1000404" [label="(Call,++f->inocache->nlink)"];
+"1000392" [label="(Block,)"];
+"1000404" -> "1000398"  [label="AST: "];
+"1000404" -> "1000405"  [label="CFG: "];
+"1000405" -> "1000404"  [label="AST: "];
+"1000398" -> "1000404"  [label="CFG: "];
+"1000404" -> "1000493"  [label="DDG: f->inocache->nlink"];
+"1000404" -> "1000398"  [label="DDG: f->inocache->nlink"];
+"1000398" -> "1000392"  [label="AST: "];
+"1000399" -> "1000398"  [label="AST: "];
+"1000413" -> "1000398"  [label="CFG: "];
+"1000398" -> "1000493"  [label="DDG: old_dentry->d_inode->i_nlink"];
+}

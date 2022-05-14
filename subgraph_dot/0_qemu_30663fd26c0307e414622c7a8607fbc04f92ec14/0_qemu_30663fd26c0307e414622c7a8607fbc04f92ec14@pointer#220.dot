@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1009551" [label="(Call,s->cpuid_ext2_features & CPUID_EXT2_RDTSCP)"];
+"1009550" [label="(Call,!(s->cpuid_ext2_features & CPUID_EXT2_RDTSCP))"];
+"1009550" [label="(Call,!(s->cpuid_ext2_features & CPUID_EXT2_RDTSCP))"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1009551" [label="(Call,s->cpuid_ext2_features & CPUID_EXT2_RDTSCP)"];
+"1009549" [label="(ControlStructure,if (!(s->cpuid_ext2_features & CPUID_EXT2_RDTSCP)))"];
+"1009559" [label="(Identifier,s)"];
+"1009552" [label="(Call,s->cpuid_ext2_features)"];
+"1009557" [label="(ControlStructure,goto illegal_op;)"];
+"1009555" [label="(Identifier,CPUID_EXT2_RDTSCP)"];
+"1009551" -> "1009550"  [label="AST: "];
+"1009551" -> "1009555"  [label="CFG: "];
+"1009552" -> "1009551"  [label="AST: "];
+"1009555" -> "1009551"  [label="AST: "];
+"1009550" -> "1009551"  [label="CFG: "];
+"1009551" -> "1011840"  [label="DDG: s->cpuid_ext2_features"];
+"1009551" -> "1011840"  [label="DDG: CPUID_EXT2_RDTSCP"];
+"1009551" -> "1009550"  [label="DDG: s->cpuid_ext2_features"];
+"1009551" -> "1009550"  [label="DDG: CPUID_EXT2_RDTSCP"];
+"1009550" -> "1009549"  [label="AST: "];
+"1009557" -> "1009550"  [label="CFG: "];
+"1009559" -> "1009550"  [label="CFG: "];
+"1009550" -> "1011840"  [label="DDG: s->cpuid_ext2_features & CPUID_EXT2_RDTSCP"];
+"1009550" -> "1011840"  [label="DDG: !(s->cpuid_ext2_features & CPUID_EXT2_RDTSCP)"];
+}

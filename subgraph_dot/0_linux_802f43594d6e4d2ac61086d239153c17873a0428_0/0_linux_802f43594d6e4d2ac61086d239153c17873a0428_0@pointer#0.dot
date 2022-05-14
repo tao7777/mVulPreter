@@ -1,0 +1,23 @@
+digraph "0_linux_802f43594d6e4d2ac61086d239153c17873a0428_0@pointer" {
+"1000136" [label="(Call,spin_unlock_irq(&ctx->ctx_lock))"];
+"1000113" [label="(Call,spin_lock_irq(&ctx->ctx_lock))"];
+"1000114" [label="(Call,&ctx->ctx_lock)"];
+"1000141" [label="(MethodReturn,static void)"];
+"1000113" [label="(Call,spin_lock_irq(&ctx->ctx_lock))"];
+"1000103" [label="(Block,)"];
+"1000136" [label="(Call,spin_unlock_irq(&ctx->ctx_lock))"];
+"1000122" [label="(Identifier,req)"];
+"1000137" [label="(Call,&ctx->ctx_lock)"];
+"1000136" -> "1000103"  [label="AST: "];
+"1000136" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000141" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000141"  [label="DDG: spin_unlock_irq(&ctx->ctx_lock)"];
+"1000136" -> "1000141"  [label="DDG: &ctx->ctx_lock"];
+"1000113" -> "1000136"  [label="DDG: &ctx->ctx_lock"];
+"1000113" -> "1000103"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000122" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000141"  [label="DDG: spin_lock_irq(&ctx->ctx_lock)"];
+}

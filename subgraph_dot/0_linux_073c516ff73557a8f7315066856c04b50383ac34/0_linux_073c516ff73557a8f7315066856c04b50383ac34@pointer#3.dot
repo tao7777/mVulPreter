@@ -1,0 +1,26 @@
+digraph "0_linux_073c516ff73557a8f7315066856c04b50383ac34@pointer" {
+"1000199" [label="(Call,inode->i_mode = S_IFREG | S_IRUGO)"];
+"1000203" [label="(Call,S_IFREG | S_IRUGO)"];
+"1000203" [label="(Call,S_IFREG | S_IRUGO)"];
+"1000205" [label="(Identifier,S_IRUGO)"];
+"1000204" [label="(Identifier,S_IFREG)"];
+"1000208" [label="(Identifier,inode)"];
+"1000104" [label="(Block,)"];
+"1000199" [label="(Call,inode->i_mode = S_IFREG | S_IRUGO)"];
+"1000276" [label="(MethodReturn,static void *)"];
+"1000200" [label="(Call,inode->i_mode)"];
+"1000199" -> "1000104"  [label="AST: "];
+"1000199" -> "1000203"  [label="CFG: "];
+"1000200" -> "1000199"  [label="AST: "];
+"1000203" -> "1000199"  [label="AST: "];
+"1000208" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000276"  [label="DDG: inode->i_mode"];
+"1000199" -> "1000276"  [label="DDG: S_IFREG | S_IRUGO"];
+"1000203" -> "1000199"  [label="DDG: S_IFREG"];
+"1000203" -> "1000199"  [label="DDG: S_IRUGO"];
+"1000203" -> "1000205"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000203"  [label="AST: "];
+"1000203" -> "1000276"  [label="DDG: S_IRUGO"];
+"1000203" -> "1000276"  [label="DDG: S_IFREG"];
+}

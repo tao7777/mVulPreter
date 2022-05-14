@@ -1,0 +1,33 @@
+digraph "0_linux_9566d6742852c527bf5af38af5cbb878dad75705_0@pointer" {
+"1000111" [label="(Call,*user_ns = current->nsproxy->mnt_ns->user_ns)"];
+"1000139" [label="(Call,user_ns != &init_user_ns)"];
+"1000141" [label="(Call,&init_user_ns)"];
+"1000148" [label="(Identifier,type)"];
+"1000113" [label="(Call,current->nsproxy->mnt_ns->user_ns)"];
+"1000139" [label="(Call,user_ns != &init_user_ns)"];
+"1000138" [label="(ControlStructure,if (user_ns != &init_user_ns))"];
+"1000221" [label="(MethodReturn,static int)"];
+"1000108" [label="(Block,)"];
+"1000124" [label="(Identifier,fstype)"];
+"1000112" [label="(Identifier,user_ns)"];
+"1000140" [label="(Identifier,user_ns)"];
+"1000111" [label="(Call,*user_ns = current->nsproxy->mnt_ns->user_ns)"];
+"1000172" [label="(Identifier,mnt)"];
+"1000111" -> "1000108"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000124" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000221"  [label="DDG: user_ns"];
+"1000111" -> "1000221"  [label="DDG: current->nsproxy->mnt_ns->user_ns"];
+"1000111" -> "1000139"  [label="DDG: user_ns"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000141"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000141" -> "1000139"  [label="AST: "];
+"1000148" -> "1000139"  [label="CFG: "];
+"1000172" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000221"  [label="DDG: &init_user_ns"];
+"1000139" -> "1000221"  [label="DDG: user_ns != &init_user_ns"];
+"1000139" -> "1000221"  [label="DDG: user_ns"];
+}

@@ -1,0 +1,28 @@
+digraph "1_krb5_e6ae703ae597d798e310368d52b8f38ee11c6a73_0@del" {
+"1000205" [label="(Call,token_wrapper_len + 14)"];
+"1000114" [label="(MethodParameterIn,size_t token_wrapper_len)"];
+"1000207" [label="(Literal,14)"];
+"1000205" [label="(Call,token_wrapper_len + 14)"];
+"1000840" [label="(MethodReturn,RET)"];
+"1000548" [label="(Call,token_wrapper_len + 14 + cksum_len + conflen)"];
+"1000199" [label="(Call,header->buffer.length < token_wrapper_len + 14)"];
+"1000114" [label="(MethodParameterIn,size_t token_wrapper_len)"];
+"1000215" [label="(Call,ptr = (unsigned char *)header->buffer.value + token_wrapper_len)"];
+"1000542" [label="(Call,header->buffer.length != token_wrapper_len + 14 + cksum_len + conflen)"];
+"1000206" [label="(Identifier,token_wrapper_len)"];
+"1000217" [label="(Call,(unsigned char *)header->buffer.value + token_wrapper_len)"];
+"1000205" -> "1000199"  [label="AST: "];
+"1000205" -> "1000207"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000207" -> "1000205"  [label="AST: "];
+"1000199" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000840"  [label="DDG: token_wrapper_len"];
+"1000114" -> "1000205"  [label="DDG: token_wrapper_len"];
+"1000114" -> "1000108"  [label="AST: "];
+"1000114" -> "1000840"  [label="DDG: token_wrapper_len"];
+"1000114" -> "1000199"  [label="DDG: token_wrapper_len"];
+"1000114" -> "1000215"  [label="DDG: token_wrapper_len"];
+"1000114" -> "1000217"  [label="DDG: token_wrapper_len"];
+"1000114" -> "1000542"  [label="DDG: token_wrapper_len"];
+"1000114" -> "1000548"  [label="DDG: token_wrapper_len"];
+}

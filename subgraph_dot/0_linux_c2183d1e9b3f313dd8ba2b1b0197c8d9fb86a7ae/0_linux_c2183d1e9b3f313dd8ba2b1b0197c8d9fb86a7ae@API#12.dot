@@ -1,0 +1,24 @@
+digraph "0_linux_c2183d1e9b3f313dd8ba2b1b0197c8d9fb86a7ae@API" {
+"1000241" [label="(Call,up_read(&fc->killsb))"];
+"1000217" [label="(Call,down_read(&fc->killsb))"];
+"1000218" [label="(Call,&fc->killsb)"];
+"1000257" [label="(MethodReturn,static int)"];
+"1000241" [label="(Call,up_read(&fc->killsb))"];
+"1000247" [label="(Identifier,buf)"];
+"1000104" [label="(Block,)"];
+"1000217" [label="(Call,down_read(&fc->killsb))"];
+"1000223" [label="(Identifier,err)"];
+"1000242" [label="(Call,&fc->killsb)"];
+"1000241" -> "1000104"  [label="AST: "];
+"1000241" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000241"  [label="AST: "];
+"1000247" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000257"  [label="DDG: &fc->killsb"];
+"1000241" -> "1000257"  [label="DDG: up_read(&fc->killsb)"];
+"1000217" -> "1000241"  [label="DDG: &fc->killsb"];
+"1000217" -> "1000104"  [label="AST: "];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000223" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000257"  [label="DDG: down_read(&fc->killsb)"];
+}

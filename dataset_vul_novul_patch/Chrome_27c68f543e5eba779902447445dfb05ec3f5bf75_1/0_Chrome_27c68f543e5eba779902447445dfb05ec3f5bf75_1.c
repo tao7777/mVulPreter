@@ -1,0 +1,1 @@
+bool VaapiVideoDecodeAccelerator::VaapiVP9Accelerator::OutputPicture(

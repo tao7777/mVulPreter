@@ -1,0 +1,34 @@
+digraph "0_linux_23fcb3340d033d9f081e21e6c12c2db7eaa541d3@pointer" {
+"1000379" [label="(Call,xfs_sb_version_hasreflink(&mp->m_sb))"];
+"1000378" [label="(Call,!xfs_sb_version_hasreflink(&mp->m_sb))"];
+"1000372" [label="(Call,(flags2 & (XFS_DIFLAG2_REFLINK | XFS_DIFLAG2_COWEXTSIZE)) &&\n\t     !xfs_sb_version_hasreflink(&mp->m_sb))"];
+"1000379" [label="(Call,xfs_sb_version_hasreflink(&mp->m_sb))"];
+"1000389" [label="(Identifier,flags2)"];
+"1000378" [label="(Call,!xfs_sb_version_hasreflink(&mp->m_sb))"];
+"1000385" [label="(Identifier,__this_address)"];
+"1000372" [label="(Call,(flags2 & (XFS_DIFLAG2_REFLINK | XFS_DIFLAG2_COWEXTSIZE)) &&\n\t     !xfs_sb_version_hasreflink(&mp->m_sb))"];
+"1000380" [label="(Call,&mp->m_sb)"];
+"1000373" [label="(Call,flags2 & (XFS_DIFLAG2_REFLINK | XFS_DIFLAG2_COWEXTSIZE))"];
+"1000435" [label="(MethodReturn,RET)"];
+"1000371" [label="(ControlStructure,if ((flags2 & (XFS_DIFLAG2_REFLINK | XFS_DIFLAG2_COWEXTSIZE)) &&\n\t     !xfs_sb_version_hasreflink(&mp->m_sb)))"];
+"1000379" -> "1000378"  [label="AST: "];
+"1000379" -> "1000380"  [label="CFG: "];
+"1000380" -> "1000379"  [label="AST: "];
+"1000378" -> "1000379"  [label="CFG: "];
+"1000379" -> "1000435"  [label="DDG: &mp->m_sb"];
+"1000379" -> "1000378"  [label="DDG: &mp->m_sb"];
+"1000378" -> "1000372"  [label="AST: "];
+"1000372" -> "1000378"  [label="CFG: "];
+"1000378" -> "1000435"  [label="DDG: xfs_sb_version_hasreflink(&mp->m_sb)"];
+"1000378" -> "1000372"  [label="DDG: xfs_sb_version_hasreflink(&mp->m_sb)"];
+"1000372" -> "1000371"  [label="AST: "];
+"1000372" -> "1000373"  [label="CFG: "];
+"1000373" -> "1000372"  [label="AST: "];
+"1000385" -> "1000372"  [label="CFG: "];
+"1000389" -> "1000372"  [label="CFG: "];
+"1000372" -> "1000435"  [label="DDG: flags2 & (XFS_DIFLAG2_REFLINK | XFS_DIFLAG2_COWEXTSIZE)"];
+"1000372" -> "1000435"  [label="DDG: !xfs_sb_version_hasreflink(&mp->m_sb)"];
+"1000372" -> "1000435"  [label="DDG: (flags2 & (XFS_DIFLAG2_REFLINK | XFS_DIFLAG2_COWEXTSIZE)) &&\n\t     !xfs_sb_version_hasreflink(&mp->m_sb)"];
+"1000373" -> "1000372"  [label="DDG: flags2"];
+"1000373" -> "1000372"  [label="DDG: XFS_DIFLAG2_REFLINK | XFS_DIFLAG2_COWEXTSIZE"];
+}

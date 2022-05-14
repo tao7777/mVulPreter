@@ -1,0 +1,28 @@
+digraph "0_Chrome_8fa5a358cb32085b51daf92df8fd4a79b3931f81_1@API" {
+"1000114" [label="(Call,* main_frame = render_view()->GetWebView()->mainFrame())"];
+"1000118" [label="(Call,!main_frame)"];
+"1000102" [label="(Block,)"];
+"1000116" [label="(Call,render_view()->GetWebView()->mainFrame())"];
+"1000201" [label="(MethodReturn,void)"];
+"1000117" [label="(ControlStructure,if (!main_frame))"];
+"1000115" [label="(Identifier,main_frame)"];
+"1000119" [label="(Identifier,main_frame)"];
+"1000114" [label="(Call,* main_frame = render_view()->GetWebView()->mainFrame())"];
+"1000120" [label="(Return,return;)"];
+"1000118" [label="(Call,!main_frame)"];
+"1000123" [label="(Identifier,document)"];
+"1000114" -> "1000102"  [label="AST: "];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000119" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000201"  [label="DDG: render_view()->GetWebView()->mainFrame()"];
+"1000114" -> "1000118"  [label="DDG: main_frame"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="CFG: "];
+"1000123" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000201"  [label="DDG: !main_frame"];
+"1000118" -> "1000201"  [label="DDG: main_frame"];
+}

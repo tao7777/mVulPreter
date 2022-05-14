@@ -1,0 +1,1 @@
+GDataEntry* GDataEntry::FromDocumentEntry(

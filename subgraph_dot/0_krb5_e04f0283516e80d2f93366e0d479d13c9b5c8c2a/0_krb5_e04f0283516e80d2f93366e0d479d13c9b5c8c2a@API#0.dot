@@ -1,0 +1,28 @@
+digraph "0_krb5_e04f0283516e80d2f93366e0d479d13c9b5c8c2a@API" {
+"1000104" [label="(Call,memset(&mech_iakerb, 0, sizeof(mech_iakerb)))"];
+"1000128" [label="(Call,gssint_register_mechinfo(&mech_iakerb))"];
+"1000133" [label="(MethodReturn,static int)"];
+"1000107" [label="(Literal,0)"];
+"1000129" [label="(Call,&mech_iakerb)"];
+"1000104" [label="(Call,memset(&mech_iakerb, 0, sizeof(mech_iakerb)))"];
+"1000128" [label="(Call,gssint_register_mechinfo(&mech_iakerb))"];
+"1000105" [label="(Call,&mech_iakerb)"];
+"1000102" [label="(Block,)"];
+"1000108" [label="(Call,sizeof(mech_iakerb))"];
+"1000132" [label="(Literal,0)"];
+"1000112" [label="(Identifier,mech_iakerb)"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000108"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000107" -> "1000104"  [label="AST: "];
+"1000108" -> "1000104"  [label="AST: "];
+"1000112" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000133"  [label="DDG: memset(&mech_iakerb, 0, sizeof(mech_iakerb))"];
+"1000104" -> "1000128"  [label="DDG: &mech_iakerb"];
+"1000128" -> "1000102"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000132" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000133"  [label="DDG: &mech_iakerb"];
+"1000128" -> "1000133"  [label="DDG: gssint_register_mechinfo(&mech_iakerb)"];
+}

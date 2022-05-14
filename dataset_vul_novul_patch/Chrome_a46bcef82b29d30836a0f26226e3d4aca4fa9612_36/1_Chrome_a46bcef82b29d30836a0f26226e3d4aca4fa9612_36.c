@@ -1,0 +1,3 @@
+ JingleSessionManager::~JingleSessionManager() {
+   Close();
+ }

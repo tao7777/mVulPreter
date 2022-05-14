@@ -1,0 +1,36 @@
+digraph "0_optee_os_70697bf3c5dc3d201341b01a1a8e5bc6d2fb48f8@pointer" {
+"1000376" [label="(Call,cs->mode == TEE_MODE_ENCRYPT)"];
+"1000400" [label="(Call,cs->mode == TEE_MODE_DECRYPT)"];
+"1000402" [label="(Identifier,cs)"];
+"1000383" [label="(Identifier,res)"];
+"1000399" [label="(ControlStructure,if (cs->mode == TEE_MODE_DECRYPT))"];
+"1000400" [label="(Call,cs->mode == TEE_MODE_DECRYPT)"];
+"1000401" [label="(Call,cs->mode)"];
+"1000380" [label="(Identifier,TEE_MODE_ENCRYPT)"];
+"1000404" [label="(Identifier,TEE_MODE_DECRYPT)"];
+"1000376" [label="(Call,cs->mode == TEE_MODE_ENCRYPT)"];
+"1000407" [label="(Identifier,res)"];
+"1000425" [label="(Identifier,res)"];
+"1000377" [label="(Call,cs->mode)"];
+"1000375" [label="(ControlStructure,if (cs->mode == TEE_MODE_ENCRYPT))"];
+"1000549" [label="(MethodReturn,TEE_Result)"];
+"1000376" -> "1000375"  [label="AST: "];
+"1000376" -> "1000380"  [label="CFG: "];
+"1000377" -> "1000376"  [label="AST: "];
+"1000380" -> "1000376"  [label="AST: "];
+"1000383" -> "1000376"  [label="CFG: "];
+"1000402" -> "1000376"  [label="CFG: "];
+"1000376" -> "1000549"  [label="DDG: cs->mode == TEE_MODE_ENCRYPT"];
+"1000376" -> "1000549"  [label="DDG: cs->mode"];
+"1000376" -> "1000549"  [label="DDG: TEE_MODE_ENCRYPT"];
+"1000376" -> "1000400"  [label="DDG: cs->mode"];
+"1000400" -> "1000399"  [label="AST: "];
+"1000400" -> "1000404"  [label="CFG: "];
+"1000401" -> "1000400"  [label="AST: "];
+"1000404" -> "1000400"  [label="AST: "];
+"1000407" -> "1000400"  [label="CFG: "];
+"1000425" -> "1000400"  [label="CFG: "];
+"1000400" -> "1000549"  [label="DDG: cs->mode"];
+"1000400" -> "1000549"  [label="DDG: TEE_MODE_DECRYPT"];
+"1000400" -> "1000549"  [label="DDG: cs->mode == TEE_MODE_DECRYPT"];
+}

@@ -1,0 +1,26 @@
+digraph "0_sgminer_910c36089940e81fb85c65b8e63dcd2fac71470c@pointer" {
+"1000759" [label="(Call,pool == current_pool())"];
+"1000109" [label="(MethodParameterIn,struct pool *pool)"];
+"1000765" [label="(JumpTarget,out:)"];
+"1000760" [label="(Identifier,pool)"];
+"1000599" [label="(Call,pool_failed(pool))"];
+"1000759" [label="(Call,pool == current_pool())"];
+"1000763" [label="(Identifier,opt_work_update)"];
+"1000109" [label="(MethodParameterIn,struct pool *pool)"];
+"1000768" [label="(MethodReturn,static bool)"];
+"1000758" [label="(ControlStructure,if (pool == current_pool()))"];
+"1000761" [label="(Call,current_pool())"];
+"1000759" -> "1000758"  [label="AST: "];
+"1000759" -> "1000761"  [label="CFG: "];
+"1000760" -> "1000759"  [label="AST: "];
+"1000761" -> "1000759"  [label="AST: "];
+"1000763" -> "1000759"  [label="CFG: "];
+"1000765" -> "1000759"  [label="CFG: "];
+"1000759" -> "1000768"  [label="DDG: pool"];
+"1000759" -> "1000768"  [label="DDG: pool == current_pool()"];
+"1000759" -> "1000768"  [label="DDG: current_pool()"];
+"1000109" -> "1000759"  [label="DDG: pool"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000768"  [label="DDG: pool"];
+"1000109" -> "1000599"  [label="DDG: pool"];
+}

@@ -1,0 +1,36 @@
+digraph "0_linux_8e3fbf870481eb53b2d3a322d1fc395ad8b367ed@pointer" {
+"1000207" [label="(Call,add_mcs(ym->bits, ym->bitrate, 0))"];
+"1000196" [label="(Call,ym->bitrate > YAM_MAXBITRATE)"];
+"1000157" [label="(Block,)"];
+"1000200" [label="(Identifier,YAM_MAXBITRATE)"];
+"1000214" [label="(Literal,0)"];
+"1000197" [label="(Call,ym->bitrate)"];
+"1000209" [label="(Identifier,ym)"];
+"1000203" [label="(Identifier,ym)"];
+"1000195" [label="(ControlStructure,if (ym->bitrate > YAM_MAXBITRATE))"];
+"1000724" [label="(MethodReturn,static int)"];
+"1000211" [label="(Call,ym->bitrate)"];
+"1000208" [label="(Call,ym->bits)"];
+"1000207" [label="(Call,add_mcs(ym->bits, ym->bitrate, 0))"];
+"1000196" [label="(Call,ym->bitrate > YAM_MAXBITRATE)"];
+"1000216" [label="(Identifier,ym)"];
+"1000207" -> "1000157"  [label="AST: "];
+"1000207" -> "1000214"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000211" -> "1000207"  [label="AST: "];
+"1000214" -> "1000207"  [label="AST: "];
+"1000216" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000724"  [label="DDG: ym->bits"];
+"1000207" -> "1000724"  [label="DDG: add_mcs(ym->bits, ym->bitrate, 0)"];
+"1000207" -> "1000724"  [label="DDG: ym->bitrate"];
+"1000196" -> "1000207"  [label="DDG: ym->bitrate"];
+"1000196" -> "1000195"  [label="AST: "];
+"1000196" -> "1000200"  [label="CFG: "];
+"1000197" -> "1000196"  [label="AST: "];
+"1000200" -> "1000196"  [label="AST: "];
+"1000203" -> "1000196"  [label="CFG: "];
+"1000209" -> "1000196"  [label="CFG: "];
+"1000196" -> "1000724"  [label="DDG: YAM_MAXBITRATE"];
+"1000196" -> "1000724"  [label="DDG: ym->bitrate"];
+"1000196" -> "1000724"  [label="DDG: ym->bitrate > YAM_MAXBITRATE"];
+}

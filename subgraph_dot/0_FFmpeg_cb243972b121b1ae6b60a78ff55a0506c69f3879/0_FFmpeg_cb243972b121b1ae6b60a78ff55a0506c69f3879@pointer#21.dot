@@ -1,0 +1,36 @@
+digraph "0_FFmpeg_cb243972b121b1ae6b60a78ff55a0506c69f3879@pointer" {
+"1000326" [label="(Call,ret = entry->rgb_color)"];
+"1000331" [label="(Return,return ret;)"];
+"1000301" [label="(Block,)"];
+"1000331" [label="(Return,return ret;)"];
+"1000105" [label="(Call,ret = 0xFF000000)"];
+"1000327" [label="(Identifier,ret)"];
+"1000135" [label="(Call,ret |= (hex_char_to_number(p[2]) <<  4) |\n                   (hex_char_to_number(p[1]) << 12) |\n                   (hex_char_to_number(p[0]) << 20))"];
+"1000328" [label="(Call,entry->rgb_color)"];
+"1000326" [label="(Call,ret = entry->rgb_color)"];
+"1000333" [label="(MethodReturn,static uint32_t)"];
+"1000198" [label="(Call,ret |=  hex_char_to_number(p[5])        |\n                   (hex_char_to_number(p[4]) <<  4) |\n                   (hex_char_to_number(p[3]) <<  8) |\n                   (hex_char_to_number(p[2]) << 12) |\n                   (hex_char_to_number(p[1]) << 16) |\n                   (hex_char_to_number(p[0]) << 20))"];
+"1000245" [label="(Call,ret  =  hex_char_to_number(p[7])        |\n                   (hex_char_to_number(p[6]) <<  4) |\n                   (hex_char_to_number(p[5]) <<  8) |\n                   (hex_char_to_number(p[4]) << 12) |\n                   (hex_char_to_number(p[3]) << 16) |\n                   (hex_char_to_number(p[2]) << 20) |\n                   (hex_char_to_number(p[1]) << 24) |\n                   (hex_char_to_number(p[0]) << 28))"];
+"1000332" [label="(Identifier,ret)"];
+"1000103" [label="(Block,)"];
+"1000163" [label="(Call,ret  = (hex_char_to_number(p[3]) <<  4) |\n                   (hex_char_to_number(p[2]) << 12) |\n                   (hex_char_to_number(p[1]) << 20) |\n                   (hex_char_to_number(p[0]) << 28))"];
+"1000326" -> "1000301"  [label="AST: "];
+"1000326" -> "1000328"  [label="CFG: "];
+"1000327" -> "1000326"  [label="AST: "];
+"1000328" -> "1000326"  [label="AST: "];
+"1000332" -> "1000326"  [label="CFG: "];
+"1000326" -> "1000333"  [label="DDG: entry->rgb_color"];
+"1000326" -> "1000333"  [label="DDG: ret"];
+"1000326" -> "1000331"  [label="DDG: ret"];
+"1000331" -> "1000103"  [label="AST: "];
+"1000331" -> "1000332"  [label="CFG: "];
+"1000332" -> "1000331"  [label="AST: "];
+"1000333" -> "1000331"  [label="CFG: "];
+"1000331" -> "1000333"  [label="DDG: <RET>"];
+"1000332" -> "1000331"  [label="DDG: ret"];
+"1000163" -> "1000331"  [label="DDG: ret"];
+"1000198" -> "1000331"  [label="DDG: ret"];
+"1000135" -> "1000331"  [label="DDG: ret"];
+"1000245" -> "1000331"  [label="DDG: ret"];
+"1000105" -> "1000331"  [label="DDG: ret"];
+}

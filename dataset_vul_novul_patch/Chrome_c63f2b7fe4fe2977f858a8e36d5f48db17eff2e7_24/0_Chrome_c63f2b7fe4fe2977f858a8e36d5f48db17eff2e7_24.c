@@ -1,0 +1,1 @@
+Utterance::~Utterance() {

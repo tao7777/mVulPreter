@@ -1,0 +1,34 @@
+digraph "0_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_2@pointer" {
+"1000251" [label="(Call,sem_unlock(sma, -1))"];
+"1000193" [label="(Call,sem_lock_and_putref(sma))"];
+"1000253" [label="(Call,-1)"];
+"1000194" [label="(Identifier,sma)"];
+"1000255" [label="(JumpTarget,out:)"];
+"1000253" [label="(Call,-1)"];
+"1000254" [label="(Literal,1)"];
+"1000258" [label="(MethodReturn,static struct sem_undo *)"];
+"1000109" [label="(Block,)"];
+"1000193" [label="(Call,sem_lock_and_putref(sma))"];
+"1000251" [label="(Call,sem_unlock(sma, -1))"];
+"1000252" [label="(Identifier,sma)"];
+"1000202" [label="(Call,sem_unlock(sma, -1))"];
+"1000198" [label="(Identifier,sma)"];
+"1000251" -> "1000109"  [label="AST: "];
+"1000251" -> "1000253"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000253" -> "1000251"  [label="AST: "];
+"1000255" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000258"  [label="DDG: sem_unlock(sma, -1)"];
+"1000251" -> "1000258"  [label="DDG: -1"];
+"1000251" -> "1000258"  [label="DDG: sma"];
+"1000193" -> "1000251"  [label="DDG: sma"];
+"1000253" -> "1000251"  [label="DDG: 1"];
+"1000193" -> "1000109"  [label="AST: "];
+"1000193" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000198" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000258"  [label="DDG: sem_lock_and_putref(sma)"];
+"1000193" -> "1000202"  [label="DDG: sma"];
+"1000253" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000253"  [label="AST: "];
+}

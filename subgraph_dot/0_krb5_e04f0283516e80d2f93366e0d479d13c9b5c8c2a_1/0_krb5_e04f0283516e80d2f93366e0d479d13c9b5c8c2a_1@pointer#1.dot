@@ -1,0 +1,23 @@
+digraph "0_krb5_e04f0283516e80d2f93366e0d479d13c9b5c8c2a_1@pointer" {
+"1000284" [label="(Call,*mech_type = (gss_OID)gss_mech_krb5)"];
+"1000287" [label="(Call,(gss_OID)gss_mech_krb5)"];
+"1000289" [label="(Identifier,gss_mech_krb5)"];
+"1000280" [label="(ControlStructure,if (mech_type != NULL))"];
+"1000285" [label="(Call,*mech_type)"];
+"1000287" [label="(Call,(gss_OID)gss_mech_krb5)"];
+"1000284" [label="(Call,*mech_type = (gss_OID)gss_mech_krb5)"];
+"1000290" [label="(JumpTarget,cleanup:)"];
+"1000309" [label="(MethodReturn,RET)"];
+"1000284" -> "1000280"  [label="AST: "];
+"1000284" -> "1000287"  [label="CFG: "];
+"1000285" -> "1000284"  [label="AST: "];
+"1000287" -> "1000284"  [label="AST: "];
+"1000290" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000309"  [label="DDG: *mech_type"];
+"1000284" -> "1000309"  [label="DDG: (gss_OID)gss_mech_krb5"];
+"1000287" -> "1000284"  [label="DDG: gss_mech_krb5"];
+"1000287" -> "1000289"  [label="CFG: "];
+"1000288" -> "1000287"  [label="AST: "];
+"1000289" -> "1000287"  [label="AST: "];
+"1000287" -> "1000309"  [label="DDG: gss_mech_krb5"];
+}

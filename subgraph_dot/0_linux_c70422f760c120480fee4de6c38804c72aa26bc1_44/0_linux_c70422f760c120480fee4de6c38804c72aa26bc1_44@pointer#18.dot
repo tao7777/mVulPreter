@@ -1,0 +1,32 @@
+digraph "0_linux_c70422f760c120480fee4de6c38804c72aa26bc1_44@pointer" {
+"1000599" [label="(Call,newxprt->sc_dev_caps |= SVCRDMA_DEVCAP_READ_W_INV)"];
+"1000556" [label="(Call,newxprt->sc_dev_caps |= SVCRDMA_DEVCAP_FAST_REG)"];
+"1000599" [label="(Call,newxprt->sc_dev_caps |= SVCRDMA_DEVCAP_READ_W_INV)"];
+"1000563" [label="(Identifier,newxprt)"];
+"1000603" [label="(Identifier,SVCRDMA_DEVCAP_READ_W_INV)"];
+"1000591" [label="(ControlStructure,if (rdma_protocol_iwarp(dev, newxprt->sc_cm_id->port_num)))"];
+"1000817" [label="(MethodReturn,static struct svc_xprt *)"];
+"1000546" [label="(Block,)"];
+"1000556" [label="(Call,newxprt->sc_dev_caps |= SVCRDMA_DEVCAP_FAST_REG)"];
+"1000600" [label="(Call,newxprt->sc_dev_caps)"];
+"1000606" [label="(Identifier,i)"];
+"1000560" [label="(Identifier,SVCRDMA_DEVCAP_FAST_REG)"];
+"1000557" [label="(Call,newxprt->sc_dev_caps)"];
+"1000599" -> "1000591"  [label="AST: "];
+"1000599" -> "1000603"  [label="CFG: "];
+"1000600" -> "1000599"  [label="AST: "];
+"1000603" -> "1000599"  [label="AST: "];
+"1000606" -> "1000599"  [label="CFG: "];
+"1000599" -> "1000817"  [label="DDG: newxprt->sc_dev_caps |= SVCRDMA_DEVCAP_READ_W_INV"];
+"1000599" -> "1000817"  [label="DDG: newxprt->sc_dev_caps"];
+"1000599" -> "1000817"  [label="DDG: SVCRDMA_DEVCAP_READ_W_INV"];
+"1000556" -> "1000599"  [label="DDG: newxprt->sc_dev_caps"];
+"1000556" -> "1000546"  [label="AST: "];
+"1000556" -> "1000560"  [label="CFG: "];
+"1000557" -> "1000556"  [label="AST: "];
+"1000560" -> "1000556"  [label="AST: "];
+"1000563" -> "1000556"  [label="CFG: "];
+"1000556" -> "1000817"  [label="DDG: SVCRDMA_DEVCAP_FAST_REG"];
+"1000556" -> "1000817"  [label="DDG: newxprt->sc_dev_caps"];
+"1000556" -> "1000817"  [label="DDG: newxprt->sc_dev_caps |= SVCRDMA_DEVCAP_FAST_REG"];
+}

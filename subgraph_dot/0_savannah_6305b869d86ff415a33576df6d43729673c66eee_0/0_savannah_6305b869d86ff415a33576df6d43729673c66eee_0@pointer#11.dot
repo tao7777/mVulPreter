@@ -1,0 +1,33 @@
+digraph "0_savannah_6305b869d86ff415a33576df6d43729673c66eee_0@pointer" {
+"1000279" [label="(Call,FT_FREE( bitmap->buffer ))"];
+"1000452" [label="(Call,FT_ALLOC( bitmap->buffer, (FT_ULong)pitch * height ))"];
+"1000653" [label="(MethodReturn,RET)"];
+"1000280" [label="(Call,bitmap->buffer)"];
+"1000465" [label="(Identifier,slot)"];
+"1000452" [label="(Call,FT_ALLOC( bitmap->buffer, (FT_ULong)pitch * height ))"];
+"1000453" [label="(Call,bitmap->buffer)"];
+"1000286" [label="(Identifier,slot)"];
+"1000278" [label="(Block,)"];
+"1000461" [label="(ControlStructure,goto Exit;)"];
+"1000456" [label="(Call,(FT_ULong)pitch * height)"];
+"1000451" [label="(ControlStructure,if ( FT_ALLOC( bitmap->buffer, (FT_ULong)pitch * height ) ))"];
+"1000279" [label="(Call,FT_FREE( bitmap->buffer ))"];
+"1000279" -> "1000278"  [label="AST: "];
+"1000279" -> "1000280"  [label="CFG: "];
+"1000280" -> "1000279"  [label="AST: "];
+"1000286" -> "1000279"  [label="CFG: "];
+"1000279" -> "1000653"  [label="DDG: bitmap->buffer"];
+"1000279" -> "1000653"  [label="DDG: FT_FREE( bitmap->buffer )"];
+"1000279" -> "1000452"  [label="DDG: bitmap->buffer"];
+"1000452" -> "1000451"  [label="AST: "];
+"1000452" -> "1000456"  [label="CFG: "];
+"1000453" -> "1000452"  [label="AST: "];
+"1000456" -> "1000452"  [label="AST: "];
+"1000461" -> "1000452"  [label="CFG: "];
+"1000465" -> "1000452"  [label="CFG: "];
+"1000452" -> "1000653"  [label="DDG: FT_ALLOC( bitmap->buffer, (FT_ULong)pitch * height )"];
+"1000452" -> "1000653"  [label="DDG: bitmap->buffer"];
+"1000452" -> "1000653"  [label="DDG: (FT_ULong)pitch * height"];
+"1000456" -> "1000452"  [label="DDG: (FT_ULong)pitch"];
+"1000456" -> "1000452"  [label="DDG: height"];
+}

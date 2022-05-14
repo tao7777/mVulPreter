@@ -1,0 +1,24 @@
+digraph "0_linux_237bbd29f7a049d310d907f4b2716a7feef9abf3_0@API" {
+"1000191" [label="(Call,read_unlock(&keyring_name_lock))"];
+"1000119" [label="(Call,read_lock(&keyring_name_lock))"];
+"1000191" [label="(Call,read_unlock(&keyring_name_lock))"];
+"1000105" [label="(Block,)"];
+"1000120" [label="(Call,&keyring_name_lock)"];
+"1000119" [label="(Call,read_lock(&keyring_name_lock))"];
+"1000125" [label="(Identifier,keyring_name_hash)"];
+"1000195" [label="(Identifier,keyring)"];
+"1000192" [label="(Call,&keyring_name_lock)"];
+"1000196" [label="(MethodReturn,struct key *)"];
+"1000191" -> "1000105"  [label="AST: "];
+"1000191" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000191"  [label="AST: "];
+"1000195" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000196"  [label="DDG: read_unlock(&keyring_name_lock)"];
+"1000191" -> "1000196"  [label="DDG: &keyring_name_lock"];
+"1000119" -> "1000191"  [label="DDG: &keyring_name_lock"];
+"1000119" -> "1000105"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000125" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000196"  [label="DDG: read_lock(&keyring_name_lock)"];
+}

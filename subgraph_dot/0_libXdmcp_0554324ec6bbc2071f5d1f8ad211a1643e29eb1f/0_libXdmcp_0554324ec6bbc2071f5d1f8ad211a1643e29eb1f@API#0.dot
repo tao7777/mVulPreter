@@ -1,0 +1,30 @@
+digraph "0_libXdmcp_0554324ec6bbc2071f5d1f8ad211a1643e29eb1f@API" {
+"1000119" [label="(Call,highbits = random ())"];
+"1000127" [label="(Call,getbits (highbits, key->data + 4))"];
+"1000134" [label="(MethodReturn,static void)"];
+"1000119" [label="(Call,highbits = random ())"];
+"1000127" [label="(Call,getbits (highbits, key->data + 4))"];
+"1000120" [label="(Identifier,highbits)"];
+"1000121" [label="(Call,random ())"];
+"1000123" [label="(Identifier,lowbits)"];
+"1000129" [label="(Call,key->data + 4)"];
+"1000122" [label="(Call,getbits (lowbits, key->data))"];
+"1000104" [label="(Block,)"];
+"1000128" [label="(Identifier,highbits)"];
+"1000119" -> "1000104"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000123" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000134"  [label="DDG: random ()"];
+"1000119" -> "1000127"  [label="DDG: highbits"];
+"1000127" -> "1000104"  [label="AST: "];
+"1000127" -> "1000129"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000129" -> "1000127"  [label="AST: "];
+"1000134" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000134"  [label="DDG: getbits (highbits, key->data + 4)"];
+"1000127" -> "1000134"  [label="DDG: highbits"];
+"1000127" -> "1000134"  [label="DDG: key->data + 4"];
+"1000122" -> "1000127"  [label="DDG: key->data"];
+}

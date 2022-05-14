@@ -1,0 +1,22 @@
+digraph "0_ImageMagick_d23beebe7b1179fb75db1e85fbca3100e49593d9@pointer" {
+"1000291" [label="(Call,image2->blob=ReferenceBlob(image->blob))"];
+"1000295" [label="(Call,ReferenceBlob(image->blob))"];
+"1000292" [label="(Call,image2->blob)"];
+"1000303" [label="(Identifier,image)"];
+"1000295" [label="(Call,ReferenceBlob(image->blob))"];
+"1000113" [label="(Block,)"];
+"1000328" [label="(MethodReturn,static Image *)"];
+"1000296" [label="(Call,image->blob)"];
+"1000291" [label="(Call,image2->blob=ReferenceBlob(image->blob))"];
+"1000291" -> "1000113"  [label="AST: "];
+"1000291" -> "1000295"  [label="CFG: "];
+"1000292" -> "1000291"  [label="AST: "];
+"1000295" -> "1000291"  [label="AST: "];
+"1000303" -> "1000291"  [label="CFG: "];
+"1000291" -> "1000328"  [label="DDG: image2->blob"];
+"1000291" -> "1000328"  [label="DDG: ReferenceBlob(image->blob)"];
+"1000295" -> "1000291"  [label="DDG: image->blob"];
+"1000295" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000295"  [label="AST: "];
+"1000295" -> "1000328"  [label="DDG: image->blob"];
+}

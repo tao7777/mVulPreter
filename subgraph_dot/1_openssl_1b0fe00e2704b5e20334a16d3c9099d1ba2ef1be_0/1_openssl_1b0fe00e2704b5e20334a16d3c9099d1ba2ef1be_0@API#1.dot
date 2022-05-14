@@ -1,0 +1,32 @@
+digraph "1_openssl_1b0fe00e2704b5e20334a16d3c9099d1ba2ef1be_0@API" {
+"1000181" [label="(Call,drbg->fork_count = rand_fork_count)"];
+"1000175" [label="(Call,drbg->fork_count != rand_fork_count)"];
+"1000185" [label="(Identifier,rand_fork_count)"];
+"1000176" [label="(Call,drbg->fork_count)"];
+"1000180" [label="(Block,)"];
+"1000174" [label="(ControlStructure,if (drbg->fork_count != rand_fork_count))"];
+"1000189" [label="(MethodReturn,int)"];
+"1000179" [label="(Identifier,rand_fork_count)"];
+"1000183" [label="(Identifier,drbg)"];
+"1000175" [label="(Call,drbg->fork_count != rand_fork_count)"];
+"1000182" [label="(Call,drbg->fork_count)"];
+"1000187" [label="(Identifier,reseed_required)"];
+"1000181" [label="(Call,drbg->fork_count = rand_fork_count)"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000181" -> "1000185"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000185" -> "1000181"  [label="AST: "];
+"1000187" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000189"  [label="DDG: rand_fork_count"];
+"1000181" -> "1000189"  [label="DDG: drbg->fork_count"];
+"1000175" -> "1000181"  [label="DDG: rand_fork_count"];
+"1000175" -> "1000174"  [label="AST: "];
+"1000175" -> "1000179"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000179" -> "1000175"  [label="AST: "];
+"1000183" -> "1000175"  [label="CFG: "];
+"1000189" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000189"  [label="DDG: rand_fork_count"];
+"1000175" -> "1000189"  [label="DDG: drbg->fork_count"];
+"1000175" -> "1000189"  [label="DDG: drbg->fork_count != rand_fork_count"];
+}

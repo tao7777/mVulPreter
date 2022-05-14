@@ -1,0 +1,25 @@
+digraph "0_wireshark_3270dfac43da861c714df76513456b46765ff47f@pointer" {
+"1000302" [label="(Call,phdr->ts.nsecs = csec * 10000000)"];
+"1000308" [label="(Call,csec * 10000000)"];
+"1000114" [label="(Block,)"];
+"1000302" [label="(Call,phdr->ts.nsecs = csec * 10000000)"];
+"1000476" [label="(MethodReturn,RET)"];
+"1000310" [label="(Literal,10000000)"];
+"1000309" [label="(Identifier,csec)"];
+"1000303" [label="(Call,phdr->ts.nsecs)"];
+"1000313" [label="(Identifier,phdr)"];
+"1000308" [label="(Call,csec * 10000000)"];
+"1000302" -> "1000114"  [label="AST: "];
+"1000302" -> "1000308"  [label="CFG: "];
+"1000303" -> "1000302"  [label="AST: "];
+"1000308" -> "1000302"  [label="AST: "];
+"1000313" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000476"  [label="DDG: phdr->ts.nsecs"];
+"1000302" -> "1000476"  [label="DDG: csec * 10000000"];
+"1000308" -> "1000302"  [label="DDG: csec"];
+"1000308" -> "1000302"  [label="DDG: 10000000"];
+"1000308" -> "1000310"  [label="CFG: "];
+"1000309" -> "1000308"  [label="AST: "];
+"1000310" -> "1000308"  [label="AST: "];
+"1000308" -> "1000476"  [label="DDG: csec"];
+}

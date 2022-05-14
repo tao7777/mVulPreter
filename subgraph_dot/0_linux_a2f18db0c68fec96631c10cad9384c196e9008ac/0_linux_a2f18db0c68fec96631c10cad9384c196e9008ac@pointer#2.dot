@@ -1,0 +1,33 @@
+digraph "0_linux_a2f18db0c68fec96631c10cad9384c196e9008ac@pointer" {
+"1000126" [label="(Call,set->flags & NFT_SET_ANONYMOUS)"];
+"1000125" [label="(Call,set->flags & NFT_SET_ANONYMOUS &&\n\t\t    !list_empty(&set->bindings))"];
+"1000131" [label="(Call,!list_empty(&set->bindings))"];
+"1000125" [label="(Call,set->flags & NFT_SET_ANONYMOUS &&\n\t\t    !list_empty(&set->bindings))"];
+"1000170" [label="(MethodReturn,static int)"];
+"1000127" [label="(Call,set->flags)"];
+"1000126" [label="(Call,set->flags & NFT_SET_ANONYMOUS)"];
+"1000139" [label="(Identifier,err)"];
+"1000124" [label="(ControlStructure,if (set->flags & NFT_SET_ANONYMOUS &&\n\t\t    !list_empty(&set->bindings)))"];
+"1000137" [label="(ControlStructure,continue;)"];
+"1000135" [label="(Identifier,set)"];
+"1000130" [label="(Identifier,NFT_SET_ANONYMOUS)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000130"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="AST: "];
+"1000135" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000170"  [label="DDG: NFT_SET_ANONYMOUS"];
+"1000126" -> "1000170"  [label="DDG: set->flags"];
+"1000126" -> "1000125"  [label="DDG: set->flags"];
+"1000126" -> "1000125"  [label="DDG: NFT_SET_ANONYMOUS"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000125"  [label="AST: "];
+"1000137" -> "1000125"  [label="CFG: "];
+"1000139" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000170"  [label="DDG: set->flags & NFT_SET_ANONYMOUS &&\n\t\t    !list_empty(&set->bindings)"];
+"1000125" -> "1000170"  [label="DDG: set->flags & NFT_SET_ANONYMOUS"];
+"1000125" -> "1000170"  [label="DDG: !list_empty(&set->bindings)"];
+"1000131" -> "1000125"  [label="DDG: list_empty(&set->bindings)"];
+}

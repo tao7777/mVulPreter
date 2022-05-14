@@ -1,0 +1,32 @@
+digraph "0_linux_54d83fc74aa9ec72794373cb47432c5f7fb1a309_10@pointer" {
+"1000157" [label="(Call,s->target_offset == sizeof(struct ip6t_entry))"];
+"1000156" [label="(Call,s->target_offset == sizeof(struct ip6t_entry) &&\n \t\t    strcmp(t->target.u.kernel.target->name,\n \t\t\t   XT_STANDARD_TARGET) == 0 &&\n\t\t    t->verdict < 0 &&\n\t\t    unconditional(&s->ipv6))"];
+"1000155" [label="(ControlStructure,if (s->target_offset == sizeof(struct ip6t_entry) &&\n \t\t    strcmp(t->target.u.kernel.target->name,\n \t\t\t   XT_STANDARD_TARGET) == 0 &&\n\t\t    t->verdict < 0 &&\n\t\t    unconditional(&s->ipv6)))"];
+"1000213" [label="(MethodReturn,RET)"];
+"1000156" [label="(Call,s->target_offset == sizeof(struct ip6t_entry) &&\n \t\t    strcmp(t->target.u.kernel.target->name,\n \t\t\t   XT_STANDARD_TARGET) == 0 &&\n\t\t    t->verdict < 0 &&\n\t\t    unconditional(&s->ipv6))"];
+"1000161" [label="(Call,sizeof(struct ip6t_entry))"];
+"1000158" [label="(Call,s->target_offset)"];
+"1000171" [label="(Identifier,t)"];
+"1000206" [label="(Literal,1)"];
+"1000193" [label="(Identifier,comment)"];
+"1000157" [label="(Call,s->target_offset == sizeof(struct ip6t_entry))"];
+"1000163" [label="(Call,strcmp(t->target.u.kernel.target->name,\n \t\t\t   XT_STANDARD_TARGET) == 0 &&\n\t\t    t->verdict < 0 &&\n\t\t    unconditional(&s->ipv6))"];
+"1000157" -> "1000156"  [label="AST: "];
+"1000157" -> "1000161"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000161" -> "1000157"  [label="AST: "];
+"1000171" -> "1000157"  [label="CFG: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000213"  [label="DDG: s->target_offset"];
+"1000157" -> "1000156"  [label="DDG: s->target_offset"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000156"  [label="AST: "];
+"1000193" -> "1000156"  [label="CFG: "];
+"1000206" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000213"  [label="DDG: s->target_offset == sizeof(struct ip6t_entry)"];
+"1000156" -> "1000213"  [label="DDG: s->target_offset == sizeof(struct ip6t_entry) &&\n \t\t    strcmp(t->target.u.kernel.target->name,\n \t\t\t   XT_STANDARD_TARGET) == 0 &&\n\t\t    t->verdict < 0 &&\n\t\t    unconditional(&s->ipv6)"];
+"1000156" -> "1000213"  [label="DDG: strcmp(t->target.u.kernel.target->name,\n \t\t\t   XT_STANDARD_TARGET) == 0 &&\n\t\t    t->verdict < 0 &&\n\t\t    unconditional(&s->ipv6)"];
+"1000163" -> "1000156"  [label="DDG: strcmp(t->target.u.kernel.target->name,\n \t\t\t   XT_STANDARD_TARGET) == 0"];
+"1000163" -> "1000156"  [label="DDG: t->verdict < 0 &&\n\t\t    unconditional(&s->ipv6)"];
+}

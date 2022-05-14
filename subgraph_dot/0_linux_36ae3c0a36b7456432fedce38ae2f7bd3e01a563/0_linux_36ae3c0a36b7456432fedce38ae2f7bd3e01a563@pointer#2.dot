@@ -1,0 +1,35 @@
+digraph "0_linux_36ae3c0a36b7456432fedce38ae2f7bd3e01a563@pointer" {
+"1000132" [label="(Call,kvm_irqfd_deassign(kvm, args))"];
+"1000101" [label="(MethodParameterIn,struct kvm *kvm)"];
+"1000102" [label="(MethodParameterIn,struct kvm_irqfd *args)"];
+"1000131" [label="(Return,return kvm_irqfd_deassign(kvm, args);)"];
+"1000125" [label="(ControlStructure,if (args->flags & KVM_IRQFD_FLAG_DEASSIGN))"];
+"1000133" [label="(Identifier,kvm)"];
+"1000134" [label="(Identifier,args)"];
+"1000139" [label="(MethodReturn,RET)"];
+"1000131" [label="(Return,return kvm_irqfd_deassign(kvm, args);)"];
+"1000102" [label="(MethodParameterIn,struct kvm_irqfd *args)"];
+"1000132" [label="(Call,kvm_irqfd_deassign(kvm, args))"];
+"1000136" [label="(Call,kvm_irqfd_assign(kvm, args))"];
+"1000101" [label="(MethodParameterIn,struct kvm *kvm)"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000134"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000134" -> "1000132"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000139"  [label="DDG: args"];
+"1000132" -> "1000139"  [label="DDG: kvm_irqfd_deassign(kvm, args)"];
+"1000132" -> "1000139"  [label="DDG: kvm"];
+"1000132" -> "1000131"  [label="DDG: kvm_irqfd_deassign(kvm, args)"];
+"1000101" -> "1000132"  [label="DDG: kvm"];
+"1000102" -> "1000132"  [label="DDG: args"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000139"  [label="DDG: kvm"];
+"1000101" -> "1000136"  [label="DDG: kvm"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000139"  [label="DDG: args"];
+"1000102" -> "1000136"  [label="DDG: args"];
+"1000131" -> "1000125"  [label="AST: "];
+"1000139" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000139"  [label="DDG: <RET>"];
+}

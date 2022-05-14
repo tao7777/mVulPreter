@@ -1,0 +1,26 @@
+digraph "0_busybox_6d3b4bb24da9a07c263f3c1acf8df85382ff562c_1@pointer" {
+"1000272" [label="(Call,option = udhcp_find_option(server_config.options, DHCP_LEASE_TIME))"];
+"1000274" [label="(Call,udhcp_find_option(server_config.options, DHCP_LEASE_TIME))"];
+"1000795" [label="(MethodReturn,int)"];
+"1000142" [label="(Block,)"];
+"1000273" [label="(Identifier,option)"];
+"1000281" [label="(Identifier,server_config)"];
+"1000278" [label="(Identifier,DHCP_LEASE_TIME)"];
+"1000275" [label="(Call,server_config.options)"];
+"1000274" [label="(Call,udhcp_find_option(server_config.options, DHCP_LEASE_TIME))"];
+"1000272" [label="(Call,option = udhcp_find_option(server_config.options, DHCP_LEASE_TIME))"];
+"1000272" -> "1000142"  [label="AST: "];
+"1000272" -> "1000274"  [label="CFG: "];
+"1000273" -> "1000272"  [label="AST: "];
+"1000274" -> "1000272"  [label="AST: "];
+"1000281" -> "1000272"  [label="CFG: "];
+"1000272" -> "1000795"  [label="DDG: udhcp_find_option(server_config.options, DHCP_LEASE_TIME)"];
+"1000272" -> "1000795"  [label="DDG: option"];
+"1000274" -> "1000272"  [label="DDG: server_config.options"];
+"1000274" -> "1000272"  [label="DDG: DHCP_LEASE_TIME"];
+"1000274" -> "1000278"  [label="CFG: "];
+"1000275" -> "1000274"  [label="AST: "];
+"1000278" -> "1000274"  [label="AST: "];
+"1000274" -> "1000795"  [label="DDG: server_config.options"];
+"1000274" -> "1000795"  [label="DDG: DHCP_LEASE_TIME"];
+}

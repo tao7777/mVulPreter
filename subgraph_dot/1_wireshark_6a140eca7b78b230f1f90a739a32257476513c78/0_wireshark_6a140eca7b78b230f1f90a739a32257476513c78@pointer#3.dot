@@ -1,0 +1,35 @@
+digraph "0_wireshark_6a140eca7b78b230f1f90a739a32257476513c78@pointer" {
+"1000188" [label="(Call,wth->file_encap != wth->phdr.pkt_encap)"];
+"1000171" [label="(Call,wth->file_encap == WTAP_ENCAP_UNKNOWN)"];
+"1000175" [label="(Identifier,WTAP_ENCAP_UNKNOWN)"];
+"1000171" [label="(Call,wth->file_encap == WTAP_ENCAP_UNKNOWN)"];
+"1000188" [label="(Call,wth->file_encap != wth->phdr.pkt_encap)"];
+"1000189" [label="(Call,wth->file_encap)"];
+"1000187" [label="(ControlStructure,if (wth->file_encap != wth->phdr.pkt_encap))"];
+"1000192" [label="(Call,wth->phdr.pkt_encap)"];
+"1000208" [label="(MethodReturn,static gboolean)"];
+"1000199" [label="(Identifier,wth)"];
+"1000170" [label="(ControlStructure,if (wth->file_encap == WTAP_ENCAP_UNKNOWN))"];
+"1000178" [label="(Identifier,wth)"];
+"1000190" [label="(Identifier,wth)"];
+"1000172" [label="(Call,wth->file_encap)"];
+"1000204" [label="(Identifier,data_offset)"];
+"1000188" -> "1000187"  [label="AST: "];
+"1000188" -> "1000192"  [label="CFG: "];
+"1000189" -> "1000188"  [label="AST: "];
+"1000192" -> "1000188"  [label="AST: "];
+"1000199" -> "1000188"  [label="CFG: "];
+"1000204" -> "1000188"  [label="CFG: "];
+"1000188" -> "1000208"  [label="DDG: wth->file_encap"];
+"1000188" -> "1000208"  [label="DDG: wth->file_encap != wth->phdr.pkt_encap"];
+"1000188" -> "1000208"  [label="DDG: wth->phdr.pkt_encap"];
+"1000171" -> "1000188"  [label="DDG: wth->file_encap"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000175"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="AST: "];
+"1000178" -> "1000171"  [label="CFG: "];
+"1000190" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000208"  [label="DDG: wth->file_encap == WTAP_ENCAP_UNKNOWN"];
+"1000171" -> "1000208"  [label="DDG: WTAP_ENCAP_UNKNOWN"];
+}

@@ -1,0 +1,38 @@
+digraph "0_Android_c82e31a7039a03dca7b37c65b7890ba5c1e18ced@API" {
+"1000137" [label="(Call,*host = data.readCString())"];
+"1000145" [label="(Call,initAsync(host, port))"];
+"1000144" [label="(Call,reply->writeInt32(initAsync(host, port)))"];
+"1000131" [label="(Block,)"];
+"1000145" [label="(Call,initAsync(host, port))"];
+"1000139" [label="(Call,data.readCString())"];
+"1000137" [label="(Call,*host = data.readCString())"];
+"1000147" [label="(Identifier,port)"];
+"1000149" [label="(Identifier,OK)"];
+"1000138" [label="(Identifier,host)"];
+"1000146" [label="(Identifier,host)"];
+"1000144" [label="(Call,reply->writeInt32(initAsync(host, port)))"];
+"1000142" [label="(Identifier,port)"];
+"1000401" [label="(MethodReturn,status_t)"];
+"1000141" [label="(Call,port = data.readInt32())"];
+"1000137" -> "1000131"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000139" -> "1000137"  [label="AST: "];
+"1000142" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000401"  [label="DDG: data.readCString()"];
+"1000137" -> "1000145"  [label="DDG: host"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000401"  [label="DDG: host"];
+"1000145" -> "1000401"  [label="DDG: port"];
+"1000145" -> "1000144"  [label="DDG: host"];
+"1000145" -> "1000144"  [label="DDG: port"];
+"1000141" -> "1000145"  [label="DDG: port"];
+"1000144" -> "1000131"  [label="AST: "];
+"1000149" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000401"  [label="DDG: reply->writeInt32(initAsync(host, port))"];
+"1000144" -> "1000401"  [label="DDG: initAsync(host, port)"];
+}

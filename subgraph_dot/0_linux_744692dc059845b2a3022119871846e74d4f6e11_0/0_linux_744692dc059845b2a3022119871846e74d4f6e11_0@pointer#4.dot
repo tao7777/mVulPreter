@@ -1,0 +1,25 @@
+digraph "0_linux_744692dc059845b2a3022119871846e74d4f6e11_0@pointer" {
+"1000299" [label="(Call,bh_result->b_blocknr = newblock)"];
+"1000119" [label="(MethodParameterIn,ext4_fsblk_t newblock)"];
+"1000317" [label="(MethodReturn,RET)"];
+"1000120" [label="(Block,)"];
+"1000300" [label="(Call,bh_result->b_blocknr)"];
+"1000253" [label="(Call,unmap_underlying_metadata_blocks(inode->i_sb->s_bdev,\n\t\t\t\t\tnewblock + max_blocks,\n\t\t\t\t\tallocated - max_blocks))"];
+"1000299" [label="(Call,bh_result->b_blocknr = newblock)"];
+"1000303" [label="(Identifier,newblock)"];
+"1000304" [label="(JumpTarget,out2:)"];
+"1000259" [label="(Call,newblock + max_blocks)"];
+"1000119" [label="(MethodParameterIn,ext4_fsblk_t newblock)"];
+"1000299" -> "1000120"  [label="AST: "];
+"1000299" -> "1000303"  [label="CFG: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000303" -> "1000299"  [label="AST: "];
+"1000304" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000317"  [label="DDG: newblock"];
+"1000299" -> "1000317"  [label="DDG: bh_result->b_blocknr"];
+"1000119" -> "1000299"  [label="DDG: newblock"];
+"1000119" -> "1000110"  [label="AST: "];
+"1000119" -> "1000317"  [label="DDG: newblock"];
+"1000119" -> "1000253"  [label="DDG: newblock"];
+"1000119" -> "1000259"  [label="DDG: newblock"];
+}

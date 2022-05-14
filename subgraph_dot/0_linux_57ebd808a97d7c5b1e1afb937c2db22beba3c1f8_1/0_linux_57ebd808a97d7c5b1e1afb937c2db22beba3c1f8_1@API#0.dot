@@ -1,0 +1,26 @@
+digraph "0_linux_57ebd808a97d7c5b1e1afb937c2db22beba3c1f8_1@API" {
+"1000488" [label="(Call,xt_write_recseq_end(addend))"];
+"1000184" [label="(Call,addend = xt_write_recseq_begin())"];
+"1000500" [label="(MethodReturn,RET)"];
+"1000186" [label="(Call,xt_write_recseq_begin())"];
+"1000185" [label="(Identifier,addend)"];
+"1000489" [label="(Identifier,addend)"];
+"1000488" [label="(Call,xt_write_recseq_end(addend))"];
+"1000113" [label="(Block,)"];
+"1000490" [label="(Call,local_bh_enable())"];
+"1000188" [label="(Identifier,private)"];
+"1000184" [label="(Call,addend = xt_write_recseq_begin())"];
+"1000488" -> "1000113"  [label="AST: "];
+"1000488" -> "1000489"  [label="CFG: "];
+"1000489" -> "1000488"  [label="AST: "];
+"1000490" -> "1000488"  [label="CFG: "];
+"1000488" -> "1000500"  [label="DDG: addend"];
+"1000488" -> "1000500"  [label="DDG: xt_write_recseq_end(addend)"];
+"1000184" -> "1000488"  [label="DDG: addend"];
+"1000184" -> "1000113"  [label="AST: "];
+"1000184" -> "1000186"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000186" -> "1000184"  [label="AST: "];
+"1000188" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000500"  [label="DDG: xt_write_recseq_begin()"];
+}

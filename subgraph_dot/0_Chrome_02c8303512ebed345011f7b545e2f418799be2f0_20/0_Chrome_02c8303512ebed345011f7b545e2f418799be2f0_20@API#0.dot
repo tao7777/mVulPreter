@@ -1,0 +1,31 @@
+digraph "0_Chrome_02c8303512ebed345011f7b545e2f418799be2f0_20@API" {
+"1000144" [label="(Call,callbacks = ResolveURICallbacks::create(resolveURLHelper->successCallback(), resolveURLHelper->errorCallback(), &worker))"];
+"1000146" [label="(Call,ResolveURICallbacks::create(resolveURLHelper->successCallback(), resolveURLHelper->errorCallback(), &worker))"];
+"1000161" [label="(MethodReturn,EntrySync*)"];
+"1000148" [label="(Call,resolveURLHelper->errorCallback())"];
+"1000145" [label="(Identifier,callbacks)"];
+"1000146" [label="(Call,ResolveURICallbacks::create(resolveURLHelper->successCallback(), resolveURLHelper->errorCallback(), &worker))"];
+"1000149" [label="(Call,&worker)"];
+"1000104" [label="(Block,)"];
+"1000152" [label="(Identifier,true)"];
+"1000153" [label="(Call,LocalFileSystem::from(worker)->resolveURL(&worker, completedURL, callbacks.release()))"];
+"1000147" [label="(Call,resolveURLHelper->successCallback())"];
+"1000144" [label="(Call,callbacks = ResolveURICallbacks::create(resolveURLHelper->successCallback(), resolveURLHelper->errorCallback(), &worker))"];
+"1000144" -> "1000104"  [label="AST: "];
+"1000144" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000152" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000161"  [label="DDG: ResolveURICallbacks::create(resolveURLHelper->successCallback(), resolveURLHelper->errorCallback(), &worker)"];
+"1000144" -> "1000161"  [label="DDG: callbacks"];
+"1000146" -> "1000144"  [label="DDG: resolveURLHelper->successCallback()"];
+"1000146" -> "1000144"  [label="DDG: resolveURLHelper->errorCallback()"];
+"1000146" -> "1000144"  [label="DDG: &worker"];
+"1000146" -> "1000149"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000148" -> "1000146"  [label="AST: "];
+"1000149" -> "1000146"  [label="AST: "];
+"1000146" -> "1000161"  [label="DDG: resolveURLHelper->errorCallback()"];
+"1000146" -> "1000161"  [label="DDG: resolveURLHelper->successCallback()"];
+"1000146" -> "1000153"  [label="DDG: &worker"];
+}

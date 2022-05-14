@@ -1,0 +1,36 @@
+digraph "0_linux_c1fa0768a8713b135848f78fd43ffc208d8ded70@pointer" {
+"1000102" [label="(MethodParameterIn,struct task_struct *tsk)"];
+"1000109" [label="(Call,tsk != current)"];
+"1000105" [label="(Call,(!cpu_has_feature(CPU_FTR_TM)) || (tsk != current))"];
+"1000110" [label="(Identifier,tsk)"];
+"1000115" [label="(Call,mfmsr())"];
+"1000112" [label="(Return,return;)"];
+"1000127" [label="(MethodReturn,static void)"];
+"1000109" [label="(Call,tsk != current)"];
+"1000111" [label="(Identifier,current)"];
+"1000102" [label="(MethodParameterIn,struct task_struct *tsk)"];
+"1000104" [label="(ControlStructure,if ((!cpu_has_feature(CPU_FTR_TM)) || (tsk != current)))"];
+"1000106" [label="(Call,!cpu_has_feature(CPU_FTR_TM))"];
+"1000105" [label="(Call,(!cpu_has_feature(CPU_FTR_TM)) || (tsk != current))"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000127"  [label="DDG: tsk"];
+"1000102" -> "1000109"  [label="DDG: tsk"];
+"1000109" -> "1000105"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000105" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000127"  [label="DDG: tsk"];
+"1000109" -> "1000127"  [label="DDG: current"];
+"1000109" -> "1000105"  [label="DDG: tsk"];
+"1000109" -> "1000105"  [label="DDG: current"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000112" -> "1000105"  [label="CFG: "];
+"1000115" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000127"  [label="DDG: (!cpu_has_feature(CPU_FTR_TM)) || (tsk != current)"];
+"1000105" -> "1000127"  [label="DDG: !cpu_has_feature(CPU_FTR_TM)"];
+"1000105" -> "1000127"  [label="DDG: tsk != current"];
+"1000106" -> "1000105"  [label="DDG: cpu_has_feature(CPU_FTR_TM)"];
+}

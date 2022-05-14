@@ -1,0 +1,28 @@
+digraph "0_linux_94f1bb15bed84ad6c893916b7e7b9db6f1d7eec6_1@pointer" {
+"1000106" [label="(Call,*buf = NULL)"];
+"1000139" [label="(Call,kfree(buf))"];
+"1000108" [label="(Identifier,NULL)"];
+"1000107" [label="(Identifier,buf)"];
+"1000142" [label="(Identifier,err)"];
+"1000127" [label="(Call,get_random_bytes(buf, slen))"];
+"1000139" [label="(Call,kfree(buf))"];
+"1000143" [label="(MethodReturn,int)"];
+"1000113" [label="(Identifier,seed)"];
+"1000104" [label="(Block,)"];
+"1000106" [label="(Call,*buf = NULL)"];
+"1000140" [label="(Identifier,buf)"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000113" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000143"  [label="DDG: NULL"];
+"1000106" -> "1000139"  [label="DDG: buf"];
+"1000139" -> "1000104"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000142" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000143"  [label="DDG: buf"];
+"1000139" -> "1000143"  [label="DDG: kfree(buf)"];
+"1000127" -> "1000139"  [label="DDG: buf"];
+}

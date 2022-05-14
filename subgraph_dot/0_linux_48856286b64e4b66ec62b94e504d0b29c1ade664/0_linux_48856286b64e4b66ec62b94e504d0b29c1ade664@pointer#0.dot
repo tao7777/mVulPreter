@@ -1,0 +1,30 @@
+digraph "0_linux_48856286b64e4b66ec62b94e504d0b29c1ade664@pointer" {
+"1000102" [label="(MethodParameterIn,struct xenvif *vif)"];
+"1000116" [label="(Call,xenvif_down(vif))"];
+"1000119" [label="(Call,xenvif_put(vif))"];
+"1000102" [label="(MethodParameterIn,struct xenvif *vif)"];
+"1000113" [label="(ControlStructure,if (netif_running(dev)))"];
+"1000116" [label="(Call,xenvif_down(vif))"];
+"1000117" [label="(Identifier,vif)"];
+"1000119" [label="(Call,xenvif_put(vif))"];
+"1000103" [label="(Block,)"];
+"1000121" [label="(MethodReturn,void)"];
+"1000120" [label="(Identifier,vif)"];
+"1000118" [label="(Call,rtnl_unlock())"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000121"  [label="DDG: vif"];
+"1000102" -> "1000116"  [label="DDG: vif"];
+"1000102" -> "1000119"  [label="DDG: vif"];
+"1000116" -> "1000113"  [label="AST: "];
+"1000116" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000121"  [label="DDG: xenvif_down(vif)"];
+"1000116" -> "1000119"  [label="DDG: vif"];
+"1000119" -> "1000103"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000121"  [label="DDG: xenvif_put(vif)"];
+"1000119" -> "1000121"  [label="DDG: vif"];
+}

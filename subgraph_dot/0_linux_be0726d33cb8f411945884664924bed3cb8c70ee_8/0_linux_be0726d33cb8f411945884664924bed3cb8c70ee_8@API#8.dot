@@ -1,0 +1,24 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_8@API" {
+"1000368" [label="(Call,up_read(&EXT2_I(inode)->xattr_sem))"];
+"1000140" [label="(Call,down_read(&EXT2_I(inode)->xattr_sem))"];
+"1000107" [label="(Block,)"];
+"1000369" [label="(Call,&EXT2_I(inode)->xattr_sem)"];
+"1000141" [label="(Call,&EXT2_I(inode)->xattr_sem)"];
+"1000376" [label="(MethodReturn,RET)"];
+"1000140" [label="(Call,down_read(&EXT2_I(inode)->xattr_sem))"];
+"1000147" [label="(Identifier,error)"];
+"1000368" [label="(Call,up_read(&EXT2_I(inode)->xattr_sem))"];
+"1000375" [label="(Identifier,error)"];
+"1000368" -> "1000107"  [label="AST: "];
+"1000368" -> "1000369"  [label="CFG: "];
+"1000369" -> "1000368"  [label="AST: "];
+"1000375" -> "1000368"  [label="CFG: "];
+"1000368" -> "1000376"  [label="DDG: &EXT2_I(inode)->xattr_sem"];
+"1000368" -> "1000376"  [label="DDG: up_read(&EXT2_I(inode)->xattr_sem)"];
+"1000140" -> "1000368"  [label="DDG: &EXT2_I(inode)->xattr_sem"];
+"1000140" -> "1000107"  [label="AST: "];
+"1000140" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000147" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000376"  [label="DDG: down_read(&EXT2_I(inode)->xattr_sem)"];
+}

@@ -1,0 +1,28 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_20@pointer" {
+"1000258" [label="(Call,!f->prop_attr)"];
+"1000248" [label="(Call,sc_select_file(card, &prkey_info.path, NULL)!=SC_SUCCESS || !f->prop_attr)"];
+"1000247" [label="(ControlStructure,if(sc_select_file(card, &prkey_info.path, NULL)!=SC_SUCCESS || !f->prop_attr))"];
+"1000248" [label="(Call,sc_select_file(card, &prkey_info.path, NULL)!=SC_SUCCESS || !f->prop_attr)"];
+"1000512" [label="(MethodReturn,static int)"];
+"1000264" [label="(Identifier,ctx)"];
+"1000258" [label="(Call,!f->prop_attr)"];
+"1000275" [label="(Identifier,ctx)"];
+"1000259" [label="(Call,f->prop_attr)"];
+"1000249" [label="(Call,sc_select_file(card, &prkey_info.path, NULL)!=SC_SUCCESS)"];
+"1000258" -> "1000248"  [label="AST: "];
+"1000258" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000258"  [label="AST: "];
+"1000248" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000512"  [label="DDG: f->prop_attr"];
+"1000258" -> "1000248"  [label="DDG: f->prop_attr"];
+"1000248" -> "1000247"  [label="AST: "];
+"1000248" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000264" -> "1000248"  [label="CFG: "];
+"1000275" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000512"  [label="DDG: sc_select_file(card, &prkey_info.path, NULL)!=SC_SUCCESS || !f->prop_attr"];
+"1000248" -> "1000512"  [label="DDG: !f->prop_attr"];
+"1000248" -> "1000512"  [label="DDG: sc_select_file(card, &prkey_info.path, NULL)!=SC_SUCCESS"];
+"1000249" -> "1000248"  [label="DDG: sc_select_file(card, &prkey_info.path, NULL)"];
+"1000249" -> "1000248"  [label="DDG: SC_SUCCESS"];
+}

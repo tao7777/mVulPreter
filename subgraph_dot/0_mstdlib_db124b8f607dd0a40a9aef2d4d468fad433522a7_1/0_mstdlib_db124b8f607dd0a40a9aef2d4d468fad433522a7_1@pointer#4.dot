@@ -1,0 +1,36 @@
+digraph "0_mstdlib_db124b8f607dd0a40a9aef2d4d468fad433522a7_1@pointer" {
+"1000166" [label="(Call,M_fs_file_close(fd_old))"];
+"1000156" [label="(Call,M_fs_info_file(&info, fd_old, M_FS_PATH_INFO_FLAGS_NONE))"];
+"1000169" [label="(Identifier,res)"];
+"1000167" [label="(Identifier,fd_old)"];
+"1000159" [label="(Identifier,fd_old)"];
+"1000192" [label="(Call,M_fs_file_close(fd_old))"];
+"1000156" [label="(Call,M_fs_info_file(&info, fd_old, M_FS_PATH_INFO_FLAGS_NONE))"];
+"1000165" [label="(Block,)"];
+"1000310" [label="(MethodReturn,static M_fs_error_t)"];
+"1000154" [label="(Call,res = M_fs_info_file(&info, fd_old, M_FS_PATH_INFO_FLAGS_NONE))"];
+"1000157" [label="(Call,&info)"];
+"1000160" [label="(Identifier,M_FS_PATH_INFO_FLAGS_NONE)"];
+"1000201" [label="(Call,M_fs_file_read(fd_old, temp, sizeof(temp), &read_len, M_FS_FILE_RW_NORMAL))"];
+"1000166" [label="(Call,M_fs_file_close(fd_old))"];
+"1000166" -> "1000165"  [label="AST: "];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000169" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000310"  [label="DDG: M_fs_file_close(fd_old)"];
+"1000166" -> "1000310"  [label="DDG: fd_old"];
+"1000156" -> "1000166"  [label="DDG: fd_old"];
+"1000156" -> "1000154"  [label="AST: "];
+"1000156" -> "1000160"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000159" -> "1000156"  [label="AST: "];
+"1000160" -> "1000156"  [label="AST: "];
+"1000154" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000310"  [label="DDG: &info"];
+"1000156" -> "1000310"  [label="DDG: M_FS_PATH_INFO_FLAGS_NONE"];
+"1000156" -> "1000154"  [label="DDG: &info"];
+"1000156" -> "1000154"  [label="DDG: fd_old"];
+"1000156" -> "1000154"  [label="DDG: M_FS_PATH_INFO_FLAGS_NONE"];
+"1000156" -> "1000192"  [label="DDG: fd_old"];
+"1000156" -> "1000201"  [label="DDG: fd_old"];
+}

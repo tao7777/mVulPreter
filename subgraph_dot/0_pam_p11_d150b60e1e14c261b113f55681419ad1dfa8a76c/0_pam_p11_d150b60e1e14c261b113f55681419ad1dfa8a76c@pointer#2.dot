@@ -1,0 +1,30 @@
+digraph "0_pam_p11_d150b60e1e14c261b113f55681419ad1dfa8a76c@pointer" {
+"1000112" [label="(Call,*signature = NULL)"];
+"1000246" [label="(Call,free(signature))"];
+"1000247" [label="(Identifier,signature)"];
+"1000269" [label="(MethodReturn,static int)"];
+"1000118" [label="(Identifier,md)"];
+"1000105" [label="(Block,)"];
+"1000112" [label="(Call,*signature = NULL)"];
+"1000246" [label="(Call,free(signature))"];
+"1000113" [label="(Identifier,signature)"];
+"1000250" [label="(Identifier,NULL)"];
+"1000198" [label="(Call,EVP_SignFinal(md_ctx, signature, &siglen, privkey))"];
+"1000222" [label="(Call,EVP_VerifyFinal(md_ctx, signature, siglen, pubkey))"];
+"1000153" [label="(Call,NULL == signature)"];
+"1000114" [label="(Identifier,NULL)"];
+"1000112" -> "1000105"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000118" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000246"  [label="DDG: signature"];
+"1000246" -> "1000105"  [label="AST: "];
+"1000246" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000246"  [label="AST: "];
+"1000250" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000269"  [label="DDG: signature"];
+"1000198" -> "1000246"  [label="DDG: signature"];
+"1000153" -> "1000246"  [label="DDG: signature"];
+"1000222" -> "1000246"  [label="DDG: signature"];
+}

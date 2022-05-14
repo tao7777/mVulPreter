@@ -1,0 +1,32 @@
+digraph "0_optee_os_d5c5b0b77b2b589666024d219a8007b3f5b6faeb@array" {
+"1000254" [label="(Call,ta_private_memref[n] = true)"];
+"1000328" [label="(Call,!ta_private_memref[n])"];
+"1000483" [label="(MethodReturn,static TEE_Result)"];
+"1000328" [label="(Call,!ta_private_memref[n])"];
+"1000327" [label="(ControlStructure,if (!ta_private_memref[n]))"];
+"1000332" [label="(ControlStructure,continue;)"];
+"1000334" [label="(Identifier,s)"];
+"1000259" [label="(ControlStructure,break;)"];
+"1000258" [label="(Identifier,true)"];
+"1000255" [label="(Call,ta_private_memref[n])"];
+"1000254" [label="(Call,ta_private_memref[n] = true)"];
+"1000239" [label="(Block,)"];
+"1000329" [label="(Call,ta_private_memref[n])"];
+"1000186" [label="(Call,ta_private_memref[n] = false)"];
+"1000254" -> "1000239"  [label="AST: "];
+"1000254" -> "1000258"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000258" -> "1000254"  [label="AST: "];
+"1000259" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000483"  [label="DDG: ta_private_memref[n]"];
+"1000254" -> "1000483"  [label="DDG: true"];
+"1000254" -> "1000328"  [label="DDG: ta_private_memref[n]"];
+"1000328" -> "1000327"  [label="AST: "];
+"1000328" -> "1000329"  [label="CFG: "];
+"1000329" -> "1000328"  [label="AST: "];
+"1000332" -> "1000328"  [label="CFG: "];
+"1000334" -> "1000328"  [label="CFG: "];
+"1000328" -> "1000483"  [label="DDG: !ta_private_memref[n]"];
+"1000328" -> "1000483"  [label="DDG: ta_private_memref[n]"];
+"1000186" -> "1000328"  [label="DDG: ta_private_memref[n]"];
+}

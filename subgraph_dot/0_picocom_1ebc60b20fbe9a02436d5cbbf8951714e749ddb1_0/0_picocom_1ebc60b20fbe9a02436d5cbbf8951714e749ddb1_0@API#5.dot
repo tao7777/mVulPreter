@@ -1,0 +1,31 @@
+digraph "0_picocom_1ebc60b20fbe9a02436d5cbbf8951714e749ddb1_0@API" {
+"1000242" [label="(Call,close(STO))"];
+"1000247" [label="(Call,dup2(fd, STO))"];
+"1000242" [label="(Call,close(STO))"];
+"1000245" [label="(Identifier,fd)"];
+"1000247" [label="(Call,dup2(fd, STO))"];
+"1000243" [label="(Identifier,STO)"];
+"1000244" [label="(Call,dup2(fd, STI))"];
+"1000249" [label="(Identifier,STO)"];
+"1000327" [label="(MethodReturn,RET)"];
+"1000248" [label="(Identifier,fd)"];
+"1000219" [label="(Block,)"];
+"1000251" [label="(Identifier,argc)"];
+"1000114" [label="(MethodParameterIn,int fd)"];
+"1000242" -> "1000219"  [label="AST: "];
+"1000242" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000242"  [label="AST: "];
+"1000245" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000327"  [label="DDG: close(STO)"];
+"1000242" -> "1000247"  [label="DDG: STO"];
+"1000247" -> "1000219"  [label="AST: "];
+"1000247" -> "1000249"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000249" -> "1000247"  [label="AST: "];
+"1000251" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000327"  [label="DDG: fd"];
+"1000247" -> "1000327"  [label="DDG: dup2(fd, STO)"];
+"1000247" -> "1000327"  [label="DDG: STO"];
+"1000244" -> "1000247"  [label="DDG: fd"];
+"1000114" -> "1000247"  [label="DDG: fd"];
+}

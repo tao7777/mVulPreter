@@ -1,0 +1,27 @@
+digraph "0_Chrome_2cb006bc9d3ad16353ed49c2b75faea618156d0f_3@API" {
+"1000109" [label="(Call,main_resource_was_namespace_entry_ ? namespace_entry_url_ : document_url)"];
+"1000101" [label="(MethodParameterIn,const GURL& document_url)"];
+"1000111" [label="(Identifier,namespace_entry_url_)"];
+"1000109" [label="(Call,main_resource_was_namespace_entry_ ? namespace_entry_url_ : document_url)"];
+"1000114" [label="(Call,SelectCache(document_url, kAppCacheNoCacheId, GURL()))"];
+"1000110" [label="(Identifier,main_resource_was_namespace_entry_)"];
+"1000112" [label="(Identifier,document_url)"];
+"1000113" [label="(Identifier,cache_document_was_loaded_from)"];
+"1000120" [label="(MethodReturn,bool)"];
+"1000101" [label="(MethodParameterIn,const GURL& document_url)"];
+"1000108" [label="(Call,storage()->MarkEntryAsForeign(\n       main_resource_was_namespace_entry_ ? namespace_entry_url_ : document_url,\n       cache_document_was_loaded_from))"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000109" -> "1000112"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000112" -> "1000109"  [label="AST: "];
+"1000113" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000120"  [label="DDG: main_resource_was_namespace_entry_"];
+"1000109" -> "1000120"  [label="DDG: namespace_entry_url_"];
+"1000101" -> "1000109"  [label="DDG: document_url"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000120"  [label="DDG: document_url"];
+"1000101" -> "1000108"  [label="DDG: document_url"];
+"1000101" -> "1000114"  [label="DDG: document_url"];
+}

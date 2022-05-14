@@ -1,0 +1,27 @@
+digraph "0_radare2_d2632f6483a3ceb5d8e0a5fb11142c51c43978b4_0@pointer" {
+"1000126" [label="(Call,bin->buf->buf + (ut32)sec->payload_data)"];
+"1000132" [label="(Call,(ut32)sec->payload_data)"];
+"1000127" [label="(Call,bin->buf->buf)"];
+"1000132" [label="(Call,(ut32)sec->payload_data)"];
+"1000246" [label="(Call,ptr->data = sec->payload_data + i)"];
+"1000250" [label="(Call,sec->payload_data + i)"];
+"1000263" [label="(MethodReturn,static RList *)"];
+"1000124" [label="(Call,* buf = bin->buf->buf + (ut32)sec->payload_data)"];
+"1000126" [label="(Call,bin->buf->buf + (ut32)sec->payload_data)"];
+"1000134" [label="(Call,sec->payload_data)"];
+"1000126" -> "1000124"  [label="AST: "];
+"1000126" -> "1000132"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000132" -> "1000126"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000263"  [label="DDG: (ut32)sec->payload_data"];
+"1000126" -> "1000263"  [label="DDG: bin->buf->buf"];
+"1000132" -> "1000126"  [label="DDG: sec->payload_data"];
+"1000132" -> "1000134"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000134" -> "1000132"  [label="AST: "];
+"1000132" -> "1000263"  [label="DDG: sec->payload_data"];
+"1000132" -> "1000124"  [label="DDG: sec->payload_data"];
+"1000132" -> "1000246"  [label="DDG: sec->payload_data"];
+"1000132" -> "1000250"  [label="DDG: sec->payload_data"];
+}

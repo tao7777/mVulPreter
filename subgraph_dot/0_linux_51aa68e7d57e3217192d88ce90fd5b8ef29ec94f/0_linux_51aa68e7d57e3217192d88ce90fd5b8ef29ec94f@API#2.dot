@@ -1,0 +1,23 @@
+digraph "0_linux_51aa68e7d57e3217192d88ce90fd5b8ef29ec94f@API" {
+"1000601" [label="(Call,vmcs_write64(VM_EXIT_MSR_LOAD_ADDR, __pa(vmx->msr_autoload.host)))"];
+"1000603" [label="(Call,__pa(vmx->msr_autoload.host))"];
+"1000601" [label="(Call,vmcs_write64(VM_EXIT_MSR_LOAD_ADDR, __pa(vmx->msr_autoload.host)))"];
+"1001021" [label="(MethodReturn,static int)"];
+"1000610" [label="(Identifier,VM_ENTRY_MSR_LOAD_COUNT)"];
+"1000126" [label="(Block,)"];
+"1000602" [label="(Identifier,VM_EXIT_MSR_LOAD_ADDR)"];
+"1000603" [label="(Call,__pa(vmx->msr_autoload.host))"];
+"1000604" [label="(Call,vmx->msr_autoload.host)"];
+"1000601" -> "1000126"  [label="AST: "];
+"1000601" -> "1000603"  [label="CFG: "];
+"1000602" -> "1000601"  [label="AST: "];
+"1000603" -> "1000601"  [label="AST: "];
+"1000610" -> "1000601"  [label="CFG: "];
+"1000601" -> "1001021"  [label="DDG: VM_EXIT_MSR_LOAD_ADDR"];
+"1000601" -> "1001021"  [label="DDG: __pa(vmx->msr_autoload.host)"];
+"1000601" -> "1001021"  [label="DDG: vmcs_write64(VM_EXIT_MSR_LOAD_ADDR, __pa(vmx->msr_autoload.host))"];
+"1000603" -> "1000601"  [label="DDG: vmx->msr_autoload.host"];
+"1000603" -> "1000604"  [label="CFG: "];
+"1000604" -> "1000603"  [label="AST: "];
+"1000603" -> "1001021"  [label="DDG: vmx->msr_autoload.host"];
+}

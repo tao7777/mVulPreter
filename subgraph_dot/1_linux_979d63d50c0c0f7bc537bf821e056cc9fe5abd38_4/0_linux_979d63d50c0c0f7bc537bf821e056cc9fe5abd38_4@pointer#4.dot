@@ -1,0 +1,30 @@
+digraph "0_linux_979d63d50c0c0f7bc537bf821e056cc9fe5abd38_4@pointer" {
+"1000162" [label="(Call,env->stack_size > BPF_COMPLEXITY_LIMIT_STACK)"];
+"1000146" [label="(Call,env->stack_size++)"];
+"1000146" [label="(Call,env->stack_size++)"];
+"1000166" [label="(Identifier,BPF_COMPLEXITY_LIMIT_STACK)"];
+"1000175" [label="(Identifier,elem)"];
+"1000196" [label="(MethodReturn,static struct bpf_verifier_state *)"];
+"1000162" [label="(Call,env->stack_size > BPF_COMPLEXITY_LIMIT_STACK)"];
+"1000105" [label="(Block,)"];
+"1000161" [label="(ControlStructure,if (env->stack_size > BPF_COMPLEXITY_LIMIT_STACK))"];
+"1000163" [label="(Call,env->stack_size)"];
+"1000151" [label="(Identifier,err)"];
+"1000147" [label="(Call,env->stack_size)"];
+"1000169" [label="(Identifier,env)"];
+"1000162" -> "1000161"  [label="AST: "];
+"1000162" -> "1000166"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="AST: "];
+"1000169" -> "1000162"  [label="CFG: "];
+"1000175" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000196"  [label="DDG: BPF_COMPLEXITY_LIMIT_STACK"];
+"1000162" -> "1000196"  [label="DDG: env->stack_size"];
+"1000162" -> "1000196"  [label="DDG: env->stack_size > BPF_COMPLEXITY_LIMIT_STACK"];
+"1000146" -> "1000162"  [label="DDG: env->stack_size"];
+"1000146" -> "1000105"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000151" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000196"  [label="DDG: env->stack_size"];
+}

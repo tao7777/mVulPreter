@@ -1,0 +1,34 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_36@API" {
+"1000156" [label="(Call,current_thread_info()->xfsr[0] &= ~0x1c000)"];
+"1000168" [label="(Call,current_thread_info()->xfsr[0] |= (6 << 14))"];
+"1000167" [label="(Block,)"];
+"1000157" [label="(Call,current_thread_info()->xfsr[0])"];
+"1000174" [label="(Call,6 << 14)"];
+"1000169" [label="(Call,current_thread_info()->xfsr[0])"];
+"1000109" [label="(Block,)"];
+"1000156" [label="(Call,current_thread_info()->xfsr[0] &= ~0x1c000)"];
+"1000165" [label="(Identifier,freg)"];
+"1000168" [label="(Call,current_thread_info()->xfsr[0] |= (6 << 14))"];
+"1000178" [label="(Identifier,regs)"];
+"1000604" [label="(MethodReturn,int)"];
+"1000162" [label="(Identifier,~0x1c000)"];
+"1000156" -> "1000109"  [label="AST: "];
+"1000156" -> "1000162"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000162" -> "1000156"  [label="AST: "];
+"1000165" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000604"  [label="DDG: current_thread_info()->xfsr[0]"];
+"1000156" -> "1000604"  [label="DDG: current_thread_info()->xfsr[0] &= ~0x1c000"];
+"1000156" -> "1000604"  [label="DDG: ~0x1c000"];
+"1000156" -> "1000168"  [label="DDG: current_thread_info()->xfsr[0]"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000174"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000174" -> "1000168"  [label="AST: "];
+"1000178" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000604"  [label="DDG: current_thread_info()->xfsr[0] |= (6 << 14)"];
+"1000168" -> "1000604"  [label="DDG: current_thread_info()->xfsr[0]"];
+"1000168" -> "1000604"  [label="DDG: 6 << 14"];
+"1000174" -> "1000168"  [label="DDG: 6"];
+"1000174" -> "1000168"  [label="DDG: 14"];
+}

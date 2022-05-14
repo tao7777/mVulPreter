@@ -1,0 +1,24 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_3@API" {
+"1000110" [label="(Call,open_mode & O_EXCL)"];
+"1000103" [label="(MethodParameterIn,int open_mode)"];
+"1000110" [label="(Call,open_mode & O_EXCL)"];
+"1000113" [label="(ControlStructure,goto out;)"];
+"1000109" [label="(ControlStructure,if (open_mode & O_EXCL))"];
+"1000111" [label="(Identifier,open_mode)"];
+"1000103" [label="(MethodParameterIn,int open_mode)"];
+"1000159" [label="(MethodReturn,static int)"];
+"1000112" [label="(Identifier,O_EXCL)"];
+"1000116" [label="(Identifier,mode)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000113" -> "1000110"  [label="CFG: "];
+"1000116" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000159"  [label="DDG: O_EXCL"];
+"1000110" -> "1000159"  [label="DDG: open_mode & O_EXCL"];
+"1000110" -> "1000159"  [label="DDG: open_mode"];
+"1000103" -> "1000110"  [label="DDG: open_mode"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000159"  [label="DDG: open_mode"];
+}

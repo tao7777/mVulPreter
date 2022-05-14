@@ -1,0 +1,27 @@
+digraph "0_radare2_1ea23bd6040441a21fbcfba69dce9a01af03f989@pointer" {
+"1000140" [label="(Call,!*class_name)"];
+"1000137" [label="(Call,!class_name || !*class_name)"];
+"1000141" [label="(Call,*class_name)"];
+"1000140" [label="(Call,!*class_name)"];
+"1000597" [label="(MethodReturn,static void)"];
+"1000136" [label="(ControlStructure,if (!class_name || !*class_name))"];
+"1000138" [label="(Call,!class_name)"];
+"1000147" [label="(Identifier,cls)"];
+"1000137" [label="(Call,!class_name || !*class_name)"];
+"1000144" [label="(Return,return;)"];
+"1000140" -> "1000137"  [label="AST: "];
+"1000140" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000137" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000597"  [label="DDG: *class_name"];
+"1000140" -> "1000137"  [label="DDG: *class_name"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000144" -> "1000137"  [label="CFG: "];
+"1000147" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000597"  [label="DDG: !*class_name"];
+"1000137" -> "1000597"  [label="DDG: !class_name"];
+"1000137" -> "1000597"  [label="DDG: !class_name || !*class_name"];
+"1000138" -> "1000137"  [label="DDG: class_name"];
+}

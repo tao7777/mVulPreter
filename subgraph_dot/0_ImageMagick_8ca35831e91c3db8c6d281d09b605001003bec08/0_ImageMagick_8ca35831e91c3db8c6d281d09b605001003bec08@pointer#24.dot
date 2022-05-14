@@ -1,0 +1,22 @@
+digraph "0_ImageMagick_8ca35831e91c3db8c6d281d09b605001003bec08@pointer" {
+"1002813" [label="(Call,image->colormap[i].green=ScaleCharToQuantum(palette[i].green))"];
+"1002821" [label="(Call,ScaleCharToQuantum(palette[i].green))"];
+"1002822" [label="(Call,palette[i].green)"];
+"1002798" [label="(Block,)"];
+"1005492" [label="(MethodReturn,static Image *)"];
+"1002813" [label="(Call,image->colormap[i].green=ScaleCharToQuantum(palette[i].green))"];
+"1002821" [label="(Call,ScaleCharToQuantum(palette[i].green))"];
+"1002831" [label="(Identifier,image)"];
+"1002814" [label="(Call,image->colormap[i].green)"];
+"1002813" -> "1002798"  [label="AST: "];
+"1002813" -> "1002821"  [label="CFG: "];
+"1002814" -> "1002813"  [label="AST: "];
+"1002821" -> "1002813"  [label="AST: "];
+"1002831" -> "1002813"  [label="CFG: "];
+"1002813" -> "1005492"  [label="DDG: image->colormap[i].green"];
+"1002813" -> "1005492"  [label="DDG: ScaleCharToQuantum(palette[i].green)"];
+"1002821" -> "1002813"  [label="DDG: palette[i].green"];
+"1002821" -> "1002822"  [label="CFG: "];
+"1002822" -> "1002821"  [label="AST: "];
+"1002821" -> "1005492"  [label="DDG: palette[i].green"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_1@pointer" {
+"1000133" [label="(Call,sb->s_flags & MS_RDONLY)"];
+"1000132" [label="(Call,!(sb->s_flags & MS_RDONLY))"];
+"1000133" [label="(Call,sb->s_flags & MS_RDONLY)"];
+"1000131" [label="(ControlStructure,if (!(sb->s_flags & MS_RDONLY)))"];
+"1000231" [label="(MethodReturn,static void)"];
+"1000168" [label="(Identifier,db_count)"];
+"1000137" [label="(Identifier,MS_RDONLY)"];
+"1000134" [label="(Call,sb->s_flags)"];
+"1000132" [label="(Call,!(sb->s_flags & MS_RDONLY))"];
+"1000141" [label="(Identifier,es)"];
+"1000133" -> "1000132"  [label="AST: "];
+"1000133" -> "1000137"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000137" -> "1000133"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000231"  [label="DDG: sb->s_flags"];
+"1000133" -> "1000231"  [label="DDG: MS_RDONLY"];
+"1000133" -> "1000132"  [label="DDG: sb->s_flags"];
+"1000133" -> "1000132"  [label="DDG: MS_RDONLY"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000141" -> "1000132"  [label="CFG: "];
+"1000168" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000231"  [label="DDG: !(sb->s_flags & MS_RDONLY)"];
+"1000132" -> "1000231"  [label="DDG: sb->s_flags & MS_RDONLY"];
+}

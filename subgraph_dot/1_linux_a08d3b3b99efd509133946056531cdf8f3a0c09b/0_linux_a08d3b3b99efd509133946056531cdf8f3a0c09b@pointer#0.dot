@@ -1,0 +1,30 @@
+digraph "0_linux_a08d3b3b99efd509133946056531cdf8f3a0c09b@pointer" {
+"1000138" [label="(Call,!vcpu->mmio_is_write)"];
+"1000253" [label="(Call,run->mmio.is_write = vcpu->mmio_is_write)"];
+"1000144" [label="(Identifier,frag)"];
+"1000259" [label="(Call,vcpu->mmio_is_write)"];
+"1000253" [label="(Call,run->mmio.is_write = vcpu->mmio_is_write)"];
+"1000138" [label="(Call,!vcpu->mmio_is_write)"];
+"1000106" [label="(Block,)"];
+"1000139" [label="(Call,vcpu->mmio_is_write)"];
+"1000271" [label="(MethodReturn,static int)"];
+"1000137" [label="(ControlStructure,if (!vcpu->mmio_is_write))"];
+"1000254" [label="(Call,run->mmio.is_write)"];
+"1000265" [label="(Identifier,vcpu)"];
+"1000155" [label="(Identifier,frag)"];
+"1000138" -> "1000137"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000144" -> "1000138"  [label="CFG: "];
+"1000155" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000271"  [label="DDG: vcpu->mmio_is_write"];
+"1000138" -> "1000271"  [label="DDG: !vcpu->mmio_is_write"];
+"1000138" -> "1000253"  [label="DDG: vcpu->mmio_is_write"];
+"1000253" -> "1000106"  [label="AST: "];
+"1000253" -> "1000259"  [label="CFG: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000259" -> "1000253"  [label="AST: "];
+"1000265" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000271"  [label="DDG: vcpu->mmio_is_write"];
+"1000253" -> "1000271"  [label="DDG: run->mmio.is_write"];
+}

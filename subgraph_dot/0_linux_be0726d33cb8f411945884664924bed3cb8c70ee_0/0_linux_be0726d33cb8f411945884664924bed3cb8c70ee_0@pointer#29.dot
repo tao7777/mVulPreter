@@ -1,0 +1,34 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_0@pointer" {
+"1000378" [label="(Call,le16_to_cpu(es->s_def_resgid))"];
+"1000375" [label="(Call,make_kgid(&init_user_ns, le16_to_cpu(es->s_def_resgid)))"];
+"1000371" [label="(Call,sbi->s_resgid = make_kgid(&init_user_ns, le16_to_cpu(es->s_def_resgid)))"];
+"1001382" [label="(MethodReturn,static int)"];
+"1000378" [label="(Call,le16_to_cpu(es->s_def_resgid))"];
+"1000379" [label="(Call,es->s_def_resgid)"];
+"1000371" [label="(Call,sbi->s_resgid = make_kgid(&init_user_ns, le16_to_cpu(es->s_def_resgid)))"];
+"1000372" [label="(Call,sbi->s_resgid)"];
+"1000364" [label="(Call,make_kuid(&init_user_ns, le16_to_cpu(es->s_def_resuid)))"];
+"1000375" [label="(Call,make_kgid(&init_user_ns, le16_to_cpu(es->s_def_resgid)))"];
+"1000113" [label="(Block,)"];
+"1000376" [label="(Call,&init_user_ns)"];
+"1000384" [label="(Identifier,sbi)"];
+"1000378" -> "1000375"  [label="AST: "];
+"1000378" -> "1000379"  [label="CFG: "];
+"1000379" -> "1000378"  [label="AST: "];
+"1000375" -> "1000378"  [label="CFG: "];
+"1000378" -> "1001382"  [label="DDG: es->s_def_resgid"];
+"1000378" -> "1000375"  [label="DDG: es->s_def_resgid"];
+"1000375" -> "1000371"  [label="AST: "];
+"1000376" -> "1000375"  [label="AST: "];
+"1000371" -> "1000375"  [label="CFG: "];
+"1000375" -> "1001382"  [label="DDG: &init_user_ns"];
+"1000375" -> "1001382"  [label="DDG: le16_to_cpu(es->s_def_resgid)"];
+"1000375" -> "1000371"  [label="DDG: &init_user_ns"];
+"1000375" -> "1000371"  [label="DDG: le16_to_cpu(es->s_def_resgid)"];
+"1000364" -> "1000375"  [label="DDG: &init_user_ns"];
+"1000371" -> "1000113"  [label="AST: "];
+"1000372" -> "1000371"  [label="AST: "];
+"1000384" -> "1000371"  [label="CFG: "];
+"1000371" -> "1001382"  [label="DDG: make_kgid(&init_user_ns, le16_to_cpu(es->s_def_resgid))"];
+"1000371" -> "1001382"  [label="DDG: sbi->s_resgid"];
+}

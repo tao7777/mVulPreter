@@ -1,0 +1,29 @@
+digraph "0_tcpdump_cc4a7391c616be7a64ed65742ef9ed3f106eb165_7@pointer" {
+"1000104" [label="(MethodParameterIn,netdissect_options *ndo)"];
+"1000173" [label="(Call,print_string(ndo, (const u_char *)ptr, length))"];
+"1000104" [label="(MethodParameterIn,netdissect_options *ndo)"];
+"1000173" [label="(Call,print_string(ndo, (const u_char *)ptr, length))"];
+"1000178" [label="(Identifier,length)"];
+"1000106" [label="(MethodParameterIn,u_int length)"];
+"1000174" [label="(Identifier,ndo)"];
+"1000175" [label="(Call,(const u_char *)ptr)"];
+"1000168" [label="(Block,)"];
+"1000179" [label="(MethodReturn,RET)"];
+"1000165" [label="(Call,length != 0)"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000179"  [label="DDG: ndo"];
+"1000104" -> "1000173"  [label="DDG: ndo"];
+"1000173" -> "1000168"  [label="AST: "];
+"1000173" -> "1000178"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000175" -> "1000173"  [label="AST: "];
+"1000178" -> "1000173"  [label="AST: "];
+"1000179" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000179"  [label="DDG: length"];
+"1000173" -> "1000179"  [label="DDG: print_string(ndo, (const u_char *)ptr, length)"];
+"1000173" -> "1000179"  [label="DDG: ndo"];
+"1000173" -> "1000179"  [label="DDG: (const u_char *)ptr"];
+"1000175" -> "1000173"  [label="DDG: ptr"];
+"1000165" -> "1000173"  [label="DDG: length"];
+"1000106" -> "1000173"  [label="DDG: length"];
+}

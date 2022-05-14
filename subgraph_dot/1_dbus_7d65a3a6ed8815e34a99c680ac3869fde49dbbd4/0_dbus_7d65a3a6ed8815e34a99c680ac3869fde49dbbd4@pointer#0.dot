@@ -1,0 +1,33 @@
+digraph "0_dbus_7d65a3a6ed8815e34a99c680ac3869fde49dbbd4@pointer" {
+"1000111" [label="(MethodParameterIn,DBusTypeReader       *reader)"];
+"1000123" [label="(Call,_dbus_type_reader_get_current_type (reader))"];
+"1000120" [label="(Call,(current_type = _dbus_type_reader_get_current_type (reader)) != DBUS_TYPE_INVALID)"];
+"1000121" [label="(Call,current_type = _dbus_type_reader_get_current_type (reader))"];
+"1000122" [label="(Identifier,current_type)"];
+"1000121" [label="(Call,current_type = _dbus_type_reader_get_current_type (reader))"];
+"1000123" [label="(Call,_dbus_type_reader_get_current_type (reader))"];
+"1000120" [label="(Call,(current_type = _dbus_type_reader_get_current_type (reader)) != DBUS_TYPE_INVALID)"];
+"1000124" [label="(Identifier,reader)"];
+"1000125" [label="(Identifier,DBUS_TYPE_INVALID)"];
+"1000119" [label="(ControlStructure,while ((current_type = _dbus_type_reader_get_current_type (reader)) != DBUS_TYPE_INVALID))"];
+"1000128" [label="(JumpTarget,case DBUS_TYPE_BYTE:)"];
+"1000111" [label="(MethodParameterIn,DBusTypeReader       *reader)"];
+"1000748" [label="(ControlStructure,break;)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000123"  [label="DDG: reader"];
+"1000123" -> "1000121"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000120"  [label="DDG: reader"];
+"1000123" -> "1000121"  [label="DDG: reader"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000120" -> "1000125"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000125" -> "1000120"  [label="AST: "];
+"1000128" -> "1000120"  [label="CFG: "];
+"1000748" -> "1000120"  [label="CFG: "];
+"1000121" -> "1000120"  [label="DDG: current_type"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="CFG: "];
+}

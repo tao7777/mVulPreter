@@ -1,0 +1,37 @@
+digraph "0_Chrome_ef97ce340c462d5212336f09bf8075d1cb10faa4@pointer" {
+"1000109" [label="(Call,* installer = plugin_finder->GetPluginInstaller(plugin))"];
+"1000111" [label="(Call,plugin_finder->GetPluginInstaller(plugin))"];
+"1000102" [label="(MethodParameterIn,const WebPluginInfo& plugin)"];
+"1000232" [label="(MethodReturn,void)"];
+"1000193" [label="(Call,plugin.type != WebPluginInfo::PLUGIN_TYPE_PEPPER_OUT_OF_PROCESS)"];
+"1000150" [label="(Call,installer->GetSecurityStatus(plugin))"];
+"1000129" [label="(Call,GetPluginContentSetting(plugin, params.top_origin_url, params.url,\n                          *group_identifier, &plugin_setting,\n                          &uses_default_content_setting))"];
+"1000110" [label="(Identifier,installer)"];
+"1000109" [label="(Call,* installer = plugin_finder->GetPluginInstaller(plugin))"];
+"1000107" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,const WebPluginInfo& plugin)"];
+"1000111" [label="(Call,plugin_finder->GetPluginInstaller(plugin))"];
+"1000182" [label="(Call,PluginService::GetInstance()->IsPluginUnstable(plugin.path))"];
+"1000187" [label="(Call,plugin.type != WebPluginInfo::PLUGIN_TYPE_PEPPER_IN_PROCESS)"];
+"1000115" [label="(Identifier,group_name)"];
+"1000112" [label="(Identifier,plugin)"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000115" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000232"  [label="DDG: installer"];
+"1000109" -> "1000232"  [label="DDG: plugin_finder->GetPluginInstaller(plugin)"];
+"1000111" -> "1000109"  [label="DDG: plugin"];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000102" -> "1000111"  [label="DDG: plugin"];
+"1000111" -> "1000129"  [label="DDG: plugin"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000232"  [label="DDG: plugin"];
+"1000102" -> "1000129"  [label="DDG: plugin"];
+"1000102" -> "1000150"  [label="DDG: plugin"];
+"1000102" -> "1000182"  [label="DDG: plugin"];
+"1000102" -> "1000187"  [label="DDG: plugin"];
+"1000102" -> "1000193"  [label="DDG: plugin"];
+}

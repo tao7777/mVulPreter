@@ -1,0 +1,32 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970_0@pointer" {
+"1001088" [label="(Call,isflagset(client->attributes, KRB5_KDB_DISALLOW_FORWARDABLE))"];
+"1001084" [label="(Call,client != NULL &&\n                isflagset(client->attributes, KRB5_KDB_DISALLOW_FORWARDABLE))"];
+"1001084" [label="(Call,client != NULL &&\n                isflagset(client->attributes, KRB5_KDB_DISALLOW_FORWARDABLE))"];
+"1001095" [label="(Identifier,enc_tkt_reply)"];
+"1001092" [label="(Identifier,KRB5_KDB_DISALLOW_FORWARDABLE)"];
+"1002500" [label="(MethodReturn,RET)"];
+"1001085" [label="(Call,client != NULL)"];
+"1001088" [label="(Call,isflagset(client->attributes, KRB5_KDB_DISALLOW_FORWARDABLE))"];
+"1001089" [label="(Call,client->attributes)"];
+"1001083" [label="(ControlStructure,if (client != NULL &&\n                isflagset(client->attributes, KRB5_KDB_DISALLOW_FORWARDABLE)))"];
+"1001103" [label="(Identifier,header_enc_tkt)"];
+"1001088" -> "1001084"  [label="AST: "];
+"1001088" -> "1001092"  [label="CFG: "];
+"1001089" -> "1001088"  [label="AST: "];
+"1001092" -> "1001088"  [label="AST: "];
+"1001084" -> "1001088"  [label="CFG: "];
+"1001088" -> "1002500"  [label="DDG: client->attributes"];
+"1001088" -> "1002500"  [label="DDG: KRB5_KDB_DISALLOW_FORWARDABLE"];
+"1001088" -> "1001084"  [label="DDG: client->attributes"];
+"1001088" -> "1001084"  [label="DDG: KRB5_KDB_DISALLOW_FORWARDABLE"];
+"1001084" -> "1001083"  [label="AST: "];
+"1001084" -> "1001085"  [label="CFG: "];
+"1001085" -> "1001084"  [label="AST: "];
+"1001095" -> "1001084"  [label="CFG: "];
+"1001103" -> "1001084"  [label="CFG: "];
+"1001084" -> "1002500"  [label="DDG: client != NULL"];
+"1001084" -> "1002500"  [label="DDG: isflagset(client->attributes, KRB5_KDB_DISALLOW_FORWARDABLE)"];
+"1001084" -> "1002500"  [label="DDG: client != NULL &&\n                isflagset(client->attributes, KRB5_KDB_DISALLOW_FORWARDABLE)"];
+"1001085" -> "1001084"  [label="DDG: client"];
+"1001085" -> "1001084"  [label="DDG: NULL"];
+}

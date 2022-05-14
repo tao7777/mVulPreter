@@ -1,0 +1,33 @@
+digraph "0_Chrome_62154472bd2c43e1790dd1bd8a527c1db9118d88_5@API" {
+"1000206" [label="(Call,std::move(client))"];
+"1000205" [label="(Call,service_->RequestScanningStart(\n      std::move(client), std::move(scan_options),\n      WTF::Bind(&Bluetooth::RequestScanningCallback, WrapPersistent(this),\n                WrapPersistent(resolver), id)))"];
+"1000209" [label="(Identifier,scan_options)"];
+"1000206" [label="(Call,std::move(client))"];
+"1000104" [label="(Block,)"];
+"1000210" [label="(Call,WTF::Bind(&Bluetooth::RequestScanningCallback, WrapPersistent(this),\n                WrapPersistent(resolver), id))"];
+"1000208" [label="(Call,std::move(scan_options))"];
+"1000205" [label="(Call,service_->RequestScanningStart(\n      std::move(client), std::move(scan_options),\n      WTF::Bind(&Bluetooth::RequestScanningCallback, WrapPersistent(this),\n                WrapPersistent(resolver), id)))"];
+"1000219" [label="(Identifier,promise)"];
+"1000207" [label="(Identifier,client)"];
+"1000220" [label="(MethodReturn,ScriptPromise)"];
+"1000206" -> "1000205"  [label="AST: "];
+"1000206" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000209" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000220"  [label="DDG: client"];
+"1000206" -> "1000205"  [label="DDG: client"];
+"1000205" -> "1000104"  [label="AST: "];
+"1000205" -> "1000210"  [label="CFG: "];
+"1000208" -> "1000205"  [label="AST: "];
+"1000210" -> "1000205"  [label="AST: "];
+"1000219" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000220"  [label="DDG: service_->RequestScanningStart(\n      std::move(client), std::move(scan_options),\n      WTF::Bind(&Bluetooth::RequestScanningCallback, WrapPersistent(this),\n                WrapPersistent(resolver), id))"];
+"1000205" -> "1000220"  [label="DDG: WTF::Bind(&Bluetooth::RequestScanningCallback, WrapPersistent(this),\n                WrapPersistent(resolver), id)"];
+"1000205" -> "1000220"  [label="DDG: std::move(client)"];
+"1000205" -> "1000220"  [label="DDG: std::move(scan_options)"];
+"1000208" -> "1000205"  [label="DDG: scan_options"];
+"1000210" -> "1000205"  [label="DDG: &Bluetooth::RequestScanningCallback"];
+"1000210" -> "1000205"  [label="DDG: WrapPersistent(this)"];
+"1000210" -> "1000205"  [label="DDG: WrapPersistent(resolver)"];
+"1000210" -> "1000205"  [label="DDG: id"];
+}

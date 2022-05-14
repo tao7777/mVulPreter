@@ -1,0 +1,31 @@
+digraph "0_openssl_68595c0c2886e7942a14f98c17a55a88afb6c292@pointer" {
+"1001838" [label="(Call,ctx->key_len == 32)"];
+"1001834" [label="(Call,len >= 1024 && ctx->key_len == 32)"];
+"1001842" [label="(Literal,32)"];
+"1001838" [label="(Call,ctx->key_len == 32)"];
+"1001839" [label="(Call,ctx->key_len)"];
+"1001965" [label="(Identifier,key)"];
+"1001834" [label="(Call,len >= 1024 && ctx->key_len == 32)"];
+"1001835" [label="(Call,len >= 1024)"];
+"1001846" [label="(Identifier,sha_off)"];
+"1001833" [label="(ControlStructure,if (len >= 1024 && ctx->key_len == 32))"];
+"1001971" [label="(MethodReturn,static int)"];
+"1001838" -> "1001834"  [label="AST: "];
+"1001838" -> "1001842"  [label="CFG: "];
+"1001839" -> "1001838"  [label="AST: "];
+"1001842" -> "1001838"  [label="AST: "];
+"1001834" -> "1001838"  [label="CFG: "];
+"1001838" -> "1001971"  [label="DDG: ctx->key_len"];
+"1001838" -> "1001834"  [label="DDG: ctx->key_len"];
+"1001838" -> "1001834"  [label="DDG: 32"];
+"1001834" -> "1001833"  [label="AST: "];
+"1001834" -> "1001835"  [label="CFG: "];
+"1001835" -> "1001834"  [label="AST: "];
+"1001846" -> "1001834"  [label="CFG: "];
+"1001965" -> "1001834"  [label="CFG: "];
+"1001834" -> "1001971"  [label="DDG: len >= 1024 && ctx->key_len == 32"];
+"1001834" -> "1001971"  [label="DDG: ctx->key_len == 32"];
+"1001834" -> "1001971"  [label="DDG: len >= 1024"];
+"1001835" -> "1001834"  [label="DDG: len"];
+"1001835" -> "1001834"  [label="DDG: 1024"];
+}

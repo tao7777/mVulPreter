@@ -1,0 +1,24 @@
+digraph "0_linux_70789d7052239992824628db8133de08dc78e593_0@API" {
+"1000696" [label="(Call,write_unlock(&ip6_frags.lock))"];
+"1000676" [label="(Call,write_lock(&ip6_frags.lock))"];
+"1000685" [label="(Identifier,fq)"];
+"1000696" [label="(Call,write_unlock(&ip6_frags.lock))"];
+"1000121" [label="(Block,)"];
+"1000716" [label="(MethodReturn,static int)"];
+"1000703" [label="(Literal,1)"];
+"1000677" [label="(Call,&ip6_frags.lock)"];
+"1000676" [label="(Call,write_lock(&ip6_frags.lock))"];
+"1000697" [label="(Call,&ip6_frags.lock)"];
+"1000696" -> "1000121"  [label="AST: "];
+"1000696" -> "1000697"  [label="CFG: "];
+"1000697" -> "1000696"  [label="AST: "];
+"1000703" -> "1000696"  [label="CFG: "];
+"1000696" -> "1000716"  [label="DDG: write_unlock(&ip6_frags.lock)"];
+"1000696" -> "1000716"  [label="DDG: &ip6_frags.lock"];
+"1000676" -> "1000696"  [label="DDG: &ip6_frags.lock"];
+"1000676" -> "1000121"  [label="AST: "];
+"1000676" -> "1000677"  [label="CFG: "];
+"1000677" -> "1000676"  [label="AST: "];
+"1000685" -> "1000676"  [label="CFG: "];
+"1000676" -> "1000716"  [label="DDG: write_lock(&ip6_frags.lock)"];
+}

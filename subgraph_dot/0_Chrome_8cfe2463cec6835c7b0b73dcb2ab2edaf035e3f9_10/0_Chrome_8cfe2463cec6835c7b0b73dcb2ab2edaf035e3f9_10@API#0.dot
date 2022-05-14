@@ -1,0 +1,24 @@
+digraph "0_Chrome_8cfe2463cec6835c7b0b73dcb2ab2edaf035e3f9_10@API" {
+"1000104" [label="(Call,std::move(request))"];
+"1000101" [label="(MethodParameterIn,mojom::AppControllerRequest request)"];
+"1000103" [label="(Call,AppControllerService::Get(context_)->BindRequest(std::move(request)))"];
+"1000105" [label="(Identifier,request)"];
+"1000102" [label="(Block,)"];
+"1000101" [label="(MethodParameterIn,mojom::AppControllerRequest request)"];
+"1000104" [label="(Call,std::move(request))"];
+"1000103" [label="(Call,AppControllerService::Get(context_)->BindRequest(std::move(request)))"];
+"1000106" [label="(MethodReturn,void)"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000106"  [label="DDG: request"];
+"1000104" -> "1000103"  [label="DDG: request"];
+"1000101" -> "1000104"  [label="DDG: request"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000106"  [label="DDG: request"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000106" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000106"  [label="DDG: AppControllerService::Get(context_)->BindRequest(std::move(request))"];
+"1000103" -> "1000106"  [label="DDG: std::move(request)"];
+}

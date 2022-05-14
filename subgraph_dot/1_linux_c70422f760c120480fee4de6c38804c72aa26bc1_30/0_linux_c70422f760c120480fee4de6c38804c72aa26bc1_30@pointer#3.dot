@@ -1,0 +1,34 @@
+digraph "0_linux_c70422f760c120480fee4de6c38804c72aa26bc1_30@pointer" {
+"1000173" [label="(Call,clear_bit(XPT_DATA, &xprt->xpt_flags))"];
+"1000192" [label="(Call,test_bit(XPT_CLOSE, &xprt->xpt_flags))"];
+"1000169" [label="(Block,)"];
+"1000194" [label="(Call,&xprt->xpt_flags)"];
+"1000193" [label="(Identifier,XPT_CLOSE)"];
+"1000191" [label="(ControlStructure,if (test_bit(XPT_CLOSE, &xprt->xpt_flags)))"];
+"1000198" [label="(ControlStructure,goto defer;)"];
+"1000192" [label="(Call,test_bit(XPT_CLOSE, &xprt->xpt_flags))"];
+"1000173" [label="(Call,clear_bit(XPT_DATA, &xprt->xpt_flags))"];
+"1000199" [label="(ControlStructure,goto out;)"];
+"1000175" [label="(Call,&xprt->xpt_flags)"];
+"1000174" [label="(Identifier,XPT_DATA)"];
+"1000387" [label="(MethodReturn,int)"];
+"1000180" [label="(Identifier,ctxt)"];
+"1000173" -> "1000169"  [label="AST: "];
+"1000173" -> "1000175"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000175" -> "1000173"  [label="AST: "];
+"1000180" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000387"  [label="DDG: clear_bit(XPT_DATA, &xprt->xpt_flags)"];
+"1000173" -> "1000387"  [label="DDG: XPT_DATA"];
+"1000173" -> "1000387"  [label="DDG: &xprt->xpt_flags"];
+"1000173" -> "1000192"  [label="DDG: &xprt->xpt_flags"];
+"1000192" -> "1000191"  [label="AST: "];
+"1000192" -> "1000194"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000194" -> "1000192"  [label="AST: "];
+"1000198" -> "1000192"  [label="CFG: "];
+"1000199" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000387"  [label="DDG: &xprt->xpt_flags"];
+"1000192" -> "1000387"  [label="DDG: XPT_CLOSE"];
+"1000192" -> "1000387"  [label="DDG: test_bit(XPT_CLOSE, &xprt->xpt_flags)"];
+}

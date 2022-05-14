@@ -1,0 +1,26 @@
+digraph "0_Chrome_47ae3dfdee9a0796a079cd4eadf2f75b34f257ae@API" {
+"1000144" [label="(Call,!setting->Remove(kObjectListKey, &objects))"];
+"1000145" [label="(Call,setting->Remove(kObjectListKey, &objects))"];
+"1000150" [label="(Identifier,results)"];
+"1000143" [label="(ControlStructure,if (!setting->Remove(kObjectListKey, &objects)))"];
+"1000145" [label="(Call,setting->Remove(kObjectListKey, &objects))"];
+"1000195" [label="(MethodReturn,RET)"];
+"1000147" [label="(Call,&objects)"];
+"1000153" [label="(Identifier,std::unique_ptr)"];
+"1000146" [label="(Identifier,kObjectListKey)"];
+"1000144" [label="(Call,!setting->Remove(kObjectListKey, &objects))"];
+"1000144" -> "1000143"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000150" -> "1000144"  [label="CFG: "];
+"1000153" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000195"  [label="DDG: !setting->Remove(kObjectListKey, &objects)"];
+"1000144" -> "1000195"  [label="DDG: setting->Remove(kObjectListKey, &objects)"];
+"1000145" -> "1000144"  [label="DDG: kObjectListKey"];
+"1000145" -> "1000144"  [label="DDG: &objects"];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000145" -> "1000195"  [label="DDG: kObjectListKey"];
+"1000145" -> "1000195"  [label="DDG: &objects"];
+}

@@ -1,0 +1,36 @@
+digraph "0_linux_82939d7999dfc1f1998c4b1c12e2f19edbdff272_0@pointer" {
+"1000143" [label="(Call,jbd2_journal_destroy(sbi->s_journal))"];
+"1000141" [label="(Call,err = jbd2_journal_destroy(sbi->s_journal))"];
+"1000153" [label="(Call,err < 0)"];
+"1000140" [label="(Block,)"];
+"1000157" [label="(Identifier,sb)"];
+"1000143" [label="(Call,jbd2_journal_destroy(sbi->s_journal))"];
+"1000144" [label="(Call,sbi->s_journal)"];
+"1000160" [label="(Identifier,sb)"];
+"1000149" [label="(Identifier,sbi)"];
+"1000155" [label="(Literal,0)"];
+"1000153" [label="(Call,err < 0)"];
+"1000141" [label="(Call,err = jbd2_journal_destroy(sbi->s_journal))"];
+"1000366" [label="(MethodReturn,static void)"];
+"1000152" [label="(ControlStructure,if (err < 0))"];
+"1000154" [label="(Identifier,err)"];
+"1000142" [label="(Identifier,err)"];
+"1000143" -> "1000141"  [label="AST: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000141" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000141"  [label="DDG: sbi->s_journal"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000149" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000366"  [label="DDG: jbd2_journal_destroy(sbi->s_journal)"];
+"1000141" -> "1000153"  [label="DDG: err"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000155"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000155" -> "1000153"  [label="AST: "];
+"1000157" -> "1000153"  [label="CFG: "];
+"1000160" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000366"  [label="DDG: err < 0"];
+"1000153" -> "1000366"  [label="DDG: err"];
+}

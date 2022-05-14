@@ -1,0 +1,31 @@
+digraph "0_linux_c290f8358acaeffd8e0c551ddcc24d1206143376@pointer" {
+"1000422" [label="(Call,filp->f_op == &hung_up_tty_fops)"];
+"1000428" [label="(Call,filp->f_op = &tty_fops)"];
+"1000423" [label="(Call,filp->f_op)"];
+"1000428" [label="(Call,filp->f_op = &tty_fops)"];
+"1000430" [label="(Identifier,filp)"];
+"1000422" [label="(Call,filp->f_op == &hung_up_tty_fops)"];
+"1000486" [label="(MethodReturn,static int)"];
+"1000421" [label="(ControlStructure,if (filp->f_op == &hung_up_tty_fops))"];
+"1000426" [label="(Call,&hung_up_tty_fops)"];
+"1000432" [label="(Call,&tty_fops)"];
+"1000434" [label="(Call,tty_unlock())"];
+"1000429" [label="(Call,filp->f_op)"];
+"1000422" -> "1000421"  [label="AST: "];
+"1000422" -> "1000426"  [label="CFG: "];
+"1000423" -> "1000422"  [label="AST: "];
+"1000426" -> "1000422"  [label="AST: "];
+"1000430" -> "1000422"  [label="CFG: "];
+"1000434" -> "1000422"  [label="CFG: "];
+"1000422" -> "1000486"  [label="DDG: &hung_up_tty_fops"];
+"1000422" -> "1000486"  [label="DDG: filp->f_op"];
+"1000422" -> "1000486"  [label="DDG: filp->f_op == &hung_up_tty_fops"];
+"1000428" -> "1000422"  [label="DDG: filp->f_op"];
+"1000428" -> "1000421"  [label="AST: "];
+"1000428" -> "1000432"  [label="CFG: "];
+"1000429" -> "1000428"  [label="AST: "];
+"1000432" -> "1000428"  [label="AST: "];
+"1000434" -> "1000428"  [label="CFG: "];
+"1000428" -> "1000486"  [label="DDG: &tty_fops"];
+"1000428" -> "1000486"  [label="DDG: filp->f_op"];
+}

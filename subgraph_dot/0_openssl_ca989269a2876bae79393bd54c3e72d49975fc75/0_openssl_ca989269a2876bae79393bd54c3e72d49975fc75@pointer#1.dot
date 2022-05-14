@@ -1,0 +1,34 @@
+digraph "0_openssl_ca989269a2876bae79393bd54c3e72d49975fc75@pointer" {
+"1000117" [label="(Call,s->method->version == TLS1_2_VERSION)"];
+"1000116" [label="(Call,s->method->version == TLS1_2_VERSION &&\n            alg2 == (SSL_HANDSHAKE_MAC_DEFAULT|TLS1_PRF))"];
+"1000123" [label="(Identifier,TLS1_2_VERSION)"];
+"1000125" [label="(Identifier,alg2)"];
+"1000115" [label="(ControlStructure,if (s->method->version == TLS1_2_VERSION &&\n            alg2 == (SSL_HANDSHAKE_MAC_DEFAULT|TLS1_PRF)))"];
+"1000134" [label="(Identifier,alg2)"];
+"1000131" [label="(Identifier,SSL_HANDSHAKE_MAC_SHA256)"];
+"1000117" [label="(Call,s->method->version == TLS1_2_VERSION)"];
+"1000135" [label="(MethodReturn,long)"];
+"1000124" [label="(Call,alg2 == (SSL_HANDSHAKE_MAC_DEFAULT|TLS1_PRF))"];
+"1000118" [label="(Call,s->method->version)"];
+"1000116" [label="(Call,s->method->version == TLS1_2_VERSION &&\n            alg2 == (SSL_HANDSHAKE_MAC_DEFAULT|TLS1_PRF))"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000123"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000123" -> "1000117"  [label="AST: "];
+"1000125" -> "1000117"  [label="CFG: "];
+"1000116" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000135"  [label="DDG: s->method->version"];
+"1000117" -> "1000135"  [label="DDG: TLS1_2_VERSION"];
+"1000117" -> "1000116"  [label="DDG: s->method->version"];
+"1000117" -> "1000116"  [label="DDG: TLS1_2_VERSION"];
+"1000116" -> "1000115"  [label="AST: "];
+"1000116" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000116"  [label="AST: "];
+"1000131" -> "1000116"  [label="CFG: "];
+"1000134" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000135"  [label="DDG: s->method->version == TLS1_2_VERSION"];
+"1000116" -> "1000135"  [label="DDG: s->method->version == TLS1_2_VERSION &&\n            alg2 == (SSL_HANDSHAKE_MAC_DEFAULT|TLS1_PRF)"];
+"1000116" -> "1000135"  [label="DDG: alg2 == (SSL_HANDSHAKE_MAC_DEFAULT|TLS1_PRF)"];
+"1000124" -> "1000116"  [label="DDG: alg2"];
+"1000124" -> "1000116"  [label="DDG: SSL_HANDSHAKE_MAC_DEFAULT|TLS1_PRF"];
+}

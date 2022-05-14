@@ -1,0 +1,26 @@
+digraph "0_linux_f0d1762554014ce0ae347b9f0d088f2c157c8c72@pointer" {
+"1000303" [label="(Call,blk_cleanup_queue(cd->disk->queue))"];
+"1000309" [label="(Call,cd->disk->queue = NULL)"];
+"1000312" [label="(Identifier,cd)"];
+"1000309" [label="(Call,cd->disk->queue = NULL)"];
+"1000296" [label="(Block,)"];
+"1000315" [label="(Identifier,NULL)"];
+"1000330" [label="(MethodReturn,static int)"];
+"1000303" [label="(Call,blk_cleanup_queue(cd->disk->queue))"];
+"1000304" [label="(Call,cd->disk->queue)"];
+"1000310" [label="(Call,cd->disk->queue)"];
+"1000319" [label="(Identifier,cd)"];
+"1000303" -> "1000296"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000312" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000330"  [label="DDG: blk_cleanup_queue(cd->disk->queue)"];
+"1000309" -> "1000303"  [label="DDG: cd->disk->queue"];
+"1000309" -> "1000296"  [label="AST: "];
+"1000309" -> "1000315"  [label="CFG: "];
+"1000310" -> "1000309"  [label="AST: "];
+"1000315" -> "1000309"  [label="AST: "];
+"1000319" -> "1000309"  [label="CFG: "];
+"1000309" -> "1000330"  [label="DDG: cd->disk->queue"];
+"1000309" -> "1000330"  [label="DDG: NULL"];
+}

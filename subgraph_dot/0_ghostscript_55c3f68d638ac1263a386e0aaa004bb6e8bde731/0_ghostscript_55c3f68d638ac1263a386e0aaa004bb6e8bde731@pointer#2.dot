@@ -1,0 +1,30 @@
+digraph "0_ghostscript_55c3f68d638ac1263a386e0aaa004bb6e8bde731@pointer" {
+"1000268" [label="(Call,entry->type = t == 0 ? 'f' : t == 1 ? 'n' : t == 2 ? 'o' : 0)"];
+"1000256" [label="(Call,!entry->type)"];
+"1000268" [label="(Call,entry->type = t == 0 ? 'f' : t == 1 ? 'n' : t == 2 ? 'o' : 0)"];
+"1000314" [label="(MethodReturn,RET)"];
+"1000260" [label="(Block,)"];
+"1000269" [label="(Call,entry->type)"];
+"1000255" [label="(ControlStructure,if (!entry->type))"];
+"1000170" [label="(Identifier,i)"];
+"1000257" [label="(Call,entry->type)"];
+"1000263" [label="(Identifier,t)"];
+"1000290" [label="(Identifier,entry)"];
+"1000256" [label="(Call,!entry->type)"];
+"1000272" [label="(Call,t == 0 ? 'f' : t == 1 ? 'n' : t == 2 ? 'o' : 0)"];
+"1000268" -> "1000260"  [label="AST: "];
+"1000268" -> "1000272"  [label="CFG: "];
+"1000269" -> "1000268"  [label="AST: "];
+"1000272" -> "1000268"  [label="AST: "];
+"1000290" -> "1000268"  [label="CFG: "];
+"1000268" -> "1000314"  [label="DDG: entry->type"];
+"1000268" -> "1000314"  [label="DDG: t == 0 ? 'f' : t == 1 ? 'n' : t == 2 ? 'o' : 0"];
+"1000268" -> "1000256"  [label="DDG: entry->type"];
+"1000256" -> "1000255"  [label="AST: "];
+"1000256" -> "1000257"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000263" -> "1000256"  [label="CFG: "];
+"1000170" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000314"  [label="DDG: entry->type"];
+"1000256" -> "1000314"  [label="DDG: !entry->type"];
+}

@@ -1,0 +1,34 @@
+digraph "0_ImageMagick_cdb383749ef7b68a38891440af8cc23e0115306d@pointer" {
+"1001304" [label="(Call,image->storage_class == PseudoClass)"];
+"1001303" [label="(Call,(image->storage_class == PseudoClass) &&\n          (SetImageGray(image,exception) != MagickFalse))"];
+"1001478" [label="(JumpTarget,Finish:)"];
+"1001524" [label="(MethodReturn,static Image *)"];
+"1001303" [label="(Call,(image->storage_class == PseudoClass) &&\n          (SetImageGray(image,exception) != MagickFalse))"];
+"1001304" [label="(Call,image->storage_class == PseudoClass)"];
+"1001305" [label="(Call,image->storage_class)"];
+"1001311" [label="(Identifier,image)"];
+"1001302" [label="(ControlStructure,if ((image->storage_class == PseudoClass) &&\n          (SetImageGray(image,exception) != MagickFalse)))"];
+"1001318" [label="(Identifier,image)"];
+"1001308" [label="(Identifier,PseudoClass)"];
+"1001309" [label="(Call,SetImageGray(image,exception) != MagickFalse)"];
+"1001304" -> "1001303"  [label="AST: "];
+"1001304" -> "1001308"  [label="CFG: "];
+"1001305" -> "1001304"  [label="AST: "];
+"1001308" -> "1001304"  [label="AST: "];
+"1001311" -> "1001304"  [label="CFG: "];
+"1001303" -> "1001304"  [label="CFG: "];
+"1001304" -> "1001524"  [label="DDG: PseudoClass"];
+"1001304" -> "1001524"  [label="DDG: image->storage_class"];
+"1001304" -> "1001303"  [label="DDG: image->storage_class"];
+"1001304" -> "1001303"  [label="DDG: PseudoClass"];
+"1001303" -> "1001302"  [label="AST: "];
+"1001303" -> "1001309"  [label="CFG: "];
+"1001309" -> "1001303"  [label="AST: "];
+"1001318" -> "1001303"  [label="CFG: "];
+"1001478" -> "1001303"  [label="CFG: "];
+"1001303" -> "1001524"  [label="DDG: SetImageGray(image,exception) != MagickFalse"];
+"1001303" -> "1001524"  [label="DDG: image->storage_class == PseudoClass"];
+"1001303" -> "1001524"  [label="DDG: (image->storage_class == PseudoClass) &&\n          (SetImageGray(image,exception) != MagickFalse)"];
+"1001309" -> "1001303"  [label="DDG: SetImageGray(image,exception)"];
+"1001309" -> "1001303"  [label="DDG: MagickFalse"];
+}

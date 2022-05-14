@@ -1,0 +1,28 @@
+digraph "1_tcpdump_9ba91381954ad325ea4fd26b9c65a8bd9a2a85b6@API" {
+"1000125" [label="(Call,ptr[strlen(ptr) - 1] = '\0')"];
+"1000102" [label="(MethodParameterIn,char *ptr)"];
+"1000102" [label="(MethodParameterIn,char *ptr)"];
+"1000125" [label="(Call,ptr[strlen(ptr) - 1] = '\0')"];
+"1000116" [label="(ControlStructure,if (ptr[strlen(ptr) - 1] == '\n'))"];
+"1000107" [label="(Call,fgets(ptr, PATH_MAX, VFile))"];
+"1000117" [label="(Call,ptr[strlen(ptr) - 1] == '\n')"];
+"1000121" [label="(Call,strlen(ptr))"];
+"1000132" [label="(Literal,'\0')"];
+"1000129" [label="(Call,strlen(ptr))"];
+"1000134" [label="(Identifier,ret)"];
+"1000126" [label="(Call,ptr[strlen(ptr) - 1])"];
+"1000135" [label="(MethodReturn,RET)"];
+"1000125" -> "1000116"  [label="AST: "];
+"1000125" -> "1000132"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="AST: "];
+"1000134" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000135"  [label="DDG: ptr[strlen(ptr) - 1]"];
+"1000102" -> "1000125"  [label="DDG: ptr"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000135"  [label="DDG: ptr"];
+"1000102" -> "1000107"  [label="DDG: ptr"];
+"1000102" -> "1000117"  [label="DDG: ptr"];
+"1000102" -> "1000121"  [label="DDG: ptr"];
+"1000102" -> "1000129"  [label="DDG: ptr"];
+}

@@ -1,0 +1,29 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1004419" [label="(Call,s->flags & (HF_EM_MASK | HF_TS_MASK))"];
+"1004423" [label="(Call,HF_EM_MASK | HF_TS_MASK)"];
+"1004419" [label="(Call,s->flags & (HF_EM_MASK | HF_TS_MASK))"];
+"1004424" [label="(Identifier,HF_EM_MASK)"];
+"1004423" [label="(Call,HF_EM_MASK | HF_TS_MASK)"];
+"1004420" [label="(Call,s->flags)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1004428" [label="(Identifier,s)"];
+"1004437" [label="(Identifier,modrm)"];
+"1004425" [label="(Identifier,HF_TS_MASK)"];
+"1004418" [label="(ControlStructure,if (s->flags & (HF_EM_MASK | HF_TS_MASK)))"];
+"1004419" -> "1004418"  [label="AST: "];
+"1004419" -> "1004423"  [label="CFG: "];
+"1004420" -> "1004419"  [label="AST: "];
+"1004423" -> "1004419"  [label="AST: "];
+"1004428" -> "1004419"  [label="CFG: "];
+"1004437" -> "1004419"  [label="CFG: "];
+"1004419" -> "1011840"  [label="DDG: s->flags"];
+"1004419" -> "1011840"  [label="DDG: s->flags & (HF_EM_MASK | HF_TS_MASK)"];
+"1004419" -> "1011840"  [label="DDG: HF_EM_MASK | HF_TS_MASK"];
+"1004423" -> "1004419"  [label="DDG: HF_EM_MASK"];
+"1004423" -> "1004419"  [label="DDG: HF_TS_MASK"];
+"1004423" -> "1004425"  [label="CFG: "];
+"1004424" -> "1004423"  [label="AST: "];
+"1004425" -> "1004423"  [label="AST: "];
+"1004423" -> "1011840"  [label="DDG: HF_TS_MASK"];
+"1004423" -> "1011840"  [label="DDG: HF_EM_MASK"];
+}

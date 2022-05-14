@@ -1,0 +1,26 @@
+digraph "0_linux_d558023207e008a4476a3b7bb8706b2a2bf5d84f@pointer" {
+"1000235" [label="(Call,atomic_set(&ctx->reqs_available, ctx->nr_events - 1))"];
+"1000240" [label="(Call,ctx->nr_events - 1)"];
+"1000244" [label="(Literal,1)"];
+"1000236" [label="(Call,&ctx->reqs_available)"];
+"1000235" [label="(Call,atomic_set(&ctx->reqs_available, ctx->nr_events - 1))"];
+"1000359" [label="(MethodReturn,static struct kioctx *)"];
+"1000240" [label="(Call,ctx->nr_events - 1)"];
+"1000241" [label="(Call,ctx->nr_events)"];
+"1000106" [label="(Block,)"];
+"1000247" [label="(Identifier,ctx)"];
+"1000250" [label="(Call,ctx->nr_events - 1)"];
+"1000235" -> "1000106"  [label="AST: "];
+"1000235" -> "1000240"  [label="CFG: "];
+"1000236" -> "1000235"  [label="AST: "];
+"1000240" -> "1000235"  [label="AST: "];
+"1000247" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000359"  [label="DDG: &ctx->reqs_available"];
+"1000235" -> "1000359"  [label="DDG: atomic_set(&ctx->reqs_available, ctx->nr_events - 1)"];
+"1000240" -> "1000235"  [label="DDG: ctx->nr_events"];
+"1000240" -> "1000235"  [label="DDG: 1"];
+"1000240" -> "1000244"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000244" -> "1000240"  [label="AST: "];
+"1000240" -> "1000250"  [label="DDG: ctx->nr_events"];
+}

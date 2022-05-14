@@ -1,0 +1,34 @@
+digraph "0_postgres_4318daecc959886d001a6e79c6ea853e8b1dfb4b@API" {
+"1000136" [label="(Call,strlen(str) > MAXDATELEN)"];
+"1000137" [label="(Call,strlen(str))"];
+"1000101" [label="(MethodParameterIn,char *str)"];
+"1000137" [label="(Call,strlen(str))"];
+"1000219" [label="(MethodReturn,RET)"];
+"1000150" [label="(Identifier,str)"];
+"1000101" [label="(MethodParameterIn,char *str)"];
+"1000138" [label="(Identifier,str)"];
+"1000149" [label="(Call,ParseDateTime(str, lowstr, field, ftype, &nf, ptr))"];
+"1000135" [label="(ControlStructure,if (strlen(str) > MAXDATELEN))"];
+"1000142" [label="(Identifier,errno)"];
+"1000136" [label="(Call,strlen(str) > MAXDATELEN)"];
+"1000139" [label="(Identifier,MAXDATELEN)"];
+"1000136" -> "1000135"  [label="AST: "];
+"1000136" -> "1000139"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000139" -> "1000136"  [label="AST: "];
+"1000142" -> "1000136"  [label="CFG: "];
+"1000150" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000219"  [label="DDG: MAXDATELEN"];
+"1000136" -> "1000219"  [label="DDG: strlen(str) > MAXDATELEN"];
+"1000136" -> "1000219"  [label="DDG: strlen(str)"];
+"1000137" -> "1000136"  [label="DDG: str"];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000139" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000219"  [label="DDG: str"];
+"1000101" -> "1000137"  [label="DDG: str"];
+"1000137" -> "1000149"  [label="DDG: str"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000219"  [label="DDG: str"];
+"1000101" -> "1000149"  [label="DDG: str"];
+}

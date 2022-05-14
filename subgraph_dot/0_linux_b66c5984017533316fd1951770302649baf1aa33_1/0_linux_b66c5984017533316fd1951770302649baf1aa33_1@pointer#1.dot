@@ -1,0 +1,29 @@
+digraph "0_linux_b66c5984017533316fd1951770302649baf1aa33_1@pointer" {
+"1000130" [label="(Call,kfree(bprm->interp))"];
+"1000123" [label="(Call,bprm->interp != bprm->filename)"];
+"1000122" [label="(ControlStructure,if (bprm->interp != bprm->filename))"];
+"1000135" [label="(Identifier,bprm)"];
+"1000131" [label="(Call,bprm->interp)"];
+"1000123" [label="(Call,bprm->interp != bprm->filename)"];
+"1000130" [label="(Call,kfree(bprm->interp))"];
+"1000136" [label="(MethodReturn,void)"];
+"1000124" [label="(Call,bprm->interp)"];
+"1000127" [label="(Call,bprm->filename)"];
+"1000132" [label="(Identifier,bprm)"];
+"1000130" -> "1000122"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000135" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000136"  [label="DDG: kfree(bprm->interp)"];
+"1000130" -> "1000136"  [label="DDG: bprm->interp"];
+"1000123" -> "1000130"  [label="DDG: bprm->interp"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000127"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000132" -> "1000123"  [label="CFG: "];
+"1000135" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000136"  [label="DDG: bprm->interp != bprm->filename"];
+"1000123" -> "1000136"  [label="DDG: bprm->filename"];
+"1000123" -> "1000136"  [label="DDG: bprm->interp"];
+}

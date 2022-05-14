@@ -1,0 +1,28 @@
+digraph "0_linux_9e2dcf72023d1447f09c47d77c99b0c49659e5ce@pointer" {
+"1000119" [label="(Call,*ret_skb = NULL)"];
+"1000298" [label="(Return,return ret_skb;)"];
+"1000284" [label="(Call,ret_skb == NULL)"];
+"1000298" [label="(Return,return ret_skb;)"];
+"1000104" [label="(Block,)"];
+"1000119" [label="(Call,*ret_skb = NULL)"];
+"1000305" [label="(MethodReturn,struct sk_buff *)"];
+"1000126" [label="(Identifier,skb)"];
+"1000121" [label="(Identifier,NULL)"];
+"1000299" [label="(Identifier,ret_skb)"];
+"1000120" [label="(Identifier,ret_skb)"];
+"1000119" -> "1000104"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000126" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000305"  [label="DDG: NULL"];
+"1000119" -> "1000305"  [label="DDG: ret_skb"];
+"1000119" -> "1000298"  [label="DDG: ret_skb"];
+"1000298" -> "1000104"  [label="AST: "];
+"1000298" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000298"  [label="AST: "];
+"1000305" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000305"  [label="DDG: <RET>"];
+"1000299" -> "1000298"  [label="DDG: ret_skb"];
+"1000284" -> "1000298"  [label="DDG: ret_skb"];
+}

@@ -1,0 +1,36 @@
+digraph "0_linux_7d11f77f84b27cef452cee332f4e469503084737@integer" {
+"1000503" [label="(Call,rm->atomic.op_remote_addr = args->remote_addr + rds_rdma_cookie_offset(args->cookie))"];
+"1000513" [label="(Call,rds_rdma_cookie_offset(args->cookie))"];
+"1000499" [label="(Call,rds_rdma_cookie_key(args->cookie))"];
+"1000539" [label="(MethodReturn,int)"];
+"1000509" [label="(Call,args->remote_addr + rds_rdma_cookie_offset(args->cookie))"];
+"1000513" [label="(Call,rds_rdma_cookie_offset(args->cookie))"];
+"1000499" [label="(Call,rds_rdma_cookie_key(args->cookie))"];
+"1000493" [label="(Call,rm->atomic.op_rkey = rds_rdma_cookie_key(args->cookie))"];
+"1000108" [label="(Block,)"];
+"1000503" [label="(Call,rm->atomic.op_remote_addr = args->remote_addr + rds_rdma_cookie_offset(args->cookie))"];
+"1000504" [label="(Call,rm->atomic.op_remote_addr)"];
+"1000500" [label="(Call,args->cookie)"];
+"1000514" [label="(Call,args->cookie)"];
+"1000518" [label="(Identifier,ret)"];
+"1000503" -> "1000108"  [label="AST: "];
+"1000503" -> "1000509"  [label="CFG: "];
+"1000504" -> "1000503"  [label="AST: "];
+"1000509" -> "1000503"  [label="AST: "];
+"1000518" -> "1000503"  [label="CFG: "];
+"1000503" -> "1000539"  [label="DDG: args->remote_addr + rds_rdma_cookie_offset(args->cookie)"];
+"1000503" -> "1000539"  [label="DDG: rm->atomic.op_remote_addr"];
+"1000513" -> "1000503"  [label="DDG: args->cookie"];
+"1000513" -> "1000509"  [label="AST: "];
+"1000513" -> "1000514"  [label="CFG: "];
+"1000514" -> "1000513"  [label="AST: "];
+"1000509" -> "1000513"  [label="CFG: "];
+"1000513" -> "1000539"  [label="DDG: args->cookie"];
+"1000513" -> "1000509"  [label="DDG: args->cookie"];
+"1000499" -> "1000513"  [label="DDG: args->cookie"];
+"1000499" -> "1000493"  [label="AST: "];
+"1000499" -> "1000500"  [label="CFG: "];
+"1000500" -> "1000499"  [label="AST: "];
+"1000493" -> "1000499"  [label="CFG: "];
+"1000499" -> "1000493"  [label="DDG: args->cookie"];
+}

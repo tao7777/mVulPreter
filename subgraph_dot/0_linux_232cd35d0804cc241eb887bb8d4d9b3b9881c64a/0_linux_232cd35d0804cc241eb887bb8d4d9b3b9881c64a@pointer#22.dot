@@ -1,0 +1,32 @@
+digraph "0_linux_232cd35d0804cc241eb887bb8d4d9b3b9881c64a@pointer" {
+"1000418" [label="(Call,sk->sk_tsflags & SOF_TIMESTAMPING_OPT_ID)"];
+"1000414" [label="(Call,tx_flags & SKBTX_ANY_SW_TSTAMP &&\n\t\t    sk->sk_tsflags & SOF_TIMESTAMPING_OPT_ID)"];
+"1001100" [label="(MethodReturn,static int)"];
+"1000424" [label="(Identifier,tskey)"];
+"1000431" [label="(Identifier,cork)"];
+"1000422" [label="(Identifier,SOF_TIMESTAMPING_OPT_ID)"];
+"1000413" [label="(ControlStructure,if (tx_flags & SKBTX_ANY_SW_TSTAMP &&\n\t\t    sk->sk_tsflags & SOF_TIMESTAMPING_OPT_ID))"];
+"1000418" [label="(Call,sk->sk_tsflags & SOF_TIMESTAMPING_OPT_ID)"];
+"1000415" [label="(Call,tx_flags & SKBTX_ANY_SW_TSTAMP)"];
+"1000419" [label="(Call,sk->sk_tsflags)"];
+"1000414" [label="(Call,tx_flags & SKBTX_ANY_SW_TSTAMP &&\n\t\t    sk->sk_tsflags & SOF_TIMESTAMPING_OPT_ID)"];
+"1000418" -> "1000414"  [label="AST: "];
+"1000418" -> "1000422"  [label="CFG: "];
+"1000419" -> "1000418"  [label="AST: "];
+"1000422" -> "1000418"  [label="AST: "];
+"1000414" -> "1000418"  [label="CFG: "];
+"1000418" -> "1001100"  [label="DDG: SOF_TIMESTAMPING_OPT_ID"];
+"1000418" -> "1001100"  [label="DDG: sk->sk_tsflags"];
+"1000418" -> "1000414"  [label="DDG: sk->sk_tsflags"];
+"1000418" -> "1000414"  [label="DDG: SOF_TIMESTAMPING_OPT_ID"];
+"1000414" -> "1000413"  [label="AST: "];
+"1000414" -> "1000415"  [label="CFG: "];
+"1000415" -> "1000414"  [label="AST: "];
+"1000424" -> "1000414"  [label="CFG: "];
+"1000431" -> "1000414"  [label="CFG: "];
+"1000414" -> "1001100"  [label="DDG: tx_flags & SKBTX_ANY_SW_TSTAMP &&\n\t\t    sk->sk_tsflags & SOF_TIMESTAMPING_OPT_ID"];
+"1000414" -> "1001100"  [label="DDG: sk->sk_tsflags & SOF_TIMESTAMPING_OPT_ID"];
+"1000414" -> "1001100"  [label="DDG: tx_flags & SKBTX_ANY_SW_TSTAMP"];
+"1000415" -> "1000414"  [label="DDG: tx_flags"];
+"1000415" -> "1000414"  [label="DDG: SKBTX_ANY_SW_TSTAMP"];
+}

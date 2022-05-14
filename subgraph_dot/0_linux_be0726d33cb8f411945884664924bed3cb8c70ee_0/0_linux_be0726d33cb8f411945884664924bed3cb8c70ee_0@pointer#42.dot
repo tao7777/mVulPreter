@@ -1,0 +1,22 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_0@pointer" {
+"1000645" [label="(Call,le32_to_cpu(es->s_first_ino))"];
+"1000641" [label="(Call,sbi->s_first_ino = le32_to_cpu(es->s_first_ino))"];
+"1001382" [label="(MethodReturn,static int)"];
+"1000642" [label="(Call,sbi->s_first_ino)"];
+"1000641" [label="(Call,sbi->s_first_ino = le32_to_cpu(es->s_first_ino))"];
+"1000646" [label="(Call,es->s_first_ino)"];
+"1000632" [label="(Block,)"];
+"1000645" [label="(Call,le32_to_cpu(es->s_first_ino))"];
+"1000653" [label="(Identifier,sbi)"];
+"1000645" -> "1000641"  [label="AST: "];
+"1000645" -> "1000646"  [label="CFG: "];
+"1000646" -> "1000645"  [label="AST: "];
+"1000641" -> "1000645"  [label="CFG: "];
+"1000645" -> "1001382"  [label="DDG: es->s_first_ino"];
+"1000645" -> "1000641"  [label="DDG: es->s_first_ino"];
+"1000641" -> "1000632"  [label="AST: "];
+"1000642" -> "1000641"  [label="AST: "];
+"1000653" -> "1000641"  [label="CFG: "];
+"1000641" -> "1001382"  [label="DDG: le32_to_cpu(es->s_first_ino)"];
+"1000641" -> "1001382"  [label="DDG: sbi->s_first_ino"];
+}

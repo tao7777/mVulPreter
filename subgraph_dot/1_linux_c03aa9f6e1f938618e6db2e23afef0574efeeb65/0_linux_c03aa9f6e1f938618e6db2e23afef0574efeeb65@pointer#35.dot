@@ -1,0 +1,36 @@
+digraph "0_linux_c03aa9f6e1f938618e6db2e23afef0574efeeb65@pointer" {
+"1000580" [label="(Call,uid_valid(inode->i_uid))"];
+"1000579" [label="(Call,!uid_valid(inode->i_uid))"];
+"1000578" [label="(Call,!uid_valid(inode->i_uid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_SET))"];
+"1000584" [label="(Call,UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_SET))"];
+"1000578" [label="(Call,!uid_valid(inode->i_uid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_SET))"];
+"1000580" [label="(Call,uid_valid(inode->i_uid))"];
+"1000581" [label="(Call,inode->i_uid)"];
+"1001156" [label="(MethodReturn,static void)"];
+"1000606" [label="(Identifier,inode)"];
+"1000577" [label="(ControlStructure,if (!uid_valid(inode->i_uid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_SET)))"];
+"1000587" [label="(Identifier,inode)"];
+"1000597" [label="(Identifier,inode)"];
+"1000579" [label="(Call,!uid_valid(inode->i_uid))"];
+"1000580" -> "1000579"  [label="AST: "];
+"1000580" -> "1000581"  [label="CFG: "];
+"1000581" -> "1000580"  [label="AST: "];
+"1000579" -> "1000580"  [label="CFG: "];
+"1000580" -> "1001156"  [label="DDG: inode->i_uid"];
+"1000580" -> "1000579"  [label="DDG: inode->i_uid"];
+"1000579" -> "1000578"  [label="AST: "];
+"1000587" -> "1000579"  [label="CFG: "];
+"1000578" -> "1000579"  [label="CFG: "];
+"1000579" -> "1001156"  [label="DDG: uid_valid(inode->i_uid)"];
+"1000579" -> "1000578"  [label="DDG: uid_valid(inode->i_uid)"];
+"1000578" -> "1000577"  [label="AST: "];
+"1000578" -> "1000584"  [label="CFG: "];
+"1000584" -> "1000578"  [label="AST: "];
+"1000597" -> "1000578"  [label="CFG: "];
+"1000606" -> "1000578"  [label="CFG: "];
+"1000578" -> "1001156"  [label="DDG: !uid_valid(inode->i_uid)"];
+"1000578" -> "1001156"  [label="DDG: UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_SET)"];
+"1000578" -> "1001156"  [label="DDG: !uid_valid(inode->i_uid) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_IGNORE) ||\n\t    UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_SET)"];
+"1000584" -> "1000578"  [label="DDG: UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_IGNORE)"];
+"1000584" -> "1000578"  [label="DDG: UDF_QUERY_FLAG(inode->i_sb, UDF_FLAG_UID_SET)"];
+}

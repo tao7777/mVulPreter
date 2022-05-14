@@ -1,0 +1,30 @@
+digraph "0_poppler_7b2d314a61fd0e12f47c62996cb49ec0d1ba747a_10@pointer" {
+"1000525" [label="(Call,maskColors ? &alphaImageSrc : &imageSrc)"];
+"1000107" [label="(MethodParameterIn,int *maskColors)"];
+"1000527" [label="(Call,&alphaImageSrc)"];
+"1000188" [label="(Call,imgData.maskColors = maskColors)"];
+"1000531" [label="(Call,splash->drawImage(src, &imgData, srcMode, maskColors ? gTrue : gFalse,\n\t\t    width, height, mat))"];
+"1000523" [label="(Call,src = maskColors ? &alphaImageSrc : &imageSrc)"];
+"1000107" [label="(MethodParameterIn,int *maskColors)"];
+"1000566" [label="(MethodReturn,void)"];
+"1000529" [label="(Call,&imageSrc)"];
+"1000536" [label="(Call,maskColors ? gTrue : gFalse)"];
+"1000526" [label="(Identifier,maskColors)"];
+"1000525" [label="(Call,maskColors ? &alphaImageSrc : &imageSrc)"];
+"1000525" -> "1000523"  [label="AST: "];
+"1000525" -> "1000527"  [label="CFG: "];
+"1000525" -> "1000529"  [label="CFG: "];
+"1000526" -> "1000525"  [label="AST: "];
+"1000527" -> "1000525"  [label="AST: "];
+"1000529" -> "1000525"  [label="AST: "];
+"1000523" -> "1000525"  [label="CFG: "];
+"1000525" -> "1000566"  [label="DDG: &imageSrc"];
+"1000525" -> "1000566"  [label="DDG: &alphaImageSrc"];
+"1000107" -> "1000525"  [label="DDG: maskColors"];
+"1000107" -> "1000100"  [label="AST: "];
+"1000107" -> "1000566"  [label="DDG: maskColors"];
+"1000107" -> "1000188"  [label="DDG: maskColors"];
+"1000107" -> "1000523"  [label="DDG: maskColors"];
+"1000107" -> "1000531"  [label="DDG: maskColors"];
+"1000107" -> "1000536"  [label="DDG: maskColors"];
+}

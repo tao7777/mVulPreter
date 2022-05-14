@@ -1,0 +1,38 @@
+digraph "0_linux_82981930125abfd39d7c8378a9cfdf5e1be2002b@pointer" {
+"1000552" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000551" [label="(Call,!test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000550" [label="(Call,!!test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000546" [label="(Call,v.val = !!test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000552" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000551" [label="(Call,!test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000547" [label="(Call,v.val)"];
+"1000558" [label="(ControlStructure,break;)"];
+"1000744" [label="(MethodReturn,int)"];
+"1000546" [label="(Call,v.val = !!test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000143" [label="(Block,)"];
+"1000553" [label="(Identifier,SOCK_PASSCRED)"];
+"1000554" [label="(Call,&sock->flags)"];
+"1000550" [label="(Call,!!test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000552" -> "1000551"  [label="AST: "];
+"1000552" -> "1000554"  [label="CFG: "];
+"1000553" -> "1000552"  [label="AST: "];
+"1000554" -> "1000552"  [label="AST: "];
+"1000551" -> "1000552"  [label="CFG: "];
+"1000552" -> "1000744"  [label="DDG: SOCK_PASSCRED"];
+"1000552" -> "1000744"  [label="DDG: &sock->flags"];
+"1000552" -> "1000551"  [label="DDG: SOCK_PASSCRED"];
+"1000552" -> "1000551"  [label="DDG: &sock->flags"];
+"1000551" -> "1000550"  [label="AST: "];
+"1000550" -> "1000551"  [label="CFG: "];
+"1000551" -> "1000744"  [label="DDG: test_bit(SOCK_PASSCRED, &sock->flags)"];
+"1000551" -> "1000550"  [label="DDG: test_bit(SOCK_PASSCRED, &sock->flags)"];
+"1000550" -> "1000546"  [label="AST: "];
+"1000546" -> "1000550"  [label="CFG: "];
+"1000550" -> "1000744"  [label="DDG: !test_bit(SOCK_PASSCRED, &sock->flags)"];
+"1000550" -> "1000546"  [label="DDG: !test_bit(SOCK_PASSCRED, &sock->flags)"];
+"1000546" -> "1000143"  [label="AST: "];
+"1000547" -> "1000546"  [label="AST: "];
+"1000558" -> "1000546"  [label="CFG: "];
+"1000546" -> "1000744"  [label="DDG: !!test_bit(SOCK_PASSCRED, &sock->flags)"];
+"1000546" -> "1000744"  [label="DDG: v.val"];
+}

@@ -1,0 +1,32 @@
+digraph "0_linux_e0c9c0afd2fc958ffa34b697972721d81df8a56f_0@pointer" {
+"1000128" [label="(Call,p->mnt.mnt_flags |= MNT_UMOUNT)"];
+"1000185" [label="(Call,p->mnt.mnt_flags |= MNT_SYNC_UMOUNT)"];
+"1000128" [label="(Call,p->mnt.mnt_flags |= MNT_UMOUNT)"];
+"1000181" [label="(ControlStructure,if (how & UMOUNT_SYNC))"];
+"1000186" [label="(Call,p->mnt.mnt_flags)"];
+"1000138" [label="(Identifier,p)"];
+"1000191" [label="(Identifier,MNT_SYNC_UMOUNT)"];
+"1000185" [label="(Call,p->mnt.mnt_flags |= MNT_SYNC_UMOUNT)"];
+"1000245" [label="(MethodReturn,static void)"];
+"1000129" [label="(Call,p->mnt.mnt_flags)"];
+"1000193" [label="(Identifier,disconnect)"];
+"1000134" [label="(Identifier,MNT_UMOUNT)"];
+"1000127" [label="(Block,)"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000134"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000134" -> "1000128"  [label="AST: "];
+"1000138" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000245"  [label="DDG: p->mnt.mnt_flags"];
+"1000128" -> "1000245"  [label="DDG: MNT_UMOUNT"];
+"1000128" -> "1000245"  [label="DDG: p->mnt.mnt_flags |= MNT_UMOUNT"];
+"1000128" -> "1000185"  [label="DDG: p->mnt.mnt_flags"];
+"1000185" -> "1000181"  [label="AST: "];
+"1000185" -> "1000191"  [label="CFG: "];
+"1000186" -> "1000185"  [label="AST: "];
+"1000191" -> "1000185"  [label="AST: "];
+"1000193" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000245"  [label="DDG: p->mnt.mnt_flags |= MNT_SYNC_UMOUNT"];
+"1000185" -> "1000245"  [label="DDG: p->mnt.mnt_flags"];
+"1000185" -> "1000245"  [label="DDG: MNT_SYNC_UMOUNT"];
+}

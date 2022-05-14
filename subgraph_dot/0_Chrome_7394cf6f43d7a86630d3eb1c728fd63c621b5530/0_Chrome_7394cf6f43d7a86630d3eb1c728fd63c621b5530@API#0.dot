@@ -1,0 +1,37 @@
+digraph "0_Chrome_7394cf6f43d7a86630d3eb1c728fd63c621b5530@API" {
+"1000112" [label="(Call,reader =\n         data_store->GetReaderForOrigin(origin))"];
+"1000114" [label="(Call,data_store->GetReaderForOrigin(origin))"];
+"1000102" [label="(MethodParameterIn,const url::Origin& origin)"];
+"1000121" [label="(Return,return reader;)"];
+"1000116" [label="(Call,(reader.get())\n            ->impl_for_testing())"];
+"1000115" [label="(Identifier,origin)"];
+"1000112" [label="(Call,reader =\n         data_store->GetReaderForOrigin(origin))"];
+"1000121" [label="(Return,return reader;)"];
+"1000122" [label="(Identifier,reader)"];
+"1000103" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,const url::Origin& origin)"];
+"1000113" [label="(Identifier,reader)"];
+"1000123" [label="(MethodReturn,std::unique_ptr<SiteCharacteristicsDataReader>)"];
+"1000114" [label="(Call,data_store->GetReaderForOrigin(origin))"];
+"1000112" -> "1000103"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000116" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000123"  [label="DDG: data_store->GetReaderForOrigin(origin)"];
+"1000112" -> "1000123"  [label="DDG: reader"];
+"1000114" -> "1000112"  [label="DDG: origin"];
+"1000112" -> "1000121"  [label="DDG: reader"];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000114" -> "1000123"  [label="DDG: origin"];
+"1000102" -> "1000114"  [label="DDG: origin"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000123"  [label="DDG: origin"];
+"1000121" -> "1000103"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000123"  [label="DDG: <RET>"];
+"1000122" -> "1000121"  [label="DDG: reader"];
+}

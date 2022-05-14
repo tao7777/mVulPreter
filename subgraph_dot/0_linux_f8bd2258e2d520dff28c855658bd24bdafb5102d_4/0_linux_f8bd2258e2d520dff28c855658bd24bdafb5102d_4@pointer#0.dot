@@ -1,0 +1,28 @@
+digraph "0_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_4@pointer" {
+"1000118" [label="(Call,cputime_to_timespec(cpu.cpu, tp))"];
+"1000102" [label="(MethodParameterIn,union cpu_time_count cpu)"];
+"1000103" [label="(MethodParameterIn,struct timespec *tp)"];
+"1000113" [label="(Call,ns_to_timespec(cpu.sched))"];
+"1000118" [label="(Call,cputime_to_timespec(cpu.cpu, tp))"];
+"1000102" [label="(MethodParameterIn,union cpu_time_count cpu)"];
+"1000119" [label="(Call,cpu.cpu)"];
+"1000103" [label="(MethodParameterIn,struct timespec *tp)"];
+"1000117" [label="(ControlStructure,else)"];
+"1000123" [label="(MethodReturn,static void)"];
+"1000122" [label="(Identifier,tp)"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000122"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000122" -> "1000118"  [label="AST: "];
+"1000123" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000123"  [label="DDG: cputime_to_timespec(cpu.cpu, tp)"];
+"1000118" -> "1000123"  [label="DDG: tp"];
+"1000118" -> "1000123"  [label="DDG: cpu.cpu"];
+"1000102" -> "1000118"  [label="DDG: cpu"];
+"1000103" -> "1000118"  [label="DDG: tp"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000123"  [label="DDG: cpu"];
+"1000102" -> "1000113"  [label="DDG: cpu"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000123"  [label="DDG: tp"];
+}

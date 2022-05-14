@@ -1,0 +1,22 @@
+digraph "0_linux_b92946e2919134ebe2a4083e4302236295ea2a73@pointer" {
+"1000325" [label="(Call,rcu_dereference_bh(q->vlan))"];
+"1000323" [label="(Call,vlan = rcu_dereference_bh(q->vlan))"];
+"1000325" [label="(Call,rcu_dereference_bh(q->vlan))"];
+"1000383" [label="(MethodReturn,static ssize_t)"];
+"1000324" [label="(Identifier,vlan)"];
+"1000109" [label="(Block,)"];
+"1000323" [label="(Call,vlan = rcu_dereference_bh(q->vlan))"];
+"1000330" [label="(Identifier,zerocopy)"];
+"1000326" [label="(Call,q->vlan)"];
+"1000325" -> "1000323"  [label="AST: "];
+"1000325" -> "1000326"  [label="CFG: "];
+"1000326" -> "1000325"  [label="AST: "];
+"1000323" -> "1000325"  [label="CFG: "];
+"1000325" -> "1000383"  [label="DDG: q->vlan"];
+"1000325" -> "1000323"  [label="DDG: q->vlan"];
+"1000323" -> "1000109"  [label="AST: "];
+"1000324" -> "1000323"  [label="AST: "];
+"1000330" -> "1000323"  [label="CFG: "];
+"1000323" -> "1000383"  [label="DDG: vlan"];
+"1000323" -> "1000383"  [label="DDG: rcu_dereference_bh(q->vlan)"];
+}

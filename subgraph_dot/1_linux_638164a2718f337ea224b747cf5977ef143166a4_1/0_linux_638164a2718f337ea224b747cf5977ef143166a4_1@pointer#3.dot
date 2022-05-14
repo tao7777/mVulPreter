@@ -1,0 +1,27 @@
+digraph "0_linux_638164a2718f337ea224b747cf5977ef143166a4_1@pointer" {
+"1000144" [label="(Call,!sbi->discard_blks)"];
+"1000141" [label="(Call,f2fs_discard_en(sbi) && !sbi->discard_blks)"];
+"1000243" [label="(MethodReturn,static void)"];
+"1000141" [label="(Call,f2fs_discard_en(sbi) && !sbi->discard_blks)"];
+"1000155" [label="(Identifier,sbi)"];
+"1000140" [label="(ControlStructure,if (f2fs_discard_en(sbi) && !sbi->discard_blks))"];
+"1000142" [label="(Call,f2fs_discard_en(sbi))"];
+"1000145" [label="(Call,sbi->discard_blks)"];
+"1000151" [label="(Identifier,sbi)"];
+"1000144" [label="(Call,!sbi->discard_blks)"];
+"1000144" -> "1000141"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000141" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000243"  [label="DDG: sbi->discard_blks"];
+"1000144" -> "1000141"  [label="DDG: sbi->discard_blks"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000141" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000151" -> "1000141"  [label="CFG: "];
+"1000155" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000243"  [label="DDG: f2fs_discard_en(sbi)"];
+"1000141" -> "1000243"  [label="DDG: f2fs_discard_en(sbi) && !sbi->discard_blks"];
+"1000141" -> "1000243"  [label="DDG: !sbi->discard_blks"];
+"1000142" -> "1000141"  [label="DDG: sbi"];
+}

@@ -1,0 +1,26 @@
+digraph "0_Chrome_eaf2e8bce3855d362e53034bd83f0e3aff8714e4@API" {
+"1000119" [label="(Call,* connection = *connections_.begin())"];
+"1000124" [label="(Call,connections_.erase(connection))"];
+"1000116" [label="(Call,connections_.empty())"];
+"1000117" [label="(Block,)"];
+"1000123" [label="(Call,connection->ForceClose())"];
+"1000131" [label="(MethodReturn,void)"];
+"1000124" [label="(Call,connections_.erase(connection))"];
+"1000121" [label="(Call,*connections_.begin())"];
+"1000119" [label="(Call,* connection = *connections_.begin())"];
+"1000125" [label="(Identifier,connection)"];
+"1000120" [label="(Identifier,connection)"];
+"1000119" -> "1000117"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000123" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000131"  [label="DDG: *connections_.begin()"];
+"1000119" -> "1000124"  [label="DDG: connection"];
+"1000124" -> "1000117"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000116" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000131"  [label="DDG: connection"];
+"1000124" -> "1000131"  [label="DDG: connections_.erase(connection)"];
+}

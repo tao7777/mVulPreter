@@ -1,0 +1,27 @@
+digraph "0_file_ce90e05774dd77d86cfc8dfa6da57b32816841c4_2@array" {
+"1001010" [label="(Call,memcpy(&signo, &nbuf[doff + 0x08],\n \t\t\t    sizeof(signo)))"];
+"1001008" [label="(Call,(void)memcpy(&signo, &nbuf[doff + 0x08],\n \t\t\t    sizeof(signo)))"];
+"1001024" [label="(Identifier,ms)"];
+"1001008" [label="(Call,(void)memcpy(&signo, &nbuf[doff + 0x08],\n \t\t\t    sizeof(signo)))"];
+"1001011" [label="(Call,&signo)"];
+"1001244" [label="(MethodReturn,RET)"];
+"1001019" [label="(Call,sizeof(signo))"];
+"1001013" [label="(Call,&nbuf[doff + 0x08])"];
+"1000985" [label="(Block,)"];
+"1001010" [label="(Call,memcpy(&signo, &nbuf[doff + 0x08],\n \t\t\t    sizeof(signo)))"];
+"1001010" -> "1001008"  [label="AST: "];
+"1001010" -> "1001019"  [label="CFG: "];
+"1001011" -> "1001010"  [label="AST: "];
+"1001013" -> "1001010"  [label="AST: "];
+"1001019" -> "1001010"  [label="AST: "];
+"1001008" -> "1001010"  [label="CFG: "];
+"1001010" -> "1001244"  [label="DDG: &nbuf[doff + 0x08]"];
+"1001010" -> "1001244"  [label="DDG: &signo"];
+"1001010" -> "1001008"  [label="DDG: &signo"];
+"1001010" -> "1001008"  [label="DDG: &nbuf[doff + 0x08]"];
+"1001008" -> "1000985"  [label="AST: "];
+"1001009" -> "1001008"  [label="AST: "];
+"1001024" -> "1001008"  [label="CFG: "];
+"1001008" -> "1001244"  [label="DDG: (void)memcpy(&signo, &nbuf[doff + 0x08],\n \t\t\t    sizeof(signo))"];
+"1001008" -> "1001244"  [label="DDG: memcpy(&signo, &nbuf[doff + 0x08],\n \t\t\t    sizeof(signo))"];
+}

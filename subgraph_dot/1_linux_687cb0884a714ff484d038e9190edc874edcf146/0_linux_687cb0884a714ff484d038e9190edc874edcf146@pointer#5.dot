@@ -1,0 +1,34 @@
+digraph "0_linux_687cb0884a714ff484d038e9190edc874edcf146@pointer" {
+"1000168" [label="(Call,set_bit(MMF_UNSTABLE, &mm->flags))"];
+"1000147" [label="(Call,test_bit(MMF_OOM_SKIP, &mm->flags))"];
+"1000147" [label="(Call,test_bit(MMF_OOM_SKIP, &mm->flags))"];
+"1000157" [label="(Identifier,mm)"];
+"1000108" [label="(Block,)"];
+"1000168" [label="(Call,set_bit(MMF_UNSTABLE, &mm->flags))"];
+"1000169" [label="(Identifier,MMF_UNSTABLE)"];
+"1000260" [label="(MethodReturn,static bool)"];
+"1000166" [label="(Identifier,tsk)"];
+"1000149" [label="(Call,&mm->flags)"];
+"1000176" [label="(Identifier,tlb)"];
+"1000146" [label="(ControlStructure,if (test_bit(MMF_OOM_SKIP, &mm->flags)))"];
+"1000148" [label="(Identifier,MMF_OOM_SKIP)"];
+"1000170" [label="(Call,&mm->flags)"];
+"1000168" -> "1000108"  [label="AST: "];
+"1000168" -> "1000170"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000170" -> "1000168"  [label="AST: "];
+"1000176" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000260"  [label="DDG: set_bit(MMF_UNSTABLE, &mm->flags)"];
+"1000168" -> "1000260"  [label="DDG: MMF_UNSTABLE"];
+"1000168" -> "1000260"  [label="DDG: &mm->flags"];
+"1000147" -> "1000168"  [label="DDG: &mm->flags"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000149"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000149" -> "1000147"  [label="AST: "];
+"1000157" -> "1000147"  [label="CFG: "];
+"1000166" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000260"  [label="DDG: &mm->flags"];
+"1000147" -> "1000260"  [label="DDG: MMF_OOM_SKIP"];
+"1000147" -> "1000260"  [label="DDG: test_bit(MMF_OOM_SKIP, &mm->flags)"];
+}

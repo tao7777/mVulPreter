@@ -1,0 +1,38 @@
+digraph "0_capstone_6fe86eef621b9849f51a5e1e5d73258a93440403@pointer" {
+"1000125" [label="(Call,block->size = size)"];
+"1000102" [label="(MethodParameterIn,size_t size)"];
+"1000104" [label="(Call,NT_ASSERT(size))"];
+"1000134" [label="(MethodReturn,CAPSTONE_API)"];
+"1000102" [label="(MethodParameterIn,size_t size)"];
+"1000132" [label="(Identifier,block)"];
+"1000106" [label="(JumpTarget,suppress :)"];
+"1000126" [label="(Call,block->size)"];
+"1000104" [label="(Call,NT_ASSERT(size))"];
+"1000103" [label="(Block,)"];
+"1000112" [label="(Call,ExAllocatePoolWithTag(\n\t\t\tNonPagedPool, size + sizeof(CS_WINKERNEL_MEMBLOCK), CS_WINKERNEL_POOL_TAG))"];
+"1000105" [label="(Identifier,size)"];
+"1000129" [label="(Identifier,size)"];
+"1000125" [label="(Call,block->size = size)"];
+"1000114" [label="(Call,size + sizeof(CS_WINKERNEL_MEMBLOCK))"];
+"1000125" -> "1000103"  [label="AST: "];
+"1000125" -> "1000129"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000129" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000134"  [label="DDG: block->size"];
+"1000125" -> "1000134"  [label="DDG: size"];
+"1000102" -> "1000125"  [label="DDG: size"];
+"1000104" -> "1000125"  [label="DDG: size"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000134"  [label="DDG: size"];
+"1000102" -> "1000104"  [label="DDG: size"];
+"1000102" -> "1000112"  [label="DDG: size"];
+"1000102" -> "1000114"  [label="DDG: size"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000134"  [label="DDG: NT_ASSERT(size)"];
+"1000104" -> "1000112"  [label="DDG: size"];
+"1000104" -> "1000114"  [label="DDG: size"];
+}

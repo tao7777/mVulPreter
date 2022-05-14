@@ -1,0 +1,25 @@
+digraph "0_ImageMagick_ef8f40689ac452398026c07da41656a7c87e4683@API" {
+"1000135" [label="(Call,assert(image_info->signature == MagickCoreSignature))"];
+"1000136" [label="(Call,image_info->signature == MagickCoreSignature)"];
+"1000135" [label="(Call,assert(image_info->signature == MagickCoreSignature))"];
+"1000112" [label="(Block,)"];
+"1000144" [label="(Identifier,image_info)"];
+"1000163" [label="(Call,exception->signature == MagickCoreSignature)"];
+"1001579" [label="(MethodReturn,static Image *)"];
+"1000137" [label="(Call,image_info->signature)"];
+"1000140" [label="(Identifier,MagickCoreSignature)"];
+"1000136" [label="(Call,image_info->signature == MagickCoreSignature)"];
+"1000135" -> "1000112"  [label="AST: "];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000144" -> "1000135"  [label="CFG: "];
+"1000135" -> "1001579"  [label="DDG: assert(image_info->signature == MagickCoreSignature)"];
+"1000135" -> "1001579"  [label="DDG: image_info->signature == MagickCoreSignature"];
+"1000136" -> "1000135"  [label="DDG: image_info->signature"];
+"1000136" -> "1000135"  [label="DDG: MagickCoreSignature"];
+"1000136" -> "1000140"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000140" -> "1000136"  [label="AST: "];
+"1000136" -> "1001579"  [label="DDG: image_info->signature"];
+"1000136" -> "1000163"  [label="DDG: MagickCoreSignature"];
+}

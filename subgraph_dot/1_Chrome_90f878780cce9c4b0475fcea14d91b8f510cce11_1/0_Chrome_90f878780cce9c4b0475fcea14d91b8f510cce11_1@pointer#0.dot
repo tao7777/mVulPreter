@@ -1,0 +1,34 @@
+digraph "0_Chrome_90f878780cce9c4b0475fcea14d91b8f510cce11_1@pointer" {
+"1000144" [label="(Call,owner_frame = frame_->Loader().Opener())"];
+"1000148" [label="(Call,owner_frame && owner_frame->IsLocalFrame())"];
+"1000144" [label="(Call,owner_frame = frame_->Loader().Opener())"];
+"1000149" [label="(Identifier,owner_frame)"];
+"1000152" [label="(Identifier,owner_document)"];
+"1000155" [label="(Call,frame_->GetPage())"];
+"1000188" [label="(MethodReturn,void)"];
+"1000146" [label="(Call,frame_->Loader().Opener())"];
+"1000147" [label="(ControlStructure,if (owner_frame && owner_frame->IsLocalFrame()))"];
+"1000142" [label="(Call,!owner_frame)"];
+"1000150" [label="(Call,owner_frame->IsLocalFrame())"];
+"1000145" [label="(Identifier,owner_frame)"];
+"1000141" [label="(ControlStructure,if (!owner_frame))"];
+"1000148" [label="(Call,owner_frame && owner_frame->IsLocalFrame())"];
+"1000144" -> "1000141"  [label="AST: "];
+"1000144" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000149" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000188"  [label="DDG: frame_->Loader().Opener()"];
+"1000144" -> "1000148"  [label="DDG: owner_frame"];
+"1000148" -> "1000147"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000148" -> "1000150"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000150" -> "1000148"  [label="AST: "];
+"1000152" -> "1000148"  [label="CFG: "];
+"1000155" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000188"  [label="DDG: owner_frame"];
+"1000148" -> "1000188"  [label="DDG: owner_frame && owner_frame->IsLocalFrame()"];
+"1000148" -> "1000188"  [label="DDG: owner_frame->IsLocalFrame()"];
+"1000142" -> "1000148"  [label="DDG: owner_frame"];
+}

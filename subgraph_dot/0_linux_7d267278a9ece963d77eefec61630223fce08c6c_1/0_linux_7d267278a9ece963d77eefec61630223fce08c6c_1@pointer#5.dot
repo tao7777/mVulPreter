@@ -1,0 +1,32 @@
+digraph "0_linux_7d267278a9ece963d77eefec61630223fce08c6c_1@pointer" {
+"1000128" [label="(Call,sk->sk_err || !skb_queue_empty(&sk->sk_error_queue))"];
+"1000132" [label="(Call,!skb_queue_empty(&sk->sk_error_queue))"];
+"1000133" [label="(Call,skb_queue_empty(&sk->sk_error_queue))"];
+"1000132" [label="(Call,!skb_queue_empty(&sk->sk_error_queue))"];
+"1000270" [label="(MethodReturn,static unsigned int)"];
+"1000133" [label="(Call,skb_queue_empty(&sk->sk_error_queue))"];
+"1000151" [label="(Identifier,sk)"];
+"1000128" [label="(Call,sk->sk_err || !skb_queue_empty(&sk->sk_error_queue))"];
+"1000129" [label="(Call,sk->sk_err)"];
+"1000139" [label="(Identifier,mask)"];
+"1000134" [label="(Call,&sk->sk_error_queue)"];
+"1000127" [label="(ControlStructure,if (sk->sk_err || !skb_queue_empty(&sk->sk_error_queue)))"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000128" -> "1000132"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000132" -> "1000128"  [label="AST: "];
+"1000139" -> "1000128"  [label="CFG: "];
+"1000151" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000270"  [label="DDG: !skb_queue_empty(&sk->sk_error_queue)"];
+"1000128" -> "1000270"  [label="DDG: sk->sk_err"];
+"1000128" -> "1000270"  [label="DDG: sk->sk_err || !skb_queue_empty(&sk->sk_error_queue)"];
+"1000132" -> "1000128"  [label="DDG: skb_queue_empty(&sk->sk_error_queue)"];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000132" -> "1000270"  [label="DDG: skb_queue_empty(&sk->sk_error_queue)"];
+"1000133" -> "1000132"  [label="DDG: &sk->sk_error_queue"];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000133" -> "1000270"  [label="DDG: &sk->sk_error_queue"];
+}

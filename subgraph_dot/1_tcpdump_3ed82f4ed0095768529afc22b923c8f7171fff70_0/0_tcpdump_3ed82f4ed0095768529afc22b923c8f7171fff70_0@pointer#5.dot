@@ -1,0 +1,34 @@
+digraph "0_tcpdump_3ed82f4ed0095768529afc22b923c8f7171fff70_0@pointer" {
+"1000205" [label="(Call,ND_TTEST(*io))"];
+"1000204" [label="(Call,!ND_TTEST(*io))"];
+"1000200" [label="(Call,io < ie && !ND_TTEST(*io))"];
+"1000204" [label="(Call,!ND_TTEST(*io))"];
+"1000252" [label="(MethodReturn,RET)"];
+"1000192" [label="(ControlStructure,for (ie = io + ps->nid; io < ie && !ND_TTEST(*io); ++io))"];
+"1000206" [label="(Call,*io)"];
+"1000201" [label="(Call,io < ie)"];
+"1000205" [label="(Call,ND_TTEST(*io))"];
+"1000200" [label="(Call,io < ie && !ND_TTEST(*io))"];
+"1000235" [label="(Identifier,ndo)"];
+"1000213" [label="(Identifier,ndo)"];
+"1000205" -> "1000204"  [label="AST: "];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000204" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000252"  [label="DDG: *io"];
+"1000205" -> "1000204"  [label="DDG: *io"];
+"1000204" -> "1000200"  [label="AST: "];
+"1000200" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000252"  [label="DDG: ND_TTEST(*io)"];
+"1000204" -> "1000200"  [label="DDG: ND_TTEST(*io)"];
+"1000200" -> "1000192"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000213" -> "1000200"  [label="CFG: "];
+"1000235" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000252"  [label="DDG: io < ie && !ND_TTEST(*io)"];
+"1000200" -> "1000252"  [label="DDG: io < ie"];
+"1000200" -> "1000252"  [label="DDG: !ND_TTEST(*io)"];
+"1000201" -> "1000200"  [label="DDG: io"];
+"1000201" -> "1000200"  [label="DDG: ie"];
+}

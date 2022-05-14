@@ -1,0 +1,35 @@
+digraph "0_linux_95d78c28b5a85bacbc29b8dba7c04babb9b0d467@pointer" {
+"1000307" [label="(Call,prev_bi_vcnt = bio->bi_vcnt)"];
+"1000337" [label="(Call,bio->bi_vcnt == prev_bi_vcnt)"];
+"1000307" [label="(Call,prev_bi_vcnt = bio->bi_vcnt)"];
+"1000309" [label="(Call,bio->bi_vcnt)"];
+"1000402" [label="(MethodReturn,struct bio *)"];
+"1000299" [label="(Block,)"];
+"1000314" [label="(Identifier,len)"];
+"1000338" [label="(Call,bio->bi_vcnt)"];
+"1000336" [label="(ControlStructure,if (bio->bi_vcnt == prev_bi_vcnt))"];
+"1000308" [label="(Identifier,prev_bi_vcnt)"];
+"1000337" [label="(Call,bio->bi_vcnt == prev_bi_vcnt)"];
+"1000307" [label="(Call,prev_bi_vcnt = bio->bi_vcnt)"];
+"1000344" [label="(Identifier,pages)"];
+"1000347" [label="(Identifier,len)"];
+"1000341" [label="(Identifier,prev_bi_vcnt)"];
+"1000307" -> "1000299"  [label="AST: "];
+"1000307" -> "1000309"  [label="CFG: "];
+"1000308" -> "1000307"  [label="AST: "];
+"1000309" -> "1000307"  [label="AST: "];
+"1000314" -> "1000307"  [label="CFG: "];
+"1000307" -> "1000402"  [label="DDG: bio->bi_vcnt"];
+"1000307" -> "1000402"  [label="DDG: prev_bi_vcnt"];
+"1000337" -> "1000307"  [label="DDG: bio->bi_vcnt"];
+"1000307" -> "1000337"  [label="DDG: prev_bi_vcnt"];
+"1000337" -> "1000336"  [label="AST: "];
+"1000337" -> "1000341"  [label="CFG: "];
+"1000338" -> "1000337"  [label="AST: "];
+"1000341" -> "1000337"  [label="AST: "];
+"1000344" -> "1000337"  [label="CFG: "];
+"1000347" -> "1000337"  [label="CFG: "];
+"1000337" -> "1000402"  [label="DDG: bio->bi_vcnt"];
+"1000337" -> "1000402"  [label="DDG: bio->bi_vcnt == prev_bi_vcnt"];
+"1000337" -> "1000402"  [label="DDG: prev_bi_vcnt"];
+}

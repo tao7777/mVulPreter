@@ -1,0 +1,27 @@
+digraph "0_linux_92964c79b357efd980812c4de5c1fd2ec8bb5520@pointer" {
+"1000142" [label="(Call,atomic_read(&sk->sk_rmem_alloc))"];
+"1000141" [label="(Call,atomic_read(&sk->sk_rmem_alloc) >= sk->sk_rcvbuf)"];
+"1000147" [label="(Call,sk->sk_rcvbuf)"];
+"1000150" [label="(ControlStructure,goto errout_skb;)"];
+"1000152" [label="(Identifier,cb)"];
+"1000142" [label="(Call,atomic_read(&sk->sk_rmem_alloc))"];
+"1000148" [label="(Identifier,sk)"];
+"1000143" [label="(Call,&sk->sk_rmem_alloc)"];
+"1000141" [label="(Call,atomic_read(&sk->sk_rmem_alloc) >= sk->sk_rcvbuf)"];
+"1000310" [label="(MethodReturn,static int)"];
+"1000140" [label="(ControlStructure,if (atomic_read(&sk->sk_rmem_alloc) >= sk->sk_rcvbuf))"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000148" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000310"  [label="DDG: &sk->sk_rmem_alloc"];
+"1000142" -> "1000141"  [label="DDG: &sk->sk_rmem_alloc"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000141" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000141"  [label="AST: "];
+"1000150" -> "1000141"  [label="CFG: "];
+"1000152" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000310"  [label="DDG: atomic_read(&sk->sk_rmem_alloc)"];
+"1000141" -> "1000310"  [label="DDG: atomic_read(&sk->sk_rmem_alloc) >= sk->sk_rcvbuf"];
+"1000141" -> "1000310"  [label="DDG: sk->sk_rcvbuf"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_363b02dab09b3226f3bd1420dad9c72b79a42a76_8@pointer" {
+"1000443" [label="(Call,up_write(&key->sem))"];
+"1000202" [label="(Call,down_write(&key->sem))"];
+"1000443" [label="(Call,up_write(&key->sem))"];
+"1000471" [label="(MethodReturn,long)"];
+"1000210" [label="(Identifier,CAP_SYS_ADMIN)"];
+"1000203" [label="(Call,&key->sem)"];
+"1000110" [label="(Block,)"];
+"1000444" [label="(Call,&key->sem)"];
+"1000449" [label="(Identifier,key)"];
+"1000202" [label="(Call,down_write(&key->sem))"];
+"1000443" -> "1000110"  [label="AST: "];
+"1000443" -> "1000444"  [label="CFG: "];
+"1000444" -> "1000443"  [label="AST: "];
+"1000449" -> "1000443"  [label="CFG: "];
+"1000443" -> "1000471"  [label="DDG: up_write(&key->sem)"];
+"1000443" -> "1000471"  [label="DDG: &key->sem"];
+"1000202" -> "1000443"  [label="DDG: &key->sem"];
+"1000202" -> "1000110"  [label="AST: "];
+"1000202" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000210" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000471"  [label="DDG: down_write(&key->sem)"];
+}

@@ -1,0 +1,27 @@
+digraph "0_linux_e50293ef9775c5f1cf3fcc093037dd6a8c5684ea@pointer" {
+"1000175" [label="(Call,kref_get(&hub->kref))"];
+"1000650" [label="(Call,kref_put(&hub->kref, hub_release))"];
+"1000655" [label="(Identifier,hub_release)"];
+"1000650" [label="(Call,kref_put(&hub->kref, hub_release))"];
+"1000182" [label="(Identifier,type)"];
+"1000656" [label="(MethodReturn,static void)"];
+"1000176" [label="(Call,&hub->kref)"];
+"1000175" [label="(Call,kref_get(&hub->kref))"];
+"1000124" [label="(Block,)"];
+"1000651" [label="(Call,&hub->kref)"];
+"1000175" -> "1000124"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000182" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000656"  [label="DDG: &hub->kref"];
+"1000175" -> "1000656"  [label="DDG: kref_get(&hub->kref)"];
+"1000175" -> "1000650"  [label="DDG: &hub->kref"];
+"1000650" -> "1000124"  [label="AST: "];
+"1000650" -> "1000655"  [label="CFG: "];
+"1000651" -> "1000650"  [label="AST: "];
+"1000655" -> "1000650"  [label="AST: "];
+"1000656" -> "1000650"  [label="CFG: "];
+"1000650" -> "1000656"  [label="DDG: kref_put(&hub->kref, hub_release)"];
+"1000650" -> "1000656"  [label="DDG: hub_release"];
+"1000650" -> "1000656"  [label="DDG: &hub->kref"];
+}

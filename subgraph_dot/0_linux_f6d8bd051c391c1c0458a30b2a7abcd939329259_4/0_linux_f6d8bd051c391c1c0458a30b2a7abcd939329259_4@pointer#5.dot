@@ -1,0 +1,20 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_4@pointer" {
+"1000151" [label="(Call,atomic_read(&sk->sk_rmem_alloc))"];
+"1000150" [label="(Call,WARN_ON(atomic_read(&sk->sk_rmem_alloc)))"];
+"1000150" [label="(Call,WARN_ON(atomic_read(&sk->sk_rmem_alloc)))"];
+"1000102" [label="(Block,)"];
+"1000151" [label="(Call,atomic_read(&sk->sk_rmem_alloc))"];
+"1000184" [label="(MethodReturn,void)"];
+"1000152" [label="(Call,&sk->sk_rmem_alloc)"];
+"1000160" [label="(Identifier,sk)"];
+"1000151" -> "1000150"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000184"  [label="DDG: &sk->sk_rmem_alloc"];
+"1000151" -> "1000150"  [label="DDG: &sk->sk_rmem_alloc"];
+"1000150" -> "1000102"  [label="AST: "];
+"1000160" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000184"  [label="DDG: atomic_read(&sk->sk_rmem_alloc)"];
+"1000150" -> "1000184"  [label="DDG: WARN_ON(atomic_read(&sk->sk_rmem_alloc))"];
+}

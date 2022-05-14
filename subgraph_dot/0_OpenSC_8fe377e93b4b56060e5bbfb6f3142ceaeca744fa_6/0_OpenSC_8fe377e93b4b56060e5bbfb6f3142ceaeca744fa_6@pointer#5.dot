@@ -1,0 +1,25 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_6@pointer" {
+"1000288" [label="(Call,mac_tlv + 2)"];
+"1000108" [label="(MethodParameterIn,unsigned char *mac_tlv)"];
+"1000288" [label="(Call,mac_tlv + 2)"];
+"1000287" [label="(Call,memcpy(mac_tlv + 2, &mac[mac_len - 16], 8))"];
+"1000293" [label="(Identifier,mac)"];
+"1000356" [label="(MethodReturn,RET)"];
+"1000345" [label="(Call,mac_tlv + 2)"];
+"1000337" [label="(Call,des_encrypt_cbc(exdata->sk_mac, 8, iv, tmp, 8, mac_tlv + 2))"];
+"1000290" [label="(Literal,2)"];
+"1000108" [label="(MethodParameterIn,unsigned char *mac_tlv)"];
+"1000289" [label="(Identifier,mac_tlv)"];
+"1000288" -> "1000287"  [label="AST: "];
+"1000288" -> "1000290"  [label="CFG: "];
+"1000289" -> "1000288"  [label="AST: "];
+"1000290" -> "1000288"  [label="AST: "];
+"1000293" -> "1000288"  [label="CFG: "];
+"1000288" -> "1000356"  [label="DDG: mac_tlv"];
+"1000108" -> "1000288"  [label="DDG: mac_tlv"];
+"1000108" -> "1000103"  [label="AST: "];
+"1000108" -> "1000356"  [label="DDG: mac_tlv"];
+"1000108" -> "1000287"  [label="DDG: mac_tlv"];
+"1000108" -> "1000337"  [label="DDG: mac_tlv"];
+"1000108" -> "1000345"  [label="DDG: mac_tlv"];
+}

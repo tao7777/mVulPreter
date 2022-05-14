@@ -1,0 +1,34 @@
+digraph "0_openssl_470990fee0182566d439ef7e82d1abf18b7085d7@API" {
+"1000273" [label="(Call,pitem_free(item))"];
+"1000248" [label="(Call,item = pqueue_pop(s->d1->buffered_app_data.q))"];
+"1000250" [label="(Call,pqueue_pop(s->d1->buffered_app_data.q))"];
+"1000248" [label="(Call,item = pqueue_pop(s->d1->buffered_app_data.q))"];
+"1000259" [label="(Block,)"];
+"1000258" [label="(Identifier,NULL)"];
+"1000249" [label="(Identifier,item)"];
+"1000247" [label="(Call,(item = pqueue_pop(s->d1->buffered_app_data.q)) != NULL)"];
+"1000275" [label="(MethodReturn,static void)"];
+"1000273" [label="(Call,pitem_free(item))"];
+"1000251" [label="(Call,s->d1->buffered_app_data.q)"];
+"1000250" [label="(Call,pqueue_pop(s->d1->buffered_app_data.q))"];
+"1000274" [label="(Identifier,item)"];
+"1000273" -> "1000259"  [label="AST: "];
+"1000273" -> "1000274"  [label="CFG: "];
+"1000274" -> "1000273"  [label="AST: "];
+"1000249" -> "1000273"  [label="CFG: "];
+"1000273" -> "1000275"  [label="DDG: pitem_free(item)"];
+"1000248" -> "1000273"  [label="DDG: item"];
+"1000248" -> "1000247"  [label="AST: "];
+"1000248" -> "1000250"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000250" -> "1000248"  [label="AST: "];
+"1000258" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000275"  [label="DDG: pqueue_pop(s->d1->buffered_app_data.q)"];
+"1000248" -> "1000275"  [label="DDG: item"];
+"1000248" -> "1000247"  [label="DDG: item"];
+"1000250" -> "1000248"  [label="DDG: s->d1->buffered_app_data.q"];
+"1000250" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000250" -> "1000275"  [label="DDG: s->d1->buffered_app_data.q"];
+"1000250" -> "1000247"  [label="DDG: s->d1->buffered_app_data.q"];
+}

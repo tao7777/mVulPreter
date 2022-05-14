@@ -1,0 +1,28 @@
+digraph "0_savannah_422214868061370aeeb0ac9cd0f021a5c350a57d@pointer" {
+"1000149" [label="(Call,_gnutls_cipher_is_block (params->cipher_algorithm))"];
+"1000144" [label="(Call,gnutls_cipher_get_block_size (params->cipher_algorithm))"];
+"1000154" [label="(JumpTarget,case CIPHER_STREAM:)"];
+"1000145" [label="(Call,params->cipher_algorithm)"];
+"1000486" [label="(MethodReturn,RET)"];
+"1000150" [label="(Call,params->cipher_algorithm)"];
+"1000185" [label="(JumpTarget,case CIPHER_BLOCK:)"];
+"1000142" [label="(Call,blocksize = gnutls_cipher_get_block_size (params->cipher_algorithm))"];
+"1000148" [label="(ControlStructure,switch (_gnutls_cipher_is_block (params->cipher_algorithm)))"];
+"1000149" [label="(Call,_gnutls_cipher_is_block (params->cipher_algorithm))"];
+"1000354" [label="(JumpTarget,default:)"];
+"1000144" [label="(Call,gnutls_cipher_get_block_size (params->cipher_algorithm))"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000154" -> "1000149"  [label="CFG: "];
+"1000185" -> "1000149"  [label="CFG: "];
+"1000354" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000486"  [label="DDG: _gnutls_cipher_is_block (params->cipher_algorithm)"];
+"1000149" -> "1000486"  [label="DDG: params->cipher_algorithm"];
+"1000144" -> "1000149"  [label="DDG: params->cipher_algorithm"];
+"1000144" -> "1000142"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000142"  [label="DDG: params->cipher_algorithm"];
+}

@@ -1,0 +1,27 @@
+digraph "0_qemu_a0d1cbdacff5df4ded16b753b38fdd9da6092968@pointer" {
+"1000108" [label="(Call,*s = qemu_get_nic_opaque(nc))"];
+"1000110" [label="(Call,qemu_get_nic_opaque(nc))"];
+"1000103" [label="(MethodParameterIn,NetClientState *nc)"];
+"1000108" [label="(Call,*s = qemu_get_nic_opaque(nc))"];
+"1000110" [label="(Call,qemu_get_nic_opaque(nc))"];
+"1000109" [label="(Identifier,s)"];
+"1000111" [label="(Identifier,nc)"];
+"1000103" [label="(MethodParameterIn,NetClientState *nc)"];
+"1000220" [label="(MethodReturn,static ssize_t)"];
+"1000106" [label="(Block,)"];
+"1000114" [label="(Identifier,rxbase)"];
+"1000108" -> "1000106"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000114" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000220"  [label="DDG: qemu_get_nic_opaque(nc)"];
+"1000108" -> "1000220"  [label="DDG: s"];
+"1000110" -> "1000108"  [label="DDG: nc"];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000110" -> "1000220"  [label="DDG: nc"];
+"1000103" -> "1000110"  [label="DDG: nc"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000220"  [label="DDG: nc"];
+}

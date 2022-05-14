@@ -1,0 +1,28 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_27@pointer" {
+"1000523" [label="(Call,!inet->recverr)"];
+"1000518" [label="(Call,err == -ENOBUFS && !inet->recverr)"];
+"1000519" [label="(Call,err == -ENOBUFS)"];
+"1000518" [label="(Call,err == -ENOBUFS && !inet->recverr)"];
+"1000523" [label="(Call,!inet->recverr)"];
+"1000570" [label="(MethodReturn,static int)"];
+"1000524" [label="(Call,inet->recverr)"];
+"1000517" [label="(ControlStructure,if (err == -ENOBUFS && !inet->recverr))"];
+"1000528" [label="(Identifier,err)"];
+"1000531" [label="(Identifier,sk)"];
+"1000523" -> "1000518"  [label="AST: "];
+"1000523" -> "1000524"  [label="CFG: "];
+"1000524" -> "1000523"  [label="AST: "];
+"1000518" -> "1000523"  [label="CFG: "];
+"1000523" -> "1000570"  [label="DDG: inet->recverr"];
+"1000523" -> "1000518"  [label="DDG: inet->recverr"];
+"1000518" -> "1000517"  [label="AST: "];
+"1000518" -> "1000519"  [label="CFG: "];
+"1000519" -> "1000518"  [label="AST: "];
+"1000528" -> "1000518"  [label="CFG: "];
+"1000531" -> "1000518"  [label="CFG: "];
+"1000518" -> "1000570"  [label="DDG: err == -ENOBUFS"];
+"1000518" -> "1000570"  [label="DDG: err == -ENOBUFS && !inet->recverr"];
+"1000518" -> "1000570"  [label="DDG: !inet->recverr"];
+"1000519" -> "1000518"  [label="DDG: err"];
+"1000519" -> "1000518"  [label="DDG: -ENOBUFS"];
+}

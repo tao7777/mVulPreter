@@ -1,0 +1,36 @@
+digraph "0_linux_9590232bb4f4cc824f3425a6e1349afbe6d6d2b7_1@pointer" {
+"1000117" [label="(Call,kref_put(&handle->ref, ion_handle_destroy))"];
+"1000115" [label="(Call,ret = kref_put(&handle->ref, ion_handle_destroy))"];
+"1000128" [label="(Return,return ret;)"];
+"1000122" [label="(Identifier,ion_handle_destroy)"];
+"1000130" [label="(MethodReturn,static int)"];
+"1000126" [label="(Identifier,client)"];
+"1000129" [label="(Identifier,ret)"];
+"1000128" [label="(Return,return ret;)"];
+"1000102" [label="(Block,)"];
+"1000116" [label="(Identifier,ret)"];
+"1000118" [label="(Call,&handle->ref)"];
+"1000115" [label="(Call,ret = kref_put(&handle->ref, ion_handle_destroy))"];
+"1000117" [label="(Call,kref_put(&handle->ref, ion_handle_destroy))"];
+"1000117" -> "1000115"  [label="AST: "];
+"1000117" -> "1000122"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="AST: "];
+"1000115" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000130"  [label="DDG: &handle->ref"];
+"1000117" -> "1000130"  [label="DDG: ion_handle_destroy"];
+"1000117" -> "1000115"  [label="DDG: &handle->ref"];
+"1000117" -> "1000115"  [label="DDG: ion_handle_destroy"];
+"1000115" -> "1000102"  [label="AST: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000126" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000130"  [label="DDG: kref_put(&handle->ref, ion_handle_destroy)"];
+"1000115" -> "1000130"  [label="DDG: ret"];
+"1000115" -> "1000128"  [label="DDG: ret"];
+"1000128" -> "1000102"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000130" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000130"  [label="DDG: <RET>"];
+"1000129" -> "1000128"  [label="DDG: ret"];
+}

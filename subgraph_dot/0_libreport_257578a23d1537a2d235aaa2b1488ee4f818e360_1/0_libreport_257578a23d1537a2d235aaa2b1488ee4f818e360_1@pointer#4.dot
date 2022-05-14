@@ -1,0 +1,37 @@
+digraph "0_libreport_257578a23d1537a2d235aaa2b1488ee4f818e360_1@pointer" {
+"1000125" [label="(Call,item->flags & CD_FLAG_TXT)"];
+"1000124" [label="(Call,!(item->flags & CD_FLAG_TXT))"];
+"1000121" [label="(Call,!item || !(item->flags & CD_FLAG_TXT))"];
+"1000129" [label="(Identifier,CD_FLAG_TXT)"];
+"1000120" [label="(ControlStructure,if (!item || !(item->flags & CD_FLAG_TXT)))"];
+"1000126" [label="(Call,item->flags)"];
+"1000135" [label="(Identifier,item)"];
+"1000121" [label="(Call,!item || !(item->flags & CD_FLAG_TXT))"];
+"1000130" [label="(ControlStructure,goto ret;)"];
+"1000125" [label="(Call,item->flags & CD_FLAG_TXT)"];
+"1000277" [label="(MethodReturn,static void)"];
+"1000124" [label="(Call,!(item->flags & CD_FLAG_TXT))"];
+"1000122" [label="(Call,!item)"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000129"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000129" -> "1000125"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000277"  [label="DDG: item->flags"];
+"1000125" -> "1000277"  [label="DDG: CD_FLAG_TXT"];
+"1000125" -> "1000124"  [label="DDG: item->flags"];
+"1000125" -> "1000124"  [label="DDG: CD_FLAG_TXT"];
+"1000124" -> "1000121"  [label="AST: "];
+"1000121" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000277"  [label="DDG: item->flags & CD_FLAG_TXT"];
+"1000124" -> "1000121"  [label="DDG: item->flags & CD_FLAG_TXT"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000130" -> "1000121"  [label="CFG: "];
+"1000135" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000277"  [label="DDG: !item || !(item->flags & CD_FLAG_TXT)"];
+"1000121" -> "1000277"  [label="DDG: !item"];
+"1000121" -> "1000277"  [label="DDG: !(item->flags & CD_FLAG_TXT)"];
+"1000122" -> "1000121"  [label="DDG: item"];
+}

@@ -1,0 +1,29 @@
+digraph "0_pacemaker_564f7cc2a51dcd2f28ab12a13394f31be5aa3c93_9@pointer" {
+"1000133" [label="(Call,gnutls_deinit(*(private->command.session)))"];
+"1000125" [label="(Call,gnutls_bye(*(private->command.session), GNUTLS_SHUT_RDWR))"];
+"1000153" [label="(Call,gnutls_bye(*(private->callback.session), GNUTLS_SHUT_RDWR))"];
+"1000133" [label="(Call,gnutls_deinit(*(private->command.session)))"];
+"1000143" [label="(Identifier,private)"];
+"1000132" [label="(Identifier,GNUTLS_SHUT_RDWR)"];
+"1000124" [label="(Block,)"];
+"1000125" [label="(Call,gnutls_bye(*(private->command.session), GNUTLS_SHUT_RDWR))"];
+"1000137" [label="(Identifier,private)"];
+"1000279" [label="(MethodReturn,RET)"];
+"1000134" [label="(Call,*(private->command.session))"];
+"1000126" [label="(Call,*(private->command.session))"];
+"1000133" -> "1000124"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000143" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000279"  [label="DDG: *(private->command.session)"];
+"1000133" -> "1000279"  [label="DDG: gnutls_deinit(*(private->command.session))"];
+"1000125" -> "1000133"  [label="DDG: *(private->command.session)"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000132"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="AST: "];
+"1000137" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000279"  [label="DDG: GNUTLS_SHUT_RDWR"];
+"1000125" -> "1000279"  [label="DDG: gnutls_bye(*(private->command.session), GNUTLS_SHUT_RDWR)"];
+"1000125" -> "1000153"  [label="DDG: GNUTLS_SHUT_RDWR"];
+}

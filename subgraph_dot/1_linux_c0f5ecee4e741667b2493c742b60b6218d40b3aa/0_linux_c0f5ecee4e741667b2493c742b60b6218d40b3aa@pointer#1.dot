@@ -1,0 +1,23 @@
+digraph "0_linux_c0f5ecee4e741667b2493c742b60b6218d40b3aa@pointer" {
+"1000228" [label="(Call,spin_unlock(&desc->iuspin))"];
+"1000115" [label="(Call,spin_lock(&desc->iuspin))"];
+"1000102" [label="(Block,)"];
+"1000115" [label="(Call,spin_lock(&desc->iuspin))"];
+"1000116" [label="(Call,&desc->iuspin)"];
+"1000228" [label="(Call,spin_unlock(&desc->iuspin))"];
+"1000229" [label="(Call,&desc->iuspin)"];
+"1000121" [label="(Identifier,WDM_RESPONDING)"];
+"1000233" [label="(MethodReturn,static void)"];
+"1000228" -> "1000102"  [label="AST: "];
+"1000228" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000233" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000233"  [label="DDG: spin_unlock(&desc->iuspin)"];
+"1000228" -> "1000233"  [label="DDG: &desc->iuspin"];
+"1000115" -> "1000228"  [label="DDG: &desc->iuspin"];
+"1000115" -> "1000102"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000121" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000233"  [label="DDG: spin_lock(&desc->iuspin)"];
+}

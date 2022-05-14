@@ -1,0 +1,24 @@
+digraph "0_linux_2d45a02d0166caf2627fe91897c6ffc3b19514c4@pointer" {
+"1000234" [label="(Call,spin_lock_bh(&net->sctp.addr_wq_lock))"];
+"1000249" [label="(Call,spin_unlock_bh(&net->sctp.addr_wq_lock))"];
+"1000234" [label="(Call,spin_lock_bh(&net->sctp.addr_wq_lock))"];
+"1000260" [label="(MethodReturn,static void)"];
+"1000249" [label="(Call,spin_unlock_bh(&net->sctp.addr_wq_lock))"];
+"1000110" [label="(Block,)"];
+"1000242" [label="(Identifier,sk)"];
+"1000257" [label="(Identifier,sk)"];
+"1000235" [label="(Call,&net->sctp.addr_wq_lock)"];
+"1000250" [label="(Call,&net->sctp.addr_wq_lock)"];
+"1000234" -> "1000110"  [label="AST: "];
+"1000234" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000234"  [label="AST: "];
+"1000242" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000260"  [label="DDG: spin_lock_bh(&net->sctp.addr_wq_lock)"];
+"1000234" -> "1000249"  [label="DDG: &net->sctp.addr_wq_lock"];
+"1000249" -> "1000110"  [label="AST: "];
+"1000249" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000249"  [label="AST: "];
+"1000257" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000260"  [label="DDG: &net->sctp.addr_wq_lock"];
+"1000249" -> "1000260"  [label="DDG: spin_unlock_bh(&net->sctp.addr_wq_lock)"];
+}

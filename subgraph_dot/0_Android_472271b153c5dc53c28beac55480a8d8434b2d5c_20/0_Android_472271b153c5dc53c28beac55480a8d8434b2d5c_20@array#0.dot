@@ -1,0 +1,29 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_20@array" {
+"1000110" [label="(Call,recv(signal_fds[0], &sig_recv, sizeof(sig_recv), MSG_WAITALL))"];
+"1000109" [label="(Call,TEMP_FAILURE_RETRY(recv(signal_fds[0], &sig_recv, sizeof(sig_recv), MSG_WAITALL)))"];
+"1000102" [label="(Block,)"];
+"1000110" [label="(Call,recv(signal_fds[0], &sig_recv, sizeof(sig_recv), MSG_WAITALL))"];
+"1000111" [label="(Call,signal_fds[0])"];
+"1000123" [label="(MethodReturn,static inline int)"];
+"1000116" [label="(Call,sizeof(sig_recv))"];
+"1000109" [label="(Call,TEMP_FAILURE_RETRY(recv(signal_fds[0], &sig_recv, sizeof(sig_recv), MSG_WAITALL)))"];
+"1000118" [label="(Identifier,MSG_WAITALL)"];
+"1000114" [label="(Call,&sig_recv)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000118"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000114" -> "1000110"  [label="AST: "];
+"1000116" -> "1000110"  [label="AST: "];
+"1000118" -> "1000110"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000123"  [label="DDG: &sig_recv"];
+"1000110" -> "1000123"  [label="DDG: MSG_WAITALL"];
+"1000110" -> "1000123"  [label="DDG: signal_fds[0]"];
+"1000110" -> "1000109"  [label="DDG: signal_fds[0]"];
+"1000110" -> "1000109"  [label="DDG: &sig_recv"];
+"1000110" -> "1000109"  [label="DDG: MSG_WAITALL"];
+"1000109" -> "1000102"  [label="AST: "];
+"1000121" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000123"  [label="DDG: TEMP_FAILURE_RETRY(recv(signal_fds[0], &sig_recv, sizeof(sig_recv), MSG_WAITALL))"];
+"1000109" -> "1000123"  [label="DDG: recv(signal_fds[0], &sig_recv, sizeof(sig_recv), MSG_WAITALL)"];
+}

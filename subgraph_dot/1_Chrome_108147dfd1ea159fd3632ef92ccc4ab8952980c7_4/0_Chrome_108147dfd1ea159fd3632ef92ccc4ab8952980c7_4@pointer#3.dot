@@ -1,0 +1,38 @@
+digraph "0_Chrome_108147dfd1ea159fd3632ef92ccc4ab8952980c7_4@pointer" {
+"1000125" [label="(Call,* previous_security_origin = nullptr)"];
+"1000175" [label="(Call,ShouldClearWindowName(*frame_, previous_security_origin, *document))"];
+"1000176" [label="(Call,*frame_)"];
+"1000135" [label="(Call,previous_security_origin = frame_->GetDocument()->GetSecurityOrigin())"];
+"1000179" [label="(Call,*document)"];
+"1000125" [label="(Call,* previous_security_origin = nullptr)"];
+"1000174" [label="(ControlStructure,if (ShouldClearWindowName(*frame_, previous_security_origin, *document)))"];
+"1000185" [label="(Call,overriding_url.IsEmpty())"];
+"1000130" [label="(Identifier,previous_csp)"];
+"1000182" [label="(Call,frame_->Tree().ExperimentalSetNulledName())"];
+"1000126" [label="(Identifier,previous_security_origin)"];
+"1000175" [label="(Call,ShouldClearWindowName(*frame_, previous_security_origin, *document))"];
+"1000248" [label="(MethodReturn,void)"];
+"1000146" [label="(Call,LocalDOMWindow::Create(*frame_))"];
+"1000127" [label="(Identifier,nullptr)"];
+"1000109" [label="(Block,)"];
+"1000178" [label="(Identifier,previous_security_origin)"];
+"1000125" -> "1000109"  [label="AST: "];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000130" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000175"  [label="DDG: previous_security_origin"];
+"1000175" -> "1000174"  [label="AST: "];
+"1000175" -> "1000179"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000178" -> "1000175"  [label="AST: "];
+"1000179" -> "1000175"  [label="AST: "];
+"1000182" -> "1000175"  [label="CFG: "];
+"1000185" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000248"  [label="DDG: previous_security_origin"];
+"1000175" -> "1000248"  [label="DDG: *document"];
+"1000175" -> "1000248"  [label="DDG: *frame_"];
+"1000175" -> "1000248"  [label="DDG: ShouldClearWindowName(*frame_, previous_security_origin, *document)"];
+"1000146" -> "1000175"  [label="DDG: *frame_"];
+"1000135" -> "1000175"  [label="DDG: previous_security_origin"];
+}

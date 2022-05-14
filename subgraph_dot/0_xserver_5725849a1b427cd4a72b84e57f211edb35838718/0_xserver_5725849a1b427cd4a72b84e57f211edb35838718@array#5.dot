@@ -1,0 +1,37 @@
+digraph "0_xserver_5725849a1b427cd4a72b84e57f211edb35838718@array" {
+"1000672" [label="(Call,glyphs[i].glyph && ! glyphs[i].found)"];
+"1000684" [label="(Call,free(glyphs[i].glyph))"];
+"1000672" [label="(Call,glyphs[i].glyph && ! glyphs[i].found)"];
+"1000678" [label="(Call,! glyphs[i].found)"];
+"1000672" [label="(Call,glyphs[i].glyph && ! glyphs[i].found)"];
+"1000670" [label="(Identifier,i)"];
+"1000671" [label="(ControlStructure,if (glyphs[i].glyph && ! glyphs[i].found))"];
+"1000685" [label="(Call,glyphs[i].glyph)"];
+"1000678" [label="(Call,! glyphs[i].found)"];
+"1000698" [label="(MethodReturn,RET)"];
+"1000687" [label="(Identifier,glyphs)"];
+"1000679" [label="(Call,glyphs[i].found)"];
+"1000673" [label="(Call,glyphs[i].glyph)"];
+"1000684" [label="(Call,free(glyphs[i].glyph))"];
+"1000672" -> "1000671"  [label="AST: "];
+"1000672" -> "1000673"  [label="CFG: "];
+"1000672" -> "1000678"  [label="CFG: "];
+"1000673" -> "1000672"  [label="AST: "];
+"1000678" -> "1000672"  [label="AST: "];
+"1000687" -> "1000672"  [label="CFG: "];
+"1000670" -> "1000672"  [label="CFG: "];
+"1000672" -> "1000698"  [label="DDG: ! glyphs[i].found"];
+"1000672" -> "1000698"  [label="DDG: glyphs[i].glyph && ! glyphs[i].found"];
+"1000672" -> "1000698"  [label="DDG: glyphs[i].glyph"];
+"1000684" -> "1000672"  [label="DDG: glyphs[i].glyph"];
+"1000678" -> "1000672"  [label="DDG: glyphs[i].found"];
+"1000672" -> "1000684"  [label="DDG: glyphs[i].glyph"];
+"1000684" -> "1000671"  [label="AST: "];
+"1000684" -> "1000685"  [label="CFG: "];
+"1000685" -> "1000684"  [label="AST: "];
+"1000670" -> "1000684"  [label="CFG: "];
+"1000684" -> "1000698"  [label="DDG: glyphs[i].glyph"];
+"1000678" -> "1000679"  [label="CFG: "];
+"1000679" -> "1000678"  [label="AST: "];
+"1000678" -> "1000698"  [label="DDG: glyphs[i].found"];
+}

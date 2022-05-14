@@ -1,0 +1,32 @@
+digraph "0_FFmpeg_54655623a82632e7624714d7b2a3e039dc5faa7e@pointer" {
+"1000590" [label="(Call,!s->sh.dependent_slice_segment_flag)"];
+"1000589" [label="(Call,!s->sh.dependent_slice_segment_flag &&\n            s->sh.slice_type != HEVC_SLICE_I)"];
+"1000777" [label="(MethodReturn,static int)"];
+"1000591" [label="(Call,s->sh.dependent_slice_segment_flag)"];
+"1000624" [label="(Identifier,s)"];
+"1000596" [label="(Call,s->sh.slice_type != HEVC_SLICE_I)"];
+"1000599" [label="(Identifier,s)"];
+"1000420" [label="(Call,s->avctx->skip_frame >= AVDISCARD_NONINTRA && s->sh.slice_type != HEVC_SLICE_I)"];
+"1000588" [label="(ControlStructure,if (!s->sh.dependent_slice_segment_flag &&\n            s->sh.slice_type != HEVC_SLICE_I))"];
+"1000590" [label="(Call,!s->sh.dependent_slice_segment_flag)"];
+"1000605" [label="(Identifier,ret)"];
+"1000589" [label="(Call,!s->sh.dependent_slice_segment_flag &&\n            s->sh.slice_type != HEVC_SLICE_I)"];
+"1000590" -> "1000589"  [label="AST: "];
+"1000590" -> "1000591"  [label="CFG: "];
+"1000591" -> "1000590"  [label="AST: "];
+"1000599" -> "1000590"  [label="CFG: "];
+"1000589" -> "1000590"  [label="CFG: "];
+"1000590" -> "1000777"  [label="DDG: s->sh.dependent_slice_segment_flag"];
+"1000590" -> "1000589"  [label="DDG: s->sh.dependent_slice_segment_flag"];
+"1000589" -> "1000588"  [label="AST: "];
+"1000589" -> "1000596"  [label="CFG: "];
+"1000596" -> "1000589"  [label="AST: "];
+"1000605" -> "1000589"  [label="CFG: "];
+"1000624" -> "1000589"  [label="CFG: "];
+"1000589" -> "1000777"  [label="DDG: !s->sh.dependent_slice_segment_flag &&\n            s->sh.slice_type != HEVC_SLICE_I"];
+"1000589" -> "1000777"  [label="DDG: !s->sh.dependent_slice_segment_flag"];
+"1000589" -> "1000777"  [label="DDG: s->sh.slice_type != HEVC_SLICE_I"];
+"1000420" -> "1000589"  [label="DDG: s->sh.slice_type != HEVC_SLICE_I"];
+"1000596" -> "1000589"  [label="DDG: s->sh.slice_type"];
+"1000596" -> "1000589"  [label="DDG: HEVC_SLICE_I"];
+}

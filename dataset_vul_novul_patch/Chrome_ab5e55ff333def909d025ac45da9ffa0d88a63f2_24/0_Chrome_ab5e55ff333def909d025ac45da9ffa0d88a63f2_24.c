@@ -1,0 +1,1 @@
+WebRTCSessionDescriptionDescriptor MockWebRTCPeerConnectionHandler::localDescription()

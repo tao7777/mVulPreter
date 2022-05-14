@@ -1,0 +1,25 @@
+digraph "0_linux_75a493e60ac4bbe2e977e7129d6d8cbb0dd236be_0@pointer" {
+"1000112" [label="(Call,rt->dst.flags & DST_XFRM_TUNNEL)"];
+"1000111" [label="(Call,!(rt->dst.flags & DST_XFRM_TUNNEL))"];
+"1000110" [label="(ControlStructure,if (!(rt->dst.flags & DST_XFRM_TUNNEL)))"];
+"1000112" [label="(Call,rt->dst.flags & DST_XFRM_TUNNEL)"];
+"1000111" [label="(Call,!(rt->dst.flags & DST_XFRM_TUNNEL))"];
+"1000122" [label="(Identifier,skb)"];
+"1000118" [label="(Identifier,DST_XFRM_TUNNEL)"];
+"1000113" [label="(Call,rt->dst.flags)"];
+"1000173" [label="(MethodReturn,static void)"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000118"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000118" -> "1000112"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000173"  [label="DDG: DST_XFRM_TUNNEL"];
+"1000112" -> "1000173"  [label="DDG: rt->dst.flags"];
+"1000112" -> "1000111"  [label="DDG: rt->dst.flags"];
+"1000112" -> "1000111"  [label="DDG: DST_XFRM_TUNNEL"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000122" -> "1000111"  [label="CFG: "];
+"1000173" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000173"  [label="DDG: rt->dst.flags & DST_XFRM_TUNNEL"];
+"1000111" -> "1000173"  [label="DDG: !(rt->dst.flags & DST_XFRM_TUNNEL)"];
+}

@@ -1,0 +1,32 @@
+digraph "1_Chrome_7ee3acb08d9de663e5ec3148ee98b666cd32ad82@del" {
+"1000111" [label="(Call,!frame()->IsMaximized() || force_restored)"];
+"1000112" [label="(Call,!frame()->IsMaximized())"];
+"1000101" [label="(MethodParameterIn,bool force_restored)"];
+"1000111" [label="(Call,!frame()->IsMaximized() || force_restored)"];
+"1000110" [label="(ControlStructure,if (!frame()->IsMaximized() || force_restored))"];
+"1000101" [label="(MethodParameterIn,bool force_restored)"];
+"1000116" [label="(Identifier,kTabstripTopSpacingRestored)"];
+"1000112" [label="(Call,!frame()->IsMaximized())"];
+"1000113" [label="(Call,frame()->IsMaximized())"];
+"1000114" [label="(Identifier,force_restored)"];
+"1000119" [label="(MethodReturn,int)"];
+"1000118" [label="(Identifier,kTabstripTopSpacingMaximized)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000114"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000114" -> "1000111"  [label="AST: "];
+"1000116" -> "1000111"  [label="CFG: "];
+"1000118" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000119"  [label="DDG: force_restored"];
+"1000111" -> "1000119"  [label="DDG: !frame()->IsMaximized()"];
+"1000111" -> "1000119"  [label="DDG: !frame()->IsMaximized() || force_restored"];
+"1000112" -> "1000111"  [label="DDG: frame()->IsMaximized()"];
+"1000101" -> "1000111"  [label="DDG: force_restored"];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000119"  [label="DDG: frame()->IsMaximized()"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000119"  [label="DDG: force_restored"];
+}

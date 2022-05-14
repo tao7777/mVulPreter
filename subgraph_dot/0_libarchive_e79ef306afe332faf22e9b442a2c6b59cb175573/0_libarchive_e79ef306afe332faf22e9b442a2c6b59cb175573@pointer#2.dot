@@ -1,0 +1,33 @@
+digraph "0_libarchive_e79ef306afe332faf22e9b442a2c6b59cb175573@pointer" {
+"1000581" [label="(Call,type = *p)"];
+"1000586" [label="(Call,type != kEnd)"];
+"1000448" [label="(Call,type == kCRC)"];
+"1000585" [label="(ControlStructure,if (type != kEnd))"];
+"1000581" [label="(Call,type = *p)"];
+"1000583" [label="(Call,*p)"];
+"1000588" [label="(Identifier,kEnd)"];
+"1000593" [label="(Literal,0)"];
+"1000586" [label="(Call,type != kEnd)"];
+"1000591" [label="(Literal,1)"];
+"1000594" [label="(MethodReturn,RET)"];
+"1000582" [label="(Identifier,type)"];
+"1000587" [label="(Identifier,type)"];
+"1000451" [label="(Block,)"];
+"1000581" -> "1000451"  [label="AST: "];
+"1000581" -> "1000583"  [label="CFG: "];
+"1000582" -> "1000581"  [label="AST: "];
+"1000583" -> "1000581"  [label="AST: "];
+"1000587" -> "1000581"  [label="CFG: "];
+"1000581" -> "1000594"  [label="DDG: *p"];
+"1000581" -> "1000586"  [label="DDG: type"];
+"1000586" -> "1000585"  [label="AST: "];
+"1000586" -> "1000588"  [label="CFG: "];
+"1000587" -> "1000586"  [label="AST: "];
+"1000588" -> "1000586"  [label="AST: "];
+"1000591" -> "1000586"  [label="CFG: "];
+"1000593" -> "1000586"  [label="CFG: "];
+"1000586" -> "1000594"  [label="DDG: kEnd"];
+"1000586" -> "1000594"  [label="DDG: type != kEnd"];
+"1000586" -> "1000594"  [label="DDG: type"];
+"1000448" -> "1000586"  [label="DDG: type"];
+}

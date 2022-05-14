@@ -1,0 +1,28 @@
+digraph "0_Chrome_4039d2fcaab746b6c20017ba9bb51c3a2403a76c@pointer" {
+"1000107" [label="(Call,observer = it.GetNext())"];
+"1000106" [label="(Call,(observer = it.GetNext()) != NULL)"];
+"1000119" [label="(Identifier,handled)"];
+"1000114" [label="(Identifier,msg)"];
+"1000108" [label="(Identifier,observer)"];
+"1000105" [label="(ControlStructure,while ((observer = it.GetNext()) != NULL))"];
+"1000106" [label="(Call,(observer = it.GetNext()) != NULL)"];
+"1000135" [label="(MethodReturn,bool)"];
+"1000109" [label="(Call,it.GetNext())"];
+"1000107" [label="(Call,observer = it.GetNext())"];
+"1000110" [label="(Identifier,NULL)"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000110" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000135"  [label="DDG: observer"];
+"1000107" -> "1000135"  [label="DDG: it.GetNext()"];
+"1000107" -> "1000106"  [label="DDG: observer"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000106" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000106"  [label="AST: "];
+"1000114" -> "1000106"  [label="CFG: "];
+"1000119" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000135"  [label="DDG: NULL"];
+"1000106" -> "1000135"  [label="DDG: (observer = it.GetNext()) != NULL"];
+}

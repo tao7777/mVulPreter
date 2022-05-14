@@ -1,0 +1,1 @@
+BrightnessLibrary* CrosLibrary::GetBrightnessLibrary() {

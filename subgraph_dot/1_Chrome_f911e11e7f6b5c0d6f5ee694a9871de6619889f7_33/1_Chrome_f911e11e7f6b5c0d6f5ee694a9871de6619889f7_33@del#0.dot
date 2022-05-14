@@ -1,0 +1,32 @@
+digraph "1_Chrome_f911e11e7f6b5c0d6f5ee694a9871de6619889f7_33@del" {
+"1000129" [label="(Call,chunk_state.Effect() == EffectPaintPropertyNode::Root())"];
+"1000122" [label="(Call,(!record || record->size() == 0) &&\n          chunk_state.Effect() == EffectPaintPropertyNode::Root())"];
+"1000121" [label="(ControlStructure,if ((!record || record->size() == 0) &&\n          chunk_state.Effect() == EffectPaintPropertyNode::Root()))"];
+"1000167" [label="(MethodReturn,void)"];
+"1000129" [label="(Call,chunk_state.Effect() == EffectPaintPropertyNode::Root())"];
+"1000123" [label="(Call,!record || record->size() == 0)"];
+"1000131" [label="(Call,EffectPaintPropertyNode::Root())"];
+"1000133" [label="(ControlStructure,continue;)"];
+"1000122" [label="(Call,(!record || record->size() == 0) &&\n          chunk_state.Effect() == EffectPaintPropertyNode::Root())"];
+"1000130" [label="(Call,chunk_state.Effect())"];
+"1000134" [label="(Call,TranslateForLayerOffsetOnce())"];
+"1000129" -> "1000122"  [label="AST: "];
+"1000129" -> "1000131"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000131" -> "1000129"  [label="AST: "];
+"1000122" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000167"  [label="DDG: chunk_state.Effect()"];
+"1000129" -> "1000167"  [label="DDG: EffectPaintPropertyNode::Root()"];
+"1000129" -> "1000122"  [label="DDG: chunk_state.Effect()"];
+"1000129" -> "1000122"  [label="DDG: EffectPaintPropertyNode::Root()"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000133" -> "1000122"  [label="CFG: "];
+"1000134" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000167"  [label="DDG: !record || record->size() == 0"];
+"1000122" -> "1000167"  [label="DDG: chunk_state.Effect() == EffectPaintPropertyNode::Root()"];
+"1000122" -> "1000167"  [label="DDG: (!record || record->size() == 0) &&\n          chunk_state.Effect() == EffectPaintPropertyNode::Root()"];
+"1000123" -> "1000122"  [label="DDG: !record"];
+"1000123" -> "1000122"  [label="DDG: record->size() == 0"];
+}

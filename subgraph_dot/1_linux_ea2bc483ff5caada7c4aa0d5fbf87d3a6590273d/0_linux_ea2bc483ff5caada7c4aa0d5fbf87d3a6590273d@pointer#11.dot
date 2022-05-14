@@ -1,0 +1,36 @@
+digraph "0_linux_ea2bc483ff5caada7c4aa0d5fbf87d3a6590273d@pointer" {
+"1000121" [label="(Call,*oldsp = sctp_sk(oldsk))"];
+"1000123" [label="(Call,sctp_sk(oldsk))"];
+"1000115" [label="(MethodParameterIn,struct sock *oldsk)"];
+"1000127" [label="(Identifier,newsp)"];
+"1000158" [label="(Call,inet_sk_copy_descendant(newsk, oldsk))"];
+"1000195" [label="(Call,inet_sk(oldsk))"];
+"1000352" [label="(Call,sctp_clear_pd(oldsk))"];
+"1000295" [label="(Call,sctp_sk(oldsk))"];
+"1000123" [label="(Call,sctp_sk(oldsk))"];
+"1000122" [label="(Identifier,oldsp)"];
+"1000384" [label="(MethodReturn,static void)"];
+"1000121" [label="(Call,*oldsp = sctp_sk(oldsk))"];
+"1000115" [label="(MethodParameterIn,struct sock *oldsk)"];
+"1000174" [label="(Call,sctp_sk(oldsk))"];
+"1000124" [label="(Identifier,oldsk)"];
+"1000119" [label="(Block,)"];
+"1000121" -> "1000119"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000127" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000384"  [label="DDG: oldsp"];
+"1000123" -> "1000121"  [label="DDG: oldsk"];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000115" -> "1000123"  [label="DDG: oldsk"];
+"1000123" -> "1000158"  [label="DDG: oldsk"];
+"1000115" -> "1000114"  [label="AST: "];
+"1000115" -> "1000384"  [label="DDG: oldsk"];
+"1000115" -> "1000158"  [label="DDG: oldsk"];
+"1000115" -> "1000174"  [label="DDG: oldsk"];
+"1000115" -> "1000195"  [label="DDG: oldsk"];
+"1000115" -> "1000295"  [label="DDG: oldsk"];
+"1000115" -> "1000352"  [label="DDG: oldsk"];
+}

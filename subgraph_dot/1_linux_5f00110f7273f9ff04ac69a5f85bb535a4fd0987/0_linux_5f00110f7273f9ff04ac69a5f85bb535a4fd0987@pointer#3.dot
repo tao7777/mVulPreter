@@ -1,0 +1,24 @@
+digraph "0_linux_5f00110f7273f9ff04ac69a5f85bb535a4fd0987@pointer" {
+"1000131" [label="(Call,spin_lock(&sbinfo->stat_lock))"];
+"1000222" [label="(Call,spin_unlock(&sbinfo->stat_lock))"];
+"1000222" [label="(Call,spin_unlock(&sbinfo->stat_lock))"];
+"1000228" [label="(Identifier,error)"];
+"1000131" [label="(Call,spin_lock(&sbinfo->stat_lock))"];
+"1000106" [label="(Block,)"];
+"1000132" [label="(Call,&sbinfo->stat_lock)"];
+"1000137" [label="(Identifier,inodes)"];
+"1000229" [label="(MethodReturn,static int)"];
+"1000223" [label="(Call,&sbinfo->stat_lock)"];
+"1000131" -> "1000106"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000137" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000229"  [label="DDG: spin_lock(&sbinfo->stat_lock)"];
+"1000131" -> "1000222"  [label="DDG: &sbinfo->stat_lock"];
+"1000222" -> "1000106"  [label="AST: "];
+"1000222" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000228" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000229"  [label="DDG: &sbinfo->stat_lock"];
+"1000222" -> "1000229"  [label="DDG: spin_unlock(&sbinfo->stat_lock)"];
+}

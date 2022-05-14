@@ -1,0 +1,35 @@
+digraph "0_didiwiki_5e5c796617e1712905dc5462b94bd5e6c08d15ea@pointer" {
+"1000206" [label="(Call,*p != '\0')"];
+"1000213" [label="(Call,*p=='?')"];
+"1000206" [label="(Call,*p != '\0')"];
+"1000212" [label="(ControlStructure,if (*p=='?'))"];
+"1000206" [label="(Call,*p != '\0')"];
+"1000202" [label="(ControlStructure,for (p=page; *p != '\0'; p++))"];
+"1000224" [label="(Identifier,req)"];
+"1000363" [label="(MethodReturn,RET)"];
+"1000220" [label="(Identifier,p)"];
+"1000207" [label="(Call,*p)"];
+"1000214" [label="(Call,*p)"];
+"1000215" [label="(Identifier,p)"];
+"1000216" [label="(Literal,'?')"];
+"1000211" [label="(Identifier,p)"];
+"1000213" [label="(Call,*p=='?')"];
+"1000209" [label="(Literal,'\0')"];
+"1000206" -> "1000202"  [label="AST: "];
+"1000206" -> "1000209"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000209" -> "1000206"  [label="AST: "];
+"1000215" -> "1000206"  [label="CFG: "];
+"1000224" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000363"  [label="DDG: *p != '\0'"];
+"1000206" -> "1000363"  [label="DDG: *p"];
+"1000213" -> "1000206"  [label="DDG: *p"];
+"1000206" -> "1000213"  [label="DDG: *p"];
+"1000213" -> "1000212"  [label="AST: "];
+"1000213" -> "1000216"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000216" -> "1000213"  [label="AST: "];
+"1000220" -> "1000213"  [label="CFG: "];
+"1000211" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000363"  [label="DDG: *p=='?'"];
+}

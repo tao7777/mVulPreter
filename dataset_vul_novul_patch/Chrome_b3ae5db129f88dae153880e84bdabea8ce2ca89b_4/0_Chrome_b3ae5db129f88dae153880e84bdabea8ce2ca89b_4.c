@@ -1,0 +1,1 @@
+LoginLibrary* CrosLibrary::GetLoginLibrary() {

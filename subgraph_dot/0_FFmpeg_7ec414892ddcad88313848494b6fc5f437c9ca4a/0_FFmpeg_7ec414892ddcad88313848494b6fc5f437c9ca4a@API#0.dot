@@ -1,0 +1,22 @@
+digraph "0_FFmpeg_7ec414892ddcad88313848494b6fc5f437c9ca4a@API" {
+"1000334" [label="(Call,av_usleep(100*1000))"];
+"1000335" [label="(Call,100*1000)"];
+"1000473" [label="(MethodReturn,static int)"];
+"1000334" [label="(Call,av_usleep(100*1000))"];
+"1000335" [label="(Call,100*1000)"];
+"1000337" [label="(Literal,1000)"];
+"1000321" [label="(Call,av_gettime_relative())"];
+"1000326" [label="(Block,)"];
+"1000336" [label="(Literal,100)"];
+"1000334" -> "1000326"  [label="AST: "];
+"1000334" -> "1000335"  [label="CFG: "];
+"1000335" -> "1000334"  [label="AST: "];
+"1000321" -> "1000334"  [label="CFG: "];
+"1000334" -> "1000473"  [label="DDG: av_usleep(100*1000)"];
+"1000334" -> "1000473"  [label="DDG: 100*1000"];
+"1000335" -> "1000334"  [label="DDG: 100"];
+"1000335" -> "1000334"  [label="DDG: 1000"];
+"1000335" -> "1000337"  [label="CFG: "];
+"1000336" -> "1000335"  [label="AST: "];
+"1000337" -> "1000335"  [label="AST: "];
+}

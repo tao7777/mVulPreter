@@ -1,0 +1,30 @@
+digraph "0_Android_5443b57cc54f2e46b35246637be26a69e9f493e1_3@pointer" {
+"1000466" [label="(Call,outputBufferHeader->nFlags |= OMX_BUFFERFLAG_SYNCFRAME)"];
+"1000451" [label="(Call,outputBufferHeader->nFlags = 0)"];
+"1000466" [label="(Call,outputBufferHeader->nFlags |= OMX_BUFFERFLAG_SYNCFRAME)"];
+"1000467" [label="(Call,outputBufferHeader->nFlags)"];
+"1000461" [label="(Identifier,encoded_packet)"];
+"1000456" [label="(ControlStructure,if (encoded_packet->data.frame.flags & VPX_FRAME_IS_KEY))"];
+"1000473" [label="(Identifier,outputBufferHeader)"];
+"1000452" [label="(Call,outputBufferHeader->nFlags)"];
+"1000541" [label="(MethodReturn,void)"];
+"1000439" [label="(Block,)"];
+"1000470" [label="(Identifier,OMX_BUFFERFLAG_SYNCFRAME)"];
+"1000451" [label="(Call,outputBufferHeader->nFlags = 0)"];
+"1000455" [label="(Literal,0)"];
+"1000466" -> "1000456"  [label="AST: "];
+"1000466" -> "1000470"  [label="CFG: "];
+"1000467" -> "1000466"  [label="AST: "];
+"1000470" -> "1000466"  [label="AST: "];
+"1000473" -> "1000466"  [label="CFG: "];
+"1000466" -> "1000541"  [label="DDG: outputBufferHeader->nFlags"];
+"1000466" -> "1000541"  [label="DDG: OMX_BUFFERFLAG_SYNCFRAME"];
+"1000466" -> "1000541"  [label="DDG: outputBufferHeader->nFlags |= OMX_BUFFERFLAG_SYNCFRAME"];
+"1000451" -> "1000466"  [label="DDG: outputBufferHeader->nFlags"];
+"1000451" -> "1000439"  [label="AST: "];
+"1000451" -> "1000455"  [label="CFG: "];
+"1000452" -> "1000451"  [label="AST: "];
+"1000455" -> "1000451"  [label="AST: "];
+"1000461" -> "1000451"  [label="CFG: "];
+"1000451" -> "1000541"  [label="DDG: outputBufferHeader->nFlags"];
+}

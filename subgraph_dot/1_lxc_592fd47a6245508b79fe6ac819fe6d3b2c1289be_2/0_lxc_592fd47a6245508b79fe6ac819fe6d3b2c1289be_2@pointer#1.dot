@@ -1,0 +1,35 @@
+digraph "0_lxc_592fd47a6245508b79fe6ac819fe6d3b2c1289be_2@pointer" {
+"1000119" [label="(Call,free(p))"];
+"1000108" [label="(Call,p = choose_init(conf->rootfs.mount))"];
+"1000110" [label="(Call,choose_init(conf->rootfs.mount))"];
+"1000118" [label="(Block,)"];
+"1000109" [label="(Identifier,p)"];
+"1000121" [label="(Return,return;)"];
+"1000205" [label="(MethodReturn,void)"];
+"1000108" [label="(Call,p = choose_init(conf->rootfs.mount))"];
+"1000111" [label="(Call,conf->rootfs.mount)"];
+"1000145" [label="(Call,snprintf(destpath, PATH_MAX, \"%s%s\", conf->rootfs.mount, \"/init.lxc.static\"))"];
+"1000110" [label="(Call,choose_init(conf->rootfs.mount))"];
+"1000103" [label="(Block,)"];
+"1000119" [label="(Call,free(p))"];
+"1000120" [label="(Identifier,p)"];
+"1000117" [label="(Identifier,p)"];
+"1000119" -> "1000118"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000205"  [label="DDG: p"];
+"1000108" -> "1000119"  [label="DDG: p"];
+"1000108" -> "1000103"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000117" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000205"  [label="DDG: choose_init(conf->rootfs.mount)"];
+"1000108" -> "1000205"  [label="DDG: p"];
+"1000110" -> "1000108"  [label="DDG: conf->rootfs.mount"];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000110" -> "1000205"  [label="DDG: conf->rootfs.mount"];
+"1000110" -> "1000145"  [label="DDG: conf->rootfs.mount"];
+}

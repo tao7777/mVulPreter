@@ -1,0 +1,24 @@
+digraph "0_Chrome_c0c8978849ac57e4ecd613ddc8ff7852a2054734_2@pointer" {
+"1000101" [label="(MethodParameterIn,SensorReading* result)"];
+"1000121" [label="(Call,shared_buffer_reader_->GetReading(result))"];
+"1000120" [label="(Return,return shared_buffer_reader_->GetReading(result);)"];
+"1000101" [label="(MethodParameterIn,SensorReading* result)"];
+"1000122" [label="(Identifier,result)"];
+"1000121" [label="(Call,shared_buffer_reader_->GetReading(result))"];
+"1000102" [label="(Block,)"];
+"1000123" [label="(MethodReturn,bool)"];
+"1000120" [label="(Return,return shared_buffer_reader_->GetReading(result);)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000123"  [label="DDG: result"];
+"1000101" -> "1000121"  [label="DDG: result"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000123"  [label="DDG: result"];
+"1000121" -> "1000123"  [label="DDG: shared_buffer_reader_->GetReading(result)"];
+"1000121" -> "1000120"  [label="DDG: shared_buffer_reader_->GetReading(result)"];
+"1000120" -> "1000102"  [label="AST: "];
+"1000123" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000123"  [label="DDG: <RET>"];
+}

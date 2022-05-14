@@ -1,0 +1,38 @@
+digraph "0_linux_f991af3daabaecff34684fd51fac80319d1baad1@API" {
+"1000156" [label="(Call,!valid_signal(notification->sigev_signo))"];
+"1000157" [label="(Call,valid_signal(notification->sigev_signo))"];
+"1000150" [label="(Call,notification->sigev_notify == SIGEV_SIGNAL &&\n\t\t\t!valid_signal(notification->sigev_signo))"];
+"1000151" [label="(Call,notification->sigev_notify == SIGEV_SIGNAL)"];
+"1000157" [label="(Call,valid_signal(notification->sigev_signo))"];
+"1000210" [label="(Call,fdget(notification->sigev_signo))"];
+"1000149" [label="(ControlStructure,if (notification->sigev_notify == SIGEV_SIGNAL &&\n\t\t\t!valid_signal(notification->sigev_signo)))"];
+"1000150" [label="(Call,notification->sigev_notify == SIGEV_SIGNAL &&\n\t\t\t!valid_signal(notification->sigev_signo))"];
+"1000156" [label="(Call,!valid_signal(notification->sigev_signo))"];
+"1000158" [label="(Call,notification->sigev_signo)"];
+"1000164" [label="(Identifier,EINVAL)"];
+"1000168" [label="(Identifier,notification)"];
+"1000469" [label="(MethodReturn,static int)"];
+"1000399" [label="(Call,info->notify.sigev_signo = notification->sigev_signo)"];
+"1000156" -> "1000150"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000150" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000469"  [label="DDG: valid_signal(notification->sigev_signo)"];
+"1000156" -> "1000150"  [label="DDG: valid_signal(notification->sigev_signo)"];
+"1000157" -> "1000156"  [label="DDG: notification->sigev_signo"];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000157" -> "1000469"  [label="DDG: notification->sigev_signo"];
+"1000157" -> "1000210"  [label="DDG: notification->sigev_signo"];
+"1000157" -> "1000399"  [label="DDG: notification->sigev_signo"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000164" -> "1000150"  [label="CFG: "];
+"1000168" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000469"  [label="DDG: notification->sigev_notify == SIGEV_SIGNAL"];
+"1000150" -> "1000469"  [label="DDG: notification->sigev_notify == SIGEV_SIGNAL &&\n\t\t\t!valid_signal(notification->sigev_signo)"];
+"1000150" -> "1000469"  [label="DDG: !valid_signal(notification->sigev_signo)"];
+"1000151" -> "1000150"  [label="DDG: notification->sigev_notify"];
+"1000151" -> "1000150"  [label="DDG: SIGEV_SIGNAL"];
+}

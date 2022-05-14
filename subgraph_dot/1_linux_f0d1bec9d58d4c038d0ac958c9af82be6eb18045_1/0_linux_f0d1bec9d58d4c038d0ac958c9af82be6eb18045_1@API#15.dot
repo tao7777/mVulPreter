@@ -1,0 +1,30 @@
+digraph "0_linux_f0d1bec9d58d4c038d0ac958c9af82be6eb18045_1@API" {
+"1000324" [label="(Call,!pipe->readers)"];
+"1000154" [label="(Call,!pipe->readers)"];
+"1000154" [label="(Call,!pipe->readers)"];
+"1000325" [label="(Call,pipe->readers)"];
+"1000153" [label="(ControlStructure,if (!pipe->readers))"];
+"1000155" [label="(Call,pipe->readers)"];
+"1000160" [label="(Identifier,SIGPIPE)"];
+"1000323" [label="(ControlStructure,if (!pipe->readers))"];
+"1000330" [label="(Identifier,SIGPIPE)"];
+"1000644" [label="(MethodReturn,RET)"];
+"1000342" [label="(Identifier,bufs)"];
+"1000169" [label="(Identifier,chars)"];
+"1000324" [label="(Call,!pipe->readers)"];
+"1000324" -> "1000323"  [label="AST: "];
+"1000324" -> "1000325"  [label="CFG: "];
+"1000325" -> "1000324"  [label="AST: "];
+"1000330" -> "1000324"  [label="CFG: "];
+"1000342" -> "1000324"  [label="CFG: "];
+"1000324" -> "1000644"  [label="DDG: !pipe->readers"];
+"1000324" -> "1000644"  [label="DDG: pipe->readers"];
+"1000154" -> "1000324"  [label="DDG: pipe->readers"];
+"1000154" -> "1000153"  [label="AST: "];
+"1000154" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000160" -> "1000154"  [label="CFG: "];
+"1000169" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000644"  [label="DDG: pipe->readers"];
+"1000154" -> "1000644"  [label="DDG: !pipe->readers"];
+}

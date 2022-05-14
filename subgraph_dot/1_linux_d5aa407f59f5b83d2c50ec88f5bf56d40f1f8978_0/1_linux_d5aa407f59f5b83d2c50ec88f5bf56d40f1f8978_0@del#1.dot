@@ -1,0 +1,35 @@
+digraph "1_linux_d5aa407f59f5b83d2c50ec88f5bf56d40f1f8978_0@del" {
+"1000116" [label="(Call,xfrm6_tunnel_register(&ip6ip6_handler, AF_INET6))"];
+"1000139" [label="(Call,xfrm6_tunnel_deregister(&ip6ip6_handler, AF_INET6))"];
+"1000115" [label="(ControlStructure,if (xfrm6_tunnel_register(&ip6ip6_handler, AF_INET6)))"];
+"1000102" [label="(Block,)"];
+"1000143" [label="(JumpTarget,unreg_ip4ip6:)"];
+"1000142" [label="(Identifier,AF_INET6)"];
+"1000117" [label="(Call,&ip6ip6_handler)"];
+"1000127" [label="(Identifier,err)"];
+"1000140" [label="(Call,&ip6ip6_handler)"];
+"1000119" [label="(Identifier,AF_INET6)"];
+"1000122" [label="(Identifier,err)"];
+"1000139" [label="(Call,xfrm6_tunnel_deregister(&ip6ip6_handler, AF_INET6))"];
+"1000116" [label="(Call,xfrm6_tunnel_register(&ip6ip6_handler, AF_INET6))"];
+"1000151" [label="(MethodReturn,static int __init)"];
+"1000116" -> "1000115"  [label="AST: "];
+"1000116" -> "1000119"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000119" -> "1000116"  [label="AST: "];
+"1000122" -> "1000116"  [label="CFG: "];
+"1000127" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000151"  [label="DDG: &ip6ip6_handler"];
+"1000116" -> "1000151"  [label="DDG: AF_INET6"];
+"1000116" -> "1000151"  [label="DDG: xfrm6_tunnel_register(&ip6ip6_handler, AF_INET6)"];
+"1000116" -> "1000139"  [label="DDG: &ip6ip6_handler"];
+"1000116" -> "1000139"  [label="DDG: AF_INET6"];
+"1000139" -> "1000102"  [label="AST: "];
+"1000139" -> "1000142"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000142" -> "1000139"  [label="AST: "];
+"1000143" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000151"  [label="DDG: AF_INET6"];
+"1000139" -> "1000151"  [label="DDG: &ip6ip6_handler"];
+"1000139" -> "1000151"  [label="DDG: xfrm6_tunnel_deregister(&ip6ip6_handler, AF_INET6)"];
+}

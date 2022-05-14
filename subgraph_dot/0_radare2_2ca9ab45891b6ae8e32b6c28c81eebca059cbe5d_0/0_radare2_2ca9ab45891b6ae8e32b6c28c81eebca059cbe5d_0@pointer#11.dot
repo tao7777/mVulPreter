@@ -1,0 +1,35 @@
+digraph "0_radare2_2ca9ab45891b6ae8e32b6c28c81eebca059cbe5d_0@pointer" {
+"1000105" [label="(MethodParameterIn,RBinDwarfAttrSpec *spec)"];
+"1000124" [label="(Call,!spec)"];
+"1000123" [label="(Call,!spec || !value || !hdr || !obuf || obuf_len < 1)"];
+"1000140" [label="(Identifier,NULL)"];
+"1000105" [label="(MethodParameterIn,RBinDwarfAttrSpec *spec)"];
+"1000123" [label="(Call,!spec || !value || !hdr || !obuf || obuf_len < 1)"];
+"1000125" [label="(Identifier,spec)"];
+"1000122" [label="(ControlStructure,if (!spec || !value || !hdr || !obuf || obuf_len < 1))"];
+"1000814" [label="(MethodReturn,static const ut8 *)"];
+"1000128" [label="(Identifier,value)"];
+"1000124" [label="(Call,!spec)"];
+"1000143" [label="(Identifier,value)"];
+"1000126" [label="(Call,!value || !hdr || !obuf || obuf_len < 1)"];
+"1000105" -> "1000102"  [label="AST: "];
+"1000105" -> "1000814"  [label="DDG: spec"];
+"1000105" -> "1000124"  [label="DDG: spec"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000128" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000814"  [label="DDG: spec"];
+"1000124" -> "1000123"  [label="DDG: spec"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000123"  [label="AST: "];
+"1000140" -> "1000123"  [label="CFG: "];
+"1000143" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000814"  [label="DDG: !value || !hdr || !obuf || obuf_len < 1"];
+"1000123" -> "1000814"  [label="DDG: !spec || !value || !hdr || !obuf || obuf_len < 1"];
+"1000123" -> "1000814"  [label="DDG: !spec"];
+"1000126" -> "1000123"  [label="DDG: !value"];
+"1000126" -> "1000123"  [label="DDG: !hdr || !obuf || obuf_len < 1"];
+}

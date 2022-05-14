@@ -1,0 +1,34 @@
+digraph "1_jasper_634ce8e8a5accc0fa05dd2c20d42b4749d4b2735_5@API" {
+"1000105" [label="(Call,assert(bufsize >= 0))"];
+"1000106" [label="(Call,bufsize >= 0)"];
+"1000102" [label="(MethodParameterIn,int bufsize)"];
+"1000117" [label="(Call,!(buf = jas_realloc2(m->buf_, bufsize, sizeof(unsigned char))) &&\n \t  bufsize)"];
+"1000107" [label="(Identifier,bufsize)"];
+"1000110" [label="(Literal,100)"];
+"1000105" [label="(Call,assert(bufsize >= 0))"];
+"1000103" [label="(Block,)"];
+"1000106" [label="(Call,bufsize >= 0)"];
+"1000151" [label="(MethodReturn,static int)"];
+"1000102" [label="(MethodParameterIn,int bufsize)"];
+"1000121" [label="(Call,jas_realloc2(m->buf_, bufsize, sizeof(unsigned char)))"];
+"1000108" [label="(Literal,0)"];
+"1000144" [label="(Call,m->bufsize_ = bufsize)"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000110" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000151"  [label="DDG: assert(bufsize >= 0)"];
+"1000105" -> "1000151"  [label="DDG: bufsize >= 0"];
+"1000106" -> "1000105"  [label="DDG: bufsize"];
+"1000106" -> "1000105"  [label="DDG: 0"];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000102" -> "1000106"  [label="DDG: bufsize"];
+"1000106" -> "1000121"  [label="DDG: bufsize"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000151"  [label="DDG: bufsize"];
+"1000102" -> "1000121"  [label="DDG: bufsize"];
+"1000102" -> "1000117"  [label="DDG: bufsize"];
+"1000102" -> "1000144"  [label="DDG: bufsize"];
+}

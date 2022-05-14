@@ -1,0 +1,28 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_27@API" {
+"1000555" [label="(Call,!inet->recverr)"];
+"1000550" [label="(Call,err == -ENOBUFS && !inet->recverr)"];
+"1000555" [label="(Call,!inet->recverr)"];
+"1000563" [label="(Identifier,sk)"];
+"1000560" [label="(Identifier,err)"];
+"1000551" [label="(Call,err == -ENOBUFS)"];
+"1000556" [label="(Call,inet->recverr)"];
+"1000602" [label="(MethodReturn,static int)"];
+"1000549" [label="(ControlStructure,if (err == -ENOBUFS && !inet->recverr))"];
+"1000550" [label="(Call,err == -ENOBUFS && !inet->recverr)"];
+"1000555" -> "1000550"  [label="AST: "];
+"1000555" -> "1000556"  [label="CFG: "];
+"1000556" -> "1000555"  [label="AST: "];
+"1000550" -> "1000555"  [label="CFG: "];
+"1000555" -> "1000602"  [label="DDG: inet->recverr"];
+"1000555" -> "1000550"  [label="DDG: inet->recverr"];
+"1000550" -> "1000549"  [label="AST: "];
+"1000550" -> "1000551"  [label="CFG: "];
+"1000551" -> "1000550"  [label="AST: "];
+"1000560" -> "1000550"  [label="CFG: "];
+"1000563" -> "1000550"  [label="CFG: "];
+"1000550" -> "1000602"  [label="DDG: err == -ENOBUFS && !inet->recverr"];
+"1000550" -> "1000602"  [label="DDG: !inet->recverr"];
+"1000550" -> "1000602"  [label="DDG: err == -ENOBUFS"];
+"1000551" -> "1000550"  [label="DDG: err"];
+"1000551" -> "1000550"  [label="DDG: -ENOBUFS"];
+}

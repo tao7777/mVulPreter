@@ -1,0 +1,26 @@
+digraph "0_neomutt_6f163e07ae68654d7ac5268cbb7565f6df79ad85_0@pointer" {
+"1000138" [label="(Call,mutt_bit_isset(idata->capabilities, AGSSAPI))"];
+"1000137" [label="(Call,!mutt_bit_isset(idata->capabilities, AGSSAPI))"];
+"1000136" [label="(ControlStructure,if (!mutt_bit_isset(idata->capabilities, AGSSAPI)))"];
+"1000137" [label="(Call,!mutt_bit_isset(idata->capabilities, AGSSAPI))"];
+"1000782" [label="(MethodReturn,enum ImapAuthRes)"];
+"1000138" [label="(Call,mutt_bit_isset(idata->capabilities, AGSSAPI))"];
+"1000144" [label="(Identifier,IMAP_AUTH_UNAVAIL)"];
+"1000151" [label="(Identifier,idata)"];
+"1000142" [label="(Identifier,AGSSAPI)"];
+"1000139" [label="(Call,idata->capabilities)"];
+"1000138" -> "1000137"  [label="AST: "];
+"1000138" -> "1000142"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000142" -> "1000138"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000782"  [label="DDG: AGSSAPI"];
+"1000138" -> "1000782"  [label="DDG: idata->capabilities"];
+"1000138" -> "1000137"  [label="DDG: idata->capabilities"];
+"1000138" -> "1000137"  [label="DDG: AGSSAPI"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000144" -> "1000137"  [label="CFG: "];
+"1000151" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000782"  [label="DDG: mutt_bit_isset(idata->capabilities, AGSSAPI)"];
+"1000137" -> "1000782"  [label="DDG: !mutt_bit_isset(idata->capabilities, AGSSAPI)"];
+}

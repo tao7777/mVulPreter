@@ -1,0 +1,32 @@
+digraph "0_libplist_3a55ddd3c4c11ce75a86afbefd085d8d397ff957@pointer" {
+"1000108" [label="(Call,!size)"];
+"1000102" [label="(MethodParameterIn,size_t *size)"];
+"1000105" [label="(Call,!buf || !size)"];
+"1000108" [label="(Call,!size)"];
+"1000329" [label="(MethodReturn,unsigned char *)"];
+"1000104" [label="(ControlStructure,if (!buf || !size))"];
+"1000102" [label="(MethodParameterIn,size_t *size)"];
+"1000111" [label="(Identifier,NULL)"];
+"1000114" [label="(Identifier,len)"];
+"1000106" [label="(Call,!buf)"];
+"1000109" [label="(Identifier,size)"];
+"1000105" [label="(Call,!buf || !size)"];
+"1000108" -> "1000105"  [label="AST: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000105" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000329"  [label="DDG: size"];
+"1000108" -> "1000105"  [label="DDG: size"];
+"1000102" -> "1000108"  [label="DDG: size"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000329"  [label="DDG: size"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000111" -> "1000105"  [label="CFG: "];
+"1000114" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000329"  [label="DDG: !size"];
+"1000105" -> "1000329"  [label="DDG: !buf || !size"];
+"1000105" -> "1000329"  [label="DDG: !buf"];
+"1000106" -> "1000105"  [label="DDG: buf"];
+}

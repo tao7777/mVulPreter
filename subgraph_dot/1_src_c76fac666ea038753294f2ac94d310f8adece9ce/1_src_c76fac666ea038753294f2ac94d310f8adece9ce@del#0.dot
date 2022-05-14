@@ -1,0 +1,33 @@
+digraph "1_src_c76fac666ea038753294f2ac94d310f8adece9ce@del" {
+"1000356" [label="(Call,no_port_forwarding_flag || options.disable_forwarding)"];
+"1000348" [label="(Call,(options.allow_streamlocal_forwarding & FORWARD_REMOTE) == 0\n\t\t    || no_port_forwarding_flag || options.disable_forwarding)"];
+"1000363" [label="(Identifier,success)"];
+"1000357" [label="(Identifier,no_port_forwarding_flag)"];
+"1000356" [label="(Call,no_port_forwarding_flag || options.disable_forwarding)"];
+"1000358" [label="(Call,options.disable_forwarding)"];
+"1000348" [label="(Call,(options.allow_streamlocal_forwarding & FORWARD_REMOTE) == 0\n\t\t    || no_port_forwarding_flag || options.disable_forwarding)"];
+"1000347" [label="(ControlStructure,if ((options.allow_streamlocal_forwarding & FORWARD_REMOTE) == 0\n\t\t    || no_port_forwarding_flag || options.disable_forwarding))"];
+"1000474" [label="(MethodReturn,RET)"];
+"1000349" [label="(Call,(options.allow_streamlocal_forwarding & FORWARD_REMOTE) == 0)"];
+"1000370" [label="(Identifier,success)"];
+"1000356" -> "1000348"  [label="AST: "];
+"1000356" -> "1000357"  [label="CFG: "];
+"1000356" -> "1000358"  [label="CFG: "];
+"1000357" -> "1000356"  [label="AST: "];
+"1000358" -> "1000356"  [label="AST: "];
+"1000348" -> "1000356"  [label="CFG: "];
+"1000356" -> "1000474"  [label="DDG: no_port_forwarding_flag"];
+"1000356" -> "1000474"  [label="DDG: options.disable_forwarding"];
+"1000356" -> "1000348"  [label="DDG: no_port_forwarding_flag"];
+"1000356" -> "1000348"  [label="DDG: options.disable_forwarding"];
+"1000348" -> "1000347"  [label="AST: "];
+"1000348" -> "1000349"  [label="CFG: "];
+"1000349" -> "1000348"  [label="AST: "];
+"1000363" -> "1000348"  [label="CFG: "];
+"1000370" -> "1000348"  [label="CFG: "];
+"1000348" -> "1000474"  [label="DDG: no_port_forwarding_flag || options.disable_forwarding"];
+"1000348" -> "1000474"  [label="DDG: (options.allow_streamlocal_forwarding & FORWARD_REMOTE) == 0"];
+"1000348" -> "1000474"  [label="DDG: (options.allow_streamlocal_forwarding & FORWARD_REMOTE) == 0\n\t\t    || no_port_forwarding_flag || options.disable_forwarding"];
+"1000349" -> "1000348"  [label="DDG: options.allow_streamlocal_forwarding & FORWARD_REMOTE"];
+"1000349" -> "1000348"  [label="DDG: 0"];
+}

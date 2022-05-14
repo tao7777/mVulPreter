@@ -1,0 +1,32 @@
+digraph "0_linux_6b3a707736301c2128ca85ce85fb13f60b5e350a_4@pointer" {
+"1000341" [label="(Call,vma->vm_flags & VM_LOCKED)"];
+"1000337" [label="(Call,(flags & FOLL_MLOCK) && (vma->vm_flags & VM_LOCKED))"];
+"1000364" [label="(JumpTarget,out:)"];
+"1000342" [label="(Call,vma->vm_flags)"];
+"1000345" [label="(Identifier,VM_LOCKED)"];
+"1000349" [label="(Identifier,page)"];
+"1000338" [label="(Call,flags & FOLL_MLOCK)"];
+"1000336" [label="(ControlStructure,if ((flags & FOLL_MLOCK) && (vma->vm_flags & VM_LOCKED)))"];
+"1000384" [label="(MethodReturn,static struct page *)"];
+"1000337" [label="(Call,(flags & FOLL_MLOCK) && (vma->vm_flags & VM_LOCKED))"];
+"1000341" [label="(Call,vma->vm_flags & VM_LOCKED)"];
+"1000341" -> "1000337"  [label="AST: "];
+"1000341" -> "1000345"  [label="CFG: "];
+"1000342" -> "1000341"  [label="AST: "];
+"1000345" -> "1000341"  [label="AST: "];
+"1000337" -> "1000341"  [label="CFG: "];
+"1000341" -> "1000384"  [label="DDG: vma->vm_flags"];
+"1000341" -> "1000384"  [label="DDG: VM_LOCKED"];
+"1000341" -> "1000337"  [label="DDG: vma->vm_flags"];
+"1000341" -> "1000337"  [label="DDG: VM_LOCKED"];
+"1000337" -> "1000336"  [label="AST: "];
+"1000337" -> "1000338"  [label="CFG: "];
+"1000338" -> "1000337"  [label="AST: "];
+"1000349" -> "1000337"  [label="CFG: "];
+"1000364" -> "1000337"  [label="CFG: "];
+"1000337" -> "1000384"  [label="DDG: flags & FOLL_MLOCK"];
+"1000337" -> "1000384"  [label="DDG: (flags & FOLL_MLOCK) && (vma->vm_flags & VM_LOCKED)"];
+"1000337" -> "1000384"  [label="DDG: vma->vm_flags & VM_LOCKED"];
+"1000338" -> "1000337"  [label="DDG: flags"];
+"1000338" -> "1000337"  [label="DDG: FOLL_MLOCK"];
+}

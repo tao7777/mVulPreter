@@ -1,0 +1,29 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_9@pointer" {
+"1000165" [label="(Call,sk->sk_rcvbuf >> 2)"];
+"1000159" [label="(Call,atomic_read(&sk->sk_rmem_alloc) <= (sk->sk_rcvbuf >> 2))"];
+"1000173" [label="(Identifier,sk)"];
+"1000166" [label="(Call,sk->sk_rcvbuf)"];
+"1000176" [label="(Identifier,sk)"];
+"1000159" [label="(Call,atomic_read(&sk->sk_rmem_alloc) <= (sk->sk_rcvbuf >> 2))"];
+"1000160" [label="(Call,atomic_read(&sk->sk_rmem_alloc))"];
+"1000179" [label="(MethodReturn,static int)"];
+"1000158" [label="(ControlStructure,if (atomic_read(&sk->sk_rmem_alloc) <= (sk->sk_rcvbuf >> 2)))"];
+"1000169" [label="(Literal,2)"];
+"1000165" [label="(Call,sk->sk_rcvbuf >> 2)"];
+"1000165" -> "1000159"  [label="AST: "];
+"1000165" -> "1000169"  [label="CFG: "];
+"1000166" -> "1000165"  [label="AST: "];
+"1000169" -> "1000165"  [label="AST: "];
+"1000159" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000179"  [label="DDG: sk->sk_rcvbuf"];
+"1000165" -> "1000159"  [label="DDG: sk->sk_rcvbuf"];
+"1000165" -> "1000159"  [label="DDG: 2"];
+"1000159" -> "1000158"  [label="AST: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000173" -> "1000159"  [label="CFG: "];
+"1000176" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000179"  [label="DDG: atomic_read(&sk->sk_rmem_alloc) <= (sk->sk_rcvbuf >> 2)"];
+"1000159" -> "1000179"  [label="DDG: atomic_read(&sk->sk_rmem_alloc)"];
+"1000159" -> "1000179"  [label="DDG: sk->sk_rcvbuf >> 2"];
+"1000160" -> "1000159"  [label="DDG: &sk->sk_rmem_alloc"];
+}

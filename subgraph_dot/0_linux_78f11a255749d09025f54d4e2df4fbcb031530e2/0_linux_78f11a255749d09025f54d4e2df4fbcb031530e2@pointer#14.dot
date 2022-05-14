@@ -1,0 +1,30 @@
+digraph "0_linux_78f11a255749d09025f54d4e2df4fbcb031530e2@pointer" {
+"1000217" [label="(Call,!vma->anon_vma || vma->vm_ops)"];
+"1000218" [label="(Call,!vma->anon_vma)"];
+"1000218" [label="(Call,!vma->anon_vma)"];
+"1000225" [label="(ControlStructure,goto out;)"];
+"1000216" [label="(ControlStructure,if (!vma->anon_vma || vma->vm_ops))"];
+"1000222" [label="(Call,vma->vm_ops)"];
+"1000219" [label="(Call,vma->anon_vma)"];
+"1000217" [label="(Call,!vma->anon_vma || vma->vm_ops)"];
+"1000276" [label="(Call,anon_vma_lock(vma->anon_vma))"];
+"1000448" [label="(MethodReturn,static void)"];
+"1000228" [label="(Identifier,vma)"];
+"1000223" [label="(Identifier,vma)"];
+"1000217" -> "1000216"  [label="AST: "];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000217" -> "1000222"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000222" -> "1000217"  [label="AST: "];
+"1000225" -> "1000217"  [label="CFG: "];
+"1000228" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000448"  [label="DDG: !vma->anon_vma || vma->vm_ops"];
+"1000217" -> "1000448"  [label="DDG: !vma->anon_vma"];
+"1000217" -> "1000448"  [label="DDG: vma->vm_ops"];
+"1000218" -> "1000217"  [label="DDG: vma->anon_vma"];
+"1000218" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000223" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000448"  [label="DDG: vma->anon_vma"];
+"1000218" -> "1000276"  [label="DDG: vma->anon_vma"];
+}

@@ -1,0 +1,22 @@
+digraph "0_poppler_58e04a08afee39370283c494ee2e4e392fd3b684@API" {
+"1000312" [label="(Call,readULong(&segLength))"];
+"1000311" [label="(Call,!readULong(&segLength))"];
+"1000318" [label="(Identifier,segDataPos)"];
+"1000312" [label="(Call,readULong(&segLength))"];
+"1000316" [label="(ControlStructure,goto eofError2;)"];
+"1000580" [label="(MethodReturn,void)"];
+"1000311" [label="(Call,!readULong(&segLength))"];
+"1000310" [label="(ControlStructure,if (!readULong(&segLength)))"];
+"1000313" [label="(Call,&segLength)"];
+"1000312" -> "1000311"  [label="AST: "];
+"1000312" -> "1000313"  [label="CFG: "];
+"1000313" -> "1000312"  [label="AST: "];
+"1000311" -> "1000312"  [label="CFG: "];
+"1000312" -> "1000580"  [label="DDG: &segLength"];
+"1000312" -> "1000311"  [label="DDG: &segLength"];
+"1000311" -> "1000310"  [label="AST: "];
+"1000316" -> "1000311"  [label="CFG: "];
+"1000318" -> "1000311"  [label="CFG: "];
+"1000311" -> "1000580"  [label="DDG: readULong(&segLength)"];
+"1000311" -> "1000580"  [label="DDG: !readULong(&segLength)"];
+}

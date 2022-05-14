@@ -1,0 +1,32 @@
+digraph "0_savannah_f958c48ee431bef8d4d466b40c9cb2d4dbcb7791@pointer" {
+"1000414" [label="(Call,charstring_base + charstring_len)"];
+"1000262" [label="(MethodParameterIn,FT_Byte*    charstring_base)"];
+"1000263" [label="(MethodParameterIn,FT_UInt     charstring_len)"];
+"1000410" [label="(Call,zone->limit  = charstring_base + charstring_len)"];
+"1000416" [label="(Identifier,charstring_len)"];
+"1000263" [label="(MethodParameterIn,FT_UInt     charstring_len)"];
+"1002530" [label="(MethodReturn,RET)"];
+"1000408" [label="(Call,limit = zone->limit  = charstring_base + charstring_len)"];
+"1000403" [label="(Call,zone->base           = charstring_base)"];
+"1000415" [label="(Identifier,charstring_base)"];
+"1000262" [label="(MethodParameterIn,FT_Byte*    charstring_base)"];
+"1000414" [label="(Call,charstring_base + charstring_len)"];
+"1000414" -> "1000410"  [label="AST: "];
+"1000414" -> "1000416"  [label="CFG: "];
+"1000415" -> "1000414"  [label="AST: "];
+"1000416" -> "1000414"  [label="AST: "];
+"1000410" -> "1000414"  [label="CFG: "];
+"1000414" -> "1002530"  [label="DDG: charstring_len"];
+"1000414" -> "1002530"  [label="DDG: charstring_base"];
+"1000262" -> "1000414"  [label="DDG: charstring_base"];
+"1000263" -> "1000414"  [label="DDG: charstring_len"];
+"1000262" -> "1000260"  [label="AST: "];
+"1000262" -> "1002530"  [label="DDG: charstring_base"];
+"1000262" -> "1000403"  [label="DDG: charstring_base"];
+"1000262" -> "1000408"  [label="DDG: charstring_base"];
+"1000262" -> "1000410"  [label="DDG: charstring_base"];
+"1000263" -> "1000260"  [label="AST: "];
+"1000263" -> "1002530"  [label="DDG: charstring_len"];
+"1000263" -> "1000408"  [label="DDG: charstring_len"];
+"1000263" -> "1000410"  [label="DDG: charstring_len"];
+}

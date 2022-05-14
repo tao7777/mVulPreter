@@ -1,0 +1,32 @@
+digraph "1_Android_37c88107679d36c419572732b4af6e18bb2f7dce_5@del" {
+"1000439" [label="(Call,CALL_AND_WAIT(bt_interface->enable(), adapter_state_changed))"];
+"1000473" [label="(Call,CALL_AND_WAIT(bt_interface->disable(), adapter_state_changed))"];
+"1000439" [label="(Call,CALL_AND_WAIT(bt_interface->enable(), adapter_state_changed))"];
+"1000437" [label="(Block,)"];
+"1000441" [label="(Identifier,adapter_state_changed)"];
+"1000473" [label="(Call,CALL_AND_WAIT(bt_interface->disable(), adapter_state_changed))"];
+"1000503" [label="(MethodReturn,int)"];
+"1000440" [label="(Call,bt_interface->enable())"];
+"1000476" [label="(Call,callbacks_cleanup())"];
+"1000439" [label="(Call,CALL_AND_WAIT(bt_interface->enable(), adapter_state_changed))"];
+"1000474" [label="(Call,bt_interface->disable())"];
+"1000475" [label="(Identifier,adapter_state_changed)"];
+"1000443" [label="(Call,test_suite[i].function())"];
+"1000439" -> "1000437"  [label="AST: "];
+"1000439" -> "1000441"  [label="CFG: "];
+"1000440" -> "1000439"  [label="AST: "];
+"1000441" -> "1000439"  [label="AST: "];
+"1000443" -> "1000439"  [label="CFG: "];
+"1000439" -> "1000503"  [label="DDG: bt_interface->enable()"];
+"1000439" -> "1000503"  [label="DDG: CALL_AND_WAIT(bt_interface->enable(), adapter_state_changed)"];
+"1000473" -> "1000439"  [label="DDG: adapter_state_changed"];
+"1000439" -> "1000473"  [label="DDG: adapter_state_changed"];
+"1000473" -> "1000437"  [label="AST: "];
+"1000473" -> "1000475"  [label="CFG: "];
+"1000474" -> "1000473"  [label="AST: "];
+"1000475" -> "1000473"  [label="AST: "];
+"1000476" -> "1000473"  [label="CFG: "];
+"1000473" -> "1000503"  [label="DDG: bt_interface->disable()"];
+"1000473" -> "1000503"  [label="DDG: adapter_state_changed"];
+"1000473" -> "1000503"  [label="DDG: CALL_AND_WAIT(bt_interface->disable(), adapter_state_changed)"];
+}

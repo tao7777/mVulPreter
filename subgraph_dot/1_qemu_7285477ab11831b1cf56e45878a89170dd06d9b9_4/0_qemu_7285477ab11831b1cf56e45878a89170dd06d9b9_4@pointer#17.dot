@@ -1,0 +1,35 @@
+digraph "0_qemu_7285477ab11831b1cf56e45878a89170dd06d9b9_4@pointer" {
+"1000451" [label="(Call,DPRINTF(\"Seek(%d) (sector %\" PRId64 \")\n\", command == SEEK_6 ? 6 : 10,\n                r->req.cmd.lba))"];
+"1000467" [label="(Call,r->req.cmd.lba > s->max_lba)"];
+"1000452" [label="(Literal,\"Seek(%d) (sector %\" PRId64 \")\n\")"];
+"1000180" [label="(Block,)"];
+"1000467" [label="(Call,r->req.cmd.lba > s->max_lba)"];
+"1000466" [label="(ControlStructure,if (r->req.cmd.lba > s->max_lba))"];
+"1000453" [label="(Call,command == SEEK_6 ? 6 : 10)"];
+"1000459" [label="(Call,r->req.cmd.lba)"];
+"1000471" [label="(Identifier,r)"];
+"1000475" [label="(Call,s->max_lba)"];
+"1000480" [label="(ControlStructure,break;)"];
+"1000468" [label="(Call,r->req.cmd.lba)"];
+"1000451" [label="(Call,DPRINTF(\"Seek(%d) (sector %\" PRId64 \")\n\", command == SEEK_6 ? 6 : 10,\n                r->req.cmd.lba))"];
+"1000650" [label="(MethodReturn,static int32_t)"];
+"1000479" [label="(ControlStructure,goto illegal_lba;)"];
+"1000451" -> "1000180"  [label="AST: "];
+"1000451" -> "1000459"  [label="CFG: "];
+"1000452" -> "1000451"  [label="AST: "];
+"1000453" -> "1000451"  [label="AST: "];
+"1000459" -> "1000451"  [label="AST: "];
+"1000471" -> "1000451"  [label="CFG: "];
+"1000451" -> "1000650"  [label="DDG: "];
+"1000451" -> "1000650"  [label="DDG: "];
+"1000451" -> "1000467"  [label="DDG: "];
+"1000467" -> "1000466"  [label="AST: "];
+"1000467" -> "1000475"  [label="CFG: "];
+"1000468" -> "1000467"  [label="AST: "];
+"1000475" -> "1000467"  [label="AST: "];
+"1000479" -> "1000467"  [label="CFG: "];
+"1000480" -> "1000467"  [label="CFG: "];
+"1000467" -> "1000650"  [label="DDG: "];
+"1000467" -> "1000650"  [label="DDG: "];
+"1000467" -> "1000650"  [label="DDG: "];
+}

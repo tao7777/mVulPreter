@@ -1,0 +1,1 @@
+const ClipPaintPropertyNode* c0() {

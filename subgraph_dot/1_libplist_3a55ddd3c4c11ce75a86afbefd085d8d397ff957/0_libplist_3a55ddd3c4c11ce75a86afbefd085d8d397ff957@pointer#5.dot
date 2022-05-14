@@ -1,0 +1,33 @@
+digraph "0_libplist_3a55ddd3c4c11ce75a86afbefd085d8d397ff957@pointer" {
+"1000164" [label="(Call,*ptr == '\0')"];
+"1000163" [label="(Call,*ptr == '\0' || ptr >= buf+len)"];
+"1000167" [label="(Literal,'\0')"];
+"1000176" [label="(Identifier,l)"];
+"1000219" [label="(MethodReturn,unsigned char *)"];
+"1000169" [label="(Identifier,ptr)"];
+"1000174" [label="(ControlStructure,break;)"];
+"1000163" [label="(Call,*ptr == '\0' || ptr >= buf+len)"];
+"1000164" [label="(Call,*ptr == '\0')"];
+"1000165" [label="(Call,*ptr)"];
+"1000168" [label="(Call,ptr >= buf+len)"];
+"1000162" [label="(ControlStructure,if (*ptr == '\0' || ptr >= buf+len))"];
+"1000164" -> "1000163"  [label="AST: "];
+"1000164" -> "1000167"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000167" -> "1000164"  [label="AST: "];
+"1000169" -> "1000164"  [label="CFG: "];
+"1000163" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000219"  [label="DDG: *ptr"];
+"1000164" -> "1000163"  [label="DDG: *ptr"];
+"1000164" -> "1000163"  [label="DDG: '\0'"];
+"1000163" -> "1000162"  [label="AST: "];
+"1000163" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000163"  [label="AST: "];
+"1000174" -> "1000163"  [label="CFG: "];
+"1000176" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000219"  [label="DDG: ptr >= buf+len"];
+"1000163" -> "1000219"  [label="DDG: *ptr == '\0'"];
+"1000163" -> "1000219"  [label="DDG: *ptr == '\0' || ptr >= buf+len"];
+"1000168" -> "1000163"  [label="DDG: ptr"];
+"1000168" -> "1000163"  [label="DDG: buf+len"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_6217e5ede23285ddfee10d2e4ba0cc2d4c046205@pointer" {
+"1000158" [label="(Call,params->codec.ch_out == 0)"];
+"1000150" [label="(Call,params->codec.ch_in == 0 || params->codec.ch_out == 0)"];
+"1000169" [label="(Literal,0)"];
+"1000159" [label="(Call,params->codec.ch_out)"];
+"1000170" [label="(MethodReturn,static int)"];
+"1000167" [label="(Identifier,EINVAL)"];
+"1000164" [label="(Literal,0)"];
+"1000158" [label="(Call,params->codec.ch_out == 0)"];
+"1000151" [label="(Call,params->codec.ch_in == 0)"];
+"1000150" [label="(Call,params->codec.ch_in == 0 || params->codec.ch_out == 0)"];
+"1000149" [label="(ControlStructure,if (params->codec.ch_in == 0 || params->codec.ch_out == 0))"];
+"1000158" -> "1000150"  [label="AST: "];
+"1000158" -> "1000164"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000164" -> "1000158"  [label="AST: "];
+"1000150" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000170"  [label="DDG: params->codec.ch_out"];
+"1000158" -> "1000150"  [label="DDG: params->codec.ch_out"];
+"1000158" -> "1000150"  [label="DDG: 0"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000167" -> "1000150"  [label="CFG: "];
+"1000169" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000170"  [label="DDG: params->codec.ch_in == 0 || params->codec.ch_out == 0"];
+"1000150" -> "1000170"  [label="DDG: params->codec.ch_in == 0"];
+"1000150" -> "1000170"  [label="DDG: params->codec.ch_out == 0"];
+"1000151" -> "1000150"  [label="DDG: params->codec.ch_in"];
+"1000151" -> "1000150"  [label="DDG: 0"];
+}

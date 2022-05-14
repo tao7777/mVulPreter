@@ -1,0 +1,35 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_37@pointer" {
+"1000434" [label="(Call,vsk->peer_shutdown & SEND_SHUTDOWN)"];
+"1000339" [label="(Call,vsk->peer_shutdown & SEND_SHUTDOWN)"];
+"1000333" [label="(Call,(sk->sk_shutdown & RCV_SHUTDOWN)\n\t\t\t    || (vsk->peer_shutdown & SEND_SHUTDOWN))"];
+"1000470" [label="(MethodReturn,RET)"];
+"1000343" [label="(Identifier,SEND_SHUTDOWN)"];
+"1000340" [label="(Call,vsk->peer_shutdown)"];
+"1000434" [label="(Call,vsk->peer_shutdown & SEND_SHUTDOWN)"];
+"1000433" [label="(ControlStructure,if (vsk->peer_shutdown & SEND_SHUTDOWN))"];
+"1000339" [label="(Call,vsk->peer_shutdown & SEND_SHUTDOWN)"];
+"1000438" [label="(Identifier,SEND_SHUTDOWN)"];
+"1000435" [label="(Call,vsk->peer_shutdown)"];
+"1000457" [label="(Identifier,err)"];
+"1000443" [label="(Identifier,vsk)"];
+"1000434" -> "1000433"  [label="AST: "];
+"1000434" -> "1000438"  [label="CFG: "];
+"1000435" -> "1000434"  [label="AST: "];
+"1000438" -> "1000434"  [label="AST: "];
+"1000443" -> "1000434"  [label="CFG: "];
+"1000457" -> "1000434"  [label="CFG: "];
+"1000434" -> "1000470"  [label="DDG: SEND_SHUTDOWN"];
+"1000434" -> "1000470"  [label="DDG: vsk->peer_shutdown & SEND_SHUTDOWN"];
+"1000434" -> "1000470"  [label="DDG: vsk->peer_shutdown"];
+"1000339" -> "1000434"  [label="DDG: vsk->peer_shutdown"];
+"1000339" -> "1000434"  [label="DDG: SEND_SHUTDOWN"];
+"1000339" -> "1000333"  [label="AST: "];
+"1000339" -> "1000343"  [label="CFG: "];
+"1000340" -> "1000339"  [label="AST: "];
+"1000343" -> "1000339"  [label="AST: "];
+"1000333" -> "1000339"  [label="CFG: "];
+"1000339" -> "1000470"  [label="DDG: SEND_SHUTDOWN"];
+"1000339" -> "1000470"  [label="DDG: vsk->peer_shutdown"];
+"1000339" -> "1000333"  [label="DDG: vsk->peer_shutdown"];
+"1000339" -> "1000333"  [label="DDG: SEND_SHUTDOWN"];
+}

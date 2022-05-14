@@ -1,0 +1,29 @@
+digraph "0_linux_b66c5984017533316fd1951770302649baf1aa33_1@pointer" {
+"1000102" [label="(MethodParameterIn,struct linux_binprm *bprm)"];
+"1000104" [label="(Call,free_arg_pages(bprm))"];
+"1000134" [label="(Call,kfree(bprm))"];
+"1000135" [label="(Identifier,bprm)"];
+"1000105" [label="(Identifier,bprm)"];
+"1000104" [label="(Call,free_arg_pages(bprm))"];
+"1000108" [label="(Identifier,bprm)"];
+"1000103" [label="(Block,)"];
+"1000136" [label="(MethodReturn,void)"];
+"1000134" [label="(Call,kfree(bprm))"];
+"1000102" [label="(MethodParameterIn,struct linux_binprm *bprm)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000136"  [label="DDG: bprm"];
+"1000102" -> "1000104"  [label="DDG: bprm"];
+"1000102" -> "1000134"  [label="DDG: bprm"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000108" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000136"  [label="DDG: free_arg_pages(bprm)"];
+"1000104" -> "1000134"  [label="DDG: bprm"];
+"1000134" -> "1000103"  [label="AST: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000136" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000136"  [label="DDG: kfree(bprm)"];
+"1000134" -> "1000136"  [label="DDG: bprm"];
+}

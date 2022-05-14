@@ -1,0 +1,35 @@
+digraph "0_FFmpeg_2a05c8f813de6f2278827734bf8102291e7484aa_5@API" {
+"1000144" [label="(Call,!force_reconnect)"];
+"1000106" [label="(MethodParameterIn,int force_reconnect)"];
+"1000143" [label="(Call,!force_reconnect &&\n              ((whence == SEEK_CUR && off == 0) ||\n               (whence == SEEK_SET && off == s->off)))"];
+"1000144" [label="(Call,!force_reconnect)"];
+"1000149" [label="(Identifier,whence)"];
+"1000143" [label="(Call,!force_reconnect &&\n              ((whence == SEEK_CUR && off == 0) ||\n               (whence == SEEK_SET && off == s->off)))"];
+"1000172" [label="(Identifier,s)"];
+"1000146" [label="(Call,(whence == SEEK_CUR && off == 0) ||\n               (whence == SEEK_SET && off == s->off))"];
+"1000106" [label="(MethodParameterIn,int force_reconnect)"];
+"1000142" [label="(ControlStructure,if (!force_reconnect &&\n              ((whence == SEEK_CUR && off == 0) ||\n               (whence == SEEK_SET && off == s->off))))"];
+"1000306" [label="(MethodReturn,static int64_t)"];
+"1000145" [label="(Identifier,force_reconnect)"];
+"1000165" [label="(Identifier,s)"];
+"1000144" -> "1000143"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000149" -> "1000144"  [label="CFG: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000306"  [label="DDG: force_reconnect"];
+"1000144" -> "1000143"  [label="DDG: force_reconnect"];
+"1000106" -> "1000144"  [label="DDG: force_reconnect"];
+"1000106" -> "1000102"  [label="AST: "];
+"1000106" -> "1000306"  [label="DDG: force_reconnect"];
+"1000143" -> "1000142"  [label="AST: "];
+"1000143" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000143"  [label="AST: "];
+"1000165" -> "1000143"  [label="CFG: "];
+"1000172" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000306"  [label="DDG: !force_reconnect"];
+"1000143" -> "1000306"  [label="DDG: !force_reconnect &&\n              ((whence == SEEK_CUR && off == 0) ||\n               (whence == SEEK_SET && off == s->off))"];
+"1000143" -> "1000306"  [label="DDG: (whence == SEEK_CUR && off == 0) ||\n               (whence == SEEK_SET && off == s->off)"];
+"1000146" -> "1000143"  [label="DDG: whence == SEEK_CUR && off == 0"];
+"1000146" -> "1000143"  [label="DDG: whence == SEEK_SET && off == s->off"];
+}

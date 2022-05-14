@@ -1,0 +1,33 @@
+digraph "0_linux_23adbe12ef7d3d4195e80800ab36b37bee28cd03_4@pointer" {
+"1000471" [label="(Call,mp->m_sb.sb_rblocks == 0)"];
+"1000470" [label="(Call,(mp->m_sb.sb_rblocks == 0) ||\n\t\t\t    (mp->m_sb.sb_rextsize == 0) ||\n\t\t\t    (ip->i_d.di_extsize % mp->m_sb.sb_rextsize))"];
+"1000472" [label="(Call,mp->m_sb.sb_rblocks)"];
+"1000478" [label="(Call,(mp->m_sb.sb_rextsize == 0) ||\n\t\t\t    (ip->i_d.di_extsize % mp->m_sb.sb_rextsize))"];
+"1000482" [label="(Identifier,mp)"];
+"1000471" [label="(Call,mp->m_sb.sb_rblocks == 0)"];
+"1000687" [label="(MethodReturn,RET)"];
+"1000470" [label="(Call,(mp->m_sb.sb_rblocks == 0) ||\n\t\t\t    (mp->m_sb.sb_rextsize == 0) ||\n\t\t\t    (ip->i_d.di_extsize % mp->m_sb.sb_rextsize))"];
+"1000477" [label="(Literal,0)"];
+"1000499" [label="(Identifier,code)"];
+"1000509" [label="(Identifier,ip)"];
+"1000469" [label="(ControlStructure,if ((mp->m_sb.sb_rblocks == 0) ||\n\t\t\t    (mp->m_sb.sb_rextsize == 0) ||\n\t\t\t    (ip->i_d.di_extsize % mp->m_sb.sb_rextsize)))"];
+"1000471" -> "1000470"  [label="AST: "];
+"1000471" -> "1000477"  [label="CFG: "];
+"1000472" -> "1000471"  [label="AST: "];
+"1000477" -> "1000471"  [label="AST: "];
+"1000482" -> "1000471"  [label="CFG: "];
+"1000470" -> "1000471"  [label="CFG: "];
+"1000471" -> "1000687"  [label="DDG: mp->m_sb.sb_rblocks"];
+"1000471" -> "1000470"  [label="DDG: mp->m_sb.sb_rblocks"];
+"1000471" -> "1000470"  [label="DDG: 0"];
+"1000470" -> "1000469"  [label="AST: "];
+"1000470" -> "1000478"  [label="CFG: "];
+"1000478" -> "1000470"  [label="AST: "];
+"1000499" -> "1000470"  [label="CFG: "];
+"1000509" -> "1000470"  [label="CFG: "];
+"1000470" -> "1000687"  [label="DDG: mp->m_sb.sb_rblocks == 0"];
+"1000470" -> "1000687"  [label="DDG: (mp->m_sb.sb_rextsize == 0) ||\n\t\t\t    (ip->i_d.di_extsize % mp->m_sb.sb_rextsize)"];
+"1000470" -> "1000687"  [label="DDG: (mp->m_sb.sb_rblocks == 0) ||\n\t\t\t    (mp->m_sb.sb_rextsize == 0) ||\n\t\t\t    (ip->i_d.di_extsize % mp->m_sb.sb_rextsize)"];
+"1000478" -> "1000470"  [label="DDG: mp->m_sb.sb_rextsize == 0"];
+"1000478" -> "1000470"  [label="DDG: ip->i_d.di_extsize % mp->m_sb.sb_rextsize"];
+}

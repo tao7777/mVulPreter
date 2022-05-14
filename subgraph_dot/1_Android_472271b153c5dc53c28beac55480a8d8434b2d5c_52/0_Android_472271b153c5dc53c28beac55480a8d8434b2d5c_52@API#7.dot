@@ -1,0 +1,26 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_52@API" {
+"1000251" [label="(Call,pthread_mutex_unlock(&client_socket_lock_))"];
+"1000237" [label="(Call,pthread_mutex_lock(&client_socket_lock_))"];
+"1000251" [label="(Call,pthread_mutex_unlock(&client_socket_lock_))"];
+"1000242" [label="(Identifier,client_socket_)"];
+"1000252" [label="(Call,&client_socket_lock_)"];
+"1000207" [label="(Block,)"];
+"1000237" [label="(Call,pthread_mutex_lock(&client_socket_lock_))"];
+"1000210" [label="(Identifier,client_socket)"];
+"1000238" [label="(Call,&client_socket_lock_)"];
+"1000251" [label="(Call,pthread_mutex_unlock(&client_socket_lock_))"];
+"1000260" [label="(MethodReturn,static void *)"];
+"1000251" -> "1000207"  [label="AST: "];
+"1000251" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000210" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000260"  [label="DDG: pthread_mutex_unlock(&client_socket_lock_)"];
+"1000251" -> "1000260"  [label="DDG: &client_socket_lock_"];
+"1000251" -> "1000237"  [label="DDG: &client_socket_lock_"];
+"1000237" -> "1000251"  [label="DDG: &client_socket_lock_"];
+"1000237" -> "1000207"  [label="AST: "];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000242" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000260"  [label="DDG: pthread_mutex_lock(&client_socket_lock_)"];
+}

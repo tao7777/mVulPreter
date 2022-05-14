@@ -1,0 +1,31 @@
+digraph "1_Chrome_c0c8978849ac57e4ecd613ddc8ff7852a2054734_8@pointer" {
+"1000102" [label="(MethodParameterIn,PlatformSensorProvider* provider)"];
+"1000106" [label="(Call,Factory::CreateSensorFusion(std::move(mapping), std::move(fusion_algorithm),\n                               callback, provider))"];
+"1000105" [label="(Block,)"];
+"1000104" [label="(MethodParameterIn,const PlatformSensorProviderBase::CreateSensorCallback& callback)"];
+"1000109" [label="(Call,std::move(fusion_algorithm))"];
+"1000107" [label="(Call,std::move(mapping))"];
+"1000102" [label="(MethodParameterIn,PlatformSensorProvider* provider)"];
+"1000106" [label="(Call,Factory::CreateSensorFusion(std::move(mapping), std::move(fusion_algorithm),\n                               callback, provider))"];
+"1000111" [label="(Identifier,callback)"];
+"1000113" [label="(MethodReturn,void)"];
+"1000112" [label="(Identifier,provider)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000113"  [label="DDG: provider"];
+"1000102" -> "1000106"  [label="DDG: provider"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000106" -> "1000112"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000109" -> "1000106"  [label="AST: "];
+"1000111" -> "1000106"  [label="AST: "];
+"1000112" -> "1000106"  [label="AST: "];
+"1000113" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000113"  [label="DDG: std::move(mapping)"];
+"1000106" -> "1000113"  [label="DDG: callback"];
+"1000106" -> "1000113"  [label="DDG: provider"];
+"1000106" -> "1000113"  [label="DDG: Factory::CreateSensorFusion(std::move(mapping), std::move(fusion_algorithm),\n                               callback, provider)"];
+"1000106" -> "1000113"  [label="DDG: std::move(fusion_algorithm)"];
+"1000107" -> "1000106"  [label="DDG: mapping"];
+"1000109" -> "1000106"  [label="DDG: fusion_algorithm"];
+"1000104" -> "1000106"  [label="DDG: callback"];
+}

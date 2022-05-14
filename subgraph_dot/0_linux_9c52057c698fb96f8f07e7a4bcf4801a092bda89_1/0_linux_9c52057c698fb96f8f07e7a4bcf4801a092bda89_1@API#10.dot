@@ -1,0 +1,24 @@
+digraph "0_linux_9c52057c698fb96f8f07e7a4bcf4801a092bda89_1@API" {
+"1000230" [label="(Call,up_read(&BTRFS_I(dir)->root->fs_info->subvol_sem))"];
+"1000174" [label="(Call,down_read(&BTRFS_I(dir)->root->fs_info->subvol_sem))"];
+"1000109" [label="(Block,)"];
+"1000175" [label="(Call,&BTRFS_I(dir)->root->fs_info->subvol_sem)"];
+"1000230" [label="(Call,up_read(&BTRFS_I(dir)->root->fs_info->subvol_sem))"];
+"1000240" [label="(JumpTarget,out_dput:)"];
+"1000231" [label="(Call,&BTRFS_I(dir)->root->fs_info->subvol_sem)"];
+"1000191" [label="(Identifier,dir)"];
+"1000251" [label="(MethodReturn,static noinline int)"];
+"1000174" [label="(Call,down_read(&BTRFS_I(dir)->root->fs_info->subvol_sem))"];
+"1000230" -> "1000109"  [label="AST: "];
+"1000230" -> "1000231"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000240" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000251"  [label="DDG: &BTRFS_I(dir)->root->fs_info->subvol_sem"];
+"1000230" -> "1000251"  [label="DDG: up_read(&BTRFS_I(dir)->root->fs_info->subvol_sem)"];
+"1000174" -> "1000230"  [label="DDG: &BTRFS_I(dir)->root->fs_info->subvol_sem"];
+"1000174" -> "1000109"  [label="AST: "];
+"1000174" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000191" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000251"  [label="DDG: down_read(&BTRFS_I(dir)->root->fs_info->subvol_sem)"];
+}

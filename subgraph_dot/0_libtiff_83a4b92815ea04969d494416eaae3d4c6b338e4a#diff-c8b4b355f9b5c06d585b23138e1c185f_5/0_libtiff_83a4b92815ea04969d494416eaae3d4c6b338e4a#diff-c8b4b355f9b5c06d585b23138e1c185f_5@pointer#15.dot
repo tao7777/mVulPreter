@@ -1,0 +1,37 @@
+digraph "0_libtiff_83a4b92815ea04969d494416eaae3d4c6b338e4a#diff-c8b4b355f9b5c06d585b23138e1c185f_5@pointer" {
+"1000439" [label="(Call,image->width = width)"];
+"1000181" [label="(Call,width = 0)"];
+"1001127" [label="(Call,readSeparateTilesIntoBuffer(in, read_buff, length, width, tw, tl, spp, bps))"];
+"1000439" [label="(Call,image->width = width)"];
+"1000440" [label="(Call,image->width)"];
+"1001165" [label="(Call,dump_info  (dump->infile, dump->format, \"loadImage\", \n                \"Image width %d, length %d, Raw image data, %4d bytes\",\n                width, length,  buffsize))"];
+"1000132" [label="(Block,)"];
+"1000825" [label="(Call,width * spp * bps)"];
+"1000183" [label="(Literal,0)"];
+"1001084" [label="(Call,readSeparateStripsIntoBuffer(in, read_buff, length, width, spp, dump))"];
+"1000182" [label="(Identifier,width)"];
+"1000186" [label="(Identifier,length)"];
+"1000443" [label="(Identifier,width)"];
+"1001214" [label="(MethodReturn,RET)"];
+"1000446" [label="(Identifier,image)"];
+"1001107" [label="(Call,readContigTilesIntoBuffer(in, read_buff, length, width, tw, tl, spp, bps))"];
+"1000181" [label="(Call,width = 0)"];
+"1000439" -> "1000132"  [label="AST: "];
+"1000439" -> "1000443"  [label="CFG: "];
+"1000440" -> "1000439"  [label="AST: "];
+"1000443" -> "1000439"  [label="AST: "];
+"1000446" -> "1000439"  [label="CFG: "];
+"1000439" -> "1001214"  [label="DDG: "];
+"1000439" -> "1001214"  [label="DDG: "];
+"1000181" -> "1000439"  [label="DDG: "];
+"1000181" -> "1000132"  [label="AST: "];
+"1000181" -> "1000183"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000183" -> "1000181"  [label="AST: "];
+"1000186" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000825"  [label="DDG: "];
+"1000181" -> "1001084"  [label="DDG: "];
+"1000181" -> "1001107"  [label="DDG: "];
+"1000181" -> "1001127"  [label="DDG: "];
+"1000181" -> "1001165"  [label="DDG: "];
+}

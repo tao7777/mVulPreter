@@ -1,0 +1,27 @@
+digraph "0_FFmpeg_6b5d3fb26fb4be48e4966e4b1d97c2165538d4ef@API" {
+"1000787" [label="(Call,memcpy(&s->framep[0], &s->next_framep[0], sizeof(s->framep[0]) * 4))"];
+"1000800" [label="(Call,sizeof(s->framep[0]) * 4)"];
+"1000808" [label="(JumpTarget,skip_decode:)"];
+"1000794" [label="(Call,&s->next_framep[0])"];
+"1000108" [label="(Block,)"];
+"1000877" [label="(MethodReturn,int)"];
+"1000807" [label="(Literal,4)"];
+"1000788" [label="(Call,&s->framep[0])"];
+"1000801" [label="(Call,sizeof(s->framep[0]))"];
+"1000787" [label="(Call,memcpy(&s->framep[0], &s->next_framep[0], sizeof(s->framep[0]) * 4))"];
+"1000800" [label="(Call,sizeof(s->framep[0]) * 4)"];
+"1000787" -> "1000108"  [label="AST: "];
+"1000787" -> "1000800"  [label="CFG: "];
+"1000788" -> "1000787"  [label="AST: "];
+"1000794" -> "1000787"  [label="AST: "];
+"1000800" -> "1000787"  [label="AST: "];
+"1000808" -> "1000787"  [label="CFG: "];
+"1000787" -> "1000877"  [label="DDG: &s->framep[0]"];
+"1000787" -> "1000877"  [label="DDG: sizeof(s->framep[0]) * 4"];
+"1000787" -> "1000877"  [label="DDG: &s->next_framep[0]"];
+"1000787" -> "1000877"  [label="DDG: memcpy(&s->framep[0], &s->next_framep[0], sizeof(s->framep[0]) * 4)"];
+"1000800" -> "1000787"  [label="DDG: 4"];
+"1000800" -> "1000807"  [label="CFG: "];
+"1000801" -> "1000800"  [label="AST: "];
+"1000807" -> "1000800"  [label="AST: "];
+}

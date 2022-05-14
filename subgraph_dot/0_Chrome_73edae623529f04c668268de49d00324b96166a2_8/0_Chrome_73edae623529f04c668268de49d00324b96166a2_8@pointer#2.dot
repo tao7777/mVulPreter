@@ -1,0 +1,37 @@
+digraph "0_Chrome_73edae623529f04c668268de49d00324b96166a2_8@pointer" {
+"1000179" [label="(Call,child = child->nextSibling())"];
+"1000208" [label="(Call,createDigest(child, &m_unusedNodesMap))"];
+"1000207" [label="(Call,newList.append(createDigest(child, &m_unusedNodesMap)))"];
+"1000179" [label="(Call,child = child->nextSibling())"];
+"1000180" [label="(Identifier,child)"];
+"1000178" [label="(Identifier,child)"];
+"1000182" [label="(Block,)"];
+"1000207" [label="(Call,newList.append(createDigest(child, &m_unusedNodesMap)))"];
+"1000250" [label="(MethodReturn,Node*)"];
+"1000175" [label="(Call,* child = fragment->firstChild())"];
+"1000173" [label="(ControlStructure,for (Node* child = fragment->firstChild(); child; child = child->nextSibling()))"];
+"1000210" [label="(Call,&m_unusedNodesMap)"];
+"1000209" [label="(Identifier,child)"];
+"1000208" [label="(Call,createDigest(child, &m_unusedNodesMap))"];
+"1000181" [label="(Call,child->nextSibling())"];
+"1000179" -> "1000173"  [label="AST: "];
+"1000179" -> "1000181"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000181" -> "1000179"  [label="AST: "];
+"1000178" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000250"  [label="DDG: child->nextSibling()"];
+"1000179" -> "1000208"  [label="DDG: child"];
+"1000208" -> "1000207"  [label="AST: "];
+"1000208" -> "1000210"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000210" -> "1000208"  [label="AST: "];
+"1000207" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000250"  [label="DDG: &m_unusedNodesMap"];
+"1000208" -> "1000207"  [label="DDG: child"];
+"1000208" -> "1000207"  [label="DDG: &m_unusedNodesMap"];
+"1000175" -> "1000208"  [label="DDG: child"];
+"1000207" -> "1000182"  [label="AST: "];
+"1000180" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000250"  [label="DDG: createDigest(child, &m_unusedNodesMap)"];
+"1000207" -> "1000250"  [label="DDG: newList.append(createDigest(child, &m_unusedNodesMap))"];
+}

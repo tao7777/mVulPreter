@@ -1,0 +1,34 @@
+digraph "0_linux_1f86840f897717f86d523a13e99a447e6a5d2fa5@pointer" {
+"1000102" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000231" [label="(Call,nla_put(skb, XFRMA_TMPL,\n\t\t       sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr, vec))"];
+"1000230" [label="(Return,return nla_put(skb, XFRMA_TMPL,\n\t\t       sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr, vec);)"];
+"1000233" [label="(Identifier,XFRMA_TMPL)"];
+"1000231" [label="(Call,nla_put(skb, XFRMA_TMPL,\n\t\t       sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr, vec))"];
+"1000234" [label="(Call,sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr)"];
+"1000102" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000103" [label="(Block,)"];
+"1000241" [label="(MethodReturn,static int)"];
+"1000232" [label="(Identifier,skb)"];
+"1000240" [label="(Identifier,vec)"];
+"1000230" [label="(Return,return nla_put(skb, XFRMA_TMPL,\n\t\t       sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr, vec);)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000241"  [label="DDG: skb"];
+"1000102" -> "1000231"  [label="DDG: skb"];
+"1000231" -> "1000230"  [label="AST: "];
+"1000231" -> "1000240"  [label="CFG: "];
+"1000232" -> "1000231"  [label="AST: "];
+"1000233" -> "1000231"  [label="AST: "];
+"1000234" -> "1000231"  [label="AST: "];
+"1000240" -> "1000231"  [label="AST: "];
+"1000230" -> "1000231"  [label="CFG: "];
+"1000231" -> "1000241"  [label="DDG: XFRMA_TMPL"];
+"1000231" -> "1000241"  [label="DDG: vec"];
+"1000231" -> "1000241"  [label="DDG: nla_put(skb, XFRMA_TMPL,\n\t\t       sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr, vec)"];
+"1000231" -> "1000241"  [label="DDG: skb"];
+"1000231" -> "1000241"  [label="DDG: sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr"];
+"1000231" -> "1000230"  [label="DDG: nla_put(skb, XFRMA_TMPL,\n\t\t       sizeof(struct xfrm_user_tmpl) * xp->xfrm_nr, vec)"];
+"1000234" -> "1000231"  [label="DDG: xp->xfrm_nr"];
+"1000230" -> "1000103"  [label="AST: "];
+"1000241" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000241"  [label="DDG: <RET>"];
+}

@@ -1,0 +1,35 @@
+digraph "1_raptor_a676f235309a59d4aa78eeffd2574ae5d341fcb0_1@pointer" {
+"1000112" [label="(Call,libxml2_resolveEntity(sax2->xc, publicId, systemId))"];
+"1000102" [label="(MethodParameterIn,const xmlChar *publicId)"];
+"1000103" [label="(MethodParameterIn,const xmlChar *systemId)"];
+"1000111" [label="(Return,return libxml2_resolveEntity(sax2->xc, publicId, systemId);)"];
+"1000104" [label="(Block,)"];
+"1000103" [label="(MethodParameterIn,const xmlChar *systemId)"];
+"1000116" [label="(Identifier,publicId)"];
+"1000102" [label="(MethodParameterIn,const xmlChar *publicId)"];
+"1000111" [label="(Return,return libxml2_resolveEntity(sax2->xc, publicId, systemId);)"];
+"1000118" [label="(MethodReturn,RET)"];
+"1000113" [label="(Call,sax2->xc)"];
+"1000112" [label="(Call,libxml2_resolveEntity(sax2->xc, publicId, systemId))"];
+"1000117" [label="(Identifier,systemId)"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000117"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000116" -> "1000112"  [label="AST: "];
+"1000117" -> "1000112"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000118"  [label="DDG: systemId"];
+"1000112" -> "1000118"  [label="DDG: publicId"];
+"1000112" -> "1000118"  [label="DDG: libxml2_resolveEntity(sax2->xc, publicId, systemId)"];
+"1000112" -> "1000118"  [label="DDG: sax2->xc"];
+"1000112" -> "1000111"  [label="DDG: libxml2_resolveEntity(sax2->xc, publicId, systemId)"];
+"1000102" -> "1000112"  [label="DDG: publicId"];
+"1000103" -> "1000112"  [label="DDG: systemId"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000118"  [label="DDG: publicId"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000118"  [label="DDG: systemId"];
+"1000111" -> "1000104"  [label="AST: "];
+"1000118" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000118"  [label="DDG: <RET>"];
+}

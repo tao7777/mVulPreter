@@ -1,0 +1,32 @@
+digraph "0_pacemaker_564f7cc2a51dcd2f28ab12a13394f31be5aa3c93_19@API" {
+"1000133" [label="(Call,st->state == stonith_disconnected)"];
+"1000131" [label="(Call,watch_fencing && st->state == stonith_disconnected)"];
+"1000133" [label="(Call,st->state == stonith_disconnected)"];
+"1000134" [label="(Call,st->state)"];
+"1000131" [label="(Call,watch_fencing && st->state == stonith_disconnected)"];
+"1000132" [label="(Identifier,watch_fencing)"];
+"1000140" [label="(Literal,\"Connecting to stonith\")"];
+"1000162" [label="(Identifier,cib)"];
+"1000121" [label="(Call,watch_fencing && st == NULL)"];
+"1000130" [label="(ControlStructure,if(watch_fencing && st->state == stonith_disconnected))"];
+"1000269" [label="(MethodReturn,RET)"];
+"1000137" [label="(Identifier,stonith_disconnected)"];
+"1000133" -> "1000131"  [label="AST: "];
+"1000133" -> "1000137"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000137" -> "1000133"  [label="AST: "];
+"1000131" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000269"  [label="DDG: st->state"];
+"1000133" -> "1000269"  [label="DDG: stonith_disconnected"];
+"1000133" -> "1000131"  [label="DDG: st->state"];
+"1000133" -> "1000131"  [label="DDG: stonith_disconnected"];
+"1000131" -> "1000130"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000140" -> "1000131"  [label="CFG: "];
+"1000162" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000269"  [label="DDG: watch_fencing"];
+"1000131" -> "1000269"  [label="DDG: st->state == stonith_disconnected"];
+"1000131" -> "1000269"  [label="DDG: watch_fencing && st->state == stonith_disconnected"];
+"1000121" -> "1000131"  [label="DDG: watch_fencing"];
+}

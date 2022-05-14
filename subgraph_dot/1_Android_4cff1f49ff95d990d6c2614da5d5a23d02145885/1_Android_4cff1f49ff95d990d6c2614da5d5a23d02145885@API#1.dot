@@ -1,0 +1,33 @@
+digraph "1_Android_4cff1f49ff95d990d6c2614da5d5a23d02145885@API" {
+"1000124" [label="(Call,p->readInplace(size))"];
+"1000120" [label="(Call,size = p->readInt32())"];
+"1000123" [label="(Call,region->readFromMemory(p->readInplace(size), size))"];
+"1000120" [label="(Call,size = p->readInt32())"];
+"1000131" [label="(MethodReturn,static jlong)"];
+"1000121" [label="(Identifier,size)"];
+"1000122" [label="(Call,p->readInt32())"];
+"1000125" [label="(Identifier,size)"];
+"1000124" [label="(Call,p->readInplace(size))"];
+"1000126" [label="(Identifier,size)"];
+"1000104" [label="(Block,)"];
+"1000123" [label="(Call,region->readFromMemory(p->readInplace(size), size))"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="DDG: size"];
+"1000120" -> "1000124"  [label="DDG: size"];
+"1000120" -> "1000104"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000125" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000131"  [label="DDG: p->readInt32()"];
+"1000123" -> "1000104"  [label="AST: "];
+"1000123" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000123"  [label="AST: "];
+"1000129" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000131"  [label="DDG: region->readFromMemory(p->readInplace(size), size)"];
+"1000123" -> "1000131"  [label="DDG: p->readInplace(size)"];
+"1000123" -> "1000131"  [label="DDG: size"];
+}

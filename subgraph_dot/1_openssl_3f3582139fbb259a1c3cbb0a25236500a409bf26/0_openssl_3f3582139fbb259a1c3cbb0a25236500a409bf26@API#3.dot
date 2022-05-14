@@ -1,0 +1,38 @@
+digraph "0_openssl_3f3582139fbb259a1c3cbb0a25236500a409bf26@API" {
+"1000200" [label="(Call,OPENSSL_assert(bl <= (int)sizeof(ctx->buf)))"];
+"1000201" [label="(Call,bl <= (int)sizeof(ctx->buf))"];
+"1000193" [label="(Call,bl = ctx->cipher->block_size)"];
+"1000334" [label="(MethodReturn,int)"];
+"1000202" [label="(Identifier,bl)"];
+"1000290" [label="(Call,bl - 1)"];
+"1000211" [label="(Identifier,i)"];
+"1000195" [label="(Call,ctx->cipher->block_size)"];
+"1000193" [label="(Call,bl = ctx->cipher->block_size)"];
+"1000200" [label="(Call,OPENSSL_assert(bl <= (int)sizeof(ctx->buf)))"];
+"1000201" [label="(Call,bl <= (int)sizeof(ctx->buf))"];
+"1000194" [label="(Identifier,bl)"];
+"1000106" [label="(Block,)"];
+"1000215" [label="(Call,i + inl < bl)"];
+"1000203" [label="(Call,(int)sizeof(ctx->buf))"];
+"1000200" -> "1000106"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000211" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000334"  [label="DDG: bl <= (int)sizeof(ctx->buf)"];
+"1000200" -> "1000334"  [label="DDG: OPENSSL_assert(bl <= (int)sizeof(ctx->buf))"];
+"1000201" -> "1000200"  [label="DDG: bl"];
+"1000201" -> "1000200"  [label="DDG: (int)sizeof(ctx->buf)"];
+"1000201" -> "1000203"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000203" -> "1000201"  [label="AST: "];
+"1000201" -> "1000334"  [label="DDG: (int)sizeof(ctx->buf)"];
+"1000193" -> "1000201"  [label="DDG: bl"];
+"1000201" -> "1000215"  [label="DDG: bl"];
+"1000201" -> "1000290"  [label="DDG: bl"];
+"1000193" -> "1000106"  [label="AST: "];
+"1000193" -> "1000195"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000195" -> "1000193"  [label="AST: "];
+"1000202" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000334"  [label="DDG: ctx->cipher->block_size"];
+}

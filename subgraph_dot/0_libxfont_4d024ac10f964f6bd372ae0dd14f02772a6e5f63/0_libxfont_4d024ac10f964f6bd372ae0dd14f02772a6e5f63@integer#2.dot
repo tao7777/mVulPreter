@@ -1,0 +1,33 @@
+digraph "0_libxfont_4d024ac10f964f6bd372ae0dd14f02772a6e5f63@integer" {
+"1000884" [label="(Call,ci->metrics.rightSideBearing = bl + bw)"];
+"1000741" [label="(Call,bw < 0)"];
+"1001224" [label="(MethodReturn,RET)"];
+"1000743" [label="(Literal,0)"];
+"1000884" [label="(Call,ci->metrics.rightSideBearing = bl + bw)"];
+"1000896" [label="(Identifier,ci)"];
+"1000745" [label="(Call,bdfError(\"character '%s' has a negative sized bitmap, %dx%d\n\",\n\t\t     charName, bw, bh))"];
+"1000885" [label="(Call,ci->metrics.rightSideBearing)"];
+"1000876" [label="(Block,)"];
+"1000741" [label="(Call,bw < 0)"];
+"1000890" [label="(Call,bl + bw)"];
+"1000737" [label="(Call,(bh < 0) || (bw < 0))"];
+"1000742" [label="(Identifier,bw)"];
+"1000884" -> "1000876"  [label="AST: "];
+"1000884" -> "1000890"  [label="CFG: "];
+"1000885" -> "1000884"  [label="AST: "];
+"1000890" -> "1000884"  [label="AST: "];
+"1000896" -> "1000884"  [label="CFG: "];
+"1000884" -> "1001224"  [label="DDG: ci->metrics.rightSideBearing"];
+"1000884" -> "1001224"  [label="DDG: bl + bw"];
+"1000741" -> "1000884"  [label="DDG: bw"];
+"1000741" -> "1000737"  [label="AST: "];
+"1000741" -> "1000743"  [label="CFG: "];
+"1000742" -> "1000741"  [label="AST: "];
+"1000743" -> "1000741"  [label="AST: "];
+"1000737" -> "1000741"  [label="CFG: "];
+"1000741" -> "1001224"  [label="DDG: bw"];
+"1000741" -> "1000737"  [label="DDG: bw"];
+"1000741" -> "1000737"  [label="DDG: 0"];
+"1000741" -> "1000745"  [label="DDG: bw"];
+"1000741" -> "1000890"  [label="DDG: bw"];
+}

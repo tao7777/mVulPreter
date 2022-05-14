@@ -1,0 +1,38 @@
+digraph "0_linux_234f3ce485d54017f15cf5e0699cff4100121601_8@pointer" {
+"1001453" [label="(Call,(u64) ctxt->src.val)"];
+"1001441" [label="(Call,ctxt->dst.val = (ctxt->op_bytes == 8) ? (u64) ctxt->src.val :\n\t\t\t\t\t\t\t(u32) ctxt->src.val)"];
+"1001447" [label="(Call,(ctxt->op_bytes == 8) ? (u64) ctxt->src.val :\n\t\t\t\t\t\t\t(u32) ctxt->src.val)"];
+"1001460" [label="(Call,(u32) ctxt->src.val)"];
+"1001448" [label="(Call,ctxt->op_bytes == 8)"];
+"1001467" [label="(ControlStructure,break;)"];
+"1001441" [label="(Call,ctxt->dst.val = (ctxt->op_bytes == 8) ? (u64) ctxt->src.val :\n\t\t\t\t\t\t\t(u32) ctxt->src.val)"];
+"1001453" [label="(Call,(u64) ctxt->src.val)"];
+"1001455" [label="(Call,ctxt->src.val)"];
+"1001240" [label="(Block,)"];
+"1001442" [label="(Call,ctxt->dst.val)"];
+"1001447" [label="(Call,(ctxt->op_bytes == 8) ? (u64) ctxt->src.val :\n\t\t\t\t\t\t\t(u32) ctxt->src.val)"];
+"1001480" [label="(MethodReturn,int)"];
+"1001453" -> "1001447"  [label="AST: "];
+"1001453" -> "1001455"  [label="CFG: "];
+"1001454" -> "1001453"  [label="AST: "];
+"1001455" -> "1001453"  [label="AST: "];
+"1001447" -> "1001453"  [label="CFG: "];
+"1001453" -> "1001480"  [label="DDG: ctxt->src.val"];
+"1001453" -> "1001441"  [label="DDG: ctxt->src.val"];
+"1001453" -> "1001447"  [label="DDG: ctxt->src.val"];
+"1001441" -> "1001240"  [label="AST: "];
+"1001441" -> "1001447"  [label="CFG: "];
+"1001442" -> "1001441"  [label="AST: "];
+"1001447" -> "1001441"  [label="AST: "];
+"1001467" -> "1001441"  [label="CFG: "];
+"1001441" -> "1001480"  [label="DDG: (ctxt->op_bytes == 8) ? (u64) ctxt->src.val :\n\t\t\t\t\t\t\t(u32) ctxt->src.val"];
+"1001441" -> "1001480"  [label="DDG: ctxt->dst.val"];
+"1001460" -> "1001441"  [label="DDG: ctxt->src.val"];
+"1001447" -> "1001460"  [label="CFG: "];
+"1001448" -> "1001447"  [label="AST: "];
+"1001460" -> "1001447"  [label="AST: "];
+"1001447" -> "1001480"  [label="DDG: (u32) ctxt->src.val"];
+"1001447" -> "1001480"  [label="DDG: ctxt->op_bytes == 8"];
+"1001447" -> "1001480"  [label="DDG: (u64) ctxt->src.val"];
+"1001460" -> "1001447"  [label="DDG: ctxt->src.val"];
+}

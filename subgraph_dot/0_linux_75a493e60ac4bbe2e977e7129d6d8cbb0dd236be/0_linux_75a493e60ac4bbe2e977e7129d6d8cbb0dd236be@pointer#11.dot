@@ -1,0 +1,29 @@
+digraph "0_linux_75a493e60ac4bbe2e977e7129d6d8cbb0dd236be@pointer" {
+"1000933" [label="(Call,2 * sk->sk_sndbuf)"];
+"1000927" [label="(Call,atomic_read(&sk->sk_wmem_alloc) <=\n\t\t\t\t    2 * sk->sk_sndbuf)"];
+"1000935" [label="(Call,sk->sk_sndbuf)"];
+"1000952" [label="(Identifier,skb)"];
+"1001327" [label="(MethodReturn,int)"];
+"1000927" [label="(Call,atomic_read(&sk->sk_wmem_alloc) <=\n\t\t\t\t    2 * sk->sk_sndbuf)"];
+"1000926" [label="(ControlStructure,if (atomic_read(&sk->sk_wmem_alloc) <=\n\t\t\t\t    2 * sk->sk_sndbuf))"];
+"1000928" [label="(Call,atomic_read(&sk->sk_wmem_alloc))"];
+"1000933" [label="(Call,2 * sk->sk_sndbuf)"];
+"1000934" [label="(Literal,2)"];
+"1000939" [label="(Identifier,skb)"];
+"1000933" -> "1000927"  [label="AST: "];
+"1000933" -> "1000935"  [label="CFG: "];
+"1000934" -> "1000933"  [label="AST: "];
+"1000935" -> "1000933"  [label="AST: "];
+"1000927" -> "1000933"  [label="CFG: "];
+"1000933" -> "1001327"  [label="DDG: sk->sk_sndbuf"];
+"1000933" -> "1000927"  [label="DDG: 2"];
+"1000933" -> "1000927"  [label="DDG: sk->sk_sndbuf"];
+"1000927" -> "1000926"  [label="AST: "];
+"1000928" -> "1000927"  [label="AST: "];
+"1000939" -> "1000927"  [label="CFG: "];
+"1000952" -> "1000927"  [label="CFG: "];
+"1000927" -> "1001327"  [label="DDG: atomic_read(&sk->sk_wmem_alloc) <=\n\t\t\t\t    2 * sk->sk_sndbuf"];
+"1000927" -> "1001327"  [label="DDG: 2 * sk->sk_sndbuf"];
+"1000927" -> "1001327"  [label="DDG: atomic_read(&sk->sk_wmem_alloc)"];
+"1000928" -> "1000927"  [label="DDG: &sk->sk_wmem_alloc"];
+}

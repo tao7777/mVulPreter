@@ -1,0 +1,35 @@
+digraph "0_qemu_a0d1cbdacff5df4ded16b753b38fdd9da6092968@pointer" {
+"1000202" [label="(Call,s->regs[rxbase + R_RX_CTRL0] |= CTRL_S)"];
+"1000146" [label="(Call,s->regs[rxbase + R_RX_CTRL0] & CTRL_S)"];
+"1000147" [label="(Call,s->regs[rxbase + R_RX_CTRL0])"];
+"1000203" [label="(Call,s->regs[rxbase + R_RX_CTRL0])"];
+"1000202" [label="(Call,s->regs[rxbase + R_RX_CTRL0] |= CTRL_S)"];
+"1000169" [label="(Literal,\"%s %zd rxbase=%x\n\")"];
+"1000154" [label="(Identifier,CTRL_S)"];
+"1000213" [label="(Identifier,s)"];
+"1000220" [label="(MethodReturn,static ssize_t)"];
+"1000146" [label="(Call,s->regs[rxbase + R_RX_CTRL0] & CTRL_S)"];
+"1000106" [label="(Block,)"];
+"1000145" [label="(ControlStructure,if (s->regs[rxbase + R_RX_CTRL0] & CTRL_S))"];
+"1000158" [label="(Literal,\"ethlite lost packet %x\n\")"];
+"1000210" [label="(Identifier,CTRL_S)"];
+"1000202" -> "1000106"  [label="AST: "];
+"1000202" -> "1000210"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000210" -> "1000202"  [label="AST: "];
+"1000213" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000220"  [label="DDG: CTRL_S"];
+"1000202" -> "1000220"  [label="DDG: s->regs[rxbase + R_RX_CTRL0]"];
+"1000202" -> "1000220"  [label="DDG: s->regs[rxbase + R_RX_CTRL0] |= CTRL_S"];
+"1000146" -> "1000202"  [label="DDG: s->regs[rxbase + R_RX_CTRL0]"];
+"1000146" -> "1000202"  [label="DDG: CTRL_S"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000154"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000154" -> "1000146"  [label="AST: "];
+"1000158" -> "1000146"  [label="CFG: "];
+"1000169" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000220"  [label="DDG: s->regs[rxbase + R_RX_CTRL0] & CTRL_S"];
+"1000146" -> "1000220"  [label="DDG: CTRL_S"];
+"1000146" -> "1000220"  [label="DDG: s->regs[rxbase + R_RX_CTRL0]"];
+}

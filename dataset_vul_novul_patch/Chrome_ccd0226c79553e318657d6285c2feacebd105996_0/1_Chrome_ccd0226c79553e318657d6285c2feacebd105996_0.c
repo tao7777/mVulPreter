@@ -1,0 +1,2 @@
+ PrintDialogGtk::~PrintDialogGtk() {
+ }

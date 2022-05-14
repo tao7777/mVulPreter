@@ -1,0 +1,33 @@
+digraph "0_wireshark_11edc83b98a61e890d7bb01855389d40e984ea82@pointer" {
+"1000267" [label="(Call,*p == '\0')"];
+"1000261" [label="(Call,g_ascii_isspace(*p))"];
+"1000267" [label="(Call,*p == '\0')"];
+"1000262" [label="(Call,*p)"];
+"1000261" [label="(Call,g_ascii_isspace(*p))"];
+"1000268" [label="(Call,*p)"];
+"1000265" [label="(Identifier,p)"];
+"1000266" [label="(ControlStructure,if (*p == '\0'))"];
+"1000272" [label="(ControlStructure,break;)"];
+"1000270" [label="(Literal,'\0')"];
+"1000274" [label="(Identifier,n)"];
+"1000422" [label="(MethodReturn,RET)"];
+"1000269" [label="(Identifier,p)"];
+"1000267" [label="(Call,*p == '\0')"];
+"1000254" [label="(ControlStructure,for (p = &line[0]; g_ascii_isspace(*p); p++))"];
+"1000267" -> "1000266"  [label="AST: "];
+"1000267" -> "1000270"  [label="CFG: "];
+"1000268" -> "1000267"  [label="AST: "];
+"1000270" -> "1000267"  [label="AST: "];
+"1000272" -> "1000267"  [label="CFG: "];
+"1000274" -> "1000267"  [label="CFG: "];
+"1000267" -> "1000422"  [label="DDG: *p"];
+"1000267" -> "1000422"  [label="DDG: *p == '\0'"];
+"1000267" -> "1000261"  [label="DDG: *p"];
+"1000261" -> "1000267"  [label="DDG: *p"];
+"1000261" -> "1000254"  [label="AST: "];
+"1000261" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000265" -> "1000261"  [label="CFG: "];
+"1000269" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000422"  [label="DDG: g_ascii_isspace(*p)"];
+}

@@ -1,0 +1,36 @@
+digraph "0_tcpdump_1dcd10aceabbc03bf571ea32b892c522cbe923de_7@pointer" {
+"1000222" [label="(Call,ndo->ndo_eflag && EXTRACT_32BITS(l2info.cookie) != 1)"];
+"1000226" [label="(Call,EXTRACT_32BITS(l2info.cookie) != 1)"];
+"1000227" [label="(Call,EXTRACT_32BITS(l2info.cookie))"];
+"1000294" [label="(MethodReturn,RET)"];
+"1000231" [label="(Literal,1)"];
+"1000221" [label="(ControlStructure,if (ndo->ndo_eflag && EXTRACT_32BITS(l2info.cookie) != 1))"];
+"1000234" [label="(Identifier,ndo)"];
+"1000242" [label="(Identifier,l2info)"];
+"1000227" [label="(Call,EXTRACT_32BITS(l2info.cookie))"];
+"1000223" [label="(Call,ndo->ndo_eflag)"];
+"1000226" [label="(Call,EXTRACT_32BITS(l2info.cookie) != 1)"];
+"1000222" [label="(Call,ndo->ndo_eflag && EXTRACT_32BITS(l2info.cookie) != 1)"];
+"1000228" [label="(Call,l2info.cookie)"];
+"1000222" -> "1000221"  [label="AST: "];
+"1000222" -> "1000223"  [label="CFG: "];
+"1000222" -> "1000226"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000226" -> "1000222"  [label="AST: "];
+"1000234" -> "1000222"  [label="CFG: "];
+"1000242" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000294"  [label="DDG: ndo->ndo_eflag"];
+"1000222" -> "1000294"  [label="DDG: EXTRACT_32BITS(l2info.cookie) != 1"];
+"1000222" -> "1000294"  [label="DDG: ndo->ndo_eflag && EXTRACT_32BITS(l2info.cookie) != 1"];
+"1000226" -> "1000222"  [label="DDG: EXTRACT_32BITS(l2info.cookie)"];
+"1000226" -> "1000222"  [label="DDG: 1"];
+"1000226" -> "1000231"  [label="CFG: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000231" -> "1000226"  [label="AST: "];
+"1000226" -> "1000294"  [label="DDG: EXTRACT_32BITS(l2info.cookie)"];
+"1000227" -> "1000226"  [label="DDG: l2info.cookie"];
+"1000227" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000227"  [label="AST: "];
+"1000231" -> "1000227"  [label="CFG: "];
+"1000227" -> "1000294"  [label="DDG: l2info.cookie"];
+}

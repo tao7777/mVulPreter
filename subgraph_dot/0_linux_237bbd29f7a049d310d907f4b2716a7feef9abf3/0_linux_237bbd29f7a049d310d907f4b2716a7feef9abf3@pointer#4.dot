@@ -1,0 +1,27 @@
+digraph "0_linux_237bbd29f7a049d310d907f4b2716a7feef9abf3@pointer" {
+"1000132" [label="(Call,!*desc)"];
+"1000129" [label="(Call,!desc || !*desc)"];
+"1000130" [label="(Call,!desc)"];
+"1000135" [label="(ControlStructure,goto error;)"];
+"1000138" [label="(Identifier,type)"];
+"1000133" [label="(Call,*desc)"];
+"1000505" [label="(MethodReturn,struct key *)"];
+"1000129" [label="(Call,!desc || !*desc)"];
+"1000128" [label="(ControlStructure,if (!desc || !*desc))"];
+"1000132" [label="(Call,!*desc)"];
+"1000132" -> "1000129"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000129" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000505"  [label="DDG: *desc"];
+"1000132" -> "1000129"  [label="DDG: *desc"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000129" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000135" -> "1000129"  [label="CFG: "];
+"1000138" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000505"  [label="DDG: !desc"];
+"1000129" -> "1000505"  [label="DDG: !*desc"];
+"1000129" -> "1000505"  [label="DDG: !desc || !*desc"];
+"1000130" -> "1000129"  [label="DDG: desc"];
+}

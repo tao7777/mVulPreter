@@ -1,0 +1,32 @@
+digraph "0_Android_37c88107679d36c419572732b4af6e18bb2f7dce_1@API" {
+"1000173" [label="(Call,pthread_mutex_destroy(&lock))"];
+"1000104" [label="(Call,pthread_mutex_init(&lock, NULL))"];
+"1000109" [label="(Identifier,config)"];
+"1000177" [label="(Identifier,alarm_timer)"];
+"1000107" [label="(Identifier,NULL)"];
+"1000173" [label="(Call,pthread_mutex_destroy(&lock))"];
+"1000105" [label="(Call,&lock)"];
+"1000185" [label="(MethodReturn,static future_t *)"];
+"1000104" [label="(Call,pthread_mutex_init(&lock, NULL))"];
+"1000179" [label="(Call,config = NULL)"];
+"1000103" [label="(Block,)"];
+"1000176" [label="(Call,alarm_timer = NULL)"];
+"1000174" [label="(Call,&lock)"];
+"1000173" -> "1000103"  [label="AST: "];
+"1000173" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000177" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000185"  [label="DDG: pthread_mutex_destroy(&lock)"];
+"1000173" -> "1000185"  [label="DDG: &lock"];
+"1000104" -> "1000173"  [label="DDG: &lock"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000107"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000107" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000185"  [label="DDG: &lock"];
+"1000104" -> "1000185"  [label="DDG: NULL"];
+"1000104" -> "1000185"  [label="DDG: pthread_mutex_init(&lock, NULL)"];
+"1000104" -> "1000176"  [label="DDG: NULL"];
+"1000104" -> "1000179"  [label="DDG: NULL"];
+}

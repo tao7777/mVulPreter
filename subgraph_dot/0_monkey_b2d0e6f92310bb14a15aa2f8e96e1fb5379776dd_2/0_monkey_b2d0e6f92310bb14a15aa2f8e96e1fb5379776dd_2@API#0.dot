@@ -1,0 +1,22 @@
+digraph "0_monkey_b2d0e6f92310bb14a15aa2f8e96e1fb5379776dd_2@API" {
+"1000125" [label="(Call,open(sr->real_path.data, sr->file_info.flags_read_only))"];
+"1000124" [label="(Return,return open(sr->real_path.data, sr->file_info.flags_read_only);)"];
+"1000125" [label="(Call,open(sr->real_path.data, sr->file_info.flags_read_only))"];
+"1000271" [label="(MethodReturn,static inline int)"];
+"1000123" [label="(Block,)"];
+"1000126" [label="(Call,sr->real_path.data)"];
+"1000131" [label="(Call,sr->file_info.flags_read_only)"];
+"1000124" [label="(Return,return open(sr->real_path.data, sr->file_info.flags_read_only);)"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000131"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000131" -> "1000125"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000271"  [label="DDG: sr->file_info.flags_read_only"];
+"1000125" -> "1000271"  [label="DDG: sr->real_path.data"];
+"1000125" -> "1000271"  [label="DDG: open(sr->real_path.data, sr->file_info.flags_read_only)"];
+"1000125" -> "1000124"  [label="DDG: open(sr->real_path.data, sr->file_info.flags_read_only)"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000271" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000271"  [label="DDG: <RET>"];
+}

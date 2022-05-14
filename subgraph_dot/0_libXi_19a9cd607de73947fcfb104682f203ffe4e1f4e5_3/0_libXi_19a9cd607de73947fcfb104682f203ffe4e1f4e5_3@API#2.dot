@@ -1,0 +1,36 @@
+digraph "0_libXi_19a9cd607de73947fcfb104682f203ffe4e1f4e5_3@API" {
+"1000205" [label="(Call,sizeof(XDevice) + rep.num_classes *\n\t\t\t\t  sizeof(XInputClassInfo))"];
+"1000208" [label="(Call,rep.num_classes *\n\t\t\t\t  sizeof(XInputClassInfo))"];
+"1000186" [label="(Call,rep.num_classes * sizeof(xInputClassInfo))"];
+"1000208" [label="(Call,rep.num_classes *\n\t\t\t\t  sizeof(XInputClassInfo))"];
+"1000206" [label="(Call,sizeof(XDevice))"];
+"1000190" [label="(Call,sizeof(xInputClassInfo))"];
+"1000244" [label="(MethodReturn,RET)"];
+"1000212" [label="(Call,sizeof(XInputClassInfo))"];
+"1000186" [label="(Call,rep.num_classes * sizeof(xInputClassInfo))"];
+"1000204" [label="(Call,Xmalloc(sizeof(XDevice) + rep.num_classes *\n\t\t\t\t  sizeof(XInputClassInfo)))"];
+"1000205" [label="(Call,sizeof(XDevice) + rep.num_classes *\n\t\t\t\t  sizeof(XInputClassInfo))"];
+"1000209" [label="(Call,rep.num_classes)"];
+"1000180" [label="(Call,(rep.length << 2) >= rep.num_classes * sizeof(xInputClassInfo))"];
+"1000187" [label="(Call,rep.num_classes)"];
+"1000205" -> "1000204"  [label="AST: "];
+"1000205" -> "1000208"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000208" -> "1000205"  [label="AST: "];
+"1000204" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000244"  [label="DDG: rep.num_classes *\n\t\t\t\t  sizeof(XInputClassInfo)"];
+"1000208" -> "1000205"  [label="DDG: rep.num_classes"];
+"1000208" -> "1000212"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000212" -> "1000208"  [label="AST: "];
+"1000208" -> "1000244"  [label="DDG: rep.num_classes"];
+"1000208" -> "1000204"  [label="DDG: rep.num_classes"];
+"1000186" -> "1000208"  [label="DDG: rep.num_classes"];
+"1000186" -> "1000180"  [label="AST: "];
+"1000186" -> "1000190"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000190" -> "1000186"  [label="AST: "];
+"1000180" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000244"  [label="DDG: rep.num_classes"];
+"1000186" -> "1000180"  [label="DDG: rep.num_classes"];
+}

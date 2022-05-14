@@ -1,0 +1,30 @@
+digraph "0_Chrome_cc0bbcbe7c986094da8e58c37a21fdd179b686b0_2@API" {
+"1000242" [label="(Call,!result.matching_top_domain.domain.empty())"];
+"1000240" [label="(Call,enable_spoof_checks && !result.matching_top_domain.domain.empty())"];
+"1000242" [label="(Call,!result.matching_top_domain.domain.empty())"];
+"1000243" [label="(Call,result.matching_top_domain.domain.empty())"];
+"1000246" [label="(Identifier,adjustments)"];
+"1000254" [label="(Identifier,result)"];
+"1000185" [label="(Call,IDNToUnicodeOneComponent(\n          input16.data() + component_start, component_length, top_level_domain,\n           enable_spoof_checks, &out16, &has_idn_component))"];
+"1000240" [label="(Call,enable_spoof_checks && !result.matching_top_domain.domain.empty())"];
+"1000241" [label="(Identifier,enable_spoof_checks)"];
+"1000104" [label="(MethodParameterIn,bool enable_spoof_checks)"];
+"1000239" [label="(ControlStructure,if (enable_spoof_checks && !result.matching_top_domain.domain.empty()))"];
+"1000255" [label="(MethodReturn,IDNConversionResult)"];
+"1000242" -> "1000240"  [label="AST: "];
+"1000242" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000242"  [label="AST: "];
+"1000240" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000255"  [label="DDG: result.matching_top_domain.domain.empty()"];
+"1000242" -> "1000240"  [label="DDG: result.matching_top_domain.domain.empty()"];
+"1000240" -> "1000239"  [label="AST: "];
+"1000240" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000246" -> "1000240"  [label="CFG: "];
+"1000254" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000255"  [label="DDG: enable_spoof_checks && !result.matching_top_domain.domain.empty()"];
+"1000240" -> "1000255"  [label="DDG: !result.matching_top_domain.domain.empty()"];
+"1000240" -> "1000255"  [label="DDG: enable_spoof_checks"];
+"1000185" -> "1000240"  [label="DDG: enable_spoof_checks"];
+"1000104" -> "1000240"  [label="DDG: enable_spoof_checks"];
+}

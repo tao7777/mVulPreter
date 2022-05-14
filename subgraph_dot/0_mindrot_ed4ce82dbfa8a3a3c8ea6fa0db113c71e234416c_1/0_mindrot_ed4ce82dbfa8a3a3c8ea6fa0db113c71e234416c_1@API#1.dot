@@ -1,0 +1,38 @@
+digraph "0_mindrot_ed4ce82dbfa8a3a3c8ea6fa0db113c71e234416c_1@API" {
+"1000371" [label="(Call,type = packet_read())"];
+"1000376" [label="(Call,type != SSH_SMSG_SUCCESS)"];
+"1000375" [label="(ControlStructure,if (type != SSH_SMSG_SUCCESS))"];
+"1000260" [label="(Call,type == SSH_SMSG_SUCCESS)"];
+"1000378" [label="(Identifier,SSH_SMSG_SUCCESS)"];
+"1000335" [label="(Call,type == SSH_SMSG_SUCCESS)"];
+"1000367" [label="(Block,)"];
+"1000373" [label="(Call,packet_read())"];
+"1000376" [label="(Call,type != SSH_SMSG_SUCCESS)"];
+"1000380" [label="(Literal,\"Warning: Remote host denied authentication agent forwarding.\")"];
+"1000381" [label="(Call,ssh_init_stdio_forwarding())"];
+"1000374" [label="(Call,packet_check_eom())"];
+"1000377" [label="(Identifier,type)"];
+"1000472" [label="(MethodReturn,RET)"];
+"1000372" [label="(Identifier,type)"];
+"1000371" [label="(Call,type = packet_read())"];
+"1000175" [label="(Call,type == SSH_SMSG_SUCCESS)"];
+"1000371" -> "1000367"  [label="AST: "];
+"1000371" -> "1000373"  [label="CFG: "];
+"1000372" -> "1000371"  [label="AST: "];
+"1000373" -> "1000371"  [label="AST: "];
+"1000374" -> "1000371"  [label="CFG: "];
+"1000371" -> "1000472"  [label="DDG: packet_read()"];
+"1000371" -> "1000376"  [label="DDG: type"];
+"1000376" -> "1000375"  [label="AST: "];
+"1000376" -> "1000378"  [label="CFG: "];
+"1000377" -> "1000376"  [label="AST: "];
+"1000378" -> "1000376"  [label="AST: "];
+"1000380" -> "1000376"  [label="CFG: "];
+"1000381" -> "1000376"  [label="CFG: "];
+"1000376" -> "1000472"  [label="DDG: type != SSH_SMSG_SUCCESS"];
+"1000376" -> "1000472"  [label="DDG: type"];
+"1000376" -> "1000472"  [label="DDG: SSH_SMSG_SUCCESS"];
+"1000260" -> "1000376"  [label="DDG: SSH_SMSG_SUCCESS"];
+"1000175" -> "1000376"  [label="DDG: SSH_SMSG_SUCCESS"];
+"1000335" -> "1000376"  [label="DDG: SSH_SMSG_SUCCESS"];
+}

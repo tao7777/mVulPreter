@@ -1,0 +1,28 @@
+digraph "0_linux_0b79459b482e85cb7426aa7da683a9f2c97aeae1_2@API" {
+"1000327" [label="(Call,sizeof(struct pvclock_vcpu_time_info) - 1)"];
+"1000325" [label="(Call,gpa_offset & (sizeof(struct pvclock_vcpu_time_info) - 1))"];
+"1000316" [label="(Call,gpa_offset = data & ~(PAGE_MASK | 1))"];
+"1000632" [label="(MethodReturn,int)"];
+"1000331" [label="(ControlStructure,break;)"];
+"1000326" [label="(Identifier,gpa_offset)"];
+"1000335" [label="(Identifier,vcpu)"];
+"1000325" [label="(Call,gpa_offset & (sizeof(struct pvclock_vcpu_time_info) - 1))"];
+"1000328" [label="(Call,sizeof(struct pvclock_vcpu_time_info))"];
+"1000327" [label="(Call,sizeof(struct pvclock_vcpu_time_info) - 1)"];
+"1000330" [label="(Literal,1)"];
+"1000324" [label="(ControlStructure,if (gpa_offset & (sizeof(struct pvclock_vcpu_time_info) - 1)))"];
+"1000327" -> "1000325"  [label="AST: "];
+"1000327" -> "1000330"  [label="CFG: "];
+"1000328" -> "1000327"  [label="AST: "];
+"1000330" -> "1000327"  [label="AST: "];
+"1000325" -> "1000327"  [label="CFG: "];
+"1000327" -> "1000325"  [label="DDG: 1"];
+"1000325" -> "1000324"  [label="AST: "];
+"1000326" -> "1000325"  [label="AST: "];
+"1000331" -> "1000325"  [label="CFG: "];
+"1000335" -> "1000325"  [label="CFG: "];
+"1000325" -> "1000632"  [label="DDG: gpa_offset"];
+"1000325" -> "1000632"  [label="DDG: gpa_offset & (sizeof(struct pvclock_vcpu_time_info) - 1)"];
+"1000325" -> "1000632"  [label="DDG: sizeof(struct pvclock_vcpu_time_info) - 1"];
+"1000316" -> "1000325"  [label="DDG: gpa_offset"];
+}

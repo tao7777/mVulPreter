@@ -1,0 +1,30 @@
+digraph "0_krb5_db64ca25d661a47b996b4e2645998b5d7f0eb52c@pointer" {
+"1000544" [label="(Call,dhkey_info.subjectPublicKey.data = dh_pubkey)"];
+"1000147" [label="(Call,*dh_pubkey = NULL)"];
+"1000550" [label="(Identifier,dh_pubkey)"];
+"1001368" [label="(Call,free(dh_pubkey))"];
+"1000149" [label="(Identifier,NULL)"];
+"1000148" [label="(Identifier,dh_pubkey)"];
+"1001415" [label="(MethodReturn,RET)"];
+"1000544" [label="(Call,dhkey_info.subjectPublicKey.data = dh_pubkey)"];
+"1000545" [label="(Call,dhkey_info.subjectPublicKey.data)"];
+"1000122" [label="(Block,)"];
+"1000152" [label="(Identifier,server_key)"];
+"1000147" [label="(Call,*dh_pubkey = NULL)"];
+"1000553" [label="(Identifier,dhkey_info)"];
+"1000536" [label="(Block,)"];
+"1000544" -> "1000536"  [label="AST: "];
+"1000544" -> "1000550"  [label="CFG: "];
+"1000545" -> "1000544"  [label="AST: "];
+"1000550" -> "1000544"  [label="AST: "];
+"1000553" -> "1000544"  [label="CFG: "];
+"1000544" -> "1001415"  [label="DDG: dhkey_info.subjectPublicKey.data"];
+"1000147" -> "1000544"  [label="DDG: dh_pubkey"];
+"1000147" -> "1000122"  [label="AST: "];
+"1000147" -> "1000149"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000149" -> "1000147"  [label="AST: "];
+"1000152" -> "1000147"  [label="CFG: "];
+"1000147" -> "1001415"  [label="DDG: dh_pubkey"];
+"1000147" -> "1001368"  [label="DDG: dh_pubkey"];
+}

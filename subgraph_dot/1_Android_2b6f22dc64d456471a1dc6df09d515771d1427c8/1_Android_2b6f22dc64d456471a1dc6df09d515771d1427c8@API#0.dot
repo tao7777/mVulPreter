@@ -1,0 +1,26 @@
+digraph "1_Android_2b6f22dc64d456471a1dc6df09d515771d1427c8@API" {
+"1000118" [label="(Call,malloc(size))"];
+"1000102" [label="(MethodParameterIn,u32 size)"];
+"1000117" [label="(Return,return malloc(size);)"];
+"1000102" [label="(MethodParameterIn,u32 size)"];
+"1000117" [label="(Return,return malloc(size);)"];
+"1000118" [label="(Call,malloc(size))"];
+"1000120" [label="(MethodReturn,void*)"];
+"1000119" [label="(Identifier,size)"];
+"1000103" [label="(Block,)"];
+"1000108" [label="(Call,numBytes += size)"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000117" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000120"  [label="DDG: malloc(size)"];
+"1000118" -> "1000120"  [label="DDG: size"];
+"1000118" -> "1000117"  [label="DDG: malloc(size)"];
+"1000102" -> "1000118"  [label="DDG: size"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000120"  [label="DDG: size"];
+"1000102" -> "1000108"  [label="DDG: size"];
+"1000117" -> "1000103"  [label="AST: "];
+"1000120" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000120"  [label="DDG: <RET>"];
+}

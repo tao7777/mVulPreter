@@ -1,0 +1,32 @@
+digraph "0_wolfssl_9b9568d500f31f964af26ba8d01e542e1f27e5ca_0@pointer" {
+"1000192" [label="(Call,ecc_sets[key->idx].id == ECC_SECP256R1)"];
+"1000186" [label="(Call,key->idx != ECC_CUSTOM_IDX && ecc_sets[key->idx].id == ECC_SECP256R1)"];
+"1000220" [label="(MethodReturn,int)"];
+"1000203" [label="(Identifier,in)"];
+"1000186" [label="(Call,key->idx != ECC_CUSTOM_IDX && ecc_sets[key->idx].id == ECC_SECP256R1)"];
+"1000217" [label="(Identifier,WC_KEY_SIZE_E)"];
+"1000185" [label="(ControlStructure,if (key->idx != ECC_CUSTOM_IDX && ecc_sets[key->idx].id == ECC_SECP256R1))"];
+"1000193" [label="(Call,ecc_sets[key->idx].id)"];
+"1000192" [label="(Call,ecc_sets[key->idx].id == ECC_SECP256R1)"];
+"1000187" [label="(Call,key->idx != ECC_CUSTOM_IDX)"];
+"1000200" [label="(Identifier,ECC_SECP256R1)"];
+"1000192" -> "1000186"  [label="AST: "];
+"1000192" -> "1000200"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000200" -> "1000192"  [label="AST: "];
+"1000186" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000220"  [label="DDG: ECC_SECP256R1"];
+"1000192" -> "1000220"  [label="DDG: ecc_sets[key->idx].id"];
+"1000192" -> "1000186"  [label="DDG: ecc_sets[key->idx].id"];
+"1000192" -> "1000186"  [label="DDG: ECC_SECP256R1"];
+"1000186" -> "1000185"  [label="AST: "];
+"1000186" -> "1000187"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000203" -> "1000186"  [label="CFG: "];
+"1000217" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000220"  [label="DDG: key->idx != ECC_CUSTOM_IDX && ecc_sets[key->idx].id == ECC_SECP256R1"];
+"1000186" -> "1000220"  [label="DDG: key->idx != ECC_CUSTOM_IDX"];
+"1000186" -> "1000220"  [label="DDG: ecc_sets[key->idx].id == ECC_SECP256R1"];
+"1000187" -> "1000186"  [label="DDG: key->idx"];
+"1000187" -> "1000186"  [label="DDG: ECC_CUSTOM_IDX"];
+}

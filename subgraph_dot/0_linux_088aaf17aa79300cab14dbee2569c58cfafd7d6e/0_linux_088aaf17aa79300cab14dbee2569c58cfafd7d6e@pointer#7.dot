@@ -1,0 +1,38 @@
+digraph "0_linux_088aaf17aa79300cab14dbee2569c58cfafd7d6e@pointer" {
+"1000306" [label="(Call,cifs_small_buf_release(req))"];
+"1000172" [label="(Call,(char *)req)"];
+"1000115" [label="(Call,*req = NULL)"];
+"1000306" [label="(Call,cifs_small_buf_release(req))"];
+"1000307" [label="(Identifier,req)"];
+"1000106" [label="(Block,)"];
+"1000172" [label="(Call,(char *)req)"];
+"1000117" [label="(Identifier,NULL)"];
+"1000174" [label="(Identifier,req)"];
+"1000396" [label="(MethodReturn,RET)"];
+"1000120" [label="(Identifier,rsp)"];
+"1000310" [label="(Identifier,nbytes)"];
+"1000166" [label="(Call,iov[0].iov_base = (char *)req)"];
+"1000116" [label="(Identifier,req)"];
+"1000115" [label="(Call,*req = NULL)"];
+"1000306" -> "1000106"  [label="AST: "];
+"1000306" -> "1000307"  [label="CFG: "];
+"1000307" -> "1000306"  [label="AST: "];
+"1000310" -> "1000306"  [label="CFG: "];
+"1000306" -> "1000396"  [label="DDG: req"];
+"1000306" -> "1000396"  [label="DDG: cifs_small_buf_release(req)"];
+"1000172" -> "1000306"  [label="DDG: req"];
+"1000172" -> "1000166"  [label="AST: "];
+"1000172" -> "1000174"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000174" -> "1000172"  [label="AST: "];
+"1000166" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000396"  [label="DDG: req"];
+"1000172" -> "1000166"  [label="DDG: req"];
+"1000115" -> "1000172"  [label="DDG: req"];
+"1000115" -> "1000106"  [label="AST: "];
+"1000115" -> "1000117"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000120" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000396"  [label="DDG: req"];
+}

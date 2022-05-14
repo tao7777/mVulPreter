@@ -1,0 +1,26 @@
+digraph "0_linux_744692dc059845b2a3022119871846e74d4f6e11_16@array" {
+"1000229" [label="(Call,part_stat_read(sb->s_bdev->bd_part,\n\t\t\t\t\t\t      sectors[1]))"];
+"1000225" [label="(Call,sbi->s_sectors_written_start = part_stat_read(sb->s_bdev->bd_part,\n\t\t\t\t\t\t      sectors[1]))"];
+"1000229" [label="(Call,part_stat_read(sb->s_bdev->bd_part,\n\t\t\t\t\t\t      sectors[1]))"];
+"1000230" [label="(Call,sb->s_bdev->bd_part)"];
+"1000238" [label="(Call,unlock_kernel())"];
+"1000120" [label="(Block,)"];
+"1000226" [label="(Call,sbi->s_sectors_written_start)"];
+"1000225" [label="(Call,sbi->s_sectors_written_start = part_stat_read(sb->s_bdev->bd_part,\n\t\t\t\t\t\t      sectors[1]))"];
+"1000235" [label="(Call,sectors[1])"];
+"1002129" [label="(MethodReturn,RET)"];
+"1000229" -> "1000225"  [label="AST: "];
+"1000229" -> "1000235"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000235" -> "1000229"  [label="AST: "];
+"1000225" -> "1000229"  [label="CFG: "];
+"1000229" -> "1002129"  [label="DDG: sectors[1]"];
+"1000229" -> "1002129"  [label="DDG: sb->s_bdev->bd_part"];
+"1000229" -> "1000225"  [label="DDG: sb->s_bdev->bd_part"];
+"1000229" -> "1000225"  [label="DDG: sectors[1]"];
+"1000225" -> "1000120"  [label="AST: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000238" -> "1000225"  [label="CFG: "];
+"1000225" -> "1002129"  [label="DDG: sbi->s_sectors_written_start"];
+"1000225" -> "1002129"  [label="DDG: part_stat_read(sb->s_bdev->bd_part,\n\t\t\t\t\t\t      sectors[1])"];
+}

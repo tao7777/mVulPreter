@@ -1,0 +1,38 @@
+digraph "0_linux_57ebd808a97d7c5b1e1afb937c2db22beba3c1f8_1@pointer" {
+"1000418" [label="(Call,e->ipv6.flags & IP6T_F_GOTO)"];
+"1000417" [label="(Call,!(e->ipv6.flags & IP6T_F_GOTO))"];
+"1000410" [label="(Call,table_base + v != ip6t_next_entry(e) &&\n \t\t\t    !(e->ipv6.flags & IP6T_F_GOTO))"];
+"1000424" [label="(Identifier,IP6T_F_GOTO)"];
+"1000411" [label="(Call,table_base + v != ip6t_next_entry(e))"];
+"1000500" [label="(MethodReturn,RET)"];
+"1000419" [label="(Call,e->ipv6.flags)"];
+"1000418" [label="(Call,e->ipv6.flags & IP6T_F_GOTO)"];
+"1000410" [label="(Call,table_base + v != ip6t_next_entry(e) &&\n \t\t\t    !(e->ipv6.flags & IP6T_F_GOTO))"];
+"1000429" [label="(Identifier,stackidx)"];
+"1000409" [label="(ControlStructure,if (table_base + v != ip6t_next_entry(e) &&\n \t\t\t    !(e->ipv6.flags & IP6T_F_GOTO)))"];
+"1000445" [label="(Identifier,e)"];
+"1000417" [label="(Call,!(e->ipv6.flags & IP6T_F_GOTO))"];
+"1000418" -> "1000417"  [label="AST: "];
+"1000418" -> "1000424"  [label="CFG: "];
+"1000419" -> "1000418"  [label="AST: "];
+"1000424" -> "1000418"  [label="AST: "];
+"1000417" -> "1000418"  [label="CFG: "];
+"1000418" -> "1000500"  [label="DDG: IP6T_F_GOTO"];
+"1000418" -> "1000500"  [label="DDG: e->ipv6.flags"];
+"1000418" -> "1000417"  [label="DDG: e->ipv6.flags"];
+"1000418" -> "1000417"  [label="DDG: IP6T_F_GOTO"];
+"1000417" -> "1000410"  [label="AST: "];
+"1000410" -> "1000417"  [label="CFG: "];
+"1000417" -> "1000500"  [label="DDG: e->ipv6.flags & IP6T_F_GOTO"];
+"1000417" -> "1000410"  [label="DDG: e->ipv6.flags & IP6T_F_GOTO"];
+"1000410" -> "1000409"  [label="AST: "];
+"1000410" -> "1000411"  [label="CFG: "];
+"1000411" -> "1000410"  [label="AST: "];
+"1000429" -> "1000410"  [label="CFG: "];
+"1000445" -> "1000410"  [label="CFG: "];
+"1000410" -> "1000500"  [label="DDG: table_base + v != ip6t_next_entry(e)"];
+"1000410" -> "1000500"  [label="DDG: table_base + v != ip6t_next_entry(e) &&\n \t\t\t    !(e->ipv6.flags & IP6T_F_GOTO)"];
+"1000410" -> "1000500"  [label="DDG: !(e->ipv6.flags & IP6T_F_GOTO)"];
+"1000411" -> "1000410"  [label="DDG: table_base + v"];
+"1000411" -> "1000410"  [label="DDG: ip6t_next_entry(e)"];
+}

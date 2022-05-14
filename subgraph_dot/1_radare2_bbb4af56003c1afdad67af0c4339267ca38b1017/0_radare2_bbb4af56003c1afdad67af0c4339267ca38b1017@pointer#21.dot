@@ -1,0 +1,29 @@
+digraph "0_radare2_bbb4af56003c1afdad67af0c4339267ca38b1017@pointer" {
+"1000450" [label="(Call,op->size = 1)"];
+"1001711" [label="(Return,return op->size;)"];
+"1000451" [label="(Call,op->size)"];
+"1000322" [label="(Block,)"];
+"1000454" [label="(Literal,1)"];
+"1001712" [label="(Call,op->size)"];
+"1001711" [label="(Return,return op->size;)"];
+"1000283" [label="(Call,op->size = snes_op_get_size (1, 1, &snes_op[data[0]]))"];
+"1000428" [label="(Call,op->size = 1)"];
+"1000269" [label="(Block,)"];
+"1000450" [label="(Call,op->size = 1)"];
+"1001715" [label="(MethodReturn,static int)"];
+"1000458" [label="(Identifier,op)"];
+"1000450" -> "1000322"  [label="AST: "];
+"1000450" -> "1000454"  [label="CFG: "];
+"1000451" -> "1000450"  [label="AST: "];
+"1000454" -> "1000450"  [label="AST: "];
+"1000458" -> "1000450"  [label="CFG: "];
+"1000450" -> "1001715"  [label="DDG: op->size"];
+"1000450" -> "1001711"  [label="DDG: op->size"];
+"1001711" -> "1000269"  [label="AST: "];
+"1001711" -> "1001712"  [label="CFG: "];
+"1001712" -> "1001711"  [label="AST: "];
+"1001715" -> "1001711"  [label="CFG: "];
+"1001711" -> "1001715"  [label="DDG: <RET>"];
+"1000283" -> "1001711"  [label="DDG: op->size"];
+"1000428" -> "1001711"  [label="DDG: op->size"];
+}

@@ -1,0 +1,34 @@
+digraph "0_linux_ae53b5bd77719fed58086c5be60ce4f22bffe1c6@pointer" {
+"1000180" [label="(Call,skb->len < sizeof(struct sctp_chunkhdr))"];
+"1000158" [label="(Call,skb->len < sizeof(struct sctphdr))"];
+"1000157" [label="(ControlStructure,if (skb->len < sizeof(struct sctphdr)))"];
+"1000158" [label="(Call,skb->len < sizeof(struct sctphdr))"];
+"1000169" [label="(Identifier,skb)"];
+"1000188" [label="(Identifier,family)"];
+"1000184" [label="(Call,sizeof(struct sctp_chunkhdr))"];
+"1000186" [label="(ControlStructure,goto discard_it;)"];
+"1000180" [label="(Call,skb->len < sizeof(struct sctp_chunkhdr))"];
+"1000181" [label="(Call,skb->len)"];
+"1000179" [label="(ControlStructure,if (skb->len < sizeof(struct sctp_chunkhdr)))"];
+"1000159" [label="(Call,skb->len)"];
+"1000164" [label="(ControlStructure,goto discard_it;)"];
+"1000162" [label="(Call,sizeof(struct sctphdr))"];
+"1000436" [label="(MethodReturn,int)"];
+"1000180" -> "1000179"  [label="AST: "];
+"1000180" -> "1000184"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000184" -> "1000180"  [label="AST: "];
+"1000186" -> "1000180"  [label="CFG: "];
+"1000188" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000436"  [label="DDG: skb->len"];
+"1000180" -> "1000436"  [label="DDG: skb->len < sizeof(struct sctp_chunkhdr)"];
+"1000158" -> "1000180"  [label="DDG: skb->len"];
+"1000158" -> "1000157"  [label="AST: "];
+"1000158" -> "1000162"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="AST: "];
+"1000164" -> "1000158"  [label="CFG: "];
+"1000169" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000436"  [label="DDG: skb->len"];
+"1000158" -> "1000436"  [label="DDG: skb->len < sizeof(struct sctphdr)"];
+}

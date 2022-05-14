@@ -1,0 +1,31 @@
+digraph "0_jasper_411a4068f8c464e883358bf403a3e25158863823_1@pointer" {
+"1000375" [label="(Call,data[i] = 0)"];
+"1000371" [label="(Call,jas_matrix_destroy(data[i]))"];
+"1000372" [label="(Call,data[i])"];
+"1000375" [label="(Call,data[i] = 0)"];
+"1000371" [label="(Call,jas_matrix_destroy(data[i]))"];
+"1000131" [label="(Call,data[i] = 0)"];
+"1000370" [label="(Block,)"];
+"1000148" [label="(Call,data[i] = jas_matrix_create(jas_image_height(image),\n\t\t  jas_image_width(image)))"];
+"1000369" [label="(Identifier,i)"];
+"1000377" [label="(Identifier,data)"];
+"1000379" [label="(Literal,0)"];
+"1000405" [label="(MethodReturn,static int)"];
+"1000210" [label="(Call,jas_image_readcmpt(image, cmpts[i], 0, y,\n \t\t\t\t\tjas_image_width(image), 1, data[i]))"];
+"1000376" [label="(Call,data[i])"];
+"1000375" -> "1000370"  [label="AST: "];
+"1000375" -> "1000379"  [label="CFG: "];
+"1000376" -> "1000375"  [label="AST: "];
+"1000379" -> "1000375"  [label="AST: "];
+"1000369" -> "1000375"  [label="CFG: "];
+"1000375" -> "1000405"  [label="DDG: data[i]"];
+"1000375" -> "1000371"  [label="DDG: data[i]"];
+"1000371" -> "1000370"  [label="AST: "];
+"1000371" -> "1000372"  [label="CFG: "];
+"1000372" -> "1000371"  [label="AST: "];
+"1000377" -> "1000371"  [label="CFG: "];
+"1000371" -> "1000405"  [label="DDG: jas_matrix_destroy(data[i])"];
+"1000131" -> "1000371"  [label="DDG: data[i]"];
+"1000148" -> "1000371"  [label="DDG: data[i]"];
+"1000210" -> "1000371"  [label="DDG: data[i]"];
+}

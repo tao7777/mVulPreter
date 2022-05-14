@@ -1,0 +1,26 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_10@pointer" {
+"1000104" [label="(MethodParameterIn,struct sc_serial_number *serial)"];
+"1000461" [label="(Call,memcpy(serial, &card->serialnr, sizeof(*serial)))"];
+"1000461" [label="(Call,memcpy(serial, &card->serialnr, sizeof(*serial)))"];
+"1000471" [label="(Identifier,ctx)"];
+"1000104" [label="(MethodParameterIn,struct sc_serial_number *serial)"];
+"1000459" [label="(ControlStructure,if (serial))"];
+"1000473" [label="(MethodReturn,RET)"];
+"1000467" [label="(Call,sizeof(*serial))"];
+"1000463" [label="(Call,&card->serialnr)"];
+"1000462" [label="(Identifier,serial)"];
+"1000135" [label="(Call,memset(&card->serialnr, 0, sizeof(card->serialnr)))"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000473"  [label="DDG: serial"];
+"1000104" -> "1000461"  [label="DDG: serial"];
+"1000461" -> "1000459"  [label="AST: "];
+"1000461" -> "1000467"  [label="CFG: "];
+"1000462" -> "1000461"  [label="AST: "];
+"1000463" -> "1000461"  [label="AST: "];
+"1000467" -> "1000461"  [label="AST: "];
+"1000471" -> "1000461"  [label="CFG: "];
+"1000461" -> "1000473"  [label="DDG: memcpy(serial, &card->serialnr, sizeof(*serial))"];
+"1000461" -> "1000473"  [label="DDG: &card->serialnr"];
+"1000461" -> "1000473"  [label="DDG: serial"];
+"1000135" -> "1000461"  [label="DDG: &card->serialnr"];
+}

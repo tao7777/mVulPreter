@@ -1,0 +1,30 @@
+digraph "0_linux_3e0097499839e0fe3af380410eababe5a47c4cf9_0@API" {
+"1000832" [label="(Call,read_lock_irqsave(&sfp->rq_list_lock, iflags))"];
+"1000841" [label="(Call,read_unlock_irqrestore(&sfp->rq_list_lock, iflags))"];
+"1000832" [label="(Call,read_lock_irqsave(&sfp->rq_list_lock, iflags))"];
+"1000817" [label="(Block,)"];
+"1000839" [label="(Identifier,sfp)"];
+"1000837" [label="(Identifier,iflags)"];
+"1000833" [label="(Call,&sfp->rq_list_lock)"];
+"1000842" [label="(Call,&sfp->rq_list_lock)"];
+"1000848" [label="(Identifier,result)"];
+"1000841" [label="(Call,read_unlock_irqrestore(&sfp->rq_list_lock, iflags))"];
+"1001060" [label="(MethodReturn,RET)"];
+"1000846" [label="(Identifier,iflags)"];
+"1000832" -> "1000817"  [label="AST: "];
+"1000832" -> "1000837"  [label="CFG: "];
+"1000833" -> "1000832"  [label="AST: "];
+"1000837" -> "1000832"  [label="AST: "];
+"1000839" -> "1000832"  [label="CFG: "];
+"1000832" -> "1001060"  [label="DDG: read_lock_irqsave(&sfp->rq_list_lock, iflags)"];
+"1000832" -> "1000841"  [label="DDG: &sfp->rq_list_lock"];
+"1000832" -> "1000841"  [label="DDG: iflags"];
+"1000841" -> "1000817"  [label="AST: "];
+"1000841" -> "1000846"  [label="CFG: "];
+"1000842" -> "1000841"  [label="AST: "];
+"1000846" -> "1000841"  [label="AST: "];
+"1000848" -> "1000841"  [label="CFG: "];
+"1000841" -> "1001060"  [label="DDG: iflags"];
+"1000841" -> "1001060"  [label="DDG: &sfp->rq_list_lock"];
+"1000841" -> "1001060"  [label="DDG: read_unlock_irqrestore(&sfp->rq_list_lock, iflags)"];
+}

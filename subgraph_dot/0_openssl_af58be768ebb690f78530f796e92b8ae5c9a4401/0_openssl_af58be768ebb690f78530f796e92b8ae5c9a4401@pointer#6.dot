@@ -1,0 +1,22 @@
+digraph "0_openssl_af58be768ebb690f78530f796e92b8ae5c9a4401@pointer" {
+"1000133" [label="(Call,SSL3_BUFFER_is_initialised(&s->rlayer.rbuf))"];
+"1000132" [label="(Call,!SSL3_BUFFER_is_initialised(&s->rlayer.rbuf))"];
+"1000151" [label="(Identifier,type)"];
+"1000134" [label="(Call,&s->rlayer.rbuf)"];
+"1000132" [label="(Call,!SSL3_BUFFER_is_initialised(&s->rlayer.rbuf))"];
+"1000144" [label="(Identifier,s)"];
+"1000133" [label="(Call,SSL3_BUFFER_is_initialised(&s->rlayer.rbuf))"];
+"1000367" [label="(MethodReturn,int)"];
+"1000131" [label="(ControlStructure,if (!SSL3_BUFFER_is_initialised(&s->rlayer.rbuf)))"];
+"1000133" -> "1000132"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000367"  [label="DDG: &s->rlayer.rbuf"];
+"1000133" -> "1000132"  [label="DDG: &s->rlayer.rbuf"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000144" -> "1000132"  [label="CFG: "];
+"1000151" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000367"  [label="DDG: !SSL3_BUFFER_is_initialised(&s->rlayer.rbuf)"];
+"1000132" -> "1000367"  [label="DDG: SSL3_BUFFER_is_initialised(&s->rlayer.rbuf)"];
+}

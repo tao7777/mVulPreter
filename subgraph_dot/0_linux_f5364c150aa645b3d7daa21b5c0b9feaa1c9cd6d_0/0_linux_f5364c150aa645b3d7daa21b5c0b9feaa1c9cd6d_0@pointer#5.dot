@@ -1,0 +1,33 @@
+digraph "0_linux_f5364c150aa645b3d7daa21b5c0b9feaa1c9cd6d_0@pointer" {
+"1000178" [label="(Call,!sb->s_root)"];
+"1000206" [label="(Call,dget(sb->s_root))"];
+"1000205" [label="(Return,return dget(sb->s_root);)"];
+"1000208" [label="(Identifier,sb)"];
+"1000206" [label="(Call,dget(sb->s_root))"];
+"1000178" [label="(Call,!sb->s_root)"];
+"1000177" [label="(ControlStructure,if (!sb->s_root))"];
+"1000205" [label="(Return,return dget(sb->s_root);)"];
+"1000179" [label="(Call,sb->s_root)"];
+"1000207" [label="(Call,sb->s_root)"];
+"1000108" [label="(Block,)"];
+"1000210" [label="(MethodReturn,static struct dentry *)"];
+"1000184" [label="(Identifier,err)"];
+"1000178" -> "1000177"  [label="AST: "];
+"1000178" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000184" -> "1000178"  [label="CFG: "];
+"1000208" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000210"  [label="DDG: !sb->s_root"];
+"1000178" -> "1000210"  [label="DDG: sb->s_root"];
+"1000178" -> "1000206"  [label="DDG: sb->s_root"];
+"1000206" -> "1000205"  [label="AST: "];
+"1000206" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000210"  [label="DDG: dget(sb->s_root)"];
+"1000206" -> "1000210"  [label="DDG: sb->s_root"];
+"1000206" -> "1000205"  [label="DDG: dget(sb->s_root)"];
+"1000205" -> "1000108"  [label="AST: "];
+"1000210" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000210"  [label="DDG: <RET>"];
+}

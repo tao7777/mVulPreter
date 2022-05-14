@@ -1,0 +1,32 @@
+digraph "0_linux_9e2dcf72023d1447f09c47d77c99b0c49659e5ce@pointer" {
+"1000279" [label="(Call,fq->q.meat == fq->q.len)"];
+"1000269" [label="(Call,fq->q.last_in == (INET_FRAG_FIRST_IN | INET_FRAG_LAST_IN) &&\n\t    fq->q.meat == fq->q.len)"];
+"1000285" [label="(Call,fq->q.len)"];
+"1000268" [label="(ControlStructure,if (fq->q.last_in == (INET_FRAG_FIRST_IN | INET_FRAG_LAST_IN) &&\n\t    fq->q.meat == fq->q.len))"];
+"1000279" [label="(Call,fq->q.meat == fq->q.len)"];
+"1000292" [label="(Identifier,ret_skb)"];
+"1000306" [label="(Identifier,fq)"];
+"1000280" [label="(Call,fq->q.meat)"];
+"1000269" [label="(Call,fq->q.last_in == (INET_FRAG_FIRST_IN | INET_FRAG_LAST_IN) &&\n\t    fq->q.meat == fq->q.len)"];
+"1000318" [label="(MethodReturn,struct sk_buff *)"];
+"1000270" [label="(Call,fq->q.last_in == (INET_FRAG_FIRST_IN | INET_FRAG_LAST_IN))"];
+"1000279" -> "1000269"  [label="AST: "];
+"1000279" -> "1000285"  [label="CFG: "];
+"1000280" -> "1000279"  [label="AST: "];
+"1000285" -> "1000279"  [label="AST: "];
+"1000269" -> "1000279"  [label="CFG: "];
+"1000279" -> "1000318"  [label="DDG: fq->q.len"];
+"1000279" -> "1000318"  [label="DDG: fq->q.meat"];
+"1000279" -> "1000269"  [label="DDG: fq->q.meat"];
+"1000279" -> "1000269"  [label="DDG: fq->q.len"];
+"1000269" -> "1000268"  [label="AST: "];
+"1000269" -> "1000270"  [label="CFG: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000292" -> "1000269"  [label="CFG: "];
+"1000306" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000318"  [label="DDG: fq->q.last_in == (INET_FRAG_FIRST_IN | INET_FRAG_LAST_IN) &&\n\t    fq->q.meat == fq->q.len"];
+"1000269" -> "1000318"  [label="DDG: fq->q.last_in == (INET_FRAG_FIRST_IN | INET_FRAG_LAST_IN)"];
+"1000269" -> "1000318"  [label="DDG: fq->q.meat == fq->q.len"];
+"1000270" -> "1000269"  [label="DDG: fq->q.last_in"];
+"1000270" -> "1000269"  [label="DDG: INET_FRAG_FIRST_IN | INET_FRAG_LAST_IN"];
+}

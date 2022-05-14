@@ -1,0 +1,22 @@
+digraph "0_libxfont_5bf703700ee4a5d6eae20da07cb7a29369667aef@API" {
+"1000123" [label="(Call,fpe->name + strlen(CataloguePrefix))"];
+"1000127" [label="(Call,strlen(CataloguePrefix))"];
+"1000124" [label="(Call,fpe->name)"];
+"1000121" [label="(Call,path = fpe->name + strlen(CataloguePrefix))"];
+"1000127" [label="(Call,strlen(CataloguePrefix))"];
+"1000128" [label="(Identifier,CataloguePrefix)"];
+"1000378" [label="(MethodReturn,RET)"];
+"1000123" [label="(Call,fpe->name + strlen(CataloguePrefix))"];
+"1000123" -> "1000121"  [label="AST: "];
+"1000123" -> "1000127"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000378"  [label="DDG: strlen(CataloguePrefix)"];
+"1000123" -> "1000378"  [label="DDG: fpe->name"];
+"1000127" -> "1000123"  [label="DDG: CataloguePrefix"];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000127" -> "1000378"  [label="DDG: CataloguePrefix"];
+"1000127" -> "1000121"  [label="DDG: CataloguePrefix"];
+}

@@ -1,0 +1,27 @@
+digraph "0_linux_dad48e73127ba10279ea33e6dbc8d3905c4d31c0@pointer" {
+"1000142" [label="(Call,!i_ext->len)"];
+"1000139" [label="(Call,!i_ext || !i_ext->len)"];
+"1000140" [label="(Call,!i_ext)"];
+"1000138" [label="(ControlStructure,if (!i_ext || !i_ext->len))"];
+"1000201" [label="(MethodReturn,static bool)"];
+"1000150" [label="(Identifier,ei)"];
+"1000147" [label="(Identifier,false)"];
+"1000143" [label="(Call,i_ext->len)"];
+"1000139" [label="(Call,!i_ext || !i_ext->len)"];
+"1000142" [label="(Call,!i_ext->len)"];
+"1000142" -> "1000139"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000139" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000201"  [label="DDG: i_ext->len"];
+"1000142" -> "1000139"  [label="DDG: i_ext->len"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000147" -> "1000139"  [label="CFG: "];
+"1000150" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000201"  [label="DDG: !i_ext->len"];
+"1000139" -> "1000201"  [label="DDG: !i_ext || !i_ext->len"];
+"1000139" -> "1000201"  [label="DDG: !i_ext"];
+"1000140" -> "1000139"  [label="DDG: i_ext"];
+}

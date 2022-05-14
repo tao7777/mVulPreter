@@ -1,0 +1,37 @@
+digraph "0_openjpeg_2cd30c2b06ce332dede81cccad8b334cde997281@pointer" {
+"1000109" [label="(Call,data[1] << 8)"];
+"1000102" [label="(MethodParameterIn,const unsigned char *data)"];
+"1000105" [label="(Call,data[0] | (data[1] << 8))"];
+"1000104" [label="(Return,return data[0] | (data[1] << 8);)"];
+"1000104" [label="(Return,return data[0] | (data[1] << 8);)"];
+"1000110" [label="(Call,data[1])"];
+"1000103" [label="(Block,)"];
+"1000109" [label="(Call,data[1] << 8)"];
+"1000102" [label="(MethodParameterIn,const unsigned char *data)"];
+"1000113" [label="(Literal,8)"];
+"1000105" [label="(Call,data[0] | (data[1] << 8))"];
+"1000106" [label="(Call,data[0])"];
+"1000114" [label="(MethodReturn,static unsigned short)"];
+"1000109" -> "1000105"  [label="AST: "];
+"1000109" -> "1000113"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000113" -> "1000109"  [label="AST: "];
+"1000105" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000114"  [label="DDG: data[1]"];
+"1000109" -> "1000105"  [label="DDG: data[1]"];
+"1000109" -> "1000105"  [label="DDG: 8"];
+"1000102" -> "1000109"  [label="DDG: data"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000114"  [label="DDG: data"];
+"1000102" -> "1000105"  [label="DDG: data"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000114"  [label="DDG: data[0] | (data[1] << 8)"];
+"1000105" -> "1000114"  [label="DDG: data[0]"];
+"1000105" -> "1000114"  [label="DDG: data[1] << 8"];
+"1000105" -> "1000104"  [label="DDG: data[0] | (data[1] << 8)"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000114" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000114"  [label="DDG: <RET>"];
+}

@@ -1,0 +1,30 @@
+digraph "0_linux_0e5cc9a40ada6046e6bc3bdfcd0c0d7e4b706b14@API" {
+"1000290" [label="(Call,epos.offset -= sizeof(struct short_ad))"];
+"1000154" [label="(Call,epos = { NULL, 0, {0, 0} })"];
+"1000318" [label="(Identifier,fibh)"];
+"1000689" [label="(Call,brelse(epos.bh))"];
+"1000155" [label="(Identifier,epos)"];
+"1000159" [label="(Identifier,ctx)"];
+"1000154" [label="(Call,epos = { NULL, 0, {0, 0} })"];
+"1000294" [label="(Call,sizeof(struct short_ad))"];
+"1000284" [label="(ControlStructure,if (iinfo->i_alloc_type == ICBTAG_FLAG_AD_SHORT))"];
+"1000291" [label="(Call,epos.offset)"];
+"1000105" [label="(Block,)"];
+"1000697" [label="(MethodReturn,static int)"];
+"1000303" [label="(Call,epos.offset -= sizeof(struct long_ad))"];
+"1000290" [label="(Call,epos.offset -= sizeof(struct short_ad))"];
+"1000290" -> "1000284"  [label="AST: "];
+"1000290" -> "1000294"  [label="CFG: "];
+"1000291" -> "1000290"  [label="AST: "];
+"1000294" -> "1000290"  [label="AST: "];
+"1000318" -> "1000290"  [label="CFG: "];
+"1000290" -> "1000697"  [label="DDG: epos.offset"];
+"1000154" -> "1000290"  [label="DDG: epos"];
+"1000154" -> "1000105"  [label="AST: "];
+"1000154" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000159" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000697"  [label="DDG: epos"];
+"1000154" -> "1000303"  [label="DDG: epos"];
+"1000154" -> "1000689"  [label="DDG: epos"];
+}

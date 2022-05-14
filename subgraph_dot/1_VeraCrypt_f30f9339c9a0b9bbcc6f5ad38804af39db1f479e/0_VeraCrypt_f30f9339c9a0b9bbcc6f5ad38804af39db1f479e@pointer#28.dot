@@ -1,0 +1,22 @@
+digraph "0_VeraCrypt_f30f9339c9a0b9bbcc6f5ad38804af39db1f479e@pointer" {
+"1001403" [label="(Call,GetVirtualVolumeDeviceObject (prop->driveNo))"];
+"1001401" [label="(Call,ListDevice = GetVirtualVolumeDeviceObject (prop->driveNo))"];
+"1003125" [label="(MethodReturn,NTSTATUS)"];
+"1001401" [label="(Call,ListDevice = GetVirtualVolumeDeviceObject (prop->driveNo))"];
+"1001389" [label="(Block,)"];
+"1001410" [label="(Identifier,Irp)"];
+"1001404" [label="(Call,prop->driveNo)"];
+"1001402" [label="(Identifier,ListDevice)"];
+"1001403" [label="(Call,GetVirtualVolumeDeviceObject (prop->driveNo))"];
+"1001403" -> "1001401"  [label="AST: "];
+"1001403" -> "1001404"  [label="CFG: "];
+"1001404" -> "1001403"  [label="AST: "];
+"1001401" -> "1001403"  [label="CFG: "];
+"1001403" -> "1003125"  [label="DDG: prop->driveNo"];
+"1001403" -> "1001401"  [label="DDG: prop->driveNo"];
+"1001401" -> "1001389"  [label="AST: "];
+"1001402" -> "1001401"  [label="AST: "];
+"1001410" -> "1001401"  [label="CFG: "];
+"1001401" -> "1003125"  [label="DDG: GetVirtualVolumeDeviceObject (prop->driveNo)"];
+"1001401" -> "1003125"  [label="DDG: ListDevice"];
+}

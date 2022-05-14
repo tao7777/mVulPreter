@@ -1,0 +1,36 @@
+digraph "0_linux_23adbe12ef7d3d4195e80800ab36b37bee28cd03_4@pointer" {
+"1000649" [label="(Call,mp->m_flags & XFS_MOUNT_WSYNC)"];
+"1000151" [label="(Call,mp->m_flags & XFS_MOUNT_RDONLY)"];
+"1000649" [label="(Call,mp->m_flags & XFS_MOUNT_WSYNC)"];
+"1000657" [label="(Identifier,code)"];
+"1000150" [label="(ControlStructure,if (mp->m_flags & XFS_MOUNT_RDONLY))"];
+"1000152" [label="(Call,mp->m_flags)"];
+"1000648" [label="(ControlStructure,if (mp->m_flags & XFS_MOUNT_WSYNC))"];
+"1000687" [label="(MethodReturn,RET)"];
+"1000653" [label="(Identifier,XFS_MOUNT_WSYNC)"];
+"1000151" [label="(Call,mp->m_flags & XFS_MOUNT_RDONLY)"];
+"1000155" [label="(Identifier,XFS_MOUNT_RDONLY)"];
+"1000655" [label="(Identifier,tp)"];
+"1000650" [label="(Call,mp->m_flags)"];
+"1000158" [label="(Identifier,EROFS)"];
+"1000161" [label="(Identifier,mp)"];
+"1000649" -> "1000648"  [label="AST: "];
+"1000649" -> "1000653"  [label="CFG: "];
+"1000650" -> "1000649"  [label="AST: "];
+"1000653" -> "1000649"  [label="AST: "];
+"1000655" -> "1000649"  [label="CFG: "];
+"1000657" -> "1000649"  [label="CFG: "];
+"1000649" -> "1000687"  [label="DDG: mp->m_flags"];
+"1000649" -> "1000687"  [label="DDG: XFS_MOUNT_WSYNC"];
+"1000649" -> "1000687"  [label="DDG: mp->m_flags & XFS_MOUNT_WSYNC"];
+"1000151" -> "1000649"  [label="DDG: mp->m_flags"];
+"1000151" -> "1000150"  [label="AST: "];
+"1000151" -> "1000155"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000155" -> "1000151"  [label="AST: "];
+"1000158" -> "1000151"  [label="CFG: "];
+"1000161" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000687"  [label="DDG: mp->m_flags & XFS_MOUNT_RDONLY"];
+"1000151" -> "1000687"  [label="DDG: mp->m_flags"];
+"1000151" -> "1000687"  [label="DDG: XFS_MOUNT_RDONLY"];
+}

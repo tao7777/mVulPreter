@@ -1,0 +1,33 @@
+digraph "0_Android_5443b57cc54f2e46b35246637be26a69e9f493e1_3@pointer" {
+"1000192" [label="(Call,outputBufferHeader->nFlags = OMX_BUFFERFLAG_EOS)"];
+"1000172" [label="(Call,inputBufferHeader->nFlags & OMX_BUFFERFLAG_EOS)"];
+"1000177" [label="(Block,)"];
+"1000196" [label="(Identifier,OMX_BUFFERFLAG_EOS)"];
+"1000193" [label="(Call,outputBufferHeader->nFlags)"];
+"1000171" [label="(ControlStructure,if (inputBufferHeader->nFlags & OMX_BUFFERFLAG_EOS))"];
+"1000209" [label="(Identifier,source)"];
+"1000541" [label="(MethodReturn,void)"];
+"1000173" [label="(Call,inputBufferHeader->nFlags)"];
+"1000179" [label="(Call,inputBufferInfoQueue.begin())"];
+"1000198" [label="(Call,outputBufferInfoQueue.begin())"];
+"1000176" [label="(Identifier,OMX_BUFFERFLAG_EOS)"];
+"1000192" [label="(Call,outputBufferHeader->nFlags = OMX_BUFFERFLAG_EOS)"];
+"1000172" [label="(Call,inputBufferHeader->nFlags & OMX_BUFFERFLAG_EOS)"];
+"1000192" -> "1000177"  [label="AST: "];
+"1000192" -> "1000196"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000196" -> "1000192"  [label="AST: "];
+"1000198" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000541"  [label="DDG: outputBufferHeader->nFlags"];
+"1000192" -> "1000541"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+"1000172" -> "1000192"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+"1000172" -> "1000171"  [label="AST: "];
+"1000172" -> "1000176"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000176" -> "1000172"  [label="AST: "];
+"1000179" -> "1000172"  [label="CFG: "];
+"1000209" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000541"  [label="DDG: inputBufferHeader->nFlags & OMX_BUFFERFLAG_EOS"];
+"1000172" -> "1000541"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+"1000172" -> "1000541"  [label="DDG: inputBufferHeader->nFlags"];
+}

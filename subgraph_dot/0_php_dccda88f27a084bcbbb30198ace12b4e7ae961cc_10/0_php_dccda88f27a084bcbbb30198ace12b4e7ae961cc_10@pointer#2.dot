@@ -1,0 +1,26 @@
+digraph "0_php_dccda88f27a084bcbbb30198ace12b4e7ae961cc_10@pointer" {
+"1000272" [label="(Call,EG(exception) ? NULL : retval)"];
+"1000271" [label="(Return,return EG(exception) ? NULL : retval;)"];
+"1000275" [label="(Identifier,NULL)"];
+"1000270" [label="(Block,)"];
+"1000276" [label="(Identifier,retval)"];
+"1000272" [label="(Call,EG(exception) ? NULL : retval)"];
+"1000271" [label="(Return,return EG(exception) ? NULL : retval;)"];
+"1000296" [label="(MethodReturn,static zval *)"];
+"1000273" [label="(Call,EG(exception))"];
+"1000272" -> "1000271"  [label="AST: "];
+"1000272" -> "1000275"  [label="CFG: "];
+"1000272" -> "1000276"  [label="CFG: "];
+"1000273" -> "1000272"  [label="AST: "];
+"1000275" -> "1000272"  [label="AST: "];
+"1000276" -> "1000272"  [label="AST: "];
+"1000271" -> "1000272"  [label="CFG: "];
+"1000272" -> "1000296"  [label="DDG: NULL"];
+"1000272" -> "1000296"  [label="DDG: retval"];
+"1000272" -> "1000296"  [label="DDG: EG(exception)"];
+"1000272" -> "1000296"  [label="DDG: EG(exception) ? NULL : retval"];
+"1000272" -> "1000271"  [label="DDG: EG(exception) ? NULL : retval"];
+"1000271" -> "1000270"  [label="AST: "];
+"1000296" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000296"  [label="DDG: <RET>"];
+}

@@ -1,0 +1,26 @@
+digraph "0_spice_8af619009660b24e0b41ad26b30289eea288fcc2@pointer" {
+"1000139" [label="(Call,!link->skip_auth)"];
+"1000137" [label="(Call,ticketing_enabled && !link->skip_auth)"];
+"1000139" [label="(Call,!link->skip_auth)"];
+"1000196" [label="(Identifier,link)"];
+"1000146" [label="(Identifier,expired)"];
+"1000137" [label="(Call,ticketing_enabled && !link->skip_auth)"];
+"1000197" [label="(MethodReturn,static void)"];
+"1000140" [label="(Call,link->skip_auth)"];
+"1000138" [label="(Identifier,ticketing_enabled)"];
+"1000136" [label="(ControlStructure,if (ticketing_enabled && !link->skip_auth))"];
+"1000139" -> "1000137"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000197"  [label="DDG: link->skip_auth"];
+"1000139" -> "1000137"  [label="DDG: link->skip_auth"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000146" -> "1000137"  [label="CFG: "];
+"1000196" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000197"  [label="DDG: !link->skip_auth"];
+"1000137" -> "1000197"  [label="DDG: ticketing_enabled"];
+"1000137" -> "1000197"  [label="DDG: ticketing_enabled && !link->skip_auth"];
+}

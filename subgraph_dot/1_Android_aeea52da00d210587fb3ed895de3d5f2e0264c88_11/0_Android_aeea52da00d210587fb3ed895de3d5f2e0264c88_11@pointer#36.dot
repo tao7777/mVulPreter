@@ -1,0 +1,27 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_11@pointer" {
+"1000519" [label="(Call,p->vsize != sizeof(uint32_t))"];
+"1000512" [label="(Call,p->psize != sizeof(uint32_t) || p->vsize != sizeof(uint32_t))"];
+"1000512" [label="(Call,p->psize != sizeof(uint32_t) || p->vsize != sizeof(uint32_t))"];
+"1000996" [label="(MethodReturn,int)"];
+"1000513" [label="(Call,p->psize != sizeof(uint32_t))"];
+"1000520" [label="(Call,p->vsize)"];
+"1000519" [label="(Call,p->vsize != sizeof(uint32_t))"];
+"1000511" [label="(ControlStructure,if (p->psize != sizeof(uint32_t) || p->vsize != sizeof(uint32_t)))"];
+"1000523" [label="(Call,sizeof(uint32_t))"];
+"1000519" -> "1000512"  [label="AST: "];
+"1000519" -> "1000523"  [label="CFG: "];
+"1000520" -> "1000519"  [label="AST: "];
+"1000523" -> "1000519"  [label="AST: "];
+"1000512" -> "1000519"  [label="CFG: "];
+"1000519" -> "1000996"  [label="DDG: p->vsize"];
+"1000519" -> "1000512"  [label="DDG: p->vsize"];
+"1000512" -> "1000511"  [label="AST: "];
+"1000512" -> "1000513"  [label="CFG: "];
+"1000513" -> "1000512"  [label="AST: "];
+"1000529" -> "1000512"  [label="CFG: "];
+"1000537" -> "1000512"  [label="CFG: "];
+"1000512" -> "1000996"  [label="DDG: p->psize != sizeof(uint32_t)"];
+"1000512" -> "1000996"  [label="DDG: p->vsize != sizeof(uint32_t)"];
+"1000512" -> "1000996"  [label="DDG: p->psize != sizeof(uint32_t) || p->vsize != sizeof(uint32_t)"];
+"1000513" -> "1000512"  [label="DDG: p->psize"];
+}

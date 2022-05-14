@@ -1,0 +1,22 @@
+digraph "0_tcpdump_c6e0531b5def26ecf912e8de6ade86cbdaed3751_0@pointer" {
+"1000313" [label="(Call,EXTRACT_LE_8BITS(cmp->cm_test.te_data))"];
+"1000311" [label="(Call,other = EXTRACT_LE_8BITS(cmp->cm_test.te_data))"];
+"1000722" [label="(MethodReturn,RET)"];
+"1000312" [label="(Identifier,other)"];
+"1000313" [label="(Call,EXTRACT_LE_8BITS(cmp->cm_test.te_data))"];
+"1000314" [label="(Call,cmp->cm_test.te_data)"];
+"1000311" [label="(Call,other = EXTRACT_LE_8BITS(cmp->cm_test.te_data))"];
+"1000146" [label="(Block,)"];
+"1000321" [label="(Identifier,ndo)"];
+"1000313" -> "1000311"  [label="AST: "];
+"1000313" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000313"  [label="AST: "];
+"1000311" -> "1000313"  [label="CFG: "];
+"1000313" -> "1000722"  [label="DDG: cmp->cm_test.te_data"];
+"1000313" -> "1000311"  [label="DDG: cmp->cm_test.te_data"];
+"1000311" -> "1000146"  [label="AST: "];
+"1000312" -> "1000311"  [label="AST: "];
+"1000321" -> "1000311"  [label="CFG: "];
+"1000311" -> "1000722"  [label="DDG: other"];
+"1000311" -> "1000722"  [label="DDG: EXTRACT_LE_8BITS(cmp->cm_test.te_data)"];
+}

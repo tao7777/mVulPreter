@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1011056" [label="(Call,s->cpuid_features & CPUID_SSE2)"];
+"1011055" [label="(Call,!(s->cpuid_features & CPUID_SSE2))"];
+"1011061" [label="(ControlStructure,goto illegal_op;)"];
+"1011060" [label="(Identifier,CPUID_SSE2)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1011056" [label="(Call,s->cpuid_features & CPUID_SSE2)"];
+"1011055" [label="(Call,!(s->cpuid_features & CPUID_SSE2))"];
+"1011057" [label="(Call,s->cpuid_features)"];
+"1011054" [label="(ControlStructure,if (!(s->cpuid_features & CPUID_SSE2)))"];
+"1011063" [label="(Identifier,ot)"];
+"1011056" -> "1011055"  [label="AST: "];
+"1011056" -> "1011060"  [label="CFG: "];
+"1011057" -> "1011056"  [label="AST: "];
+"1011060" -> "1011056"  [label="AST: "];
+"1011055" -> "1011056"  [label="CFG: "];
+"1011056" -> "1011840"  [label="DDG: s->cpuid_features"];
+"1011056" -> "1011840"  [label="DDG: CPUID_SSE2"];
+"1011056" -> "1011055"  [label="DDG: s->cpuid_features"];
+"1011056" -> "1011055"  [label="DDG: CPUID_SSE2"];
+"1011055" -> "1011054"  [label="AST: "];
+"1011061" -> "1011055"  [label="CFG: "];
+"1011063" -> "1011055"  [label="CFG: "];
+"1011055" -> "1011840"  [label="DDG: !(s->cpuid_features & CPUID_SSE2)"];
+"1011055" -> "1011840"  [label="DDG: s->cpuid_features & CPUID_SSE2"];
+}

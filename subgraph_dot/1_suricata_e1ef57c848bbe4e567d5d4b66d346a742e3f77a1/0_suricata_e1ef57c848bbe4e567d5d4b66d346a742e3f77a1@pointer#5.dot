@@ -1,0 +1,33 @@
+digraph "0_suricata_e1ef57c848bbe4e567d5d4b66d346a742e3f77a1@pointer" {
+"1000111" [label="(Call,p->flags & PKT_NOPACKET_INSPECTION)"];
+"1000110" [label="(Call,(p->flags & PKT_NOPACKET_INSPECTION) ||\n        (PACKET_TEST_ACTION(p, ACTION_DROP)))"];
+"1000183" [label="(MethodReturn,static void)"];
+"1000116" [label="(Call,PACKET_TEST_ACTION(p, ACTION_DROP))"];
+"1000109" [label="(ControlStructure,if ((p->flags & PKT_NOPACKET_INSPECTION) ||\n        (PACKET_TEST_ACTION(p, ACTION_DROP))))"];
+"1000115" [label="(Identifier,PKT_NOPACKET_INSPECTION)"];
+"1000111" [label="(Call,p->flags & PKT_NOPACKET_INSPECTION)"];
+"1000110" [label="(Call,(p->flags & PKT_NOPACKET_INSPECTION) ||\n        (PACKET_TEST_ACTION(p, ACTION_DROP)))"];
+"1000112" [label="(Call,p->flags)"];
+"1000122" [label="(Identifier,pass)"];
+"1000117" [label="(Identifier,p)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000115"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000115" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000183"  [label="DDG: PKT_NOPACKET_INSPECTION"];
+"1000111" -> "1000183"  [label="DDG: p->flags"];
+"1000111" -> "1000110"  [label="DDG: p->flags"];
+"1000111" -> "1000110"  [label="DDG: PKT_NOPACKET_INSPECTION"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000110"  [label="AST: "];
+"1000122" -> "1000110"  [label="CFG: "];
+"1000177" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000183"  [label="DDG: (p->flags & PKT_NOPACKET_INSPECTION) ||\n        (PACKET_TEST_ACTION(p, ACTION_DROP))"];
+"1000110" -> "1000183"  [label="DDG: PACKET_TEST_ACTION(p, ACTION_DROP)"];
+"1000110" -> "1000183"  [label="DDG: p->flags & PKT_NOPACKET_INSPECTION"];
+"1000116" -> "1000110"  [label="DDG: p"];
+"1000116" -> "1000110"  [label="DDG: ACTION_DROP"];
+}

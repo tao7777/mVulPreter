@@ -1,0 +1,4 @@
+void LeafUnwindBlacklist::AddModuleToBlacklist(const void* module) {
+   CHECK(module);
+   blacklisted_modules_.insert(module);
+ }

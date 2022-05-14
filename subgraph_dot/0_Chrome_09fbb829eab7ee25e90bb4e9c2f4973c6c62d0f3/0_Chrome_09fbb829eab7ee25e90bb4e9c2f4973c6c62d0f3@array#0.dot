@@ -1,0 +1,29 @@
+digraph "0_Chrome_09fbb829eab7ee25e90bb4e9c2f4973c6c62d0f3@array" {
+"1000203" [label="(Call,m_lastCharacter = text[m_positionEndOffset - 1])"];
+"1000119" [label="(Call,text = renderer->text())"];
+"1000120" [label="(Identifier,text)"];
+"1000119" [label="(Call,text = renderer->text())"];
+"1000101" [label="(Block,)"];
+"1000212" [label="(Identifier,m_shouldHandleFirstLetter)"];
+"1000205" [label="(Call,text[m_positionEndOffset - 1])"];
+"1000125" [label="(Call,renderer->firstTextBox())"];
+"1000213" [label="(MethodReturn,bool)"];
+"1000121" [label="(Call,renderer->text())"];
+"1000204" [label="(Identifier,m_lastCharacter)"];
+"1000203" [label="(Call,m_lastCharacter = text[m_positionEndOffset - 1])"];
+"1000203" -> "1000101"  [label="AST: "];
+"1000203" -> "1000205"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000203"  [label="AST: "];
+"1000212" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000213"  [label="DDG: text[m_positionEndOffset - 1]"];
+"1000203" -> "1000213"  [label="DDG: m_lastCharacter"];
+"1000119" -> "1000203"  [label="DDG: text"];
+"1000119" -> "1000101"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000125" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000213"  [label="DDG: renderer->text()"];
+"1000119" -> "1000213"  [label="DDG: text"];
+}

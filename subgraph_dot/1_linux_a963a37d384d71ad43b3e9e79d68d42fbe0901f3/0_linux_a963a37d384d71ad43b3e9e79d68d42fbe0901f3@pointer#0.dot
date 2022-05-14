@@ -1,0 +1,27 @@
+digraph "0_linux_a963a37d384d71ad43b3e9e79d68d42fbe0901f3@pointer" {
+"1000102" [label="(MethodParameterIn,struct sock *sk)"];
+"1000109" [label="(Call,inet6_sk(sk))"];
+"1000107" [label="(Call,*np = inet6_sk(sk))"];
+"1000105" [label="(Block,)"];
+"1000130" [label="(MethodReturn,static struct dst_entry *)"];
+"1000113" [label="(Identifier,rt)"];
+"1000108" [label="(Identifier,np)"];
+"1000110" [label="(Identifier,sk)"];
+"1000107" [label="(Call,*np = inet6_sk(sk))"];
+"1000109" [label="(Call,inet6_sk(sk))"];
+"1000102" [label="(MethodParameterIn,struct sock *sk)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000130"  [label="DDG: sk"];
+"1000102" -> "1000109"  [label="DDG: sk"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000130"  [label="DDG: sk"];
+"1000109" -> "1000107"  [label="DDG: sk"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000113" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000130"  [label="DDG: np"];
+"1000107" -> "1000130"  [label="DDG: inet6_sk(sk)"];
+}

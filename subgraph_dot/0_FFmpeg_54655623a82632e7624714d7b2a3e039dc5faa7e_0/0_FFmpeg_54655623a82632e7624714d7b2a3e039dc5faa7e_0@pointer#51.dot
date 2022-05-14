@@ -1,0 +1,34 @@
+digraph "0_FFmpeg_54655623a82632e7624714d7b2a3e039dc5faa7e_0@pointer" {
+"1000370" [label="(Call,sps->width != last_sps->width)"];
+"1000369" [label="(Call,sps->width != last_sps->width || sps->height != last_sps->height ||\n                sps->temporal_layer[sps->max_sub_layers - 1].max_dec_pic_buffering !=\n                last_sps->temporal_layer[last_sps->max_sub_layers - 1].max_dec_pic_buffering)"];
+"1000371" [label="(Call,sps->width)"];
+"1000374" [label="(Call,last_sps->width)"];
+"1000380" [label="(Identifier,sps)"];
+"1000369" [label="(Call,sps->width != last_sps->width || sps->height != last_sps->height ||\n                sps->temporal_layer[sps->max_sub_layers - 1].max_dec_pic_buffering !=\n                last_sps->temporal_layer[last_sps->max_sub_layers - 1].max_dec_pic_buffering)"];
+"1000368" [label="(ControlStructure,if (sps->width != last_sps->width || sps->height != last_sps->height ||\n                sps->temporal_layer[sps->max_sub_layers - 1].max_dec_pic_buffering !=\n                last_sps->temporal_layer[last_sps->max_sub_layers - 1].max_dec_pic_buffering))"];
+"1000414" [label="(Identifier,s)"];
+"1000377" [label="(Call,sps->height != last_sps->height ||\n                sps->temporal_layer[sps->max_sub_layers - 1].max_dec_pic_buffering !=\n                last_sps->temporal_layer[last_sps->max_sub_layers - 1].max_dec_pic_buffering)"];
+"1002212" [label="(MethodReturn,static int)"];
+"1000410" [label="(Identifier,sh)"];
+"1000370" [label="(Call,sps->width != last_sps->width)"];
+"1000370" -> "1000369"  [label="AST: "];
+"1000370" -> "1000374"  [label="CFG: "];
+"1000371" -> "1000370"  [label="AST: "];
+"1000374" -> "1000370"  [label="AST: "];
+"1000380" -> "1000370"  [label="CFG: "];
+"1000369" -> "1000370"  [label="CFG: "];
+"1000370" -> "1002212"  [label="DDG: last_sps->width"];
+"1000370" -> "1002212"  [label="DDG: sps->width"];
+"1000370" -> "1000369"  [label="DDG: sps->width"];
+"1000370" -> "1000369"  [label="DDG: last_sps->width"];
+"1000369" -> "1000368"  [label="AST: "];
+"1000369" -> "1000377"  [label="CFG: "];
+"1000377" -> "1000369"  [label="AST: "];
+"1000410" -> "1000369"  [label="CFG: "];
+"1000414" -> "1000369"  [label="CFG: "];
+"1000369" -> "1002212"  [label="DDG: sps->width != last_sps->width || sps->height != last_sps->height ||\n                sps->temporal_layer[sps->max_sub_layers - 1].max_dec_pic_buffering !=\n                last_sps->temporal_layer[last_sps->max_sub_layers - 1].max_dec_pic_buffering"];
+"1000369" -> "1002212"  [label="DDG: sps->height != last_sps->height ||\n                sps->temporal_layer[sps->max_sub_layers - 1].max_dec_pic_buffering !=\n                last_sps->temporal_layer[last_sps->max_sub_layers - 1].max_dec_pic_buffering"];
+"1000369" -> "1002212"  [label="DDG: sps->width != last_sps->width"];
+"1000377" -> "1000369"  [label="DDG: sps->height != last_sps->height"];
+"1000377" -> "1000369"  [label="DDG: sps->temporal_layer[sps->max_sub_layers - 1].max_dec_pic_buffering !=\n                last_sps->temporal_layer[last_sps->max_sub_layers - 1].max_dec_pic_buffering"];
+}

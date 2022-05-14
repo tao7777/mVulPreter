@@ -1,0 +1,23 @@
+digraph "0_linux_f84598bd7c851f8b0bf8cd0d7c3be0d73c432ff4@pointer" {
+"1000107" [label="(MethodParameterIn,unsigned long *mc_saved_in_initrd)"];
+"1000214" [label="(Call,mc_saved_in_initrd[i] = (unsigned long)mc_saved_tmp[i] - start)"];
+"1000205" [label="(ControlStructure,for (i = 0; i < mc_saved_count; i++))"];
+"1000213" [label="(Identifier,i)"];
+"1000218" [label="(Call,(unsigned long)mc_saved_tmp[i] - start)"];
+"1000107" [label="(MethodParameterIn,unsigned long *mc_saved_in_initrd)"];
+"1000233" [label="(MethodReturn,RET)"];
+"1000214" [label="(Call,mc_saved_in_initrd[i] = (unsigned long)mc_saved_tmp[i] - start)"];
+"1000215" [label="(Call,mc_saved_in_initrd[i])"];
+"1000107" -> "1000101"  [label="AST: "];
+"1000107" -> "1000233"  [label="DDG: mc_saved_in_initrd"];
+"1000107" -> "1000214"  [label="DDG: mc_saved_in_initrd"];
+"1000214" -> "1000205"  [label="AST: "];
+"1000214" -> "1000218"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000218" -> "1000214"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000233"  [label="DDG: (unsigned long)mc_saved_tmp[i] - start"];
+"1000214" -> "1000233"  [label="DDG: mc_saved_in_initrd[i]"];
+"1000218" -> "1000214"  [label="DDG: (unsigned long)mc_saved_tmp[i]"];
+"1000218" -> "1000214"  [label="DDG: start"];
+}

@@ -1,0 +1,29 @@
+digraph "0_Chrome_fec26ff33bf372476a70326f3669a35f34a9d474_3@API" {
+"1000124" [label="(Call,std::move(stats))"];
+"1000101" [label="(MethodParameterIn,std::unique_ptr<PreconnectStats> stats)"];
+"1000122" [label="(Call,preconnect_stats_.emplace(main_frame_url, std::move(stats)))"];
+"1000122" [label="(Call,preconnect_stats_.emplace(main_frame_url, std::move(stats)))"];
+"1000125" [label="(Identifier,stats)"];
+"1000101" [label="(MethodParameterIn,std::unique_ptr<PreconnectStats> stats)"];
+"1000123" [label="(Identifier,main_frame_url)"];
+"1000124" [label="(Call,std::move(stats))"];
+"1000126" [label="(MethodReturn,void)"];
+"1000112" [label="(Call,preconnect_stats_.find(main_frame_url))"];
+"1000102" [label="(Block,)"];
+"1000124" -> "1000122"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000126"  [label="DDG: stats"];
+"1000124" -> "1000122"  [label="DDG: stats"];
+"1000101" -> "1000124"  [label="DDG: stats"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000126"  [label="DDG: stats"];
+"1000122" -> "1000102"  [label="AST: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000126"  [label="DDG: main_frame_url"];
+"1000122" -> "1000126"  [label="DDG: preconnect_stats_.emplace(main_frame_url, std::move(stats))"];
+"1000122" -> "1000126"  [label="DDG: std::move(stats)"];
+"1000112" -> "1000122"  [label="DDG: main_frame_url"];
+}

@@ -1,0 +1,28 @@
+digraph "0_linux_bb3d48dcf86a97dc25fe9fc2c11938e19cb4399a@API" {
+"1000249" [label="(Call,memset((char *)&nargs, 0, sizeof(nargs)))"];
+"1000250" [label="(Call,(char *)&nargs)"];
+"1000259" [label="(Identifier,nargs)"];
+"1000110" [label="(Block,)"];
+"1000252" [label="(Call,&nargs)"];
+"1000249" [label="(Call,memset((char *)&nargs, 0, sizeof(nargs)))"];
+"1000422" [label="(MethodReturn,RET)"];
+"1000255" [label="(Call,sizeof(nargs))"];
+"1000383" [label="(Call,xfs_attr3_leaf_lookup_int(bp, &nargs))"];
+"1000250" [label="(Call,(char *)&nargs)"];
+"1000254" [label="(Literal,0)"];
+"1000249" -> "1000110"  [label="AST: "];
+"1000249" -> "1000255"  [label="CFG: "];
+"1000250" -> "1000249"  [label="AST: "];
+"1000254" -> "1000249"  [label="AST: "];
+"1000255" -> "1000249"  [label="AST: "];
+"1000259" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000422"  [label="DDG: (char *)&nargs"];
+"1000249" -> "1000422"  [label="DDG: memset((char *)&nargs, 0, sizeof(nargs))"];
+"1000250" -> "1000249"  [label="DDG: &nargs"];
+"1000250" -> "1000252"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000252" -> "1000250"  [label="AST: "];
+"1000254" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000422"  [label="DDG: &nargs"];
+"1000250" -> "1000383"  [label="DDG: &nargs"];
+}

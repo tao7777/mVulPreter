@@ -1,0 +1,34 @@
+digraph "0_linux_a0ad220c96692eda76b2e3fd7279f3dcd1d8a8ff@pointer" {
+"1000154" [label="(Call,pcu->max_ctrl_size = usb_endpoint_maxp(pcu->ep_ctrl))"];
+"1000158" [label="(Call,usb_endpoint_maxp(pcu->ep_ctrl))"];
+"1000142" [label="(Call,pcu->ep_ctrl = &alt->endpoint[0].desc)"];
+"1000156" [label="(Identifier,pcu)"];
+"1000143" [label="(Call,pcu->ep_ctrl)"];
+"1000318" [label="(MethodReturn,static int)"];
+"1000155" [label="(Call,pcu->max_ctrl_size)"];
+"1000158" [label="(Call,usb_endpoint_maxp(pcu->ep_ctrl))"];
+"1000164" [label="(Identifier,pcu)"];
+"1000142" [label="(Call,pcu->ep_ctrl = &alt->endpoint[0].desc)"];
+"1000146" [label="(Call,&alt->endpoint[0].desc)"];
+"1000103" [label="(Block,)"];
+"1000159" [label="(Call,pcu->ep_ctrl)"];
+"1000154" [label="(Call,pcu->max_ctrl_size = usb_endpoint_maxp(pcu->ep_ctrl))"];
+"1000154" -> "1000103"  [label="AST: "];
+"1000154" -> "1000158"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000158" -> "1000154"  [label="AST: "];
+"1000164" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000318"  [label="DDG: pcu->max_ctrl_size"];
+"1000154" -> "1000318"  [label="DDG: usb_endpoint_maxp(pcu->ep_ctrl)"];
+"1000158" -> "1000154"  [label="DDG: pcu->ep_ctrl"];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000158" -> "1000318"  [label="DDG: pcu->ep_ctrl"];
+"1000142" -> "1000158"  [label="DDG: pcu->ep_ctrl"];
+"1000142" -> "1000103"  [label="AST: "];
+"1000142" -> "1000146"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000146" -> "1000142"  [label="AST: "];
+"1000156" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000318"  [label="DDG: &alt->endpoint[0].desc"];
+}

@@ -1,0 +1,1 @@
+InputMethodLibrary* CrosLibrary::GetInputMethodLibrary() {

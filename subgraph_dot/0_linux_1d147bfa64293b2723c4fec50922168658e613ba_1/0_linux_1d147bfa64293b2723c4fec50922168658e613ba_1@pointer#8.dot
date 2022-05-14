@@ -1,0 +1,36 @@
+digraph "0_linux_1d147bfa64293b2723c4fec50922168658e613ba_1@pointer" {
+"1000297" [label="(Call,timer_pending(&local->sta_cleanup))"];
+"1000296" [label="(Call,!timer_pending(&local->sta_cleanup))"];
+"1000302" [label="(Call,mod_timer(&local->sta_cleanup,\n\t\t\t\t  round_jiffies(jiffies +\n\t\t\t\t\t\tSTA_INFO_CLEANUP_INTERVAL)))"];
+"1000312" [label="(Identifier,sta)"];
+"1000303" [label="(Call,&local->sta_cleanup)"];
+"1000307" [label="(Call,round_jiffies(jiffies +\n\t\t\t\t\t\tSTA_INFO_CLEANUP_INTERVAL))"];
+"1000295" [label="(ControlStructure,if (!timer_pending(&local->sta_cleanup)))"];
+"1000298" [label="(Call,&local->sta_cleanup)"];
+"1000305" [label="(Identifier,local)"];
+"1000334" [label="(MethodReturn,RET)"];
+"1000302" [label="(Call,mod_timer(&local->sta_cleanup,\n\t\t\t\t  round_jiffies(jiffies +\n\t\t\t\t\t\tSTA_INFO_CLEANUP_INTERVAL)))"];
+"1000297" [label="(Call,timer_pending(&local->sta_cleanup))"];
+"1000296" [label="(Call,!timer_pending(&local->sta_cleanup))"];
+"1000297" -> "1000296"  [label="AST: "];
+"1000297" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000297"  [label="AST: "];
+"1000296" -> "1000297"  [label="CFG: "];
+"1000297" -> "1000334"  [label="DDG: &local->sta_cleanup"];
+"1000297" -> "1000296"  [label="DDG: &local->sta_cleanup"];
+"1000297" -> "1000302"  [label="DDG: &local->sta_cleanup"];
+"1000296" -> "1000295"  [label="AST: "];
+"1000305" -> "1000296"  [label="CFG: "];
+"1000312" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000334"  [label="DDG: timer_pending(&local->sta_cleanup)"];
+"1000296" -> "1000334"  [label="DDG: !timer_pending(&local->sta_cleanup)"];
+"1000302" -> "1000295"  [label="AST: "];
+"1000302" -> "1000307"  [label="CFG: "];
+"1000303" -> "1000302"  [label="AST: "];
+"1000307" -> "1000302"  [label="AST: "];
+"1000312" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000334"  [label="DDG: mod_timer(&local->sta_cleanup,\n\t\t\t\t  round_jiffies(jiffies +\n\t\t\t\t\t\tSTA_INFO_CLEANUP_INTERVAL))"];
+"1000302" -> "1000334"  [label="DDG: &local->sta_cleanup"];
+"1000302" -> "1000334"  [label="DDG: round_jiffies(jiffies +\n\t\t\t\t\t\tSTA_INFO_CLEANUP_INTERVAL)"];
+"1000307" -> "1000302"  [label="DDG: jiffies +\n\t\t\t\t\t\tSTA_INFO_CLEANUP_INTERVAL"];
+}

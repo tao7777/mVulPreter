@@ -1,0 +1,26 @@
+digraph "0_linux_f5364c150aa645b3d7daa21b5c0b9feaa1c9cd6d_0@pointer" {
+"1000137" [label="(Call,ns_capable(ns->user_ns, CAP_SYS_ADMIN))"];
+"1000136" [label="(Call,!ns_capable(ns->user_ns, CAP_SYS_ADMIN))"];
+"1000138" [label="(Call,ns->user_ns)"];
+"1000147" [label="(Identifier,sb)"];
+"1000141" [label="(Identifier,CAP_SYS_ADMIN)"];
+"1000135" [label="(ControlStructure,if (!ns_capable(ns->user_ns, CAP_SYS_ADMIN)))"];
+"1000137" [label="(Call,ns_capable(ns->user_ns, CAP_SYS_ADMIN))"];
+"1000136" [label="(Call,!ns_capable(ns->user_ns, CAP_SYS_ADMIN))"];
+"1000210" [label="(MethodReturn,static struct dentry *)"];
+"1000145" [label="(Identifier,EPERM)"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000141"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000141" -> "1000137"  [label="AST: "];
+"1000136" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000210"  [label="DDG: CAP_SYS_ADMIN"];
+"1000137" -> "1000210"  [label="DDG: ns->user_ns"];
+"1000137" -> "1000136"  [label="DDG: ns->user_ns"];
+"1000137" -> "1000136"  [label="DDG: CAP_SYS_ADMIN"];
+"1000136" -> "1000135"  [label="AST: "];
+"1000145" -> "1000136"  [label="CFG: "];
+"1000147" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000210"  [label="DDG: !ns_capable(ns->user_ns, CAP_SYS_ADMIN)"];
+"1000136" -> "1000210"  [label="DDG: ns_capable(ns->user_ns, CAP_SYS_ADMIN)"];
+}

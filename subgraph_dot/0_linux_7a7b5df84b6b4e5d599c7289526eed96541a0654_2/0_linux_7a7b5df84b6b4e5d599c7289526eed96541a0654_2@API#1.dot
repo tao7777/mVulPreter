@@ -1,0 +1,23 @@
+digraph "0_linux_7a7b5df84b6b4e5d599c7289526eed96541a0654_2@API" {
+"1000123" [label="(Call,mutex_lock(&dev->lock))"];
+"1000165" [label="(Call,mutex_unlock(&dev->lock))"];
+"1000124" [label="(Call,&dev->lock)"];
+"1000166" [label="(Call,&dev->lock)"];
+"1000104" [label="(Block,)"];
+"1000170" [label="(MethodReturn,static void)"];
+"1000165" [label="(Call,mutex_unlock(&dev->lock))"];
+"1000123" [label="(Call,mutex_lock(&dev->lock))"];
+"1000130" [label="(Identifier,buf)"];
+"1000123" -> "1000104"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000130" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000170"  [label="DDG: mutex_lock(&dev->lock)"];
+"1000123" -> "1000165"  [label="DDG: &dev->lock"];
+"1000165" -> "1000104"  [label="AST: "];
+"1000165" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000165"  [label="AST: "];
+"1000170" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000170"  [label="DDG: mutex_unlock(&dev->lock)"];
+"1000165" -> "1000170"  [label="DDG: &dev->lock"];
+}

@@ -1,0 +1,23 @@
+digraph "1_linux_712f4aad406bb1ed67f3f98d04c044191f0ff593_0@del" {
+"1000116" [label="(Call,spin_lock(&unix_gc_lock))"];
+"1000152" [label="(Call,spin_unlock(&unix_gc_lock))"];
+"1000110" [label="(Block,)"];
+"1000116" [label="(Call,spin_lock(&unix_gc_lock))"];
+"1000153" [label="(Call,&unix_gc_lock)"];
+"1000155" [label="(MethodReturn,void)"];
+"1000124" [label="(Identifier,u)"];
+"1000152" [label="(Call,spin_unlock(&unix_gc_lock))"];
+"1000117" [label="(Call,&unix_gc_lock)"];
+"1000116" -> "1000110"  [label="AST: "];
+"1000116" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000124" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000155"  [label="DDG: spin_lock(&unix_gc_lock)"];
+"1000116" -> "1000152"  [label="DDG: &unix_gc_lock"];
+"1000152" -> "1000110"  [label="AST: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000155" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000155"  [label="DDG: &unix_gc_lock"];
+"1000152" -> "1000155"  [label="DDG: spin_unlock(&unix_gc_lock)"];
+}

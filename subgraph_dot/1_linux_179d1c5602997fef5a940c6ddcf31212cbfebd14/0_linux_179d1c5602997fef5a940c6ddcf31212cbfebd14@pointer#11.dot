@@ -1,0 +1,26 @@
+digraph "0_linux_179d1c5602997fef5a940c6ddcf31212cbfebd14@pointer" {
+"1000121" [label="(Call,rold->live & REG_LIVE_READ)"];
+"1000120" [label="(Call,!(rold->live & REG_LIVE_READ))"];
+"1000129" [label="(Identifier,true)"];
+"1000307" [label="(MethodReturn,static bool)"];
+"1000125" [label="(Identifier,REG_LIVE_READ)"];
+"1000127" [label="(Identifier,true)"];
+"1000120" [label="(Call,!(rold->live & REG_LIVE_READ))"];
+"1000122" [label="(Call,rold->live)"];
+"1000119" [label="(ControlStructure,if (!(rold->live & REG_LIVE_READ)))"];
+"1000121" [label="(Call,rold->live & REG_LIVE_READ)"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000307"  [label="DDG: REG_LIVE_READ"];
+"1000121" -> "1000307"  [label="DDG: rold->live"];
+"1000121" -> "1000120"  [label="DDG: rold->live"];
+"1000121" -> "1000120"  [label="DDG: REG_LIVE_READ"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000127" -> "1000120"  [label="CFG: "];
+"1000129" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000307"  [label="DDG: rold->live & REG_LIVE_READ"];
+"1000120" -> "1000307"  [label="DDG: !(rold->live & REG_LIVE_READ)"];
+}

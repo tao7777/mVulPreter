@@ -1,0 +1,35 @@
+digraph "0_openssl_a004e72b95835136d3f1ea90517f706c24c03da7_3@pointer" {
+"1000479" [label="(Call,s->servername_done = 1)"];
+"1000380" [label="(Call,s->servername_done == 0)"];
+"1000379" [label="(ControlStructure,if (s->servername_done == 0))"];
+"1000516" [label="(ControlStructure,break;)"];
+"1000479" [label="(Call,s->servername_done = 1)"];
+"1000386" [label="(Identifier,servname_type)"];
+"1000480" [label="(Call,s->servername_done)"];
+"1001399" [label="(MethodReturn,static int)"];
+"1000381" [label="(Call,s->servername_done)"];
+"1000380" [label="(Call,s->servername_done == 0)"];
+"1000485" [label="(Call,s->servername_done = s->session->tlsext_hostname\n                                && strlen(s->session->tlsext_hostname) == len\n                                && strncmp(s->session->tlsext_hostname,\n                                           (char *)sdata, len) == 0)"];
+"1000520" [label="(Identifier,dsize)"];
+"1000394" [label="(Block,)"];
+"1000483" [label="(Literal,1)"];
+"1000384" [label="(Literal,0)"];
+"1000134" [label="(Call,s->servername_done = 0)"];
+"1000479" -> "1000394"  [label="AST: "];
+"1000479" -> "1000483"  [label="CFG: "];
+"1000480" -> "1000479"  [label="AST: "];
+"1000483" -> "1000479"  [label="AST: "];
+"1000516" -> "1000479"  [label="CFG: "];
+"1000479" -> "1001399"  [label="DDG: s->servername_done"];
+"1000479" -> "1000380"  [label="DDG: s->servername_done"];
+"1000380" -> "1000379"  [label="AST: "];
+"1000380" -> "1000384"  [label="CFG: "];
+"1000381" -> "1000380"  [label="AST: "];
+"1000384" -> "1000380"  [label="AST: "];
+"1000386" -> "1000380"  [label="CFG: "];
+"1000520" -> "1000380"  [label="CFG: "];
+"1000380" -> "1001399"  [label="DDG: s->servername_done == 0"];
+"1000380" -> "1001399"  [label="DDG: s->servername_done"];
+"1000485" -> "1000380"  [label="DDG: s->servername_done"];
+"1000134" -> "1000380"  [label="DDG: s->servername_done"];
+}

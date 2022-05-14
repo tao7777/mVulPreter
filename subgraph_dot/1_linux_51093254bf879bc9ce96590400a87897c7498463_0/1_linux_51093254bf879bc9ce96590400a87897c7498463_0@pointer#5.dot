@@ -1,0 +1,24 @@
+digraph "1_linux_51093254bf879bc9ce96590400a87897c7498463_0@pointer" {
+"1000137" [label="(Call,spin_lock_irq(&sdev->spinlock))"];
+"1000191" [label="(Call,spin_unlock_irq(&sdev->spinlock))"];
+"1000104" [label="(Block,)"];
+"1000137" [label="(Call,spin_lock_irq(&sdev->spinlock))"];
+"1000192" [label="(Call,&sdev->spinlock)"];
+"1000138" [label="(Call,&sdev->spinlock)"];
+"1000197" [label="(Identifier,ret)"];
+"1000144" [label="(Identifier,i)"];
+"1000191" [label="(Call,spin_unlock_irq(&sdev->spinlock))"];
+"1000198" [label="(MethodReturn,static int)"];
+"1000137" -> "1000104"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000144" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000198"  [label="DDG: spin_lock_irq(&sdev->spinlock)"];
+"1000137" -> "1000191"  [label="DDG: &sdev->spinlock"];
+"1000191" -> "1000104"  [label="AST: "];
+"1000191" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000191"  [label="AST: "];
+"1000197" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000198"  [label="DDG: spin_unlock_irq(&sdev->spinlock)"];
+"1000191" -> "1000198"  [label="DDG: &sdev->spinlock"];
+}

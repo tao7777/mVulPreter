@@ -1,0 +1,32 @@
+digraph "0_openssl_fb0bc2b273bcc2d5401dd883fe869af4fc74bb21@pointer" {
+"1000925" [label="(Call,s->s3->flags |= TLS1_FLAGS_ENCRYPT_THEN_MAC)"];
+"1000171" [label="(Call,s->s3->flags &= ~TLS1_FLAGS_ENCRYPT_THEN_MAC)"];
+"1000931" [label="(Identifier,TLS1_FLAGS_ENCRYPT_THEN_MAC)"];
+"1000933" [label="(Identifier,data)"];
+"1000177" [label="(Identifier,~TLS1_FLAGS_ENCRYPT_THEN_MAC)"];
+"1000180" [label="(Identifier,data)"];
+"1000925" [label="(Call,s->s3->flags |= TLS1_FLAGS_ENCRYPT_THEN_MAC)"];
+"1000913" [label="(ControlStructure,if (s->s3->tmp.new_cipher->algorithm_mac != SSL_AEAD))"];
+"1000171" [label="(Call,s->s3->flags &= ~TLS1_FLAGS_ENCRYPT_THEN_MAC)"];
+"1001038" [label="(MethodReturn,static int)"];
+"1000119" [label="(Block,)"];
+"1000926" [label="(Call,s->s3->flags)"];
+"1000172" [label="(Call,s->s3->flags)"];
+"1000925" -> "1000913"  [label="AST: "];
+"1000925" -> "1000931"  [label="CFG: "];
+"1000926" -> "1000925"  [label="AST: "];
+"1000931" -> "1000925"  [label="AST: "];
+"1000933" -> "1000925"  [label="CFG: "];
+"1000925" -> "1001038"  [label="DDG: s->s3->flags"];
+"1000925" -> "1001038"  [label="DDG: s->s3->flags |= TLS1_FLAGS_ENCRYPT_THEN_MAC"];
+"1000925" -> "1001038"  [label="DDG: TLS1_FLAGS_ENCRYPT_THEN_MAC"];
+"1000171" -> "1000925"  [label="DDG: s->s3->flags"];
+"1000171" -> "1000119"  [label="AST: "];
+"1000171" -> "1000177"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000177" -> "1000171"  [label="AST: "];
+"1000180" -> "1000171"  [label="CFG: "];
+"1000171" -> "1001038"  [label="DDG: s->s3->flags"];
+"1000171" -> "1001038"  [label="DDG: s->s3->flags &= ~TLS1_FLAGS_ENCRYPT_THEN_MAC"];
+"1000171" -> "1001038"  [label="DDG: ~TLS1_FLAGS_ENCRYPT_THEN_MAC"];
+}

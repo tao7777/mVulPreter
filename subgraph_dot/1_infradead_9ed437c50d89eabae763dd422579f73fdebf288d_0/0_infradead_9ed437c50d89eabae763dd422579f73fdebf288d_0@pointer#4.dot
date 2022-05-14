@@ -1,0 +1,24 @@
+digraph "0_infradead_9ed437c50d89eabae763dd422579f73fdebf288d_0@pointer" {
+"1000404" [label="(Call,up(&f->sem))"];
+"1000387" [label="(Call,down(&f->sem))"];
+"1000404" [label="(Call,up(&f->sem))"];
+"1000405" [label="(Call,&f->sem)"];
+"1000386" [label="(Block,)"];
+"1000387" [label="(Call,down(&f->sem))"];
+"1000388" [label="(Call,&f->sem)"];
+"1000484" [label="(MethodReturn,static int)"];
+"1000410" [label="(Identifier,dentry)"];
+"1000395" [label="(Identifier,old_dentry)"];
+"1000404" -> "1000386"  [label="AST: "];
+"1000404" -> "1000405"  [label="CFG: "];
+"1000405" -> "1000404"  [label="AST: "];
+"1000410" -> "1000404"  [label="CFG: "];
+"1000404" -> "1000484"  [label="DDG: &f->sem"];
+"1000404" -> "1000484"  [label="DDG: up(&f->sem)"];
+"1000387" -> "1000404"  [label="DDG: &f->sem"];
+"1000387" -> "1000386"  [label="AST: "];
+"1000387" -> "1000388"  [label="CFG: "];
+"1000388" -> "1000387"  [label="AST: "];
+"1000395" -> "1000387"  [label="CFG: "];
+"1000387" -> "1000484"  [label="DDG: down(&f->sem)"];
+}

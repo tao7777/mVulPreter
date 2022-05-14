@@ -1,0 +1,1 @@
+ExtensionTtsPlatformImpl* ExtensionTtsController::GetPlatformImpl() {

@@ -1,0 +1,30 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_14@API" {
+"1000203" [label="(Call,recvbuf ? SC_APDU_CASE_4_SHORT: SC_APDU_CASE_3_SHORT)"];
+"1000119" [label="(MethodParameterIn,u8 ** recvbuf)"];
+"1000206" [label="(Identifier,SC_APDU_CASE_3_SHORT)"];
+"1000119" [label="(MethodParameterIn,u8 ** recvbuf)"];
+"1000205" [label="(Identifier,SC_APDU_CASE_4_SHORT)"];
+"1000199" [label="(Call,sc_format_apdu(card, &apdu,\n\t\t\trecvbuf ? SC_APDU_CASE_4_SHORT: SC_APDU_CASE_3_SHORT,\n\t\t\tins, p1, p2))"];
+"1000204" [label="(Identifier,recvbuf)"];
+"1000203" [label="(Call,recvbuf ? SC_APDU_CASE_4_SHORT: SC_APDU_CASE_3_SHORT)"];
+"1000207" [label="(Identifier,ins)"];
+"1000376" [label="(Call,recvbuf && apdu.resplen > 3 && priv->pin_cmd_noparse != 1)"];
+"1000168" [label="(Call,recvbuf && *recvbuf && recvbuflen && *recvbuflen)"];
+"1000495" [label="(MethodReturn,static int)"];
+"1000203" -> "1000199"  [label="AST: "];
+"1000203" -> "1000205"  [label="CFG: "];
+"1000203" -> "1000206"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000203"  [label="AST: "];
+"1000206" -> "1000203"  [label="AST: "];
+"1000207" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000495"  [label="DDG: SC_APDU_CASE_3_SHORT"];
+"1000203" -> "1000495"  [label="DDG: SC_APDU_CASE_4_SHORT"];
+"1000203" -> "1000495"  [label="DDG: recvbuf"];
+"1000119" -> "1000203"  [label="DDG: recvbuf"];
+"1000119" -> "1000112"  [label="AST: "];
+"1000119" -> "1000495"  [label="DDG: recvbuf"];
+"1000119" -> "1000168"  [label="DDG: recvbuf"];
+"1000119" -> "1000199"  [label="DDG: recvbuf"];
+"1000119" -> "1000376"  [label="DDG: recvbuf"];
+}

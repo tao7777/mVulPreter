@@ -1,0 +1,26 @@
+digraph "0_Android_5b82f4f90c3d531313714df4b936f92fb0ff15cf_0@API" {
+"1000602" [label="(Call,memset( (void *)&buf, 0, sizeof(buf)))"];
+"1000603" [label="(Call,(void *)&buf)"];
+"1000608" [label="(Call,sizeof(buf))"];
+"1000908" [label="(MethodReturn,OMX_ERRORTYPE)"];
+"1000605" [label="(Call,&buf)"];
+"1000800" [label="(Call,ioctl(drv_ctx.video_driver_fd, VIDIOC_QBUF, &buf))"];
+"1000607" [label="(Literal,0)"];
+"1000602" [label="(Call,memset( (void *)&buf, 0, sizeof(buf)))"];
+"1000108" [label="(Block,)"];
+"1000603" [label="(Call,(void *)&buf)"];
+"1000602" -> "1000108"  [label="AST: "];
+"1000602" -> "1000608"  [label="CFG: "];
+"1000603" -> "1000602"  [label="AST: "];
+"1000607" -> "1000602"  [label="AST: "];
+"1000608" -> "1000602"  [label="AST: "];
+"1000612" -> "1000602"  [label="CFG: "];
+"1000602" -> "1000908"  [label="DDG: memset( (void *)&buf, 0, sizeof(buf))"];
+"1000602" -> "1000908"  [label="DDG: (void *)&buf"];
+"1000603" -> "1000602"  [label="DDG: &buf"];
+"1000603" -> "1000605"  [label="CFG: "];
+"1000604" -> "1000603"  [label="AST: "];
+"1000605" -> "1000603"  [label="AST: "];
+"1000607" -> "1000603"  [label="CFG: "];
+"1000603" -> "1000800"  [label="DDG: &buf"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_124d3b7041f9a0ca7c43a6293e1cae4576c32fd5@pointer" {
+"1000113" [label="(Call,i->iov_offset += bytes)"];
+"1000103" [label="(MethodParameterIn,size_t bytes)"];
+"1000114" [label="(Call,i->iov_offset)"];
+"1000113" [label="(Call,i->iov_offset += bytes)"];
+"1000133" [label="(Call,bytes || !iov->iov_len)"];
+"1000143" [label="(Call,min(bytes, iov->iov_len - base))"];
+"1000103" [label="(MethodParameterIn,size_t bytes)"];
+"1000150" [label="(Call,bytes -= copy)"];
+"1000112" [label="(Block,)"];
+"1000117" [label="(Identifier,bytes)"];
+"1000178" [label="(MethodReturn,static void)"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000117"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000117" -> "1000113"  [label="AST: "];
+"1000178" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000178"  [label="DDG: bytes"];
+"1000113" -> "1000178"  [label="DDG: i->iov_offset"];
+"1000103" -> "1000113"  [label="DDG: bytes"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000178"  [label="DDG: bytes"];
+"1000103" -> "1000133"  [label="DDG: bytes"];
+"1000103" -> "1000143"  [label="DDG: bytes"];
+"1000103" -> "1000150"  [label="DDG: bytes"];
+}

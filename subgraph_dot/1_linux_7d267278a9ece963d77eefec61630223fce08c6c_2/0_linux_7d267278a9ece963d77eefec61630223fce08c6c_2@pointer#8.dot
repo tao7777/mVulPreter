@@ -1,0 +1,34 @@
+digraph "0_linux_7d267278a9ece963d77eefec61630223fce08c6c_2@pointer" {
+"1000209" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000208" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags) && !u->addr\n\t    && (err = unix_autobind(sock)) != 0)"];
+"1000226" [label="(ControlStructure,goto out;)"];
+"1000209" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000211" [label="(Call,&sock->flags)"];
+"1000210" [label="(Identifier,SOCK_PASSCRED)"];
+"1000556" [label="(MethodReturn,static int)"];
+"1000218" [label="(Identifier,u)"];
+"1000215" [label="(Call,!u->addr\n\t    && (err = unix_autobind(sock)) != 0)"];
+"1000207" [label="(ControlStructure,if (test_bit(SOCK_PASSCRED, &sock->flags) && !u->addr\n\t    && (err = unix_autobind(sock)) != 0))"];
+"1000228" [label="(Identifier,err)"];
+"1000208" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags) && !u->addr\n\t    && (err = unix_autobind(sock)) != 0)"];
+"1000209" -> "1000208"  [label="AST: "];
+"1000209" -> "1000211"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000211" -> "1000209"  [label="AST: "];
+"1000218" -> "1000209"  [label="CFG: "];
+"1000208" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000556"  [label="DDG: SOCK_PASSCRED"];
+"1000209" -> "1000556"  [label="DDG: &sock->flags"];
+"1000209" -> "1000208"  [label="DDG: SOCK_PASSCRED"];
+"1000209" -> "1000208"  [label="DDG: &sock->flags"];
+"1000208" -> "1000207"  [label="AST: "];
+"1000208" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000208"  [label="AST: "];
+"1000226" -> "1000208"  [label="CFG: "];
+"1000228" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000556"  [label="DDG: test_bit(SOCK_PASSCRED, &sock->flags)"];
+"1000208" -> "1000556"  [label="DDG: test_bit(SOCK_PASSCRED, &sock->flags) && !u->addr\n\t    && (err = unix_autobind(sock)) != 0"];
+"1000208" -> "1000556"  [label="DDG: !u->addr\n\t    && (err = unix_autobind(sock)) != 0"];
+"1000215" -> "1000208"  [label="DDG: !u->addr"];
+"1000215" -> "1000208"  [label="DDG: (err = unix_autobind(sock)) != 0"];
+}

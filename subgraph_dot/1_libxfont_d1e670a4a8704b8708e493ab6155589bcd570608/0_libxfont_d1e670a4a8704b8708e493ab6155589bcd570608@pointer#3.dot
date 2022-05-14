@@ -1,0 +1,21 @@
+digraph "0_libxfont_d1e670a4a8704b8708e493ab6155589bcd570608@pointer" {
+"1000221" [label="(Call,*string == '\0')"];
+"1000220" [label="(Return,return (*string == '\0');)"];
+"1000220" [label="(Return,return (*string == '\0');)"];
+"1000122" [label="(Block,)"];
+"1000224" [label="(Literal,'\0')"];
+"1000221" [label="(Call,*string == '\0')"];
+"1000222" [label="(Call,*string)"];
+"1000242" [label="(MethodReturn,RET)"];
+"1000221" -> "1000220"  [label="AST: "];
+"1000221" -> "1000224"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000224" -> "1000221"  [label="AST: "];
+"1000220" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000242"  [label="DDG: *string == '\0'"];
+"1000221" -> "1000242"  [label="DDG: *string"];
+"1000221" -> "1000220"  [label="DDG: *string == '\0'"];
+"1000220" -> "1000122"  [label="AST: "];
+"1000242" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000242"  [label="DDG: <RET>"];
+}

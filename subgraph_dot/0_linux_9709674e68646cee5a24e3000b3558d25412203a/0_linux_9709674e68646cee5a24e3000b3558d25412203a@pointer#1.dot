@@ -1,0 +1,32 @@
+digraph "0_linux_9709674e68646cee5a24e3000b3558d25412203a@pointer" {
+"1000185" [label="(Call,dst = !IS_ERR(rt) ? &rt->dst : NULL)"];
+"1000196" [label="(Call,sk_dst_set(sk, dst))"];
+"1000187" [label="(Call,!IS_ERR(rt) ? &rt->dst : NULL)"];
+"1000198" [label="(Identifier,dst)"];
+"1000101" [label="(MethodParameterIn,struct sock *sk)"];
+"1000199" [label="(Call,rcu_read_unlock())"];
+"1000197" [label="(Identifier,sk)"];
+"1000196" [label="(Call,sk_dst_set(sk, dst))"];
+"1000185" [label="(Call,dst = !IS_ERR(rt) ? &rt->dst : NULL)"];
+"1000186" [label="(Identifier,dst)"];
+"1000200" [label="(MethodReturn,void)"];
+"1000102" [label="(Block,)"];
+"1000161" [label="(Call,ip_route_output_ports(sock_net(sk), &fl4, sk, daddr,\n \t\t\t\t   inet->inet_saddr, inet->inet_dport,\n \t\t\t\t   inet->inet_sport, sk->sk_protocol,\n \t\t\t\t   RT_CONN_FLAGS(sk), sk->sk_bound_dev_if))"];
+"1000185" -> "1000102"  [label="AST: "];
+"1000185" -> "1000187"  [label="CFG: "];
+"1000186" -> "1000185"  [label="AST: "];
+"1000187" -> "1000185"  [label="AST: "];
+"1000197" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000200"  [label="DDG: !IS_ERR(rt) ? &rt->dst : NULL"];
+"1000185" -> "1000196"  [label="DDG: dst"];
+"1000196" -> "1000102"  [label="AST: "];
+"1000196" -> "1000198"  [label="CFG: "];
+"1000197" -> "1000196"  [label="AST: "];
+"1000198" -> "1000196"  [label="AST: "];
+"1000199" -> "1000196"  [label="CFG: "];
+"1000196" -> "1000200"  [label="DDG: sk"];
+"1000196" -> "1000200"  [label="DDG: sk_dst_set(sk, dst)"];
+"1000196" -> "1000200"  [label="DDG: dst"];
+"1000161" -> "1000196"  [label="DDG: sk"];
+"1000101" -> "1000196"  [label="DDG: sk"];
+}

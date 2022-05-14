@@ -1,0 +1,38 @@
+digraph "0_linux_232cd35d0804cc241eb887bb8d4d9b3b9881c64a@API" {
+"1000225" [label="(Call,sizeof(struct ipv6hdr) + rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0))"];
+"1000198" [label="(Call,rt->dst.header_len - rt->rt6i_nfheader_len)"];
+"1000204" [label="(Call,rt->rt6i_nfheader_len)"];
+"1000255" [label="(Call,(opt ? opt->opt_flen + opt->opt_nflen : 0) +\n\t\t     (dst_allfrag(&rt->dst) ?\n\t\t      sizeof(struct frag_hdr) : 0) +\n\t\t     rt->rt6i_nfheader_len)"];
+"1001100" [label="(MethodReturn,static int)"];
+"1000223" [label="(Call,fragheaderlen = sizeof(struct ipv6hdr) + rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0))"];
+"1000226" [label="(Call,sizeof(struct ipv6hdr))"];
+"1000225" [label="(Call,sizeof(struct ipv6hdr) + rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0))"];
+"1000198" [label="(Call,rt->dst.header_len - rt->rt6i_nfheader_len)"];
+"1000250" [label="(Call,headersize = sizeof(struct ipv6hdr) +\n\t\t     (opt ? opt->opt_flen + opt->opt_nflen : 0) +\n\t\t     (dst_allfrag(&rt->dst) ?\n\t\t      sizeof(struct frag_hdr) : 0) +\n\t\t     rt->rt6i_nfheader_len)"];
+"1000199" [label="(Call,rt->dst.header_len)"];
+"1000196" [label="(Call,dst_exthdrlen = rt->dst.header_len - rt->rt6i_nfheader_len)"];
+"1000266" [label="(Call,(dst_allfrag(&rt->dst) ?\n\t\t      sizeof(struct frag_hdr) : 0) +\n\t\t     rt->rt6i_nfheader_len)"];
+"1000252" [label="(Call,sizeof(struct ipv6hdr) +\n\t\t     (opt ? opt->opt_flen + opt->opt_nflen : 0) +\n\t\t     (dst_allfrag(&rt->dst) ?\n\t\t      sizeof(struct frag_hdr) : 0) +\n\t\t     rt->rt6i_nfheader_len)"];
+"1000228" [label="(Call,rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0))"];
+"1000225" -> "1000223"  [label="AST: "];
+"1000225" -> "1000228"  [label="CFG: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000228" -> "1000225"  [label="AST: "];
+"1000223" -> "1000225"  [label="CFG: "];
+"1000225" -> "1001100"  [label="DDG: rt->rt6i_nfheader_len +\n\t\t\t(opt ? opt->opt_nflen : 0)"];
+"1000198" -> "1000225"  [label="DDG: rt->rt6i_nfheader_len"];
+"1000198" -> "1000196"  [label="AST: "];
+"1000198" -> "1000204"  [label="CFG: "];
+"1000199" -> "1000198"  [label="AST: "];
+"1000204" -> "1000198"  [label="AST: "];
+"1000196" -> "1000198"  [label="CFG: "];
+"1000198" -> "1001100"  [label="DDG: rt->dst.header_len"];
+"1000198" -> "1000196"  [label="DDG: rt->dst.header_len"];
+"1000198" -> "1000196"  [label="DDG: rt->rt6i_nfheader_len"];
+"1000198" -> "1000223"  [label="DDG: rt->rt6i_nfheader_len"];
+"1000198" -> "1000228"  [label="DDG: rt->rt6i_nfheader_len"];
+"1000198" -> "1000250"  [label="DDG: rt->rt6i_nfheader_len"];
+"1000198" -> "1000252"  [label="DDG: rt->rt6i_nfheader_len"];
+"1000198" -> "1000255"  [label="DDG: rt->rt6i_nfheader_len"];
+"1000198" -> "1000266"  [label="DDG: rt->rt6i_nfheader_len"];
+}

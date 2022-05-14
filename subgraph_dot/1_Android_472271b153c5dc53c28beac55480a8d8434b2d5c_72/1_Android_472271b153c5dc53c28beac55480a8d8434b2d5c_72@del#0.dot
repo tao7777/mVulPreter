@@ -1,0 +1,28 @@
+digraph "1_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_72@del" {
+"1000151" [label="(Call,-1)"];
+"1000140" [label="(Call,(fd = accept(sfd, (struct sockaddr *)&remote, &len)) == -1)"];
+"1000139" [label="(ControlStructure,if ((fd = accept(sfd, (struct sockaddr *)&remote, &len)) == -1))"];
+"1000162" [label="(Identifier,fd)"];
+"1000141" [label="(Call,fd = accept(sfd, (struct sockaddr *)&remote, &len))"];
+"1000163" [label="(MethodReturn,static int)"];
+"1000155" [label="(Literal,\"sock accept failed (%s)\")"];
+"1000143" [label="(Call,accept(sfd, (struct sockaddr *)&remote, &len))"];
+"1000152" [label="(Literal,1)"];
+"1000140" [label="(Call,(fd = accept(sfd, (struct sockaddr *)&remote, &len)) == -1)"];
+"1000151" [label="(Call,-1)"];
+"1000151" -> "1000140"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000140" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000140"  [label="DDG: 1"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000155" -> "1000140"  [label="CFG: "];
+"1000162" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000163"  [label="DDG: -1"];
+"1000140" -> "1000163"  [label="DDG: (fd = accept(sfd, (struct sockaddr *)&remote, &len)) == -1"];
+"1000141" -> "1000140"  [label="DDG: fd"];
+"1000143" -> "1000140"  [label="DDG: sfd"];
+"1000143" -> "1000140"  [label="DDG: (struct sockaddr *)&remote"];
+"1000143" -> "1000140"  [label="DDG: &len"];
+}

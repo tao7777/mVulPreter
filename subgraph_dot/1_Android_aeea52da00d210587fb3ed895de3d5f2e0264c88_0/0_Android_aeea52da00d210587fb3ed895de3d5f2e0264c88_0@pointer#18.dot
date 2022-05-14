@@ -1,0 +1,29 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_0@pointer" {
+"1000149" [label="(Call,*replySize != sizeof(int))"];
+"1000145" [label="(Call,pReplyData == NULL || *replySize != sizeof(int))"];
+"1000548" [label="(MethodReturn,static int)"];
+"1000150" [label="(Call,*replySize)"];
+"1000146" [label="(Call,pReplyData == NULL)"];
+"1000145" [label="(Call,pReplyData == NULL || *replySize != sizeof(int))"];
+"1000157" [label="(Identifier,EINVAL)"];
+"1000144" [label="(ControlStructure,if (pReplyData == NULL || *replySize != sizeof(int)))"];
+"1000152" [label="(Call,sizeof(int))"];
+"1000149" [label="(Call,*replySize != sizeof(int))"];
+"1000149" -> "1000145"  [label="AST: "];
+"1000149" -> "1000152"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000152" -> "1000149"  [label="AST: "];
+"1000145" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000548"  [label="DDG: *replySize"];
+"1000149" -> "1000145"  [label="DDG: *replySize"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000157" -> "1000145"  [label="CFG: "];
+"1000161" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000548"  [label="DDG: *replySize != sizeof(int)"];
+"1000145" -> "1000548"  [label="DDG: pReplyData == NULL || *replySize != sizeof(int)"];
+"1000145" -> "1000548"  [label="DDG: pReplyData == NULL"];
+"1000146" -> "1000145"  [label="DDG: pReplyData"];
+"1000146" -> "1000145"  [label="DDG: NULL"];
+}

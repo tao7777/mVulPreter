@@ -1,0 +1,35 @@
+digraph "0_bdwgc_be9df82919960214ee4b9d3313523bff44fd99e1@array" {
+"1000152" [label="(Call,init = GC_obj_kinds[k].ok_init)"];
+"1000223" [label="(Call,init && !GC_debugging_started && 0 != result)"];
+"1000159" [label="(Call,LOCK())"];
+"1000249" [label="(MethodReturn,GC_CALL)"];
+"1000223" [label="(Call,init && !GC_debugging_started && 0 != result)"];
+"1000224" [label="(Identifier,init)"];
+"1000222" [label="(ControlStructure,if (init && !GC_debugging_started && 0 != result))"];
+"1000239" [label="(Literal,0)"];
+"1000153" [label="(Identifier,init)"];
+"1000233" [label="(Identifier,result)"];
+"1000225" [label="(Call,!GC_debugging_started && 0 != result)"];
+"1000152" [label="(Call,init = GC_obj_kinds[k].ok_init)"];
+"1000154" [label="(Call,GC_obj_kinds[k].ok_init)"];
+"1000128" [label="(Block,)"];
+"1000152" -> "1000128"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000154" -> "1000152"  [label="AST: "];
+"1000159" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000249"  [label="DDG: GC_obj_kinds[k].ok_init"];
+"1000152" -> "1000223"  [label="DDG: init"];
+"1000223" -> "1000222"  [label="AST: "];
+"1000223" -> "1000224"  [label="CFG: "];
+"1000223" -> "1000225"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000225" -> "1000223"  [label="AST: "];
+"1000233" -> "1000223"  [label="CFG: "];
+"1000239" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000249"  [label="DDG: !GC_debugging_started && 0 != result"];
+"1000223" -> "1000249"  [label="DDG: init && !GC_debugging_started && 0 != result"];
+"1000223" -> "1000249"  [label="DDG: init"];
+"1000225" -> "1000223"  [label="DDG: !GC_debugging_started"];
+"1000225" -> "1000223"  [label="DDG: 0 != result"];
+}

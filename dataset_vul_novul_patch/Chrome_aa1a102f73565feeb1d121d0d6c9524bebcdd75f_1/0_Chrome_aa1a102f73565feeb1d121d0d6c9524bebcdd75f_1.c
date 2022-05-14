@@ -1,0 +1,4 @@
+ void XMLHttpRequest::didFailRedirectCheck()
+ {
+    handleNetworkError();
+ }

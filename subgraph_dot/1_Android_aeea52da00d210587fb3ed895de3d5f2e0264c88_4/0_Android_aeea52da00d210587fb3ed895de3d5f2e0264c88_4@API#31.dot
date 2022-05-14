@@ -1,0 +1,29 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_4@API" {
+"1000170" [label="(Call,*replySize != sizeof(int))"];
+"1000166" [label="(Call,pReplyData == NULL || *replySize != sizeof(int))"];
+"1001424" [label="(MethodReturn,int)"];
+"1000170" [label="(Call,*replySize != sizeof(int))"];
+"1000166" [label="(Call,pReplyData == NULL || *replySize != sizeof(int))"];
+"1000173" [label="(Call,sizeof(int))"];
+"1000167" [label="(Call,pReplyData == NULL)"];
+"1000171" [label="(Call,*replySize)"];
+"1000165" [label="(ControlStructure,if (pReplyData == NULL || *replySize != sizeof(int)))"];
+"1000177" [label="(Literal,\"\tLVM_ERROR, EFFECT_CMD_INIT: ERROR for effect type %d\")"];
+"1000170" -> "1000166"  [label="AST: "];
+"1000170" -> "1000173"  [label="CFG: "];
+"1000171" -> "1000170"  [label="AST: "];
+"1000173" -> "1000170"  [label="AST: "];
+"1000166" -> "1000170"  [label="CFG: "];
+"1000170" -> "1001424"  [label="DDG: *replySize"];
+"1000170" -> "1000166"  [label="DDG: *replySize"];
+"1000166" -> "1000165"  [label="AST: "];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000177" -> "1000166"  [label="CFG: "];
+"1000187" -> "1000166"  [label="CFG: "];
+"1000166" -> "1001424"  [label="DDG: pReplyData == NULL || *replySize != sizeof(int)"];
+"1000166" -> "1001424"  [label="DDG: pReplyData == NULL"];
+"1000166" -> "1001424"  [label="DDG: *replySize != sizeof(int)"];
+"1000167" -> "1000166"  [label="DDG: pReplyData"];
+"1000167" -> "1000166"  [label="DDG: NULL"];
+}

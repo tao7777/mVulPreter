@@ -1,0 +1,22 @@
+digraph "0_linux_0f886ca12765d20124bd06291c82951fd49a33be@pointer" {
+"1000292" [label="(Call,fp->maxpacksize = le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize))"];
+"1000296" [label="(Call,le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize))"];
+"1000329" [label="(MethodReturn,static int)"];
+"1000304" [label="(Identifier,chip)"];
+"1000286" [label="(ControlStructure,if (fp->maxpacksize == 0))"];
+"1000296" [label="(Call,le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize))"];
+"1000292" [label="(Call,fp->maxpacksize = le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize))"];
+"1000297" [label="(Call,get_endpoint(alts, 0)->wMaxPacketSize)"];
+"1000293" [label="(Call,fp->maxpacksize)"];
+"1000292" -> "1000286"  [label="AST: "];
+"1000292" -> "1000296"  [label="CFG: "];
+"1000293" -> "1000292"  [label="AST: "];
+"1000296" -> "1000292"  [label="AST: "];
+"1000304" -> "1000292"  [label="CFG: "];
+"1000292" -> "1000329"  [label="DDG: fp->maxpacksize"];
+"1000292" -> "1000329"  [label="DDG: le16_to_cpu(get_endpoint(alts, 0)->wMaxPacketSize)"];
+"1000296" -> "1000292"  [label="DDG: get_endpoint(alts, 0)->wMaxPacketSize"];
+"1000296" -> "1000297"  [label="CFG: "];
+"1000297" -> "1000296"  [label="AST: "];
+"1000296" -> "1000329"  [label="DDG: get_endpoint(alts, 0)->wMaxPacketSize"];
+}

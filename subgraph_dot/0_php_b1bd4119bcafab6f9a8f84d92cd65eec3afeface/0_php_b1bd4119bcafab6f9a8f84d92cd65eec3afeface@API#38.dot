@@ -1,0 +1,30 @@
+digraph "0_php_b1bd4119bcafab6f9a8f84d92cd65eec3afeface@API" {
+"1000304" [label="(Call,!strcmp(ent1->varname, PHP_CLASS_NAME_VAR))"];
+"1000303" [label="(Call,!strcmp(ent1->varname, PHP_CLASS_NAME_VAR) &&\n\t\t\t\t\t\tZ_TYPE_P(ent1->data) == IS_STRING && Z_STRLEN_P(ent1->data) &&\n\t\t\t\t\t\tent2->type == ST_STRUCT && Z_TYPE_P(ent2->data) == IS_ARRAY)"];
+"1000304" [label="(Call,!strcmp(ent1->varname, PHP_CLASS_NAME_VAR))"];
+"1000528" [label="(MethodReturn,static void)"];
+"1000303" [label="(Call,!strcmp(ent1->varname, PHP_CLASS_NAME_VAR) &&\n\t\t\t\t\t\tZ_TYPE_P(ent1->data) == IS_STRING && Z_STRLEN_P(ent1->data) &&\n\t\t\t\t\t\tent2->type == ST_STRUCT && Z_TYPE_P(ent2->data) == IS_ARRAY)"];
+"1000305" [label="(Call,strcmp(ent1->varname, PHP_CLASS_NAME_VAR))"];
+"1000337" [label="(Identifier,incomplete_class)"];
+"1000314" [label="(Identifier,ent1)"];
+"1000415" [label="(Identifier,ent2)"];
+"1000302" [label="(ControlStructure,if (!strcmp(ent1->varname, PHP_CLASS_NAME_VAR) &&\n\t\t\t\t\t\tZ_TYPE_P(ent1->data) == IS_STRING && Z_STRLEN_P(ent1->data) &&\n\t\t\t\t\t\tent2->type == ST_STRUCT && Z_TYPE_P(ent2->data) == IS_ARRAY))"];
+"1000310" [label="(Call,Z_TYPE_P(ent1->data) == IS_STRING && Z_STRLEN_P(ent1->data) &&\n\t\t\t\t\t\tent2->type == ST_STRUCT && Z_TYPE_P(ent2->data) == IS_ARRAY)"];
+"1000304" -> "1000303"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000304"  [label="AST: "];
+"1000314" -> "1000304"  [label="CFG: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000528"  [label="DDG: strcmp(ent1->varname, PHP_CLASS_NAME_VAR)"];
+"1000304" -> "1000303"  [label="DDG: strcmp(ent1->varname, PHP_CLASS_NAME_VAR)"];
+"1000303" -> "1000302"  [label="AST: "];
+"1000303" -> "1000310"  [label="CFG: "];
+"1000310" -> "1000303"  [label="AST: "];
+"1000337" -> "1000303"  [label="CFG: "];
+"1000415" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000528"  [label="DDG: Z_TYPE_P(ent1->data) == IS_STRING && Z_STRLEN_P(ent1->data) &&\n\t\t\t\t\t\tent2->type == ST_STRUCT && Z_TYPE_P(ent2->data) == IS_ARRAY"];
+"1000303" -> "1000528"  [label="DDG: !strcmp(ent1->varname, PHP_CLASS_NAME_VAR)"];
+"1000303" -> "1000528"  [label="DDG: !strcmp(ent1->varname, PHP_CLASS_NAME_VAR) &&\n\t\t\t\t\t\tZ_TYPE_P(ent1->data) == IS_STRING && Z_STRLEN_P(ent1->data) &&\n\t\t\t\t\t\tent2->type == ST_STRUCT && Z_TYPE_P(ent2->data) == IS_ARRAY"];
+"1000310" -> "1000303"  [label="DDG: Z_TYPE_P(ent1->data) == IS_STRING"];
+"1000310" -> "1000303"  [label="DDG: Z_STRLEN_P(ent1->data) &&\n\t\t\t\t\t\tent2->type == ST_STRUCT && Z_TYPE_P(ent2->data) == IS_ARRAY"];
+}

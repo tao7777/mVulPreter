@@ -1,0 +1,27 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_68@pointer" {
+"1000364" [label="(Call,local_inc(&rb->lost))"];
+"1000164" [label="(Call,local_read(&rb->lost))"];
+"1000370" [label="(Identifier,handle)"];
+"1000162" [label="(Call,have_lost = local_read(&rb->lost))"];
+"1000365" [label="(Call,&rb->lost)"];
+"1000347" [label="(Call,local_xchg(&rb->lost, 0))"];
+"1000108" [label="(Block,)"];
+"1000364" [label="(Call,local_inc(&rb->lost))"];
+"1000165" [label="(Call,&rb->lost)"];
+"1000164" [label="(Call,local_read(&rb->lost))"];
+"1000376" [label="(MethodReturn,int)"];
+"1000364" -> "1000108"  [label="AST: "];
+"1000364" -> "1000365"  [label="CFG: "];
+"1000365" -> "1000364"  [label="AST: "];
+"1000370" -> "1000364"  [label="CFG: "];
+"1000364" -> "1000376"  [label="DDG: &rb->lost"];
+"1000364" -> "1000376"  [label="DDG: local_inc(&rb->lost)"];
+"1000164" -> "1000364"  [label="DDG: &rb->lost"];
+"1000164" -> "1000162"  [label="AST: "];
+"1000164" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000162" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000376"  [label="DDG: &rb->lost"];
+"1000164" -> "1000162"  [label="DDG: &rb->lost"];
+"1000164" -> "1000347"  [label="DDG: &rb->lost"];
+}

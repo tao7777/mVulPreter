@@ -1,0 +1,33 @@
+digraph "0_linux_51aa68e7d57e3217192d88ce90fd5b8ef29ec94f@pointer" {
+"1000816" [label="(Call,vmcs12->virtual_processor_id != vmx->nested.last_vpid)"];
+"1000826" [label="(Call,vmx->nested.last_vpid = vmcs12->virtual_processor_id)"];
+"1000832" [label="(Call,vmcs12->virtual_processor_id)"];
+"1000817" [label="(Call,vmcs12->virtual_processor_id)"];
+"1000853" [label="(Identifier,enable_pml)"];
+"1001021" [label="(MethodReturn,static int)"];
+"1000829" [label="(Identifier,vmx)"];
+"1000826" [label="(Call,vmx->nested.last_vpid = vmcs12->virtual_processor_id)"];
+"1000820" [label="(Call,vmx->nested.last_vpid)"];
+"1000816" [label="(Call,vmcs12->virtual_processor_id != vmx->nested.last_vpid)"];
+"1000825" [label="(Block,)"];
+"1000815" [label="(ControlStructure,if (vmcs12->virtual_processor_id != vmx->nested.last_vpid))"];
+"1000827" [label="(Call,vmx->nested.last_vpid)"];
+"1000836" [label="(Identifier,vcpu)"];
+"1000816" -> "1000815"  [label="AST: "];
+"1000816" -> "1000820"  [label="CFG: "];
+"1000817" -> "1000816"  [label="AST: "];
+"1000820" -> "1000816"  [label="AST: "];
+"1000829" -> "1000816"  [label="CFG: "];
+"1000853" -> "1000816"  [label="CFG: "];
+"1000816" -> "1001021"  [label="DDG: vmcs12->virtual_processor_id != vmx->nested.last_vpid"];
+"1000816" -> "1001021"  [label="DDG: vmcs12->virtual_processor_id"];
+"1000816" -> "1001021"  [label="DDG: vmx->nested.last_vpid"];
+"1000816" -> "1000826"  [label="DDG: vmcs12->virtual_processor_id"];
+"1000826" -> "1000825"  [label="AST: "];
+"1000826" -> "1000832"  [label="CFG: "];
+"1000827" -> "1000826"  [label="AST: "];
+"1000832" -> "1000826"  [label="AST: "];
+"1000836" -> "1000826"  [label="CFG: "];
+"1000826" -> "1001021"  [label="DDG: vmx->nested.last_vpid"];
+"1000826" -> "1001021"  [label="DDG: vmcs12->virtual_processor_id"];
+}

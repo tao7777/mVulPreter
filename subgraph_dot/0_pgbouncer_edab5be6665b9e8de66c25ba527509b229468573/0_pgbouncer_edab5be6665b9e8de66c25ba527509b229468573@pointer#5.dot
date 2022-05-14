@@ -1,0 +1,27 @@
+digraph "0_pgbouncer_edab5be6665b9e8de66c25ba527509b229468573@pointer" {
+"1000128" [label="(Call,!*user->passwd)"];
+"1000124" [label="(Call,!*passwd || !*user->passwd)"];
+"1000136" [label="(Identifier,cf_auth_type)"];
+"1000134" [label="(Identifier,false)"];
+"1000128" [label="(Call,!*user->passwd)"];
+"1000216" [label="(MethodReturn,static bool)"];
+"1000129" [label="(Call,*user->passwd)"];
+"1000123" [label="(ControlStructure,if (!*passwd || !*user->passwd))"];
+"1000124" [label="(Call,!*passwd || !*user->passwd)"];
+"1000125" [label="(Call,!*passwd)"];
+"1000128" -> "1000124"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000124" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000216"  [label="DDG: *user->passwd"];
+"1000128" -> "1000124"  [label="DDG: *user->passwd"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000134" -> "1000124"  [label="CFG: "];
+"1000136" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000216"  [label="DDG: !*passwd"];
+"1000124" -> "1000216"  [label="DDG: !*user->passwd"];
+"1000124" -> "1000216"  [label="DDG: !*passwd || !*user->passwd"];
+"1000125" -> "1000124"  [label="DDG: *passwd"];
+}

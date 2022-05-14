@@ -1,0 +1,33 @@
+digraph "0_linux_6708075f104c3c9b04b23336bb0366ca30c3931b_0@pointer" {
+"1000110" [label="(Call,new_map->nr_extents == 1)"];
+"1000109" [label="(Call,(new_map->nr_extents == 1) && (new_map->extent[0].count == 1))"];
+"1000108" [label="(ControlStructure,if ((new_map->nr_extents == 1) && (new_map->extent[0].count == 1)))"];
+"1000110" [label="(Call,new_map->nr_extents == 1)"];
+"1000177" [label="(Identifier,cap_setid)"];
+"1000111" [label="(Call,new_map->nr_extents)"];
+"1000127" [label="(Identifier,id)"];
+"1000114" [label="(Literal,1)"];
+"1000115" [label="(Call,new_map->extent[0].count == 1)"];
+"1000119" [label="(Identifier,new_map)"];
+"1000109" [label="(Call,(new_map->nr_extents == 1) && (new_map->extent[0].count == 1))"];
+"1000190" [label="(MethodReturn,static bool)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000114"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000114" -> "1000110"  [label="AST: "];
+"1000119" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000190"  [label="DDG: new_map->nr_extents"];
+"1000110" -> "1000109"  [label="DDG: new_map->nr_extents"];
+"1000110" -> "1000109"  [label="DDG: 1"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000109"  [label="AST: "];
+"1000127" -> "1000109"  [label="CFG: "];
+"1000177" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000190"  [label="DDG: new_map->extent[0].count == 1"];
+"1000109" -> "1000190"  [label="DDG: new_map->nr_extents == 1"];
+"1000109" -> "1000190"  [label="DDG: (new_map->nr_extents == 1) && (new_map->extent[0].count == 1)"];
+"1000115" -> "1000109"  [label="DDG: new_map->extent[0].count"];
+"1000115" -> "1000109"  [label="DDG: 1"];
+}

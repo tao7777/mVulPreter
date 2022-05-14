@@ -1,0 +1,24 @@
+digraph "0_linux_c2c65cd2e14ada6de44cb527e7f1990bede24e15@array" {
+"1000240" [label="(Call,spin_lock_bh(&pd->app_lock[OZ_APPID_USB-1]))"];
+"1000303" [label="(Call,spin_unlock_bh(&pd->app_lock[OZ_APPID_USB-1]))"];
+"1000312" [label="(JumpTarget,out:)"];
+"1000336" [label="(MethodReturn,static ssize_t)"];
+"1000241" [label="(Call,&pd->app_lock[OZ_APPID_USB-1])"];
+"1000250" [label="(Identifier,ctx)"];
+"1000240" [label="(Call,spin_lock_bh(&pd->app_lock[OZ_APPID_USB-1]))"];
+"1000304" [label="(Call,&pd->app_lock[OZ_APPID_USB-1])"];
+"1000303" [label="(Call,spin_unlock_bh(&pd->app_lock[OZ_APPID_USB-1]))"];
+"1000105" [label="(Block,)"];
+"1000240" -> "1000105"  [label="AST: "];
+"1000240" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000250" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000336"  [label="DDG: spin_lock_bh(&pd->app_lock[OZ_APPID_USB-1])"];
+"1000240" -> "1000303"  [label="DDG: &pd->app_lock[OZ_APPID_USB-1]"];
+"1000303" -> "1000105"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000312" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000336"  [label="DDG: &pd->app_lock[OZ_APPID_USB-1]"];
+"1000303" -> "1000336"  [label="DDG: spin_unlock_bh(&pd->app_lock[OZ_APPID_USB-1])"];
+}

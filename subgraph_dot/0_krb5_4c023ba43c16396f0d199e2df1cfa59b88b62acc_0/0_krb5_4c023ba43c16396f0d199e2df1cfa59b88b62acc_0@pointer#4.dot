@@ -1,0 +1,33 @@
+digraph "0_krb5_4c023ba43c16396f0d199e2df1cfa59b88b62acc_0@pointer" {
+"1000105" [label="(MethodParameterIn,krb5_kdc_req *request)"];
+"1000130" [label="(Call,is_referral_req(kdc_active_realm, request))"];
+"1000129" [label="(Call,!is_referral_req(kdc_active_realm, request))"];
+"1000133" [label="(ControlStructure,goto cleanup;)"];
+"1000131" [label="(Identifier,kdc_active_realm)"];
+"1000132" [label="(Identifier,request)"];
+"1000104" [label="(MethodParameterIn,kdc_realm_t *kdc_active_realm)"];
+"1000135" [label="(Identifier,hostname)"];
+"1000105" [label="(MethodParameterIn,krb5_kdc_req *request)"];
+"1000129" [label="(Call,!is_referral_req(kdc_active_realm, request))"];
+"1000128" [label="(ControlStructure,if (!is_referral_req(kdc_active_realm, request)))"];
+"1000228" [label="(MethodReturn,RET)"];
+"1000130" [label="(Call,is_referral_req(kdc_active_realm, request))"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000228"  [label="DDG: request"];
+"1000105" -> "1000130"  [label="DDG: request"];
+"1000130" -> "1000129"  [label="AST: "];
+"1000130" -> "1000132"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000132" -> "1000130"  [label="AST: "];
+"1000129" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000228"  [label="DDG: request"];
+"1000130" -> "1000228"  [label="DDG: kdc_active_realm"];
+"1000130" -> "1000129"  [label="DDG: kdc_active_realm"];
+"1000130" -> "1000129"  [label="DDG: request"];
+"1000104" -> "1000130"  [label="DDG: kdc_active_realm"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000133" -> "1000129"  [label="CFG: "];
+"1000135" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000228"  [label="DDG: is_referral_req(kdc_active_realm, request)"];
+"1000129" -> "1000228"  [label="DDG: !is_referral_req(kdc_active_realm, request)"];
+}

@@ -1,0 +1,22 @@
+digraph "0_linux_23b133bdc452aa441fcb9b82cbf6dd05cfd342d0@pointer" {
+"1000527" [label="(Call,iinfo->i_lenAlloc = le32_to_cpu(\n\t\t\t\t((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs))"];
+"1000531" [label="(Call,le32_to_cpu(\n\t\t\t\t((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs))"];
+"1000528" [label="(Call,iinfo->i_lenAlloc)"];
+"1000531" [label="(Call,le32_to_cpu(\n\t\t\t\t((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs))"];
+"1000516" [label="(Block,)"];
+"1000527" [label="(Call,iinfo->i_lenAlloc = le32_to_cpu(\n\t\t\t\t((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs))"];
+"1000532" [label="(Call,((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs)"];
+"1001231" [label="(MethodReturn,static int)"];
+"1000540" [label="(Identifier,ret)"];
+"1000527" -> "1000516"  [label="AST: "];
+"1000527" -> "1000531"  [label="CFG: "];
+"1000528" -> "1000527"  [label="AST: "];
+"1000531" -> "1000527"  [label="AST: "];
+"1000540" -> "1000527"  [label="CFG: "];
+"1000527" -> "1001231"  [label="DDG: iinfo->i_lenAlloc"];
+"1000527" -> "1001231"  [label="DDG: le32_to_cpu(\n\t\t\t\t((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs)"];
+"1000531" -> "1000527"  [label="DDG: ((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs"];
+"1000531" -> "1000532"  [label="CFG: "];
+"1000532" -> "1000531"  [label="AST: "];
+"1000531" -> "1001231"  [label="DDG: ((struct unallocSpaceEntry *)bh->b_data)->\n\t\t\t\t lengthAllocDescs"];
+}

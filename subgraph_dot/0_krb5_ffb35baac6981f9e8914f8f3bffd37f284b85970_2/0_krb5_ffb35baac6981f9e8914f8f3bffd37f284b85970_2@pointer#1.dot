@@ -1,0 +1,26 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970_2@pointer" {
+"1000146" [label="(Call,isflagset(t2enc->flags, TKT_FLG_FORWARDABLE))"];
+"1000145" [label="(Call,!isflagset(t2enc->flags, TKT_FLG_FORWARDABLE))"];
+"1000150" [label="(Identifier,TKT_FLG_FORWARDABLE)"];
+"1000145" [label="(Call,!isflagset(t2enc->flags, TKT_FLG_FORWARDABLE))"];
+"1000178" [label="(MethodReturn,RET)"];
+"1000154" [label="(Identifier,status)"];
+"1000147" [label="(Call,t2enc->flags)"];
+"1000146" [label="(Call,isflagset(t2enc->flags, TKT_FLG_FORWARDABLE))"];
+"1000159" [label="(Identifier,errcode)"];
+"1000144" [label="(ControlStructure,if (!isflagset(t2enc->flags, TKT_FLG_FORWARDABLE)))"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000150"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000150" -> "1000146"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000178"  [label="DDG: TKT_FLG_FORWARDABLE"];
+"1000146" -> "1000178"  [label="DDG: t2enc->flags"];
+"1000146" -> "1000145"  [label="DDG: t2enc->flags"];
+"1000146" -> "1000145"  [label="DDG: TKT_FLG_FORWARDABLE"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000154" -> "1000145"  [label="CFG: "];
+"1000159" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000178"  [label="DDG: !isflagset(t2enc->flags, TKT_FLG_FORWARDABLE)"];
+"1000145" -> "1000178"  [label="DDG: isflagset(t2enc->flags, TKT_FLG_FORWARDABLE)"];
+}

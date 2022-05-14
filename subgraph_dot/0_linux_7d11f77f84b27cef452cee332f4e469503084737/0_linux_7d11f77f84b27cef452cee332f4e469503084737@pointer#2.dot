@@ -1,0 +1,36 @@
+digraph "0_linux_7d11f77f84b27cef452cee332f4e469503084737@pointer" {
+"1000359" [label="(Call,rm->atomic.op_recverr = rs->rs_recverr)"];
+"1000433" [label="(Call,rm->atomic.op_notify || rm->atomic.op_recverr)"];
+"1000539" [label="(MethodReturn,int)"];
+"1000432" [label="(ControlStructure,if (rm->atomic.op_notify || rm->atomic.op_recverr))"];
+"1000371" [label="(Identifier,rm)"];
+"1000360" [label="(Call,rm->atomic.op_recverr)"];
+"1000326" [label="(Call,rm->atomic.op_notify = !!(args->flags & RDS_RDMA_NOTIFY_ME))"];
+"1000434" [label="(Call,rm->atomic.op_notify)"];
+"1000433" [label="(Call,rm->atomic.op_notify || rm->atomic.op_recverr)"];
+"1000439" [label="(Call,rm->atomic.op_recverr)"];
+"1000365" [label="(Call,rs->rs_recverr)"];
+"1000108" [label="(Block,)"];
+"1000448" [label="(Identifier,rm)"];
+"1000359" [label="(Call,rm->atomic.op_recverr = rs->rs_recverr)"];
+"1000496" [label="(Identifier,rm)"];
+"1000359" -> "1000108"  [label="AST: "];
+"1000359" -> "1000365"  [label="CFG: "];
+"1000360" -> "1000359"  [label="AST: "];
+"1000365" -> "1000359"  [label="AST: "];
+"1000371" -> "1000359"  [label="CFG: "];
+"1000359" -> "1000539"  [label="DDG: rs->rs_recverr"];
+"1000359" -> "1000539"  [label="DDG: rm->atomic.op_recverr"];
+"1000359" -> "1000433"  [label="DDG: rm->atomic.op_recverr"];
+"1000433" -> "1000432"  [label="AST: "];
+"1000433" -> "1000434"  [label="CFG: "];
+"1000433" -> "1000439"  [label="CFG: "];
+"1000434" -> "1000433"  [label="AST: "];
+"1000439" -> "1000433"  [label="AST: "];
+"1000448" -> "1000433"  [label="CFG: "];
+"1000496" -> "1000433"  [label="CFG: "];
+"1000433" -> "1000539"  [label="DDG: rm->atomic.op_notify"];
+"1000433" -> "1000539"  [label="DDG: rm->atomic.op_notify || rm->atomic.op_recverr"];
+"1000433" -> "1000539"  [label="DDG: rm->atomic.op_recverr"];
+"1000326" -> "1000433"  [label="DDG: rm->atomic.op_notify"];
+}

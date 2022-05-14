@@ -1,0 +1,20 @@
+digraph "0_tcpdump_d7505276842e85bfd067fa21cdb32b8a2dc3c5e4_0@pointer" {
+"1000289" [label="(Call,EXTRACT_32BITS(&opp->nd_opt_pi_preferred_time))"];
+"1000288" [label="(Call,get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_preferred_time)))"];
+"1000283" [label="(Call,ND_PRINT((ndo,\", pref. time %s\", get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_preferred_time)))))"];
+"1000286" [label="(Block,)"];
+"1000288" [label="(Call,get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_preferred_time)))"];
+"1000648" [label="(MethodReturn,RET)"];
+"1000289" [label="(Call,EXTRACT_32BITS(&opp->nd_opt_pi_preferred_time))"];
+"1000290" [label="(Call,&opp->nd_opt_pi_preferred_time)"];
+"1000289" -> "1000288"  [label="AST: "];
+"1000289" -> "1000290"  [label="CFG: "];
+"1000290" -> "1000289"  [label="AST: "];
+"1000288" -> "1000289"  [label="CFG: "];
+"1000289" -> "1000648"  [label="DDG: &opp->nd_opt_pi_preferred_time"];
+"1000289" -> "1000288"  [label="DDG: &opp->nd_opt_pi_preferred_time"];
+"1000288" -> "1000286"  [label="AST: "];
+"1000283" -> "1000288"  [label="CFG: "];
+"1000288" -> "1000648"  [label="DDG: EXTRACT_32BITS(&opp->nd_opt_pi_preferred_time)"];
+"1000288" -> "1000648"  [label="DDG: get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_preferred_time))"];
+}

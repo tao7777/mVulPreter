@@ -1,0 +1,37 @@
+digraph "1_spice_8af619009660b24e0b41ad26b30289eea288fcc2@pointer" {
+"1000114" [label="(Call,RSA_private_decrypt(link->tiTicketing.rsa_size,\n                        link->tiTicketing.encrypted_ticket.encrypted_data,\n                        (unsigned char *)password, link->tiTicketing.rsa, RSA_PKCS1_OAEP_PADDING))"];
+"1000127" [label="(Call,(unsigned char *)password)"];
+"1000172" [label="(Call,strncmp(password, taTicket.password, SPICE_MAX_PASSWORD_LENGTH))"];
+"1000115" [label="(Call,link->tiTicketing.rsa_size)"];
+"1000135" [label="(Identifier,RSA_PKCS1_OAEP_PADDING)"];
+"1000114" [label="(Call,RSA_private_decrypt(link->tiTicketing.rsa_size,\n                        link->tiTicketing.encrypted_ticket.encrypted_data,\n                        (unsigned char *)password, link->tiTicketing.rsa, RSA_PKCS1_OAEP_PADDING))"];
+"1000132" [label="(Identifier,link)"];
+"1000129" [label="(Identifier,password)"];
+"1000197" [label="(MethodReturn,static void)"];
+"1000127" [label="(Call,(unsigned char *)password)"];
+"1000102" [label="(Block,)"];
+"1000138" [label="(Identifier,ticketing_enabled)"];
+"1000130" [label="(Call,link->tiTicketing.rsa)"];
+"1000120" [label="(Call,link->tiTicketing.encrypted_ticket.encrypted_data)"];
+"1000114" -> "1000102"  [label="AST: "];
+"1000114" -> "1000135"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000120" -> "1000114"  [label="AST: "];
+"1000127" -> "1000114"  [label="AST: "];
+"1000130" -> "1000114"  [label="AST: "];
+"1000135" -> "1000114"  [label="AST: "];
+"1000138" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000197"  [label="DDG: link->tiTicketing.rsa"];
+"1000114" -> "1000197"  [label="DDG: RSA_private_decrypt(link->tiTicketing.rsa_size,\n                        link->tiTicketing.encrypted_ticket.encrypted_data,\n                        (unsigned char *)password, link->tiTicketing.rsa, RSA_PKCS1_OAEP_PADDING)"];
+"1000114" -> "1000197"  [label="DDG: link->tiTicketing.rsa_size"];
+"1000114" -> "1000197"  [label="DDG: (unsigned char *)password"];
+"1000114" -> "1000197"  [label="DDG: RSA_PKCS1_OAEP_PADDING"];
+"1000114" -> "1000197"  [label="DDG: link->tiTicketing.encrypted_ticket.encrypted_data"];
+"1000127" -> "1000114"  [label="DDG: password"];
+"1000127" -> "1000129"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000129" -> "1000127"  [label="AST: "];
+"1000132" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000197"  [label="DDG: password"];
+"1000127" -> "1000172"  [label="DDG: password"];
+}

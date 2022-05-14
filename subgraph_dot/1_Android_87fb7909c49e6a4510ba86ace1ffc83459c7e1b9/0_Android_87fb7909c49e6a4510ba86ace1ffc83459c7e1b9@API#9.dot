@@ -1,0 +1,30 @@
+digraph "0_Android_87fb7909c49e6a4510ba86ace1ffc83459c7e1b9@API" {
+"1000957" [label="(Call,2 * sizeof(UWORD32))"];
+"1000950" [label="(Call,memset(ps_codec->pu1_bitsbuf + bits_len, 0, 2 * sizeof(UWORD32)))"];
+"1000957" [label="(Call,2 * sizeof(UWORD32))"];
+"1000958" [label="(Literal,2)"];
+"1000950" [label="(Call,memset(ps_codec->pu1_bitsbuf + bits_len, 0, 2 * sizeof(UWORD32)))"];
+"1000925" [label="(Call,ihevcd_nal_remv_emuln_bytes(ps_codec->pu1_inp_bitsbuf + nal_ofst,\n                                        ps_codec->pu1_bitsbuf,\n                                        bytes_remaining,\n &nal_len, &bits_len))"];
+"1000940" [label="(Call,bits_len < (WORD32)(ps_codec->u4_bitsbuf_size - 8))"];
+"1000956" [label="(Literal,0)"];
+"1000959" [label="(Call,sizeof(UWORD32))"];
+"1000951" [label="(Call,ps_codec->pu1_bitsbuf + bits_len)"];
+"1000949" [label="(Block,)"];
+"1001918" [label="(MethodReturn,WORD32)"];
+"1000963" [label="(Identifier,ps_codec)"];
+"1000957" -> "1000950"  [label="AST: "];
+"1000957" -> "1000959"  [label="CFG: "];
+"1000958" -> "1000957"  [label="AST: "];
+"1000959" -> "1000957"  [label="AST: "];
+"1000950" -> "1000957"  [label="CFG: "];
+"1000957" -> "1000950"  [label="DDG: 2"];
+"1000950" -> "1000949"  [label="AST: "];
+"1000951" -> "1000950"  [label="AST: "];
+"1000956" -> "1000950"  [label="AST: "];
+"1000963" -> "1000950"  [label="CFG: "];
+"1000950" -> "1001918"  [label="DDG: memset(ps_codec->pu1_bitsbuf + bits_len, 0, 2 * sizeof(UWORD32))"];
+"1000950" -> "1001918"  [label="DDG: 2 * sizeof(UWORD32)"];
+"1000950" -> "1001918"  [label="DDG: ps_codec->pu1_bitsbuf + bits_len"];
+"1000925" -> "1000950"  [label="DDG: ps_codec->pu1_bitsbuf"];
+"1000940" -> "1000950"  [label="DDG: bits_len"];
+}

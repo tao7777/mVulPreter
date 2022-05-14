@@ -1,0 +1,28 @@
+digraph "0_linux_1666984c8625b3db19a9abc298931d35ab7bc64b@pointer" {
+"1000747" [label="(Call,cancel_work_sync(&dev->kevent))"];
+"1000281" [label="(Call,INIT_WORK (&dev->kevent, usbnet_deferred_kevent))"];
+"1000286" [label="(Identifier,usbnet_deferred_kevent)"];
+"1000281" [label="(Call,INIT_WORK (&dev->kevent, usbnet_deferred_kevent))"];
+"1000747" [label="(Call,cancel_work_sync(&dev->kevent))"];
+"1000282" [label="(Call,&dev->kevent)"];
+"1000113" [label="(Block,)"];
+"1000755" [label="(Identifier,dev)"];
+"1000762" [label="(MethodReturn,RET)"];
+"1000748" [label="(Call,&dev->kevent)"];
+"1000290" [label="(Identifier,dev)"];
+"1000747" -> "1000113"  [label="AST: "];
+"1000747" -> "1000748"  [label="CFG: "];
+"1000748" -> "1000747"  [label="AST: "];
+"1000755" -> "1000747"  [label="CFG: "];
+"1000747" -> "1000762"  [label="DDG: &dev->kevent"];
+"1000747" -> "1000762"  [label="DDG: cancel_work_sync(&dev->kevent)"];
+"1000281" -> "1000747"  [label="DDG: &dev->kevent"];
+"1000281" -> "1000113"  [label="AST: "];
+"1000281" -> "1000286"  [label="CFG: "];
+"1000282" -> "1000281"  [label="AST: "];
+"1000286" -> "1000281"  [label="AST: "];
+"1000290" -> "1000281"  [label="CFG: "];
+"1000281" -> "1000762"  [label="DDG: usbnet_deferred_kevent"];
+"1000281" -> "1000762"  [label="DDG: &dev->kevent"];
+"1000281" -> "1000762"  [label="DDG: INIT_WORK (&dev->kevent, usbnet_deferred_kevent)"];
+}

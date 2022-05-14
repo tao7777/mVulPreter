@@ -1,0 +1,24 @@
+digraph "0_libgcrypt_a4c561aab1014c3630bc88faf6f5246fee16b020@pointer" {
+"1000103" [label="(MethodParameterIn,const void *gcmM)"];
+"1000114" [label="(Call,prefetch_table(gcmM, gcmM_size))"];
+"1000115" [label="(Identifier,gcmM)"];
+"1000104" [label="(MethodParameterIn,size_t gcmM_size)"];
+"1000114" [label="(Call,prefetch_table(gcmM, gcmM_size))"];
+"1000105" [label="(Block,)"];
+"1000103" [label="(MethodParameterIn,const void *gcmM)"];
+"1000122" [label="(MethodReturn,RET)"];
+"1000119" [label="(Identifier,gcm_table)"];
+"1000116" [label="(Identifier,gcmM_size)"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000122"  [label="DDG: gcmM"];
+"1000103" -> "1000114"  [label="DDG: gcmM"];
+"1000114" -> "1000105"  [label="AST: "];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000119" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000122"  [label="DDG: prefetch_table(gcmM, gcmM_size)"];
+"1000114" -> "1000122"  [label="DDG: gcmM"];
+"1000114" -> "1000122"  [label="DDG: gcmM_size"];
+"1000104" -> "1000114"  [label="DDG: gcmM_size"];
+}

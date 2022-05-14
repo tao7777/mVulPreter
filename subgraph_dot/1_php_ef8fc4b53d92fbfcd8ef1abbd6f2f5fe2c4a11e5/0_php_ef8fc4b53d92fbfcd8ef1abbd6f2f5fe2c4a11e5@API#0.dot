@@ -1,0 +1,38 @@
+digraph "0_php_ef8fc4b53d92fbfcd8ef1abbd6f2f5fe2c4a11e5@API" {
+"1000146" [label="(Call,free(cd))"];
+"1000108" [label="(Call,cd=(struct zip_cdir *)malloc(sizeof(*cd)))"];
+"1000110" [label="(Call,(struct zip_cdir *)malloc(sizeof(*cd)))"];
+"1000107" [label="(Call,(cd=(struct zip_cdir *)malloc(sizeof(*cd))) == NULL)"];
+"1000176" [label="(MethodReturn,RET)"];
+"1000141" [label="(Block,)"];
+"1000146" [label="(Call,free(cd))"];
+"1000149" [label="(Identifier,NULL)"];
+"1000110" [label="(Call,(struct zip_cdir *)malloc(sizeof(*cd)))"];
+"1000147" [label="(Identifier,cd)"];
+"1000108" [label="(Call,cd=(struct zip_cdir *)malloc(sizeof(*cd)))"];
+"1000174" [label="(Return,return cd;)"];
+"1000109" [label="(Identifier,cd)"];
+"1000116" [label="(Identifier,NULL)"];
+"1000112" [label="(Call,malloc(sizeof(*cd)))"];
+"1000146" -> "1000141"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000149" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000176"  [label="DDG: cd"];
+"1000108" -> "1000146"  [label="DDG: cd"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000116" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000176"  [label="DDG: cd"];
+"1000108" -> "1000176"  [label="DDG: (struct zip_cdir *)malloc(sizeof(*cd))"];
+"1000108" -> "1000107"  [label="DDG: cd"];
+"1000110" -> "1000108"  [label="DDG: malloc(sizeof(*cd))"];
+"1000108" -> "1000174"  [label="DDG: cd"];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000110" -> "1000176"  [label="DDG: malloc(sizeof(*cd))"];
+"1000110" -> "1000107"  [label="DDG: malloc(sizeof(*cd))"];
+}

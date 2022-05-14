@@ -1,0 +1,37 @@
+digraph "0_krb5_b863de7fbf080b15e347a736fdda0a82d42f4f6b@API" {
+"1000571" [label="(Call,assert(entry->n_key_data == 0))"];
+"1000572" [label="(Call,entry->n_key_data == 0)"];
+"1000206" [label="(Call,entry->n_key_data != 0)"];
+"1000576" [label="(Literal,0)"];
+"1000207" [label="(Call,entry->n_key_data)"];
+"1000206" [label="(Call,entry->n_key_data != 0)"];
+"1000202" [label="(Call,(mask & KADM5_KEY_DATA) && entry->n_key_data != 0)"];
+"1000571" [label="(Call,assert(entry->n_key_data == 0))"];
+"1000570" [label="(Block,)"];
+"1000572" [label="(Call,entry->n_key_data == 0)"];
+"1000573" [label="(Call,entry->n_key_data)"];
+"1000720" [label="(MethodReturn,RET)"];
+"1000616" [label="(Identifier,ret)"];
+"1000210" [label="(Literal,0)"];
+"1000571" -> "1000570"  [label="AST: "];
+"1000571" -> "1000572"  [label="CFG: "];
+"1000572" -> "1000571"  [label="AST: "];
+"1000616" -> "1000571"  [label="CFG: "];
+"1000571" -> "1000720"  [label="DDG: assert(entry->n_key_data == 0)"];
+"1000571" -> "1000720"  [label="DDG: entry->n_key_data == 0"];
+"1000572" -> "1000571"  [label="DDG: entry->n_key_data"];
+"1000572" -> "1000571"  [label="DDG: 0"];
+"1000572" -> "1000576"  [label="CFG: "];
+"1000573" -> "1000572"  [label="AST: "];
+"1000576" -> "1000572"  [label="AST: "];
+"1000572" -> "1000720"  [label="DDG: entry->n_key_data"];
+"1000206" -> "1000572"  [label="DDG: entry->n_key_data"];
+"1000206" -> "1000202"  [label="AST: "];
+"1000206" -> "1000210"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000210" -> "1000206"  [label="AST: "];
+"1000202" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000720"  [label="DDG: entry->n_key_data"];
+"1000206" -> "1000202"  [label="DDG: entry->n_key_data"];
+"1000206" -> "1000202"  [label="DDG: 0"];
+}

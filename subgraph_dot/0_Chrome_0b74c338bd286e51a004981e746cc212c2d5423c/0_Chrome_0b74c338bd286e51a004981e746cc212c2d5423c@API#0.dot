@@ -1,0 +1,20 @@
+digraph "0_Chrome_0b74c338bd286e51a004981e746cc212c2d5423c@API" {
+"1000150" [label="(Call,ppapi_process.set_main_thread(\n      new PpapiThread(parameters.command_line, false)))"];
+"1000151" [label="(Call,new PpapiThread(parameters.command_line, false))"];
+"1000153" [label="(Call,main_message_loop.Run())"];
+"1000152" [label="(Identifier,PpapiThread)"];
+"1000156" [label="(MethodReturn,int)"];
+"1000106" [label="(Block,)"];
+"1000150" [label="(Call,ppapi_process.set_main_thread(\n      new PpapiThread(parameters.command_line, false)))"];
+"1000151" [label="(Call,new PpapiThread(parameters.command_line, false))"];
+"1000150" -> "1000106"  [label="AST: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000153" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000156"  [label="DDG: new PpapiThread(parameters.command_line, false)"];
+"1000150" -> "1000156"  [label="DDG: ppapi_process.set_main_thread(\n      new PpapiThread(parameters.command_line, false))"];
+"1000151" -> "1000150"  [label="DDG: PpapiThread"];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000151" -> "1000156"  [label="DDG: PpapiThread"];
+}

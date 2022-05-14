@@ -1,0 +1,28 @@
+digraph "0_src_779974d35b4859c07bc3cb8a12c74b43b0a7d1e0_1@pointer" {
+"1000137" [label="(Call,*key_s = NULL)"];
+"1000694" [label="(Call,free(key_s))"];
+"1000694" [label="(Call,free(key_s))"];
+"1000138" [label="(Identifier,key_s)"];
+"1000319" [label="(Call,debug3(\"%s: have %s signature for %s%s%s\",\n\t\t    __func__, pkalg, key_s,\n\t\t    ca_s == NULL ? \"\" : \" CA \",\n\t\t    ca_s == NULL ? \"\" : ca_s))"];
+"1000558" [label="(Call,debug(\"%s: test pkalg %s pkblob %s%s%s\",\n\t\t    __func__, pkalg, key_s,\n\t\t    ca_s == NULL ? \"\" : \" CA \",\n\t\t    ca_s == NULL ? \"\" : ca_s))"];
+"1000697" [label="(Identifier,ca_s)"];
+"1000702" [label="(MethodReturn,RET)"];
+"1000695" [label="(Identifier,key_s)"];
+"1000142" [label="(Identifier,ca_s)"];
+"1000139" [label="(Identifier,NULL)"];
+"1000107" [label="(Block,)"];
+"1000137" [label="(Call,*key_s = NULL)"];
+"1000137" -> "1000107"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000139" -> "1000137"  [label="AST: "];
+"1000142" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000694"  [label="DDG: key_s"];
+"1000694" -> "1000107"  [label="AST: "];
+"1000694" -> "1000695"  [label="CFG: "];
+"1000695" -> "1000694"  [label="AST: "];
+"1000697" -> "1000694"  [label="CFG: "];
+"1000694" -> "1000702"  [label="DDG: key_s"];
+"1000558" -> "1000694"  [label="DDG: key_s"];
+"1000319" -> "1000694"  [label="DDG: key_s"];
+}

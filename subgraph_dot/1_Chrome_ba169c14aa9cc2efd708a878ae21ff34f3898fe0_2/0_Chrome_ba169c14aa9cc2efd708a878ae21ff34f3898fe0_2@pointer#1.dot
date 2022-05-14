@@ -1,0 +1,37 @@
+digraph "0_Chrome_ba169c14aa9cc2efd708a878ae21ff34f3898fe0_2@pointer" {
+"1000259" [label="(Call,BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy))"];
+"1000257" [label="(Call,base::MakeRefCounted<BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy))"];
+"1000253" [label="(Call,partition->background_fetch_context_ =\n      base::MakeRefCounted<BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy))"];
+"1000212" [label="(Call,base::MakeRefCounted<ChromeAppCacheService>(quota_manager_proxy.get()))"];
+"1000271" [label="(Identifier,quota_manager_proxy)"];
+"1000370" [label="(MethodReturn,std::unique_ptr<StoragePartitionImpl>)"];
+"1000257" [label="(Call,base::MakeRefCounted<BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy))"];
+"1000259" [label="(Call,BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy))"];
+"1000261" [label="(Block,)"];
+"1000105" [label="(Block,)"];
+"1000254" [label="(Call,partition->background_fetch_context_)"];
+"1000260" [label="(Identifier,BackgroundFetchContext)"];
+"1000274" [label="(Identifier,partition)"];
+"1000253" [label="(Call,partition->background_fetch_context_ =\n      base::MakeRefCounted<BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy))"];
+"1000258" [label="(Identifier,base::MakeRefCounted)"];
+"1000259" -> "1000257"  [label="AST: "];
+"1000259" -> "1000271"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000261" -> "1000259"  [label="AST: "];
+"1000257" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000370"  [label="DDG: BackgroundFetchContext"];
+"1000259" -> "1000257"  [label="DDG: BackgroundFetchContext"];
+"1000257" -> "1000253"  [label="AST: "];
+"1000258" -> "1000257"  [label="AST: "];
+"1000253" -> "1000257"  [label="CFG: "];
+"1000257" -> "1000370"  [label="DDG: BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy)"];
+"1000257" -> "1000370"  [label="DDG: base::MakeRefCounted"];
+"1000257" -> "1000253"  [label="DDG: base::MakeRefCounted"];
+"1000257" -> "1000253"  [label="DDG: BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy)"];
+"1000212" -> "1000257"  [label="DDG: base::MakeRefCounted"];
+"1000253" -> "1000105"  [label="AST: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000274" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000370"  [label="DDG: partition->background_fetch_context_"];
+"1000253" -> "1000370"  [label="DDG: base::MakeRefCounted<BackgroundFetchContext>(\n          context, partition->service_worker_context_,\n          partition->cache_storage_context_, quota_manager_proxy)"];
+}

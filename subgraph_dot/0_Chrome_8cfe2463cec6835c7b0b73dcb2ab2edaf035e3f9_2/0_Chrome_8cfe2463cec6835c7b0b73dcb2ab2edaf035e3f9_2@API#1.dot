@@ -1,0 +1,33 @@
+digraph "0_Chrome_8cfe2463cec6835c7b0b73dcb2ab2edaf035e3f9_2@API" {
+"1000112" [label="(Call,std::move(callback).Run(std::move(app_list)))"];
+"1000113" [label="(Call,std::move(app_list))"];
+"1000105" [label="(Call,chromeos::kiosk_next_home::mojom::AppPtr> app_list)"];
+"1000114" [label="(Identifier,app_list)"];
+"1000106" [label="(Identifier,chromeos::kiosk_next_home::mojom::AppPtr)"];
+"1000105" [label="(Call,chromeos::kiosk_next_home::mojom::AppPtr> app_list)"];
+"1000113" [label="(Call,std::move(app_list))"];
+"1000103" [label="(Call,std::vector<chromeos::kiosk_next_home::mojom::AppPtr> app_list)"];
+"1000107" [label="(Identifier,app_list)"];
+"1000112" [label="(Call,std::move(callback).Run(std::move(app_list)))"];
+"1000102" [label="(Block,)"];
+"1000115" [label="(MethodReturn,void)"];
+"1000112" -> "1000102"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000115" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000115"  [label="DDG: std::move(callback).Run(std::move(app_list))"];
+"1000112" -> "1000115"  [label="DDG: std::move(app_list)"];
+"1000113" -> "1000112"  [label="DDG: app_list"];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000113" -> "1000115"  [label="DDG: app_list"];
+"1000105" -> "1000113"  [label="DDG: app_list"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000103" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000115"  [label="DDG: chromeos::kiosk_next_home::mojom::AppPtr"];
+"1000105" -> "1000103"  [label="DDG: chromeos::kiosk_next_home::mojom::AppPtr"];
+"1000105" -> "1000103"  [label="DDG: app_list"];
+}

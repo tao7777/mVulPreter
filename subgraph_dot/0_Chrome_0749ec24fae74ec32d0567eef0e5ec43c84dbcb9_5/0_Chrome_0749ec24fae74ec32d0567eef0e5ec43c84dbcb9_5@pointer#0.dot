@@ -1,0 +1,35 @@
+digraph "0_Chrome_0749ec24fae74ec32d0567eef0e5ec43c84dbcb9_5@pointer" {
+"1000101" [label="(MethodParameterIn,HeapObjectHeader* header)"];
+"1000128" [label="(Call,isObjectAllocatedAtAllocationPoint(header))"];
+"1000127" [label="(Call,isObjectAllocatedAtAllocationPoint(header) &&\n      expandSize <= m_remainingAllocationSize)"];
+"1000127" [label="(Call,isObjectAllocatedAtAllocationPoint(header) &&\n      expandSize <= m_remainingAllocationSize)"];
+"1000129" [label="(Identifier,header)"];
+"1000135" [label="(Identifier,m_currentAllocationPoint)"];
+"1000101" [label="(MethodParameterIn,HeapObjectHeader* header)"];
+"1000130" [label="(Call,expandSize <= m_remainingAllocationSize)"];
+"1000159" [label="(MethodReturn,bool)"];
+"1000128" [label="(Call,isObjectAllocatedAtAllocationPoint(header))"];
+"1000126" [label="(ControlStructure,if (isObjectAllocatedAtAllocationPoint(header) &&\n      expandSize <= m_remainingAllocationSize))"];
+"1000158" [label="(Identifier,false)"];
+"1000131" [label="(Identifier,expandSize)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000159"  [label="DDG: header"];
+"1000101" -> "1000128"  [label="DDG: header"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000131" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000159"  [label="DDG: header"];
+"1000128" -> "1000127"  [label="DDG: header"];
+"1000127" -> "1000126"  [label="AST: "];
+"1000127" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000127"  [label="AST: "];
+"1000135" -> "1000127"  [label="CFG: "];
+"1000158" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000159"  [label="DDG: expandSize <= m_remainingAllocationSize"];
+"1000127" -> "1000159"  [label="DDG: isObjectAllocatedAtAllocationPoint(header) &&\n      expandSize <= m_remainingAllocationSize"];
+"1000127" -> "1000159"  [label="DDG: isObjectAllocatedAtAllocationPoint(header)"];
+"1000130" -> "1000127"  [label="DDG: expandSize"];
+"1000130" -> "1000127"  [label="DDG: m_remainingAllocationSize"];
+}

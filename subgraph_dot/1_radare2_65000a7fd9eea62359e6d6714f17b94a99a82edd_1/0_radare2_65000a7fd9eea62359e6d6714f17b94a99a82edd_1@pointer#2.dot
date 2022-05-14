@@ -1,0 +1,26 @@
+digraph "0_radare2_65000a7fd9eea62359e6d6714f17b94a99a82edd_1@pointer" {
+"1000121" [label="(Call,grub_le_to_cpu16(ext_block->magic))"];
+"1000120" [label="(Call,grub_le_to_cpu16(ext_block->magic) != EXT4_EXT_MAGIC)"];
+"1000125" [label="(Identifier,EXT4_EXT_MAGIC)"];
+"1000122" [label="(Call,ext_block->magic)"];
+"1000119" [label="(ControlStructure,if (grub_le_to_cpu16(ext_block->magic) != EXT4_EXT_MAGIC))"];
+"1000121" [label="(Call,grub_le_to_cpu16(ext_block->magic))"];
+"1000120" [label="(Call,grub_le_to_cpu16(ext_block->magic) != EXT4_EXT_MAGIC)"];
+"1000131" [label="(Identifier,ext_block)"];
+"1000206" [label="(MethodReturn,RET)"];
+"1000127" [label="(Literal,0)"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000206"  [label="DDG: ext_block->magic"];
+"1000121" -> "1000120"  [label="DDG: ext_block->magic"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000120" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000120"  [label="AST: "];
+"1000127" -> "1000120"  [label="CFG: "];
+"1000131" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000206"  [label="DDG: EXT4_EXT_MAGIC"];
+"1000120" -> "1000206"  [label="DDG: grub_le_to_cpu16(ext_block->magic)"];
+"1000120" -> "1000206"  [label="DDG: grub_le_to_cpu16(ext_block->magic) != EXT4_EXT_MAGIC"];
+}

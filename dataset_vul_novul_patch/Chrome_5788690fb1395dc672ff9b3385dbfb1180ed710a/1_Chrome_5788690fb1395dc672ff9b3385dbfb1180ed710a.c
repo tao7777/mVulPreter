@@ -1,0 +1,3 @@
+ void DelegatedFrameHost::ClearDelegatedFrame() {
+   EvictDelegatedFrame();
+ }

@@ -1,0 +1,30 @@
+digraph "0_ImageMagick_2ad6d33493750a28a5a655d319a8e0b16c392de1@array" {
+"1000738" [label="(Call,*p++=background_color[j])"];
+"1000354" [label="(Call,background_color[i]=0)"];
+"1000353" [label="(Identifier,i)"];
+"1000343" [label="(ControlStructure,for (i=0; i < (ssize_t) number_planes; i++))"];
+"1000725" [label="(ControlStructure,for (j=0; j < (ssize_t) (number_planes-1); j++))"];
+"1000355" [label="(Call,background_color[i])"];
+"1000738" [label="(Call,*p++=background_color[j])"];
+"1001955" [label="(MethodReturn,static Image *)"];
+"1000365" [label="(Call,p=background_color)"];
+"1000742" [label="(Call,background_color[j])"];
+"1000737" [label="(Identifier,j)"];
+"1000739" [label="(Call,*p++)"];
+"1000358" [label="(Literal,0)"];
+"1000354" [label="(Call,background_color[i]=0)"];
+"1000738" -> "1000725"  [label="AST: "];
+"1000738" -> "1000742"  [label="CFG: "];
+"1000739" -> "1000738"  [label="AST: "];
+"1000742" -> "1000738"  [label="AST: "];
+"1000737" -> "1000738"  [label="CFG: "];
+"1000738" -> "1001955"  [label="DDG: background_color[j]"];
+"1000354" -> "1000738"  [label="DDG: background_color[i]"];
+"1000354" -> "1000343"  [label="AST: "];
+"1000354" -> "1000358"  [label="CFG: "];
+"1000355" -> "1000354"  [label="AST: "];
+"1000358" -> "1000354"  [label="AST: "];
+"1000353" -> "1000354"  [label="CFG: "];
+"1000354" -> "1001955"  [label="DDG: background_color[i]"];
+"1000354" -> "1000365"  [label="DDG: background_color[i]"];
+}

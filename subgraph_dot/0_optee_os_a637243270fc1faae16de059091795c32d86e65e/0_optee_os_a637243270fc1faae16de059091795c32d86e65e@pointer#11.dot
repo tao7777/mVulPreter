@@ -1,0 +1,32 @@
+digraph "0_optee_os_a637243270fc1faae16de059091795c32d86e65e@pointer" {
+"1000257" [label="(Call,params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000253" [label="(Call,param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000859" [label="(MethodReturn,TEE_Result)"];
+"1000253" [label="(Call,param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000263" [label="(Identifier,TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000258" [label="(Call,params[0].attributeID)"];
+"1000257" [label="(Call,params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000254" [label="(Call,param_count != 1)"];
+"1000252" [label="(ControlStructure,if (param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE))"];
+"1000266" [label="(Identifier,res)"];
+"1000270" [label="(Identifier,alloc_size)"];
+"1000257" -> "1000253"  [label="AST: "];
+"1000257" -> "1000263"  [label="CFG: "];
+"1000258" -> "1000257"  [label="AST: "];
+"1000263" -> "1000257"  [label="AST: "];
+"1000253" -> "1000257"  [label="CFG: "];
+"1000257" -> "1000859"  [label="DDG: TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000257" -> "1000859"  [label="DDG: params[0].attributeID"];
+"1000257" -> "1000253"  [label="DDG: params[0].attributeID"];
+"1000257" -> "1000253"  [label="DDG: TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000253" -> "1000252"  [label="AST: "];
+"1000253" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000266" -> "1000253"  [label="CFG: "];
+"1000270" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000859"  [label="DDG: param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000253" -> "1000859"  [label="DDG: param_count != 1"];
+"1000253" -> "1000859"  [label="DDG: params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000254" -> "1000253"  [label="DDG: param_count"];
+"1000254" -> "1000253"  [label="DDG: 1"];
+}

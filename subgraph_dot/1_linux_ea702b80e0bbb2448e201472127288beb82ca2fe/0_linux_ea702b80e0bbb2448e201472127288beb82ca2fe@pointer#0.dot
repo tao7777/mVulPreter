@@ -1,0 +1,23 @@
+digraph "0_linux_ea702b80e0bbb2448e201472127288beb82ca2fe@pointer" {
+"1000148" [label="(Call,(struct sockaddr *) &server->dstaddr)"];
+"1000144" [label="(Call,smb_msg.msg_name = (struct sockaddr *) &server->dstaddr)"];
+"1000383" [label="(MethodReturn,RET)"];
+"1000150" [label="(Call,&server->dstaddr)"];
+"1000156" [label="(Identifier,smb_msg)"];
+"1000145" [label="(Call,smb_msg.msg_name)"];
+"1000112" [label="(Block,)"];
+"1000148" [label="(Call,(struct sockaddr *) &server->dstaddr)"];
+"1000144" [label="(Call,smb_msg.msg_name = (struct sockaddr *) &server->dstaddr)"];
+"1000148" -> "1000144"  [label="AST: "];
+"1000148" -> "1000150"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000150" -> "1000148"  [label="AST: "];
+"1000144" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000383"  [label="DDG: &server->dstaddr"];
+"1000148" -> "1000144"  [label="DDG: &server->dstaddr"];
+"1000144" -> "1000112"  [label="AST: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000156" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000383"  [label="DDG: (struct sockaddr *) &server->dstaddr"];
+"1000144" -> "1000383"  [label="DDG: smb_msg.msg_name"];
+}

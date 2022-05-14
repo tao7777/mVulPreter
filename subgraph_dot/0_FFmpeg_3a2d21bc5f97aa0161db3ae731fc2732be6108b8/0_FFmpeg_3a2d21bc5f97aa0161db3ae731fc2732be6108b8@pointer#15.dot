@@ -1,0 +1,35 @@
+digraph "0_FFmpeg_3a2d21bc5f97aa0161db3ae731fc2732be6108b8@pointer" {
+"1001316" [label="(Call,pkt->flags & AV_PKT_FLAG_KEY)"];
+"1001400" [label="(Call,pkt->flags & AV_PKT_FLAG_DISPOSABLE)"];
+"1001423" [label="(Identifier,trk)"];
+"1001320" [label="(Identifier,AV_PKT_FLAG_KEY)"];
+"1001400" [label="(Call,pkt->flags & AV_PKT_FLAG_DISPOSABLE)"];
+"1001317" [label="(Call,pkt->flags)"];
+"1001404" [label="(Identifier,AV_PKT_FLAG_DISPOSABLE)"];
+"1001326" [label="(Identifier,mov)"];
+"1001402" [label="(Identifier,pkt)"];
+"1001410" [label="(Identifier,trk)"];
+"1001401" [label="(Call,pkt->flags)"];
+"1001315" [label="(ControlStructure,if (pkt->flags & AV_PKT_FLAG_KEY))"];
+"1001399" [label="(ControlStructure,if (pkt->flags & AV_PKT_FLAG_DISPOSABLE))"];
+"1001316" [label="(Call,pkt->flags & AV_PKT_FLAG_KEY)"];
+"1001466" [label="(MethodReturn,int)"];
+"1001316" -> "1001315"  [label="AST: "];
+"1001316" -> "1001320"  [label="CFG: "];
+"1001317" -> "1001316"  [label="AST: "];
+"1001320" -> "1001316"  [label="AST: "];
+"1001326" -> "1001316"  [label="CFG: "];
+"1001402" -> "1001316"  [label="CFG: "];
+"1001316" -> "1001466"  [label="DDG: AV_PKT_FLAG_KEY"];
+"1001316" -> "1001466"  [label="DDG: pkt->flags & AV_PKT_FLAG_KEY"];
+"1001316" -> "1001400"  [label="DDG: pkt->flags"];
+"1001400" -> "1001399"  [label="AST: "];
+"1001400" -> "1001404"  [label="CFG: "];
+"1001401" -> "1001400"  [label="AST: "];
+"1001404" -> "1001400"  [label="AST: "];
+"1001410" -> "1001400"  [label="CFG: "];
+"1001423" -> "1001400"  [label="CFG: "];
+"1001400" -> "1001466"  [label="DDG: AV_PKT_FLAG_DISPOSABLE"];
+"1001400" -> "1001466"  [label="DDG: pkt->flags & AV_PKT_FLAG_DISPOSABLE"];
+"1001400" -> "1001466"  [label="DDG: pkt->flags"];
+}

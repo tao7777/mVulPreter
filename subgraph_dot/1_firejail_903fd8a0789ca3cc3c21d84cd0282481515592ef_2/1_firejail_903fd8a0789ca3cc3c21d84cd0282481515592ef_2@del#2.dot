@@ -1,0 +1,26 @@
+digraph "1_firejail_903fd8a0789ca3cc3c21d84cd0282481515592ef_2@del" {
+"1000205" [label="(Call,-1)"];
+"1000200" [label="(Call,chown(dest, getuid(), getgid()) == -1)"];
+"1000205" [label="(Call,-1)"];
+"1000199" [label="(ControlStructure,if (chown(dest, getuid(), getgid()) == -1))"];
+"1000201" [label="(Call,chown(dest, getuid(), getgid()))"];
+"1000200" [label="(Call,chown(dest, getuid(), getgid()) == -1)"];
+"1000222" [label="(MethodReturn,static int)"];
+"1000208" [label="(Literal,\"fchown\")"];
+"1000206" [label="(Literal,1)"];
+"1000212" [label="(Identifier,dest)"];
+"1000205" -> "1000200"  [label="AST: "];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000200" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000200"  [label="DDG: 1"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000208" -> "1000200"  [label="CFG: "];
+"1000212" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000222"  [label="DDG: chown(dest, getuid(), getgid())"];
+"1000200" -> "1000222"  [label="DDG: chown(dest, getuid(), getgid()) == -1"];
+"1000201" -> "1000200"  [label="DDG: dest"];
+"1000201" -> "1000200"  [label="DDG: getuid()"];
+"1000201" -> "1000200"  [label="DDG: getgid()"];
+}

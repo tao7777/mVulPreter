@@ -1,0 +1,33 @@
+digraph "0_linux_54d83fc74aa9ec72794373cb47432c5f7fb1a309_1@API" {
+"1000243" [label="(Call,strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET) == 0)"];
+"1000242" [label="(Call,(strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET) == 0) &&\n\t\t\t\t    t->verdict < -NF_MAX_VERDICT - 1)"];
+"1000258" [label="(Identifier,t)"];
+"1000241" [label="(ControlStructure,if ((strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET) == 0) &&\n\t\t\t\t    t->verdict < -NF_MAX_VERDICT - 1))"];
+"1000256" [label="(Call,t->verdict < -NF_MAX_VERDICT - 1)"];
+"1000242" [label="(Call,(strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET) == 0) &&\n\t\t\t\t    t->verdict < -NF_MAX_VERDICT - 1)"];
+"1000276" [label="(Identifier,e)"];
+"1000266" [label="(Literal,\"mark_source_chains: bad \"\n\t\t\t\t\t\t\"negative verdict (%i)\n\")"];
+"1000243" [label="(Call,strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET) == 0)"];
+"1000419" [label="(MethodReturn,static int)"];
+"1000244" [label="(Call,strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET))"];
+"1000255" [label="(Literal,0)"];
+"1000243" -> "1000242"  [label="AST: "];
+"1000243" -> "1000255"  [label="CFG: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000255" -> "1000243"  [label="AST: "];
+"1000258" -> "1000243"  [label="CFG: "];
+"1000242" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000419"  [label="DDG: strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET)"];
+"1000243" -> "1000242"  [label="DDG: strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET)"];
+"1000243" -> "1000242"  [label="DDG: 0"];
+"1000242" -> "1000241"  [label="AST: "];
+"1000242" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000242"  [label="AST: "];
+"1000266" -> "1000242"  [label="CFG: "];
+"1000276" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000419"  [label="DDG: (strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET) == 0) &&\n\t\t\t\t    t->verdict < -NF_MAX_VERDICT - 1"];
+"1000242" -> "1000419"  [label="DDG: t->verdict < -NF_MAX_VERDICT - 1"];
+"1000242" -> "1000419"  [label="DDG: strcmp(t->target.u.user.name,\n\t\t\t\t\t    XT_STANDARD_TARGET) == 0"];
+"1000256" -> "1000242"  [label="DDG: t->verdict"];
+"1000256" -> "1000242"  [label="DDG: -NF_MAX_VERDICT - 1"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_d7a6be58edc01b1c66ecd8fcc91236bfbce0a420@API" {
+"1000213" [label="(Call,mutex_unlock(&einj_mutex))"];
+"1000201" [label="(Call,mutex_lock(&einj_mutex))"];
+"1000213" [label="(Call,mutex_unlock(&einj_mutex))"];
+"1000214" [label="(Call,&einj_mutex)"];
+"1000205" [label="(Identifier,rc)"];
+"1000202" [label="(Call,&einj_mutex)"];
+"1000218" [label="(MethodReturn,static int)"];
+"1000201" [label="(Call,mutex_lock(&einj_mutex))"];
+"1000112" [label="(Block,)"];
+"1000217" [label="(Identifier,rc)"];
+"1000213" -> "1000112"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000217" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000218"  [label="DDG: &einj_mutex"];
+"1000213" -> "1000218"  [label="DDG: mutex_unlock(&einj_mutex)"];
+"1000201" -> "1000213"  [label="DDG: &einj_mutex"];
+"1000201" -> "1000112"  [label="AST: "];
+"1000201" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000218"  [label="DDG: mutex_lock(&einj_mutex)"];
+}

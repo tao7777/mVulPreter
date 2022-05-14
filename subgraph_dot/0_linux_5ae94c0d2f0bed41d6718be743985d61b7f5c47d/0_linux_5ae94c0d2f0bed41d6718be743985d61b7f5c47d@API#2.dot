@@ -1,0 +1,37 @@
+digraph "0_linux_5ae94c0d2f0bed41d6718be743985d61b7f5c47d@API" {
+"1000193" [label="(Call,atomic_read(&sk->sk_rmem_alloc) << 2)"];
+"1000194" [label="(Call,atomic_read(&sk->sk_rmem_alloc))"];
+"1000192" [label="(Call,(atomic_read(&sk->sk_rmem_alloc) << 2) <= sk->sk_rcvbuf)"];
+"1000199" [label="(Literal,2)"];
+"1000193" [label="(Call,atomic_read(&sk->sk_rmem_alloc) << 2)"];
+"1000205" [label="(Literal,2)"];
+"1000195" [label="(Call,&sk->sk_rmem_alloc)"];
+"1000200" [label="(Call,sk->sk_rcvbuf)"];
+"1000201" [label="(Identifier,sk)"];
+"1000219" [label="(Identifier,copied)"];
+"1000191" [label="(ControlStructure,if ((atomic_read(&sk->sk_rmem_alloc) << 2) <= sk->sk_rcvbuf))"];
+"1000194" [label="(Call,atomic_read(&sk->sk_rmem_alloc))"];
+"1000192" [label="(Call,(atomic_read(&sk->sk_rmem_alloc) << 2) <= sk->sk_rcvbuf)"];
+"1000220" [label="(MethodReturn,static int)"];
+"1000193" -> "1000192"  [label="AST: "];
+"1000193" -> "1000199"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000199" -> "1000193"  [label="AST: "];
+"1000201" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000220"  [label="DDG: atomic_read(&sk->sk_rmem_alloc)"];
+"1000193" -> "1000192"  [label="DDG: atomic_read(&sk->sk_rmem_alloc)"];
+"1000193" -> "1000192"  [label="DDG: 2"];
+"1000194" -> "1000193"  [label="DDG: &sk->sk_rmem_alloc"];
+"1000194" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000199" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000220"  [label="DDG: &sk->sk_rmem_alloc"];
+"1000192" -> "1000191"  [label="AST: "];
+"1000192" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000192"  [label="AST: "];
+"1000205" -> "1000192"  [label="CFG: "];
+"1000219" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000220"  [label="DDG: sk->sk_rcvbuf"];
+"1000192" -> "1000220"  [label="DDG: atomic_read(&sk->sk_rmem_alloc) << 2"];
+"1000192" -> "1000220"  [label="DDG: (atomic_read(&sk->sk_rmem_alloc) << 2) <= sk->sk_rcvbuf"];
+}

@@ -1,0 +1,29 @@
+digraph "0_ImageMagick_aeff00de228bc5a158c2a975ab47845d8a1db456_0@pointer" {
+"1000812" [label="(Call,image_info->pointsize == 0.0)"];
+"1000282" [label="(Call,fabs(image_info->pointsize))"];
+"1000816" [label="(Literal,0.0)"];
+"1000835" [label="(Identifier,draw_info)"];
+"1000281" [label="(Call,fabs(image_info->pointsize) < MagickEpsilon)"];
+"1000283" [label="(Call,image_info->pointsize)"];
+"1000811" [label="(ControlStructure,if (image_info->pointsize == 0.0))"];
+"1000286" [label="(Identifier,MagickEpsilon)"];
+"1000812" [label="(Call,image_info->pointsize == 0.0)"];
+"1000282" [label="(Call,fabs(image_info->pointsize))"];
+"1000854" [label="(MethodReturn,static Image *)"];
+"1000813" [label="(Call,image_info->pointsize)"];
+"1000812" -> "1000811"  [label="AST: "];
+"1000812" -> "1000816"  [label="CFG: "];
+"1000813" -> "1000812"  [label="AST: "];
+"1000816" -> "1000812"  [label="AST: "];
+"1000820" -> "1000812"  [label="CFG: "];
+"1000835" -> "1000812"  [label="CFG: "];
+"1000812" -> "1000854"  [label="DDG: image_info->pointsize"];
+"1000812" -> "1000854"  [label="DDG: image_info->pointsize == 0.0"];
+"1000282" -> "1000812"  [label="DDG: image_info->pointsize"];
+"1000282" -> "1000281"  [label="AST: "];
+"1000282" -> "1000283"  [label="CFG: "];
+"1000283" -> "1000282"  [label="AST: "];
+"1000286" -> "1000282"  [label="CFG: "];
+"1000282" -> "1000854"  [label="DDG: image_info->pointsize"];
+"1000282" -> "1000281"  [label="DDG: image_info->pointsize"];
+}

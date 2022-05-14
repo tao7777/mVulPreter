@@ -1,0 +1,29 @@
+digraph "0_OpenJK_b6ff2bcb1e4e6976d61e316175c6d7c99860fe20_1@pointer" {
+"1000123" [label="(Call,strcmp(filename, Q3CONFIG_CFG))"];
+"1000102" [label="(MethodParameterIn,const char *filename)"];
+"1000122" [label="(Call,!strcmp(filename, Q3CONFIG_CFG))"];
+"1000194" [label="(MethodReturn,long)"];
+"1000125" [label="(Identifier,Q3CONFIG_CFG)"];
+"1000123" [label="(Call,strcmp(filename, Q3CONFIG_CFG))"];
+"1000124" [label="(Identifier,filename)"];
+"1000102" [label="(MethodParameterIn,const char *filename)"];
+"1000176" [label="(Call,fprintf(missingFiles, \"%s\n\", filename))"];
+"1000118" [label="(Call,!strcmp(filename, \"autoexec.cfg\"))"];
+"1000119" [label="(Call,strcmp(filename, \"autoexec.cfg\"))"];
+"1000146" [label="(Call,FS_FOpenFileReadDir(filename, search, file, uniqueFILE, qfalse))"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000194"  [label="DDG: Q3CONFIG_CFG"];
+"1000123" -> "1000194"  [label="DDG: filename"];
+"1000102" -> "1000123"  [label="DDG: filename"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000194"  [label="DDG: filename"];
+"1000102" -> "1000118"  [label="DDG: filename"];
+"1000102" -> "1000119"  [label="DDG: filename"];
+"1000102" -> "1000122"  [label="DDG: filename"];
+"1000102" -> "1000146"  [label="DDG: filename"];
+"1000102" -> "1000176"  [label="DDG: filename"];
+}

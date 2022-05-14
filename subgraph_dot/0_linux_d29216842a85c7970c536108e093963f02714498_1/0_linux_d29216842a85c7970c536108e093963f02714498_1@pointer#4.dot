@@ -1,0 +1,27 @@
+digraph "0_linux_d29216842a85c7970c536108e093963f02714498_1@pointer" {
+"1000159" [label="(Call,touch_mnt_namespace(n))"];
+"1000114" [label="(Call,*n = parent->mnt_ns)"];
+"1000115" [label="(Identifier,n)"];
+"1000114" [label="(Call,*n = parent->mnt_ns)"];
+"1000159" [label="(Call,touch_mnt_namespace(n))"];
+"1000103" [label="(Block,)"];
+"1000161" [label="(MethodReturn,static void)"];
+"1000121" [label="(Identifier,parent)"];
+"1000160" [label="(Identifier,n)"];
+"1000116" [label="(Call,parent->mnt_ns)"];
+"1000130" [label="(Call,m->mnt_ns = n)"];
+"1000159" -> "1000103"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000161"  [label="DDG: touch_mnt_namespace(n)"];
+"1000159" -> "1000161"  [label="DDG: n"];
+"1000114" -> "1000159"  [label="DDG: n"];
+"1000114" -> "1000103"  [label="AST: "];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000121" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000161"  [label="DDG: parent->mnt_ns"];
+"1000114" -> "1000130"  [label="DDG: n"];
+}

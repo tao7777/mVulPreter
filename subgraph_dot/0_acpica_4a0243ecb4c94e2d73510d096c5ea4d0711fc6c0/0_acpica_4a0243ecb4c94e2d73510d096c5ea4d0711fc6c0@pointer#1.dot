@@ -1,0 +1,38 @@
+digraph "0_acpica_4a0243ecb4c94e2d73510d096c5ea4d0711fc6c0@pointer" {
+"1000132" [label="(Call,WalkState->AscendingCallback != NULL)"];
+"1000130" [label="(Call,Ascending && WalkState->AscendingCallback != NULL)"];
+"1000253" [label="(MethodReturn,RET)"];
+"1000221" [label="(Call,Ascending = FALSE)"];
+"1000132" [label="(Call,WalkState->AscendingCallback != NULL)"];
+"1000140" [label="(Identifier,WalkState)"];
+"1000112" [label="(Call,Ascending = TRUE)"];
+"1000136" [label="(Identifier,NULL)"];
+"1000133" [label="(Call,WalkState->AscendingCallback)"];
+"1000130" [label="(Call,Ascending && WalkState->AscendingCallback != NULL)"];
+"1000131" [label="(Identifier,Ascending)"];
+"1000195" [label="(Call,Ascending = FALSE)"];
+"1000129" [label="(ControlStructure,if (Ascending && WalkState->AscendingCallback != NULL))"];
+"1000206" [label="(Call,Ascending = FALSE)"];
+"1000213" [label="(Identifier,Status)"];
+"1000132" -> "1000130"  [label="AST: "];
+"1000132" -> "1000136"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000136" -> "1000132"  [label="AST: "];
+"1000130" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000253"  [label="DDG: WalkState->AscendingCallback"];
+"1000132" -> "1000253"  [label="DDG: NULL"];
+"1000132" -> "1000130"  [label="DDG: WalkState->AscendingCallback"];
+"1000132" -> "1000130"  [label="DDG: NULL"];
+"1000130" -> "1000129"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000140" -> "1000130"  [label="CFG: "];
+"1000213" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000253"  [label="DDG: Ascending && WalkState->AscendingCallback != NULL"];
+"1000130" -> "1000253"  [label="DDG: WalkState->AscendingCallback != NULL"];
+"1000130" -> "1000253"  [label="DDG: Ascending"];
+"1000221" -> "1000130"  [label="DDG: Ascending"];
+"1000206" -> "1000130"  [label="DDG: Ascending"];
+"1000112" -> "1000130"  [label="DDG: Ascending"];
+"1000195" -> "1000130"  [label="DDG: Ascending"];
+}

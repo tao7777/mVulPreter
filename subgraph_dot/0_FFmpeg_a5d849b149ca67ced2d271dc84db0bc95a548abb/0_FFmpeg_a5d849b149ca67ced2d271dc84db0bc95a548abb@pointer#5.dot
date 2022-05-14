@@ -1,0 +1,29 @@
+digraph "0_FFmpeg_a5d849b149ca67ced2d271dc84db0bc95a548abb@pointer" {
+"1000104" [label="(MethodParameterIn,AVStream *st)"];
+"1000347" [label="(Call,avpriv_set_pts_info(st, 64, time_base.num, time_base.den))"];
+"1000348" [label="(Identifier,st)"];
+"1000358" [label="(Identifier,ast)"];
+"1000104" [label="(MethodParameterIn,AVStream *st)"];
+"1000382" [label="(MethodReturn,static int)"];
+"1000349" [label="(Literal,64)"];
+"1000305" [label="(Block,)"];
+"1000336" [label="(Call,time_base = ast->sub_ctx->streams[0]->time_base)"];
+"1000353" [label="(Call,time_base.den)"];
+"1000347" [label="(Call,avpriv_set_pts_info(st, 64, time_base.num, time_base.den))"];
+"1000350" [label="(Call,time_base.num)"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000382"  [label="DDG: st"];
+"1000104" -> "1000347"  [label="DDG: st"];
+"1000347" -> "1000305"  [label="AST: "];
+"1000347" -> "1000353"  [label="CFG: "];
+"1000348" -> "1000347"  [label="AST: "];
+"1000349" -> "1000347"  [label="AST: "];
+"1000350" -> "1000347"  [label="AST: "];
+"1000353" -> "1000347"  [label="AST: "];
+"1000358" -> "1000347"  [label="CFG: "];
+"1000347" -> "1000382"  [label="DDG: time_base.den"];
+"1000347" -> "1000382"  [label="DDG: st"];
+"1000347" -> "1000382"  [label="DDG: avpriv_set_pts_info(st, 64, time_base.num, time_base.den)"];
+"1000347" -> "1000382"  [label="DDG: time_base.num"];
+"1000336" -> "1000347"  [label="DDG: time_base"];
+}

@@ -1,0 +1,30 @@
+digraph "0_tor_79b59a2dfcb68897ee89d98587d09e55f07e68d7@pointer" {
+"1000288" [label="(Call,!options->AllowSingleHopExits)"];
+"1000287" [label="(Call,!options->AllowSingleHopExits &&\n           (or_circ->is_first_hop ||\n            (!connection_or_digest_is_known_relay(\n                or_circ->p_chan->identity_digest) &&\n          should_refuse_unknown_exits(options))))"];
+"1000409" [label="(Identifier,options)"];
+"1000289" [label="(Call,options->AllowSingleHopExits)"];
+"1000294" [label="(Identifier,or_circ)"];
+"1000308" [label="(Identifier,LOG_PROTOCOL_WARN)"];
+"1000718" [label="(MethodReturn,RET)"];
+"1000292" [label="(Call,or_circ->is_first_hop ||\n            (!connection_or_digest_is_known_relay(\n                or_circ->p_chan->identity_digest) &&\n          should_refuse_unknown_exits(options)))"];
+"1000287" [label="(Call,!options->AllowSingleHopExits &&\n           (or_circ->is_first_hop ||\n            (!connection_or_digest_is_known_relay(\n                or_circ->p_chan->identity_digest) &&\n          should_refuse_unknown_exits(options))))"];
+"1000286" [label="(ControlStructure,if (!options->AllowSingleHopExits &&\n           (or_circ->is_first_hop ||\n            (!connection_or_digest_is_known_relay(\n                or_circ->p_chan->identity_digest) &&\n          should_refuse_unknown_exits(options)))))"];
+"1000288" [label="(Call,!options->AllowSingleHopExits)"];
+"1000288" -> "1000287"  [label="AST: "];
+"1000288" -> "1000289"  [label="CFG: "];
+"1000289" -> "1000288"  [label="AST: "];
+"1000294" -> "1000288"  [label="CFG: "];
+"1000287" -> "1000288"  [label="CFG: "];
+"1000288" -> "1000718"  [label="DDG: options->AllowSingleHopExits"];
+"1000288" -> "1000287"  [label="DDG: options->AllowSingleHopExits"];
+"1000287" -> "1000286"  [label="AST: "];
+"1000287" -> "1000292"  [label="CFG: "];
+"1000292" -> "1000287"  [label="AST: "];
+"1000308" -> "1000287"  [label="CFG: "];
+"1000409" -> "1000287"  [label="CFG: "];
+"1000287" -> "1000718"  [label="DDG: or_circ->is_first_hop ||\n            (!connection_or_digest_is_known_relay(\n                or_circ->p_chan->identity_digest) &&\n          should_refuse_unknown_exits(options))"];
+"1000287" -> "1000718"  [label="DDG: !options->AllowSingleHopExits &&\n           (or_circ->is_first_hop ||\n            (!connection_or_digest_is_known_relay(\n                or_circ->p_chan->identity_digest) &&\n          should_refuse_unknown_exits(options)))"];
+"1000287" -> "1000718"  [label="DDG: !options->AllowSingleHopExits"];
+"1000292" -> "1000287"  [label="DDG: or_circ->is_first_hop"];
+"1000292" -> "1000287"  [label="DDG: !connection_or_digest_is_known_relay(\n                or_circ->p_chan->identity_digest) &&\n          should_refuse_unknown_exits(options)"];
+}

@@ -1,0 +1,30 @@
+digraph "0_Chrome_2bcaf4649c1d495072967ea454e8c16dce044705_1@pointer" {
+"1000158" [label="(Call,IsLWS(*line_begin))"];
+"1000156" [label="(Call,prev_line_continuable && IsLWS(*line_begin))"];
+"1000141" [label="(Call,prev_line_continuable = false)"];
+"1000156" [label="(Call,prev_line_continuable && IsLWS(*line_begin))"];
+"1000157" [label="(Identifier,prev_line_continuable)"];
+"1000155" [label="(ControlStructure,if (prev_line_continuable && IsLWS(*line_begin)))"];
+"1000158" [label="(Call,IsLWS(*line_begin))"];
+"1000176" [label="(Call,prev_line_continuable = IsLineSegmentContinuable(line_begin, line_end))"];
+"1000172" [label="(Literal,'\n')"];
+"1000197" [label="(MethodReturn,std::string)"];
+"1000163" [label="(Literal,' ')"];
+"1000159" [label="(Call,*line_begin)"];
+"1000158" -> "1000156"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000156" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000197"  [label="DDG: *line_begin"];
+"1000158" -> "1000156"  [label="DDG: *line_begin"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000163" -> "1000156"  [label="CFG: "];
+"1000172" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000197"  [label="DDG: prev_line_continuable"];
+"1000156" -> "1000197"  [label="DDG: IsLWS(*line_begin)"];
+"1000156" -> "1000197"  [label="DDG: prev_line_continuable && IsLWS(*line_begin)"];
+"1000141" -> "1000156"  [label="DDG: prev_line_continuable"];
+"1000176" -> "1000156"  [label="DDG: prev_line_continuable"];
+}

@@ -1,0 +1,34 @@
+digraph "0_heimdal_b1e699103f08d6a0ca46a122193c9da65f6cf837_0@pointer" {
+"1002102" [label="(Call,b->kdc_options.validate || b->kdc_options.renew)"];
+"1002101" [label="(Call,(b->kdc_options.validate || b->kdc_options.renew) &&\n       !krb5_principal_compare(context,\n\t\t\t       krbtgt->entry.principal,\n\t\t\t       server->entry.principal))"];
+"1002139" [label="(Identifier,context)"];
+"1002103" [label="(Call,b->kdc_options.validate)"];
+"1002115" [label="(Identifier,context)"];
+"1002108" [label="(Call,b->kdc_options.renew)"];
+"1002128" [label="(Identifier,context)"];
+"1002340" [label="(MethodReturn,RET)"];
+"1002100" [label="(ControlStructure,if((b->kdc_options.validate || b->kdc_options.renew) &&\n       !krb5_principal_compare(context,\n\t\t\t       krbtgt->entry.principal,\n\t\t\t       server->entry.principal)))"];
+"1002113" [label="(Call,!krb5_principal_compare(context,\n\t\t\t       krbtgt->entry.principal,\n\t\t\t       server->entry.principal))"];
+"1002102" [label="(Call,b->kdc_options.validate || b->kdc_options.renew)"];
+"1002101" [label="(Call,(b->kdc_options.validate || b->kdc_options.renew) &&\n       !krb5_principal_compare(context,\n\t\t\t       krbtgt->entry.principal,\n\t\t\t       server->entry.principal))"];
+"1002102" -> "1002101"  [label="AST: "];
+"1002102" -> "1002103"  [label="CFG: "];
+"1002102" -> "1002108"  [label="CFG: "];
+"1002103" -> "1002102"  [label="AST: "];
+"1002108" -> "1002102"  [label="AST: "];
+"1002115" -> "1002102"  [label="CFG: "];
+"1002101" -> "1002102"  [label="CFG: "];
+"1002102" -> "1002340"  [label="DDG: b->kdc_options.validate"];
+"1002102" -> "1002340"  [label="DDG: b->kdc_options.renew"];
+"1002102" -> "1002101"  [label="DDG: b->kdc_options.validate"];
+"1002102" -> "1002101"  [label="DDG: b->kdc_options.renew"];
+"1002101" -> "1002100"  [label="AST: "];
+"1002101" -> "1002113"  [label="CFG: "];
+"1002113" -> "1002101"  [label="AST: "];
+"1002128" -> "1002101"  [label="CFG: "];
+"1002139" -> "1002101"  [label="CFG: "];
+"1002101" -> "1002340"  [label="DDG: b->kdc_options.validate || b->kdc_options.renew"];
+"1002101" -> "1002340"  [label="DDG: !krb5_principal_compare(context,\n\t\t\t       krbtgt->entry.principal,\n\t\t\t       server->entry.principal)"];
+"1002101" -> "1002340"  [label="DDG: (b->kdc_options.validate || b->kdc_options.renew) &&\n       !krb5_principal_compare(context,\n\t\t\t       krbtgt->entry.principal,\n\t\t\t       server->entry.principal)"];
+"1002113" -> "1002101"  [label="DDG: krb5_principal_compare(context,\n\t\t\t       krbtgt->entry.principal,\n\t\t\t       server->entry.principal)"];
+}

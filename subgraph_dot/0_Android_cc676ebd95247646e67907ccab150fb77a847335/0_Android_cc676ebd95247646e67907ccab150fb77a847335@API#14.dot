@@ -1,0 +1,31 @@
+digraph "0_Android_cc676ebd95247646e67907ccab150fb77a847335@API" {
+"1000259" [label="(Call,memset(ps_dec->pv_mv_buf_mgr, 0, size))"];
+"1000253" [label="(Call,size = sizeof(buf_mgr_t) + ithread_get_mutex_lock_size())"];
+"1000263" [label="(Literal,0)"];
+"1000266" [label="(Identifier,ps_dec)"];
+"1000254" [label="(Identifier,size)"];
+"1000260" [label="(Call,ps_dec->pv_mv_buf_mgr)"];
+"1000261" [label="(Identifier,ps_dec)"];
+"1000963" [label="(MethodReturn,void)"];
+"1000255" [label="(Call,sizeof(buf_mgr_t) + ithread_get_mutex_lock_size())"];
+"1000259" [label="(Call,memset(ps_dec->pv_mv_buf_mgr, 0, size))"];
+"1000121" [label="(Block,)"];
+"1000253" [label="(Call,size = sizeof(buf_mgr_t) + ithread_get_mutex_lock_size())"];
+"1000264" [label="(Identifier,size)"];
+"1000259" -> "1000121"  [label="AST: "];
+"1000259" -> "1000264"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000263" -> "1000259"  [label="AST: "];
+"1000264" -> "1000259"  [label="AST: "];
+"1000266" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000963"  [label="DDG: memset(ps_dec->pv_mv_buf_mgr, 0, size)"];
+"1000259" -> "1000963"  [label="DDG: ps_dec->pv_mv_buf_mgr"];
+"1000259" -> "1000963"  [label="DDG: size"];
+"1000253" -> "1000259"  [label="DDG: size"];
+"1000253" -> "1000121"  [label="AST: "];
+"1000253" -> "1000255"  [label="CFG: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000255" -> "1000253"  [label="AST: "];
+"1000261" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000963"  [label="DDG: sizeof(buf_mgr_t) + ithread_get_mutex_lock_size()"];
+}

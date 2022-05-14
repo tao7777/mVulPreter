@@ -1,0 +1,26 @@
+digraph "0_linux_2b7e8665b4ff51c034c55df3cff76518d1a9ee3a@pointer" {
+"1000222" [label="(Call,mm->def_flags = current->mm->def_flags & VM_INIT_DEF_MASK)"];
+"1000226" [label="(Call,current->mm->def_flags & VM_INIT_DEF_MASK)"];
+"1000226" [label="(Call,current->mm->def_flags & VM_INIT_DEF_MASK)"];
+"1000232" [label="(Identifier,VM_INIT_DEF_MASK)"];
+"1000223" [label="(Call,mm->def_flags)"];
+"1000270" [label="(MethodReturn,static struct mm_struct *)"];
+"1000222" [label="(Call,mm->def_flags = current->mm->def_flags & VM_INIT_DEF_MASK)"];
+"1000227" [label="(Call,current->mm->def_flags)"];
+"1000210" [label="(Block,)"];
+"1000247" [label="(Identifier,mm)"];
+"1000222" -> "1000210"  [label="AST: "];
+"1000222" -> "1000226"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000226" -> "1000222"  [label="AST: "];
+"1000247" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000270"  [label="DDG: mm->def_flags"];
+"1000222" -> "1000270"  [label="DDG: current->mm->def_flags & VM_INIT_DEF_MASK"];
+"1000226" -> "1000222"  [label="DDG: current->mm->def_flags"];
+"1000226" -> "1000222"  [label="DDG: VM_INIT_DEF_MASK"];
+"1000226" -> "1000232"  [label="CFG: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000232" -> "1000226"  [label="AST: "];
+"1000226" -> "1000270"  [label="DDG: current->mm->def_flags"];
+"1000226" -> "1000270"  [label="DDG: VM_INIT_DEF_MASK"];
+}

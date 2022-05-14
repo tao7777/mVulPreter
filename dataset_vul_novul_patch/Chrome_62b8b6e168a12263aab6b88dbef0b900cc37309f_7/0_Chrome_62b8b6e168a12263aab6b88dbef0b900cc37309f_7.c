@@ -1,0 +1,1 @@
+bool PartialMagnificationController::IsPartialMagnified() const {

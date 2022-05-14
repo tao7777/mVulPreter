@@ -1,0 +1,31 @@
+digraph "0_qemu_de594e47659029316bbf9391efb79da0a1a08e08@pointer" {
+"1000191" [label="(Call,s->waiting == LSI_NOWAIT)"];
+"1000185" [label="(Call,s->istat1 & LSI_ISTAT1_SRUN && s->waiting == LSI_NOWAIT)"];
+"1000204" [label="(MethodReturn,static void)"];
+"1000186" [label="(Call,s->istat1 & LSI_ISTAT1_SRUN)"];
+"1000192" [label="(Call,s->waiting)"];
+"1000191" [label="(Call,s->waiting == LSI_NOWAIT)"];
+"1000195" [label="(Identifier,LSI_NOWAIT)"];
+"1000200" [label="(Identifier,s)"];
+"1000184" [label="(ControlStructure,if (s->istat1 & LSI_ISTAT1_SRUN && s->waiting == LSI_NOWAIT))"];
+"1000185" [label="(Call,s->istat1 & LSI_ISTAT1_SRUN && s->waiting == LSI_NOWAIT)"];
+"1000191" -> "1000185"  [label="AST: "];
+"1000191" -> "1000195"  [label="CFG: "];
+"1000192" -> "1000191"  [label="AST: "];
+"1000195" -> "1000191"  [label="AST: "];
+"1000185" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000204"  [label="DDG: LSI_NOWAIT"];
+"1000191" -> "1000204"  [label="DDG: s->waiting"];
+"1000191" -> "1000185"  [label="DDG: s->waiting"];
+"1000191" -> "1000185"  [label="DDG: LSI_NOWAIT"];
+"1000185" -> "1000184"  [label="AST: "];
+"1000185" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000185"  [label="AST: "];
+"1000200" -> "1000185"  [label="CFG: "];
+"1000204" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000204"  [label="DDG: s->istat1 & LSI_ISTAT1_SRUN && s->waiting == LSI_NOWAIT"];
+"1000185" -> "1000204"  [label="DDG: s->istat1 & LSI_ISTAT1_SRUN"];
+"1000185" -> "1000204"  [label="DDG: s->waiting == LSI_NOWAIT"];
+"1000186" -> "1000185"  [label="DDG: s->istat1"];
+"1000186" -> "1000185"  [label="DDG: LSI_ISTAT1_SRUN"];
+}

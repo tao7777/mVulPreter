@@ -1,0 +1,3 @@
+  void NotifyObserversOfDNSChange() {
+     NetworkChangeNotifier::NotifyObserversOfDNSChange();
+   }

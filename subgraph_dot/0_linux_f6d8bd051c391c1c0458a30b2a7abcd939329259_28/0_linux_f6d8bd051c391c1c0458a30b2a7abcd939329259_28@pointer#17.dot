@@ -1,0 +1,30 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_28@pointer" {
+"1000197" [label="(Call,ret = NULL)"];
+"1000481" [label="(Return,return ret;)"];
+"1000483" [label="(MethodReturn,struct sock *)"];
+"1000201" [label="(Identifier,req)"];
+"1000197" [label="(Call,ret = NULL)"];
+"1000109" [label="(Block,)"];
+"1000481" [label="(Return,return ret;)"];
+"1000482" [label="(Identifier,ret)"];
+"1000134" [label="(Call,*ret = sk)"];
+"1000199" [label="(Identifier,NULL)"];
+"1000198" [label="(Identifier,ret)"];
+"1000470" [label="(Call,ret = get_cookie_sock(sk, skb, req, &rt->dst))"];
+"1000197" -> "1000109"  [label="AST: "];
+"1000197" -> "1000199"  [label="CFG: "];
+"1000198" -> "1000197"  [label="AST: "];
+"1000199" -> "1000197"  [label="AST: "];
+"1000201" -> "1000197"  [label="CFG: "];
+"1000197" -> "1000483"  [label="DDG: NULL"];
+"1000197" -> "1000483"  [label="DDG: ret"];
+"1000197" -> "1000481"  [label="DDG: ret"];
+"1000481" -> "1000109"  [label="AST: "];
+"1000481" -> "1000482"  [label="CFG: "];
+"1000482" -> "1000481"  [label="AST: "];
+"1000483" -> "1000481"  [label="CFG: "];
+"1000481" -> "1000483"  [label="DDG: <RET>"];
+"1000482" -> "1000481"  [label="DDG: ret"];
+"1000134" -> "1000481"  [label="DDG: ret"];
+"1000470" -> "1000481"  [label="DDG: ret"];
+}

@@ -1,0 +1,26 @@
+digraph "0_suricata_47afc577ff763150f9b47f10331f5ef9eb847a57@pointer" {
+"1000994" [label="(Call,pe->flags & DETECT_PCRE_RELATIVE_NEXT)"];
+"1000993" [label="(Call,!(pe->flags & DETECT_PCRE_RELATIVE_NEXT))"];
+"1000993" [label="(Call,!(pe->flags & DETECT_PCRE_RELATIVE_NEXT))"];
+"1000992" [label="(ControlStructure,if (!(pe->flags & DETECT_PCRE_RELATIVE_NEXT)))"];
+"1001004" [label="(Identifier,det_ctx)"];
+"1001542" [label="(MethodReturn,int)"];
+"1000998" [label="(Identifier,DETECT_PCRE_RELATIVE_NEXT)"];
+"1000995" [label="(Call,pe->flags)"];
+"1000994" [label="(Call,pe->flags & DETECT_PCRE_RELATIVE_NEXT)"];
+"1001001" [label="(Literal,\"no relative match coming up, so this is a match\")"];
+"1000994" -> "1000993"  [label="AST: "];
+"1000994" -> "1000998"  [label="CFG: "];
+"1000995" -> "1000994"  [label="AST: "];
+"1000998" -> "1000994"  [label="AST: "];
+"1000993" -> "1000994"  [label="CFG: "];
+"1000994" -> "1001542"  [label="DDG: DETECT_PCRE_RELATIVE_NEXT"];
+"1000994" -> "1001542"  [label="DDG: pe->flags"];
+"1000994" -> "1000993"  [label="DDG: pe->flags"];
+"1000994" -> "1000993"  [label="DDG: DETECT_PCRE_RELATIVE_NEXT"];
+"1000993" -> "1000992"  [label="AST: "];
+"1001001" -> "1000993"  [label="CFG: "];
+"1001004" -> "1000993"  [label="CFG: "];
+"1000993" -> "1001542"  [label="DDG: !(pe->flags & DETECT_PCRE_RELATIVE_NEXT)"];
+"1000993" -> "1001542"  [label="DDG: pe->flags & DETECT_PCRE_RELATIVE_NEXT"];
+}

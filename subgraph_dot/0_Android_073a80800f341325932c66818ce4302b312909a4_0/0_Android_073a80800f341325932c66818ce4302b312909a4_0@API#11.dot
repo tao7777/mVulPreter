@@ -1,0 +1,30 @@
+digraph "0_Android_073a80800f341325932c66818ce4302b312909a4_0@API" {
+"1000214" [label="(Call,*replySize != sizeof(effect_config_t))"];
+"1000210" [label="(Call,pReplyData == NULL ||\n *replySize != sizeof(effect_config_t))"];
+"1000227" [label="(Identifier,effect)"];
+"1000221" [label="(Literal,\"fx_command() EFFECT_CMD_GET_CONFIG invalid args\")"];
+"1000487" [label="(MethodReturn,static int)"];
+"1000210" [label="(Call,pReplyData == NULL ||\n *replySize != sizeof(effect_config_t))"];
+"1000217" [label="(Call,sizeof(effect_config_t))"];
+"1000215" [label="(Call,*replySize)"];
+"1000211" [label="(Call,pReplyData == NULL)"];
+"1000214" [label="(Call,*replySize != sizeof(effect_config_t))"];
+"1000209" [label="(ControlStructure,if (pReplyData == NULL ||\n *replySize != sizeof(effect_config_t)))"];
+"1000214" -> "1000210"  [label="AST: "];
+"1000214" -> "1000217"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000217" -> "1000214"  [label="AST: "];
+"1000210" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000487"  [label="DDG: *replySize"];
+"1000214" -> "1000210"  [label="DDG: *replySize"];
+"1000210" -> "1000209"  [label="AST: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000221" -> "1000210"  [label="CFG: "];
+"1000227" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000487"  [label="DDG: pReplyData == NULL ||\n *replySize != sizeof(effect_config_t)"];
+"1000210" -> "1000487"  [label="DDG: *replySize != sizeof(effect_config_t)"];
+"1000210" -> "1000487"  [label="DDG: pReplyData == NULL"];
+"1000211" -> "1000210"  [label="DDG: pReplyData"];
+"1000211" -> "1000210"  [label="DDG: NULL"];
+}

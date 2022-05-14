@@ -1,0 +1,33 @@
+digraph "0_ImageMagick6_91e58d967a92250439ede038ccfb0913a81e59fe@pointer" {
+"1000151" [label="(Call,next=next->next)"];
+"1000146" [label="(Call,next != (Image *) NULL)"];
+"1000157" [label="(Identifier,columns)"];
+"1000148" [label="(Call,(Image *) NULL)"];
+"1000146" [label="(Call,next != (Image *) NULL)"];
+"1000151" [label="(Call,next=next->next)"];
+"1000142" [label="(ControlStructure,for (next=images; next != (Image *) NULL; next=next->next))"];
+"1000143" [label="(Call,next=images)"];
+"1000152" [label="(Identifier,next)"];
+"1000219" [label="(MethodReturn,static MagickPixelPacket **)"];
+"1000153" [label="(Call,next->next)"];
+"1000147" [label="(Identifier,next)"];
+"1000165" [label="(Identifier,i)"];
+"1000151" -> "1000142"  [label="AST: "];
+"1000151" -> "1000153"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000153" -> "1000151"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000219"  [label="DDG: next->next"];
+"1000151" -> "1000146"  [label="DDG: next"];
+"1000146" -> "1000142"  [label="AST: "];
+"1000146" -> "1000148"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000148" -> "1000146"  [label="AST: "];
+"1000157" -> "1000146"  [label="CFG: "];
+"1000165" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000219"  [label="DDG: (Image *) NULL"];
+"1000146" -> "1000219"  [label="DDG: next != (Image *) NULL"];
+"1000146" -> "1000219"  [label="DDG: next"];
+"1000143" -> "1000146"  [label="DDG: next"];
+"1000148" -> "1000146"  [label="DDG: NULL"];
+}

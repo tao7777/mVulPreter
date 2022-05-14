@@ -1,0 +1,31 @@
+digraph "0_linux_f2fcfcd670257236ebf2088bbdf26f6a8ef459fe_4@pointer" {
+"1000130" [label="(Call,addr->sa_family != AF_BLUETOOTH)"];
+"1000127" [label="(Call,!addr || addr->sa_family != AF_BLUETOOTH)"];
+"1000255" [label="(MethodReturn,static int)"];
+"1000137" [label="(Identifier,EINVAL)"];
+"1000127" [label="(Call,!addr || addr->sa_family != AF_BLUETOOTH)"];
+"1000134" [label="(Identifier,AF_BLUETOOTH)"];
+"1000131" [label="(Call,addr->sa_family)"];
+"1000140" [label="(Identifier,la)"];
+"1000126" [label="(ControlStructure,if (!addr || addr->sa_family != AF_BLUETOOTH))"];
+"1000128" [label="(Call,!addr)"];
+"1000130" [label="(Call,addr->sa_family != AF_BLUETOOTH)"];
+"1000130" -> "1000127"  [label="AST: "];
+"1000130" -> "1000134"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000134" -> "1000130"  [label="AST: "];
+"1000127" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000255"  [label="DDG: AF_BLUETOOTH"];
+"1000130" -> "1000255"  [label="DDG: addr->sa_family"];
+"1000130" -> "1000127"  [label="DDG: addr->sa_family"];
+"1000130" -> "1000127"  [label="DDG: AF_BLUETOOTH"];
+"1000127" -> "1000126"  [label="AST: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000137" -> "1000127"  [label="CFG: "];
+"1000140" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000255"  [label="DDG: !addr || addr->sa_family != AF_BLUETOOTH"];
+"1000127" -> "1000255"  [label="DDG: addr->sa_family != AF_BLUETOOTH"];
+"1000127" -> "1000255"  [label="DDG: !addr"];
+"1000128" -> "1000127"  [label="DDG: addr"];
+}

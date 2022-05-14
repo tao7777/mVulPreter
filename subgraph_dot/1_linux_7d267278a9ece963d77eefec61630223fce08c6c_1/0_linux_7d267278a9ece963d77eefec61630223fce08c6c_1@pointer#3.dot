@@ -1,0 +1,35 @@
+digraph "0_linux_7d267278a9ece963d77eefec61630223fce08c6c_1@pointer" {
+"1000190" [label="(Call,sk->sk_state == TCP_CLOSE)"];
+"1000199" [label="(Call,sk->sk_state == TCP_SYN_SENT)"];
+"1000205" [label="(Identifier,mask)"];
+"1000196" [label="(Identifier,mask)"];
+"1000194" [label="(Identifier,TCP_CLOSE)"];
+"1000271" [label="(MethodReturn,static unsigned int)"];
+"1000199" [label="(Call,sk->sk_state == TCP_SYN_SENT)"];
+"1000198" [label="(ControlStructure,if (sk->sk_state == TCP_SYN_SENT))"];
+"1000189" [label="(ControlStructure,if (sk->sk_state == TCP_CLOSE))"];
+"1000210" [label="(Identifier,wait)"];
+"1000203" [label="(Identifier,TCP_SYN_SENT)"];
+"1000191" [label="(Call,sk->sk_state)"];
+"1000190" [label="(Call,sk->sk_state == TCP_CLOSE)"];
+"1000200" [label="(Call,sk->sk_state)"];
+"1000201" [label="(Identifier,sk)"];
+"1000190" -> "1000189"  [label="AST: "];
+"1000190" -> "1000194"  [label="CFG: "];
+"1000191" -> "1000190"  [label="AST: "];
+"1000194" -> "1000190"  [label="AST: "];
+"1000196" -> "1000190"  [label="CFG: "];
+"1000201" -> "1000190"  [label="CFG: "];
+"1000190" -> "1000271"  [label="DDG: TCP_CLOSE"];
+"1000190" -> "1000271"  [label="DDG: sk->sk_state == TCP_CLOSE"];
+"1000190" -> "1000199"  [label="DDG: sk->sk_state"];
+"1000199" -> "1000198"  [label="AST: "];
+"1000199" -> "1000203"  [label="CFG: "];
+"1000200" -> "1000199"  [label="AST: "];
+"1000203" -> "1000199"  [label="AST: "];
+"1000205" -> "1000199"  [label="CFG: "];
+"1000210" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000271"  [label="DDG: sk->sk_state"];
+"1000199" -> "1000271"  [label="DDG: TCP_SYN_SENT"];
+"1000199" -> "1000271"  [label="DDG: sk->sk_state == TCP_SYN_SENT"];
+}

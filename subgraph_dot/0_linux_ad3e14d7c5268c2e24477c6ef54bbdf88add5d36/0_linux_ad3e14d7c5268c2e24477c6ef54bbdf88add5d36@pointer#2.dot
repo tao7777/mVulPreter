@@ -1,0 +1,30 @@
+digraph "0_linux_ad3e14d7c5268c2e24477c6ef54bbdf88add5d36@pointer" {
+"1000152" [label="(Call,spin_lock_irqsave(&djrcv_dev->lock, flags))"];
+"1000197" [label="(Call,spin_unlock_irqrestore(&djrcv_dev->lock, flags))"];
+"1000157" [label="(Identifier,flags)"];
+"1000152" [label="(Call,spin_lock_irqsave(&djrcv_dev->lock, flags))"];
+"1000106" [label="(Block,)"];
+"1000205" [label="(MethodReturn,static int)"];
+"1000202" [label="(Identifier,flags)"];
+"1000198" [label="(Call,&djrcv_dev->lock)"];
+"1000204" [label="(Identifier,report_processed)"];
+"1000153" [label="(Call,&djrcv_dev->lock)"];
+"1000197" [label="(Call,spin_unlock_irqrestore(&djrcv_dev->lock, flags))"];
+"1000161" [label="(Identifier,dj_report)"];
+"1000152" -> "1000106"  [label="AST: "];
+"1000152" -> "1000157"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000157" -> "1000152"  [label="AST: "];
+"1000161" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000205"  [label="DDG: spin_lock_irqsave(&djrcv_dev->lock, flags)"];
+"1000152" -> "1000197"  [label="DDG: &djrcv_dev->lock"];
+"1000152" -> "1000197"  [label="DDG: flags"];
+"1000197" -> "1000106"  [label="AST: "];
+"1000197" -> "1000202"  [label="CFG: "];
+"1000198" -> "1000197"  [label="AST: "];
+"1000202" -> "1000197"  [label="AST: "];
+"1000204" -> "1000197"  [label="CFG: "];
+"1000197" -> "1000205"  [label="DDG: spin_unlock_irqrestore(&djrcv_dev->lock, flags)"];
+"1000197" -> "1000205"  [label="DDG: flags"];
+"1000197" -> "1000205"  [label="DDG: &djrcv_dev->lock"];
+}

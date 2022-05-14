@@ -1,0 +1,30 @@
+digraph "0_linux_3d32e4dbe71374a6780eaf51d719d76f9a9bf22f@pointer" {
+"1000140" [label="(Call,gfn + slot->npages)"];
+"1000133" [label="(Call,gfn     = slot->base_gfn)"];
+"1000134" [label="(Identifier,gfn)"];
+"1000169" [label="(Call,gfn < end_gfn)"];
+"1000111" [label="(Block,)"];
+"1000140" [label="(Call,gfn + slot->npages)"];
+"1000142" [label="(Call,slot->npages)"];
+"1000135" [label="(Call,slot->base_gfn)"];
+"1000138" [label="(Call,end_gfn = gfn + slot->npages)"];
+"1000133" [label="(Call,gfn     = slot->base_gfn)"];
+"1000139" [label="(Identifier,end_gfn)"];
+"1000141" [label="(Identifier,gfn)"];
+"1000278" [label="(MethodReturn,int)"];
+"1000140" -> "1000138"  [label="AST: "];
+"1000140" -> "1000142"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000142" -> "1000140"  [label="AST: "];
+"1000138" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000278"  [label="DDG: slot->npages"];
+"1000133" -> "1000140"  [label="DDG: gfn"];
+"1000133" -> "1000111"  [label="AST: "];
+"1000133" -> "1000135"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000135" -> "1000133"  [label="AST: "];
+"1000139" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000278"  [label="DDG: slot->base_gfn"];
+"1000133" -> "1000138"  [label="DDG: gfn"];
+"1000133" -> "1000169"  [label="DDG: gfn"];
+}

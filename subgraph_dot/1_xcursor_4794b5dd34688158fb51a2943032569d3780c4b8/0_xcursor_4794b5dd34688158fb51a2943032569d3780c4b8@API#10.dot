@@ -1,0 +1,23 @@
+digraph "0_xcursor_4794b5dd34688158fb51a2943032569d3780c4b8@API" {
+"1000149" [label="(Call,sizeof (XcursorComments) +\n\t\t       size * sizeof (XcursorComment *))"];
+"1000152" [label="(Call,size * sizeof (XcursorComment *))"];
+"1000152" [label="(Call,size * sizeof (XcursorComment *))"];
+"1000148" [label="(Call,malloc (sizeof (XcursorComments) +\n\t\t       size * sizeof (XcursorComment *)))"];
+"1000150" [label="(Call,sizeof (XcursorComments))"];
+"1000149" [label="(Call,sizeof (XcursorComments) +\n\t\t       size * sizeof (XcursorComment *))"];
+"1000153" [label="(Identifier,size)"];
+"1000154" [label="(Call,sizeof (XcursorComment *))"];
+"1001171" [label="(MethodReturn,RET)"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000152"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000152" -> "1000149"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1001171"  [label="DDG: size * sizeof (XcursorComment *)"];
+"1000152" -> "1000149"  [label="DDG: size"];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000154" -> "1000152"  [label="AST: "];
+"1000152" -> "1001171"  [label="DDG: size"];
+"1000152" -> "1000148"  [label="DDG: size"];
+}

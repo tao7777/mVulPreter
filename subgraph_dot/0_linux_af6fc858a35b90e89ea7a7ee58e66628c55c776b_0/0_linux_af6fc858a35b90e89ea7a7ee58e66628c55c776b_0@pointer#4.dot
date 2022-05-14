@@ -1,0 +1,29 @@
+digraph "0_linux_af6fc858a35b90e89ea7a7ee58e66628c55c776b_0@pointer" {
+"1000167" [label="(Call,!dev->is_busmaster)"];
+"1000166" [label="(Call,!dev->is_busmaster && is_master_cmd(value))"];
+"1000168" [label="(Call,dev->is_busmaster)"];
+"1000181" [label="(Identifier,value)"];
+"1000171" [label="(Call,is_master_cmd(value))"];
+"1000166" [label="(Call,!dev->is_busmaster && is_master_cmd(value))"];
+"1000248" [label="(MethodReturn,static int)"];
+"1000167" [label="(Call,!dev->is_busmaster)"];
+"1000176" [label="(Identifier,verbose_request)"];
+"1000165" [label="(ControlStructure,if (!dev->is_busmaster && is_master_cmd(value)))"];
+"1000172" [label="(Identifier,value)"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000172" -> "1000167"  [label="CFG: "];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000248"  [label="DDG: dev->is_busmaster"];
+"1000167" -> "1000166"  [label="DDG: dev->is_busmaster"];
+"1000166" -> "1000165"  [label="AST: "];
+"1000166" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000166"  [label="AST: "];
+"1000176" -> "1000166"  [label="CFG: "];
+"1000181" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000248"  [label="DDG: !dev->is_busmaster && is_master_cmd(value)"];
+"1000166" -> "1000248"  [label="DDG: !dev->is_busmaster"];
+"1000166" -> "1000248"  [label="DDG: is_master_cmd(value)"];
+"1000171" -> "1000166"  [label="DDG: value"];
+}

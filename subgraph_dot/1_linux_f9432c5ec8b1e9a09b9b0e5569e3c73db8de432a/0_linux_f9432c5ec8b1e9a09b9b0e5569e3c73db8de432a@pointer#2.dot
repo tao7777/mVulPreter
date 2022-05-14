@@ -1,0 +1,33 @@
+digraph "0_linux_f9432c5ec8b1e9a09b9b0e5569e3c73db8de432a@pointer" {
+"1000172" [label="(Call,test_bit(RFCOMM_TTY_RELEASED, &dev->flags))"];
+"1000188" [label="(Call,(di + n)->flags   = dev->flags)"];
+"1000173" [label="(Identifier,RFCOMM_TTY_RELEASED)"];
+"1000189" [label="(Call,(di + n)->flags)"];
+"1000178" [label="(ControlStructure,continue;)"];
+"1000172" [label="(Call,test_bit(RFCOMM_TTY_RELEASED, &dev->flags))"];
+"1000278" [label="(MethodReturn,static int)"];
+"1000174" [label="(Call,&dev->flags)"];
+"1000170" [label="(Block,)"];
+"1000200" [label="(Identifier,di)"];
+"1000182" [label="(Identifier,di)"];
+"1000171" [label="(ControlStructure,if (test_bit(RFCOMM_TTY_RELEASED, &dev->flags)))"];
+"1000188" [label="(Call,(di + n)->flags   = dev->flags)"];
+"1000194" [label="(Call,dev->flags)"];
+"1000172" -> "1000171"  [label="AST: "];
+"1000172" -> "1000174"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000174" -> "1000172"  [label="AST: "];
+"1000178" -> "1000172"  [label="CFG: "];
+"1000182" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000278"  [label="DDG: test_bit(RFCOMM_TTY_RELEASED, &dev->flags)"];
+"1000172" -> "1000278"  [label="DDG: RFCOMM_TTY_RELEASED"];
+"1000172" -> "1000278"  [label="DDG: &dev->flags"];
+"1000172" -> "1000188"  [label="DDG: &dev->flags"];
+"1000188" -> "1000170"  [label="AST: "];
+"1000188" -> "1000194"  [label="CFG: "];
+"1000189" -> "1000188"  [label="AST: "];
+"1000194" -> "1000188"  [label="AST: "];
+"1000200" -> "1000188"  [label="CFG: "];
+"1000188" -> "1000278"  [label="DDG: dev->flags"];
+"1000188" -> "1000278"  [label="DDG: (di + n)->flags"];
+}

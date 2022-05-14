@@ -1,0 +1,29 @@
+digraph "0_Chrome_c66b1fc49870c514b1c1e8b53498153176d7ec2b_6@array" {
+"1000161" [label="(Call,user_auth_type_map_[account_id] = initial_auth_type)"];
+"1000150" [label="(Call,initial_auth_type =\n         is_public_account\n             ? proximity_auth::mojom::AuthType::EXPAND_THEN_USER_CLICK\n            : (ShouldForceOnlineSignIn(*it)\n                    ? proximity_auth::mojom::AuthType::ONLINE_SIGN_IN\n                    : proximity_auth::mojom::AuthType::OFFLINE_PASSWORD))"];
+"1000152" [label="(Call,is_public_account\n             ? proximity_auth::mojom::AuthType::EXPAND_THEN_USER_CLICK\n            : (ShouldForceOnlineSignIn(*it)\n                    ? proximity_auth::mojom::AuthType::ONLINE_SIGN_IN\n                    : proximity_auth::mojom::AuthType::OFFLINE_PASSWORD))"];
+"1000165" [label="(Identifier,initial_auth_type)"];
+"1000162" [label="(Call,user_auth_type_map_[account_id])"];
+"1000161" [label="(Call,user_auth_type_map_[account_id] = initial_auth_type)"];
+"1000168" [label="(Identifier,login_user_info)"];
+"1000151" [label="(Identifier,initial_auth_type)"];
+"1000187" [label="(Call,FillUserMojoStruct(*it, is_owner, is_signin_to_add, initial_auth_type,\n                       public_session_recommended_locales,\n                       login_user_info.get()))"];
+"1000219" [label="(MethodReturn,RET)"];
+"1000163" [label="(Identifier,user_auth_type_map_)"];
+"1000132" [label="(Block,)"];
+"1000150" [label="(Call,initial_auth_type =\n         is_public_account\n             ? proximity_auth::mojom::AuthType::EXPAND_THEN_USER_CLICK\n            : (ShouldForceOnlineSignIn(*it)\n                    ? proximity_auth::mojom::AuthType::ONLINE_SIGN_IN\n                    : proximity_auth::mojom::AuthType::OFFLINE_PASSWORD))"];
+"1000161" -> "1000132"  [label="AST: "];
+"1000161" -> "1000165"  [label="CFG: "];
+"1000162" -> "1000161"  [label="AST: "];
+"1000165" -> "1000161"  [label="AST: "];
+"1000168" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000219"  [label="DDG: user_auth_type_map_[account_id]"];
+"1000150" -> "1000161"  [label="DDG: initial_auth_type"];
+"1000150" -> "1000132"  [label="AST: "];
+"1000150" -> "1000152"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000152" -> "1000150"  [label="AST: "];
+"1000163" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000219"  [label="DDG: is_public_account\n             ? proximity_auth::mojom::AuthType::EXPAND_THEN_USER_CLICK\n            : (ShouldForceOnlineSignIn(*it)\n                    ? proximity_auth::mojom::AuthType::ONLINE_SIGN_IN\n                    : proximity_auth::mojom::AuthType::OFFLINE_PASSWORD)"];
+"1000150" -> "1000187"  [label="DDG: initial_auth_type"];
+}

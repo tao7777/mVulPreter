@@ -1,0 +1,35 @@
+digraph "0_jasper_d42b2388f7f8e0332c846675133acea151fc557a_13@pointer" {
+"1000106" [label="(Call,image = jas_malloc(sizeof(jas_image_t)))"];
+"1000105" [label="(Call,!(image = jas_malloc(sizeof(jas_image_t))))"];
+"1000159" [label="(Return,return image;)"];
+"1000104" [label="(ControlStructure,if (!(image = jas_malloc(sizeof(jas_image_t)))))"];
+"1000160" [label="(Identifier,image)"];
+"1000107" [label="(Identifier,image)"];
+"1000159" [label="(Return,return image;)"];
+"1000105" [label="(Call,!(image = jas_malloc(sizeof(jas_image_t))))"];
+"1000113" [label="(Literal,0)"];
+"1000161" [label="(MethodReturn,jas_image_t *)"];
+"1000106" [label="(Call,image = jas_malloc(sizeof(jas_image_t)))"];
+"1000102" [label="(Block,)"];
+"1000108" [label="(Call,jas_malloc(sizeof(jas_image_t)))"];
+"1000116" [label="(Identifier,image)"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000161"  [label="DDG: jas_malloc(sizeof(jas_image_t))"];
+"1000106" -> "1000161"  [label="DDG: image"];
+"1000106" -> "1000105"  [label="DDG: image"];
+"1000106" -> "1000159"  [label="DDG: image"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000113" -> "1000105"  [label="CFG: "];
+"1000116" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000161"  [label="DDG: !(image = jas_malloc(sizeof(jas_image_t)))"];
+"1000159" -> "1000102"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000161"  [label="DDG: <RET>"];
+"1000160" -> "1000159"  [label="DDG: image"];
+}

@@ -1,0 +1,26 @@
+digraph "0_memcached_75cc83685e103bc8ba380a57468c8f04413033f9_0@API" {
+"1000254" [label="(Call,pthread_mutex_lock(&c->thread->stats.mutex))"];
+"1000272" [label="(Call,pthread_mutex_unlock(&c->thread->stats.mutex))"];
+"1000254" [label="(Call,pthread_mutex_lock(&c->thread->stats.mutex))"];
+"1000282" [label="(Identifier,gotdata)"];
+"1000325" [label="(MethodReturn,static enum try_read_result)"];
+"1000253" [label="(Block,)"];
+"1000272" [label="(Call,pthread_mutex_unlock(&c->thread->stats.mutex))"];
+"1000254" [label="(Call,pthread_mutex_lock(&c->thread->stats.mutex))"];
+"1000255" [label="(Call,&c->thread->stats.mutex)"];
+"1000273" [label="(Call,&c->thread->stats.mutex)"];
+"1000267" [label="(Identifier,c)"];
+"1000254" -> "1000253"  [label="AST: "];
+"1000254" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000267" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000325"  [label="DDG: pthread_mutex_lock(&c->thread->stats.mutex)"];
+"1000272" -> "1000254"  [label="DDG: &c->thread->stats.mutex"];
+"1000254" -> "1000272"  [label="DDG: &c->thread->stats.mutex"];
+"1000272" -> "1000253"  [label="AST: "];
+"1000272" -> "1000273"  [label="CFG: "];
+"1000273" -> "1000272"  [label="AST: "];
+"1000282" -> "1000272"  [label="CFG: "];
+"1000272" -> "1000325"  [label="DDG: &c->thread->stats.mutex"];
+"1000272" -> "1000325"  [label="DDG: pthread_mutex_unlock(&c->thread->stats.mutex)"];
+}

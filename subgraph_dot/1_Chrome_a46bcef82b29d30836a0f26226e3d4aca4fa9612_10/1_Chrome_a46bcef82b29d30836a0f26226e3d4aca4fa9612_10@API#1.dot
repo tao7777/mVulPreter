@@ -1,0 +1,26 @@
+digraph "1_Chrome_a46bcef82b29d30836a0f26226e3d4aca4fa9612_10@API" {
+"1000130" [label="(Call,context_->main_message_loop()->PostTask(FROM_HERE, shutdown_task))"];
+"1000101" [label="(MethodParameterIn,const base::Closure& shutdown_task)"];
+"1000101" [label="(MethodParameterIn,const base::Closure& shutdown_task)"];
+"1000131" [label="(Identifier,FROM_HERE)"];
+"1000133" [label="(Return,return;)"];
+"1000130" [label="(Call,context_->main_message_loop()->PostTask(FROM_HERE, shutdown_task))"];
+"1000126" [label="(Block,)"];
+"1000159" [label="(MethodReturn,void)"];
+"1000110" [label="(Call,base::Bind(&ChromotingHost::Shutdown, this, shutdown_task))"];
+"1000137" [label="(Call,shutdown_tasks_.push_back(shutdown_task))"];
+"1000132" [label="(Identifier,shutdown_task)"];
+"1000130" -> "1000126"  [label="AST: "];
+"1000130" -> "1000132"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000132" -> "1000130"  [label="AST: "];
+"1000133" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000159"  [label="DDG: context_->main_message_loop()->PostTask(FROM_HERE, shutdown_task)"];
+"1000130" -> "1000159"  [label="DDG: FROM_HERE"];
+"1000130" -> "1000159"  [label="DDG: shutdown_task"];
+"1000101" -> "1000130"  [label="DDG: shutdown_task"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000159"  [label="DDG: shutdown_task"];
+"1000101" -> "1000110"  [label="DDG: shutdown_task"];
+"1000101" -> "1000137"  [label="DDG: shutdown_task"];
+}

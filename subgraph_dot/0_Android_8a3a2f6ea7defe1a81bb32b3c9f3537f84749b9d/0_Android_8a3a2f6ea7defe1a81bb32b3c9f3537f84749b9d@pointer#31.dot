@@ -1,0 +1,35 @@
+digraph "0_Android_8a3a2f6ea7defe1a81bb32b3c9f3537f84749b9d@pointer" {
+"1003022" [label="(Call,*offset = stop_offset)"];
+"1002967" [label="(Call,stop_offset = *offset + chunk_size)"];
+"1003021" [label="(Block,)"];
+"1002975" [label="(Identifier,offset)"];
+"1002996" [label="(Call,*offset = stop_offset)"];
+"1003027" [label="(Identifier,OK)"];
+"1003923" [label="(MethodReturn,status_t)"];
+"1003022" [label="(Call,*offset = stop_offset)"];
+"1003010" [label="(Call,*offset = stop_offset)"];
+"1002969" [label="(Call,*offset + chunk_size)"];
+"1002967" [label="(Call,stop_offset = *offset + chunk_size)"];
+"1002965" [label="(Block,)"];
+"1003023" [label="(Call,*offset)"];
+"1002968" [label="(Identifier,stop_offset)"];
+"1003034" [label="(Call,*offset < stop_offset)"];
+"1003025" [label="(Identifier,stop_offset)"];
+"1003022" -> "1003021"  [label="AST: "];
+"1003022" -> "1003025"  [label="CFG: "];
+"1003023" -> "1003022"  [label="AST: "];
+"1003025" -> "1003022"  [label="AST: "];
+"1003027" -> "1003022"  [label="CFG: "];
+"1003022" -> "1003923"  [label="DDG: stop_offset"];
+"1003022" -> "1003923"  [label="DDG: *offset"];
+"1002967" -> "1003022"  [label="DDG: stop_offset"];
+"1002967" -> "1002965"  [label="AST: "];
+"1002967" -> "1002969"  [label="CFG: "];
+"1002968" -> "1002967"  [label="AST: "];
+"1002969" -> "1002967"  [label="AST: "];
+"1002975" -> "1002967"  [label="CFG: "];
+"1002967" -> "1003923"  [label="DDG: *offset + chunk_size"];
+"1002967" -> "1002996"  [label="DDG: stop_offset"];
+"1002967" -> "1003010"  [label="DDG: stop_offset"];
+"1002967" -> "1003034"  [label="DDG: stop_offset"];
+}

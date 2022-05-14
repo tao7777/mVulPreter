@@ -1,0 +1,37 @@
+digraph "0_libav_fe6eea99efac66839052af547426518efd970b24@pointer" {
+"1000667" [label="(Call,(int64_t)nsv->avsync)"];
+"1000666" [label="(Call,(int64_t)nsv->avsync * nsv->framerate.num)"];
+"1000662" [label="(Call,pkt->dts += (int64_t)nsv->avsync * nsv->framerate.num)"];
+"1000688" [label="(MethodReturn,static int)"];
+"1000674" [label="(Identifier,nsv)"];
+"1000669" [label="(Call,nsv->avsync)"];
+"1000649" [label="(Call,pkt->dts *= (int64_t)1000        * nsv->framerate.den)"];
+"1000663" [label="(Call,pkt->dts)"];
+"1000633" [label="(Block,)"];
+"1000666" [label="(Call,(int64_t)nsv->avsync * nsv->framerate.num)"];
+"1000662" [label="(Call,pkt->dts += (int64_t)nsv->avsync * nsv->framerate.num)"];
+"1000672" [label="(Call,nsv->framerate.num)"];
+"1000679" [label="(Identifier,nst)"];
+"1000667" [label="(Call,(int64_t)nsv->avsync)"];
+"1000667" -> "1000666"  [label="AST: "];
+"1000667" -> "1000669"  [label="CFG: "];
+"1000668" -> "1000667"  [label="AST: "];
+"1000669" -> "1000667"  [label="AST: "];
+"1000674" -> "1000667"  [label="CFG: "];
+"1000667" -> "1000688"  [label="DDG: nsv->avsync"];
+"1000667" -> "1000666"  [label="DDG: nsv->avsync"];
+"1000666" -> "1000662"  [label="AST: "];
+"1000666" -> "1000672"  [label="CFG: "];
+"1000672" -> "1000666"  [label="AST: "];
+"1000662" -> "1000666"  [label="CFG: "];
+"1000666" -> "1000688"  [label="DDG: nsv->framerate.num"];
+"1000666" -> "1000688"  [label="DDG: (int64_t)nsv->avsync"];
+"1000666" -> "1000662"  [label="DDG: (int64_t)nsv->avsync"];
+"1000666" -> "1000662"  [label="DDG: nsv->framerate.num"];
+"1000662" -> "1000633"  [label="AST: "];
+"1000663" -> "1000662"  [label="AST: "];
+"1000679" -> "1000662"  [label="CFG: "];
+"1000662" -> "1000688"  [label="DDG: pkt->dts"];
+"1000662" -> "1000688"  [label="DDG: (int64_t)nsv->avsync * nsv->framerate.num"];
+"1000649" -> "1000662"  [label="DDG: pkt->dts"];
+}

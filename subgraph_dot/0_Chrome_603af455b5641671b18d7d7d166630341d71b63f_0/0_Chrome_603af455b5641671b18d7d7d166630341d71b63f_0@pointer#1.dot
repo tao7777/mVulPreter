@@ -1,0 +1,33 @@
+digraph "0_Chrome_603af455b5641671b18d7d7d166630341d71b63f_0@pointer" {
+"1000109" [label="(Call,* accept_languages =\n      translate_tab_helper->GetTranslateAcceptLanguages())"];
+"1000113" [label="(Call,translate_prefs->CanTranslateLanguage(accept_languages,\n                                                original_language_code()))"];
+"1000112" [label="(Return,return translate_prefs->CanTranslateLanguage(accept_languages,\n                                                original_language_code());)"];
+"1000114" [label="(Identifier,accept_languages)"];
+"1000101" [label="(Block,)"];
+"1000113" [label="(Call,translate_prefs->CanTranslateLanguage(accept_languages,\n                                                original_language_code()))"];
+"1000116" [label="(MethodReturn,bool)"];
+"1000110" [label="(Identifier,accept_languages)"];
+"1000112" [label="(Return,return translate_prefs->CanTranslateLanguage(accept_languages,\n                                                original_language_code());)"];
+"1000111" [label="(Call,translate_tab_helper->GetTranslateAcceptLanguages())"];
+"1000115" [label="(Call,original_language_code())"];
+"1000109" [label="(Call,* accept_languages =\n      translate_tab_helper->GetTranslateAcceptLanguages())"];
+"1000109" -> "1000101"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000114" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000116"  [label="DDG: translate_tab_helper->GetTranslateAcceptLanguages()"];
+"1000109" -> "1000113"  [label="DDG: accept_languages"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000115"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000116"  [label="DDG: accept_languages"];
+"1000113" -> "1000116"  [label="DDG: original_language_code()"];
+"1000113" -> "1000116"  [label="DDG: translate_prefs->CanTranslateLanguage(accept_languages,\n                                                original_language_code())"];
+"1000113" -> "1000112"  [label="DDG: translate_prefs->CanTranslateLanguage(accept_languages,\n                                                original_language_code())"];
+"1000112" -> "1000101"  [label="AST: "];
+"1000116" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000116"  [label="DDG: <RET>"];
+}

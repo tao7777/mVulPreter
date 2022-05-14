@@ -1,0 +1,33 @@
+digraph "0_samba_25452a2268ac7013da28125f3df22085139af12d@pointer" {
+"1000135" [label="(Call,req->wct < 2)"];
+"1000134" [label="(Call,(req->wct < 2) || (CVAL(req->outbuf, smb_wct) < 2))"];
+"1000136" [label="(Call,req->wct)"];
+"1000134" [label="(Call,(req->wct < 2) || (CVAL(req->outbuf, smb_wct) < 2))"];
+"1000189" [label="(Identifier,req)"];
+"1000139" [label="(Literal,2)"];
+"1000143" [label="(Identifier,req)"];
+"1000133" [label="(ControlStructure,if ((req->wct < 2) || (CVAL(req->outbuf, smb_wct) < 2)))"];
+"1000222" [label="(MethodReturn,void)"];
+"1000135" [label="(Call,req->wct < 2)"];
+"1000140" [label="(Call,CVAL(req->outbuf, smb_wct) < 2)"];
+"1000151" [label="(Identifier,req)"];
+"1000135" -> "1000134"  [label="AST: "];
+"1000135" -> "1000139"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000139" -> "1000135"  [label="AST: "];
+"1000143" -> "1000135"  [label="CFG: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000222"  [label="DDG: req->wct"];
+"1000135" -> "1000134"  [label="DDG: req->wct"];
+"1000135" -> "1000134"  [label="DDG: 2"];
+"1000134" -> "1000133"  [label="AST: "];
+"1000134" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000134"  [label="AST: "];
+"1000151" -> "1000134"  [label="CFG: "];
+"1000189" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000222"  [label="DDG: CVAL(req->outbuf, smb_wct) < 2"];
+"1000134" -> "1000222"  [label="DDG: (req->wct < 2) || (CVAL(req->outbuf, smb_wct) < 2)"];
+"1000134" -> "1000222"  [label="DDG: req->wct < 2"];
+"1000140" -> "1000134"  [label="DDG: CVAL(req->outbuf, smb_wct)"];
+"1000140" -> "1000134"  [label="DDG: 2"];
+}

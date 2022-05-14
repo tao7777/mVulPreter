@@ -1,0 +1,34 @@
+digraph "0_linux_7d267278a9ece963d77eefec61630223fce08c6c_0@pointer" {
+"1000153" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000152" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags) &&\n\t\t    !unix_sk(sk)->addr && (err = unix_autobind(sock)) != 0)"];
+"1000281" [label="(MethodReturn,static int)"];
+"1000154" [label="(Identifier,SOCK_PASSCRED)"];
+"1000171" [label="(ControlStructure,goto out;)"];
+"1000163" [label="(Identifier,sk)"];
+"1000159" [label="(Call,!unix_sk(sk)->addr && (err = unix_autobind(sock)) != 0)"];
+"1000155" [label="(Call,&sock->flags)"];
+"1000172" [label="(JumpTarget,restart:)"];
+"1000151" [label="(ControlStructure,if (test_bit(SOCK_PASSCRED, &sock->flags) &&\n\t\t    !unix_sk(sk)->addr && (err = unix_autobind(sock)) != 0))"];
+"1000152" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags) &&\n\t\t    !unix_sk(sk)->addr && (err = unix_autobind(sock)) != 0)"];
+"1000153" [label="(Call,test_bit(SOCK_PASSCRED, &sock->flags))"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000155"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000155" -> "1000153"  [label="AST: "];
+"1000163" -> "1000153"  [label="CFG: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000281"  [label="DDG: SOCK_PASSCRED"];
+"1000153" -> "1000281"  [label="DDG: &sock->flags"];
+"1000153" -> "1000152"  [label="DDG: SOCK_PASSCRED"];
+"1000153" -> "1000152"  [label="DDG: &sock->flags"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000152"  [label="AST: "];
+"1000171" -> "1000152"  [label="CFG: "];
+"1000172" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000281"  [label="DDG: test_bit(SOCK_PASSCRED, &sock->flags)"];
+"1000152" -> "1000281"  [label="DDG: !unix_sk(sk)->addr && (err = unix_autobind(sock)) != 0"];
+"1000152" -> "1000281"  [label="DDG: test_bit(SOCK_PASSCRED, &sock->flags) &&\n\t\t    !unix_sk(sk)->addr && (err = unix_autobind(sock)) != 0"];
+"1000159" -> "1000152"  [label="DDG: !unix_sk(sk)->addr"];
+"1000159" -> "1000152"  [label="DDG: (err = unix_autobind(sock)) != 0"];
+}

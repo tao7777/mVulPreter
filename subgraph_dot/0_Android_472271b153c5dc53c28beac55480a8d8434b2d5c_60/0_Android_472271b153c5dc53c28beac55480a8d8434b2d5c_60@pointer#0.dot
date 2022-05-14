@@ -1,0 +1,29 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_60@pointer" {
+"1000101" [label="(MethodParameterIn,semaphore_t *semaphore)"];
+"1000104" [label="(Call,semaphore != NULL)"];
+"1000103" [label="(Call,assert(semaphore != NULL))"];
+"1000102" [label="(Block,)"];
+"1000103" [label="(Call,assert(semaphore != NULL))"];
+"1000106" [label="(Identifier,NULL)"];
+"1000105" [label="(Identifier,semaphore)"];
+"1000101" [label="(MethodParameterIn,semaphore_t *semaphore)"];
+"1000187" [label="(MethodReturn,bool)"];
+"1000104" [label="(Call,semaphore != NULL)"];
+"1000110" [label="(Identifier,semaphore)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000187"  [label="DDG: semaphore"];
+"1000101" -> "1000104"  [label="DDG: semaphore"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000187"  [label="DDG: semaphore"];
+"1000104" -> "1000187"  [label="DDG: NULL"];
+"1000104" -> "1000103"  [label="DDG: semaphore"];
+"1000104" -> "1000103"  [label="DDG: NULL"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000110" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000187"  [label="DDG: semaphore != NULL"];
+"1000103" -> "1000187"  [label="DDG: assert(semaphore != NULL)"];
+}

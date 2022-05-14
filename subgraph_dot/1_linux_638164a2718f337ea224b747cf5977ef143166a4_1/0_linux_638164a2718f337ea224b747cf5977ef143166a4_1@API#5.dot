@@ -1,0 +1,24 @@
+digraph "0_linux_638164a2718f337ea224b747cf5977ef143166a4_1@API" {
+"1000118" [label="(Call,mutex_lock(&sbi->umount_mutex))"];
+"1000161" [label="(Call,mutex_unlock(&sbi->umount_mutex))"];
+"1000126" [label="(Identifier,sbi)"];
+"1000243" [label="(MethodReturn,static void)"];
+"1000162" [label="(Call,&sbi->umount_mutex)"];
+"1000161" [label="(Call,mutex_unlock(&sbi->umount_mutex))"];
+"1000118" [label="(Call,mutex_lock(&sbi->umount_mutex))"];
+"1000119" [label="(Call,&sbi->umount_mutex)"];
+"1000109" [label="(Block,)"];
+"1000167" [label="(Identifier,sbi)"];
+"1000118" -> "1000109"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000126" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000243"  [label="DDG: mutex_lock(&sbi->umount_mutex)"];
+"1000118" -> "1000161"  [label="DDG: &sbi->umount_mutex"];
+"1000161" -> "1000109"  [label="AST: "];
+"1000161" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000161"  [label="AST: "];
+"1000167" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000243"  [label="DDG: &sbi->umount_mutex"];
+"1000161" -> "1000243"  [label="DDG: mutex_unlock(&sbi->umount_mutex)"];
+}

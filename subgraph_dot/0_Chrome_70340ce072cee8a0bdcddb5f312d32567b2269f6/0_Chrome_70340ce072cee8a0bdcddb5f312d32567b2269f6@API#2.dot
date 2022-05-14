@@ -1,0 +1,36 @@
+digraph "0_Chrome_70340ce072cee8a0bdcddb5f312d32567b2269f6@API" {
+"1000136" [label="(Call,decoder_thread_task_runner_->DeleteSoon(FROM_HERE,\n                                            vp8_accelerator_.release()))"];
+"1000123" [label="(Call,decoder_thread_task_runner_->DeleteSoon(FROM_HERE, decoder_.release()))"];
+"1000143" [label="(Call,decoder_thread_task_runner_->DeleteSoon(FROM_HERE,\n                                            vp9_accelerator_.release()))"];
+"1000125" [label="(Call,decoder_.release())"];
+"1000124" [label="(Identifier,FROM_HERE)"];
+"1000154" [label="(MethodReturn,void)"];
+"1000135" [label="(Block,)"];
+"1000137" [label="(Identifier,FROM_HERE)"];
+"1000146" [label="(Call,input_ready_.Signal())"];
+"1000123" [label="(Call,decoder_thread_task_runner_->DeleteSoon(FROM_HERE, decoder_.release()))"];
+"1000101" [label="(Block,)"];
+"1000129" [label="(Call,decoder_thread_task_runner_->DeleteSoon(FROM_HERE,\n                                            h264_accelerator_.release()))"];
+"1000138" [label="(Call,vp8_accelerator_.release())"];
+"1000127" [label="(Identifier,h264_accelerator_)"];
+"1000136" [label="(Call,decoder_thread_task_runner_->DeleteSoon(FROM_HERE,\n                                            vp8_accelerator_.release()))"];
+"1000136" -> "1000135"  [label="AST: "];
+"1000136" -> "1000138"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000138" -> "1000136"  [label="AST: "];
+"1000146" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000154"  [label="DDG: vp8_accelerator_.release()"];
+"1000136" -> "1000154"  [label="DDG: decoder_thread_task_runner_->DeleteSoon(FROM_HERE,\n                                            vp8_accelerator_.release())"];
+"1000136" -> "1000154"  [label="DDG: FROM_HERE"];
+"1000123" -> "1000136"  [label="DDG: FROM_HERE"];
+"1000123" -> "1000101"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000154"  [label="DDG: decoder_.release()"];
+"1000123" -> "1000154"  [label="DDG: decoder_thread_task_runner_->DeleteSoon(FROM_HERE, decoder_.release())"];
+"1000123" -> "1000154"  [label="DDG: FROM_HERE"];
+"1000123" -> "1000129"  [label="DDG: FROM_HERE"];
+"1000123" -> "1000143"  [label="DDG: FROM_HERE"];
+}

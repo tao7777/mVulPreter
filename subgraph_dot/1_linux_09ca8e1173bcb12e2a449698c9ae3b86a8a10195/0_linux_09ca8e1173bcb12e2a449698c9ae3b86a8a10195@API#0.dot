@@ -1,0 +1,35 @@
+digraph "0_linux_09ca8e1173bcb12e2a449698c9ae3b86a8a10195@API" {
+"1000125" [label="(Call,srcu_read_unlock(&kvm->srcu, idx))"];
+"1000108" [label="(Call,srcu_read_lock(&kvm->srcu))"];
+"1000106" [label="(Call,idx = srcu_read_lock(&kvm->srcu))"];
+"1000109" [label="(Call,&kvm->srcu)"];
+"1000114" [label="(Identifier,slots)"];
+"1000106" [label="(Call,idx = srcu_read_lock(&kvm->srcu))"];
+"1000108" [label="(Call,srcu_read_lock(&kvm->srcu))"];
+"1000132" [label="(Literal,0)"];
+"1000102" [label="(Block,)"];
+"1000125" [label="(Call,srcu_read_unlock(&kvm->srcu, idx))"];
+"1000130" [label="(Identifier,idx)"];
+"1000126" [label="(Call,&kvm->srcu)"];
+"1000107" [label="(Identifier,idx)"];
+"1000133" [label="(MethodReturn,static int)"];
+"1000125" -> "1000102"  [label="AST: "];
+"1000125" -> "1000130"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000130" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000133"  [label="DDG: srcu_read_unlock(&kvm->srcu, idx)"];
+"1000125" -> "1000133"  [label="DDG: idx"];
+"1000125" -> "1000133"  [label="DDG: &kvm->srcu"];
+"1000108" -> "1000125"  [label="DDG: &kvm->srcu"];
+"1000106" -> "1000125"  [label="DDG: idx"];
+"1000108" -> "1000106"  [label="AST: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000106"  [label="DDG: &kvm->srcu"];
+"1000106" -> "1000102"  [label="AST: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000114" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000133"  [label="DDG: srcu_read_lock(&kvm->srcu)"];
+}

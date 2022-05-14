@@ -1,0 +1,36 @@
+digraph "0_linux_09ccfd238e5a0e670d8178cf50180ea81ae09ae1_0@pointer" {
+"1000121" [label="(Call,*po = pppox_sk(sk))"];
+"1000123" [label="(Call,pppox_sk(sk))"];
+"1000109" [label="(Call,*sk = sock->sk)"];
+"1000116" [label="(Identifier,sp)"];
+"1000109" [label="(Call,*sk = sock->sk)"];
+"1000124" [label="(Identifier,sk)"];
+"1000365" [label="(MethodReturn,static int)"];
+"1000122" [label="(Identifier,po)"];
+"1000107" [label="(Block,)"];
+"1000121" [label="(Call,*po = pppox_sk(sk))"];
+"1000111" [label="(Call,sock->sk)"];
+"1000110" [label="(Identifier,sk)"];
+"1000178" [label="(Call,lock_sock(sk))"];
+"1000127" [label="(Identifier,opt)"];
+"1000123" [label="(Call,pppox_sk(sk))"];
+"1000121" -> "1000107"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000127" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000365"  [label="DDG: pppox_sk(sk)"];
+"1000121" -> "1000365"  [label="DDG: po"];
+"1000123" -> "1000121"  [label="DDG: sk"];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000123" -> "1000365"  [label="DDG: sk"];
+"1000109" -> "1000123"  [label="DDG: sk"];
+"1000123" -> "1000178"  [label="DDG: sk"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000116" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000365"  [label="DDG: sock->sk"];
+}

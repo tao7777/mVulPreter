@@ -1,0 +1,32 @@
+digraph "0_minisphere_252c1ca184cb38e1acb917aa0e451c5f08519996@pointer" {
+"1000193" [label="(Call,tilemap[x + y * x_size] = s_map->layers[layer].tilemap[x + y * old_width])"];
+"1000248" [label="(Call,s_map->layers[layer].tilemap = tilemap)"];
+"1000201" [label="(Call,s_map->layers[layer].tilemap[x + y * old_width])"];
+"1000249" [label="(Call,s_map->layers[layer].tilemap)"];
+"1000182" [label="(Identifier,y)"];
+"1000192" [label="(Block,)"];
+"1000248" [label="(Call,s_map->layers[layer].tilemap = tilemap)"];
+"1000104" [label="(Block,)"];
+"1000261" [label="(Identifier,s_map)"];
+"1000256" [label="(Identifier,tilemap)"];
+"1000485" [label="(MethodReturn,RET)"];
+"1000158" [label="(Call,tilemap = malloc(tilemap_size))"];
+"1000193" [label="(Call,tilemap[x + y * x_size] = s_map->layers[layer].tilemap[x + y * old_width])"];
+"1000194" [label="(Call,tilemap[x + y * x_size])"];
+"1000193" -> "1000192"  [label="AST: "];
+"1000193" -> "1000201"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000201" -> "1000193"  [label="AST: "];
+"1000182" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000485"  [label="DDG: tilemap[x + y * x_size]"];
+"1000193" -> "1000485"  [label="DDG: s_map->layers[layer].tilemap[x + y * old_width]"];
+"1000193" -> "1000248"  [label="DDG: tilemap[x + y * x_size]"];
+"1000248" -> "1000104"  [label="AST: "];
+"1000248" -> "1000256"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000256" -> "1000248"  [label="AST: "];
+"1000261" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000485"  [label="DDG: tilemap"];
+"1000248" -> "1000485"  [label="DDG: s_map->layers[layer].tilemap"];
+"1000158" -> "1000248"  [label="DDG: tilemap"];
+}

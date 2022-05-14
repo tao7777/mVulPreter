@@ -1,0 +1,35 @@
+digraph "0_FFmpeg_bd27a9364ca274ca97f1df6d984e88a0700fb235@pointer" {
+"1000105" [label="(Call,s->avctx->hwaccel && s->avctx->hwaccel->decode_slice)"];
+"1000104" [label="(Call,s->avctx->hwaccel && s->avctx->hwaccel->decode_slice           ||\n        !s->cur_pic.f                                                  ||\n       s->cur_pic.field_picture                                       ||\n       s->avctx->profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO)"];
+"1000122" [label="(Identifier,s)"];
+"1000103" [label="(ControlStructure,if(s->avctx->hwaccel && s->avctx->hwaccel->decode_slice           ||\n        !s->cur_pic.f                                                  ||\n       s->cur_pic.field_picture                                       ||\n       s->avctx->profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO\n     ))"];
+"1000106" [label="(Call,s->avctx->hwaccel)"];
+"1000142" [label="(MethodReturn,static int)"];
+"1000111" [label="(Call,s->avctx->hwaccel->decode_slice)"];
+"1000105" [label="(Call,s->avctx->hwaccel && s->avctx->hwaccel->decode_slice)"];
+"1000139" [label="(Literal,0)"];
+"1000104" [label="(Call,s->avctx->hwaccel && s->avctx->hwaccel->decode_slice           ||\n        !s->cur_pic.f                                                  ||\n       s->cur_pic.field_picture                                       ||\n       s->avctx->profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO)"];
+"1000141" [label="(Literal,1)"];
+"1000118" [label="(Call,!s->cur_pic.f                                                  ||\n       s->cur_pic.field_picture                                       ||\n       s->avctx->profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO)"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000111"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000111" -> "1000105"  [label="AST: "];
+"1000122" -> "1000105"  [label="CFG: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000142"  [label="DDG: s->avctx->hwaccel->decode_slice"];
+"1000105" -> "1000142"  [label="DDG: s->avctx->hwaccel"];
+"1000105" -> "1000104"  [label="DDG: s->avctx->hwaccel"];
+"1000105" -> "1000104"  [label="DDG: s->avctx->hwaccel->decode_slice"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000104"  [label="AST: "];
+"1000139" -> "1000104"  [label="CFG: "];
+"1000141" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000142"  [label="DDG: s->avctx->hwaccel && s->avctx->hwaccel->decode_slice           ||\n        !s->cur_pic.f                                                  ||\n       s->cur_pic.field_picture                                       ||\n       s->avctx->profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO"];
+"1000104" -> "1000142"  [label="DDG: s->avctx->hwaccel && s->avctx->hwaccel->decode_slice"];
+"1000104" -> "1000142"  [label="DDG: !s->cur_pic.f                                                  ||\n       s->cur_pic.field_picture                                       ||\n       s->avctx->profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO"];
+"1000118" -> "1000104"  [label="DDG: !s->cur_pic.f"];
+"1000118" -> "1000104"  [label="DDG: s->cur_pic.field_picture                                       ||\n       s->avctx->profile == FF_PROFILE_MPEG4_SIMPLE_STUDIO"];
+}

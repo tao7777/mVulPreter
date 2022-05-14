@@ -1,0 +1,35 @@
+digraph "0_linux_12ae030d54ef250706da5642fc7697cc60ad0df7@pointer" {
+"1000110" [label="(Call,ftrace_event_is_function(tp_event))"];
+"1000105" [label="(MethodParameterIn,struct ftrace_event_call *tp_event)"];
+"1000109" [label="(Call,ftrace_event_is_function(tp_event) &&\n\t    perf_paranoid_tracepoint_raw() && !capable(CAP_SYS_ADMIN))"];
+"1000110" [label="(Call,ftrace_event_is_function(tp_event))"];
+"1000157" [label="(MethodReturn,static int)"];
+"1000113" [label="(Call,perf_paranoid_tracepoint_raw())"];
+"1000111" [label="(Identifier,tp_event)"];
+"1000109" [label="(Call,ftrace_event_is_function(tp_event) &&\n\t    perf_paranoid_tracepoint_raw() && !capable(CAP_SYS_ADMIN))"];
+"1000125" [label="(Identifier,p_event)"];
+"1000119" [label="(Identifier,EPERM)"];
+"1000112" [label="(Call,perf_paranoid_tracepoint_raw() && !capable(CAP_SYS_ADMIN))"];
+"1000108" [label="(ControlStructure,if (ftrace_event_is_function(tp_event) &&\n\t    perf_paranoid_tracepoint_raw() && !capable(CAP_SYS_ADMIN)))"];
+"1000105" [label="(MethodParameterIn,struct ftrace_event_call *tp_event)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000113" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000157"  [label="DDG: tp_event"];
+"1000110" -> "1000109"  [label="DDG: tp_event"];
+"1000105" -> "1000110"  [label="DDG: tp_event"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000157"  [label="DDG: tp_event"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000109"  [label="AST: "];
+"1000119" -> "1000109"  [label="CFG: "];
+"1000125" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000157"  [label="DDG: perf_paranoid_tracepoint_raw() && !capable(CAP_SYS_ADMIN)"];
+"1000109" -> "1000157"  [label="DDG: ftrace_event_is_function(tp_event)"];
+"1000109" -> "1000157"  [label="DDG: ftrace_event_is_function(tp_event) &&\n\t    perf_paranoid_tracepoint_raw() && !capable(CAP_SYS_ADMIN)"];
+"1000112" -> "1000109"  [label="DDG: perf_paranoid_tracepoint_raw()"];
+"1000112" -> "1000109"  [label="DDG: !capable(CAP_SYS_ADMIN)"];
+}

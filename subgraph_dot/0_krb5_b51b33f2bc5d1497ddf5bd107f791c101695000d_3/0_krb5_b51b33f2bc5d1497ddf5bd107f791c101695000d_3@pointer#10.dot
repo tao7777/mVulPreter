@@ -1,0 +1,37 @@
+digraph "0_krb5_b51b33f2bc5d1497ddf5bd107f791c101695000d_3@pointer" {
+"1000230" [label="(Call,*mech_type = GSS_C_NO_OID)"];
+"1000212" [label="(Call,sc->internal_mech == GSS_C_NO_OID)"];
+"1000226" [label="(ControlStructure,if (mech_type != NULL))"];
+"1000208" [label="(Call,sc == NULL || sc->internal_mech == GSS_C_NO_OID)"];
+"1000212" [label="(Call,sc->internal_mech == GSS_C_NO_OID)"];
+"1000233" [label="(Identifier,GSS_C_NO_OID)"];
+"1000444" [label="(Call,sc ? sc->internal_mech :\n\t\t\t\t\t\t   GSS_C_NO_OID)"];
+"1000213" [label="(Call,sc->internal_mech)"];
+"1000442" [label="(Call,make_spnego_tokenTarg_msg(negState,\n\t\t\t\t\t\t   sc ? sc->internal_mech :\n\t\t\t\t\t\t   GSS_C_NO_OID,\n\t\t\t\t\t\t   &mechtok_out, mic_out,\n\t\t\t\t\t\t   return_token,\n\t\t\t\t\t\t   output_token))"];
+"1000216" [label="(Identifier,GSS_C_NO_OID)"];
+"1000231" [label="(Call,*mech_type)"];
+"1000230" [label="(Call,*mech_type = GSS_C_NO_OID)"];
+"1000560" [label="(MethodReturn,RET)"];
+"1000236" [label="(Identifier,time_rec)"];
+"1000230" -> "1000226"  [label="AST: "];
+"1000230" -> "1000233"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000233" -> "1000230"  [label="AST: "];
+"1000236" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000560"  [label="DDG: GSS_C_NO_OID"];
+"1000230" -> "1000560"  [label="DDG: *mech_type"];
+"1000212" -> "1000230"  [label="DDG: GSS_C_NO_OID"];
+"1000212" -> "1000208"  [label="AST: "];
+"1000212" -> "1000216"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000216" -> "1000212"  [label="AST: "];
+"1000208" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000560"  [label="DDG: GSS_C_NO_OID"];
+"1000212" -> "1000560"  [label="DDG: sc->internal_mech"];
+"1000212" -> "1000208"  [label="DDG: sc->internal_mech"];
+"1000212" -> "1000208"  [label="DDG: GSS_C_NO_OID"];
+"1000212" -> "1000442"  [label="DDG: sc->internal_mech"];
+"1000212" -> "1000442"  [label="DDG: GSS_C_NO_OID"];
+"1000212" -> "1000444"  [label="DDG: sc->internal_mech"];
+"1000212" -> "1000444"  [label="DDG: GSS_C_NO_OID"];
+}

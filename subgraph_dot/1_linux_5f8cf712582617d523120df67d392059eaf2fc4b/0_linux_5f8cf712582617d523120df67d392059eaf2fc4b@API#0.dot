@@ -1,0 +1,25 @@
+digraph "0_linux_5f8cf712582617d523120df67d392059eaf2fc4b@API" {
+"1000496" [label="(Call,snd_card_free(chip->card))"];
+"1000454" [label="(Call,snd_card_register(chip->card))"];
+"1000496" [label="(Call,snd_card_free(chip->card))"];
+"1000491" [label="(ControlStructure,if (!chip->num_interfaces))"];
+"1000503" [label="(Identifier,chip)"];
+"1000497" [label="(Call,chip->card)"];
+"1000510" [label="(MethodReturn,static int)"];
+"1000455" [label="(Call,chip->card)"];
+"1000452" [label="(Call,err = snd_card_register(chip->card))"];
+"1000454" [label="(Call,snd_card_register(chip->card))"];
+"1000496" -> "1000491"  [label="AST: "];
+"1000496" -> "1000497"  [label="CFG: "];
+"1000497" -> "1000496"  [label="AST: "];
+"1000503" -> "1000496"  [label="CFG: "];
+"1000496" -> "1000510"  [label="DDG: snd_card_free(chip->card)"];
+"1000496" -> "1000510"  [label="DDG: chip->card"];
+"1000454" -> "1000496"  [label="DDG: chip->card"];
+"1000454" -> "1000452"  [label="AST: "];
+"1000454" -> "1000455"  [label="CFG: "];
+"1000455" -> "1000454"  [label="AST: "];
+"1000452" -> "1000454"  [label="CFG: "];
+"1000454" -> "1000510"  [label="DDG: chip->card"];
+"1000454" -> "1000452"  [label="DDG: chip->card"];
+}

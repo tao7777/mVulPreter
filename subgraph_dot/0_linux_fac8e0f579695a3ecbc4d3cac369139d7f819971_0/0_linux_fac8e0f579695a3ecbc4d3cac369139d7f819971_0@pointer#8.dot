@@ -1,0 +1,32 @@
+digraph "0_linux_fac8e0f579695a3ecbc4d3cac369139d7f819971_0@pointer" {
+"1000296" [label="(Call,greh2->protocol != greh->protocol)"];
+"1000288" [label="(Call,greh2->flags != greh->flags ||\n\t\t    greh2->protocol != greh->protocol)"];
+"1000289" [label="(Call,greh2->flags != greh->flags)"];
+"1000314" [label="(Identifier,greh)"];
+"1000307" [label="(Identifier,p)"];
+"1000296" [label="(Call,greh2->protocol != greh->protocol)"];
+"1000300" [label="(Call,greh->protocol)"];
+"1000287" [label="(ControlStructure,if (greh2->flags != greh->flags ||\n\t\t    greh2->protocol != greh->protocol))"];
+"1000366" [label="(MethodReturn,static struct sk_buff **)"];
+"1000297" [label="(Call,greh2->protocol)"];
+"1000288" [label="(Call,greh2->flags != greh->flags ||\n\t\t    greh2->protocol != greh->protocol)"];
+"1000296" -> "1000288"  [label="AST: "];
+"1000296" -> "1000300"  [label="CFG: "];
+"1000297" -> "1000296"  [label="AST: "];
+"1000300" -> "1000296"  [label="AST: "];
+"1000288" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000366"  [label="DDG: greh->protocol"];
+"1000296" -> "1000366"  [label="DDG: greh2->protocol"];
+"1000296" -> "1000288"  [label="DDG: greh2->protocol"];
+"1000296" -> "1000288"  [label="DDG: greh->protocol"];
+"1000288" -> "1000287"  [label="AST: "];
+"1000288" -> "1000289"  [label="CFG: "];
+"1000289" -> "1000288"  [label="AST: "];
+"1000307" -> "1000288"  [label="CFG: "];
+"1000314" -> "1000288"  [label="CFG: "];
+"1000288" -> "1000366"  [label="DDG: greh2->protocol != greh->protocol"];
+"1000288" -> "1000366"  [label="DDG: greh2->flags != greh->flags"];
+"1000288" -> "1000366"  [label="DDG: greh2->flags != greh->flags ||\n\t\t    greh2->protocol != greh->protocol"];
+"1000289" -> "1000288"  [label="DDG: greh2->flags"];
+"1000289" -> "1000288"  [label="DDG: greh->flags"];
+}

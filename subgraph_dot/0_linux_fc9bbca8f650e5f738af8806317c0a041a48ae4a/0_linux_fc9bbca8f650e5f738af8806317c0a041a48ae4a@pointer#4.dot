@@ -1,0 +1,22 @@
+digraph "0_linux_fc9bbca8f650e5f738af8806317c0a041a48ae4a@pointer" {
+"1000209" [label="(Call,vma->vm_page_prot = vm_get_page_prot(vma->vm_flags))"];
+"1000213" [label="(Call,vm_get_page_prot(vma->vm_flags))"];
+"1000213" [label="(Call,vm_get_page_prot(vma->vm_flags))"];
+"1000226" [label="(MethodReturn,RET)"];
+"1000218" [label="(Identifier,file)"];
+"1000104" [label="(Block,)"];
+"1000210" [label="(Call,vma->vm_page_prot)"];
+"1000214" [label="(Call,vma->vm_flags)"];
+"1000209" [label="(Call,vma->vm_page_prot = vm_get_page_prot(vma->vm_flags))"];
+"1000209" -> "1000104"  [label="AST: "];
+"1000209" -> "1000213"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000213" -> "1000209"  [label="AST: "];
+"1000218" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000226"  [label="DDG: vma->vm_page_prot"];
+"1000209" -> "1000226"  [label="DDG: vm_get_page_prot(vma->vm_flags)"];
+"1000213" -> "1000209"  [label="DDG: vma->vm_flags"];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000213" -> "1000226"  [label="DDG: vma->vm_flags"];
+}

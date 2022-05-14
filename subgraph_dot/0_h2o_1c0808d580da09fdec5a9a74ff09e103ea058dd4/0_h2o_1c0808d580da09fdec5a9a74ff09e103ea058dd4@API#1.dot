@@ -1,0 +1,31 @@
+digraph "0_h2o_1c0808d580da09fdec5a9a74ff09e103ea058dd4@API" {
+"1000111" [label="(Call,conn->_write.buf_in_flight != NULL)"];
+"1000110" [label="(Call,conn->_write.buf_in_flight != NULL || h2o_timeout_is_linked(&conn->_write.timeout_entry))"];
+"1000110" [label="(Call,conn->_write.buf_in_flight != NULL || h2o_timeout_is_linked(&conn->_write.timeout_entry))"];
+"1000111" [label="(Call,conn->_write.buf_in_flight != NULL)"];
+"1000118" [label="(Call,h2o_timeout_is_linked(&conn->_write.timeout_entry))"];
+"1000112" [label="(Call,conn->_write.buf_in_flight)"];
+"1000135" [label="(MethodReturn,int)"];
+"1000122" [label="(Identifier,conn)"];
+"1000117" [label="(Identifier,NULL)"];
+"1000129" [label="(Identifier,conn)"];
+"1000109" [label="(ControlStructure,if (conn->_write.buf_in_flight != NULL || h2o_timeout_is_linked(&conn->_write.timeout_entry)))"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000117"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="AST: "];
+"1000122" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000135"  [label="DDG: NULL"];
+"1000111" -> "1000135"  [label="DDG: conn->_write.buf_in_flight"];
+"1000111" -> "1000110"  [label="DDG: conn->_write.buf_in_flight"];
+"1000111" -> "1000110"  [label="DDG: NULL"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000110"  [label="AST: "];
+"1000129" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000135"  [label="DDG: h2o_timeout_is_linked(&conn->_write.timeout_entry)"];
+"1000110" -> "1000135"  [label="DDG: conn->_write.buf_in_flight != NULL || h2o_timeout_is_linked(&conn->_write.timeout_entry)"];
+"1000110" -> "1000135"  [label="DDG: conn->_write.buf_in_flight != NULL"];
+"1000118" -> "1000110"  [label="DDG: &conn->_write.timeout_entry"];
+}

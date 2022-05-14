@@ -1,0 +1,28 @@
+digraph "0_linux_fac8e0f579695a3ecbc4d3cac369139d7f819971_1@pointer" {
+"1000111" [label="(Call,**pp = NULL)"];
+"1000304" [label="(Return,return pp;)"];
+"1000107" [label="(Block,)"];
+"1000112" [label="(Identifier,pp)"];
+"1000306" [label="(MethodReturn,struct sk_buff **)"];
+"1000111" [label="(Call,**pp = NULL)"];
+"1000117" [label="(Identifier,off)"];
+"1000287" [label="(Call,pp = uo_priv->offload->callbacks.gro_receive(head, skb,\n\t\t\t\t\t\t     uo_priv->offload))"];
+"1000113" [label="(Identifier,NULL)"];
+"1000304" [label="(Return,return pp;)"];
+"1000305" [label="(Identifier,pp)"];
+"1000111" -> "1000107"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000306"  [label="DDG: pp"];
+"1000111" -> "1000306"  [label="DDG: NULL"];
+"1000111" -> "1000304"  [label="DDG: pp"];
+"1000304" -> "1000107"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000304"  [label="AST: "];
+"1000306" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000306"  [label="DDG: <RET>"];
+"1000305" -> "1000304"  [label="DDG: pp"];
+"1000287" -> "1000304"  [label="DDG: pp"];
+}

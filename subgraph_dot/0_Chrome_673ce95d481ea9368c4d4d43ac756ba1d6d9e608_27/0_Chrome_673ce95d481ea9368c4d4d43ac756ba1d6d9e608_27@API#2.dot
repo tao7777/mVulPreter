@@ -1,0 +1,37 @@
+digraph "0_Chrome_673ce95d481ea9368c4d4d43ac756ba1d6d9e608_27@API" {
+"1000116" [label="(Call,socket_ = std::make_unique<base::CancelableSyncSocket>(fd))"];
+"1000118" [label="(Call,std::make_unique<base::CancelableSyncSocket>(fd))"];
+"1000120" [label="(Call,base::CancelableSyncSocket>(fd))"];
+"1000154" [label="(MethodReturn,void)"];
+"1000122" [label="(Identifier,fd)"];
+"1000121" [label="(Identifier,base::CancelableSyncSocket)"];
+"1000105" [label="(Block,)"];
+"1000120" [label="(Call,base::CancelableSyncSocket>(fd))"];
+"1000118" [label="(Call,std::make_unique<base::CancelableSyncSocket>(fd))"];
+"1000116" [label="(Call,socket_ = std::make_unique<base::CancelableSyncSocket>(fd))"];
+"1000124" [label="(Call,socket_->handle())"];
+"1000117" [label="(Identifier,socket_)"];
+"1000119" [label="(Identifier,std::make_unique)"];
+"1000145" [label="(Call,std::make_unique<base::SharedMemory>(shmem_handle,\n                                                   true /* read_only */))"];
+"1000116" -> "1000105"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000124" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000154"  [label="DDG: socket_"];
+"1000116" -> "1000154"  [label="DDG: std::make_unique<base::CancelableSyncSocket>(fd)"];
+"1000118" -> "1000116"  [label="DDG: std::make_unique"];
+"1000118" -> "1000116"  [label="DDG: base::CancelableSyncSocket>(fd)"];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000118" -> "1000154"  [label="DDG: base::CancelableSyncSocket>(fd)"];
+"1000120" -> "1000118"  [label="DDG: base::CancelableSyncSocket"];
+"1000120" -> "1000118"  [label="DDG: fd"];
+"1000118" -> "1000145"  [label="DDG: std::make_unique"];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000120" -> "1000154"  [label="DDG: base::CancelableSyncSocket"];
+"1000120" -> "1000154"  [label="DDG: fd"];
+}

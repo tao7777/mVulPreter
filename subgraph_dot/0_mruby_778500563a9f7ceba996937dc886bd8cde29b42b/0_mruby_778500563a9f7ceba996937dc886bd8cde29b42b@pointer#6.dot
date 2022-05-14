@@ -1,0 +1,38 @@
+digraph "0_mruby_778500563a9f7ceba996937dc886bd8cde29b42b@pointer" {
+"1000230" [label="(Call,c->cibase->argc = (int)len)"];
+"1000236" [label="(Call,(int)len)"];
+"1000104" [label="(MethodParameterIn,mrb_int len)"];
+"1000215" [label="(Call,b + len)"];
+"1000201" [label="(Call,mrb_stack_extend(mrb, len+2))"];
+"1000301" [label="(MethodReturn,RET)"];
+"1000203" [label="(Call,len+2)"];
+"1000261" [label="(Call,fiber_result(mrb, a, len))"];
+"1000240" [label="(Identifier,value)"];
+"1000236" [label="(Call,(int)len)"];
+"1000238" [label="(Identifier,len)"];
+"1000213" [label="(Call,e = b + len)"];
+"1000231" [label="(Call,c->cibase->argc)"];
+"1000198" [label="(Block,)"];
+"1000104" [label="(MethodParameterIn,mrb_int len)"];
+"1000230" [label="(Call,c->cibase->argc = (int)len)"];
+"1000230" -> "1000198"  [label="AST: "];
+"1000230" -> "1000236"  [label="CFG: "];
+"1000231" -> "1000230"  [label="AST: "];
+"1000236" -> "1000230"  [label="AST: "];
+"1000240" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000301"  [label="DDG: c->cibase->argc"];
+"1000230" -> "1000301"  [label="DDG: (int)len"];
+"1000236" -> "1000230"  [label="DDG: len"];
+"1000236" -> "1000238"  [label="CFG: "];
+"1000237" -> "1000236"  [label="AST: "];
+"1000238" -> "1000236"  [label="AST: "];
+"1000236" -> "1000301"  [label="DDG: len"];
+"1000104" -> "1000236"  [label="DDG: len"];
+"1000104" -> "1000101"  [label="AST: "];
+"1000104" -> "1000301"  [label="DDG: len"];
+"1000104" -> "1000201"  [label="DDG: len"];
+"1000104" -> "1000203"  [label="DDG: len"];
+"1000104" -> "1000213"  [label="DDG: len"];
+"1000104" -> "1000215"  [label="DDG: len"];
+"1000104" -> "1000261"  [label="DDG: len"];
+}

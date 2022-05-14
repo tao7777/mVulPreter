@@ -1,0 +1,26 @@
+digraph "0_krb5_82dc33da50338ac84c7b4102dc6513d897d0506a_1@pointer" {
+"1000144" [label="(Call,!ctx->established)"];
+"1000140" [label="(Call,ctx->terminated || !ctx->established)"];
+"1000188" [label="(MethodReturn,RET)"];
+"1000152" [label="(Identifier,i)"];
+"1000149" [label="(Identifier,GSS_S_NO_CONTEXT)"];
+"1000144" [label="(Call,!ctx->established)"];
+"1000139" [label="(ControlStructure,if (ctx->terminated || !ctx->established))"];
+"1000141" [label="(Call,ctx->terminated)"];
+"1000145" [label="(Call,ctx->established)"];
+"1000140" [label="(Call,ctx->terminated || !ctx->established)"];
+"1000144" -> "1000140"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000140" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000188"  [label="DDG: ctx->established"];
+"1000144" -> "1000140"  [label="DDG: ctx->established"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000149" -> "1000140"  [label="CFG: "];
+"1000152" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000188"  [label="DDG: ctx->terminated"];
+"1000140" -> "1000188"  [label="DDG: ctx->terminated || !ctx->established"];
+"1000140" -> "1000188"  [label="DDG: !ctx->established"];
+}

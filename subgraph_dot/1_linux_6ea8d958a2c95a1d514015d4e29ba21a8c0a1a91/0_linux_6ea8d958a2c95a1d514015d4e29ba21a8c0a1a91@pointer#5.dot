@@ -1,0 +1,28 @@
+digraph "0_linux_6ea8d958a2c95a1d514015d4e29ba21a8c0a1a91@pointer" {
+"1000117" [label="(Call,*prev = vma)"];
+"1000102" [label="(MethodParameterIn,struct vm_area_struct *vma)"];
+"1000120" [label="(Identifier,vma)"];
+"1000153" [label="(Call,*prev = vma)"];
+"1000205" [label="(MethodReturn,static long)"];
+"1000116" [label="(Block,)"];
+"1000122" [label="(Identifier,vma)"];
+"1000117" [label="(Call,*prev = vma)"];
+"1000121" [label="(Call,force_swapin_readahead(vma, start, end))"];
+"1000137" [label="(Call,force_shm_swapin_readahead(vma, start, end,\n \t\t\t\t\tfile->f_mapping))"];
+"1000133" [label="(Call,*prev = vma)"];
+"1000102" [label="(MethodParameterIn,struct vm_area_struct *vma)"];
+"1000118" [label="(Call,*prev)"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000120"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000120" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000205"  [label="DDG: *prev"];
+"1000102" -> "1000117"  [label="DDG: vma"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000205"  [label="DDG: vma"];
+"1000102" -> "1000121"  [label="DDG: vma"];
+"1000102" -> "1000133"  [label="DDG: vma"];
+"1000102" -> "1000137"  [label="DDG: vma"];
+"1000102" -> "1000153"  [label="DDG: vma"];
+}

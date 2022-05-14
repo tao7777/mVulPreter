@@ -1,0 +1,31 @@
+digraph "0_ImageMagick_72f5c8632bff2daf3c95005f9b4cf2982786b52a@pointer" {
+"1002038" [label="(Call,image->page.height == 0)"];
+"1002030" [label="(Call,image->page.width == 0 && image->page.height == 0)"];
+"1002039" [label="(Call,image->page.height)"];
+"1002031" [label="(Call,image->page.width == 0)"];
+"1002065" [label="(Identifier,image)"];
+"1002030" [label="(Call,image->page.width == 0 && image->page.height == 0)"];
+"1002044" [label="(Literal,0)"];
+"1002049" [label="(Identifier,image)"];
+"1002029" [label="(ControlStructure,if (image->page.width == 0 && image->page.height == 0))"];
+"1002155" [label="(MethodReturn,static Image *)"];
+"1002038" [label="(Call,image->page.height == 0)"];
+"1002038" -> "1002030"  [label="AST: "];
+"1002038" -> "1002044"  [label="CFG: "];
+"1002039" -> "1002038"  [label="AST: "];
+"1002044" -> "1002038"  [label="AST: "];
+"1002030" -> "1002038"  [label="CFG: "];
+"1002038" -> "1002155"  [label="DDG: image->page.height"];
+"1002038" -> "1002030"  [label="DDG: image->page.height"];
+"1002038" -> "1002030"  [label="DDG: 0"];
+"1002030" -> "1002029"  [label="AST: "];
+"1002030" -> "1002031"  [label="CFG: "];
+"1002031" -> "1002030"  [label="AST: "];
+"1002049" -> "1002030"  [label="CFG: "];
+"1002065" -> "1002030"  [label="CFG: "];
+"1002030" -> "1002155"  [label="DDG: image->page.height == 0"];
+"1002030" -> "1002155"  [label="DDG: image->page.width == 0 && image->page.height == 0"];
+"1002030" -> "1002155"  [label="DDG: image->page.width == 0"];
+"1002031" -> "1002030"  [label="DDG: image->page.width"];
+"1002031" -> "1002030"  [label="DDG: 0"];
+}

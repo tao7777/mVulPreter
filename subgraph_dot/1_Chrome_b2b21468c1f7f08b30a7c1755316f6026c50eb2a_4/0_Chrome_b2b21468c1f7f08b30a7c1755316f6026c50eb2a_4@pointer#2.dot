@@ -1,0 +1,37 @@
+digraph "0_Chrome_b2b21468c1f7f08b30a7c1755316f6026c50eb2a_4@pointer" {
+"1000211" [label="(Call,parentToInvalidate = parentToInvalidate->parent())"];
+"1000202" [label="(Call,i < backgroundObscurationTestMaxDepth && parentToInvalidate)"];
+"1000213" [label="(Call,parentToInvalidate->parent())"];
+"1000225" [label="(MethodReturn,void)"];
+"1000206" [label="(Identifier,parentToInvalidate)"];
+"1000197" [label="(ControlStructure,for (unsigned i = 0; i < backgroundObscurationTestMaxDepth && parentToInvalidate; ++i))"];
+"1000216" [label="(Call,isDocumentElement())"];
+"1000194" [label="(Call,* parentToInvalidate = parent())"];
+"1000202" [label="(Call,i < backgroundObscurationTestMaxDepth && parentToInvalidate)"];
+"1000208" [label="(Identifier,i)"];
+"1000212" [label="(Identifier,parentToInvalidate)"];
+"1000211" [label="(Call,parentToInvalidate = parentToInvalidate->parent())"];
+"1000210" [label="(Call,parentToInvalidate->invalidateBackgroundObscurationStatus())"];
+"1000203" [label="(Call,i < backgroundObscurationTestMaxDepth)"];
+"1000209" [label="(Block,)"];
+"1000211" -> "1000209"  [label="AST: "];
+"1000211" -> "1000213"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000213" -> "1000211"  [label="AST: "];
+"1000208" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000225"  [label="DDG: parentToInvalidate->parent()"];
+"1000211" -> "1000202"  [label="DDG: parentToInvalidate"];
+"1000202" -> "1000197"  [label="AST: "];
+"1000202" -> "1000203"  [label="CFG: "];
+"1000202" -> "1000206"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000206" -> "1000202"  [label="AST: "];
+"1000210" -> "1000202"  [label="CFG: "];
+"1000216" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000225"  [label="DDG: parentToInvalidate"];
+"1000202" -> "1000225"  [label="DDG: i < backgroundObscurationTestMaxDepth"];
+"1000202" -> "1000225"  [label="DDG: i < backgroundObscurationTestMaxDepth && parentToInvalidate"];
+"1000203" -> "1000202"  [label="DDG: i"];
+"1000203" -> "1000202"  [label="DDG: backgroundObscurationTestMaxDepth"];
+"1000194" -> "1000202"  [label="DDG: parentToInvalidate"];
+}

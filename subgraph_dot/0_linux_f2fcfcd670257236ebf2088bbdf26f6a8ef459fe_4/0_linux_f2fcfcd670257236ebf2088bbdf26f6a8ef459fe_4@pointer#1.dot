@@ -1,0 +1,33 @@
+digraph "0_linux_f2fcfcd670257236ebf2088bbdf26f6a8ef459fe_4@pointer" {
+"1000160" [label="(Call,sk->sk_type == SOCK_SEQPACKET)"];
+"1000159" [label="(Call,sk->sk_type == SOCK_SEQPACKET && !la.l2_psm)"];
+"1000161" [label="(Call,sk->sk_type)"];
+"1000255" [label="(MethodReturn,static int)"];
+"1000171" [label="(Identifier,err)"];
+"1000178" [label="(Identifier,sk)"];
+"1000160" [label="(Call,sk->sk_type == SOCK_SEQPACKET)"];
+"1000167" [label="(Identifier,la)"];
+"1000158" [label="(ControlStructure,if (sk->sk_type == SOCK_SEQPACKET && !la.l2_psm))"];
+"1000159" [label="(Call,sk->sk_type == SOCK_SEQPACKET && !la.l2_psm)"];
+"1000165" [label="(Call,!la.l2_psm)"];
+"1000164" [label="(Identifier,SOCK_SEQPACKET)"];
+"1000160" -> "1000159"  [label="AST: "];
+"1000160" -> "1000164"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000164" -> "1000160"  [label="AST: "];
+"1000167" -> "1000160"  [label="CFG: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000255"  [label="DDG: SOCK_SEQPACKET"];
+"1000160" -> "1000255"  [label="DDG: sk->sk_type"];
+"1000160" -> "1000159"  [label="DDG: sk->sk_type"];
+"1000160" -> "1000159"  [label="DDG: SOCK_SEQPACKET"];
+"1000159" -> "1000158"  [label="AST: "];
+"1000159" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000159"  [label="AST: "];
+"1000171" -> "1000159"  [label="CFG: "];
+"1000178" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000255"  [label="DDG: sk->sk_type == SOCK_SEQPACKET && !la.l2_psm"];
+"1000159" -> "1000255"  [label="DDG: sk->sk_type == SOCK_SEQPACKET"];
+"1000159" -> "1000255"  [label="DDG: !la.l2_psm"];
+"1000165" -> "1000159"  [label="DDG: la.l2_psm"];
+}

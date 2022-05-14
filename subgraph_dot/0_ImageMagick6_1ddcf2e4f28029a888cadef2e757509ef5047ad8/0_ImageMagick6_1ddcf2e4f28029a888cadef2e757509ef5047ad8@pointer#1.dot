@@ -1,0 +1,34 @@
+digraph "0_ImageMagick6_1ddcf2e4f28029a888cadef2e757509ef5047ad8@pointer" {
+"1000171" [label="(Call,image->columns != next->columns)"];
+"1000170" [label="(Call,(image->columns != next->columns) || (image->rows != next->rows) ||\n        (image->page.x != next->page.x) || (image->page.y != next->page.y))"];
+"1000181" [label="(Identifier,image)"];
+"1000171" [label="(Call,image->columns != next->columns)"];
+"1000178" [label="(Call,(image->rows != next->rows) ||\n        (image->page.x != next->page.x) || (image->page.y != next->page.y))"];
+"1000211" [label="(Identifier,bounds)"];
+"1000286" [label="(MethodReturn,MagickExport void)"];
+"1000175" [label="(Call,next->columns)"];
+"1000169" [label="(ControlStructure,if ((image->columns != next->columns) || (image->rows != next->rows) ||\n        (image->page.x != next->page.x) || (image->page.y != next->page.y)))"];
+"1000170" [label="(Call,(image->columns != next->columns) || (image->rows != next->rows) ||\n        (image->page.x != next->page.x) || (image->page.y != next->page.y))"];
+"1000209" [label="(ControlStructure,continue;)"];
+"1000172" [label="(Call,image->columns)"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000175"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="AST: "];
+"1000181" -> "1000171"  [label="CFG: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000286"  [label="DDG: image->columns"];
+"1000171" -> "1000286"  [label="DDG: next->columns"];
+"1000171" -> "1000170"  [label="DDG: image->columns"];
+"1000171" -> "1000170"  [label="DDG: next->columns"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000170" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000170"  [label="AST: "];
+"1000209" -> "1000170"  [label="CFG: "];
+"1000211" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000286"  [label="DDG: (image->rows != next->rows) ||\n        (image->page.x != next->page.x) || (image->page.y != next->page.y)"];
+"1000170" -> "1000286"  [label="DDG: image->columns != next->columns"];
+"1000170" -> "1000286"  [label="DDG: (image->columns != next->columns) || (image->rows != next->rows) ||\n        (image->page.x != next->page.x) || (image->page.y != next->page.y)"];
+"1000178" -> "1000170"  [label="DDG: image->rows != next->rows"];
+"1000178" -> "1000170"  [label="DDG: (image->page.x != next->page.x) || (image->page.y != next->page.y)"];
+}

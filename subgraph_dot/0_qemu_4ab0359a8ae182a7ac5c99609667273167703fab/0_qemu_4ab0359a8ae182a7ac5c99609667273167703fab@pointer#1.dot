@@ -1,0 +1,26 @@
+digraph "0_qemu_4ab0359a8ae182a7ac5c99609667273167703fab@pointer" {
+"1000121" [label="(Call,ide_state->status = READY_STAT | ERR_STAT)"];
+"1000125" [label="(Call,READY_STAT | ERR_STAT)"];
+"1000146" [label="(MethodReturn,static void)"];
+"1000125" [label="(Call,READY_STAT | ERR_STAT)"];
+"1000122" [label="(Call,ide_state->status)"];
+"1000121" [label="(Call,ide_state->status = READY_STAT | ERR_STAT)"];
+"1000132" [label="(Identifier,ncq_tfs)"];
+"1000127" [label="(Identifier,ERR_STAT)"];
+"1000102" [label="(Block,)"];
+"1000126" [label="(Identifier,READY_STAT)"];
+"1000121" -> "1000102"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000132" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000146"  [label="DDG: READY_STAT | ERR_STAT"];
+"1000121" -> "1000146"  [label="DDG: ide_state->status"];
+"1000125" -> "1000121"  [label="DDG: READY_STAT"];
+"1000125" -> "1000121"  [label="DDG: ERR_STAT"];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000125" -> "1000146"  [label="DDG: READY_STAT"];
+"1000125" -> "1000146"  [label="DDG: ERR_STAT"];
+}

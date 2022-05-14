@@ -1,0 +1,28 @@
+digraph "1_Chrome_f1574f25e1402e748bf2bd7e28ce3dd96ceb1ca4_4@pointer" {
+"1000103" [label="(Call,* frame = GetElement().GetDocument().GetFrame())"];
+"1000107" [label="(Call,!frame)"];
+"1000109" [label="(Return,return;)"];
+"1000108" [label="(Identifier,frame)"];
+"1000104" [label="(Identifier,frame)"];
+"1000111" [label="(Identifier,false)"];
+"1000106" [label="(ControlStructure,if (!frame))"];
+"1000103" [label="(Call,* frame = GetElement().GetDocument().GetFrame())"];
+"1000112" [label="(MethodReturn,void)"];
+"1000101" [label="(Block,)"];
+"1000105" [label="(Call,GetElement().GetDocument().GetFrame())"];
+"1000107" [label="(Call,!frame)"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000105"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000105" -> "1000103"  [label="AST: "];
+"1000108" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000112"  [label="DDG: GetElement().GetDocument().GetFrame()"];
+"1000103" -> "1000107"  [label="DDG: frame"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="CFG: "];
+"1000111" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000112"  [label="DDG: frame"];
+"1000107" -> "1000112"  [label="DDG: !frame"];
+}

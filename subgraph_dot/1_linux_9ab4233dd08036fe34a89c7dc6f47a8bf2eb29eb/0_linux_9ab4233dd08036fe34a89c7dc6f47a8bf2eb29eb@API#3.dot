@@ -1,0 +1,24 @@
+digraph "0_linux_9ab4233dd08036fe34a89c7dc6f47a8bf2eb29eb@API" {
+"1000204" [label="(Call,down_read(&current->mm->mmap_sem))"];
+"1000184" [label="(Call,up_read(&current->mm->mmap_sem))"];
+"1000192" [label="(Identifier,error)"];
+"1000213" [label="(MethodReturn,static long)"];
+"1000107" [label="(Block,)"];
+"1000205" [label="(Call,&current->mm->mmap_sem)"];
+"1000212" [label="(Identifier,error)"];
+"1000185" [label="(Call,&current->mm->mmap_sem)"];
+"1000204" [label="(Call,down_read(&current->mm->mmap_sem))"];
+"1000184" [label="(Call,up_read(&current->mm->mmap_sem))"];
+"1000204" -> "1000107"  [label="AST: "];
+"1000204" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000212" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000213"  [label="DDG: &current->mm->mmap_sem"];
+"1000204" -> "1000213"  [label="DDG: down_read(&current->mm->mmap_sem)"];
+"1000184" -> "1000204"  [label="DDG: &current->mm->mmap_sem"];
+"1000184" -> "1000107"  [label="AST: "];
+"1000184" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000192" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000213"  [label="DDG: up_read(&current->mm->mmap_sem)"];
+}

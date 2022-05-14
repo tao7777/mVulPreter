@@ -1,0 +1,38 @@
+digraph "0_linux_8c7188b23474cca017b3ef354c4a58456f68303a_0@pointer" {
+"1000553" [label="(Call,rds_rdma_cookie_key(rm->m_rdma_cookie))"];
+"1000551" [label="(Call,rds_rdma_unuse(rs, rds_rdma_cookie_key(rm->m_rdma_cookie), 1))"];
+"1000557" [label="(Literal,1)"];
+"1000553" [label="(Call,rds_rdma_cookie_key(rm->m_rdma_cookie))"];
+"1000564" [label="(MethodReturn,int)"];
+"1000554" [label="(Call,rm->m_rdma_cookie)"];
+"1000458" [label="(Call,rds_send_queue_rm(rs, conn, rm, rs->rs_bound_port,\n\t\t\t\t  dport, &queued))"];
+"1000440" [label="(Call,rds_cong_wait(conn->c_fcong, dport, nonblock, rs))"];
+"1000559" [label="(Identifier,rm)"];
+"1000485" [label="(Call,rds_send_queue_rm(rs, conn, rm,\n\t\t\t\t\t\t\t  rs->rs_bound_port,\n\t\t\t\t\t\t\t  dport,\n\t\t\t\t\t\t\t  &queued))"];
+"1000549" [label="(ControlStructure,if (allocated_mr))"];
+"1000389" [label="(Call,rds_cmsg_send(rs, rm, msg, &allocated_mr))"];
+"1000123" [label="(Call,*rs = rds_sk_to_rs(sk))"];
+"1000552" [label="(Identifier,rs)"];
+"1000253" [label="(Call,rds_sk_sndbuf(rs))"];
+"1000551" [label="(Call,rds_rdma_unuse(rs, rds_rdma_cookie_key(rm->m_rdma_cookie), 1))"];
+"1000553" -> "1000551"  [label="AST: "];
+"1000553" -> "1000554"  [label="CFG: "];
+"1000554" -> "1000553"  [label="AST: "];
+"1000557" -> "1000553"  [label="CFG: "];
+"1000553" -> "1000564"  [label="DDG: rm->m_rdma_cookie"];
+"1000553" -> "1000551"  [label="DDG: rm->m_rdma_cookie"];
+"1000551" -> "1000549"  [label="AST: "];
+"1000551" -> "1000557"  [label="CFG: "];
+"1000552" -> "1000551"  [label="AST: "];
+"1000557" -> "1000551"  [label="AST: "];
+"1000559" -> "1000551"  [label="CFG: "];
+"1000551" -> "1000564"  [label="DDG: rds_rdma_cookie_key(rm->m_rdma_cookie)"];
+"1000551" -> "1000564"  [label="DDG: rds_rdma_unuse(rs, rds_rdma_cookie_key(rm->m_rdma_cookie), 1)"];
+"1000551" -> "1000564"  [label="DDG: rs"];
+"1000485" -> "1000551"  [label="DDG: rs"];
+"1000458" -> "1000551"  [label="DDG: rs"];
+"1000253" -> "1000551"  [label="DDG: rs"];
+"1000440" -> "1000551"  [label="DDG: rs"];
+"1000389" -> "1000551"  [label="DDG: rs"];
+"1000123" -> "1000551"  [label="DDG: rs"];
+}

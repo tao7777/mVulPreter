@@ -1,0 +1,24 @@
+digraph "0_linux_9c52057c698fb96f8f07e7a4bcf4801a092bda89@pointer" {
+"1000256" [label="(Call,parent_inode->i_mtime = parent_inode->i_ctime = CURRENT_TIME)"];
+"1000260" [label="(Call,parent_inode->i_ctime = CURRENT_TIME)"];
+"1000266" [label="(Identifier,ret)"];
+"1000329" [label="(MethodReturn,int)"];
+"1000109" [label="(Block,)"];
+"1000261" [label="(Call,parent_inode->i_ctime)"];
+"1000264" [label="(Identifier,CURRENT_TIME)"];
+"1000260" [label="(Call,parent_inode->i_ctime = CURRENT_TIME)"];
+"1000256" [label="(Call,parent_inode->i_mtime = parent_inode->i_ctime = CURRENT_TIME)"];
+"1000257" [label="(Call,parent_inode->i_mtime)"];
+"1000256" -> "1000109"  [label="AST: "];
+"1000256" -> "1000260"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000260" -> "1000256"  [label="AST: "];
+"1000266" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000329"  [label="DDG: parent_inode->i_mtime"];
+"1000260" -> "1000256"  [label="DDG: parent_inode->i_ctime"];
+"1000260" -> "1000264"  [label="CFG: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000264" -> "1000260"  [label="AST: "];
+"1000260" -> "1000329"  [label="DDG: CURRENT_TIME"];
+"1000260" -> "1000329"  [label="DDG: parent_inode->i_ctime"];
+}

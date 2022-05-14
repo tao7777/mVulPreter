@@ -1,0 +1,37 @@
+digraph "0_Chrome_c63f2b7fe4fe2977f858a8e36d5f48db17eff2e7_30@pointer" {
+"1001407" [label="(Call,* permission =\n          ExtensionPermissionsInfo::GetInstance()->GetByName(permission_str))"];
+"1001409" [label="(Call,ExtensionPermissionsInfo::GetInstance()->GetByName(permission_str))"];
+"1001475" [label="(Call,pattern.Parse(permission_str,\n                                                           parse_strictness))"];
+"1001473" [label="(Call,parse_result = pattern.Parse(permission_str,\n                                                           parse_strictness))"];
+"1001477" [label="(Identifier,parse_strictness)"];
+"1001412" [label="(ControlStructure,continue;)"];
+"1001388" [label="(Block,)"];
+"1001408" [label="(Identifier,permission)"];
+"1001475" [label="(Call,pattern.Parse(permission_str,\n                                                           parse_strictness))"];
+"1001476" [label="(Identifier,permission_str)"];
+"1002448" [label="(MethodReturn,bool)"];
+"1001407" [label="(Call,* permission =\n          ExtensionPermissionsInfo::GetInstance()->GetByName(permission_str))"];
+"1001410" [label="(Identifier,permission_str)"];
+"1001409" [label="(Call,ExtensionPermissionsInfo::GetInstance()->GetByName(permission_str))"];
+"1001407" -> "1001388"  [label="AST: "];
+"1001407" -> "1001409"  [label="CFG: "];
+"1001408" -> "1001407"  [label="AST: "];
+"1001409" -> "1001407"  [label="AST: "];
+"1001412" -> "1001407"  [label="CFG: "];
+"1001407" -> "1002448"  [label="DDG: permission"];
+"1001407" -> "1002448"  [label="DDG: ExtensionPermissionsInfo::GetInstance()->GetByName(permission_str)"];
+"1001409" -> "1001407"  [label="DDG: permission_str"];
+"1001409" -> "1001410"  [label="CFG: "];
+"1001410" -> "1001409"  [label="AST: "];
+"1001409" -> "1002448"  [label="DDG: permission_str"];
+"1001475" -> "1001409"  [label="DDG: permission_str"];
+"1001475" -> "1001473"  [label="AST: "];
+"1001475" -> "1001477"  [label="CFG: "];
+"1001476" -> "1001475"  [label="AST: "];
+"1001477" -> "1001475"  [label="AST: "];
+"1001473" -> "1001475"  [label="CFG: "];
+"1001475" -> "1002448"  [label="DDG: permission_str"];
+"1001475" -> "1002448"  [label="DDG: parse_strictness"];
+"1001475" -> "1001473"  [label="DDG: permission_str"];
+"1001475" -> "1001473"  [label="DDG: parse_strictness"];
+}

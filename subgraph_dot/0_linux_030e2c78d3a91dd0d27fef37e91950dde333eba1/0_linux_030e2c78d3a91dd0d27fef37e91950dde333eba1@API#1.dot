@@ -1,0 +1,35 @@
+digraph "0_linux_030e2c78d3a91dd0d27fef37e91950dde333eba1@API" {
+"1000147" [label="(Call,info.remove_mode & SNDRV_SEQ_REMOVE_OUTPUT)"];
+"1000118" [label="(Call,info.remove_mode & SNDRV_SEQ_REMOVE_INPUT)"];
+"1000151" [label="(Identifier,SNDRV_SEQ_REMOVE_OUTPUT)"];
+"1000147" [label="(Call,info.remove_mode & SNDRV_SEQ_REMOVE_OUTPUT)"];
+"1000159" [label="(Literal,0)"];
+"1000117" [label="(ControlStructure,if (info.remove_mode & SNDRV_SEQ_REMOVE_INPUT))"];
+"1000119" [label="(Call,info.remove_mode)"];
+"1000128" [label="(Identifier,client)"];
+"1000146" [label="(ControlStructure,if (info.remove_mode & SNDRV_SEQ_REMOVE_OUTPUT))"];
+"1000149" [label="(Identifier,info)"];
+"1000122" [label="(Identifier,SNDRV_SEQ_REMOVE_INPUT)"];
+"1000148" [label="(Call,info.remove_mode)"];
+"1000160" [label="(MethodReturn,static int)"];
+"1000154" [label="(Identifier,client)"];
+"1000118" [label="(Call,info.remove_mode & SNDRV_SEQ_REMOVE_INPUT)"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000151" -> "1000147"  [label="AST: "];
+"1000154" -> "1000147"  [label="CFG: "];
+"1000159" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000160"  [label="DDG: SNDRV_SEQ_REMOVE_OUTPUT"];
+"1000147" -> "1000160"  [label="DDG: info.remove_mode"];
+"1000147" -> "1000160"  [label="DDG: info.remove_mode & SNDRV_SEQ_REMOVE_OUTPUT"];
+"1000118" -> "1000147"  [label="DDG: info.remove_mode"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000122"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000122" -> "1000118"  [label="AST: "];
+"1000128" -> "1000118"  [label="CFG: "];
+"1000149" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000160"  [label="DDG: info.remove_mode & SNDRV_SEQ_REMOVE_INPUT"];
+"1000118" -> "1000160"  [label="DDG: SNDRV_SEQ_REMOVE_INPUT"];
+}

@@ -1,0 +1,27 @@
+digraph "0_radare2_66191f780863ea8c66ace4040d0d04a8842e8432@pointer" {
+"1000107" [label="(MethodParameterIn,size_t *begin)"];
+"1000120" [label="(Call,begin && str[*begin] && isspace ((ut8)str[*begin]))"];
+"1000107" [label="(MethodParameterIn,size_t *begin)"];
+"1000120" [label="(Call,begin && str[*begin] && isspace ((ut8)str[*begin]))"];
+"1000119" [label="(ControlStructure,while (begin && str[*begin] && isspace ((ut8)str[*begin])))"];
+"1000121" [label="(Identifier,begin)"];
+"1000141" [label="(Identifier,str)"];
+"1000122" [label="(Call,str[*begin] && isspace ((ut8)str[*begin]))"];
+"1000228" [label="(MethodReturn,static x86newTokenType)"];
+"1000137" [label="(Identifier,begin)"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000228"  [label="DDG: begin"];
+"1000107" -> "1000120"  [label="DDG: begin"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000137" -> "1000120"  [label="CFG: "];
+"1000141" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000228"  [label="DDG: begin"];
+"1000120" -> "1000228"  [label="DDG: begin && str[*begin] && isspace ((ut8)str[*begin])"];
+"1000120" -> "1000228"  [label="DDG: str[*begin] && isspace ((ut8)str[*begin])"];
+"1000122" -> "1000120"  [label="DDG: str[*begin]"];
+"1000122" -> "1000120"  [label="DDG: isspace ((ut8)str[*begin])"];
+}

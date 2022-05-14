@@ -1,0 +1,19 @@
+digraph "0_systemd_cb31827d62066a04b02111df3052949fda4b6888_0@API" {
+"1000131" [label="(Call,assert(pwd))"];
+"1000105" [label="(MethodParameterIn,struct passwd *pwd)"];
+"1000109" [label="(Block,)"];
+"1000134" [label="(Identifier,p)"];
+"1000131" [label="(Call,assert(pwd))"];
+"1000132" [label="(Identifier,pwd)"];
+"1000325" [label="(MethodReturn,enum nss_status)"];
+"1000105" [label="(MethodParameterIn,struct passwd *pwd)"];
+"1000131" -> "1000109"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000134" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000325"  [label="DDG: pwd"];
+"1000131" -> "1000325"  [label="DDG: assert(pwd)"];
+"1000105" -> "1000131"  [label="DDG: pwd"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000325"  [label="DDG: pwd"];
+}

@@ -1,0 +1,37 @@
+digraph "0_rawstudio_983bda1f0fa5fa86884381208274198a620f006e@pointer" {
+"1000350" [label="(Call,jh->huff[c+1] = jh->huff[c])"];
+"1000280" [label="(Call,jh->huff[c] = make_decoder_ref (&dp))"];
+"1000286" [label="(Call,make_decoder_ref (&dp))"];
+"1000281" [label="(Call,jh->huff[c])"];
+"1000350" [label="(Call,jh->huff[c+1] = jh->huff[c])"];
+"1000286" [label="(Call,make_decoder_ref (&dp))"];
+"1000287" [label="(Call,&dp)"];
+"1000365" [label="(Identifier,jh)"];
+"1000280" [label="(Call,jh->huff[c] = make_decoder_ref (&dp))"];
+"1000351" [label="(Call,jh->huff[c+1])"];
+"1000358" [label="(Call,jh->huff[c])"];
+"1000418" [label="(MethodReturn,int CLASS)"];
+"1000274" [label="(Call,jh->free[c] = jh->huff[c] = make_decoder_ref (&dp))"];
+"1000341" [label="(ControlStructure,if (!jh->huff[c+1]))"];
+"1000350" -> "1000341"  [label="AST: "];
+"1000350" -> "1000358"  [label="CFG: "];
+"1000351" -> "1000350"  [label="AST: "];
+"1000358" -> "1000350"  [label="AST: "];
+"1000365" -> "1000350"  [label="CFG: "];
+"1000350" -> "1000418"  [label="DDG: jh->huff[c+1]"];
+"1000350" -> "1000418"  [label="DDG: jh->huff[c]"];
+"1000280" -> "1000350"  [label="DDG: jh->huff[c]"];
+"1000280" -> "1000274"  [label="AST: "];
+"1000280" -> "1000286"  [label="CFG: "];
+"1000281" -> "1000280"  [label="AST: "];
+"1000286" -> "1000280"  [label="AST: "];
+"1000274" -> "1000280"  [label="CFG: "];
+"1000280" -> "1000418"  [label="DDG: make_decoder_ref (&dp)"];
+"1000280" -> "1000418"  [label="DDG: jh->huff[c]"];
+"1000280" -> "1000274"  [label="DDG: jh->huff[c]"];
+"1000286" -> "1000280"  [label="DDG: &dp"];
+"1000286" -> "1000287"  [label="CFG: "];
+"1000287" -> "1000286"  [label="AST: "];
+"1000286" -> "1000418"  [label="DDG: &dp"];
+"1000286" -> "1000274"  [label="DDG: &dp"];
+}

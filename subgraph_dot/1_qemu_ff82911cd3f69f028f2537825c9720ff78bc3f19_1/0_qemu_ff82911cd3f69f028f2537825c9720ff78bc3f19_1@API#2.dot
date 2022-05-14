@@ -1,0 +1,36 @@
+digraph "0_qemu_ff82911cd3f69f028f2537825c9720ff78bc3f19_1@API" {
+"1000212" [label="(Call,error_free(local_err))"];
+"1000210" [label="(Call,error_get_pretty(local_err))"];
+"1000116" [label="(Call,*local_err = NULL)"];
+"1000116" [label="(Call,*local_err = NULL)"];
+"1000236" [label="(MethodReturn,ssize_t)"];
+"1000117" [label="(Identifier,local_err)"];
+"1000213" [label="(Identifier,local_err)"];
+"1000212" [label="(Call,error_free(local_err))"];
+"1000208" [label="(Call,TRACE(\"I/O error: %s\", error_get_pretty(local_err)))"];
+"1000121" [label="(Identifier,local_iov_head)"];
+"1000110" [label="(Block,)"];
+"1000211" [label="(Identifier,local_err)"];
+"1000215" [label="(Identifier,done)"];
+"1000207" [label="(Block,)"];
+"1000118" [label="(Identifier,NULL)"];
+"1000210" [label="(Call,error_get_pretty(local_err))"];
+"1000212" -> "1000207"  [label="AST: "];
+"1000212" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000215" -> "1000212"  [label="CFG: "];
+"1000210" -> "1000212"  [label="DDG: local_err"];
+"1000210" -> "1000208"  [label="AST: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000208" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000208"  [label="DDG: local_err"];
+"1000116" -> "1000210"  [label="DDG: local_err"];
+"1000116" -> "1000110"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000121" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000236"  [label="DDG: NULL"];
+"1000116" -> "1000236"  [label="DDG: local_err"];
+}

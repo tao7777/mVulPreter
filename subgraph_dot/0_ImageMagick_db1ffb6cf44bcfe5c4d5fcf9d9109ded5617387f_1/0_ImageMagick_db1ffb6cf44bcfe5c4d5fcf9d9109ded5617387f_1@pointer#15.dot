@@ -1,0 +1,30 @@
+digraph "0_ImageMagick_db1ffb6cf44bcfe5c4d5fcf9d9109ded5617387f_1@pointer" {
+"1000619" [label="(Call,image->type=GrayscaleType)"];
+"1000124" [label="(Call,image->type != GrayscaleType)"];
+"1000102" [label="(Block,)"];
+"1000123" [label="(ControlStructure,if (image->type != GrayscaleType))"];
+"1000125" [label="(Call,image->type)"];
+"1000135" [label="(Identifier,colormap_index)"];
+"1000128" [label="(Identifier,GrayscaleType)"];
+"1000627" [label="(Identifier,image)"];
+"1000640" [label="(MethodReturn,static MagickBooleanType)"];
+"1000124" [label="(Call,image->type != GrayscaleType)"];
+"1000620" [label="(Call,image->type)"];
+"1000619" [label="(Call,image->type=GrayscaleType)"];
+"1000623" [label="(Identifier,GrayscaleType)"];
+"1000619" -> "1000102"  [label="AST: "];
+"1000619" -> "1000623"  [label="CFG: "];
+"1000620" -> "1000619"  [label="AST: "];
+"1000623" -> "1000619"  [label="AST: "];
+"1000627" -> "1000619"  [label="CFG: "];
+"1000619" -> "1000640"  [label="DDG: GrayscaleType"];
+"1000619" -> "1000640"  [label="DDG: image->type"];
+"1000124" -> "1000619"  [label="DDG: GrayscaleType"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000128"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000128" -> "1000124"  [label="AST: "];
+"1000130" -> "1000124"  [label="CFG: "];
+"1000135" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000640"  [label="DDG: image->type != GrayscaleType"];
+}

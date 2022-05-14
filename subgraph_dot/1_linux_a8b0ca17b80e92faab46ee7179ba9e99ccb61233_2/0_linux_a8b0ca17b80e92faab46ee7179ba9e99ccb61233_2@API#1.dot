@@ -1,0 +1,35 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_2@API" {
+"1000216" [label="(Call,xscale1pmu_write_pmnc(pmnc))"];
+"1000211" [label="(Call,pmnc = xscale1pmu_read_pmnc() | XSCALE_PMU_ENABLE)"];
+"1000213" [label="(Call,xscale1pmu_read_pmnc() | XSCALE_PMU_ENABLE)"];
+"1000213" [label="(Call,xscale1pmu_read_pmnc() | XSCALE_PMU_ENABLE)"];
+"1000214" [label="(Call,xscale1pmu_read_pmnc())"];
+"1000211" [label="(Call,pmnc = xscale1pmu_read_pmnc() | XSCALE_PMU_ENABLE)"];
+"1000212" [label="(Identifier,pmnc)"];
+"1000215" [label="(Identifier,XSCALE_PMU_ENABLE)"];
+"1000219" [label="(Identifier,IRQ_HANDLED)"];
+"1000216" [label="(Call,xscale1pmu_write_pmnc(pmnc))"];
+"1000106" [label="(Block,)"];
+"1000217" [label="(Identifier,pmnc)"];
+"1000220" [label="(MethodReturn,RET)"];
+"1000216" -> "1000106"  [label="AST: "];
+"1000216" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000219" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000220"  [label="DDG: xscale1pmu_write_pmnc(pmnc)"];
+"1000216" -> "1000220"  [label="DDG: pmnc"];
+"1000211" -> "1000216"  [label="DDG: pmnc"];
+"1000211" -> "1000106"  [label="AST: "];
+"1000211" -> "1000213"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000213" -> "1000211"  [label="AST: "];
+"1000217" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000220"  [label="DDG: xscale1pmu_read_pmnc() | XSCALE_PMU_ENABLE"];
+"1000213" -> "1000211"  [label="DDG: xscale1pmu_read_pmnc()"];
+"1000213" -> "1000211"  [label="DDG: XSCALE_PMU_ENABLE"];
+"1000213" -> "1000215"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000215" -> "1000213"  [label="AST: "];
+"1000213" -> "1000220"  [label="DDG: XSCALE_PMU_ENABLE"];
+"1000213" -> "1000220"  [label="DDG: xscale1pmu_read_pmnc()"];
+}

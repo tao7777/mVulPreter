@@ -1,0 +1,22 @@
+digraph "0_samba_10c3e3923022485c720f322ca4f0aca5d7501310@pointer" {
+"1000115" [label="(Call,VALID_STAT(fsp->fsp_name->st))"];
+"1000113" [label="(Call,file_existed = VALID_STAT(fsp->fsp_name->st))"];
+"1000114" [label="(Identifier,file_existed)"];
+"1000106" [label="(Block,)"];
+"1000113" [label="(Call,file_existed = VALID_STAT(fsp->fsp_name->st))"];
+"1000116" [label="(Call,fsp->fsp_name->st)"];
+"1000124" [label="(Identifier,file_created)"];
+"1000132" [label="(MethodReturn,static NTSTATUS)"];
+"1000115" [label="(Call,VALID_STAT(fsp->fsp_name->st))"];
+"1000115" -> "1000113"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000113" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000132"  [label="DDG: fsp->fsp_name->st"];
+"1000115" -> "1000113"  [label="DDG: fsp->fsp_name->st"];
+"1000113" -> "1000106"  [label="AST: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000124" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000132"  [label="DDG: file_existed"];
+"1000113" -> "1000132"  [label="DDG: VALID_STAT(fsp->fsp_name->st)"];
+}

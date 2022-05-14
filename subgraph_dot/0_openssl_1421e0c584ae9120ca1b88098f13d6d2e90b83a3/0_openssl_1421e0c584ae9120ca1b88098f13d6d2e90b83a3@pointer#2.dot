@@ -1,0 +1,28 @@
+digraph "0_openssl_1421e0c584ae9120ca1b88098f13d6d2e90b83a3@pointer" {
+"1000700" [label="(Call,BIO_free(s->s3->handshake_buffer))"];
+"1000387" [label="(Call,BIO_get_mem_data(s->s3->handshake_buffer, &hdata))"];
+"1000388" [label="(Call,s->s3->handshake_buffer)"];
+"1000727" [label="(MethodReturn,int)"];
+"1000700" [label="(Call,BIO_free(s->s3->handshake_buffer))"];
+"1000385" [label="(Call,hdatalen = BIO_get_mem_data(s->s3->handshake_buffer, &hdata))"];
+"1000393" [label="(Call,&hdata)"];
+"1000709" [label="(Identifier,s)"];
+"1000701" [label="(Call,s->s3->handshake_buffer)"];
+"1000699" [label="(Block,)"];
+"1000387" [label="(Call,BIO_get_mem_data(s->s3->handshake_buffer, &hdata))"];
+"1000700" -> "1000699"  [label="AST: "];
+"1000700" -> "1000701"  [label="CFG: "];
+"1000701" -> "1000700"  [label="AST: "];
+"1000709" -> "1000700"  [label="CFG: "];
+"1000700" -> "1000727"  [label="DDG: BIO_free(s->s3->handshake_buffer)"];
+"1000387" -> "1000700"  [label="DDG: s->s3->handshake_buffer"];
+"1000387" -> "1000385"  [label="AST: "];
+"1000387" -> "1000393"  [label="CFG: "];
+"1000388" -> "1000387"  [label="AST: "];
+"1000393" -> "1000387"  [label="AST: "];
+"1000385" -> "1000387"  [label="CFG: "];
+"1000387" -> "1000727"  [label="DDG: &hdata"];
+"1000387" -> "1000727"  [label="DDG: s->s3->handshake_buffer"];
+"1000387" -> "1000385"  [label="DDG: s->s3->handshake_buffer"];
+"1000387" -> "1000385"  [label="DDG: &hdata"];
+}

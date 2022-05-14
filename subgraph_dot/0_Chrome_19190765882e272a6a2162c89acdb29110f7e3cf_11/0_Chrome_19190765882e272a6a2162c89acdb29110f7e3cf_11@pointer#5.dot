@@ -1,0 +1,30 @@
+digraph "0_Chrome_19190765882e272a6a2162c89acdb29110f7e3cf_11@pointer" {
+"1000148" [label="(Call,ShouldSyncWindow(*i))"];
+"1000147" [label="(Call,ShouldSyncWindow(*i) && (*i)->GetTabCount() &&\n        (*i)->HasWindow())"];
+"1000158" [label="(Identifier,window_id)"];
+"1000151" [label="(Call,(*i)->GetTabCount() &&\n        (*i)->HasWindow())"];
+"1000148" [label="(Call,ShouldSyncWindow(*i))"];
+"1000147" [label="(Call,ShouldSyncWindow(*i) && (*i)->GetTabCount() &&\n        (*i)->HasWindow())"];
+"1000144" [label="(Identifier,i)"];
+"1000152" [label="(Call,(*i)->GetTabCount())"];
+"1000271" [label="(MethodReturn,void)"];
+"1000149" [label="(Call,*i)"];
+"1000146" [label="(ControlStructure,if (ShouldSyncWindow(*i) && (*i)->GetTabCount() &&\n        (*i)->HasWindow()))"];
+"1000148" -> "1000147"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000152" -> "1000148"  [label="CFG: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000271"  [label="DDG: *i"];
+"1000148" -> "1000147"  [label="DDG: *i"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000147"  [label="AST: "];
+"1000158" -> "1000147"  [label="CFG: "];
+"1000144" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000271"  [label="DDG: (*i)->GetTabCount() &&\n        (*i)->HasWindow()"];
+"1000147" -> "1000271"  [label="DDG: ShouldSyncWindow(*i)"];
+"1000147" -> "1000271"  [label="DDG: ShouldSyncWindow(*i) && (*i)->GetTabCount() &&\n        (*i)->HasWindow()"];
+"1000151" -> "1000147"  [label="DDG: (*i)->GetTabCount()"];
+"1000151" -> "1000147"  [label="DDG: (*i)->HasWindow()"];
+}

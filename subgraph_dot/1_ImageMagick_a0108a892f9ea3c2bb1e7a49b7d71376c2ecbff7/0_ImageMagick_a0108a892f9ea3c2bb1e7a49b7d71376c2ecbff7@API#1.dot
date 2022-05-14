@@ -1,0 +1,25 @@
+digraph "0_ImageMagick_a0108a892f9ea3c2bb1e7a49b7d71376c2ecbff7@API" {
+"1000121" [label="(Call,assert(image_info->signature == MagickSignature))"];
+"1000122" [label="(Call,image_info->signature == MagickSignature)"];
+"1000134" [label="(Call,image->signature == MagickSignature)"];
+"1000345" [label="(MethodReturn,static MagickBooleanType)"];
+"1000122" [label="(Call,image_info->signature == MagickSignature)"];
+"1000123" [label="(Call,image_info->signature)"];
+"1000121" [label="(Call,assert(image_info->signature == MagickSignature))"];
+"1000129" [label="(Identifier,image)"];
+"1000108" [label="(Block,)"];
+"1000126" [label="(Identifier,MagickSignature)"];
+"1000121" -> "1000108"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000129" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000345"  [label="DDG: assert(image_info->signature == MagickSignature)"];
+"1000121" -> "1000345"  [label="DDG: image_info->signature == MagickSignature"];
+"1000122" -> "1000121"  [label="DDG: image_info->signature"];
+"1000122" -> "1000121"  [label="DDG: MagickSignature"];
+"1000122" -> "1000126"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="AST: "];
+"1000122" -> "1000345"  [label="DDG: image_info->signature"];
+"1000122" -> "1000134"  [label="DDG: MagickSignature"];
+}

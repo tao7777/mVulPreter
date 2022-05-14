@@ -1,0 +1,32 @@
+digraph "0_linux_13bf9fbff0e5e099e2b6f003a0ab8ae145436309_0@pointer" {
+"1000162" [label="(Call,args->stable = ntohl(*p++))"];
+"1000166" [label="(Call,ntohl(*p++))"];
+"1000158" [label="(Call,ntohl(*p++))"];
+"1000154" [label="(Call,args->count = ntohl(*p++))"];
+"1000348" [label="(MethodReturn,RET)"];
+"1000166" [label="(Call,ntohl(*p++))"];
+"1000176" [label="(Call,ntohl(*p++))"];
+"1000107" [label="(Block,)"];
+"1000171" [label="(Identifier,len)"];
+"1000159" [label="(Call,*p++)"];
+"1000162" [label="(Call,args->stable = ntohl(*p++))"];
+"1000163" [label="(Call,args->stable)"];
+"1000158" [label="(Call,ntohl(*p++))"];
+"1000167" [label="(Call,*p++)"];
+"1000162" -> "1000107"  [label="AST: "];
+"1000162" -> "1000166"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="AST: "];
+"1000171" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000348"  [label="DDG: args->stable"];
+"1000166" -> "1000162"  [label="DDG: *p++"];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000158" -> "1000166"  [label="DDG: *p++"];
+"1000166" -> "1000176"  [label="DDG: *p++"];
+"1000158" -> "1000154"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000154" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000154"  [label="DDG: *p++"];
+}

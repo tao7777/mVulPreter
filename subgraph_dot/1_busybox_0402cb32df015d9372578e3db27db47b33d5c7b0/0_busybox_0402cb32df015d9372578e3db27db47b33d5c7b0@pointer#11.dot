@@ -1,0 +1,37 @@
+digraph "0_busybox_0402cb32df015d9372578e3db27db47b33d5c7b0@pointer" {
+"1000416" [label="(Call,selectors[i] = tmp_byte)"];
+"1000393" [label="(Call,tmp_byte = mtfSymbol[n])"];
+"1000412" [label="(Call,mtfSymbol[0] = selectors[i] = tmp_byte)"];
+"1000393" [label="(Call,tmp_byte = mtfSymbol[n])"];
+"1000395" [label="(Call,mtfSymbol[n])"];
+"1000374" [label="(Block,)"];
+"1000394" [label="(Identifier,tmp_byte)"];
+"1000401" [label="(Identifier,n)"];
+"1000413" [label="(Call,mtfSymbol[0])"];
+"1000373" [label="(Identifier,i)"];
+"1000417" [label="(Call,selectors[i])"];
+"1001173" [label="(MethodReturn,static int)"];
+"1000416" [label="(Call,selectors[i] = tmp_byte)"];
+"1000412" [label="(Call,mtfSymbol[0] = selectors[i] = tmp_byte)"];
+"1000420" [label="(Identifier,tmp_byte)"];
+"1000416" -> "1000412"  [label="AST: "];
+"1000416" -> "1000420"  [label="CFG: "];
+"1000417" -> "1000416"  [label="AST: "];
+"1000420" -> "1000416"  [label="AST: "];
+"1000412" -> "1000416"  [label="CFG: "];
+"1000416" -> "1001173"  [label="DDG: tmp_byte"];
+"1000416" -> "1001173"  [label="DDG: selectors[i]"];
+"1000416" -> "1000412"  [label="DDG: selectors[i]"];
+"1000393" -> "1000416"  [label="DDG: tmp_byte"];
+"1000393" -> "1000374"  [label="AST: "];
+"1000393" -> "1000395"  [label="CFG: "];
+"1000394" -> "1000393"  [label="AST: "];
+"1000395" -> "1000393"  [label="AST: "];
+"1000401" -> "1000393"  [label="CFG: "];
+"1000393" -> "1001173"  [label="DDG: mtfSymbol[n]"];
+"1000393" -> "1000412"  [label="DDG: tmp_byte"];
+"1000412" -> "1000374"  [label="AST: "];
+"1000413" -> "1000412"  [label="AST: "];
+"1000373" -> "1000412"  [label="CFG: "];
+"1000412" -> "1001173"  [label="DDG: mtfSymbol[0]"];
+}

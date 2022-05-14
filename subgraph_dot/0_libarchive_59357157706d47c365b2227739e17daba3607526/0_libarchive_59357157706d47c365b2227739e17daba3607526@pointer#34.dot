@@ -1,0 +1,33 @@
+digraph "0_libarchive_59357157706d47c365b2227739e17daba3607526@pointer" {
+"1000577" [label="(Call,cpio->option_numeric_uid_gid = 1)"];
+"1000818" [label="(Call,cpio->option_numeric_uid_gid && !cpio->option_list)"];
+"1000817" [label="(ControlStructure,if (cpio->option_numeric_uid_gid && !cpio->option_list))"];
+"1000581" [label="(Literal,1)"];
+"1000582" [label="(ControlStructure,break;)"];
+"1000827" [label="(Literal,1)"];
+"1000578" [label="(Call,cpio->option_numeric_uid_gid)"];
+"1000818" [label="(Call,cpio->option_numeric_uid_gid && !cpio->option_list)"];
+"1000995" [label="(MethodReturn,RET)"];
+"1000341" [label="(Block,)"];
+"1000819" [label="(Call,cpio->option_numeric_uid_gid)"];
+"1000834" [label="(Identifier,cpio)"];
+"1000577" [label="(Call,cpio->option_numeric_uid_gid = 1)"];
+"1000822" [label="(Call,!cpio->option_list)"];
+"1000577" -> "1000341"  [label="AST: "];
+"1000577" -> "1000581"  [label="CFG: "];
+"1000578" -> "1000577"  [label="AST: "];
+"1000581" -> "1000577"  [label="AST: "];
+"1000582" -> "1000577"  [label="CFG: "];
+"1000577" -> "1000818"  [label="DDG: cpio->option_numeric_uid_gid"];
+"1000818" -> "1000817"  [label="AST: "];
+"1000818" -> "1000819"  [label="CFG: "];
+"1000818" -> "1000822"  [label="CFG: "];
+"1000819" -> "1000818"  [label="AST: "];
+"1000822" -> "1000818"  [label="AST: "];
+"1000827" -> "1000818"  [label="CFG: "];
+"1000834" -> "1000818"  [label="CFG: "];
+"1000818" -> "1000995"  [label="DDG: cpio->option_numeric_uid_gid && !cpio->option_list"];
+"1000818" -> "1000995"  [label="DDG: cpio->option_numeric_uid_gid"];
+"1000818" -> "1000995"  [label="DDG: !cpio->option_list"];
+"1000822" -> "1000818"  [label="DDG: cpio->option_list"];
+}

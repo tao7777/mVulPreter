@@ -1,0 +1,37 @@
+digraph "0_linux_8fff105e13041e49b82f92eef034f363a6b1c071@pointer" {
+"1000171" [label="(Call,armpmu->get_event_idx(hw_events, &fake_event))"];
+"1000103" [label="(MethodParameterIn,struct pmu_hw_events *hw_events)"];
+"1000170" [label="(Call,armpmu->get_event_idx(hw_events, &fake_event) >= 0)"];
+"1000169" [label="(Return,return armpmu->get_event_idx(hw_events, &fake_event) >= 0;)"];
+"1000169" [label="(Return,return armpmu->get_event_idx(hw_events, &fake_event) >= 0;)"];
+"1000173" [label="(Call,&fake_event)"];
+"1000176" [label="(MethodReturn,RET)"];
+"1000170" [label="(Call,armpmu->get_event_idx(hw_events, &fake_event) >= 0)"];
+"1000103" [label="(MethodParameterIn,struct pmu_hw_events *hw_events)"];
+"1000171" [label="(Call,armpmu->get_event_idx(hw_events, &fake_event))"];
+"1000175" [label="(Literal,0)"];
+"1000172" [label="(Identifier,hw_events)"];
+"1000105" [label="(Block,)"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000173"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000173" -> "1000171"  [label="AST: "];
+"1000175" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000176"  [label="DDG: hw_events"];
+"1000171" -> "1000176"  [label="DDG: &fake_event"];
+"1000171" -> "1000170"  [label="DDG: hw_events"];
+"1000171" -> "1000170"  [label="DDG: &fake_event"];
+"1000103" -> "1000171"  [label="DDG: hw_events"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000176"  [label="DDG: hw_events"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000170" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000170"  [label="AST: "];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000176"  [label="DDG: armpmu->get_event_idx(hw_events, &fake_event)"];
+"1000170" -> "1000176"  [label="DDG: armpmu->get_event_idx(hw_events, &fake_event) >= 0"];
+"1000170" -> "1000169"  [label="DDG: armpmu->get_event_idx(hw_events, &fake_event) >= 0"];
+"1000169" -> "1000105"  [label="AST: "];
+"1000176" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000176"  [label="DDG: <RET>"];
+}

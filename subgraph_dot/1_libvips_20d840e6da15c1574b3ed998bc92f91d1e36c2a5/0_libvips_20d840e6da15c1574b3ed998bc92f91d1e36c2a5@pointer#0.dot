@@ -1,0 +1,34 @@
+digraph "0_libvips_20d840e6da15c1574b3ed998bc92f91d1e36c2a5@pointer" {
+"1000117" [label="(Call,!load->real)"];
+"1000175" [label="(Call,vips_region_new( load->real ))"];
+"1000174" [label="(Return,return( vips_region_new( load->real ) );)"];
+"1000179" [label="(MethodReturn,RET)"];
+"1000176" [label="(Call,load->real)"];
+"1000117" [label="(Call,!load->real)"];
+"1000126" [label="(Identifier,load)"];
+"1000175" [label="(Call,vips_region_new( load->real ))"];
+"1000174" [label="(Return,return( vips_region_new( load->real ) );)"];
+"1000161" [label="(Call,vips_image_pipelinev( load->out, load->out->dhint, \n\t\t\tload->real, NULL ))"];
+"1000118" [label="(Call,load->real)"];
+"1000177" [label="(Identifier,load)"];
+"1000116" [label="(ControlStructure,if( !load->real ))"];
+"1000108" [label="(Block,)"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000126" -> "1000117"  [label="CFG: "];
+"1000177" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000179"  [label="DDG: !load->real"];
+"1000117" -> "1000175"  [label="DDG: load->real"];
+"1000175" -> "1000174"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000174" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000179"  [label="DDG: load->real"];
+"1000175" -> "1000179"  [label="DDG: vips_region_new( load->real )"];
+"1000175" -> "1000174"  [label="DDG: vips_region_new( load->real )"];
+"1000161" -> "1000175"  [label="DDG: load->real"];
+"1000174" -> "1000108"  [label="AST: "];
+"1000179" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000179"  [label="DDG: <RET>"];
+}

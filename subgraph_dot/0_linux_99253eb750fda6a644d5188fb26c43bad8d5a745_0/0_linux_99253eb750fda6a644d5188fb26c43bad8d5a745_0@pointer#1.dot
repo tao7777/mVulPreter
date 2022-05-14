@@ -1,0 +1,38 @@
+digraph "0_linux_99253eb750fda6a644d5188fb26c43bad8d5a745_0@pointer" {
+"1000159" [label="(Call,ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1000158" [label="(Call,!ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1000152" [label="(Call,sk != mrt->mroute6_sk && !ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1000152" [label="(Call,sk != mrt->mroute6_sk && !ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1000153" [label="(Call,sk != mrt->mroute6_sk)"];
+"1000159" [label="(Call,ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1000158" [label="(Call,!ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1000470" [label="(MethodReturn,int)"];
+"1000166" [label="(Identifier,EACCES)"];
+"1000168" [label="(Identifier,optname)"];
+"1000163" [label="(Identifier,CAP_NET_ADMIN)"];
+"1000151" [label="(ControlStructure,if (sk != mrt->mroute6_sk && !ns_capable(net->user_ns, CAP_NET_ADMIN)))"];
+"1000160" [label="(Call,net->user_ns)"];
+"1000159" -> "1000158"  [label="AST: "];
+"1000159" -> "1000163"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000163" -> "1000159"  [label="AST: "];
+"1000158" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000470"  [label="DDG: net->user_ns"];
+"1000159" -> "1000470"  [label="DDG: CAP_NET_ADMIN"];
+"1000159" -> "1000158"  [label="DDG: net->user_ns"];
+"1000159" -> "1000158"  [label="DDG: CAP_NET_ADMIN"];
+"1000158" -> "1000152"  [label="AST: "];
+"1000152" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000470"  [label="DDG: ns_capable(net->user_ns, CAP_NET_ADMIN)"];
+"1000158" -> "1000152"  [label="DDG: ns_capable(net->user_ns, CAP_NET_ADMIN)"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000166" -> "1000152"  [label="CFG: "];
+"1000168" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000470"  [label="DDG: sk != mrt->mroute6_sk && !ns_capable(net->user_ns, CAP_NET_ADMIN)"];
+"1000152" -> "1000470"  [label="DDG: !ns_capable(net->user_ns, CAP_NET_ADMIN)"];
+"1000152" -> "1000470"  [label="DDG: sk != mrt->mroute6_sk"];
+"1000153" -> "1000152"  [label="DDG: sk"];
+"1000153" -> "1000152"  [label="DDG: mrt->mroute6_sk"];
+}

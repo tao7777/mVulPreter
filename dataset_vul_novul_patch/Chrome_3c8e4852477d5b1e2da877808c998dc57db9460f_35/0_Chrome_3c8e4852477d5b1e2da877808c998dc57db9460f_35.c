@@ -1,0 +1,15 @@
+ Response StorageHandler::TrackCacheStorageForOrigin(const std::string& origin) {
+  if (!storage_partition_)
+     return Response::InternalError();
+ 
+   GURL origin_url(origin);
+  if (!origin_url.is_valid())
+    return Response::InvalidParams(origin + " is not a valid URL");
+
+  BrowserThread::PostTask(
+      BrowserThread::IO, FROM_HERE,
+      base::BindOnce(&CacheStorageObserver::TrackOriginOnIOThread,
+                     base::Unretained(GetCacheStorageObserver()),
+                     url::Origin::Create(origin_url)));
+  return Response::OK();
+}

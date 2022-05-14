@@ -1,0 +1,34 @@
+digraph "0_linux_edfbbf388f293d70bf4b7c0bc38774d05e6f711a@pointer" {
+"1000120" [label="(Call,ring = kmap_atomic(ctx->ring_pages[0]))"];
+"1000122" [label="(Call,kmap_atomic(ctx->ring_pages[0]))"];
+"1000138" [label="(Call,kunmap_atomic(ring))"];
+"1000129" [label="(Identifier,head)"];
+"1000138" [label="(Call,kunmap_atomic(ring))"];
+"1000121" [label="(Identifier,ring)"];
+"1000122" [label="(Call,kmap_atomic(ctx->ring_pages[0]))"];
+"1000123" [label="(Call,ctx->ring_pages[0])"];
+"1000285" [label="(MethodReturn,static long)"];
+"1000139" [label="(Identifier,ring)"];
+"1000253" [label="(Call,kmap_atomic(ctx->ring_pages[0]))"];
+"1000141" [label="(Literal,\"h%u t%u m%u\n\")"];
+"1000105" [label="(Block,)"];
+"1000120" [label="(Call,ring = kmap_atomic(ctx->ring_pages[0]))"];
+"1000120" -> "1000105"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000129" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000285"  [label="DDG: kmap_atomic(ctx->ring_pages[0])"];
+"1000122" -> "1000120"  [label="DDG: ctx->ring_pages[0]"];
+"1000120" -> "1000138"  [label="DDG: ring"];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000122" -> "1000285"  [label="DDG: ctx->ring_pages[0]"];
+"1000122" -> "1000253"  [label="DDG: ctx->ring_pages[0]"];
+"1000138" -> "1000105"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000141" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000285"  [label="DDG: ring"];
+"1000138" -> "1000285"  [label="DDG: kunmap_atomic(ring)"];
+}

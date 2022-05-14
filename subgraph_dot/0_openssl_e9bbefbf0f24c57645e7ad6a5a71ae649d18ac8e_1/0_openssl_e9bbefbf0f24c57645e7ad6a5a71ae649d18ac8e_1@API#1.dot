@@ -1,0 +1,32 @@
+digraph "0_openssl_e9bbefbf0f24c57645e7ad6a5a71ae649d18ac8e_1@API" {
+"1000143" [label="(Call,SSL_CTX_remove_session(s->session_ctx, s->session))"];
+"1000138" [label="(Call,s->session != NULL)"];
+"1000138" [label="(Call,s->session != NULL)"];
+"1000152" [label="(Identifier,s)"];
+"1000145" [label="(Identifier,s)"];
+"1000143" [label="(Call,SSL_CTX_remove_session(s->session_ctx, s->session))"];
+"1000139" [label="(Call,s->session)"];
+"1000144" [label="(Call,s->session_ctx)"];
+"1000175" [label="(MethodReturn,int)"];
+"1000142" [label="(Identifier,NULL)"];
+"1000147" [label="(Call,s->session)"];
+"1000137" [label="(ControlStructure,if (s->session != NULL))"];
+"1000143" -> "1000137"  [label="AST: "];
+"1000143" -> "1000147"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000147" -> "1000143"  [label="AST: "];
+"1000152" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000175"  [label="DDG: s->session_ctx"];
+"1000143" -> "1000175"  [label="DDG: s->session"];
+"1000143" -> "1000175"  [label="DDG: SSL_CTX_remove_session(s->session_ctx, s->session)"];
+"1000138" -> "1000143"  [label="DDG: s->session"];
+"1000138" -> "1000137"  [label="AST: "];
+"1000138" -> "1000142"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000142" -> "1000138"  [label="AST: "];
+"1000145" -> "1000138"  [label="CFG: "];
+"1000152" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000175"  [label="DDG: NULL"];
+"1000138" -> "1000175"  [label="DDG: s->session"];
+"1000138" -> "1000175"  [label="DDG: s->session != NULL"];
+}

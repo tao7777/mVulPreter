@@ -1,0 +1,31 @@
+digraph "0_qemu_9f64916da20eea67121d544698676295bbb105a7_3@pointer" {
+"1000124" [label="(Call,vs->client_pf.bytes_per_pixel == 1)"];
+"1000117" [label="(Call,ds_get_bytes_per_pixel(vs->ds) == 1 ||\n        vs->client_pf.bytes_per_pixel == 1)"];
+"1000125" [label="(Call,vs->client_pf.bytes_per_pixel)"];
+"1000130" [label="(Literal,1)"];
+"1000136" [label="(MethodReturn,static bool)"];
+"1000117" [label="(Call,ds_get_bytes_per_pixel(vs->ds) == 1 ||\n        vs->client_pf.bytes_per_pixel == 1)"];
+"1000116" [label="(ControlStructure,if (ds_get_bytes_per_pixel(vs->ds) == 1 ||\n        vs->client_pf.bytes_per_pixel == 1))"];
+"1000133" [label="(Identifier,false)"];
+"1000118" [label="(Call,ds_get_bytes_per_pixel(vs->ds) == 1)"];
+"1000124" [label="(Call,vs->client_pf.bytes_per_pixel == 1)"];
+"1000135" [label="(Identifier,true)"];
+"1000124" -> "1000117"  [label="AST: "];
+"1000124" -> "1000130"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000130" -> "1000124"  [label="AST: "];
+"1000117" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000136"  [label="DDG: vs->client_pf.bytes_per_pixel"];
+"1000124" -> "1000117"  [label="DDG: vs->client_pf.bytes_per_pixel"];
+"1000124" -> "1000117"  [label="DDG: 1"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000133" -> "1000117"  [label="CFG: "];
+"1000135" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000136"  [label="DDG: ds_get_bytes_per_pixel(vs->ds) == 1 ||\n        vs->client_pf.bytes_per_pixel == 1"];
+"1000117" -> "1000136"  [label="DDG: ds_get_bytes_per_pixel(vs->ds) == 1"];
+"1000117" -> "1000136"  [label="DDG: vs->client_pf.bytes_per_pixel == 1"];
+"1000118" -> "1000117"  [label="DDG: ds_get_bytes_per_pixel(vs->ds)"];
+"1000118" -> "1000117"  [label="DDG: 1"];
+}

@@ -1,0 +1,22 @@
+digraph "0_linux_e0bccd315db0c2f919e7fcf9cb60db21d9986f52@pointer" {
+"1000389" [label="(Call,skb_queue_head(&sk->sk_receive_queue, skb))"];
+"1000104" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000108" [label="(Block,)"];
+"1000104" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000390" [label="(Call,&sk->sk_receive_queue)"];
+"1000396" [label="(Identifier,make)"];
+"1000409" [label="(MethodReturn,int)"];
+"1000389" [label="(Call,skb_queue_head(&sk->sk_receive_queue, skb))"];
+"1000394" [label="(Identifier,skb)"];
+"1000389" -> "1000108"  [label="AST: "];
+"1000389" -> "1000394"  [label="CFG: "];
+"1000390" -> "1000389"  [label="AST: "];
+"1000394" -> "1000389"  [label="AST: "];
+"1000396" -> "1000389"  [label="CFG: "];
+"1000389" -> "1000409"  [label="DDG: skb"];
+"1000389" -> "1000409"  [label="DDG: skb_queue_head(&sk->sk_receive_queue, skb)"];
+"1000389" -> "1000409"  [label="DDG: &sk->sk_receive_queue"];
+"1000104" -> "1000389"  [label="DDG: skb"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000409"  [label="DDG: skb"];
+}

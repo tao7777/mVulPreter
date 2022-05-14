@@ -1,0 +1,25 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_35@pointer" {
+"1000300" [label="(Call,memset(f->regs+32, 0, 32*sizeof(u32)))"];
+"1000307" [label="(Call,32*sizeof(u32))"];
+"1000347" [label="(MethodReturn,void)"];
+"1000301" [label="(Call,f->regs+32)"];
+"1000307" [label="(Call,32*sizeof(u32))"];
+"1000306" [label="(Literal,0)"];
+"1000308" [label="(Literal,32)"];
+"1000309" [label="(Call,sizeof(u32))"];
+"1000300" [label="(Call,memset(f->regs+32, 0, 32*sizeof(u32)))"];
+"1000299" [label="(ControlStructure,else)"];
+"1000300" -> "1000299"  [label="AST: "];
+"1000300" -> "1000307"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000306" -> "1000300"  [label="AST: "];
+"1000307" -> "1000300"  [label="AST: "];
+"1000314" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000347"  [label="DDG: 32*sizeof(u32)"];
+"1000300" -> "1000347"  [label="DDG: f->regs+32"];
+"1000300" -> "1000347"  [label="DDG: memset(f->regs+32, 0, 32*sizeof(u32))"];
+"1000307" -> "1000300"  [label="DDG: 32"];
+"1000307" -> "1000309"  [label="CFG: "];
+"1000308" -> "1000307"  [label="AST: "];
+"1000309" -> "1000307"  [label="AST: "];
+}

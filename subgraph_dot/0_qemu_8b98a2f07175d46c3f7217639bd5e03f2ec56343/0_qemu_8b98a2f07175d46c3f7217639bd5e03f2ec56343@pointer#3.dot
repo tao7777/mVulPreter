@@ -1,0 +1,29 @@
+digraph "0_qemu_8b98a2f07175d46c3f7217639bd5e03f2ec56343@pointer" {
+"1000309" [label="(Call,s->csr[0] |= 0x1000)"];
+"1000672" [label="(Call,s->csr[0] |= 0x0400)"];
+"1000309" [label="(Call,s->csr[0] |= 0x1000)"];
+"1000711" [label="(MethodReturn,ssize_t)"];
+"1000672" [label="(Call,s->csr[0] |= 0x0400)"];
+"1000304" [label="(Block,)"];
+"1000318" [label="(Identifier,s)"];
+"1000680" [label="(Literal,\"RCVRC=%d CRDA=0x%08x BLKS=%d\n\")"];
+"1000673" [label="(Call,s->csr[0])"];
+"1000678" [label="(Literal,0x0400)"];
+"1000315" [label="(Literal,0x1000)"];
+"1000310" [label="(Call,s->csr[0])"];
+"1000210" [label="(Block,)"];
+"1000309" -> "1000304"  [label="AST: "];
+"1000309" -> "1000315"  [label="CFG: "];
+"1000310" -> "1000309"  [label="AST: "];
+"1000315" -> "1000309"  [label="AST: "];
+"1000318" -> "1000309"  [label="CFG: "];
+"1000309" -> "1000711"  [label="DDG: s->csr[0] |= 0x1000"];
+"1000309" -> "1000672"  [label="DDG: s->csr[0]"];
+"1000672" -> "1000210"  [label="AST: "];
+"1000672" -> "1000678"  [label="CFG: "];
+"1000673" -> "1000672"  [label="AST: "];
+"1000678" -> "1000672"  [label="AST: "];
+"1000680" -> "1000672"  [label="CFG: "];
+"1000672" -> "1000711"  [label="DDG: s->csr[0] |= 0x0400"];
+"1000672" -> "1000711"  [label="DDG: s->csr[0]"];
+}

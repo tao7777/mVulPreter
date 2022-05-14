@@ -1,0 +1,32 @@
+digraph "0_krb5_db64ca25d661a47b996b4e2645998b5d7f0eb52c@pointer" {
+"1001202" [label="(Call,secret.data = server_key)"];
+"1000151" [label="(Call,*server_key = NULL)"];
+"1001202" [label="(Call,secret.data = server_key)"];
+"1000122" [label="(Block,)"];
+"1001364" [label="(Call,free(server_key))"];
+"1000156" [label="(Identifier,subjectPublicKey_len)"];
+"1000151" [label="(Call,*server_key = NULL)"];
+"1000153" [label="(Identifier,NULL)"];
+"1001251" [label="(Call,pkinit_octetstring2key(context, enctype, server_key,\n                                            server_key_len, encrypting_key))"];
+"1001206" [label="(Identifier,server_key)"];
+"1001209" [label="(Identifier,secret)"];
+"1000152" [label="(Identifier,server_key)"];
+"1001203" [label="(Call,secret.data)"];
+"1001201" [label="(Block,)"];
+"1001409" [label="(MethodReturn,RET)"];
+"1001202" -> "1001201"  [label="AST: "];
+"1001202" -> "1001206"  [label="CFG: "];
+"1001203" -> "1001202"  [label="AST: "];
+"1001206" -> "1001202"  [label="AST: "];
+"1001209" -> "1001202"  [label="CFG: "];
+"1001202" -> "1001409"  [label="DDG: secret.data"];
+"1000151" -> "1001202"  [label="DDG: server_key"];
+"1000151" -> "1000122"  [label="AST: "];
+"1000151" -> "1000153"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000153" -> "1000151"  [label="AST: "];
+"1000156" -> "1000151"  [label="CFG: "];
+"1000151" -> "1001409"  [label="DDG: server_key"];
+"1000151" -> "1001251"  [label="DDG: server_key"];
+"1000151" -> "1001364"  [label="DDG: server_key"];
+}

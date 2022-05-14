@@ -1,0 +1,22 @@
+digraph "1_linux_295dc39d941dc2ae53d5c170365af4c9d5c16212@del" {
+"1000266" [label="(Call,path->mnt = mntget(nd->path.mnt))"];
+"1000270" [label="(Call,mntget(nd->path.mnt))"];
+"1000296" [label="(MethodReturn,RET)"];
+"1000267" [label="(Call,path->mnt)"];
+"1000266" [label="(Call,path->mnt = mntget(nd->path.mnt))"];
+"1000270" [label="(Call,mntget(nd->path.mnt))"];
+"1000271" [label="(Call,nd->path.mnt)"];
+"1000278" [label="(Identifier,dentry)"];
+"1000105" [label="(Block,)"];
+"1000266" -> "1000105"  [label="AST: "];
+"1000266" -> "1000270"  [label="CFG: "];
+"1000267" -> "1000266"  [label="AST: "];
+"1000270" -> "1000266"  [label="AST: "];
+"1000278" -> "1000266"  [label="CFG: "];
+"1000266" -> "1000296"  [label="DDG: path->mnt"];
+"1000266" -> "1000296"  [label="DDG: mntget(nd->path.mnt)"];
+"1000270" -> "1000266"  [label="DDG: nd->path.mnt"];
+"1000270" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000270"  [label="AST: "];
+"1000270" -> "1000296"  [label="DDG: nd->path.mnt"];
+}

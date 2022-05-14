@@ -1,0 +1,36 @@
+digraph "0_linux_3592aaeb80290bda0f2cf0b5456c97bfc638b192@API" {
+"1000123" [label="(Call,memset(&sllc, 0, sizeof(sllc)))"];
+"1000245" [label="(Call,memcpy(uaddr, &sllc, sizeof(sllc)))"];
+"1000127" [label="(Call,sizeof(sllc))"];
+"1000105" [label="(Block,)"];
+"1000123" [label="(Call,memset(&sllc, 0, sizeof(sllc)))"];
+"1000130" [label="(Identifier,sk)"];
+"1000256" [label="(MethodReturn,static int)"];
+"1000249" [label="(Call,sizeof(sllc))"];
+"1000246" [label="(Identifier,uaddr)"];
+"1000251" [label="(JumpTarget,out:)"];
+"1000247" [label="(Call,&sllc)"];
+"1000245" [label="(Call,memcpy(uaddr, &sllc, sizeof(sllc)))"];
+"1000124" [label="(Call,&sllc)"];
+"1000102" [label="(MethodParameterIn,struct sockaddr *uaddr)"];
+"1000126" [label="(Literal,0)"];
+"1000123" -> "1000105"  [label="AST: "];
+"1000123" -> "1000127"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000126" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000130" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000256"  [label="DDG: memset(&sllc, 0, sizeof(sllc))"];
+"1000123" -> "1000256"  [label="DDG: &sllc"];
+"1000123" -> "1000245"  [label="DDG: &sllc"];
+"1000245" -> "1000105"  [label="AST: "];
+"1000245" -> "1000249"  [label="CFG: "];
+"1000246" -> "1000245"  [label="AST: "];
+"1000247" -> "1000245"  [label="AST: "];
+"1000249" -> "1000245"  [label="AST: "];
+"1000251" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000256"  [label="DDG: memcpy(uaddr, &sllc, sizeof(sllc))"];
+"1000245" -> "1000256"  [label="DDG: uaddr"];
+"1000245" -> "1000256"  [label="DDG: &sllc"];
+"1000102" -> "1000245"  [label="DDG: uaddr"];
+}

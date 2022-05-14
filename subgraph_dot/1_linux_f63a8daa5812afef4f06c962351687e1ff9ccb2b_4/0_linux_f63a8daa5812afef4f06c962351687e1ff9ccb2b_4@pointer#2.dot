@@ -1,0 +1,24 @@
+digraph "0_linux_f63a8daa5812afef4f06c962351687e1ff9ccb2b_4@pointer" {
+"1000135" [label="(Call,mutex_lock(&ctx->mutex))"];
+"1000259" [label="(Call,mutex_unlock(&ctx->mutex))"];
+"1000135" [label="(Call,mutex_lock(&ctx->mutex))"];
+"1000260" [label="(Call,&ctx->mutex)"];
+"1000141" [label="(Identifier,count)"];
+"1000104" [label="(Block,)"];
+"1000136" [label="(Call,&ctx->mutex)"];
+"1000265" [label="(Identifier,ret)"];
+"1000266" [label="(MethodReturn,static int)"];
+"1000259" [label="(Call,mutex_unlock(&ctx->mutex))"];
+"1000135" -> "1000104"  [label="AST: "];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000141" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000266"  [label="DDG: mutex_lock(&ctx->mutex)"];
+"1000135" -> "1000259"  [label="DDG: &ctx->mutex"];
+"1000259" -> "1000104"  [label="AST: "];
+"1000259" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000265" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000266"  [label="DDG: mutex_unlock(&ctx->mutex)"];
+"1000259" -> "1000266"  [label="DDG: &ctx->mutex"];
+}

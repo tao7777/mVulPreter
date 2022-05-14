@@ -1,0 +1,35 @@
+digraph "1_linux_c70422f760c120480fee4de6c38804c72aa26bc1_46@pointer" {
+"1000108" [label="(Call,spin_lock(&xprt->sc_map_lock))"];
+"1000125" [label="(Call,spin_unlock(&xprt->sc_map_lock))"];
+"1000139" [label="(Call,spin_unlock(&xprt->sc_map_lock))"];
+"1000130" [label="(JumpTarget,out:)"];
+"1000108" [label="(Call,spin_lock(&xprt->sc_map_lock))"];
+"1000126" [label="(Call,&xprt->sc_map_lock)"];
+"1000145" [label="(Identifier,map)"];
+"1000103" [label="(Block,)"];
+"1000109" [label="(Call,&xprt->sc_map_lock)"];
+"1000139" [label="(Call,spin_unlock(&xprt->sc_map_lock))"];
+"1000125" [label="(Call,spin_unlock(&xprt->sc_map_lock))"];
+"1000156" [label="(MethodReturn,struct svc_rdma_req_map *)"];
+"1000140" [label="(Call,&xprt->sc_map_lock)"];
+"1000117" [label="(Identifier,xprt)"];
+"1000108" -> "1000103"  [label="AST: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000117" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000156"  [label="DDG: spin_lock(&xprt->sc_map_lock)"];
+"1000108" -> "1000125"  [label="DDG: &xprt->sc_map_lock"];
+"1000108" -> "1000139"  [label="DDG: &xprt->sc_map_lock"];
+"1000125" -> "1000103"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000130" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000156"  [label="DDG: &xprt->sc_map_lock"];
+"1000125" -> "1000156"  [label="DDG: spin_unlock(&xprt->sc_map_lock)"];
+"1000139" -> "1000103"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000145" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000156"  [label="DDG: &xprt->sc_map_lock"];
+"1000139" -> "1000156"  [label="DDG: spin_unlock(&xprt->sc_map_lock)"];
+}

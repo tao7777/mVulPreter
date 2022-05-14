@@ -1,0 +1,33 @@
+digraph "0_linux_cb66ddd156203daefb8d71158036b27b0e2caf63@pointer" {
+"1000108" [label="(Call,*rtn = net_generic(net, rds_tcp_netid))"];
+"1000110" [label="(Call,net_generic(net, rds_tcp_netid))"];
+"1000101" [label="(MethodParameterIn,struct net *net)"];
+"1000109" [label="(Identifier,rtn)"];
+"1000108" [label="(Call,*rtn = net_generic(net, rds_tcp_netid))"];
+"1000111" [label="(Identifier,net)"];
+"1000102" [label="(Block,)"];
+"1000110" [label="(Call,net_generic(net, rds_tcp_netid))"];
+"1000112" [label="(Identifier,rds_tcp_netid)"];
+"1000115" [label="(Identifier,lsock)"];
+"1000190" [label="(MethodReturn,static void)"];
+"1000147" [label="(Call,net != c_net)"];
+"1000101" [label="(MethodParameterIn,struct net *net)"];
+"1000108" -> "1000102"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000115" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000190"  [label="DDG: net_generic(net, rds_tcp_netid)"];
+"1000108" -> "1000190"  [label="DDG: rtn"];
+"1000110" -> "1000108"  [label="DDG: net"];
+"1000110" -> "1000108"  [label="DDG: rds_tcp_netid"];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000110" -> "1000190"  [label="DDG: rds_tcp_netid"];
+"1000101" -> "1000110"  [label="DDG: net"];
+"1000110" -> "1000147"  [label="DDG: net"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000190"  [label="DDG: net"];
+"1000101" -> "1000147"  [label="DDG: net"];
+}

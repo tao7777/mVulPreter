@@ -1,0 +1,22 @@
+digraph "0_memcached_d9cd01ede97f4145af9781d448c62a3318952719@pointer" {
+"1000336" [label="(Call,ntohl(req->request.bodylen))"];
+"1000328" [label="(Call,c->binary_header.request.bodylen = ntohl(req->request.bodylen))"];
+"1000329" [label="(Call,c->binary_header.request.bodylen)"];
+"1000346" [label="(Identifier,c)"];
+"1000613" [label="(MethodReturn,static int)"];
+"1000336" [label="(Call,ntohl(req->request.bodylen))"];
+"1000328" [label="(Call,c->binary_header.request.bodylen = ntohl(req->request.bodylen))"];
+"1000207" [label="(Block,)"];
+"1000337" [label="(Call,req->request.bodylen)"];
+"1000336" -> "1000328"  [label="AST: "];
+"1000336" -> "1000337"  [label="CFG: "];
+"1000337" -> "1000336"  [label="AST: "];
+"1000328" -> "1000336"  [label="CFG: "];
+"1000336" -> "1000613"  [label="DDG: req->request.bodylen"];
+"1000336" -> "1000328"  [label="DDG: req->request.bodylen"];
+"1000328" -> "1000207"  [label="AST: "];
+"1000329" -> "1000328"  [label="AST: "];
+"1000346" -> "1000328"  [label="CFG: "];
+"1000328" -> "1000613"  [label="DDG: ntohl(req->request.bodylen)"];
+"1000328" -> "1000613"  [label="DDG: c->binary_header.request.bodylen"];
+}

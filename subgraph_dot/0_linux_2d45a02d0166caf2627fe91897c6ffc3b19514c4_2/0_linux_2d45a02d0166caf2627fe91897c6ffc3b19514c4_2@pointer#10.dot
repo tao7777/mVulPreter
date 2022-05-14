@@ -1,0 +1,24 @@
+digraph "0_linux_2d45a02d0166caf2627fe91897c6ffc3b19514c4_2@pointer" {
+"1000181" [label="(Call,spin_lock(&head->lock))"];
+"1000213" [label="(Call,spin_unlock(&head->lock))"];
+"1000214" [label="(Call,&head->lock)"];
+"1000119" [label="(Block,)"];
+"1000379" [label="(MethodReturn,static void)"];
+"1000182" [label="(Call,&head->lock)"];
+"1000218" [label="(Call,local_bh_enable())"];
+"1000187" [label="(Identifier,pp)"];
+"1000213" [label="(Call,spin_unlock(&head->lock))"];
+"1000181" [label="(Call,spin_lock(&head->lock))"];
+"1000181" -> "1000119"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000187" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000379"  [label="DDG: spin_lock(&head->lock)"];
+"1000181" -> "1000213"  [label="DDG: &head->lock"];
+"1000213" -> "1000119"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000218" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000379"  [label="DDG: &head->lock"];
+"1000213" -> "1000379"  [label="DDG: spin_unlock(&head->lock)"];
+}

@@ -1,0 +1,27 @@
+digraph "0_file_ce90e05774dd77d86cfc8dfa6da57b32816841c4_2@pointer" {
+"1001198" [label="(Call,*cp && isprint(*cp))"];
+"1001201" [label="(Call,isprint(*cp))"];
+"1001198" [label="(Call,*cp && isprint(*cp))"];
+"1001202" [label="(Call,*cp)"];
+"1001206" [label="(ControlStructure,continue;)"];
+"1001201" [label="(Call,isprint(*cp))"];
+"1001199" [label="(Call,*cp)"];
+"1001194" [label="(ControlStructure,for (cp = cname; *cp && isprint(*cp); cp++))"];
+"1001198" [label="(Call,*cp && isprint(*cp))"];
+"1001244" [label="(MethodReturn,RET)"];
+"1001210" [label="(Identifier,cp)"];
+"1001198" -> "1001194"  [label="AST: "];
+"1001198" -> "1001199"  [label="CFG: "];
+"1001198" -> "1001201"  [label="CFG: "];
+"1001199" -> "1001198"  [label="AST: "];
+"1001201" -> "1001198"  [label="AST: "];
+"1001206" -> "1001198"  [label="CFG: "];
+"1001210" -> "1001198"  [label="CFG: "];
+"1001198" -> "1001244"  [label="DDG: *cp"];
+"1001198" -> "1001244"  [label="DDG: *cp && isprint(*cp)"];
+"1001198" -> "1001244"  [label="DDG: isprint(*cp)"];
+"1001201" -> "1001198"  [label="DDG: *cp"];
+"1001198" -> "1001201"  [label="DDG: *cp"];
+"1001201" -> "1001202"  [label="CFG: "];
+"1001202" -> "1001201"  [label="AST: "];
+}

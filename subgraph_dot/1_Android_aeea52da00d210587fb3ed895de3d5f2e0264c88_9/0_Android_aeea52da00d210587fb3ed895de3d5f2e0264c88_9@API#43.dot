@@ -1,0 +1,34 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_9@API" {
+"1000991" [label="(Call,2 * sizeof(uint32_t))"];
+"1000987" [label="(Call,*replySize = 2 * sizeof(uint32_t) + num_configs * sizeof(channel_config_t))"];
+"1000990" [label="(Call,2 * sizeof(uint32_t) + num_configs * sizeof(channel_config_t))"];
+"1000988" [label="(Call,*replySize)"];
+"1000842" [label="(Block,)"];
+"1000991" [label="(Call,2 * sizeof(uint32_t))"];
+"1000990" [label="(Call,2 * sizeof(uint32_t) + num_configs * sizeof(channel_config_t))"];
+"1000993" [label="(Call,sizeof(uint32_t))"];
+"1000996" [label="(Identifier,num_configs)"];
+"1001295" [label="(MethodReturn,int)"];
+"1000995" [label="(Call,num_configs * sizeof(channel_config_t))"];
+"1000992" [label="(Literal,2)"];
+"1000987" [label="(Call,*replySize = 2 * sizeof(uint32_t) + num_configs * sizeof(channel_config_t))"];
+"1000991" -> "1000990"  [label="AST: "];
+"1000991" -> "1000993"  [label="CFG: "];
+"1000992" -> "1000991"  [label="AST: "];
+"1000993" -> "1000991"  [label="AST: "];
+"1000996" -> "1000991"  [label="CFG: "];
+"1000991" -> "1000987"  [label="DDG: 2"];
+"1000991" -> "1000990"  [label="DDG: 2"];
+"1000987" -> "1000842"  [label="AST: "];
+"1000987" -> "1000990"  [label="CFG: "];
+"1000988" -> "1000987"  [label="AST: "];
+"1000990" -> "1000987"  [label="AST: "];
+"1001003" -> "1000987"  [label="CFG: "];
+"1000987" -> "1001295"  [label="DDG: *replySize"];
+"1000987" -> "1001295"  [label="DDG: 2 * sizeof(uint32_t) + num_configs * sizeof(channel_config_t)"];
+"1000995" -> "1000987"  [label="DDG: num_configs"];
+"1000990" -> "1000995"  [label="CFG: "];
+"1000995" -> "1000990"  [label="AST: "];
+"1000990" -> "1001295"  [label="DDG: 2 * sizeof(uint32_t)"];
+"1000995" -> "1000990"  [label="DDG: num_configs"];
+}

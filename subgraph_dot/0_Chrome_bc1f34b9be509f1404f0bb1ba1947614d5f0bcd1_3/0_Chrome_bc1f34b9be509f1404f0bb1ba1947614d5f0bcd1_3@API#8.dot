@@ -1,0 +1,26 @@
+digraph "0_Chrome_bc1f34b9be509f1404f0bb1ba1947614d5f0bcd1_3@API" {
+"1000185" [label="(Call,* browser_connection = ServiceManagerConnection::GetForProcess())"];
+"1000323" [label="(Call,RegisterCommonBrowserInterfaces(browser_connection))"];
+"1000331" [label="(MethodReturn,RET)"];
+"1000185" [label="(Call,* browser_connection = ServiceManagerConnection::GetForProcess())"];
+"1000101" [label="(Block,)"];
+"1000186" [label="(Identifier,browser_connection)"];
+"1000187" [label="(Call,ServiceManagerConnection::GetForProcess())"];
+"1000325" [label="(Call,browser_connection->Start())"];
+"1000324" [label="(Identifier,browser_connection)"];
+"1000191" [label="(Identifier,mojom::kBrowserServiceName)"];
+"1000323" [label="(Call,RegisterCommonBrowserInterfaces(browser_connection))"];
+"1000185" -> "1000101"  [label="AST: "];
+"1000185" -> "1000187"  [label="CFG: "];
+"1000186" -> "1000185"  [label="AST: "];
+"1000187" -> "1000185"  [label="AST: "];
+"1000191" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000331"  [label="DDG: ServiceManagerConnection::GetForProcess()"];
+"1000185" -> "1000323"  [label="DDG: browser_connection"];
+"1000323" -> "1000101"  [label="AST: "];
+"1000323" -> "1000324"  [label="CFG: "];
+"1000324" -> "1000323"  [label="AST: "];
+"1000325" -> "1000323"  [label="CFG: "];
+"1000323" -> "1000331"  [label="DDG: browser_connection"];
+"1000323" -> "1000331"  [label="DDG: RegisterCommonBrowserInterfaces(browser_connection)"];
+}

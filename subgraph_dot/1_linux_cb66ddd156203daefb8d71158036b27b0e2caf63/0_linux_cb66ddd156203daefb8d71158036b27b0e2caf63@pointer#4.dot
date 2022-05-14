@@ -1,0 +1,28 @@
+digraph "0_linux_cb66ddd156203daefb8d71158036b27b0e2caf63@pointer" {
+"1000151" [label="(Call,!tc->t_sock)"];
+"1000147" [label="(Call,net != c_net || !tc->t_sock)"];
+"1000151" [label="(Call,!tc->t_sock)"];
+"1000146" [label="(ControlStructure,if (net != c_net || !tc->t_sock))"];
+"1000195" [label="(MethodReturn,static void)"];
+"1000148" [label="(Call,net != c_net)"];
+"1000155" [label="(ControlStructure,continue;)"];
+"1000160" [label="(Identifier,tmp_list)"];
+"1000147" [label="(Call,net != c_net || !tc->t_sock)"];
+"1000152" [label="(Call,tc->t_sock)"];
+"1000151" -> "1000147"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000195"  [label="DDG: tc->t_sock"];
+"1000151" -> "1000147"  [label="DDG: tc->t_sock"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000155" -> "1000147"  [label="CFG: "];
+"1000160" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000195"  [label="DDG: !tc->t_sock"];
+"1000147" -> "1000195"  [label="DDG: net != c_net || !tc->t_sock"];
+"1000147" -> "1000195"  [label="DDG: net != c_net"];
+"1000148" -> "1000147"  [label="DDG: net"];
+"1000148" -> "1000147"  [label="DDG: c_net"];
+}

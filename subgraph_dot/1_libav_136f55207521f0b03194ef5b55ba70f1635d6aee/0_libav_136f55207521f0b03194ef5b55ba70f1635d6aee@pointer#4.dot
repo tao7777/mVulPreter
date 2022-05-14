@@ -1,0 +1,37 @@
+digraph "0_libav_136f55207521f0b03194ef5b55ba70f1635d6aee@pointer" {
+"1000104" [label="(MethodParameterIn,uint8_t *dest)"];
+"1000252" [label="(Call,pix_op[dxy](dest, src, s->linesize, 8))"];
+"1000254" [label="(Identifier,src)"];
+"1000104" [label="(MethodParameterIn,uint8_t *dest)"];
+"1000111" [label="(Block,)"];
+"1000252" [label="(Call,pix_op[dxy](dest, src, s->linesize, 8))"];
+"1000255" [label="(Call,s->linesize)"];
+"1000260" [label="(Identifier,emu)"];
+"1000242" [label="(Call,src = s->sc.edge_emu_buffer)"];
+"1000172" [label="(Call,src += src_y * s->linesize + src_x)"];
+"1000261" [label="(MethodReturn,static inline int)"];
+"1000175" [label="(Call,src_y * s->linesize)"];
+"1000253" [label="(Identifier,dest)"];
+"1000105" [label="(MethodParameterIn,uint8_t *src)"];
+"1000219" [label="(Call,s->vdsp.emulated_edge_mc(s->sc.edge_emu_buffer, src,\n                                     s->linesize, s->linesize,\n                                     9, 9,\n                                     src_x, src_y, s->h_edge_pos,\n                                     s->v_edge_pos))"];
+"1000258" [label="(Literal,8)"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000261"  [label="DDG: dest"];
+"1000104" -> "1000252"  [label="DDG: dest"];
+"1000252" -> "1000111"  [label="AST: "];
+"1000252" -> "1000258"  [label="CFG: "];
+"1000253" -> "1000252"  [label="AST: "];
+"1000254" -> "1000252"  [label="AST: "];
+"1000255" -> "1000252"  [label="AST: "];
+"1000258" -> "1000252"  [label="AST: "];
+"1000260" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000261"  [label="DDG: dest"];
+"1000252" -> "1000261"  [label="DDG: s->linesize"];
+"1000252" -> "1000261"  [label="DDG: src"];
+"1000252" -> "1000261"  [label="DDG: pix_op[dxy](dest, src, s->linesize, 8)"];
+"1000172" -> "1000252"  [label="DDG: src"];
+"1000242" -> "1000252"  [label="DDG: src"];
+"1000105" -> "1000252"  [label="DDG: src"];
+"1000219" -> "1000252"  [label="DDG: s->linesize"];
+"1000175" -> "1000252"  [label="DDG: s->linesize"];
+}

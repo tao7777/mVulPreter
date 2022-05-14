@@ -1,0 +1,30 @@
+digraph "0_linux_4291086b1f081b869c6d79e5b7441633dc3ace00@API" {
+"1000331" [label="(Call,remove_wait_queue(&tty->write_wait, &wait))"];
+"1000147" [label="(Call,add_wait_queue(&tty->write_wait, &wait))"];
+"1000368" [label="(MethodReturn,static ssize_t)"];
+"1000336" [label="(Call,&wait)"];
+"1000152" [label="(Call,&wait)"];
+"1000332" [label="(Call,&tty->write_wait)"];
+"1000331" [label="(Call,remove_wait_queue(&tty->write_wait, &wait))"];
+"1000342" [label="(Identifier,b)"];
+"1000147" [label="(Call,add_wait_queue(&tty->write_wait, &wait))"];
+"1000148" [label="(Call,&tty->write_wait)"];
+"1000155" [label="(Literal,1)"];
+"1000107" [label="(Block,)"];
+"1000331" -> "1000107"  [label="AST: "];
+"1000331" -> "1000336"  [label="CFG: "];
+"1000332" -> "1000331"  [label="AST: "];
+"1000336" -> "1000331"  [label="AST: "];
+"1000342" -> "1000331"  [label="CFG: "];
+"1000331" -> "1000368"  [label="DDG: remove_wait_queue(&tty->write_wait, &wait)"];
+"1000331" -> "1000368"  [label="DDG: &wait"];
+"1000331" -> "1000368"  [label="DDG: &tty->write_wait"];
+"1000147" -> "1000331"  [label="DDG: &tty->write_wait"];
+"1000147" -> "1000331"  [label="DDG: &wait"];
+"1000147" -> "1000107"  [label="AST: "];
+"1000147" -> "1000152"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000152" -> "1000147"  [label="AST: "];
+"1000155" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000368"  [label="DDG: add_wait_queue(&tty->write_wait, &wait)"];
+}

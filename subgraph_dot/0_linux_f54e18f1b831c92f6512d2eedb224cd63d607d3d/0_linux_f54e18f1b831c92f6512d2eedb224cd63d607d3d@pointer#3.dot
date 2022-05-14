@@ -1,0 +1,33 @@
+digraph "0_linux_f54e18f1b831c92f6512d2eedb224cd63d607d3d@pointer" {
+"1000218" [label="(Call,bh->b_data + rs->cont_offset)"];
+"1000129" [label="(Call,(unsigned)rs->cont_offset)"];
+"1000148" [label="(Call,rs->cont_offset + rs->cont_size)"];
+"1000129" [label="(Call,(unsigned)rs->cont_offset)"];
+"1000131" [label="(Call,rs->cont_offset)"];
+"1000222" [label="(Call,rs->cont_offset)"];
+"1000219" [label="(Call,bh->b_data)"];
+"1000128" [label="(Call,(unsigned)rs->cont_offset > blocksize - min_de_size)"];
+"1000135" [label="(Identifier,blocksize)"];
+"1000218" [label="(Call,bh->b_data + rs->cont_offset)"];
+"1000214" [label="(Call,memcpy(rs->buffer, bh->b_data + rs->cont_offset,\n\t\t\t\t\trs->cont_size))"];
+"1000275" [label="(MethodReturn,static int)"];
+"1000146" [label="(Call,(unsigned)(rs->cont_offset + rs->cont_size))"];
+"1000226" [label="(Identifier,rs)"];
+"1000218" -> "1000214"  [label="AST: "];
+"1000218" -> "1000222"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000222" -> "1000218"  [label="AST: "];
+"1000226" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000275"  [label="DDG: bh->b_data"];
+"1000129" -> "1000218"  [label="DDG: rs->cont_offset"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000129" -> "1000131"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000131" -> "1000129"  [label="AST: "];
+"1000135" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000275"  [label="DDG: rs->cont_offset"];
+"1000129" -> "1000128"  [label="DDG: rs->cont_offset"];
+"1000129" -> "1000146"  [label="DDG: rs->cont_offset"];
+"1000129" -> "1000148"  [label="DDG: rs->cont_offset"];
+"1000129" -> "1000214"  [label="DDG: rs->cont_offset"];
+}

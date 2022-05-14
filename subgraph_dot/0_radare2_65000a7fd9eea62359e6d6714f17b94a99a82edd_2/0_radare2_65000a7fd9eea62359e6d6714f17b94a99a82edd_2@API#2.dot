@@ -1,0 +1,30 @@
+digraph "0_radare2_65000a7fd9eea62359e6d6714f17b94a99a82edd_2@API" {
+"1000120" [label="(Call,grub_strlen (currpath) + 1)"];
+"1000121" [label="(Call,grub_strlen (currpath))"];
+"1000111" [label="(MethodParameterIn,const char *currpath)"];
+"1000367" [label="(MethodReturn,RET)"];
+"1000122" [label="(Identifier,currpath)"];
+"1000150" [label="(Call,grub_strlen (currpath))"];
+"1000121" [label="(Call,grub_strlen (currpath))"];
+"1000123" [label="(Literal,1)"];
+"1000120" [label="(Call,grub_strlen (currpath) + 1)"];
+"1000146" [label="(Call,grub_strncpy (fpath, currpath, grub_strlen (currpath) + 1))"];
+"1000111" [label="(MethodParameterIn,const char *currpath)"];
+"1000119" [label="(Call,grub_malloc (grub_strlen (currpath) + 1))"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000120" -> "1000123"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000123" -> "1000120"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000121" -> "1000120"  [label="DDG: currpath"];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000119"  [label="DDG: currpath"];
+"1000111" -> "1000121"  [label="DDG: currpath"];
+"1000121" -> "1000150"  [label="DDG: currpath"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000367"  [label="DDG: currpath"];
+"1000111" -> "1000146"  [label="DDG: currpath"];
+"1000111" -> "1000150"  [label="DDG: currpath"];
+}

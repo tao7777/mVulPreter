@@ -1,0 +1,36 @@
+digraph "0_Chrome_dff368031150a1033a1a3c913f8857679a0279be_1@pointer" {
+"1000101" [label="(MethodParameterIn,v8::Isolate* isolate)"];
+"1000106" [label="(Call,V8PerIsolateData::from(isolate))"];
+"1000104" [label="(Call,* isolateData = V8PerIsolateData::from(isolate))"];
+"1000108" [label="(Call,ASSERT(isolateData))"];
+"1000107" [label="(Identifier,isolate)"];
+"1000101" [label="(MethodParameterIn,v8::Isolate* isolate)"];
+"1000104" [label="(Call,* isolateData = V8PerIsolateData::from(isolate))"];
+"1000105" [label="(Identifier,isolateData)"];
+"1000126" [label="(MethodReturn,void)"];
+"1000102" [label="(Block,)"];
+"1000108" [label="(Call,ASSERT(isolateData))"];
+"1000109" [label="(Identifier,isolateData)"];
+"1000106" [label="(Call,V8PerIsolateData::from(isolate))"];
+"1000112" [label="(Call,isolateData->recursionLevel())"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000126"  [label="DDG: isolate"];
+"1000101" -> "1000106"  [label="DDG: isolate"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000126"  [label="DDG: isolate"];
+"1000106" -> "1000104"  [label="DDG: isolate"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000126"  [label="DDG: V8PerIsolateData::from(isolate)"];
+"1000104" -> "1000108"  [label="DDG: isolateData"];
+"1000108" -> "1000102"  [label="AST: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000126"  [label="DDG: ASSERT(isolateData)"];
+"1000108" -> "1000126"  [label="DDG: isolateData"];
+}

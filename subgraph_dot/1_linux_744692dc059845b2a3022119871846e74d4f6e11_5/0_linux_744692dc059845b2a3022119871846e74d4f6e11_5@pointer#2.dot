@@ -1,0 +1,25 @@
+digraph "0_linux_744692dc059845b2a3022119871846e74d4f6e11_5@pointer" {
+"1000141" [label="(Call,list_del_init(&io->list))"];
+"1000136" [label="(Call,list_empty(&io->list))"];
+"1000147" [label="(Identifier,io)"];
+"1000136" [label="(Call,list_empty(&io->list))"];
+"1000137" [label="(Call,&io->list)"];
+"1000134" [label="(ControlStructure,if (!list_empty(&io->list)))"];
+"1000142" [label="(Call,&io->list)"];
+"1000141" [label="(Call,list_del_init(&io->list))"];
+"1000135" [label="(Call,!list_empty(&io->list))"];
+"1000153" [label="(MethodReturn,static void)"];
+"1000141" -> "1000134"  [label="AST: "];
+"1000141" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000147" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000153"  [label="DDG: &io->list"];
+"1000141" -> "1000153"  [label="DDG: list_del_init(&io->list)"];
+"1000136" -> "1000141"  [label="DDG: &io->list"];
+"1000136" -> "1000135"  [label="AST: "];
+"1000136" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000136"  [label="AST: "];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000153"  [label="DDG: &io->list"];
+"1000136" -> "1000135"  [label="DDG: &io->list"];
+}

@@ -1,0 +1,34 @@
+digraph "0_collectd_d16c24542b2f96a194d43a73c2e5778822b9cb47@pointer" {
+"1000531" [label="(Call,vb->type == SNMP_ENDOFMIBVIEW)"];
+"1000530" [label="(Call,(vb->type == SNMP_ENDOFMIBVIEW) ||\n            (snmp_oid_ncompare(\n                 data->instance.oid.oid, data->instance.oid.oid_len, vb->name,\n                 vb->name_length, data->instance.oid.oid_len) != 0))"];
+"1000532" [label="(Call,vb->type)"];
+"1000536" [label="(Call,snmp_oid_ncompare(\n                 data->instance.oid.oid, data->instance.oid.oid_len, vb->name,\n                 vb->name_length, data->instance.oid.oid_len) != 0)"];
+"1000568" [label="(Literal,\"snmp plugin: host = %s; data = %s; Instance left its subtree.\")"];
+"1000585" [label="(Identifier,instance_list_head)"];
+"1000541" [label="(Identifier,data)"];
+"1000531" [label="(Call,vb->type == SNMP_ENDOFMIBVIEW)"];
+"1000886" [label="(MethodReturn,static int)"];
+"1000535" [label="(Identifier,SNMP_ENDOFMIBVIEW)"];
+"1000530" [label="(Call,(vb->type == SNMP_ENDOFMIBVIEW) ||\n            (snmp_oid_ncompare(\n                 data->instance.oid.oid, data->instance.oid.oid_len, vb->name,\n                 vb->name_length, data->instance.oid.oid_len) != 0))"];
+"1000529" [label="(ControlStructure,if ((vb->type == SNMP_ENDOFMIBVIEW) ||\n            (snmp_oid_ncompare(\n                 data->instance.oid.oid, data->instance.oid.oid_len, vb->name,\n                 vb->name_length, data->instance.oid.oid_len) != 0)))"];
+"1000531" -> "1000530"  [label="AST: "];
+"1000531" -> "1000535"  [label="CFG: "];
+"1000532" -> "1000531"  [label="AST: "];
+"1000535" -> "1000531"  [label="AST: "];
+"1000541" -> "1000531"  [label="CFG: "];
+"1000530" -> "1000531"  [label="CFG: "];
+"1000531" -> "1000886"  [label="DDG: SNMP_ENDOFMIBVIEW"];
+"1000531" -> "1000886"  [label="DDG: vb->type"];
+"1000531" -> "1000530"  [label="DDG: vb->type"];
+"1000531" -> "1000530"  [label="DDG: SNMP_ENDOFMIBVIEW"];
+"1000530" -> "1000529"  [label="AST: "];
+"1000530" -> "1000536"  [label="CFG: "];
+"1000536" -> "1000530"  [label="AST: "];
+"1000568" -> "1000530"  [label="CFG: "];
+"1000585" -> "1000530"  [label="CFG: "];
+"1000530" -> "1000886"  [label="DDG: vb->type == SNMP_ENDOFMIBVIEW"];
+"1000530" -> "1000886"  [label="DDG: snmp_oid_ncompare(\n                 data->instance.oid.oid, data->instance.oid.oid_len, vb->name,\n                 vb->name_length, data->instance.oid.oid_len) != 0"];
+"1000530" -> "1000886"  [label="DDG: (vb->type == SNMP_ENDOFMIBVIEW) ||\n            (snmp_oid_ncompare(\n                 data->instance.oid.oid, data->instance.oid.oid_len, vb->name,\n                 vb->name_length, data->instance.oid.oid_len) != 0)"];
+"1000536" -> "1000530"  [label="DDG: snmp_oid_ncompare(\n                 data->instance.oid.oid, data->instance.oid.oid_len, vb->name,\n                 vb->name_length, data->instance.oid.oid_len)"];
+"1000536" -> "1000530"  [label="DDG: 0"];
+}

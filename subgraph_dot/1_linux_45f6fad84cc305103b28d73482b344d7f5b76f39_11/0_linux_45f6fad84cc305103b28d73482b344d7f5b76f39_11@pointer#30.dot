@@ -1,0 +1,38 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_11@pointer" {
+"1000848" [label="(Call,ns_capable(net->user_ns, CAP_NET_RAW))"];
+"1000847" [label="(Call,!ns_capable(net->user_ns, CAP_NET_RAW))"];
+"1000843" [label="(Call,optname != IPV6_RTHDR && !ns_capable(net->user_ns, CAP_NET_RAW))"];
+"1000848" [label="(Call,ns_capable(net->user_ns, CAP_NET_RAW))"];
+"1000853" [label="(ControlStructure,break;)"];
+"1000849" [label="(Call,net->user_ns)"];
+"1000844" [label="(Call,optname != IPV6_RTHDR)"];
+"1000852" [label="(Identifier,CAP_NET_RAW)"];
+"1000847" [label="(Call,!ns_capable(net->user_ns, CAP_NET_RAW))"];
+"1000842" [label="(ControlStructure,if (optname != IPV6_RTHDR && !ns_capable(net->user_ns, CAP_NET_RAW)))"];
+"1000843" [label="(Call,optname != IPV6_RTHDR && !ns_capable(net->user_ns, CAP_NET_RAW))"];
+"1000855" [label="(Identifier,opt)"];
+"1002046" [label="(MethodReturn,static int)"];
+"1000848" -> "1000847"  [label="AST: "];
+"1000848" -> "1000852"  [label="CFG: "];
+"1000849" -> "1000848"  [label="AST: "];
+"1000852" -> "1000848"  [label="AST: "];
+"1000847" -> "1000848"  [label="CFG: "];
+"1000848" -> "1002046"  [label="DDG: net->user_ns"];
+"1000848" -> "1002046"  [label="DDG: CAP_NET_RAW"];
+"1000848" -> "1000847"  [label="DDG: net->user_ns"];
+"1000848" -> "1000847"  [label="DDG: CAP_NET_RAW"];
+"1000847" -> "1000843"  [label="AST: "];
+"1000843" -> "1000847"  [label="CFG: "];
+"1000847" -> "1002046"  [label="DDG: ns_capable(net->user_ns, CAP_NET_RAW)"];
+"1000847" -> "1000843"  [label="DDG: ns_capable(net->user_ns, CAP_NET_RAW)"];
+"1000843" -> "1000842"  [label="AST: "];
+"1000843" -> "1000844"  [label="CFG: "];
+"1000844" -> "1000843"  [label="AST: "];
+"1000853" -> "1000843"  [label="CFG: "];
+"1000855" -> "1000843"  [label="CFG: "];
+"1000843" -> "1002046"  [label="DDG: optname != IPV6_RTHDR && !ns_capable(net->user_ns, CAP_NET_RAW)"];
+"1000843" -> "1002046"  [label="DDG: optname != IPV6_RTHDR"];
+"1000843" -> "1002046"  [label="DDG: !ns_capable(net->user_ns, CAP_NET_RAW)"];
+"1000844" -> "1000843"  [label="DDG: optname"];
+"1000844" -> "1000843"  [label="DDG: IPV6_RTHDR"];
+}

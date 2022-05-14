@@ -1,0 +1,33 @@
+digraph "0_qemu_4774718e5c194026ba5ee7a28d9be49be3080e42@pointer" {
+"1000194" [label="(Call,s->fsconf.fsdev_id ? s->fsconf.fsdev_id : \"NULL\")"];
+"1000181" [label="(Call,get_fsdev_fsentry(s->fsconf.fsdev_id))"];
+"1000191" [label="(Call,error_setg(errp, \"9pfs device couldn't find fsdev with the \"\n                   \"id = %s\",\n                   s->fsconf.fsdev_id ? s->fsconf.fsdev_id : \"NULL\"))"];
+"1000195" [label="(Call,s->fsconf.fsdev_id)"];
+"1000415" [label="(MethodReturn,int)"];
+"1000194" [label="(Call,s->fsconf.fsdev_id ? s->fsconf.fsdev_id : \"NULL\")"];
+"1000215" [label="(Call,error_setg(errp, \"fsdev with id %s needs mount_tag arguments\",\n                   s->fsconf.fsdev_id))"];
+"1000182" [label="(Call,s->fsconf.fsdev_id)"];
+"1000205" [label="(Literal,\"NULL\")"];
+"1000200" [label="(Call,s->fsconf.fsdev_id)"];
+"1000324" [label="(Call,error_setg(errp, \"9pfs Failed to initialize fs-driver with id:%s\"\n                   \" and export path:%s\", s->fsconf.fsdev_id, s->ctx.fs_root))"];
+"1000181" [label="(Call,get_fsdev_fsentry(s->fsconf.fsdev_id))"];
+"1000179" [label="(Call,fse = get_fsdev_fsentry(s->fsconf.fsdev_id))"];
+"1000194" -> "1000191"  [label="AST: "];
+"1000194" -> "1000200"  [label="CFG: "];
+"1000194" -> "1000205"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000200" -> "1000194"  [label="AST: "];
+"1000205" -> "1000194"  [label="AST: "];
+"1000191" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000415"  [label="DDG: s->fsconf.fsdev_id"];
+"1000181" -> "1000194"  [label="DDG: s->fsconf.fsdev_id"];
+"1000181" -> "1000179"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000179" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000415"  [label="DDG: s->fsconf.fsdev_id"];
+"1000181" -> "1000179"  [label="DDG: s->fsconf.fsdev_id"];
+"1000181" -> "1000191"  [label="DDG: s->fsconf.fsdev_id"];
+"1000181" -> "1000215"  [label="DDG: s->fsconf.fsdev_id"];
+"1000181" -> "1000324"  [label="DDG: s->fsconf.fsdev_id"];
+}

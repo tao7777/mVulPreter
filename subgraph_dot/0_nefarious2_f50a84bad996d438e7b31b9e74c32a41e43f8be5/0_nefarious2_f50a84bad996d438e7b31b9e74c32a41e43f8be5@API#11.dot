@@ -1,0 +1,24 @@
+digraph "0_nefarious2_f50a84bad996d438e7b31b9e74c32a41e43f8be5@API" {
+"1000212" [label="(Call,ircrandom() & 0x7fffffff)"];
+"1000209" [label="(Call,cli_saslcookie(cptr) = ircrandom() & 0x7fffffff)"];
+"1000213" [label="(Call,ircrandom())"];
+"1000217" [label="(Identifier,cptr)"];
+"1000463" [label="(MethodReturn,int)"];
+"1000210" [label="(Call,cli_saslcookie(cptr))"];
+"1000214" [label="(Literal,0x7fffffff)"];
+"1000212" [label="(Call,ircrandom() & 0x7fffffff)"];
+"1000209" [label="(Call,cli_saslcookie(cptr) = ircrandom() & 0x7fffffff)"];
+"1000208" [label="(Block,)"];
+"1000212" -> "1000209"  [label="AST: "];
+"1000212" -> "1000214"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000214" -> "1000212"  [label="AST: "];
+"1000209" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000463"  [label="DDG: ircrandom()"];
+"1000212" -> "1000209"  [label="DDG: ircrandom()"];
+"1000212" -> "1000209"  [label="DDG: 0x7fffffff"];
+"1000209" -> "1000208"  [label="AST: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000217" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000463"  [label="DDG: ircrandom() & 0x7fffffff"];
+}

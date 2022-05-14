@@ -1,0 +1,22 @@
+digraph "0_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_1@pointer" {
+"1000285" [label="(Call,semaphore->sempid = task_tgid_vnr(current))"];
+"1000289" [label="(Call,task_tgid_vnr(current))"];
+"1000253" [label="(Block,)"];
+"1000289" [label="(Call,task_tgid_vnr(current))"];
+"1000236" [label="(Identifier,i)"];
+"1000290" [label="(Identifier,current)"];
+"1000311" [label="(MethodReturn,void)"];
+"1000286" [label="(Call,semaphore->sempid)"];
+"1000285" [label="(Call,semaphore->sempid = task_tgid_vnr(current))"];
+"1000285" -> "1000253"  [label="AST: "];
+"1000285" -> "1000289"  [label="CFG: "];
+"1000286" -> "1000285"  [label="AST: "];
+"1000289" -> "1000285"  [label="AST: "];
+"1000236" -> "1000285"  [label="CFG: "];
+"1000285" -> "1000311"  [label="DDG: semaphore->sempid"];
+"1000285" -> "1000311"  [label="DDG: task_tgid_vnr(current)"];
+"1000289" -> "1000285"  [label="DDG: current"];
+"1000289" -> "1000290"  [label="CFG: "];
+"1000290" -> "1000289"  [label="AST: "];
+"1000289" -> "1000311"  [label="DDG: current"];
+}

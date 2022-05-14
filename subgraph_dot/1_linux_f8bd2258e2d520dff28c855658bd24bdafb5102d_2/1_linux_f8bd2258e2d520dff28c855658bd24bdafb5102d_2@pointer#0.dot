@@ -1,0 +1,28 @@
+digraph "1_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_2@pointer" {
+"1000144" [label="(Call,ns_to_timespec(cur_setting->it_interval, timr->it.mmtimer.incr * sgi_clock_period))"];
+"1000148" [label="(Call,timr->it.mmtimer.incr * sgi_clock_period)"];
+"1000144" [label="(Call,ns_to_timespec(cur_setting->it_interval, timr->it.mmtimer.incr * sgi_clock_period))"];
+"1000149" [label="(Call,timr->it.mmtimer.incr)"];
+"1000173" [label="(MethodReturn,static void)"];
+"1000161" [label="(Call,(timr->it.mmtimer.expires - rtc_time())* sgi_clock_period)"];
+"1000156" [label="(Identifier,sgi_clock_period)"];
+"1000103" [label="(Block,)"];
+"1000159" [label="(Identifier,cur_setting)"];
+"1000145" [label="(Call,cur_setting->it_interval)"];
+"1000148" [label="(Call,timr->it.mmtimer.incr * sgi_clock_period)"];
+"1000144" -> "1000103"  [label="AST: "];
+"1000144" -> "1000148"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000148" -> "1000144"  [label="AST: "];
+"1000159" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000173"  [label="DDG: ns_to_timespec(cur_setting->it_interval, timr->it.mmtimer.incr * sgi_clock_period)"];
+"1000144" -> "1000173"  [label="DDG: timr->it.mmtimer.incr * sgi_clock_period"];
+"1000144" -> "1000173"  [label="DDG: cur_setting->it_interval"];
+"1000148" -> "1000144"  [label="DDG: timr->it.mmtimer.incr"];
+"1000148" -> "1000144"  [label="DDG: sgi_clock_period"];
+"1000148" -> "1000156"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000156" -> "1000148"  [label="AST: "];
+"1000148" -> "1000173"  [label="DDG: timr->it.mmtimer.incr"];
+"1000148" -> "1000161"  [label="DDG: sgi_clock_period"];
+}

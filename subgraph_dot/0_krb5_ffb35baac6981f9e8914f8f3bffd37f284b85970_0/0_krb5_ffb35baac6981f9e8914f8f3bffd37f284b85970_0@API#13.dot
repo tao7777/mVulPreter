@@ -1,0 +1,28 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970_0@API" {
+"1002224" [label="(Call,free(ticket_reply.enc_part.ciphertext.data))"];
+"1002208" [label="(Call,memset(ticket_reply.enc_part.ciphertext.data, 0,\n           ticket_reply.enc_part.ciphertext.length))"];
+"1002216" [label="(Literal,0)"];
+"1002225" [label="(Call,ticket_reply.enc_part.ciphertext.data)"];
+"1002500" [label="(MethodReturn,RET)"];
+"1002217" [label="(Call,ticket_reply.enc_part.ciphertext.length)"];
+"1002224" [label="(Call,free(ticket_reply.enc_part.ciphertext.data))"];
+"1002236" [label="(Identifier,reply)"];
+"1002208" [label="(Call,memset(ticket_reply.enc_part.ciphertext.data, 0,\n           ticket_reply.enc_part.ciphertext.length))"];
+"1000171" [label="(Block,)"];
+"1002209" [label="(Call,ticket_reply.enc_part.ciphertext.data)"];
+"1002228" [label="(Identifier,ticket_reply)"];
+"1002224" -> "1000171"  [label="AST: "];
+"1002224" -> "1002225"  [label="CFG: "];
+"1002225" -> "1002224"  [label="AST: "];
+"1002236" -> "1002224"  [label="CFG: "];
+"1002224" -> "1002500"  [label="DDG: ticket_reply.enc_part.ciphertext.data"];
+"1002208" -> "1002224"  [label="DDG: ticket_reply.enc_part.ciphertext.data"];
+"1002208" -> "1000171"  [label="AST: "];
+"1002208" -> "1002217"  [label="CFG: "];
+"1002209" -> "1002208"  [label="AST: "];
+"1002216" -> "1002208"  [label="AST: "];
+"1002217" -> "1002208"  [label="AST: "];
+"1002228" -> "1002208"  [label="CFG: "];
+"1002208" -> "1002500"  [label="DDG: ticket_reply.enc_part.ciphertext.length"];
+"1002208" -> "1002500"  [label="DDG: memset(ticket_reply.enc_part.ciphertext.data, 0,\n           ticket_reply.enc_part.ciphertext.length)"];
+}

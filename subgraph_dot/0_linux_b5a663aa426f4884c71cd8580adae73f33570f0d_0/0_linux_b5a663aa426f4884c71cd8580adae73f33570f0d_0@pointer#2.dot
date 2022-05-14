@@ -1,0 +1,21 @@
+digraph "0_linux_b5a663aa426f4884c71cd8580adae73f33570f0d_0@pointer" {
+"1000102" [label="(MethodParameterIn,struct snd_timer_instance *master)"];
+"1000143" [label="(Call,slave->master = master)"];
+"1000102" [label="(MethodParameterIn,struct snd_timer_instance *master)"];
+"1000144" [label="(Call,slave->master)"];
+"1000143" [label="(Call,slave->master = master)"];
+"1000180" [label="(MethodReturn,static void)"];
+"1000147" [label="(Identifier,master)"];
+"1000150" [label="(Identifier,slave)"];
+"1000123" [label="(Block,)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000180"  [label="DDG: master"];
+"1000102" -> "1000143"  [label="DDG: master"];
+"1000143" -> "1000123"  [label="AST: "];
+"1000143" -> "1000147"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000147" -> "1000143"  [label="AST: "];
+"1000150" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000180"  [label="DDG: slave->master"];
+"1000143" -> "1000180"  [label="DDG: master"];
+}

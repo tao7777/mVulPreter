@@ -1,0 +1,21 @@
+digraph "0_Chrome_805eabb91d386c86bd64336c7643f6dfa864151d_0@array" {
+"1000113" [label="(Call,sizeof(buffer[0]))"];
+"1000103" [label="(MethodParameterIn,BufferType* buffer)"];
+"1000175" [label="(Call,static_cast<BufferType*>(buffer))"];
+"1000114" [label="(Call,buffer[0])"];
+"1000288" [label="(MethodReturn,size_t)"];
+"1000113" [label="(Call,sizeof(buffer[0]))"];
+"1000103" [label="(MethodParameterIn,BufferType* buffer)"];
+"1000118" [label="(Identifier,char)"];
+"1000112" [label="(Call,sizeof(buffer[0]) == sizeof(char))"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000118" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000288"  [label="DDG: buffer[0]"];
+"1000103" -> "1000113"  [label="DDG: buffer"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000288"  [label="DDG: buffer"];
+"1000103" -> "1000112"  [label="DDG: buffer"];
+"1000103" -> "1000175"  [label="DDG: buffer"];
+}

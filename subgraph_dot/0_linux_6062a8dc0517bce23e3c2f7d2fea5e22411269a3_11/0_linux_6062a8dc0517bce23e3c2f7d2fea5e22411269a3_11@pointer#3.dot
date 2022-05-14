@@ -1,0 +1,32 @@
+digraph "0_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_11@pointer" {
+"1000117" [label="(Call,copy_semid_from_user(&semid64, p, version))"];
+"1000105" [label="(MethodParameterIn,void __user *p)"];
+"1000104" [label="(MethodParameterIn,int version)"];
+"1000124" [label="(Identifier,EFAULT)"];
+"1000104" [label="(MethodParameterIn,int version)"];
+"1000117" [label="(Call,copy_semid_from_user(&semid64, p, version))"];
+"1000126" [label="(Identifier,ipcp)"];
+"1000105" [label="(MethodParameterIn,void __user *p)"];
+"1000120" [label="(Identifier,p)"];
+"1000118" [label="(Call,&semid64)"];
+"1000121" [label="(Identifier,version)"];
+"1000116" [label="(ControlStructure,if (copy_semid_from_user(&semid64, p, version)))"];
+"1000212" [label="(MethodReturn,static int)"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000121"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000120" -> "1000117"  [label="AST: "];
+"1000121" -> "1000117"  [label="AST: "];
+"1000124" -> "1000117"  [label="CFG: "];
+"1000126" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000212"  [label="DDG: version"];
+"1000117" -> "1000212"  [label="DDG: &semid64"];
+"1000117" -> "1000212"  [label="DDG: copy_semid_from_user(&semid64, p, version)"];
+"1000117" -> "1000212"  [label="DDG: p"];
+"1000105" -> "1000117"  [label="DDG: p"];
+"1000104" -> "1000117"  [label="DDG: version"];
+"1000105" -> "1000100"  [label="AST: "];
+"1000105" -> "1000212"  [label="DDG: p"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000212"  [label="DDG: version"];
+}

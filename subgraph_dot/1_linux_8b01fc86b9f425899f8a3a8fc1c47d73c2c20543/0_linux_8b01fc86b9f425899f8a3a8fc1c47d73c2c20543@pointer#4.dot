@@ -1,0 +1,38 @@
+digraph "0_linux_8b01fc86b9f425899f8a3a8fc1c47d73c2c20543@pointer" {
+"1000106" [label="(MethodParameterIn,struct linux_binprm *bprm)"];
+"1000220" [label="(Call,security_bprm_set_creds(bprm))"];
+"1000218" [label="(Call,retval = security_bprm_set_creds(bprm))"];
+"1000224" [label="(Return,return retval;)"];
+"1000247" [label="(MethodReturn,int)"];
+"1000219" [label="(Identifier,retval)"];
+"1000218" [label="(Call,retval = security_bprm_set_creds(bprm))"];
+"1000220" [label="(Call,security_bprm_set_creds(bprm))"];
+"1000106" [label="(MethodParameterIn,struct linux_binprm *bprm)"];
+"1000225" [label="(Identifier,retval)"];
+"1000224" [label="(Return,return retval;)"];
+"1000222" [label="(ControlStructure,if (retval))"];
+"1000221" [label="(Identifier,bprm)"];
+"1000107" [label="(Block,)"];
+"1000223" [label="(Identifier,retval)"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000106" -> "1000247"  [label="DDG: bprm"];
+"1000106" -> "1000220"  [label="DDG: bprm"];
+"1000220" -> "1000218"  [label="AST: "];
+"1000220" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000218" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000247"  [label="DDG: bprm"];
+"1000220" -> "1000218"  [label="DDG: bprm"];
+"1000218" -> "1000107"  [label="AST: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000223" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000247"  [label="DDG: retval"];
+"1000218" -> "1000247"  [label="DDG: security_bprm_set_creds(bprm)"];
+"1000218" -> "1000224"  [label="DDG: retval"];
+"1000224" -> "1000222"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000247" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000247"  [label="DDG: <RET>"];
+"1000225" -> "1000224"  [label="DDG: retval"];
+}

@@ -1,0 +1,28 @@
+digraph "0_file_74cafd7de9ec99a14f4480927580e501c8f852c3@pointer" {
+"1000942" [label="(Call,ms->flags & MAGIC_DEBUG)"];
+"1000941" [label="(Call,(ms->flags & MAGIC_DEBUG) != 0)"];
+"1000976" [label="(MethodReturn,RET)"];
+"1000943" [label="(Call,ms->flags)"];
+"1000940" [label="(ControlStructure,if ((ms->flags & MAGIC_DEBUG) != 0))"];
+"1000947" [label="(Literal,0)"];
+"1000946" [label="(Identifier,MAGIC_DEBUG)"];
+"1000963" [label="(ControlStructure,break;)"];
+"1000941" [label="(Call,(ms->flags & MAGIC_DEBUG) != 0)"];
+"1000942" [label="(Call,ms->flags & MAGIC_DEBUG)"];
+"1000942" -> "1000941"  [label="AST: "];
+"1000942" -> "1000946"  [label="CFG: "];
+"1000943" -> "1000942"  [label="AST: "];
+"1000946" -> "1000942"  [label="AST: "];
+"1000947" -> "1000942"  [label="CFG: "];
+"1000942" -> "1000976"  [label="DDG: MAGIC_DEBUG"];
+"1000942" -> "1000976"  [label="DDG: ms->flags"];
+"1000942" -> "1000941"  [label="DDG: ms->flags"];
+"1000942" -> "1000941"  [label="DDG: MAGIC_DEBUG"];
+"1000941" -> "1000940"  [label="AST: "];
+"1000941" -> "1000947"  [label="CFG: "];
+"1000947" -> "1000941"  [label="AST: "];
+"1000949" -> "1000941"  [label="CFG: "];
+"1000963" -> "1000941"  [label="CFG: "];
+"1000941" -> "1000976"  [label="DDG: ms->flags & MAGIC_DEBUG"];
+"1000941" -> "1000976"  [label="DDG: (ms->flags & MAGIC_DEBUG) != 0"];
+}

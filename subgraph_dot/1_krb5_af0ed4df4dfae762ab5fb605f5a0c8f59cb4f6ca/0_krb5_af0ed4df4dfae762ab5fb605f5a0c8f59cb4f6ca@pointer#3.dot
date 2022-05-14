@@ -1,0 +1,26 @@
+digraph "0_krb5_af0ed4df4dfae762ab5fb605f5a0c8f59cb4f6ca@pointer" {
+"1000369" [label="(Call,kdb->mask = KADM5_KEY_DATA | KADM5_FAIL_AUTH_COUNT)"];
+"1000373" [label="(Call,KADM5_KEY_DATA | KADM5_FAIL_AUTH_COUNT)"];
+"1000377" [label="(Identifier,ret)"];
+"1000113" [label="(Block,)"];
+"1000375" [label="(Identifier,KADM5_FAIL_AUTH_COUNT)"];
+"1000370" [label="(Call,kdb->mask)"];
+"1000369" [label="(Call,kdb->mask = KADM5_KEY_DATA | KADM5_FAIL_AUTH_COUNT)"];
+"1000439" [label="(MethodReturn,RET)"];
+"1000373" [label="(Call,KADM5_KEY_DATA | KADM5_FAIL_AUTH_COUNT)"];
+"1000374" [label="(Identifier,KADM5_KEY_DATA)"];
+"1000369" -> "1000113"  [label="AST: "];
+"1000369" -> "1000373"  [label="CFG: "];
+"1000370" -> "1000369"  [label="AST: "];
+"1000373" -> "1000369"  [label="AST: "];
+"1000377" -> "1000369"  [label="CFG: "];
+"1000369" -> "1000439"  [label="DDG: kdb->mask"];
+"1000369" -> "1000439"  [label="DDG: KADM5_KEY_DATA | KADM5_FAIL_AUTH_COUNT"];
+"1000373" -> "1000369"  [label="DDG: KADM5_KEY_DATA"];
+"1000373" -> "1000369"  [label="DDG: KADM5_FAIL_AUTH_COUNT"];
+"1000373" -> "1000375"  [label="CFG: "];
+"1000374" -> "1000373"  [label="AST: "];
+"1000375" -> "1000373"  [label="AST: "];
+"1000373" -> "1000439"  [label="DDG: KADM5_FAIL_AUTH_COUNT"];
+"1000373" -> "1000439"  [label="DDG: KADM5_KEY_DATA"];
+}

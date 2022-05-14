@@ -1,0 +1,35 @@
+digraph "0_krb5_af0ed4df4dfae762ab5fb605f5a0c8f59cb4f6ca@integer" {
+"1000311" [label="(Call,kdb->pw_expiration = now + pol.pw_max_life)"];
+"1000290" [label="(Call,now - last_pwd)"];
+"1000335" [label="(Call,krb5_dbe_update_last_pwd_change(handle->context, kdb, now))"];
+"1000334" [label="(Identifier,ret)"];
+"1000311" [label="(Call,kdb->pw_expiration = now + pol.pw_max_life)"];
+"1000294" [label="(Identifier,pol)"];
+"1000439" [label="(MethodReturn,RET)"];
+"1000291" [label="(Identifier,now)"];
+"1000292" [label="(Identifier,last_pwd)"];
+"1000289" [label="(Call,(now - last_pwd) < pol.pw_min_life)"];
+"1000307" [label="(ControlStructure,if (pol.pw_max_life))"];
+"1000312" [label="(Call,kdb->pw_expiration)"];
+"1000290" [label="(Call,now - last_pwd)"];
+"1000315" [label="(Call,now + pol.pw_max_life)"];
+"1000311" -> "1000307"  [label="AST: "];
+"1000311" -> "1000315"  [label="CFG: "];
+"1000312" -> "1000311"  [label="AST: "];
+"1000315" -> "1000311"  [label="AST: "];
+"1000334" -> "1000311"  [label="CFG: "];
+"1000311" -> "1000439"  [label="DDG: kdb->pw_expiration"];
+"1000311" -> "1000439"  [label="DDG: now + pol.pw_max_life"];
+"1000290" -> "1000311"  [label="DDG: now"];
+"1000290" -> "1000289"  [label="AST: "];
+"1000290" -> "1000292"  [label="CFG: "];
+"1000291" -> "1000290"  [label="AST: "];
+"1000292" -> "1000290"  [label="AST: "];
+"1000294" -> "1000290"  [label="CFG: "];
+"1000290" -> "1000439"  [label="DDG: now"];
+"1000290" -> "1000439"  [label="DDG: last_pwd"];
+"1000290" -> "1000289"  [label="DDG: now"];
+"1000290" -> "1000289"  [label="DDG: last_pwd"];
+"1000290" -> "1000315"  [label="DDG: now"];
+"1000290" -> "1000335"  [label="DDG: now"];
+}

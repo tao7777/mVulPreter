@@ -1,0 +1,22 @@
+digraph "0_linux_ad3e14d7c5268c2e24477c6ef54bbdf88add5d36_0@pointer" {
+"1000211" [label="(Call,le16_to_cpu(usbdev->descriptor.idProduct))"];
+"1000207" [label="(Call,dj_hiddev->product = le16_to_cpu(usbdev->descriptor.idProduct))"];
+"1000211" [label="(Call,le16_to_cpu(usbdev->descriptor.idProduct))"];
+"1000219" [label="(Identifier,dj_hiddev)"];
+"1000212" [label="(Call,usbdev->descriptor.idProduct)"];
+"1000208" [label="(Call,dj_hiddev->product)"];
+"1000207" [label="(Call,dj_hiddev->product = le16_to_cpu(usbdev->descriptor.idProduct))"];
+"1000106" [label="(Block,)"];
+"1000349" [label="(MethodReturn,static void)"];
+"1000211" -> "1000207"  [label="AST: "];
+"1000211" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000207" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000349"  [label="DDG: usbdev->descriptor.idProduct"];
+"1000211" -> "1000207"  [label="DDG: usbdev->descriptor.idProduct"];
+"1000207" -> "1000106"  [label="AST: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000219" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000349"  [label="DDG: dj_hiddev->product"];
+"1000207" -> "1000349"  [label="DDG: le16_to_cpu(usbdev->descriptor.idProduct)"];
+}

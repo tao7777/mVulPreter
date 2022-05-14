@@ -1,0 +1,29 @@
+digraph "0_file_445c8fb0ebff85195be94cd9f7e1df89cade5c7f@API" {
+"1000177" [label="(Call,xph_filesz < sizeof(nbuf) ? xph_filesz : sizeof(nbuf))"];
+"1000178" [label="(Call,xph_filesz < sizeof(nbuf))"];
+"1000178" [label="(Call,xph_filesz < sizeof(nbuf))"];
+"1000184" [label="(Identifier,nbuf)"];
+"1000177" [label="(Call,xph_filesz < sizeof(nbuf) ? xph_filesz : sizeof(nbuf))"];
+"1000180" [label="(Call,sizeof(nbuf))"];
+"1000179" [label="(Identifier,xph_filesz)"];
+"1000234" [label="(MethodReturn,RET)"];
+"1000175" [label="(Call,len = xph_filesz < sizeof(nbuf) ? xph_filesz : sizeof(nbuf))"];
+"1000182" [label="(Identifier,xph_filesz)"];
+"1000183" [label="(Call,sizeof(nbuf))"];
+"1000177" -> "1000175"  [label="AST: "];
+"1000177" -> "1000182"  [label="CFG: "];
+"1000177" -> "1000183"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000182" -> "1000177"  [label="AST: "];
+"1000183" -> "1000177"  [label="AST: "];
+"1000175" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000234"  [label="DDG: xph_filesz"];
+"1000177" -> "1000234"  [label="DDG: xph_filesz < sizeof(nbuf)"];
+"1000178" -> "1000177"  [label="DDG: xph_filesz"];
+"1000178" -> "1000180"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000180" -> "1000178"  [label="AST: "];
+"1000182" -> "1000178"  [label="CFG: "];
+"1000184" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000175"  [label="DDG: xph_filesz"];
+}

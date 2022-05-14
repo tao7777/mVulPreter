@@ -1,0 +1,28 @@
+digraph "0_haproxy_efbbdf72992cd20458259962346044cafd9331c0@API" {
+"1001039" [label="(Call,memcmp(&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr,\n\t\t\t\t\t\t    &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr,\n\t\t\t\t\t\t    sizeof(struct in6_addr)))"];
+"1001038" [label="(Call,!memcmp(&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr,\n\t\t\t\t\t\t    &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr,\n\t\t\t\t\t\t    sizeof(struct in6_addr)))"];
+"1001063" [label="(ControlStructure,break;)"];
+"1001156" [label="(MethodReturn,static int)"];
+"1001038" [label="(Call,!memcmp(&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr,\n\t\t\t\t\t\t    &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr,\n\t\t\t\t\t\t    sizeof(struct in6_addr)))"];
+"1001061" [label="(Identifier,found)"];
+"1001039" [label="(Call,memcmp(&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr,\n\t\t\t\t\t\t    &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr,\n\t\t\t\t\t\t    sizeof(struct in6_addr)))"];
+"1001049" [label="(Call,&((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr)"];
+"1001037" [label="(ControlStructure,if (!memcmp(&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr,\n\t\t\t\t\t\t    &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr,\n\t\t\t\t\t\t    sizeof(struct in6_addr))))"];
+"1001058" [label="(Call,sizeof(struct in6_addr))"];
+"1001040" [label="(Call,&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr)"];
+"1001039" -> "1001038"  [label="AST: "];
+"1001039" -> "1001058"  [label="CFG: "];
+"1001040" -> "1001039"  [label="AST: "];
+"1001049" -> "1001039"  [label="AST: "];
+"1001058" -> "1001039"  [label="AST: "];
+"1001038" -> "1001039"  [label="CFG: "];
+"1001039" -> "1001156"  [label="DDG: &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr"];
+"1001039" -> "1001156"  [label="DDG: &((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr"];
+"1001039" -> "1001038"  [label="DDG: &((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr"];
+"1001039" -> "1001038"  [label="DDG: &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr"];
+"1001038" -> "1001037"  [label="AST: "];
+"1001061" -> "1001038"  [label="CFG: "];
+"1001063" -> "1001038"  [label="CFG: "];
+"1001038" -> "1001156"  [label="DDG: !memcmp(&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr,\n\t\t\t\t\t\t    &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr,\n\t\t\t\t\t\t    sizeof(struct in6_addr))"];
+"1001038" -> "1001156"  [label="DDG: memcmp(&((struct sockaddr_in6 *)&dns_answer_record->address)->sin6_addr,\n\t\t\t\t\t\t    &((struct sockaddr_in6 *)&tmp_record->address)->sin6_addr,\n\t\t\t\t\t\t    sizeof(struct in6_addr))"];
+}

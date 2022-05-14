@@ -1,0 +1,35 @@
+digraph "0_linux_c290f8358acaeffd8e0c551ddcc24d1206143376@API" {
+"1000415" [label="(Call,signal_pending(current))"];
+"1000470" [label="(Call,__proc_set_tty(current, tty))"];
+"1000477" [label="(Identifier,current)"];
+"1000416" [label="(Identifier,current)"];
+"1000472" [label="(Identifier,tty)"];
+"1000415" [label="(Call,signal_pending(current))"];
+"1000339" [label="(Call,check_tty_count(tty, \"tty_open\"))"];
+"1000486" [label="(MethodReturn,static int)"];
+"1000418" [label="(Identifier,retval)"];
+"1000369" [label="(Call,tty->ops->open(tty, filp))"];
+"1000471" [label="(Identifier,current)"];
+"1000470" [label="(Call,__proc_set_tty(current, tty))"];
+"1000419" [label="(Call,schedule())"];
+"1000414" [label="(ControlStructure,if (signal_pending(current)))"];
+"1000448" [label="(ControlStructure,if (!noctty &&\n\t    current->signal->leader &&\n\t    !current->signal->tty &&\n\t    tty->session == NULL))"];
+"1000415" -> "1000414"  [label="AST: "];
+"1000415" -> "1000416"  [label="CFG: "];
+"1000416" -> "1000415"  [label="AST: "];
+"1000418" -> "1000415"  [label="CFG: "];
+"1000419" -> "1000415"  [label="CFG: "];
+"1000415" -> "1000486"  [label="DDG: current"];
+"1000415" -> "1000486"  [label="DDG: signal_pending(current)"];
+"1000415" -> "1000470"  [label="DDG: current"];
+"1000470" -> "1000448"  [label="AST: "];
+"1000470" -> "1000472"  [label="CFG: "];
+"1000471" -> "1000470"  [label="AST: "];
+"1000472" -> "1000470"  [label="AST: "];
+"1000477" -> "1000470"  [label="CFG: "];
+"1000470" -> "1000486"  [label="DDG: tty"];
+"1000470" -> "1000486"  [label="DDG: current"];
+"1000470" -> "1000486"  [label="DDG: __proc_set_tty(current, tty)"];
+"1000369" -> "1000470"  [label="DDG: tty"];
+"1000339" -> "1000470"  [label="DDG: tty"];
+}

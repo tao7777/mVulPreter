@@ -1,0 +1,36 @@
+digraph "0_enlightment_c21beaf1780cf3ca291735ae7d58a3dde63277a2@array" {
+"1000906" [label="(Call,buf2[j] = 0)"];
+"1000915" [label="(Call,atoi(buf2))"];
+"1000911" [label="(Call,*(iptr++) = atoi(buf2))"];
+"1000918" [label="(Identifier,j)"];
+"1001770" [label="(MethodReturn,RET)"];
+"1000915" [label="(Call,atoi(buf2))"];
+"1000911" [label="(Call,*(iptr++) = atoi(buf2))"];
+"1000894" [label="(Call,buf2[j++] = buf[i++])"];
+"1000914" [label="(Identifier,iptr)"];
+"1000916" [label="(Identifier,buf2)"];
+"1000910" [label="(Literal,0)"];
+"1000912" [label="(Call,*(iptr++))"];
+"1000907" [label="(Call,buf2[j])"];
+"1000905" [label="(Block,)"];
+"1000906" [label="(Call,buf2[j] = 0)"];
+"1000906" -> "1000905"  [label="AST: "];
+"1000906" -> "1000910"  [label="CFG: "];
+"1000907" -> "1000906"  [label="AST: "];
+"1000910" -> "1000906"  [label="AST: "];
+"1000914" -> "1000906"  [label="CFG: "];
+"1000906" -> "1001770"  [label="DDG: buf2[j]"];
+"1000906" -> "1000915"  [label="DDG: buf2[j]"];
+"1000915" -> "1000911"  [label="AST: "];
+"1000915" -> "1000916"  [label="CFG: "];
+"1000916" -> "1000915"  [label="AST: "];
+"1000911" -> "1000915"  [label="CFG: "];
+"1000915" -> "1001770"  [label="DDG: buf2"];
+"1000915" -> "1000911"  [label="DDG: buf2"];
+"1000894" -> "1000915"  [label="DDG: buf2[j++]"];
+"1000911" -> "1000905"  [label="AST: "];
+"1000912" -> "1000911"  [label="AST: "];
+"1000918" -> "1000911"  [label="CFG: "];
+"1000911" -> "1001770"  [label="DDG: *(iptr++)"];
+"1000911" -> "1001770"  [label="DDG: atoi(buf2)"];
+}

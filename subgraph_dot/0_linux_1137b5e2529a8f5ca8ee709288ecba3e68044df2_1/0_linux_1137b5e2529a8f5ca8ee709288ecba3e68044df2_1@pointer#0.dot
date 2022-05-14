@@ -1,0 +1,22 @@
+digraph "0_linux_1137b5e2529a8f5ca8ee709288ecba3e68044df2_1@pointer" {
+"1000109" [label="(Call,sock_net(skb->sk))"];
+"1000107" [label="(Call,*net = sock_net(skb->sk))"];
+"1000109" [label="(Call,sock_net(skb->sk))"];
+"1000212" [label="(MethodReturn,static int)"];
+"1000107" [label="(Call,*net = sock_net(skb->sk))"];
+"1000105" [label="(Block,)"];
+"1000110" [label="(Call,skb->sk)"];
+"1000108" [label="(Identifier,net)"];
+"1000118" [label="(Call,in_compat_syscall())"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000212"  [label="DDG: skb->sk"];
+"1000109" -> "1000107"  [label="DDG: skb->sk"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000118" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000212"  [label="DDG: net"];
+"1000107" -> "1000212"  [label="DDG: sock_net(skb->sk)"];
+}

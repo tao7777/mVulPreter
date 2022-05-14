@@ -1,0 +1,38 @@
+digraph "0_cgminer_e1c5050734123973b99d181c45e74b2cbb00272e_1@API" {
+"1000332" [label="(Call,free(pool->swork.merkle_bin[i]))"];
+"1000349" [label="(Call,realloc(pool->swork.merkle_bin,\n\t\t\t\t\t\t sizeof(char *) * merkles + 1))"];
+"1000343" [label="(Call,pool->swork.merkle_bin = realloc(pool->swork.merkle_bin,\n\t\t\t\t\t\t sizeof(char *) * merkles + 1))"];
+"1000332" [label="(Call,free(pool->swork.merkle_bin[i]))"];
+"1000343" [label="(Call,pool->swork.merkle_bin = realloc(pool->swork.merkle_bin,\n\t\t\t\t\t\t sizeof(char *) * merkles + 1))"];
+"1000344" [label="(Call,pool->swork.merkle_bin)"];
+"1000333" [label="(Call,pool->swork.merkle_bin[i])"];
+"1000355" [label="(Call,sizeof(char *) * merkles + 1)"];
+"1000321" [label="(ControlStructure,for (i = 0; i < pool->merkles; i++))"];
+"1000349" [label="(Call,realloc(pool->swork.merkle_bin,\n\t\t\t\t\t\t sizeof(char *) * merkles + 1))"];
+"1000356" [label="(Call,sizeof(char *) * merkles)"];
+"1000363" [label="(Identifier,i)"];
+"1000342" [label="(Block,)"];
+"1000331" [label="(Identifier,i)"];
+"1000350" [label="(Call,pool->swork.merkle_bin)"];
+"1000685" [label="(MethodReturn,static bool)"];
+"1000332" -> "1000321"  [label="AST: "];
+"1000332" -> "1000333"  [label="CFG: "];
+"1000333" -> "1000332"  [label="AST: "];
+"1000331" -> "1000332"  [label="CFG: "];
+"1000332" -> "1000685"  [label="DDG: pool->swork.merkle_bin[i]"];
+"1000332" -> "1000349"  [label="DDG: pool->swork.merkle_bin[i]"];
+"1000349" -> "1000343"  [label="AST: "];
+"1000349" -> "1000355"  [label="CFG: "];
+"1000350" -> "1000349"  [label="AST: "];
+"1000355" -> "1000349"  [label="AST: "];
+"1000343" -> "1000349"  [label="CFG: "];
+"1000349" -> "1000685"  [label="DDG: sizeof(char *) * merkles + 1"];
+"1000349" -> "1000343"  [label="DDG: pool->swork.merkle_bin"];
+"1000349" -> "1000343"  [label="DDG: sizeof(char *) * merkles + 1"];
+"1000356" -> "1000349"  [label="DDG: merkles"];
+"1000343" -> "1000342"  [label="AST: "];
+"1000344" -> "1000343"  [label="AST: "];
+"1000363" -> "1000343"  [label="CFG: "];
+"1000343" -> "1000685"  [label="DDG: realloc(pool->swork.merkle_bin,\n\t\t\t\t\t\t sizeof(char *) * merkles + 1)"];
+"1000343" -> "1000685"  [label="DDG: pool->swork.merkle_bin"];
+}

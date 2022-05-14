@@ -1,0 +1,29 @@
+digraph "0_linux_b71812168571fa55e44cdd0254471331b9c4c4c6_0@pointer" {
+"1000158" [label="(Call,entry->next_offset < sizeof(*entry))"];
+"1000151" [label="(Call,*total < sizeof(*entry) || entry->next_offset < sizeof(*entry))"];
+"1000426" [label="(MethodReturn,static int)"];
+"1000150" [label="(ControlStructure,if (*total < sizeof(*entry) || entry->next_offset < sizeof(*entry)))"];
+"1000152" [label="(Call,*total < sizeof(*entry))"];
+"1000151" [label="(Call,*total < sizeof(*entry) || entry->next_offset < sizeof(*entry))"];
+"1000162" [label="(Call,sizeof(*entry))"];
+"1000169" [label="(Identifier,startoff)"];
+"1000167" [label="(Identifier,EINVAL)"];
+"1000159" [label="(Call,entry->next_offset)"];
+"1000158" [label="(Call,entry->next_offset < sizeof(*entry))"];
+"1000158" -> "1000151"  [label="AST: "];
+"1000158" -> "1000162"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="AST: "];
+"1000151" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000426"  [label="DDG: entry->next_offset"];
+"1000158" -> "1000151"  [label="DDG: entry->next_offset"];
+"1000151" -> "1000150"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000167" -> "1000151"  [label="CFG: "];
+"1000169" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000426"  [label="DDG: *total < sizeof(*entry) || entry->next_offset < sizeof(*entry)"];
+"1000151" -> "1000426"  [label="DDG: *total < sizeof(*entry)"];
+"1000151" -> "1000426"  [label="DDG: entry->next_offset < sizeof(*entry)"];
+"1000152" -> "1000151"  [label="DDG: *total"];
+}

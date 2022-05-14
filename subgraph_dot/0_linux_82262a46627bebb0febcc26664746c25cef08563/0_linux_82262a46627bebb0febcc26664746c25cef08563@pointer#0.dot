@@ -1,0 +1,24 @@
+digraph "0_linux_82262a46627bebb0febcc26664746c25cef08563@pointer" {
+"1000501" [label="(Call,up_write(&card->controls_rwsem))"];
+"1000492" [label="(Call,down_write(&card->controls_rwsem))"];
+"1000499" [label="(Identifier,card)"];
+"1000508" [label="(MethodReturn,static int)"];
+"1000493" [label="(Call,&card->controls_rwsem)"];
+"1000507" [label="(Literal,0)"];
+"1000501" [label="(Call,up_write(&card->controls_rwsem))"];
+"1000104" [label="(Block,)"];
+"1000492" [label="(Call,down_write(&card->controls_rwsem))"];
+"1000502" [label="(Call,&card->controls_rwsem)"];
+"1000501" -> "1000104"  [label="AST: "];
+"1000501" -> "1000502"  [label="CFG: "];
+"1000502" -> "1000501"  [label="AST: "];
+"1000507" -> "1000501"  [label="CFG: "];
+"1000501" -> "1000508"  [label="DDG: &card->controls_rwsem"];
+"1000501" -> "1000508"  [label="DDG: up_write(&card->controls_rwsem)"];
+"1000492" -> "1000501"  [label="DDG: &card->controls_rwsem"];
+"1000492" -> "1000104"  [label="AST: "];
+"1000492" -> "1000493"  [label="CFG: "];
+"1000493" -> "1000492"  [label="AST: "];
+"1000499" -> "1000492"  [label="CFG: "];
+"1000492" -> "1000508"  [label="DDG: down_write(&card->controls_rwsem)"];
+}

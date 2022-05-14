@@ -1,0 +1,33 @@
+digraph "0_Android_dded8fdbb700d6cc498debc69a780915bc34d755@API" {
+"1000216" [label="(Call,data.read(*releaseFence))"];
+"1000214" [label="(Call,err = data.read(*releaseFence))"];
+"1000221" [label="(Return,return err;)"];
+"1000214" [label="(Call,err = data.read(*releaseFence))"];
+"1000219" [label="(ControlStructure,if (err))"];
+"1000220" [label="(Identifier,err)"];
+"1000217" [label="(Call,*releaseFence)"];
+"1000215" [label="(Identifier,err)"];
+"1000222" [label="(Identifier,err)"];
+"1000476" [label="(MethodReturn,status_t)"];
+"1000195" [label="(Block,)"];
+"1000221" [label="(Return,return err;)"];
+"1000216" [label="(Call,data.read(*releaseFence))"];
+"1000216" -> "1000214"  [label="AST: "];
+"1000216" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000214" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000476"  [label="DDG: *releaseFence"];
+"1000216" -> "1000214"  [label="DDG: *releaseFence"];
+"1000214" -> "1000195"  [label="AST: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000220" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000476"  [label="DDG: data.read(*releaseFence)"];
+"1000214" -> "1000476"  [label="DDG: err"];
+"1000214" -> "1000221"  [label="DDG: err"];
+"1000221" -> "1000219"  [label="AST: "];
+"1000221" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000476" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000476"  [label="DDG: <RET>"];
+"1000222" -> "1000221"  [label="DDG: err"];
+}

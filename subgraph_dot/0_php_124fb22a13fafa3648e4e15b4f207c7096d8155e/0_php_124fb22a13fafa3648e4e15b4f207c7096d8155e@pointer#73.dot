@@ -1,0 +1,29 @@
+digraph "0_php_124fb22a13fafa3648e4e15b4f207c7096d8155e@pointer" {
+"1001703" [label="(Call,zval_ptr_dtor(&ch->handlers->passwd))"];
+"1001710" [label="(Call,ZVAL_COPY(&ch->handlers->passwd, zvalue))"];
+"1001717" [label="(Identifier,zvalue)"];
+"1001714" [label="(Identifier,ch)"];
+"1001711" [label="(Call,&ch->handlers->passwd)"];
+"1001703" [label="(Call,zval_ptr_dtor(&ch->handlers->passwd))"];
+"1001710" [label="(Call,ZVAL_COPY(&ch->handlers->passwd, zvalue))"];
+"1000128" [label="(Block,)"];
+"1000120" [label="(MethodParameterIn,zval *zvalue)"];
+"1001719" [label="(Identifier,error)"];
+"1001704" [label="(Call,&ch->handlers->passwd)"];
+"1001927" [label="(MethodReturn,static int)"];
+"1001703" -> "1000128"  [label="AST: "];
+"1001703" -> "1001704"  [label="CFG: "];
+"1001704" -> "1001703"  [label="AST: "];
+"1001714" -> "1001703"  [label="CFG: "];
+"1001703" -> "1001927"  [label="DDG: zval_ptr_dtor(&ch->handlers->passwd)"];
+"1001703" -> "1001710"  [label="DDG: &ch->handlers->passwd"];
+"1001710" -> "1000128"  [label="AST: "];
+"1001710" -> "1001717"  [label="CFG: "];
+"1001711" -> "1001710"  [label="AST: "];
+"1001717" -> "1001710"  [label="AST: "];
+"1001719" -> "1001710"  [label="CFG: "];
+"1001710" -> "1001927"  [label="DDG: &ch->handlers->passwd"];
+"1001710" -> "1001927"  [label="DDG: zvalue"];
+"1001710" -> "1001927"  [label="DDG: ZVAL_COPY(&ch->handlers->passwd, zvalue)"];
+"1000120" -> "1001710"  [label="DDG: zvalue"];
+}

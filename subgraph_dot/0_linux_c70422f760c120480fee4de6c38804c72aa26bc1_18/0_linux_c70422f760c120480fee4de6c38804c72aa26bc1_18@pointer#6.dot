@@ -1,0 +1,38 @@
+digraph "0_linux_c70422f760c120480fee4de6c38804c72aa26bc1_18@pointer" {
+"1000186" [label="(Call,exp->ex_flags & NFSEXP_V4ROOT)"];
+"1000185" [label="(Call,!(exp->ex_flags & NFSEXP_V4ROOT))"];
+"1000180" [label="(Call,err == -ENOENT && !(exp->ex_flags & NFSEXP_V4ROOT))"];
+"1000196" [label="(Identifier,path)"];
+"1000186" [label="(Call,exp->ex_flags & NFSEXP_V4ROOT)"];
+"1000185" [label="(Call,!(exp->ex_flags & NFSEXP_V4ROOT))"];
+"1000187" [label="(Call,exp->ex_flags)"];
+"1000237" [label="(MethodReturn,RET)"];
+"1000180" [label="(Call,err == -ENOENT && !(exp->ex_flags & NFSEXP_V4ROOT))"];
+"1000190" [label="(Identifier,NFSEXP_V4ROOT)"];
+"1000181" [label="(Call,err == -ENOENT)"];
+"1000179" [label="(ControlStructure,if (err == -ENOENT && !(exp->ex_flags & NFSEXP_V4ROOT)))"];
+"1000192" [label="(Identifier,err)"];
+"1000186" -> "1000185"  [label="AST: "];
+"1000186" -> "1000190"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000190" -> "1000186"  [label="AST: "];
+"1000185" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000237"  [label="DDG: NFSEXP_V4ROOT"];
+"1000186" -> "1000237"  [label="DDG: exp->ex_flags"];
+"1000186" -> "1000185"  [label="DDG: exp->ex_flags"];
+"1000186" -> "1000185"  [label="DDG: NFSEXP_V4ROOT"];
+"1000185" -> "1000180"  [label="AST: "];
+"1000180" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000237"  [label="DDG: exp->ex_flags & NFSEXP_V4ROOT"];
+"1000185" -> "1000180"  [label="DDG: exp->ex_flags & NFSEXP_V4ROOT"];
+"1000180" -> "1000179"  [label="AST: "];
+"1000180" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000192" -> "1000180"  [label="CFG: "];
+"1000196" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000237"  [label="DDG: !(exp->ex_flags & NFSEXP_V4ROOT)"];
+"1000180" -> "1000237"  [label="DDG: err == -ENOENT"];
+"1000180" -> "1000237"  [label="DDG: err == -ENOENT && !(exp->ex_flags & NFSEXP_V4ROOT)"];
+"1000181" -> "1000180"  [label="DDG: err"];
+"1000181" -> "1000180"  [label="DDG: -ENOENT"];
+}

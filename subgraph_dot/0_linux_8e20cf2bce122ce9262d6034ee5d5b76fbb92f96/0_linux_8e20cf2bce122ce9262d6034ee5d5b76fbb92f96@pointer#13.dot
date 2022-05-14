@@ -1,0 +1,33 @@
+digraph "0_linux_8e20cf2bce122ce9262d6034ee5d5b76fbb92f96@pointer" {
+"1000745" [label="(Call,sysfs_remove_group(&intf->dev.kobj, &aiptek_attribute_group))"];
+"1000705" [label="(Call,sysfs_create_group(&intf->dev.kobj, &aiptek_attribute_group))"];
+"1000712" [label="(Call,&aiptek_attribute_group)"];
+"1000706" [label="(Call,&intf->dev.kobj)"];
+"1000746" [label="(Call,&intf->dev.kobj)"];
+"1000754" [label="(JumpTarget,fail3:)"];
+"1000779" [label="(MethodReturn,RET)"];
+"1000705" [label="(Call,sysfs_create_group(&intf->dev.kobj, &aiptek_attribute_group))"];
+"1000703" [label="(Call,err = sysfs_create_group(&intf->dev.kobj, &aiptek_attribute_group))"];
+"1000118" [label="(Block,)"];
+"1000752" [label="(Call,&aiptek_attribute_group)"];
+"1000745" [label="(Call,sysfs_remove_group(&intf->dev.kobj, &aiptek_attribute_group))"];
+"1000745" -> "1000118"  [label="AST: "];
+"1000745" -> "1000752"  [label="CFG: "];
+"1000746" -> "1000745"  [label="AST: "];
+"1000752" -> "1000745"  [label="AST: "];
+"1000754" -> "1000745"  [label="CFG: "];
+"1000745" -> "1000779"  [label="DDG: sysfs_remove_group(&intf->dev.kobj, &aiptek_attribute_group)"];
+"1000745" -> "1000779"  [label="DDG: &intf->dev.kobj"];
+"1000745" -> "1000779"  [label="DDG: &aiptek_attribute_group"];
+"1000705" -> "1000745"  [label="DDG: &intf->dev.kobj"];
+"1000705" -> "1000745"  [label="DDG: &aiptek_attribute_group"];
+"1000705" -> "1000703"  [label="AST: "];
+"1000705" -> "1000712"  [label="CFG: "];
+"1000706" -> "1000705"  [label="AST: "];
+"1000712" -> "1000705"  [label="AST: "];
+"1000703" -> "1000705"  [label="CFG: "];
+"1000705" -> "1000779"  [label="DDG: &aiptek_attribute_group"];
+"1000705" -> "1000779"  [label="DDG: &intf->dev.kobj"];
+"1000705" -> "1000703"  [label="DDG: &intf->dev.kobj"];
+"1000705" -> "1000703"  [label="DDG: &aiptek_attribute_group"];
+}

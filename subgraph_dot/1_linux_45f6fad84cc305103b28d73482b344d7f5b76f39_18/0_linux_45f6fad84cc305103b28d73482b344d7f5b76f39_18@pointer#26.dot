@@ -1,0 +1,26 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_18@pointer" {
+"1000633" [label="(Call,opt->opt_nflen|opt->opt_flen)"];
+"1000632" [label="(Call,!(opt->opt_nflen|opt->opt_flen))"];
+"1000641" [label="(Identifier,opt)"];
+"1000644" [label="(Identifier,connected)"];
+"1000637" [label="(Call,opt->opt_flen)"];
+"1000631" [label="(ControlStructure,if (!(opt->opt_nflen|opt->opt_flen)))"];
+"1000634" [label="(Call,opt->opt_nflen)"];
+"1000632" [label="(Call,!(opt->opt_nflen|opt->opt_flen))"];
+"1001034" [label="(MethodReturn,int)"];
+"1000633" [label="(Call,opt->opt_nflen|opt->opt_flen)"];
+"1000633" -> "1000632"  [label="AST: "];
+"1000633" -> "1000637"  [label="CFG: "];
+"1000634" -> "1000633"  [label="AST: "];
+"1000637" -> "1000633"  [label="AST: "];
+"1000632" -> "1000633"  [label="CFG: "];
+"1000633" -> "1001034"  [label="DDG: opt->opt_flen"];
+"1000633" -> "1001034"  [label="DDG: opt->opt_nflen"];
+"1000633" -> "1000632"  [label="DDG: opt->opt_nflen"];
+"1000633" -> "1000632"  [label="DDG: opt->opt_flen"];
+"1000632" -> "1000631"  [label="AST: "];
+"1000641" -> "1000632"  [label="CFG: "];
+"1000644" -> "1000632"  [label="CFG: "];
+"1000632" -> "1001034"  [label="DDG: !(opt->opt_nflen|opt->opt_flen)"];
+"1000632" -> "1001034"  [label="DDG: opt->opt_nflen|opt->opt_flen"];
+}

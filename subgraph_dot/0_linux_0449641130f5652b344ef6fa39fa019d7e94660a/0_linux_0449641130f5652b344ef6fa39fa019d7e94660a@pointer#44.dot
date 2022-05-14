@@ -1,0 +1,36 @@
+digraph "0_linux_0449641130f5652b344ef6fa39fa019d7e94660a@pointer" {
+"1001729" [label="(Call,S_ISDIR(root->i_mode))"];
+"1001728" [label="(Call,!S_ISDIR(root->i_mode))"];
+"1001727" [label="(Call,!S_ISDIR(root->i_mode) || !root->i_blocks || !root->i_size)"];
+"1002227" [label="(MethodReturn,RET)"];
+"1001728" [label="(Call,!S_ISDIR(root->i_mode))"];
+"1001730" [label="(Call,root->i_mode)"];
+"1001729" [label="(Call,S_ISDIR(root->i_mode))"];
+"1001750" [label="(Identifier,sb)"];
+"1001727" [label="(Call,!S_ISDIR(root->i_mode) || !root->i_blocks || !root->i_size)"];
+"1001736" [label="(Identifier,root)"];
+"1001744" [label="(Identifier,sb)"];
+"1001733" [label="(Call,!root->i_blocks || !root->i_size)"];
+"1001726" [label="(ControlStructure,if (!S_ISDIR(root->i_mode) || !root->i_blocks || !root->i_size))"];
+"1001729" -> "1001728"  [label="AST: "];
+"1001729" -> "1001730"  [label="CFG: "];
+"1001730" -> "1001729"  [label="AST: "];
+"1001728" -> "1001729"  [label="CFG: "];
+"1001729" -> "1002227"  [label="DDG: root->i_mode"];
+"1001729" -> "1001728"  [label="DDG: root->i_mode"];
+"1001728" -> "1001727"  [label="AST: "];
+"1001736" -> "1001728"  [label="CFG: "];
+"1001727" -> "1001728"  [label="CFG: "];
+"1001728" -> "1002227"  [label="DDG: S_ISDIR(root->i_mode)"];
+"1001728" -> "1001727"  [label="DDG: S_ISDIR(root->i_mode)"];
+"1001727" -> "1001726"  [label="AST: "];
+"1001727" -> "1001733"  [label="CFG: "];
+"1001733" -> "1001727"  [label="AST: "];
+"1001744" -> "1001727"  [label="CFG: "];
+"1001750" -> "1001727"  [label="CFG: "];
+"1001727" -> "1002227"  [label="DDG: !S_ISDIR(root->i_mode)"];
+"1001727" -> "1002227"  [label="DDG: !S_ISDIR(root->i_mode) || !root->i_blocks || !root->i_size"];
+"1001727" -> "1002227"  [label="DDG: !root->i_blocks || !root->i_size"];
+"1001733" -> "1001727"  [label="DDG: !root->i_blocks"];
+"1001733" -> "1001727"  [label="DDG: !root->i_size"];
+}

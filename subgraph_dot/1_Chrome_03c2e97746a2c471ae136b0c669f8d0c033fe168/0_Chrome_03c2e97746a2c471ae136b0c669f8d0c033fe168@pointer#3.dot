@@ -1,0 +1,34 @@
+digraph "0_Chrome_03c2e97746a2c471ae136b0c669f8d0c033fe168@pointer" {
+"1000173" [label="(Call,!allocator)"];
+"1000148" [label="(Call,* allocator = GlobalHistogramAllocator::Get())"];
+"1000172" [label="(Call,DCHECK(!allocator))"];
+"1000174" [label="(Identifier,allocator)"];
+"1000150" [label="(Call,GlobalHistogramAllocator::Get())"];
+"1000112" [label="(Block,)"];
+"1000168" [label="(Block,)"];
+"1000240" [label="(MethodReturn,HistogramBase*)"];
+"1000149" [label="(Identifier,allocator)"];
+"1000148" [label="(Call,* allocator = GlobalHistogramAllocator::Get())"];
+"1000152" [label="(Identifier,allocator)"];
+"1000172" [label="(Call,DCHECK(!allocator))"];
+"1000176" [label="(Identifier,flags_)"];
+"1000173" [label="(Call,!allocator)"];
+"1000173" -> "1000172"  [label="AST: "];
+"1000173" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000172" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000240"  [label="DDG: allocator"];
+"1000173" -> "1000172"  [label="DDG: allocator"];
+"1000148" -> "1000173"  [label="DDG: allocator"];
+"1000148" -> "1000112"  [label="AST: "];
+"1000148" -> "1000150"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000150" -> "1000148"  [label="AST: "];
+"1000152" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000240"  [label="DDG: allocator"];
+"1000148" -> "1000240"  [label="DDG: GlobalHistogramAllocator::Get()"];
+"1000172" -> "1000168"  [label="AST: "];
+"1000176" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000240"  [label="DDG: DCHECK(!allocator)"];
+"1000172" -> "1000240"  [label="DDG: !allocator"];
+}

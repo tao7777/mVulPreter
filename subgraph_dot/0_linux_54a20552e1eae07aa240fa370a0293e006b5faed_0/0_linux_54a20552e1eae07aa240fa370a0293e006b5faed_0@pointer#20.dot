@@ -1,0 +1,22 @@
+digraph "0_linux_54a20552e1eae07aa240fa370a0293e006b5faed_0@pointer" {
+"1000382" [label="(Call,kvm_run->debug.arch.dr7 = vmcs_readl(GUEST_DR7))"];
+"1000390" [label="(Call,vmcs_readl(GUEST_DR7))"];
+"1000320" [label="(Block,)"];
+"1000383" [label="(Call,kvm_run->debug.arch.dr7)"];
+"1000382" [label="(Call,kvm_run->debug.arch.dr7 = vmcs_readl(GUEST_DR7))"];
+"1000457" [label="(MethodReturn,static int)"];
+"1000390" [label="(Call,vmcs_readl(GUEST_DR7))"];
+"1000392" [label="(JumpTarget,case BP_VECTOR:)"];
+"1000391" [label="(Identifier,GUEST_DR7)"];
+"1000382" -> "1000320"  [label="AST: "];
+"1000382" -> "1000390"  [label="CFG: "];
+"1000383" -> "1000382"  [label="AST: "];
+"1000390" -> "1000382"  [label="AST: "];
+"1000392" -> "1000382"  [label="CFG: "];
+"1000382" -> "1000457"  [label="DDG: kvm_run->debug.arch.dr7"];
+"1000382" -> "1000457"  [label="DDG: vmcs_readl(GUEST_DR7)"];
+"1000390" -> "1000382"  [label="DDG: GUEST_DR7"];
+"1000390" -> "1000391"  [label="CFG: "];
+"1000391" -> "1000390"  [label="AST: "];
+"1000390" -> "1000457"  [label="DDG: GUEST_DR7"];
+}

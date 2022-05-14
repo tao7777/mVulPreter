@@ -1,0 +1,27 @@
+digraph "0_linux_b69f2292063d2caf37ca9aec7d63ded203701bf3_1@API" {
+"1000232" [label="(Call,atomic_read(&p->real_cred->user->processes))"];
+"1000231" [label="(Call,atomic_read(&p->real_cred->user->processes) >=\n\t\t\tp->signal->rlim[RLIMIT_NPROC].rlim_cur)"];
+"1000255" [label="(Identifier,CAP_SYS_ADMIN)"];
+"1001149" [label="(MethodReturn,static struct task_struct *)"];
+"1000232" [label="(Call,atomic_read(&p->real_cred->user->processes))"];
+"1000241" [label="(Call,p->signal->rlim[RLIMIT_NPROC].rlim_cur)"];
+"1000233" [label="(Call,&p->real_cred->user->processes)"];
+"1000230" [label="(ControlStructure,if (atomic_read(&p->real_cred->user->processes) >=\n\t\t\tp->signal->rlim[RLIMIT_NPROC].rlim_cur))"];
+"1000231" [label="(Call,atomic_read(&p->real_cred->user->processes) >=\n\t\t\tp->signal->rlim[RLIMIT_NPROC].rlim_cur)"];
+"1000269" [label="(Identifier,retval)"];
+"1000245" [label="(Identifier,p)"];
+"1000232" -> "1000231"  [label="AST: "];
+"1000232" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000232"  [label="AST: "];
+"1000245" -> "1000232"  [label="CFG: "];
+"1000232" -> "1001149"  [label="DDG: &p->real_cred->user->processes"];
+"1000232" -> "1000231"  [label="DDG: &p->real_cred->user->processes"];
+"1000231" -> "1000230"  [label="AST: "];
+"1000231" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000231"  [label="AST: "];
+"1000255" -> "1000231"  [label="CFG: "];
+"1000269" -> "1000231"  [label="CFG: "];
+"1000231" -> "1001149"  [label="DDG: atomic_read(&p->real_cred->user->processes) >=\n\t\t\tp->signal->rlim[RLIMIT_NPROC].rlim_cur"];
+"1000231" -> "1001149"  [label="DDG: atomic_read(&p->real_cred->user->processes)"];
+"1000231" -> "1001149"  [label="DDG: p->signal->rlim[RLIMIT_NPROC].rlim_cur"];
+}

@@ -1,0 +1,31 @@
+digraph "0_qemu_ff82911cd3f69f028f2537825c9720ff78bc3f19_1@API" {
+"1000193" [label="(Call,do_read ? G_IO_IN : G_IO_OUT)"];
+"1000109" [label="(MethodParameterIn,bool do_read)"];
+"1000195" [label="(Identifier,G_IO_IN)"];
+"1000109" [label="(MethodParameterIn,bool do_read)"];
+"1000236" [label="(MethodReturn,ssize_t)"];
+"1000194" [label="(Identifier,do_read)"];
+"1000176" [label="(Call,qio_channel_wait(ioc,\n                                 do_read ? G_IO_IN : G_IO_OUT))"];
+"1000191" [label="(Call,qio_channel_wait(ioc,\n                                 do_read ? G_IO_IN : G_IO_OUT))"];
+"1000193" [label="(Call,do_read ? G_IO_IN : G_IO_OUT)"];
+"1000220" [label="(Call,do_read && len == 0)"];
+"1000196" [label="(Identifier,G_IO_OUT)"];
+"1000178" [label="(Call,do_read ? G_IO_IN : G_IO_OUT)"];
+"1000193" -> "1000191"  [label="AST: "];
+"1000193" -> "1000195"  [label="CFG: "];
+"1000193" -> "1000196"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000195" -> "1000193"  [label="AST: "];
+"1000196" -> "1000193"  [label="AST: "];
+"1000191" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000236"  [label="DDG: G_IO_OUT"];
+"1000193" -> "1000236"  [label="DDG: do_read"];
+"1000193" -> "1000236"  [label="DDG: G_IO_IN"];
+"1000109" -> "1000193"  [label="DDG: do_read"];
+"1000109" -> "1000104"  [label="AST: "];
+"1000109" -> "1000236"  [label="DDG: do_read"];
+"1000109" -> "1000176"  [label="DDG: do_read"];
+"1000109" -> "1000178"  [label="DDG: do_read"];
+"1000109" -> "1000191"  [label="DDG: do_read"];
+"1000109" -> "1000220"  [label="DDG: do_read"];
+}

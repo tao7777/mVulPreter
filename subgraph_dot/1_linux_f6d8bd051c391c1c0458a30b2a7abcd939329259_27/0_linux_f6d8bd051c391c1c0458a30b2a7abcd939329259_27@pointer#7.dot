@@ -1,0 +1,30 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_27@pointer" {
+"1000284" [label="(Call,ipc.opt = inet->opt)"];
+"1000535" [label="(Call,kfree(ipc.opt))"];
+"1000285" [label="(Call,ipc.opt)"];
+"1000288" [label="(Call,inet->opt)"];
+"1000536" [label="(Call,ipc.opt)"];
+"1000533" [label="(ControlStructure,if (free))"];
+"1000540" [label="(Identifier,rt)"];
+"1000570" [label="(MethodReturn,static int)"];
+"1000293" [label="(Identifier,ipc)"];
+"1000279" [label="(ControlStructure,if (!ipc.opt))"];
+"1000284" [label="(Call,ipc.opt = inet->opt)"];
+"1000535" [label="(Call,kfree(ipc.opt))"];
+"1000280" [label="(Call,!ipc.opt)"];
+"1000284" -> "1000279"  [label="AST: "];
+"1000284" -> "1000288"  [label="CFG: "];
+"1000285" -> "1000284"  [label="AST: "];
+"1000288" -> "1000284"  [label="AST: "];
+"1000293" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000570"  [label="DDG: ipc.opt"];
+"1000284" -> "1000570"  [label="DDG: inet->opt"];
+"1000284" -> "1000535"  [label="DDG: ipc.opt"];
+"1000535" -> "1000533"  [label="AST: "];
+"1000535" -> "1000536"  [label="CFG: "];
+"1000536" -> "1000535"  [label="AST: "];
+"1000540" -> "1000535"  [label="CFG: "];
+"1000535" -> "1000570"  [label="DDG: ipc.opt"];
+"1000535" -> "1000570"  [label="DDG: kfree(ipc.opt)"];
+"1000280" -> "1000535"  [label="DDG: ipc.opt"];
+}

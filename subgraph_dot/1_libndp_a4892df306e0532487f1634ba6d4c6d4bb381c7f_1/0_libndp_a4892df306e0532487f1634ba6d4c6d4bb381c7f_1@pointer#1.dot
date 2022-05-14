@@ -1,0 +1,31 @@
+digraph "0_libndp_a4892df306e0532487f1634ba6d4c6d4bb381c7f_1@pointer" {
+"1000143" [label="(Call,err(ndp, \"Failed to receive message\"))"];
+"1000101" [label="(MethodParameterIn,struct ndp *ndp)"];
+"1000144" [label="(Identifier,ndp)"];
+"1000229" [label="(Call,ndp_call_handlers(ndp, msg))"];
+"1000203" [label="(Call,warn(ndp, \"rcvd invalid ND message\"))"];
+"1000143" [label="(Call,err(ndp, \"Failed to receive message\"))"];
+"1000146" [label="(ControlStructure,goto free_msg;)"];
+"1000147" [label="(Call,dbg(ndp, \"rcvd from: %s, ifindex: %u\",\n\t\t str_in6_addr(&msg->addrto), msg->ifindex))"];
+"1000142" [label="(Block,)"];
+"1000101" [label="(MethodParameterIn,struct ndp *ndp)"];
+"1000167" [label="(Call,warn(ndp, \"rcvd icmp6 packet too short (%luB)\", len))"];
+"1000145" [label="(Literal,\"Failed to receive message\")"];
+"1000237" [label="(MethodReturn,static int)"];
+"1000210" [label="(Call,dbg(ndp, \"rcvd %s, len: %zuB\",\n\t\t ndp_msg_type_info(msg_type)->strabbr, len))"];
+"1000143" -> "1000142"  [label="AST: "];
+"1000143" -> "1000145"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000145" -> "1000143"  [label="AST: "];
+"1000146" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000237"  [label="DDG: "];
+"1000143" -> "1000237"  [label="DDG: "];
+"1000101" -> "1000143"  [label="DDG: "];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000237"  [label="DDG: "];
+"1000101" -> "1000147"  [label="DDG: "];
+"1000101" -> "1000167"  [label="DDG: "];
+"1000101" -> "1000203"  [label="DDG: "];
+"1000101" -> "1000210"  [label="DDG: "];
+"1000101" -> "1000229"  [label="DDG: "];
+}

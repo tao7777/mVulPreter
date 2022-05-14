@@ -1,0 +1,27 @@
+digraph "1_linux_4ff67b720c02c36e54d55b88c2931879b7db1cd2@pointer" {
+"1000111" [label="(Call,strncmp(ses->userName, username, MAX_USERNAME_SIZE))"];
+"1000102" [label="(MethodParameterIn,char *username)"];
+"1000102" [label="(MethodParameterIn,char *username)"];
+"1000117" [label="(ControlStructure,continue;)"];
+"1000110" [label="(ControlStructure,if (strncmp(ses->userName, username, MAX_USERNAME_SIZE)))"];
+"1000112" [label="(Call,ses->userName)"];
+"1000111" [label="(Call,strncmp(ses->userName, username, MAX_USERNAME_SIZE))"];
+"1000120" [label="(Identifier,ses)"];
+"1000132" [label="(MethodReturn,RET)"];
+"1000116" [label="(Identifier,MAX_USERNAME_SIZE)"];
+"1000115" [label="(Identifier,username)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000116"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000115" -> "1000111"  [label="AST: "];
+"1000116" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="CFG: "];
+"1000120" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000132"  [label="DDG: username"];
+"1000111" -> "1000132"  [label="DDG: ses->userName"];
+"1000111" -> "1000132"  [label="DDG: strncmp(ses->userName, username, MAX_USERNAME_SIZE)"];
+"1000111" -> "1000132"  [label="DDG: MAX_USERNAME_SIZE"];
+"1000102" -> "1000111"  [label="DDG: username"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000132"  [label="DDG: username"];
+}

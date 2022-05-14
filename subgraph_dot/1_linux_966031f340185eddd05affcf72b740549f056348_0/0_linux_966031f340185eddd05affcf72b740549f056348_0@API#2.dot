@@ -1,0 +1,32 @@
+digraph "0_linux_966031f340185eddd05affcf72b740549f056348_0@API" {
+"1000188" [label="(Call,ldata->commit_head = ldata->read_head)"];
+"1000165" [label="(Call,ldata->read_head - 1)"];
+"1000169" [label="(Literal,1)"];
+"1000189" [label="(Call,ldata->commit_head)"];
+"1000127" [label="(Block,)"];
+"1000164" [label="(Call,(ldata->read_head - 1) & (N_TTY_BUF_SIZE - 1))"];
+"1000176" [label="(Call,ldata->canon_head = ldata->read_head)"];
+"1000171" [label="(Identifier,N_TTY_BUF_SIZE)"];
+"1000166" [label="(Call,ldata->read_head)"];
+"1000197" [label="(Identifier,ldata)"];
+"1000165" [label="(Call,ldata->read_head - 1)"];
+"1000461" [label="(MethodReturn,static void)"];
+"1000188" [label="(Call,ldata->commit_head = ldata->read_head)"];
+"1000192" [label="(Call,ldata->read_head)"];
+"1000188" -> "1000127"  [label="AST: "];
+"1000188" -> "1000192"  [label="CFG: "];
+"1000189" -> "1000188"  [label="AST: "];
+"1000192" -> "1000188"  [label="AST: "];
+"1000197" -> "1000188"  [label="CFG: "];
+"1000188" -> "1000461"  [label="DDG: ldata->commit_head"];
+"1000188" -> "1000461"  [label="DDG: ldata->read_head"];
+"1000165" -> "1000188"  [label="DDG: ldata->read_head"];
+"1000165" -> "1000164"  [label="AST: "];
+"1000165" -> "1000169"  [label="CFG: "];
+"1000166" -> "1000165"  [label="AST: "];
+"1000169" -> "1000165"  [label="AST: "];
+"1000171" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000164"  [label="DDG: ldata->read_head"];
+"1000165" -> "1000164"  [label="DDG: 1"];
+"1000165" -> "1000176"  [label="DDG: ldata->read_head"];
+}

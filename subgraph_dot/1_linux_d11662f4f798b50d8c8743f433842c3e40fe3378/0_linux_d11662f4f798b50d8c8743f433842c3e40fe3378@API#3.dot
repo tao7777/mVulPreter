@@ -1,0 +1,26 @@
+digraph "0_linux_d11662f4f798b50d8c8743f433842c3e40fe3378@API" {
+"1000243" [label="(Call,mutex_lock(&tu->ioctl_lock))"];
+"1000285" [label="(Call,mutex_unlock(&tu->ioctl_lock))"];
+"1000243" [label="(Call,mutex_lock(&tu->ioctl_lock))"];
+"1000250" [label="(Identifier,tu)"];
+"1000243" [label="(Call,mutex_lock(&tu->ioctl_lock))"];
+"1000285" [label="(Call,mutex_unlock(&tu->ioctl_lock))"];
+"1000286" [label="(Call,&tu->ioctl_lock)"];
+"1000319" [label="(MethodReturn,static ssize_t)"];
+"1000293" [label="(Identifier,tu)"];
+"1000145" [label="(Block,)"];
+"1000244" [label="(Call,&tu->ioctl_lock)"];
+"1000243" -> "1000145"  [label="AST: "];
+"1000243" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000250" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000319"  [label="DDG: mutex_lock(&tu->ioctl_lock)"];
+"1000285" -> "1000243"  [label="DDG: &tu->ioctl_lock"];
+"1000243" -> "1000285"  [label="DDG: &tu->ioctl_lock"];
+"1000285" -> "1000145"  [label="AST: "];
+"1000285" -> "1000286"  [label="CFG: "];
+"1000286" -> "1000285"  [label="AST: "];
+"1000293" -> "1000285"  [label="CFG: "];
+"1000285" -> "1000319"  [label="DDG: &tu->ioctl_lock"];
+"1000285" -> "1000319"  [label="DDG: mutex_unlock(&tu->ioctl_lock)"];
+}

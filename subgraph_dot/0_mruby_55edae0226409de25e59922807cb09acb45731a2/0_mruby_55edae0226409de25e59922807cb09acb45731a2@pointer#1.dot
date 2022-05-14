@@ -1,0 +1,27 @@
+digraph "0_mruby_55edae0226409de25e59922807cb09acb45731a2@pointer" {
+"1000161" [label="(Call,p->flags |= mrb_obj_ptr(self)->flags & MRB_FLAG_IS_FROZEN)"];
+"1000165" [label="(Call,mrb_obj_ptr(self)->flags & MRB_FLAG_IS_FROZEN)"];
+"1000166" [label="(Call,mrb_obj_ptr(self)->flags)"];
+"1000170" [label="(Identifier,MRB_FLAG_IS_FROZEN)"];
+"1000173" [label="(MethodReturn,RET)"];
+"1000172" [label="(Identifier,clone)"];
+"1000162" [label="(Call,p->flags)"];
+"1000161" [label="(Call,p->flags |= mrb_obj_ptr(self)->flags & MRB_FLAG_IS_FROZEN)"];
+"1000165" [label="(Call,mrb_obj_ptr(self)->flags & MRB_FLAG_IS_FROZEN)"];
+"1000103" [label="(Block,)"];
+"1000161" -> "1000103"  [label="AST: "];
+"1000161" -> "1000165"  [label="CFG: "];
+"1000162" -> "1000161"  [label="AST: "];
+"1000165" -> "1000161"  [label="AST: "];
+"1000172" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000173"  [label="DDG: p->flags"];
+"1000161" -> "1000173"  [label="DDG: p->flags |= mrb_obj_ptr(self)->flags & MRB_FLAG_IS_FROZEN"];
+"1000161" -> "1000173"  [label="DDG: mrb_obj_ptr(self)->flags & MRB_FLAG_IS_FROZEN"];
+"1000165" -> "1000161"  [label="DDG: mrb_obj_ptr(self)->flags"];
+"1000165" -> "1000161"  [label="DDG: MRB_FLAG_IS_FROZEN"];
+"1000165" -> "1000170"  [label="CFG: "];
+"1000166" -> "1000165"  [label="AST: "];
+"1000170" -> "1000165"  [label="AST: "];
+"1000165" -> "1000173"  [label="DDG: mrb_obj_ptr(self)->flags"];
+"1000165" -> "1000173"  [label="DDG: MRB_FLAG_IS_FROZEN"];
+}

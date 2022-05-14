@@ -1,0 +1,32 @@
+digraph "0_linux_744692dc059845b2a3022119871846e74d4f6e11_11@pointer" {
+"1000287" [label="(Call,ext4_should_retry_alloc(inode->i_sb, &retries))"];
+"1000282" [label="(Call,ret == -ENOSPC && ext4_should_retry_alloc(inode->i_sb, &retries))"];
+"1000297" [label="(MethodReturn,static int)"];
+"1000281" [label="(ControlStructure,if (ret == -ENOSPC && ext4_should_retry_alloc(inode->i_sb, &retries)))"];
+"1000283" [label="(Call,ret == -ENOSPC)"];
+"1000287" [label="(Call,ext4_should_retry_alloc(inode->i_sb, &retries))"];
+"1000288" [label="(Call,inode->i_sb)"];
+"1000293" [label="(ControlStructure,goto retry;)"];
+"1000294" [label="(JumpTarget,out:)"];
+"1000291" [label="(Call,&retries)"];
+"1000282" [label="(Call,ret == -ENOSPC && ext4_should_retry_alloc(inode->i_sb, &retries))"];
+"1000287" -> "1000282"  [label="AST: "];
+"1000287" -> "1000291"  [label="CFG: "];
+"1000288" -> "1000287"  [label="AST: "];
+"1000291" -> "1000287"  [label="AST: "];
+"1000282" -> "1000287"  [label="CFG: "];
+"1000287" -> "1000297"  [label="DDG: &retries"];
+"1000287" -> "1000297"  [label="DDG: inode->i_sb"];
+"1000287" -> "1000282"  [label="DDG: inode->i_sb"];
+"1000287" -> "1000282"  [label="DDG: &retries"];
+"1000282" -> "1000281"  [label="AST: "];
+"1000282" -> "1000283"  [label="CFG: "];
+"1000283" -> "1000282"  [label="AST: "];
+"1000293" -> "1000282"  [label="CFG: "];
+"1000294" -> "1000282"  [label="CFG: "];
+"1000282" -> "1000297"  [label="DDG: ret == -ENOSPC && ext4_should_retry_alloc(inode->i_sb, &retries)"];
+"1000282" -> "1000297"  [label="DDG: ext4_should_retry_alloc(inode->i_sb, &retries)"];
+"1000282" -> "1000297"  [label="DDG: ret == -ENOSPC"];
+"1000283" -> "1000282"  [label="DDG: ret"];
+"1000283" -> "1000282"  [label="DDG: -ENOSPC"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_c919a3069c775c1c876bec55e00b2305d5125caa@pointer" {
+"1000323" [label="(Call,usb_kill_anchored_urbs(&dev->rx_submitted))"];
+"1000248" [label="(Call,init_usb_anchor(&dev->rx_submitted))"];
+"1000329" [label="(Identifier,dev)"];
+"1000249" [label="(Call,&dev->rx_submitted)"];
+"1000343" [label="(MethodReturn,static int)"];
+"1000296" [label="(Block,)"];
+"1000107" [label="(Block,)"];
+"1000324" [label="(Call,&dev->rx_submitted)"];
+"1000256" [label="(Identifier,dev)"];
+"1000323" [label="(Call,usb_kill_anchored_urbs(&dev->rx_submitted))"];
+"1000248" [label="(Call,init_usb_anchor(&dev->rx_submitted))"];
+"1000323" -> "1000296"  [label="AST: "];
+"1000323" -> "1000324"  [label="CFG: "];
+"1000324" -> "1000323"  [label="AST: "];
+"1000329" -> "1000323"  [label="CFG: "];
+"1000323" -> "1000343"  [label="DDG: &dev->rx_submitted"];
+"1000323" -> "1000343"  [label="DDG: usb_kill_anchored_urbs(&dev->rx_submitted)"];
+"1000248" -> "1000323"  [label="DDG: &dev->rx_submitted"];
+"1000248" -> "1000107"  [label="AST: "];
+"1000248" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000256" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000343"  [label="DDG: init_usb_anchor(&dev->rx_submitted)"];
+"1000248" -> "1000343"  [label="DDG: &dev->rx_submitted"];
+}

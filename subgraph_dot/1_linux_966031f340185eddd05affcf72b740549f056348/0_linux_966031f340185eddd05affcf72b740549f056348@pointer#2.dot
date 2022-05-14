@@ -1,0 +1,24 @@
+digraph "0_linux_966031f340185eddd05affcf72b740549f056348@pointer" {
+"1000142" [label="(Call,up_write(&tty->termios_rwsem))"];
+"1000125" [label="(Call,down_write(&tty->termios_rwsem))"];
+"1000115" [label="(Block,)"];
+"1000142" [label="(Call,up_write(&tty->termios_rwsem))"];
+"1000143" [label="(Call,&tty->termios_rwsem)"];
+"1000160" [label="(MethodReturn,static int)"];
+"1000149" [label="(Identifier,retval)"];
+"1000125" [label="(Call,down_write(&tty->termios_rwsem))"];
+"1000126" [label="(Call,&tty->termios_rwsem)"];
+"1000132" [label="(Identifier,tty)"];
+"1000142" -> "1000115"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000149" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000160"  [label="DDG: up_write(&tty->termios_rwsem)"];
+"1000142" -> "1000160"  [label="DDG: &tty->termios_rwsem"];
+"1000125" -> "1000142"  [label="DDG: &tty->termios_rwsem"];
+"1000125" -> "1000115"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000160"  [label="DDG: down_write(&tty->termios_rwsem)"];
+}

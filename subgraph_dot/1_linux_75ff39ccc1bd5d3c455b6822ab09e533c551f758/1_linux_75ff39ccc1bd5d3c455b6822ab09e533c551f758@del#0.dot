@@ -1,0 +1,35 @@
+digraph "1_linux_75ff39ccc1bd5d3c455b6822ab09e533c551f758@del" {
+"1000139" [label="(Call,challenge_count = 0)"];
+"1000144" [label="(Call,++challenge_count)"];
+"1000143" [label="(Call,++challenge_count <= sysctl_tcp_challenge_ack_limit)"];
+"1000139" [label="(Call,challenge_count = 0)"];
+"1000145" [label="(Identifier,challenge_count)"];
+"1000135" [label="(Block,)"];
+"1000141" [label="(Literal,0)"];
+"1000146" [label="(Identifier,sysctl_tcp_challenge_ack_limit)"];
+"1000150" [label="(Identifier,sk)"];
+"1000142" [label="(ControlStructure,if (++challenge_count <= sysctl_tcp_challenge_ack_limit))"];
+"1000154" [label="(MethodReturn,static void)"];
+"1000144" [label="(Call,++challenge_count)"];
+"1000143" [label="(Call,++challenge_count <= sysctl_tcp_challenge_ack_limit)"];
+"1000140" [label="(Identifier,challenge_count)"];
+"1000139" -> "1000135"  [label="AST: "];
+"1000139" -> "1000141"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000141" -> "1000139"  [label="AST: "];
+"1000145" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000144"  [label="DDG: challenge_count"];
+"1000144" -> "1000143"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000154"  [label="DDG: challenge_count"];
+"1000144" -> "1000143"  [label="DDG: challenge_count"];
+"1000143" -> "1000142"  [label="AST: "];
+"1000143" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000143"  [label="AST: "];
+"1000150" -> "1000143"  [label="CFG: "];
+"1000154" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000154"  [label="DDG: sysctl_tcp_challenge_ack_limit"];
+"1000143" -> "1000154"  [label="DDG: ++challenge_count <= sysctl_tcp_challenge_ack_limit"];
+}

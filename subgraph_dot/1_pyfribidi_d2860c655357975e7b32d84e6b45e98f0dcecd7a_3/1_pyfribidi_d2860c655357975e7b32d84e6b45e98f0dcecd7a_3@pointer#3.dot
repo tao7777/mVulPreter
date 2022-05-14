@@ -1,0 +1,33 @@
+digraph "1_pyfribidi_d2860c655357975e7b32d84e6b45e98f0dcecd7a_3@pointer" {
+"1000124" [label="(Call,*visual = NULL)"];
+"1000240" [label="(Call,PyMem_Del (visual))"];
+"1000243" [label="(Identifier,visual_utf8)"];
+"1000118" [label="(Block,)"];
+"1000129" [label="(Identifier,visual_utf8)"];
+"1000125" [label="(Identifier,visual)"];
+"1000124" [label="(Call,*visual = NULL)"];
+"1000223" [label="(Call,fribidi_unicode_to_utf8 (visual, unicode_length, visual_utf8))"];
+"1000241" [label="(Identifier,visual)"];
+"1000246" [label="(MethodReturn,RET)"];
+"1000126" [label="(Identifier,NULL)"];
+"1000181" [label="(Call,fribidi_log2vis (logical, unicode_length, &base_direction, visual,\n\t\t\t      NULL, NULL, NULL))"];
+"1000240" [label="(Call,PyMem_Del (visual))"];
+"1000197" [label="(Call,fribidi_remove_bidi_marks (visual, unicode_length, NULL, NULL, NULL))"];
+"1000163" [label="(Call,visual == NULL)"];
+"1000124" -> "1000118"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="AST: "];
+"1000129" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000240"  [label="DDG: visual"];
+"1000240" -> "1000118"  [label="AST: "];
+"1000240" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000243" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000246"  [label="DDG: PyMem_Del (visual)"];
+"1000240" -> "1000246"  [label="DDG: visual"];
+"1000163" -> "1000240"  [label="DDG: visual"];
+"1000181" -> "1000240"  [label="DDG: visual"];
+"1000223" -> "1000240"  [label="DDG: visual"];
+"1000197" -> "1000240"  [label="DDG: visual"];
+}

@@ -1,0 +1,38 @@
+digraph "0_Chrome_0aca6bc05a263ea9eafee515fc6ba14da94c1964_0@pointer" {
+"1000123" [label="(Call,!contents)"];
+"1000119" [label="(Call,* contents = browser->tab_strip_model()->GetActiveWebContents())"];
+"1000142" [label="(Return,return contents;)"];
+"1000122" [label="(ControlStructure,if (!contents))"];
+"1000128" [label="(Identifier,error)"];
+"1000135" [label="(Call,contents->GetLastCommittedURL())"];
+"1000144" [label="(MethodReturn,WebContents*)"];
+"1000121" [label="(Call,browser->tab_strip_model()->GetActiveWebContents())"];
+"1000142" [label="(Return,return contents;)"];
+"1000119" [label="(Call,* contents = browser->tab_strip_model()->GetActiveWebContents())"];
+"1000143" [label="(Identifier,contents)"];
+"1000103" [label="(Block,)"];
+"1000120" [label="(Identifier,contents)"];
+"1000124" [label="(Identifier,contents)"];
+"1000123" [label="(Call,!contents)"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000128" -> "1000123"  [label="CFG: "];
+"1000135" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000144"  [label="DDG: !contents"];
+"1000123" -> "1000144"  [label="DDG: contents"];
+"1000119" -> "1000123"  [label="DDG: contents"];
+"1000123" -> "1000142"  [label="DDG: contents"];
+"1000119" -> "1000103"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000124" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000144"  [label="DDG: browser->tab_strip_model()->GetActiveWebContents()"];
+"1000142" -> "1000103"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000144"  [label="DDG: <RET>"];
+"1000143" -> "1000142"  [label="DDG: contents"];
+}

@@ -1,0 +1,35 @@
+digraph "0_linux_6caabe7f197d3466d238f70915d65301f1716626@pointer" {
+"1000184" [label="(Call,timer_setup(&hsr->prune_timer, hsr_prune_nodes, 0))"];
+"1000250" [label="(Call,mod_timer(&hsr->prune_timer, jiffies + msecs_to_jiffies(PRUNE_PERIOD)))"];
+"1000272" [label="(MethodReturn,int)"];
+"1000109" [label="(Block,)"];
+"1000250" [label="(Call,mod_timer(&hsr->prune_timer, jiffies + msecs_to_jiffies(PRUNE_PERIOD)))"];
+"1000260" [label="(Literal,0)"];
+"1000189" [label="(Identifier,hsr_prune_nodes)"];
+"1000251" [label="(Call,&hsr->prune_timer)"];
+"1000255" [label="(Call,jiffies + msecs_to_jiffies(PRUNE_PERIOD))"];
+"1000184" [label="(Call,timer_setup(&hsr->prune_timer, hsr_prune_nodes, 0))"];
+"1000190" [label="(Literal,0)"];
+"1000185" [label="(Call,&hsr->prune_timer)"];
+"1000193" [label="(Identifier,hsr)"];
+"1000257" [label="(Call,msecs_to_jiffies(PRUNE_PERIOD))"];
+"1000184" -> "1000109"  [label="AST: "];
+"1000184" -> "1000190"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000189" -> "1000184"  [label="AST: "];
+"1000190" -> "1000184"  [label="AST: "];
+"1000193" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000272"  [label="DDG: &hsr->prune_timer"];
+"1000184" -> "1000272"  [label="DDG: hsr_prune_nodes"];
+"1000184" -> "1000272"  [label="DDG: timer_setup(&hsr->prune_timer, hsr_prune_nodes, 0)"];
+"1000184" -> "1000250"  [label="DDG: &hsr->prune_timer"];
+"1000250" -> "1000109"  [label="AST: "];
+"1000250" -> "1000255"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000255" -> "1000250"  [label="AST: "];
+"1000260" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000272"  [label="DDG: jiffies + msecs_to_jiffies(PRUNE_PERIOD)"];
+"1000250" -> "1000272"  [label="DDG: mod_timer(&hsr->prune_timer, jiffies + msecs_to_jiffies(PRUNE_PERIOD))"];
+"1000250" -> "1000272"  [label="DDG: &hsr->prune_timer"];
+"1000257" -> "1000250"  [label="DDG: PRUNE_PERIOD"];
+}

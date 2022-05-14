@@ -1,0 +1,22 @@
+digraph "0_linux_d4fdf8ba0e5808ba9ad6b44337783bd9935e0982@API" {
+"1000250" [label="(Call,!f2fs_readonly(sbi->sb))"];
+"1000251" [label="(Call,f2fs_readonly(sbi->sb))"];
+"1000252" [label="(Call,sbi->sb)"];
+"1000250" [label="(Call,!f2fs_readonly(sbi->sb))"];
+"1000249" [label="(ControlStructure,if (!f2fs_readonly(sbi->sb)))"];
+"1000257" [label="(Identifier,err)"];
+"1000265" [label="(Identifier,err)"];
+"1000251" [label="(Call,f2fs_readonly(sbi->sb))"];
+"1000312" [label="(MethodReturn,int)"];
+"1000250" -> "1000249"  [label="AST: "];
+"1000250" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000257" -> "1000250"  [label="CFG: "];
+"1000265" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000312"  [label="DDG: f2fs_readonly(sbi->sb)"];
+"1000250" -> "1000312"  [label="DDG: !f2fs_readonly(sbi->sb)"];
+"1000251" -> "1000250"  [label="DDG: sbi->sb"];
+"1000251" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000251" -> "1000312"  [label="DDG: sbi->sb"];
+}

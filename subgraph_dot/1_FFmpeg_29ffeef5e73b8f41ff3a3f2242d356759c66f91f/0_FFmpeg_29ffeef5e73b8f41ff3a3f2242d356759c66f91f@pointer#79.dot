@@ -1,0 +1,28 @@
+digraph "0_FFmpeg_29ffeef5e73b8f41ff3a3f2242d356759c66f91f@pointer" {
+"1002182" [label="(Call,!h->sps.delta_pic_order_always_zero_flag)"];
+"1002174" [label="(Call,h->sps.poc_type == 1 && !h->sps.delta_pic_order_always_zero_flag)"];
+"1002182" [label="(Call,!h->sps.delta_pic_order_always_zero_flag)"];
+"1002174" [label="(Call,h->sps.poc_type == 1 && !h->sps.delta_pic_order_always_zero_flag)"];
+"1002192" [label="(Identifier,h)"];
+"1002173" [label="(ControlStructure,if (h->sps.poc_type == 1 && !h->sps.delta_pic_order_always_zero_flag))"];
+"1002183" [label="(Call,h->sps.delta_pic_order_always_zero_flag)"];
+"1003435" [label="(MethodReturn,static int)"];
+"1002175" [label="(Call,h->sps.poc_type == 1)"];
+"1002226" [label="(Identifier,h)"];
+"1002182" -> "1002174"  [label="AST: "];
+"1002182" -> "1002183"  [label="CFG: "];
+"1002183" -> "1002182"  [label="AST: "];
+"1002174" -> "1002182"  [label="CFG: "];
+"1002182" -> "1003435"  [label="DDG: h->sps.delta_pic_order_always_zero_flag"];
+"1002182" -> "1002174"  [label="DDG: h->sps.delta_pic_order_always_zero_flag"];
+"1002174" -> "1002173"  [label="AST: "];
+"1002174" -> "1002175"  [label="CFG: "];
+"1002175" -> "1002174"  [label="AST: "];
+"1002192" -> "1002174"  [label="CFG: "];
+"1002226" -> "1002174"  [label="CFG: "];
+"1002174" -> "1003435"  [label="DDG: h->sps.poc_type == 1"];
+"1002174" -> "1003435"  [label="DDG: !h->sps.delta_pic_order_always_zero_flag"];
+"1002174" -> "1003435"  [label="DDG: h->sps.poc_type == 1 && !h->sps.delta_pic_order_always_zero_flag"];
+"1002175" -> "1002174"  [label="DDG: h->sps.poc_type"];
+"1002175" -> "1002174"  [label="DDG: 1"];
+}

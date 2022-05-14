@@ -1,0 +1,33 @@
+digraph "0_lxc_592fd47a6245508b79fe6ac819fe6d3b2c1289be_6@pointer" {
+"1000102" [label="(MethodParameterIn,struct mntent *mntent)"];
+"1000218" [label="(Call,mount_entry_on_generic(mntent, path, rootfs->mount))"];
+"1000217" [label="(Return,return mount_entry_on_generic(mntent, path, rootfs->mount);)"];
+"1000102" [label="(MethodParameterIn,struct mntent *mntent)"];
+"1000219" [label="(Identifier,mntent)"];
+"1000105" [label="(Block,)"];
+"1000217" [label="(Return,return mount_entry_on_generic(mntent, path, rootfs->mount);)"];
+"1000190" [label="(Call,snprintf(path, MAXPATHLEN, \"%s/%s\", rootfs->mount,\n\t\t aux + offset))"];
+"1000220" [label="(Identifier,path)"];
+"1000224" [label="(MethodReturn,static int)"];
+"1000218" [label="(Call,mount_entry_on_generic(mntent, path, rootfs->mount))"];
+"1000221" [label="(Call,rootfs->mount)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000224"  [label="DDG: mntent"];
+"1000102" -> "1000218"  [label="DDG: mntent"];
+"1000218" -> "1000217"  [label="AST: "];
+"1000218" -> "1000221"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000220" -> "1000218"  [label="AST: "];
+"1000221" -> "1000218"  [label="AST: "];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000224"  [label="DDG: mntent"];
+"1000218" -> "1000224"  [label="DDG: rootfs->mount"];
+"1000218" -> "1000224"  [label="DDG: mount_entry_on_generic(mntent, path, rootfs->mount)"];
+"1000218" -> "1000224"  [label="DDG: path"];
+"1000218" -> "1000217"  [label="DDG: mount_entry_on_generic(mntent, path, rootfs->mount)"];
+"1000190" -> "1000218"  [label="DDG: path"];
+"1000190" -> "1000218"  [label="DDG: rootfs->mount"];
+"1000217" -> "1000105"  [label="AST: "];
+"1000224" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000224"  [label="DDG: <RET>"];
+}

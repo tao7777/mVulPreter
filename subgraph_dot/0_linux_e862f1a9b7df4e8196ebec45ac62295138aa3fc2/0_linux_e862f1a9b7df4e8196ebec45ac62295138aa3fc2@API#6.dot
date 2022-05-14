@@ -1,0 +1,34 @@
+digraph "0_linux_e862f1a9b7df4e8196ebec45ac62295138aa3fc2@API" {
+"1000260" [label="(Call,!vcc->dev || !vcc->dev->ops->getsockopt)"];
+"1000261" [label="(Call,!vcc->dev)"];
+"1000265" [label="(Call,!vcc->dev->ops->getsockopt)"];
+"1000275" [label="(Identifier,EINVAL)"];
+"1000259" [label="(ControlStructure,if (!vcc->dev || !vcc->dev->ops->getsockopt))"];
+"1000260" [label="(Call,!vcc->dev || !vcc->dev->ops->getsockopt)"];
+"1000269" [label="(Identifier,vcc)"];
+"1000278" [label="(Identifier,vcc)"];
+"1000261" [label="(Call,!vcc->dev)"];
+"1000266" [label="(Call,vcc->dev->ops->getsockopt)"];
+"1000283" [label="(MethodReturn,int)"];
+"1000262" [label="(Call,vcc->dev)"];
+"1000265" [label="(Call,!vcc->dev->ops->getsockopt)"];
+"1000260" -> "1000259"  [label="AST: "];
+"1000260" -> "1000261"  [label="CFG: "];
+"1000260" -> "1000265"  [label="CFG: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000265" -> "1000260"  [label="AST: "];
+"1000275" -> "1000260"  [label="CFG: "];
+"1000278" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000283"  [label="DDG: !vcc->dev || !vcc->dev->ops->getsockopt"];
+"1000260" -> "1000283"  [label="DDG: !vcc->dev->ops->getsockopt"];
+"1000260" -> "1000283"  [label="DDG: !vcc->dev"];
+"1000261" -> "1000260"  [label="DDG: vcc->dev"];
+"1000265" -> "1000260"  [label="DDG: vcc->dev->ops->getsockopt"];
+"1000261" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000269" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000283"  [label="DDG: vcc->dev"];
+"1000265" -> "1000266"  [label="CFG: "];
+"1000266" -> "1000265"  [label="AST: "];
+"1000265" -> "1000283"  [label="DDG: vcc->dev->ops->getsockopt"];
+}

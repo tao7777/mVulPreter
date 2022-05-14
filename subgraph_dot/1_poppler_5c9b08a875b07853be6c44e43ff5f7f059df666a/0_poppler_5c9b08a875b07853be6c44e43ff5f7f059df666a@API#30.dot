@@ -1,0 +1,26 @@
+digraph "0_poppler_5c9b08a875b07853be6c44e43ff5f7f059df666a@API" {
+"1000224" [label="(Call,!doc->isEncrypted())"];
+"1000222" [label="(Call,doc->isOk() && !doc->isEncrypted())"];
+"1001120" [label="(MethodReturn,int)"];
+"1000256" [label="(Call,doc->isOk())"];
+"1000221" [label="(ControlStructure,if (doc->isOk() && !doc->isEncrypted()))"];
+"1000225" [label="(Call,doc->isEncrypted())"];
+"1000223" [label="(Call,doc->isOk())"];
+"1000224" [label="(Call,!doc->isEncrypted())"];
+"1000222" [label="(Call,doc->isOk() && !doc->isEncrypted())"];
+"1000228" [label="(Identifier,doc)"];
+"1000224" -> "1000222"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000222" -> "1000224"  [label="CFG: "];
+"1000224" -> "1001120"  [label="DDG: doc->isEncrypted()"];
+"1000224" -> "1000222"  [label="DDG: doc->isEncrypted()"];
+"1000222" -> "1000221"  [label="AST: "];
+"1000222" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000228" -> "1000222"  [label="CFG: "];
+"1000256" -> "1000222"  [label="CFG: "];
+"1000222" -> "1001120"  [label="DDG: doc->isOk()"];
+"1000222" -> "1001120"  [label="DDG: doc->isOk() && !doc->isEncrypted()"];
+"1000222" -> "1001120"  [label="DDG: !doc->isEncrypted()"];
+}

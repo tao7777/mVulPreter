@@ -1,0 +1,37 @@
+digraph "1_Chrome_7933c117fd16b192e70609c331641e9112af5e42@API" {
+"1000166" [label="(Call,is_connection_reused = http_stream_parser_->IsConnectionReused())"];
+"1000171" [label="(Call,transport_->GetLoadTimingInfo(\n                is_connection_reused, &redirect_load_timing_info_))"];
+"1000169" [label="(Call,redirect_has_load_timing_info_ =\n            transport_->GetLoadTimingInfo(\n                is_connection_reused, &redirect_load_timing_info_))"];
+"1000166" [label="(Call,is_connection_reused = http_stream_parser_->IsConnectionReused())"];
+"1000170" [label="(Identifier,redirect_has_load_timing_info_)"];
+"1000175" [label="(Call,transport_.reset())"];
+"1000171" [label="(Call,transport_->GetLoadTimingInfo(\n                is_connection_reused, &redirect_load_timing_info_))"];
+"1000173" [label="(Call,&redirect_load_timing_info_)"];
+"1000168" [label="(Call,http_stream_parser_->IsConnectionReused())"];
+"1000172" [label="(Identifier,is_connection_reused)"];
+"1000164" [label="(Block,)"];
+"1000193" [label="(MethodReturn,int)"];
+"1000169" [label="(Call,redirect_has_load_timing_info_ =\n            transport_->GetLoadTimingInfo(\n                is_connection_reused, &redirect_load_timing_info_))"];
+"1000167" [label="(Identifier,is_connection_reused)"];
+"1000166" -> "1000164"  [label="AST: "];
+"1000166" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000168" -> "1000166"  [label="AST: "];
+"1000170" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000193"  [label="DDG: http_stream_parser_->IsConnectionReused()"];
+"1000166" -> "1000171"  [label="DDG: is_connection_reused"];
+"1000171" -> "1000169"  [label="AST: "];
+"1000171" -> "1000173"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000173" -> "1000171"  [label="AST: "];
+"1000169" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000193"  [label="DDG: is_connection_reused"];
+"1000171" -> "1000193"  [label="DDG: &redirect_load_timing_info_"];
+"1000171" -> "1000169"  [label="DDG: is_connection_reused"];
+"1000171" -> "1000169"  [label="DDG: &redirect_load_timing_info_"];
+"1000169" -> "1000164"  [label="AST: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000175" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000193"  [label="DDG: transport_->GetLoadTimingInfo(\n                is_connection_reused, &redirect_load_timing_info_)"];
+"1000169" -> "1000193"  [label="DDG: redirect_has_load_timing_info_"];
+}

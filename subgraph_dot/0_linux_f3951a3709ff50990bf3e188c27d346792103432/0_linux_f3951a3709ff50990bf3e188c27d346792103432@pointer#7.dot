@@ -1,0 +1,22 @@
+digraph "0_linux_f3951a3709ff50990bf3e188c27d346792103432@pointer" {
+"1000255" [label="(Call,hp->duration = jiffies_to_msecs(jiffies))"];
+"1000259" [label="(Call,jiffies_to_msecs(jiffies))"];
+"1000110" [label="(Block,)"];
+"1000260" [label="(Identifier,jiffies)"];
+"1000255" [label="(Call,hp->duration = jiffies_to_msecs(jiffies))"];
+"1000256" [label="(Call,hp->duration)"];
+"1000265" [label="(Identifier,hp)"];
+"1000308" [label="(MethodReturn,RET)"];
+"1000259" [label="(Call,jiffies_to_msecs(jiffies))"];
+"1000255" -> "1000110"  [label="AST: "];
+"1000255" -> "1000259"  [label="CFG: "];
+"1000256" -> "1000255"  [label="AST: "];
+"1000259" -> "1000255"  [label="AST: "];
+"1000265" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000308"  [label="DDG: jiffies_to_msecs(jiffies)"];
+"1000255" -> "1000308"  [label="DDG: hp->duration"];
+"1000259" -> "1000255"  [label="DDG: jiffies"];
+"1000259" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000259" -> "1000308"  [label="DDG: jiffies"];
+}

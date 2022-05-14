@@ -1,0 +1,37 @@
+digraph "1_haproxy_7ec765568883b2d4e5a2796adbeb492a22ec9bd4@pointer" {
+"1000160" [label="(Call,buf->data + buf->size)"];
+"1000143" [label="(Call,buf->size - buf->p)"];
+"1000161" [label="(Call,buf->data)"];
+"1000150" [label="(Call,block2 = buf->p + buf->i - (buf->data + buf->size))"];
+"1000137" [label="(Call,block1 = buf->data + buf->size - buf->p)"];
+"1000143" [label="(Call,buf->size - buf->p)"];
+"1000152" [label="(Call,buf->p + buf->i - (buf->data + buf->size))"];
+"1000175" [label="(Call,memmove(buf->data, buf->p, block1))"];
+"1000160" [label="(Call,buf->data + buf->size)"];
+"1000147" [label="(Call,buf->p)"];
+"1000200" [label="(MethodReturn,void)"];
+"1000139" [label="(Call,buf->data + buf->size - buf->p)"];
+"1000156" [label="(Call,buf->i - (buf->data + buf->size))"];
+"1000144" [label="(Call,buf->size)"];
+"1000164" [label="(Call,buf->size)"];
+"1000160" -> "1000156"  [label="AST: "];
+"1000160" -> "1000164"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000164" -> "1000160"  [label="AST: "];
+"1000156" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000200"  [label="DDG: buf->size"];
+"1000143" -> "1000160"  [label="DDG: buf->size"];
+"1000143" -> "1000139"  [label="AST: "];
+"1000143" -> "1000147"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000147" -> "1000143"  [label="AST: "];
+"1000139" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000137"  [label="DDG: buf->size"];
+"1000143" -> "1000137"  [label="DDG: buf->p"];
+"1000143" -> "1000139"  [label="DDG: buf->size"];
+"1000143" -> "1000139"  [label="DDG: buf->p"];
+"1000143" -> "1000150"  [label="DDG: buf->p"];
+"1000143" -> "1000152"  [label="DDG: buf->p"];
+"1000143" -> "1000156"  [label="DDG: buf->size"];
+"1000143" -> "1000175"  [label="DDG: buf->p"];
+}

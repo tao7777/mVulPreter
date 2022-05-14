@@ -1,0 +1,27 @@
+digraph "0_linux_d0772b70faaf8e9f2013b6c4273d94d5eac8047a@pointer" {
+"1000101" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000106" [label="(Call,ipv6_hdr(skb))"];
+"1000104" [label="(Call,*iph = ipv6_hdr(skb))"];
+"1000106" [label="(Call,ipv6_hdr(skb))"];
+"1000105" [label="(Identifier,iph)"];
+"1000101" [label="(MethodParameterIn,struct sk_buff *skb)"];
+"1000104" [label="(Call,*iph = ipv6_hdr(skb))"];
+"1000107" [label="(Identifier,skb)"];
+"1000110" [label="(Identifier,spi)"];
+"1000102" [label="(Block,)"];
+"1000119" [label="(MethodReturn,static int)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000119"  [label="DDG: skb"];
+"1000101" -> "1000106"  [label="DDG: skb"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000119"  [label="DDG: skb"];
+"1000106" -> "1000104"  [label="DDG: skb"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000110" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000119"  [label="DDG: iph"];
+"1000104" -> "1000119"  [label="DDG: ipv6_hdr(skb)"];
+}

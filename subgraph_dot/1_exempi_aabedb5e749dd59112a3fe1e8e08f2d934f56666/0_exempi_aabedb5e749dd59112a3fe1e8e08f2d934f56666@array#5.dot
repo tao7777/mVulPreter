@@ -1,0 +1,28 @@
+digraph "0_exempi_aabedb5e749dd59112a3fe1e8e08f2d934f56666@array" {
+"1000184" [label="(Call,GetLE24(&this->data[4]))"];
+"1000183" [label="(Call,GetLE24(&this->data[4]) + 1)"];
+"1000182" [label="(Return,return GetLE24(&this->data[4]) + 1;)"];
+"1000185" [label="(Call,&this->data[4])"];
+"1000183" [label="(Call,GetLE24(&this->data[4]) + 1)"];
+"1000191" [label="(Literal,1)"];
+"1000184" [label="(Call,GetLE24(&this->data[4]))"];
+"1000182" [label="(Return,return GetLE24(&this->data[4]) + 1;)"];
+"1000537" [label="(MethodReturn,RET)"];
+"1000181" [label="(Block,)"];
+"1000184" -> "1000183"  [label="AST: "];
+"1000184" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000191" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000537"  [label="DDG: &this->data[4]"];
+"1000184" -> "1000183"  [label="DDG: &this->data[4]"];
+"1000183" -> "1000182"  [label="AST: "];
+"1000183" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000183"  [label="AST: "];
+"1000182" -> "1000183"  [label="CFG: "];
+"1000183" -> "1000537"  [label="DDG: GetLE24(&this->data[4])"];
+"1000183" -> "1000537"  [label="DDG: GetLE24(&this->data[4]) + 1"];
+"1000183" -> "1000182"  [label="DDG: GetLE24(&this->data[4]) + 1"];
+"1000182" -> "1000181"  [label="AST: "];
+"1000537" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000537"  [label="DDG: <RET>"];
+}

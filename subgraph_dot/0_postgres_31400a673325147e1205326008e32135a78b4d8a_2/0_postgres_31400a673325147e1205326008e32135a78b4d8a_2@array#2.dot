@@ -1,0 +1,34 @@
+digraph "0_postgres_31400a673325147e1205326008e32135a78b4d8a_2@array" {
+"1000263" [label="(Call,pairs[i].vallen = hstoreCheckValLen(len))"];
+"1000269" [label="(Call,hstoreCheckValLen(len))"];
+"1000210" [label="(Call,hstoreCheckKeyLen(len))"];
+"1000274" [label="(Identifier,pairs)"];
+"1000269" [label="(Call,hstoreCheckValLen(len))"];
+"1000270" [label="(Identifier,len)"];
+"1000211" [label="(Identifier,len)"];
+"1000264" [label="(Call,pairs[i].vallen)"];
+"1000263" [label="(Call,pairs[i].vallen = hstoreCheckValLen(len))"];
+"1000210" [label="(Call,hstoreCheckKeyLen(len))"];
+"1000293" [label="(MethodReturn,RET)"];
+"1000251" [label="(Block,)"];
+"1000204" [label="(Call,pairs[i].keylen = hstoreCheckKeyLen(len))"];
+"1000263" -> "1000251"  [label="AST: "];
+"1000263" -> "1000269"  [label="CFG: "];
+"1000264" -> "1000263"  [label="AST: "];
+"1000269" -> "1000263"  [label="AST: "];
+"1000274" -> "1000263"  [label="CFG: "];
+"1000263" -> "1000293"  [label="DDG: hstoreCheckValLen(len)"];
+"1000263" -> "1000293"  [label="DDG: pairs[i].vallen"];
+"1000269" -> "1000263"  [label="DDG: len"];
+"1000269" -> "1000270"  [label="CFG: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000269" -> "1000293"  [label="DDG: len"];
+"1000269" -> "1000210"  [label="DDG: len"];
+"1000210" -> "1000269"  [label="DDG: len"];
+"1000210" -> "1000204"  [label="AST: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000204" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000293"  [label="DDG: len"];
+"1000210" -> "1000204"  [label="DDG: len"];
+}

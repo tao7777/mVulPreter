@@ -1,0 +1,37 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c@pointer" {
+"1000103" [label="(MethodParameterIn,struct a2dp_stream_common *common)"];
+"1000142" [label="(Call,a2dp_ctrl_receive(common, &ack, 1))"];
+"1000141" [label="(Call,a2dp_ctrl_receive(common, &ack, 1) < 0)"];
+"1000146" [label="(Literal,1)"];
+"1000152" [label="(Literal,\"A2DP COMMAND %s DONE STATUS %d\")"];
+"1000141" [label="(Call,a2dp_ctrl_receive(common, &ack, 1) < 0)"];
+"1000171" [label="(MethodReturn,static int)"];
+"1000140" [label="(ControlStructure,if (a2dp_ctrl_receive(common, &ack, 1) < 0))"];
+"1000150" [label="(Literal,1)"];
+"1000103" [label="(MethodParameterIn,struct a2dp_stream_common *common)"];
+"1000142" [label="(Call,a2dp_ctrl_receive(common, &ack, 1))"];
+"1000147" [label="(Literal,0)"];
+"1000143" [label="(Identifier,common)"];
+"1000144" [label="(Call,&ack)"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000171"  [label="DDG: common"];
+"1000103" -> "1000142"  [label="DDG: common"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000146"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="AST: "];
+"1000146" -> "1000142"  [label="AST: "];
+"1000147" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000171"  [label="DDG: &ack"];
+"1000142" -> "1000171"  [label="DDG: common"];
+"1000142" -> "1000141"  [label="DDG: common"];
+"1000142" -> "1000141"  [label="DDG: &ack"];
+"1000142" -> "1000141"  [label="DDG: 1"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000141" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000141"  [label="AST: "];
+"1000150" -> "1000141"  [label="CFG: "];
+"1000152" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000171"  [label="DDG: a2dp_ctrl_receive(common, &ack, 1)"];
+"1000141" -> "1000171"  [label="DDG: a2dp_ctrl_receive(common, &ack, 1) < 0"];
+}

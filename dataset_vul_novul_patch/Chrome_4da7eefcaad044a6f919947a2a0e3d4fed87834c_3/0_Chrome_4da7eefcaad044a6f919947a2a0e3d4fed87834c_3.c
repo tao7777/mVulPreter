@@ -1,0 +1,1 @@
+    QWindow* get(Display* dpy)

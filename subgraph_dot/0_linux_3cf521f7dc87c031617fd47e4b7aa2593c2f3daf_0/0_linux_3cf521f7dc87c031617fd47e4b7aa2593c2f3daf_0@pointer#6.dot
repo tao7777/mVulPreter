@@ -1,0 +1,33 @@
+digraph "0_linux_3cf521f7dc87c031617fd47e4b7aa2593c2f3daf_0@pointer" {
+"1000174" [label="(Call,session->session_id == 0)"];
+"1000173" [label="(Call,(session->session_id == 0) &&\n\t    (session->peer_session_id == 0))"];
+"1000173" [label="(Call,(session->session_id == 0) &&\n\t    (session->peer_session_id == 0))"];
+"1000172" [label="(ControlStructure,if ((session->session_id == 0) &&\n\t    (session->peer_session_id == 0)))"];
+"1000181" [label="(Identifier,session)"];
+"1000179" [label="(Call,session->peer_session_id == 0)"];
+"1000186" [label="(Identifier,err)"];
+"1000178" [label="(Literal,0)"];
+"1000175" [label="(Call,session->session_id)"];
+"1000228" [label="(MethodReturn,static int)"];
+"1000174" [label="(Call,session->session_id == 0)"];
+"1000213" [label="(Identifier,err)"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000174" -> "1000178"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000178" -> "1000174"  [label="AST: "];
+"1000181" -> "1000174"  [label="CFG: "];
+"1000173" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000228"  [label="DDG: session->session_id"];
+"1000174" -> "1000173"  [label="DDG: session->session_id"];
+"1000174" -> "1000173"  [label="DDG: 0"];
+"1000173" -> "1000172"  [label="AST: "];
+"1000173" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000173"  [label="AST: "];
+"1000186" -> "1000173"  [label="CFG: "];
+"1000213" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000228"  [label="DDG: session->peer_session_id == 0"];
+"1000173" -> "1000228"  [label="DDG: (session->session_id == 0) &&\n\t    (session->peer_session_id == 0)"];
+"1000173" -> "1000228"  [label="DDG: session->session_id == 0"];
+"1000179" -> "1000173"  [label="DDG: session->peer_session_id"];
+"1000179" -> "1000173"  [label="DDG: 0"];
+}

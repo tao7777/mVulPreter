@@ -1,0 +1,33 @@
+digraph "0_Chrome_90f878780cce9c4b0475fcea14d91b8f510cce11_2@pointer" {
+"1000102" [label="(MethodParameterIn,Document* owner_document)"];
+"1000145" [label="(Call,document_loader_->ReplaceDocumentWhileExecutingJavaScriptURL(\n      url, owner_document, global_object_reuse_policy, source))"];
+"1000146" [label="(Identifier,url)"];
+"1000125" [label="(Call,global_object_reuse_policy =\n      frame_->ShouldReuseDefaultView(url)\n           ? WebGlobalObjectReusePolicy::kUseExisting\n           : WebGlobalObjectReusePolicy::kCreateNew)"];
+"1000145" [label="(Call,document_loader_->ReplaceDocumentWhileExecutingJavaScriptURL(\n      url, owner_document, global_object_reuse_policy, source))"];
+"1000150" [label="(MethodReturn,void)"];
+"1000128" [label="(Call,frame_->ShouldReuseDefaultView(url))"];
+"1000103" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,Document* owner_document)"];
+"1000101" [label="(MethodParameterIn,const String& source)"];
+"1000148" [label="(Identifier,global_object_reuse_policy)"];
+"1000149" [label="(Identifier,source)"];
+"1000147" [label="(Identifier,owner_document)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000150"  [label="DDG: owner_document"];
+"1000102" -> "1000145"  [label="DDG: owner_document"];
+"1000145" -> "1000103"  [label="AST: "];
+"1000145" -> "1000149"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000148" -> "1000145"  [label="AST: "];
+"1000149" -> "1000145"  [label="AST: "];
+"1000150" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000150"  [label="DDG: url"];
+"1000145" -> "1000150"  [label="DDG: source"];
+"1000145" -> "1000150"  [label="DDG: global_object_reuse_policy"];
+"1000145" -> "1000150"  [label="DDG: document_loader_->ReplaceDocumentWhileExecutingJavaScriptURL(\n      url, owner_document, global_object_reuse_policy, source)"];
+"1000145" -> "1000150"  [label="DDG: owner_document"];
+"1000128" -> "1000145"  [label="DDG: url"];
+"1000125" -> "1000145"  [label="DDG: global_object_reuse_policy"];
+"1000101" -> "1000145"  [label="DDG: source"];
+}

@@ -1,0 +1,31 @@
+digraph "0_exempi_e163667a06a9b656a047b0ec660b871f29a83c9f@pointer" {
+"1000322" [label="(Call,*endPtr == 0)"];
+"1000318" [label="(Call,(endPtr >= minPtr) && (*endPtr == 0))"];
+"1000329" [label="(Identifier,iptcDigestState)"];
+"1000317" [label="(ControlStructure,while ( (endPtr >= minPtr) && (*endPtr == 0) ))"];
+"1000319" [label="(Call,endPtr >= minPtr)"];
+"1000432" [label="(MethodReturn,void)"];
+"1000323" [label="(Call,*endPtr)"];
+"1000318" [label="(Call,(endPtr >= minPtr) && (*endPtr == 0))"];
+"1000322" [label="(Call,*endPtr == 0)"];
+"1000327" [label="(Identifier,endPtr)"];
+"1000325" [label="(Literal,0)"];
+"1000322" -> "1000318"  [label="AST: "];
+"1000322" -> "1000325"  [label="CFG: "];
+"1000323" -> "1000322"  [label="AST: "];
+"1000325" -> "1000322"  [label="AST: "];
+"1000318" -> "1000322"  [label="CFG: "];
+"1000322" -> "1000432"  [label="DDG: *endPtr"];
+"1000322" -> "1000318"  [label="DDG: *endPtr"];
+"1000322" -> "1000318"  [label="DDG: 0"];
+"1000318" -> "1000317"  [label="AST: "];
+"1000318" -> "1000319"  [label="CFG: "];
+"1000319" -> "1000318"  [label="AST: "];
+"1000327" -> "1000318"  [label="CFG: "];
+"1000329" -> "1000318"  [label="CFG: "];
+"1000318" -> "1000432"  [label="DDG: (endPtr >= minPtr) && (*endPtr == 0)"];
+"1000318" -> "1000432"  [label="DDG: endPtr >= minPtr"];
+"1000318" -> "1000432"  [label="DDG: *endPtr == 0"];
+"1000319" -> "1000318"  [label="DDG: endPtr"];
+"1000319" -> "1000318"  [label="DDG: minPtr"];
+}

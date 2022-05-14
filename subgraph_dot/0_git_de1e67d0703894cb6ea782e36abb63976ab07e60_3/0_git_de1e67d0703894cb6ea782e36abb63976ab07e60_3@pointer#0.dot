@@ -1,0 +1,32 @@
+digraph "0_git_de1e67d0703894cb6ea782e36abb63976ab07e60_3@pointer" {
+"1000141" [label="(Call,pathlen = path->len)"];
+"1000155" [label="(Call,strbuf_setlen(path, pathlen))"];
+"1000104" [label="(MethodParameterIn,struct strbuf *path)"];
+"1000142" [label="(Identifier,pathlen)"];
+"1000147" [label="(Identifier,path)"];
+"1000141" [label="(Call,pathlen = path->len)"];
+"1000158" [label="(MethodReturn,static void)"];
+"1000156" [label="(Identifier,path)"];
+"1000157" [label="(Identifier,pathlen)"];
+"1000146" [label="(Call,strbuf_addstr(path, name))"];
+"1000143" [label="(Call,path->len)"];
+"1000107" [label="(Block,)"];
+"1000155" [label="(Call,strbuf_setlen(path, pathlen))"];
+"1000141" -> "1000107"  [label="AST: "];
+"1000141" -> "1000143"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000143" -> "1000141"  [label="AST: "];
+"1000147" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000158"  [label="DDG: path->len"];
+"1000141" -> "1000155"  [label="DDG: pathlen"];
+"1000155" -> "1000107"  [label="AST: "];
+"1000155" -> "1000157"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000157" -> "1000155"  [label="AST: "];
+"1000158" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000158"  [label="DDG: pathlen"];
+"1000155" -> "1000158"  [label="DDG: strbuf_setlen(path, pathlen)"];
+"1000155" -> "1000158"  [label="DDG: path"];
+"1000146" -> "1000155"  [label="DDG: path"];
+"1000104" -> "1000155"  [label="DDG: path"];
+}

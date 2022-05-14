@@ -1,0 +1,30 @@
+digraph "0_FFmpeg_8c2ea3030af7b40a3c4275696fb5c76cdb80950a@pointer" {
+"1000927" [label="(Return,return avpkt->size;)"];
+"1000130" [label="(Call,bytestream2_init(&s->g, avpkt->data, avpkt->size))"];
+"1000927" [label="(Return,return avpkt->size;)"];
+"1000138" [label="(Call,avpkt->size)"];
+"1000105" [label="(Block,)"];
+"1000130" [label="(Call,bytestream2_init(&s->g, avpkt->data, avpkt->size))"];
+"1000131" [label="(Call,&s->g)"];
+"1000135" [label="(Call,avpkt->data)"];
+"1000928" [label="(Call,avpkt->size)"];
+"1000146" [label="(Identifier,s)"];
+"1000143" [label="(Call,bytestream2_get_bytes_left(&s->g))"];
+"1000931" [label="(MethodReturn,static int)"];
+"1000927" -> "1000105"  [label="AST: "];
+"1000927" -> "1000928"  [label="CFG: "];
+"1000928" -> "1000927"  [label="AST: "];
+"1000931" -> "1000927"  [label="CFG: "];
+"1000927" -> "1000931"  [label="DDG: <RET>"];
+"1000130" -> "1000927"  [label="DDG: avpkt->size"];
+"1000130" -> "1000105"  [label="AST: "];
+"1000130" -> "1000138"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000135" -> "1000130"  [label="AST: "];
+"1000138" -> "1000130"  [label="AST: "];
+"1000146" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000931"  [label="DDG: bytestream2_init(&s->g, avpkt->data, avpkt->size)"];
+"1000130" -> "1000931"  [label="DDG: avpkt->data"];
+"1000130" -> "1000931"  [label="DDG: avpkt->size"];
+"1000130" -> "1000143"  [label="DDG: &s->g"];
+}

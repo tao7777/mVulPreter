@@ -1,0 +1,34 @@
+digraph "0_FFmpeg_9a271a9368eaabf99e6c2046103acb33957e63b7_0@pointer" {
+"1000291" [label="(Call,s->avctx->flags & CODEC_FLAG_BITEXACT)"];
+"1000290" [label="(Call,(s->avctx->flags & CODEC_FLAG_BITEXACT) && (c->transform == FF_DWT97))"];
+"1000297" [label="(Identifier,CODEC_FLAG_BITEXACT)"];
+"1000291" [label="(Call,s->avctx->flags & CODEC_FLAG_BITEXACT)"];
+"1000300" [label="(Identifier,c)"];
+"1000292" [label="(Call,s->avctx->flags)"];
+"1000290" [label="(Call,(s->avctx->flags & CODEC_FLAG_BITEXACT) && (c->transform == FF_DWT97))"];
+"1000305" [label="(Identifier,c)"];
+"1000289" [label="(ControlStructure,if ((s->avctx->flags & CODEC_FLAG_BITEXACT) && (c->transform == FF_DWT97)))"];
+"1000298" [label="(Call,c->transform == FF_DWT97)"];
+"1000311" [label="(Identifier,c)"];
+"1000377" [label="(MethodReturn,static int)"];
+"1000291" -> "1000290"  [label="AST: "];
+"1000291" -> "1000297"  [label="CFG: "];
+"1000292" -> "1000291"  [label="AST: "];
+"1000297" -> "1000291"  [label="AST: "];
+"1000300" -> "1000291"  [label="CFG: "];
+"1000290" -> "1000291"  [label="CFG: "];
+"1000291" -> "1000377"  [label="DDG: s->avctx->flags"];
+"1000291" -> "1000377"  [label="DDG: CODEC_FLAG_BITEXACT"];
+"1000291" -> "1000290"  [label="DDG: s->avctx->flags"];
+"1000291" -> "1000290"  [label="DDG: CODEC_FLAG_BITEXACT"];
+"1000290" -> "1000289"  [label="AST: "];
+"1000290" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000290"  [label="AST: "];
+"1000305" -> "1000290"  [label="CFG: "];
+"1000311" -> "1000290"  [label="CFG: "];
+"1000290" -> "1000377"  [label="DDG: c->transform == FF_DWT97"];
+"1000290" -> "1000377"  [label="DDG: s->avctx->flags & CODEC_FLAG_BITEXACT"];
+"1000290" -> "1000377"  [label="DDG: (s->avctx->flags & CODEC_FLAG_BITEXACT) && (c->transform == FF_DWT97)"];
+"1000298" -> "1000290"  [label="DDG: c->transform"];
+"1000298" -> "1000290"  [label="DDG: FF_DWT97"];
+}

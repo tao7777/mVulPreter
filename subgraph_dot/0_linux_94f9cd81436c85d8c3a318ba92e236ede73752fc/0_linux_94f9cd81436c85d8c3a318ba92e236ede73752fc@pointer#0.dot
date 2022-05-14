@@ -1,0 +1,26 @@
+digraph "0_linux_94f9cd81436c85d8c3a318ba92e236ede73752fc@pointer" {
+"1000206" [label="(Call,mr->range[0].flags | NF_NAT_RANGE_MAP_IPS)"];
+"1000202" [label="(Call,newrange.flags\t     = mr->range[0].flags | NF_NAT_RANGE_MAP_IPS)"];
+"1000203" [label="(Call,newrange.flags)"];
+"1000107" [label="(Block,)"];
+"1000257" [label="(MethodReturn,RET)"];
+"1000202" [label="(Call,newrange.flags\t     = mr->range[0].flags | NF_NAT_RANGE_MAP_IPS)"];
+"1000214" [label="(Identifier,NF_NAT_RANGE_MAP_IPS)"];
+"1000206" [label="(Call,mr->range[0].flags | NF_NAT_RANGE_MAP_IPS)"];
+"1000218" [label="(Identifier,newrange)"];
+"1000207" [label="(Call,mr->range[0].flags)"];
+"1000206" -> "1000202"  [label="AST: "];
+"1000206" -> "1000214"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000214" -> "1000206"  [label="AST: "];
+"1000202" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000257"  [label="DDG: NF_NAT_RANGE_MAP_IPS"];
+"1000206" -> "1000257"  [label="DDG: mr->range[0].flags"];
+"1000206" -> "1000202"  [label="DDG: mr->range[0].flags"];
+"1000206" -> "1000202"  [label="DDG: NF_NAT_RANGE_MAP_IPS"];
+"1000202" -> "1000107"  [label="AST: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000218" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000257"  [label="DDG: newrange.flags"];
+"1000202" -> "1000257"  [label="DDG: mr->range[0].flags | NF_NAT_RANGE_MAP_IPS"];
+}

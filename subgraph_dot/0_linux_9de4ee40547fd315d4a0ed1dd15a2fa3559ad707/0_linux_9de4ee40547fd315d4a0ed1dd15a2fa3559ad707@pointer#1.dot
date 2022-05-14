@@ -1,0 +1,28 @@
+digraph "0_linux_9de4ee40547fd315d4a0ed1dd15a2fa3559ad707@pointer" {
+"1000126" [label="(Call,media_changed(cdi, 1))"];
+"1000102" [label="(MethodParameterIn,struct cdrom_device_info *cdi)"];
+"1000125" [label="(Return,return media_changed(cdi, 1);)"];
+"1000128" [label="(Literal,1)"];
+"1000125" [label="(Return,return media_changed(cdi, 1);)"];
+"1000153" [label="(Call,cdrom_read_mech_status(cdi, info))"];
+"1000126" [label="(Call,media_changed(cdi, 1))"];
+"1000102" [label="(MethodParameterIn,struct cdrom_device_info *cdi)"];
+"1000127" [label="(Identifier,cdi)"];
+"1000117" [label="(ControlStructure,if (!CDROM_CAN(CDC_SELECT_DISC) || arg == CDSL_CURRENT))"];
+"1000172" [label="(MethodReturn,static int)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000172"  [label="DDG: media_changed(cdi, 1)"];
+"1000126" -> "1000172"  [label="DDG: cdi"];
+"1000126" -> "1000125"  [label="DDG: media_changed(cdi, 1)"];
+"1000102" -> "1000126"  [label="DDG: cdi"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000172"  [label="DDG: cdi"];
+"1000102" -> "1000153"  [label="DDG: cdi"];
+"1000125" -> "1000117"  [label="AST: "];
+"1000172" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000172"  [label="DDG: <RET>"];
+}

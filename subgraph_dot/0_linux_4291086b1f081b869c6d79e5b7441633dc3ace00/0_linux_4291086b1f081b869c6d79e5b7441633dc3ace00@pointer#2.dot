@@ -1,0 +1,35 @@
+digraph "0_linux_4291086b1f081b869c6d79e5b7441633dc3ace00@pointer" {
+"1000104" [label="(MethodParameterIn,struct file *file)"];
+"1000170" [label="(Call,tty_hung_up_p(file))"];
+"1000169" [label="(Call,tty_hung_up_p(file) || (tty->link && !tty->link->count))"];
+"1000368" [label="(MethodReturn,static ssize_t)"];
+"1000190" [label="(Identifier,tty)"];
+"1000171" [label="(Identifier,file)"];
+"1000169" [label="(Call,tty_hung_up_p(file) || (tty->link && !tty->link->count))"];
+"1000172" [label="(Call,tty->link && !tty->link->count)"];
+"1000104" [label="(MethodParameterIn,struct file *file)"];
+"1000168" [label="(ControlStructure,if (tty_hung_up_p(file) || (tty->link && !tty->link->count)))"];
+"1000184" [label="(Identifier,retval)"];
+"1000174" [label="(Identifier,tty)"];
+"1000170" [label="(Call,tty_hung_up_p(file))"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000368"  [label="DDG: file"];
+"1000104" -> "1000170"  [label="DDG: file"];
+"1000170" -> "1000169"  [label="AST: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000170"  [label="AST: "];
+"1000174" -> "1000170"  [label="CFG: "];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000368"  [label="DDG: file"];
+"1000170" -> "1000169"  [label="DDG: file"];
+"1000169" -> "1000168"  [label="AST: "];
+"1000169" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000169"  [label="AST: "];
+"1000184" -> "1000169"  [label="CFG: "];
+"1000190" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000368"  [label="DDG: tty->link && !tty->link->count"];
+"1000169" -> "1000368"  [label="DDG: tty_hung_up_p(file) || (tty->link && !tty->link->count)"];
+"1000169" -> "1000368"  [label="DDG: tty_hung_up_p(file)"];
+"1000172" -> "1000169"  [label="DDG: tty->link"];
+"1000172" -> "1000169"  [label="DDG: !tty->link->count"];
+}

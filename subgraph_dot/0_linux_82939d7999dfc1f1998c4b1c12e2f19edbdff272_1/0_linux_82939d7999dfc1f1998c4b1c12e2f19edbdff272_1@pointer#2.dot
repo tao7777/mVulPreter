@@ -1,0 +1,23 @@
+digraph "0_linux_82939d7999dfc1f1998c4b1c12e2f19edbdff272_1@pointer" {
+"1000240" [label="(Call,bh->b_data + le16_to_cpu(entry->e_value_offs))"];
+"1000244" [label="(Call,le16_to_cpu(entry->e_value_offs))"];
+"1000238" [label="(Call,memcpy(buffer, bh->b_data + le16_to_cpu(entry->e_value_offs),\n\t\t       size))"];
+"1000245" [label="(Call,entry->e_value_offs)"];
+"1000240" [label="(Call,bh->b_data + le16_to_cpu(entry->e_value_offs))"];
+"1000248" [label="(Identifier,size)"];
+"1000257" [label="(MethodReturn,RET)"];
+"1000241" [label="(Call,bh->b_data)"];
+"1000244" [label="(Call,le16_to_cpu(entry->e_value_offs))"];
+"1000240" -> "1000238"  [label="AST: "];
+"1000240" -> "1000244"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000244" -> "1000240"  [label="AST: "];
+"1000248" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000257"  [label="DDG: le16_to_cpu(entry->e_value_offs)"];
+"1000240" -> "1000257"  [label="DDG: bh->b_data"];
+"1000244" -> "1000240"  [label="DDG: entry->e_value_offs"];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000244" -> "1000257"  [label="DDG: entry->e_value_offs"];
+"1000244" -> "1000238"  [label="DDG: entry->e_value_offs"];
+}

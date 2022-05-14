@@ -1,0 +1,34 @@
+digraph "0_exfat_2e86ae5f81da11f11673d0546efb525af02b7786@pointer" {
+"1000561" [label="(Call,ef->root->fptr_cluster = ef->root->start_cluster)"];
+"1000549" [label="(Call,ef->root->start_cluster = le32_to_cpu(ef->sb->rootdir_cluster))"];
+"1000555" [label="(Call,le32_to_cpu(ef->sb->rootdir_cluster))"];
+"1000576" [label="(Identifier,ef)"];
+"1000705" [label="(MethodReturn,int)"];
+"1000562" [label="(Call,ef->root->fptr_cluster)"];
+"1000567" [label="(Call,ef->root->start_cluster)"];
+"1000549" [label="(Call,ef->root->start_cluster = le32_to_cpu(ef->sb->rootdir_cluster))"];
+"1000110" [label="(Block,)"];
+"1000550" [label="(Call,ef->root->start_cluster)"];
+"1000564" [label="(Identifier,ef)"];
+"1000561" [label="(Call,ef->root->fptr_cluster = ef->root->start_cluster)"];
+"1000555" [label="(Call,le32_to_cpu(ef->sb->rootdir_cluster))"];
+"1000556" [label="(Call,ef->sb->rootdir_cluster)"];
+"1000561" -> "1000110"  [label="AST: "];
+"1000561" -> "1000567"  [label="CFG: "];
+"1000562" -> "1000561"  [label="AST: "];
+"1000567" -> "1000561"  [label="AST: "];
+"1000576" -> "1000561"  [label="CFG: "];
+"1000561" -> "1000705"  [label="DDG: ef->root->fptr_cluster"];
+"1000561" -> "1000705"  [label="DDG: ef->root->start_cluster"];
+"1000549" -> "1000561"  [label="DDG: ef->root->start_cluster"];
+"1000549" -> "1000110"  [label="AST: "];
+"1000549" -> "1000555"  [label="CFG: "];
+"1000550" -> "1000549"  [label="AST: "];
+"1000555" -> "1000549"  [label="AST: "];
+"1000564" -> "1000549"  [label="CFG: "];
+"1000549" -> "1000705"  [label="DDG: le32_to_cpu(ef->sb->rootdir_cluster)"];
+"1000555" -> "1000549"  [label="DDG: ef->sb->rootdir_cluster"];
+"1000555" -> "1000556"  [label="CFG: "];
+"1000556" -> "1000555"  [label="AST: "];
+"1000555" -> "1000705"  [label="DDG: ef->sb->rootdir_cluster"];
+}

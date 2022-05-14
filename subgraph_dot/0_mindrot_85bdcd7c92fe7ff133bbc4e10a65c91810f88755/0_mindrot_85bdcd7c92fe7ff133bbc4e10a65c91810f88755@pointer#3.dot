@@ -1,0 +1,29 @@
+digraph "0_mindrot_85bdcd7c92fe7ff133bbc4e10a65c91810f88755@pointer" {
+"1000147" [label="(Call,env[0] = NULL)"];
+"1000628" [label="(Return,return env;)"];
+"1000151" [label="(Identifier,NULL)"];
+"1000155" [label="(Identifier,p)"];
+"1000141" [label="(Call,env = xcalloc(envsize, sizeof(char *)))"];
+"1000630" [label="(MethodReturn,RET)"];
+"1000118" [label="(Block,)"];
+"1000629" [label="(Identifier,env)"];
+"1000628" [label="(Return,return env;)"];
+"1000148" [label="(Call,env[0])"];
+"1000147" [label="(Call,env[0] = NULL)"];
+"1000622" [label="(Call,fprintf(stderr, \"  %.200s\n\", env[i]))"];
+"1000147" -> "1000118"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000151" -> "1000147"  [label="AST: "];
+"1000155" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000630"  [label="DDG: env[0]"];
+"1000147" -> "1000628"  [label="DDG: env[0]"];
+"1000628" -> "1000118"  [label="AST: "];
+"1000628" -> "1000629"  [label="CFG: "];
+"1000629" -> "1000628"  [label="AST: "];
+"1000630" -> "1000628"  [label="CFG: "];
+"1000628" -> "1000630"  [label="DDG: <RET>"];
+"1000629" -> "1000628"  [label="DDG: env"];
+"1000141" -> "1000628"  [label="DDG: env"];
+"1000622" -> "1000628"  [label="DDG: env[i]"];
+}

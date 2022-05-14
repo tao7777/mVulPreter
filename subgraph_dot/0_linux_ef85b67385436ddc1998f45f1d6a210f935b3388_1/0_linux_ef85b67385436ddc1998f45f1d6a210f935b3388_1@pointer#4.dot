@@ -1,0 +1,37 @@
+digraph "0_linux_ef85b67385436ddc1998f45f1d6a210f935b3388_1@pointer" {
+"1000184" [label="(Call,vmcs12->guest_cr0 & X86_CR0_TS)"];
+"1000183" [label="(Call,!(vmcs12->guest_cr0 & X86_CR0_TS))"];
+"1000180" [label="(Call,is_no_device(intr_info) &&\n\t\t\t !(vmcs12->guest_cr0 & X86_CR0_TS))"];
+"1000393" [label="(MethodReturn,static bool)"];
+"1000195" [label="(Identifier,intr_info)"];
+"1000180" [label="(Call,is_no_device(intr_info) &&\n\t\t\t !(vmcs12->guest_cr0 & X86_CR0_TS))"];
+"1000184" [label="(Call,vmcs12->guest_cr0 & X86_CR0_TS)"];
+"1000188" [label="(Identifier,X86_CR0_TS)"];
+"1000183" [label="(Call,!(vmcs12->guest_cr0 & X86_CR0_TS))"];
+"1000181" [label="(Call,is_no_device(intr_info))"];
+"1000179" [label="(ControlStructure,if (is_no_device(intr_info) &&\n\t\t\t !(vmcs12->guest_cr0 & X86_CR0_TS)))"];
+"1000190" [label="(Identifier,false)"];
+"1000185" [label="(Call,vmcs12->guest_cr0)"];
+"1000184" -> "1000183"  [label="AST: "];
+"1000184" -> "1000188"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000188" -> "1000184"  [label="AST: "];
+"1000183" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000393"  [label="DDG: vmcs12->guest_cr0"];
+"1000184" -> "1000393"  [label="DDG: X86_CR0_TS"];
+"1000184" -> "1000183"  [label="DDG: vmcs12->guest_cr0"];
+"1000184" -> "1000183"  [label="DDG: X86_CR0_TS"];
+"1000183" -> "1000180"  [label="AST: "];
+"1000180" -> "1000183"  [label="CFG: "];
+"1000183" -> "1000393"  [label="DDG: vmcs12->guest_cr0 & X86_CR0_TS"];
+"1000183" -> "1000180"  [label="DDG: vmcs12->guest_cr0 & X86_CR0_TS"];
+"1000180" -> "1000179"  [label="AST: "];
+"1000180" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000190" -> "1000180"  [label="CFG: "];
+"1000195" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000393"  [label="DDG: is_no_device(intr_info)"];
+"1000180" -> "1000393"  [label="DDG: is_no_device(intr_info) &&\n\t\t\t !(vmcs12->guest_cr0 & X86_CR0_TS)"];
+"1000180" -> "1000393"  [label="DDG: !(vmcs12->guest_cr0 & X86_CR0_TS)"];
+"1000181" -> "1000180"  [label="DDG: intr_info"];
+}

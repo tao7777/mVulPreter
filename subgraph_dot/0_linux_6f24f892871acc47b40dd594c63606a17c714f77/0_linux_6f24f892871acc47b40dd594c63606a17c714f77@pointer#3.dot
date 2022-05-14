@@ -1,0 +1,24 @@
+digraph "0_linux_6f24f892871acc47b40dd594c63606a17c714f77@pointer" {
+"1000107" [label="(MethodParameterIn,struct inode *src_dir)"];
+"1000376" [label="(Call,hfsplus_mark_inode_dirty(src_dir, HFSPLUS_I_CAT_DIRTY))"];
+"1000376" [label="(Call,hfsplus_mark_inode_dirty(src_dir, HFSPLUS_I_CAT_DIRTY))"];
+"1000379" [label="(JumpTarget,out:)"];
+"1000373" [label="(Call,hfsplus_mark_inode_dirty(dst_dir, HFSPLUS_I_CAT_DIRTY))"];
+"1000389" [label="(MethodReturn,int)"];
+"1000107" [label="(MethodParameterIn,struct inode *src_dir)"];
+"1000111" [label="(Block,)"];
+"1000377" [label="(Identifier,src_dir)"];
+"1000378" [label="(Identifier,HFSPLUS_I_CAT_DIRTY)"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000389"  [label="DDG: src_dir"];
+"1000107" -> "1000376"  [label="DDG: src_dir"];
+"1000376" -> "1000111"  [label="AST: "];
+"1000376" -> "1000378"  [label="CFG: "];
+"1000377" -> "1000376"  [label="AST: "];
+"1000378" -> "1000376"  [label="AST: "];
+"1000379" -> "1000376"  [label="CFG: "];
+"1000376" -> "1000389"  [label="DDG: hfsplus_mark_inode_dirty(src_dir, HFSPLUS_I_CAT_DIRTY)"];
+"1000376" -> "1000389"  [label="DDG: src_dir"];
+"1000376" -> "1000389"  [label="DDG: HFSPLUS_I_CAT_DIRTY"];
+"1000373" -> "1000376"  [label="DDG: HFSPLUS_I_CAT_DIRTY"];
+}

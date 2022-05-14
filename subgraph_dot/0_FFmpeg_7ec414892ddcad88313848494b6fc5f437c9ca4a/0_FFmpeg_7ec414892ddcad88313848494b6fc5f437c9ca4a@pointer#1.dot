@@ -1,0 +1,30 @@
+digraph "0_FFmpeg_7ec414892ddcad88313848494b6fc5f437c9ca4a@pointer" {
+"1000229" [label="(Call,!v->finished)"];
+"1000228" [label="(Call,!v->finished &&\n             av_gettime_relative() - v->last_load_time >= reload_interval)"];
+"1000275" [label="(Identifier,v)"];
+"1000229" [label="(Call,!v->finished)"];
+"1000233" [label="(Call,av_gettime_relative() - v->last_load_time >= reload_interval)"];
+"1000235" [label="(Call,av_gettime_relative())"];
+"1000228" [label="(Call,!v->finished &&\n             av_gettime_relative() - v->last_load_time >= reload_interval)"];
+"1000227" [label="(ControlStructure,if (!v->finished &&\n             av_gettime_relative() - v->last_load_time >= reload_interval))"];
+"1000230" [label="(Call,v->finished)"];
+"1000244" [label="(Identifier,ret)"];
+"1000473" [label="(MethodReturn,static int)"];
+"1000229" -> "1000228"  [label="AST: "];
+"1000229" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000235" -> "1000229"  [label="CFG: "];
+"1000228" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000473"  [label="DDG: v->finished"];
+"1000229" -> "1000228"  [label="DDG: v->finished"];
+"1000228" -> "1000227"  [label="AST: "];
+"1000228" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000228"  [label="AST: "];
+"1000244" -> "1000228"  [label="CFG: "];
+"1000275" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000473"  [label="DDG: av_gettime_relative() - v->last_load_time >= reload_interval"];
+"1000228" -> "1000473"  [label="DDG: !v->finished &&\n             av_gettime_relative() - v->last_load_time >= reload_interval"];
+"1000228" -> "1000473"  [label="DDG: !v->finished"];
+"1000233" -> "1000228"  [label="DDG: av_gettime_relative() - v->last_load_time"];
+"1000233" -> "1000228"  [label="DDG: reload_interval"];
+}

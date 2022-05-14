@@ -1,0 +1,36 @@
+digraph "0_tnef_8dccf79857ceeb7a6d3e42c1e762e7b865d5344d_0@array" {
+"1000123" [label="(Call,body[j] = XMALLOC(VarLenData, 1))"];
+"1000127" [label="(Call,XMALLOC(VarLenData, 1))"];
+"1000163" [label="(Return,return body;)"];
+"1000102" [label="(Block,)"];
+"1000127" [label="(Call,XMALLOC(VarLenData, 1))"];
+"1000164" [label="(Identifier,body)"];
+"1000129" [label="(Literal,1)"];
+"1000124" [label="(Call,body[j])"];
+"1000123" [label="(Call,body[j] = XMALLOC(VarLenData, 1))"];
+"1000128" [label="(Identifier,VarLenData)"];
+"1000165" [label="(MethodReturn,RET)"];
+"1000163" [label="(Return,return body;)"];
+"1000133" [label="(Identifier,body)"];
+"1000122" [label="(Block,)"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000127"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000133" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000165"  [label="DDG: XMALLOC(VarLenData, 1)"];
+"1000123" -> "1000165"  [label="DDG: body[j]"];
+"1000127" -> "1000123"  [label="DDG: VarLenData"];
+"1000127" -> "1000123"  [label="DDG: 1"];
+"1000123" -> "1000163"  [label="DDG: body[j]"];
+"1000127" -> "1000129"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000129" -> "1000127"  [label="AST: "];
+"1000127" -> "1000165"  [label="DDG: VarLenData"];
+"1000163" -> "1000102"  [label="AST: "];
+"1000163" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000163"  [label="AST: "];
+"1000165" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000165"  [label="DDG: <RET>"];
+"1000164" -> "1000163"  [label="DDG: body"];
+}

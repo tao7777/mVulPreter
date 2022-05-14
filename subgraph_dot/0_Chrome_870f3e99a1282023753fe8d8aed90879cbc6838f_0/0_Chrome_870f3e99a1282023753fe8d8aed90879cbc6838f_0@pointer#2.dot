@@ -1,0 +1,22 @@
+digraph "0_Chrome_870f3e99a1282023753fe8d8aed90879cbc6838f_0@pointer" {
+"1000125" [label="(Call,*arg_filter = base::Bind(&IsArgNameWhitelisted))"];
+"1000128" [label="(Call,base::Bind(&IsArgNameWhitelisted))"];
+"1000128" [label="(Call,base::Bind(&IsArgNameWhitelisted))"];
+"1000125" [label="(Call,*arg_filter = base::Bind(&IsArgNameWhitelisted))"];
+"1000124" [label="(Block,)"];
+"1000126" [label="(Call,*arg_filter)"];
+"1000132" [label="(Identifier,true)"];
+"1000135" [label="(MethodReturn,bool)"];
+"1000129" [label="(Call,&IsArgNameWhitelisted)"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000128"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000128" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000135"  [label="DDG: *arg_filter"];
+"1000125" -> "1000135"  [label="DDG: base::Bind(&IsArgNameWhitelisted)"];
+"1000128" -> "1000125"  [label="DDG: &IsArgNameWhitelisted"];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000128" -> "1000135"  [label="DDG: &IsArgNameWhitelisted"];
+}

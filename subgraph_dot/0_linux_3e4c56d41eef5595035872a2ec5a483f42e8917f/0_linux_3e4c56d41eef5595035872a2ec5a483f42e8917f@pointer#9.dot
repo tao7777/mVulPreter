@@ -1,0 +1,28 @@
+digraph "0_linux_3e4c56d41eef5595035872a2ec5a483f42e8917f@pointer" {
+"1000432" [label="(Call,list_splice_tail_init(&wc->w_unwritten_list, &dwc->dw_zero_list))"];
+"1000407" [label="(Call,list_empty(&wc->w_unwritten_list))"];
+"1000408" [label="(Call,&wc->w_unwritten_list)"];
+"1000432" [label="(Call,list_splice_tail_init(&wc->w_unwritten_list, &dwc->dw_zero_list))"];
+"1000437" [label="(Call,&dwc->dw_zero_list)"];
+"1000407" [label="(Call,list_empty(&wc->w_unwritten_list))"];
+"1000443" [label="(Identifier,dwc)"];
+"1000406" [label="(Call,!list_empty(&wc->w_unwritten_list))"];
+"1000484" [label="(MethodReturn,static int)"];
+"1000433" [label="(Call,&wc->w_unwritten_list)"];
+"1000412" [label="(Block,)"];
+"1000432" -> "1000412"  [label="AST: "];
+"1000432" -> "1000437"  [label="CFG: "];
+"1000433" -> "1000432"  [label="AST: "];
+"1000437" -> "1000432"  [label="AST: "];
+"1000443" -> "1000432"  [label="CFG: "];
+"1000432" -> "1000484"  [label="DDG: &dwc->dw_zero_list"];
+"1000432" -> "1000484"  [label="DDG: list_splice_tail_init(&wc->w_unwritten_list, &dwc->dw_zero_list)"];
+"1000432" -> "1000484"  [label="DDG: &wc->w_unwritten_list"];
+"1000407" -> "1000432"  [label="DDG: &wc->w_unwritten_list"];
+"1000407" -> "1000406"  [label="AST: "];
+"1000407" -> "1000408"  [label="CFG: "];
+"1000408" -> "1000407"  [label="AST: "];
+"1000406" -> "1000407"  [label="CFG: "];
+"1000407" -> "1000484"  [label="DDG: &wc->w_unwritten_list"];
+"1000407" -> "1000406"  [label="DDG: &wc->w_unwritten_list"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_744692dc059845b2a3022119871846e74d4f6e11_17@pointer" {
+"1000149" [label="(Call,jbd2_journal_init_jbd_inode(&ei->jinode, &ei->vfs_inode))"];
+"1000218" [label="(Return,return &ei->vfs_inode;)"];
+"1000218" [label="(Return,return &ei->vfs_inode;)"];
+"1000150" [label="(Call,&ei->jinode)"];
+"1000160" [label="(Identifier,ei)"];
+"1000219" [label="(Call,&ei->vfs_inode)"];
+"1000223" [label="(MethodReturn,static struct inode *)"];
+"1000149" [label="(Call,jbd2_journal_init_jbd_inode(&ei->jinode, &ei->vfs_inode))"];
+"1000154" [label="(Call,&ei->vfs_inode)"];
+"1000103" [label="(Block,)"];
+"1000149" -> "1000103"  [label="AST: "];
+"1000149" -> "1000154"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000154" -> "1000149"  [label="AST: "];
+"1000160" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000223"  [label="DDG: &ei->vfs_inode"];
+"1000149" -> "1000223"  [label="DDG: &ei->jinode"];
+"1000149" -> "1000223"  [label="DDG: jbd2_journal_init_jbd_inode(&ei->jinode, &ei->vfs_inode)"];
+"1000149" -> "1000218"  [label="DDG: &ei->vfs_inode"];
+"1000218" -> "1000103"  [label="AST: "];
+"1000218" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000223" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000223"  [label="DDG: <RET>"];
+}

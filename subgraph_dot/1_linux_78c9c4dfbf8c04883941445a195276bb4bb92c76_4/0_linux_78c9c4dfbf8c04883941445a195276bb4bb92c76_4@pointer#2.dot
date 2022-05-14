@@ -1,0 +1,32 @@
+digraph "0_linux_78c9c4dfbf8c04883941445a195276bb4bb92c76_4@pointer" {
+"1000115" [label="(Call,spin_lock_irqsave(&timr->it_lock, flags))"];
+"1000197" [label="(Call,unlock_timer(timr, flags))"];
+"1000199" [label="(Identifier,flags)"];
+"1000198" [label="(Identifier,timr)"];
+"1000104" [label="(Block,)"];
+"1000197" [label="(Call,unlock_timer(timr, flags))"];
+"1000139" [label="(Call,posix_timer_event(timr, si_private))"];
+"1000120" [label="(Identifier,flags)"];
+"1000116" [label="(Call,&timr->it_lock)"];
+"1000115" [label="(Call,spin_lock_irqsave(&timr->it_lock, flags))"];
+"1000123" [label="(Identifier,timr)"];
+"1000201" [label="(Identifier,ret)"];
+"1000202" [label="(MethodReturn,static enum hrtimer_restart)"];
+"1000115" -> "1000104"  [label="AST: "];
+"1000115" -> "1000120"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000120" -> "1000115"  [label="AST: "];
+"1000123" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000202"  [label="DDG: spin_lock_irqsave(&timr->it_lock, flags)"];
+"1000115" -> "1000202"  [label="DDG: &timr->it_lock"];
+"1000115" -> "1000197"  [label="DDG: flags"];
+"1000197" -> "1000104"  [label="AST: "];
+"1000197" -> "1000199"  [label="CFG: "];
+"1000198" -> "1000197"  [label="AST: "];
+"1000199" -> "1000197"  [label="AST: "];
+"1000201" -> "1000197"  [label="CFG: "];
+"1000197" -> "1000202"  [label="DDG: timr"];
+"1000197" -> "1000202"  [label="DDG: unlock_timer(timr, flags)"];
+"1000197" -> "1000202"  [label="DDG: flags"];
+"1000139" -> "1000197"  [label="DDG: timr"];
+}

@@ -1,0 +1,28 @@
+digraph "1_linux_20e2b791796bd68816fa115f12be5320de2b8021@API" {
+"1000126" [label="(Call,readw(mpu->dev->MIDQ + JQS_wTail))"];
+"1000125" [label="(Call,readw(mpu->dev->MIDQ + JQS_wTail) !=\n\t       readw(mpu->dev->MIDQ + JQS_wHead))"];
+"1000224" [label="(MethodReturn,void)"];
+"1000221" [label="(Identifier,mpu)"];
+"1000126" [label="(Call,readw(mpu->dev->MIDQ + JQS_wTail))"];
+"1000124" [label="(ControlStructure,while (readw(mpu->dev->MIDQ + JQS_wTail) !=\n\t       readw(mpu->dev->MIDQ + JQS_wHead)))"];
+"1000146" [label="(Identifier,val)"];
+"1000127" [label="(Call,mpu->dev->MIDQ + JQS_wTail)"];
+"1000125" [label="(Call,readw(mpu->dev->MIDQ + JQS_wTail) !=\n\t       readw(mpu->dev->MIDQ + JQS_wHead))"];
+"1000134" [label="(Call,readw(mpu->dev->MIDQ + JQS_wHead))"];
+"1000138" [label="(Identifier,mpu)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000138" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000224"  [label="DDG: mpu->dev->MIDQ + JQS_wTail"];
+"1000126" -> "1000125"  [label="DDG: mpu->dev->MIDQ + JQS_wTail"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000125"  [label="AST: "];
+"1000146" -> "1000125"  [label="CFG: "];
+"1000221" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000224"  [label="DDG: readw(mpu->dev->MIDQ + JQS_wTail) !=\n\t       readw(mpu->dev->MIDQ + JQS_wHead)"];
+"1000125" -> "1000224"  [label="DDG: readw(mpu->dev->MIDQ + JQS_wTail)"];
+"1000125" -> "1000224"  [label="DDG: readw(mpu->dev->MIDQ + JQS_wHead)"];
+"1000134" -> "1000125"  [label="DDG: mpu->dev->MIDQ + JQS_wHead"];
+}

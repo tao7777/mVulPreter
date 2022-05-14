@@ -1,0 +1,38 @@
+digraph "0_ImageMagick6_a906fe9298bf89e01d5272023db687935068849a@pointer" {
+"1000149" [label="(Call,next=images)"];
+"1000101" [label="(MethodParameterIn,const Image *images)"];
+"1000152" [label="(Call,next != (Image *) NULL)"];
+"1000150" [label="(Identifier,next)"];
+"1000157" [label="(Call,next=next->next)"];
+"1000101" [label="(MethodParameterIn,const Image *images)"];
+"1000154" [label="(Call,(Image *) NULL)"];
+"1000163" [label="(Identifier,columns)"];
+"1000148" [label="(ControlStructure,for (next=images; next != (Image *) NULL; next=next->next))"];
+"1000171" [label="(Identifier,i)"];
+"1000152" [label="(Call,next != (Image *) NULL)"];
+"1000240" [label="(MethodReturn,static PixelChannels **)"];
+"1000149" [label="(Call,next=images)"];
+"1000151" [label="(Identifier,images)"];
+"1000153" [label="(Identifier,next)"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000151"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000151" -> "1000149"  [label="AST: "];
+"1000153" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000240"  [label="DDG: images"];
+"1000101" -> "1000149"  [label="DDG: images"];
+"1000149" -> "1000152"  [label="DDG: next"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000240"  [label="DDG: images"];
+"1000152" -> "1000148"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000154" -> "1000152"  [label="AST: "];
+"1000163" -> "1000152"  [label="CFG: "];
+"1000171" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000240"  [label="DDG: next"];
+"1000152" -> "1000240"  [label="DDG: (Image *) NULL"];
+"1000152" -> "1000240"  [label="DDG: next != (Image *) NULL"];
+"1000157" -> "1000152"  [label="DDG: next"];
+"1000154" -> "1000152"  [label="DDG: NULL"];
+}

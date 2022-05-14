@@ -1,0 +1,36 @@
+digraph "1_linux_eee5cc2702929fd41cce28058dc6d6717f723f87_7@API" {
+"1000137" [label="(Call,file_check_writeable(f) != 0)"];
+"1000138" [label="(Call,file_check_writeable(f))"];
+"1000110" [label="(Call,file_count(f))"];
+"1000148" [label="(Call,file_release_write(f))"];
+"1000154" [label="(MethodReturn,void)"];
+"1000141" [label="(ControlStructure,continue;)"];
+"1000145" [label="(Identifier,f)"];
+"1000138" [label="(Call,file_check_writeable(f))"];
+"1000140" [label="(Literal,0)"];
+"1000110" [label="(Call,file_count(f))"];
+"1000111" [label="(Identifier,f)"];
+"1000109" [label="(Call,!file_count(f))"];
+"1000139" [label="(Identifier,f)"];
+"1000136" [label="(ControlStructure,if (file_check_writeable(f) != 0))"];
+"1000137" [label="(Call,file_check_writeable(f) != 0)"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000140"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000140" -> "1000137"  [label="AST: "];
+"1000141" -> "1000137"  [label="CFG: "];
+"1000145" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000154"  [label="DDG: file_check_writeable(f)"];
+"1000137" -> "1000154"  [label="DDG: file_check_writeable(f) != 0"];
+"1000138" -> "1000137"  [label="DDG: f"];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000140" -> "1000138"  [label="CFG: "];
+"1000110" -> "1000138"  [label="DDG: f"];
+"1000138" -> "1000148"  [label="DDG: f"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="DDG: f"];
+}

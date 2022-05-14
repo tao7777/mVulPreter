@@ -1,0 +1,24 @@
+digraph "0_linux_687cb0884a714ff484d038e9190edc874edcf146@pointer" {
+"1000250" [label="(Call,trace_finish_task_reaping(tsk->pid))"];
+"1000164" [label="(Call,trace_start_task_reaping(tsk->pid))"];
+"1000251" [label="(Call,tsk->pid)"];
+"1000108" [label="(Block,)"];
+"1000169" [label="(Identifier,MMF_UNSTABLE)"];
+"1000164" [label="(Call,trace_start_task_reaping(tsk->pid))"];
+"1000165" [label="(Call,tsk->pid)"];
+"1000250" [label="(Call,trace_finish_task_reaping(tsk->pid))"];
+"1000260" [label="(MethodReturn,static bool)"];
+"1000254" [label="(JumpTarget,unlock_oom:)"];
+"1000250" -> "1000108"  [label="AST: "];
+"1000250" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000254" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000260"  [label="DDG: tsk->pid"];
+"1000250" -> "1000260"  [label="DDG: trace_finish_task_reaping(tsk->pid)"];
+"1000164" -> "1000250"  [label="DDG: tsk->pid"];
+"1000164" -> "1000108"  [label="AST: "];
+"1000164" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000169" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000260"  [label="DDG: trace_start_task_reaping(tsk->pid)"];
+}

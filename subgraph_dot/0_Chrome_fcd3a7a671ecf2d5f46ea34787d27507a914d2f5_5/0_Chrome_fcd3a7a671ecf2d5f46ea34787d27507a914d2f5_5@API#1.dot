@@ -1,0 +1,34 @@
+digraph "0_Chrome_fcd3a7a671ecf2d5f46ea34787d27507a914d2f5_5@API" {
+"1000397" [label="(Call,OverwriteServerChanges(trans, &entry))"];
+"1000102" [label="(MethodParameterIn,WriteTransaction* trans)"];
+"1000442" [label="(Call,trans->directory()->GetChildHandlesById(trans,\n                                              entry.Get(syncable::ID),\n                                              &children))"];
+"1000325" [label="(Call,OverwriteServerChanges(trans, &entry))"];
+"1000396" [label="(Block,)"];
+"1000397" [label="(Call,OverwriteServerChanges(trans, &entry))"];
+"1000398" [label="(Identifier,trans)"];
+"1000517" [label="(MethodReturn,RET)"];
+"1000471" [label="(Call,OverwriteServerChanges(trans, &entry))"];
+"1000494" [label="(Call,SyncerUtil::SplitServerInformationIntoNewEntry(trans, &entry))"];
+"1000399" [label="(Call,&entry)"];
+"1000355" [label="(Call,OverwriteServerChanges(trans, &entry))"];
+"1000379" [label="(Call,OverwriteServerChanges(trans, &entry))"];
+"1000401" [label="(Call,status->increment_num_server_overwrites())"];
+"1000102" [label="(MethodParameterIn,WriteTransaction* trans)"];
+"1000397" -> "1000396"  [label="AST: "];
+"1000397" -> "1000399"  [label="CFG: "];
+"1000398" -> "1000397"  [label="AST: "];
+"1000399" -> "1000397"  [label="AST: "];
+"1000401" -> "1000397"  [label="CFG: "];
+"1000397" -> "1000517"  [label="DDG: OverwriteServerChanges(trans, &entry)"];
+"1000397" -> "1000517"  [label="DDG: trans"];
+"1000397" -> "1000517"  [label="DDG: &entry"];
+"1000102" -> "1000397"  [label="DDG: trans"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000517"  [label="DDG: trans"];
+"1000102" -> "1000325"  [label="DDG: trans"];
+"1000102" -> "1000355"  [label="DDG: trans"];
+"1000102" -> "1000379"  [label="DDG: trans"];
+"1000102" -> "1000442"  [label="DDG: trans"];
+"1000102" -> "1000471"  [label="DDG: trans"];
+"1000102" -> "1000494"  [label="DDG: trans"];
+}

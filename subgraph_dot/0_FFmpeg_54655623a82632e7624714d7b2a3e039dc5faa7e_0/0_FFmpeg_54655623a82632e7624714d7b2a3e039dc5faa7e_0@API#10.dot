@@ -1,0 +1,33 @@
+digraph "0_FFmpeg_54655623a82632e7624714d7b2a3e039dc5faa7e_0@API" {
+"1001971" [label="(Call,s->threads_number > 1)"];
+"1001970" [label="(Call,s->threads_number > 1 && (s->ps.pps->num_tile_rows > 1 || s->ps.pps->num_tile_columns > 1))"];
+"1001972" [label="(Call,s->threads_number)"];
+"1001975" [label="(Literal,1)"];
+"1001970" [label="(Call,s->threads_number > 1 && (s->ps.pps->num_tile_rows > 1 || s->ps.pps->num_tile_columns > 1))"];
+"1001981" [label="(Identifier,s)"];
+"1001976" [label="(Call,s->ps.pps->num_tile_rows > 1 || s->ps.pps->num_tile_columns > 1)"];
+"1002212" [label="(MethodReturn,static int)"];
+"1001998" [label="(Identifier,s)"];
+"1001969" [label="(ControlStructure,if (s->threads_number > 1 && (s->ps.pps->num_tile_rows > 1 || s->ps.pps->num_tile_columns > 1)))"];
+"1001971" [label="(Call,s->threads_number > 1)"];
+"1002009" [label="(Identifier,s)"];
+"1001971" -> "1001970"  [label="AST: "];
+"1001971" -> "1001975"  [label="CFG: "];
+"1001972" -> "1001971"  [label="AST: "];
+"1001975" -> "1001971"  [label="AST: "];
+"1001981" -> "1001971"  [label="CFG: "];
+"1001970" -> "1001971"  [label="CFG: "];
+"1001971" -> "1002212"  [label="DDG: s->threads_number"];
+"1001971" -> "1001970"  [label="DDG: s->threads_number"];
+"1001971" -> "1001970"  [label="DDG: 1"];
+"1001970" -> "1001969"  [label="AST: "];
+"1001970" -> "1001976"  [label="CFG: "];
+"1001976" -> "1001970"  [label="AST: "];
+"1001998" -> "1001970"  [label="CFG: "];
+"1002009" -> "1001970"  [label="CFG: "];
+"1001970" -> "1002212"  [label="DDG: s->threads_number > 1"];
+"1001970" -> "1002212"  [label="DDG: s->threads_number > 1 && (s->ps.pps->num_tile_rows > 1 || s->ps.pps->num_tile_columns > 1)"];
+"1001970" -> "1002212"  [label="DDG: s->ps.pps->num_tile_rows > 1 || s->ps.pps->num_tile_columns > 1"];
+"1001976" -> "1001970"  [label="DDG: s->ps.pps->num_tile_rows > 1"];
+"1001976" -> "1001970"  [label="DDG: s->ps.pps->num_tile_columns > 1"];
+}

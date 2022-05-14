@@ -1,0 +1,30 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_1@API" {
+"1000192" [label="(Call,ipv6_addr_copy(&newnp->rcv_saddr, &newnp->saddr))"];
+"1000184" [label="(Call,ipv6_addr_set_v4mapped(newinet->inet_saddr, &newnp->saddr))"];
+"1000204" [label="(Identifier,newsk)"];
+"1000197" [label="(Call,&newnp->saddr)"];
+"1000188" [label="(Call,&newnp->saddr)"];
+"1000136" [label="(Block,)"];
+"1000195" [label="(Identifier,newnp)"];
+"1000192" [label="(Call,ipv6_addr_copy(&newnp->rcv_saddr, &newnp->saddr))"];
+"1000184" [label="(Call,ipv6_addr_set_v4mapped(newinet->inet_saddr, &newnp->saddr))"];
+"1000193" [label="(Call,&newnp->rcv_saddr)"];
+"1000185" [label="(Call,newinet->inet_saddr)"];
+"1000619" [label="(MethodReturn,static struct sock *)"];
+"1000192" -> "1000136"  [label="AST: "];
+"1000192" -> "1000197"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000197" -> "1000192"  [label="AST: "];
+"1000204" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000619"  [label="DDG: &newnp->saddr"];
+"1000192" -> "1000619"  [label="DDG: &newnp->rcv_saddr"];
+"1000192" -> "1000619"  [label="DDG: ipv6_addr_copy(&newnp->rcv_saddr, &newnp->saddr)"];
+"1000184" -> "1000192"  [label="DDG: &newnp->saddr"];
+"1000184" -> "1000136"  [label="AST: "];
+"1000184" -> "1000188"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000188" -> "1000184"  [label="AST: "];
+"1000195" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000619"  [label="DDG: newinet->inet_saddr"];
+"1000184" -> "1000619"  [label="DDG: ipv6_addr_set_v4mapped(newinet->inet_saddr, &newnp->saddr)"];
+}

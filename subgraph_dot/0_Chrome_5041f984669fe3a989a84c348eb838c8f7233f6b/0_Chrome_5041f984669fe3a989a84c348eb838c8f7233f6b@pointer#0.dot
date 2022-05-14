@@ -1,0 +1,33 @@
+digraph "0_Chrome_5041f984669fe3a989a84c348eb838c8f7233f6b@pointer" {
+"1000126" [label="(Call,NavigationState::FromDataSource(ds))"];
+"1000120" [label="(Call,* ds = frame->dataSource())"];
+"1000124" [label="(Call,* navigation_state = NavigationState::FromDataSource(ds))"];
+"1000126" [label="(Call,NavigationState::FromDataSource(ds))"];
+"1000127" [label="(Identifier,ds)"];
+"1000131" [label="(MethodReturn,void)"];
+"1000120" [label="(Call,* ds = frame->dataSource())"];
+"1000125" [label="(Identifier,navigation_state)"];
+"1000124" [label="(Call,* navigation_state = NavigationState::FromDataSource(ds))"];
+"1000121" [label="(Identifier,ds)"];
+"1000128" [label="(Call,navigation_state->user_script_idle_scheduler()->Cancel())"];
+"1000103" [label="(Block,)"];
+"1000122" [label="(Call,frame->dataSource())"];
+"1000126" -> "1000124"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000131"  [label="DDG: ds"];
+"1000126" -> "1000124"  [label="DDG: ds"];
+"1000120" -> "1000126"  [label="DDG: ds"];
+"1000120" -> "1000103"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000125" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000131"  [label="DDG: frame->dataSource()"];
+"1000124" -> "1000103"  [label="AST: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000128" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000131"  [label="DDG: navigation_state"];
+"1000124" -> "1000131"  [label="DDG: NavigationState::FromDataSource(ds)"];
+}

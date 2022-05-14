@@ -1,0 +1,36 @@
+digraph "0_libmspack_7cadd489698be117c47efcadd742651594429e6d@API" {
+"1000112" [label="(Call,strlen(fname) + 1)"];
+"1000113" [label="(Call,strlen(fname))"];
+"1000104" [label="(MethodParameterIn,char *fname)"];
+"1000129" [label="(Call,strcpy(out, (*fname) ? fname : \"x\"))"];
+"1000114" [label="(Identifier,fname)"];
+"1000115" [label="(Literal,1)"];
+"1000131" [label="(Call,(*fname) ? fname : \"x\")"];
+"1000111" [label="(Call,malloc(strlen(fname) + 1))"];
+"1000112" [label="(Call,strlen(fname) + 1)"];
+"1000127" [label="(Call,fname++)"];
+"1000113" [label="(Call,strlen(fname))"];
+"1000104" [label="(MethodParameterIn,char *fname)"];
+"1000181" [label="(MethodReturn,char *)"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000115"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000115" -> "1000112"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000181"  [label="DDG: strlen(fname)"];
+"1000113" -> "1000112"  [label="DDG: fname"];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000181"  [label="DDG: fname"];
+"1000113" -> "1000111"  [label="DDG: fname"];
+"1000104" -> "1000113"  [label="DDG: fname"];
+"1000113" -> "1000127"  [label="DDG: fname"];
+"1000113" -> "1000129"  [label="DDG: fname"];
+"1000113" -> "1000131"  [label="DDG: fname"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000181"  [label="DDG: fname"];
+"1000104" -> "1000127"  [label="DDG: fname"];
+"1000104" -> "1000129"  [label="DDG: fname"];
+"1000104" -> "1000131"  [label="DDG: fname"];
+}

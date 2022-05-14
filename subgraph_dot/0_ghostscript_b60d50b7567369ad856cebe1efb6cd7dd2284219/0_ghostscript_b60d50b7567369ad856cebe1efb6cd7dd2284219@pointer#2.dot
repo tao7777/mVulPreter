@@ -1,0 +1,22 @@
+digraph "0_ghostscript_b60d50b7567369ad856cebe1efb6cd7dd2284219@pointer" {
+"1000104" [label="(MethodParameterIn,const char *permission)"];
+"1000118" [label="(Call,permission[0] == 'r')"];
+"1000117" [label="(Call,permission[0] == 'r' ? \"PermitFileReading\" : \"PermitFileWriting\")"];
+"1000124" [label="(Literal,\"PermitFileWriting\")"];
+"1000104" [label="(MethodParameterIn,const char *permission)"];
+"1000118" [label="(Call,permission[0] == 'r')"];
+"1000119" [label="(Call,permission[0])"];
+"1000122" [label="(Literal,'r')"];
+"1000174" [label="(MethodReturn,RET)"];
+"1000123" [label="(Literal,\"PermitFileReading\")"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000174"  [label="DDG: permission"];
+"1000104" -> "1000118"  [label="DDG: permission"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000122"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000122" -> "1000118"  [label="AST: "];
+"1000123" -> "1000118"  [label="CFG: "];
+"1000124" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000174"  [label="DDG: permission[0]"];
+}

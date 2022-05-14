@@ -1,0 +1,31 @@
+digraph "0_linux_0720a06a7518c9d0c0125bd5d1f3b6264c55c3dd_0@pointer" {
+"1000199" [label="(Call,*ip == ':')"];
+"1000197" [label="(Call,escape && (*ip == ':'))"];
+"1000198" [label="(Identifier,escape)"];
+"1000106" [label="(MethodParameterIn,int escape)"];
+"1000202" [label="(Literal,':')"];
+"1000311" [label="(Identifier,charlen)"];
+"1000206" [label="(Identifier,i)"];
+"1000196" [label="(ControlStructure,if (escape && (*ip == ':')))"];
+"1000199" [label="(Call,*ip == ':')"];
+"1000459" [label="(MethodReturn,RET)"];
+"1000200" [label="(Call,*ip)"];
+"1000197" [label="(Call,escape && (*ip == ':'))"];
+"1000199" -> "1000197"  [label="AST: "];
+"1000199" -> "1000202"  [label="CFG: "];
+"1000200" -> "1000199"  [label="AST: "];
+"1000202" -> "1000199"  [label="AST: "];
+"1000197" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000459"  [label="DDG: *ip"];
+"1000199" -> "1000197"  [label="DDG: *ip"];
+"1000199" -> "1000197"  [label="DDG: ':'"];
+"1000197" -> "1000196"  [label="AST: "];
+"1000197" -> "1000198"  [label="CFG: "];
+"1000198" -> "1000197"  [label="AST: "];
+"1000206" -> "1000197"  [label="CFG: "];
+"1000311" -> "1000197"  [label="CFG: "];
+"1000197" -> "1000459"  [label="DDG: escape && (*ip == ':')"];
+"1000197" -> "1000459"  [label="DDG: *ip == ':'"];
+"1000197" -> "1000459"  [label="DDG: escape"];
+"1000106" -> "1000197"  [label="DDG: escape"];
+}

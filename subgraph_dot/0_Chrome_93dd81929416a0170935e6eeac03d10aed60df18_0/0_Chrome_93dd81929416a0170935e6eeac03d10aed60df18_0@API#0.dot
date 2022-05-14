@@ -1,0 +1,32 @@
+digraph "0_Chrome_93dd81929416a0170935e6eeac03d10aed60df18_0@API" {
+"1000112" [label="(Call,npObject->_class->removeProperty(npObject, propertyName))"];
+"1000102" [label="(MethodParameterIn,NPObject* npObject)"];
+"1000103" [label="(MethodParameterIn,NPIdentifier propertyName)"];
+"1000111" [label="(Return,return npObject->_class->removeProperty(npObject, propertyName);)"];
+"1000114" [label="(Identifier,propertyName)"];
+"1000113" [label="(Identifier,npObject)"];
+"1000117" [label="(MethodReturn,static bool)"];
+"1000105" [label="(ControlStructure,if (npObject->_class->removeProperty))"];
+"1000111" [label="(Return,return npObject->_class->removeProperty(npObject, propertyName);)"];
+"1000102" [label="(MethodParameterIn,NPObject* npObject)"];
+"1000103" [label="(MethodParameterIn,NPIdentifier propertyName)"];
+"1000112" [label="(Call,npObject->_class->removeProperty(npObject, propertyName))"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000117"  [label="DDG: propertyName"];
+"1000112" -> "1000117"  [label="DDG: npObject->_class->removeProperty(npObject, propertyName)"];
+"1000112" -> "1000117"  [label="DDG: npObject"];
+"1000112" -> "1000111"  [label="DDG: npObject->_class->removeProperty(npObject, propertyName)"];
+"1000102" -> "1000112"  [label="DDG: npObject"];
+"1000103" -> "1000112"  [label="DDG: propertyName"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000117"  [label="DDG: npObject"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000117"  [label="DDG: propertyName"];
+"1000111" -> "1000105"  [label="AST: "];
+"1000117" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000117"  [label="DDG: <RET>"];
+}

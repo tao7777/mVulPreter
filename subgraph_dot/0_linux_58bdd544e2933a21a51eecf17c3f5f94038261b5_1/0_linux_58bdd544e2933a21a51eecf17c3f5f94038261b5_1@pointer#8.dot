@@ -1,0 +1,29 @@
+digraph "0_linux_58bdd544e2933a21a51eecf17c3f5f94038261b5_1@pointer" {
+"1000114" [label="(Call,*lto_tlv = NULL)"];
+"1000304" [label="(Call,kfree(lto_tlv))"];
+"1000115" [label="(Identifier,lto_tlv)"];
+"1000176" [label="(Call,!lto_tlv)"];
+"1000114" [label="(Call,*lto_tlv = NULL)"];
+"1000307" [label="(Identifier,wks_tlv)"];
+"1000304" [label="(Call,kfree(lto_tlv))"];
+"1000305" [label="(Identifier,lto_tlv)"];
+"1000119" [label="(Identifier,wks_tlv)"];
+"1000102" [label="(Block,)"];
+"1000275" [label="(Call,memcpy(gb_cur, lto_tlv, lto_length))"];
+"1000116" [label="(Identifier,NULL)"];
+"1000312" [label="(MethodReturn,static int)"];
+"1000114" -> "1000102"  [label="AST: "];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000119" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000304"  [label="DDG: lto_tlv"];
+"1000304" -> "1000102"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000304"  [label="AST: "];
+"1000307" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000312"  [label="DDG: kfree(lto_tlv)"];
+"1000304" -> "1000312"  [label="DDG: lto_tlv"];
+"1000275" -> "1000304"  [label="DDG: lto_tlv"];
+"1000176" -> "1000304"  [label="DDG: lto_tlv"];
+}

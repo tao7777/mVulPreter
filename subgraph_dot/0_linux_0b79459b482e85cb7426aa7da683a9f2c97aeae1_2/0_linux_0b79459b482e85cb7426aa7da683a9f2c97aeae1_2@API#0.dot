@@ -1,0 +1,25 @@
+digraph "0_linux_0b79459b482e85cb7426aa7da683a9f2c97aeae1_2@API" {
+"1000226" [label="(Call,kvm_x2apic_msr_write(vcpu, msr, data))"];
+"1000225" [label="(Return,return kvm_x2apic_msr_write(vcpu, msr, data);)"];
+"1000133" [label="(Block,)"];
+"1000225" [label="(Return,return kvm_x2apic_msr_write(vcpu, msr, data);)"];
+"1000632" [label="(MethodReturn,int)"];
+"1000228" [label="(Identifier,msr)"];
+"1000229" [label="(Identifier,data)"];
+"1000227" [label="(Identifier,vcpu)"];
+"1000226" [label="(Call,kvm_x2apic_msr_write(vcpu, msr, data))"];
+"1000226" -> "1000225"  [label="AST: "];
+"1000226" -> "1000229"  [label="CFG: "];
+"1000227" -> "1000226"  [label="AST: "];
+"1000228" -> "1000226"  [label="AST: "];
+"1000229" -> "1000226"  [label="AST: "];
+"1000225" -> "1000226"  [label="CFG: "];
+"1000226" -> "1000632"  [label="DDG: vcpu"];
+"1000226" -> "1000632"  [label="DDG: kvm_x2apic_msr_write(vcpu, msr, data)"];
+"1000226" -> "1000632"  [label="DDG: msr"];
+"1000226" -> "1000632"  [label="DDG: data"];
+"1000226" -> "1000225"  [label="DDG: kvm_x2apic_msr_write(vcpu, msr, data)"];
+"1000225" -> "1000133"  [label="AST: "];
+"1000632" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000632"  [label="DDG: <RET>"];
+}

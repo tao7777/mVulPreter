@@ -1,0 +1,25 @@
+digraph "0_linux_82981930125abfd39d7c8378a9cfdf5e1be2002b@pointer" {
+"1000256" [label="(Call,xchg(&sk->sk_err_soft, 0))"];
+"1000252" [label="(Call,v.val = xchg(&sk->sk_err_soft, 0))"];
+"1000246" [label="(ControlStructure,if (v.val == 0))"];
+"1000262" [label="(ControlStructure,break;)"];
+"1000252" [label="(Call,v.val = xchg(&sk->sk_err_soft, 0))"];
+"1000256" [label="(Call,xchg(&sk->sk_err_soft, 0))"];
+"1000253" [label="(Call,v.val)"];
+"1000261" [label="(Literal,0)"];
+"1000744" [label="(MethodReturn,int)"];
+"1000257" [label="(Call,&sk->sk_err_soft)"];
+"1000256" -> "1000252"  [label="AST: "];
+"1000256" -> "1000261"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000261" -> "1000256"  [label="AST: "];
+"1000252" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000744"  [label="DDG: &sk->sk_err_soft"];
+"1000256" -> "1000252"  [label="DDG: &sk->sk_err_soft"];
+"1000256" -> "1000252"  [label="DDG: 0"];
+"1000252" -> "1000246"  [label="AST: "];
+"1000253" -> "1000252"  [label="AST: "];
+"1000262" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000744"  [label="DDG: v.val"];
+"1000252" -> "1000744"  [label="DDG: xchg(&sk->sk_err_soft, 0)"];
+}

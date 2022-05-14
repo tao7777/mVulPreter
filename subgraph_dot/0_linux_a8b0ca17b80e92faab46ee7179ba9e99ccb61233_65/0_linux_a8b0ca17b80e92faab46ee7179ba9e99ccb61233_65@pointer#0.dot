@@ -1,0 +1,23 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_65@pointer" {
+"1000101" [label="(MethodParameterIn,struct hrtimer *hrtimer)"];
+"1000177" [label="(Call,hrtimer_forward_now(hrtimer, ns_to_ktime(period)))"];
+"1000178" [label="(Identifier,hrtimer)"];
+"1000177" [label="(Call,hrtimer_forward_now(hrtimer, ns_to_ktime(period)))"];
+"1000179" [label="(Call,ns_to_ktime(period))"];
+"1000102" [label="(Block,)"];
+"1000182" [label="(Identifier,ret)"];
+"1000101" [label="(MethodParameterIn,struct hrtimer *hrtimer)"];
+"1000183" [label="(MethodReturn,static enum hrtimer_restart)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000183"  [label="DDG: hrtimer"];
+"1000101" -> "1000177"  [label="DDG: hrtimer"];
+"1000177" -> "1000102"  [label="AST: "];
+"1000177" -> "1000179"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000179" -> "1000177"  [label="AST: "];
+"1000182" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000183"  [label="DDG: hrtimer"];
+"1000177" -> "1000183"  [label="DDG: ns_to_ktime(period)"];
+"1000177" -> "1000183"  [label="DDG: hrtimer_forward_now(hrtimer, ns_to_ktime(period))"];
+"1000179" -> "1000177"  [label="DDG: period"];
+}

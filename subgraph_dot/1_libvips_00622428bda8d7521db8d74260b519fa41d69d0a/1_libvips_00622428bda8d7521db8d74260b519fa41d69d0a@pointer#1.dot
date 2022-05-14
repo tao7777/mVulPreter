@@ -1,0 +1,33 @@
+digraph "1_libvips_00622428bda8d7521db8d74260b519fa41d69d0a@pointer" {
+"1000118" [label="(Call,object->local_memory += size)"];
+"1000107" [label="(Call,g_malloc( size ))"];
+"1000102" [label="(MethodParameterIn,size_t size)"];
+"1000105" [label="(Call,buf = g_malloc( size ))"];
+"1000125" [label="(MethodReturn,RET)"];
+"1000111" [label="(Block,)"];
+"1000122" [label="(Identifier,size)"];
+"1000108" [label="(Identifier,size)"];
+"1000107" [label="(Call,g_malloc( size ))"];
+"1000124" [label="(Identifier,buf)"];
+"1000118" [label="(Call,object->local_memory += size)"];
+"1000119" [label="(Call,object->local_memory)"];
+"1000102" [label="(MethodParameterIn,size_t size)"];
+"1000118" -> "1000111"  [label="AST: "];
+"1000118" -> "1000122"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000122" -> "1000118"  [label="AST: "];
+"1000124" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000125"  [label="DDG: size"];
+"1000118" -> "1000125"  [label="DDG: object->local_memory"];
+"1000107" -> "1000118"  [label="DDG: size"];
+"1000102" -> "1000118"  [label="DDG: size"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000125"  [label="DDG: size"];
+"1000107" -> "1000105"  [label="DDG: size"];
+"1000102" -> "1000107"  [label="DDG: size"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000125"  [label="DDG: size"];
+}

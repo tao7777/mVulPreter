@@ -1,0 +1,22 @@
+digraph "0_savannah_3f872fe60463a931c5c766dbf8c36870c0023e88@pointer" {
+"1000124" [label="(Call,emsg->filter.typemask = htons (filter->typemask))"];
+"1000130" [label="(Call,htons (filter->typemask))"];
+"1000167" [label="(MethodReturn,RET)"];
+"1000104" [label="(Block,)"];
+"1000137" [label="(Identifier,emsg)"];
+"1000125" [label="(Call,emsg->filter.typemask)"];
+"1000124" [label="(Call,emsg->filter.typemask = htons (filter->typemask))"];
+"1000130" [label="(Call,htons (filter->typemask))"];
+"1000131" [label="(Call,filter->typemask)"];
+"1000124" -> "1000104"  [label="AST: "];
+"1000124" -> "1000130"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000130" -> "1000124"  [label="AST: "];
+"1000137" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000167"  [label="DDG: emsg->filter.typemask"];
+"1000124" -> "1000167"  [label="DDG: htons (filter->typemask)"];
+"1000130" -> "1000124"  [label="DDG: filter->typemask"];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000130" -> "1000167"  [label="DDG: filter->typemask"];
+}

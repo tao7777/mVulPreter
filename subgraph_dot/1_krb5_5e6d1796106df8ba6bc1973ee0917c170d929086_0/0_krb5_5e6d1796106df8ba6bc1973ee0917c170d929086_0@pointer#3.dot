@@ -1,0 +1,35 @@
+digraph "0_krb5_5e6d1796106df8ba6bc1973ee0917c170d929086_0@pointer" {
+"1000105" [label="(MethodParameterIn,krb5_principal *canon_user)"];
+"1000164" [label="(Call,krb5_copy_principal(context,\n                                   anonymous ? in_creds->server\n                                   : in_creds->client,\n                                   canon_user))"];
+"1000163" [label="(Return,return krb5_copy_principal(context,\n                                   anonymous ? in_creds->server\n                                   : in_creds->client,\n                                   canon_user);)"];
+"1000347" [label="(MethodReturn,RET)"];
+"1000165" [label="(Identifier,context)"];
+"1000102" [label="(MethodParameterIn,krb5_context context)"];
+"1000166" [label="(Call,anonymous ? in_creds->server\n                                   : in_creds->client)"];
+"1000157" [label="(Call,krb5_principal_compare(context, in_creds->client,\n                                           krb5_anonymous_principal()))"];
+"1000153" [label="(Block,)"];
+"1000105" [label="(MethodParameterIn,krb5_principal *canon_user)"];
+"1000174" [label="(Identifier,canon_user)"];
+"1000164" [label="(Call,krb5_copy_principal(context,\n                                   anonymous ? in_creds->server\n                                   : in_creds->client,\n                                   canon_user))"];
+"1000163" [label="(Return,return krb5_copy_principal(context,\n                                   anonymous ? in_creds->server\n                                   : in_creds->client,\n                                   canon_user);)"];
+"1000105" -> "1000101"  [label="AST: "];
+"1000105" -> "1000347"  [label="DDG: canon_user"];
+"1000105" -> "1000164"  [label="DDG: canon_user"];
+"1000164" -> "1000163"  [label="AST: "];
+"1000164" -> "1000174"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000166" -> "1000164"  [label="AST: "];
+"1000174" -> "1000164"  [label="AST: "];
+"1000163" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000347"  [label="DDG: krb5_copy_principal(context,\n                                   anonymous ? in_creds->server\n                                   : in_creds->client,\n                                   canon_user)"];
+"1000164" -> "1000347"  [label="DDG: anonymous ? in_creds->server\n                                   : in_creds->client"];
+"1000164" -> "1000347"  [label="DDG: canon_user"];
+"1000164" -> "1000347"  [label="DDG: context"];
+"1000164" -> "1000163"  [label="DDG: krb5_copy_principal(context,\n                                   anonymous ? in_creds->server\n                                   : in_creds->client,\n                                   canon_user)"];
+"1000157" -> "1000164"  [label="DDG: context"];
+"1000157" -> "1000164"  [label="DDG: in_creds->client"];
+"1000102" -> "1000164"  [label="DDG: context"];
+"1000163" -> "1000153"  [label="AST: "];
+"1000347" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000347"  [label="DDG: <RET>"];
+}

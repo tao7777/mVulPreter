@@ -1,0 +1,34 @@
+digraph "0_linux_ee0d8d8482345ff97a75a7d747efc309f13b0d80@API" {
+"1000123" [label="(Call,copy_from_user(&ifr, arg, sizeof(ifr)))"];
+"1000102" [label="(MethodParameterIn,void __user *arg)"];
+"1000129" [label="(ControlStructure,break;)"];
+"1000122" [label="(ControlStructure,if (copy_from_user(&ifr, arg, sizeof(ifr))))"];
+"1000123" [label="(Call,copy_from_user(&ifr, arg, sizeof(ifr)))"];
+"1000127" [label="(Call,sizeof(ifr))"];
+"1000217" [label="(Call,copy_from_user(&ifr, arg, sizeof(ifr)))"];
+"1000331" [label="(Call,(unsigned char __user *) arg)"];
+"1000126" [label="(Identifier,arg)"];
+"1000343" [label="(MethodReturn,static int)"];
+"1000124" [label="(Call,&ifr)"];
+"1000102" [label="(MethodParameterIn,void __user *arg)"];
+"1000291" [label="(Call,copy_to_user(arg, &ifr, sizeof(ifr)))"];
+"1000312" [label="(Call,(unsigned char __user *) arg)"];
+"1000131" [label="(Identifier,sipx)"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000127"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000126" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000129" -> "1000123"  [label="CFG: "];
+"1000131" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000343"  [label="DDG: arg"];
+"1000123" -> "1000343"  [label="DDG: copy_from_user(&ifr, arg, sizeof(ifr))"];
+"1000123" -> "1000343"  [label="DDG: &ifr"];
+"1000102" -> "1000123"  [label="DDG: arg"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000343"  [label="DDG: arg"];
+"1000102" -> "1000217"  [label="DDG: arg"];
+"1000102" -> "1000291"  [label="DDG: arg"];
+"1000102" -> "1000312"  [label="DDG: arg"];
+"1000102" -> "1000331"  [label="DDG: arg"];
+}

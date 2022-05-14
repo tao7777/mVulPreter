@@ -1,0 +1,38 @@
+digraph "0_linux_6062a8dc0517bce23e3c2f7d2fea5e22411269a3_2@API" {
+"1000178" [label="(Call,sizeof(struct sem_undo) + sizeof(short)*nsems)"];
+"1000181" [label="(Call,sizeof(short)*nsems)"];
+"1000159" [label="(Call,nsems = sma->sem_nsems)"];
+"1000184" [label="(Identifier,nsems)"];
+"1000185" [label="(Identifier,GFP_KERNEL)"];
+"1000258" [label="(MethodReturn,static struct sem_undo *)"];
+"1000182" [label="(Call,sizeof(short))"];
+"1000161" [label="(Call,sma->sem_nsems)"];
+"1000179" [label="(Call,sizeof(struct sem_undo))"];
+"1000178" [label="(Call,sizeof(struct sem_undo) + sizeof(short)*nsems)"];
+"1000167" [label="(Identifier,sma)"];
+"1000159" [label="(Call,nsems = sma->sem_nsems)"];
+"1000109" [label="(Block,)"];
+"1000181" [label="(Call,sizeof(short)*nsems)"];
+"1000177" [label="(Call,kzalloc(sizeof(struct sem_undo) + sizeof(short)*nsems, GFP_KERNEL))"];
+"1000160" [label="(Identifier,nsems)"];
+"1000178" -> "1000177"  [label="AST: "];
+"1000178" -> "1000181"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000181" -> "1000178"  [label="AST: "];
+"1000185" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000258"  [label="DDG: sizeof(short)*nsems"];
+"1000181" -> "1000178"  [label="DDG: nsems"];
+"1000181" -> "1000184"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000184" -> "1000181"  [label="AST: "];
+"1000181" -> "1000258"  [label="DDG: nsems"];
+"1000181" -> "1000177"  [label="DDG: nsems"];
+"1000159" -> "1000181"  [label="DDG: nsems"];
+"1000159" -> "1000109"  [label="AST: "];
+"1000159" -> "1000161"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000159"  [label="AST: "];
+"1000167" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000258"  [label="DDG: nsems"];
+"1000159" -> "1000258"  [label="DDG: sma->sem_nsems"];
+}

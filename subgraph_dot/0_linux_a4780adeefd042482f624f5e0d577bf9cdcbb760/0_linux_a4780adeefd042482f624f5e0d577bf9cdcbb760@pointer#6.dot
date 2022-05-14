@@ -1,0 +1,23 @@
+digraph "0_linux_a4780adeefd042482f624f5e0d577bf9cdcbb760@pointer" {
+"1000145" [label="(Call,childregs->ARM_sp = stack_start)"];
+"1000102" [label="(MethodParameterIn,unsigned long stack_start)"];
+"1000221" [label="(MethodReturn,RET)"];
+"1000146" [label="(Call,childregs->ARM_sp)"];
+"1000102" [label="(MethodParameterIn,unsigned long stack_start)"];
+"1000143" [label="(ControlStructure,if (stack_start))"];
+"1000145" [label="(Call,childregs->ARM_sp = stack_start)"];
+"1000179" [label="(Identifier,thread)"];
+"1000149" [label="(Identifier,stack_start)"];
+"1000164" [label="(Call,thread->cpu_context.r5 = stack_start)"];
+"1000145" -> "1000143"  [label="AST: "];
+"1000145" -> "1000149"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000149" -> "1000145"  [label="AST: "];
+"1000179" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000221"  [label="DDG: stack_start"];
+"1000145" -> "1000221"  [label="DDG: childregs->ARM_sp"];
+"1000102" -> "1000145"  [label="DDG: stack_start"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000221"  [label="DDG: stack_start"];
+"1000102" -> "1000164"  [label="DDG: stack_start"];
+}

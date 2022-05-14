@@ -1,0 +1,37 @@
+digraph "0_Android_5a6788730acfc6fd8f4a6ef89d2c376572a26b55@pointer" {
+"1000184" [label="(Call,outHeader->nFlags = OMX_BUFFERFLAG_EOS)"];
+"1000154" [label="(Call,inHeader->nFlags & OMX_BUFFERFLAG_EOS)"];
+"1000161" [label="(Identifier,EOSseen)"];
+"1000297" [label="(Call,EOSseen ? OMX_BUFFERFLAG_EOS : 0)"];
+"1000154" [label="(Call,inHeader->nFlags & OMX_BUFFERFLAG_EOS)"];
+"1000184" [label="(Call,outHeader->nFlags = OMX_BUFFERFLAG_EOS)"];
+"1000188" [label="(Identifier,OMX_BUFFERFLAG_EOS)"];
+"1000409" [label="(MethodReturn,void)"];
+"1000293" [label="(Call,outHeader->nFlags = EOSseen ? OMX_BUFFERFLAG_EOS : 0)"];
+"1000153" [label="(ControlStructure,if (inHeader->nFlags & OMX_BUFFERFLAG_EOS))"];
+"1000169" [label="(Block,)"];
+"1000201" [label="(Identifier,mImg)"];
+"1000158" [label="(Identifier,OMX_BUFFERFLAG_EOS)"];
+"1000190" [label="(Call,outQueue.begin())"];
+"1000155" [label="(Call,inHeader->nFlags)"];
+"1000185" [label="(Call,outHeader->nFlags)"];
+"1000184" -> "1000169"  [label="AST: "];
+"1000184" -> "1000188"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000188" -> "1000184"  [label="AST: "];
+"1000190" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000409"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+"1000184" -> "1000409"  [label="DDG: outHeader->nFlags"];
+"1000154" -> "1000184"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+"1000154" -> "1000153"  [label="AST: "];
+"1000154" -> "1000158"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000158" -> "1000154"  [label="AST: "];
+"1000161" -> "1000154"  [label="CFG: "];
+"1000201" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000409"  [label="DDG: inHeader->nFlags"];
+"1000154" -> "1000409"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+"1000154" -> "1000409"  [label="DDG: inHeader->nFlags & OMX_BUFFERFLAG_EOS"];
+"1000154" -> "1000293"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+"1000154" -> "1000297"  [label="DDG: OMX_BUFFERFLAG_EOS"];
+}

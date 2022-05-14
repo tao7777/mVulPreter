@@ -1,0 +1,30 @@
+digraph "0_ImageMagick_e87af64b1ff1635a32d9b6162f1b0e260fb54ed9@pointer" {
+"1000172" [label="(Call,image->depth == 1)"];
+"1000165" [label="(Call,IsMonochromeImage(image,&image->exception) && (image->depth == 1))"];
+"1000172" [label="(Call,image->depth == 1)"];
+"1000173" [label="(Call,image->depth)"];
+"1000166" [label="(Call,IsMonochromeImage(image,&image->exception))"];
+"1000164" [label="(Call,IsMonochromeImage(image,&image->exception) && (image->depth == 1)\n     ? MagickTrue : MagickFalse)"];
+"1000165" [label="(Call,IsMonochromeImage(image,&image->exception) && (image->depth == 1))"];
+"1000177" [label="(Identifier,MagickTrue)"];
+"1000178" [label="(Identifier,MagickFalse)"];
+"1000484" [label="(MethodReturn,static size_t)"];
+"1000176" [label="(Literal,1)"];
+"1000172" -> "1000165"  [label="AST: "];
+"1000172" -> "1000176"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000176" -> "1000172"  [label="AST: "];
+"1000165" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000484"  [label="DDG: image->depth"];
+"1000172" -> "1000165"  [label="DDG: image->depth"];
+"1000172" -> "1000165"  [label="DDG: 1"];
+"1000165" -> "1000164"  [label="AST: "];
+"1000165" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000165"  [label="AST: "];
+"1000177" -> "1000165"  [label="CFG: "];
+"1000178" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000484"  [label="DDG: image->depth == 1"];
+"1000165" -> "1000484"  [label="DDG: IsMonochromeImage(image,&image->exception)"];
+"1000166" -> "1000165"  [label="DDG: image"];
+"1000166" -> "1000165"  [label="DDG: &image->exception"];
+}

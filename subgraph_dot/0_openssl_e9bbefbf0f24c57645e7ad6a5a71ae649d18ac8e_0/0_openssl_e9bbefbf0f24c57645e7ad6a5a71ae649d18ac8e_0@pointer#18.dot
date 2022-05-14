@@ -1,0 +1,35 @@
+digraph "0_openssl_e9bbefbf0f24c57645e7ad6a5a71ae649d18ac8e_0@pointer" {
+"1001293" [label="(Call,s->s3->change_cipher_spec = 1)"];
+"1000367" [label="(Call,s->s3->change_cipher_spec /* set when we receive ChangeCipherSpec,\n                                   * reset by ssl3_get_finished */\n        && (rr->type != SSL3_RT_HANDSHAKE))"];
+"1001303" [label="(Identifier,s)"];
+"1001294" [label="(Call,s->s3->change_cipher_spec)"];
+"1000373" [label="(Call,rr->type != SSL3_RT_HANDSHAKE)"];
+"1001293" [label="(Call,s->s3->change_cipher_spec = 1)"];
+"1000368" [label="(Call,s->s3->change_cipher_spec)"];
+"1000380" [label="(Identifier,al)"];
+"1001522" [label="(MethodReturn,int)"];
+"1001199" [label="(Block,)"];
+"1000366" [label="(ControlStructure,if (s->s3->change_cipher_spec /* set when we receive ChangeCipherSpec,\n                                   * reset by ssl3_get_finished */\n        && (rr->type != SSL3_RT_HANDSHAKE)))"];
+"1000389" [label="(Identifier,s)"];
+"1001299" [label="(Literal,1)"];
+"1000367" [label="(Call,s->s3->change_cipher_spec /* set when we receive ChangeCipherSpec,\n                                   * reset by ssl3_get_finished */\n        && (rr->type != SSL3_RT_HANDSHAKE))"];
+"1001293" -> "1001199"  [label="AST: "];
+"1001293" -> "1001299"  [label="CFG: "];
+"1001294" -> "1001293"  [label="AST: "];
+"1001299" -> "1001293"  [label="AST: "];
+"1001303" -> "1001293"  [label="CFG: "];
+"1001293" -> "1001522"  [label="DDG: s->s3->change_cipher_spec"];
+"1001293" -> "1000367"  [label="DDG: s->s3->change_cipher_spec"];
+"1000367" -> "1000366"  [label="AST: "];
+"1000367" -> "1000368"  [label="CFG: "];
+"1000367" -> "1000373"  [label="CFG: "];
+"1000368" -> "1000367"  [label="AST: "];
+"1000373" -> "1000367"  [label="AST: "];
+"1000380" -> "1000367"  [label="CFG: "];
+"1000389" -> "1000367"  [label="CFG: "];
+"1000367" -> "1001522"  [label="DDG: s->s3->change_cipher_spec"];
+"1000367" -> "1001522"  [label="DDG: rr->type != SSL3_RT_HANDSHAKE"];
+"1000367" -> "1001522"  [label="DDG: s->s3->change_cipher_spec /* set when we receive ChangeCipherSpec,\n                                   * reset by ssl3_get_finished */\n        && (rr->type != SSL3_RT_HANDSHAKE)"];
+"1000373" -> "1000367"  [label="DDG: rr->type"];
+"1000373" -> "1000367"  [label="DDG: SSL3_RT_HANDSHAKE"];
+}

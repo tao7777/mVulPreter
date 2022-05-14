@@ -1,0 +1,38 @@
+digraph "0_collectd_d16c24542b2f96a194d43a73c2e5778822b9cb47@pointer" {
+"1000174" [label="(Call,!ds)"];
+"1000167" [label="(Call,ds = plugin_get_ds(data->type))"];
+"1000169" [label="(Call,plugin_get_ds(data->type))"];
+"1000188" [label="(Identifier,ds)"];
+"1000168" [label="(Identifier,ds)"];
+"1000194" [label="(Call,ERROR(\"snmp plugin: DataSet `%s' requires %zu values, but config talks \"\n          \"about %zu\",\n          data->type, ds->ds_num, data->values_len))"];
+"1000175" [label="(Identifier,ds)"];
+"1000170" [label="(Call,data->type)"];
+"1000876" [label="(MethodReturn,static int)"];
+"1000173" [label="(ControlStructure,if (!ds))"];
+"1000178" [label="(Literal,\"snmp plugin: DataSet `%s' not defined.\")"];
+"1000167" [label="(Call,ds = plugin_get_ds(data->type))"];
+"1000123" [label="(Block,)"];
+"1000174" [label="(Call,!ds)"];
+"1000177" [label="(Call,ERROR(\"snmp plugin: DataSet `%s' not defined.\", data->type))"];
+"1000169" [label="(Call,plugin_get_ds(data->type))"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000174" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000178" -> "1000174"  [label="CFG: "];
+"1000188" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000876"  [label="DDG: !ds"];
+"1000174" -> "1000876"  [label="DDG: ds"];
+"1000167" -> "1000174"  [label="DDG: ds"];
+"1000167" -> "1000123"  [label="AST: "];
+"1000167" -> "1000169"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000169" -> "1000167"  [label="AST: "];
+"1000175" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000876"  [label="DDG: plugin_get_ds(data->type)"];
+"1000169" -> "1000167"  [label="DDG: data->type"];
+"1000169" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000169"  [label="AST: "];
+"1000169" -> "1000876"  [label="DDG: data->type"];
+"1000169" -> "1000177"  [label="DDG: data->type"];
+"1000169" -> "1000194"  [label="DDG: data->type"];
+}

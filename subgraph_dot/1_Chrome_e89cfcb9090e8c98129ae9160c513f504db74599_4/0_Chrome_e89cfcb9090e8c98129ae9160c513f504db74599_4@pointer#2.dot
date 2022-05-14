@@ -1,0 +1,23 @@
+digraph "0_Chrome_e89cfcb9090e8c98129ae9160c513f504db74599_4@pointer" {
+"1000103" [label="(MethodParameterIn,TabContents* new_contents)"];
+"1000145" [label="(Call,session_service->TabRestored(new_contents,\n                                 tab_strip_model_->IsTabPinned(index)))"];
+"1000145" [label="(Call,session_service->TabRestored(new_contents,\n                                 tab_strip_model_->IsTabPinned(index)))"];
+"1000146" [label="(Identifier,new_contents)"];
+"1000150" [label="(Call,old_contents->web_contents())"];
+"1000152" [label="(MethodReturn,void)"];
+"1000147" [label="(Call,tab_strip_model_->IsTabPinned(index))"];
+"1000103" [label="(MethodParameterIn,TabContents* new_contents)"];
+"1000144" [label="(Block,)"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000152"  [label="DDG: new_contents"];
+"1000103" -> "1000145"  [label="DDG: new_contents"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000150" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000152"  [label="DDG: new_contents"];
+"1000145" -> "1000152"  [label="DDG: session_service->TabRestored(new_contents,\n                                 tab_strip_model_->IsTabPinned(index))"];
+"1000145" -> "1000152"  [label="DDG: tab_strip_model_->IsTabPinned(index)"];
+"1000147" -> "1000145"  [label="DDG: index"];
+}

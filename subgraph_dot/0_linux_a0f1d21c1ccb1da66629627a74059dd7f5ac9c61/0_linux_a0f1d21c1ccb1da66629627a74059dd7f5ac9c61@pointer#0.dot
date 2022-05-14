@@ -1,0 +1,29 @@
+digraph "0_linux_a0f1d21c1ccb1da66629627a74059dd7f5ac9c61@pointer" {
+"1000237" [label="(Call,list_del(&dev->vm_node))"];
+"1000195" [label="(Call,list_add(&dev->vm_node, &kvm->devices))"];
+"1000237" [label="(Call,list_del(&dev->vm_node))"];
+"1000231" [label="(Block,)"];
+"1000260" [label="(MethodReturn,static int)"];
+"1000238" [label="(Call,&dev->vm_node)"];
+"1000200" [label="(Call,&kvm->devices)"];
+"1000195" [label="(Call,list_add(&dev->vm_node, &kvm->devices))"];
+"1000207" [label="(Identifier,kvm)"];
+"1000103" [label="(Block,)"];
+"1000245" [label="(Identifier,kvm)"];
+"1000196" [label="(Call,&dev->vm_node)"];
+"1000237" -> "1000231"  [label="AST: "];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000245" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000260"  [label="DDG: list_del(&dev->vm_node)"];
+"1000237" -> "1000260"  [label="DDG: &dev->vm_node"];
+"1000195" -> "1000237"  [label="DDG: &dev->vm_node"];
+"1000195" -> "1000103"  [label="AST: "];
+"1000195" -> "1000200"  [label="CFG: "];
+"1000196" -> "1000195"  [label="AST: "];
+"1000200" -> "1000195"  [label="AST: "];
+"1000207" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000260"  [label="DDG: &kvm->devices"];
+"1000195" -> "1000260"  [label="DDG: list_add(&dev->vm_node, &kvm->devices)"];
+"1000195" -> "1000260"  [label="DDG: &dev->vm_node"];
+}

@@ -1,0 +1,29 @@
+digraph "0_php_91826a311dd37f4c4e5d605fa7af331e80ddd4c3@pointer" {
+"1000407" [label="(Call,zval_dtor(sealdata))"];
+"1000409" [label="(Call,ZVAL_NEW_STR(sealdata, zend_string_init((char*)buf, len1 + len2, 0)))"];
+"1000408" [label="(Identifier,sealdata)"];
+"1000406" [label="(Block,)"];
+"1000409" [label="(Call,ZVAL_NEW_STR(sealdata, zend_string_init((char*)buf, len1 + len2, 0)))"];
+"1000410" [label="(Identifier,sealdata)"];
+"1000411" [label="(Call,zend_string_init((char*)buf, len1 + len2, 0))"];
+"1000536" [label="(MethodReturn,RET)"];
+"1000420" [label="(Identifier,buf)"];
+"1000407" [label="(Call,zval_dtor(sealdata))"];
+"1000407" -> "1000406"  [label="AST: "];
+"1000407" -> "1000408"  [label="CFG: "];
+"1000408" -> "1000407"  [label="AST: "];
+"1000410" -> "1000407"  [label="CFG: "];
+"1000407" -> "1000536"  [label="DDG: zval_dtor(sealdata)"];
+"1000407" -> "1000409"  [label="DDG: sealdata"];
+"1000409" -> "1000406"  [label="AST: "];
+"1000409" -> "1000411"  [label="CFG: "];
+"1000410" -> "1000409"  [label="AST: "];
+"1000411" -> "1000409"  [label="AST: "];
+"1000420" -> "1000409"  [label="CFG: "];
+"1000409" -> "1000536"  [label="DDG: zend_string_init((char*)buf, len1 + len2, 0)"];
+"1000409" -> "1000536"  [label="DDG: ZVAL_NEW_STR(sealdata, zend_string_init((char*)buf, len1 + len2, 0))"];
+"1000409" -> "1000536"  [label="DDG: sealdata"];
+"1000411" -> "1000409"  [label="DDG: (char*)buf"];
+"1000411" -> "1000409"  [label="DDG: len1 + len2"];
+"1000411" -> "1000409"  [label="DDG: 0"];
+}

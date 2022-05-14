@@ -1,0 +1,24 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c@pointer" {
+"1000871" [label="(Call,channel_auto_read(s->rep))"];
+"1000875" [label="(Call,channel_auto_close(s->rep))"];
+"1000882" [label="(Identifier,s)"];
+"1000877" [label="(Identifier,s)"];
+"1000903" [label="(MethodReturn,void)"];
+"1000876" [label="(Call,s->rep)"];
+"1000871" [label="(Call,channel_auto_read(s->rep))"];
+"1000875" [label="(Call,channel_auto_close(s->rep))"];
+"1000872" [label="(Call,s->rep)"];
+"1000118" [label="(Block,)"];
+"1000871" -> "1000118"  [label="AST: "];
+"1000871" -> "1000872"  [label="CFG: "];
+"1000872" -> "1000871"  [label="AST: "];
+"1000877" -> "1000871"  [label="CFG: "];
+"1000871" -> "1000903"  [label="DDG: channel_auto_read(s->rep)"];
+"1000871" -> "1000875"  [label="DDG: s->rep"];
+"1000875" -> "1000118"  [label="AST: "];
+"1000875" -> "1000876"  [label="CFG: "];
+"1000876" -> "1000875"  [label="AST: "];
+"1000882" -> "1000875"  [label="CFG: "];
+"1000875" -> "1000903"  [label="DDG: s->rep"];
+"1000875" -> "1000903"  [label="DDG: channel_auto_close(s->rep)"];
+}

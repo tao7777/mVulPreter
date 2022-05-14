@@ -1,0 +1,34 @@
+digraph "0_krb5_4c023ba43c16396f0d199e2df1cfa59b88b62acc@pointer" {
+"1000205" [label="(Call,server = NULL)"];
+"1000232" [label="(Call,krb5_db_free_principal(kdc_context, server))"];
+"1000229" [label="(Call,krb5_free_realm_tree(kdc_context, plist))"];
+"1000205" [label="(Call,server = NULL)"];
+"1000116" [label="(Call,*server = NULL)"];
+"1000236" [label="(Identifier,retval)"];
+"1000232" [label="(Call,krb5_db_free_principal(kdc_context, server))"];
+"1000234" [label="(Identifier,server)"];
+"1000156" [label="(Block,)"];
+"1000208" [label="(ControlStructure,goto cleanup;)"];
+"1000107" [label="(Block,)"];
+"1000233" [label="(Identifier,kdc_context)"];
+"1000206" [label="(Identifier,server)"];
+"1000237" [label="(MethodReturn,RET)"];
+"1000207" [label="(Identifier,NULL)"];
+"1000205" -> "1000156"  [label="AST: "];
+"1000205" -> "1000207"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000207" -> "1000205"  [label="AST: "];
+"1000208" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000237"  [label="DDG: NULL"];
+"1000205" -> "1000232"  [label="DDG: server"];
+"1000232" -> "1000107"  [label="AST: "];
+"1000232" -> "1000234"  [label="CFG: "];
+"1000233" -> "1000232"  [label="AST: "];
+"1000234" -> "1000232"  [label="AST: "];
+"1000236" -> "1000232"  [label="CFG: "];
+"1000232" -> "1000237"  [label="DDG: kdc_context"];
+"1000232" -> "1000237"  [label="DDG: krb5_db_free_principal(kdc_context, server)"];
+"1000232" -> "1000237"  [label="DDG: server"];
+"1000229" -> "1000232"  [label="DDG: kdc_context"];
+"1000116" -> "1000232"  [label="DDG: server"];
+}

@@ -1,0 +1,36 @@
+digraph "0_openssl_feba02f3919495e1b960c33ba849e10e77d0785d_0@API" {
+"1000152" [label="(Call,!ssl3_setup_read_buffer(s))"];
+"1000153" [label="(Call,ssl3_setup_read_buffer(s))"];
+"1000117" [label="(MethodParameterIn,SSL *s)"];
+"1000157" [label="(Literal,1)"];
+"1000154" [label="(Identifier,s)"];
+"1000261" [label="(Call,SSL_IS_DTLS(s))"];
+"1000462" [label="(Call,SSL_IS_DTLS(s))"];
+"1000153" [label="(Call,ssl3_setup_read_buffer(s))"];
+"1000151" [label="(ControlStructure,if (!ssl3_setup_read_buffer(s)))"];
+"1000117" [label="(MethodParameterIn,SSL *s)"];
+"1000512" [label="(MethodReturn,int)"];
+"1000152" [label="(Call,!ssl3_setup_read_buffer(s))"];
+"1000478" [label="(Call,SSL_IS_DTLS(s))"];
+"1000159" [label="(Identifier,left)"];
+"1000470" [label="(Call,ssl3_release_read_buffer(s))"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000157" -> "1000152"  [label="CFG: "];
+"1000159" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000512"  [label="DDG: !ssl3_setup_read_buffer(s)"];
+"1000152" -> "1000512"  [label="DDG: ssl3_setup_read_buffer(s)"];
+"1000153" -> "1000152"  [label="DDG: s"];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000153" -> "1000512"  [label="DDG: s"];
+"1000117" -> "1000153"  [label="DDG: s"];
+"1000153" -> "1000261"  [label="DDG: s"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000512"  [label="DDG: s"];
+"1000117" -> "1000261"  [label="DDG: s"];
+"1000117" -> "1000462"  [label="DDG: s"];
+"1000117" -> "1000470"  [label="DDG: s"];
+"1000117" -> "1000478"  [label="DDG: s"];
+}

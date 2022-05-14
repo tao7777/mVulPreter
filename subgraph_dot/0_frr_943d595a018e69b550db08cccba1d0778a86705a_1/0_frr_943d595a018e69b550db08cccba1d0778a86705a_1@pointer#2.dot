@@ -1,0 +1,35 @@
+digraph "0_frr_943d595a018e69b550db08cccba1d0778a86705a_1@pointer" {
+"1000132" [label="(Call,!attr)"];
+"1000116" [label="(MethodParameterIn,struct attr *attr)"];
+"1000131" [label="(Call,!attr || (attrtype == BGP_ATTR_ENCAP\n\t\t      && (!attr->encap_tunneltype\n\t\t\t  || attr->encap_tunneltype == BGP_ENCAP_TYPE_MPLS)))"];
+"1000130" [label="(ControlStructure,if (!attr || (attrtype == BGP_ATTR_ENCAP\n\t\t      && (!attr->encap_tunneltype\n\t\t\t  || attr->encap_tunneltype == BGP_ENCAP_TYPE_MPLS))))"];
+"1000133" [label="(Identifier,attr)"];
+"1000116" [label="(MethodParameterIn,struct attr *attr)"];
+"1000132" [label="(Call,!attr)"];
+"1000131" [label="(Call,!attr || (attrtype == BGP_ATTR_ENCAP\n\t\t      && (!attr->encap_tunneltype\n\t\t\t  || attr->encap_tunneltype == BGP_ENCAP_TYPE_MPLS)))"];
+"1000150" [label="(Identifier,attrtype)"];
+"1000327" [label="(MethodReturn,static void)"];
+"1000134" [label="(Call,attrtype == BGP_ATTR_ENCAP\n\t\t      && (!attr->encap_tunneltype\n\t\t\t  || attr->encap_tunneltype == BGP_ENCAP_TYPE_MPLS))"];
+"1000148" [label="(Return,return;)"];
+"1000136" [label="(Identifier,attrtype)"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000136" -> "1000132"  [label="CFG: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000327"  [label="DDG: attr"];
+"1000132" -> "1000131"  [label="DDG: attr"];
+"1000116" -> "1000132"  [label="DDG: attr"];
+"1000116" -> "1000112"  [label="AST: "];
+"1000116" -> "1000327"  [label="DDG: attr"];
+"1000131" -> "1000130"  [label="AST: "];
+"1000131" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000131"  [label="AST: "];
+"1000148" -> "1000131"  [label="CFG: "];
+"1000150" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000327"  [label="DDG: !attr"];
+"1000131" -> "1000327"  [label="DDG: attrtype == BGP_ATTR_ENCAP\n\t\t      && (!attr->encap_tunneltype\n\t\t\t  || attr->encap_tunneltype == BGP_ENCAP_TYPE_MPLS)"];
+"1000131" -> "1000327"  [label="DDG: !attr || (attrtype == BGP_ATTR_ENCAP\n\t\t      && (!attr->encap_tunneltype\n\t\t\t  || attr->encap_tunneltype == BGP_ENCAP_TYPE_MPLS))"];
+"1000134" -> "1000131"  [label="DDG: attrtype == BGP_ATTR_ENCAP"];
+"1000134" -> "1000131"  [label="DDG: !attr->encap_tunneltype\n\t\t\t  || attr->encap_tunneltype == BGP_ENCAP_TYPE_MPLS"];
+}

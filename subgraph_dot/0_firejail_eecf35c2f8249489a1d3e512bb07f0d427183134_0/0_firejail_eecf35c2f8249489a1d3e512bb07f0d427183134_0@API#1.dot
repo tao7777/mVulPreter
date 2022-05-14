@@ -1,0 +1,35 @@
+digraph "0_firejail_eecf35c2f8249489a1d3e512bb07f0d427183134_0@API" {
+"1000189" [label="(Call,create_empty_file_as_root(RUN_SECCOMP_POSTEXEC, 0644))"];
+"1000193" [label="(Call,set_perms(RUN_SECCOMP_POSTEXEC, getuid(), getgid(), 0644))"];
+"1000197" [label="(Literal,0644)"];
+"1000189" [label="(Call,create_empty_file_as_root(RUN_SECCOMP_POSTEXEC, 0644))"];
+"1000194" [label="(Identifier,RUN_SECCOMP_POSTEXEC)"];
+"1000196" [label="(Call,getgid())"];
+"1000200" [label="(MethodReturn,void)"];
+"1000111" [label="(Block,)"];
+"1000192" [label="(ControlStructure,if (set_perms(RUN_SECCOMP_POSTEXEC, getuid(), getgid(), 0644)))"];
+"1000193" [label="(Call,set_perms(RUN_SECCOMP_POSTEXEC, getuid(), getgid(), 0644))"];
+"1000199" [label="(Literal,\"set_perms\")"];
+"1000195" [label="(Call,getuid())"];
+"1000191" [label="(Literal,0644)"];
+"1000190" [label="(Identifier,RUN_SECCOMP_POSTEXEC)"];
+"1000189" -> "1000111"  [label="AST: "];
+"1000189" -> "1000191"  [label="CFG: "];
+"1000190" -> "1000189"  [label="AST: "];
+"1000191" -> "1000189"  [label="AST: "];
+"1000194" -> "1000189"  [label="CFG: "];
+"1000189" -> "1000200"  [label="DDG: create_empty_file_as_root(RUN_SECCOMP_POSTEXEC, 0644)"];
+"1000189" -> "1000193"  [label="DDG: RUN_SECCOMP_POSTEXEC"];
+"1000193" -> "1000192"  [label="AST: "];
+"1000193" -> "1000197"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000195" -> "1000193"  [label="AST: "];
+"1000196" -> "1000193"  [label="AST: "];
+"1000197" -> "1000193"  [label="AST: "];
+"1000199" -> "1000193"  [label="CFG: "];
+"1000200" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000200"  [label="DDG: getgid()"];
+"1000193" -> "1000200"  [label="DDG: RUN_SECCOMP_POSTEXEC"];
+"1000193" -> "1000200"  [label="DDG: getuid()"];
+"1000193" -> "1000200"  [label="DDG: set_perms(RUN_SECCOMP_POSTEXEC, getuid(), getgid(), 0644)"];
+}

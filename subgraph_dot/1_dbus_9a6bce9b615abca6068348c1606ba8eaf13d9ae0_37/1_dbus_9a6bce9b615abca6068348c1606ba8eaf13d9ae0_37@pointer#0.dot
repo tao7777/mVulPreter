@@ -1,0 +1,27 @@
+digraph "1_dbus_9a6bce9b615abca6068348c1606ba8eaf13d9ae0_37@pointer" {
+"1000103" [label="(MethodParameterIn,const GValue *value)"];
+"1000123" [label="(Call,g_value_dup_string (value))"];
+"1000119" [label="(Call,mobject->this_is_a_string = g_value_dup_string (value))"];
+"1000124" [label="(Identifier,value)"];
+"1000132" [label="(MethodReturn,RET)"];
+"1000125" [label="(ControlStructure,break;)"];
+"1000113" [label="(Block,)"];
+"1000103" [label="(MethodParameterIn,const GValue *value)"];
+"1000120" [label="(Call,mobject->this_is_a_string)"];
+"1000119" [label="(Call,mobject->this_is_a_string = g_value_dup_string (value))"];
+"1000123" [label="(Call,g_value_dup_string (value))"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000132"  [label="DDG: value"];
+"1000103" -> "1000123"  [label="DDG: value"];
+"1000123" -> "1000119"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000119" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000132"  [label="DDG: value"];
+"1000123" -> "1000119"  [label="DDG: value"];
+"1000119" -> "1000113"  [label="AST: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000125" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000132"  [label="DDG: g_value_dup_string (value)"];
+"1000119" -> "1000132"  [label="DDG: mobject->this_is_a_string"];
+}

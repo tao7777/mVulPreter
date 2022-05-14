@@ -1,0 +1,31 @@
+digraph "0_Android_e86d3cfd2bc28dac421092106751e5638d54a848@pointer" {
+"1000574" [label="(Call,1 == ps_dec->u4_disp_buf_to_be_freed[i])"];
+"1000566" [label="(Call,0 == ps_dec->u4_disp_buf_mapping[i]\n || 1 == ps_dec->u4_disp_buf_to_be_freed[i])"];
+"1000575" [label="(Literal,1)"];
+"1000563" [label="(Identifier,i)"];
+"1000576" [label="(Call,ps_dec->u4_disp_buf_to_be_freed[i])"];
+"1000565" [label="(ControlStructure,if(0 == ps_dec->u4_disp_buf_mapping[i]\n || 1 == ps_dec->u4_disp_buf_to_be_freed[i]))"];
+"1000567" [label="(Call,0 == ps_dec->u4_disp_buf_mapping[i])"];
+"1000566" [label="(Call,0 == ps_dec->u4_disp_buf_mapping[i]\n || 1 == ps_dec->u4_disp_buf_to_be_freed[i])"];
+"1000583" [label="(Identifier,disp_avail)"];
+"1002270" [label="(MethodReturn,WORD32)"];
+"1000574" [label="(Call,1 == ps_dec->u4_disp_buf_to_be_freed[i])"];
+"1000574" -> "1000566"  [label="AST: "];
+"1000574" -> "1000576"  [label="CFG: "];
+"1000575" -> "1000574"  [label="AST: "];
+"1000576" -> "1000574"  [label="AST: "];
+"1000566" -> "1000574"  [label="CFG: "];
+"1000574" -> "1002270"  [label="DDG: ps_dec->u4_disp_buf_to_be_freed[i]"];
+"1000574" -> "1000566"  [label="DDG: 1"];
+"1000574" -> "1000566"  [label="DDG: ps_dec->u4_disp_buf_to_be_freed[i]"];
+"1000566" -> "1000565"  [label="AST: "];
+"1000566" -> "1000567"  [label="CFG: "];
+"1000567" -> "1000566"  [label="AST: "];
+"1000583" -> "1000566"  [label="CFG: "];
+"1000563" -> "1000566"  [label="CFG: "];
+"1000566" -> "1002270"  [label="DDG: 0 == ps_dec->u4_disp_buf_mapping[i]\n || 1 == ps_dec->u4_disp_buf_to_be_freed[i]"];
+"1000566" -> "1002270"  [label="DDG: 1 == ps_dec->u4_disp_buf_to_be_freed[i]"];
+"1000566" -> "1002270"  [label="DDG: 0 == ps_dec->u4_disp_buf_mapping[i]"];
+"1000567" -> "1000566"  [label="DDG: 0"];
+"1000567" -> "1000566"  [label="DDG: ps_dec->u4_disp_buf_mapping[i]"];
+}

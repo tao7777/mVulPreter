@@ -1,0 +1,33 @@
+digraph "0_mapserver_3a10f6b829297dae63492a8c63385044bc6953ed@pointer" {
+"1000356" [label="(Call,freeExpression(&lp->filter))"];
+"1000361" [label="(Call,loadExpressionString(&lp->filter, buffer))"];
+"1000355" [label="(Block,)"];
+"1000361" [label="(Call,loadExpressionString(&lp->filter, buffer))"];
+"1000357" [label="(Call,&lp->filter)"];
+"1000183" [label="(Call,createPostgresTimeCompareSimple(timefield, timestring, buffer, buffer_size))"];
+"1000134" [label="(Call,buffer[0] = '\0')"];
+"1000369" [label="(MethodReturn,int)"];
+"1000295" [label="(Call,strlcat(buffer, \")\", buffer_size))"];
+"1000368" [label="(Identifier,MS_TRUE)"];
+"1000364" [label="(Identifier,lp)"];
+"1000356" [label="(Call,freeExpression(&lp->filter))"];
+"1000366" [label="(Identifier,buffer)"];
+"1000362" [label="(Call,&lp->filter)"];
+"1000356" -> "1000355"  [label="AST: "];
+"1000356" -> "1000357"  [label="CFG: "];
+"1000357" -> "1000356"  [label="AST: "];
+"1000364" -> "1000356"  [label="CFG: "];
+"1000356" -> "1000369"  [label="DDG: freeExpression(&lp->filter)"];
+"1000356" -> "1000361"  [label="DDG: &lp->filter"];
+"1000361" -> "1000355"  [label="AST: "];
+"1000361" -> "1000366"  [label="CFG: "];
+"1000362" -> "1000361"  [label="AST: "];
+"1000366" -> "1000361"  [label="AST: "];
+"1000368" -> "1000361"  [label="CFG: "];
+"1000361" -> "1000369"  [label="DDG: loadExpressionString(&lp->filter, buffer)"];
+"1000361" -> "1000369"  [label="DDG: buffer"];
+"1000361" -> "1000369"  [label="DDG: &lp->filter"];
+"1000183" -> "1000361"  [label="DDG: buffer"];
+"1000295" -> "1000361"  [label="DDG: buffer"];
+"1000134" -> "1000361"  [label="DDG: buffer[0]"];
+}

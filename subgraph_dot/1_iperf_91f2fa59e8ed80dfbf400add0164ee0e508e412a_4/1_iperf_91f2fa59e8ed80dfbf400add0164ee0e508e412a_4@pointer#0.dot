@@ -1,0 +1,22 @@
+digraph "1_iperf_91f2fa59e8ed80dfbf400add0164ee0e508e412a_4@pointer" {
+"1000109" [label="(Call,item->type = b ? cJSON_True : cJSON_False)"];
+"1000101" [label="(MethodParameterIn,int b)"];
+"1000110" [label="(Call,item->type)"];
+"1000118" [label="(Identifier,item)"];
+"1000113" [label="(Call,b ? cJSON_True : cJSON_False)"];
+"1000107" [label="(ControlStructure,if ( item ))"];
+"1000109" [label="(Call,item->type = b ? cJSON_True : cJSON_False)"];
+"1000119" [label="(MethodReturn,cJSON *)"];
+"1000101" [label="(MethodParameterIn,int b)"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000113"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000113" -> "1000109"  [label="AST: "];
+"1000118" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000119"  [label="DDG: b ? cJSON_True : cJSON_False"];
+"1000109" -> "1000119"  [label="DDG: item->type"];
+"1000101" -> "1000109"  [label="DDG: b"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000119"  [label="DDG: b"];
+"1000101" -> "1000113"  [label="DDG: b"];
+}

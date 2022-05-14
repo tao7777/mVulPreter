@@ -1,0 +1,35 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1010145" [label="(Call,s->flags & HF_MPX_IU_MASK)"];
+"1010012" [label="(Call,s->flags & HF_MPX_EN_MASK)"];
+"1010011" [label="(ControlStructure,if (s->flags & HF_MPX_EN_MASK))"];
+"1010144" [label="(ControlStructure,if (s->flags & HF_MPX_IU_MASK))"];
+"1010361" [label="(Identifier,env)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1010145" [label="(Call,s->flags & HF_MPX_IU_MASK)"];
+"1010019" [label="(Identifier,mod)"];
+"1010153" [label="(Identifier,cpu_bndl)"];
+"1010013" [label="(Call,s->flags)"];
+"1010012" [label="(Call,s->flags & HF_MPX_EN_MASK)"];
+"1010146" [label="(Call,s->flags)"];
+"1010149" [label="(Identifier,HF_MPX_IU_MASK)"];
+"1010016" [label="(Identifier,HF_MPX_EN_MASK)"];
+"1010145" -> "1010144"  [label="AST: "];
+"1010145" -> "1010149"  [label="CFG: "];
+"1010146" -> "1010145"  [label="AST: "];
+"1010149" -> "1010145"  [label="AST: "];
+"1010153" -> "1010145"  [label="CFG: "];
+"1010361" -> "1010145"  [label="CFG: "];
+"1010145" -> "1011840"  [label="DDG: HF_MPX_IU_MASK"];
+"1010145" -> "1011840"  [label="DDG: s->flags"];
+"1010145" -> "1011840"  [label="DDG: s->flags & HF_MPX_IU_MASK"];
+"1010012" -> "1010145"  [label="DDG: s->flags"];
+"1010012" -> "1010011"  [label="AST: "];
+"1010012" -> "1010016"  [label="CFG: "];
+"1010013" -> "1010012"  [label="AST: "];
+"1010016" -> "1010012"  [label="AST: "];
+"1010019" -> "1010012"  [label="CFG: "];
+"1010361" -> "1010012"  [label="CFG: "];
+"1010012" -> "1011840"  [label="DDG: HF_MPX_EN_MASK"];
+"1010012" -> "1011840"  [label="DDG: s->flags"];
+"1010012" -> "1011840"  [label="DDG: s->flags & HF_MPX_EN_MASK"];
+}

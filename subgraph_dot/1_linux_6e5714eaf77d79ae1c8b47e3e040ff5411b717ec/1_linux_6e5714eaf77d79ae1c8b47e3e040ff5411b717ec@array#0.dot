@@ -1,0 +1,26 @@
+digraph "1_linux_6e5714eaf77d79ae1c8b47e3e040ff5411b717ec@array" {
+"1000104" [label="(Call,*keyptr = &ip_keydata[ip_cnt & 1])"];
+"1000113" [label="(Return,return keyptr;)"];
+"1000105" [label="(Identifier,keyptr)"];
+"1000113" [label="(Return,return keyptr;)"];
+"1000114" [label="(Identifier,keyptr)"];
+"1000104" [label="(Call,*keyptr = &ip_keydata[ip_cnt & 1])"];
+"1000115" [label="(MethodReturn,static inline struct keydata *)"];
+"1000102" [label="(Block,)"];
+"1000112" [label="(Call,smp_rmb())"];
+"1000106" [label="(Call,&ip_keydata[ip_cnt & 1])"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000112" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000115"  [label="DDG: keyptr"];
+"1000104" -> "1000115"  [label="DDG: &ip_keydata[ip_cnt & 1]"];
+"1000104" -> "1000113"  [label="DDG: keyptr"];
+"1000113" -> "1000102"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000115"  [label="DDG: <RET>"];
+"1000114" -> "1000113"  [label="DDG: keyptr"];
+}

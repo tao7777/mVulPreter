@@ -1,0 +1,33 @@
+digraph "0_ImageMagick_4b1b9c0522628887195bad3a6723f7000b0c9a58@pointer" {
+"1000844" [label="(Call,image_info->number_scenes == 1)"];
+"1000843" [label="(Call,(image_info->number_scenes == 1) && (image_info->scene == 0) &&\n      (has_merged_image != MagickFalse))"];
+"1000852" [label="(Identifier,image_info)"];
+"1000845" [label="(Call,image_info->number_scenes)"];
+"1000849" [label="(Call,(image_info->scene == 0) &&\n      (has_merged_image != MagickFalse))"];
+"1000842" [label="(ControlStructure,if ((image_info->number_scenes == 1) && (image_info->scene == 0) &&\n      (has_merged_image != MagickFalse)))"];
+"1000844" [label="(Call,image_info->number_scenes == 1)"];
+"1000848" [label="(Literal,1)"];
+"1000876" [label="(Identifier,length)"];
+"1001057" [label="(MethodReturn,static Image *)"];
+"1000843" [label="(Call,(image_info->number_scenes == 1) && (image_info->scene == 0) &&\n      (has_merged_image != MagickFalse))"];
+"1000862" [label="(Identifier,image)"];
+"1000844" -> "1000843"  [label="AST: "];
+"1000844" -> "1000848"  [label="CFG: "];
+"1000845" -> "1000844"  [label="AST: "];
+"1000848" -> "1000844"  [label="AST: "];
+"1000852" -> "1000844"  [label="CFG: "];
+"1000843" -> "1000844"  [label="CFG: "];
+"1000844" -> "1001057"  [label="DDG: image_info->number_scenes"];
+"1000844" -> "1000843"  [label="DDG: image_info->number_scenes"];
+"1000844" -> "1000843"  [label="DDG: 1"];
+"1000843" -> "1000842"  [label="AST: "];
+"1000843" -> "1000849"  [label="CFG: "];
+"1000849" -> "1000843"  [label="AST: "];
+"1000862" -> "1000843"  [label="CFG: "];
+"1000876" -> "1000843"  [label="CFG: "];
+"1000843" -> "1001057"  [label="DDG: (image_info->number_scenes == 1) && (image_info->scene == 0) &&\n      (has_merged_image != MagickFalse)"];
+"1000843" -> "1001057"  [label="DDG: (image_info->scene == 0) &&\n      (has_merged_image != MagickFalse)"];
+"1000843" -> "1001057"  [label="DDG: image_info->number_scenes == 1"];
+"1000849" -> "1000843"  [label="DDG: image_info->scene == 0"];
+"1000849" -> "1000843"  [label="DDG: has_merged_image != MagickFalse"];
+}

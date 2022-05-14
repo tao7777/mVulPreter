@@ -1,0 +1,36 @@
+digraph "1_Chrome_673ce95d481ea9368c4d4d43ac756ba1d6d9e608_35@del" {
+"1000124" [label="(Call,mojo::WrapSharedMemoryHandle(handle.handle, handle.handle.GetSize(),\n                                      false))"];
+"1000101" [label="(MethodParameterIn,const gfx::GpuMemoryBufferHandle& handle)"];
+"1000123" [label="(Return,return mojo::WrapSharedMemoryHandle(handle.handle, handle.handle.GetSize(),\n                                      false);)"];
+"1000102" [label="(Block,)"];
+"1000105" [label="(Call,handle.type != gfx::SHARED_MEMORY_BUFFER)"];
+"1000125" [label="(Call,handle.handle)"];
+"1000101" [label="(MethodParameterIn,const gfx::GpuMemoryBufferHandle& handle)"];
+"1000111" [label="(Call,handle.type != gfx::DXGI_SHARED_HANDLE)"];
+"1000123" [label="(Return,return mojo::WrapSharedMemoryHandle(handle.handle, handle.handle.GetSize(),\n                                      false);)"];
+"1000128" [label="(Call,handle.handle.GetSize())"];
+"1000130" [label="(MethodReturn,RET)"];
+"1000116" [label="(Call,handle.type != gfx::ANDROID_HARDWARE_BUFFER)"];
+"1000124" [label="(Call,mojo::WrapSharedMemoryHandle(handle.handle, handle.handle.GetSize(),\n                                      false))"];
+"1000129" [label="(Identifier,false)"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000129"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000128" -> "1000124"  [label="AST: "];
+"1000129" -> "1000124"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000130"  [label="DDG: handle.handle"];
+"1000124" -> "1000130"  [label="DDG: false"];
+"1000124" -> "1000130"  [label="DDG: handle.handle.GetSize()"];
+"1000124" -> "1000130"  [label="DDG: mojo::WrapSharedMemoryHandle(handle.handle, handle.handle.GetSize(),\n                                      false)"];
+"1000124" -> "1000123"  [label="DDG: mojo::WrapSharedMemoryHandle(handle.handle, handle.handle.GetSize(),\n                                      false)"];
+"1000101" -> "1000124"  [label="DDG: handle"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000130"  [label="DDG: handle"];
+"1000101" -> "1000105"  [label="DDG: handle"];
+"1000101" -> "1000111"  [label="DDG: handle"];
+"1000101" -> "1000116"  [label="DDG: handle"];
+"1000123" -> "1000102"  [label="AST: "];
+"1000130" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000130"  [label="DDG: <RET>"];
+}

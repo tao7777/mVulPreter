@@ -1,0 +1,29 @@
+digraph "0_openssl_fb0bc2b273bcc2d5401dd883fe869af4fc74bb21@pointer" {
+"1000156" [label="(Call,s->s3->alpn_selected = NULL)"];
+"1000728" [label="(Call,OPENSSL_free(s->s3->alpn_selected))"];
+"1000162" [label="(Identifier,NULL)"];
+"1000728" [label="(Call,OPENSSL_free(s->s3->alpn_selected))"];
+"1000156" [label="(Call,s->s3->alpn_selected = NULL)"];
+"1000149" [label="(Block,)"];
+"1000729" [label="(Call,s->s3->alpn_selected)"];
+"1001032" [label="(MethodReturn,static int)"];
+"1000157" [label="(Call,s->s3->alpn_selected)"];
+"1000722" [label="(ControlStructure,if (s->s3->alpn_selected))"];
+"1000165" [label="(Identifier,s)"];
+"1000756" [label="(Call,memcpy(s->s3->alpn_selected, data + 3, len))"];
+"1000737" [label="(Identifier,s)"];
+"1000156" -> "1000149"  [label="AST: "];
+"1000156" -> "1000162"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000162" -> "1000156"  [label="AST: "];
+"1000165" -> "1000156"  [label="CFG: "];
+"1000156" -> "1001032"  [label="DDG: s->s3->alpn_selected"];
+"1000156" -> "1001032"  [label="DDG: NULL"];
+"1000156" -> "1000728"  [label="DDG: s->s3->alpn_selected"];
+"1000728" -> "1000722"  [label="AST: "];
+"1000728" -> "1000729"  [label="CFG: "];
+"1000729" -> "1000728"  [label="AST: "];
+"1000737" -> "1000728"  [label="CFG: "];
+"1000728" -> "1001032"  [label="DDG: OPENSSL_free(s->s3->alpn_selected)"];
+"1000756" -> "1000728"  [label="DDG: s->s3->alpn_selected"];
+}

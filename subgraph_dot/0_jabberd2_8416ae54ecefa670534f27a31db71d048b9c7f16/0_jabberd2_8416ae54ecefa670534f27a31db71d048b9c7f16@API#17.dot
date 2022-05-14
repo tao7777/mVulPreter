@@ -1,0 +1,35 @@
+digraph "0_jabberd2_8416ae54ecefa670534f27a31db71d048b9c7f16@API" {
+"1000531" [label="(Call,strcmp(creds->authnid, jid.node) == 0)"];
+"1000530" [label="(Call,strcmp(creds->authnid, jid.node) == 0 &&\n                    (sess->host->ar->user_exists)(sess->host->ar, sess, jid.node, jid.domain))"];
+"1000540" [label="(Call,(sess->host->ar->user_exists)(sess->host->ar, sess, jid.node, jid.domain))"];
+"1000532" [label="(Call,strcmp(creds->authnid, jid.node))"];
+"1000554" [label="(Identifier,sx_sasl_ret_OK)"];
+"1000556" [label="(Identifier,sx_sasl_ret_FAIL)"];
+"1000529" [label="(ControlStructure,if (strcmp(creds->authnid, jid.node) == 0 &&\n                    (sess->host->ar->user_exists)(sess->host->ar, sess, jid.node, jid.domain)))"];
+"1000539" [label="(Literal,0)"];
+"1000543" [label="(Identifier,sess)"];
+"1000530" [label="(Call,strcmp(creds->authnid, jid.node) == 0 &&\n                    (sess->host->ar->user_exists)(sess->host->ar, sess, jid.node, jid.domain))"];
+"1000766" [label="(MethodReturn,static int)"];
+"1000531" [label="(Call,strcmp(creds->authnid, jid.node) == 0)"];
+"1000531" -> "1000530"  [label="AST: "];
+"1000531" -> "1000539"  [label="CFG: "];
+"1000532" -> "1000531"  [label="AST: "];
+"1000539" -> "1000531"  [label="AST: "];
+"1000543" -> "1000531"  [label="CFG: "];
+"1000530" -> "1000531"  [label="CFG: "];
+"1000531" -> "1000766"  [label="DDG: strcmp(creds->authnid, jid.node)"];
+"1000531" -> "1000530"  [label="DDG: strcmp(creds->authnid, jid.node)"];
+"1000531" -> "1000530"  [label="DDG: 0"];
+"1000530" -> "1000529"  [label="AST: "];
+"1000530" -> "1000540"  [label="CFG: "];
+"1000540" -> "1000530"  [label="AST: "];
+"1000554" -> "1000530"  [label="CFG: "];
+"1000556" -> "1000530"  [label="CFG: "];
+"1000530" -> "1000766"  [label="DDG: (sess->host->ar->user_exists)(sess->host->ar, sess, jid.node, jid.domain)"];
+"1000530" -> "1000766"  [label="DDG: strcmp(creds->authnid, jid.node) == 0"];
+"1000530" -> "1000766"  [label="DDG: strcmp(creds->authnid, jid.node) == 0 &&\n                    (sess->host->ar->user_exists)(sess->host->ar, sess, jid.node, jid.domain)"];
+"1000540" -> "1000530"  [label="DDG: sess->host->ar"];
+"1000540" -> "1000530"  [label="DDG: sess"];
+"1000540" -> "1000530"  [label="DDG: jid.node"];
+"1000540" -> "1000530"  [label="DDG: jid.domain"];
+}

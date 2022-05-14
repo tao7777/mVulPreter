@@ -1,0 +1,34 @@
+digraph "0_linux_96b340406724d87e4621284ebac5e059d67b2194@API" {
+"1000182" [label="(Call,ifr->ifr_settings.size < sizeof (sync))"];
+"1000171" [label="(Call,ifr->ifr_settings.size == 0)"];
+"1000172" [label="(Call,ifr->ifr_settings.size)"];
+"1000188" [label="(Call,sizeof (sync))"];
+"1000183" [label="(Call,ifr->ifr_settings.size)"];
+"1000181" [label="(ControlStructure,if (ifr->ifr_settings.size < sizeof (sync)))"];
+"1000177" [label="(Literal,0)"];
+"1000185" [label="(Identifier,ifr)"];
+"1000180" [label="(Literal,0)"];
+"1000195" [label="(Identifier,i)"];
+"1000171" [label="(Call,ifr->ifr_settings.size == 0)"];
+"1000264" [label="(MethodReturn,RET)"];
+"1000193" [label="(Identifier,ENOMEM)"];
+"1000170" [label="(ControlStructure,if (ifr->ifr_settings.size == 0))"];
+"1000182" [label="(Call,ifr->ifr_settings.size < sizeof (sync))"];
+"1000182" -> "1000181"  [label="AST: "];
+"1000182" -> "1000188"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000188" -> "1000182"  [label="AST: "];
+"1000193" -> "1000182"  [label="CFG: "];
+"1000195" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000264"  [label="DDG: ifr->ifr_settings.size < sizeof (sync)"];
+"1000182" -> "1000264"  [label="DDG: ifr->ifr_settings.size"];
+"1000171" -> "1000182"  [label="DDG: ifr->ifr_settings.size"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000177"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000177" -> "1000171"  [label="AST: "];
+"1000180" -> "1000171"  [label="CFG: "];
+"1000185" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000264"  [label="DDG: ifr->ifr_settings.size"];
+"1000171" -> "1000264"  [label="DDG: ifr->ifr_settings.size == 0"];
+}

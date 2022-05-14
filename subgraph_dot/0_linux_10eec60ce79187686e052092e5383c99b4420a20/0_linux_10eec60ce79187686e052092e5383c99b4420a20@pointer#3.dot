@@ -1,0 +1,32 @@
+digraph "0_linux_10eec60ce79187686e052092e5383c99b4420a20@pointer" {
+"1000109" [label="(Call,*same = NULL)"];
+"1000171" [label="(Call,kfree(same))"];
+"1000109" [label="(Call,*same = NULL)"];
+"1000117" [label="(Identifier,count)"];
+"1000141" [label="(Call,same = NULL)"];
+"1000171" [label="(Call,kfree(same))"];
+"1000152" [label="(Call,vfs_dedupe_file_range(file, same))"];
+"1000172" [label="(Identifier,same)"];
+"1000103" [label="(Block,)"];
+"1000175" [label="(MethodReturn,static long)"];
+"1000111" [label="(Identifier,NULL)"];
+"1000160" [label="(Call,copy_to_user(argp, same, size))"];
+"1000174" [label="(Identifier,ret)"];
+"1000110" [label="(Identifier,same)"];
+"1000109" -> "1000103"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000117" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000175"  [label="DDG: NULL"];
+"1000109" -> "1000171"  [label="DDG: same"];
+"1000171" -> "1000103"  [label="AST: "];
+"1000171" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000174" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000175"  [label="DDG: same"];
+"1000171" -> "1000175"  [label="DDG: kfree(same)"];
+"1000141" -> "1000171"  [label="DDG: same"];
+"1000152" -> "1000171"  [label="DDG: same"];
+"1000160" -> "1000171"  [label="DDG: same"];
+}

@@ -1,0 +1,26 @@
+digraph "0_jasper_e96fc4fdd525fa0ede28074a7e2b1caf94b58b0d_2@pointer" {
+"1000102" [label="(MethodParameterIn,jas_stream_t *in)"];
+"1000155" [label="(Call,jp2_getuint8(in, &bpcc->bpcs[i]))"];
+"1000166" [label="(Literal,1)"];
+"1000155" [label="(Call,jp2_getuint8(in, &bpcc->bpcs[i]))"];
+"1000154" [label="(ControlStructure,if (jp2_getuint8(in, &bpcc->bpcs[i])))"];
+"1000156" [label="(Identifier,in)"];
+"1000157" [label="(Call,&bpcc->bpcs[i])"];
+"1000102" [label="(MethodParameterIn,jas_stream_t *in)"];
+"1000128" [label="(Call,bpcc->bpcs = jas_alloc2(bpcc->numcmpts, sizeof(uint_fast8_t)))"];
+"1000169" [label="(MethodReturn,static int)"];
+"1000152" [label="(Identifier,i)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000169"  [label="DDG: in"];
+"1000102" -> "1000155"  [label="DDG: in"];
+"1000155" -> "1000154"  [label="AST: "];
+"1000155" -> "1000157"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000157" -> "1000155"  [label="AST: "];
+"1000166" -> "1000155"  [label="CFG: "];
+"1000152" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000169"  [label="DDG: &bpcc->bpcs[i]"];
+"1000155" -> "1000169"  [label="DDG: jp2_getuint8(in, &bpcc->bpcs[i])"];
+"1000155" -> "1000169"  [label="DDG: in"];
+"1000128" -> "1000155"  [label="DDG: bpcc->bpcs"];
+}

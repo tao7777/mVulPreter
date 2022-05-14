@@ -1,0 +1,29 @@
+digraph "0_krb5_4c023ba43c16396f0d199e2df1cfa59b88b62acc@API" {
+"1000123" [label="(Call,assert(is_cross_tgs_principal(princ)))"];
+"1000124" [label="(Call,is_cross_tgs_principal(princ))"];
+"1000104" [label="(MethodParameterIn,krb5_principal princ)"];
+"1000124" [label="(Call,is_cross_tgs_principal(princ))"];
+"1000125" [label="(Identifier,princ)"];
+"1000107" [label="(Block,)"];
+"1000128" [label="(Identifier,retval)"];
+"1000131" [label="(Call,krb5_princ_realm(kdc_context, princ))"];
+"1000104" [label="(MethodParameterIn,krb5_principal princ)"];
+"1000237" [label="(MethodReturn,RET)"];
+"1000134" [label="(Call,krb5_princ_component(kdc_context, princ, 1))"];
+"1000123" [label="(Call,assert(is_cross_tgs_principal(princ)))"];
+"1000123" -> "1000107"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000128" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000237"  [label="DDG: assert(is_cross_tgs_principal(princ))"];
+"1000123" -> "1000237"  [label="DDG: is_cross_tgs_principal(princ)"];
+"1000124" -> "1000123"  [label="DDG: princ"];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000104" -> "1000124"  [label="DDG: princ"];
+"1000124" -> "1000131"  [label="DDG: princ"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000237"  [label="DDG: princ"];
+"1000104" -> "1000131"  [label="DDG: princ"];
+"1000104" -> "1000134"  [label="DDG: princ"];
+}

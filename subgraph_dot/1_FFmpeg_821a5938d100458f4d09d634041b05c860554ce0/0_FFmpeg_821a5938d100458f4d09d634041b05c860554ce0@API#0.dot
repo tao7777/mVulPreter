@@ -1,0 +1,26 @@
+digraph "0_FFmpeg_821a5938d100458f4d09d634041b05c860554ce0@API" {
+"1000211" [label="(Call,av_free(c->synth_tile))"];
+"1000168" [label="(Call,!c->synth_tile)"];
+"1000296" [label="(MethodReturn,static int)"];
+"1000168" [label="(Call,!c->synth_tile)"];
+"1000169" [label="(Call,c->synth_tile)"];
+"1000211" [label="(Call,av_free(c->synth_tile))"];
+"1000217" [label="(Identifier,c)"];
+"1000167" [label="(Call,!c->synth_tile || !c->jpeg_tile ||\n         c->old_tile_w < c->tile_width ||\n         c->old_tile_h < c->tile_height)"];
+"1000192" [label="(Block,)"];
+"1000175" [label="(Identifier,c)"];
+"1000212" [label="(Call,c->synth_tile)"];
+"1000211" -> "1000192"  [label="AST: "];
+"1000211" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000217" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000296"  [label="DDG: av_free(c->synth_tile)"];
+"1000168" -> "1000211"  [label="DDG: c->synth_tile"];
+"1000168" -> "1000167"  [label="AST: "];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000175" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000296"  [label="DDG: c->synth_tile"];
+"1000168" -> "1000167"  [label="DDG: c->synth_tile"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_9c52057c698fb96f8f07e7a4bcf4801a092bda89_0@pointer" {
+"1000631" [label="(Call,up_read(&root->fs_info->subvol_sem))"];
+"1000273" [label="(Call,down_read(&root->fs_info->subvol_sem))"];
+"1000281" [label="(Identifier,trans)"];
+"1000273" [label="(Call,down_read(&root->fs_info->subvol_sem))"];
+"1000632" [label="(Call,&root->fs_info->subvol_sem)"];
+"1000269" [label="(ControlStructure,if (old_ino == BTRFS_FIRST_FREE_OBJECTID))"];
+"1000627" [label="(ControlStructure,if (old_ino == BTRFS_FIRST_FREE_OBJECTID))"];
+"1000639" [label="(Identifier,ret)"];
+"1000640" [label="(MethodReturn,static int)"];
+"1000631" [label="(Call,up_read(&root->fs_info->subvol_sem))"];
+"1000274" [label="(Call,&root->fs_info->subvol_sem)"];
+"1000631" -> "1000627"  [label="AST: "];
+"1000631" -> "1000632"  [label="CFG: "];
+"1000632" -> "1000631"  [label="AST: "];
+"1000639" -> "1000631"  [label="CFG: "];
+"1000631" -> "1000640"  [label="DDG: &root->fs_info->subvol_sem"];
+"1000631" -> "1000640"  [label="DDG: up_read(&root->fs_info->subvol_sem)"];
+"1000273" -> "1000631"  [label="DDG: &root->fs_info->subvol_sem"];
+"1000273" -> "1000269"  [label="AST: "];
+"1000273" -> "1000274"  [label="CFG: "];
+"1000274" -> "1000273"  [label="AST: "];
+"1000281" -> "1000273"  [label="CFG: "];
+"1000273" -> "1000640"  [label="DDG: &root->fs_info->subvol_sem"];
+"1000273" -> "1000640"  [label="DDG: down_read(&root->fs_info->subvol_sem)"];
+}

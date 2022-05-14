@@ -1,0 +1,22 @@
+digraph "0_linux_ac6e780070e30e4c35bd395acfe9191e6268bdd3@pointer" {
+"1000237" [label="(Call,ntohl(th->ack_seq))"];
+"1000232" [label="(Call,TCP_SKB_CB(skb)->ack_seq = ntohl(th->ack_seq))"];
+"1000238" [label="(Call,th->ack_seq)"];
+"1000237" [label="(Call,ntohl(th->ack_seq))"];
+"1000233" [label="(Call,TCP_SKB_CB(skb)->ack_seq)"];
+"1000598" [label="(MethodReturn,int)"];
+"1000232" [label="(Call,TCP_SKB_CB(skb)->ack_seq = ntohl(th->ack_seq))"];
+"1000108" [label="(Block,)"];
+"1000244" [label="(Identifier,skb)"];
+"1000237" -> "1000232"  [label="AST: "];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000232" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000598"  [label="DDG: th->ack_seq"];
+"1000237" -> "1000232"  [label="DDG: th->ack_seq"];
+"1000232" -> "1000108"  [label="AST: "];
+"1000233" -> "1000232"  [label="AST: "];
+"1000244" -> "1000232"  [label="CFG: "];
+"1000232" -> "1000598"  [label="DDG: ntohl(th->ack_seq)"];
+"1000232" -> "1000598"  [label="DDG: TCP_SKB_CB(skb)->ack_seq"];
+}

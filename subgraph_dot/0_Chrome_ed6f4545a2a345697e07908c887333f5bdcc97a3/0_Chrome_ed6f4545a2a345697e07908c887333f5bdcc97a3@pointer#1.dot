@@ -1,0 +1,33 @@
+digraph "0_Chrome_ed6f4545a2a345697e07908c887333f5bdcc97a3@pointer" {
+"1000150" [label="(Call,* resource = m_resource ? m_resource.get() : sourceCode.resource())"];
+"1000157" [label="(Call,resource && !resource->mimeTypeAllowedByNosniff())"];
+"1000215" [label="(MethodReturn,void)"];
+"1000157" [label="(Call,resource && !resource->mimeTypeAllowedByNosniff())"];
+"1000176" [label="(Identifier,frame)"];
+"1000163" [label="(Identifier,SecurityMessageSource)"];
+"1000159" [label="(Call,!resource->mimeTypeAllowedByNosniff())"];
+"1000150" [label="(Call,* resource = m_resource ? m_resource.get() : sourceCode.resource())"];
+"1000148" [label="(Block,)"];
+"1000158" [label="(Identifier,resource)"];
+"1000152" [label="(Call,m_resource ? m_resource.get() : sourceCode.resource())"];
+"1000151" [label="(Identifier,resource)"];
+"1000156" [label="(ControlStructure,if (resource && !resource->mimeTypeAllowedByNosniff()))"];
+"1000150" -> "1000148"  [label="AST: "];
+"1000150" -> "1000152"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000152" -> "1000150"  [label="AST: "];
+"1000158" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000215"  [label="DDG: m_resource ? m_resource.get() : sourceCode.resource()"];
+"1000150" -> "1000157"  [label="DDG: resource"];
+"1000157" -> "1000156"  [label="AST: "];
+"1000157" -> "1000158"  [label="CFG: "];
+"1000157" -> "1000159"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000159" -> "1000157"  [label="AST: "];
+"1000163" -> "1000157"  [label="CFG: "];
+"1000176" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000215"  [label="DDG: !resource->mimeTypeAllowedByNosniff()"];
+"1000157" -> "1000215"  [label="DDG: resource && !resource->mimeTypeAllowedByNosniff()"];
+"1000157" -> "1000215"  [label="DDG: resource"];
+"1000159" -> "1000157"  [label="DDG: resource->mimeTypeAllowedByNosniff()"];
+}

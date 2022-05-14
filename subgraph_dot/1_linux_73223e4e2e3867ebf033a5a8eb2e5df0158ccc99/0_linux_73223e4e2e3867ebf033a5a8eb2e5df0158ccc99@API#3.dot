@@ -1,0 +1,26 @@
+digraph "0_linux_73223e4e2e3867ebf033a5a8eb2e5df0158ccc99@API" {
+"1000356" [label="(Call,up_read(&current->mm->mmap_sem))"];
+"1000314" [label="(Call,up_read(&current->mm->mmap_sem))"];
+"1000322" [label="(Identifier,vma)"];
+"1000354" [label="(ControlStructure,if (vma))"];
+"1000365" [label="(MethodReturn,static long)"];
+"1000314" [label="(Call,up_read(&current->mm->mmap_sem))"];
+"1000357" [label="(Call,&current->mm->mmap_sem)"];
+"1000313" [label="(Block,)"];
+"1000315" [label="(Call,&current->mm->mmap_sem)"];
+"1000364" [label="(Identifier,err)"];
+"1000356" [label="(Call,up_read(&current->mm->mmap_sem))"];
+"1000356" -> "1000354"  [label="AST: "];
+"1000356" -> "1000357"  [label="CFG: "];
+"1000357" -> "1000356"  [label="AST: "];
+"1000364" -> "1000356"  [label="CFG: "];
+"1000356" -> "1000365"  [label="DDG: up_read(&current->mm->mmap_sem)"];
+"1000356" -> "1000365"  [label="DDG: &current->mm->mmap_sem"];
+"1000314" -> "1000356"  [label="DDG: &current->mm->mmap_sem"];
+"1000314" -> "1000313"  [label="AST: "];
+"1000314" -> "1000315"  [label="CFG: "];
+"1000315" -> "1000314"  [label="AST: "];
+"1000322" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000365"  [label="DDG: &current->mm->mmap_sem"];
+"1000314" -> "1000365"  [label="DDG: up_read(&current->mm->mmap_sem)"];
+}

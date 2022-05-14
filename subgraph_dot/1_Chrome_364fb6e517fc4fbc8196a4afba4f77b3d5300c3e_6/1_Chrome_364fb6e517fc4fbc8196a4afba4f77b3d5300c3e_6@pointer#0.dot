@@ -1,0 +1,27 @@
+digraph "1_Chrome_364fb6e517fc4fbc8196a4afba4f77b3d5300c3e_6@pointer" {
+"1000105" [label="(Call,IsTextInputClientFocused(client))"];
+"1000101" [label="(MethodParameterIn,const TextInputClient* client)"];
+"1000104" [label="(Call,!IsTextInputClientFocused(client))"];
+"1000107" [label="(Return,return;)"];
+"1000104" [label="(Call,!IsTextInputClientFocused(client))"];
+"1000109" [label="(Call,GetTextInputClient()->GetCaretBounds())"];
+"1000110" [label="(MethodReturn,void)"];
+"1000103" [label="(ControlStructure,if (!IsTextInputClientFocused(client)))"];
+"1000106" [label="(Identifier,client)"];
+"1000101" [label="(MethodParameterIn,const TextInputClient* client)"];
+"1000105" [label="(Call,IsTextInputClientFocused(client))"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000110"  [label="DDG: client"];
+"1000105" -> "1000104"  [label="DDG: client"];
+"1000101" -> "1000105"  [label="DDG: client"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000110"  [label="DDG: client"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000107" -> "1000104"  [label="CFG: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000110"  [label="DDG: !IsTextInputClientFocused(client)"];
+"1000104" -> "1000110"  [label="DDG: IsTextInputClientFocused(client)"];
+}

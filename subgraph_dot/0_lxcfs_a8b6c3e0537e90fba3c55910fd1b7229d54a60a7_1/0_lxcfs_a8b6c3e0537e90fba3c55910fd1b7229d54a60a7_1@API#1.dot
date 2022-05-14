@@ -1,0 +1,30 @@
+digraph "0_lxcfs_a8b6c3e0537e90fba3c55910fd1b7229d54a60a7_1@API" {
+"1000244" [label="(Call,free(next))"];
+"1000119" [label="(Call,*next = NULL)"];
+"1000103" [label="(Block,)"];
+"1000181" [label="(Call,strcmp(next, fpath) == 0)"];
+"1000126" [label="(Identifier,fc)"];
+"1000121" [label="(Identifier,NULL)"];
+"1000120" [label="(Identifier,next)"];
+"1000119" [label="(Call,*next = NULL)"];
+"1000244" [label="(Call,free(next))"];
+"1000245" [label="(Identifier,next)"];
+"1000247" [label="(Identifier,ret)"];
+"1000182" [label="(Call,strcmp(next, fpath))"];
+"1000248" [label="(MethodReturn,int)"];
+"1000244" -> "1000103"  [label="AST: "];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000247" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000248"  [label="DDG: next"];
+"1000119" -> "1000244"  [label="DDG: next"];
+"1000119" -> "1000103"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000126" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000248"  [label="DDG: NULL"];
+"1000119" -> "1000248"  [label="DDG: next"];
+"1000119" -> "1000181"  [label="DDG: next"];
+"1000119" -> "1000182"  [label="DDG: next"];
+}

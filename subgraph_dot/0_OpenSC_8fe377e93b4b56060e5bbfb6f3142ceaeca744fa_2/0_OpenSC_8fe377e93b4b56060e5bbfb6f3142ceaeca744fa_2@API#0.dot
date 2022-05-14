@@ -1,0 +1,28 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_2@API" {
+"1000200" [label="(Call,sc_file_free(card->cache.current_df))"];
+"1000179" [label="(Call,card->cache.valid && card->cache.current_df)"];
+"1000185" [label="(Call,card->cache.current_df)"];
+"1000178" [label="(ControlStructure,if (card->cache.valid && card->cache.current_df))"];
+"1000200" [label="(Call,sc_file_free(card->cache.current_df))"];
+"1000180" [label="(Call,card->cache.valid)"];
+"1000201" [label="(Call,card->cache.current_df)"];
+"1000190" [label="(Block,)"];
+"1000179" [label="(Call,card->cache.valid && card->cache.current_df)"];
+"1000192" [label="(Identifier,cur_df_path)"];
+"1000385" [label="(MethodReturn,RET)"];
+"1000209" [label="(Identifier,card)"];
+"1000200" -> "1000190"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000209" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000385"  [label="DDG: sc_file_free(card->cache.current_df)"];
+"1000179" -> "1000200"  [label="DDG: card->cache.current_df"];
+"1000179" -> "1000178"  [label="AST: "];
+"1000179" -> "1000180"  [label="CFG: "];
+"1000179" -> "1000185"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000185" -> "1000179"  [label="AST: "];
+"1000192" -> "1000179"  [label="CFG: "];
+"1000209" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000385"  [label="DDG: card->cache.valid && card->cache.current_df"];
+}

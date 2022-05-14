@@ -1,0 +1,37 @@
+digraph "0_linux_aa93d1fee85c890a34f2510a310e55ee76a27848@pointer" {
+"1000496" [label="(Call,ret = s->hdl.error)"];
+"1000595" [label="(Return,return ret;)"];
+"1000310" [label="(Call,ret = vb2_queue_init(&s->vb_queue))"];
+"1000596" [label="(Identifier,ret)"];
+"1000214" [label="(Call,ret == 0)"];
+"1000497" [label="(Identifier,ret)"];
+"1000380" [label="(Call,dev_err(s->dev, \"Failed to register v4l2-device (%d)\n\", ret))"];
+"1000496" [label="(Call,ret = s->hdl.error)"];
+"1000505" [label="(Identifier,s)"];
+"1000108" [label="(Block,)"];
+"1000597" [label="(MethodReturn,static int)"];
+"1000498" [label="(Call,s->hdl.error)"];
+"1000217" [label="(Call,ret = airspy_ctrl_msg(s, CMD_VERSION_STRING_READ, 0, 0,\n\t\t\t\tbuf, BUF_SIZE))"];
+"1000595" [label="(Return,return ret;)"];
+"1000495" [label="(Block,)"];
+"1000557" [label="(Call,dev_err(s->dev, \"Failed to register as video device (%d)\n\",\n \t\t\t\tret))"];
+"1000496" -> "1000495"  [label="AST: "];
+"1000496" -> "1000498"  [label="CFG: "];
+"1000497" -> "1000496"  [label="AST: "];
+"1000498" -> "1000496"  [label="AST: "];
+"1000505" -> "1000496"  [label="CFG: "];
+"1000496" -> "1000597"  [label="DDG: s->hdl.error"];
+"1000496" -> "1000597"  [label="DDG: ret"];
+"1000496" -> "1000595"  [label="DDG: ret"];
+"1000595" -> "1000108"  [label="AST: "];
+"1000595" -> "1000596"  [label="CFG: "];
+"1000596" -> "1000595"  [label="AST: "];
+"1000597" -> "1000595"  [label="CFG: "];
+"1000595" -> "1000597"  [label="DDG: <RET>"];
+"1000596" -> "1000595"  [label="DDG: ret"];
+"1000557" -> "1000595"  [label="DDG: ret"];
+"1000310" -> "1000595"  [label="DDG: ret"];
+"1000217" -> "1000595"  [label="DDG: ret"];
+"1000214" -> "1000595"  [label="DDG: ret"];
+"1000380" -> "1000595"  [label="DDG: ret"];
+}

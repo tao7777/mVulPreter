@@ -1,0 +1,29 @@
+digraph "0_radare2_4e98402f09a0ef0bb8559a33a4c1988c54938eaf@pointer" {
+"1000737" [label="(Call,sizeof (ret->path) - 1)"];
+"1000732" [label="(Call,strncpy (ret->path, libname, sizeof (ret->path) - 1))"];
+"1000742" [label="(Literal,1)"];
+"1000750" [label="(MethodReturn,struct r_bin_dyldcache_lib_t *)"];
+"1000736" [label="(Identifier,libname)"];
+"1000338" [label="(Call,libname = r_buf_read_string (bin->b, pfo, 64))"];
+"1000733" [label="(Call,ret->path)"];
+"1000737" [label="(Call,sizeof (ret->path) - 1)"];
+"1000114" [label="(Block,)"];
+"1000738" [label="(Call,sizeof (ret->path))"];
+"1000745" [label="(Identifier,ret)"];
+"1000732" [label="(Call,strncpy (ret->path, libname, sizeof (ret->path) - 1))"];
+"1000737" -> "1000732"  [label="AST: "];
+"1000737" -> "1000742"  [label="CFG: "];
+"1000738" -> "1000737"  [label="AST: "];
+"1000742" -> "1000737"  [label="AST: "];
+"1000732" -> "1000737"  [label="CFG: "];
+"1000737" -> "1000732"  [label="DDG: 1"];
+"1000732" -> "1000114"  [label="AST: "];
+"1000733" -> "1000732"  [label="AST: "];
+"1000736" -> "1000732"  [label="AST: "];
+"1000745" -> "1000732"  [label="CFG: "];
+"1000732" -> "1000750"  [label="DDG: sizeof (ret->path) - 1"];
+"1000732" -> "1000750"  [label="DDG: libname"];
+"1000732" -> "1000750"  [label="DDG: strncpy (ret->path, libname, sizeof (ret->path) - 1)"];
+"1000732" -> "1000750"  [label="DDG: ret->path"];
+"1000338" -> "1000732"  [label="DDG: libname"];
+}

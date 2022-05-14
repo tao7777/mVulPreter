@@ -1,0 +1,26 @@
+digraph "0_krb5_e04f0283516e80d2f93366e0d479d13c9b5c8c2a_3@API" {
+"1000402" [label="(Call,k5_mutex_unlock(&kcred->lock))"];
+"1000303" [label="(Call,k5_mutex_unlock(&kcred->lock))"];
+"1000409" [label="(Identifier,initialContextToken)"];
+"1000402" [label="(Call,k5_mutex_unlock(&kcred->lock))"];
+"1000303" [label="(Call,k5_mutex_unlock(&kcred->lock))"];
+"1000421" [label="(MethodReturn,RET)"];
+"1000304" [label="(Call,&kcred->lock)"];
+"1000309" [label="(Identifier,cred_locked)"];
+"1000403" [label="(Call,&kcred->lock)"];
+"1000302" [label="(Block,)"];
+"1000400" [label="(ControlStructure,if (cred_locked))"];
+"1000402" -> "1000400"  [label="AST: "];
+"1000402" -> "1000403"  [label="CFG: "];
+"1000403" -> "1000402"  [label="AST: "];
+"1000409" -> "1000402"  [label="CFG: "];
+"1000402" -> "1000421"  [label="DDG: k5_mutex_unlock(&kcred->lock)"];
+"1000402" -> "1000421"  [label="DDG: &kcred->lock"];
+"1000303" -> "1000402"  [label="DDG: &kcred->lock"];
+"1000303" -> "1000302"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000309" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000421"  [label="DDG: &kcred->lock"];
+"1000303" -> "1000421"  [label="DDG: k5_mutex_unlock(&kcred->lock)"];
+}

@@ -1,0 +1,36 @@
+digraph "0_linux_1b53cf9815bb4744958d41f3795d5d5a1d365e2d_3@API" {
+"1000111" [label="(Call,kmem_cache_free(fscrypt_info_cachep, ci))"];
+"1000104" [label="(Call,!ci)"];
+"1000101" [label="(MethodParameterIn,struct fscrypt_info *ci)"];
+"1000104" [label="(Call,!ci)"];
+"1000111" [label="(Call,kmem_cache_free(fscrypt_info_cachep, ci))"];
+"1000114" [label="(MethodReturn,static void)"];
+"1000109" [label="(Identifier,ci)"];
+"1000112" [label="(Identifier,fscrypt_info_cachep)"];
+"1000105" [label="(Identifier,ci)"];
+"1000113" [label="(Identifier,ci)"];
+"1000103" [label="(ControlStructure,if (!ci))"];
+"1000106" [label="(Return,return;)"];
+"1000102" [label="(Block,)"];
+"1000101" [label="(MethodParameterIn,struct fscrypt_info *ci)"];
+"1000111" -> "1000102"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000114" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000114"  [label="DDG: fscrypt_info_cachep"];
+"1000111" -> "1000114"  [label="DDG: kmem_cache_free(fscrypt_info_cachep, ci)"];
+"1000111" -> "1000114"  [label="DDG: ci"];
+"1000104" -> "1000111"  [label="DDG: ci"];
+"1000101" -> "1000111"  [label="DDG: ci"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="CFG: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000114"  [label="DDG: !ci"];
+"1000104" -> "1000114"  [label="DDG: ci"];
+"1000101" -> "1000104"  [label="DDG: ci"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000114"  [label="DDG: ci"];
+}

@@ -1,0 +1,36 @@
+digraph "1_linux_574823bfab82d9d8fa47f422778043fbb4b4f50e@pointer" {
+"1000104" [label="(MethodParameterIn,unsigned char *vec)"];
+"1000138" [label="(Call,vec[i] = mincore_page(vma->vm_file->f_mapping, pgoff))"];
+"1000160" [label="(Call,vec[i] = 0)"];
+"1000164" [label="(Literal,0)"];
+"1000138" [label="(Call,vec[i] = mincore_page(vma->vm_file->f_mapping, pgoff))"];
+"1000161" [label="(Call,vec[i])"];
+"1000167" [label="(MethodReturn,static int)"];
+"1000126" [label="(ControlStructure,for (i = 0; i < nr; i++, pgoff++))"];
+"1000104" [label="(MethodParameterIn,unsigned char *vec)"];
+"1000142" [label="(Call,mincore_page(vma->vm_file->f_mapping, pgoff))"];
+"1000159" [label="(Identifier,i)"];
+"1000151" [label="(ControlStructure,for (i = 0; i < nr; i++))"];
+"1000139" [label="(Call,vec[i])"];
+"1000160" [label="(Call,vec[i] = 0)"];
+"1000135" [label="(Identifier,i)"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000167"  [label="DDG: vec"];
+"1000104" -> "1000138"  [label="DDG: vec"];
+"1000104" -> "1000160"  [label="DDG: vec"];
+"1000138" -> "1000126"  [label="AST: "];
+"1000138" -> "1000142"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000142" -> "1000138"  [label="AST: "];
+"1000135" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000167"  [label="DDG: mincore_page(vma->vm_file->f_mapping, pgoff)"];
+"1000138" -> "1000167"  [label="DDG: vec[i]"];
+"1000142" -> "1000138"  [label="DDG: vma->vm_file->f_mapping"];
+"1000142" -> "1000138"  [label="DDG: pgoff"];
+"1000160" -> "1000151"  [label="AST: "];
+"1000160" -> "1000164"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000164" -> "1000160"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000167"  [label="DDG: vec[i]"];
+}

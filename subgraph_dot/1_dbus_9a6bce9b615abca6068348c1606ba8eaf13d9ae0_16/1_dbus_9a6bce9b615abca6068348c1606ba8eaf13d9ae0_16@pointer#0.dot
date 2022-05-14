@@ -1,0 +1,37 @@
+digraph "1_dbus_9a6bce9b615abca6068348c1606ba8eaf13d9ae0_16@pointer" {
+"1000101" [label="(MethodParameterIn,GObject *object)"];
+"1000106" [label="(Call,MY_OBJECT (object))"];
+"1000104" [label="(Call,*mobject = MY_OBJECT (object))"];
+"1000112" [label="(Call,(G_OBJECT_CLASS (my_object_parent_class)->finalize) (object))"];
+"1000104" [label="(Call,*mobject = MY_OBJECT (object))"];
+"1000102" [label="(Block,)"];
+"1000106" [label="(Call,MY_OBJECT (object))"];
+"1000105" [label="(Identifier,mobject)"];
+"1000110" [label="(Identifier,mobject)"];
+"1000112" [label="(Call,(G_OBJECT_CLASS (my_object_parent_class)->finalize) (object))"];
+"1000113" [label="(Identifier,object)"];
+"1000101" [label="(MethodParameterIn,GObject *object)"];
+"1000114" [label="(MethodReturn,RET)"];
+"1000107" [label="(Identifier,object)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000114"  [label="DDG: object"];
+"1000101" -> "1000106"  [label="DDG: object"];
+"1000101" -> "1000112"  [label="DDG: object"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000104"  [label="DDG: object"];
+"1000106" -> "1000112"  [label="DDG: object"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000110" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000114"  [label="DDG: mobject"];
+"1000104" -> "1000114"  [label="DDG: MY_OBJECT (object)"];
+"1000112" -> "1000102"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000114"  [label="DDG: (G_OBJECT_CLASS (my_object_parent_class)->finalize) (object)"];
+"1000112" -> "1000114"  [label="DDG: object"];
+}

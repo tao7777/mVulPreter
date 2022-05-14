@@ -1,0 +1,30 @@
+digraph "0_Chrome_d30a8bd191f17b61938fc87890bffc80049b0774_5@pointer" {
+"1000142" [label="(Call,* installed_extension =\n      extension_service->GetExtensionById(id_, true /* include disabled */))"];
+"1000144" [label="(Call,extension_service->GetExtensionById(id_, true /* include disabled */))"];
+"1000156" [label="(Call,done = true)"];
+"1000142" [label="(Call,* installed_extension =\n      extension_service->GetExtensionById(id_, true /* include disabled */))"];
+"1000104" [label="(Block,)"];
+"1000145" [label="(Identifier,id_)"];
+"1000148" [label="(Identifier,installed_extension)"];
+"1000190" [label="(MethodReturn,void)"];
+"1000160" [label="(Call,ExtensionPrefs::Get(profile_)->IsExtensionBlacklisted(id_))"];
+"1000144" [label="(Call,extension_service->GetExtensionById(id_, true /* include disabled */))"];
+"1000146" [label="(Identifier,true)"];
+"1000143" [label="(Identifier,installed_extension)"];
+"1000142" -> "1000104"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="AST: "];
+"1000148" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000190"  [label="DDG: extension_service->GetExtensionById(id_, true /* include disabled */)"];
+"1000142" -> "1000190"  [label="DDG: installed_extension"];
+"1000144" -> "1000142"  [label="DDG: id_"];
+"1000144" -> "1000142"  [label="DDG: true"];
+"1000144" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000144" -> "1000190"  [label="DDG: id_"];
+"1000144" -> "1000190"  [label="DDG: true"];
+"1000144" -> "1000156"  [label="DDG: true"];
+"1000144" -> "1000160"  [label="DDG: id_"];
+}

@@ -1,0 +1,32 @@
+digraph "0_wildmidi_660b513d99bced8783a4a5984ac2f742c74ebbdd_4@pointer" {
+"1000920" [label="(Call,text[tmp_length] = '\0')"];
+"1000925" [label="(Call,midi_setup_marker(mdi, text))"];
+"1000865" [label="(Block,)"];
+"1000916" [label="(Call,memcpy(text, event_data, tmp_length))"];
+"1000924" [label="(Literal,'\0')"];
+"1000142" [label="(MethodParameterIn,struct _mdi *mdi)"];
+"1000920" [label="(Call,text[tmp_length] = '\0')"];
+"1000927" [label="(Identifier,text)"];
+"1000926" [label="(Identifier,mdi)"];
+"1001550" [label="(MethodReturn,uint32_t)"];
+"1000929" [label="(Identifier,ret_cnt)"];
+"1000925" [label="(Call,midi_setup_marker(mdi, text))"];
+"1000921" [label="(Call,text[tmp_length])"];
+"1000920" -> "1000865"  [label="AST: "];
+"1000920" -> "1000924"  [label="CFG: "];
+"1000921" -> "1000920"  [label="AST: "];
+"1000924" -> "1000920"  [label="AST: "];
+"1000926" -> "1000920"  [label="CFG: "];
+"1000920" -> "1001550"  [label="DDG: text[tmp_length]"];
+"1000920" -> "1000925"  [label="DDG: text[tmp_length]"];
+"1000925" -> "1000865"  [label="AST: "];
+"1000925" -> "1000927"  [label="CFG: "];
+"1000926" -> "1000925"  [label="AST: "];
+"1000927" -> "1000925"  [label="AST: "];
+"1000929" -> "1000925"  [label="CFG: "];
+"1000925" -> "1001550"  [label="DDG: mdi"];
+"1000925" -> "1001550"  [label="DDG: midi_setup_marker(mdi, text)"];
+"1000925" -> "1001550"  [label="DDG: text"];
+"1000142" -> "1000925"  [label="DDG: mdi"];
+"1000916" -> "1000925"  [label="DDG: text"];
+}

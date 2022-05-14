@@ -1,0 +1,26 @@
+digraph "0_linux_d52fc5dde171f030170a6cb78034d166b13c9445@pointer" {
+"1000154" [label="(Call,cap_combine(old->cap_bset,\n\t\t\t\t\t\t\t old->cap_inheritable))"];
+"1000152" [label="(Call,cap_permitted = cap_combine(old->cap_bset,\n\t\t\t\t\t\t\t old->cap_inheritable))"];
+"1000153" [label="(Identifier,cap_permitted)"];
+"1000203" [label="(MethodReturn,int)"];
+"1000155" [label="(Call,old->cap_bset)"];
+"1000152" [label="(Call,cap_permitted = cap_combine(old->cap_bset,\n\t\t\t\t\t\t\t old->cap_inheritable))"];
+"1000154" [label="(Call,cap_combine(old->cap_bset,\n\t\t\t\t\t\t\t old->cap_inheritable))"];
+"1000162" [label="(Identifier,effective)"];
+"1000151" [label="(Block,)"];
+"1000158" [label="(Call,old->cap_inheritable)"];
+"1000154" -> "1000152"  [label="AST: "];
+"1000154" -> "1000158"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000158" -> "1000154"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000203"  [label="DDG: old->cap_bset"];
+"1000154" -> "1000203"  [label="DDG: old->cap_inheritable"];
+"1000154" -> "1000152"  [label="DDG: old->cap_bset"];
+"1000154" -> "1000152"  [label="DDG: old->cap_inheritable"];
+"1000152" -> "1000151"  [label="AST: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000162" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000203"  [label="DDG: cap_permitted"];
+"1000152" -> "1000203"  [label="DDG: cap_combine(old->cap_bset,\n\t\t\t\t\t\t\t old->cap_inheritable)"];
+}

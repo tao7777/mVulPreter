@@ -1,0 +1,1 @@
+NetworkLibrary* CrosLibrary::GetNetworkLibrary() {

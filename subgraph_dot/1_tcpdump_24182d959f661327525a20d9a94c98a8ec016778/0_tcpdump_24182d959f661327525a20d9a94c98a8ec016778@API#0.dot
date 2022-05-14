@@ -1,0 +1,33 @@
+digraph "0_tcpdump_24182d959f661327525a20d9a94c98a8ec016778@API" {
+"1000192" [label="(Call,memset(s, 0, sizeof(s)))"];
+"1000222" [label="(Call,s[p - fmt] = '\0')"];
+"1000192" [label="(Call,memset(s, 0, sizeof(s)))"];
+"1000222" [label="(Call,s[p - fmt] = '\0')"];
+"1000292" [label="(MethodReturn,RET)"];
+"1000194" [label="(Literal,0)"];
+"1000195" [label="(Call,sizeof(s))"];
+"1000223" [label="(Call,s[p - fmt])"];
+"1000216" [label="(Call,strncpy(s, fmt, p - fmt))"];
+"1000236" [label="(Call,smb_fdata1(ndo, buf, s, maxbuf, unicodestr))"];
+"1000228" [label="(Literal,'\0')"];
+"1000230" [label="(Identifier,fmt)"];
+"1000121" [label="(Block,)"];
+"1000193" [label="(Identifier,s)"];
+"1000198" [label="(Identifier,p)"];
+"1000192" -> "1000121"  [label="AST: "];
+"1000192" -> "1000195"  [label="CFG: "];
+"1000193" -> "1000192"  [label="AST: "];
+"1000194" -> "1000192"  [label="AST: "];
+"1000195" -> "1000192"  [label="AST: "];
+"1000198" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000292"  [label="DDG: memset(s, 0, sizeof(s))"];
+"1000222" -> "1000192"  [label="DDG: s[p - fmt]"];
+"1000222" -> "1000121"  [label="AST: "];
+"1000222" -> "1000228"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000228" -> "1000222"  [label="AST: "];
+"1000230" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000292"  [label="DDG: s[p - fmt]"];
+"1000222" -> "1000216"  [label="DDG: s[p - fmt]"];
+"1000222" -> "1000236"  [label="DDG: s[p - fmt]"];
+}

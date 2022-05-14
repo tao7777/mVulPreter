@@ -1,0 +1,27 @@
+digraph "0_Chrome_137458c8680c51fe9d3984ded2ef50a45a667b8b@API" {
+"1000140" [label="(Call,std::move(gesture))"];
+"1000139" [label="(Call,GetWidgetHost()->QueueSyntheticGesture(\n        std::move(gesture),\n        base::Bind(&TouchActionBrowserTest::OnSyntheticGestureCompleted,\n                   base::Unretained(this))))"];
+"1000104" [label="(Block,)"];
+"1000140" [label="(Call,std::move(gesture))"];
+"1000175" [label="(MethodReturn,bool)"];
+"1000141" [label="(Identifier,gesture)"];
+"1000144" [label="(Identifier,TouchActionBrowserTest::OnSyntheticGestureCompleted)"];
+"1000147" [label="(Call,runner_->Run())"];
+"1000139" [label="(Call,GetWidgetHost()->QueueSyntheticGesture(\n        std::move(gesture),\n        base::Bind(&TouchActionBrowserTest::OnSyntheticGestureCompleted,\n                   base::Unretained(this))))"];
+"1000142" [label="(Call,base::Bind(&TouchActionBrowserTest::OnSyntheticGestureCompleted,\n                   base::Unretained(this)))"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000144" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000175"  [label="DDG: gesture"];
+"1000140" -> "1000139"  [label="DDG: gesture"];
+"1000139" -> "1000104"  [label="AST: "];
+"1000139" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000139"  [label="AST: "];
+"1000147" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000175"  [label="DDG: base::Bind(&TouchActionBrowserTest::OnSyntheticGestureCompleted,\n                   base::Unretained(this))"];
+"1000139" -> "1000175"  [label="DDG: GetWidgetHost()->QueueSyntheticGesture(\n        std::move(gesture),\n        base::Bind(&TouchActionBrowserTest::OnSyntheticGestureCompleted,\n                   base::Unretained(this)))"];
+"1000139" -> "1000175"  [label="DDG: std::move(gesture)"];
+"1000142" -> "1000139"  [label="DDG: &TouchActionBrowserTest::OnSyntheticGestureCompleted"];
+"1000142" -> "1000139"  [label="DDG: base::Unretained(this)"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_c3c87e770458aa004bd7ed3f29945ff436fd6511_0@API" {
+"1000337" [label="(Call,mutex_unlock(&pmus_lock))"];
+"1000108" [label="(Call,mutex_lock(&pmus_lock))"];
+"1000109" [label="(Call,&pmus_lock)"];
+"1000341" [label="(Identifier,ret)"];
+"1000105" [label="(Block,)"];
+"1000112" [label="(Identifier,ret)"];
+"1000338" [label="(Call,&pmus_lock)"];
+"1000370" [label="(MethodReturn,int)"];
+"1000108" [label="(Call,mutex_lock(&pmus_lock))"];
+"1000337" [label="(Call,mutex_unlock(&pmus_lock))"];
+"1000337" -> "1000105"  [label="AST: "];
+"1000337" -> "1000338"  [label="CFG: "];
+"1000338" -> "1000337"  [label="AST: "];
+"1000341" -> "1000337"  [label="CFG: "];
+"1000337" -> "1000370"  [label="DDG: &pmus_lock"];
+"1000337" -> "1000370"  [label="DDG: mutex_unlock(&pmus_lock)"];
+"1000108" -> "1000337"  [label="DDG: &pmus_lock"];
+"1000108" -> "1000105"  [label="AST: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000370"  [label="DDG: mutex_lock(&pmus_lock)"];
+}

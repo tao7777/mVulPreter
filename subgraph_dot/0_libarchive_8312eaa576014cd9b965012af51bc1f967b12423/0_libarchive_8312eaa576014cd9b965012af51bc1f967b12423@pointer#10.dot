@@ -1,0 +1,35 @@
+digraph "0_libarchive_8312eaa576014cd9b965012af51bc1f967b12423@pointer" {
+"1000269" [label="(Call,(uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size)"];
+"1000268" [label="(Call,(uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size *\n\t\t\t\t\t    (uint64_t)archive_le32dec(data))"];
+"1000264" [label="(Call,file->cl_offset = (uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size *\n\t\t\t\t\t    (uint64_t)archive_le32dec(data))"];
+"1000583" [label="(MethodReturn,RET)"];
+"1000274" [label="(Call,(uint64_t)archive_le32dec(data))"];
+"1000264" [label="(Call,file->cl_offset = (uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size *\n\t\t\t\t\t    (uint64_t)archive_le32dec(data))"];
+"1000265" [label="(Call,file->cl_offset)"];
+"1000280" [label="(Identifier,iso9660)"];
+"1000269" [label="(Call,(uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size)"];
+"1000271" [label="(Call,iso9660->logical_block_size)"];
+"1000263" [label="(Block,)"];
+"1000268" [label="(Call,(uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size *\n\t\t\t\t\t    (uint64_t)archive_le32dec(data))"];
+"1000269" -> "1000268"  [label="AST: "];
+"1000269" -> "1000271"  [label="CFG: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000271" -> "1000269"  [label="AST: "];
+"1000275" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000583"  [label="DDG: iso9660->logical_block_size"];
+"1000269" -> "1000268"  [label="DDG: iso9660->logical_block_size"];
+"1000268" -> "1000264"  [label="AST: "];
+"1000268" -> "1000274"  [label="CFG: "];
+"1000274" -> "1000268"  [label="AST: "];
+"1000264" -> "1000268"  [label="CFG: "];
+"1000268" -> "1000583"  [label="DDG: (uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size"];
+"1000268" -> "1000583"  [label="DDG: (uint64_t)archive_le32dec(data)"];
+"1000268" -> "1000264"  [label="DDG: (uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size"];
+"1000268" -> "1000264"  [label="DDG: (uint64_t)archive_le32dec(data)"];
+"1000274" -> "1000268"  [label="DDG: archive_le32dec(data)"];
+"1000264" -> "1000263"  [label="AST: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000280" -> "1000264"  [label="CFG: "];
+"1000264" -> "1000583"  [label="DDG: file->cl_offset"];
+"1000264" -> "1000583"  [label="DDG: (uint64_t)\n\t\t\t\t\t    iso9660->logical_block_size *\n\t\t\t\t\t    (uint64_t)archive_le32dec(data)"];
+}

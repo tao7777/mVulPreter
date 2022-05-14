@@ -1,0 +1,33 @@
+digraph "0_linux_04f5866e41fb70690e28397487d8bd8eea7d712a@pointer" {
+"1000213" [label="(Call,vma->vm_flags &= ~(VM_SHARED | VM_MAYSHARE))"];
+"1000217" [label="(Call,~(VM_SHARED | VM_MAYSHARE))"];
+"1000218" [label="(Call,VM_SHARED | VM_MAYSHARE)"];
+"1000218" [label="(Call,VM_SHARED | VM_MAYSHARE)"];
+"1000214" [label="(Call,vma->vm_flags)"];
+"1000234" [label="(MethodReturn,void)"];
+"1000213" [label="(Call,vma->vm_flags &= ~(VM_SHARED | VM_MAYSHARE))"];
+"1000224" [label="(Identifier,ufile)"];
+"1000220" [label="(Identifier,VM_MAYSHARE)"];
+"1000219" [label="(Identifier,VM_SHARED)"];
+"1000217" [label="(Call,~(VM_SHARED | VM_MAYSHARE))"];
+"1000182" [label="(Block,)"];
+"1000213" -> "1000182"  [label="AST: "];
+"1000213" -> "1000217"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000217" -> "1000213"  [label="AST: "];
+"1000224" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000234"  [label="DDG: ~(VM_SHARED | VM_MAYSHARE)"];
+"1000213" -> "1000234"  [label="DDG: vma->vm_flags"];
+"1000213" -> "1000234"  [label="DDG: vma->vm_flags &= ~(VM_SHARED | VM_MAYSHARE)"];
+"1000217" -> "1000213"  [label="DDG: VM_SHARED | VM_MAYSHARE"];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000217" -> "1000234"  [label="DDG: VM_SHARED | VM_MAYSHARE"];
+"1000218" -> "1000217"  [label="DDG: VM_SHARED"];
+"1000218" -> "1000217"  [label="DDG: VM_MAYSHARE"];
+"1000218" -> "1000220"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000220" -> "1000218"  [label="AST: "];
+"1000218" -> "1000234"  [label="DDG: VM_SHARED"];
+"1000218" -> "1000234"  [label="DDG: VM_MAYSHARE"];
+}

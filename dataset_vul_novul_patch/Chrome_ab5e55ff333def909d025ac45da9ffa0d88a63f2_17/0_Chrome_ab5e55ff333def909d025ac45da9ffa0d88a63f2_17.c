@@ -1,0 +1,1 @@
+PassRefPtr<RTCSessionDescriptionDescriptor> RTCPeerConnectionHandlerChromium::remoteDescription()

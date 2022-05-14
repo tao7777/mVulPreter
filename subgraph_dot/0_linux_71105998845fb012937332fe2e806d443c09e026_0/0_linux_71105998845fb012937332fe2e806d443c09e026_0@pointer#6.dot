@@ -1,0 +1,24 @@
+digraph "0_linux_71105998845fb012937332fe2e806d443c09e026_0@pointer" {
+"1000179" [label="(Call,snd_use_lock_init(&new_port->use_lock))"];
+"1000194" [label="(Call,snd_use_lock_use(&new_port->use_lock))"];
+"1000280" [label="(MethodReturn,struct snd_seq_client_port *)"];
+"1000110" [label="(Block,)"];
+"1000200" [label="(Identifier,num)"];
+"1000179" [label="(Call,snd_use_lock_init(&new_port->use_lock))"];
+"1000195" [label="(Call,&new_port->use_lock)"];
+"1000180" [label="(Call,&new_port->use_lock)"];
+"1000187" [label="(Identifier,new_port)"];
+"1000194" [label="(Call,snd_use_lock_use(&new_port->use_lock))"];
+"1000179" -> "1000110"  [label="AST: "];
+"1000179" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000187" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000280"  [label="DDG: snd_use_lock_init(&new_port->use_lock)"];
+"1000179" -> "1000194"  [label="DDG: &new_port->use_lock"];
+"1000194" -> "1000110"  [label="AST: "];
+"1000194" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000200" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000280"  [label="DDG: snd_use_lock_use(&new_port->use_lock)"];
+"1000194" -> "1000280"  [label="DDG: &new_port->use_lock"];
+}

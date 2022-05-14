@@ -1,0 +1,12 @@
+ContextualSearchFieldTrial::ContextualSearchFieldTrial()
+    : is_resolver_url_prefix_cached_(false),
+      is_surrounding_size_cached_(false),
+      surrounding_size_(0),
+      is_icing_surrounding_size_cached_(false),
+      icing_surrounding_size_(0),
+      is_send_base_page_url_disabled_cached_(false),
+       is_send_base_page_url_disabled_(false),
+       is_decode_mentions_disabled_cached_(false),
+       is_decode_mentions_disabled_(false),
+      is_now_on_tap_bar_integration_enabled_cached_(false),
+      is_now_on_tap_bar_integration_enabled_(false) {}

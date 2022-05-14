@@ -1,0 +1,37 @@
+digraph "0_Android_46e305be6e670a5a0041b0b4861122a0f1aabefa_2@pointer" {
+"1001242" [label="(Call,drv_ctx.ip_buf.actualcount = portDefn->nBufferCountActual)"];
+"1001213" [label="(Call,portDefn->nBufferCountActual >= drv_ctx.ip_buf.mincount)"];
+"1001212" [label="(Call,portDefn->nBufferCountActual >= drv_ctx.ip_buf.mincount\n                                            || portDefn->nBufferSize != drv_ctx.ip_buf.buffer_size)"];
+"1001254" [label="(Identifier,drv_ctx)"];
+"1001242" [label="(Call,drv_ctx.ip_buf.actualcount = portDefn->nBufferCountActual)"];
+"1003102" [label="(MethodReturn,OMX_ERRORTYPE)"];
+"1001214" [label="(Call,portDefn->nBufferCountActual)"];
+"1001282" [label="(Call,DEBUG_PRINT_ERROR(\"ERROR: IP Requirements(#%d: %u) Requested(#%u: %u)\",\n                                               drv_ctx.ip_buf.mincount, (unsigned int)drv_ctx.ip_buf.buffer_size,\n (unsigned int)portDefn->nBufferCountActual, (unsigned int)portDefn->nBufferSize))"];
+"1001213" [label="(Call,portDefn->nBufferCountActual >= drv_ctx.ip_buf.mincount)"];
+"1001217" [label="(Call,drv_ctx.ip_buf.mincount)"];
+"1001231" [label="(Block,)"];
+"1001248" [label="(Call,portDefn->nBufferCountActual)"];
+"1001243" [label="(Call,drv_ctx.ip_buf.actualcount)"];
+"1001224" [label="(Identifier,portDefn)"];
+"1001296" [label="(Call,(unsigned int)portDefn->nBufferCountActual)"];
+"1001242" -> "1001231"  [label="AST: "];
+"1001242" -> "1001248"  [label="CFG: "];
+"1001243" -> "1001242"  [label="AST: "];
+"1001248" -> "1001242"  [label="AST: "];
+"1001254" -> "1001242"  [label="CFG: "];
+"1001242" -> "1003102"  [label="DDG: drv_ctx.ip_buf.actualcount"];
+"1001242" -> "1003102"  [label="DDG: portDefn->nBufferCountActual"];
+"1001213" -> "1001242"  [label="DDG: portDefn->nBufferCountActual"];
+"1001213" -> "1001212"  [label="AST: "];
+"1001213" -> "1001217"  [label="CFG: "];
+"1001214" -> "1001213"  [label="AST: "];
+"1001217" -> "1001213"  [label="AST: "];
+"1001224" -> "1001213"  [label="CFG: "];
+"1001212" -> "1001213"  [label="CFG: "];
+"1001213" -> "1003102"  [label="DDG: portDefn->nBufferCountActual"];
+"1001213" -> "1003102"  [label="DDG: drv_ctx.ip_buf.mincount"];
+"1001213" -> "1001212"  [label="DDG: portDefn->nBufferCountActual"];
+"1001213" -> "1001212"  [label="DDG: drv_ctx.ip_buf.mincount"];
+"1001213" -> "1001282"  [label="DDG: drv_ctx.ip_buf.mincount"];
+"1001213" -> "1001296"  [label="DDG: portDefn->nBufferCountActual"];
+}

@@ -1,0 +1,27 @@
+digraph "0_pgbouncer_edab5be6665b9e8de66c25ba527509b229468573@API" {
+"1000176" [label="(Call,!isMD5(user->passwd))"];
+"1000177" [label="(Call,isMD5(user->passwd))"];
+"1000196" [label="(Call,user->passwd + 3)"];
+"1000195" [label="(Call,pg_md5_encrypt(user->passwd + 3, (char *)client->tmp_login_salt, 4, md5))"];
+"1000216" [label="(MethodReturn,static bool)"];
+"1000175" [label="(ControlStructure,if (!isMD5(user->passwd)))"];
+"1000176" [label="(Call,!isMD5(user->passwd))"];
+"1000181" [label="(Call,pg_md5_encrypt(user->passwd, user->name, strlen(user->name), user->passwd))"];
+"1000178" [label="(Call,user->passwd)"];
+"1000177" [label="(Call,isMD5(user->passwd))"];
+"1000183" [label="(Identifier,user)"];
+"1000198" [label="(Identifier,user)"];
+"1000176" -> "1000175"  [label="AST: "];
+"1000176" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000176"  [label="AST: "];
+"1000183" -> "1000176"  [label="CFG: "];
+"1000198" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000216"  [label="DDG: !isMD5(user->passwd)"];
+"1000176" -> "1000216"  [label="DDG: isMD5(user->passwd)"];
+"1000177" -> "1000176"  [label="DDG: user->passwd"];
+"1000177" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000177" -> "1000181"  [label="DDG: user->passwd"];
+"1000177" -> "1000195"  [label="DDG: user->passwd"];
+"1000177" -> "1000196"  [label="DDG: user->passwd"];
+}

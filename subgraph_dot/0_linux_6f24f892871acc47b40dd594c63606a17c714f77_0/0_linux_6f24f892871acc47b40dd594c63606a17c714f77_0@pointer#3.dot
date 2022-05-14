@@ -1,0 +1,27 @@
+digraph "0_linux_6f24f892871acc47b40dd594c63606a17c714f77_0@pointer" {
+"1000109" [label="(Call,*inode = filp->f_path.dentry->d_inode)"];
+"1000531" [label="(Call,HFSPLUS_I(inode))"];
+"1000109" [label="(Call,*inode = filp->f_path.dentry->d_inode)"];
+"1000531" [label="(Call,HFSPLUS_I(inode))"];
+"1000530" [label="(Call,HFSPLUS_I(inode)->open_dir_list)"];
+"1000532" [label="(Identifier,inode)"];
+"1000110" [label="(Identifier,inode)"];
+"1000111" [label="(Call,filp->f_path.dentry->d_inode)"];
+"1000120" [label="(Identifier,sb)"];
+"1000550" [label="(MethodReturn,static int)"];
+"1000533" [label="(FieldIdentifier,open_dir_list)"];
+"1000107" [label="(Block,)"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000120" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000550"  [label="DDG: inode"];
+"1000109" -> "1000550"  [label="DDG: filp->f_path.dentry->d_inode"];
+"1000109" -> "1000531"  [label="DDG: inode"];
+"1000531" -> "1000530"  [label="AST: "];
+"1000531" -> "1000532"  [label="CFG: "];
+"1000532" -> "1000531"  [label="AST: "];
+"1000533" -> "1000531"  [label="CFG: "];
+"1000531" -> "1000550"  [label="DDG: inode"];
+}

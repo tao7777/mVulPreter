@@ -1,0 +1,33 @@
+digraph "0_samba_d724f835acb9f4886c0001af32cd325dbbf1f895@pointer" {
+"1000104" [label="(MethodParameterIn,const char *share)"];
+"1000142" [label="(Call,talloc_strdup(ctx,share))"];
+"1000140" [label="(Call,servicename = talloc_strdup(ctx,share))"];
+"1000143" [label="(Identifier,ctx)"];
+"1000141" [label="(Identifier,servicename)"];
+"1000102" [label="(MethodParameterIn,TALLOC_CTX *ctx)"];
+"1000140" [label="(Call,servicename = talloc_strdup(ctx,share))"];
+"1000104" [label="(MethodParameterIn,const char *share)"];
+"1000142" [label="(Call,talloc_strdup(ctx,share))"];
+"1000112" [label="(Block,)"];
+"1000146" [label="(Identifier,sharename)"];
+"1000173" [label="(MethodReturn,static NTSTATUS)"];
+"1000144" [label="(Identifier,share)"];
+"1000104" -> "1000101"  [label="AST: "];
+"1000104" -> "1000173"  [label="DDG: share"];
+"1000104" -> "1000142"  [label="DDG: share"];
+"1000142" -> "1000140"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="AST: "];
+"1000140" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000173"  [label="DDG: share"];
+"1000142" -> "1000173"  [label="DDG: ctx"];
+"1000142" -> "1000140"  [label="DDG: ctx"];
+"1000142" -> "1000140"  [label="DDG: share"];
+"1000102" -> "1000142"  [label="DDG: ctx"];
+"1000140" -> "1000112"  [label="AST: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000146" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000173"  [label="DDG: talloc_strdup(ctx,share)"];
+"1000140" -> "1000173"  [label="DDG: servicename"];
+}

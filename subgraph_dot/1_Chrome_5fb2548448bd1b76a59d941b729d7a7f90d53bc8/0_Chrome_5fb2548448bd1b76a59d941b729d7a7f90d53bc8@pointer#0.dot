@@ -1,0 +1,34 @@
+digraph "0_Chrome_5fb2548448bd1b76a59d941b729d7a7f90d53bc8@pointer" {
+"1000133" [label="(Call,GetOrCreateContext(isolate))"];
+"1000123" [label="(Call,* isolate = v8::Isolate::GetCurrent())"];
+"1000127" [label="(Call,v8::Local<v8::Context> context = GetOrCreateContext(isolate))"];
+"1000128" [label="(Call,v8::Local<v8::Context> context)"];
+"1000102" [label="(Block,)"];
+"1000129" [label="(Identifier,v8::Local)"];
+"1000125" [label="(Call,v8::Isolate::GetCurrent())"];
+"1000124" [label="(Identifier,isolate)"];
+"1000167" [label="(MethodReturn,RET)"];
+"1000133" [label="(Call,GetOrCreateContext(isolate))"];
+"1000123" [label="(Call,* isolate = v8::Isolate::GetCurrent())"];
+"1000134" [label="(Identifier,isolate)"];
+"1000127" [label="(Call,v8::Local<v8::Context> context = GetOrCreateContext(isolate))"];
+"1000138" [label="(Identifier,schema)"];
+"1000133" -> "1000127"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000127" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000167"  [label="DDG: isolate"];
+"1000133" -> "1000127"  [label="DDG: isolate"];
+"1000123" -> "1000133"  [label="DDG: isolate"];
+"1000123" -> "1000102"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000129" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000167"  [label="DDG: v8::Isolate::GetCurrent()"];
+"1000127" -> "1000102"  [label="AST: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000138" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000167"  [label="DDG: GetOrCreateContext(isolate)"];
+"1000127" -> "1000167"  [label="DDG: v8::Local<v8::Context> context"];
+}

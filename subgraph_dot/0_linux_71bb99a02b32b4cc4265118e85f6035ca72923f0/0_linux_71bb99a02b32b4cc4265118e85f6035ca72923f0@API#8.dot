@@ -1,0 +1,29 @@
+digraph "0_linux_71bb99a02b32b4cc4265118e85f6035ca72923f0@API" {
+"1000118" [label="(Call,!l2cap_is_socket(sock))"];
+"1000119" [label="(Call,l2cap_is_socket(sock))"];
+"1000107" [label="(MethodParameterIn,struct socket *sock)"];
+"1000230" [label="(Call,s->sock  = sock)"];
+"1000123" [label="(Identifier,EBADFD)"];
+"1000120" [label="(Identifier,sock)"];
+"1000117" [label="(ControlStructure,if (!l2cap_is_socket(sock)))"];
+"1000107" [label="(MethodParameterIn,struct socket *sock)"];
+"1000118" [label="(Call,!l2cap_is_socket(sock))"];
+"1000119" [label="(Call,l2cap_is_socket(sock))"];
+"1000336" [label="(MethodReturn,int)"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000123" -> "1000118"  [label="CFG: "];
+"1000126" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000336"  [label="DDG: !l2cap_is_socket(sock)"];
+"1000118" -> "1000336"  [label="DDG: l2cap_is_socket(sock)"];
+"1000119" -> "1000118"  [label="DDG: sock"];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000119" -> "1000336"  [label="DDG: sock"];
+"1000107" -> "1000119"  [label="DDG: sock"];
+"1000119" -> "1000230"  [label="DDG: sock"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000336"  [label="DDG: sock"];
+"1000107" -> "1000230"  [label="DDG: sock"];
+}

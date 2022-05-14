@@ -1,0 +1,35 @@
+digraph "0_Android_830cb39cb2a0f1bf6704d264e2a5c5029c175dd7@API" {
+"1000198" [label="(Call,AVCT_RemoveConn(handle))"];
+"1000129" [label="(MethodParameterIn,uint8_t handle)"];
+"1000199" [label="(Identifier,handle)"];
+"1000815" [label="(Call,avrc_send_next_vendor_cmd(handle))"];
+"1001023" [label="(Call,AVRC_TRACE_WARNING(\"%s %s msg handle:%d, control:%d, cr:%d, opcode:x%x\",\n                       __func__, p_drop_msg, handle,\n                       avrc_cb.ccb[handle].control, cr, opcode))"];
+"1000129" [label="(MethodParameterIn,uint8_t handle)"];
+"1000996" [label="(Call,AVCT_MsgReq(handle, label, cr, p_rsp))"];
+"1001015" [label="(Call,avrc_cb.ccb[handle].msg_cback.Run(handle, label, opcode, &msg))"];
+"1000200" [label="(Return,return;)"];
+"1000933" [label="(Call,avrc_send_next_vendor_cmd(handle))"];
+"1000198" [label="(Call,AVCT_RemoveConn(handle))"];
+"1000310" [label="(Call,AVRC_TRACE_DEBUG(\"%s handle:%d, ctype:%d, offset:%d, len: %d\", __func__,\n                      handle, msg.hdr.ctype, p_pkt->offset, p_pkt->len))"];
+"1000195" [label="(Block,)"];
+"1000207" [label="(Call,AVRC_TRACE_DEBUG(\"AVRC: stopping timer (handle=0x%02x)\", handle))"];
+"1000753" [label="(Call,avrc_proc_far_msg(handle, label, cr, &p_pkt, p_msg))"];
+"1001057" [label="(MethodReturn,static void)"];
+"1000198" -> "1000195"  [label="AST: "];
+"1000198" -> "1000199"  [label="CFG: "];
+"1000199" -> "1000198"  [label="AST: "];
+"1000200" -> "1000198"  [label="CFG: "];
+"1000198" -> "1001057"  [label="DDG: handle"];
+"1000198" -> "1001057"  [label="DDG: AVCT_RemoveConn(handle)"];
+"1000129" -> "1000198"  [label="DDG: handle"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000129" -> "1001057"  [label="DDG: handle"];
+"1000129" -> "1000207"  [label="DDG: handle"];
+"1000129" -> "1000310"  [label="DDG: handle"];
+"1000129" -> "1000753"  [label="DDG: handle"];
+"1000129" -> "1000815"  [label="DDG: handle"];
+"1000129" -> "1000933"  [label="DDG: handle"];
+"1000129" -> "1000996"  [label="DDG: handle"];
+"1000129" -> "1001015"  [label="DDG: handle"];
+"1000129" -> "1001023"  [label="DDG: handle"];
+}

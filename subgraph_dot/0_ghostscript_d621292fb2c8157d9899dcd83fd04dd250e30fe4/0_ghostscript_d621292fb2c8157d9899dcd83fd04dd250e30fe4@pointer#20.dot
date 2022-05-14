@@ -1,0 +1,35 @@
+digraph "0_ghostscript_d621292fb2c8157d9899dcd83fd04dd250e30fe4@pointer" {
+"1000912" [label="(Call,ctx->smask_depth > 0)"];
+"1000911" [label="(Call,ctx->smask_depth > 0 && maskbuf != NULL)"];
+"1000913" [label="(Call,ctx->smask_depth)"];
+"1000382" [label="(Call,maskbuf != NULL && maskbuf->data == NULL && maskbuf->alpha == 255)"];
+"1000917" [label="(Call,maskbuf != NULL)"];
+"1000927" [label="(Literal,'v')"];
+"1000910" [label="(ControlStructure,if (ctx->smask_depth > 0 && maskbuf != NULL))"];
+"1000942" [label="(MethodReturn,RET)"];
+"1000923" [label="(Identifier,ctx)"];
+"1000916" [label="(Literal,0)"];
+"1000912" [label="(Call,ctx->smask_depth > 0)"];
+"1000918" [label="(Identifier,maskbuf)"];
+"1000911" [label="(Call,ctx->smask_depth > 0 && maskbuf != NULL)"];
+"1000912" -> "1000911"  [label="AST: "];
+"1000912" -> "1000916"  [label="CFG: "];
+"1000913" -> "1000912"  [label="AST: "];
+"1000916" -> "1000912"  [label="AST: "];
+"1000918" -> "1000912"  [label="CFG: "];
+"1000911" -> "1000912"  [label="CFG: "];
+"1000912" -> "1000942"  [label="DDG: ctx->smask_depth"];
+"1000912" -> "1000911"  [label="DDG: ctx->smask_depth"];
+"1000912" -> "1000911"  [label="DDG: 0"];
+"1000911" -> "1000910"  [label="AST: "];
+"1000911" -> "1000917"  [label="CFG: "];
+"1000917" -> "1000911"  [label="AST: "];
+"1000923" -> "1000911"  [label="CFG: "];
+"1000927" -> "1000911"  [label="CFG: "];
+"1000911" -> "1000942"  [label="DDG: ctx->smask_depth > 0 && maskbuf != NULL"];
+"1000911" -> "1000942"  [label="DDG: ctx->smask_depth > 0"];
+"1000911" -> "1000942"  [label="DDG: maskbuf != NULL"];
+"1000917" -> "1000911"  [label="DDG: maskbuf"];
+"1000917" -> "1000911"  [label="DDG: NULL"];
+"1000382" -> "1000911"  [label="DDG: maskbuf != NULL"];
+}

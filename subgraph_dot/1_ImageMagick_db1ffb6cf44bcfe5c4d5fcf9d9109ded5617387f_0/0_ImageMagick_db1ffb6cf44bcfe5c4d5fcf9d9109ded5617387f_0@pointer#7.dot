@@ -1,0 +1,29 @@
+digraph "0_ImageMagick_db1ffb6cf44bcfe5c4d5fcf9d9109ded5617387f_0@pointer" {
+"1000693" [label="(Call,FindColor(&image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)]))"];
+"1000689" [label="(Call,SetPixelIndex(indexes+x,FindColor(&image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)])))"];
+"1000688" [label="(Identifier,x)"];
+"1000693" [label="(Call,FindColor(&image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)]))"];
+"1000672" [label="(Call,indexes=GetAuthenticIndexQueue(image))"];
+"1000694" [label="(Call,&image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)])"];
+"1000689" [label="(Call,SetPixelIndex(indexes+x,FindColor(&image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)])))"];
+"1000690" [label="(Call,indexes+x)"];
+"1001433" [label="(MethodReturn,static MagickBooleanType)"];
+"1000680" [label="(Call,x < (ssize_t) image->columns)"];
+"1000676" [label="(ControlStructure,for (x=0; x < (ssize_t) image->columns; x++))"];
+"1000701" [label="(Call,GetPixelIndex(indexes+x))"];
+"1000693" -> "1000689"  [label="AST: "];
+"1000693" -> "1000694"  [label="CFG: "];
+"1000694" -> "1000693"  [label="AST: "];
+"1000689" -> "1000693"  [label="CFG: "];
+"1000693" -> "1001433"  [label="DDG: &image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)]"];
+"1000693" -> "1000689"  [label="DDG: &image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)]"];
+"1000689" -> "1000676"  [label="AST: "];
+"1000690" -> "1000689"  [label="AST: "];
+"1000688" -> "1000689"  [label="CFG: "];
+"1000689" -> "1001433"  [label="DDG: FindColor(&image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)])"];
+"1000689" -> "1001433"  [label="DDG: SetPixelIndex(indexes+x,FindColor(&image->colormap[\n                (ssize_t) GetPixelIndex(indexes+x)]))"];
+"1000689" -> "1001433"  [label="DDG: indexes+x"];
+"1000701" -> "1000689"  [label="DDG: indexes+x"];
+"1000672" -> "1000689"  [label="DDG: indexes"];
+"1000680" -> "1000689"  [label="DDG: x"];
+}

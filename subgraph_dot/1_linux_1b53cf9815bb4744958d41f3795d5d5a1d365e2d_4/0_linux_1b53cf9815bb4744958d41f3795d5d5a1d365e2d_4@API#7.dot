@@ -1,0 +1,28 @@
+digraph "0_linux_1b53cf9815bb4744958d41f3795d5d5a1d365e2d_4@API" {
+"1000220" [label="(Call,up_read(&keyring_key->sem))"];
+"1000155" [label="(Call,down_read(&keyring_key->sem))"];
+"1000204" [label="(Call,up_read(&keyring_key->sem))"];
+"1000161" [label="(Identifier,ukp)"];
+"1000155" [label="(Call,down_read(&keyring_key->sem))"];
+"1000176" [label="(Call,up_read(&keyring_key->sem))"];
+"1000226" [label="(Identifier,res)"];
+"1000156" [label="(Call,&keyring_key->sem)"];
+"1000105" [label="(Block,)"];
+"1000221" [label="(Call,&keyring_key->sem)"];
+"1000220" [label="(Call,up_read(&keyring_key->sem))"];
+"1000240" [label="(MethodReturn,static int)"];
+"1000220" -> "1000105"  [label="AST: "];
+"1000220" -> "1000221"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000226" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000240"  [label="DDG: &keyring_key->sem"];
+"1000220" -> "1000240"  [label="DDG: up_read(&keyring_key->sem)"];
+"1000155" -> "1000220"  [label="DDG: &keyring_key->sem"];
+"1000155" -> "1000105"  [label="AST: "];
+"1000155" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000161" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000240"  [label="DDG: down_read(&keyring_key->sem)"];
+"1000155" -> "1000176"  [label="DDG: &keyring_key->sem"];
+"1000155" -> "1000204"  [label="DDG: &keyring_key->sem"];
+}

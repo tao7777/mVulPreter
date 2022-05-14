@@ -1,0 +1,34 @@
+digraph "0_suricata_47afc577ff763150f9b47f10331f5ef9eb847a57@pointer" {
+"1001269" [label="(Call,bed->flags & DETECT_BYTE_EXTRACT_FLAG_ENDIAN)"];
+"1001268" [label="(Call,(bed->flags & DETECT_BYTE_EXTRACT_FLAG_ENDIAN) &&\n            endian == DETECT_BYTE_EXTRACT_ENDIAN_DCE && data != NULL)"];
+"1001270" [label="(Call,bed->flags)"];
+"1001273" [label="(Identifier,DETECT_BYTE_EXTRACT_FLAG_ENDIAN)"];
+"1001269" [label="(Call,bed->flags & DETECT_BYTE_EXTRACT_FLAG_ENDIAN)"];
+"1001542" [label="(MethodReturn,int)"];
+"1001267" [label="(ControlStructure,if ((bed->flags & DETECT_BYTE_EXTRACT_FLAG_ENDIAN) &&\n            endian == DETECT_BYTE_EXTRACT_ENDIAN_DCE && data != NULL))"];
+"1001284" [label="(Identifier,dcerpc_state)"];
+"1001268" [label="(Call,(bed->flags & DETECT_BYTE_EXTRACT_FLAG_ENDIAN) &&\n            endian == DETECT_BYTE_EXTRACT_ENDIAN_DCE && data != NULL)"];
+"1001307" [label="(Identifier,det_ctx)"];
+"1001274" [label="(Call,endian == DETECT_BYTE_EXTRACT_ENDIAN_DCE && data != NULL)"];
+"1001276" [label="(Identifier,endian)"];
+"1001269" -> "1001268"  [label="AST: "];
+"1001269" -> "1001273"  [label="CFG: "];
+"1001270" -> "1001269"  [label="AST: "];
+"1001273" -> "1001269"  [label="AST: "];
+"1001276" -> "1001269"  [label="CFG: "];
+"1001268" -> "1001269"  [label="CFG: "];
+"1001269" -> "1001542"  [label="DDG: bed->flags"];
+"1001269" -> "1001542"  [label="DDG: DETECT_BYTE_EXTRACT_FLAG_ENDIAN"];
+"1001269" -> "1001268"  [label="DDG: bed->flags"];
+"1001269" -> "1001268"  [label="DDG: DETECT_BYTE_EXTRACT_FLAG_ENDIAN"];
+"1001268" -> "1001267"  [label="AST: "];
+"1001268" -> "1001274"  [label="CFG: "];
+"1001274" -> "1001268"  [label="AST: "];
+"1001284" -> "1001268"  [label="CFG: "];
+"1001307" -> "1001268"  [label="CFG: "];
+"1001268" -> "1001542"  [label="DDG: (bed->flags & DETECT_BYTE_EXTRACT_FLAG_ENDIAN) &&\n            endian == DETECT_BYTE_EXTRACT_ENDIAN_DCE && data != NULL"];
+"1001268" -> "1001542"  [label="DDG: bed->flags & DETECT_BYTE_EXTRACT_FLAG_ENDIAN"];
+"1001268" -> "1001542"  [label="DDG: endian == DETECT_BYTE_EXTRACT_ENDIAN_DCE && data != NULL"];
+"1001274" -> "1001268"  [label="DDG: endian == DETECT_BYTE_EXTRACT_ENDIAN_DCE"];
+"1001274" -> "1001268"  [label="DDG: data != NULL"];
+}

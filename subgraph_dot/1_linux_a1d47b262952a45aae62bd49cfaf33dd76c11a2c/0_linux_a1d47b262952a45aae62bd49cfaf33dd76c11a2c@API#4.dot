@@ -1,0 +1,26 @@
+digraph "0_linux_a1d47b262952a45aae62bd49cfaf33dd76c11a2c@API" {
+"1000204" [label="(Call,up_read(&iinfo->i_data_sem))"];
+"1000138" [label="(Call,down_read(&iinfo->i_data_sem))"];
+"1000205" [label="(Call,&iinfo->i_data_sem)"];
+"1000204" [label="(Call,up_read(&iinfo->i_data_sem))"];
+"1000190" [label="(Call,up_read(&iinfo->i_data_sem))"];
+"1000103" [label="(Block,)"];
+"1000146" [label="(Identifier,iinfo)"];
+"1000139" [label="(Call,&iinfo->i_data_sem)"];
+"1000217" [label="(MethodReturn,static int)"];
+"1000138" [label="(Call,down_read(&iinfo->i_data_sem))"];
+"1000210" [label="(Identifier,page)"];
+"1000204" -> "1000103"  [label="AST: "];
+"1000204" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000210" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000217"  [label="DDG: &iinfo->i_data_sem"];
+"1000204" -> "1000217"  [label="DDG: up_read(&iinfo->i_data_sem)"];
+"1000138" -> "1000204"  [label="DDG: &iinfo->i_data_sem"];
+"1000138" -> "1000103"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000146" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000217"  [label="DDG: down_read(&iinfo->i_data_sem)"];
+"1000138" -> "1000190"  [label="DDG: &iinfo->i_data_sem"];
+}

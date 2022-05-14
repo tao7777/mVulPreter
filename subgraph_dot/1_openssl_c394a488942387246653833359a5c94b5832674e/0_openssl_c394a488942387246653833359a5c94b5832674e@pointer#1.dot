@@ -1,0 +1,26 @@
+digraph "0_openssl_c394a488942387246653833359a5c94b5832674e@pointer" {
+"1000113" [label="(Call,OBJ_obj2nid(alg->algorithm))"];
+"1000112" [label="(Call,OBJ_obj2nid(alg->algorithm) != NID_mgf1)"];
+"1000158" [label="(MethodReturn,static X509_ALGOR *)"];
+"1000117" [label="(Identifier,NID_mgf1)"];
+"1000112" [label="(Call,OBJ_obj2nid(alg->algorithm) != NID_mgf1)"];
+"1000124" [label="(Identifier,alg)"];
+"1000119" [label="(Identifier,NULL)"];
+"1000114" [label="(Call,alg->algorithm)"];
+"1000111" [label="(ControlStructure,if (OBJ_obj2nid(alg->algorithm) != NID_mgf1))"];
+"1000113" [label="(Call,OBJ_obj2nid(alg->algorithm))"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000117" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000158"  [label="DDG: alg->algorithm"];
+"1000113" -> "1000112"  [label="DDG: alg->algorithm"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000112"  [label="AST: "];
+"1000119" -> "1000112"  [label="CFG: "];
+"1000124" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000158"  [label="DDG: NID_mgf1"];
+"1000112" -> "1000158"  [label="DDG: OBJ_obj2nid(alg->algorithm) != NID_mgf1"];
+"1000112" -> "1000158"  [label="DDG: OBJ_obj2nid(alg->algorithm)"];
+}

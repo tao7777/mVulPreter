@@ -1,0 +1,36 @@
+digraph "0_linux_c55aee1bf0e6b6feec8b2927b43f7a09a6d5f754_0@pointer" {
+"1000110" [label="(Call,*priv = usb_get_serial_port_data(port))"];
+"1000112" [label="(Call,usb_get_serial_port_data(port))"];
+"1000107" [label="(MethodParameterIn,struct usb_serial_port *port)"];
+"1000113" [label="(Identifier,port)"];
+"1000116" [label="(Identifier,serial)"];
+"1000253" [label="(MethodReturn,static int)"];
+"1000249" [label="(Call,cypress_set_dead(port))"];
+"1000107" [label="(MethodParameterIn,struct usb_serial_port *port)"];
+"1000112" [label="(Call,usb_get_serial_port_data(port))"];
+"1000111" [label="(Identifier,priv)"];
+"1000110" [label="(Call,*priv = usb_get_serial_port_data(port))"];
+"1000179" [label="(Call,cypress_set_termios(tty, port, &priv->tmp_termios))"];
+"1000202" [label="(Call,usb_fill_int_urb(port->interrupt_in_urb, serial->dev,\n \t\tusb_rcvintpipe(serial->dev, port->interrupt_in_endpointAddress),\n \t\tport->interrupt_in_urb->transfer_buffer,\n\t\tport->interrupt_in_urb->transfer_buffer_length,\n\t\tcypress_read_int_callback, port, priv->read_urb_interval))"];
+"1000175" [label="(Call,cypress_send(port))"];
+"1000108" [label="(Block,)"];
+"1000110" -> "1000108"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000116" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000253"  [label="DDG: usb_get_serial_port_data(port)"];
+"1000110" -> "1000253"  [label="DDG: priv"];
+"1000112" -> "1000110"  [label="DDG: port"];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000112" -> "1000253"  [label="DDG: port"];
+"1000107" -> "1000112"  [label="DDG: port"];
+"1000112" -> "1000175"  [label="DDG: port"];
+"1000107" -> "1000105"  [label="AST: "];
+"1000107" -> "1000253"  [label="DDG: port"];
+"1000107" -> "1000175"  [label="DDG: port"];
+"1000107" -> "1000179"  [label="DDG: port"];
+"1000107" -> "1000202"  [label="DDG: port"];
+"1000107" -> "1000249"  [label="DDG: port"];
+}

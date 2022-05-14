@@ -1,0 +1,24 @@
+digraph "0_Chrome_ac149a8d4371c0e01e0934fdd57b09e86f96b5b9_9@API" {
+"1000237" [label="(Call,usbi_mutex_unlock(&autoclaim_lock))"];
+"1000148" [label="(Call,usbi_mutex_lock(&autoclaim_lock))"];
+"1000246" [label="(MethodReturn,static int)"];
+"1000148" [label="(Call,usbi_mutex_lock(&autoclaim_lock))"];
+"1000149" [label="(Call,&autoclaim_lock)"];
+"1000237" [label="(Call,usbi_mutex_unlock(&autoclaim_lock))"];
+"1000105" [label="(Block,)"];
+"1000238" [label="(Call,&autoclaim_lock)"];
+"1000153" [label="(Identifier,current_interface)"];
+"1000242" [label="(Identifier,interface_number)"];
+"1000237" -> "1000105"  [label="AST: "];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000242" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000246"  [label="DDG: usbi_mutex_unlock(&autoclaim_lock)"];
+"1000237" -> "1000246"  [label="DDG: &autoclaim_lock"];
+"1000148" -> "1000237"  [label="DDG: &autoclaim_lock"];
+"1000148" -> "1000105"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000153" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000246"  [label="DDG: usbi_mutex_lock(&autoclaim_lock)"];
+}

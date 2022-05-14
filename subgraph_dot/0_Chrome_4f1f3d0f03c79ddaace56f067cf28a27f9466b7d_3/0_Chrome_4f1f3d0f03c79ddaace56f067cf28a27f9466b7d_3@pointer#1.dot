@@ -1,0 +1,25 @@
+digraph "0_Chrome_4f1f3d0f03c79ddaace56f067cf28a27f9466b7d_3@pointer" {
+"1000166" [label="(Call,name->ObjectName.Length /\n                                        sizeof(name->ObjectName.Buffer[0]))"];
+"1000160" [label="(Call,path->assign(name->ObjectName.Buffer, name->ObjectName.Length /\n                                        sizeof(name->ObjectName.Buffer[0])))"];
+"1000182" [label="(MethodReturn,bool)"];
+"1000166" [label="(Call,name->ObjectName.Length /\n                                        sizeof(name->ObjectName.Buffer[0]))"];
+"1000160" [label="(Call,path->assign(name->ObjectName.Buffer, name->ObjectName.Length /\n                                        sizeof(name->ObjectName.Buffer[0])))"];
+"1000161" [label="(Call,name->ObjectName.Buffer)"];
+"1000181" [label="(Identifier,true)"];
+"1000103" [label="(Block,)"];
+"1000167" [label="(Call,name->ObjectName.Length)"];
+"1000172" [label="(Call,sizeof(name->ObjectName.Buffer[0]))"];
+"1000166" -> "1000160"  [label="AST: "];
+"1000166" -> "1000172"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000172" -> "1000166"  [label="AST: "];
+"1000160" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000182"  [label="DDG: name->ObjectName.Length"];
+"1000166" -> "1000160"  [label="DDG: name->ObjectName.Length"];
+"1000160" -> "1000103"  [label="AST: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000181" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000182"  [label="DDG: path->assign(name->ObjectName.Buffer, name->ObjectName.Length /\n                                        sizeof(name->ObjectName.Buffer[0]))"];
+"1000160" -> "1000182"  [label="DDG: name->ObjectName.Length /\n                                        sizeof(name->ObjectName.Buffer[0])"];
+"1000160" -> "1000182"  [label="DDG: name->ObjectName.Buffer"];
+}

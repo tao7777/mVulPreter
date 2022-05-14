@@ -1,0 +1,36 @@
+digraph "0_linux_c9b92530a723ac5ef8e352885a1862b18f31b2f5@pointer" {
+"1000159" [label="(Call,inode->i_nlink == 0)"];
+"1000144" [label="(Call,(S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)) || inode->i_nlink == 0)"];
+"1000143" [label="(Call,J_ASSERT((S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)) || inode->i_nlink == 0))"];
+"1000160" [label="(Call,inode->i_nlink)"];
+"1000107" [label="(Block,)"];
+"1000144" [label="(Call,(S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)) || inode->i_nlink == 0)"];
+"1000159" [label="(Call,inode->i_nlink == 0)"];
+"1000167" [label="(Identifier,sb)"];
+"1000163" [label="(Literal,0)"];
+"1000143" [label="(Call,J_ASSERT((S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)) || inode->i_nlink == 0))"];
+"1000288" [label="(MethodReturn,int)"];
+"1000145" [label="(Call,S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode))"];
+"1000159" -> "1000144"  [label="AST: "];
+"1000159" -> "1000163"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000163" -> "1000159"  [label="AST: "];
+"1000144" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000288"  [label="DDG: inode->i_nlink"];
+"1000159" -> "1000144"  [label="DDG: inode->i_nlink"];
+"1000159" -> "1000144"  [label="DDG: 0"];
+"1000144" -> "1000143"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000288"  [label="DDG: inode->i_nlink == 0"];
+"1000144" -> "1000288"  [label="DDG: S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)"];
+"1000144" -> "1000143"  [label="DDG: S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)"];
+"1000144" -> "1000143"  [label="DDG: inode->i_nlink == 0"];
+"1000145" -> "1000144"  [label="DDG: S_ISREG(inode->i_mode)"];
+"1000145" -> "1000144"  [label="DDG: S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)"];
+"1000143" -> "1000107"  [label="AST: "];
+"1000167" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000288"  [label="DDG: (S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)) || inode->i_nlink == 0"];
+"1000143" -> "1000288"  [label="DDG: J_ASSERT((S_ISREG(inode->i_mode) || S_ISDIR(inode->i_mode) ||\n\t\t  S_ISLNK(inode->i_mode)) || inode->i_nlink == 0)"];
+}

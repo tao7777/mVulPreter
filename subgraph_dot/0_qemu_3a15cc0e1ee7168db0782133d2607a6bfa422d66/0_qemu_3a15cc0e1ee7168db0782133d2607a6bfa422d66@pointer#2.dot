@@ -1,0 +1,34 @@
+digraph "0_qemu_3a15cc0e1ee7168db0782133d2607a6bfa422d66@pointer" {
+"1000139" [label="(Call,s->next_packet + s->np)"];
+"1000126" [label="(Call,s->np >= 31)"];
+"1000140" [label="(Call,s->next_packet)"];
+"1000177" [label="(Call,s->np++)"];
+"1000216" [label="(MethodReturn,static ssize_t)"];
+"1000130" [label="(Literal,31)"];
+"1000125" [label="(ControlStructure,if (s->np >= 31))"];
+"1000135" [label="(Literal,\"Received packet len=%zu\n\")"];
+"1000139" [label="(Call,s->next_packet + s->np)"];
+"1000127" [label="(Call,s->np)"];
+"1000137" [label="(Call,n = s->next_packet + s->np)"];
+"1000133" [label="(Literal,0)"];
+"1000143" [label="(Call,s->np)"];
+"1000126" [label="(Call,s->np >= 31)"];
+"1000139" -> "1000137"  [label="AST: "];
+"1000139" -> "1000143"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000143" -> "1000139"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000216"  [label="DDG: s->next_packet"];
+"1000139" -> "1000216"  [label="DDG: s->np"];
+"1000126" -> "1000139"  [label="DDG: s->np"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000130"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="AST: "];
+"1000133" -> "1000126"  [label="CFG: "];
+"1000135" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000216"  [label="DDG: s->np"];
+"1000126" -> "1000216"  [label="DDG: s->np >= 31"];
+"1000126" -> "1000137"  [label="DDG: s->np"];
+"1000126" -> "1000177"  [label="DDG: s->np"];
+}

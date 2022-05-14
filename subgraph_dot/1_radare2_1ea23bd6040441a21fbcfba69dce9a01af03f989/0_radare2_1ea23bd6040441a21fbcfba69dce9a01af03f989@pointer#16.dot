@@ -1,0 +1,23 @@
+digraph "0_radare2_1ea23bd6040441a21fbcfba69dce9a01af03f989@pointer" {
+"1000422" [label="(Call,c->class_data = (struct dex_class_data_item_t *)malloc (\n\t\t\tsizeof (struct dex_class_data_item_t)))"];
+"1000426" [label="(Call,(struct dex_class_data_item_t *)malloc (\n\t\t\tsizeof (struct dex_class_data_item_t)))"];
+"1000368" [label="(Block,)"];
+"1000597" [label="(MethodReturn,static void)"];
+"1000432" [label="(Identifier,p)"];
+"1000423" [label="(Call,c->class_data)"];
+"1000428" [label="(Call,malloc (\n\t\t\tsizeof (struct dex_class_data_item_t)))"];
+"1000422" [label="(Call,c->class_data = (struct dex_class_data_item_t *)malloc (\n\t\t\tsizeof (struct dex_class_data_item_t)))"];
+"1000426" [label="(Call,(struct dex_class_data_item_t *)malloc (\n\t\t\tsizeof (struct dex_class_data_item_t)))"];
+"1000422" -> "1000368"  [label="AST: "];
+"1000422" -> "1000426"  [label="CFG: "];
+"1000423" -> "1000422"  [label="AST: "];
+"1000426" -> "1000422"  [label="AST: "];
+"1000432" -> "1000422"  [label="CFG: "];
+"1000422" -> "1000597"  [label="DDG: (struct dex_class_data_item_t *)malloc (\n\t\t\tsizeof (struct dex_class_data_item_t))"];
+"1000422" -> "1000597"  [label="DDG: c->class_data"];
+"1000426" -> "1000422"  [label="DDG: malloc (\n\t\t\tsizeof (struct dex_class_data_item_t))"];
+"1000426" -> "1000428"  [label="CFG: "];
+"1000427" -> "1000426"  [label="AST: "];
+"1000428" -> "1000426"  [label="AST: "];
+"1000426" -> "1000597"  [label="DDG: malloc (\n\t\t\tsizeof (struct dex_class_data_item_t))"];
+}

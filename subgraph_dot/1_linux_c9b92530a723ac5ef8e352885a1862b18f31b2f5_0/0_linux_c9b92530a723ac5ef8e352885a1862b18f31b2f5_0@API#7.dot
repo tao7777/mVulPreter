@@ -1,0 +1,24 @@
+digraph "0_linux_c9b92530a723ac5ef8e352885a1862b18f31b2f5_0@API" {
+"1000283" [label="(Call,mutex_unlock(&EXT4_SB(inode->i_sb)->s_orphan_lock))"];
+"1000127" [label="(Call,mutex_lock(&EXT4_SB(inode->i_sb)->s_orphan_lock))"];
+"1000127" [label="(Call,mutex_lock(&EXT4_SB(inode->i_sb)->s_orphan_lock))"];
+"1000284" [label="(Call,&EXT4_SB(inode->i_sb)->s_orphan_lock)"];
+"1000283" [label="(Call,mutex_unlock(&EXT4_SB(inode->i_sb)->s_orphan_lock))"];
+"1000128" [label="(Call,&EXT4_SB(inode->i_sb)->s_orphan_lock)"];
+"1000105" [label="(Block,)"];
+"1000292" [label="(Identifier,err)"];
+"1000299" [label="(MethodReturn,int)"];
+"1000139" [label="(Identifier,ei)"];
+"1000283" -> "1000105"  [label="AST: "];
+"1000283" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000283"  [label="AST: "];
+"1000292" -> "1000283"  [label="CFG: "];
+"1000283" -> "1000299"  [label="DDG: &EXT4_SB(inode->i_sb)->s_orphan_lock"];
+"1000283" -> "1000299"  [label="DDG: mutex_unlock(&EXT4_SB(inode->i_sb)->s_orphan_lock)"];
+"1000127" -> "1000283"  [label="DDG: &EXT4_SB(inode->i_sb)->s_orphan_lock"];
+"1000127" -> "1000105"  [label="AST: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000139" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000299"  [label="DDG: mutex_lock(&EXT4_SB(inode->i_sb)->s_orphan_lock)"];
+}

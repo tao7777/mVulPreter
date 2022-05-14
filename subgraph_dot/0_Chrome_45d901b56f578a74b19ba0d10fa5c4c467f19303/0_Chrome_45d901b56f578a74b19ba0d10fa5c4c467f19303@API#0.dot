@@ -1,0 +1,24 @@
+digraph "0_Chrome_45d901b56f578a74b19ba0d10fa5c4c467f19303@API" {
+"1000118" [label="(Call,rand.nextU() | 0xff000000)"];
+"1000116" [label="(Call,color_ = rand.nextU() | 0xff000000)"];
+"1000121" [label="(MethodReturn,RET)"];
+"1000101" [label="(Block,)"];
+"1000120" [label="(Literal,0xff000000)"];
+"1000118" [label="(Call,rand.nextU() | 0xff000000)"];
+"1000116" [label="(Call,color_ = rand.nextU() | 0xff000000)"];
+"1000119" [label="(Call,rand.nextU())"];
+"1000117" [label="(Identifier,color_)"];
+"1000118" -> "1000116"  [label="AST: "];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000121"  [label="DDG: rand.nextU()"];
+"1000118" -> "1000116"  [label="DDG: rand.nextU()"];
+"1000118" -> "1000116"  [label="DDG: 0xff000000"];
+"1000116" -> "1000101"  [label="AST: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000121" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000121"  [label="DDG: color_"];
+"1000116" -> "1000121"  [label="DDG: rand.nextU() | 0xff000000"];
+}

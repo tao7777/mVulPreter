@@ -1,0 +1,37 @@
+digraph "0_linux_979d63d50c0c0f7bc537bf821e056cc9fe5abd38@pointer" {
+"1000254" [label="(Call,BPF_CLASS(insn->code))"];
+"1000218" [label="(Call,BPF_OP(insn->code))"];
+"1000253" [label="(Call,BPF_CLASS(insn->code) != BPF_ALU64)"];
+"1000252" [label="(ControlStructure,if (BPF_CLASS(insn->code) != BPF_ALU64))"];
+"1000907" [label="(MethodReturn,static int)"];
+"1000261" [label="(Identifier,env)"];
+"1000218" [label="(Call,BPF_OP(insn->code))"];
+"1000255" [label="(Call,insn->code)"];
+"1000258" [label="(Identifier,BPF_ALU64)"];
+"1000219" [label="(Call,insn->code)"];
+"1000216" [label="(Call,opcode = BPF_OP(insn->code))"];
+"1000269" [label="(Identifier,ptr_reg)"];
+"1000253" [label="(Call,BPF_CLASS(insn->code) != BPF_ALU64)"];
+"1000254" [label="(Call,BPF_CLASS(insn->code))"];
+"1000254" -> "1000253"  [label="AST: "];
+"1000254" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000258" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000907"  [label="DDG: insn->code"];
+"1000254" -> "1000253"  [label="DDG: insn->code"];
+"1000218" -> "1000254"  [label="DDG: insn->code"];
+"1000218" -> "1000216"  [label="AST: "];
+"1000218" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000216" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000907"  [label="DDG: insn->code"];
+"1000218" -> "1000216"  [label="DDG: insn->code"];
+"1000253" -> "1000252"  [label="AST: "];
+"1000253" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000253"  [label="AST: "];
+"1000261" -> "1000253"  [label="CFG: "];
+"1000269" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000907"  [label="DDG: BPF_CLASS(insn->code) != BPF_ALU64"];
+"1000253" -> "1000907"  [label="DDG: BPF_CLASS(insn->code)"];
+"1000253" -> "1000907"  [label="DDG: BPF_ALU64"];
+}

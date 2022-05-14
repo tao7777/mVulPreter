@@ -1,0 +1,25 @@
+digraph "0_FFmpeg_e43a0a232dbf6d3c161823c2e07c52e76227a1bc_8@pointer" {
+"1000148" [label="(Call,frame->width  = w)"];
+"1000102" [label="(MethodParameterIn,int w)"];
+"1000152" [label="(Identifier,w)"];
+"1000148" [label="(Call,frame->width  = w)"];
+"1000155" [label="(Identifier,frame)"];
+"1000102" [label="(MethodParameterIn,int w)"];
+"1000104" [label="(Block,)"];
+"1000116" [label="(Call,ff_get_video_buffer(inlink->dst->outputs[0],\n                                         w + (s->w - s->in_w),\n                                         h + (s->h - s->in_h)))"];
+"1000124" [label="(Call,w + (s->w - s->in_w))"];
+"1000149" [label="(Call,frame->width)"];
+"1000227" [label="(MethodReturn,static AVFrame *)"];
+"1000148" -> "1000104"  [label="AST: "];
+"1000148" -> "1000152"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000152" -> "1000148"  [label="AST: "];
+"1000155" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000227"  [label="DDG: w"];
+"1000148" -> "1000227"  [label="DDG: frame->width"];
+"1000102" -> "1000148"  [label="DDG: w"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000227"  [label="DDG: w"];
+"1000102" -> "1000116"  [label="DDG: w"];
+"1000102" -> "1000124"  [label="DDG: w"];
+}

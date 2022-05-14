@@ -1,0 +1,28 @@
+digraph "0_memcached_75cc83685e103bc8ba380a57468c8f04413033f9@API" {
+"1000114" [label="(Call,assert(c->rcurr <= (c->rbuf + c->rsize)))"];
+"1000115" [label="(Call,c->rcurr <= (c->rbuf + c->rsize))"];
+"1000119" [label="(Call,c->rbuf + c->rsize)"];
+"1000603" [label="(MethodReturn,static int)"];
+"1000211" [label="(Call,(long)(c->rcurr))"];
+"1000129" [label="(Identifier,c)"];
+"1000109" [label="(Block,)"];
+"1000116" [label="(Call,c->rcurr)"];
+"1000115" [label="(Call,c->rcurr <= (c->rbuf + c->rsize))"];
+"1000484" [label="(Call,memchr(c->rcurr, '\n', c->rbytes))"];
+"1000114" [label="(Call,assert(c->rcurr <= (c->rbuf + c->rsize)))"];
+"1000114" -> "1000109"  [label="AST: "];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000129" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000603"  [label="DDG: assert(c->rcurr <= (c->rbuf + c->rsize))"];
+"1000114" -> "1000603"  [label="DDG: c->rcurr <= (c->rbuf + c->rsize)"];
+"1000115" -> "1000114"  [label="DDG: c->rcurr"];
+"1000115" -> "1000114"  [label="DDG: c->rbuf + c->rsize"];
+"1000115" -> "1000119"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000119" -> "1000115"  [label="AST: "];
+"1000115" -> "1000603"  [label="DDG: c->rbuf + c->rsize"];
+"1000115" -> "1000603"  [label="DDG: c->rcurr"];
+"1000115" -> "1000211"  [label="DDG: c->rcurr"];
+"1000115" -> "1000484"  [label="DDG: c->rcurr"];
+}

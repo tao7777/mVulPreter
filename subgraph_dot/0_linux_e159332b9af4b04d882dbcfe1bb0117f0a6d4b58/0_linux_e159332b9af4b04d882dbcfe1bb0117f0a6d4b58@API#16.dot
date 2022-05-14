@@ -1,0 +1,24 @@
+digraph "0_linux_e159332b9af4b04d882dbcfe1bb0117f0a6d4b58@API" {
+"1000716" [label="(Call,read_unlock(&sbi->s_cred_lock))"];
+"1000586" [label="(Call,read_lock(&sbi->s_cred_lock))"];
+"1000109" [label="(Block,)"];
+"1000717" [label="(Call,&sbi->s_cred_lock)"];
+"1000592" [label="(Identifier,inode)"];
+"1000586" [label="(Call,read_lock(&sbi->s_cred_lock))"];
+"1000587" [label="(Call,&sbi->s_cred_lock)"];
+"1000722" [label="(Identifier,link_count)"];
+"1001226" [label="(MethodReturn,static int)"];
+"1000716" [label="(Call,read_unlock(&sbi->s_cred_lock))"];
+"1000716" -> "1000109"  [label="AST: "];
+"1000716" -> "1000717"  [label="CFG: "];
+"1000717" -> "1000716"  [label="AST: "];
+"1000722" -> "1000716"  [label="CFG: "];
+"1000716" -> "1001226"  [label="DDG: read_unlock(&sbi->s_cred_lock)"];
+"1000716" -> "1001226"  [label="DDG: &sbi->s_cred_lock"];
+"1000586" -> "1000716"  [label="DDG: &sbi->s_cred_lock"];
+"1000586" -> "1000109"  [label="AST: "];
+"1000586" -> "1000587"  [label="CFG: "];
+"1000587" -> "1000586"  [label="AST: "];
+"1000592" -> "1000586"  [label="CFG: "];
+"1000586" -> "1001226"  [label="DDG: read_lock(&sbi->s_cred_lock)"];
+}

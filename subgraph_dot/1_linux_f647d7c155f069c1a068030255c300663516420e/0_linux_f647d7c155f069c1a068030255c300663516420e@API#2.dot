@@ -1,0 +1,27 @@
+digraph "0_linux_f647d7c155f069c1a068030255c300663516420e@API" {
+"1000299" [label="(Call,this_cpu_write(__preempt_count, task_thread_info(next_p)->saved_preempt_count))"];
+"1000297" [label="(Call,this_cpu_read(__preempt_count))"];
+"1000298" [label="(Identifier,__preempt_count)"];
+"1000297" [label="(Call,this_cpu_read(__preempt_count))"];
+"1000336" [label="(MethodReturn,RET)"];
+"1000299" [label="(Call,this_cpu_write(__preempt_count, task_thread_info(next_p)->saved_preempt_count))"];
+"1000113" [label="(Block,)"];
+"1000306" [label="(Identifier,kernel_stack)"];
+"1000292" [label="(Call,task_thread_info(prev_p)->saved_preempt_count = this_cpu_read(__preempt_count))"];
+"1000300" [label="(Identifier,__preempt_count)"];
+"1000301" [label="(Call,task_thread_info(next_p)->saved_preempt_count)"];
+"1000299" -> "1000113"  [label="AST: "];
+"1000299" -> "1000301"  [label="CFG: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000301" -> "1000299"  [label="AST: "];
+"1000306" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000336"  [label="DDG: this_cpu_write(__preempt_count, task_thread_info(next_p)->saved_preempt_count)"];
+"1000299" -> "1000336"  [label="DDG: task_thread_info(next_p)->saved_preempt_count"];
+"1000299" -> "1000336"  [label="DDG: __preempt_count"];
+"1000297" -> "1000299"  [label="DDG: __preempt_count"];
+"1000297" -> "1000292"  [label="AST: "];
+"1000297" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000297"  [label="AST: "];
+"1000292" -> "1000297"  [label="CFG: "];
+"1000297" -> "1000292"  [label="DDG: __preempt_count"];
+}

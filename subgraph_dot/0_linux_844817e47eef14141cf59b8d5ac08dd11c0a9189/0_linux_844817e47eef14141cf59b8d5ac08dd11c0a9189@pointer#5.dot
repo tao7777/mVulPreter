@@ -1,0 +1,26 @@
+digraph "0_linux_844817e47eef14141cf59b8d5ac08dd11c0a9189@pointer" {
+"1000208" [label="(Call,data->pending->in_report = report)"];
+"1000103" [label="(MethodParameterIn,struct hid_report *report)"];
+"1000214" [label="(Identifier,report)"];
+"1000208" [label="(Call,data->pending->in_report = report)"];
+"1000219" [label="(Identifier,data)"];
+"1000186" [label="(Block,)"];
+"1000236" [label="(MethodReturn,static int)"];
+"1000209" [label="(Call,data->pending->in_report)"];
+"1000146" [label="(Call,picolcd_raw_keypad(data, report, raw_data+1, size-1))"];
+"1000103" [label="(MethodParameterIn,struct hid_report *report)"];
+"1000165" [label="(Call,picolcd_raw_cir(data, report, raw_data+1, size-1))"];
+"1000228" [label="(Call,picolcd_debug_raw_event(data, hdev, report, raw_data, size))"];
+"1000208" -> "1000186"  [label="AST: "];
+"1000208" -> "1000214"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000214" -> "1000208"  [label="AST: "];
+"1000219" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000236"  [label="DDG: data->pending->in_report"];
+"1000103" -> "1000208"  [label="DDG: report"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000236"  [label="DDG: report"];
+"1000103" -> "1000146"  [label="DDG: report"];
+"1000103" -> "1000165"  [label="DDG: report"];
+"1000103" -> "1000228"  [label="DDG: report"];
+}

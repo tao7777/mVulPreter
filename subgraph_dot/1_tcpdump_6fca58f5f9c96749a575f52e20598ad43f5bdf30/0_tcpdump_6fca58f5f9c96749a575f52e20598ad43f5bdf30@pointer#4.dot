@@ -1,0 +1,26 @@
+digraph "0_tcpdump_6fca58f5f9c96749a575f52e20598ad43f5bdf30@pointer" {
+"1001311" [label="(Call,EXTRACT_32BITS(&bp[4]))"];
+"1001300" [label="(Call,EXTRACT_32BITS(&bp[0]))"];
+"1001305" [label="(Literal,0x7fffffff)"];
+"1001311" [label="(Call,EXTRACT_32BITS(&bp[4]))"];
+"1001547" [label="(MethodReturn,RET)"];
+"1001306" [label="(Call,ND_PRINT((ndo, \" metric=%u\", EXTRACT_32BITS(&bp[4]))))"];
+"1001300" [label="(Call,EXTRACT_32BITS(&bp[0]))"];
+"1001299" [label="(Call,EXTRACT_32BITS(&bp[0]) & 0x7fffffff)"];
+"1001309" [label="(Block,)"];
+"1001312" [label="(Call,&bp[4])"];
+"1001301" [label="(Call,&bp[0])"];
+"1001311" -> "1001309"  [label="AST: "];
+"1001311" -> "1001312"  [label="CFG: "];
+"1001312" -> "1001311"  [label="AST: "];
+"1001306" -> "1001311"  [label="CFG: "];
+"1001311" -> "1001547"  [label="DDG: &bp[4]"];
+"1001311" -> "1001547"  [label="DDG: EXTRACT_32BITS(&bp[4])"];
+"1001300" -> "1001311"  [label="DDG: &bp[0]"];
+"1001300" -> "1001299"  [label="AST: "];
+"1001300" -> "1001301"  [label="CFG: "];
+"1001301" -> "1001300"  [label="AST: "];
+"1001305" -> "1001300"  [label="CFG: "];
+"1001300" -> "1001547"  [label="DDG: &bp[0]"];
+"1001300" -> "1001299"  [label="DDG: &bp[0]"];
+}

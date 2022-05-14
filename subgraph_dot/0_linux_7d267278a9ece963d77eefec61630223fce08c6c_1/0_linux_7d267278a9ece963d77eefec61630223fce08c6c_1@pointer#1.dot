@@ -1,0 +1,22 @@
+digraph "0_linux_7d267278a9ece963d77eefec61630223fce08c6c_1@pointer" {
+"1000172" [label="(Call,skb_queue_empty(&sk->sk_receive_queue))"];
+"1000171" [label="(Call,!skb_queue_empty(&sk->sk_receive_queue))"];
+"1000178" [label="(Identifier,mask)"];
+"1000270" [label="(MethodReturn,static unsigned int)"];
+"1000185" [label="(Identifier,sk)"];
+"1000170" [label="(ControlStructure,if (!skb_queue_empty(&sk->sk_receive_queue)))"];
+"1000173" [label="(Call,&sk->sk_receive_queue)"];
+"1000171" [label="(Call,!skb_queue_empty(&sk->sk_receive_queue))"];
+"1000172" [label="(Call,skb_queue_empty(&sk->sk_receive_queue))"];
+"1000172" -> "1000171"  [label="AST: "];
+"1000172" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000171" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000270"  [label="DDG: &sk->sk_receive_queue"];
+"1000172" -> "1000171"  [label="DDG: &sk->sk_receive_queue"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000178" -> "1000171"  [label="CFG: "];
+"1000185" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000270"  [label="DDG: skb_queue_empty(&sk->sk_receive_queue)"];
+"1000171" -> "1000270"  [label="DDG: !skb_queue_empty(&sk->sk_receive_queue)"];
+}

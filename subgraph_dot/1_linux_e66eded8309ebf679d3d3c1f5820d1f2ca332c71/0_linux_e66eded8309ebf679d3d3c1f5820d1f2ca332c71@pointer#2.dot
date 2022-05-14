@@ -1,0 +1,24 @@
+digraph "0_linux_e66eded8309ebf679d3d3c1f5820d1f2ca332c71@pointer" {
+"1000278" [label="(Call,spin_unlock(&fs->lock))"];
+"1000256" [label="(Call,spin_lock(&fs->lock))"];
+"1000327" [label="(MethodReturn,RET)"];
+"1000284" [label="(Identifier,new_fd)"];
+"1000278" [label="(Call,spin_unlock(&fs->lock))"];
+"1000256" [label="(Call,spin_lock(&fs->lock))"];
+"1000279" [label="(Call,&fs->lock)"];
+"1000250" [label="(Block,)"];
+"1000257" [label="(Call,&fs->lock)"];
+"1000263" [label="(Identifier,current)"];
+"1000278" -> "1000250"  [label="AST: "];
+"1000278" -> "1000279"  [label="CFG: "];
+"1000279" -> "1000278"  [label="AST: "];
+"1000284" -> "1000278"  [label="CFG: "];
+"1000278" -> "1000327"  [label="DDG: spin_unlock(&fs->lock)"];
+"1000278" -> "1000327"  [label="DDG: &fs->lock"];
+"1000256" -> "1000278"  [label="DDG: &fs->lock"];
+"1000256" -> "1000250"  [label="AST: "];
+"1000256" -> "1000257"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000263" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000327"  [label="DDG: spin_lock(&fs->lock)"];
+}

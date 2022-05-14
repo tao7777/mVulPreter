@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1011460" [label="(Call,s->cpuid_7_0_ebx_features & CPUID_7_0_EBX_CLFLUSHOPT)"];
+"1011459" [label="(Call,!(s->cpuid_7_0_ebx_features & CPUID_7_0_EBX_CLFLUSHOPT))"];
+"1011464" [label="(Identifier,CPUID_7_0_EBX_CLFLUSHOPT)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1011461" [label="(Call,s->cpuid_7_0_ebx_features)"];
+"1011460" [label="(Call,s->cpuid_7_0_ebx_features & CPUID_7_0_EBX_CLFLUSHOPT)"];
+"1011459" [label="(Call,!(s->cpuid_7_0_ebx_features & CPUID_7_0_EBX_CLFLUSHOPT))"];
+"1011458" [label="(ControlStructure,if (!(s->cpuid_7_0_ebx_features & CPUID_7_0_EBX_CLFLUSHOPT)))"];
+"1011487" [label="(Identifier,env)"];
+"1011466" [label="(ControlStructure,goto illegal_op;)"];
+"1011460" -> "1011459"  [label="AST: "];
+"1011460" -> "1011464"  [label="CFG: "];
+"1011461" -> "1011460"  [label="AST: "];
+"1011464" -> "1011460"  [label="AST: "];
+"1011459" -> "1011460"  [label="CFG: "];
+"1011460" -> "1011840"  [label="DDG: s->cpuid_7_0_ebx_features"];
+"1011460" -> "1011840"  [label="DDG: CPUID_7_0_EBX_CLFLUSHOPT"];
+"1011460" -> "1011459"  [label="DDG: s->cpuid_7_0_ebx_features"];
+"1011460" -> "1011459"  [label="DDG: CPUID_7_0_EBX_CLFLUSHOPT"];
+"1011459" -> "1011458"  [label="AST: "];
+"1011466" -> "1011459"  [label="CFG: "];
+"1011487" -> "1011459"  [label="CFG: "];
+"1011459" -> "1011840"  [label="DDG: s->cpuid_7_0_ebx_features & CPUID_7_0_EBX_CLFLUSHOPT"];
+"1011459" -> "1011840"  [label="DDG: !(s->cpuid_7_0_ebx_features & CPUID_7_0_EBX_CLFLUSHOPT)"];
+}

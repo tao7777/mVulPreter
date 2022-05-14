@@ -1,0 +1,24 @@
+digraph "0_linux_05692d7005a364add85c6e25a6c4447ce08f913a@API" {
+"1000848" [label="(Call,mutex_lock(&vdev->igate))"];
+"1000870" [label="(Call,mutex_unlock(&vdev->igate))"];
+"1001380" [label="(MethodReturn,static long)"];
+"1000854" [label="(Identifier,ret)"];
+"1000871" [label="(Call,&vdev->igate)"];
+"1000700" [label="(Block,)"];
+"1000848" [label="(Call,mutex_lock(&vdev->igate))"];
+"1000870" [label="(Call,mutex_unlock(&vdev->igate))"];
+"1000876" [label="(Identifier,data)"];
+"1000849" [label="(Call,&vdev->igate)"];
+"1000848" -> "1000700"  [label="AST: "];
+"1000848" -> "1000849"  [label="CFG: "];
+"1000849" -> "1000848"  [label="AST: "];
+"1000854" -> "1000848"  [label="CFG: "];
+"1000848" -> "1001380"  [label="DDG: mutex_lock(&vdev->igate)"];
+"1000848" -> "1000870"  [label="DDG: &vdev->igate"];
+"1000870" -> "1000700"  [label="AST: "];
+"1000870" -> "1000871"  [label="CFG: "];
+"1000871" -> "1000870"  [label="AST: "];
+"1000876" -> "1000870"  [label="CFG: "];
+"1000870" -> "1001380"  [label="DDG: mutex_unlock(&vdev->igate)"];
+"1000870" -> "1001380"  [label="DDG: &vdev->igate"];
+}

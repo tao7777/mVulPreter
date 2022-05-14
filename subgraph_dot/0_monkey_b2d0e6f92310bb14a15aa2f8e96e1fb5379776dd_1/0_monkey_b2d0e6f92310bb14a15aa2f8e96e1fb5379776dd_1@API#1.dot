@@ -1,0 +1,19 @@
+digraph "0_monkey_b2d0e6f92310bb14a15aa2f8e96e1fb5379776dd_1@API" {
+"1000186" [label="(Call,close(sr->fd_file))"];
+"1000185" [label="(Return,return close(sr->fd_file);)"];
+"1000187" [label="(Call,sr->fd_file)"];
+"1000185" [label="(Return,return close(sr->fd_file);)"];
+"1000199" [label="(MethodReturn,static inline int)"];
+"1000169" [label="(Block,)"];
+"1000186" [label="(Call,close(sr->fd_file))"];
+"1000186" -> "1000185"  [label="AST: "];
+"1000186" -> "1000187"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000185" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000199"  [label="DDG: close(sr->fd_file)"];
+"1000186" -> "1000199"  [label="DDG: sr->fd_file"];
+"1000186" -> "1000185"  [label="DDG: close(sr->fd_file)"];
+"1000185" -> "1000169"  [label="AST: "];
+"1000199" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000199"  [label="DDG: <RET>"];
+}

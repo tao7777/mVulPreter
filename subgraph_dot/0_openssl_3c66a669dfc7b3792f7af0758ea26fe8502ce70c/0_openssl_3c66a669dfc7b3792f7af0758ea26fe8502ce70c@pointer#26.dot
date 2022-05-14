@@ -1,0 +1,26 @@
+digraph "0_openssl_3c66a669dfc7b3792f7af0758ea26fe8502ce70c@pointer" {
+"1001172" [label="(Call,s->options & SSL_OP_TLS_ROLLBACK_BUG)"];
+"1001171" [label="(Call,!(s->options & SSL_OP_TLS_ROLLBACK_BUG))"];
+"1001187" [label="(Identifier,ciph_ctx)"];
+"1001173" [label="(Call,s->options)"];
+"1001176" [label="(Identifier,SSL_OP_TLS_ROLLBACK_BUG)"];
+"1001172" [label="(Call,s->options & SSL_OP_TLS_ROLLBACK_BUG)"];
+"1001179" [label="(Identifier,SSL_F_SSL3_GET_CLIENT_KEY_EXCHANGE)"];
+"1001170" [label="(ControlStructure,if (!(s->options & SSL_OP_TLS_ROLLBACK_BUG)))"];
+"1002163" [label="(MethodReturn,int)"];
+"1001171" [label="(Call,!(s->options & SSL_OP_TLS_ROLLBACK_BUG))"];
+"1001172" -> "1001171"  [label="AST: "];
+"1001172" -> "1001176"  [label="CFG: "];
+"1001173" -> "1001172"  [label="AST: "];
+"1001176" -> "1001172"  [label="AST: "];
+"1001171" -> "1001172"  [label="CFG: "];
+"1001172" -> "1002163"  [label="DDG: SSL_OP_TLS_ROLLBACK_BUG"];
+"1001172" -> "1002163"  [label="DDG: s->options"];
+"1001172" -> "1001171"  [label="DDG: s->options"];
+"1001172" -> "1001171"  [label="DDG: SSL_OP_TLS_ROLLBACK_BUG"];
+"1001171" -> "1001170"  [label="AST: "];
+"1001179" -> "1001171"  [label="CFG: "];
+"1001187" -> "1001171"  [label="CFG: "];
+"1001171" -> "1002163"  [label="DDG: s->options & SSL_OP_TLS_ROLLBACK_BUG"];
+"1001171" -> "1002163"  [label="DDG: !(s->options & SSL_OP_TLS_ROLLBACK_BUG)"];
+}

@@ -1,0 +1,24 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_9@API" {
+"1000824" [label="(Call,pthread_mutex_unlock(&gPcmDumpLock))"];
+"1000811" [label="(Call,pthread_mutex_lock(&gPcmDumpLock))"];
+"1000825" [label="(Call,&gPcmDumpLock)"];
+"1000811" [label="(Call,pthread_mutex_lock(&gPcmDumpLock))"];
+"1000824" [label="(Call,pthread_mutex_unlock(&gPcmDumpLock))"];
+"1000792" [label="(Block,)"];
+"1000812" [label="(Call,&gPcmDumpLock)"];
+"1000828" [label="(Literal,\"PREPROC_CMD_DUAL_MIC_PCM_DUMP_STOP\")"];
+"1001295" [label="(MethodReturn,int)"];
+"1000816" [label="(Identifier,gPcmDumpFh)"];
+"1000824" -> "1000792"  [label="AST: "];
+"1000824" -> "1000825"  [label="CFG: "];
+"1000825" -> "1000824"  [label="AST: "];
+"1000828" -> "1000824"  [label="CFG: "];
+"1000824" -> "1001295"  [label="DDG: pthread_mutex_unlock(&gPcmDumpLock)"];
+"1000824" -> "1001295"  [label="DDG: &gPcmDumpLock"];
+"1000811" -> "1000824"  [label="DDG: &gPcmDumpLock"];
+"1000811" -> "1000792"  [label="AST: "];
+"1000811" -> "1000812"  [label="CFG: "];
+"1000812" -> "1000811"  [label="AST: "];
+"1000816" -> "1000811"  [label="CFG: "];
+"1000811" -> "1001295"  [label="DDG: pthread_mutex_lock(&gPcmDumpLock)"];
+}

@@ -1,0 +1,29 @@
+digraph "0_gnupg_014b2103fcb12f261135e3954f26e9e07b39e342@pointer" {
+"1000164" [label="(Call,zs->next_in = BYTEF_CAST (zfx->inbuf))"];
+"1000168" [label="(Call,BYTEF_CAST (zfx->inbuf))"];
+"1000193" [label="(Call,zfx->inbuf + n)"];
+"1000165" [label="(Call,zs->next_in)"];
+"1000164" [label="(Call,zs->next_in = BYTEF_CAST (zfx->inbuf))"];
+"1000168" [label="(Call,BYTEF_CAST (zfx->inbuf))"];
+"1000169" [label="(Call,zfx->inbuf)"];
+"1000183" [label="(Call,zfx->inbuf + n)"];
+"1000161" [label="(ControlStructure,if( !n ))"];
+"1000329" [label="(MethodReturn,RET)"];
+"1000181" [label="(Call,iobuf_read( a, zfx->inbuf + n, count ))"];
+"1000173" [label="(Identifier,count)"];
+"1000191" [label="(Call,iobuf_read( a, zfx->inbuf + n, count ))"];
+"1000164" -> "1000161"  [label="AST: "];
+"1000164" -> "1000168"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000168" -> "1000164"  [label="AST: "];
+"1000173" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000329"  [label="DDG: BYTEF_CAST (zfx->inbuf)"];
+"1000164" -> "1000329"  [label="DDG: zs->next_in"];
+"1000168" -> "1000164"  [label="DDG: zfx->inbuf"];
+"1000168" -> "1000169"  [label="CFG: "];
+"1000169" -> "1000168"  [label="AST: "];
+"1000168" -> "1000181"  [label="DDG: zfx->inbuf"];
+"1000168" -> "1000183"  [label="DDG: zfx->inbuf"];
+"1000168" -> "1000191"  [label="DDG: zfx->inbuf"];
+"1000168" -> "1000193"  [label="DDG: zfx->inbuf"];
+}

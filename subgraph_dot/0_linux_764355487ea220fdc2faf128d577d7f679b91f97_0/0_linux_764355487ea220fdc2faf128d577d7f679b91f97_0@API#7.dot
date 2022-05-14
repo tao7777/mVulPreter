@@ -1,0 +1,29 @@
+digraph "0_linux_764355487ea220fdc2faf128d577d7f679b91f97_0@API" {
+"1000544" [label="(Call,mutex_unlock(&key_tfm_list_mutex))"];
+"1000481" [label="(Call,mutex_lock(&key_tfm_list_mutex))"];
+"1000545" [label="(Call,&key_tfm_list_mutex)"];
+"1000482" [label="(Call,&key_tfm_list_mutex)"];
+"1000104" [label="(Block,)"];
+"1000547" [label="(ControlStructure,goto out;)"];
+"1000481" [label="(Call,mutex_lock(&key_tfm_list_mutex))"];
+"1000509" [label="(Call,mutex_unlock(&key_tfm_list_mutex))"];
+"1000548" [label="(Call,mutex_unlock(&key_tfm_list_mutex))"];
+"1000544" [label="(Call,mutex_unlock(&key_tfm_list_mutex))"];
+"1000560" [label="(MethodReturn,static int)"];
+"1000488" [label="(Identifier,mount_crypt_stat)"];
+"1000539" [label="(Block,)"];
+"1000544" -> "1000539"  [label="AST: "];
+"1000544" -> "1000545"  [label="CFG: "];
+"1000545" -> "1000544"  [label="AST: "];
+"1000547" -> "1000544"  [label="CFG: "];
+"1000544" -> "1000560"  [label="DDG: &key_tfm_list_mutex"];
+"1000544" -> "1000560"  [label="DDG: mutex_unlock(&key_tfm_list_mutex)"];
+"1000481" -> "1000544"  [label="DDG: &key_tfm_list_mutex"];
+"1000481" -> "1000104"  [label="AST: "];
+"1000481" -> "1000482"  [label="CFG: "];
+"1000482" -> "1000481"  [label="AST: "];
+"1000488" -> "1000481"  [label="CFG: "];
+"1000481" -> "1000560"  [label="DDG: mutex_lock(&key_tfm_list_mutex)"];
+"1000481" -> "1000509"  [label="DDG: &key_tfm_list_mutex"];
+"1000481" -> "1000548"  [label="DDG: &key_tfm_list_mutex"];
+}

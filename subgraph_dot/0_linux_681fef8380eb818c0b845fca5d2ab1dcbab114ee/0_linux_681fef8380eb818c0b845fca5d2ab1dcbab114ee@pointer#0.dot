@@ -1,0 +1,28 @@
+digraph "0_linux_681fef8380eb818c0b845fca5d2ab1dcbab114ee@pointer" {
+"1000102" [label="(MethodParameterIn,void __user *arg)"];
+"1000132" [label="(Call,copy_to_user(arg, &ci, sizeof(ci)))"];
+"1000136" [label="(Call,sizeof(ci))"];
+"1000131" [label="(ControlStructure,if (copy_to_user(arg, &ci, sizeof(ci))))"];
+"1000134" [label="(Call,&ci)"];
+"1000142" [label="(Literal,0)"];
+"1000143" [label="(MethodReturn,static int)"];
+"1000102" [label="(MethodParameterIn,void __user *arg)"];
+"1000133" [label="(Identifier,arg)"];
+"1000132" [label="(Call,copy_to_user(arg, &ci, sizeof(ci)))"];
+"1000105" [label="(Call,memset(&ci, 0, sizeof(ci)))"];
+"1000140" [label="(Identifier,EFAULT)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000143"  [label="DDG: arg"];
+"1000102" -> "1000132"  [label="DDG: arg"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000136"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000134" -> "1000132"  [label="AST: "];
+"1000136" -> "1000132"  [label="AST: "];
+"1000140" -> "1000132"  [label="CFG: "];
+"1000142" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000143"  [label="DDG: &ci"];
+"1000132" -> "1000143"  [label="DDG: copy_to_user(arg, &ci, sizeof(ci))"];
+"1000132" -> "1000143"  [label="DDG: arg"];
+"1000105" -> "1000132"  [label="DDG: &ci"];
+}

@@ -1,0 +1,36 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_16@pointer" {
+"1000459" [label="(Call,memcpy(&dptr[doffset-1], &start[soffset-1], 4))"];
+"1000431" [label="(Call,memcpy(&faddr, &start[soffset-1], 4))"];
+"1000472" [label="(Literal,4)"];
+"1000431" [label="(Call,memcpy(&faddr, &start[soffset-1], 4))"];
+"1000441" [label="(ControlStructure,for (soffset-=4, doffset=4; soffset > 3; soffset-=4, doffset+=4))"];
+"1000434" [label="(Call,&start[soffset-1])"];
+"1000459" [label="(Call,memcpy(&dptr[doffset-1], &start[soffset-1], 4))"];
+"1000466" [label="(Call,&start[soffset-1])"];
+"1000444" [label="(Identifier,soffset)"];
+"1000460" [label="(Call,&dptr[doffset-1])"];
+"1000430" [label="(Block,)"];
+"1000440" [label="(Literal,4)"];
+"1000454" [label="(Identifier,soffset)"];
+"1000618" [label="(MethodReturn,int)"];
+"1000432" [label="(Call,&faddr)"];
+"1000459" -> "1000441"  [label="AST: "];
+"1000459" -> "1000472"  [label="CFG: "];
+"1000460" -> "1000459"  [label="AST: "];
+"1000466" -> "1000459"  [label="AST: "];
+"1000472" -> "1000459"  [label="AST: "];
+"1000454" -> "1000459"  [label="CFG: "];
+"1000459" -> "1000618"  [label="DDG: &dptr[doffset-1]"];
+"1000459" -> "1000618"  [label="DDG: memcpy(&dptr[doffset-1], &start[soffset-1], 4)"];
+"1000459" -> "1000618"  [label="DDG: &start[soffset-1]"];
+"1000431" -> "1000459"  [label="DDG: &start[soffset-1]"];
+"1000431" -> "1000430"  [label="AST: "];
+"1000431" -> "1000440"  [label="CFG: "];
+"1000432" -> "1000431"  [label="AST: "];
+"1000434" -> "1000431"  [label="AST: "];
+"1000440" -> "1000431"  [label="AST: "];
+"1000444" -> "1000431"  [label="CFG: "];
+"1000431" -> "1000618"  [label="DDG: &start[soffset-1]"];
+"1000431" -> "1000618"  [label="DDG: &faddr"];
+"1000431" -> "1000618"  [label="DDG: memcpy(&faddr, &start[soffset-1], 4)"];
+}

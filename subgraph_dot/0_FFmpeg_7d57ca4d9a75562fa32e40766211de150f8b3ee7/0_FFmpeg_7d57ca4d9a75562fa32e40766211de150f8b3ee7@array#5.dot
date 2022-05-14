@@ -1,0 +1,30 @@
+digraph "0_FFmpeg_7d57ca4d9a75562fa32e40766211de150f8b3ee7@array" {
+"1000367" [label="(Call,prev_pkt[channel_id].read = 0)"];
+"1000375" [label="(Call,!prev_pkt[channel_id].read)"];
+"1000367" [label="(Call,prev_pkt[channel_id].read = 0)"];
+"1000378" [label="(Identifier,prev_pkt)"];
+"1000374" [label="(ControlStructure,if (!prev_pkt[channel_id].read))"];
+"1000351" [label="(Block,)"];
+"1000368" [label="(Call,prev_pkt[channel_id].read)"];
+"1000376" [label="(Call,prev_pkt[channel_id].read)"];
+"1000627" [label="(MethodReturn,static int)"];
+"1000373" [label="(Literal,0)"];
+"1000385" [label="(Identifier,ret)"];
+"1000423" [label="(Identifier,prev)"];
+"1000375" [label="(Call,!prev_pkt[channel_id].read)"];
+"1000338" [label="(Call,prev_pkt[channel_id].read && size != prev_pkt[channel_id].size)"];
+"1000367" -> "1000351"  [label="AST: "];
+"1000367" -> "1000373"  [label="CFG: "];
+"1000368" -> "1000367"  [label="AST: "];
+"1000373" -> "1000367"  [label="AST: "];
+"1000378" -> "1000367"  [label="CFG: "];
+"1000367" -> "1000375"  [label="DDG: prev_pkt[channel_id].read"];
+"1000375" -> "1000374"  [label="AST: "];
+"1000375" -> "1000376"  [label="CFG: "];
+"1000376" -> "1000375"  [label="AST: "];
+"1000385" -> "1000375"  [label="CFG: "];
+"1000423" -> "1000375"  [label="CFG: "];
+"1000375" -> "1000627"  [label="DDG: prev_pkt[channel_id].read"];
+"1000375" -> "1000627"  [label="DDG: !prev_pkt[channel_id].read"];
+"1000338" -> "1000375"  [label="DDG: prev_pkt[channel_id].read"];
+}

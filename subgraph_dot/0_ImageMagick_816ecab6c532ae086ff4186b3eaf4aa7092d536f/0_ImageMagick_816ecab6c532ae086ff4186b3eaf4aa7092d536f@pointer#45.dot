@@ -1,0 +1,27 @@
+digraph "0_ImageMagick_816ecab6c532ae086ff4186b3eaf4aa7092d536f@pointer" {
+"1004673" [label="(Call,!mng_info->equal_backgrounds)"];
+"1004668" [label="(Call,!mng_info->adjoin || !mng_info->equal_backgrounds)"];
+"1004680" [label="(Identifier,mask)"];
+"1004674" [label="(Call,mng_info->equal_backgrounds)"];
+"1004668" [label="(Call,!mng_info->adjoin || !mng_info->equal_backgrounds)"];
+"1004673" [label="(Call,!mng_info->equal_backgrounds)"];
+"1004669" [label="(Call,!mng_info->adjoin)"];
+"1009779" [label="(MethodReturn,static MagickBooleanType)"];
+"1004667" [label="(ControlStructure,if ((!mng_info->adjoin || !mng_info->equal_backgrounds)))"];
+"1004763" [label="(Identifier,logging)"];
+"1004673" -> "1004668"  [label="AST: "];
+"1004673" -> "1004674"  [label="CFG: "];
+"1004674" -> "1004673"  [label="AST: "];
+"1004668" -> "1004673"  [label="CFG: "];
+"1004673" -> "1009779"  [label="DDG: mng_info->equal_backgrounds"];
+"1004673" -> "1004668"  [label="DDG: mng_info->equal_backgrounds"];
+"1004668" -> "1004667"  [label="AST: "];
+"1004668" -> "1004669"  [label="CFG: "];
+"1004669" -> "1004668"  [label="AST: "];
+"1004680" -> "1004668"  [label="CFG: "];
+"1004763" -> "1004668"  [label="CFG: "];
+"1004668" -> "1009779"  [label="DDG: !mng_info->equal_backgrounds"];
+"1004668" -> "1009779"  [label="DDG: !mng_info->adjoin"];
+"1004668" -> "1009779"  [label="DDG: !mng_info->adjoin || !mng_info->equal_backgrounds"];
+"1004669" -> "1004668"  [label="DDG: mng_info->adjoin"];
+}

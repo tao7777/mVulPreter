@@ -1,0 +1,34 @@
+digraph "0_Android_28a566f7731b4cb76d2a9ba16d997ac5aeb07dad_0@pointer" {
+"1000166" [label="(Call,pMap->ranges = malloc(sizeof(MappedRange)))"];
+"1000174" [label="(Call,pMap->ranges == NULL)"];
+"1000125" [label="(Call,mmap(NULL, length, PROT_READ, MAP_PRIVATE, fd, start))"];
+"1000166" [label="(Call,pMap->ranges = malloc(sizeof(MappedRange)))"];
+"1000174" [label="(Call,pMap->ranges == NULL)"];
+"1000181" [label="(Literal,\"malloc failed: %s\n\")"];
+"1000103" [label="(Block,)"];
+"1000176" [label="(Identifier,pMap)"];
+"1000173" [label="(ControlStructure,if (pMap->ranges == NULL))"];
+"1000167" [label="(Call,pMap->ranges)"];
+"1000175" [label="(Call,pMap->ranges)"];
+"1000178" [label="(Identifier,NULL)"];
+"1000194" [label="(Identifier,pMap)"];
+"1000170" [label="(Call,malloc(sizeof(MappedRange)))"];
+"1000210" [label="(MethodReturn,static int)"];
+"1000166" -> "1000103"  [label="AST: "];
+"1000166" -> "1000170"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000170" -> "1000166"  [label="AST: "];
+"1000176" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000210"  [label="DDG: malloc(sizeof(MappedRange))"];
+"1000166" -> "1000174"  [label="DDG: pMap->ranges"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000174" -> "1000178"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000178" -> "1000174"  [label="AST: "];
+"1000181" -> "1000174"  [label="CFG: "];
+"1000194" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000210"  [label="DDG: NULL"];
+"1000174" -> "1000210"  [label="DDG: pMap->ranges == NULL"];
+"1000174" -> "1000210"  [label="DDG: pMap->ranges"];
+"1000125" -> "1000174"  [label="DDG: NULL"];
+}

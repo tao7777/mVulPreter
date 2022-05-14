@@ -1,0 +1,30 @@
+digraph "0_linux_ec8013beddd717d1740cfefb1a9b900deef85462_1@pointer" {
+"1000127" [label="(Call,spin_lock_irqsave(&m->lock, flags))"];
+"1000184" [label="(Call,spin_unlock_irqrestore(&m->lock, flags))"];
+"1000136" [label="(Identifier,m)"];
+"1000185" [label="(Call,&m->lock)"];
+"1000127" [label="(Call,spin_lock_irqsave(&m->lock, flags))"];
+"1000105" [label="(Block,)"];
+"1000132" [label="(Identifier,flags)"];
+"1000128" [label="(Call,&m->lock)"];
+"1000189" [label="(Identifier,flags)"];
+"1000193" [label="(Identifier,r)"];
+"1000214" [label="(MethodReturn,static int)"];
+"1000184" [label="(Call,spin_unlock_irqrestore(&m->lock, flags))"];
+"1000127" -> "1000105"  [label="AST: "];
+"1000127" -> "1000132"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000132" -> "1000127"  [label="AST: "];
+"1000136" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000214"  [label="DDG: spin_lock_irqsave(&m->lock, flags)"];
+"1000127" -> "1000184"  [label="DDG: &m->lock"];
+"1000127" -> "1000184"  [label="DDG: flags"];
+"1000184" -> "1000105"  [label="AST: "];
+"1000184" -> "1000189"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000189" -> "1000184"  [label="AST: "];
+"1000193" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000214"  [label="DDG: &m->lock"];
+"1000184" -> "1000214"  [label="DDG: flags"];
+"1000184" -> "1000214"  [label="DDG: spin_unlock_irqrestore(&m->lock, flags)"];
+}

@@ -1,0 +1,27 @@
+digraph "0_radare2_9b46d38dd3c4de6048a488b655c7319f845af185@pointer" {
+"1000825" [label="(Call,a->num? (RCore *)(a->num->userptr): NULL)"];
+"1000829" [label="(Call,(RCore *)(a->num->userptr))"];
+"1000823" [label="(Call,*core = a->num? (RCore *)(a->num->userptr): NULL)"];
+"1000944" [label="(MethodReturn,static int)"];
+"1000831" [label="(Call,a->num->userptr)"];
+"1000826" [label="(Call,a->num)"];
+"1000836" [label="(Identifier,NULL)"];
+"1000825" [label="(Call,a->num? (RCore *)(a->num->userptr): NULL)"];
+"1000829" [label="(Call,(RCore *)(a->num->userptr))"];
+"1000825" -> "1000823"  [label="AST: "];
+"1000825" -> "1000829"  [label="CFG: "];
+"1000825" -> "1000836"  [label="CFG: "];
+"1000826" -> "1000825"  [label="AST: "];
+"1000829" -> "1000825"  [label="AST: "];
+"1000836" -> "1000825"  [label="AST: "];
+"1000823" -> "1000825"  [label="CFG: "];
+"1000825" -> "1000944"  [label="DDG: (RCore *)(a->num->userptr)"];
+"1000825" -> "1000944"  [label="DDG: NULL"];
+"1000825" -> "1000944"  [label="DDG: a->num"];
+"1000829" -> "1000825"  [label="DDG: a->num->userptr"];
+"1000829" -> "1000831"  [label="CFG: "];
+"1000830" -> "1000829"  [label="AST: "];
+"1000831" -> "1000829"  [label="AST: "];
+"1000829" -> "1000944"  [label="DDG: a->num->userptr"];
+"1000829" -> "1000823"  [label="DDG: a->num->userptr"];
+}

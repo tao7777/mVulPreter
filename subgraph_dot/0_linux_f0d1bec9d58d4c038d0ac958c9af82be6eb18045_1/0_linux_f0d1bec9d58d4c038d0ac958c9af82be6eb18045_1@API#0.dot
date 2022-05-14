@@ -1,0 +1,33 @@
+digraph "0_linux_f0d1bec9d58d4c038d0ac958c9af82be6eb18045_1@API" {
+"1000282" [label="(Call,send_sig(SIGPIPE, current, 0))"];
+"1000466" [label="(Call,signal_pending(current))"];
+"1000282" [label="(Call,send_sig(SIGPIPE, current, 0))"];
+"1000283" [label="(Identifier,SIGPIPE)"];
+"1000557" [label="(MethodReturn,RET)"];
+"1000471" [label="(Identifier,ret)"];
+"1000478" [label="(Identifier,do_wakeup)"];
+"1000467" [label="(Identifier,current)"];
+"1000466" [label="(Call,signal_pending(current))"];
+"1000284" [label="(Identifier,current)"];
+"1000285" [label="(Literal,0)"];
+"1000281" [label="(Block,)"];
+"1000288" [label="(Identifier,ret)"];
+"1000465" [label="(ControlStructure,if (signal_pending(current)))"];
+"1000282" -> "1000281"  [label="AST: "];
+"1000282" -> "1000285"  [label="CFG: "];
+"1000283" -> "1000282"  [label="AST: "];
+"1000284" -> "1000282"  [label="AST: "];
+"1000285" -> "1000282"  [label="AST: "];
+"1000288" -> "1000282"  [label="CFG: "];
+"1000282" -> "1000557"  [label="DDG: send_sig(SIGPIPE, current, 0)"];
+"1000282" -> "1000557"  [label="DDG: current"];
+"1000282" -> "1000557"  [label="DDG: SIGPIPE"];
+"1000466" -> "1000282"  [label="DDG: current"];
+"1000466" -> "1000465"  [label="AST: "];
+"1000466" -> "1000467"  [label="CFG: "];
+"1000467" -> "1000466"  [label="AST: "];
+"1000471" -> "1000466"  [label="CFG: "];
+"1000478" -> "1000466"  [label="CFG: "];
+"1000466" -> "1000557"  [label="DDG: current"];
+"1000466" -> "1000557"  [label="DDG: signal_pending(current)"];
+}

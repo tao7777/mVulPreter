@@ -1,0 +1,29 @@
+digraph "0_linux_c55aee1bf0e6b6feec8b2927b43f7a09a6d5f754@pointer" {
+"1000114" [label="(Call,!port->interrupt_out_urb)"];
+"1000113" [label="(Call,!port->interrupt_out_urb || !port->interrupt_in_urb)"];
+"1000113" [label="(Call,!port->interrupt_out_urb || !port->interrupt_in_urb)"];
+"1000133" [label="(Identifier,priv)"];
+"1000115" [label="(Call,port->interrupt_out_urb)"];
+"1000114" [label="(Call,!port->interrupt_out_urb)"];
+"1000120" [label="(Identifier,port)"];
+"1000112" [label="(ControlStructure,if (!port->interrupt_out_urb || !port->interrupt_in_urb))"];
+"1000284" [label="(MethodReturn,static int)"];
+"1000118" [label="(Call,!port->interrupt_in_urb)"];
+"1000126" [label="(Identifier,port)"];
+"1000114" -> "1000113"  [label="AST: "];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000120" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000284"  [label="DDG: port->interrupt_out_urb"];
+"1000114" -> "1000113"  [label="DDG: port->interrupt_out_urb"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000113"  [label="AST: "];
+"1000126" -> "1000113"  [label="CFG: "];
+"1000133" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000284"  [label="DDG: !port->interrupt_out_urb"];
+"1000113" -> "1000284"  [label="DDG: !port->interrupt_in_urb"];
+"1000113" -> "1000284"  [label="DDG: !port->interrupt_out_urb || !port->interrupt_in_urb"];
+"1000118" -> "1000113"  [label="DDG: port->interrupt_in_urb"];
+}

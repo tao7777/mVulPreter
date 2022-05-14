@@ -1,0 +1,1 @@
+bool DeleteReparsePoint(HANDLE source) {

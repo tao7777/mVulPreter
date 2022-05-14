@@ -1,0 +1,28 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_59@pointer" {
+"1000307" [label="(Call,object->write_ready(object->context))"];
+"1000286" [label="(Call,object->read_ready(object->context))"];
+"1000307" [label="(Call,object->write_ready(object->context))"];
+"1000294" [label="(Identifier,reactor)"];
+"1000268" [label="(ControlStructure,if (events[j].events & (EPOLLIN | EPOLLHUP | EPOLLRDHUP | EPOLLERR) && object->read_ready))"];
+"1000307" [label="(Call,object->write_ready(object->context))"];
+"1000287" [label="(Call,object->context)"];
+"1000286" [label="(Call,object->read_ready(object->context))"];
+"1000314" [label="(Identifier,object)"];
+"1000290" [label="(ControlStructure,if (!reactor->object_removed && events[j].events & EPOLLOUT && object->write_ready))"];
+"1000335" [label="(MethodReturn,static reactor_status_t)"];
+"1000308" [label="(Call,object->context)"];
+"1000307" -> "1000290"  [label="AST: "];
+"1000307" -> "1000308"  [label="CFG: "];
+"1000308" -> "1000307"  [label="AST: "];
+"1000314" -> "1000307"  [label="CFG: "];
+"1000307" -> "1000335"  [label="DDG: object->write_ready(object->context)"];
+"1000307" -> "1000335"  [label="DDG: object->context"];
+"1000307" -> "1000286"  [label="DDG: object->context"];
+"1000286" -> "1000307"  [label="DDG: object->context"];
+"1000286" -> "1000268"  [label="AST: "];
+"1000286" -> "1000287"  [label="CFG: "];
+"1000287" -> "1000286"  [label="AST: "];
+"1000294" -> "1000286"  [label="CFG: "];
+"1000286" -> "1000335"  [label="DDG: object->read_ready(object->context)"];
+"1000286" -> "1000335"  [label="DDG: object->context"];
+}

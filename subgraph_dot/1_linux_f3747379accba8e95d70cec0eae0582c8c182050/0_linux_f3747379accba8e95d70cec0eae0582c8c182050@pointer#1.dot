@@ -1,0 +1,33 @@
+digraph "0_linux_f3747379accba8e95d70cec0eae0582c8c182050@pointer" {
+"1000201" [label="(Call,ctxt->eflags &= ~(EFLG_VM | EFLG_IF))"];
+"1000205" [label="(Call,~(EFLG_VM | EFLG_IF))"];
+"1000206" [label="(Call,EFLG_VM | EFLG_IF)"];
+"1000205" [label="(Call,~(EFLG_VM | EFLG_IF))"];
+"1000201" [label="(Call,ctxt->eflags &= ~(EFLG_VM | EFLG_IF))"];
+"1000206" [label="(Call,EFLG_VM | EFLG_IF)"];
+"1000283" [label="(MethodReturn,static int)"];
+"1000210" [label="(Identifier,cs_sel)"];
+"1000208" [label="(Identifier,EFLG_IF)"];
+"1000202" [label="(Call,ctxt->eflags)"];
+"1000105" [label="(Block,)"];
+"1000207" [label="(Identifier,EFLG_VM)"];
+"1000201" -> "1000105"  [label="AST: "];
+"1000201" -> "1000205"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="AST: "];
+"1000210" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000283"  [label="DDG: ctxt->eflags &= ~(EFLG_VM | EFLG_IF)"];
+"1000201" -> "1000283"  [label="DDG: ~(EFLG_VM | EFLG_IF)"];
+"1000201" -> "1000283"  [label="DDG: ctxt->eflags"];
+"1000205" -> "1000201"  [label="DDG: EFLG_VM | EFLG_IF"];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000205" -> "1000283"  [label="DDG: EFLG_VM | EFLG_IF"];
+"1000206" -> "1000205"  [label="DDG: EFLG_VM"];
+"1000206" -> "1000205"  [label="DDG: EFLG_IF"];
+"1000206" -> "1000208"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000208" -> "1000206"  [label="AST: "];
+"1000206" -> "1000283"  [label="DDG: EFLG_IF"];
+"1000206" -> "1000283"  [label="DDG: EFLG_VM"];
+}

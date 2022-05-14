@@ -1,0 +1,32 @@
+digraph "0_linux_592acbf16821288ecdc4192c47e3774a4c48bb64@pointer" {
+"1000340" [label="(Call,le16_add_cpu(&neh->eh_depth, 1))"];
+"1000299" [label="(Call,neh->eh_depth == 0)"];
+"1000345" [label="(Literal,1)"];
+"1000347" [label="(Identifier,handle)"];
+"1000111" [label="(Block,)"];
+"1000323" [label="(Literal,\"new root: num %d(%d), lblock %d, ptr %llu\n\")"];
+"1000341" [label="(Call,&neh->eh_depth)"];
+"1000340" [label="(Call,le16_add_cpu(&neh->eh_depth, 1))"];
+"1000299" [label="(Call,neh->eh_depth == 0)"];
+"1000354" [label="(MethodReturn,static int)"];
+"1000298" [label="(ControlStructure,if (neh->eh_depth == 0))"];
+"1000307" [label="(Identifier,neh)"];
+"1000300" [label="(Call,neh->eh_depth)"];
+"1000303" [label="(Literal,0)"];
+"1000340" -> "1000111"  [label="AST: "];
+"1000340" -> "1000345"  [label="CFG: "];
+"1000341" -> "1000340"  [label="AST: "];
+"1000345" -> "1000340"  [label="AST: "];
+"1000347" -> "1000340"  [label="CFG: "];
+"1000340" -> "1000354"  [label="DDG: le16_add_cpu(&neh->eh_depth, 1)"];
+"1000340" -> "1000354"  [label="DDG: &neh->eh_depth"];
+"1000299" -> "1000340"  [label="DDG: neh->eh_depth"];
+"1000299" -> "1000298"  [label="AST: "];
+"1000299" -> "1000303"  [label="CFG: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000303" -> "1000299"  [label="AST: "];
+"1000307" -> "1000299"  [label="CFG: "];
+"1000323" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000354"  [label="DDG: neh->eh_depth == 0"];
+"1000299" -> "1000354"  [label="DDG: neh->eh_depth"];
+}

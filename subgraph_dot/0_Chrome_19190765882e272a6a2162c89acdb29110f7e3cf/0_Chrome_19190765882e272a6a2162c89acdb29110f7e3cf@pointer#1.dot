@@ -1,0 +1,34 @@
+digraph "0_Chrome_19190765882e272a6a2162c89acdb29110f7e3cf@pointer" {
+"1000115" [label="(Call,AddExtensionsActivityToMessage(session, commit_message))"];
+"1000102" [label="(MethodParameterIn,SyncSession* session)"];
+"1000110" [label="(Call,* commit_message = message.mutable_commit())"];
+"1000116" [label="(Identifier,session)"];
+"1000115" [label="(Call,AddExtensionsActivityToMessage(session, commit_message))"];
+"1000110" [label="(Call,* commit_message = message.mutable_commit())"];
+"1000112" [label="(Call,message.mutable_commit())"];
+"1000349" [label="(MethodReturn,void)"];
+"1000111" [label="(Identifier,commit_message)"];
+"1000119" [label="(Call,session->write_transaction()->directory())"];
+"1000117" [label="(Identifier,commit_message)"];
+"1000103" [label="(Block,)"];
+"1000102" [label="(MethodParameterIn,SyncSession* session)"];
+"1000114" [label="(Call,session->write_transaction()->directory()->cache_guid())"];
+"1000115" -> "1000103"  [label="AST: "];
+"1000115" -> "1000117"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000119" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000349"  [label="DDG: commit_message"];
+"1000115" -> "1000349"  [label="DDG: AddExtensionsActivityToMessage(session, commit_message)"];
+"1000115" -> "1000349"  [label="DDG: session"];
+"1000102" -> "1000115"  [label="DDG: session"];
+"1000110" -> "1000115"  [label="DDG: commit_message"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000349"  [label="DDG: session"];
+"1000110" -> "1000103"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000114" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000349"  [label="DDG: message.mutable_commit()"];
+}

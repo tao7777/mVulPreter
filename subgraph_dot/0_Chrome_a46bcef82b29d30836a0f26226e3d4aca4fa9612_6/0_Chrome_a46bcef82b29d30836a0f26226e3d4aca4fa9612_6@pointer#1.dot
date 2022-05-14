@@ -1,0 +1,24 @@
+digraph "0_Chrome_a46bcef82b29d30836a0f26226e3d4aca4fa9612_6@pointer" {
+"1000111" [label="(MethodParameterIn,ClientSession* client)"];
+"1000128" [label="(Call,(*other_client) != client)"];
+"1000131" [label="(Identifier,client)"];
+"1000127" [label="(ControlStructure,if ((*other_client) != client))"];
+"1000111" [label="(MethodParameterIn,ClientSession* client)"];
+"1000128" [label="(Call,(*other_client) != client)"];
+"1000125" [label="(Identifier,other_client)"];
+"1000133" [label="(Call,(*other_client)->Disconnect())"];
+"1000178" [label="(MethodReturn,void)"];
+"1000129" [label="(Call,*other_client)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000178"  [label="DDG: client"];
+"1000111" -> "1000128"  [label="DDG: client"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000131"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000131" -> "1000128"  [label="AST: "];
+"1000133" -> "1000128"  [label="CFG: "];
+"1000125" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000178"  [label="DDG: *other_client"];
+"1000128" -> "1000178"  [label="DDG: (*other_client) != client"];
+"1000128" -> "1000178"  [label="DDG: client"];
+}

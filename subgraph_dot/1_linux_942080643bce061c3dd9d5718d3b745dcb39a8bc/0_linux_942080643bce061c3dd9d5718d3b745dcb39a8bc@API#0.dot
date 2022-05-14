@@ -1,0 +1,29 @@
+digraph "0_linux_942080643bce061c3dd9d5718d3b745dcb39a8bc@API" {
+"1000126" [label="(Call,ecryptfs_max_decoded_size(src_size))"];
+"1000104" [label="(MethodParameterIn,size_t src_size)"];
+"1000123" [label="(Call,(*dst_size) = ecryptfs_max_decoded_size(src_size))"];
+"1000225" [label="(MethodReturn,RET)"];
+"1000123" [label="(Call,(*dst_size) = ecryptfs_max_decoded_size(src_size))"];
+"1000122" [label="(Block,)"];
+"1000127" [label="(Identifier,src_size)"];
+"1000104" [label="(MethodParameterIn,size_t src_size)"];
+"1000126" [label="(Call,ecryptfs_max_decoded_size(src_size))"];
+"1000124" [label="(Call,*dst_size)"];
+"1000128" [label="(ControlStructure,goto out;)"];
+"1000130" [label="(Call,src_byte_offset < src_size)"];
+"1000126" -> "1000123"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000123" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000225"  [label="DDG: src_size"];
+"1000126" -> "1000123"  [label="DDG: src_size"];
+"1000104" -> "1000126"  [label="DDG: src_size"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000225"  [label="DDG: src_size"];
+"1000104" -> "1000130"  [label="DDG: src_size"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000128" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000225"  [label="DDG: ecryptfs_max_decoded_size(src_size)"];
+"1000123" -> "1000225"  [label="DDG: *dst_size"];
+}

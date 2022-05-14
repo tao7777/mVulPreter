@@ -1,0 +1,37 @@
+digraph "0_linux_c9b92530a723ac5ef8e352885a1862b18f31b2f5_0@pointer" {
+"1000153" [label="(Call,sbi = EXT4_SB(inode->i_sb))"];
+"1000155" [label="(Call,EXT4_SB(inode->i_sb))"];
+"1000130" [label="(Call,EXT4_SB(inode->i_sb))"];
+"1000129" [label="(Call,EXT4_SB(inode->i_sb)->s_orphan_lock)"];
+"1000134" [label="(FieldIdentifier,s_orphan_lock)"];
+"1000154" [label="(Identifier,sbi)"];
+"1000286" [label="(Call,EXT4_SB(inode->i_sb))"];
+"1000130" [label="(Call,EXT4_SB(inode->i_sb))"];
+"1000277" [label="(Call,ext4_std_error(inode->i_sb, err))"];
+"1000105" [label="(Block,)"];
+"1000153" [label="(Call,sbi = EXT4_SB(inode->i_sb))"];
+"1000299" [label="(MethodReturn,int)"];
+"1000160" [label="(Literal,4)"];
+"1000156" [label="(Call,inode->i_sb)"];
+"1000225" [label="(Call,ext4_handle_dirty_super(handle, inode->i_sb))"];
+"1000155" [label="(Call,EXT4_SB(inode->i_sb))"];
+"1000131" [label="(Call,inode->i_sb)"];
+"1000153" -> "1000105"  [label="AST: "];
+"1000153" -> "1000155"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000155" -> "1000153"  [label="AST: "];
+"1000160" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000299"  [label="DDG: sbi"];
+"1000155" -> "1000153"  [label="DDG: inode->i_sb"];
+"1000155" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000130" -> "1000155"  [label="DDG: inode->i_sb"];
+"1000155" -> "1000225"  [label="DDG: inode->i_sb"];
+"1000155" -> "1000277"  [label="DDG: inode->i_sb"];
+"1000155" -> "1000286"  [label="DDG: inode->i_sb"];
+"1000130" -> "1000129"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000134" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000286"  [label="DDG: inode->i_sb"];
+}

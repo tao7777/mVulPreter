@@ -1,0 +1,30 @@
+digraph "0_Android_4ed06d14080d8667d5be14eed200e378cba78345@API" {
+"1000137" [label="(Call,buffer->nSize != sizeof(OMX_BUFFERHEADERTYPE))"];
+"1000133" [label="(Call,buffer == NULL || (buffer->nSize != sizeof(OMX_BUFFERHEADERTYPE)))"];
+"1000137" [label="(Call,buffer->nSize != sizeof(OMX_BUFFERHEADERTYPE))"];
+"1000133" [label="(Call,buffer == NULL || (buffer->nSize != sizeof(OMX_BUFFERHEADERTYPE)))"];
+"1000134" [label="(Call,buffer == NULL)"];
+"1000138" [label="(Call,buffer->nSize)"];
+"1000145" [label="(Literal,\"ERROR: omx_video::etb--> buffer is null or buffer size is invalid\")"];
+"1000141" [label="(Call,sizeof(OMX_BUFFERHEADERTYPE))"];
+"1000224" [label="(MethodReturn,OMX_ERRORTYPE)"];
+"1000152" [label="(Identifier,buffer)"];
+"1000132" [label="(ControlStructure,if (buffer == NULL || (buffer->nSize != sizeof(OMX_BUFFERHEADERTYPE))))"];
+"1000137" -> "1000133"  [label="AST: "];
+"1000137" -> "1000141"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000141" -> "1000137"  [label="AST: "];
+"1000133" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000224"  [label="DDG: buffer->nSize"];
+"1000137" -> "1000133"  [label="DDG: buffer->nSize"];
+"1000133" -> "1000132"  [label="AST: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000145" -> "1000133"  [label="CFG: "];
+"1000152" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000224"  [label="DDG: buffer == NULL"];
+"1000133" -> "1000224"  [label="DDG: buffer == NULL || (buffer->nSize != sizeof(OMX_BUFFERHEADERTYPE))"];
+"1000133" -> "1000224"  [label="DDG: buffer->nSize != sizeof(OMX_BUFFERHEADERTYPE)"];
+"1000134" -> "1000133"  [label="DDG: buffer"];
+"1000134" -> "1000133"  [label="DDG: NULL"];
+}

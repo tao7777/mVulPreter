@@ -1,0 +1,26 @@
+digraph "0_abrt_50ee8130fb4cd4ef1af7682a2c85dd99cb99424e@pointer" {
+"1000285" [label="(Call,args[i++] = verbs[g_verbose <= 3 ? g_verbose : 3])"];
+"1000252" [label="(Call,*verbs[] = { \"\", \"-v\", \"-vv\", \"-vvv\" })"];
+"1000281" [label="(ControlStructure,if (g_verbose > 0))"];
+"1000256" [label="(Identifier,i)"];
+"1000286" [label="(Call,args[i++])"];
+"1000290" [label="(Call,verbs[g_verbose <= 3 ? g_verbose : 3])"];
+"1000285" [label="(Call,args[i++] = verbs[g_verbose <= 3 ? g_verbose : 3])"];
+"1000250" [label="(Block,)"];
+"1000252" [label="(Call,*verbs[] = { \"\", \"-v\", \"-vv\", \"-vvv\" })"];
+"1000525" [label="(MethodReturn,int)"];
+"1000253" [label="(Identifier,verbs)"];
+"1000300" [label="(Identifier,opts)"];
+"1000285" -> "1000281"  [label="AST: "];
+"1000285" -> "1000290"  [label="CFG: "];
+"1000286" -> "1000285"  [label="AST: "];
+"1000290" -> "1000285"  [label="AST: "];
+"1000300" -> "1000285"  [label="CFG: "];
+"1000285" -> "1000525"  [label="DDG: verbs[g_verbose <= 3 ? g_verbose : 3]"];
+"1000252" -> "1000285"  [label="DDG: verbs"];
+"1000252" -> "1000250"  [label="AST: "];
+"1000252" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000252"  [label="AST: "];
+"1000256" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000525"  [label="DDG: verbs"];
+}

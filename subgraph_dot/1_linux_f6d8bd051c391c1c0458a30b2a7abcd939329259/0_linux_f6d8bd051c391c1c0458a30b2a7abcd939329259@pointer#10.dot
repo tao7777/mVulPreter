@@ -1,0 +1,29 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259@pointer" {
+"1000225" [label="(Call,rt->rt_flags & (RTCF_MULTICAST | RTCF_BROADCAST))"];
+"1000229" [label="(Call,RTCF_MULTICAST | RTCF_BROADCAST)"];
+"1000229" [label="(Call,RTCF_MULTICAST | RTCF_BROADCAST)"];
+"1000230" [label="(Identifier,RTCF_MULTICAST)"];
+"1000234" [label="(Identifier,rt)"];
+"1000411" [label="(MethodReturn,int)"];
+"1000225" [label="(Call,rt->rt_flags & (RTCF_MULTICAST | RTCF_BROADCAST))"];
+"1000224" [label="(ControlStructure,if (rt->rt_flags & (RTCF_MULTICAST | RTCF_BROADCAST)))"];
+"1000242" [label="(Identifier,inet)"];
+"1000226" [label="(Call,rt->rt_flags)"];
+"1000231" [label="(Identifier,RTCF_BROADCAST)"];
+"1000225" -> "1000224"  [label="AST: "];
+"1000225" -> "1000229"  [label="CFG: "];
+"1000226" -> "1000225"  [label="AST: "];
+"1000229" -> "1000225"  [label="AST: "];
+"1000234" -> "1000225"  [label="CFG: "];
+"1000242" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000411"  [label="DDG: rt->rt_flags & (RTCF_MULTICAST | RTCF_BROADCAST)"];
+"1000225" -> "1000411"  [label="DDG: rt->rt_flags"];
+"1000225" -> "1000411"  [label="DDG: RTCF_MULTICAST | RTCF_BROADCAST"];
+"1000229" -> "1000225"  [label="DDG: RTCF_MULTICAST"];
+"1000229" -> "1000225"  [label="DDG: RTCF_BROADCAST"];
+"1000229" -> "1000231"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000231" -> "1000229"  [label="AST: "];
+"1000229" -> "1000411"  [label="DDG: RTCF_BROADCAST"];
+"1000229" -> "1000411"  [label="DDG: RTCF_MULTICAST"];
+}

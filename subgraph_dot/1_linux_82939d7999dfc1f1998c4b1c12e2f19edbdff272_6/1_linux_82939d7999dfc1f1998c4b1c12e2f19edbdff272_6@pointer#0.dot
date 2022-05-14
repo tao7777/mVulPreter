@@ -1,0 +1,27 @@
+digraph "1_linux_82939d7999dfc1f1998c4b1c12e2f19edbdff272_6@pointer" {
+"1000104" [label="(Call,mb_cache_create(name, HASH_BUCKET_BITS))"];
+"1000101" [label="(MethodParameterIn,char *name)"];
+"1000103" [label="(Return,return mb_cache_create(name, HASH_BUCKET_BITS);)"];
+"1000104" [label="(Call,mb_cache_create(name, HASH_BUCKET_BITS))"];
+"1000101" [label="(MethodParameterIn,char *name)"];
+"1000105" [label="(Identifier,name)"];
+"1000102" [label="(Block,)"];
+"1000106" [label="(Identifier,HASH_BUCKET_BITS)"];
+"1000103" [label="(Return,return mb_cache_create(name, HASH_BUCKET_BITS);)"];
+"1000107" [label="(MethodReturn,RET)"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000107"  [label="DDG: mb_cache_create(name, HASH_BUCKET_BITS)"];
+"1000104" -> "1000107"  [label="DDG: name"];
+"1000104" -> "1000107"  [label="DDG: HASH_BUCKET_BITS"];
+"1000104" -> "1000103"  [label="DDG: mb_cache_create(name, HASH_BUCKET_BITS)"];
+"1000101" -> "1000104"  [label="DDG: name"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000107"  [label="DDG: name"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000107" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000107"  [label="DDG: <RET>"];
+}

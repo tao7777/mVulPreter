@@ -1,0 +1,26 @@
+digraph "0_linux_6ec82562ffc6f297d0de36d65776cff8e5704867@pointer" {
+"1000140" [label="(Call,rcv->flags & IFF_UP)"];
+"1000139" [label="(Call,!(rcv->flags & IFF_UP))"];
+"1000138" [label="(ControlStructure,if (!(rcv->flags & IFF_UP)))"];
+"1000141" [label="(Call,rcv->flags)"];
+"1000209" [label="(MethodReturn,static netdev_tx_t)"];
+"1000145" [label="(ControlStructure,goto tx_drop;)"];
+"1000140" [label="(Call,rcv->flags & IFF_UP)"];
+"1000144" [label="(Identifier,IFF_UP)"];
+"1000149" [label="(Identifier,dev)"];
+"1000139" [label="(Call,!(rcv->flags & IFF_UP))"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000144"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000144" -> "1000140"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000209"  [label="DDG: rcv->flags"];
+"1000140" -> "1000209"  [label="DDG: IFF_UP"];
+"1000140" -> "1000139"  [label="DDG: rcv->flags"];
+"1000140" -> "1000139"  [label="DDG: IFF_UP"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000145" -> "1000139"  [label="CFG: "];
+"1000149" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000209"  [label="DDG: !(rcv->flags & IFF_UP)"];
+"1000139" -> "1000209"  [label="DDG: rcv->flags & IFF_UP"];
+}

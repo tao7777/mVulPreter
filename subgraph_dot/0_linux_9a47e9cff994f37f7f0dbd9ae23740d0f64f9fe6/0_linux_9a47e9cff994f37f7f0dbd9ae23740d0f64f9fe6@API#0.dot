@@ -1,0 +1,33 @@
+digraph "0_linux_9a47e9cff994f37f7f0dbd9ae23740d0f64f9fe6@API" {
+"1000144" [label="(Call,memset(&r1, 0, sizeof(r1)))"];
+"1000172" [label="(Call,snd_timer_user_append_to_tqueue(tu, &r1))"];
+"1000152" [label="(Identifier,r1)"];
+"1000144" [label="(Call,memset(&r1, 0, sizeof(r1)))"];
+"1000148" [label="(Call,sizeof(r1))"];
+"1000105" [label="(Block,)"];
+"1000147" [label="(Literal,0)"];
+"1000173" [label="(Identifier,tu)"];
+"1000107" [label="(Call,*tu = timeri->callback_data)"];
+"1000174" [label="(Call,&r1)"];
+"1000179" [label="(Identifier,tu)"];
+"1000172" [label="(Call,snd_timer_user_append_to_tqueue(tu, &r1))"];
+"1000194" [label="(MethodReturn,static void)"];
+"1000145" [label="(Call,&r1)"];
+"1000144" -> "1000105"  [label="AST: "];
+"1000144" -> "1000148"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000147" -> "1000144"  [label="AST: "];
+"1000148" -> "1000144"  [label="AST: "];
+"1000152" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000194"  [label="DDG: memset(&r1, 0, sizeof(r1))"];
+"1000144" -> "1000172"  [label="DDG: &r1"];
+"1000172" -> "1000105"  [label="AST: "];
+"1000172" -> "1000174"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000174" -> "1000172"  [label="AST: "];
+"1000179" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000194"  [label="DDG: snd_timer_user_append_to_tqueue(tu, &r1)"];
+"1000172" -> "1000194"  [label="DDG: tu"];
+"1000172" -> "1000194"  [label="DDG: &r1"];
+"1000107" -> "1000172"  [label="DDG: tu"];
+}

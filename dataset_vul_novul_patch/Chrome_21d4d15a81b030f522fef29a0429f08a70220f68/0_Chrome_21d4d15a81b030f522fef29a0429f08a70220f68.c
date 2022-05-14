@@ -1,0 +1,1 @@
+GuestViewBase* GuestViewBase::Create(

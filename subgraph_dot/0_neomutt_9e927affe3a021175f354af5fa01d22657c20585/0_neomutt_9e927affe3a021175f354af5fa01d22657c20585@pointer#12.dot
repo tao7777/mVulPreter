@@ -1,0 +1,35 @@
+digraph "0_neomutt_9e927affe3a021175f354af5fa01d22657c20585@pointer" {
+"1000670" [label="(Call,hdr->deleted = false)"];
+"1000476" [label="(Call,hdr->deleted && !restore)"];
+"1000485" [label="(Identifier,hdr)"];
+"1000503" [label="(Identifier,hdr)"];
+"1000477" [label="(Call,hdr->deleted)"];
+"1000476" [label="(Call,hdr->deleted && !restore)"];
+"1000392" [label="(Block,)"];
+"1000677" [label="(Identifier,hdr)"];
+"1000475" [label="(ControlStructure,if (hdr->deleted && !restore))"];
+"1000670" [label="(Call,hdr->deleted = false)"];
+"1000674" [label="(Identifier,false)"];
+"1000824" [label="(MethodReturn,static int)"];
+"1000480" [label="(Call,!restore)"];
+"1000671" [label="(Call,hdr->deleted)"];
+"1000670" -> "1000392"  [label="AST: "];
+"1000670" -> "1000674"  [label="CFG: "];
+"1000671" -> "1000670"  [label="AST: "];
+"1000674" -> "1000670"  [label="AST: "];
+"1000677" -> "1000670"  [label="CFG: "];
+"1000670" -> "1000824"  [label="DDG: false"];
+"1000670" -> "1000824"  [label="DDG: hdr->deleted"];
+"1000670" -> "1000476"  [label="DDG: hdr->deleted"];
+"1000476" -> "1000475"  [label="AST: "];
+"1000476" -> "1000477"  [label="CFG: "];
+"1000476" -> "1000480"  [label="CFG: "];
+"1000477" -> "1000476"  [label="AST: "];
+"1000480" -> "1000476"  [label="AST: "];
+"1000485" -> "1000476"  [label="CFG: "];
+"1000503" -> "1000476"  [label="CFG: "];
+"1000476" -> "1000824"  [label="DDG: hdr->deleted && !restore"];
+"1000476" -> "1000824"  [label="DDG: hdr->deleted"];
+"1000476" -> "1000824"  [label="DDG: !restore"];
+"1000480" -> "1000476"  [label="DDG: restore"];
+}

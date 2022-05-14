@@ -1,0 +1,33 @@
+digraph "0_openvpn_1394192b210cb3c6624a7419bcf3ff966742e79b@pointer" {
+"1000112" [label="(Call,*data = NULL)"];
+"1000270" [label="(Call,free(data))"];
+"1000104" [label="(Block,)"];
+"1000185" [label="(Call,data[size - 1] != 0)"];
+"1000113" [label="(Identifier,data)"];
+"1000271" [label="(Identifier,data)"];
+"1000273" [label="(Identifier,ret)"];
+"1000270" [label="(Call,free(data))"];
+"1000156" [label="(Call,data == NULL)"];
+"1000118" [label="(Identifier,bytes)"];
+"1000274" [label="(MethodReturn,RET)"];
+"1000112" [label="(Call,*data = NULL)"];
+"1000167" [label="(Call,ReadPipeAsync(pipe, data, bytes, 1, &exit_event))"];
+"1000114" [label="(Identifier,NULL)"];
+"1000263" [label="(Call,data = NULL)"];
+"1000112" -> "1000104"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000118" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000274"  [label="DDG: NULL"];
+"1000112" -> "1000270"  [label="DDG: data"];
+"1000270" -> "1000104"  [label="AST: "];
+"1000270" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000270"  [label="AST: "];
+"1000273" -> "1000270"  [label="CFG: "];
+"1000270" -> "1000274"  [label="DDG: data"];
+"1000185" -> "1000270"  [label="DDG: data[size - 1]"];
+"1000167" -> "1000270"  [label="DDG: data"];
+"1000156" -> "1000270"  [label="DDG: data"];
+"1000263" -> "1000270"  [label="DDG: data"];
+}

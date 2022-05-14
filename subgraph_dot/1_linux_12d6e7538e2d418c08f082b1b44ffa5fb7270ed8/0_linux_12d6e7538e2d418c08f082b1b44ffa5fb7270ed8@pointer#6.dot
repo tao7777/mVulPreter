@@ -1,0 +1,26 @@
+digraph "0_linux_12d6e7538e2d418c08f082b1b44ffa5fb7270ed8@pointer" {
+"1000461" [label="(Call,synchronize_srcu_expedited(&kvm->srcu))"];
+"1000403" [label="(Call,synchronize_srcu_expedited(&kvm->srcu))"];
+"1000116" [label="(Block,)"];
+"1000467" [label="(Identifier,kvm)"];
+"1000404" [label="(Call,&kvm->srcu)"];
+"1000359" [label="(Block,)"];
+"1000462" [label="(Call,&kvm->srcu)"];
+"1000493" [label="(MethodReturn,int)"];
+"1000461" [label="(Call,synchronize_srcu_expedited(&kvm->srcu))"];
+"1000403" [label="(Call,synchronize_srcu_expedited(&kvm->srcu))"];
+"1000409" [label="(Identifier,kvm)"];
+"1000461" -> "1000116"  [label="AST: "];
+"1000461" -> "1000462"  [label="CFG: "];
+"1000462" -> "1000461"  [label="AST: "];
+"1000467" -> "1000461"  [label="CFG: "];
+"1000461" -> "1000493"  [label="DDG: synchronize_srcu_expedited(&kvm->srcu)"];
+"1000461" -> "1000493"  [label="DDG: &kvm->srcu"];
+"1000403" -> "1000461"  [label="DDG: &kvm->srcu"];
+"1000403" -> "1000359"  [label="AST: "];
+"1000403" -> "1000404"  [label="CFG: "];
+"1000404" -> "1000403"  [label="AST: "];
+"1000409" -> "1000403"  [label="CFG: "];
+"1000403" -> "1000493"  [label="DDG: &kvm->srcu"];
+"1000403" -> "1000493"  [label="DDG: synchronize_srcu_expedited(&kvm->srcu)"];
+}

@@ -1,0 +1,32 @@
+digraph "0_linux_21c5977a836e399fc710ff2c5367845ed5c2527f_2@pointer" {
+"1000196" [label="(Call,w = cpu->type)"];
+"1000202" [label="(Call,put_user(w, (unsigned long  __user*)buffer))"];
+"1000203" [label="(Identifier,w)"];
+"1000204" [label="(Call,(unsigned long  __user*)buffer)"];
+"1000211" [label="(Literal,1)"];
+"1000120" [label="(Block,)"];
+"1000198" [label="(Call,cpu->type)"];
+"1000197" [label="(Identifier,w)"];
+"1000239" [label="(MethodReturn,RET)"];
+"1000201" [label="(ControlStructure,if (put_user(w, (unsigned long  __user*)buffer)))"];
+"1000209" [label="(Identifier,EFAULT)"];
+"1000202" [label="(Call,put_user(w, (unsigned long  __user*)buffer))"];
+"1000196" [label="(Call,w = cpu->type)"];
+"1000196" -> "1000120"  [label="AST: "];
+"1000196" -> "1000198"  [label="CFG: "];
+"1000197" -> "1000196"  [label="AST: "];
+"1000198" -> "1000196"  [label="AST: "];
+"1000203" -> "1000196"  [label="CFG: "];
+"1000196" -> "1000239"  [label="DDG: cpu->type"];
+"1000196" -> "1000202"  [label="DDG: w"];
+"1000202" -> "1000201"  [label="AST: "];
+"1000202" -> "1000204"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000204" -> "1000202"  [label="AST: "];
+"1000209" -> "1000202"  [label="CFG: "];
+"1000211" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000239"  [label="DDG: w"];
+"1000202" -> "1000239"  [label="DDG: (unsigned long  __user*)buffer"];
+"1000202" -> "1000239"  [label="DDG: put_user(w, (unsigned long  __user*)buffer)"];
+"1000204" -> "1000202"  [label="DDG: buffer"];
+}

@@ -1,0 +1,29 @@
+digraph "0_qemu_ab9509cceabef28071e41bdfa073083859c949a7_0@pointer" {
+"1000286" [label="(Call,qemu_spice_rect_is_empty(&ssd->dirty))"];
+"1000296" [label="(Call,qemu_spice_rect_union(&ssd->dirty, &update_area))"];
+"1000294" [label="(Identifier,ssd)"];
+"1000301" [label="(Call,&update_area)"];
+"1000303" [label="(MethodReturn,void)"];
+"1000296" [label="(Call,qemu_spice_rect_union(&ssd->dirty, &update_area))"];
+"1000287" [label="(Call,&ssd->dirty)"];
+"1000286" [label="(Call,qemu_spice_rect_is_empty(&ssd->dirty))"];
+"1000104" [label="(Block,)"];
+"1000285" [label="(ControlStructure,if (qemu_spice_rect_is_empty(&ssd->dirty)))"];
+"1000297" [label="(Call,&ssd->dirty)"];
+"1000299" [label="(Identifier,ssd)"];
+"1000286" -> "1000285"  [label="AST: "];
+"1000286" -> "1000287"  [label="CFG: "];
+"1000287" -> "1000286"  [label="AST: "];
+"1000294" -> "1000286"  [label="CFG: "];
+"1000299" -> "1000286"  [label="CFG: "];
+"1000286" -> "1000303"  [label="DDG: qemu_spice_rect_is_empty(&ssd->dirty)"];
+"1000286" -> "1000296"  [label="DDG: &ssd->dirty"];
+"1000296" -> "1000104"  [label="AST: "];
+"1000296" -> "1000301"  [label="CFG: "];
+"1000297" -> "1000296"  [label="AST: "];
+"1000301" -> "1000296"  [label="AST: "];
+"1000303" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000303"  [label="DDG: qemu_spice_rect_union(&ssd->dirty, &update_area)"];
+"1000296" -> "1000303"  [label="DDG: &update_area"];
+"1000296" -> "1000303"  [label="DDG: &ssd->dirty"];
+}

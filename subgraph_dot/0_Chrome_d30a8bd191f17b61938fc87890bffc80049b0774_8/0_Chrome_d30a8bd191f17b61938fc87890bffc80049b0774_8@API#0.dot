@@ -1,0 +1,34 @@
+digraph "0_Chrome_d30a8bd191f17b61938fc87890bffc80049b0774_8@API" {
+"1000125" [label="(Call,std::move(install_prompt_))"];
+"1000117" [label="(Call,install_ui_->ShowDialog(\n      base::Bind(&WebstoreStandaloneInstaller::OnInstallPromptDone, this),\n      localized_extension.get(), &icon_, std::move(install_prompt_),\n      ExtensionInstallPrompt::GetDefaultShowDialogCallback()))"];
+"1000127" [label="(Call,ExtensionInstallPrompt::GetDefaultShowDialogCallback())"];
+"1000101" [label="(Block,)"];
+"1000117" [label="(Call,install_ui_->ShowDialog(\n      base::Bind(&WebstoreStandaloneInstaller::OnInstallPromptDone, this),\n      localized_extension.get(), &icon_, std::move(install_prompt_),\n      ExtensionInstallPrompt::GetDefaultShowDialogCallback()))"];
+"1000122" [label="(Call,localized_extension.get())"];
+"1000128" [label="(MethodReturn,void)"];
+"1000126" [label="(Identifier,install_prompt_)"];
+"1000125" [label="(Call,std::move(install_prompt_))"];
+"1000123" [label="(Call,&icon_)"];
+"1000118" [label="(Call,base::Bind(&WebstoreStandaloneInstaller::OnInstallPromptDone, this))"];
+"1000125" -> "1000117"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000128"  [label="DDG: install_prompt_"];
+"1000125" -> "1000117"  [label="DDG: install_prompt_"];
+"1000117" -> "1000101"  [label="AST: "];
+"1000117" -> "1000127"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="AST: "];
+"1000123" -> "1000117"  [label="AST: "];
+"1000127" -> "1000117"  [label="AST: "];
+"1000128" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000128"  [label="DDG: install_ui_->ShowDialog(\n      base::Bind(&WebstoreStandaloneInstaller::OnInstallPromptDone, this),\n      localized_extension.get(), &icon_, std::move(install_prompt_),\n      ExtensionInstallPrompt::GetDefaultShowDialogCallback())"];
+"1000117" -> "1000128"  [label="DDG: std::move(install_prompt_)"];
+"1000117" -> "1000128"  [label="DDG: &icon_"];
+"1000117" -> "1000128"  [label="DDG: ExtensionInstallPrompt::GetDefaultShowDialogCallback()"];
+"1000117" -> "1000128"  [label="DDG: base::Bind(&WebstoreStandaloneInstaller::OnInstallPromptDone, this)"];
+"1000117" -> "1000128"  [label="DDG: localized_extension.get()"];
+"1000118" -> "1000117"  [label="DDG: &WebstoreStandaloneInstaller::OnInstallPromptDone"];
+"1000118" -> "1000117"  [label="DDG: this"];
+}

@@ -1,0 +1,32 @@
+digraph "0_jasper_634ce8e8a5accc0fa05dd2c20d42b4749d4b2735@pointer" {
+"1000287" [label="(Return,return cmpt;)"];
+"1000288" [label="(Identifier,cmpt)"];
+"1000152" [label="(Call,cmpt = jas_malloc(sizeof(jas_image_cmpt_t)))"];
+"1000287" [label="(Return,return cmpt;)"];
+"1000152" [label="(Call,cmpt = jas_malloc(sizeof(jas_image_cmpt_t)))"];
+"1000293" [label="(Call,jas_image_cmpt_destroy(cmpt))"];
+"1000154" [label="(Call,jas_malloc(sizeof(jas_image_cmpt_t)))"];
+"1000297" [label="(MethodReturn,static jas_image_cmpt_t *)"];
+"1000112" [label="(Block,)"];
+"1000288" [label="(Identifier,cmpt)"];
+"1000153" [label="(Identifier,cmpt)"];
+"1000151" [label="(Call,!(cmpt = jas_malloc(sizeof(jas_image_cmpt_t))))"];
+"1000258" [label="(Call,jas_stream_seek(cmpt->stream_, size - 1, SEEK_SET) < 0 ||\n\t  jas_stream_putc(cmpt->stream_, 0) == EOF ||\n\t  jas_stream_seek(cmpt->stream_, 0, SEEK_SET) < 0)"];
+"1000287" -> "1000112"  [label="AST: "];
+"1000287" -> "1000288"  [label="CFG: "];
+"1000288" -> "1000287"  [label="AST: "];
+"1000297" -> "1000287"  [label="CFG: "];
+"1000287" -> "1000297"  [label="DDG: <RET>"];
+"1000288" -> "1000287"  [label="DDG: cmpt"];
+"1000152" -> "1000287"  [label="DDG: cmpt"];
+"1000288" -> "1000258"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000154" -> "1000152"  [label="AST: "];
+"1000151" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000297"  [label="DDG: jas_malloc(sizeof(jas_image_cmpt_t))"];
+"1000152" -> "1000297"  [label="DDG: cmpt"];
+"1000152" -> "1000151"  [label="DDG: cmpt"];
+"1000152" -> "1000293"  [label="DDG: cmpt"];
+}

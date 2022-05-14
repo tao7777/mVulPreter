@@ -1,0 +1,26 @@
+digraph "0_linux_59643d1535eb220668692a5359de22545af579f6@API" {
+"1000443" [label="(Call,mutex_unlock(&buffer->mutex))"];
+"1000172" [label="(Call,mutex_lock(&buffer->mutex))"];
+"1000444" [label="(Call,&buffer->mutex)"];
+"1000120" [label="(Block,)"];
+"1000173" [label="(Call,&buffer->mutex)"];
+"1000172" [label="(Call,mutex_lock(&buffer->mutex))"];
+"1000179" [label="(Identifier,cpu_id)"];
+"1000405" [label="(Call,mutex_unlock(&buffer->mutex))"];
+"1000449" [label="(Identifier,err)"];
+"1000443" [label="(Call,mutex_unlock(&buffer->mutex))"];
+"1000450" [label="(MethodReturn,int)"];
+"1000443" -> "1000120"  [label="AST: "];
+"1000443" -> "1000444"  [label="CFG: "];
+"1000444" -> "1000443"  [label="AST: "];
+"1000449" -> "1000443"  [label="CFG: "];
+"1000443" -> "1000450"  [label="DDG: mutex_unlock(&buffer->mutex)"];
+"1000443" -> "1000450"  [label="DDG: &buffer->mutex"];
+"1000172" -> "1000443"  [label="DDG: &buffer->mutex"];
+"1000172" -> "1000120"  [label="AST: "];
+"1000172" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000179" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000450"  [label="DDG: mutex_lock(&buffer->mutex)"];
+"1000172" -> "1000405"  [label="DDG: &buffer->mutex"];
+}

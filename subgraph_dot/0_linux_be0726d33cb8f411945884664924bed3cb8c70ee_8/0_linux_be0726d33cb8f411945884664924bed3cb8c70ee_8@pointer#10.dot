@@ -1,0 +1,34 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_8@pointer" {
+"1000194" [label="(Call,end = bh->b_data + bh->b_size)"];
+"1000254" [label="(Call,(char *)next >= end)"];
+"1000107" [label="(Block,)"];
+"1000253" [label="(ControlStructure,if ((char *)next >= end))"];
+"1000195" [label="(Identifier,end)"];
+"1000258" [label="(Identifier,end)"];
+"1000259" [label="(ControlStructure,goto bad_block;)"];
+"1000255" [label="(Call,(char *)next)"];
+"1000376" [label="(MethodReturn,RET)"];
+"1000254" [label="(Call,(char *)next >= end)"];
+"1000208" [label="(Identifier,bh)"];
+"1000196" [label="(Call,bh->b_data + bh->b_size)"];
+"1000194" [label="(Call,end = bh->b_data + bh->b_size)"];
+"1000261" [label="(Identifier,entry)"];
+"1000194" -> "1000107"  [label="AST: "];
+"1000194" -> "1000196"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000196" -> "1000194"  [label="AST: "];
+"1000208" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000376"  [label="DDG: end"];
+"1000194" -> "1000376"  [label="DDG: bh->b_data + bh->b_size"];
+"1000194" -> "1000254"  [label="DDG: end"];
+"1000254" -> "1000253"  [label="AST: "];
+"1000254" -> "1000258"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000258" -> "1000254"  [label="AST: "];
+"1000259" -> "1000254"  [label="CFG: "];
+"1000261" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000376"  [label="DDG: (char *)next"];
+"1000254" -> "1000376"  [label="DDG: (char *)next >= end"];
+"1000254" -> "1000376"  [label="DDG: end"];
+"1000255" -> "1000254"  [label="DDG: next"];
+}

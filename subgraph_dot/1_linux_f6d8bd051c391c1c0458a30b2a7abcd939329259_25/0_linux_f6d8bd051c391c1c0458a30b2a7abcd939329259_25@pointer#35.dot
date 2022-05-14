@@ -1,0 +1,35 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_25@pointer" {
+"1000534" [label="(Call,inet->cmsg_flags & IP_CMSG_PKTINFO)"];
+"1000576" [label="(Call,inet->cmsg_flags & IP_CMSG_TTL)"];
+"1000533" [label="(ControlStructure,if (inet->cmsg_flags & IP_CMSG_PKTINFO))"];
+"1000598" [label="(Identifier,len)"];
+"1000544" [label="(Identifier,info)"];
+"1000698" [label="(MethodReturn,static int)"];
+"1000535" [label="(Call,inet->cmsg_flags)"];
+"1000538" [label="(Identifier,IP_CMSG_PKTINFO)"];
+"1000534" [label="(Call,inet->cmsg_flags & IP_CMSG_PKTINFO)"];
+"1000580" [label="(Identifier,IP_CMSG_TTL)"];
+"1000577" [label="(Call,inet->cmsg_flags)"];
+"1000575" [label="(ControlStructure,if (inet->cmsg_flags & IP_CMSG_TTL))"];
+"1000576" [label="(Call,inet->cmsg_flags & IP_CMSG_TTL)"];
+"1000584" [label="(Identifier,hlim)"];
+"1000578" [label="(Identifier,inet)"];
+"1000534" -> "1000533"  [label="AST: "];
+"1000534" -> "1000538"  [label="CFG: "];
+"1000535" -> "1000534"  [label="AST: "];
+"1000538" -> "1000534"  [label="AST: "];
+"1000544" -> "1000534"  [label="CFG: "];
+"1000578" -> "1000534"  [label="CFG: "];
+"1000534" -> "1000698"  [label="DDG: inet->cmsg_flags & IP_CMSG_PKTINFO"];
+"1000534" -> "1000698"  [label="DDG: IP_CMSG_PKTINFO"];
+"1000534" -> "1000576"  [label="DDG: inet->cmsg_flags"];
+"1000576" -> "1000575"  [label="AST: "];
+"1000576" -> "1000580"  [label="CFG: "];
+"1000577" -> "1000576"  [label="AST: "];
+"1000580" -> "1000576"  [label="AST: "];
+"1000584" -> "1000576"  [label="CFG: "];
+"1000598" -> "1000576"  [label="CFG: "];
+"1000576" -> "1000698"  [label="DDG: IP_CMSG_TTL"];
+"1000576" -> "1000698"  [label="DDG: inet->cmsg_flags"];
+"1000576" -> "1000698"  [label="DDG: inet->cmsg_flags & IP_CMSG_TTL"];
+}

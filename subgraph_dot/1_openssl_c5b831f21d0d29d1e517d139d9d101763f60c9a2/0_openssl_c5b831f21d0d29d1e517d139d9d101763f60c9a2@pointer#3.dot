@@ -1,0 +1,26 @@
+digraph "0_openssl_c5b831f21d0d29d1e517d139d9d101763f60c9a2@pointer" {
+"1000324" [label="(Call,s->options & SSL_OP_SINGLE_DH_USE)"];
+"1000323" [label="(Call,!(s->options & SSL_OP_SINGLE_DH_USE))"];
+"1000325" [label="(Call,s->options)"];
+"1000323" [label="(Call,!(s->options & SSL_OP_SINGLE_DH_USE))"];
+"1000333" [label="(Identifier,dh)"];
+"1000328" [label="(Identifier,SSL_OP_SINGLE_DH_USE)"];
+"1000322" [label="(ControlStructure,if (!(s->options & SSL_OP_SINGLE_DH_USE)))"];
+"1000324" [label="(Call,s->options & SSL_OP_SINGLE_DH_USE)"];
+"1000392" [label="(MethodReturn,long)"];
+"1000346" [label="(Identifier,s)"];
+"1000324" -> "1000323"  [label="AST: "];
+"1000324" -> "1000328"  [label="CFG: "];
+"1000325" -> "1000324"  [label="AST: "];
+"1000328" -> "1000324"  [label="AST: "];
+"1000323" -> "1000324"  [label="CFG: "];
+"1000324" -> "1000392"  [label="DDG: SSL_OP_SINGLE_DH_USE"];
+"1000324" -> "1000392"  [label="DDG: s->options"];
+"1000324" -> "1000323"  [label="DDG: s->options"];
+"1000324" -> "1000323"  [label="DDG: SSL_OP_SINGLE_DH_USE"];
+"1000323" -> "1000322"  [label="AST: "];
+"1000333" -> "1000323"  [label="CFG: "];
+"1000346" -> "1000323"  [label="CFG: "];
+"1000323" -> "1000392"  [label="DDG: !(s->options & SSL_OP_SINGLE_DH_USE)"];
+"1000323" -> "1000392"  [label="DDG: s->options & SSL_OP_SINGLE_DH_USE"];
+}

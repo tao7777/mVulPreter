@@ -1,0 +1,35 @@
+digraph "0_openssl_c3c7fb07dc975dc3c9de0eddb7d8fd79fc9c67c1@pointer" {
+"1000102" [label="(MethodParameterIn,const ASN1_TYPE *a)"];
+"1000112" [label="(Call,!a)"];
+"1000111" [label="(Call,!a || !b || a->type != b->type)"];
+"1000102" [label="(MethodParameterIn,const ASN1_TYPE *a)"];
+"1000111" [label="(Call,!a || !b || a->type != b->type)"];
+"1000110" [label="(ControlStructure,if (!a || !b || a->type != b->type))"];
+"1000113" [label="(Identifier,a)"];
+"1000129" [label="(Identifier,a)"];
+"1000207" [label="(MethodReturn,int)"];
+"1000116" [label="(Identifier,b)"];
+"1000126" [label="(Literal,1)"];
+"1000112" [label="(Call,!a)"];
+"1000114" [label="(Call,!b || a->type != b->type)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000207"  [label="DDG: a"];
+"1000102" -> "1000112"  [label="DDG: a"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000116" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000207"  [label="DDG: a"];
+"1000112" -> "1000111"  [label="DDG: a"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000111"  [label="AST: "];
+"1000126" -> "1000111"  [label="CFG: "];
+"1000129" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000207"  [label="DDG: !b || a->type != b->type"];
+"1000111" -> "1000207"  [label="DDG: !a"];
+"1000111" -> "1000207"  [label="DDG: !a || !b || a->type != b->type"];
+"1000114" -> "1000111"  [label="DDG: !b"];
+"1000114" -> "1000111"  [label="DDG: a->type != b->type"];
+}

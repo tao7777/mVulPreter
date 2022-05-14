@@ -1,0 +1,36 @@
+digraph "1_Chrome_dbcfe72cb16222c9f7e7907fcc5f35b27cc25331@pointer" {
+"1000118" [label="(Call,* url_db = history_service->InMemoryDatabase())"];
+"1000122" [label="(Call,url_db && (url_db->GetRowForURL(match.destination_url, url_row) != 0))"];
+"1000121" [label="(Return,return url_db && (url_db->GetRowForURL(match.destination_url, url_row) != 0);)"];
+"1000104" [label="(Block,)"];
+"1000118" [label="(Call,* url_db = history_service->InMemoryDatabase())"];
+"1000131" [label="(MethodReturn,bool)"];
+"1000120" [label="(Call,history_service->InMemoryDatabase())"];
+"1000119" [label="(Identifier,url_db)"];
+"1000123" [label="(Identifier,url_db)"];
+"1000121" [label="(Return,return url_db && (url_db->GetRowForURL(match.destination_url, url_row) != 0);)"];
+"1000124" [label="(Call,url_db->GetRowForURL(match.destination_url, url_row) != 0)"];
+"1000122" [label="(Call,url_db && (url_db->GetRowForURL(match.destination_url, url_row) != 0))"];
+"1000118" -> "1000104"  [label="AST: "];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000123" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000131"  [label="DDG: history_service->InMemoryDatabase()"];
+"1000118" -> "1000122"  [label="DDG: url_db"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000131"  [label="DDG: url_db"];
+"1000122" -> "1000131"  [label="DDG: url_db && (url_db->GetRowForURL(match.destination_url, url_row) != 0)"];
+"1000122" -> "1000131"  [label="DDG: url_db->GetRowForURL(match.destination_url, url_row) != 0"];
+"1000122" -> "1000121"  [label="DDG: url_db && (url_db->GetRowForURL(match.destination_url, url_row) != 0)"];
+"1000124" -> "1000122"  [label="DDG: url_db->GetRowForURL(match.destination_url, url_row)"];
+"1000124" -> "1000122"  [label="DDG: 0"];
+"1000121" -> "1000104"  [label="AST: "];
+"1000131" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000131"  [label="DDG: <RET>"];
+}

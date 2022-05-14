@@ -1,0 +1,29 @@
+digraph "0_linux_20e2b791796bd68816fa115f12be5320de2b8021@pointer" {
+"1000212" [label="(Call,spin_unlock_irqrestore(&mpu->input_lock, flags))"];
+"1000121" [label="(Call,spin_lock_irqsave(&mpu->input_lock, flags))"];
+"1000218" [label="(MethodReturn,void)"];
+"1000102" [label="(Block,)"];
+"1000122" [label="(Call,&mpu->input_lock)"];
+"1000213" [label="(Call,&mpu->input_lock)"];
+"1000128" [label="(Identifier,head)"];
+"1000212" [label="(Call,spin_unlock_irqrestore(&mpu->input_lock, flags))"];
+"1000121" [label="(Call,spin_lock_irqsave(&mpu->input_lock, flags))"];
+"1000217" [label="(Identifier,flags)"];
+"1000126" [label="(Identifier,flags)"];
+"1000212" -> "1000102"  [label="AST: "];
+"1000212" -> "1000217"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000217" -> "1000212"  [label="AST: "];
+"1000218" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000218"  [label="DDG: spin_unlock_irqrestore(&mpu->input_lock, flags)"];
+"1000212" -> "1000218"  [label="DDG: flags"];
+"1000212" -> "1000218"  [label="DDG: &mpu->input_lock"];
+"1000121" -> "1000212"  [label="DDG: &mpu->input_lock"];
+"1000121" -> "1000212"  [label="DDG: flags"];
+"1000121" -> "1000102"  [label="AST: "];
+"1000121" -> "1000126"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="AST: "];
+"1000128" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000218"  [label="DDG: spin_lock_irqsave(&mpu->input_lock, flags)"];
+}

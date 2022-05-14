@@ -1,0 +1,28 @@
+digraph "0_linux_d558023207e008a4476a3b7bb8706b2a2bf5d84f@API" {
+"1000336" [label="(Call,free_percpu(ctx->cpu))"];
+"1000224" [label="(Call,!ctx->cpu)"];
+"1000337" [label="(Call,ctx->cpu)"];
+"1000343" [label="(Identifier,ctx)"];
+"1000232" [label="(Identifier,ctx)"];
+"1000223" [label="(ControlStructure,if (!ctx->cpu))"];
+"1000361" [label="(MethodReturn,static struct kioctx *)"];
+"1000225" [label="(Call,ctx->cpu)"];
+"1000224" [label="(Call,!ctx->cpu)"];
+"1000336" [label="(Call,free_percpu(ctx->cpu))"];
+"1000106" [label="(Block,)"];
+"1000228" [label="(ControlStructure,goto err;)"];
+"1000336" -> "1000106"  [label="AST: "];
+"1000336" -> "1000337"  [label="CFG: "];
+"1000337" -> "1000336"  [label="AST: "];
+"1000343" -> "1000336"  [label="CFG: "];
+"1000336" -> "1000361"  [label="DDG: free_percpu(ctx->cpu)"];
+"1000336" -> "1000361"  [label="DDG: ctx->cpu"];
+"1000224" -> "1000336"  [label="DDG: ctx->cpu"];
+"1000224" -> "1000223"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000228" -> "1000224"  [label="CFG: "];
+"1000232" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000361"  [label="DDG: ctx->cpu"];
+"1000224" -> "1000361"  [label="DDG: !ctx->cpu"];
+}

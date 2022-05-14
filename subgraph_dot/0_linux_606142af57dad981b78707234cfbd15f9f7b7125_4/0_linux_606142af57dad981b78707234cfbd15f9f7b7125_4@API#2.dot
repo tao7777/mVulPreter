@@ -1,0 +1,24 @@
+digraph "0_linux_606142af57dad981b78707234cfbd15f9f7b7125_4@API" {
+"1000124" [label="(Call,mutex_lock(&d->data_mutex))"];
+"1000302" [label="(Call,mutex_unlock(&d->data_mutex))"];
+"1000302" [label="(Call,mutex_unlock(&d->data_mutex))"];
+"1000106" [label="(Block,)"];
+"1000303" [label="(Call,&d->data_mutex)"];
+"1000125" [label="(Call,&d->data_mutex)"];
+"1000309" [label="(Identifier,m88ds3103_pdata)"];
+"1000124" [label="(Call,mutex_lock(&d->data_mutex))"];
+"1000132" [label="(Identifier,state)"];
+"1000606" [label="(MethodReturn,static int)"];
+"1000124" -> "1000106"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000132" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000606"  [label="DDG: mutex_lock(&d->data_mutex)"];
+"1000124" -> "1000302"  [label="DDG: &d->data_mutex"];
+"1000302" -> "1000106"  [label="AST: "];
+"1000302" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000302"  [label="AST: "];
+"1000309" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000606"  [label="DDG: &d->data_mutex"];
+"1000302" -> "1000606"  [label="DDG: mutex_unlock(&d->data_mutex)"];
+}

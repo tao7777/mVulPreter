@@ -1,0 +1,26 @@
+digraph "0_memcached_75cc83685e103bc8ba380a57468c8f04413033f9@API" {
+"1000126" [label="(Call,assert(c->rbytes > 0))"];
+"1000127" [label="(Call,c->rbytes > 0)"];
+"1000603" [label="(MethodReturn,static int)"];
+"1000131" [label="(Literal,0)"];
+"1000126" [label="(Call,assert(c->rbytes > 0))"];
+"1000109" [label="(Block,)"];
+"1000136" [label="(Identifier,c)"];
+"1000128" [label="(Call,c->rbytes)"];
+"1000195" [label="(Call,c->rbytes < sizeof(c->binary_header))"];
+"1000475" [label="(Call,c->rbytes == 0)"];
+"1000127" [label="(Call,c->rbytes > 0)"];
+"1000126" -> "1000109"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000136" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000603"  [label="DDG: assert(c->rbytes > 0)"];
+"1000126" -> "1000603"  [label="DDG: c->rbytes > 0"];
+"1000127" -> "1000126"  [label="DDG: c->rbytes"];
+"1000127" -> "1000126"  [label="DDG: 0"];
+"1000127" -> "1000131"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000131" -> "1000127"  [label="AST: "];
+"1000127" -> "1000195"  [label="DDG: c->rbytes"];
+"1000127" -> "1000475"  [label="DDG: c->rbytes"];
+}

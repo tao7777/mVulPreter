@@ -1,0 +1,21 @@
+digraph "0_Chrome_0749ec24fae74ec32d0567eef0e5ec43c84dbcb9_7@API" {
+"1000117" [label="(Call,visitor->markHeaderNoTracing(header))"];
+"1000102" [label="(MethodParameterIn,HeapObjectHeader* header)"];
+"1000118" [label="(Identifier,header)"];
+"1000102" [label="(MethodParameterIn,HeapObjectHeader* header)"];
+"1000121" [label="(Call,header->payload())"];
+"1000117" [label="(Call,visitor->markHeaderNoTracing(header))"];
+"1000125" [label="(Call,visitor->markHeader(header, gcInfo->m_trace))"];
+"1000116" [label="(Block,)"];
+"1000130" [label="(MethodReturn,static void)"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000121" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000130"  [label="DDG: visitor->markHeaderNoTracing(header)"];
+"1000117" -> "1000130"  [label="DDG: header"];
+"1000102" -> "1000117"  [label="DDG: header"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000130"  [label="DDG: header"];
+"1000102" -> "1000125"  [label="DDG: header"];
+}

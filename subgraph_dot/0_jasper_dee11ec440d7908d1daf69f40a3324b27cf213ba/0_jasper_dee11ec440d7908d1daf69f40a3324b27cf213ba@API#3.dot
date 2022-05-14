@@ -1,0 +1,24 @@
+digraph "0_jasper_dee11ec440d7908d1daf69f40a3324b27cf213ba@API" {
+"1000362" [label="(Call,!jas_image_cmpt_domains_same(dec->image))"];
+"1000363" [label="(Call,jas_image_cmpt_domains_same(dec->image))"];
+"1000363" [label="(Call,jas_image_cmpt_domains_same(dec->image))"];
+"1000369" [label="(Literal,\"RCT requires all components have the same domain\n\")"];
+"1000364" [label="(Call,dec->image)"];
+"1000377" [label="(Identifier,tile)"];
+"1000653" [label="(Call,jas_image_writecmpt(dec->image, compno, tcomp->xstart -\n\t\t  JPC_CEILDIV(dec->xstart, cmpt->hstep), tcomp->ystart -\n\t\t  JPC_CEILDIV(dec->ystart, cmpt->vstep), jas_matrix_numcols(\n\t\t  tcomp->data), jas_matrix_numrows(tcomp->data), tcomp->data))"];
+"1000362" [label="(Call,!jas_image_cmpt_domains_same(dec->image))"];
+"1000361" [label="(ControlStructure,if (!jas_image_cmpt_domains_same(dec->image)))"];
+"1000699" [label="(MethodReturn,static int)"];
+"1000362" -> "1000361"  [label="AST: "];
+"1000362" -> "1000363"  [label="CFG: "];
+"1000363" -> "1000362"  [label="AST: "];
+"1000369" -> "1000362"  [label="CFG: "];
+"1000377" -> "1000362"  [label="CFG: "];
+"1000362" -> "1000699"  [label="DDG: !jas_image_cmpt_domains_same(dec->image)"];
+"1000362" -> "1000699"  [label="DDG: jas_image_cmpt_domains_same(dec->image)"];
+"1000363" -> "1000362"  [label="DDG: dec->image"];
+"1000363" -> "1000364"  [label="CFG: "];
+"1000364" -> "1000363"  [label="AST: "];
+"1000363" -> "1000699"  [label="DDG: dec->image"];
+"1000363" -> "1000653"  [label="DDG: dec->image"];
+}

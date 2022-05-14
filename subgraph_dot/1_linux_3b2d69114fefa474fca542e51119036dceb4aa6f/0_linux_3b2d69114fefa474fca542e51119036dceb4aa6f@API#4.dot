@@ -1,0 +1,31 @@
+digraph "0_linux_3b2d69114fefa474fca542e51119036dceb4aa6f@API" {
+"1000153" [label="(Call,acpi_ut_release_mutex(ACPI_MTX_NAMESPACE))"];
+"1000142" [label="(Call,acpi_ut_acquire_mutex(ACPI_MTX_NAMESPACE))"];
+"1000151" [label="(Call,(void)acpi_ut_release_mutex(ACPI_MTX_NAMESPACE))"];
+"1000151" [label="(Call,(void)acpi_ut_release_mutex(ACPI_MTX_NAMESPACE))"];
+"1000157" [label="(Identifier,ACPI_DB_INFO)"];
+"1000142" [label="(Call,acpi_ut_acquire_mutex(ACPI_MTX_NAMESPACE))"];
+"1000143" [label="(Identifier,ACPI_MTX_NAMESPACE)"];
+"1000160" [label="(MethodReturn,void)"];
+"1000140" [label="(Call,status = acpi_ut_acquire_mutex(ACPI_MTX_NAMESPACE))"];
+"1000106" [label="(Block,)"];
+"1000153" [label="(Call,acpi_ut_release_mutex(ACPI_MTX_NAMESPACE))"];
+"1000154" [label="(Identifier,ACPI_MTX_NAMESPACE)"];
+"1000153" -> "1000151"  [label="AST: "];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000151" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000160"  [label="DDG: ACPI_MTX_NAMESPACE"];
+"1000153" -> "1000151"  [label="DDG: ACPI_MTX_NAMESPACE"];
+"1000142" -> "1000153"  [label="DDG: ACPI_MTX_NAMESPACE"];
+"1000142" -> "1000140"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000140" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000140"  [label="DDG: ACPI_MTX_NAMESPACE"];
+"1000151" -> "1000106"  [label="AST: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000157" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000160"  [label="DDG: (void)acpi_ut_release_mutex(ACPI_MTX_NAMESPACE)"];
+"1000151" -> "1000160"  [label="DDG: acpi_ut_release_mutex(ACPI_MTX_NAMESPACE)"];
+}

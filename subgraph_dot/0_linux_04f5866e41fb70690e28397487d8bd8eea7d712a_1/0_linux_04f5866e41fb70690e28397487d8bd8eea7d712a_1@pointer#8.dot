@@ -1,0 +1,33 @@
+digraph "0_linux_04f5866e41fb70690e28397487d8bd8eea7d712a_1@pointer" {
+"1000277" [label="(Call,vma->vm_flags &= ~(VM_UFFD_WP | VM_UFFD_MISSING))"];
+"1000281" [label="(Call,~(VM_UFFD_WP | VM_UFFD_MISSING))"];
+"1000282" [label="(Call,VM_UFFD_WP | VM_UFFD_MISSING)"];
+"1000281" [label="(Call,~(VM_UFFD_WP | VM_UFFD_MISSING))"];
+"1000283" [label="(Identifier,VM_UFFD_WP)"];
+"1000300" [label="(MethodReturn,static void)"];
+"1000259" [label="(Identifier,vma)"];
+"1000278" [label="(Call,vma->vm_flags)"];
+"1000284" [label="(Identifier,VM_UFFD_MISSING)"];
+"1000277" [label="(Call,vma->vm_flags &= ~(VM_UFFD_WP | VM_UFFD_MISSING))"];
+"1000282" [label="(Call,VM_UFFD_WP | VM_UFFD_MISSING)"];
+"1000271" [label="(Block,)"];
+"1000277" -> "1000271"  [label="AST: "];
+"1000277" -> "1000281"  [label="CFG: "];
+"1000278" -> "1000277"  [label="AST: "];
+"1000281" -> "1000277"  [label="AST: "];
+"1000259" -> "1000277"  [label="CFG: "];
+"1000277" -> "1000300"  [label="DDG: vma->vm_flags"];
+"1000277" -> "1000300"  [label="DDG: ~(VM_UFFD_WP | VM_UFFD_MISSING)"];
+"1000277" -> "1000300"  [label="DDG: vma->vm_flags &= ~(VM_UFFD_WP | VM_UFFD_MISSING)"];
+"1000281" -> "1000277"  [label="DDG: VM_UFFD_WP | VM_UFFD_MISSING"];
+"1000281" -> "1000282"  [label="CFG: "];
+"1000282" -> "1000281"  [label="AST: "];
+"1000281" -> "1000300"  [label="DDG: VM_UFFD_WP | VM_UFFD_MISSING"];
+"1000282" -> "1000281"  [label="DDG: VM_UFFD_WP"];
+"1000282" -> "1000281"  [label="DDG: VM_UFFD_MISSING"];
+"1000282" -> "1000284"  [label="CFG: "];
+"1000283" -> "1000282"  [label="AST: "];
+"1000284" -> "1000282"  [label="AST: "];
+"1000282" -> "1000300"  [label="DDG: VM_UFFD_MISSING"];
+"1000282" -> "1000300"  [label="DDG: VM_UFFD_WP"];
+}

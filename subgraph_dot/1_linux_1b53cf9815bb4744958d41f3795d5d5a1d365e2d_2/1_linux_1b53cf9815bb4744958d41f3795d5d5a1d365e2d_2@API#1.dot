@@ -1,0 +1,24 @@
+digraph "1_linux_1b53cf9815bb4744958d41f3795d5d5a1d365e2d_2@API" {
+"1000135" [label="(Call,fscrypt_get_crypt_info(inode))"];
+"1000101" [label="(MethodParameterIn,struct inode *inode)"];
+"1000134" [label="(Return,return fscrypt_get_crypt_info(inode);)"];
+"1000135" [label="(Call,fscrypt_get_crypt_info(inode))"];
+"1000109" [label="(ControlStructure,if (!ci ||\n\t\t(ci->ci_keyring_key &&\n\t\t (ci->ci_keyring_key->flags & ((1 << KEY_FLAG_INVALIDATED) |\n\t\t\t\t\t       (1 << KEY_FLAG_REVOKED) |\n\t\t\t\t\t       (1 << KEY_FLAG_DEAD))))))"];
+"1000136" [label="(Identifier,inode)"];
+"1000134" [label="(Return,return fscrypt_get_crypt_info(inode);)"];
+"1000139" [label="(MethodReturn,int)"];
+"1000101" [label="(MethodParameterIn,struct inode *inode)"];
+"1000135" -> "1000134"  [label="AST: "];
+"1000135" -> "1000136"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000139"  [label="DDG: inode"];
+"1000135" -> "1000139"  [label="DDG: fscrypt_get_crypt_info(inode)"];
+"1000135" -> "1000134"  [label="DDG: fscrypt_get_crypt_info(inode)"];
+"1000101" -> "1000135"  [label="DDG: inode"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000139"  [label="DDG: inode"];
+"1000134" -> "1000109"  [label="AST: "];
+"1000139" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000139"  [label="DDG: <RET>"];
+}

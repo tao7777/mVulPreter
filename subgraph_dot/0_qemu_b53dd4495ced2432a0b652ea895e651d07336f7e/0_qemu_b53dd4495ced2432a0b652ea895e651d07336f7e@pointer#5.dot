@@ -1,0 +1,31 @@
+digraph "0_qemu_b53dd4495ced2432a0b652ea895e651d07336f7e@pointer" {
+"1000217" [label="(Call,dev->msix_pba\n         && dev->msix_entry_used)"];
+"1000213" [label="(Call,dev->msix_table && dev->msix_pba\n         && dev->msix_entry_used)"];
+"1000214" [label="(Call,dev->msix_table)"];
+"1000218" [label="(Call,dev->msix_pba)"];
+"1000226" [label="(Identifier,dev)"];
+"1000217" [label="(Call,dev->msix_pba\n         && dev->msix_entry_used)"];
+"1000212" [label="(ControlStructure,if (dev->msix_table && dev->msix_pba\n         && dev->msix_entry_used))"];
+"1000238" [label="(Identifier,xhci)"];
+"1000213" [label="(Call,dev->msix_table && dev->msix_pba\n         && dev->msix_entry_used)"];
+"1000221" [label="(Call,dev->msix_entry_used)"];
+"1000245" [label="(MethodReturn,static void)"];
+"1000217" -> "1000213"  [label="AST: "];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000217" -> "1000221"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000221" -> "1000217"  [label="AST: "];
+"1000213" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000245"  [label="DDG: dev->msix_entry_used"];
+"1000217" -> "1000245"  [label="DDG: dev->msix_pba"];
+"1000217" -> "1000213"  [label="DDG: dev->msix_pba"];
+"1000217" -> "1000213"  [label="DDG: dev->msix_entry_used"];
+"1000213" -> "1000212"  [label="AST: "];
+"1000213" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000226" -> "1000213"  [label="CFG: "];
+"1000238" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000245"  [label="DDG: dev->msix_pba\n         && dev->msix_entry_used"];
+"1000213" -> "1000245"  [label="DDG: dev->msix_table"];
+"1000213" -> "1000245"  [label="DDG: dev->msix_table && dev->msix_pba\n         && dev->msix_entry_used"];
+}

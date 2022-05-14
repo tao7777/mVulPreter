@@ -1,0 +1,27 @@
+digraph "0_libplist_3a55ddd3c4c11ce75a86afbefd085d8d397ff957@array" {
+"1000208" [label="(Call,outbuf[p] = 0)"];
+"1000217" [label="(Return,return outbuf;)"];
+"1000217" [label="(Return,return outbuf;)"];
+"1000218" [label="(Identifier,outbuf)"];
+"1000131" [label="(Call,*outbuf = (unsigned char*)malloc((len/4)*3+3))"];
+"1000219" [label="(MethodReturn,unsigned char *)"];
+"1000212" [label="(Literal,0)"];
+"1000103" [label="(Block,)"];
+"1000209" [label="(Call,outbuf[p])"];
+"1000215" [label="(Identifier,size)"];
+"1000208" [label="(Call,outbuf[p] = 0)"];
+"1000208" -> "1000103"  [label="AST: "];
+"1000208" -> "1000212"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000212" -> "1000208"  [label="AST: "];
+"1000215" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000219"  [label="DDG: outbuf[p]"];
+"1000208" -> "1000217"  [label="DDG: outbuf[p]"];
+"1000217" -> "1000103"  [label="AST: "];
+"1000217" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000219" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000219"  [label="DDG: <RET>"];
+"1000218" -> "1000217"  [label="DDG: outbuf"];
+"1000131" -> "1000217"  [label="DDG: outbuf"];
+}

@@ -1,0 +1,32 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c_0@pointer" {
+"1000511" [label="(Call,s->req->flags & CF_WROTE_DATA)"];
+"1000510" [label="(Call,!(s->req->flags & CF_WROTE_DATA))"];
+"1000509" [label="(Call,unlikely(!(s->req->flags & CF_WROTE_DATA)))"];
+"1000517" [label="(Identifier,CF_WROTE_DATA)"];
+"1000511" [label="(Call,s->req->flags & CF_WROTE_DATA)"];
+"1000512" [label="(Call,s->req->flags)"];
+"1000509" [label="(Call,unlikely(!(s->req->flags & CF_WROTE_DATA)))"];
+"1000510" [label="(Call,!(s->req->flags & CF_WROTE_DATA))"];
+"1000508" [label="(ControlStructure,if (unlikely(!(s->req->flags & CF_WROTE_DATA))))"];
+"1000527" [label="(Identifier,msg)"];
+"1001006" [label="(MethodReturn,int)"];
+"1000520" [label="(Identifier,msg)"];
+"1000511" -> "1000510"  [label="AST: "];
+"1000511" -> "1000517"  [label="CFG: "];
+"1000512" -> "1000511"  [label="AST: "];
+"1000517" -> "1000511"  [label="AST: "];
+"1000510" -> "1000511"  [label="CFG: "];
+"1000511" -> "1001006"  [label="DDG: s->req->flags"];
+"1000511" -> "1001006"  [label="DDG: CF_WROTE_DATA"];
+"1000511" -> "1000510"  [label="DDG: s->req->flags"];
+"1000511" -> "1000510"  [label="DDG: CF_WROTE_DATA"];
+"1000510" -> "1000509"  [label="AST: "];
+"1000509" -> "1000510"  [label="CFG: "];
+"1000510" -> "1001006"  [label="DDG: s->req->flags & CF_WROTE_DATA"];
+"1000510" -> "1000509"  [label="DDG: s->req->flags & CF_WROTE_DATA"];
+"1000509" -> "1000508"  [label="AST: "];
+"1000520" -> "1000509"  [label="CFG: "];
+"1000527" -> "1000509"  [label="CFG: "];
+"1000509" -> "1001006"  [label="DDG: unlikely(!(s->req->flags & CF_WROTE_DATA))"];
+"1000509" -> "1001006"  [label="DDG: !(s->req->flags & CF_WROTE_DATA)"];
+}

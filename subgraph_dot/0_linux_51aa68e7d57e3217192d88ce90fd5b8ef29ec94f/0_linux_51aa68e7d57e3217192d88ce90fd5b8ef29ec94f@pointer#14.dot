@@ -1,0 +1,32 @@
+digraph "0_linux_51aa68e7d57e3217192d88ce90fd5b8ef29ec94f@pointer" {
+"1000861" [label="(Call,page_to_phys(vmx->pml_pg))"];
+"1000855" [label="(Call,ASSERT(vmx->pml_pg))"];
+"1000859" [label="(Call,vmcs_write64(PML_ADDRESS, page_to_phys(vmx->pml_pg)))"];
+"1000855" [label="(Call,ASSERT(vmx->pml_pg))"];
+"1000856" [label="(Call,vmx->pml_pg)"];
+"1001021" [label="(MethodReturn,static int)"];
+"1000860" [label="(Identifier,PML_ADDRESS)"];
+"1000859" [label="(Call,vmcs_write64(PML_ADDRESS, page_to_phys(vmx->pml_pg)))"];
+"1000861" [label="(Call,page_to_phys(vmx->pml_pg))"];
+"1000866" [label="(Identifier,GUEST_PML_INDEX)"];
+"1000862" [label="(Call,vmx->pml_pg)"];
+"1000854" [label="(Block,)"];
+"1000861" -> "1000859"  [label="AST: "];
+"1000861" -> "1000862"  [label="CFG: "];
+"1000862" -> "1000861"  [label="AST: "];
+"1000859" -> "1000861"  [label="CFG: "];
+"1000861" -> "1001021"  [label="DDG: vmx->pml_pg"];
+"1000861" -> "1000859"  [label="DDG: vmx->pml_pg"];
+"1000855" -> "1000861"  [label="DDG: vmx->pml_pg"];
+"1000855" -> "1000854"  [label="AST: "];
+"1000855" -> "1000856"  [label="CFG: "];
+"1000856" -> "1000855"  [label="AST: "];
+"1000860" -> "1000855"  [label="CFG: "];
+"1000855" -> "1001021"  [label="DDG: ASSERT(vmx->pml_pg)"];
+"1000859" -> "1000854"  [label="AST: "];
+"1000860" -> "1000859"  [label="AST: "];
+"1000866" -> "1000859"  [label="CFG: "];
+"1000859" -> "1001021"  [label="DDG: vmcs_write64(PML_ADDRESS, page_to_phys(vmx->pml_pg))"];
+"1000859" -> "1001021"  [label="DDG: PML_ADDRESS"];
+"1000859" -> "1001021"  [label="DDG: page_to_phys(vmx->pml_pg)"];
+}

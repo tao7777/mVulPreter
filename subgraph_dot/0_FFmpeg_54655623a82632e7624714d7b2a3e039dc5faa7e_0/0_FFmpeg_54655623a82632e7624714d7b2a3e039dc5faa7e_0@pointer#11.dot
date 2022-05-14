@@ -1,0 +1,29 @@
+digraph "0_FFmpeg_54655623a82632e7624714d7b2a3e039dc5faa7e_0@pointer" {
+"1001090" [label="(Call,sh->nb_refs[L0] = sh->nb_refs[L1] = 0)"];
+"1001096" [label="(Call,sh->nb_refs[L1] = 0)"];
+"1001090" [label="(Call,sh->nb_refs[L0] = sh->nb_refs[L1] = 0)"];
+"1001096" [label="(Call,sh->nb_refs[L1] = 0)"];
+"1001188" [label="(Call,sh->nb_refs[L1] > HEVC_MAX_REFS)"];
+"1002212" [label="(MethodReturn,static int)"];
+"1001324" [label="(Call,i < sh->nb_refs[L1])"];
+"1001196" [label="(Call,av_log(s->avctx, AV_LOG_ERROR, \"Too many refs: %d/%d.\n\",\n                       sh->nb_refs[L0], sh->nb_refs[L1]))"];
+"1001097" [label="(Call,sh->nb_refs[L1])"];
+"1001107" [label="(Identifier,sh)"];
+"1000589" [label="(Block,)"];
+"1001102" [label="(Literal,0)"];
+"1001091" [label="(Call,sh->nb_refs[L0])"];
+"1001090" -> "1000589"  [label="AST: "];
+"1001090" -> "1001096"  [label="CFG: "];
+"1001091" -> "1001090"  [label="AST: "];
+"1001096" -> "1001090"  [label="AST: "];
+"1001107" -> "1001090"  [label="CFG: "];
+"1001090" -> "1002212"  [label="DDG: sh->nb_refs[L0]"];
+"1001096" -> "1001090"  [label="DDG: sh->nb_refs[L1]"];
+"1001096" -> "1001102"  [label="CFG: "];
+"1001097" -> "1001096"  [label="AST: "];
+"1001102" -> "1001096"  [label="AST: "];
+"1001096" -> "1002212"  [label="DDG: sh->nb_refs[L1]"];
+"1001096" -> "1001188"  [label="DDG: sh->nb_refs[L1]"];
+"1001096" -> "1001196"  [label="DDG: sh->nb_refs[L1]"];
+"1001096" -> "1001324"  [label="DDG: sh->nb_refs[L1]"];
+}

@@ -1,0 +1,27 @@
+digraph "0_linux_606142af57dad981b78707234cfbd15f9f7b7125_1@API" {
+"1000121" [label="(Call,mutex_lock_interruptible(&d->i2c_mutex) < 0)"];
+"1000122" [label="(Call,mutex_lock_interruptible(&d->i2c_mutex))"];
+"1000127" [label="(Literal,0)"];
+"1000130" [label="(Identifier,EAGAIN)"];
+"1000377" [label="(MethodReturn,static int)"];
+"1000120" [label="(ControlStructure,if (mutex_lock_interruptible(&d->i2c_mutex) < 0))"];
+"1000132" [label="(Identifier,num)"];
+"1000370" [label="(Call,mutex_unlock(&d->i2c_mutex))"];
+"1000121" [label="(Call,mutex_lock_interruptible(&d->i2c_mutex) < 0)"];
+"1000123" [label="(Call,&d->i2c_mutex)"];
+"1000122" [label="(Call,mutex_lock_interruptible(&d->i2c_mutex))"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000127"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000127" -> "1000121"  [label="AST: "];
+"1000130" -> "1000121"  [label="CFG: "];
+"1000132" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000377"  [label="DDG: mutex_lock_interruptible(&d->i2c_mutex) < 0"];
+"1000121" -> "1000377"  [label="DDG: mutex_lock_interruptible(&d->i2c_mutex)"];
+"1000122" -> "1000121"  [label="DDG: &d->i2c_mutex"];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000127" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000377"  [label="DDG: &d->i2c_mutex"];
+"1000122" -> "1000370"  [label="DDG: &d->i2c_mutex"];
+}

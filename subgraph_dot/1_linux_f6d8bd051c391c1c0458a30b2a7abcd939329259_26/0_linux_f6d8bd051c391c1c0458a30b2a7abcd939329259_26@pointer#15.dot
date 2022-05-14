@@ -1,0 +1,34 @@
+digraph "0_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_26@pointer" {
+"1000299" [label="(Call,sk->sk_family == PF_INET)"];
+"1000298" [label="(Call,sk->sk_family == PF_INET ||\n\t\t\t    (!((1 << sk->sk_state) &\n \t\t\t       (TCPF_LISTEN | TCPF_CLOSE)) &&\n \t\t\t     inet->inet_daddr != LOOPBACK4_IPV6))"];
+"1000297" [label="(ControlStructure,if (sk->sk_family == PF_INET ||\n\t\t\t    (!((1 << sk->sk_state) &\n \t\t\t       (TCPF_LISTEN | TCPF_CLOSE)) &&\n \t\t\t     inet->inet_daddr != LOOPBACK4_IPV6)))"];
+"1000298" [label="(Call,sk->sk_family == PF_INET ||\n\t\t\t    (!((1 << sk->sk_state) &\n \t\t\t       (TCPF_LISTEN | TCPF_CLOSE)) &&\n \t\t\t     inet->inet_daddr != LOOPBACK4_IPV6))"];
+"1001720" [label="(MethodReturn,static int)"];
+"1000349" [label="(Identifier,opt)"];
+"1000304" [label="(Call,!((1 << sk->sk_state) &\n \t\t\t       (TCPF_LISTEN | TCPF_CLOSE)) &&\n \t\t\t     inet->inet_daddr != LOOPBACK4_IPV6)"];
+"1000303" [label="(Identifier,PF_INET)"];
+"1000299" [label="(Call,sk->sk_family == PF_INET)"];
+"1000323" [label="(Identifier,inet)"];
+"1000308" [label="(Literal,1)"];
+"1000300" [label="(Call,sk->sk_family)"];
+"1000299" -> "1000298"  [label="AST: "];
+"1000299" -> "1000303"  [label="CFG: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000303" -> "1000299"  [label="AST: "];
+"1000308" -> "1000299"  [label="CFG: "];
+"1000298" -> "1000299"  [label="CFG: "];
+"1000299" -> "1001720"  [label="DDG: PF_INET"];
+"1000299" -> "1001720"  [label="DDG: sk->sk_family"];
+"1000299" -> "1000298"  [label="DDG: sk->sk_family"];
+"1000299" -> "1000298"  [label="DDG: PF_INET"];
+"1000298" -> "1000297"  [label="AST: "];
+"1000298" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000298"  [label="AST: "];
+"1000323" -> "1000298"  [label="CFG: "];
+"1000349" -> "1000298"  [label="CFG: "];
+"1000298" -> "1001720"  [label="DDG: sk->sk_family == PF_INET ||\n\t\t\t    (!((1 << sk->sk_state) &\n \t\t\t       (TCPF_LISTEN | TCPF_CLOSE)) &&\n \t\t\t     inet->inet_daddr != LOOPBACK4_IPV6)"];
+"1000298" -> "1001720"  [label="DDG: !((1 << sk->sk_state) &\n \t\t\t       (TCPF_LISTEN | TCPF_CLOSE)) &&\n \t\t\t     inet->inet_daddr != LOOPBACK4_IPV6"];
+"1000298" -> "1001720"  [label="DDG: sk->sk_family == PF_INET"];
+"1000304" -> "1000298"  [label="DDG: !((1 << sk->sk_state) &\n \t\t\t       (TCPF_LISTEN | TCPF_CLOSE))"];
+"1000304" -> "1000298"  [label="DDG: inet->inet_daddr != LOOPBACK4_IPV6"];
+}

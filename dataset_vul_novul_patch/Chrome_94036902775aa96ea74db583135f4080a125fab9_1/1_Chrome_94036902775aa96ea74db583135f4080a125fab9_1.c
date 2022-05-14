@@ -1,0 +1,2 @@
+ AppModalDialog::~AppModalDialog() {
+ }

@@ -1,0 +1,23 @@
+digraph "0_libav_5a396bb3a66a61a68b80f2369d0249729bf85e04@pointer" {
+"1000247" [label="(Call,c->audio_pkt[1].size = 0)"];
+"1000239" [label="(Call,c->audio_pkt[0].size = c->audio_pkt[1].size = 0)"];
+"1000247" [label="(Call,c->audio_pkt[1].size = 0)"];
+"1000240" [label="(Call,c->audio_pkt[0].size)"];
+"1000255" [label="(Literal,0)"];
+"1000238" [label="(Block,)"];
+"1000261" [label="(MethodReturn,int)"];
+"1000258" [label="(Identifier,c)"];
+"1000248" [label="(Call,c->audio_pkt[1].size)"];
+"1000239" [label="(Call,c->audio_pkt[0].size = c->audio_pkt[1].size = 0)"];
+"1000247" -> "1000239"  [label="AST: "];
+"1000247" -> "1000255"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000255" -> "1000247"  [label="AST: "];
+"1000239" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000261"  [label="DDG: c->audio_pkt[1].size"];
+"1000247" -> "1000239"  [label="DDG: c->audio_pkt[1].size"];
+"1000239" -> "1000238"  [label="AST: "];
+"1000240" -> "1000239"  [label="AST: "];
+"1000258" -> "1000239"  [label="CFG: "];
+"1000239" -> "1000261"  [label="DDG: c->audio_pkt[0].size"];
+}

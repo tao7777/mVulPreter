@@ -1,0 +1,32 @@
+digraph "0_linux_8b74d439e1697110c5e5c600643e823eb1dd0762_0@pointer" {
+"1000122" [label="(Call,sock_hold(sk))"];
+"1000103" [label="(MethodParameterIn,struct sock *sk)"];
+"1000124" [label="(Call,skb->sk = sk)"];
+"1000126" [label="(Identifier,skb)"];
+"1000137" [label="(MethodReturn,static void)"];
+"1000122" [label="(Call,sock_hold(sk))"];
+"1000123" [label="(Identifier,sk)"];
+"1000124" [label="(Call,skb->sk = sk)"];
+"1000128" [label="(Identifier,sk)"];
+"1000125" [label="(Call,skb->sk)"];
+"1000103" [label="(MethodParameterIn,struct sock *sk)"];
+"1000104" [label="(Block,)"];
+"1000131" [label="(Identifier,skb)"];
+"1000122" -> "1000104"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000137"  [label="DDG: sock_hold(sk)"];
+"1000103" -> "1000122"  [label="DDG: sk"];
+"1000122" -> "1000124"  [label="DDG: sk"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000137"  [label="DDG: sk"];
+"1000103" -> "1000124"  [label="DDG: sk"];
+"1000124" -> "1000104"  [label="AST: "];
+"1000124" -> "1000128"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000128" -> "1000124"  [label="AST: "];
+"1000131" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000137"  [label="DDG: skb->sk"];
+"1000124" -> "1000137"  [label="DDG: sk"];
+}

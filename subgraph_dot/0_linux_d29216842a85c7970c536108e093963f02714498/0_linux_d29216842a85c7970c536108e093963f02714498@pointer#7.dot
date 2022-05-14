@@ -1,0 +1,25 @@
+digraph "0_linux_d29216842a85c7970c536108e093963f02714498@pointer" {
+"1000158" [label="(Call,new_ns->seq = atomic64_add_return(1, &mnt_ns_seq))"];
+"1000162" [label="(Call,atomic64_add_return(1, &mnt_ns_seq))"];
+"1000159" [label="(Call,new_ns->seq)"];
+"1000169" [label="(Identifier,new_ns)"];
+"1000164" [label="(Call,&mnt_ns_seq)"];
+"1000162" [label="(Call,atomic64_add_return(1, &mnt_ns_seq))"];
+"1000102" [label="(Block,)"];
+"1000215" [label="(MethodReturn,static struct mnt_namespace *)"];
+"1000158" [label="(Call,new_ns->seq = atomic64_add_return(1, &mnt_ns_seq))"];
+"1000163" [label="(Literal,1)"];
+"1000158" -> "1000102"  [label="AST: "];
+"1000158" -> "1000162"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="AST: "];
+"1000169" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000215"  [label="DDG: new_ns->seq"];
+"1000158" -> "1000215"  [label="DDG: atomic64_add_return(1, &mnt_ns_seq)"];
+"1000162" -> "1000158"  [label="DDG: 1"];
+"1000162" -> "1000158"  [label="DDG: &mnt_ns_seq"];
+"1000162" -> "1000164"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000164" -> "1000162"  [label="AST: "];
+"1000162" -> "1000215"  [label="DDG: &mnt_ns_seq"];
+}

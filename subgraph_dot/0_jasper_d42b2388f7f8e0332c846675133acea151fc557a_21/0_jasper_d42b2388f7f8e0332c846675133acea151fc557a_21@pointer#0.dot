@@ -1,0 +1,32 @@
+digraph "0_jasper_d42b2388f7f8e0332c846675133acea151fc557a_21@pointer" {
+"1000289" [label="(Return,return matrix;)"];
+"1000290" [label="(Identifier,matrix)"];
+"1000122" [label="(Call,matrix = jas_malloc(sizeof(jas_matrix_t)))"];
+"1000121" [label="(Call,!(matrix = jas_malloc(sizeof(jas_matrix_t))))"];
+"1000124" [label="(Call,jas_malloc(sizeof(jas_matrix_t)))"];
+"1000289" [label="(Return,return matrix;)"];
+"1000103" [label="(Block,)"];
+"1000122" [label="(Call,matrix = jas_malloc(sizeof(jas_matrix_t)))"];
+"1000295" [label="(Call,jas_matrix_destroy(matrix))"];
+"1000290" [label="(Identifier,matrix)"];
+"1000123" [label="(Identifier,matrix)"];
+"1000299" [label="(MethodReturn,jas_matrix_t *)"];
+"1000282" [label="(Call,matrix->yend_ = matrix->numrows_)"];
+"1000289" -> "1000103"  [label="AST: "];
+"1000289" -> "1000290"  [label="CFG: "];
+"1000290" -> "1000289"  [label="AST: "];
+"1000299" -> "1000289"  [label="CFG: "];
+"1000289" -> "1000299"  [label="DDG: <RET>"];
+"1000290" -> "1000289"  [label="DDG: matrix"];
+"1000122" -> "1000289"  [label="DDG: matrix"];
+"1000290" -> "1000282"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000299"  [label="DDG: matrix"];
+"1000122" -> "1000299"  [label="DDG: jas_malloc(sizeof(jas_matrix_t))"];
+"1000122" -> "1000121"  [label="DDG: matrix"];
+"1000122" -> "1000295"  [label="DDG: matrix"];
+}

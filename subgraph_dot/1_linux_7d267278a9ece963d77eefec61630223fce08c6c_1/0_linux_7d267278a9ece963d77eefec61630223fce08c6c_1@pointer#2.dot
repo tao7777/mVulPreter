@@ -1,0 +1,35 @@
+digraph "0_linux_7d267278a9ece963d77eefec61630223fce08c6c_1@pointer" {
+"1000162" [label="(Call,sk->sk_shutdown == SHUTDOWN_MASK)"];
+"1000149" [label="(Call,sk->sk_shutdown & RCV_SHUTDOWN)"];
+"1000166" [label="(Identifier,SHUTDOWN_MASK)"];
+"1000153" [label="(Identifier,RCV_SHUTDOWN)"];
+"1000271" [label="(MethodReturn,static unsigned int)"];
+"1000149" [label="(Call,sk->sk_shutdown & RCV_SHUTDOWN)"];
+"1000148" [label="(ControlStructure,if (sk->sk_shutdown & RCV_SHUTDOWN))"];
+"1000150" [label="(Call,sk->sk_shutdown)"];
+"1000163" [label="(Call,sk->sk_shutdown)"];
+"1000164" [label="(Identifier,sk)"];
+"1000168" [label="(Identifier,mask)"];
+"1000161" [label="(ControlStructure,if (sk->sk_shutdown == SHUTDOWN_MASK))"];
+"1000175" [label="(Identifier,sk)"];
+"1000162" [label="(Call,sk->sk_shutdown == SHUTDOWN_MASK)"];
+"1000155" [label="(Identifier,mask)"];
+"1000162" -> "1000161"  [label="AST: "];
+"1000162" -> "1000166"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="AST: "];
+"1000168" -> "1000162"  [label="CFG: "];
+"1000175" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000271"  [label="DDG: SHUTDOWN_MASK"];
+"1000162" -> "1000271"  [label="DDG: sk->sk_shutdown"];
+"1000162" -> "1000271"  [label="DDG: sk->sk_shutdown == SHUTDOWN_MASK"];
+"1000149" -> "1000162"  [label="DDG: sk->sk_shutdown"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000153"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000153" -> "1000149"  [label="AST: "];
+"1000155" -> "1000149"  [label="CFG: "];
+"1000164" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000271"  [label="DDG: sk->sk_shutdown & RCV_SHUTDOWN"];
+"1000149" -> "1000271"  [label="DDG: RCV_SHUTDOWN"];
+}

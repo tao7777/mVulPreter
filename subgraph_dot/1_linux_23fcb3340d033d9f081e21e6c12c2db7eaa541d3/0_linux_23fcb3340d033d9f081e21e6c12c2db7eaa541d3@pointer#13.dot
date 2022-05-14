@@ -1,0 +1,25 @@
+digraph "0_linux_23fcb3340d033d9f081e21e6c12c2db7eaa541d3@pointer" {
+"1000128" [label="(Call,dip->di_magic != cpu_to_be16(XFS_DINODE_MAGIC))"];
+"1000132" [label="(Call,cpu_to_be16(XFS_DINODE_MAGIC))"];
+"1000127" [label="(ControlStructure,if (dip->di_magic != cpu_to_be16(XFS_DINODE_MAGIC)))"];
+"1000139" [label="(Identifier,dip)"];
+"1000128" [label="(Call,dip->di_magic != cpu_to_be16(XFS_DINODE_MAGIC))"];
+"1000133" [label="(Identifier,XFS_DINODE_MAGIC)"];
+"1000467" [label="(MethodReturn,RET)"];
+"1000132" [label="(Call,cpu_to_be16(XFS_DINODE_MAGIC))"];
+"1000135" [label="(Identifier,__this_address)"];
+"1000129" [label="(Call,dip->di_magic)"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000132"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000132" -> "1000128"  [label="AST: "];
+"1000135" -> "1000128"  [label="CFG: "];
+"1000139" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000467"  [label="DDG: cpu_to_be16(XFS_DINODE_MAGIC)"];
+"1000128" -> "1000467"  [label="DDG: dip->di_magic"];
+"1000128" -> "1000467"  [label="DDG: dip->di_magic != cpu_to_be16(XFS_DINODE_MAGIC)"];
+"1000132" -> "1000128"  [label="DDG: XFS_DINODE_MAGIC"];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000132" -> "1000467"  [label="DDG: XFS_DINODE_MAGIC"];
+}

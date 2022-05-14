@@ -1,0 +1,37 @@
+digraph "0_linux_3a8b0677fc6180a467e26cc32ce6b0c09a32f9bb@API" {
+"1000137" [label="(Call,idx = srcu_read_lock(&kvm->irq_srcu))"];
+"1000139" [label="(Call,srcu_read_lock(&kvm->irq_srcu))"];
+"1000270" [label="(Call,srcu_read_unlock(&kvm->irq_srcu, idx))"];
+"1000270" [label="(Call,srcu_read_unlock(&kvm->irq_srcu, idx))"];
+"1000145" [label="(Identifier,irq_rt)"];
+"1000146" [label="(Call,srcu_dereference(kvm->irq_routing, &kvm->irq_srcu))"];
+"1000278" [label="(MethodReturn,static int)"];
+"1000277" [label="(Identifier,ret)"];
+"1000138" [label="(Identifier,idx)"];
+"1000271" [label="(Call,&kvm->irq_srcu)"];
+"1000140" [label="(Call,&kvm->irq_srcu)"];
+"1000108" [label="(Block,)"];
+"1000275" [label="(Identifier,idx)"];
+"1000139" [label="(Call,srcu_read_lock(&kvm->irq_srcu))"];
+"1000137" [label="(Call,idx = srcu_read_lock(&kvm->irq_srcu))"];
+"1000137" -> "1000108"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000139" -> "1000137"  [label="AST: "];
+"1000145" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000278"  [label="DDG: srcu_read_lock(&kvm->irq_srcu)"];
+"1000139" -> "1000137"  [label="DDG: &kvm->irq_srcu"];
+"1000137" -> "1000270"  [label="DDG: idx"];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000139" -> "1000146"  [label="DDG: &kvm->irq_srcu"];
+"1000270" -> "1000108"  [label="AST: "];
+"1000270" -> "1000275"  [label="CFG: "];
+"1000271" -> "1000270"  [label="AST: "];
+"1000275" -> "1000270"  [label="AST: "];
+"1000277" -> "1000270"  [label="CFG: "];
+"1000270" -> "1000278"  [label="DDG: idx"];
+"1000270" -> "1000278"  [label="DDG: srcu_read_unlock(&kvm->irq_srcu, idx)"];
+"1000270" -> "1000278"  [label="DDG: &kvm->irq_srcu"];
+"1000146" -> "1000270"  [label="DDG: &kvm->irq_srcu"];
+}

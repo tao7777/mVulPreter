@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1003003" [label="(Call,s->cpuid_ext_features & CPUID_EXT_CX16)"];
+"1003002" [label="(Call,!(s->cpuid_ext_features & CPUID_EXT_CX16))"];
+"1003002" [label="(Call,!(s->cpuid_ext_features & CPUID_EXT_CX16))"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1003003" [label="(Call,s->cpuid_ext_features & CPUID_EXT_CX16)"];
+"1003001" [label="(ControlStructure,if (!(s->cpuid_ext_features & CPUID_EXT_CX16)))"];
+"1003007" [label="(Identifier,CPUID_EXT_CX16)"];
+"1003008" [label="(ControlStructure,goto illegal_op;)"];
+"1003004" [label="(Call,s->cpuid_ext_features)"];
+"1003010" [label="(Identifier,env)"];
+"1003003" -> "1003002"  [label="AST: "];
+"1003003" -> "1003007"  [label="CFG: "];
+"1003004" -> "1003003"  [label="AST: "];
+"1003007" -> "1003003"  [label="AST: "];
+"1003002" -> "1003003"  [label="CFG: "];
+"1003003" -> "1011840"  [label="DDG: s->cpuid_ext_features"];
+"1003003" -> "1011840"  [label="DDG: CPUID_EXT_CX16"];
+"1003003" -> "1003002"  [label="DDG: s->cpuid_ext_features"];
+"1003003" -> "1003002"  [label="DDG: CPUID_EXT_CX16"];
+"1003002" -> "1003001"  [label="AST: "];
+"1003008" -> "1003002"  [label="CFG: "];
+"1003010" -> "1003002"  [label="CFG: "];
+"1003002" -> "1011840"  [label="DDG: !(s->cpuid_ext_features & CPUID_EXT_CX16)"];
+"1003002" -> "1011840"  [label="DDG: s->cpuid_ext_features & CPUID_EXT_CX16"];
+}

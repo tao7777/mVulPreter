@@ -1,0 +1,1 @@
+ScreenLockLibrary* CrosLibrary::GetScreenLockLibrary() {

@@ -1,0 +1,35 @@
+digraph "0_linux_e0e3cea46d31d23dc40df0a49a7a2c04fe8edfea@pointer" {
+"1000118" [label="(Call,*nlk = nlk_sk(sk))"];
+"1000120" [label="(Call,nlk_sk(sk))"];
+"1000112" [label="(Call,*sk = sock->sk)"];
+"1000118" [label="(Call,*nlk = nlk_sk(sk))"];
+"1000121" [label="(Identifier,sk)"];
+"1000114" [label="(Call,sock->sk)"];
+"1000113" [label="(Identifier,sk)"];
+"1000112" [label="(Call,*sk = sock->sk)"];
+"1000105" [label="(Block,)"];
+"1000303" [label="(Call,security_netlink_send(sk, skb))"];
+"1000124" [label="(Identifier,addr)"];
+"1000119" [label="(Identifier,nlk)"];
+"1000120" [label="(Call,nlk_sk(sk))"];
+"1000344" [label="(MethodReturn,static int)"];
+"1000118" -> "1000105"  [label="AST: "];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000124" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000344"  [label="DDG: nlk_sk(sk)"];
+"1000118" -> "1000344"  [label="DDG: nlk"];
+"1000120" -> "1000118"  [label="DDG: sk"];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000120" -> "1000344"  [label="DDG: sk"];
+"1000112" -> "1000120"  [label="DDG: sk"];
+"1000120" -> "1000303"  [label="DDG: sk"];
+"1000112" -> "1000105"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000119" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000344"  [label="DDG: sock->sk"];
+}

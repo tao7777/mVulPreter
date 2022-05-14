@@ -1,0 +1,32 @@
+digraph "0_linux_26b87c7881006311828bb0ab271a551a62dcceb4@API" {
+"1000181" [label="(Call,sctp_chunk_free(chunk))"];
+"1000122" [label="(Call,chunk = queue->in_progress)"];
+"1000181" [label="(Call,sctp_chunk_free(chunk))"];
+"1000180" [label="(Block,)"];
+"1000192" [label="(Identifier,chunk)"];
+"1000123" [label="(Identifier,chunk)"];
+"1000184" [label="(Identifier,chunk)"];
+"1000131" [label="(Identifier,chunk)"];
+"1000122" [label="(Call,chunk = queue->in_progress)"];
+"1000191" [label="(Call,!chunk)"];
+"1000182" [label="(Identifier,chunk)"];
+"1000353" [label="(MethodReturn,struct sctp_chunk *)"];
+"1000124" [label="(Call,queue->in_progress)"];
+"1000141" [label="(Call,sctp_chunk_free(chunk))"];
+"1000121" [label="(ControlStructure,if ((chunk = queue->in_progress)))"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000184" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000353"  [label="DDG: sctp_chunk_free(chunk)"];
+"1000122" -> "1000181"  [label="DDG: chunk"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000131" -> "1000122"  [label="CFG: "];
+"1000192" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000353"  [label="DDG: queue->in_progress"];
+"1000122" -> "1000141"  [label="DDG: chunk"];
+"1000122" -> "1000191"  [label="DDG: chunk"];
+}

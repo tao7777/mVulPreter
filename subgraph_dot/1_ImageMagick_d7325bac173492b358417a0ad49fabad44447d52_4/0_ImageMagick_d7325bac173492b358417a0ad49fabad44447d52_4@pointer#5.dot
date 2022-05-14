@@ -1,0 +1,30 @@
+digraph "0_ImageMagick_d7325bac173492b358417a0ad49fabad44447d52_4@pointer" {
+"1000102" [label="(MethodParameterIn,DDSInfo *dds_info)"];
+"1000418" [label="(Call,SkipRGBMipmaps(image, dds_info, 4))"];
+"1000424" [label="(MethodReturn,static MagickBooleanType)"];
+"1000419" [label="(Identifier,image)"];
+"1000101" [label="(MethodParameterIn,Image *image)"];
+"1000150" [label="(Call,SetImageType(image,GrayscaleMatteType))"];
+"1000104" [label="(Block,)"];
+"1000421" [label="(Literal,4)"];
+"1000423" [label="(Identifier,MagickTrue)"];
+"1000102" [label="(MethodParameterIn,DDSInfo *dds_info)"];
+"1000412" [label="(Call,SyncAuthenticPixels(image,exception))"];
+"1000418" [label="(Call,SkipRGBMipmaps(image, dds_info, 4))"];
+"1000420" [label="(Identifier,dds_info)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000424"  [label="DDG: dds_info"];
+"1000102" -> "1000418"  [label="DDG: dds_info"];
+"1000418" -> "1000104"  [label="AST: "];
+"1000418" -> "1000421"  [label="CFG: "];
+"1000419" -> "1000418"  [label="AST: "];
+"1000420" -> "1000418"  [label="AST: "];
+"1000421" -> "1000418"  [label="AST: "];
+"1000423" -> "1000418"  [label="CFG: "];
+"1000418" -> "1000424"  [label="DDG: dds_info"];
+"1000418" -> "1000424"  [label="DDG: SkipRGBMipmaps(image, dds_info, 4)"];
+"1000418" -> "1000424"  [label="DDG: image"];
+"1000150" -> "1000418"  [label="DDG: image"];
+"1000412" -> "1000418"  [label="DDG: image"];
+"1000101" -> "1000418"  [label="DDG: image"];
+}

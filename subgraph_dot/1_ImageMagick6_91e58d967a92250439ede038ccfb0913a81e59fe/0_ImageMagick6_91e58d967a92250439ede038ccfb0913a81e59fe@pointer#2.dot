@@ -1,0 +1,24 @@
+digraph "0_ImageMagick6_91e58d967a92250439ede038ccfb0913a81e59fe@pointer" {
+"1000216" [label="(Call,GetMagickPixelPacket(images,&pixels[i][j]))"];
+"1000101" [label="(MethodParameterIn,const Image *images)"];
+"1000215" [label="(Identifier,j)"];
+"1000226" [label="(MethodReturn,static MagickPixelPacket **)"];
+"1000217" [label="(Identifier,images)"];
+"1000205" [label="(ControlStructure,for (j=0; j < (ssize_t) columns; j++))"];
+"1000218" [label="(Call,&pixels[i][j])"];
+"1000150" [label="(Call,next=images)"];
+"1000101" [label="(MethodParameterIn,const Image *images)"];
+"1000216" [label="(Call,GetMagickPixelPacket(images,&pixels[i][j]))"];
+"1000216" -> "1000205"  [label="AST: "];
+"1000216" -> "1000218"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000218" -> "1000216"  [label="AST: "];
+"1000215" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000226"  [label="DDG: GetMagickPixelPacket(images,&pixels[i][j])"];
+"1000216" -> "1000226"  [label="DDG: images"];
+"1000216" -> "1000226"  [label="DDG: &pixels[i][j]"];
+"1000101" -> "1000216"  [label="DDG: images"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000226"  [label="DDG: images"];
+"1000101" -> "1000150"  [label="DDG: images"];
+}

@@ -1,0 +1,25 @@
+digraph "0_qemu_06630554ccbdd25780aa03c3548aaff1eb56dffd@pointer" {
+"1000112" [label="(Call,*hdr = (MPIRequestHeader *)req)"];
+"1000114" [label="(Call,(MPIRequestHeader *)req)"];
+"1000122" [label="(Identifier,s)"];
+"1000114" [label="(Call,(MPIRequestHeader *)req)"];
+"1000113" [label="(Identifier,hdr)"];
+"1000139" [label="(Call,pci_dma_read(pci, addr, req, sizeof(hdr)))"];
+"1000103" [label="(Block,)"];
+"1000116" [label="(Identifier,req)"];
+"1000112" [label="(Call,*hdr = (MPIRequestHeader *)req)"];
+"1000145" [label="(MethodReturn,static void)"];
+"1000112" -> "1000103"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000122" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000145"  [label="DDG: (MPIRequestHeader *)req"];
+"1000112" -> "1000145"  [label="DDG: hdr"];
+"1000114" -> "1000112"  [label="DDG: req"];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000114" -> "1000145"  [label="DDG: req"];
+"1000114" -> "1000139"  [label="DDG: req"];
+}

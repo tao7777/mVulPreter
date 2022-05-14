@@ -1,0 +1,1 @@
+  MirrorMockURLRequestJob(net::URLRequest* request,

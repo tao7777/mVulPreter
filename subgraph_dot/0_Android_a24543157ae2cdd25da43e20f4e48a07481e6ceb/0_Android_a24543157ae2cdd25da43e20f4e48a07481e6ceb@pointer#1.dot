@@ -1,0 +1,23 @@
+digraph "0_Android_a24543157ae2cdd25da43e20f4e48a07481e6ceb@pointer" {
+"1000231" [label="(Call,* accessor =\n            reinterpret_cast<InternalElementsAccessor*>(\n                object->GetElementsAccessor()))"];
+"1000233" [label="(Call,reinterpret_cast<InternalElementsAccessor*>(\n                object->GetElementsAccessor()))"];
+"1000235" [label="(Call,object->GetElementsAccessor())"];
+"1000229" [label="(Block,)"];
+"1000283" [label="(MethodReturn,static Maybe<bool>)"];
+"1000232" [label="(Identifier,accessor)"];
+"1000231" [label="(Call,* accessor =\n            reinterpret_cast<InternalElementsAccessor*>(\n                object->GetElementsAccessor()))"];
+"1000238" [label="(Identifier,entry)"];
+"1000233" [label="(Call,reinterpret_cast<InternalElementsAccessor*>(\n                object->GetElementsAccessor()))"];
+"1000231" -> "1000229"  [label="AST: "];
+"1000231" -> "1000233"  [label="CFG: "];
+"1000232" -> "1000231"  [label="AST: "];
+"1000233" -> "1000231"  [label="AST: "];
+"1000238" -> "1000231"  [label="CFG: "];
+"1000231" -> "1000283"  [label="DDG: reinterpret_cast<InternalElementsAccessor*>(\n                object->GetElementsAccessor())"];
+"1000231" -> "1000283"  [label="DDG: accessor"];
+"1000233" -> "1000231"  [label="DDG: object->GetElementsAccessor()"];
+"1000233" -> "1000235"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000235" -> "1000233"  [label="AST: "];
+"1000233" -> "1000283"  [label="DDG: object->GetElementsAccessor()"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_fda4e2e85589191b123d31cdc21fd33ee70f50fd_1@pointer" {
+"1000121" [label="(Call,test_bit(KVM_APIC_CHECK_VAPIC, &vcpu->arch.apic_attention))"];
+"1000120" [label="(Call,!test_bit(KVM_APIC_CHECK_VAPIC, &vcpu->arch.apic_attention))"];
+"1000122" [label="(Identifier,KVM_APIC_CHECK_VAPIC)"];
+"1000119" [label="(ControlStructure,if (!test_bit(KVM_APIC_CHECK_VAPIC, &vcpu->arch.apic_attention)))"];
+"1000131" [label="(Identifier,tpr)"];
+"1000121" [label="(Call,test_bit(KVM_APIC_CHECK_VAPIC, &vcpu->arch.apic_attention))"];
+"1000129" [label="(Return,return;)"];
+"1000120" [label="(Call,!test_bit(KVM_APIC_CHECK_VAPIC, &vcpu->arch.apic_attention))"];
+"1000123" [label="(Call,&vcpu->arch.apic_attention)"];
+"1000201" [label="(MethodReturn,void)"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000201"  [label="DDG: &vcpu->arch.apic_attention"];
+"1000121" -> "1000201"  [label="DDG: KVM_APIC_CHECK_VAPIC"];
+"1000121" -> "1000120"  [label="DDG: KVM_APIC_CHECK_VAPIC"];
+"1000121" -> "1000120"  [label="DDG: &vcpu->arch.apic_attention"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000129" -> "1000120"  [label="CFG: "];
+"1000131" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000201"  [label="DDG: test_bit(KVM_APIC_CHECK_VAPIC, &vcpu->arch.apic_attention)"];
+"1000120" -> "1000201"  [label="DDG: !test_bit(KVM_APIC_CHECK_VAPIC, &vcpu->arch.apic_attention)"];
+}

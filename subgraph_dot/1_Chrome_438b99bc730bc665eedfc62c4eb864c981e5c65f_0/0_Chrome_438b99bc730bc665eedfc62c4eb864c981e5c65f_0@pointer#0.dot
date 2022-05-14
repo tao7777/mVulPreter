@@ -1,0 +1,31 @@
+digraph "0_Chrome_438b99bc730bc665eedfc62c4eb864c981e5c65f_0@pointer" {
+"1000129" [label="(Call,extension_system = extensions::ExtensionSystem::Get(profile_))"];
+"1000131" [label="(Call,extensions::ExtensionSystem::Get(profile_))"];
+"1000128" [label="(Call,!(extension_system = extensions::ExtensionSystem::Get(profile_)))"];
+"1000129" [label="(Call,extension_system = extensions::ExtensionSystem::Get(profile_))"];
+"1000128" [label="(Call,!(extension_system = extensions::ExtensionSystem::Get(profile_)))"];
+"1000135" [label="(Identifier,extension_service)"];
+"1000130" [label="(Identifier,extension_system)"];
+"1000131" [label="(Call,extensions::ExtensionSystem::Get(profile_))"];
+"1000160" [label="(MethodReturn,void)"];
+"1000154" [label="(Call,ShouldCreateShortcutFor(profile_, it->get()))"];
+"1000132" [label="(Identifier,profile_)"];
+"1000127" [label="(Call,!(extension_system = extensions::ExtensionSystem::Get(profile_)) ||\n      !(extension_service = extension_system->extension_service()))"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000129" -> "1000131"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000131" -> "1000129"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000160"  [label="DDG: extension_system"];
+"1000129" -> "1000160"  [label="DDG: extensions::ExtensionSystem::Get(profile_)"];
+"1000129" -> "1000128"  [label="DDG: extension_system"];
+"1000131" -> "1000129"  [label="DDG: profile_"];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000131" -> "1000160"  [label="DDG: profile_"];
+"1000131" -> "1000128"  [label="DDG: profile_"];
+"1000131" -> "1000154"  [label="DDG: profile_"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000135" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000128"  [label="CFG: "];
+}

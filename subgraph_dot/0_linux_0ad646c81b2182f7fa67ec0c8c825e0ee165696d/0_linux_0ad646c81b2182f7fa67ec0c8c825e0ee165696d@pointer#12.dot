@@ -1,0 +1,25 @@
+digraph "0_linux_0ad646c81b2182f7fa67ec0c8c825e0ee165696d@pointer" {
+"1000580" [label="(Call,security_tun_dev_free_security(tun->security))"];
+"1000455" [label="(Call,security_tun_dev_alloc_security(&tun->security))"];
+"1000455" [label="(Call,security_tun_dev_alloc_security(&tun->security))"];
+"1000110" [label="(Block,)"];
+"1000453" [label="(Call,err = security_tun_dev_alloc_security(&tun->security))"];
+"1000581" [label="(Call,tun->security)"];
+"1000580" [label="(Call,security_tun_dev_free_security(tun->security))"];
+"1000456" [label="(Call,&tun->security)"];
+"1000584" [label="(JumpTarget,err_free_stat:)"];
+"1000594" [label="(MethodReturn,static int)"];
+"1000580" -> "1000110"  [label="AST: "];
+"1000580" -> "1000581"  [label="CFG: "];
+"1000581" -> "1000580"  [label="AST: "];
+"1000584" -> "1000580"  [label="CFG: "];
+"1000580" -> "1000594"  [label="DDG: security_tun_dev_free_security(tun->security)"];
+"1000580" -> "1000594"  [label="DDG: tun->security"];
+"1000455" -> "1000580"  [label="DDG: &tun->security"];
+"1000455" -> "1000453"  [label="AST: "];
+"1000455" -> "1000456"  [label="CFG: "];
+"1000456" -> "1000455"  [label="AST: "];
+"1000453" -> "1000455"  [label="CFG: "];
+"1000455" -> "1000594"  [label="DDG: &tun->security"];
+"1000455" -> "1000453"  [label="DDG: &tun->security"];
+}

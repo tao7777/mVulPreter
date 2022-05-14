@@ -1,0 +1,34 @@
+digraph "1_linux_94f1bb15bed84ad6c893916b7e7b9db6f1d7eec6_2@pointer" {
+"1000104" [label="(MethodParameterIn,u8 *dst)"];
+"1000108" [label="(Call,crypto_old_rng_alg(tfm)->rng_make_random(tfm, dst, dlen))"];
+"1000107" [label="(Return,return crypto_old_rng_alg(tfm)->rng_make_random(tfm, dst, dlen);)"];
+"1000111" [label="(Identifier,dlen)"];
+"1000112" [label="(MethodReturn,static int)"];
+"1000104" [label="(MethodParameterIn,u8 *dst)"];
+"1000108" [label="(Call,crypto_old_rng_alg(tfm)->rng_make_random(tfm, dst, dlen))"];
+"1000105" [label="(MethodParameterIn,unsigned int dlen)"];
+"1000101" [label="(MethodParameterIn,struct crypto_rng *tfm)"];
+"1000107" [label="(Return,return crypto_old_rng_alg(tfm)->rng_make_random(tfm, dst, dlen);)"];
+"1000106" [label="(Block,)"];
+"1000109" [label="(Identifier,tfm)"];
+"1000110" [label="(Identifier,dst)"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000112"  [label="DDG: dst"];
+"1000104" -> "1000108"  [label="DDG: dst"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000108" -> "1000111"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000111" -> "1000108"  [label="AST: "];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000112"  [label="DDG: crypto_old_rng_alg(tfm)->rng_make_random(tfm, dst, dlen)"];
+"1000108" -> "1000112"  [label="DDG: dlen"];
+"1000108" -> "1000112"  [label="DDG: tfm"];
+"1000108" -> "1000112"  [label="DDG: dst"];
+"1000108" -> "1000107"  [label="DDG: crypto_old_rng_alg(tfm)->rng_make_random(tfm, dst, dlen)"];
+"1000101" -> "1000108"  [label="DDG: tfm"];
+"1000105" -> "1000108"  [label="DDG: dlen"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000112" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000112"  [label="DDG: <RET>"];
+}

@@ -1,0 +1,1 @@
+PowerLibrary* CrosLibrary::GetPowerLibrary() {

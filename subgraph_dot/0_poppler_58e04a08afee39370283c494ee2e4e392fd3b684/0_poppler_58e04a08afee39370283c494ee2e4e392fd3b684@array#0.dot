@@ -1,0 +1,22 @@
+digraph "0_poppler_58e04a08afee39370283c494ee2e4e392fd3b684@array" {
+"1000261" [label="(Call,readUWord(&refSegs[i]))"];
+"1000260" [label="(Call,!readUWord(&refSegs[i]))"];
+"1000259" [label="(ControlStructure,if (!readUWord(&refSegs[i])))"];
+"1000261" [label="(Call,readUWord(&refSegs[i]))"];
+"1000580" [label="(MethodReturn,void)"];
+"1000260" [label="(Call,!readUWord(&refSegs[i]))"];
+"1000267" [label="(ControlStructure,goto eofError2;)"];
+"1000257" [label="(Identifier,i)"];
+"1000262" [label="(Call,&refSegs[i])"];
+"1000261" -> "1000260"  [label="AST: "];
+"1000261" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000260" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000580"  [label="DDG: &refSegs[i]"];
+"1000261" -> "1000260"  [label="DDG: &refSegs[i]"];
+"1000260" -> "1000259"  [label="AST: "];
+"1000267" -> "1000260"  [label="CFG: "];
+"1000257" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000580"  [label="DDG: !readUWord(&refSegs[i])"];
+"1000260" -> "1000580"  [label="DDG: readUWord(&refSegs[i])"];
+}

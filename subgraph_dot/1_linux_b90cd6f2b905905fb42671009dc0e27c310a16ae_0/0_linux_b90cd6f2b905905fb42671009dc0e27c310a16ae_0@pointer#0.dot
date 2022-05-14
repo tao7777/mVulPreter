@@ -1,0 +1,30 @@
+digraph "0_linux_b90cd6f2b905905fb42671009dc0e27c310a16ae_0@pointer" {
+"1000117" [label="(Call,spin_lock_irqsave(&task->task_state_lock, flags))"];
+"1000135" [label="(Call,spin_unlock_irqrestore(&task->task_state_lock, flags))"];
+"1000117" [label="(Call,spin_lock_irqsave(&task->task_state_lock, flags))"];
+"1000140" [label="(Identifier,flags)"];
+"1000127" [label="(Identifier,task)"];
+"1000145" [label="(Identifier,task)"];
+"1000122" [label="(Identifier,flags)"];
+"1000102" [label="(Block,)"];
+"1000118" [label="(Call,&task->task_state_lock)"];
+"1000136" [label="(Call,&task->task_state_lock)"];
+"1000148" [label="(MethodReturn,static void)"];
+"1000135" [label="(Call,spin_unlock_irqrestore(&task->task_state_lock, flags))"];
+"1000117" -> "1000102"  [label="AST: "];
+"1000117" -> "1000122"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="AST: "];
+"1000127" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000148"  [label="DDG: spin_lock_irqsave(&task->task_state_lock, flags)"];
+"1000117" -> "1000135"  [label="DDG: &task->task_state_lock"];
+"1000117" -> "1000135"  [label="DDG: flags"];
+"1000135" -> "1000102"  [label="AST: "];
+"1000135" -> "1000140"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000140" -> "1000135"  [label="AST: "];
+"1000145" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000148"  [label="DDG: flags"];
+"1000135" -> "1000148"  [label="DDG: &task->task_state_lock"];
+"1000135" -> "1000148"  [label="DDG: spin_unlock_irqrestore(&task->task_state_lock, flags)"];
+}

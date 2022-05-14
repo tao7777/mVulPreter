@@ -1,0 +1,37 @@
+digraph "1_linux_b66c5984017533316fd1951770302649baf1aa33@del" {
+"1000269" [label="(Call,bprm->interp = iname)"];
+"1000144" [label="(Call,strlcpy(iname, fmt->interpreter, BINPRM_BUF_SIZE))"];
+"1000269" [label="(Call,bprm->interp = iname)"];
+"1000273" [label="(Identifier,iname)"];
+"1000110" [label="(Block,)"];
+"1000355" [label="(MethodReturn,static int)"];
+"1000146" [label="(Call,fmt->interpreter)"];
+"1000298" [label="(Call,memset(bprm->buf, 0, BINPRM_BUF_SIZE))"];
+"1000144" [label="(Call,strlcpy(iname, fmt->interpreter, BINPRM_BUF_SIZE))"];
+"1000145" [label="(Identifier,iname)"];
+"1000275" [label="(Identifier,interp_file)"];
+"1000142" [label="(ControlStructure,if (fmt))"];
+"1000149" [label="(Identifier,BINPRM_BUF_SIZE)"];
+"1000152" [label="(Identifier,entries_lock)"];
+"1000276" [label="(Call,open_exec (iname))"];
+"1000270" [label="(Call,bprm->interp)"];
+"1000269" -> "1000110"  [label="AST: "];
+"1000269" -> "1000273"  [label="CFG: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000273" -> "1000269"  [label="AST: "];
+"1000275" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000355"  [label="DDG: bprm->interp"];
+"1000144" -> "1000269"  [label="DDG: iname"];
+"1000144" -> "1000142"  [label="AST: "];
+"1000144" -> "1000149"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000149" -> "1000144"  [label="AST: "];
+"1000152" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000355"  [label="DDG: strlcpy(iname, fmt->interpreter, BINPRM_BUF_SIZE)"];
+"1000144" -> "1000355"  [label="DDG: BINPRM_BUF_SIZE"];
+"1000144" -> "1000355"  [label="DDG: iname"];
+"1000144" -> "1000355"  [label="DDG: fmt->interpreter"];
+"1000144" -> "1000276"  [label="DDG: iname"];
+"1000144" -> "1000298"  [label="DDG: BINPRM_BUF_SIZE"];
+}

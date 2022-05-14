@@ -1,0 +1,1 @@
+bool ChromeOSStopInputMethodProcess(InputMethodStatusConnection* connection) {

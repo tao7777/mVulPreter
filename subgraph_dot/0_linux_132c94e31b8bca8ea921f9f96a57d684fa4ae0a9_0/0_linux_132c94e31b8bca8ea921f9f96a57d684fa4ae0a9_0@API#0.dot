@@ -1,0 +1,34 @@
+digraph "0_linux_132c94e31b8bca8ea921f9f96a57d684fa4ae0a9_0@API" {
+"1000134" [label="(Call,down_write(&namespace_sem))"];
+"1000162" [label="(Call,up_write(&namespace_sem))"];
+"1000250" [label="(Call,up_write(&namespace_sem))"];
+"1000251" [label="(Call,&namespace_sem)"];
+"1000166" [label="(Identifier,new_ns)"];
+"1000135" [label="(Call,&namespace_sem)"];
+"1000134" [label="(Call,down_write(&namespace_sem))"];
+"1000263" [label="(MethodReturn,static struct mnt_namespace *)"];
+"1000254" [label="(Identifier,rootmnt)"];
+"1000138" [label="(Identifier,copy_flags)"];
+"1000163" [label="(Call,&namespace_sem)"];
+"1000106" [label="(Block,)"];
+"1000161" [label="(Block,)"];
+"1000250" [label="(Call,up_write(&namespace_sem))"];
+"1000162" [label="(Call,up_write(&namespace_sem))"];
+"1000134" -> "1000106"  [label="AST: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000138" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000263"  [label="DDG: down_write(&namespace_sem)"];
+"1000134" -> "1000162"  [label="DDG: &namespace_sem"];
+"1000162" -> "1000161"  [label="AST: "];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000250"  [label="DDG: &namespace_sem"];
+"1000250" -> "1000106"  [label="AST: "];
+"1000250" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000254" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000263"  [label="DDG: &namespace_sem"];
+"1000250" -> "1000263"  [label="DDG: up_write(&namespace_sem)"];
+}

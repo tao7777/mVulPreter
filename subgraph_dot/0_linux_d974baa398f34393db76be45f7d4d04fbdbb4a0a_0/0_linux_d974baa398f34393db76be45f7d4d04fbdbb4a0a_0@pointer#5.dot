@@ -1,0 +1,35 @@
+digraph "0_linux_d974baa398f34393db76be45f7d4d04fbdbb4a0a_0@pointer" {
+"1000126" [label="(Call,!cpu_has_virtual_nmis() && vmx->soft_vnmi_blocked)"];
+"1000127" [label="(Call,!cpu_has_virtual_nmis())"];
+"1000125" [label="(Call,unlikely(!cpu_has_virtual_nmis() && vmx->soft_vnmi_blocked))"];
+"1000124" [label="(ControlStructure,if (unlikely(!cpu_has_virtual_nmis() && vmx->soft_vnmi_blocked)))"];
+"1000129" [label="(Call,vmx->soft_vnmi_blocked)"];
+"1000139" [label="(Identifier,vmx)"];
+"1000134" [label="(Identifier,vmx)"];
+"1000126" [label="(Call,!cpu_has_virtual_nmis() && vmx->soft_vnmi_blocked)"];
+"1000125" [label="(Call,unlikely(!cpu_has_virtual_nmis() && vmx->soft_vnmi_blocked))"];
+"1000127" [label="(Call,!cpu_has_virtual_nmis())"];
+"1000128" [label="(Call,cpu_has_virtual_nmis())"];
+"1000353" [label="(MethodReturn,static void __noclone)"];
+"1000130" [label="(Identifier,vmx)"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000129"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000129" -> "1000126"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000353"  [label="DDG: vmx->soft_vnmi_blocked"];
+"1000126" -> "1000353"  [label="DDG: !cpu_has_virtual_nmis()"];
+"1000126" -> "1000125"  [label="DDG: !cpu_has_virtual_nmis()"];
+"1000126" -> "1000125"  [label="DDG: vmx->soft_vnmi_blocked"];
+"1000127" -> "1000126"  [label="DDG: cpu_has_virtual_nmis()"];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000130" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000353"  [label="DDG: cpu_has_virtual_nmis()"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000134" -> "1000125"  [label="CFG: "];
+"1000139" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000353"  [label="DDG: !cpu_has_virtual_nmis() && vmx->soft_vnmi_blocked"];
+"1000125" -> "1000353"  [label="DDG: unlikely(!cpu_has_virtual_nmis() && vmx->soft_vnmi_blocked)"];
+}

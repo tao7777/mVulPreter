@@ -1,0 +1,31 @@
+digraph "0_Android_514139f4b40cbb035bb92f3e24d5a389d75db9e6@pointer" {
+"1000102" [label="(MethodParameterIn,UINT8 *data)"];
+"1000159" [label="(Call,memcpy(pbuf_data, data, len))"];
+"1000159" [label="(Call,memcpy(pbuf_data, data, len))"];
+"1000162" [label="(Identifier,len)"];
+"1000165" [label="(MethodReturn,static BT_HDR *)"];
+"1000161" [label="(Identifier,data)"];
+"1000164" [label="(Identifier,p_buf)"];
+"1000102" [label="(MethodParameterIn,UINT8 *data)"];
+"1000101" [label="(MethodParameterIn,UINT16 len)"];
+"1000136" [label="(Block,)"];
+"1000148" [label="(Call,pbuf_data = (UINT8*) (p_buf + 1) + p_buf->offset)"];
+"1000160" [label="(Identifier,pbuf_data)"];
+"1000116" [label="(Call,buflen < len)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000165"  [label="DDG: data"];
+"1000102" -> "1000159"  [label="DDG: data"];
+"1000159" -> "1000136"  [label="AST: "];
+"1000159" -> "1000162"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000159"  [label="AST: "];
+"1000162" -> "1000159"  [label="AST: "];
+"1000164" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000165"  [label="DDG: len"];
+"1000159" -> "1000165"  [label="DDG: memcpy(pbuf_data, data, len)"];
+"1000159" -> "1000165"  [label="DDG: pbuf_data"];
+"1000159" -> "1000165"  [label="DDG: data"];
+"1000148" -> "1000159"  [label="DDG: pbuf_data"];
+"1000101" -> "1000159"  [label="DDG: len"];
+"1000116" -> "1000159"  [label="DDG: len"];
+}

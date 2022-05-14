@@ -1,0 +1,32 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_14@API" {
+"1000220" [label="(Call,card->reader->active_protocol == SC_PROTO_T1)"];
+"1000216" [label="(Call,rbuflen == 8 && card->reader->active_protocol == SC_PROTO_T1)"];
+"1000221" [label="(Call,card->reader->active_protocol)"];
+"1000215" [label="(ControlStructure,if (rbuflen == 8 && card->reader->active_protocol == SC_PROTO_T1))"];
+"1000238" [label="(Identifier,apdu)"];
+"1000226" [label="(Identifier,SC_PROTO_T1)"];
+"1000217" [label="(Call,rbuflen == 8)"];
+"1000495" [label="(MethodReturn,static int)"];
+"1000220" [label="(Call,card->reader->active_protocol == SC_PROTO_T1)"];
+"1000230" [label="(Identifier,apdu)"];
+"1000216" [label="(Call,rbuflen == 8 && card->reader->active_protocol == SC_PROTO_T1)"];
+"1000220" -> "1000216"  [label="AST: "];
+"1000220" -> "1000226"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000226" -> "1000220"  [label="AST: "];
+"1000216" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000495"  [label="DDG: card->reader->active_protocol"];
+"1000220" -> "1000495"  [label="DDG: SC_PROTO_T1"];
+"1000220" -> "1000216"  [label="DDG: card->reader->active_protocol"];
+"1000220" -> "1000216"  [label="DDG: SC_PROTO_T1"];
+"1000216" -> "1000215"  [label="AST: "];
+"1000216" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000230" -> "1000216"  [label="CFG: "];
+"1000238" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000495"  [label="DDG: rbuflen == 8 && card->reader->active_protocol == SC_PROTO_T1"];
+"1000216" -> "1000495"  [label="DDG: rbuflen == 8"];
+"1000216" -> "1000495"  [label="DDG: card->reader->active_protocol == SC_PROTO_T1"];
+"1000217" -> "1000216"  [label="DDG: rbuflen"];
+"1000217" -> "1000216"  [label="DDG: 8"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_09ccfd238e5a0e670d8178cf50180ea81ae09ae1_0@pointer" {
+"1000306" [label="(Call,po->chan.mtu = PPP_MRU)"];
+"1000315" [label="(Call,po->chan.mtu -= PPTP_HEADER_OVERHEAD)"];
+"1000312" [label="(Identifier,PPP_MRU)"];
+"1000300" [label="(Call,!po->chan.mtu)"];
+"1000299" [label="(ControlStructure,if (!po->chan.mtu))"];
+"1000314" [label="(Identifier,rt)"];
+"1000365" [label="(MethodReturn,static int)"];
+"1000325" [label="(Identifier,po)"];
+"1000107" [label="(Block,)"];
+"1000307" [label="(Call,po->chan.mtu)"];
+"1000321" [label="(Identifier,PPTP_HEADER_OVERHEAD)"];
+"1000316" [label="(Call,po->chan.mtu)"];
+"1000306" [label="(Call,po->chan.mtu = PPP_MRU)"];
+"1000315" [label="(Call,po->chan.mtu -= PPTP_HEADER_OVERHEAD)"];
+"1000306" -> "1000299"  [label="AST: "];
+"1000306" -> "1000312"  [label="CFG: "];
+"1000307" -> "1000306"  [label="AST: "];
+"1000312" -> "1000306"  [label="AST: "];
+"1000314" -> "1000306"  [label="CFG: "];
+"1000306" -> "1000365"  [label="DDG: PPP_MRU"];
+"1000306" -> "1000315"  [label="DDG: po->chan.mtu"];
+"1000315" -> "1000107"  [label="AST: "];
+"1000315" -> "1000321"  [label="CFG: "];
+"1000316" -> "1000315"  [label="AST: "];
+"1000321" -> "1000315"  [label="AST: "];
+"1000325" -> "1000315"  [label="CFG: "];
+"1000315" -> "1000365"  [label="DDG: po->chan.mtu"];
+"1000315" -> "1000365"  [label="DDG: PPTP_HEADER_OVERHEAD"];
+"1000300" -> "1000315"  [label="DDG: po->chan.mtu"];
+}

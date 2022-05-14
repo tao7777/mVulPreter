@@ -1,0 +1,31 @@
+digraph "0_linux_6ec82562ffc6f297d0de36d65776cff8e5704867@pointer" {
+"1000182" [label="(Call,rcv_stats->rx_bytes += length)"];
+"1000159" [label="(Call,length = skb->len + ETH_HLEN)"];
+"1000183" [label="(Call,rcv_stats->rx_bytes)"];
+"1000160" [label="(Identifier,length)"];
+"1000182" [label="(Call,rcv_stats->rx_bytes += length)"];
+"1000209" [label="(MethodReturn,static netdev_tx_t)"];
+"1000103" [label="(Block,)"];
+"1000189" [label="(Identifier,rcv_stats)"];
+"1000186" [label="(Identifier,length)"];
+"1000173" [label="(Call,stats->tx_bytes += length)"];
+"1000169" [label="(Identifier,rcv)"];
+"1000159" [label="(Call,length = skb->len + ETH_HLEN)"];
+"1000161" [label="(Call,skb->len + ETH_HLEN)"];
+"1000182" -> "1000103"  [label="AST: "];
+"1000182" -> "1000186"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000186" -> "1000182"  [label="AST: "];
+"1000189" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000209"  [label="DDG: length"];
+"1000182" -> "1000209"  [label="DDG: rcv_stats->rx_bytes"];
+"1000159" -> "1000182"  [label="DDG: length"];
+"1000159" -> "1000103"  [label="AST: "];
+"1000159" -> "1000161"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000159"  [label="AST: "];
+"1000169" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000209"  [label="DDG: length"];
+"1000159" -> "1000209"  [label="DDG: skb->len + ETH_HLEN"];
+"1000159" -> "1000173"  [label="DDG: length"];
+}

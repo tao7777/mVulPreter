@@ -1,0 +1,33 @@
+digraph "0_tcpdump_c2ef693866beae071a24b45c49f9674af1df4028_2@pointer" {
+"1000465" [label="(Call,ndo->ndo_vflag > 3)"];
+"1000464" [label="(Call,ndo->ndo_vflag > 3 || (showsomedata && ep-cp < 30))"];
+"1000463" [label="(ControlStructure,if (ndo->ndo_vflag > 3 || (showsomedata && ep-cp < 30)))"];
+"1000499" [label="(Identifier,showsomedata)"];
+"1000469" [label="(Literal,3)"];
+"1000524" [label="(MethodReturn,RET)"];
+"1000466" [label="(Call,ndo->ndo_vflag)"];
+"1000464" [label="(Call,ndo->ndo_vflag > 3 || (showsomedata && ep-cp < 30))"];
+"1000471" [label="(Identifier,showsomedata)"];
+"1000480" [label="(Identifier,ndo)"];
+"1000470" [label="(Call,showsomedata && ep-cp < 30)"];
+"1000465" [label="(Call,ndo->ndo_vflag > 3)"];
+"1000465" -> "1000464"  [label="AST: "];
+"1000465" -> "1000469"  [label="CFG: "];
+"1000466" -> "1000465"  [label="AST: "];
+"1000469" -> "1000465"  [label="AST: "];
+"1000471" -> "1000465"  [label="CFG: "];
+"1000464" -> "1000465"  [label="CFG: "];
+"1000465" -> "1000524"  [label="DDG: ndo->ndo_vflag"];
+"1000465" -> "1000464"  [label="DDG: ndo->ndo_vflag"];
+"1000465" -> "1000464"  [label="DDG: 3"];
+"1000464" -> "1000463"  [label="AST: "];
+"1000464" -> "1000470"  [label="CFG: "];
+"1000470" -> "1000464"  [label="AST: "];
+"1000480" -> "1000464"  [label="CFG: "];
+"1000499" -> "1000464"  [label="CFG: "];
+"1000464" -> "1000524"  [label="DDG: ndo->ndo_vflag > 3"];
+"1000464" -> "1000524"  [label="DDG: ndo->ndo_vflag > 3 || (showsomedata && ep-cp < 30)"];
+"1000464" -> "1000524"  [label="DDG: showsomedata && ep-cp < 30"];
+"1000470" -> "1000464"  [label="DDG: showsomedata"];
+"1000470" -> "1000464"  [label="DDG: ep-cp < 30"];
+}

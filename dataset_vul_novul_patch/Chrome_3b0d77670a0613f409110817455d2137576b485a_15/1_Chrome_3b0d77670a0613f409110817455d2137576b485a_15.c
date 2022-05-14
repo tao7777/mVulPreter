@@ -1,0 +1,2 @@
+ProxyChannelDelegate::~ProxyChannelDelegate() {
+}

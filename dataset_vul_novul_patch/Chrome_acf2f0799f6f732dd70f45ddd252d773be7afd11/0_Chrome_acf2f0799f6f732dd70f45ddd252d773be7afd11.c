@@ -1,0 +1,1 @@
+int InternalPageInfoBubbleView::GetDialogButtons() const {

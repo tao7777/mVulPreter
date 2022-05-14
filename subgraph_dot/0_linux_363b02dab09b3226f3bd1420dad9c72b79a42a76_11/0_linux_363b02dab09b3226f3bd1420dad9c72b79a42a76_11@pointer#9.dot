@@ -1,0 +1,28 @@
+digraph "0_linux_363b02dab09b3226f3bd1420dad9c72b79a42a76_11@pointer" {
+"1000253" [label="(Call,ctx->result = ERR_PTR(-EACCES))"];
+"1000257" [label="(Call,ERR_PTR(-EACCES))"];
+"1000258" [label="(Call,-EACCES)"];
+"1000253" [label="(Call,ctx->result = ERR_PTR(-EACCES))"];
+"1000259" [label="(Identifier,EACCES)"];
+"1000257" [label="(Call,ERR_PTR(-EACCES))"];
+"1000254" [label="(Call,ctx->result)"];
+"1000308" [label="(MethodReturn,static int)"];
+"1000252" [label="(Block,)"];
+"1000258" [label="(Call,-EACCES)"];
+"1000261" [label="(Literal,\" = %d [!perm]\")"];
+"1000253" -> "1000252"  [label="AST: "];
+"1000253" -> "1000257"  [label="CFG: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000257" -> "1000253"  [label="AST: "];
+"1000261" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000308"  [label="DDG: ctx->result"];
+"1000253" -> "1000308"  [label="DDG: ERR_PTR(-EACCES)"];
+"1000257" -> "1000253"  [label="DDG: -EACCES"];
+"1000257" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000257"  [label="AST: "];
+"1000257" -> "1000308"  [label="DDG: -EACCES"];
+"1000258" -> "1000257"  [label="DDG: EACCES"];
+"1000258" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000258"  [label="AST: "];
+"1000258" -> "1000308"  [label="DDG: EACCES"];
+}

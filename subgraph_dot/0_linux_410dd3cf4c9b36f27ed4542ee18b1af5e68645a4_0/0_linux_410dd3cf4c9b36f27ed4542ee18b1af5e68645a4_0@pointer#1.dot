@@ -1,0 +1,32 @@
+digraph "0_linux_410dd3cf4c9b36f27ed4542ee18b1af5e68645a4_0@pointer" {
+"1000145" [label="(Call,*tmpde = NULL)"];
+"1000716" [label="(Call,kfree(tmpde))"];
+"1000248" [label="(Call,(char *)tmpde)"];
+"1000719" [label="(Identifier,bh)"];
+"1000224" [label="(Call,memcpy(tmpde, bh->b_data + offset, frag1))"];
+"1000145" [label="(Call,*tmpde = NULL)"];
+"1000146" [label="(Identifier,tmpde)"];
+"1000727" [label="(MethodReturn,static int)"];
+"1000717" [label="(Identifier,tmpde)"];
+"1000716" [label="(Call,kfree(tmpde))"];
+"1000152" [label="(Identifier,ei)"];
+"1000147" [label="(Identifier,NULL)"];
+"1000115" [label="(Block,)"];
+"1000215" [label="(Call,tmpde == NULL)"];
+"1000145" -> "1000115"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000152" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000727"  [label="DDG: NULL"];
+"1000145" -> "1000716"  [label="DDG: tmpde"];
+"1000716" -> "1000115"  [label="AST: "];
+"1000716" -> "1000717"  [label="CFG: "];
+"1000717" -> "1000716"  [label="AST: "];
+"1000719" -> "1000716"  [label="CFG: "];
+"1000716" -> "1000727"  [label="DDG: kfree(tmpde)"];
+"1000716" -> "1000727"  [label="DDG: tmpde"];
+"1000224" -> "1000716"  [label="DDG: tmpde"];
+"1000215" -> "1000716"  [label="DDG: tmpde"];
+"1000248" -> "1000716"  [label="DDG: tmpde"];
+}

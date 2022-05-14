@@ -1,0 +1,24 @@
+digraph "0_linux_2172fa709ab32ca60e86179dc67d0857be8e2c98@API" {
+"1000143" [label="(Call,!strcmp(initial_sid_to_string[i], scontext))"];
+"1000104" [label="(MethodParameterIn,const char *scontext)"];
+"1000104" [label="(MethodParameterIn,const char *scontext)"];
+"1000140" [label="(Identifier,i)"];
+"1000179" [label="(Call,memcpy(scontext2, scontext, scontext_len))"];
+"1000266" [label="(MethodReturn,static int)"];
+"1000144" [label="(Call,strcmp(initial_sid_to_string[i], scontext))"];
+"1000152" [label="(Identifier,sid)"];
+"1000143" [label="(Call,!strcmp(initial_sid_to_string[i], scontext))"];
+"1000142" [label="(ControlStructure,if (!strcmp(initial_sid_to_string[i], scontext)))"];
+"1000143" -> "1000142"  [label="AST: "];
+"1000143" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000152" -> "1000143"  [label="CFG: "];
+"1000140" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000266"  [label="DDG: strcmp(initial_sid_to_string[i], scontext)"];
+"1000143" -> "1000266"  [label="DDG: !strcmp(initial_sid_to_string[i], scontext)"];
+"1000104" -> "1000143"  [label="DDG: scontext"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000266"  [label="DDG: scontext"];
+"1000104" -> "1000144"  [label="DDG: scontext"];
+"1000104" -> "1000179"  [label="DDG: scontext"];
+}

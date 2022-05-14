@@ -1,0 +1,106 @@
+void MigrationTest::SetUpVersion75Database() {
+  sql::Connection connection;
+  ASSERT_TRUE(connection.Open(GetDatabasePath()));
+  ASSERT_TRUE(connection.BeginTransaction());
+  ASSERT_TRUE(connection.Execute(
+      "CREATE TABLE share_version (id VARCHAR(128) primary key, data INT);"
+      "INSERT INTO 'share_version' VALUES('nick@chromium.org',75);"
+      "CREATE TABLE 'share_info' (id TEXT primary key, name TEXT, store_birthd"
+          "ay TEXT, db_create_version TEXT, db_create_time INT, next_id INT de"
+          "fault -2, cache_guid TEXT , notification_state BLOB, autofill_migra"
+          "tion_state INT default 0,bookmarks_added_during_autofill_migration "
+          "INT default 0, autofill_migration_time INT default 0, autofill_entr"
+          "ies_added_during_migration INT default 0, autofill_profiles_added_d"
+          "uring_migration INT default 0);"
+       "INSERT INTO 'share_info' VALUES('nick@chromium.org','nick@chromium.org"
+           "','c27e9f59-08ca-46f8-b0cc-f16a2ed778bb','Unknown',1263522064,-655"
+           "42,'9010788312004066376x-6609234393368420856x',NULL,0,0,0,0,0);"
+       "CREATE TABLE models (model_id BLOB primary key, progress_marker BLOB, "
+           "initial_sync_ended BOOLEAN default 0);"
+       "INSERT INTO 'models' VALUES(X'C2881000',X'0888810218B605',1);"
+       "CREATE TABLE 'metas'(metahandle bigint primary key ON CONFLICT FAIL,ba"
+           "se_version bigint default -1,server_version bigint default 0,mtime"
+           " bigint default 0,server_mtime bigint default 0,ctime bigint defau"
+           "lt 0,server_ctime bigint default 0,server_position_in_parent bigin"
+           "t default 0,local_external_id bigint default 0,id varchar(255) def"
+           "ault 'r',parent_id varchar(255) default 'r',server_parent_id varch"
+           "ar(255) default 'r',prev_id varchar(255) default 'r',next_id varch"
+           "ar(255) default 'r',is_unsynced bit default 0,is_unapplied_update "
+           "bit default 0,is_del bit default 0,is_dir bit default 0,server_is_"
+            "dir bit default 0,server_is_del bit default 0,non_unique_name varc"
+            "har,server_non_unique_name varchar(255),unique_server_tag varchar,"
+            "unique_client_tag varchar,specifics blob,server_specifics blob);"
+           "INSERT INTO 'metas' VALUES(1,-1,0," LEGACY_PROTO_TIME_VALS(1)
+              ",0,0,'r','r','r','r','r',0,0,0,1,0,0,NULL,NULL,NULL,NUL"
+               "L,X'',X'');"
+           "INSERT INTO 'metas' VALUES(2,669,669," LEGACY_PROTO_TIME_VALS(2)
+              ",-2097152,4,'s_ID_"
+               "2','s_ID_9','s_ID_9','s_ID_2','s_ID_2',0,0,1,0,0,1,'Deleted Ite"
+               "m','Deleted Item',NULL,NULL,X'C28810220A16687474703A2F2F7777772"
+               "E676F6F676C652E636F6D2F12084141534741534741',X'C28810260A176874"
+               "74703A2F2F7777772E676F6F676C652E636F6D2F32120B41534144474144474"
+               "14447');"
+           "INSERT INTO 'metas' VALUES(4,681,681," LEGACY_PROTO_TIME_VALS(4)
+              ",-3145728,3,'s_ID_"
+               "4','s_ID_9','s_ID_9','s_ID_4','s_ID_4',0,0,1,0,0,1,'Welcome to "
+               "Chromium','Welcome to Chromium',NULL,NULL,X'C28810350A316874747"
+               "03A2F2F7777772E676F6F676C652E636F6D2F6368726F6D652F696E746C2F65"
+               "6E2F77656C636F6D652E68746D6C1200',X'C28810350A31687474703A2F2F7"
+               "777772E676F6F676C652E636F6D2F6368726F6D652F696E746C2F656E2F7765"
+               "6C636F6D652E68746D6C1200');"
+           "INSERT INTO 'metas' VALUES(5,677,677," LEGACY_PROTO_TIME_VALS(5)
+              ",1048576,7,'s_ID_5"
+               "','s_ID_9','s_ID_9','s_ID_5','s_ID_5',0,0,1,0,0,1,'Google','Goo"
+               "gle',NULL,NULL,X'C28810220A16687474703A2F2F7777772E676F6F676C65"
+               "2E636F6D2F12084147415347415347',X'C28810220A16687474703A2F2F777"
+               "7772E676F6F676C652E636F6D2F12084147464447415347');"
+           "INSERT INTO 'metas' VALUES(6,694,694," LEGACY_PROTO_TIME_VALS(6)
+              ",-4194304,6,'s_ID_"
+               "6','s_ID_9','s_ID_9','r','r',0,0,0,1,1,0,'The Internet','The In"
+               "ternet',NULL,NULL,X'C2881000',X'C2881000');"
+           "INSERT INTO 'metas' VALUES(7,663,663," LEGACY_PROTO_TIME_VALS(7)
+              ",1048576,0,'s_ID_7"
+               "','r','r','r','r',0,0,0,1,1,0,'Google Chrome','Google Chrome','"
+               "google_chrome',NULL,NULL,NULL);"
+           "INSERT INTO 'metas' VALUES(8,664,664," LEGACY_PROTO_TIME_VALS(8)
+              ",1048576,0,'s_ID_8"
+               "','s_ID_7','s_ID_7','r','r',0,0,0,1,1,0,'Bookmarks','Bookmarks'"
+               ",'google_chrome_bookmarks',NULL,X'C2881000',X'C2881000');"
+           "INSERT INTO 'metas' VALUES(9,665,665," LEGACY_PROTO_TIME_VALS(9)
+              ",1048576,1,'s_ID_9"
+               "','s_ID_8','s_ID_8','r','s_ID_10',0,0,0,1,1,0,'Bookmark Bar','B"
+               "ookmark Bar','bookmark_bar',NULL,X'C2881000',X'C2881000');"
+           "INSERT INTO 'metas' VALUES(10,666,666," LEGACY_PROTO_TIME_VALS(10)
+              ",2097152,2,'s_ID_"
+               "10','s_ID_8','s_ID_8','s_ID_9','r',0,0,0,1,1,0,'Other Bookmarks"
+               "','Other Bookmarks','other_bookmarks',NULL,X'C2881000',X'C28810"
+               "00');"
+           "INSERT INTO 'metas' VALUES(11,683,683," LEGACY_PROTO_TIME_VALS(11)
+              ",-1048576,8,'s_ID"
+               "_11','s_ID_6','s_ID_6','r','s_ID_13',0,0,0,0,0,0,'Home (The Chr"
+               "omium Projects)','Home (The Chromium Projects)',NULL,NULL,X'C28"
+               "810220A18687474703A2F2F6465762E6368726F6D69756D2E6F72672F120641"
+               "4741545741',X'C28810290A1D687474703A2F2F6465762E6368726F6D69756"
+               "D2E6F72672F6F7468657212084146414756415346');"
+           "INSERT INTO 'metas' VALUES(12,685,685," LEGACY_PROTO_TIME_VALS(12)
+              ",0,9,'s_ID_12','s"
+               "_ID_6','s_ID_6','s_ID_13','s_ID_14',0,0,0,1,1,0,'Extra Bookmark"
+               "s','Extra Bookmarks',NULL,NULL,X'C2881000',X'C2881000');"
+           "INSERT INTO 'metas' VALUES(13,687,687," LEGACY_PROTO_TIME_VALS(13)
+              ",-917504,10,'s_ID"
+               "_13','s_ID_6','s_ID_6','s_ID_11','s_ID_12',0,0,0,0,0,0,'ICANN |"
+               " Internet Corporation for Assigned Names and Numbers','ICANN | "
+               "Internet Corporation for Assigned Names and Numbers',NULL,NULL,"
+               "X'C28810240A15687474703A2F2F7777772E6963616E6E2E636F6D2F120B504"
+               "E474158463041414646',X'C28810200A15687474703A2F2F7777772E696361"
+               "6E6E2E636F6D2F120744414146415346');"
+           "INSERT INTO 'metas' VALUES(14,692,692," LEGACY_PROTO_TIME_VALS(14)
+              ",1048576,11,'s_ID"
+               "_14','s_ID_6','s_ID_6','s_ID_12','r',0,0,0,0,0,0,'The WebKit Op"
+               "en Source Project','The WebKit Open Source Project',NULL,NULL,X"
+               "'C288101A0A12687474703A2F2F7765626B69742E6F72672F1204504E4758',"
+              "X'C288101C0A13687474703A2F2F7765626B69742E6F72672F781205504E473"
+              "259');"
+      ));
+   ASSERT_TRUE(connection.CommitTransaction());
+ }

@@ -1,0 +1,26 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1011695" [label="(Call,s->flags & HF_SMM_MASK)"];
+"1011694" [label="(Call,!(s->flags & HF_SMM_MASK))"];
+"1011700" [label="(ControlStructure,goto illegal_op;)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1011693" [label="(ControlStructure,if (!(s->flags & HF_SMM_MASK)))"];
+"1011694" [label="(Call,!(s->flags & HF_SMM_MASK))"];
+"1011699" [label="(Identifier,HF_SMM_MASK)"];
+"1011702" [label="(Identifier,s)"];
+"1011695" [label="(Call,s->flags & HF_SMM_MASK)"];
+"1011696" [label="(Call,s->flags)"];
+"1011695" -> "1011694"  [label="AST: "];
+"1011695" -> "1011699"  [label="CFG: "];
+"1011696" -> "1011695"  [label="AST: "];
+"1011699" -> "1011695"  [label="AST: "];
+"1011694" -> "1011695"  [label="CFG: "];
+"1011695" -> "1011840"  [label="DDG: HF_SMM_MASK"];
+"1011695" -> "1011840"  [label="DDG: s->flags"];
+"1011695" -> "1011694"  [label="DDG: s->flags"];
+"1011695" -> "1011694"  [label="DDG: HF_SMM_MASK"];
+"1011694" -> "1011693"  [label="AST: "];
+"1011700" -> "1011694"  [label="CFG: "];
+"1011702" -> "1011694"  [label="CFG: "];
+"1011694" -> "1011840"  [label="DDG: s->flags & HF_SMM_MASK"];
+"1011694" -> "1011840"  [label="DDG: !(s->flags & HF_SMM_MASK)"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_9bf292bfca94694a721449e3fd752493856710f6@API" {
+"1000224" [label="(Call,mutex_unlock(&vi->vop_mutex))"];
+"1000201" [label="(Call,mutex_lock(&vi->vop_mutex))"];
+"1000376" [label="(MethodReturn,static long)"];
+"1000232" [label="(Identifier,vdev)"];
+"1000224" [label="(Call,mutex_unlock(&vi->vop_mutex))"];
+"1000129" [label="(Block,)"];
+"1000207" [label="(Identifier,ret)"];
+"1000225" [label="(Call,&vi->vop_mutex)"];
+"1000201" [label="(Call,mutex_lock(&vi->vop_mutex))"];
+"1000202" [label="(Call,&vi->vop_mutex)"];
+"1000224" -> "1000129"  [label="AST: "];
+"1000224" -> "1000225"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000232" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000376"  [label="DDG: &vi->vop_mutex"];
+"1000224" -> "1000376"  [label="DDG: mutex_unlock(&vi->vop_mutex)"];
+"1000201" -> "1000224"  [label="DDG: &vi->vop_mutex"];
+"1000201" -> "1000129"  [label="AST: "];
+"1000201" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000207" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000376"  [label="DDG: mutex_lock(&vi->vop_mutex)"];
+}

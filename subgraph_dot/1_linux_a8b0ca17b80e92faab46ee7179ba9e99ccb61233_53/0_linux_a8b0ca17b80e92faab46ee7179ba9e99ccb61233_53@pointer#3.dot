@@ -1,0 +1,35 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_53@pointer" {
+"1000219" [label="(Call,event->pending_kill = POLL_HUP)"];
+"1000256" [label="(Call,event->fasync && event->pending_kill)"];
+"1000257" [label="(Call,event->fasync)"];
+"1000265" [label="(Identifier,nmi)"];
+"1000281" [label="(Identifier,ret)"];
+"1000255" [label="(ControlStructure,if (event->fasync && event->pending_kill))"];
+"1000225" [label="(Identifier,nmi)"];
+"1000202" [label="(Call,event->pending_kill = POLL_IN)"];
+"1000282" [label="(MethodReturn,static int)"];
+"1000256" [label="(Call,event->fasync && event->pending_kill)"];
+"1000220" [label="(Call,event->pending_kill)"];
+"1000219" [label="(Call,event->pending_kill = POLL_HUP)"];
+"1000215" [label="(Block,)"];
+"1000223" [label="(Identifier,POLL_HUP)"];
+"1000260" [label="(Call,event->pending_kill)"];
+"1000219" -> "1000215"  [label="AST: "];
+"1000219" -> "1000223"  [label="CFG: "];
+"1000220" -> "1000219"  [label="AST: "];
+"1000223" -> "1000219"  [label="AST: "];
+"1000225" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000282"  [label="DDG: POLL_HUP"];
+"1000219" -> "1000256"  [label="DDG: event->pending_kill"];
+"1000256" -> "1000255"  [label="AST: "];
+"1000256" -> "1000257"  [label="CFG: "];
+"1000256" -> "1000260"  [label="CFG: "];
+"1000257" -> "1000256"  [label="AST: "];
+"1000260" -> "1000256"  [label="AST: "];
+"1000265" -> "1000256"  [label="CFG: "];
+"1000281" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000282"  [label="DDG: event->pending_kill"];
+"1000256" -> "1000282"  [label="DDG: event->fasync"];
+"1000256" -> "1000282"  [label="DDG: event->fasync && event->pending_kill"];
+"1000202" -> "1000256"  [label="DDG: event->pending_kill"];
+}

@@ -1,0 +1,3 @@
+Chapters::Atom::Atom()
+{
+ }

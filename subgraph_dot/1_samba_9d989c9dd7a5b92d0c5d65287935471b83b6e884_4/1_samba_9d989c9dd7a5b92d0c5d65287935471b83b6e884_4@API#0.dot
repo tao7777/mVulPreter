@@ -1,0 +1,25 @@
+digraph "1_samba_9d989c9dd7a5b92d0c5d65287935471b83b6e884_4@API" {
+"1000104" [label="(Call,asn1_write(data, s->data, s->length))"];
+"1000101" [label="(MethodParameterIn,struct asn1_data *data)"];
+"1000109" [label="(Call,s->length)"];
+"1000117" [label="(MethodReturn,bool)"];
+"1000115" [label="(Identifier,data)"];
+"1000103" [label="(Block,)"];
+"1000106" [label="(Call,s->data)"];
+"1000105" [label="(Identifier,data)"];
+"1000101" [label="(MethodParameterIn,struct asn1_data *data)"];
+"1000104" [label="(Call,asn1_write(data, s->data, s->length))"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000109"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="AST: "];
+"1000115" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000117"  [label="DDG: asn1_write(data, s->data, s->length)"];
+"1000104" -> "1000117"  [label="DDG: data"];
+"1000104" -> "1000117"  [label="DDG: s->data"];
+"1000104" -> "1000117"  [label="DDG: s->length"];
+"1000101" -> "1000104"  [label="DDG: data"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000117"  [label="DDG: data"];
+}

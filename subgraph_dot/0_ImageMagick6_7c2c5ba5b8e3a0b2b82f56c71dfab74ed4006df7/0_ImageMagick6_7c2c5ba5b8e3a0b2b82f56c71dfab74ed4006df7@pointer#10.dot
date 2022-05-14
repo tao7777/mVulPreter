@@ -1,0 +1,35 @@
+digraph "0_ImageMagick6_7c2c5ba5b8e3a0b2b82f56c71dfab74ed4006df7@pointer" {
+"1000214" [label="(Call,*p != '\0')"];
+"1000221" [label="(Call,*p == '\n')"];
+"1000214" [label="(Call,*p != '\0')"];
+"1000210" [label="(ControlStructure,for (p=text; *p != '\0'; p++))"];
+"1000224" [label="(Literal,'\n')"];
+"1000221" [label="(Call,*p == '\n')"];
+"1002061" [label="(MethodReturn,MagickExport MagickBooleanType)"];
+"1000226" [label="(Identifier,number_lines)"];
+"1000219" [label="(Identifier,p)"];
+"1000217" [label="(Literal,'\0')"];
+"1000228" [label="(Identifier,textlist)"];
+"1000215" [label="(Call,*p)"];
+"1000223" [label="(Identifier,p)"];
+"1000222" [label="(Call,*p)"];
+"1000220" [label="(ControlStructure,if (*p == '\n'))"];
+"1000214" [label="(Call,*p != '\0')"];
+"1000214" -> "1000210"  [label="AST: "];
+"1000214" -> "1000217"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000217" -> "1000214"  [label="AST: "];
+"1000223" -> "1000214"  [label="CFG: "];
+"1000228" -> "1000214"  [label="CFG: "];
+"1000214" -> "1002061"  [label="DDG: *p != '\0'"];
+"1000214" -> "1002061"  [label="DDG: *p"];
+"1000221" -> "1000214"  [label="DDG: *p"];
+"1000214" -> "1000221"  [label="DDG: *p"];
+"1000221" -> "1000220"  [label="AST: "];
+"1000221" -> "1000224"  [label="CFG: "];
+"1000222" -> "1000221"  [label="AST: "];
+"1000224" -> "1000221"  [label="AST: "];
+"1000226" -> "1000221"  [label="CFG: "];
+"1000219" -> "1000221"  [label="CFG: "];
+"1000221" -> "1002061"  [label="DDG: *p == '\n'"];
+}

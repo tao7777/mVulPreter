@@ -1,0 +1,25 @@
+digraph "0_httpd_3f1693d558d0758f829c8b53993f1749ddf6ffcb_0@pointer" {
+"1000102" [label="(MethodParameterIn,const char *require_line)"];
+"1000145" [label="(Call,require_line && *require_line)"];
+"1000102" [label="(MethodParameterIn,const char *require_line)"];
+"1000144" [label="(ControlStructure,if (require_line && *require_line))"];
+"1000153" [label="(Identifier,func)"];
+"1000182" [label="(MethodReturn,static const char *)"];
+"1000146" [label="(Identifier,require_line)"];
+"1000147" [label="(Call,*require_line)"];
+"1000145" [label="(Call,require_line && *require_line)"];
+"1000178" [label="(Identifier,parsed_require_line)"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000182"  [label="DDG: require_line"];
+"1000102" -> "1000145"  [label="DDG: require_line"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000153" -> "1000145"  [label="CFG: "];
+"1000178" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000182"  [label="DDG: require_line && *require_line"];
+"1000145" -> "1000182"  [label="DDG: require_line"];
+"1000145" -> "1000182"  [label="DDG: *require_line"];
+}

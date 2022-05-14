@@ -1,0 +1,33 @@
+digraph "0_linux_c70422f760c120480fee4de6c38804c72aa26bc1_31@pointer" {
+"1000159" [label="(Call,*p = xdr_zero)"];
+"1000126" [label="(Call,*q != xdr_zero)"];
+"1000154" [label="(Call,*p++ = xdr_zero)"];
+"1000129" [label="(Identifier,xdr_zero)"];
+"1000157" [label="(Identifier,p)"];
+"1000111" [label="(Block,)"];
+"1000126" [label="(Call,*q != xdr_zero)"];
+"1000159" [label="(Call,*p = xdr_zero)"];
+"1000125" [label="(ControlStructure,while (*q != xdr_zero))"];
+"1000162" [label="(Identifier,xdr_zero)"];
+"1000127" [label="(Call,*q)"];
+"1000132" [label="(Identifier,nsegs)"];
+"1000163" [label="(MethodReturn,static void)"];
+"1000160" [label="(Call,*p)"];
+"1000159" -> "1000111"  [label="AST: "];
+"1000159" -> "1000162"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000162" -> "1000159"  [label="AST: "];
+"1000163" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000163"  [label="DDG: *p"];
+"1000159" -> "1000163"  [label="DDG: xdr_zero"];
+"1000126" -> "1000159"  [label="DDG: xdr_zero"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000129"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000129" -> "1000126"  [label="AST: "];
+"1000132" -> "1000126"  [label="CFG: "];
+"1000157" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000163"  [label="DDG: *q != xdr_zero"];
+"1000126" -> "1000163"  [label="DDG: *q"];
+"1000126" -> "1000154"  [label="DDG: xdr_zero"];
+}

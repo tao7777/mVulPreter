@@ -1,0 +1,37 @@
+digraph "0_radare2_4e98402f09a0ef0bb8559a33a4c1988c54938eaf_0@API" {
+"1000115" [label="(Call,r_bin_dyldcache_free (bin))"];
+"1000105" [label="(Call,!bin)"];
+"1000114" [label="(Return,return r_bin_dyldcache_free (bin);)"];
+"1000104" [label="(ControlStructure,if (!bin))"];
+"1000113" [label="(Block,)"];
+"1000115" [label="(Call,r_bin_dyldcache_free (bin))"];
+"1000137" [label="(Call,r_bin_dyldcache_free (bin))"];
+"1000106" [label="(Identifier,bin)"];
+"1000116" [label="(Identifier,bin)"];
+"1000109" [label="(Identifier,NULL)"];
+"1000141" [label="(Call,r_bin_dyldcache_init (bin))"];
+"1000105" [label="(Call,!bin)"];
+"1000154" [label="(MethodReturn,struct r_bin_dyldcache_obj_t*)"];
+"1000112" [label="(Identifier,buf)"];
+"1000114" [label="(Return,return r_bin_dyldcache_free (bin);)"];
+"1000115" -> "1000114"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000154"  [label="DDG: r_bin_dyldcache_free (bin)"];
+"1000115" -> "1000154"  [label="DDG: bin"];
+"1000115" -> "1000114"  [label="DDG: r_bin_dyldcache_free (bin)"];
+"1000105" -> "1000115"  [label="DDG: bin"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000109" -> "1000105"  [label="CFG: "];
+"1000112" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000154"  [label="DDG: !bin"];
+"1000105" -> "1000154"  [label="DDG: bin"];
+"1000105" -> "1000137"  [label="DDG: bin"];
+"1000105" -> "1000141"  [label="DDG: bin"];
+"1000114" -> "1000113"  [label="AST: "];
+"1000154" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000154"  [label="DDG: <RET>"];
+}

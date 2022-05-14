@@ -1,0 +1,1 @@
+void WebSettingsImpl::setExperimentalNotificationsEnabled(bool enabled)

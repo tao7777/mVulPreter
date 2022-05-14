@@ -1,0 +1,33 @@
+digraph "0_openssl_b15f8769644b00ef7283521593360b7b2135cb63@pointer" {
+"1000166" [label="(Call,*srvr_ecpoint = NULL)"];
+"1001750" [label="(Call,EC_POINT_free(srvr_ecpoint))"];
+"1001751" [label="(Identifier,srvr_ecpoint)"];
+"1001401" [label="(Call,srvr_ecpoint = NULL)"];
+"1001754" [label="(Identifier,ecdh)"];
+"1001750" [label="(Call,EC_POINT_free(srvr_ecpoint))"];
+"1000166" [label="(Call,*srvr_ecpoint = NULL)"];
+"1001318" [label="(Call,EC_POINT_oct2point(group, srvr_ecpoint, \n\t\t\tp, encoded_pt_len, bn_ctx))"];
+"1000171" [label="(Identifier,curve_nid)"];
+"1000127" [label="(Block,)"];
+"1000168" [label="(Identifier,NULL)"];
+"1001764" [label="(MethodReturn,int)"];
+"1001288" [label="(Call,srvr_ecpoint = EC_POINT_new(group))"];
+"1000167" [label="(Identifier,srvr_ecpoint)"];
+"1000166" -> "1000127"  [label="AST: "];
+"1000166" -> "1000168"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000168" -> "1000166"  [label="AST: "];
+"1000171" -> "1000166"  [label="CFG: "];
+"1000166" -> "1001764"  [label="DDG: NULL"];
+"1000166" -> "1001764"  [label="DDG: srvr_ecpoint"];
+"1000166" -> "1001750"  [label="DDG: srvr_ecpoint"];
+"1001750" -> "1000127"  [label="AST: "];
+"1001750" -> "1001751"  [label="CFG: "];
+"1001751" -> "1001750"  [label="AST: "];
+"1001754" -> "1001750"  [label="CFG: "];
+"1001750" -> "1001764"  [label="DDG: srvr_ecpoint"];
+"1001750" -> "1001764"  [label="DDG: EC_POINT_free(srvr_ecpoint)"];
+"1001318" -> "1001750"  [label="DDG: srvr_ecpoint"];
+"1001288" -> "1001750"  [label="DDG: srvr_ecpoint"];
+"1001401" -> "1001750"  [label="DDG: srvr_ecpoint"];
+}

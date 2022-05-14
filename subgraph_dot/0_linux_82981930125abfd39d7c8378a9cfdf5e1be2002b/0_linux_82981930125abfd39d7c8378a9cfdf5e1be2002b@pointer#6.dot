@@ -1,0 +1,38 @@
+digraph "0_linux_82981930125abfd39d7c8378a9cfdf5e1be2002b@pointer" {
+"1000639" [label="(Call,test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000638" [label="(Call,!test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000637" [label="(Call,!!test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000633" [label="(Call,v.val = !!test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000639" [label="(Call,test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000637" [label="(Call,!!test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000645" [label="(ControlStructure,break;)"];
+"1000641" [label="(Call,&sock->flags)"];
+"1000638" [label="(Call,!test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000744" [label="(MethodReturn,int)"];
+"1000640" [label="(Identifier,SOCK_PASSSEC)"];
+"1000143" [label="(Block,)"];
+"1000633" [label="(Call,v.val = !!test_bit(SOCK_PASSSEC, &sock->flags))"];
+"1000634" [label="(Call,v.val)"];
+"1000639" -> "1000638"  [label="AST: "];
+"1000639" -> "1000641"  [label="CFG: "];
+"1000640" -> "1000639"  [label="AST: "];
+"1000641" -> "1000639"  [label="AST: "];
+"1000638" -> "1000639"  [label="CFG: "];
+"1000639" -> "1000744"  [label="DDG: &sock->flags"];
+"1000639" -> "1000744"  [label="DDG: SOCK_PASSSEC"];
+"1000639" -> "1000638"  [label="DDG: SOCK_PASSSEC"];
+"1000639" -> "1000638"  [label="DDG: &sock->flags"];
+"1000638" -> "1000637"  [label="AST: "];
+"1000637" -> "1000638"  [label="CFG: "];
+"1000638" -> "1000744"  [label="DDG: test_bit(SOCK_PASSSEC, &sock->flags)"];
+"1000638" -> "1000637"  [label="DDG: test_bit(SOCK_PASSSEC, &sock->flags)"];
+"1000637" -> "1000633"  [label="AST: "];
+"1000633" -> "1000637"  [label="CFG: "];
+"1000637" -> "1000744"  [label="DDG: !test_bit(SOCK_PASSSEC, &sock->flags)"];
+"1000637" -> "1000633"  [label="DDG: !test_bit(SOCK_PASSSEC, &sock->flags)"];
+"1000633" -> "1000143"  [label="AST: "];
+"1000634" -> "1000633"  [label="AST: "];
+"1000645" -> "1000633"  [label="CFG: "];
+"1000633" -> "1000744"  [label="DDG: !!test_bit(SOCK_PASSSEC, &sock->flags)"];
+"1000633" -> "1000744"  [label="DDG: v.val"];
+}

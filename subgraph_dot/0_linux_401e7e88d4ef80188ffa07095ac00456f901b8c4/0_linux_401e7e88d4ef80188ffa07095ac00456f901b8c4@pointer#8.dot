@@ -1,0 +1,30 @@
+digraph "0_linux_401e7e88d4ef80188ffa07095ac00456f901b8c4@pointer" {
+"1000450" [label="(Call,atomic_set(&new_smi->req_events, 1))"];
+"1000384" [label="(Call,atomic_set(&new_smi->req_events, 0))"];
+"1000389" [label="(Literal,0)"];
+"1000384" [label="(Call,atomic_set(&new_smi->req_events, 0))"];
+"1000385" [label="(Call,&new_smi->req_events)"];
+"1000450" [label="(Call,atomic_set(&new_smi->req_events, 1))"];
+"1000392" [label="(Identifier,new_smi)"];
+"1000444" [label="(Block,)"];
+"1000459" [label="(Identifier,new_smi)"];
+"1000113" [label="(Block,)"];
+"1000603" [label="(MethodReturn,static int)"];
+"1000451" [label="(Call,&new_smi->req_events)"];
+"1000455" [label="(Literal,1)"];
+"1000450" -> "1000444"  [label="AST: "];
+"1000450" -> "1000455"  [label="CFG: "];
+"1000451" -> "1000450"  [label="AST: "];
+"1000455" -> "1000450"  [label="AST: "];
+"1000459" -> "1000450"  [label="CFG: "];
+"1000450" -> "1000603"  [label="DDG: atomic_set(&new_smi->req_events, 1)"];
+"1000450" -> "1000603"  [label="DDG: &new_smi->req_events"];
+"1000384" -> "1000450"  [label="DDG: &new_smi->req_events"];
+"1000384" -> "1000113"  [label="AST: "];
+"1000384" -> "1000389"  [label="CFG: "];
+"1000385" -> "1000384"  [label="AST: "];
+"1000389" -> "1000384"  [label="AST: "];
+"1000392" -> "1000384"  [label="CFG: "];
+"1000384" -> "1000603"  [label="DDG: atomic_set(&new_smi->req_events, 0)"];
+"1000384" -> "1000603"  [label="DDG: &new_smi->req_events"];
+}

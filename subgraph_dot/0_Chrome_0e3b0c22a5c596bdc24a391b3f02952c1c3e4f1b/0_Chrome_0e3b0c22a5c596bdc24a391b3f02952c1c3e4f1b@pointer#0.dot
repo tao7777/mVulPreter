@@ -1,0 +1,28 @@
+digraph "0_Chrome_0e3b0c22a5c596bdc24a391b3f02952c1c3e4f1b@pointer" {
+"1000121" [label="(Call,* entered_document = entered_window->document())"];
+"1000125" [label="(Call,!entered_document)"];
+"1000125" [label="(Call,!entered_document)"];
+"1000130" [label="(Identifier,completed_url)"];
+"1000237" [label="(MethodReturn,void)"];
+"1000111" [label="(Block,)"];
+"1000122" [label="(Identifier,entered_document)"];
+"1000126" [label="(Identifier,entered_document)"];
+"1000121" [label="(Call,* entered_document = entered_window->document())"];
+"1000127" [label="(Return,return;)"];
+"1000123" [label="(Call,entered_window->document())"];
+"1000124" [label="(ControlStructure,if (!entered_document))"];
+"1000121" -> "1000111"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000237"  [label="DDG: entered_window->document()"];
+"1000121" -> "1000125"  [label="DDG: entered_document"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="CFG: "];
+"1000130" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000237"  [label="DDG: entered_document"];
+"1000125" -> "1000237"  [label="DDG: !entered_document"];
+}

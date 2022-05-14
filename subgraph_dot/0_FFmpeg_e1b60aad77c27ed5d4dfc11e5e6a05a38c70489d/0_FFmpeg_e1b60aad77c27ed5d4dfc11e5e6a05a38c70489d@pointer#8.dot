@@ -1,0 +1,37 @@
+digraph "0_FFmpeg_e1b60aad77c27ed5d4dfc11e5e6a05a38c70489d@pointer" {
+"1000413" [label="(Call,avctx->pix_fmt = AV_PIX_FMT_RGB24)"];
+"1000488" [label="(Call,avctx->pix_fmt == AV_PIX_FMT_PAL8)"];
+"1000487" [label="(ControlStructure,if (avctx->pix_fmt == AV_PIX_FMT_PAL8))"];
+"1000386" [label="(Call,avctx->pix_fmt = AV_PIX_FMT_BGR24)"];
+"1000412" [label="(Block,)"];
+"1000508" [label="(MethodReturn,static int)"];
+"1000489" [label="(Call,avctx->pix_fmt)"];
+"1000500" [label="(Identifier,c)"];
+"1000417" [label="(Identifier,AV_PIX_FMT_RGB24)"];
+"1000349" [label="(Call,avctx->pix_fmt = AV_PIX_FMT_PAL8)"];
+"1000414" [label="(Call,avctx->pix_fmt)"];
+"1000413" [label="(Call,avctx->pix_fmt = AV_PIX_FMT_RGB24)"];
+"1000488" [label="(Call,avctx->pix_fmt == AV_PIX_FMT_PAL8)"];
+"1000492" [label="(Identifier,AV_PIX_FMT_PAL8)"];
+"1000495" [label="(Identifier,c)"];
+"1000435" [label="(Identifier,ret)"];
+"1000413" -> "1000412"  [label="AST: "];
+"1000413" -> "1000417"  [label="CFG: "];
+"1000414" -> "1000413"  [label="AST: "];
+"1000417" -> "1000413"  [label="AST: "];
+"1000435" -> "1000413"  [label="CFG: "];
+"1000413" -> "1000508"  [label="DDG: avctx->pix_fmt"];
+"1000413" -> "1000508"  [label="DDG: AV_PIX_FMT_RGB24"];
+"1000413" -> "1000488"  [label="DDG: avctx->pix_fmt"];
+"1000488" -> "1000487"  [label="AST: "];
+"1000488" -> "1000492"  [label="CFG: "];
+"1000489" -> "1000488"  [label="AST: "];
+"1000492" -> "1000488"  [label="AST: "];
+"1000495" -> "1000488"  [label="CFG: "];
+"1000500" -> "1000488"  [label="CFG: "];
+"1000488" -> "1000508"  [label="DDG: avctx->pix_fmt"];
+"1000488" -> "1000508"  [label="DDG: avctx->pix_fmt == AV_PIX_FMT_PAL8"];
+"1000488" -> "1000508"  [label="DDG: AV_PIX_FMT_PAL8"];
+"1000386" -> "1000488"  [label="DDG: avctx->pix_fmt"];
+"1000349" -> "1000488"  [label="DDG: avctx->pix_fmt"];
+}

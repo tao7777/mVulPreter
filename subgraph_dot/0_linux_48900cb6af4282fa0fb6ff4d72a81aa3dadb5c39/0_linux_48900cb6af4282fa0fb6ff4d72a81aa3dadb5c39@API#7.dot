@@ -1,0 +1,31 @@
+digraph "0_linux_48900cb6af4282fa0fb6ff4d72a81aa3dadb5c39@API" {
+"1000416" [label="(Call,vi->hdr_len = sizeof(struct virtio_net_hdr_mrg_rxbuf))"];
+"1000455" [label="(Call,dev->needed_headroom = vi->hdr_len)"];
+"1000423" [label="(Call,vi->hdr_len = sizeof(struct virtio_net_hdr))"];
+"1000459" [label="(Call,vi->hdr_len)"];
+"1000417" [label="(Call,vi->hdr_len)"];
+"1000456" [label="(Call,dev->needed_headroom)"];
+"1000408" [label="(ControlStructure,if (virtio_has_feature(vdev, VIRTIO_NET_F_MRG_RXBUF) ||\n\t    virtio_has_feature(vdev, VIRTIO_F_VERSION_1)))"];
+"1000464" [label="(Identifier,vi)"];
+"1000451" [label="(ControlStructure,if (vi->any_header_sg))"];
+"1000455" [label="(Call,dev->needed_headroom = vi->hdr_len)"];
+"1000432" [label="(Identifier,vdev)"];
+"1000416" [label="(Call,vi->hdr_len = sizeof(struct virtio_net_hdr_mrg_rxbuf))"];
+"1000420" [label="(Call,sizeof(struct virtio_net_hdr_mrg_rxbuf))"];
+"1000638" [label="(MethodReturn,static int)"];
+"1000416" -> "1000408"  [label="AST: "];
+"1000416" -> "1000420"  [label="CFG: "];
+"1000417" -> "1000416"  [label="AST: "];
+"1000420" -> "1000416"  [label="AST: "];
+"1000432" -> "1000416"  [label="CFG: "];
+"1000416" -> "1000638"  [label="DDG: vi->hdr_len"];
+"1000416" -> "1000455"  [label="DDG: vi->hdr_len"];
+"1000455" -> "1000451"  [label="AST: "];
+"1000455" -> "1000459"  [label="CFG: "];
+"1000456" -> "1000455"  [label="AST: "];
+"1000459" -> "1000455"  [label="AST: "];
+"1000464" -> "1000455"  [label="CFG: "];
+"1000455" -> "1000638"  [label="DDG: vi->hdr_len"];
+"1000455" -> "1000638"  [label="DDG: dev->needed_headroom"];
+"1000423" -> "1000455"  [label="DDG: vi->hdr_len"];
+}

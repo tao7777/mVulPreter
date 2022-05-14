@@ -1,0 +1,35 @@
+digraph "0_raptor_a676f235309a59d4aa78eeffd2574ae5d341fcb0_2@pointer" {
+"1000205" [label="(Call,raptor_new_id_set(rdf_parser->world))"];
+"1000201" [label="(Call,rdf_xml_parser->id_set = raptor_new_id_set(rdf_parser->world))"];
+"1000210" [label="(Call,!rdf_xml_parser->id_set)"];
+"1000211" [label="(Call,rdf_xml_parser->id_set)"];
+"1000206" [label="(Call,rdf_parser->world)"];
+"1000215" [label="(Literal,1)"];
+"1000205" [label="(Call,raptor_new_id_set(rdf_parser->world))"];
+"1000202" [label="(Call,rdf_xml_parser->id_set)"];
+"1000218" [label="(MethodReturn,RET)"];
+"1000201" [label="(Call,rdf_xml_parser->id_set = raptor_new_id_set(rdf_parser->world))"];
+"1000209" [label="(ControlStructure,if(!rdf_xml_parser->id_set))"];
+"1000200" [label="(Block,)"];
+"1000212" [label="(Identifier,rdf_xml_parser)"];
+"1000210" [label="(Call,!rdf_xml_parser->id_set)"];
+"1000217" [label="(Literal,0)"];
+"1000205" -> "1000201"  [label="AST: "];
+"1000205" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000205"  [label="AST: "];
+"1000201" -> "1000205"  [label="CFG: "];
+"1000205" -> "1000218"  [label="DDG: rdf_parser->world"];
+"1000205" -> "1000201"  [label="DDG: rdf_parser->world"];
+"1000201" -> "1000200"  [label="AST: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000212" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000218"  [label="DDG: raptor_new_id_set(rdf_parser->world)"];
+"1000201" -> "1000210"  [label="DDG: rdf_xml_parser->id_set"];
+"1000210" -> "1000209"  [label="AST: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000215" -> "1000210"  [label="CFG: "];
+"1000217" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000218"  [label="DDG: rdf_xml_parser->id_set"];
+"1000210" -> "1000218"  [label="DDG: !rdf_xml_parser->id_set"];
+}

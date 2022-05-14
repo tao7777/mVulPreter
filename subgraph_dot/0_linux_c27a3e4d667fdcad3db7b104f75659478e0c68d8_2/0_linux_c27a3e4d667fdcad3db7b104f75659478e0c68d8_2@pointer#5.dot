@@ -1,0 +1,32 @@
+digraph "0_linux_c27a3e4d667fdcad3db7b104f75659478e0c68d8_2@pointer" {
+"1000383" [label="(Call,ceph_crypto_key_destroy(&th->session_key))"];
+"1000223" [label="(Call,memcpy(&old_key, &th->session_key, sizeof(old_key)))"];
+"1000226" [label="(Call,&th->session_key)"];
+"1000110" [label="(Block,)"];
+"1000384" [label="(Call,&th->session_key)"];
+"1000390" [label="(Identifier,th)"];
+"1000233" [label="(Identifier,ret)"];
+"1000383" [label="(Call,ceph_crypto_key_destroy(&th->session_key))"];
+"1000463" [label="(MethodReturn,static int)"];
+"1000287" [label="(Call,ceph_x_decrypt(&old_key, p, end, &ticket_buf, 0))"];
+"1000224" [label="(Call,&old_key)"];
+"1000230" [label="(Call,sizeof(old_key))"];
+"1000223" [label="(Call,memcpy(&old_key, &th->session_key, sizeof(old_key)))"];
+"1000383" -> "1000110"  [label="AST: "];
+"1000383" -> "1000384"  [label="CFG: "];
+"1000384" -> "1000383"  [label="AST: "];
+"1000390" -> "1000383"  [label="CFG: "];
+"1000383" -> "1000463"  [label="DDG: ceph_crypto_key_destroy(&th->session_key)"];
+"1000383" -> "1000463"  [label="DDG: &th->session_key"];
+"1000223" -> "1000383"  [label="DDG: &th->session_key"];
+"1000223" -> "1000110"  [label="AST: "];
+"1000223" -> "1000230"  [label="CFG: "];
+"1000224" -> "1000223"  [label="AST: "];
+"1000226" -> "1000223"  [label="AST: "];
+"1000230" -> "1000223"  [label="AST: "];
+"1000233" -> "1000223"  [label="CFG: "];
+"1000223" -> "1000463"  [label="DDG: memcpy(&old_key, &th->session_key, sizeof(old_key))"];
+"1000223" -> "1000463"  [label="DDG: &th->session_key"];
+"1000223" -> "1000463"  [label="DDG: &old_key"];
+"1000223" -> "1000287"  [label="DDG: &old_key"];
+}

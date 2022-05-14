@@ -1,0 +1,31 @@
+digraph "0_linux_82262a46627bebb0febcc26664746c25cef08563@pointer" {
+"1000375" [label="(Call,ue->card = card)"];
+"1000106" [label="(Call,*card = file->card)"];
+"1000379" [label="(Identifier,card)"];
+"1000508" [label="(MethodReturn,static int)"];
+"1000483" [label="(Call,snd_ctl_add(card, _kctl))"];
+"1000106" [label="(Call,*card = file->card)"];
+"1000107" [label="(Identifier,card)"];
+"1000121" [label="(Identifier,info)"];
+"1000108" [label="(Call,file->card)"];
+"1000104" [label="(Block,)"];
+"1000382" [label="(Identifier,ue)"];
+"1000376" [label="(Call,ue->card)"];
+"1000375" [label="(Call,ue->card = card)"];
+"1000375" -> "1000104"  [label="AST: "];
+"1000375" -> "1000379"  [label="CFG: "];
+"1000376" -> "1000375"  [label="AST: "];
+"1000379" -> "1000375"  [label="AST: "];
+"1000382" -> "1000375"  [label="CFG: "];
+"1000375" -> "1000508"  [label="DDG: ue->card"];
+"1000375" -> "1000508"  [label="DDG: card"];
+"1000106" -> "1000375"  [label="DDG: card"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000121" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000508"  [label="DDG: file->card"];
+"1000106" -> "1000508"  [label="DDG: card"];
+"1000106" -> "1000483"  [label="DDG: card"];
+}

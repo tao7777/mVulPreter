@@ -1,0 +1,38 @@
+digraph "0_Chrome_e21bdfb9c758ac411012ad84f83d26d3f7dd69fb_3@pointer" {
+"1000241" [label="(Call,!permission_info)"];
+"1000235" [label="(Call,* permission_info = info->GetByName(*it))"];
+"1000237" [label="(Call,info->GetByName(*it))"];
+"1000281" [label="(Call,origin.Parse(*it))"];
+"1000241" [label="(Call,!permission_info)"];
+"1000246" [label="(Identifier,error)"];
+"1000233" [label="(Block,)"];
+"1000254" [label="(Call,permission_info->id())"];
+"1000236" [label="(Identifier,permission_info)"];
+"1000240" [label="(ControlStructure,if (!permission_info))"];
+"1000237" [label="(Call,info->GetByName(*it))"];
+"1000309" [label="(MethodReturn,scoped_refptr<PermissionSet>)"];
+"1000242" [label="(Identifier,permission_info)"];
+"1000247" [label="(Call,ErrorUtils::FormatErrorMessage(\n              kUnknownPermissionError, *it))"];
+"1000238" [label="(Call,*it)"];
+"1000235" [label="(Call,* permission_info = info->GetByName(*it))"];
+"1000241" -> "1000240"  [label="AST: "];
+"1000241" -> "1000242"  [label="CFG: "];
+"1000242" -> "1000241"  [label="AST: "];
+"1000246" -> "1000241"  [label="CFG: "];
+"1000254" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000309"  [label="DDG: permission_info"];
+"1000241" -> "1000309"  [label="DDG: !permission_info"];
+"1000235" -> "1000241"  [label="DDG: permission_info"];
+"1000235" -> "1000233"  [label="AST: "];
+"1000235" -> "1000237"  [label="CFG: "];
+"1000236" -> "1000235"  [label="AST: "];
+"1000237" -> "1000235"  [label="AST: "];
+"1000242" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000309"  [label="DDG: info->GetByName(*it)"];
+"1000237" -> "1000235"  [label="DDG: *it"];
+"1000237" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000237" -> "1000309"  [label="DDG: *it"];
+"1000237" -> "1000247"  [label="DDG: *it"];
+"1000237" -> "1000281"  [label="DDG: *it"];
+}

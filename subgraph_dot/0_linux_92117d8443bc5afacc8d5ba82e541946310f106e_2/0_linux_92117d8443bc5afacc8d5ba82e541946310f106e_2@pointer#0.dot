@@ -1,0 +1,26 @@
+digraph "0_linux_92117d8443bc5afacc8d5ba82e541946310f106e_2@pointer" {
+"1000114" [label="(Call,atomic_dec(&map->refcnt))"];
+"1000107" [label="(Call,atomic_inc_return(&map->refcnt))"];
+"1000114" [label="(Call,atomic_dec(&map->refcnt))"];
+"1000108" [label="(Call,&map->refcnt)"];
+"1000113" [label="(Block,)"];
+"1000132" [label="(MethodReturn,struct bpf_map *)"];
+"1000106" [label="(Call,atomic_inc_return(&map->refcnt) > BPF_MAX_REFCNT)"];
+"1000112" [label="(Identifier,BPF_MAX_REFCNT)"];
+"1000115" [label="(Call,&map->refcnt)"];
+"1000122" [label="(Identifier,EBUSY)"];
+"1000107" [label="(Call,atomic_inc_return(&map->refcnt))"];
+"1000114" -> "1000113"  [label="AST: "];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000122" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000132"  [label="DDG: atomic_dec(&map->refcnt)"];
+"1000114" -> "1000132"  [label="DDG: &map->refcnt"];
+"1000107" -> "1000114"  [label="DDG: &map->refcnt"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000112" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000132"  [label="DDG: &map->refcnt"];
+"1000107" -> "1000106"  [label="DDG: &map->refcnt"];
+}

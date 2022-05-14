@@ -1,0 +1,34 @@
+digraph "0_openssl_3c66a669dfc7b3792f7af0758ea26fe8502ce70c@pointer" {
+"1000177" [label="(Call,*clnt_ecpoint = NULL)"];
+"1002145" [label="(Call,EC_POINT_free(clnt_ecpoint))"];
+"1000177" [label="(Call,*clnt_ecpoint = NULL)"];
+"1002146" [label="(Identifier,clnt_ecpoint)"];
+"1002149" [label="(Identifier,srvr_ecdh)"];
+"1001439" [label="(Call,EC_POINT_oct2point(group, clnt_ecpoint, p, i, bn_ctx))"];
+"1000178" [label="(Identifier,clnt_ecpoint)"];
+"1001475" [label="(Call,ECDH_compute_key(p, (field_size + 7) / 8, clnt_ecpoint, srvr_ecdh,\n                             NULL))"];
+"1001335" [label="(Call,clnt_ecpoint = EC_POINT_new(group))"];
+"1002145" [label="(Call,EC_POINT_free(clnt_ecpoint))"];
+"1002163" [label="(MethodReturn,int)"];
+"1000182" [label="(Identifier,bn_ctx)"];
+"1000179" [label="(Identifier,NULL)"];
+"1001389" [label="(Call,EC_POINT_copy(clnt_ecpoint,\n                              EC_KEY_get0_public_key(clnt_pub_pkey->\n                                                     pkey.ec)))"];
+"1000143" [label="(Block,)"];
+"1000177" -> "1000143"  [label="AST: "];
+"1000177" -> "1000179"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000179" -> "1000177"  [label="AST: "];
+"1000182" -> "1000177"  [label="CFG: "];
+"1000177" -> "1002163"  [label="DDG: clnt_ecpoint"];
+"1000177" -> "1002145"  [label="DDG: clnt_ecpoint"];
+"1002145" -> "1000143"  [label="AST: "];
+"1002145" -> "1002146"  [label="CFG: "];
+"1002146" -> "1002145"  [label="AST: "];
+"1002149" -> "1002145"  [label="CFG: "];
+"1002145" -> "1002163"  [label="DDG: EC_POINT_free(clnt_ecpoint)"];
+"1002145" -> "1002163"  [label="DDG: clnt_ecpoint"];
+"1001335" -> "1002145"  [label="DDG: clnt_ecpoint"];
+"1001389" -> "1002145"  [label="DDG: clnt_ecpoint"];
+"1001475" -> "1002145"  [label="DDG: clnt_ecpoint"];
+"1001439" -> "1002145"  [label="DDG: clnt_ecpoint"];
+}

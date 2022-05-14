@@ -1,0 +1,36 @@
+digraph "0_linux_b5a663aa426f4884c71cd8580adae73f33570f0d@pointer" {
+"1000129" [label="(Call,timeri->flags &= ~SNDRV_TIMER_IFLG_RUNNING)"];
+"1000115" [label="(Call,timeri->flags & SNDRV_TIMER_IFLG_SLAVE)"];
+"1000114" [label="(ControlStructure,if (timeri->flags & SNDRV_TIMER_IFLG_SLAVE))"];
+"1000123" [label="(Identifier,keep_flag)"];
+"1000150" [label="(Identifier,timer)"];
+"1000178" [label="(Call,timeri->flags & SNDRV_TIMER_IFLG_RUNNING)"];
+"1000130" [label="(Call,timeri->flags)"];
+"1000133" [label="(Identifier,~SNDRV_TIMER_IFLG_RUNNING)"];
+"1000115" [label="(Call,timeri->flags & SNDRV_TIMER_IFLG_SLAVE)"];
+"1000124" [label="(Block,)"];
+"1000119" [label="(Identifier,SNDRV_TIMER_IFLG_SLAVE)"];
+"1000116" [label="(Call,timeri->flags)"];
+"1000129" [label="(Call,timeri->flags &= ~SNDRV_TIMER_IFLG_RUNNING)"];
+"1000247" [label="(MethodReturn,static int)"];
+"1000137" [label="(Identifier,timeri)"];
+"1000129" -> "1000124"  [label="AST: "];
+"1000129" -> "1000133"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000133" -> "1000129"  [label="AST: "];
+"1000137" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000247"  [label="DDG: timeri->flags"];
+"1000129" -> "1000247"  [label="DDG: timeri->flags &= ~SNDRV_TIMER_IFLG_RUNNING"];
+"1000129" -> "1000247"  [label="DDG: ~SNDRV_TIMER_IFLG_RUNNING"];
+"1000115" -> "1000129"  [label="DDG: timeri->flags"];
+"1000115" -> "1000114"  [label="AST: "];
+"1000115" -> "1000119"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000119" -> "1000115"  [label="AST: "];
+"1000123" -> "1000115"  [label="CFG: "];
+"1000150" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000247"  [label="DDG: SNDRV_TIMER_IFLG_SLAVE"];
+"1000115" -> "1000247"  [label="DDG: timeri->flags & SNDRV_TIMER_IFLG_SLAVE"];
+"1000115" -> "1000247"  [label="DDG: timeri->flags"];
+"1000115" -> "1000178"  [label="DDG: timeri->flags"];
+}

@@ -1,0 +1,34 @@
+digraph "0_Chrome_d27468a832d5316884bd02f459cbf493697fd7e1_20@pointer" {
+"1000113" [label="(Call,* previous = nullptr)"];
+"1000154" [label="(Call,previous && accumulatedText.length() &&\n        !isHTMLSpace(accumulatedText[accumulatedText.length() - 1]))"];
+"1000156" [label="(Call,accumulatedText.length() &&\n        !isHTMLSpace(accumulatedText[accumulatedText.length() - 1]))"];
+"1000115" [label="(Identifier,nullptr)"];
+"1000196" [label="(MethodReturn,String)"];
+"1000155" [label="(Identifier,previous)"];
+"1000169" [label="(Call,child->getLayoutObject())"];
+"1000103" [label="(Block,)"];
+"1000154" [label="(Call,previous && accumulatedText.length() &&\n        !isHTMLSpace(accumulatedText[accumulatedText.length() - 1]))"];
+"1000118" [label="(Identifier,HeapVector)"];
+"1000113" [label="(Call,* previous = nullptr)"];
+"1000175" [label="(Call,child->isPresentational())"];
+"1000153" [label="(ControlStructure,if (previous && accumulatedText.length() &&\n        !isHTMLSpace(accumulatedText[accumulatedText.length() - 1])))"];
+"1000114" [label="(Identifier,previous)"];
+"1000113" -> "1000103"  [label="AST: "];
+"1000113" -> "1000115"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="AST: "];
+"1000118" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000196"  [label="DDG: nullptr"];
+"1000113" -> "1000154"  [label="DDG: previous"];
+"1000154" -> "1000153"  [label="AST: "];
+"1000154" -> "1000155"  [label="CFG: "];
+"1000154" -> "1000156"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000156" -> "1000154"  [label="AST: "];
+"1000169" -> "1000154"  [label="CFG: "];
+"1000175" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000196"  [label="DDG: previous && accumulatedText.length() &&\n        !isHTMLSpace(accumulatedText[accumulatedText.length() - 1])"];
+"1000154" -> "1000196"  [label="DDG: accumulatedText.length() &&\n        !isHTMLSpace(accumulatedText[accumulatedText.length() - 1])"];
+"1000156" -> "1000154"  [label="DDG: accumulatedText.length()"];
+"1000156" -> "1000154"  [label="DDG: !isHTMLSpace(accumulatedText[accumulatedText.length() - 1])"];
+}

@@ -1,0 +1,31 @@
+digraph "0_mruby_778500563a9f7ceba996937dc886bd8cde29b42b@pointer" {
+"1000179" [label="(Call,resume ? mrb->c : (c->prev ? c->prev : mrb->root_c))"];
+"1000105" [label="(MethodParameterIn,mrb_bool resume)"];
+"1000125" [label="(Call,resume && c->status == MRB_FIBER_TRANSFERRED)"];
+"1000316" [label="(MethodReturn,RET)"];
+"1000165" [label="(Call,mrb->c->status = resume ? MRB_FIBER_RESUMED : MRB_FIBER_TRANSFERRED)"];
+"1000179" [label="(Call,resume ? mrb->c : (c->prev ? c->prev : mrb->root_c))"];
+"1000171" [label="(Call,resume ? MRB_FIBER_RESUMED : MRB_FIBER_TRANSFERRED)"];
+"1000180" [label="(Identifier,resume)"];
+"1000184" [label="(Call,c->prev ? c->prev : mrb->root_c)"];
+"1000105" [label="(MethodParameterIn,mrb_bool resume)"];
+"1000175" [label="(Call,c->prev = resume ? mrb->c : (c->prev ? c->prev : mrb->root_c))"];
+"1000181" [label="(Call,mrb->c)"];
+"1000179" -> "1000175"  [label="AST: "];
+"1000179" -> "1000181"  [label="CFG: "];
+"1000179" -> "1000184"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000181" -> "1000179"  [label="AST: "];
+"1000184" -> "1000179"  [label="AST: "];
+"1000175" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000316"  [label="DDG: mrb->c"];
+"1000179" -> "1000316"  [label="DDG: c->prev ? c->prev : mrb->root_c"];
+"1000179" -> "1000316"  [label="DDG: resume"];
+"1000105" -> "1000179"  [label="DDG: resume"];
+"1000105" -> "1000100"  [label="AST: "];
+"1000105" -> "1000316"  [label="DDG: resume"];
+"1000105" -> "1000125"  [label="DDG: resume"];
+"1000105" -> "1000165"  [label="DDG: resume"];
+"1000105" -> "1000171"  [label="DDG: resume"];
+"1000105" -> "1000175"  [label="DDG: resume"];
+}

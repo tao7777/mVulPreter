@@ -1,0 +1,28 @@
+digraph "0_openssl_56fb454d281a023b3f950d969693553d3f3ceea1@API" {
+"1000249" [label="(Call,!BN_copy(k, scalar))"];
+"1000250" [label="(Call,BN_copy(k, scalar))"];
+"1000255" [label="(Identifier,k)"];
+"1000249" [label="(Call,!BN_copy(k, scalar))"];
+"1000250" [label="(Call,BN_copy(k, scalar))"];
+"1000253" [label="(ControlStructure,goto err;)"];
+"1000248" [label="(ControlStructure,if (!BN_copy(k, scalar)))"];
+"1000254" [label="(Call,BN_set_flags(k, BN_FLG_CONSTTIME))"];
+"1000499" [label="(MethodReturn,static int)"];
+"1000251" [label="(Identifier,k)"];
+"1000252" [label="(Identifier,scalar)"];
+"1000249" -> "1000248"  [label="AST: "];
+"1000249" -> "1000250"  [label="CFG: "];
+"1000250" -> "1000249"  [label="AST: "];
+"1000253" -> "1000249"  [label="CFG: "];
+"1000255" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000499"  [label="DDG: BN_copy(k, scalar)"];
+"1000249" -> "1000499"  [label="DDG: !BN_copy(k, scalar)"];
+"1000250" -> "1000249"  [label="DDG: k"];
+"1000250" -> "1000249"  [label="DDG: scalar"];
+"1000250" -> "1000252"  [label="CFG: "];
+"1000251" -> "1000250"  [label="AST: "];
+"1000252" -> "1000250"  [label="AST: "];
+"1000250" -> "1000499"  [label="DDG: k"];
+"1000250" -> "1000499"  [label="DDG: scalar"];
+"1000250" -> "1000254"  [label="DDG: k"];
+}

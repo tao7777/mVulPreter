@@ -1,0 +1,25 @@
+digraph "1_linux_8e2d61e0aed2b7c4ecb35844fe07e0b2b762dee4_0@del" {
+"1000543" [label="(Call,unregister_pernet_subsys(&sctp_net_ops))"];
+"1000519" [label="(Call,register_pernet_subsys(&sctp_net_ops))"];
+"1000112" [label="(Block,)"];
+"1000517" [label="(Call,status = register_pernet_subsys(&sctp_net_ops))"];
+"1000520" [label="(Call,&sctp_net_ops)"];
+"1000519" [label="(Call,register_pernet_subsys(&sctp_net_ops))"];
+"1000587" [label="(MethodReturn,static __init int)"];
+"1000546" [label="(JumpTarget,err_register_pernet_subsys:)"];
+"1000544" [label="(Call,&sctp_net_ops)"];
+"1000543" [label="(Call,unregister_pernet_subsys(&sctp_net_ops))"];
+"1000543" -> "1000112"  [label="AST: "];
+"1000543" -> "1000544"  [label="CFG: "];
+"1000544" -> "1000543"  [label="AST: "];
+"1000546" -> "1000543"  [label="CFG: "];
+"1000543" -> "1000587"  [label="DDG: unregister_pernet_subsys(&sctp_net_ops)"];
+"1000543" -> "1000587"  [label="DDG: &sctp_net_ops"];
+"1000519" -> "1000543"  [label="DDG: &sctp_net_ops"];
+"1000519" -> "1000517"  [label="AST: "];
+"1000519" -> "1000520"  [label="CFG: "];
+"1000520" -> "1000519"  [label="AST: "];
+"1000517" -> "1000519"  [label="CFG: "];
+"1000519" -> "1000587"  [label="DDG: &sctp_net_ops"];
+"1000519" -> "1000517"  [label="DDG: &sctp_net_ops"];
+}

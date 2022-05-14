@@ -1,0 +1,36 @@
+digraph "0_lxc_592fd47a6245508b79fe6ac819fe6d3b2c1289be_3@pointer" {
+"1000348" [label="(Call,in_caplist(CAP_SYS_ADMIN, &conf->keepcaps))"];
+"1000340" [label="(Call,lxc_list_empty(&conf->keepcaps))"];
+"1000346" [label="(Call,has_sys_admin = in_caplist(CAP_SYS_ADMIN, &conf->keepcaps))"];
+"1000367" [label="(Identifier,cg_flags)"];
+"1000339" [label="(Call,!lxc_list_empty(&conf->keepcaps))"];
+"1000348" [label="(Call,in_caplist(CAP_SYS_ADMIN, &conf->keepcaps))"];
+"1000347" [label="(Identifier,has_sys_admin)"];
+"1000409" [label="(MethodReturn,static int)"];
+"1000346" [label="(Call,has_sys_admin = in_caplist(CAP_SYS_ADMIN, &conf->keepcaps))"];
+"1000340" [label="(Call,lxc_list_empty(&conf->keepcaps))"];
+"1000341" [label="(Call,&conf->keepcaps)"];
+"1000350" [label="(Call,&conf->keepcaps)"];
+"1000349" [label="(Identifier,CAP_SYS_ADMIN)"];
+"1000345" [label="(Block,)"];
+"1000348" -> "1000346"  [label="AST: "];
+"1000348" -> "1000350"  [label="CFG: "];
+"1000349" -> "1000348"  [label="AST: "];
+"1000350" -> "1000348"  [label="AST: "];
+"1000346" -> "1000348"  [label="CFG: "];
+"1000348" -> "1000409"  [label="DDG: CAP_SYS_ADMIN"];
+"1000348" -> "1000409"  [label="DDG: &conf->keepcaps"];
+"1000348" -> "1000346"  [label="DDG: CAP_SYS_ADMIN"];
+"1000348" -> "1000346"  [label="DDG: &conf->keepcaps"];
+"1000340" -> "1000348"  [label="DDG: &conf->keepcaps"];
+"1000340" -> "1000339"  [label="AST: "];
+"1000340" -> "1000341"  [label="CFG: "];
+"1000341" -> "1000340"  [label="AST: "];
+"1000339" -> "1000340"  [label="CFG: "];
+"1000340" -> "1000409"  [label="DDG: &conf->keepcaps"];
+"1000340" -> "1000339"  [label="DDG: &conf->keepcaps"];
+"1000346" -> "1000345"  [label="AST: "];
+"1000347" -> "1000346"  [label="AST: "];
+"1000367" -> "1000346"  [label="CFG: "];
+"1000346" -> "1000409"  [label="DDG: in_caplist(CAP_SYS_ADMIN, &conf->keepcaps)"];
+}

@@ -1,0 +1,36 @@
+digraph "0_httpd_e427c41257957b57036d5a549b260b6185d1dd73@pointer" {
+"1000359" [label="(Call,apr_bucket_eos_create(f->c->bucket_alloc))"];
+"1000357" [label="(Call,e = apr_bucket_eos_create(f->c->bucket_alloc))"];
+"1000365" [label="(Call,APR_BRIGADE_INSERT_TAIL(b, e))"];
+"1000358" [label="(Identifier,e)"];
+"1000365" [label="(Call,APR_BRIGADE_INSERT_TAIL(b, e))"];
+"1000370" [label="(Identifier,ctx)"];
+"1000357" [label="(Call,e = apr_bucket_eos_create(f->c->bucket_alloc))"];
+"1000910" [label="(MethodReturn,apr_status_t)"];
+"1000356" [label="(Block,)"];
+"1000128" [label="(MethodParameterIn,apr_bucket_brigade *b)"];
+"1000359" [label="(Call,apr_bucket_eos_create(f->c->bucket_alloc))"];
+"1000367" [label="(Identifier,e)"];
+"1000366" [label="(Identifier,b)"];
+"1000360" [label="(Call,f->c->bucket_alloc)"];
+"1000359" -> "1000357"  [label="AST: "];
+"1000359" -> "1000360"  [label="CFG: "];
+"1000360" -> "1000359"  [label="AST: "];
+"1000357" -> "1000359"  [label="CFG: "];
+"1000359" -> "1000910"  [label="DDG: f->c->bucket_alloc"];
+"1000359" -> "1000357"  [label="DDG: f->c->bucket_alloc"];
+"1000357" -> "1000356"  [label="AST: "];
+"1000358" -> "1000357"  [label="AST: "];
+"1000366" -> "1000357"  [label="CFG: "];
+"1000357" -> "1000910"  [label="DDG: apr_bucket_eos_create(f->c->bucket_alloc)"];
+"1000357" -> "1000365"  [label="DDG: e"];
+"1000365" -> "1000356"  [label="AST: "];
+"1000365" -> "1000367"  [label="CFG: "];
+"1000366" -> "1000365"  [label="AST: "];
+"1000367" -> "1000365"  [label="AST: "];
+"1000370" -> "1000365"  [label="CFG: "];
+"1000365" -> "1000910"  [label="DDG: APR_BRIGADE_INSERT_TAIL(b, e)"];
+"1000365" -> "1000910"  [label="DDG: e"];
+"1000365" -> "1000910"  [label="DDG: b"];
+"1000128" -> "1000365"  [label="DDG: b"];
+}

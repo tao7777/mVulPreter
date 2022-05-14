@@ -1,0 +1,27 @@
+digraph "0_linux_d974baa398f34393db76be45f7d4d04fbdbb4a0a@API" {
+"1000121" [label="(Call,vmcs_writel(HOST_CR0, read_cr0() & ~X86_CR0_TS))"];
+"1000123" [label="(Call,read_cr0() & ~X86_CR0_TS)"];
+"1000122" [label="(Identifier,HOST_CR0)"];
+"1000127" [label="(Identifier,HOST_CR3)"];
+"1000124" [label="(Call,read_cr0())"];
+"1000125" [label="(Identifier,~X86_CR0_TS)"];
+"1000121" [label="(Call,vmcs_writel(HOST_CR0, read_cr0() & ~X86_CR0_TS))"];
+"1000115" [label="(Block,)"];
+"1000123" [label="(Call,read_cr0() & ~X86_CR0_TS)"];
+"1000210" [label="(MethodReturn,static void)"];
+"1000121" -> "1000115"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000127" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000210"  [label="DDG: read_cr0() & ~X86_CR0_TS"];
+"1000121" -> "1000210"  [label="DDG: vmcs_writel(HOST_CR0, read_cr0() & ~X86_CR0_TS)"];
+"1000121" -> "1000210"  [label="DDG: HOST_CR0"];
+"1000123" -> "1000121"  [label="DDG: read_cr0()"];
+"1000123" -> "1000121"  [label="DDG: ~X86_CR0_TS"];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000123" -> "1000210"  [label="DDG: ~X86_CR0_TS"];
+"1000123" -> "1000210"  [label="DDG: read_cr0()"];
+}

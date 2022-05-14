@@ -1,0 +1,33 @@
+digraph "0_NetworkManager_d5fc88e573fa58b93034b04d35a2454f5d28cad9@pointer" {
+"1002708" [label="(Call,priv->state < NM_DEVICE_STATE_DISCONNECTED)"];
+"1002707" [label="(Call,priv->state < NM_DEVICE_STATE_DISCONNECTED || !priv->autoconnect)"];
+"1002708" [label="(Call,priv->state < NM_DEVICE_STATE_DISCONNECTED)"];
+"1002715" [label="(Identifier,priv)"];
+"1002709" [label="(Call,priv->state)"];
+"1002707" [label="(Call,priv->state < NM_DEVICE_STATE_DISCONNECTED || !priv->autoconnect)"];
+"1002721" [label="(Identifier,instance)"];
+"1002712" [label="(Identifier,NM_DEVICE_STATE_DISCONNECTED)"];
+"1007368" [label="(MethodReturn,RET)"];
+"1002706" [label="(ControlStructure,if (priv->state < NM_DEVICE_STATE_DISCONNECTED || !priv->autoconnect))"];
+"1002718" [label="(Identifier,FALSE)"];
+"1002713" [label="(Call,!priv->autoconnect)"];
+"1002708" -> "1002707"  [label="AST: "];
+"1002708" -> "1002712"  [label="CFG: "];
+"1002709" -> "1002708"  [label="AST: "];
+"1002712" -> "1002708"  [label="AST: "];
+"1002715" -> "1002708"  [label="CFG: "];
+"1002707" -> "1002708"  [label="CFG: "];
+"1002708" -> "1007368"  [label="DDG: NM_DEVICE_STATE_DISCONNECTED"];
+"1002708" -> "1007368"  [label="DDG: priv->state"];
+"1002708" -> "1002707"  [label="DDG: priv->state"];
+"1002708" -> "1002707"  [label="DDG: NM_DEVICE_STATE_DISCONNECTED"];
+"1002707" -> "1002706"  [label="AST: "];
+"1002707" -> "1002713"  [label="CFG: "];
+"1002713" -> "1002707"  [label="AST: "];
+"1002718" -> "1002707"  [label="CFG: "];
+"1002721" -> "1002707"  [label="CFG: "];
+"1002707" -> "1007368"  [label="DDG: !priv->autoconnect"];
+"1002707" -> "1007368"  [label="DDG: priv->state < NM_DEVICE_STATE_DISCONNECTED || !priv->autoconnect"];
+"1002707" -> "1007368"  [label="DDG: priv->state < NM_DEVICE_STATE_DISCONNECTED"];
+"1002713" -> "1002707"  [label="DDG: priv->autoconnect"];
+}

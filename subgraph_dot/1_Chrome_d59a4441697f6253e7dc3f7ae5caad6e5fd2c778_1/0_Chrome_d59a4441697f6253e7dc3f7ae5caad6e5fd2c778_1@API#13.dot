@@ -1,0 +1,25 @@
+digraph "0_Chrome_d59a4441697f6253e7dc3f7ae5caad6e5fd2c778_1@API" {
+"1000377" [label="(Call,StaticBitmapImage::create(\n          unPremulSkImageToPremul(skiaImage.get())))"];
+"1000378" [label="(Call,unPremulSkImageToPremul(skiaImage.get()))"];
+"1000376" [label="(Return,return StaticBitmapImage::create(\n          unPremulSkImageToPremul(skiaImage.get()));)"];
+"1000378" [label="(Call,unPremulSkImageToPremul(skiaImage.get()))"];
+"1000377" [label="(Call,StaticBitmapImage::create(\n          unPremulSkImageToPremul(skiaImage.get())))"];
+"1000388" [label="(MethodReturn,static PassRefPtr<StaticBitmapImage>)"];
+"1000372" [label="(ControlStructure,if (imageFormat == DontPremultiplyAlpha))"];
+"1000379" [label="(Call,skiaImage.get())"];
+"1000376" [label="(Return,return StaticBitmapImage::create(\n          unPremulSkImageToPremul(skiaImage.get()));)"];
+"1000377" -> "1000376"  [label="AST: "];
+"1000377" -> "1000378"  [label="CFG: "];
+"1000378" -> "1000377"  [label="AST: "];
+"1000376" -> "1000377"  [label="CFG: "];
+"1000377" -> "1000388"  [label="DDG: StaticBitmapImage::create(\n          unPremulSkImageToPremul(skiaImage.get()))"];
+"1000377" -> "1000388"  [label="DDG: unPremulSkImageToPremul(skiaImage.get())"];
+"1000377" -> "1000376"  [label="DDG: StaticBitmapImage::create(\n          unPremulSkImageToPremul(skiaImage.get()))"];
+"1000378" -> "1000377"  [label="DDG: skiaImage.get()"];
+"1000378" -> "1000379"  [label="CFG: "];
+"1000379" -> "1000378"  [label="AST: "];
+"1000378" -> "1000388"  [label="DDG: skiaImage.get()"];
+"1000376" -> "1000372"  [label="AST: "];
+"1000388" -> "1000376"  [label="CFG: "];
+"1000376" -> "1000388"  [label="DDG: <RET>"];
+}

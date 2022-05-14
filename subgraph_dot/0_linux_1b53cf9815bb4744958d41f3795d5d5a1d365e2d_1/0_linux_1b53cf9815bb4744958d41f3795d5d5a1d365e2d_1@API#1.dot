@@ -1,0 +1,36 @@
+digraph "0_linux_1b53cf9815bb4744958d41f3795d5d5a1d365e2d_1@API" {
+"1000190" [label="(Call,memset(ctx.master_key_descriptor, 0x42, FS_KEY_DESCRIPTOR_SIZE))"];
+"1000261" [label="(Call,memcpy(crypt_info->ci_master_key, ctx.master_key_descriptor,\n \t\t\t\tsizeof(crypt_info->ci_master_key)))"];
+"1000191" [label="(Call,ctx.master_key_descriptor)"];
+"1000419" [label="(MethodReturn,int)"];
+"1000195" [label="(Identifier,FS_KEY_DESCRIPTOR_SIZE)"];
+"1000262" [label="(Call,crypt_info->ci_master_key)"];
+"1000273" [label="(Identifier,res)"];
+"1000104" [label="(Block,)"];
+"1000159" [label="(Block,)"];
+"1000268" [label="(Call,sizeof(crypt_info->ci_master_key))"];
+"1000209" [label="(Identifier,ctx)"];
+"1000194" [label="(Literal,0x42)"];
+"1000190" [label="(Call,memset(ctx.master_key_descriptor, 0x42, FS_KEY_DESCRIPTOR_SIZE))"];
+"1000265" [label="(Call,ctx.master_key_descriptor)"];
+"1000261" [label="(Call,memcpy(crypt_info->ci_master_key, ctx.master_key_descriptor,\n \t\t\t\tsizeof(crypt_info->ci_master_key)))"];
+"1000190" -> "1000159"  [label="AST: "];
+"1000190" -> "1000195"  [label="CFG: "];
+"1000191" -> "1000190"  [label="AST: "];
+"1000194" -> "1000190"  [label="AST: "];
+"1000195" -> "1000190"  [label="AST: "];
+"1000209" -> "1000190"  [label="CFG: "];
+"1000190" -> "1000419"  [label="DDG: memset(ctx.master_key_descriptor, 0x42, FS_KEY_DESCRIPTOR_SIZE)"];
+"1000190" -> "1000419"  [label="DDG: FS_KEY_DESCRIPTOR_SIZE"];
+"1000190" -> "1000419"  [label="DDG: ctx.master_key_descriptor"];
+"1000190" -> "1000261"  [label="DDG: ctx.master_key_descriptor"];
+"1000261" -> "1000104"  [label="AST: "];
+"1000261" -> "1000268"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000265" -> "1000261"  [label="AST: "];
+"1000268" -> "1000261"  [label="AST: "];
+"1000273" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000419"  [label="DDG: ctx.master_key_descriptor"];
+"1000261" -> "1000419"  [label="DDG: crypt_info->ci_master_key"];
+"1000261" -> "1000419"  [label="DDG: memcpy(crypt_info->ci_master_key, ctx.master_key_descriptor,\n \t\t\t\tsizeof(crypt_info->ci_master_key))"];
+}

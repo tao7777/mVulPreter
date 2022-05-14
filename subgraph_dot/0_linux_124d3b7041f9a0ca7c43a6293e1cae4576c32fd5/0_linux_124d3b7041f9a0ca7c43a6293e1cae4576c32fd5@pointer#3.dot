@@ -1,0 +1,25 @@
+digraph "0_linux_124d3b7041f9a0ca7c43a6293e1cae4576c32fd5@pointer" {
+"1000107" [label="(Call,i->nr_segs == 1)"];
+"1000106" [label="(Call,likely(i->nr_segs == 1))"];
+"1000122" [label="(Identifier,iov)"];
+"1000106" [label="(Call,likely(i->nr_segs == 1))"];
+"1000105" [label="(ControlStructure,if (likely(i->nr_segs == 1)))"];
+"1000108" [label="(Call,i->nr_segs)"];
+"1000107" [label="(Call,i->nr_segs == 1)"];
+"1000111" [label="(Literal,1)"];
+"1000115" [label="(Identifier,i)"];
+"1000178" [label="(MethodReturn,static void)"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000111"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000111" -> "1000107"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000178"  [label="DDG: i->nr_segs"];
+"1000107" -> "1000106"  [label="DDG: i->nr_segs"];
+"1000107" -> "1000106"  [label="DDG: 1"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000115" -> "1000106"  [label="CFG: "];
+"1000122" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000178"  [label="DDG: i->nr_segs == 1"];
+"1000106" -> "1000178"  [label="DDG: likely(i->nr_segs == 1)"];
+}

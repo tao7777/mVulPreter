@@ -1,0 +1,26 @@
+digraph "0_linux_6ec82562ffc6f297d0de36d65776cff8e5704867_0@pointer" {
+"1000108" [label="(Call,dev->flags & IFF_UP)"];
+"1000107" [label="(Call,!(dev->flags & IFF_UP))"];
+"1000109" [label="(Call,dev->flags)"];
+"1000108" [label="(Call,dev->flags & IFF_UP)"];
+"1000106" [label="(ControlStructure,if (!(dev->flags & IFF_UP)))"];
+"1000154" [label="(MethodReturn,int)"];
+"1000112" [label="(Identifier,IFF_UP)"];
+"1000114" [label="(Identifier,NET_RX_DROP)"];
+"1000118" [label="(Identifier,skb)"];
+"1000107" [label="(Call,!(dev->flags & IFF_UP))"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000108" -> "1000112"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="AST: "];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000154"  [label="DDG: dev->flags"];
+"1000108" -> "1000154"  [label="DDG: IFF_UP"];
+"1000108" -> "1000107"  [label="DDG: dev->flags"];
+"1000108" -> "1000107"  [label="DDG: IFF_UP"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000114" -> "1000107"  [label="CFG: "];
+"1000118" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000154"  [label="DDG: dev->flags & IFF_UP"];
+"1000107" -> "1000154"  [label="DDG: !(dev->flags & IFF_UP)"];
+}

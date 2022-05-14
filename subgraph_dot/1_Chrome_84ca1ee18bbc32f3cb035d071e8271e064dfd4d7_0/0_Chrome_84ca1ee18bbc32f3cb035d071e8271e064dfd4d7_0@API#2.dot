@@ -1,0 +1,32 @@
+digraph "0_Chrome_84ca1ee18bbc32f3cb035d071e8271e064dfd4d7_0@API" {
+"1000324" [label="(Call,std::move(mojo_point))"];
+"1000310" [label="(Call,mojo_point = media::mojom::blink::Point2D::New())"];
+"1000323" [label="(Call,settings->points_of_interest.push_back(std::move(mojo_point)))"];
+"1000312" [label="(Call,media::mojom::blink::Point2D::New())"];
+"1000691" [label="(MethodReturn,void)"];
+"1000325" [label="(Identifier,mojo_point)"];
+"1000308" [label="(Block,)"];
+"1000323" [label="(Call,settings->points_of_interest.push_back(std::move(mojo_point)))"];
+"1000310" [label="(Call,mojo_point = media::mojom::blink::Point2D::New())"];
+"1000327" [label="(Call,constraints.pointsOfInterest())"];
+"1000311" [label="(Identifier,mojo_point)"];
+"1000315" [label="(Identifier,mojo_point)"];
+"1000324" [label="(Call,std::move(mojo_point))"];
+"1000324" -> "1000323"  [label="AST: "];
+"1000324" -> "1000325"  [label="CFG: "];
+"1000325" -> "1000324"  [label="AST: "];
+"1000323" -> "1000324"  [label="CFG: "];
+"1000324" -> "1000691"  [label="DDG: mojo_point"];
+"1000324" -> "1000323"  [label="DDG: mojo_point"];
+"1000310" -> "1000324"  [label="DDG: mojo_point"];
+"1000310" -> "1000308"  [label="AST: "];
+"1000310" -> "1000312"  [label="CFG: "];
+"1000311" -> "1000310"  [label="AST: "];
+"1000312" -> "1000310"  [label="AST: "];
+"1000315" -> "1000310"  [label="CFG: "];
+"1000310" -> "1000691"  [label="DDG: media::mojom::blink::Point2D::New()"];
+"1000323" -> "1000308"  [label="AST: "];
+"1000327" -> "1000323"  [label="CFG: "];
+"1000323" -> "1000691"  [label="DDG: std::move(mojo_point)"];
+"1000323" -> "1000691"  [label="DDG: settings->points_of_interest.push_back(std::move(mojo_point))"];
+}

@@ -1,0 +1,30 @@
+digraph "0_linux_fbd40ea0180a2d328c5adc61414dc8bab9335ce2@pointer" {
+"1000174" [label="(Call,ifa1->ifa_scope <= ifa->ifa_scope)"];
+"1000167" [label="(Call,!(ifa->ifa_flags & IFA_F_SECONDARY) &&\n\t\t\t    ifa1->ifa_scope <= ifa->ifa_scope)"];
+"1000166" [label="(ControlStructure,if (!(ifa->ifa_flags & IFA_F_SECONDARY) &&\n\t\t\t    ifa1->ifa_scope <= ifa->ifa_scope))"];
+"1000174" [label="(Call,ifa1->ifa_scope <= ifa->ifa_scope)"];
+"1000168" [label="(Call,!(ifa->ifa_flags & IFA_F_SECONDARY))"];
+"1000175" [label="(Call,ifa1->ifa_scope)"];
+"1000182" [label="(Identifier,last_prim)"];
+"1000189" [label="(Identifier,ifa)"];
+"1000373" [label="(MethodReturn,static void)"];
+"1000167" [label="(Call,!(ifa->ifa_flags & IFA_F_SECONDARY) &&\n\t\t\t    ifa1->ifa_scope <= ifa->ifa_scope)"];
+"1000178" [label="(Call,ifa->ifa_scope)"];
+"1000174" -> "1000167"  [label="AST: "];
+"1000174" -> "1000178"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000178" -> "1000174"  [label="AST: "];
+"1000167" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000373"  [label="DDG: ifa->ifa_scope"];
+"1000174" -> "1000373"  [label="DDG: ifa1->ifa_scope"];
+"1000174" -> "1000167"  [label="DDG: ifa1->ifa_scope"];
+"1000174" -> "1000167"  [label="DDG: ifa->ifa_scope"];
+"1000167" -> "1000166"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000182" -> "1000167"  [label="CFG: "];
+"1000189" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000373"  [label="DDG: !(ifa->ifa_flags & IFA_F_SECONDARY) &&\n\t\t\t    ifa1->ifa_scope <= ifa->ifa_scope"];
+"1000167" -> "1000373"  [label="DDG: ifa1->ifa_scope <= ifa->ifa_scope"];
+"1000168" -> "1000167"  [label="DDG: ifa->ifa_flags & IFA_F_SECONDARY"];
+}

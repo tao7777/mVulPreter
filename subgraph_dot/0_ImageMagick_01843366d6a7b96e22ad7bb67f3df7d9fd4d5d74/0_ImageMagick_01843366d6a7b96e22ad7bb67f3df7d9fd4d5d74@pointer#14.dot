@@ -1,0 +1,22 @@
+digraph "0_ImageMagick_01843366d6a7b96e22ad7bb67f3df7d9fd4d5d74@pointer" {
+"1000605" [label="(Call,clone_image->cache=ReferencePixelCache(image->cache))"];
+"1000609" [label="(Call,ReferencePixelCache(image->cache))"];
+"1000609" [label="(Call,ReferencePixelCache(image->cache))"];
+"1000610" [label="(Call,image->cache)"];
+"1000528" [label="(Block,)"];
+"1000605" [label="(Call,clone_image->cache=ReferencePixelCache(image->cache))"];
+"1000844" [label="(MethodReturn,MagickExport Image *)"];
+"1000614" [label="(Identifier,clone_image)"];
+"1000606" [label="(Call,clone_image->cache)"];
+"1000605" -> "1000528"  [label="AST: "];
+"1000605" -> "1000609"  [label="CFG: "];
+"1000606" -> "1000605"  [label="AST: "];
+"1000609" -> "1000605"  [label="AST: "];
+"1000614" -> "1000605"  [label="CFG: "];
+"1000605" -> "1000844"  [label="DDG: ReferencePixelCache(image->cache)"];
+"1000605" -> "1000844"  [label="DDG: clone_image->cache"];
+"1000609" -> "1000605"  [label="DDG: image->cache"];
+"1000609" -> "1000610"  [label="CFG: "];
+"1000610" -> "1000609"  [label="AST: "];
+"1000609" -> "1000844"  [label="DDG: image->cache"];
+}

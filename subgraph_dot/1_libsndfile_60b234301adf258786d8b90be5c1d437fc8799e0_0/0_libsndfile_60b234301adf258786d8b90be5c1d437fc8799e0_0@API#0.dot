@@ -1,0 +1,19 @@
+digraph "0_libsndfile_60b234301adf258786d8b90be5c1d437fc8799e0_0@API" {
+"1000148" [label="(Call,flac_buffer_copy (psf))"];
+"1000104" [label="(MethodParameterIn,SF_PRIVATE *psf)"];
+"1000149" [label="(Identifier,psf)"];
+"1000184" [label="(MethodReturn,RET)"];
+"1000153" [label="(Identifier,pflac)"];
+"1000104" [label="(MethodParameterIn,SF_PRIVATE *psf)"];
+"1000130" [label="(ControlStructure,if (pflac->frame != NULL && pflac->bufferpos < pflac->frame->header.blocksize))"];
+"1000148" [label="(Call,flac_buffer_copy (psf))"];
+"1000148" -> "1000130"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000153" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000184"  [label="DDG: psf"];
+"1000148" -> "1000184"  [label="DDG: flac_buffer_copy (psf)"];
+"1000104" -> "1000148"  [label="DDG: psf"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000184"  [label="DDG: psf"];
+}

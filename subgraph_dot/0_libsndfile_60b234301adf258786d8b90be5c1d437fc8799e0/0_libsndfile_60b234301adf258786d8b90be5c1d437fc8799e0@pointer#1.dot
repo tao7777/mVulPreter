@@ -1,0 +1,36 @@
+digraph "0_libsndfile_60b234301adf258786d8b90be5c1d437fc8799e0@pointer" {
+"1000450" [label="(Call,(uint16_t) buffer [j][pflac->bufferpos])"];
+"1000449" [label="(Call,((uint16_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000443" [label="(Call,retpcm [offset + j] = ((uint16_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000301" [label="(Call,shift < 0)"];
+"1000444" [label="(Call,retpcm [offset + j])"];
+"1000442" [label="(Identifier,j)"];
+"1000443" [label="(Call,retpcm [offset + j] = ((uint16_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000808" [label="(MethodReturn,RET)"];
+"1000452" [label="(Call,buffer [j][pflac->bufferpos])"];
+"1000450" [label="(Call,(uint16_t) buffer [j][pflac->bufferpos])"];
+"1000434" [label="(ControlStructure,for (j = 0 ; j < channels ; j++))"];
+"1000449" [label="(Call,((uint16_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000459" [label="(Identifier,shift)"];
+"1000450" -> "1000449"  [label="AST: "];
+"1000450" -> "1000452"  [label="CFG: "];
+"1000451" -> "1000450"  [label="AST: "];
+"1000452" -> "1000450"  [label="AST: "];
+"1000459" -> "1000450"  [label="CFG: "];
+"1000450" -> "1000808"  [label="DDG: buffer [j][pflac->bufferpos]"];
+"1000450" -> "1000449"  [label="DDG: buffer [j][pflac->bufferpos]"];
+"1000449" -> "1000443"  [label="AST: "];
+"1000449" -> "1000459"  [label="CFG: "];
+"1000459" -> "1000449"  [label="AST: "];
+"1000443" -> "1000449"  [label="CFG: "];
+"1000449" -> "1000808"  [label="DDG: shift"];
+"1000449" -> "1000808"  [label="DDG: (uint16_t) buffer [j][pflac->bufferpos]"];
+"1000449" -> "1000443"  [label="DDG: (uint16_t) buffer [j][pflac->bufferpos]"];
+"1000449" -> "1000443"  [label="DDG: shift"];
+"1000301" -> "1000449"  [label="DDG: shift"];
+"1000443" -> "1000434"  [label="AST: "];
+"1000444" -> "1000443"  [label="AST: "];
+"1000442" -> "1000443"  [label="CFG: "];
+"1000443" -> "1000808"  [label="DDG: ((uint16_t) buffer [j][pflac->bufferpos]) << shift"];
+"1000443" -> "1000808"  [label="DDG: retpcm [offset + j]"];
+}

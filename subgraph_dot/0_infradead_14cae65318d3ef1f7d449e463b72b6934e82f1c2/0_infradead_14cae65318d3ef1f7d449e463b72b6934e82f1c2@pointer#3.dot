@@ -1,0 +1,32 @@
+digraph "0_infradead_14cae65318d3ef1f7d449e463b72b6934e82f1c2@pointer" {
+"1000140" [label="(Call,*p == '%')"];
+"1000139" [label="(Call,*p == '%' && isxdigit((int)(unsigned char)p[1]) &&\n\t\t    isxdigit((int)(unsigned char)p[2]))"];
+"1000140" [label="(Call,*p == '%')"];
+"1000177" [label="(Identifier,q)"];
+"1000138" [label="(ControlStructure,if (*p == '%' && isxdigit((int)(unsigned char)p[1]) &&\n\t\t    isxdigit((int)(unsigned char)p[2])))"];
+"1000143" [label="(Literal,'%')"];
+"1000191" [label="(MethodReturn,static void)"];
+"1000144" [label="(Call,isxdigit((int)(unsigned char)p[1]) &&\n\t\t    isxdigit((int)(unsigned char)p[2]))"];
+"1000165" [label="(Identifier,q)"];
+"1000139" [label="(Call,*p == '%' && isxdigit((int)(unsigned char)p[1]) &&\n\t\t    isxdigit((int)(unsigned char)p[2]))"];
+"1000141" [label="(Call,*p)"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000143"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000143" -> "1000140"  [label="AST: "];
+"1000147" -> "1000140"  [label="CFG: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000191"  [label="DDG: *p"];
+"1000140" -> "1000139"  [label="DDG: *p"];
+"1000140" -> "1000139"  [label="DDG: '%'"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000139"  [label="AST: "];
+"1000165" -> "1000139"  [label="CFG: "];
+"1000177" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000191"  [label="DDG: *p == '%' && isxdigit((int)(unsigned char)p[1]) &&\n\t\t    isxdigit((int)(unsigned char)p[2])"];
+"1000139" -> "1000191"  [label="DDG: *p == '%'"];
+"1000139" -> "1000191"  [label="DDG: isxdigit((int)(unsigned char)p[1]) &&\n\t\t    isxdigit((int)(unsigned char)p[2])"];
+"1000144" -> "1000139"  [label="DDG: isxdigit((int)(unsigned char)p[1])"];
+"1000144" -> "1000139"  [label="DDG: isxdigit((int)(unsigned char)p[2])"];
+}

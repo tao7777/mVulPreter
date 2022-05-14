@@ -1,0 +1,36 @@
+digraph "0_Chrome_96dbafe288dbe2f0cc45fa3c39daf6d0c37acbab_20@array" {
+"1000158" [label="(Call,*(--pointer) = alpha_list[((int)fmod(number, alpha_size))])"];
+"1000137" [label="(Call,alpha_list = (is_upper) ? alpha_upper_list : alpha_lower_list)"];
+"1000105" [label="(MethodParameterIn,int is_upper)"];
+"1000170" [label="(Identifier,number)"];
+"1000139" [label="(Call,(is_upper) ? alpha_upper_list : alpha_lower_list)"];
+"1000137" [label="(Call,alpha_list = (is_upper) ? alpha_upper_list : alpha_lower_list)"];
+"1000155" [label="(Block,)"];
+"1000180" [label="(MethodReturn,RET)"];
+"1000106" [label="(Block,)"];
+"1000162" [label="(Call,alpha_list[((int)fmod(number, alpha_size))])"];
+"1000158" [label="(Call,*(--pointer) = alpha_list[((int)fmod(number, alpha_size))])"];
+"1000105" [label="(MethodParameterIn,int is_upper)"];
+"1000138" [label="(Identifier,alpha_list)"];
+"1000145" [label="(Identifier,i)"];
+"1000159" [label="(Call,*(--pointer))"];
+"1000158" -> "1000155"  [label="AST: "];
+"1000158" -> "1000162"  [label="CFG: "];
+"1000159" -> "1000158"  [label="AST: "];
+"1000162" -> "1000158"  [label="AST: "];
+"1000170" -> "1000158"  [label="CFG: "];
+"1000158" -> "1000180"  [label="DDG: alpha_list[((int)fmod(number, alpha_size))]"];
+"1000158" -> "1000180"  [label="DDG: *(--pointer)"];
+"1000137" -> "1000158"  [label="DDG: alpha_list"];
+"1000137" -> "1000106"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000139" -> "1000137"  [label="AST: "];
+"1000145" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000180"  [label="DDG: (is_upper) ? alpha_upper_list : alpha_lower_list"];
+"1000137" -> "1000180"  [label="DDG: alpha_list"];
+"1000105" -> "1000137"  [label="DDG: is_upper"];
+"1000105" -> "1000102"  [label="AST: "];
+"1000105" -> "1000180"  [label="DDG: is_upper"];
+"1000105" -> "1000139"  [label="DDG: is_upper"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_654b404f2a222f918af9b0cd18ad469d0c941a8e@pointer" {
+"1000276" [label="(Call,spin_lock(&edge_port->ep_lock))"];
+"1000304" [label="(Call,spin_unlock(&edge_port->ep_lock))"];
+"1000305" [label="(Call,&edge_port->ep_lock)"];
+"1000284" [label="(Identifier,edge_port)"];
+"1000106" [label="(Block,)"];
+"1000277" [label="(Call,&edge_port->ep_lock)"];
+"1000276" [label="(Call,spin_lock(&edge_port->ep_lock))"];
+"1000310" [label="(Identifier,retval)"];
+"1000316" [label="(MethodReturn,static void)"];
+"1000304" [label="(Call,spin_unlock(&edge_port->ep_lock))"];
+"1000276" -> "1000106"  [label="AST: "];
+"1000276" -> "1000277"  [label="CFG: "];
+"1000277" -> "1000276"  [label="AST: "];
+"1000284" -> "1000276"  [label="CFG: "];
+"1000276" -> "1000316"  [label="DDG: spin_lock(&edge_port->ep_lock)"];
+"1000276" -> "1000304"  [label="DDG: &edge_port->ep_lock"];
+"1000304" -> "1000106"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000304"  [label="AST: "];
+"1000310" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000316"  [label="DDG: spin_unlock(&edge_port->ep_lock)"];
+"1000304" -> "1000316"  [label="DDG: &edge_port->ep_lock"];
+}

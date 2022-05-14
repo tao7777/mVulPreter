@@ -1,0 +1,24 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_21@pointer" {
+"1000107" [label="(MethodParameterIn,const char       *label)"];
+"1000235" [label="(Call,strlcpy(pin_obj.label, label, sizeof(pin_obj.label)))"];
+"1000240" [label="(Call,sizeof(pin_obj.label))"];
+"1000246" [label="(Identifier,pin_obj)"];
+"1000239" [label="(Identifier,label)"];
+"1000508" [label="(MethodReturn,static int)"];
+"1000109" [label="(Block,)"];
+"1000107" [label="(MethodParameterIn,const char       *label)"];
+"1000235" [label="(Call,strlcpy(pin_obj.label, label, sizeof(pin_obj.label)))"];
+"1000236" [label="(Call,pin_obj.label)"];
+"1000107" -> "1000100"  [label="AST: "];
+"1000107" -> "1000508"  [label="DDG: label"];
+"1000107" -> "1000235"  [label="DDG: label"];
+"1000235" -> "1000109"  [label="AST: "];
+"1000235" -> "1000240"  [label="CFG: "];
+"1000236" -> "1000235"  [label="AST: "];
+"1000239" -> "1000235"  [label="AST: "];
+"1000240" -> "1000235"  [label="AST: "];
+"1000246" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000508"  [label="DDG: pin_obj.label"];
+"1000235" -> "1000508"  [label="DDG: label"];
+"1000235" -> "1000508"  [label="DDG: strlcpy(pin_obj.label, label, sizeof(pin_obj.label))"];
+}

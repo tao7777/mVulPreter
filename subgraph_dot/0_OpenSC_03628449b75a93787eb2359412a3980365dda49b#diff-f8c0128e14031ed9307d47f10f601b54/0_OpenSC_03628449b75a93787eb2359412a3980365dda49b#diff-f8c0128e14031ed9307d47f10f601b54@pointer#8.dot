@@ -1,0 +1,30 @@
+digraph "0_OpenSC_03628449b75a93787eb2359412a3980365dda49b#diff-f8c0128e14031ed9307d47f10f601b54@pointer" {
+"1000196" [label="(Call,card->ef_atr ? sc_dump_hex(card->ef_atr->aid.value, card->ef_atr->aid.len) : \"\")"];
+"1000200" [label="(Call,sc_dump_hex(card->ef_atr->aid.value, card->ef_atr->aid.len))"];
+"1001130" [label="(MethodReturn,RET)"];
+"1000215" [label="(Literal,\"\")"];
+"1000197" [label="(Call,card->ef_atr)"];
+"1000196" [label="(Call,card->ef_atr ? sc_dump_hex(card->ef_atr->aid.value, card->ef_atr->aid.len) : \"\")"];
+"1000208" [label="(Call,card->ef_atr->aid.len)"];
+"1000201" [label="(Call,card->ef_atr->aid.value)"];
+"1000193" [label="(Call,sc_log(ctx, \"EF.ATR(aid:'%s')\", card->ef_atr ? sc_dump_hex(card->ef_atr->aid.value, card->ef_atr->aid.len) : \"\"))"];
+"1000200" [label="(Call,sc_dump_hex(card->ef_atr->aid.value, card->ef_atr->aid.len))"];
+"1000196" -> "1000193"  [label="AST: "];
+"1000196" -> "1000200"  [label="CFG: "];
+"1000196" -> "1000215"  [label="CFG: "];
+"1000197" -> "1000196"  [label="AST: "];
+"1000200" -> "1000196"  [label="AST: "];
+"1000215" -> "1000196"  [label="AST: "];
+"1000193" -> "1000196"  [label="CFG: "];
+"1000196" -> "1001130"  [label="DDG: "];
+"1000196" -> "1001130"  [label="DDG: "];
+"1000200" -> "1000196"  [label="DDG: "];
+"1000200" -> "1000196"  [label="DDG: "];
+"1000200" -> "1000208"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000208" -> "1000200"  [label="AST: "];
+"1000200" -> "1001130"  [label="DDG: "];
+"1000200" -> "1001130"  [label="DDG: "];
+"1000200" -> "1000193"  [label="DDG: "];
+"1000200" -> "1000193"  [label="DDG: "];
+}

@@ -1,0 +1,38 @@
+digraph "0_linux_193e87143c290ec16838f5368adc0e0bc94eb931@pointer" {
+"1000159" [label="(Call,f_pdata->cs = cs)"];
+"1000137" [label="(Call,cs >= CQSPI_MAX_CHIPSELECT)"];
+"1000160" [label="(Call,f_pdata->cs)"];
+"1000290" [label="(Call,i < CQSPI_MAX_CHIPSELECT)"];
+"1000159" [label="(Call,f_pdata->cs = cs)"];
+"1000147" [label="(Identifier,f_pdata)"];
+"1000242" [label="(Call,devm_kasprintf(dev, GFP_KERNEL, \"%s.%d\",\n\t\t\t\t\t   dev_name(dev), cs))"];
+"1000138" [label="(Identifier,cs)"];
+"1000316" [label="(MethodReturn,static int)"];
+"1000136" [label="(ControlStructure,if (cs >= CQSPI_MAX_CHIPSELECT))"];
+"1000139" [label="(Identifier,CQSPI_MAX_CHIPSELECT)"];
+"1000163" [label="(Identifier,cs)"];
+"1000165" [label="(Identifier,ret)"];
+"1000137" [label="(Call,cs >= CQSPI_MAX_CHIPSELECT)"];
+"1000141" [label="(Call,dev_err(dev, \"Chip select %d out of range.\n\", cs))"];
+"1000142" [label="(Identifier,dev)"];
+"1000124" [label="(Block,)"];
+"1000159" -> "1000124"  [label="AST: "];
+"1000159" -> "1000163"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000163" -> "1000159"  [label="AST: "];
+"1000165" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000316"  [label="DDG: f_pdata->cs"];
+"1000159" -> "1000316"  [label="DDG: cs"];
+"1000137" -> "1000159"  [label="DDG: cs"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000137" -> "1000139"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000139" -> "1000137"  [label="AST: "];
+"1000142" -> "1000137"  [label="CFG: "];
+"1000147" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000316"  [label="DDG: CQSPI_MAX_CHIPSELECT"];
+"1000137" -> "1000316"  [label="DDG: cs >= CQSPI_MAX_CHIPSELECT"];
+"1000137" -> "1000141"  [label="DDG: cs"];
+"1000137" -> "1000242"  [label="DDG: cs"];
+"1000137" -> "1000290"  [label="DDG: CQSPI_MAX_CHIPSELECT"];
+}

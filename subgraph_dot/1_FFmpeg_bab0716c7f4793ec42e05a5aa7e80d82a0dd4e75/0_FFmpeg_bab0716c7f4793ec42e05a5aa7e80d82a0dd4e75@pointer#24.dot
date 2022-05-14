@@ -1,0 +1,33 @@
+digraph "0_FFmpeg_bab0716c7f4793ec42e05a5aa7e80d82a0dd4e75@pointer" {
+"1001490" [label="(Call,descriptor->horiz_subsampling == 2)"];
+"1001489" [label="(Call,descriptor->horiz_subsampling == 2 &&\n                                descriptor->vert_subsampling == 1 &&\n                                descriptor->component_depth == 8)"];
+"1001490" [label="(Call,descriptor->horiz_subsampling == 2)"];
+"1001488" [label="(ControlStructure,if (descriptor->horiz_subsampling == 2 &&\n                                descriptor->vert_subsampling == 1 &&\n                                descriptor->component_depth == 8))"];
+"1001516" [label="(Identifier,st)"];
+"1001989" [label="(MethodReturn,static int)"];
+"1001510" [label="(Identifier,st)"];
+"1001498" [label="(Identifier,descriptor)"];
+"1001495" [label="(Call,descriptor->vert_subsampling == 1 &&\n                                descriptor->component_depth == 8)"];
+"1001489" [label="(Call,descriptor->horiz_subsampling == 2 &&\n                                descriptor->vert_subsampling == 1 &&\n                                descriptor->component_depth == 8)"];
+"1001491" [label="(Call,descriptor->horiz_subsampling)"];
+"1001494" [label="(Literal,2)"];
+"1001490" -> "1001489"  [label="AST: "];
+"1001490" -> "1001494"  [label="CFG: "];
+"1001491" -> "1001490"  [label="AST: "];
+"1001494" -> "1001490"  [label="AST: "];
+"1001498" -> "1001490"  [label="CFG: "];
+"1001489" -> "1001490"  [label="CFG: "];
+"1001490" -> "1001989"  [label="DDG: descriptor->horiz_subsampling"];
+"1001490" -> "1001489"  [label="DDG: descriptor->horiz_subsampling"];
+"1001490" -> "1001489"  [label="DDG: 2"];
+"1001489" -> "1001488"  [label="AST: "];
+"1001489" -> "1001495"  [label="CFG: "];
+"1001495" -> "1001489"  [label="AST: "];
+"1001510" -> "1001489"  [label="CFG: "];
+"1001516" -> "1001489"  [label="CFG: "];
+"1001489" -> "1001989"  [label="DDG: descriptor->vert_subsampling == 1 &&\n                                descriptor->component_depth == 8"];
+"1001489" -> "1001989"  [label="DDG: descriptor->horiz_subsampling == 2 &&\n                                descriptor->vert_subsampling == 1 &&\n                                descriptor->component_depth == 8"];
+"1001489" -> "1001989"  [label="DDG: descriptor->horiz_subsampling == 2"];
+"1001495" -> "1001489"  [label="DDG: descriptor->vert_subsampling == 1"];
+"1001495" -> "1001489"  [label="DDG: descriptor->component_depth == 8"];
+}

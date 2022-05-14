@@ -1,0 +1,1 @@
+const TransformPaintPropertyNode* t0() {

@@ -1,0 +1,30 @@
+digraph "0_linux_c0f5ecee4e741667b2493c742b60b6218d40b3aa@pointer" {
+"1000222" [label="(Call,set_bit(WDM_READ, &desc->flags))"];
+"1000120" [label="(Call,clear_bit(WDM_RESPONDING, &desc->flags))"];
+"1000222" [label="(Call,set_bit(WDM_READ, &desc->flags))"];
+"1000102" [label="(Block,)"];
+"1000231" [label="(Identifier,desc)"];
+"1000120" [label="(Call,clear_bit(WDM_RESPONDING, &desc->flags))"];
+"1000121" [label="(Identifier,WDM_RESPONDING)"];
+"1000224" [label="(Call,&desc->flags)"];
+"1000127" [label="(Identifier,status)"];
+"1000122" [label="(Call,&desc->flags)"];
+"1000223" [label="(Identifier,WDM_READ)"];
+"1000233" [label="(MethodReturn,static void)"];
+"1000222" -> "1000102"  [label="AST: "];
+"1000222" -> "1000224"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000224" -> "1000222"  [label="AST: "];
+"1000231" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000233"  [label="DDG: set_bit(WDM_READ, &desc->flags)"];
+"1000222" -> "1000233"  [label="DDG: &desc->flags"];
+"1000222" -> "1000233"  [label="DDG: WDM_READ"];
+"1000120" -> "1000222"  [label="DDG: &desc->flags"];
+"1000120" -> "1000102"  [label="AST: "];
+"1000120" -> "1000122"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000122" -> "1000120"  [label="AST: "];
+"1000127" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000233"  [label="DDG: WDM_RESPONDING"];
+"1000120" -> "1000233"  [label="DDG: clear_bit(WDM_RESPONDING, &desc->flags)"];
+}

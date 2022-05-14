@@ -1,0 +1,26 @@
+digraph "0_linux_532c34b5fbf1687df63b3fcd5b2846312ac943c6@pointer" {
+"1000107" [label="(Call,copy_from_user(&ctl_sccb, user_area, sizeof(ctl_sccb)))"];
+"1000101" [label="(MethodParameterIn,void __user *user_area)"];
+"1000115" [label="(Identifier,EFAULT)"];
+"1000107" [label="(Call,copy_from_user(&ctl_sccb, user_area, sizeof(ctl_sccb)))"];
+"1000106" [label="(ControlStructure,if (copy_from_user(&ctl_sccb, user_area, sizeof(ctl_sccb))))"];
+"1000120" [label="(Identifier,ctl_sccb)"];
+"1000111" [label="(Call,sizeof(ctl_sccb))"];
+"1000110" [label="(Identifier,user_area)"];
+"1000101" [label="(MethodParameterIn,void __user *user_area)"];
+"1000217" [label="(MethodReturn,static int)"];
+"1000108" [label="(Call,&ctl_sccb)"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000111"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000110" -> "1000107"  [label="AST: "];
+"1000111" -> "1000107"  [label="AST: "];
+"1000115" -> "1000107"  [label="CFG: "];
+"1000120" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000217"  [label="DDG: &ctl_sccb"];
+"1000107" -> "1000217"  [label="DDG: copy_from_user(&ctl_sccb, user_area, sizeof(ctl_sccb))"];
+"1000107" -> "1000217"  [label="DDG: user_area"];
+"1000101" -> "1000107"  [label="DDG: user_area"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000217"  [label="DDG: user_area"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_4b6184336ebb5c8dc1eae7f7ab46ee608a748b05@pointer" {
+"1000361" [label="(Call,ch->magic != DGNC_CHANNEL_MAGIC)"];
+"1000358" [label="(Call,!ch || ch->magic != DGNC_CHANNEL_MAGIC)"];
+"1000358" [label="(Call,!ch || ch->magic != DGNC_CHANNEL_MAGIC)"];
+"1000365" [label="(Identifier,DGNC_CHANNEL_MAGIC)"];
+"1000368" [label="(Identifier,ENODEV)"];
+"1000357" [label="(ControlStructure,if (!ch || ch->magic != DGNC_CHANNEL_MAGIC))"];
+"1000361" [label="(Call,ch->magic != DGNC_CHANNEL_MAGIC)"];
+"1000359" [label="(Call,!ch)"];
+"1000623" [label="(MethodReturn,long)"];
+"1000362" [label="(Call,ch->magic)"];
+"1000371" [label="(Identifier,ni)"];
+"1000361" -> "1000358"  [label="AST: "];
+"1000361" -> "1000365"  [label="CFG: "];
+"1000362" -> "1000361"  [label="AST: "];
+"1000365" -> "1000361"  [label="AST: "];
+"1000358" -> "1000361"  [label="CFG: "];
+"1000361" -> "1000623"  [label="DDG: DGNC_CHANNEL_MAGIC"];
+"1000361" -> "1000623"  [label="DDG: ch->magic"];
+"1000361" -> "1000358"  [label="DDG: ch->magic"];
+"1000361" -> "1000358"  [label="DDG: DGNC_CHANNEL_MAGIC"];
+"1000358" -> "1000357"  [label="AST: "];
+"1000358" -> "1000359"  [label="CFG: "];
+"1000359" -> "1000358"  [label="AST: "];
+"1000368" -> "1000358"  [label="CFG: "];
+"1000371" -> "1000358"  [label="CFG: "];
+"1000358" -> "1000623"  [label="DDG: ch->magic != DGNC_CHANNEL_MAGIC"];
+"1000358" -> "1000623"  [label="DDG: !ch || ch->magic != DGNC_CHANNEL_MAGIC"];
+"1000358" -> "1000623"  [label="DDG: !ch"];
+"1000359" -> "1000358"  [label="DDG: ch"];
+}

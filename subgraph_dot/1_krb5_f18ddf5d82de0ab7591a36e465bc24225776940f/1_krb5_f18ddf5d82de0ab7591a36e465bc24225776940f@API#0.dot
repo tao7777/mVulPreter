@@ -1,0 +1,33 @@
+digraph "1_krb5_f18ddf5d82de0ab7591a36e465bc24225776940f@API" {
+"1000121" [label="(Call,gss_delete_sec_context(&tmpmin, &sc->ctx_handle,\n \t\t\t       GSS_C_NO_BUFFER))"];
+"1000114" [label="(Call,generic_gss_release_oid(&tmpmin, &sc->internal_mech))"];
+"1000115" [label="(Call,&tmpmin)"];
+"1000124" [label="(Call,&sc->ctx_handle)"];
+"1000111" [label="(Block,)"];
+"1000131" [label="(Identifier,i)"];
+"1000114" [label="(Call,generic_gss_release_oid(&tmpmin, &sc->internal_mech))"];
+"1000117" [label="(Call,&sc->internal_mech)"];
+"1000128" [label="(Identifier,GSS_C_NO_BUFFER)"];
+"1000123" [label="(Identifier,tmpmin)"];
+"1000122" [label="(Call,&tmpmin)"];
+"1000121" [label="(Call,gss_delete_sec_context(&tmpmin, &sc->ctx_handle,\n \t\t\t       GSS_C_NO_BUFFER))"];
+"1000203" [label="(MethodReturn,RET)"];
+"1000121" -> "1000111"  [label="AST: "];
+"1000121" -> "1000128"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000124" -> "1000121"  [label="AST: "];
+"1000128" -> "1000121"  [label="AST: "];
+"1000131" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000203"  [label="DDG: gss_delete_sec_context(&tmpmin, &sc->ctx_handle,\n \t\t\t       GSS_C_NO_BUFFER)"];
+"1000121" -> "1000203"  [label="DDG: &tmpmin"];
+"1000121" -> "1000203"  [label="DDG: GSS_C_NO_BUFFER"];
+"1000121" -> "1000203"  [label="DDG: &sc->ctx_handle"];
+"1000114" -> "1000121"  [label="DDG: &tmpmin"];
+"1000114" -> "1000111"  [label="AST: "];
+"1000114" -> "1000117"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000117" -> "1000114"  [label="AST: "];
+"1000123" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000203"  [label="DDG: &sc->internal_mech"];
+"1000114" -> "1000203"  [label="DDG: generic_gss_release_oid(&tmpmin, &sc->internal_mech)"];
+}

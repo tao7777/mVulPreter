@@ -1,0 +1,22 @@
+digraph "0_poppler_58e04a08afee39370283c494ee2e4e392fd3b684@API" {
+"1000305" [label="(Call,readUByte(&page))"];
+"1000304" [label="(Call,!readUByte(&page))"];
+"1000306" [label="(Call,&page)"];
+"1000580" [label="(MethodReturn,void)"];
+"1000309" [label="(ControlStructure,goto eofError2;)"];
+"1000314" [label="(Identifier,segLength)"];
+"1000304" [label="(Call,!readUByte(&page))"];
+"1000305" [label="(Call,readUByte(&page))"];
+"1000303" [label="(ControlStructure,if (!readUByte(&page)))"];
+"1000305" -> "1000304"  [label="AST: "];
+"1000305" -> "1000306"  [label="CFG: "];
+"1000306" -> "1000305"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000580"  [label="DDG: &page"];
+"1000305" -> "1000304"  [label="DDG: &page"];
+"1000304" -> "1000303"  [label="AST: "];
+"1000309" -> "1000304"  [label="CFG: "];
+"1000314" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000580"  [label="DDG: !readUByte(&page)"];
+"1000304" -> "1000580"  [label="DDG: readUByte(&page)"];
+}

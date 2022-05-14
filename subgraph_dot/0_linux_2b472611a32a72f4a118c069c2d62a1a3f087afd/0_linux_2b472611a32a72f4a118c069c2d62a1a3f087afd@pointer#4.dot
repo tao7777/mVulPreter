@@ -1,0 +1,26 @@
+digraph "0_linux_2b472611a32a72f4a118c069c2d62a1a3f087afd@pointer" {
+"1000201" [label="(Call,vma->vm_flags & VM_MERGEABLE)"];
+"1000200" [label="(Call,!(vma->vm_flags & VM_MERGEABLE))"];
+"1000205" [label="(Identifier,VM_MERGEABLE)"];
+"1000201" [label="(Call,vma->vm_flags & VM_MERGEABLE)"];
+"1000202" [label="(Call,vma->vm_flags)"];
+"1000206" [label="(ControlStructure,continue;)"];
+"1000199" [label="(ControlStructure,if (!(vma->vm_flags & VM_MERGEABLE)))"];
+"1000420" [label="(MethodReturn,static struct rmap_item *)"];
+"1000200" [label="(Call,!(vma->vm_flags & VM_MERGEABLE))"];
+"1000210" [label="(Identifier,ksm_scan)"];
+"1000201" -> "1000200"  [label="AST: "];
+"1000201" -> "1000205"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000420"  [label="DDG: VM_MERGEABLE"];
+"1000201" -> "1000420"  [label="DDG: vma->vm_flags"];
+"1000201" -> "1000200"  [label="DDG: vma->vm_flags"];
+"1000201" -> "1000200"  [label="DDG: VM_MERGEABLE"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000206" -> "1000200"  [label="CFG: "];
+"1000210" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000420"  [label="DDG: vma->vm_flags & VM_MERGEABLE"];
+"1000200" -> "1000420"  [label="DDG: !(vma->vm_flags & VM_MERGEABLE)"];
+}

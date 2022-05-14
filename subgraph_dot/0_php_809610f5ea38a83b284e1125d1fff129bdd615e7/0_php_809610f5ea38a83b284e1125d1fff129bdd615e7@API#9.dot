@@ -1,0 +1,31 @@
+digraph "0_php_809610f5ea38a83b284e1125d1fff129bdd615e7@API" {
+"1000206" [label="(Call,strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE) && strcmp(r->handler, PHP_SCRIPT))"];
+"1000200" [label="(Call,strcmp(r->handler, PHP_MAGIC_TYPE) && strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE) && strcmp(r->handler, PHP_SCRIPT))"];
+"1000201" [label="(Call,strcmp(r->handler, PHP_MAGIC_TYPE))"];
+"1000212" [label="(Call,strcmp(r->handler, PHP_SCRIPT))"];
+"1000541" [label="(MethodReturn,static int)"];
+"1000222" [label="(Identifier,xbithack)"];
+"1000206" [label="(Call,strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE) && strcmp(r->handler, PHP_SCRIPT))"];
+"1000245" [label="(Identifier,r)"];
+"1000199" [label="(ControlStructure,if (strcmp(r->handler, PHP_MAGIC_TYPE) && strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE) && strcmp(r->handler, PHP_SCRIPT)))"];
+"1000207" [label="(Call,strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE))"];
+"1000200" [label="(Call,strcmp(r->handler, PHP_MAGIC_TYPE) && strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE) && strcmp(r->handler, PHP_SCRIPT))"];
+"1000206" -> "1000200"  [label="AST: "];
+"1000206" -> "1000207"  [label="CFG: "];
+"1000206" -> "1000212"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000212" -> "1000206"  [label="AST: "];
+"1000200" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000541"  [label="DDG: strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE)"];
+"1000206" -> "1000541"  [label="DDG: strcmp(r->handler, PHP_SCRIPT)"];
+"1000206" -> "1000200"  [label="DDG: strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE)"];
+"1000206" -> "1000200"  [label="DDG: strcmp(r->handler, PHP_SCRIPT)"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000222" -> "1000200"  [label="CFG: "];
+"1000245" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000541"  [label="DDG: strcmp(r->handler, PHP_MAGIC_TYPE)"];
+"1000200" -> "1000541"  [label="DDG: strcmp(r->handler, PHP_MAGIC_TYPE) && strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE) && strcmp(r->handler, PHP_SCRIPT)"];
+"1000200" -> "1000541"  [label="DDG: strcmp(r->handler, PHP_SOURCE_MAGIC_TYPE) && strcmp(r->handler, PHP_SCRIPT)"];
+}

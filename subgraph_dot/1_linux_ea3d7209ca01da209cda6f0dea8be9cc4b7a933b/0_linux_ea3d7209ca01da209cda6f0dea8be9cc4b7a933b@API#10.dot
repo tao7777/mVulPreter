@@ -1,0 +1,31 @@
+digraph "0_linux_ea3d7209ca01da209cda6f0dea8be9cc4b7a933b@API" {
+"1000284" [label="(Call,up_write(&EXT4_I(inode)->i_data_sem))"];
+"1000265" [label="(Call,down_write(&EXT4_I(inode)->i_data_sem))"];
+"1000285" [label="(Call,&EXT4_I(inode)->i_data_sem)"];
+"1000384" [label="(MethodReturn,int)"];
+"1000284" [label="(Call,up_write(&EXT4_I(inode)->i_data_sem))"];
+"1000266" [label="(Call,&EXT4_I(inode)->i_data_sem)"];
+"1000346" [label="(Call,up_write(&EXT4_I(inode)->i_data_sem))"];
+"1000272" [label="(Identifier,inode)"];
+"1000113" [label="(Block,)"];
+"1000283" [label="(Block,)"];
+"1000324" [label="(Call,up_write(&EXT4_I(inode)->i_data_sem))"];
+"1000302" [label="(Call,up_write(&EXT4_I(inode)->i_data_sem))"];
+"1000265" [label="(Call,down_write(&EXT4_I(inode)->i_data_sem))"];
+"1000290" [label="(ControlStructure,goto out_stop;)"];
+"1000284" -> "1000283"  [label="AST: "];
+"1000284" -> "1000285"  [label="CFG: "];
+"1000285" -> "1000284"  [label="AST: "];
+"1000290" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000384"  [label="DDG: &EXT4_I(inode)->i_data_sem"];
+"1000284" -> "1000384"  [label="DDG: up_write(&EXT4_I(inode)->i_data_sem)"];
+"1000265" -> "1000284"  [label="DDG: &EXT4_I(inode)->i_data_sem"];
+"1000265" -> "1000113"  [label="AST: "];
+"1000265" -> "1000266"  [label="CFG: "];
+"1000266" -> "1000265"  [label="AST: "];
+"1000272" -> "1000265"  [label="CFG: "];
+"1000265" -> "1000384"  [label="DDG: down_write(&EXT4_I(inode)->i_data_sem)"];
+"1000265" -> "1000302"  [label="DDG: &EXT4_I(inode)->i_data_sem"];
+"1000265" -> "1000324"  [label="DDG: &EXT4_I(inode)->i_data_sem"];
+"1000265" -> "1000346"  [label="DDG: &EXT4_I(inode)->i_data_sem"];
+}

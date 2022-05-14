@@ -1,0 +1,22 @@
+digraph "0_systemd_ee735086f8670be1591fa9593e80dd60163a7a2f_2@pointer" {
+"1000166" [label="(Call,t->last_trigger.realtime = timespec_load(&st.st_atim))"];
+"1000172" [label="(Call,timespec_load(&st.st_atim))"];
+"1000173" [label="(Call,&st.st_atim)"];
+"1000201" [label="(MethodReturn,static int)"];
+"1000166" [label="(Call,t->last_trigger.realtime = timespec_load(&st.st_atim))"];
+"1000172" [label="(Call,timespec_load(&st.st_atim))"];
+"1000193" [label="(Identifier,t)"];
+"1000167" [label="(Call,t->last_trigger.realtime)"];
+"1000157" [label="(ControlStructure,if (stat(t->stamp_path, &st) >= 0))"];
+"1000166" -> "1000157"  [label="AST: "];
+"1000166" -> "1000172"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000172" -> "1000166"  [label="AST: "];
+"1000193" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000201"  [label="DDG: timespec_load(&st.st_atim)"];
+"1000166" -> "1000201"  [label="DDG: t->last_trigger.realtime"];
+"1000172" -> "1000166"  [label="DDG: &st.st_atim"];
+"1000172" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000172" -> "1000201"  [label="DDG: &st.st_atim"];
+}

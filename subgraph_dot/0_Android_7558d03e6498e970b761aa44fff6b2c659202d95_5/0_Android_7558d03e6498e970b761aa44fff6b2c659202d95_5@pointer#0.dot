@@ -1,0 +1,33 @@
+digraph "0_Android_7558d03e6498e970b761aa44fff6b2c659202d95_5@pointer" {
+"1000101" [label="(MethodParameterIn,const char *buffer_addr)"];
+"1000308" [label="(Call,fwrite(buffer_addr, buffer_len, 1, m_debug.outfile))"];
+"1000102" [label="(MethodParameterIn,int buffer_len)"];
+"1000303" [label="(Block,)"];
+"1000298" [label="(Call,m_debug.outfile && buffer_len)"];
+"1000304" [label="(Call,DEBUG_PRINT_LOW(\"%s buffer_len:%d\", __func__, buffer_len))"];
+"1000308" [label="(Call,fwrite(buffer_addr, buffer_len, 1, m_debug.outfile))"];
+"1000310" [label="(Identifier,buffer_len)"];
+"1000311" [label="(Literal,1)"];
+"1000101" [label="(MethodParameterIn,const char *buffer_addr)"];
+"1000317" [label="(MethodReturn,int)"];
+"1000312" [label="(Call,m_debug.outfile)"];
+"1000316" [label="(Literal,0)"];
+"1000309" [label="(Identifier,buffer_addr)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000317"  [label="DDG: buffer_addr"];
+"1000101" -> "1000308"  [label="DDG: buffer_addr"];
+"1000308" -> "1000303"  [label="AST: "];
+"1000308" -> "1000312"  [label="CFG: "];
+"1000309" -> "1000308"  [label="AST: "];
+"1000310" -> "1000308"  [label="AST: "];
+"1000311" -> "1000308"  [label="AST: "];
+"1000312" -> "1000308"  [label="AST: "];
+"1000316" -> "1000308"  [label="CFG: "];
+"1000308" -> "1000317"  [label="DDG: buffer_len"];
+"1000308" -> "1000317"  [label="DDG: buffer_addr"];
+"1000308" -> "1000317"  [label="DDG: m_debug.outfile"];
+"1000308" -> "1000317"  [label="DDG: fwrite(buffer_addr, buffer_len, 1, m_debug.outfile)"];
+"1000304" -> "1000308"  [label="DDG: buffer_len"];
+"1000102" -> "1000308"  [label="DDG: buffer_len"];
+"1000298" -> "1000308"  [label="DDG: m_debug.outfile"];
+}

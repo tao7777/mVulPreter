@@ -1,0 +1,24 @@
+digraph "0_enlightment_666df815cd86a50343859bce36c5cf968c5f38b0@API" {
+"1000317" [label="(Call,setuid(0) != 0)"];
+"1000318" [label="(Call,setuid(0))"];
+"1000320" [label="(Literal,0)"];
+"1000317" [label="(Call,setuid(0) != 0)"];
+"1000323" [label="(Literal,\"ERROR: UNABLE TO ASSUME ROOT PRIVILEGES\n\")"];
+"1000316" [label="(ControlStructure,if (setuid(0) != 0))"];
+"1000730" [label="(MethodReturn,RET)"];
+"1000329" [label="(Literal,0)"];
+"1000318" [label="(Call,setuid(0))"];
+"1000319" [label="(Literal,0)"];
+"1000317" -> "1000316"  [label="AST: "];
+"1000317" -> "1000320"  [label="CFG: "];
+"1000318" -> "1000317"  [label="AST: "];
+"1000320" -> "1000317"  [label="AST: "];
+"1000323" -> "1000317"  [label="CFG: "];
+"1000329" -> "1000317"  [label="CFG: "];
+"1000317" -> "1000730"  [label="DDG: setuid(0)"];
+"1000317" -> "1000730"  [label="DDG: setuid(0) != 0"];
+"1000318" -> "1000317"  [label="DDG: 0"];
+"1000318" -> "1000319"  [label="CFG: "];
+"1000319" -> "1000318"  [label="AST: "];
+"1000320" -> "1000318"  [label="CFG: "];
+}

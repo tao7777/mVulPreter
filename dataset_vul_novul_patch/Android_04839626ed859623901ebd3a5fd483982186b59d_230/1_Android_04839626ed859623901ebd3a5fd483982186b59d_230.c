@@ -1,0 +1,4 @@
+Track::Info::~Info()
+{
+    Clear();
+}

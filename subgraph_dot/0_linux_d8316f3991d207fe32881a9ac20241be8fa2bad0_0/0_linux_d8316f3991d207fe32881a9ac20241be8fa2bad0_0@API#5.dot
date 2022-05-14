@@ -1,0 +1,23 @@
+digraph "0_linux_d8316f3991d207fe32881a9ac20241be8fa2bad0_0@API" {
+"1000424" [label="(Call,mutex_unlock(&vq->mutex))"];
+"1000147" [label="(Call,mutex_lock(&vq->mutex))"];
+"1000425" [label="(Call,&vq->mutex)"];
+"1000113" [label="(Block,)"];
+"1000153" [label="(Identifier,sock)"];
+"1000148" [label="(Call,&vq->mutex)"];
+"1000429" [label="(MethodReturn,static void)"];
+"1000424" [label="(Call,mutex_unlock(&vq->mutex))"];
+"1000147" [label="(Call,mutex_lock(&vq->mutex))"];
+"1000424" -> "1000113"  [label="AST: "];
+"1000424" -> "1000425"  [label="CFG: "];
+"1000425" -> "1000424"  [label="AST: "];
+"1000429" -> "1000424"  [label="CFG: "];
+"1000424" -> "1000429"  [label="DDG: &vq->mutex"];
+"1000424" -> "1000429"  [label="DDG: mutex_unlock(&vq->mutex)"];
+"1000147" -> "1000424"  [label="DDG: &vq->mutex"];
+"1000147" -> "1000113"  [label="AST: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000153" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000429"  [label="DDG: mutex_lock(&vq->mutex)"];
+}

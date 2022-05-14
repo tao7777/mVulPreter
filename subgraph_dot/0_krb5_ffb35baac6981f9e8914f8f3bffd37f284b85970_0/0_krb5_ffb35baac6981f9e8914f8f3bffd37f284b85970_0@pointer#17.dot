@@ -1,0 +1,36 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970_0@pointer" {
+"1001214" [label="(Call,ticket_reply = *(header_ticket))"];
+"1002059" [label="(Call,reply_encpart.server = ticket_reply.server)"];
+"1001008" [label="(Call,ticket_reply.server = request->server)"];
+"1001215" [label="(Identifier,ticket_reply)"];
+"1002060" [label="(Call,reply_encpart.server)"];
+"1001249" [label="(Call,ticket_reply = *(header_ticket))"];
+"1002500" [label="(MethodReturn,RET)"];
+"1001219" [label="(Identifier,enc_tkt_reply)"];
+"1001216" [label="(Call,*(header_ticket))"];
+"1002059" [label="(Call,reply_encpart.server = ticket_reply.server)"];
+"1002069" [label="(Identifier,reply)"];
+"1000171" [label="(Block,)"];
+"1001000" [label="(Call,ticket_reply.server = server->princ)"];
+"1001207" [label="(Block,)"];
+"1002063" [label="(Call,ticket_reply.server)"];
+"1001214" [label="(Call,ticket_reply = *(header_ticket))"];
+"1001214" -> "1001207"  [label="AST: "];
+"1001214" -> "1001216"  [label="CFG: "];
+"1001215" -> "1001214"  [label="AST: "];
+"1001216" -> "1001214"  [label="AST: "];
+"1001219" -> "1001214"  [label="CFG: "];
+"1001214" -> "1002500"  [label="DDG: ticket_reply"];
+"1001214" -> "1002500"  [label="DDG: *(header_ticket)"];
+"1001214" -> "1002059"  [label="DDG: ticket_reply"];
+"1002059" -> "1000171"  [label="AST: "];
+"1002059" -> "1002063"  [label="CFG: "];
+"1002060" -> "1002059"  [label="AST: "];
+"1002063" -> "1002059"  [label="AST: "];
+"1002069" -> "1002059"  [label="CFG: "];
+"1002059" -> "1002500"  [label="DDG: reply_encpart.server"];
+"1002059" -> "1002500"  [label="DDG: ticket_reply.server"];
+"1001008" -> "1002059"  [label="DDG: ticket_reply.server"];
+"1001000" -> "1002059"  [label="DDG: ticket_reply.server"];
+"1001249" -> "1002059"  [label="DDG: ticket_reply"];
+}

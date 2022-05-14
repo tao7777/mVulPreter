@@ -1,0 +1,19 @@
+digraph "1_linux_82262a46627bebb0febcc26664746c25cef08563@del" {
+"1000128" [label="(Call,-ENOMEM)"];
+"1000127" [label="(Return,return -ENOMEM;)"];
+"1000129" [label="(Identifier,ENOMEM)"];
+"1000128" [label="(Call,-ENOMEM)"];
+"1000546" [label="(MethodReturn,static int)"];
+"1000127" [label="(Return,return -ENOMEM;)"];
+"1000118" [label="(ControlStructure,if (!replace && card->user_ctl_count >= MAX_USER_CONTROLS))"];
+"1000128" -> "1000127"  [label="AST: "];
+"1000128" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000546"  [label="DDG: ENOMEM"];
+"1000128" -> "1000546"  [label="DDG: -ENOMEM"];
+"1000128" -> "1000127"  [label="DDG: -ENOMEM"];
+"1000127" -> "1000118"  [label="AST: "];
+"1000546" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000546"  [label="DDG: <RET>"];
+}

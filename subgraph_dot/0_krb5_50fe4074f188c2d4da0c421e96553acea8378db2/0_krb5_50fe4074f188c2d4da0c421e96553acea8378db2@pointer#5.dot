@@ -1,0 +1,26 @@
+digraph "0_krb5_50fe4074f188c2d4da0c421e96553acea8378db2@pointer" {
+"1000426" [label="(Call,k5int_decode_krb5_principal_name(&name, &princs[p]))"];
+"1000424" [label="(Call,ret = k5int_decode_krb5_principal_name(&name, &princs[p]))"];
+"1000434" [label="(Identifier,ret)"];
+"1000429" [label="(Call,&princs[p])"];
+"1000427" [label="(Call,&name)"];
+"1000424" [label="(Call,ret = k5int_decode_krb5_principal_name(&name, &princs[p]))"];
+"1000706" [label="(MethodReturn,RET)"];
+"1000425" [label="(Identifier,ret)"];
+"1000426" [label="(Call,k5int_decode_krb5_principal_name(&name, &princs[p]))"];
+"1000413" [label="(Block,)"];
+"1000426" -> "1000424"  [label="AST: "];
+"1000426" -> "1000429"  [label="CFG: "];
+"1000427" -> "1000426"  [label="AST: "];
+"1000429" -> "1000426"  [label="AST: "];
+"1000424" -> "1000426"  [label="CFG: "];
+"1000426" -> "1000706"  [label="DDG: &name"];
+"1000426" -> "1000706"  [label="DDG: &princs[p]"];
+"1000426" -> "1000424"  [label="DDG: &name"];
+"1000426" -> "1000424"  [label="DDG: &princs[p]"];
+"1000424" -> "1000413"  [label="AST: "];
+"1000425" -> "1000424"  [label="AST: "];
+"1000434" -> "1000424"  [label="CFG: "];
+"1000424" -> "1000706"  [label="DDG: k5int_decode_krb5_principal_name(&name, &princs[p])"];
+"1000424" -> "1000706"  [label="DDG: ret"];
+}

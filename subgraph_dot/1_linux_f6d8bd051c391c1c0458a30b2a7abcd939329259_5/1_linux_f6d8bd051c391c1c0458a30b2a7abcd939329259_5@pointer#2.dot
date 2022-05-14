@@ -1,0 +1,28 @@
+digraph "1_linux_f6d8bd051c391c1c0458a30b2a7abcd939329259_5@pointer" {
+"1000292" [label="(Call,kfree(opt))"];
+"1000110" [label="(Call,*opt = *opt_ptr)"];
+"1000295" [label="(Identifier,hdr_delta)"];
+"1000296" [label="(MethodReturn,static int)"];
+"1000104" [label="(Block,)"];
+"1000282" [label="(Block,)"];
+"1000117" [label="(Identifier,opt)"];
+"1000292" [label="(Call,kfree(opt))"];
+"1000110" [label="(Call,*opt = *opt_ptr)"];
+"1000111" [label="(Identifier,opt)"];
+"1000293" [label="(Identifier,opt)"];
+"1000112" [label="(Call,*opt_ptr)"];
+"1000292" -> "1000282"  [label="AST: "];
+"1000292" -> "1000293"  [label="CFG: "];
+"1000293" -> "1000292"  [label="AST: "];
+"1000295" -> "1000292"  [label="CFG: "];
+"1000292" -> "1000296"  [label="DDG: kfree(opt)"];
+"1000292" -> "1000296"  [label="DDG: opt"];
+"1000110" -> "1000292"  [label="DDG: opt"];
+"1000110" -> "1000104"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000117" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000296"  [label="DDG: *opt_ptr"];
+"1000110" -> "1000296"  [label="DDG: opt"];
+}

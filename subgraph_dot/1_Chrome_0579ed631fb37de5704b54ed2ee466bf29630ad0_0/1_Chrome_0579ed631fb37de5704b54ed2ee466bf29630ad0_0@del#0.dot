@@ -1,0 +1,33 @@
+digraph "1_Chrome_0579ed631fb37de5704b54ed2ee466bf29630ad0_0@del" {
+"1000115" [label="(Call,UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time))"];
+"1000113" [label="(Call,base::MakeUnique<UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time))"];
+"1000112" [label="(Call,element_readers.push_back(base::MakeUnique<UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time)))"];
+"1000104" [label="(Block,)"];
+"1000148" [label="(MethodReturn,void)"];
+"1000116" [label="(Identifier,UploadFileElementReader)"];
+"1000115" [label="(Call,UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time))"];
+"1000113" [label="(Call,base::MakeUnique<UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time))"];
+"1000112" [label="(Call,element_readers.push_back(base::MakeUnique<UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time)))"];
+"1000114" [label="(Identifier,base::MakeUnique)"];
+"1000125" [label="(Identifier,time)"];
+"1000130" [label="(Call,init_callback.callback())"];
+"1000117" [label="(Block,)"];
+"1000115" -> "1000113"  [label="AST: "];
+"1000115" -> "1000125"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000113" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000148"  [label="DDG: UploadFileElementReader"];
+"1000115" -> "1000113"  [label="DDG: UploadFileElementReader"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000148"  [label="DDG: base::MakeUnique"];
+"1000113" -> "1000148"  [label="DDG: UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time)"];
+"1000113" -> "1000112"  [label="DDG: base::MakeUnique"];
+"1000113" -> "1000112"  [label="DDG: UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time)"];
+"1000112" -> "1000104"  [label="AST: "];
+"1000130" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000148"  [label="DDG: element_readers.push_back(base::MakeUnique<UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time))"];
+"1000112" -> "1000148"  [label="DDG: base::MakeUnique<UploadFileElementReader>(\n       base::ThreadTaskRunnerHandle::Get().get(), file_path, 1, 2, time)"];
+}

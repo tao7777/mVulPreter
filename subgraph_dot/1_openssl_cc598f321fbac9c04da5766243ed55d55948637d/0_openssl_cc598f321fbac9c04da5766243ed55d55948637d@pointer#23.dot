@@ -1,0 +1,36 @@
+digraph "0_openssl_cc598f321fbac9c04da5766243ed55d55948637d@pointer" {
+"1000291" [label="(Call,ASN1_tag2bit(otag) & it->utype)"];
+"1000292" [label="(Call,ASN1_tag2bit(otag))"];
+"1000290" [label="(Call,!(ASN1_tag2bit(otag) & it->utype))"];
+"1000295" [label="(Identifier,it)"];
+"1000309" [label="(Identifier,pval)"];
+"1001021" [label="(MethodReturn,int)"];
+"1000289" [label="(ControlStructure,if (!(ASN1_tag2bit(otag) & it->utype)))"];
+"1000294" [label="(Call,it->utype)"];
+"1000308" [label="(Call,asn1_d2i_ex_primitive(pval, in, len, it, otag, 0, 0, ctx))"];
+"1000292" [label="(Call,ASN1_tag2bit(otag))"];
+"1000299" [label="(Identifier,opt)"];
+"1000291" [label="(Call,ASN1_tag2bit(otag) & it->utype)"];
+"1000293" [label="(Identifier,otag)"];
+"1000290" [label="(Call,!(ASN1_tag2bit(otag) & it->utype))"];
+"1000291" -> "1000290"  [label="AST: "];
+"1000291" -> "1000294"  [label="CFG: "];
+"1000292" -> "1000291"  [label="AST: "];
+"1000294" -> "1000291"  [label="AST: "];
+"1000290" -> "1000291"  [label="CFG: "];
+"1000291" -> "1001021"  [label="DDG: ASN1_tag2bit(otag)"];
+"1000291" -> "1001021"  [label="DDG: it->utype"];
+"1000291" -> "1000290"  [label="DDG: ASN1_tag2bit(otag)"];
+"1000291" -> "1000290"  [label="DDG: it->utype"];
+"1000292" -> "1000291"  [label="DDG: otag"];
+"1000292" -> "1000293"  [label="CFG: "];
+"1000293" -> "1000292"  [label="AST: "];
+"1000295" -> "1000292"  [label="CFG: "];
+"1000292" -> "1001021"  [label="DDG: otag"];
+"1000292" -> "1000308"  [label="DDG: otag"];
+"1000290" -> "1000289"  [label="AST: "];
+"1000299" -> "1000290"  [label="CFG: "];
+"1000309" -> "1000290"  [label="CFG: "];
+"1000290" -> "1001021"  [label="DDG: ASN1_tag2bit(otag) & it->utype"];
+"1000290" -> "1001021"  [label="DDG: !(ASN1_tag2bit(otag) & it->utype)"];
+}

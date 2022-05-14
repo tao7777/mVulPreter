@@ -1,0 +1,35 @@
+digraph "0_libarchive_9c84b7426660c09c18cc349f6d70b5f8168b5680@pointer" {
+"1000141" [label="(Call,w->cntoff + 4U)"];
+"1000121" [label="(Call,w->cntoff >= w->cntlen)"];
+"1000122" [label="(Call,w->cntoff)"];
+"1000129" [label="(JumpTarget,eof:)"];
+"1000201" [label="(Call,w->cntlen - w->cntoff)"];
+"1000145" [label="(Literal,4U)"];
+"1000138" [label="(Call,*off = w->cntoff + 4U)"];
+"1000125" [label="(Call,w->cntlen)"];
+"1000142" [label="(Call,w->cntoff)"];
+"1000121" [label="(Call,w->cntoff >= w->cntlen)"];
+"1000246" [label="(MethodReturn,RET)"];
+"1000141" [label="(Call,w->cntoff + 4U)"];
+"1000120" [label="(ControlStructure,if (w->cntoff >= w->cntlen))"];
+"1000155" [label="(Identifier,w)"];
+"1000141" -> "1000138"  [label="AST: "];
+"1000141" -> "1000145"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000145" -> "1000141"  [label="AST: "];
+"1000138" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000246"  [label="DDG: w->cntoff"];
+"1000121" -> "1000141"  [label="DDG: w->cntoff"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000129" -> "1000121"  [label="CFG: "];
+"1000155" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000246"  [label="DDG: w->cntlen"];
+"1000121" -> "1000246"  [label="DDG: w->cntoff >= w->cntlen"];
+"1000121" -> "1000246"  [label="DDG: w->cntoff"];
+"1000121" -> "1000138"  [label="DDG: w->cntoff"];
+"1000121" -> "1000201"  [label="DDG: w->cntlen"];
+"1000121" -> "1000201"  [label="DDG: w->cntoff"];
+}

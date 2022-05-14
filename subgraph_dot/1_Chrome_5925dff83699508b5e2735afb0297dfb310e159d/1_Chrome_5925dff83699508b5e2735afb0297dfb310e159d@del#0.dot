@@ -1,0 +1,35 @@
+digraph "1_Chrome_5925dff83699508b5e2735afb0297dfb310e159d@del" {
+"1000117" [label="(Call,enter_fullscreen && !window_->IsFullscreen())"];
+"1000102" [label="(MethodParameterIn,bool enter_fullscreen)"];
+"1000119" [label="(Call,!window_->IsFullscreen())"];
+"1000117" [label="(Call,enter_fullscreen && !window_->IsFullscreen())"];
+"1000125" [label="(Identifier,tab_caused_fullscreen_)"];
+"1000122" [label="(Identifier,tab_caused_fullscreen_)"];
+"1000120" [label="(Call,window_->IsFullscreen())"];
+"1000102" [label="(MethodParameterIn,bool enter_fullscreen)"];
+"1000111" [label="(Call,enter_fullscreen ?\n       TabContentsWrapper::GetCurrentWrapperForContents(tab) : NULL)"];
+"1000127" [label="(MethodReturn,void)"];
+"1000118" [label="(Identifier,enter_fullscreen)"];
+"1000109" [label="(Call,fullscreened_tab_ = enter_fullscreen ?\n       TabContentsWrapper::GetCurrentWrapperForContents(tab) : NULL)"];
+"1000119" [label="(Call,!window_->IsFullscreen())"];
+"1000116" [label="(ControlStructure,if (enter_fullscreen && !window_->IsFullscreen()))"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000119"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000119" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="CFG: "];
+"1000125" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000127"  [label="DDG: enter_fullscreen && !window_->IsFullscreen()"];
+"1000117" -> "1000127"  [label="DDG: enter_fullscreen"];
+"1000117" -> "1000127"  [label="DDG: !window_->IsFullscreen()"];
+"1000102" -> "1000117"  [label="DDG: enter_fullscreen"];
+"1000119" -> "1000117"  [label="DDG: window_->IsFullscreen()"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000127"  [label="DDG: enter_fullscreen"];
+"1000102" -> "1000109"  [label="DDG: enter_fullscreen"];
+"1000102" -> "1000111"  [label="DDG: enter_fullscreen"];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000119" -> "1000127"  [label="DDG: window_->IsFullscreen()"];
+}

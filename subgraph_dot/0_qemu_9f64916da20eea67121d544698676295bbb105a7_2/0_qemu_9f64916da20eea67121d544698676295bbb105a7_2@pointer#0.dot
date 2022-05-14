@@ -1,0 +1,27 @@
+digraph "0_qemu_9f64916da20eea67121d544698676295bbb105a7_2@pointer" {
+"1000101" [label="(MethodParameterIn,VncState *vs)"];
+"1000104" [label="(Call,tight_pack24(vs, vs->tight.tight.buffer, 1, &vs->tight.tight.offset))"];
+"1000114" [label="(Call,&vs->tight.tight.offset)"];
+"1000101" [label="(MethodParameterIn,VncState *vs)"];
+"1000113" [label="(Literal,1)"];
+"1000104" [label="(Call,tight_pack24(vs, vs->tight.tight.buffer, 1, &vs->tight.tight.offset))"];
+"1000105" [label="(Identifier,vs)"];
+"1000102" [label="(Block,)"];
+"1000125" [label="(MethodReturn,static int)"];
+"1000123" [label="(Identifier,bytes)"];
+"1000106" [label="(Call,vs->tight.tight.buffer)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000125"  [label="DDG: vs"];
+"1000101" -> "1000104"  [label="DDG: vs"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000114"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000113" -> "1000104"  [label="AST: "];
+"1000114" -> "1000104"  [label="AST: "];
+"1000123" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000125"  [label="DDG: tight_pack24(vs, vs->tight.tight.buffer, 1, &vs->tight.tight.offset)"];
+"1000104" -> "1000125"  [label="DDG: vs"];
+"1000104" -> "1000125"  [label="DDG: &vs->tight.tight.offset"];
+"1000104" -> "1000125"  [label="DDG: vs->tight.tight.buffer"];
+}

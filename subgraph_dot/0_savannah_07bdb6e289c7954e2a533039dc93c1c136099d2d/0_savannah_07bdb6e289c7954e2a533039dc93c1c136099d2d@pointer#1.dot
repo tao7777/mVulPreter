@@ -1,0 +1,31 @@
+digraph "0_savannah_07bdb6e289c7954e2a533039dc93c1c136099d2d@pointer" {
+"1000546" [label="(Call,p->list.used > 2)"];
+"1000539" [label="(Call,p->glyph_enc == -1 && p->list.used > 2)"];
+"1000540" [label="(Call,p->glyph_enc == -1)"];
+"1000546" [label="(Call,p->list.used > 2)"];
+"1000538" [label="(ControlStructure,if ( p->glyph_enc == -1 && p->list.used > 2 ))"];
+"1000539" [label="(Call,p->glyph_enc == -1 && p->list.used > 2)"];
+"1000569" [label="(Identifier,DBGMSG2)"];
+"1000552" [label="(Literal,2)"];
+"1000555" [label="(Identifier,p)"];
+"1001571" [label="(MethodReturn,RET)"];
+"1000547" [label="(Call,p->list.used)"];
+"1000546" -> "1000539"  [label="AST: "];
+"1000546" -> "1000552"  [label="CFG: "];
+"1000547" -> "1000546"  [label="AST: "];
+"1000552" -> "1000546"  [label="AST: "];
+"1000539" -> "1000546"  [label="CFG: "];
+"1000546" -> "1001571"  [label="DDG: p->list.used"];
+"1000546" -> "1000539"  [label="DDG: p->list.used"];
+"1000546" -> "1000539"  [label="DDG: 2"];
+"1000539" -> "1000538"  [label="AST: "];
+"1000539" -> "1000540"  [label="CFG: "];
+"1000540" -> "1000539"  [label="AST: "];
+"1000555" -> "1000539"  [label="CFG: "];
+"1000569" -> "1000539"  [label="CFG: "];
+"1000539" -> "1001571"  [label="DDG: p->glyph_enc == -1"];
+"1000539" -> "1001571"  [label="DDG: p->list.used > 2"];
+"1000539" -> "1001571"  [label="DDG: p->glyph_enc == -1 && p->list.used > 2"];
+"1000540" -> "1000539"  [label="DDG: p->glyph_enc"];
+"1000540" -> "1000539"  [label="DDG: -1"];
+}

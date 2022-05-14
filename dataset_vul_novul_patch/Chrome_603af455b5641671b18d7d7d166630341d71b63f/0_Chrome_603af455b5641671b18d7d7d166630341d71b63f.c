@@ -1,0 +1,1 @@
+base::string16 TranslateInfoBarDelegate::GetLanguageDisplayableName(

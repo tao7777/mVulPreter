@@ -1,0 +1,32 @@
+digraph "0_linux_69c433ed2ecd2d3264efd7afec4439524b319121@pointer" {
+"1000314" [label="(Call,s->s_stack_depth = path.dentry->d_sb->s_stack_depth + 1)"];
+"1000332" [label="(Call,s->s_stack_depth > FILESYSTEM_MAX_STACK_DEPTH)"];
+"1000108" [label="(Block,)"];
+"1000342" [label="(Identifier,inode)"];
+"1000333" [label="(Call,s->s_stack_depth)"];
+"1000318" [label="(Call,path.dentry->d_sb->s_stack_depth + 1)"];
+"1000331" [label="(ControlStructure,if (s->s_stack_depth > FILESYSTEM_MAX_STACK_DEPTH))"];
+"1000430" [label="(MethodReturn,static struct dentry *)"];
+"1000339" [label="(Literal,\"eCryptfs: maximum fs stacking depth exceeded\n\")"];
+"1000314" [label="(Call,s->s_stack_depth = path.dentry->d_sb->s_stack_depth + 1)"];
+"1000328" [label="(Identifier,rc)"];
+"1000332" [label="(Call,s->s_stack_depth > FILESYSTEM_MAX_STACK_DEPTH)"];
+"1000315" [label="(Call,s->s_stack_depth)"];
+"1000336" [label="(Identifier,FILESYSTEM_MAX_STACK_DEPTH)"];
+"1000314" -> "1000108"  [label="AST: "];
+"1000314" -> "1000318"  [label="CFG: "];
+"1000315" -> "1000314"  [label="AST: "];
+"1000318" -> "1000314"  [label="AST: "];
+"1000328" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000430"  [label="DDG: path.dentry->d_sb->s_stack_depth + 1"];
+"1000314" -> "1000332"  [label="DDG: s->s_stack_depth"];
+"1000332" -> "1000331"  [label="AST: "];
+"1000332" -> "1000336"  [label="CFG: "];
+"1000333" -> "1000332"  [label="AST: "];
+"1000336" -> "1000332"  [label="AST: "];
+"1000339" -> "1000332"  [label="CFG: "];
+"1000342" -> "1000332"  [label="CFG: "];
+"1000332" -> "1000430"  [label="DDG: FILESYSTEM_MAX_STACK_DEPTH"];
+"1000332" -> "1000430"  [label="DDG: s->s_stack_depth"];
+"1000332" -> "1000430"  [label="DDG: s->s_stack_depth > FILESYSTEM_MAX_STACK_DEPTH"];
+}

@@ -1,0 +1,31 @@
+digraph "0_Chrome_f911e11e7f6b5c0d6f5ee694a9871de6619889f7@pointer" {
+"1000123" [label="(Call,properties && properties->Scroll())"];
+"1000116" [label="(Call,* properties = fragment ? fragment->PaintProperties() : nullptr)"];
+"1000116" [label="(Call,* properties = fragment ? fragment->PaintProperties() : nullptr)"];
+"1000128" [label="(Call,properties->ScrollTranslation())"];
+"1000122" [label="(ControlStructure,if (properties && properties->Scroll()))"];
+"1000117" [label="(Identifier,properties)"];
+"1000125" [label="(Call,properties->Scroll())"];
+"1000124" [label="(Identifier,properties)"];
+"1000138" [label="(MethodReturn,void)"];
+"1000102" [label="(Block,)"];
+"1000118" [label="(Call,fragment ? fragment->PaintProperties() : nullptr)"];
+"1000123" [label="(Call,properties && properties->Scroll())"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000128" -> "1000123"  [label="CFG: "];
+"1000138" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000138"  [label="DDG: properties->Scroll()"];
+"1000123" -> "1000138"  [label="DDG: properties && properties->Scroll()"];
+"1000123" -> "1000138"  [label="DDG: properties"];
+"1000116" -> "1000123"  [label="DDG: properties"];
+"1000116" -> "1000102"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000124" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000138"  [label="DDG: fragment ? fragment->PaintProperties() : nullptr"];
+}

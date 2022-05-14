@@ -1,0 +1,1 @@
+void MockWebRTCPeerConnectionHandler::setLocalDescription(const WebRTCVoidRequest& request, const WebRTCSessionDescriptionDescriptor& localDescription)

@@ -1,0 +1,23 @@
+digraph "0_linux_c03aa9f6e1f938618e6db2e23afef0574efeeb65@pointer" {
+"1000119" [label="(Call,*sbi = UDF_SB(inode->i_sb))"];
+"1000121" [label="(Call,UDF_SB(inode->i_sb))"];
+"1000105" [label="(Block,)"];
+"1001145" [label="(MethodReturn,static void)"];
+"1000120" [label="(Identifier,sbi)"];
+"1000119" [label="(Call,*sbi = UDF_SB(inode->i_sb))"];
+"1000121" [label="(Call,UDF_SB(inode->i_sb))"];
+"1000128" [label="(Identifier,indirections)"];
+"1000133" [label="(Call,udf_read_ptagged(inode->i_sb, &iinfo->i_location, 0, &ident))"];
+"1000122" [label="(Call,inode->i_sb)"];
+"1000119" -> "1000105"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000121" -> "1000119"  [label="AST: "];
+"1000128" -> "1000119"  [label="CFG: "];
+"1000119" -> "1001145"  [label="DDG: UDF_SB(inode->i_sb)"];
+"1000119" -> "1001145"  [label="DDG: sbi"];
+"1000121" -> "1000119"  [label="DDG: inode->i_sb"];
+"1000121" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000121" -> "1000133"  [label="DDG: inode->i_sb"];
+}

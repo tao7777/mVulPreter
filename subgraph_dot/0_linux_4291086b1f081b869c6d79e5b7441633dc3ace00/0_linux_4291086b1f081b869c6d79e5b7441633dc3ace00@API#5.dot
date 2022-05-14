@@ -1,0 +1,26 @@
+digraph "0_linux_4291086b1f081b869c6d79e5b7441633dc3ace00@API" {
+"1000277" [label="(Call,mutex_unlock(&ldata->output_lock))"];
+"1000266" [label="(Call,mutex_lock(&ldata->output_lock))"];
+"1000277" [label="(Call,mutex_unlock(&ldata->output_lock))"];
+"1000368" [label="(MethodReturn,static ssize_t)"];
+"1000265" [label="(Block,)"];
+"1000278" [label="(Call,&ldata->output_lock)"];
+"1000266" [label="(Call,mutex_lock(&ldata->output_lock))"];
+"1000267" [label="(Call,&ldata->output_lock)"];
+"1000277" [label="(Call,mutex_unlock(&ldata->output_lock))"];
+"1000272" [label="(Identifier,c)"];
+"1000284" [label="(Identifier,c)"];
+"1000277" -> "1000265"  [label="AST: "];
+"1000277" -> "1000278"  [label="CFG: "];
+"1000278" -> "1000277"  [label="AST: "];
+"1000284" -> "1000277"  [label="CFG: "];
+"1000277" -> "1000368"  [label="DDG: &ldata->output_lock"];
+"1000277" -> "1000368"  [label="DDG: mutex_unlock(&ldata->output_lock)"];
+"1000277" -> "1000266"  [label="DDG: &ldata->output_lock"];
+"1000266" -> "1000277"  [label="DDG: &ldata->output_lock"];
+"1000266" -> "1000265"  [label="AST: "];
+"1000266" -> "1000267"  [label="CFG: "];
+"1000267" -> "1000266"  [label="AST: "];
+"1000272" -> "1000266"  [label="CFG: "];
+"1000266" -> "1000368"  [label="DDG: mutex_lock(&ldata->output_lock)"];
+}

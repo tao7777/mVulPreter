@@ -1,0 +1,1 @@
+long BlockEntry::GetIndex() const

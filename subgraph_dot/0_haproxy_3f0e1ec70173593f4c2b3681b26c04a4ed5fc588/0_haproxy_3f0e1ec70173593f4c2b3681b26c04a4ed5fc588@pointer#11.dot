@@ -1,0 +1,33 @@
+digraph "0_haproxy_3f0e1ec70173593f4c2b3681b26c04a4ed5fc588@pointer" {
+"1000387" [label="(Call,h2c->dff = hdr.ff)"];
+"1000218" [label="(Call,hdr.ff & H2_F_SETTINGS_ACK)"];
+"1000284" [label="(Call,h2c->dff = hdr.ff)"];
+"1000388" [label="(Call,h2c->dff)"];
+"1000391" [label="(Call,hdr.ff)"];
+"1000396" [label="(Identifier,h2c)"];
+"1000325" [label="(Block,)"];
+"1000212" [label="(Call,hdr.ft != H2_FT_SETTINGS || hdr.ff & H2_F_SETTINGS_ACK)"];
+"1000218" [label="(Call,hdr.ff & H2_F_SETTINGS_ACK)"];
+"1000858" [label="(MethodReturn,static void)"];
+"1000219" [label="(Call,hdr.ff)"];
+"1000222" [label="(Identifier,H2_F_SETTINGS_ACK)"];
+"1000387" [label="(Call,h2c->dff = hdr.ff)"];
+"1000387" -> "1000325"  [label="AST: "];
+"1000387" -> "1000391"  [label="CFG: "];
+"1000388" -> "1000387"  [label="AST: "];
+"1000391" -> "1000387"  [label="AST: "];
+"1000396" -> "1000387"  [label="CFG: "];
+"1000387" -> "1000858"  [label="DDG: h2c->dff"];
+"1000387" -> "1000858"  [label="DDG: hdr.ff"];
+"1000218" -> "1000387"  [label="DDG: hdr.ff"];
+"1000218" -> "1000212"  [label="AST: "];
+"1000218" -> "1000222"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000222" -> "1000218"  [label="AST: "];
+"1000212" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000858"  [label="DDG: hdr.ff"];
+"1000218" -> "1000858"  [label="DDG: H2_F_SETTINGS_ACK"];
+"1000218" -> "1000212"  [label="DDG: hdr.ff"];
+"1000218" -> "1000212"  [label="DDG: H2_F_SETTINGS_ACK"];
+"1000218" -> "1000284"  [label="DDG: hdr.ff"];
+}

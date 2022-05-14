@@ -1,0 +1,26 @@
+digraph "0_linux_8f3fafc9c2f0ece10832c25f7ffcb07c97a32ad4@pointer" {
+"1000109" [label="(Call,cdi->ops->capability & CDC_DRIVE_STATUS)"];
+"1000108" [label="(Call,!(cdi->ops->capability & CDC_DRIVE_STATUS))"];
+"1000108" [label="(Call,!(cdi->ops->capability & CDC_DRIVE_STATUS))"];
+"1000110" [label="(Call,cdi->ops->capability)"];
+"1000118" [label="(Identifier,ENOSYS)"];
+"1000107" [label="(ControlStructure,if (!(cdi->ops->capability & CDC_DRIVE_STATUS)))"];
+"1000148" [label="(MethodReturn,static int)"];
+"1000115" [label="(Identifier,CDC_DRIVE_STATUS)"];
+"1000109" [label="(Call,cdi->ops->capability & CDC_DRIVE_STATUS)"];
+"1000123" [label="(Identifier,CDC_SELECT_DISC)"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000115"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000115" -> "1000109"  [label="AST: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000148"  [label="DDG: CDC_DRIVE_STATUS"];
+"1000109" -> "1000148"  [label="DDG: cdi->ops->capability"];
+"1000109" -> "1000108"  [label="DDG: cdi->ops->capability"];
+"1000109" -> "1000108"  [label="DDG: CDC_DRIVE_STATUS"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000118" -> "1000108"  [label="CFG: "];
+"1000123" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000148"  [label="DDG: !(cdi->ops->capability & CDC_DRIVE_STATUS)"];
+"1000108" -> "1000148"  [label="DDG: cdi->ops->capability & CDC_DRIVE_STATUS"];
+}

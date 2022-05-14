@@ -1,0 +1,31 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_11@pointer" {
+"1000976" [label="(Call,sk->sk_bound_dev_if && pkt.ipi6_ifindex != sk->sk_bound_dev_if)"];
+"1000980" [label="(Call,pkt.ipi6_ifindex != sk->sk_bound_dev_if)"];
+"1000977" [label="(Call,sk->sk_bound_dev_if)"];
+"1000991" [label="(Identifier,np)"];
+"1000976" [label="(Call,sk->sk_bound_dev_if && pkt.ipi6_ifindex != sk->sk_bound_dev_if)"];
+"1000981" [label="(Call,pkt.ipi6_ifindex)"];
+"1000980" [label="(Call,pkt.ipi6_ifindex != sk->sk_bound_dev_if)"];
+"1000987" [label="(ControlStructure,goto e_inval;)"];
+"1002065" [label="(MethodReturn,static int)"];
+"1000984" [label="(Call,sk->sk_bound_dev_if)"];
+"1000975" [label="(ControlStructure,if (sk->sk_bound_dev_if && pkt.ipi6_ifindex != sk->sk_bound_dev_if))"];
+"1000988" [label="(Call,np->sticky_pktinfo.ipi6_ifindex = pkt.ipi6_ifindex)"];
+"1000976" -> "1000975"  [label="AST: "];
+"1000976" -> "1000977"  [label="CFG: "];
+"1000976" -> "1000980"  [label="CFG: "];
+"1000977" -> "1000976"  [label="AST: "];
+"1000980" -> "1000976"  [label="AST: "];
+"1000987" -> "1000976"  [label="CFG: "];
+"1000991" -> "1000976"  [label="CFG: "];
+"1000976" -> "1002065"  [label="DDG: sk->sk_bound_dev_if"];
+"1000976" -> "1002065"  [label="DDG: pkt.ipi6_ifindex != sk->sk_bound_dev_if"];
+"1000976" -> "1002065"  [label="DDG: sk->sk_bound_dev_if && pkt.ipi6_ifindex != sk->sk_bound_dev_if"];
+"1000980" -> "1000976"  [label="DDG: sk->sk_bound_dev_if"];
+"1000980" -> "1000976"  [label="DDG: pkt.ipi6_ifindex"];
+"1000980" -> "1000984"  [label="CFG: "];
+"1000981" -> "1000980"  [label="AST: "];
+"1000984" -> "1000980"  [label="AST: "];
+"1000980" -> "1002065"  [label="DDG: pkt.ipi6_ifindex"];
+"1000980" -> "1000988"  [label="DDG: pkt.ipi6_ifindex"];
+}

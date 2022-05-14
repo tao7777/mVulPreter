@@ -1,0 +1,33 @@
+digraph "0_ImageMagick_acee073df34aa4d491bf5cb74d3a15fc80f0a3aa@pointer" {
+"1000426" [label="(Call,image_info->number_scenes != 0)"];
+"1000425" [label="(Call,(image_info->number_scenes != 0) && (image_info->scene != 0))"];
+"1000430" [label="(Literal,0)"];
+"1000437" [label="(Identifier,jp2_status)"];
+"1000433" [label="(Identifier,image_info)"];
+"1000427" [label="(Call,image_info->number_scenes)"];
+"1000942" [label="(MethodReturn,static Image *)"];
+"1000431" [label="(Call,image_info->scene != 0)"];
+"1000453" [label="(Identifier,image)"];
+"1000424" [label="(ControlStructure,if ((image_info->number_scenes != 0) && (image_info->scene != 0)))"];
+"1000425" [label="(Call,(image_info->number_scenes != 0) && (image_info->scene != 0))"];
+"1000426" [label="(Call,image_info->number_scenes != 0)"];
+"1000426" -> "1000425"  [label="AST: "];
+"1000426" -> "1000430"  [label="CFG: "];
+"1000427" -> "1000426"  [label="AST: "];
+"1000430" -> "1000426"  [label="AST: "];
+"1000433" -> "1000426"  [label="CFG: "];
+"1000425" -> "1000426"  [label="CFG: "];
+"1000426" -> "1000942"  [label="DDG: image_info->number_scenes"];
+"1000426" -> "1000425"  [label="DDG: image_info->number_scenes"];
+"1000426" -> "1000425"  [label="DDG: 0"];
+"1000425" -> "1000424"  [label="AST: "];
+"1000425" -> "1000431"  [label="CFG: "];
+"1000431" -> "1000425"  [label="AST: "];
+"1000437" -> "1000425"  [label="CFG: "];
+"1000453" -> "1000425"  [label="CFG: "];
+"1000425" -> "1000942"  [label="DDG: image_info->number_scenes != 0"];
+"1000425" -> "1000942"  [label="DDG: (image_info->number_scenes != 0) && (image_info->scene != 0)"];
+"1000425" -> "1000942"  [label="DDG: image_info->scene != 0"];
+"1000431" -> "1000425"  [label="DDG: image_info->scene"];
+"1000431" -> "1000425"  [label="DDG: 0"];
+}

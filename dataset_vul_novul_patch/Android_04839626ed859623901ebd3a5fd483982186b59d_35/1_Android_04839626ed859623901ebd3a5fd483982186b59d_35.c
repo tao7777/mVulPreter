@@ -1,0 +1,3 @@
+Chapters::Edition::Edition()
+{
+ }

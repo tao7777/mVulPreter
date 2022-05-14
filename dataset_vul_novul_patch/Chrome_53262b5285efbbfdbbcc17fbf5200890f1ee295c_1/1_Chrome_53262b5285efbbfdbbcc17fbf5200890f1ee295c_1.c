@@ -1,0 +1,4 @@
+  void HistogramsCallback() {
+     MockHistogramsCallback();
+    QuitMessageLoop();
+   }

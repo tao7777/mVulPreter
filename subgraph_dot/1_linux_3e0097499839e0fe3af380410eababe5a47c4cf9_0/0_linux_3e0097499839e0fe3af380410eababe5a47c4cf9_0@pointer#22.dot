@@ -1,0 +1,22 @@
+digraph "0_linux_3e0097499839e0fe3af380410eababe5a47c4cf9_0@pointer" {
+"1000180" [label="(Call,scsi_block_when_processing_errors(sdp->device))"];
+"1000179" [label="(Call,!scsi_block_when_processing_errors(sdp->device))"];
+"1000190" [label="(Identifier,VERIFY_WRITE)"];
+"1000180" [label="(Call,scsi_block_when_processing_errors(sdp->device))"];
+"1000179" [label="(Call,!scsi_block_when_processing_errors(sdp->device))"];
+"1000181" [label="(Call,sdp->device)"];
+"1001060" [label="(MethodReturn,RET)"];
+"1000186" [label="(Identifier,ENXIO)"];
+"1000178" [label="(ControlStructure,if (!scsi_block_when_processing_errors(sdp->device)))"];
+"1000180" -> "1000179"  [label="AST: "];
+"1000180" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000179" -> "1000180"  [label="CFG: "];
+"1000180" -> "1001060"  [label="DDG: sdp->device"];
+"1000180" -> "1000179"  [label="DDG: sdp->device"];
+"1000179" -> "1000178"  [label="AST: "];
+"1000186" -> "1000179"  [label="CFG: "];
+"1000190" -> "1000179"  [label="CFG: "];
+"1000179" -> "1001060"  [label="DDG: !scsi_block_when_processing_errors(sdp->device)"];
+"1000179" -> "1001060"  [label="DDG: scsi_block_when_processing_errors(sdp->device)"];
+}

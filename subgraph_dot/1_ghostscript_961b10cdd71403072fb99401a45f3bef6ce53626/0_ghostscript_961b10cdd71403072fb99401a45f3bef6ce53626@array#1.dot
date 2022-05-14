@@ -1,0 +1,37 @@
+digraph "0_ghostscript_961b10cdd71403072fb99401a45f3bef6ce53626@array" {
+"1000708" [label="(Call,u16(&table[10 + (i * 2)]))"];
+"1000706" [label="(Call,ch = u16(&table[10 + (i * 2)]))"];
+"1000718" [label="(Call,ch == code)"];
+"1000705" [label="(Block,)"];
+"1000720" [label="(Identifier,code)"];
+"1000818" [label="(MethodReturn,RET)"];
+"1000709" [label="(Call,&table[10 + (i * 2)])"];
+"1000704" [label="(Identifier,i)"];
+"1000723" [label="(Identifier,firstCode)"];
+"1000717" [label="(ControlStructure,if (ch == code))"];
+"1000719" [label="(Identifier,ch)"];
+"1000706" [label="(Call,ch = u16(&table[10 + (i * 2)]))"];
+"1000708" [label="(Call,u16(&table[10 + (i * 2)]))"];
+"1000718" [label="(Call,ch == code)"];
+"1000707" [label="(Identifier,ch)"];
+"1000708" -> "1000706"  [label="AST: "];
+"1000708" -> "1000709"  [label="CFG: "];
+"1000709" -> "1000708"  [label="AST: "];
+"1000706" -> "1000708"  [label="CFG: "];
+"1000708" -> "1000818"  [label="DDG: &table[10 + (i * 2)]"];
+"1000708" -> "1000706"  [label="DDG: &table[10 + (i * 2)]"];
+"1000706" -> "1000705"  [label="AST: "];
+"1000707" -> "1000706"  [label="AST: "];
+"1000719" -> "1000706"  [label="CFG: "];
+"1000706" -> "1000818"  [label="DDG: u16(&table[10 + (i * 2)])"];
+"1000706" -> "1000718"  [label="DDG: ch"];
+"1000718" -> "1000717"  [label="AST: "];
+"1000718" -> "1000720"  [label="CFG: "];
+"1000719" -> "1000718"  [label="AST: "];
+"1000720" -> "1000718"  [label="AST: "];
+"1000723" -> "1000718"  [label="CFG: "];
+"1000704" -> "1000718"  [label="CFG: "];
+"1000718" -> "1000818"  [label="DDG: code"];
+"1000718" -> "1000818"  [label="DDG: ch"];
+"1000718" -> "1000818"  [label="DDG: ch == code"];
+}

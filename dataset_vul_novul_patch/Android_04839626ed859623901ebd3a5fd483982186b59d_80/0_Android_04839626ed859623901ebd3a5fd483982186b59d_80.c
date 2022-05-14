@@ -1,0 +1,1 @@
+long Cluster::GetEntryCount() const

@@ -1,0 +1,25 @@
+digraph "1_linux_966031f340185eddd05affcf72b740549f056348@del" {
+"1000131" [label="(Call,L_ICANON(tty))"];
+"1000101" [label="(MethodParameterIn,struct tty_struct *tty)"];
+"1000139" [label="(Identifier,retval)"];
+"1000132" [label="(Identifier,tty)"];
+"1000131" [label="(Call,L_ICANON(tty))"];
+"1000101" [label="(MethodParameterIn,struct tty_struct *tty)"];
+"1000119" [label="(Call,tty_chars_in_buffer(tty))"];
+"1000155" [label="(Call,n_tty_ioctl_helper(tty, file, cmd, arg))"];
+"1000160" [label="(MethodReturn,static int)"];
+"1000130" [label="(ControlStructure,if (L_ICANON(tty)))"];
+"1000134" [label="(Identifier,retval)"];
+"1000131" -> "1000130"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000134" -> "1000131"  [label="CFG: "];
+"1000139" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000160"  [label="DDG: L_ICANON(tty)"];
+"1000131" -> "1000160"  [label="DDG: tty"];
+"1000101" -> "1000131"  [label="DDG: tty"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000160"  [label="DDG: tty"];
+"1000101" -> "1000119"  [label="DDG: tty"];
+"1000101" -> "1000155"  [label="DDG: tty"];
+}

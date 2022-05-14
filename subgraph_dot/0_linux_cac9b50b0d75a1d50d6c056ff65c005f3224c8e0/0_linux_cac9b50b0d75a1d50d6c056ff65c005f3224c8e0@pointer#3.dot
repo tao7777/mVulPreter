@@ -1,0 +1,33 @@
+digraph "0_linux_cac9b50b0d75a1d50d6c056ff65c005f3224c8e0@pointer" {
+"1000139" [label="(Call,serial->num_bulk_in < 2)"];
+"1000138" [label="(Call,serial->num_bulk_in < 2 || serial->num_interrupt_in < 2)"];
+"1000154" [label="(Identifier,serial)"];
+"1000138" [label="(Call,serial->num_bulk_in < 2 || serial->num_interrupt_in < 2)"];
+"1000166" [label="(Identifier,i)"];
+"1000146" [label="(Identifier,serial)"];
+"1000143" [label="(Literal,2)"];
+"1000140" [label="(Call,serial->num_bulk_in)"];
+"1000307" [label="(MethodReturn,static int)"];
+"1000144" [label="(Call,serial->num_interrupt_in < 2)"];
+"1000139" [label="(Call,serial->num_bulk_in < 2)"];
+"1000137" [label="(ControlStructure,if (serial->num_bulk_in < 2 || serial->num_interrupt_in < 2))"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000143"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000143" -> "1000139"  [label="AST: "];
+"1000146" -> "1000139"  [label="CFG: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000307"  [label="DDG: serial->num_bulk_in"];
+"1000139" -> "1000138"  [label="DDG: serial->num_bulk_in"];
+"1000139" -> "1000138"  [label="DDG: 2"];
+"1000138" -> "1000137"  [label="AST: "];
+"1000138" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000138"  [label="AST: "];
+"1000154" -> "1000138"  [label="CFG: "];
+"1000166" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000307"  [label="DDG: serial->num_bulk_in < 2"];
+"1000138" -> "1000307"  [label="DDG: serial->num_interrupt_in < 2"];
+"1000138" -> "1000307"  [label="DDG: serial->num_bulk_in < 2 || serial->num_interrupt_in < 2"];
+"1000144" -> "1000138"  [label="DDG: serial->num_interrupt_in"];
+"1000144" -> "1000138"  [label="DDG: 2"];
+}

@@ -1,0 +1,36 @@
+digraph "0_qemu_a6b3167fa0e825aebb5a7cd8b437b6d41584a196@pointer" {
+"1000232" [label="(Call,acb->task->cdb_size = acb->ioh->cmd_len)"];
+"1000171" [label="(Call,acb->ioh->cmd_len > SCSI_CDB_MAX_SIZE)"];
+"1000420" [label="(MethodReturn,static BlockAIOCB *)"];
+"1000193" [label="(Identifier,acb)"];
+"1000232" [label="(Call,acb->task->cdb_size = acb->ioh->cmd_len)"];
+"1000243" [label="(Call,memcpy(&acb->task->cdb[0], acb->ioh->cmdp, acb->ioh->cmd_len))"];
+"1000177" [label="(Identifier,SCSI_CDB_MAX_SIZE)"];
+"1000180" [label="(Literal,\"iSCSI: ioctl error CDB exceeds max size (%d > %d)\")"];
+"1000248" [label="(Identifier,acb)"];
+"1000171" [label="(Call,acb->ioh->cmd_len > SCSI_CDB_MAX_SIZE)"];
+"1000170" [label="(ControlStructure,if (acb->ioh->cmd_len > SCSI_CDB_MAX_SIZE))"];
+"1000233" [label="(Call,acb->task->cdb_size)"];
+"1000179" [label="(Call,error_report(\"iSCSI: ioctl error CDB exceeds max size (%d > %d)\",\n                     acb->ioh->cmd_len, SCSI_CDB_MAX_SIZE))"];
+"1000238" [label="(Call,acb->ioh->cmd_len)"];
+"1000107" [label="(Block,)"];
+"1000172" [label="(Call,acb->ioh->cmd_len)"];
+"1000232" -> "1000107"  [label="AST: "];
+"1000232" -> "1000238"  [label="CFG: "];
+"1000233" -> "1000232"  [label="AST: "];
+"1000238" -> "1000232"  [label="AST: "];
+"1000248" -> "1000232"  [label="CFG: "];
+"1000232" -> "1000420"  [label="DDG: acb->task->cdb_size"];
+"1000171" -> "1000232"  [label="DDG: acb->ioh->cmd_len"];
+"1000171" -> "1000170"  [label="AST: "];
+"1000171" -> "1000177"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000177" -> "1000171"  [label="AST: "];
+"1000180" -> "1000171"  [label="CFG: "];
+"1000193" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000420"  [label="DDG: acb->ioh->cmd_len > SCSI_CDB_MAX_SIZE"];
+"1000171" -> "1000420"  [label="DDG: SCSI_CDB_MAX_SIZE"];
+"1000171" -> "1000179"  [label="DDG: acb->ioh->cmd_len"];
+"1000171" -> "1000179"  [label="DDG: SCSI_CDB_MAX_SIZE"];
+"1000171" -> "1000243"  [label="DDG: acb->ioh->cmd_len"];
+}

@@ -1,0 +1,3 @@
+AutocompleteProvider::~AutocompleteProvider() {
+  Stop();
+}

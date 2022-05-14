@@ -1,0 +1,24 @@
+digraph "0_tcpdump_e01c9bf76740802025c9328901b55ee4a0c49ed6@pointer" {
+"1000147" [label="(Call,EXTRACT_16BITS(&lshp->ls_length))"];
+"1000146" [label="(Call,EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr))"];
+"1000152" [label="(Call,(u_int)sizeof(struct lsa6_hdr))"];
+"1000148" [label="(Call,&lshp->ls_length)"];
+"1000146" [label="(Call,EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr))"];
+"1000140" [label="(Block,)"];
+"1000122" [label="(Call,ND_PRINT((ndo, \"\n\t  Advertising Router %s, seq 0x%08x, age %us, length %u\",\n                ipaddr_string(ndo, &lshp->ls_router),\n               EXTRACT_32BITS(&lshp->ls_seq),\n               EXTRACT_16BITS(&lshp->ls_age),\n               EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr))))"];
+"1000147" [label="(Call,EXTRACT_16BITS(&lshp->ls_length))"];
+"1000172" [label="(MethodReturn,RET)"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000153" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000172"  [label="DDG: &lshp->ls_length"];
+"1000147" -> "1000146"  [label="DDG: &lshp->ls_length"];
+"1000146" -> "1000140"  [label="AST: "];
+"1000146" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000146"  [label="AST: "];
+"1000122" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000172"  [label="DDG: (u_int)sizeof(struct lsa6_hdr)"];
+"1000146" -> "1000172"  [label="DDG: EXTRACT_16BITS(&lshp->ls_length)"];
+"1000146" -> "1000172"  [label="DDG: EXTRACT_16BITS(&lshp->ls_length)-(u_int)sizeof(struct lsa6_hdr)"];
+}

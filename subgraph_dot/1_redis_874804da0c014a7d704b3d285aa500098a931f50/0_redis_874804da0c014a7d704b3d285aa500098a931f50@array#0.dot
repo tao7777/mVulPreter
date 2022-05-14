@@ -1,0 +1,32 @@
+digraph "0_redis_874804da0c014a7d704b3d285aa500098a931f50@array" {
+"1000153" [label="(Call,c->querybuf[0] == '*')"];
+"1000117" [label="(Call,sdslen(c->querybuf))"];
+"1000154" [label="(Call,c->querybuf[0])"];
+"1000153" [label="(Call,c->querybuf[0] == '*')"];
+"1000152" [label="(ControlStructure,if (c->querybuf[0] == '*'))"];
+"1000170" [label="(Identifier,c)"];
+"1000159" [label="(Literal,'*')"];
+"1000117" [label="(Call,sdslen(c->querybuf))"];
+"1000127" [label="(Identifier,c)"];
+"1000231" [label="(Identifier,server)"];
+"1000234" [label="(MethodReturn,void)"];
+"1000163" [label="(Identifier,c)"];
+"1000118" [label="(Call,c->querybuf)"];
+"1000116" [label="(ControlStructure,while(sdslen(c->querybuf)))"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000159"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000159" -> "1000153"  [label="AST: "];
+"1000163" -> "1000153"  [label="CFG: "];
+"1000170" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000234"  [label="DDG: c->querybuf[0] == '*'"];
+"1000153" -> "1000234"  [label="DDG: c->querybuf[0]"];
+"1000153" -> "1000117"  [label="DDG: c->querybuf[0]"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000127" -> "1000117"  [label="CFG: "];
+"1000231" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000234"  [label="DDG: c->querybuf"];
+"1000117" -> "1000234"  [label="DDG: sdslen(c->querybuf)"];
+}

@@ -1,0 +1,29 @@
+digraph "0_php_124fb22a13fafa3648e4e15b4f207c7096d8155e@pointer" {
+"1001257" [label="(Call,*postval == '@')"];
+"1001252" [label="(Call,!ch->safe_upload && *postval == '@')"];
+"1001260" [label="(Literal,'@')"];
+"1001370" [label="(Identifier,error)"];
+"1001253" [label="(Call,!ch->safe_upload)"];
+"1001251" [label="(ControlStructure,if (!ch->safe_upload && *postval == '@'))"];
+"1001252" [label="(Call,!ch->safe_upload && *postval == '@')"];
+"1001266" [label="(Identifier,postval)"];
+"1001257" [label="(Call,*postval == '@')"];
+"1001258" [label="(Call,*postval)"];
+"1001927" [label="(MethodReturn,static int)"];
+"1001257" -> "1001252"  [label="AST: "];
+"1001257" -> "1001260"  [label="CFG: "];
+"1001258" -> "1001257"  [label="AST: "];
+"1001260" -> "1001257"  [label="AST: "];
+"1001252" -> "1001257"  [label="CFG: "];
+"1001257" -> "1001927"  [label="DDG: *postval"];
+"1001257" -> "1001252"  [label="DDG: *postval"];
+"1001257" -> "1001252"  [label="DDG: '"];
+"1001252" -> "1001251"  [label="AST: "];
+"1001252" -> "1001253"  [label="CFG: "];
+"1001253" -> "1001252"  [label="AST: "];
+"1001266" -> "1001252"  [label="CFG: "];
+"1001370" -> "1001252"  [label="CFG: "];
+"1001252" -> "1001927"  [label="DDG: !ch->safe_upload"];
+"1001252" -> "1001927"  [label="DDG: '"];
+"1001253" -> "1001252"  [label="DDG: ch->safe_upload"];
+}

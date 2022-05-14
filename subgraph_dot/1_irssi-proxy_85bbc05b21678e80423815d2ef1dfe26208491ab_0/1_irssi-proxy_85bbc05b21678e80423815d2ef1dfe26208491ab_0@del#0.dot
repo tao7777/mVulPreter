@@ -1,0 +1,37 @@
+digraph "1_irssi-proxy_85bbc05b21678e80423815d2ef1dfe26208491ab_0@del" {
+"1000211" [label="(Call,!chan->verify)"];
+"1000210" [label="(Call,!chan->verify || irssi_ssl_verify(chan->ssl, chan->ctx, cert))"];
+"1000208" [label="(Call,ret = !chan->verify || irssi_ssl_verify(chan->ssl, chan->ctx, cert))"];
+"1000209" [label="(Identifier,ret)"];
+"1000208" [label="(Call,ret = !chan->verify || irssi_ssl_verify(chan->ssl, chan->ctx, cert))"];
+"1000215" [label="(Call,irssi_ssl_verify(chan->ssl, chan->ctx, cert))"];
+"1000210" [label="(Call,!chan->verify || irssi_ssl_verify(chan->ssl, chan->ctx, cert))"];
+"1000102" [label="(Block,)"];
+"1000231" [label="(MethodReturn,int)"];
+"1000217" [label="(Identifier,chan)"];
+"1000212" [label="(Call,chan->verify)"];
+"1000211" [label="(Call,!chan->verify)"];
+"1000224" [label="(Identifier,cert)"];
+"1000211" -> "1000210"  [label="AST: "];
+"1000211" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000217" -> "1000211"  [label="CFG: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000231"  [label="DDG: "];
+"1000211" -> "1000210"  [label="DDG: "];
+"1000210" -> "1000208"  [label="AST: "];
+"1000210" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000210"  [label="AST: "];
+"1000208" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000231"  [label="DDG: "];
+"1000210" -> "1000231"  [label="DDG: "];
+"1000210" -> "1000208"  [label="DDG: "];
+"1000210" -> "1000208"  [label="DDG: "];
+"1000215" -> "1000210"  [label="DDG: "];
+"1000215" -> "1000210"  [label="DDG: "];
+"1000215" -> "1000210"  [label="DDG: "];
+"1000208" -> "1000102"  [label="AST: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000224" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000231"  [label="DDG: "];
+}

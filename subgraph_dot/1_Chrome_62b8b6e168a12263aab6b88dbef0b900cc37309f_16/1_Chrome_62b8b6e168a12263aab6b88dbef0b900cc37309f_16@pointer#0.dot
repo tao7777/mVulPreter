@@ -1,0 +1,35 @@
+digraph "1_Chrome_62b8b6e168a12263aab6b88dbef0b900cc37309f_16@pointer" {
+"1000101" [label="(MethodParameterIn,aura::Window* new_root_window)"];
+"1000106" [label="(Call,new_root_window == zoom_widget_->GetNativeView()->GetRootWindow())"];
+"1000104" [label="(Call,zoom_widget_ &&\n      new_root_window == zoom_widget_->GetNativeView()->GetRootWindow())"];
+"1000108" [label="(Call,zoom_widget_->GetNativeView()->GetRootWindow())"];
+"1000110" [label="(Call,CloseMagnifierWindow())"];
+"1000106" [label="(Call,new_root_window == zoom_widget_->GetNativeView()->GetRootWindow())"];
+"1000105" [label="(Identifier,zoom_widget_)"];
+"1000104" [label="(Call,zoom_widget_ &&\n      new_root_window == zoom_widget_->GetNativeView()->GetRootWindow())"];
+"1000107" [label="(Identifier,new_root_window)"];
+"1000113" [label="(MethodReturn,void)"];
+"1000101" [label="(MethodParameterIn,aura::Window* new_root_window)"];
+"1000103" [label="(ControlStructure,if (zoom_widget_ &&\n      new_root_window == zoom_widget_->GetNativeView()->GetRootWindow()))"];
+"1000109" [label="(Return,return;)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000113"  [label="DDG: new_root_window"];
+"1000101" -> "1000106"  [label="DDG: new_root_window"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000108"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000108" -> "1000106"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000113"  [label="DDG: zoom_widget_->GetNativeView()->GetRootWindow()"];
+"1000106" -> "1000113"  [label="DDG: new_root_window"];
+"1000106" -> "1000104"  [label="DDG: new_root_window"];
+"1000106" -> "1000104"  [label="DDG: zoom_widget_->GetNativeView()->GetRootWindow()"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000110" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000113"  [label="DDG: zoom_widget_ &&\n      new_root_window == zoom_widget_->GetNativeView()->GetRootWindow()"];
+"1000104" -> "1000113"  [label="DDG: zoom_widget_"];
+"1000104" -> "1000113"  [label="DDG: new_root_window == zoom_widget_->GetNativeView()->GetRootWindow()"];
+}

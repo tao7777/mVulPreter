@@ -1,0 +1,37 @@
+digraph "0_ioq3_d2b1d124d4055c2fcbe5126863487c52fd58cca1_5@pointer" {
+"1000163" [label="(Call,msg->data[msg->cursize] = value)"];
+"1000102" [label="(MethodParameterIn,int value)"];
+"1000326" [label="(Call,value = (value >> 8))"];
+"1000189" [label="(Call,temp = value)"];
+"1000316" [label="(Call,value & 0xff)"];
+"1000171" [label="(Identifier,value)"];
+"1000289" [label="(Call,value >> 1)"];
+"1000102" [label="(MethodParameterIn,int value)"];
+"1000342" [label="(MethodReturn,void)"];
+"1000162" [label="(Block,)"];
+"1000248" [label="(Call,value &= (0xffffffff >> (32 - bits)))"];
+"1000287" [label="(Call,value = (value >> 1))"];
+"1000277" [label="(Call,value & 1)"];
+"1000328" [label="(Call,value >> 8)"];
+"1000174" [label="(Identifier,msg)"];
+"1000164" [label="(Call,msg->data[msg->cursize])"];
+"1000163" [label="(Call,msg->data[msg->cursize] = value)"];
+"1000163" -> "1000162"  [label="AST: "];
+"1000163" -> "1000171"  [label="CFG: "];
+"1000164" -> "1000163"  [label="AST: "];
+"1000171" -> "1000163"  [label="AST: "];
+"1000174" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000342"  [label="DDG: msg->data[msg->cursize]"];
+"1000163" -> "1000342"  [label="DDG: value"];
+"1000102" -> "1000163"  [label="DDG: value"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000342"  [label="DDG: value"];
+"1000102" -> "1000189"  [label="DDG: value"];
+"1000102" -> "1000248"  [label="DDG: value"];
+"1000102" -> "1000277"  [label="DDG: value"];
+"1000102" -> "1000287"  [label="DDG: value"];
+"1000102" -> "1000289"  [label="DDG: value"];
+"1000102" -> "1000316"  [label="DDG: value"];
+"1000102" -> "1000326"  [label="DDG: value"];
+"1000102" -> "1000328"  [label="DDG: value"];
+}

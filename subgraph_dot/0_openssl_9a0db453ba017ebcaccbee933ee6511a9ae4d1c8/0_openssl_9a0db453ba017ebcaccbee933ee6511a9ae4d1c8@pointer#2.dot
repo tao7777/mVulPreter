@@ -1,0 +1,35 @@
+digraph "0_openssl_9a0db453ba017ebcaccbee933ee6511a9ae4d1c8@pointer" {
+"1000310" [label="(Call,CRYPTO_add(&xtmp->references, 1, CRYPTO_LOCK_X509))"];
+"1000213" [label="(Call,CRYPTO_add(&ctx->cert->references, 1, CRYPTO_LOCK_X509))"];
+"1000220" [label="(Literal,1)"];
+"1000213" [label="(Call,CRYPTO_add(&ctx->cert->references, 1, CRYPTO_LOCK_X509))"];
+"1000803" [label="(MethodReturn,int)"];
+"1000224" [label="(Identifier,ctx)"];
+"1000297" [label="(Block,)"];
+"1000316" [label="(Identifier,CRYPTO_LOCK_X509)"];
+"1000214" [label="(Call,&ctx->cert->references)"];
+"1000310" [label="(Call,CRYPTO_add(&xtmp->references, 1, CRYPTO_LOCK_X509))"];
+"1000221" [label="(Identifier,CRYPTO_LOCK_X509)"];
+"1000190" [label="(Block,)"];
+"1000311" [label="(Call,&xtmp->references)"];
+"1000315" [label="(Literal,1)"];
+"1000310" -> "1000297"  [label="AST: "];
+"1000310" -> "1000316"  [label="CFG: "];
+"1000311" -> "1000310"  [label="AST: "];
+"1000315" -> "1000310"  [label="AST: "];
+"1000316" -> "1000310"  [label="AST: "];
+"1000318" -> "1000310"  [label="CFG: "];
+"1000310" -> "1000803"  [label="DDG: CRYPTO_add(&xtmp->references, 1, CRYPTO_LOCK_X509)"];
+"1000310" -> "1000803"  [label="DDG: CRYPTO_LOCK_X509"];
+"1000310" -> "1000803"  [label="DDG: &xtmp->references"];
+"1000213" -> "1000310"  [label="DDG: CRYPTO_LOCK_X509"];
+"1000213" -> "1000190"  [label="AST: "];
+"1000213" -> "1000221"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000220" -> "1000213"  [label="AST: "];
+"1000221" -> "1000213"  [label="AST: "];
+"1000224" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000803"  [label="DDG: CRYPTO_LOCK_X509"];
+"1000213" -> "1000803"  [label="DDG: &ctx->cert->references"];
+"1000213" -> "1000803"  [label="DDG: CRYPTO_add(&ctx->cert->references, 1, CRYPTO_LOCK_X509)"];
+}

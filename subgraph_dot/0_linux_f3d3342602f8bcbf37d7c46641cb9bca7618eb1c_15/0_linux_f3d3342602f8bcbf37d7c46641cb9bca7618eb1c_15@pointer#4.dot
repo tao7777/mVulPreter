@@ -1,0 +1,34 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_15@pointer" {
+"1000116" [label="(Call,*ipxs = ipx_sk(sk))"];
+"1000118" [label="(Call,ipx_sk(sk))"];
+"1000110" [label="(Call,*sk = sock->sk)"];
+"1000122" [label="(Identifier,sipx)"];
+"1000119" [label="(Identifier,sk)"];
+"1000108" [label="(Block,)"];
+"1000135" [label="(Call,lock_sock(sk))"];
+"1000110" [label="(Call,*sk = sock->sk)"];
+"1000116" [label="(Call,*ipxs = ipx_sk(sk))"];
+"1000111" [label="(Identifier,sk)"];
+"1000118" [label="(Call,ipx_sk(sk))"];
+"1000112" [label="(Call,sock->sk)"];
+"1000117" [label="(Identifier,ipxs)"];
+"1000330" [label="(MethodReturn,static int)"];
+"1000116" -> "1000108"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000122" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000330"  [label="DDG: ipx_sk(sk)"];
+"1000116" -> "1000330"  [label="DDG: ipxs"];
+"1000118" -> "1000116"  [label="DDG: sk"];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000110" -> "1000118"  [label="DDG: sk"];
+"1000118" -> "1000135"  [label="DDG: sk"];
+"1000110" -> "1000108"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000117" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000330"  [label="DDG: sock->sk"];
+}

@@ -1,0 +1,1 @@
+bool ExtensionTtsController::IsSpeaking() const {

@@ -1,0 +1,31 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1008081" [label="(Call,env->cpuid_vendor1 != CPUID_VENDOR_INTEL_1)"];
+"1008078" [label="(Call,CODE64(s) && env->cpuid_vendor1 != CPUID_VENDOR_INTEL_1)"];
+"1008086" [label="(ControlStructure,goto illegal_op;)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1008081" [label="(Call,env->cpuid_vendor1 != CPUID_VENDOR_INTEL_1)"];
+"1008082" [label="(Call,env->cpuid_vendor1)"];
+"1008079" [label="(Call,CODE64(s))"];
+"1008090" [label="(Identifier,s)"];
+"1008085" [label="(Identifier,CPUID_VENDOR_INTEL_1)"];
+"1008077" [label="(ControlStructure,if (CODE64(s) && env->cpuid_vendor1 != CPUID_VENDOR_INTEL_1))"];
+"1008078" [label="(Call,CODE64(s) && env->cpuid_vendor1 != CPUID_VENDOR_INTEL_1)"];
+"1008081" -> "1008078"  [label="AST: "];
+"1008081" -> "1008085"  [label="CFG: "];
+"1008082" -> "1008081"  [label="AST: "];
+"1008085" -> "1008081"  [label="AST: "];
+"1008078" -> "1008081"  [label="CFG: "];
+"1008081" -> "1011840"  [label="DDG: env->cpuid_vendor1"];
+"1008081" -> "1011840"  [label="DDG: CPUID_VENDOR_INTEL_1"];
+"1008081" -> "1008078"  [label="DDG: env->cpuid_vendor1"];
+"1008081" -> "1008078"  [label="DDG: CPUID_VENDOR_INTEL_1"];
+"1008078" -> "1008077"  [label="AST: "];
+"1008078" -> "1008079"  [label="CFG: "];
+"1008079" -> "1008078"  [label="AST: "];
+"1008086" -> "1008078"  [label="CFG: "];
+"1008090" -> "1008078"  [label="CFG: "];
+"1008078" -> "1011840"  [label="DDG: CODE64(s) && env->cpuid_vendor1 != CPUID_VENDOR_INTEL_1"];
+"1008078" -> "1011840"  [label="DDG: env->cpuid_vendor1 != CPUID_VENDOR_INTEL_1"];
+"1008078" -> "1011840"  [label="DDG: CODE64(s)"];
+"1008079" -> "1008078"  [label="DDG: s"];
+}

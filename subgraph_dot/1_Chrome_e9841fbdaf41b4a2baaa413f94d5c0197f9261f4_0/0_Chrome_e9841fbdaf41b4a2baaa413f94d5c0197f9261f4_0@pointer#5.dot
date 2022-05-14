@@ -1,0 +1,32 @@
+digraph "0_Chrome_e9841fbdaf41b4a2baaa413f94d5c0197f9261f4_0@pointer" {
+"1000142" [label="(Call,curr_entry ? curr_entry->GetURL() : GURL())"];
+"1000101" [label="(MethodParameterIn,const NavigationEntry* curr_entry)"];
+"1000151" [label="(Call,!curr_entry)"];
+"1000141" [label="(Call,GetContentClient()->browser()->ShouldSwapProcessesForNavigation(\n          curr_entry ? curr_entry->GetURL() : GURL(), new_entry->GetURL()))"];
+"1000144" [label="(Call,curr_entry->GetURL())"];
+"1000146" [label="(Call,new_entry->GetURL())"];
+"1000142" [label="(Call,curr_entry ? curr_entry->GetURL() : GURL())"];
+"1000145" [label="(Call,GURL())"];
+"1000101" [label="(MethodParameterIn,const NavigationEntry* curr_entry)"];
+"1000109" [label="(Call,(curr_entry) ? curr_entry->GetURL() :\n      render_view_host_->GetSiteInstance()->GetSiteURL())"];
+"1000107" [label="(Call,& current_url = (curr_entry) ? curr_entry->GetURL() :\n      render_view_host_->GetSiteInstance()->GetSiteURL())"];
+"1000143" [label="(Identifier,curr_entry)"];
+"1000163" [label="(MethodReturn,bool)"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000142" -> "1000145"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="AST: "];
+"1000145" -> "1000142"  [label="AST: "];
+"1000146" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000163"  [label="DDG: curr_entry->GetURL()"];
+"1000142" -> "1000163"  [label="DDG: curr_entry"];
+"1000142" -> "1000163"  [label="DDG: GURL()"];
+"1000101" -> "1000142"  [label="DDG: curr_entry"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000163"  [label="DDG: curr_entry"];
+"1000101" -> "1000107"  [label="DDG: curr_entry"];
+"1000101" -> "1000109"  [label="DDG: curr_entry"];
+"1000101" -> "1000141"  [label="DDG: curr_entry"];
+"1000101" -> "1000151"  [label="DDG: curr_entry"];
+}

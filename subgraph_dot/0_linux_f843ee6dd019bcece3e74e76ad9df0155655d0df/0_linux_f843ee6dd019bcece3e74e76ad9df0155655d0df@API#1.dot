@@ -1,0 +1,38 @@
+digraph "0_linux_f843ee6dd019bcece3e74e76ad9df0155655d0df@API" {
+"1000153" [label="(Call,sizeof(__u32) * 8)"];
+"1000149" [label="(Call,up->bmp_len * sizeof(__u32) * 8)"];
+"1000145" [label="(Call,up->replay_window > up->bmp_len * sizeof(__u32) * 8)"];
+"1000156" [label="(Literal,8)"];
+"1000150" [label="(Call,up->bmp_len)"];
+"1000134" [label="(Call,replay_esn->bmp_len != up->bmp_len)"];
+"1000144" [label="(ControlStructure,if (up->replay_window > up->bmp_len * sizeof(__u32) * 8))"];
+"1000159" [label="(Identifier,EINVAL)"];
+"1000154" [label="(Call,sizeof(__u32))"];
+"1000162" [label="(MethodReturn,static inline int)"];
+"1000149" [label="(Call,up->bmp_len * sizeof(__u32) * 8)"];
+"1000146" [label="(Call,up->replay_window)"];
+"1000161" [label="(Literal,0)"];
+"1000145" [label="(Call,up->replay_window > up->bmp_len * sizeof(__u32) * 8)"];
+"1000153" [label="(Call,sizeof(__u32) * 8)"];
+"1000153" -> "1000149"  [label="AST: "];
+"1000153" -> "1000156"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000156" -> "1000153"  [label="AST: "];
+"1000149" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000149"  [label="DDG: 8"];
+"1000149" -> "1000145"  [label="AST: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000145" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000162"  [label="DDG: up->bmp_len"];
+"1000149" -> "1000162"  [label="DDG: sizeof(__u32) * 8"];
+"1000149" -> "1000145"  [label="DDG: up->bmp_len"];
+"1000149" -> "1000145"  [label="DDG: sizeof(__u32) * 8"];
+"1000134" -> "1000149"  [label="DDG: up->bmp_len"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000159" -> "1000145"  [label="CFG: "];
+"1000161" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000162"  [label="DDG: up->bmp_len * sizeof(__u32) * 8"];
+"1000145" -> "1000162"  [label="DDG: up->replay_window"];
+"1000145" -> "1000162"  [label="DDG: up->replay_window > up->bmp_len * sizeof(__u32) * 8"];
+}

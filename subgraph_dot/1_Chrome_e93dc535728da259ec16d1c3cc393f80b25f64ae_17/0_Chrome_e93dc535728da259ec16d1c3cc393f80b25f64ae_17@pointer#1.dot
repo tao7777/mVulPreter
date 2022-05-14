@@ -1,0 +1,26 @@
+digraph "0_Chrome_e93dc535728da259ec16d1c3cc393f80b25f64ae_17@pointer" {
+"1000102" [label="(MethodParameterIn,GURL* url)"];
+"1000135" [label="(Call,GetPlainTextURL(source_object_, url))"];
+"1000140" [label="(Call,url->is_valid())"];
+"1000134" [label="(ControlStructure,if (GetPlainTextURL(source_object_, url)))"];
+"1000157" [label="(Identifier,false)"];
+"1000136" [label="(Identifier,source_object_)"];
+"1000109" [label="(Call,ClipboardUtil::GetUrl(\n       source_object_,\n      &url_str,\n       title,\n       policy == OSExchangeData::CONVERT_FILENAMES ? true : false))"];
+"1000158" [label="(MethodReturn,bool)"];
+"1000102" [label="(MethodParameterIn,GURL* url)"];
+"1000137" [label="(Identifier,url)"];
+"1000135" [label="(Call,GetPlainTextURL(source_object_, url))"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000158"  [label="DDG: url"];
+"1000102" -> "1000135"  [label="DDG: url"];
+"1000135" -> "1000134"  [label="AST: "];
+"1000135" -> "1000137"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000137" -> "1000135"  [label="AST: "];
+"1000140" -> "1000135"  [label="CFG: "];
+"1000157" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000158"  [label="DDG: GetPlainTextURL(source_object_, url)"];
+"1000135" -> "1000158"  [label="DDG: source_object_"];
+"1000135" -> "1000158"  [label="DDG: url"];
+"1000109" -> "1000135"  [label="DDG: source_object_"];
+}

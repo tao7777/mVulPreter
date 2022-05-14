@@ -1,0 +1,25 @@
+digraph "0_linux_3cf521f7dc87c031617fd47e4b7aa2593c2f3daf@pointer" {
+"1000210" [label="(Call,sock_put(ps->tunnel_sock))"];
+"1000193" [label="(Call,l2tp_sock_to_tunnel(ps->tunnel_sock))"];
+"1000224" [label="(Identifier,err)"];
+"1000186" [label="(Block,)"];
+"1000250" [label="(MethodReturn,static int)"];
+"1000191" [label="(Call,tunnel = l2tp_sock_to_tunnel(ps->tunnel_sock))"];
+"1000211" [label="(Call,ps->tunnel_sock)"];
+"1000210" [label="(Call,sock_put(ps->tunnel_sock))"];
+"1000194" [label="(Call,ps->tunnel_sock)"];
+"1000193" [label="(Call,l2tp_sock_to_tunnel(ps->tunnel_sock))"];
+"1000210" -> "1000186"  [label="AST: "];
+"1000210" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000224" -> "1000210"  [label="CFG: "];
+"1000210" -> "1000250"  [label="DDG: sock_put(ps->tunnel_sock)"];
+"1000210" -> "1000250"  [label="DDG: ps->tunnel_sock"];
+"1000193" -> "1000210"  [label="DDG: ps->tunnel_sock"];
+"1000193" -> "1000191"  [label="AST: "];
+"1000193" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000191" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000250"  [label="DDG: ps->tunnel_sock"];
+"1000193" -> "1000191"  [label="DDG: ps->tunnel_sock"];
+}

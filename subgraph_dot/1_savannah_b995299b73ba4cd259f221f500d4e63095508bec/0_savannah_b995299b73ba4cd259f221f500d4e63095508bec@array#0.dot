@@ -1,0 +1,32 @@
+digraph "0_savannah_b995299b73ba4cd259f221f500d4e63095508bec@array" {
+"1000152" [label="(Call,face[total].filepath == face[0].filepath)"];
+"1000142" [label="(Call,total + state->face_index < state->num_faces &&\n              face[total].filepath == face[0].filepath)"];
+"1000152" [label="(Call,face[total].filepath == face[0].filepath)"];
+"1000141" [label="(ControlStructure,while ( total + state->face_index < state->num_faces &&\n              face[total].filepath == face[0].filepath     ))"];
+"1000166" [label="(Identifier,total)"];
+"1000153" [label="(Call,face[total].filepath)"];
+"1000164" [label="(Identifier,total)"];
+"1000143" [label="(Call,total + state->face_index < state->num_faces)"];
+"1000225" [label="(MethodReturn,RET)"];
+"1000142" [label="(Call,total + state->face_index < state->num_faces &&\n              face[total].filepath == face[0].filepath)"];
+"1000158" [label="(Call,face[0].filepath)"];
+"1000152" -> "1000142"  [label="AST: "];
+"1000152" -> "1000158"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000158" -> "1000152"  [label="AST: "];
+"1000142" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000225"  [label="DDG: face[0].filepath"];
+"1000152" -> "1000225"  [label="DDG: face[total].filepath"];
+"1000152" -> "1000142"  [label="DDG: face[total].filepath"];
+"1000152" -> "1000142"  [label="DDG: face[0].filepath"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000164" -> "1000142"  [label="CFG: "];
+"1000166" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000225"  [label="DDG: total + state->face_index < state->num_faces &&\n              face[total].filepath == face[0].filepath"];
+"1000142" -> "1000225"  [label="DDG: face[total].filepath == face[0].filepath"];
+"1000142" -> "1000225"  [label="DDG: total + state->face_index < state->num_faces"];
+"1000143" -> "1000142"  [label="DDG: total + state->face_index"];
+"1000143" -> "1000142"  [label="DDG: state->num_faces"];
+}

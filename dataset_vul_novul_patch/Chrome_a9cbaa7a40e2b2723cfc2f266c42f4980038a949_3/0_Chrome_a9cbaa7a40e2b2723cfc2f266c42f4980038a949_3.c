@@ -1,0 +1,1 @@
+bool MultibufferDataSource::DidPassCORSAccessCheck() const {

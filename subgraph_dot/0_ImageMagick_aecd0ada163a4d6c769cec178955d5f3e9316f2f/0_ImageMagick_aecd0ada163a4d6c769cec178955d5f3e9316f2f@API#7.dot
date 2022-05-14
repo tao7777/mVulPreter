@@ -1,0 +1,37 @@
+digraph "0_ImageMagick_aecd0ada163a4d6c769cec178955d5f3e9316f2f@API" {
+"1000298" [label="(Call,MaxPixelChannels*\n    sizeof(*image->channel_map))"];
+"1000291" [label="(Call,memcpy(cache_info->channel_map,image->channel_map,MaxPixelChannels*\n    sizeof(*image->channel_map)))"];
+"1000289" [label="(Call,(void) memcpy(cache_info->channel_map,image->channel_map,MaxPixelChannels*\n    sizeof(*image->channel_map)))"];
+"1000299" [label="(Identifier,MaxPixelChannels)"];
+"1000292" [label="(Call,cache_info->channel_map)"];
+"1000300" [label="(Call,sizeof(*image->channel_map))"];
+"1000307" [label="(Identifier,cache_info)"];
+"1000295" [label="(Call,image->channel_map)"];
+"1001283" [label="(MethodReturn,static MagickBooleanType)"];
+"1000108" [label="(Block,)"];
+"1000289" [label="(Call,(void) memcpy(cache_info->channel_map,image->channel_map,MaxPixelChannels*\n    sizeof(*image->channel_map)))"];
+"1000298" [label="(Call,MaxPixelChannels*\n    sizeof(*image->channel_map))"];
+"1000291" [label="(Call,memcpy(cache_info->channel_map,image->channel_map,MaxPixelChannels*\n    sizeof(*image->channel_map)))"];
+"1000298" -> "1000291"  [label="AST: "];
+"1000298" -> "1000300"  [label="CFG: "];
+"1000299" -> "1000298"  [label="AST: "];
+"1000300" -> "1000298"  [label="AST: "];
+"1000291" -> "1000298"  [label="CFG: "];
+"1000298" -> "1001283"  [label="DDG: MaxPixelChannels"];
+"1000298" -> "1000291"  [label="DDG: MaxPixelChannels"];
+"1000291" -> "1000289"  [label="AST: "];
+"1000292" -> "1000291"  [label="AST: "];
+"1000295" -> "1000291"  [label="AST: "];
+"1000289" -> "1000291"  [label="CFG: "];
+"1000291" -> "1001283"  [label="DDG: MaxPixelChannels*\n    sizeof(*image->channel_map)"];
+"1000291" -> "1001283"  [label="DDG: cache_info->channel_map"];
+"1000291" -> "1001283"  [label="DDG: image->channel_map"];
+"1000291" -> "1000289"  [label="DDG: cache_info->channel_map"];
+"1000291" -> "1000289"  [label="DDG: image->channel_map"];
+"1000291" -> "1000289"  [label="DDG: MaxPixelChannels*\n    sizeof(*image->channel_map)"];
+"1000289" -> "1000108"  [label="AST: "];
+"1000290" -> "1000289"  [label="AST: "];
+"1000307" -> "1000289"  [label="CFG: "];
+"1000289" -> "1001283"  [label="DDG: memcpy(cache_info->channel_map,image->channel_map,MaxPixelChannels*\n    sizeof(*image->channel_map))"];
+"1000289" -> "1001283"  [label="DDG: (void) memcpy(cache_info->channel_map,image->channel_map,MaxPixelChannels*\n    sizeof(*image->channel_map))"];
+}

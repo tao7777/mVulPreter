@@ -1,0 +1,33 @@
+digraph "0_linux_09ca8e1173bcb12e2a449698c9ae3b86a8a10195@pointer" {
+"1000117" [label="(Call,kvm_iommu_unmap_pages(kvm, memslot))"];
+"1000115" [label="(Call,kvm_memslots(kvm))"];
+"1000101" [label="(MethodParameterIn,struct kvm *kvm)"];
+"1000102" [label="(Block,)"];
+"1000117" [label="(Call,kvm_iommu_unmap_pages(kvm, memslot))"];
+"1000118" [label="(Identifier,kvm)"];
+"1000113" [label="(Call,slots = kvm_memslots(kvm))"];
+"1000119" [label="(Identifier,memslot)"];
+"1000123" [label="(Identifier,kvm)"];
+"1000128" [label="(MethodReturn,static int)"];
+"1000101" [label="(MethodParameterIn,struct kvm *kvm)"];
+"1000116" [label="(Identifier,kvm)"];
+"1000115" [label="(Call,kvm_memslots(kvm))"];
+"1000117" -> "1000102"  [label="AST: "];
+"1000117" -> "1000119"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000119" -> "1000117"  [label="AST: "];
+"1000123" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000128"  [label="DDG: kvm_iommu_unmap_pages(kvm, memslot)"];
+"1000117" -> "1000128"  [label="DDG: kvm"];
+"1000117" -> "1000128"  [label="DDG: memslot"];
+"1000115" -> "1000117"  [label="DDG: kvm"];
+"1000101" -> "1000117"  [label="DDG: kvm"];
+"1000115" -> "1000113"  [label="AST: "];
+"1000115" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000113" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000113"  [label="DDG: kvm"];
+"1000101" -> "1000115"  [label="DDG: kvm"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000128"  [label="DDG: kvm"];
+}

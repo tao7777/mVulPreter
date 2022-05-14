@@ -1,0 +1,27 @@
+digraph "0_linux_05692d7005a364add85c6e25a6c4447ce08f913a_0@pointer" {
+"1000103" [label="(MethodParameterIn,struct vfio_pci_device *vdev)"];
+"1000123" [label="(Call,is_irq_none(vdev))"];
+"1000122" [label="(Call,!is_irq_none(vdev))"];
+"1000122" [label="(Call,!is_irq_none(vdev))"];
+"1000123" [label="(Call,is_irq_none(vdev))"];
+"1000201" [label="(MethodReturn,static int)"];
+"1000124" [label="(Identifier,vdev)"];
+"1000127" [label="(Identifier,EINVAL)"];
+"1000103" [label="(MethodParameterIn,struct vfio_pci_device *vdev)"];
+"1000130" [label="(Identifier,vdev)"];
+"1000121" [label="(ControlStructure,if (!is_irq_none(vdev)))"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000201"  [label="DDG: vdev"];
+"1000103" -> "1000123"  [label="DDG: vdev"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000201"  [label="DDG: vdev"];
+"1000123" -> "1000122"  [label="DDG: vdev"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000127" -> "1000122"  [label="CFG: "];
+"1000130" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000201"  [label="DDG: is_irq_none(vdev)"];
+"1000122" -> "1000201"  [label="DDG: !is_irq_none(vdev)"];
+}

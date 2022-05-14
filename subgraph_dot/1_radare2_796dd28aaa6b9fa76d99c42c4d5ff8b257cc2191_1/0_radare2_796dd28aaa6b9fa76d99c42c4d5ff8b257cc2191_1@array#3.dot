@@ -1,0 +1,38 @@
+digraph "0_radare2_796dd28aaa6b9fa76d99c42c4d5ff8b257cc2191_1@array" {
+"1000267" [label="(Call,grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000265" [label="(Call,blknr = grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000426" [label="(Return,return blknr;)"];
+"1000268" [label="(Call,inode->blocks.dir_blocks[fileblock])"];
+"1000266" [label="(Identifier,blknr)"];
+"1000261" [label="(ControlStructure,if (fileblock < INDIRECT_BLOCKS))"];
+"1000107" [label="(Block,)"];
+"1000265" [label="(Call,blknr = grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000427" [label="(Identifier,blknr)"];
+"1000315" [label="(Call,blknr = grub_le_to_cpu32 (indir[fileblock - INDIRECT_BLOCKS]))"];
+"1000122" [label="(Call,blknr = -1)"];
+"1000267" [label="(Call,grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000411" [label="(Call,blknr = grub_le_to_cpu32 (indir[rblock % perblock]))"];
+"1000428" [label="(MethodReturn,RET)"];
+"1000426" [label="(Return,return blknr;)"];
+"1000267" -> "1000265"  [label="AST: "];
+"1000267" -> "1000268"  [label="CFG: "];
+"1000268" -> "1000267"  [label="AST: "];
+"1000265" -> "1000267"  [label="CFG: "];
+"1000267" -> "1000428"  [label="DDG: inode->blocks.dir_blocks[fileblock]"];
+"1000267" -> "1000265"  [label="DDG: inode->blocks.dir_blocks[fileblock]"];
+"1000265" -> "1000261"  [label="AST: "];
+"1000266" -> "1000265"  [label="AST: "];
+"1000427" -> "1000265"  [label="CFG: "];
+"1000265" -> "1000428"  [label="DDG: grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock])"];
+"1000265" -> "1000428"  [label="DDG: blknr"];
+"1000265" -> "1000426"  [label="DDG: blknr"];
+"1000426" -> "1000107"  [label="AST: "];
+"1000426" -> "1000427"  [label="CFG: "];
+"1000427" -> "1000426"  [label="AST: "];
+"1000428" -> "1000426"  [label="CFG: "];
+"1000426" -> "1000428"  [label="DDG: <RET>"];
+"1000427" -> "1000426"  [label="DDG: blknr"];
+"1000411" -> "1000426"  [label="DDG: blknr"];
+"1000315" -> "1000426"  [label="DDG: blknr"];
+"1000122" -> "1000426"  [label="DDG: blknr"];
+}

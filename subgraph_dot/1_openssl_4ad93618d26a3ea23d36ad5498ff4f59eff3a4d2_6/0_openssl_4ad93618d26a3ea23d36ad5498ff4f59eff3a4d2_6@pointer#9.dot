@@ -1,0 +1,36 @@
+digraph "0_openssl_4ad93618d26a3ea23d36ad5498ff4f59eff3a4d2_6@pointer" {
+"1000519" [label="(Call,s->tlsext_heartbeat & SSL_DTLSEXT_HB_DONT_RECV_REQUESTS)"];
+"1000499" [label="(Call,s->tlsext_heartbeat & SSL_DTLSEXT_HB_ENABLED)"];
+"1000496" [label="(Call,SSL_IS_DTLS(s) && (s->tlsext_heartbeat & SSL_DTLSEXT_HB_ENABLED))"];
+"1000533" [label="(Identifier,ret)"];
+"1000519" [label="(Call,s->tlsext_heartbeat & SSL_DTLSEXT_HB_DONT_RECV_REQUESTS)"];
+"1000518" [label="(ControlStructure,if (s->tlsext_heartbeat & SSL_DTLSEXT_HB_DONT_RECV_REQUESTS))"];
+"1000523" [label="(Identifier,SSL_DTLSEXT_HB_DONT_RECV_REQUESTS)"];
+"1000530" [label="(Call,*(ret++) = SSL_DTLSEXT_HB_ENABLED)"];
+"1000527" [label="(Identifier,ret)"];
+"1000520" [label="(Call,s->tlsext_heartbeat)"];
+"1000500" [label="(Call,s->tlsext_heartbeat)"];
+"1000800" [label="(MethodReturn,unsigned char *)"];
+"1000503" [label="(Identifier,SSL_DTLSEXT_HB_ENABLED)"];
+"1000499" [label="(Call,s->tlsext_heartbeat & SSL_DTLSEXT_HB_ENABLED)"];
+"1000519" -> "1000518"  [label="AST: "];
+"1000519" -> "1000523"  [label="CFG: "];
+"1000520" -> "1000519"  [label="AST: "];
+"1000523" -> "1000519"  [label="AST: "];
+"1000527" -> "1000519"  [label="CFG: "];
+"1000533" -> "1000519"  [label="CFG: "];
+"1000519" -> "1000800"  [label="DDG: s->tlsext_heartbeat"];
+"1000519" -> "1000800"  [label="DDG: s->tlsext_heartbeat & SSL_DTLSEXT_HB_DONT_RECV_REQUESTS"];
+"1000519" -> "1000800"  [label="DDG: SSL_DTLSEXT_HB_DONT_RECV_REQUESTS"];
+"1000499" -> "1000519"  [label="DDG: s->tlsext_heartbeat"];
+"1000499" -> "1000496"  [label="AST: "];
+"1000499" -> "1000503"  [label="CFG: "];
+"1000500" -> "1000499"  [label="AST: "];
+"1000503" -> "1000499"  [label="AST: "];
+"1000496" -> "1000499"  [label="CFG: "];
+"1000499" -> "1000800"  [label="DDG: SSL_DTLSEXT_HB_ENABLED"];
+"1000499" -> "1000800"  [label="DDG: s->tlsext_heartbeat"];
+"1000499" -> "1000496"  [label="DDG: s->tlsext_heartbeat"];
+"1000499" -> "1000496"  [label="DDG: SSL_DTLSEXT_HB_ENABLED"];
+"1000499" -> "1000530"  [label="DDG: SSL_DTLSEXT_HB_ENABLED"];
+}

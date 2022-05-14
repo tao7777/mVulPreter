@@ -1,0 +1,31 @@
+digraph "0_libgit2_3207ddb0103543da8ad2139ec6539f590f9900c1@pointer" {
+"1000371" [label="(Call,path_ptr + varint_len)"];
+"1000351" [label="(Call,(const unsigned char *)path_ptr)"];
+"1000355" [label="(Identifier,varint_len)"];
+"1000353" [label="(Identifier,path_ptr)"];
+"1000350" [label="(Call,git_decode_varint((const unsigned char *)path_ptr,\n\t\t\t\t\t\t     &varint_len))"];
+"1000372" [label="(Identifier,path_ptr)"];
+"1000371" [label="(Call,path_ptr + varint_len)"];
+"1000373" [label="(Identifier,varint_len)"];
+"1000463" [label="(MethodReturn,static int)"];
+"1000406" [label="(Call,path_ptr + varint_len)"];
+"1000351" [label="(Call,(const unsigned char *)path_ptr)"];
+"1000402" [label="(Call,memcpy(tmp_path + prefix_len, path_ptr + varint_len, suffix_len + 1))"];
+"1000370" [label="(Call,strlen(path_ptr + varint_len))"];
+"1000371" -> "1000370"  [label="AST: "];
+"1000371" -> "1000373"  [label="CFG: "];
+"1000372" -> "1000371"  [label="AST: "];
+"1000373" -> "1000371"  [label="AST: "];
+"1000370" -> "1000371"  [label="CFG: "];
+"1000371" -> "1000463"  [label="DDG: path_ptr"];
+"1000351" -> "1000371"  [label="DDG: path_ptr"];
+"1000351" -> "1000350"  [label="AST: "];
+"1000351" -> "1000353"  [label="CFG: "];
+"1000352" -> "1000351"  [label="AST: "];
+"1000353" -> "1000351"  [label="AST: "];
+"1000355" -> "1000351"  [label="CFG: "];
+"1000351" -> "1000350"  [label="DDG: path_ptr"];
+"1000351" -> "1000370"  [label="DDG: path_ptr"];
+"1000351" -> "1000402"  [label="DDG: path_ptr"];
+"1000351" -> "1000406"  [label="DDG: path_ptr"];
+}

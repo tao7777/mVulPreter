@@ -1,0 +1,25 @@
+digraph "0_linux_c06cfb08b88dfbe13be44a69ae2fdc3a7c902d81_4@API" {
+"1000233" [label="(Call,type->match_free(&ctx.match_data))"];
+"1000141" [label="(Call,type->match_preparse(&ctx.match_data))"];
+"1000234" [label="(Call,&ctx.match_data)"];
+"1000233" [label="(Call,type->match_free(&ctx.match_data))"];
+"1000229" [label="(ControlStructure,if (type->match_free))"];
+"1000238" [label="(JumpTarget,error:)"];
+"1000141" [label="(Call,type->match_preparse(&ctx.match_data))"];
+"1000142" [label="(Call,&ctx.match_data)"];
+"1000244" [label="(MethodReturn,struct key *)"];
+"1000139" [label="(Call,ret = type->match_preparse(&ctx.match_data))"];
+"1000233" -> "1000229"  [label="AST: "];
+"1000233" -> "1000234"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000238" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000244"  [label="DDG: type->match_free(&ctx.match_data)"];
+"1000233" -> "1000244"  [label="DDG: &ctx.match_data"];
+"1000141" -> "1000233"  [label="DDG: &ctx.match_data"];
+"1000141" -> "1000139"  [label="AST: "];
+"1000141" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000139" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000244"  [label="DDG: &ctx.match_data"];
+"1000141" -> "1000139"  [label="DDG: &ctx.match_data"];
+}

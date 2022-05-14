@@ -1,0 +1,24 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_17@API" {
+"1000201" [label="(Call,p->o_arg.open_flags = flags)"];
+"1000103" [label="(MethodParameterIn,int flags)"];
+"1000300" [label="(Call,flags & O_CREAT)"];
+"1000201" [label="(Call,p->o_arg.open_flags = flags)"];
+"1000268" [label="(Call,flags & O_EXCL)"];
+"1000207" [label="(Identifier,flags)"];
+"1000378" [label="(MethodReturn,static struct nfs4_opendata *)"];
+"1000202" [label="(Call,p->o_arg.open_flags)"];
+"1000200" [label="(Block,)"];
+"1000211" [label="(Identifier,p)"];
+"1000103" [label="(MethodParameterIn,int flags)"];
+"1000201" -> "1000200"  [label="AST: "];
+"1000201" -> "1000207"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000207" -> "1000201"  [label="AST: "];
+"1000211" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000378"  [label="DDG: p->o_arg.open_flags"];
+"1000103" -> "1000201"  [label="DDG: flags"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000378"  [label="DDG: flags"];
+"1000103" -> "1000268"  [label="DDG: flags"];
+"1000103" -> "1000300"  [label="DDG: flags"];
+}

@@ -1,0 +1,29 @@
+digraph "0_Android_aeea52da00d210587fb3ed895de3d5f2e0264c88_4@API" {
+"1001047" [label="(Call,*replySize != sizeof(int))"];
+"1001043" [label="(Call,pReplyData == NULL || *replySize != sizeof(int))"];
+"1001042" [label="(ControlStructure,if (pReplyData == NULL || *replySize != sizeof(int)))"];
+"1001424" [label="(MethodReturn,int)"];
+"1001050" [label="(Call,sizeof(int))"];
+"1001048" [label="(Call,*replySize)"];
+"1001044" [label="(Call,pReplyData == NULL)"];
+"1001054" [label="(Literal,\"\tLVM_ERROR : Effect_command cmdCode Case: EFFECT_CMD_DISABLE: ERROR\")"];
+"1001047" [label="(Call,*replySize != sizeof(int))"];
+"1001043" [label="(Call,pReplyData == NULL || *replySize != sizeof(int))"];
+"1001047" -> "1001043"  [label="AST: "];
+"1001047" -> "1001050"  [label="CFG: "];
+"1001048" -> "1001047"  [label="AST: "];
+"1001050" -> "1001047"  [label="AST: "];
+"1001043" -> "1001047"  [label="CFG: "];
+"1001047" -> "1001424"  [label="DDG: *replySize"];
+"1001047" -> "1001043"  [label="DDG: *replySize"];
+"1001043" -> "1001042"  [label="AST: "];
+"1001043" -> "1001044"  [label="CFG: "];
+"1001044" -> "1001043"  [label="AST: "];
+"1001054" -> "1001043"  [label="CFG: "];
+"1001061" -> "1001043"  [label="CFG: "];
+"1001043" -> "1001424"  [label="DDG: pReplyData == NULL"];
+"1001043" -> "1001424"  [label="DDG: *replySize != sizeof(int)"];
+"1001043" -> "1001424"  [label="DDG: pReplyData == NULL || *replySize != sizeof(int)"];
+"1001044" -> "1001043"  [label="DDG: pReplyData"];
+"1001044" -> "1001043"  [label="DDG: NULL"];
+}

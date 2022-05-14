@@ -1,0 +1,35 @@
+digraph "0_radare2_ad55822430a03fe075221b543efb434567e9e431@array" {
+"1000909" [label="(Call,debug_locals[register_num].live = true)"];
+"1000895" [label="(Call,!debug_locals[register_num].live)"];
+"1000601" [label="(Call,debug_locals[register_num].live = true)"];
+"1000894" [label="(ControlStructure,if (!debug_locals[register_num].live))"];
+"1000905" [label="(Identifier,debug_locals)"];
+"1000910" [label="(Call,debug_locals[register_num].live)"];
+"1000916" [label="(ControlStructure,break;)"];
+"1001185" [label="(MethodReturn,static void)"];
+"1000901" [label="(Block,)"];
+"1000779" [label="(Call,debug_locals[register_num].live = true)"];
+"1000896" [label="(Call,debug_locals[register_num].live)"];
+"1000895" [label="(Call,!debug_locals[register_num].live)"];
+"1000915" [label="(Identifier,true)"];
+"1000909" [label="(Call,debug_locals[register_num].live = true)"];
+"1000874" [label="(Call,debug_locals[register_num].live = false)"];
+"1000909" -> "1000901"  [label="AST: "];
+"1000909" -> "1000915"  [label="CFG: "];
+"1000910" -> "1000909"  [label="AST: "];
+"1000915" -> "1000909"  [label="AST: "];
+"1000916" -> "1000909"  [label="CFG: "];
+"1000909" -> "1001185"  [label="DDG: debug_locals[register_num].live"];
+"1000909" -> "1001185"  [label="DDG: true"];
+"1000909" -> "1000895"  [label="DDG: debug_locals[register_num].live"];
+"1000895" -> "1000894"  [label="AST: "];
+"1000895" -> "1000896"  [label="CFG: "];
+"1000896" -> "1000895"  [label="AST: "];
+"1000905" -> "1000895"  [label="CFG: "];
+"1000916" -> "1000895"  [label="CFG: "];
+"1000895" -> "1001185"  [label="DDG: !debug_locals[register_num].live"];
+"1000895" -> "1001185"  [label="DDG: debug_locals[register_num].live"];
+"1000779" -> "1000895"  [label="DDG: debug_locals[register_num].live"];
+"1000601" -> "1000895"  [label="DDG: debug_locals[register_num].live"];
+"1000874" -> "1000895"  [label="DDG: debug_locals[register_num].live"];
+}

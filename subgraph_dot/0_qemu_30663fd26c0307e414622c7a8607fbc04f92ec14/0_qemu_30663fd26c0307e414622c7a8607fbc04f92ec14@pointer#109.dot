@@ -1,0 +1,34 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1006004" [label="(Call,s->tb->cflags & CF_USE_ICOUNT)"];
+"1005980" [label="(Call,s->tb->cflags & CF_USE_ICOUNT)"];
+"1005988" [label="(Call,gen_io_start())"];
+"1005981" [label="(Call,s->tb->cflags)"];
+"1005979" [label="(ControlStructure,if (s->tb->cflags & CF_USE_ICOUNT))"];
+"1005986" [label="(Identifier,CF_USE_ICOUNT)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1005980" [label="(Call,s->tb->cflags & CF_USE_ICOUNT)"];
+"1006004" [label="(Call,s->tb->cflags & CF_USE_ICOUNT)"];
+"1006005" [label="(Call,s->tb->cflags)"];
+"1006003" [label="(ControlStructure,if (s->tb->cflags & CF_USE_ICOUNT))"];
+"1005990" [label="(Identifier,cpu_tmp2_i32)"];
+"1006010" [label="(Identifier,CF_USE_ICOUNT)"];
+"1006022" [label="(ControlStructure,break;)"];
+"1006012" [label="(Call,gen_io_end())"];
+"1006004" -> "1006003"  [label="AST: "];
+"1006004" -> "1006010"  [label="CFG: "];
+"1006005" -> "1006004"  [label="AST: "];
+"1006010" -> "1006004"  [label="AST: "];
+"1006012" -> "1006004"  [label="CFG: "];
+"1006022" -> "1006004"  [label="CFG: "];
+"1006004" -> "1011840"  [label="DDG: s->tb->cflags"];
+"1006004" -> "1011840"  [label="DDG: s->tb->cflags & CF_USE_ICOUNT"];
+"1006004" -> "1011840"  [label="DDG: CF_USE_ICOUNT"];
+"1005980" -> "1006004"  [label="DDG: s->tb->cflags"];
+"1005980" -> "1006004"  [label="DDG: CF_USE_ICOUNT"];
+"1005980" -> "1005979"  [label="AST: "];
+"1005980" -> "1005986"  [label="CFG: "];
+"1005981" -> "1005980"  [label="AST: "];
+"1005986" -> "1005980"  [label="AST: "];
+"1005988" -> "1005980"  [label="CFG: "];
+"1005990" -> "1005980"  [label="CFG: "];
+}

@@ -1,0 +1,22 @@
+digraph "0_haproxy_17514045e5d934dede62116216c1b016fe23dd06@pointer" {
+"1000144" [label="(Call,chn->buf->p + hdr_idx_first_pos(&txn->hdr_idx))"];
+"1000150" [label="(Call,hdr_idx_first_pos(&txn->hdr_idx))"];
+"1000150" [label="(Call,hdr_idx_first_pos(&txn->hdr_idx))"];
+"1000144" [label="(Call,chn->buf->p + hdr_idx_first_pos(&txn->hdr_idx))"];
+"1000382" [label="(MethodReturn,void)"];
+"1000142" [label="(Call,cur_next = chn->buf->p + hdr_idx_first_pos(&txn->hdr_idx))"];
+"1000145" [label="(Call,chn->buf->p)"];
+"1000151" [label="(Call,&txn->hdr_idx)"];
+"1000144" -> "1000142"  [label="AST: "];
+"1000144" -> "1000150"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000150" -> "1000144"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000382"  [label="DDG: chn->buf->p"];
+"1000144" -> "1000382"  [label="DDG: hdr_idx_first_pos(&txn->hdr_idx)"];
+"1000150" -> "1000144"  [label="DDG: &txn->hdr_idx"];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000150" -> "1000382"  [label="DDG: &txn->hdr_idx"];
+"1000150" -> "1000142"  [label="DDG: &txn->hdr_idx"];
+}

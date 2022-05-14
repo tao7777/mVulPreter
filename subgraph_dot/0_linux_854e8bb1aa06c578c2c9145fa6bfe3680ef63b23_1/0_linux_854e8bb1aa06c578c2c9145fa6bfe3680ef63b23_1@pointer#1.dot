@@ -1,0 +1,21 @@
+digraph "0_linux_854e8bb1aa06c578c2c9145fa6bfe3680ef63b23_1@pointer" {
+"1000129" [label="(Call,get_canonical(msr->data))"];
+"1000125" [label="(Call,msr->data = get_canonical(msr->data))"];
+"1000109" [label="(Block,)"];
+"1000135" [label="(Identifier,vcpu)"];
+"1000137" [label="(MethodReturn,int)"];
+"1000126" [label="(Call,msr->data)"];
+"1000125" [label="(Call,msr->data = get_canonical(msr->data))"];
+"1000130" [label="(Call,msr->data)"];
+"1000129" [label="(Call,get_canonical(msr->data))"];
+"1000129" -> "1000125"  [label="AST: "];
+"1000129" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000125" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000125"  [label="DDG: msr->data"];
+"1000125" -> "1000109"  [label="AST: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000135" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000137"  [label="DDG: msr->data"];
+"1000125" -> "1000137"  [label="DDG: get_canonical(msr->data)"];
+}

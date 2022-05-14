@@ -1,0 +1,38 @@
+digraph "0_uncurl_448cd13e7b18c83855d706c564341ddd1e38e769@pointer" {
+"1000156" [label="(Call,strstr(origin, origins[x]))"];
+"1000125" [label="(Call,*origin = NULL)"];
+"1000102" [label="(MethodParameterIn,char **origins)"];
+"1000156" [label="(Call,strstr(origin, origins[x]))"];
+"1000127" [label="(Identifier,NULL)"];
+"1000155" [label="(ControlStructure,if (strstr(origin, origins[x])))"];
+"1000154" [label="(Identifier,x)"];
+"1000125" [label="(Call,*origin = NULL)"];
+"1000102" [label="(MethodParameterIn,char **origins)"];
+"1000219" [label="(MethodReturn,UNCURL_EXPORT int32_t)"];
+"1000104" [label="(Block,)"];
+"1000126" [label="(Identifier,origin)"];
+"1000158" [label="(Call,origins[x])"];
+"1000163" [label="(Identifier,origin_ok)"];
+"1000129" [label="(Identifier,e)"];
+"1000157" [label="(Identifier,origin)"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000158"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000158" -> "1000156"  [label="AST: "];
+"1000163" -> "1000156"  [label="CFG: "];
+"1000154" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000219"  [label="DDG: origin"];
+"1000156" -> "1000219"  [label="DDG: origins[x]"];
+"1000156" -> "1000219"  [label="DDG: strstr(origin, origins[x])"];
+"1000125" -> "1000156"  [label="DDG: origin"];
+"1000102" -> "1000156"  [label="DDG: origins"];
+"1000125" -> "1000104"  [label="AST: "];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000129" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000219"  [label="DDG: origin"];
+"1000125" -> "1000219"  [label="DDG: NULL"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000219"  [label="DDG: origins"];
+}

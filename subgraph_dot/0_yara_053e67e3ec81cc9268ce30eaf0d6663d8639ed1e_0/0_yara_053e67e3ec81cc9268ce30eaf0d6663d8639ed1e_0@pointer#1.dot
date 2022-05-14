@@ -1,0 +1,35 @@
+digraph "0_yara_053e67e3ec81cc9268ce30eaf0d6663d8639ed1e_0@pointer" {
+"1000259" [label="(Call,structure_member = structure_member->next)"];
+"1000240" [label="(Call,structure_member != NULL)"];
+"1000242" [label="(Identifier,NULL)"];
+"1000239" [label="(ControlStructure,while (structure_member != NULL))"];
+"1000247" [label="(Identifier,structure_member)"];
+"1000241" [label="(Identifier,structure_member)"];
+"1000264" [label="(ControlStructure,break;)"];
+"1000260" [label="(Identifier,structure_member)"];
+"1000232" [label="(Call,structure_member = ((YR_OBJECT_STRUCTURE*) object)->members)"];
+"1000240" [label="(Call,structure_member != NULL)"];
+"1000259" [label="(Call,structure_member = structure_member->next)"];
+"1000308" [label="(MethodReturn,int)"];
+"1000115" [label="(Call,yr_object_create(\n      object->type,\n      object->identifier,\n      NULL,\n      &copy))"];
+"1000261" [label="(Call,structure_member->next)"];
+"1000243" [label="(Block,)"];
+"1000259" -> "1000243"  [label="AST: "];
+"1000259" -> "1000261"  [label="CFG: "];
+"1000260" -> "1000259"  [label="AST: "];
+"1000261" -> "1000259"  [label="AST: "];
+"1000241" -> "1000259"  [label="CFG: "];
+"1000259" -> "1000308"  [label="DDG: structure_member->next"];
+"1000259" -> "1000240"  [label="DDG: structure_member"];
+"1000240" -> "1000239"  [label="AST: "];
+"1000240" -> "1000242"  [label="CFG: "];
+"1000241" -> "1000240"  [label="AST: "];
+"1000242" -> "1000240"  [label="AST: "];
+"1000247" -> "1000240"  [label="CFG: "];
+"1000264" -> "1000240"  [label="CFG: "];
+"1000240" -> "1000308"  [label="DDG: structure_member != NULL"];
+"1000240" -> "1000308"  [label="DDG: NULL"];
+"1000240" -> "1000308"  [label="DDG: structure_member"];
+"1000232" -> "1000240"  [label="DDG: structure_member"];
+"1000115" -> "1000240"  [label="DDG: NULL"];
+}

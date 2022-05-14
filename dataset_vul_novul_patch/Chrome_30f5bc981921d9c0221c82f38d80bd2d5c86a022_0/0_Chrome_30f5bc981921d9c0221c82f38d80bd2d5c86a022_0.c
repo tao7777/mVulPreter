@@ -1,0 +1,1 @@
+    AsOmniboxEventProviderType() const {

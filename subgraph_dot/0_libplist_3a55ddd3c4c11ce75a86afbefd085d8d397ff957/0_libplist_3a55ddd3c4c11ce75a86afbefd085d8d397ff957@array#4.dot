@@ -1,0 +1,33 @@
+digraph "0_libplist_3a55ddd3c4c11ce75a86afbefd085d8d397ff957@array" {
+"1000318" [label="(Call,outbuf[p] = 0)"];
+"1000327" [label="(Return,return outbuf;)"];
+"1000329" [label="(MethodReturn,unsigned char *)"];
+"1000325" [label="(Identifier,size)"];
+"1000319" [label="(Call,outbuf[p])"];
+"1000282" [label="(Call,outbuf[p++] = (unsigned char)(((w2 << 4) + (w3 >> 2)) & 0xFF))"];
+"1000327" [label="(Return,return outbuf;)"];
+"1000322" [label="(Literal,0)"];
+"1000131" [label="(Call,*outbuf = (unsigned char*)malloc((len/4)*3+3))"];
+"1000318" [label="(Call,outbuf[p] = 0)"];
+"1000261" [label="(Call,outbuf[p++] = (unsigned char)(((w1 << 2) + (w2 >> 4)) & 0xFF))"];
+"1000303" [label="(Call,outbuf[p++] = (unsigned char)(((w3 << 6) + w4) & 0xFF))"];
+"1000103" [label="(Block,)"];
+"1000328" [label="(Identifier,outbuf)"];
+"1000318" -> "1000103"  [label="AST: "];
+"1000318" -> "1000322"  [label="CFG: "];
+"1000319" -> "1000318"  [label="AST: "];
+"1000322" -> "1000318"  [label="AST: "];
+"1000325" -> "1000318"  [label="CFG: "];
+"1000318" -> "1000329"  [label="DDG: outbuf[p]"];
+"1000318" -> "1000327"  [label="DDG: outbuf[p]"];
+"1000327" -> "1000103"  [label="AST: "];
+"1000327" -> "1000328"  [label="CFG: "];
+"1000328" -> "1000327"  [label="AST: "];
+"1000329" -> "1000327"  [label="CFG: "];
+"1000327" -> "1000329"  [label="DDG: <RET>"];
+"1000328" -> "1000327"  [label="DDG: outbuf"];
+"1000303" -> "1000327"  [label="DDG: outbuf[p++]"];
+"1000131" -> "1000327"  [label="DDG: outbuf"];
+"1000261" -> "1000327"  [label="DDG: outbuf[p++]"];
+"1000282" -> "1000327"  [label="DDG: outbuf[p++]"];
+}

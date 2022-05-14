@@ -1,0 +1,32 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_5@pointer" {
+"1000132" [label="(Call,sk->sk_state != TCP_ESTABLISHED)"];
+"1000126" [label="(Call,sk->sk_type == SOCK_SEQPACKET && sk->sk_state != TCP_ESTABLISHED)"];
+"1000144" [label="(Identifier,skb)"];
+"1000133" [label="(Call,sk->sk_state)"];
+"1000132" [label="(Call,sk->sk_state != TCP_ESTABLISHED)"];
+"1000125" [label="(ControlStructure,if (sk->sk_type == SOCK_SEQPACKET && sk->sk_state != TCP_ESTABLISHED))"];
+"1000307" [label="(MethodReturn,static int)"];
+"1000126" [label="(Call,sk->sk_type == SOCK_SEQPACKET && sk->sk_state != TCP_ESTABLISHED)"];
+"1000139" [label="(Identifier,err)"];
+"1000127" [label="(Call,sk->sk_type == SOCK_SEQPACKET)"];
+"1000136" [label="(Identifier,TCP_ESTABLISHED)"];
+"1000132" -> "1000126"  [label="AST: "];
+"1000132" -> "1000136"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000136" -> "1000132"  [label="AST: "];
+"1000126" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000307"  [label="DDG: sk->sk_state"];
+"1000132" -> "1000307"  [label="DDG: TCP_ESTABLISHED"];
+"1000132" -> "1000126"  [label="DDG: sk->sk_state"];
+"1000132" -> "1000126"  [label="DDG: TCP_ESTABLISHED"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000139" -> "1000126"  [label="CFG: "];
+"1000144" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000307"  [label="DDG: sk->sk_type == SOCK_SEQPACKET && sk->sk_state != TCP_ESTABLISHED"];
+"1000126" -> "1000307"  [label="DDG: sk->sk_state != TCP_ESTABLISHED"];
+"1000126" -> "1000307"  [label="DDG: sk->sk_type == SOCK_SEQPACKET"];
+"1000127" -> "1000126"  [label="DDG: sk->sk_type"];
+"1000127" -> "1000126"  [label="DDG: SOCK_SEQPACKET"];
+}

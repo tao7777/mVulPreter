@@ -1,0 +1,33 @@
+digraph "0_openssl_4ad93618d26a3ea23d36ad5498ff4f59eff3a4d2_5@pointer" {
+"1000184" [label="(Call,s->s3->tmp.new_mac_secret_size = mac_secret_size)"];
+"1000114" [label="(Call,mac_secret_size = 0)"];
+"1000436" [label="(MethodReturn,int)"];
+"1000184" [label="(Call,s->s3->tmp.new_mac_secret_size = mac_secret_size)"];
+"1000114" [label="(Call,mac_secret_size = 0)"];
+"1000198" [label="(Call,mac_secret_size + EVP_CIPHER_iv_length(c))"];
+"1000185" [label="(Call,s->s3->tmp.new_mac_secret_size)"];
+"1000193" [label="(Call,num = EVP_CIPHER_key_length(c) + mac_secret_size + EVP_CIPHER_iv_length(c))"];
+"1000192" [label="(Identifier,mac_secret_size)"];
+"1000116" [label="(Literal,0)"];
+"1000119" [label="(Identifier,ret)"];
+"1000195" [label="(Call,EVP_CIPHER_key_length(c) + mac_secret_size + EVP_CIPHER_iv_length(c))"];
+"1000115" [label="(Identifier,mac_secret_size)"];
+"1000103" [label="(Block,)"];
+"1000194" [label="(Identifier,num)"];
+"1000184" -> "1000103"  [label="AST: "];
+"1000184" -> "1000192"  [label="CFG: "];
+"1000185" -> "1000184"  [label="AST: "];
+"1000192" -> "1000184"  [label="AST: "];
+"1000194" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000436"  [label="DDG: s->s3->tmp.new_mac_secret_size"];
+"1000114" -> "1000184"  [label="DDG: mac_secret_size"];
+"1000114" -> "1000103"  [label="AST: "];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000119" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000436"  [label="DDG: mac_secret_size"];
+"1000114" -> "1000193"  [label="DDG: mac_secret_size"];
+"1000114" -> "1000195"  [label="DDG: mac_secret_size"];
+"1000114" -> "1000198"  [label="DDG: mac_secret_size"];
+}

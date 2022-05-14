@@ -1,0 +1,22 @@
+digraph "0_ImageMagick_f7206618d27c2e69d977abf40e3035a33e5f6be0@pointer" {
+"1001990" [label="(Call,ReferenceBlob(image->blob))"];
+"1001986" [label="(Call,rotated_image->blob=ReferenceBlob(image->blob))"];
+"1002314" [label="(MethodReturn,static Image *)"];
+"1001991" [label="(Call,image->blob)"];
+"1001987" [label="(Call,rotated_image->blob)"];
+"1001962" [label="(Block,)"];
+"1001996" [label="(Identifier,image)"];
+"1001990" [label="(Call,ReferenceBlob(image->blob))"];
+"1001986" [label="(Call,rotated_image->blob=ReferenceBlob(image->blob))"];
+"1001990" -> "1001986"  [label="AST: "];
+"1001990" -> "1001991"  [label="CFG: "];
+"1001991" -> "1001990"  [label="AST: "];
+"1001986" -> "1001990"  [label="CFG: "];
+"1001990" -> "1002314"  [label="DDG: image->blob"];
+"1001990" -> "1001986"  [label="DDG: image->blob"];
+"1001986" -> "1001962"  [label="AST: "];
+"1001987" -> "1001986"  [label="AST: "];
+"1001996" -> "1001986"  [label="CFG: "];
+"1001986" -> "1002314"  [label="DDG: rotated_image->blob"];
+"1001986" -> "1002314"  [label="DDG: ReferenceBlob(image->blob)"];
+}

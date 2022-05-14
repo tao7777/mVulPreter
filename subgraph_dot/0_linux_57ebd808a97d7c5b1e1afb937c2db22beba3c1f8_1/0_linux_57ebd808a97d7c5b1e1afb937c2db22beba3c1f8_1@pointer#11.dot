@@ -1,0 +1,22 @@
+digraph "0_linux_57ebd808a97d7c5b1e1afb937c2db22beba3c1f8_1@pointer" {
+"1000301" [label="(Call,xt_get_this_cpu_counter(&e->counters))"];
+"1000299" [label="(Call,counter = xt_get_this_cpu_counter(&e->counters))"];
+"1000300" [label="(Identifier,counter)"];
+"1000500" [label="(MethodReturn,RET)"];
+"1000232" [label="(Block,)"];
+"1000301" [label="(Call,xt_get_this_cpu_counter(&e->counters))"];
+"1000308" [label="(Identifier,counter)"];
+"1000302" [label="(Call,&e->counters)"];
+"1000299" [label="(Call,counter = xt_get_this_cpu_counter(&e->counters))"];
+"1000301" -> "1000299"  [label="AST: "];
+"1000301" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000301"  [label="AST: "];
+"1000299" -> "1000301"  [label="CFG: "];
+"1000301" -> "1000500"  [label="DDG: &e->counters"];
+"1000301" -> "1000299"  [label="DDG: &e->counters"];
+"1000299" -> "1000232"  [label="AST: "];
+"1000300" -> "1000299"  [label="AST: "];
+"1000308" -> "1000299"  [label="CFG: "];
+"1000299" -> "1000500"  [label="DDG: xt_get_this_cpu_counter(&e->counters)"];
+"1000299" -> "1000500"  [label="DDG: counter"];
+}

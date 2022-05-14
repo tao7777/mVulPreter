@@ -1,0 +1,37 @@
+digraph "0_linux_0449641130f5652b344ef6fa39fa019d7e94660a@pointer" {
+"1002127" [label="(Call,is_vmalloc_addr(sbi->s_flex_groups))"];
+"1002131" [label="(Call,vfree(sbi->s_flex_groups))"];
+"1002136" [label="(Call,kfree(sbi->s_flex_groups))"];
+"1002227" [label="(MethodReturn,RET)"];
+"1002128" [label="(Call,sbi->s_flex_groups)"];
+"1002135" [label="(ControlStructure,else)"];
+"1002127" [label="(Call,is_vmalloc_addr(sbi->s_flex_groups))"];
+"1002136" [label="(Call,kfree(sbi->s_flex_groups))"];
+"1002126" [label="(ControlStructure,if (is_vmalloc_addr(sbi->s_flex_groups)))"];
+"1002133" [label="(Identifier,sbi)"];
+"1002132" [label="(Call,sbi->s_flex_groups)"];
+"1002143" [label="(Identifier,sbi)"];
+"1002137" [label="(Call,sbi->s_flex_groups)"];
+"1002131" [label="(Call,vfree(sbi->s_flex_groups))"];
+"1002138" [label="(Identifier,sbi)"];
+"1002127" -> "1002126"  [label="AST: "];
+"1002127" -> "1002128"  [label="CFG: "];
+"1002128" -> "1002127"  [label="AST: "];
+"1002133" -> "1002127"  [label="CFG: "];
+"1002138" -> "1002127"  [label="CFG: "];
+"1002127" -> "1002227"  [label="DDG: is_vmalloc_addr(sbi->s_flex_groups)"];
+"1002127" -> "1002131"  [label="DDG: sbi->s_flex_groups"];
+"1002127" -> "1002136"  [label="DDG: sbi->s_flex_groups"];
+"1002131" -> "1002126"  [label="AST: "];
+"1002131" -> "1002132"  [label="CFG: "];
+"1002132" -> "1002131"  [label="AST: "];
+"1002143" -> "1002131"  [label="CFG: "];
+"1002131" -> "1002227"  [label="DDG: vfree(sbi->s_flex_groups)"];
+"1002131" -> "1002227"  [label="DDG: sbi->s_flex_groups"];
+"1002136" -> "1002135"  [label="AST: "];
+"1002136" -> "1002137"  [label="CFG: "];
+"1002137" -> "1002136"  [label="AST: "];
+"1002143" -> "1002136"  [label="CFG: "];
+"1002136" -> "1002227"  [label="DDG: sbi->s_flex_groups"];
+"1002136" -> "1002227"  [label="DDG: kfree(sbi->s_flex_groups)"];
+}

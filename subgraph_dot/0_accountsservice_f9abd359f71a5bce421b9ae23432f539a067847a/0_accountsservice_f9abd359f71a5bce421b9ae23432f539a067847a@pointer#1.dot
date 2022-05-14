@@ -1,0 +1,31 @@
+digraph "0_accountsservice_f9abd359f71a5bce421b9ae23432f539a067847a@pointer" {
+"1000133" [label="(Call,*filename == '\0')"];
+"1000129" [label="(Call,filename == NULL ||\n            *filename == '\0')"];
+"1000130" [label="(Call,filename == NULL)"];
+"1000192" [label="(Identifier,file)"];
+"1000140" [label="(Identifier,dest_path)"];
+"1000204" [label="(MethodReturn,RET)"];
+"1000129" [label="(Call,filename == NULL ||\n            *filename == '\0')"];
+"1000133" [label="(Call,*filename == '\0')"];
+"1000128" [label="(ControlStructure,if (filename == NULL ||\n            *filename == '\0'))"];
+"1000136" [label="(Literal,'\0')"];
+"1000134" [label="(Call,*filename)"];
+"1000133" -> "1000129"  [label="AST: "];
+"1000133" -> "1000136"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000136" -> "1000133"  [label="AST: "];
+"1000129" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000204"  [label="DDG: *filename"];
+"1000133" -> "1000129"  [label="DDG: *filename"];
+"1000133" -> "1000129"  [label="DDG: '\0'"];
+"1000129" -> "1000128"  [label="AST: "];
+"1000129" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000129"  [label="AST: "];
+"1000140" -> "1000129"  [label="CFG: "];
+"1000192" -> "1000129"  [label="CFG: "];
+"1000129" -> "1000204"  [label="DDG: filename == NULL"];
+"1000129" -> "1000204"  [label="DDG: filename == NULL ||\n            *filename == '\0'"];
+"1000129" -> "1000204"  [label="DDG: *filename == '\0'"];
+"1000130" -> "1000129"  [label="DDG: filename"];
+"1000130" -> "1000129"  [label="DDG: NULL"];
+}

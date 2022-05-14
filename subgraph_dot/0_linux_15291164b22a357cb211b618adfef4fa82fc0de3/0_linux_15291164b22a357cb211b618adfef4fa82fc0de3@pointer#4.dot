@@ -1,0 +1,31 @@
+digraph "0_linux_15291164b22a357cb211b618adfef4fa82fc0de3@pointer" {
+"1000274" [label="(Call,spin_unlock(&journal->j_list_lock))"];
+"1000137" [label="(Call,spin_lock(&journal->j_list_lock))"];
+"1000275" [label="(Call,&journal->j_list_lock)"];
+"1000309" [label="(Call,spin_unlock(&journal->j_list_lock))"];
+"1000114" [label="(Block,)"];
+"1000226" [label="(Call,spin_unlock(&journal->j_list_lock))"];
+"1000274" [label="(Call,spin_unlock(&journal->j_list_lock))"];
+"1000138" [label="(Call,&journal->j_list_lock)"];
+"1000193" [label="(Call,spin_unlock(&journal->j_list_lock))"];
+"1000137" [label="(Call,spin_lock(&journal->j_list_lock))"];
+"1000252" [label="(Block,)"];
+"1000346" [label="(MethodReturn,static int)"];
+"1000280" [label="(Identifier,bh)"];
+"1000143" [label="(Identifier,jh)"];
+"1000274" -> "1000252"  [label="AST: "];
+"1000274" -> "1000275"  [label="CFG: "];
+"1000275" -> "1000274"  [label="AST: "];
+"1000280" -> "1000274"  [label="CFG: "];
+"1000274" -> "1000346"  [label="DDG: &journal->j_list_lock"];
+"1000274" -> "1000346"  [label="DDG: spin_unlock(&journal->j_list_lock)"];
+"1000137" -> "1000274"  [label="DDG: &journal->j_list_lock"];
+"1000137" -> "1000114"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000137"  [label="AST: "];
+"1000143" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000346"  [label="DDG: spin_lock(&journal->j_list_lock)"];
+"1000137" -> "1000193"  [label="DDG: &journal->j_list_lock"];
+"1000137" -> "1000226"  [label="DDG: &journal->j_list_lock"];
+"1000137" -> "1000309"  [label="DDG: &journal->j_list_lock"];
+}

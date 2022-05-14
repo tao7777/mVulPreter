@@ -1,0 +1,37 @@
+digraph "0_php_16023f3e3b9c06cf677c3c980e8d574e4c162827@API" {
+"1000131" [label="(Call,buffer = emalloc(buffer_length + 1))"];
+"1000133" [label="(Call,emalloc(buffer_length + 1))"];
+"1000118" [label="(Call,buffer_length <= 0)"];
+"1000131" [label="(Call,buffer = emalloc(buffer_length + 1))"];
+"1000133" [label="(Call,emalloc(buffer_length + 1))"];
+"1000119" [label="(Identifier,buffer_length)"];
+"1000137" [label="(MethodReturn,RET)"];
+"1000134" [label="(Call,buffer_length + 1)"];
+"1000122" [label="(Identifier,RETURN_FALSE)"];
+"1000132" [label="(Identifier,buffer)"];
+"1000120" [label="(Literal,0)"];
+"1000118" [label="(Call,buffer_length <= 0)"];
+"1000124" [label="(Identifier,zstrong_result_returned)"];
+"1000117" [label="(ControlStructure,if (buffer_length <= 0))"];
+"1000104" [label="(Block,)"];
+"1000131" -> "1000104"  [label="AST: "];
+"1000131" -> "1000133"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000133" -> "1000131"  [label="AST: "];
+"1000137" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000137"  [label="DDG: buffer"];
+"1000131" -> "1000137"  [label="DDG: emalloc(buffer_length + 1)"];
+"1000133" -> "1000131"  [label="DDG: buffer_length + 1"];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000133"  [label="AST: "];
+"1000133" -> "1000137"  [label="DDG: buffer_length + 1"];
+"1000118" -> "1000133"  [label="DDG: buffer_length"];
+"1000118" -> "1000117"  [label="AST: "];
+"1000118" -> "1000120"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000120" -> "1000118"  [label="AST: "];
+"1000122" -> "1000118"  [label="CFG: "];
+"1000124" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000137"  [label="DDG: buffer_length <= 0"];
+"1000118" -> "1000134"  [label="DDG: buffer_length"];
+}

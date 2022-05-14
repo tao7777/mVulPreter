@@ -1,0 +1,33 @@
+digraph "0_libssh_94f6955fbaee6fda9385a23e505497efe21f5b4f_0@API" {
+"1000271" [label="(Call,session->next_crypto->server_pubkey_type = key->type_c)"];
+"1000224" [label="(Call,ssh_match_group(session->opts.wanted_methods[SSH_HOSTKEYS],\n                            key->type_c))"];
+"1000236" [label="(Call,ssh_set_error(session,\n                          SSH_FATAL,\n                          \"Public key from server (%s) doesn't match user \"\n                          \"preference (%s)\",\n                          key->type_c,\n                          session->opts.wanted_methods[SSH_HOSTKEYS]))"];
+"1000281" [label="(Identifier,key)"];
+"1000157" [label="(Block,)"];
+"1000391" [label="(MethodReturn,RET)"];
+"1000224" [label="(Call,ssh_match_group(session->opts.wanted_methods[SSH_HOSTKEYS],\n                            key->type_c))"];
+"1000272" [label="(Call,session->next_crypto->server_pubkey_type)"];
+"1000223" [label="(Call,!ssh_match_group(session->opts.wanted_methods[SSH_HOSTKEYS],\n                            key->type_c))"];
+"1000277" [label="(Call,key->type_c)"];
+"1000271" [label="(Call,session->next_crypto->server_pubkey_type = key->type_c)"];
+"1000232" [label="(Call,key->type_c)"];
+"1000225" [label="(Call,session->opts.wanted_methods[SSH_HOSTKEYS])"];
+"1000271" -> "1000157"  [label="AST: "];
+"1000271" -> "1000277"  [label="CFG: "];
+"1000272" -> "1000271"  [label="AST: "];
+"1000277" -> "1000271"  [label="AST: "];
+"1000281" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000391"  [label="DDG: key->type_c"];
+"1000271" -> "1000391"  [label="DDG: session->next_crypto->server_pubkey_type"];
+"1000224" -> "1000271"  [label="DDG: key->type_c"];
+"1000224" -> "1000223"  [label="AST: "];
+"1000224" -> "1000232"  [label="CFG: "];
+"1000225" -> "1000224"  [label="AST: "];
+"1000232" -> "1000224"  [label="AST: "];
+"1000223" -> "1000224"  [label="CFG: "];
+"1000224" -> "1000391"  [label="DDG: session->opts.wanted_methods[SSH_HOSTKEYS]"];
+"1000224" -> "1000223"  [label="DDG: session->opts.wanted_methods[SSH_HOSTKEYS]"];
+"1000224" -> "1000223"  [label="DDG: key->type_c"];
+"1000224" -> "1000236"  [label="DDG: key->type_c"];
+"1000224" -> "1000236"  [label="DDG: session->opts.wanted_methods[SSH_HOSTKEYS]"];
+}

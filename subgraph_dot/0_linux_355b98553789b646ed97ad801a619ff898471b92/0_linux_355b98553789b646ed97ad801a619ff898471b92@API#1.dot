@@ -1,0 +1,24 @@
+digraph "0_linux_355b98553789b646ed97ad801a619ff898471b92@API" {
+"1000181" [label="(Call,up_write(&net_rwsem))"];
+"1000171" [label="(Call,down_write(&net_rwsem))"];
+"1000177" [label="(Identifier,net)"];
+"1000182" [label="(Call,&net_rwsem)"];
+"1000172" [label="(Call,&net_rwsem)"];
+"1000105" [label="(Block,)"];
+"1000181" [label="(Call,up_write(&net_rwsem))"];
+"1000211" [label="(MethodReturn,static __net_init int)"];
+"1000171" [label="(Call,down_write(&net_rwsem))"];
+"1000184" [label="(JumpTarget,out:)"];
+"1000181" -> "1000105"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000184" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000211"  [label="DDG: up_write(&net_rwsem)"];
+"1000181" -> "1000211"  [label="DDG: &net_rwsem"];
+"1000171" -> "1000181"  [label="DDG: &net_rwsem"];
+"1000171" -> "1000105"  [label="AST: "];
+"1000171" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000171"  [label="AST: "];
+"1000177" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000211"  [label="DDG: down_write(&net_rwsem)"];
+}

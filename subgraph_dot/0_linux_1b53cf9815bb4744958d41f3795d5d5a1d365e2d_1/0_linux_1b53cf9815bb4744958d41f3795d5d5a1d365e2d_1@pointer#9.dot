@@ -1,0 +1,35 @@
+digraph "0_linux_1b53cf9815bb4744958d41f3795d5d5a1d365e2d_1@pointer" {
+"1000111" [label="(Call,*raw_key = NULL)"];
+"1000415" [label="(Call,kzfree(raw_key))"];
+"1000384" [label="(Call,crypto_skcipher_setkey(ctfm, raw_key, keysize))"];
+"1000419" [label="(MethodReturn,int)"];
+"1000294" [label="(Call,!raw_key)"];
+"1000113" [label="(Identifier,NULL)"];
+"1000117" [label="(Identifier,inode)"];
+"1000104" [label="(Block,)"];
+"1000299" [label="(Call,validate_user_key(crypt_info, &ctx, raw_key, FS_KEY_DESC_PREFIX))"];
+"1000111" [label="(Call,*raw_key = NULL)"];
+"1000416" [label="(Identifier,raw_key)"];
+"1000418" [label="(Identifier,res)"];
+"1000112" [label="(Identifier,raw_key)"];
+"1000415" [label="(Call,kzfree(raw_key))"];
+"1000319" [label="(Call,validate_user_key(crypt_info, &ctx, raw_key,\n\t\t\t\t\t     inode->i_sb->s_cop->key_prefix))"];
+"1000111" -> "1000104"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000117" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000419"  [label="DDG: raw_key"];
+"1000111" -> "1000419"  [label="DDG: NULL"];
+"1000111" -> "1000415"  [label="DDG: raw_key"];
+"1000415" -> "1000104"  [label="AST: "];
+"1000415" -> "1000416"  [label="CFG: "];
+"1000416" -> "1000415"  [label="AST: "];
+"1000418" -> "1000415"  [label="CFG: "];
+"1000415" -> "1000419"  [label="DDG: raw_key"];
+"1000415" -> "1000419"  [label="DDG: kzfree(raw_key)"];
+"1000299" -> "1000415"  [label="DDG: raw_key"];
+"1000294" -> "1000415"  [label="DDG: raw_key"];
+"1000319" -> "1000415"  [label="DDG: raw_key"];
+"1000384" -> "1000415"  [label="DDG: raw_key"];
+}

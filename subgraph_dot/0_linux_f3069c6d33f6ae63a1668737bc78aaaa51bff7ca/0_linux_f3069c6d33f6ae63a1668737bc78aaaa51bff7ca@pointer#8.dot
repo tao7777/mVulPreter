@@ -1,0 +1,32 @@
+digraph "0_linux_f3069c6d33f6ae63a1668737bc78aaaa51bff7ca@pointer" {
+"1000121" [label="(Call,**pages = NULL)"];
+"1000498" [label="(Call,kfree(pages))"];
+"1000123" [label="(Identifier,NULL)"];
+"1000499" [label="(Identifier,pages)"];
+"1000498" [label="(Call,kfree(pages))"];
+"1000343" [label="(Call,sg_set_page(&sg[i], pages[i], PAGE_SIZE, 0))"];
+"1000506" [label="(MethodReturn,static int)"];
+"1000113" [label="(Block,)"];
+"1000122" [label="(Identifier,pages)"];
+"1000213" [label="(Call,!pages)"];
+"1000121" [label="(Call,**pages = NULL)"];
+"1000501" [label="(Identifier,mr)"];
+"1000294" [label="(Call,rds_pin_pages(args->vec.addr, nr_pages, pages, 1))"];
+"1000135" [label="(Identifier,rs)"];
+"1000121" -> "1000113"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000135" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000506"  [label="DDG: NULL"];
+"1000121" -> "1000498"  [label="DDG: pages"];
+"1000498" -> "1000113"  [label="AST: "];
+"1000498" -> "1000499"  [label="CFG: "];
+"1000499" -> "1000498"  [label="AST: "];
+"1000501" -> "1000498"  [label="CFG: "];
+"1000498" -> "1000506"  [label="DDG: kfree(pages)"];
+"1000498" -> "1000506"  [label="DDG: pages"];
+"1000213" -> "1000498"  [label="DDG: pages"];
+"1000343" -> "1000498"  [label="DDG: pages[i]"];
+"1000294" -> "1000498"  [label="DDG: pages"];
+}

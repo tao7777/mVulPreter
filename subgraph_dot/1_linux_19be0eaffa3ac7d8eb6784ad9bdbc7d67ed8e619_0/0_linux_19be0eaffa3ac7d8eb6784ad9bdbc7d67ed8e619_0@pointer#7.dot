@@ -1,0 +1,29 @@
+digraph "0_linux_19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619_0@pointer" {
+"1000122" [label="(Call,*pgmap = NULL)"];
+"1000319" [label="(Call,put_dev_pagemap(pgmap))"];
+"1000322" [label="(Identifier,pgmap)"];
+"1000320" [label="(Identifier,pgmap)"];
+"1000318" [label="(Block,)"];
+"1000393" [label="(MethodReturn,static struct page *)"];
+"1000122" [label="(Call,*pgmap = NULL)"];
+"1000124" [label="(Identifier,NULL)"];
+"1000224" [label="(Call,pgmap = get_dev_pagemap(pte_pfn(pte), NULL))"];
+"1000319" [label="(Call,put_dev_pagemap(pgmap))"];
+"1000123" [label="(Identifier,pgmap)"];
+"1000129" [label="(JumpTarget,retry:)"];
+"1000114" [label="(Block,)"];
+"1000122" -> "1000114"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000129" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000393"  [label="DDG: pgmap"];
+"1000122" -> "1000393"  [label="DDG: NULL"];
+"1000122" -> "1000319"  [label="DDG: pgmap"];
+"1000319" -> "1000318"  [label="AST: "];
+"1000319" -> "1000320"  [label="CFG: "];
+"1000320" -> "1000319"  [label="AST: "];
+"1000322" -> "1000319"  [label="CFG: "];
+"1000319" -> "1000393"  [label="DDG: put_dev_pagemap(pgmap)"];
+"1000224" -> "1000319"  [label="DDG: pgmap"];
+}

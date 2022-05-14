@@ -1,0 +1,34 @@
+digraph "0_FFmpeg_ed22dc22216f74c75ee7901f82649e1ff725ba50@pointer" {
+"1000186" [label="(Call,hdr->bit_rate / 1000)"];
+"1000182" [label="(Call,FFMAX(info->data_rate, hdr->bit_rate / 1000))"];
+"1000178" [label="(Call,info->data_rate = FFMAX(info->data_rate, hdr->bit_rate / 1000))"];
+"1000116" [label="(Block,)"];
+"1000182" [label="(Call,FFMAX(info->data_rate, hdr->bit_rate / 1000))"];
+"1000183" [label="(Call,info->data_rate)"];
+"1000179" [label="(Call,info->data_rate)"];
+"1000178" [label="(Call,info->data_rate = FFMAX(info->data_rate, hdr->bit_rate / 1000))"];
+"1000187" [label="(Call,hdr->bit_rate)"];
+"1000683" [label="(MethodReturn,static int)"];
+"1000192" [label="(Identifier,num_blocks)"];
+"1000190" [label="(Literal,1000)"];
+"1000186" [label="(Call,hdr->bit_rate / 1000)"];
+"1000186" -> "1000182"  [label="AST: "];
+"1000186" -> "1000190"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000190" -> "1000186"  [label="AST: "];
+"1000182" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000683"  [label="DDG: hdr->bit_rate"];
+"1000186" -> "1000182"  [label="DDG: hdr->bit_rate"];
+"1000186" -> "1000182"  [label="DDG: 1000"];
+"1000182" -> "1000178"  [label="AST: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000178" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000683"  [label="DDG: hdr->bit_rate / 1000"];
+"1000182" -> "1000178"  [label="DDG: info->data_rate"];
+"1000182" -> "1000178"  [label="DDG: hdr->bit_rate / 1000"];
+"1000178" -> "1000116"  [label="AST: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000192" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000683"  [label="DDG: FFMAX(info->data_rate, hdr->bit_rate / 1000)"];
+"1000178" -> "1000683"  [label="DDG: info->data_rate"];
+}

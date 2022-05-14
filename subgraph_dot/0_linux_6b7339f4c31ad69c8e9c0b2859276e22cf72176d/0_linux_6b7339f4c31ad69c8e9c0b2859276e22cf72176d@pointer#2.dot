@@ -1,0 +1,36 @@
+digraph "0_linux_6b7339f4c31ad69c8e9c0b2859276e22cf72176d@pointer" {
+"1000121" [label="(Call,vma->vm_flags & VM_SHARED)"];
+"1000202" [label="(Call,vma->vm_flags & VM_WRITE)"];
+"1000122" [label="(Call,vma->vm_flags)"];
+"1000213" [label="(Identifier,page_table)"];
+"1000121" [label="(Call,vma->vm_flags & VM_SHARED)"];
+"1000201" [label="(ControlStructure,if (vma->vm_flags & VM_WRITE))"];
+"1000269" [label="(MethodReturn,static int)"];
+"1000125" [label="(Identifier,VM_SHARED)"];
+"1000120" [label="(ControlStructure,if (vma->vm_flags & VM_SHARED))"];
+"1000131" [label="(Identifier,vma)"];
+"1000206" [label="(Identifier,VM_WRITE)"];
+"1000208" [label="(Identifier,entry)"];
+"1000127" [label="(Identifier,VM_FAULT_SIGBUS)"];
+"1000202" [label="(Call,vma->vm_flags & VM_WRITE)"];
+"1000203" [label="(Call,vma->vm_flags)"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000127" -> "1000121"  [label="CFG: "];
+"1000131" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000269"  [label="DDG: VM_SHARED"];
+"1000121" -> "1000269"  [label="DDG: vma->vm_flags & VM_SHARED"];
+"1000121" -> "1000269"  [label="DDG: vma->vm_flags"];
+"1000121" -> "1000202"  [label="DDG: vma->vm_flags"];
+"1000202" -> "1000201"  [label="AST: "];
+"1000202" -> "1000206"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000206" -> "1000202"  [label="AST: "];
+"1000208" -> "1000202"  [label="CFG: "];
+"1000213" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000269"  [label="DDG: VM_WRITE"];
+"1000202" -> "1000269"  [label="DDG: vma->vm_flags"];
+"1000202" -> "1000269"  [label="DDG: vma->vm_flags & VM_WRITE"];
+}

@@ -1,0 +1,23 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_26@pointer" {
+"1000203" [label="(Call,regs->regs[destreg] = (__u64) *(__u16 *) &buffer)"];
+"1000209" [label="(Call,(__u64) *(__u16 *) &buffer)"];
+"1000203" [label="(Call,regs->regs[destreg] = (__u64) *(__u16 *) &buffer)"];
+"1000211" [label="(Call,*(__u16 *) &buffer)"];
+"1000209" [label="(Call,(__u64) *(__u16 *) &buffer)"];
+"1000216" [label="(ControlStructure,break;)"];
+"1000202" [label="(Block,)"];
+"1000204" [label="(Call,regs->regs[destreg])"];
+"1000305" [label="(MethodReturn,static int)"];
+"1000203" -> "1000202"  [label="AST: "];
+"1000203" -> "1000209"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000209" -> "1000203"  [label="AST: "];
+"1000216" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000305"  [label="DDG: (__u64) *(__u16 *) &buffer"];
+"1000203" -> "1000305"  [label="DDG: regs->regs[destreg]"];
+"1000209" -> "1000203"  [label="DDG: *(__u16 *) &buffer"];
+"1000209" -> "1000211"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000211" -> "1000209"  [label="AST: "];
+"1000209" -> "1000305"  [label="DDG: *(__u16 *) &buffer"];
+}

@@ -1,0 +1,34 @@
+digraph "0_tcpdump_2d669862df7cd17f539129049f6fb70d17174125@pointer" {
+"1000181" [label="(Call,EXTRACT_16BITS(&ip6->ip6_plen))"];
+"1000180" [label="(Call,EXTRACT_16BITS(&ip6->ip6_plen) -\n\t\t\t       (long)(bp - bp2) - sizeof(struct ip6_frag))"];
+"1000177" [label="(Call,sizeof(struct ip6_hdr) + EXTRACT_16BITS(&ip6->ip6_plen) -\n\t\t\t       (long)(bp - bp2) - sizeof(struct ip6_frag))"];
+"1000224" [label="(MethodReturn,RET)"];
+"1000177" [label="(Call,sizeof(struct ip6_hdr) + EXTRACT_16BITS(&ip6->ip6_plen) -\n\t\t\t       (long)(bp - bp2) - sizeof(struct ip6_frag))"];
+"1000180" [label="(Call,EXTRACT_16BITS(&ip6->ip6_plen) -\n\t\t\t       (long)(bp - bp2) - sizeof(struct ip6_frag))"];
+"1000181" [label="(Call,EXTRACT_16BITS(&ip6->ip6_plen))"];
+"1000164" [label="(Call,ND_PRINT((ndo, \"frag (%d|%ld)\",\n\t\t       EXTRACT_16BITS(&dp->ip6f_offlg) & IP6F_OFF_MASK,\n\t\t       sizeof(struct ip6_hdr) + EXTRACT_16BITS(&ip6->ip6_plen) -\n\t\t\t       (long)(bp - bp2) - sizeof(struct ip6_frag))))"];
+"1000182" [label="(Call,&ip6->ip6_plen)"];
+"1000169" [label="(Block,)"];
+"1000178" [label="(Call,sizeof(struct ip6_hdr))"];
+"1000186" [label="(Call,(long)(bp - bp2) - sizeof(struct ip6_frag))"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000188" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000224"  [label="DDG: &ip6->ip6_plen"];
+"1000181" -> "1000180"  [label="DDG: &ip6->ip6_plen"];
+"1000180" -> "1000177"  [label="AST: "];
+"1000180" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000180"  [label="AST: "];
+"1000177" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000224"  [label="DDG: EXTRACT_16BITS(&ip6->ip6_plen)"];
+"1000180" -> "1000224"  [label="DDG: (long)(bp - bp2) - sizeof(struct ip6_frag)"];
+"1000180" -> "1000177"  [label="DDG: EXTRACT_16BITS(&ip6->ip6_plen)"];
+"1000180" -> "1000177"  [label="DDG: (long)(bp - bp2) - sizeof(struct ip6_frag)"];
+"1000186" -> "1000180"  [label="DDG: (long)(bp - bp2)"];
+"1000177" -> "1000169"  [label="AST: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000164" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000224"  [label="DDG: EXTRACT_16BITS(&ip6->ip6_plen) -\n\t\t\t       (long)(bp - bp2) - sizeof(struct ip6_frag)"];
+"1000177" -> "1000224"  [label="DDG: sizeof(struct ip6_hdr) + EXTRACT_16BITS(&ip6->ip6_plen) -\n\t\t\t       (long)(bp - bp2) - sizeof(struct ip6_frag)"];
+}

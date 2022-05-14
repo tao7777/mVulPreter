@@ -1,0 +1,30 @@
+digraph "0_linux_073931017b49d9458aa351605b43a7e34598caef@pointer" {
+"1000122" [label="(Call,v9ses->flags & V9FS_ACCESS_MASK)"];
+"1000121" [label="(Call,(v9ses->flags & V9FS_ACCESS_MASK) != V9FS_ACCESS_CLIENT)"];
+"1000122" [label="(Call,v9ses->flags & V9FS_ACCESS_MASK)"];
+"1000121" [label="(Call,(v9ses->flags & V9FS_ACCESS_MASK) != V9FS_ACCESS_CLIENT)"];
+"1000120" [label="(ControlStructure,if ((v9ses->flags & V9FS_ACCESS_MASK) != V9FS_ACCESS_CLIENT))"];
+"1000274" [label="(MethodReturn,static int)"];
+"1000123" [label="(Call,v9ses->flags)"];
+"1000130" [label="(Identifier,dentry)"];
+"1000126" [label="(Identifier,V9FS_ACCESS_MASK)"];
+"1000140" [label="(Identifier,inode)"];
+"1000127" [label="(Identifier,V9FS_ACCESS_CLIENT)"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000122" -> "1000126"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000126" -> "1000122"  [label="AST: "];
+"1000127" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000274"  [label="DDG: V9FS_ACCESS_MASK"];
+"1000122" -> "1000274"  [label="DDG: v9ses->flags"];
+"1000122" -> "1000121"  [label="DDG: v9ses->flags"];
+"1000122" -> "1000121"  [label="DDG: V9FS_ACCESS_MASK"];
+"1000121" -> "1000120"  [label="AST: "];
+"1000121" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000121"  [label="AST: "];
+"1000130" -> "1000121"  [label="CFG: "];
+"1000140" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000274"  [label="DDG: V9FS_ACCESS_CLIENT"];
+"1000121" -> "1000274"  [label="DDG: (v9ses->flags & V9FS_ACCESS_MASK) != V9FS_ACCESS_CLIENT"];
+"1000121" -> "1000274"  [label="DDG: v9ses->flags & V9FS_ACCESS_MASK"];
+}

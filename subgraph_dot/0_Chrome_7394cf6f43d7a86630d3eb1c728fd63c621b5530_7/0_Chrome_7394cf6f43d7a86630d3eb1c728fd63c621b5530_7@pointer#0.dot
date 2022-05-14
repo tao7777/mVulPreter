@@ -1,0 +1,33 @@
+digraph "0_Chrome_7394cf6f43d7a86630d3eb1c728fd63c621b5530_7@pointer" {
+"1000113" [label="(Call,CreateTwoTabs(true /* focus_tab_strip */, &first_lifecycle_unit,\n                  &second_lifecycle_unit))"];
+"1000135" [label="(Call,other_tab_strip_model.AppendWebContents(CreateTestWebContents(),\n                                             /*foreground=*/true))"];
+"1000140" [label="(Identifier,owned_contents)"];
+"1000104" [label="(Block,)"];
+"1000135" [label="(Call,other_tab_strip_model.AppendWebContents(CreateTestWebContents(),\n                                             /*foreground=*/true))"];
+"1000136" [label="(Call,CreateTestWebContents())"];
+"1000156" [label="(MethodReturn,void)"];
+"1000115" [label="(Call,&first_lifecycle_unit)"];
+"1000113" [label="(Call,CreateTwoTabs(true /* focus_tab_strip */, &first_lifecycle_unit,\n                  &second_lifecycle_unit))"];
+"1000117" [label="(Call,&second_lifecycle_unit)"];
+"1000120" [label="(Identifier,first_lifecycle_unit)"];
+"1000137" [label="(Identifier,true)"];
+"1000114" [label="(Identifier,true)"];
+"1000113" -> "1000104"  [label="AST: "];
+"1000113" -> "1000117"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000115" -> "1000113"  [label="AST: "];
+"1000117" -> "1000113"  [label="AST: "];
+"1000120" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000156"  [label="DDG: &second_lifecycle_unit"];
+"1000113" -> "1000156"  [label="DDG: &first_lifecycle_unit"];
+"1000113" -> "1000156"  [label="DDG: CreateTwoTabs(true /* focus_tab_strip */, &first_lifecycle_unit,\n                  &second_lifecycle_unit)"];
+"1000113" -> "1000135"  [label="DDG: true"];
+"1000135" -> "1000104"  [label="AST: "];
+"1000135" -> "1000137"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000137" -> "1000135"  [label="AST: "];
+"1000140" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000156"  [label="DDG: other_tab_strip_model.AppendWebContents(CreateTestWebContents(),\n                                             /*foreground=*/true)"];
+"1000135" -> "1000156"  [label="DDG: CreateTestWebContents()"];
+"1000135" -> "1000156"  [label="DDG: true"];
+}

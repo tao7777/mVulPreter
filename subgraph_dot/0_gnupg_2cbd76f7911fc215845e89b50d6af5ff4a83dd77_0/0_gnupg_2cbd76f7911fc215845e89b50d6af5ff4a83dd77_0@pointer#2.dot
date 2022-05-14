@@ -1,0 +1,33 @@
+digraph "0_gnupg_2cbd76f7911fc215845e89b50d6af5ff4a83dd77_0@pointer" {
+"1000483" [label="(Call,*dst = *src++)"];
+"1000493" [label="(Call,*dst == '\n')"];
+"1000492" [label="(ControlStructure,if (*dst == '\n'))"];
+"1000501" [label="(Identifier,uiserver)"];
+"1000496" [label="(Literal,'\n')"];
+"1000874" [label="(MethodReturn,RET)"];
+"1000491" [label="(Identifier,alinelen)"];
+"1000470" [label="(Call,*dst = _gpgme_hextobyte (src))"];
+"1000547" [label="(Identifier,dst)"];
+"1000482" [label="(Block,)"];
+"1000484" [label="(Call,*dst)"];
+"1000486" [label="(Call,*src++)"];
+"1000494" [label="(Call,*dst)"];
+"1000493" [label="(Call,*dst == '\n')"];
+"1000483" [label="(Call,*dst = *src++)"];
+"1000483" -> "1000482"  [label="AST: "];
+"1000483" -> "1000486"  [label="CFG: "];
+"1000484" -> "1000483"  [label="AST: "];
+"1000486" -> "1000483"  [label="AST: "];
+"1000491" -> "1000483"  [label="CFG: "];
+"1000483" -> "1000874"  [label="DDG: *src++"];
+"1000483" -> "1000493"  [label="DDG: *dst"];
+"1000493" -> "1000492"  [label="AST: "];
+"1000493" -> "1000496"  [label="CFG: "];
+"1000494" -> "1000493"  [label="AST: "];
+"1000496" -> "1000493"  [label="AST: "];
+"1000501" -> "1000493"  [label="CFG: "];
+"1000547" -> "1000493"  [label="CFG: "];
+"1000493" -> "1000874"  [label="DDG: *dst"];
+"1000493" -> "1000874"  [label="DDG: *dst == '\n'"];
+"1000470" -> "1000493"  [label="DDG: *dst"];
+}

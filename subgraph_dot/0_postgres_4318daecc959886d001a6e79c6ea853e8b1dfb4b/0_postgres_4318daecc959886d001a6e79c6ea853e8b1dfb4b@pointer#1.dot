@@ -1,0 +1,38 @@
+digraph "0_postgres_4318daecc959886d001a6e79c6ea853e8b1dfb4b@pointer" {
+"1000121" [label="(Call,(endptr != NULL) ? endptr : &realptr)"];
+"1000122" [label="(Call,endptr != NULL)"];
+"1000102" [label="(MethodParameterIn,char **endptr)"];
+"1000127" [label="(Identifier,realptr)"];
+"1000219" [label="(MethodReturn,RET)"];
+"1000125" [label="(Identifier,endptr)"];
+"1000123" [label="(Identifier,endptr)"];
+"1000122" [label="(Call,endptr != NULL)"];
+"1000119" [label="(Call,**ptr = (endptr != NULL) ? endptr : &realptr)"];
+"1000124" [label="(Identifier,NULL)"];
+"1000121" [label="(Call,(endptr != NULL) ? endptr : &realptr)"];
+"1000102" [label="(MethodParameterIn,char **endptr)"];
+"1000126" [label="(Call,&realptr)"];
+"1000121" -> "1000119"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000121" -> "1000126"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="AST: "];
+"1000119" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000219"  [label="DDG: &realptr"];
+"1000121" -> "1000219"  [label="DDG: endptr"];
+"1000121" -> "1000219"  [label="DDG: endptr != NULL"];
+"1000122" -> "1000121"  [label="DDG: endptr"];
+"1000102" -> "1000121"  [label="DDG: endptr"];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000125" -> "1000122"  [label="CFG: "];
+"1000127" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000219"  [label="DDG: NULL"];
+"1000122" -> "1000119"  [label="DDG: endptr"];
+"1000102" -> "1000122"  [label="DDG: endptr"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000219"  [label="DDG: endptr"];
+"1000102" -> "1000119"  [label="DDG: endptr"];
+}

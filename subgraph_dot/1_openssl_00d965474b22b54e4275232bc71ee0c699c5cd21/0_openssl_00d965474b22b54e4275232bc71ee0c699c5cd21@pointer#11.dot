@@ -1,0 +1,27 @@
+digraph "0_openssl_00d965474b22b54e4275232bc71ee0c699c5cd21@pointer" {
+"1000318" [label="(Call,!cctx->tag_set)"];
+"1000314" [label="(Call,!EVP_CIPHER_CTX_encrypting(c) || !cctx->tag_set)"];
+"1000402" [label="(MethodReturn,static int)"];
+"1000318" [label="(Call,!cctx->tag_set)"];
+"1000329" [label="(Identifier,cctx)"];
+"1000314" [label="(Call,!EVP_CIPHER_CTX_encrypting(c) || !cctx->tag_set)"];
+"1000319" [label="(Call,cctx->tag_set)"];
+"1000323" [label="(Literal,0)"];
+"1000313" [label="(ControlStructure,if (!EVP_CIPHER_CTX_encrypting(c) || !cctx->tag_set))"];
+"1000315" [label="(Call,!EVP_CIPHER_CTX_encrypting(c))"];
+"1000318" -> "1000314"  [label="AST: "];
+"1000318" -> "1000319"  [label="CFG: "];
+"1000319" -> "1000318"  [label="AST: "];
+"1000314" -> "1000318"  [label="CFG: "];
+"1000318" -> "1000402"  [label="DDG: cctx->tag_set"];
+"1000318" -> "1000314"  [label="DDG: cctx->tag_set"];
+"1000314" -> "1000313"  [label="AST: "];
+"1000314" -> "1000315"  [label="CFG: "];
+"1000315" -> "1000314"  [label="AST: "];
+"1000323" -> "1000314"  [label="CFG: "];
+"1000329" -> "1000314"  [label="CFG: "];
+"1000314" -> "1000402"  [label="DDG: !EVP_CIPHER_CTX_encrypting(c)"];
+"1000314" -> "1000402"  [label="DDG: !cctx->tag_set"];
+"1000314" -> "1000402"  [label="DDG: !EVP_CIPHER_CTX_encrypting(c) || !cctx->tag_set"];
+"1000315" -> "1000314"  [label="DDG: EVP_CIPHER_CTX_encrypting(c)"];
+}

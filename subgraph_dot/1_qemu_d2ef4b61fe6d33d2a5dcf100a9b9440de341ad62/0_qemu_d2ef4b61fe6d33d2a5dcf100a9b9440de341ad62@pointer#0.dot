@@ -1,0 +1,22 @@
+digraph "0_qemu_d2ef4b61fe6d33d2a5dcf100a9b9440de341ad62@pointer" {
+"1000101" [label="(MethodParameterIn,QEMUFile *f)"];
+"1000107" [label="(Call,qemu_get_sbe32s(f, &loaded))"];
+"1000109" [label="(Call,&loaded)"];
+"1000113" [label="(Identifier,loaded)"];
+"1000123" [label="(MethodReturn,static int)"];
+"1000108" [label="(Identifier,f)"];
+"1000104" [label="(Block,)"];
+"1000101" [label="(MethodParameterIn,QEMUFile *f)"];
+"1000107" [label="(Call,qemu_get_sbe32s(f, &loaded))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000123"  [label="DDG: f"];
+"1000101" -> "1000107"  [label="DDG: f"];
+"1000107" -> "1000104"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000113" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000123"  [label="DDG: f"];
+"1000107" -> "1000123"  [label="DDG: qemu_get_sbe32s(f, &loaded)"];
+"1000107" -> "1000123"  [label="DDG: &loaded"];
+}

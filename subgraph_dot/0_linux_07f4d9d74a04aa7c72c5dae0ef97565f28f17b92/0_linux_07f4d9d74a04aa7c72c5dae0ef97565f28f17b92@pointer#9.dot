@@ -1,0 +1,31 @@
+digraph "0_linux_07f4d9d74a04aa7c72c5dae0ef97565f28f17b92@pointer" {
+"1000346" [label="(Call,info->value.enumerated.items == 0)"];
+"1000340" [label="(Call,info->count > 128 || info->value.enumerated.items == 0)"];
+"1000357" [label="(Identifier,EINVAL)"];
+"1000546" [label="(MethodReturn,static int)"];
+"1000358" [label="(ControlStructure,break;)"];
+"1000347" [label="(Call,info->value.enumerated.items)"];
+"1000346" [label="(Call,info->value.enumerated.items == 0)"];
+"1000354" [label="(Literal,0)"];
+"1000341" [label="(Call,info->count > 128)"];
+"1000339" [label="(ControlStructure,if (info->count > 128 || info->value.enumerated.items == 0))"];
+"1000340" [label="(Call,info->count > 128 || info->value.enumerated.items == 0)"];
+"1000346" -> "1000340"  [label="AST: "];
+"1000346" -> "1000354"  [label="CFG: "];
+"1000347" -> "1000346"  [label="AST: "];
+"1000354" -> "1000346"  [label="AST: "];
+"1000340" -> "1000346"  [label="CFG: "];
+"1000346" -> "1000546"  [label="DDG: info->value.enumerated.items"];
+"1000346" -> "1000340"  [label="DDG: info->value.enumerated.items"];
+"1000346" -> "1000340"  [label="DDG: 0"];
+"1000340" -> "1000339"  [label="AST: "];
+"1000340" -> "1000341"  [label="CFG: "];
+"1000341" -> "1000340"  [label="AST: "];
+"1000357" -> "1000340"  [label="CFG: "];
+"1000358" -> "1000340"  [label="CFG: "];
+"1000340" -> "1000546"  [label="DDG: info->count > 128 || info->value.enumerated.items == 0"];
+"1000340" -> "1000546"  [label="DDG: info->value.enumerated.items == 0"];
+"1000340" -> "1000546"  [label="DDG: info->count > 128"];
+"1000341" -> "1000340"  [label="DDG: info->count"];
+"1000341" -> "1000340"  [label="DDG: 128"];
+}

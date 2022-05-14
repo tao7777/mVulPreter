@@ -1,0 +1,21 @@
+digraph "0_linux_8141c7f3e7aee618312fa1c15109e1219de784a7@API" {
+"1000323" [label="(Call,kfree(current->pi_state_cache))"];
+"1000319" [label="(Call,unlikely(current->pi_state_cache))"];
+"1000320" [label="(Call,current->pi_state_cache)"];
+"1000319" [label="(Call,unlikely(current->pi_state_cache))"];
+"1000323" [label="(Call,kfree(current->pi_state_cache))"];
+"1000318" [label="(ControlStructure,if (unlikely(current->pi_state_cache)))"];
+"1000328" [label="(Identifier,tsk)"];
+"1000324" [label="(Call,current->pi_state_cache)"];
+"1000325" [label="(Identifier,current)"];
+"1000323" -> "1000318"  [label="AST: "];
+"1000323" -> "1000324"  [label="CFG: "];
+"1000324" -> "1000323"  [label="AST: "];
+"1000328" -> "1000323"  [label="CFG: "];
+"1000319" -> "1000323"  [label="DDG: current->pi_state_cache"];
+"1000319" -> "1000318"  [label="AST: "];
+"1000319" -> "1000320"  [label="CFG: "];
+"1000320" -> "1000319"  [label="AST: "];
+"1000325" -> "1000319"  [label="CFG: "];
+"1000328" -> "1000319"  [label="CFG: "];
+}

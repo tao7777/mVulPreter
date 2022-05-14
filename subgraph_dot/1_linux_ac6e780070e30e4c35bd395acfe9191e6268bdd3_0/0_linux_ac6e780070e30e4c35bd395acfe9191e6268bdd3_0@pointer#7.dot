@@ -1,0 +1,33 @@
+digraph "0_linux_ac6e780070e30e4c35bd395acfe9191e6268bdd3_0@pointer" {
+"1000296" [label="(Call,TCP_SKB_CB(opt_skb)->end_seq == tp->rcv_nxt)"];
+"1000295" [label="(Call,TCP_SKB_CB(opt_skb)->end_seq == tp->rcv_nxt &&\n\t    !((1 << sk->sk_state) & (TCPF_CLOSE | TCPF_LISTEN)))"];
+"1000307" [label="(Literal,1)"];
+"1000295" [label="(Call,TCP_SKB_CB(opt_skb)->end_seq == tp->rcv_nxt &&\n\t    !((1 << sk->sk_state) & (TCPF_CLOSE | TCPF_LISTEN)))"];
+"1000297" [label="(Call,TCP_SKB_CB(opt_skb)->end_seq)"];
+"1000301" [label="(Call,tp->rcv_nxt)"];
+"1000320" [label="(Identifier,np)"];
+"1000296" [label="(Call,TCP_SKB_CB(opt_skb)->end_seq == tp->rcv_nxt)"];
+"1000294" [label="(ControlStructure,if (TCP_SKB_CB(opt_skb)->end_seq == tp->rcv_nxt &&\n\t    !((1 << sk->sk_state) & (TCPF_CLOSE | TCPF_LISTEN))))"];
+"1000433" [label="(Identifier,opt_skb)"];
+"1000304" [label="(Call,!((1 << sk->sk_state) & (TCPF_CLOSE | TCPF_LISTEN)))"];
+"1000436" [label="(MethodReturn,static int)"];
+"1000296" -> "1000295"  [label="AST: "];
+"1000296" -> "1000301"  [label="CFG: "];
+"1000297" -> "1000296"  [label="AST: "];
+"1000301" -> "1000296"  [label="AST: "];
+"1000307" -> "1000296"  [label="CFG: "];
+"1000295" -> "1000296"  [label="CFG: "];
+"1000296" -> "1000436"  [label="DDG: TCP_SKB_CB(opt_skb)->end_seq"];
+"1000296" -> "1000436"  [label="DDG: tp->rcv_nxt"];
+"1000296" -> "1000295"  [label="DDG: TCP_SKB_CB(opt_skb)->end_seq"];
+"1000296" -> "1000295"  [label="DDG: tp->rcv_nxt"];
+"1000295" -> "1000294"  [label="AST: "];
+"1000295" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000295"  [label="AST: "];
+"1000320" -> "1000295"  [label="CFG: "];
+"1000433" -> "1000295"  [label="CFG: "];
+"1000295" -> "1000436"  [label="DDG: !((1 << sk->sk_state) & (TCPF_CLOSE | TCPF_LISTEN))"];
+"1000295" -> "1000436"  [label="DDG: TCP_SKB_CB(opt_skb)->end_seq == tp->rcv_nxt"];
+"1000295" -> "1000436"  [label="DDG: TCP_SKB_CB(opt_skb)->end_seq == tp->rcv_nxt &&\n\t    !((1 << sk->sk_state) & (TCPF_CLOSE | TCPF_LISTEN))"];
+"1000304" -> "1000295"  [label="DDG: (1 << sk->sk_state) & (TCPF_CLOSE | TCPF_LISTEN)"];
+}

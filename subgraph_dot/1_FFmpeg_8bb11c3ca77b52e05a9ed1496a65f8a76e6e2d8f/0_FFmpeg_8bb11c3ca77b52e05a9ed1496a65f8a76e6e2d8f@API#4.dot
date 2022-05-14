@@ -1,0 +1,29 @@
+digraph "0_FFmpeg_8bb11c3ca77b52e05a9ed1496a65f8a76e6e2d8f@API" {
+"1000474" [label="(Call,INT_MAX/sizeof(*s->tile))"];
+"1000464" [label="(Call,s->numXtiles * (uint64_t)s->numYtiles > INT_MAX/sizeof(*s->tile))"];
+"1000496" [label="(Identifier,s)"];
+"1000779" [label="(MethodReturn,static int)"];
+"1000475" [label="(Identifier,INT_MAX)"];
+"1000463" [label="(ControlStructure,if (s->numXtiles * (uint64_t)s->numYtiles > INT_MAX/sizeof(*s->tile)))"];
+"1000476" [label="(Call,sizeof(*s->tile))"];
+"1000484" [label="(Identifier,s)"];
+"1000465" [label="(Call,s->numXtiles * (uint64_t)s->numYtiles)"];
+"1000474" [label="(Call,INT_MAX/sizeof(*s->tile))"];
+"1000464" [label="(Call,s->numXtiles * (uint64_t)s->numYtiles > INT_MAX/sizeof(*s->tile))"];
+"1000474" -> "1000464"  [label="AST: "];
+"1000474" -> "1000476"  [label="CFG: "];
+"1000475" -> "1000474"  [label="AST: "];
+"1000476" -> "1000474"  [label="AST: "];
+"1000464" -> "1000474"  [label="CFG: "];
+"1000474" -> "1000779"  [label="DDG: INT_MAX"];
+"1000474" -> "1000464"  [label="DDG: INT_MAX"];
+"1000464" -> "1000463"  [label="AST: "];
+"1000465" -> "1000464"  [label="AST: "];
+"1000484" -> "1000464"  [label="CFG: "];
+"1000496" -> "1000464"  [label="CFG: "];
+"1000464" -> "1000779"  [label="DDG: s->numXtiles * (uint64_t)s->numYtiles"];
+"1000464" -> "1000779"  [label="DDG: INT_MAX/sizeof(*s->tile)"];
+"1000464" -> "1000779"  [label="DDG: s->numXtiles * (uint64_t)s->numYtiles > INT_MAX/sizeof(*s->tile)"];
+"1000465" -> "1000464"  [label="DDG: s->numXtiles"];
+"1000465" -> "1000464"  [label="DDG: (uint64_t)s->numYtiles"];
+}

@@ -1,0 +1,35 @@
+digraph "0_linux_41bdc78544b8a93a9c6814b8bbbfef966272abbe_0@pointer" {
+"1000101" [label="(MethodParameterIn,struct task_struct *target)"];
+"1000174" [label="(Call,set_tls_desc(target,\n \t\t     GDT_ENTRY_TLS_MIN + (pos / sizeof(struct user_desc)),\n \t\t     info, count / sizeof(struct user_desc)))"];
+"1000176" [label="(Call,GDT_ENTRY_TLS_MIN + (pos / sizeof(struct user_desc)))"];
+"1000188" [label="(Literal,0)"];
+"1000150" [label="(Call,info = infobuf)"];
+"1000183" [label="(Call,count / sizeof(struct user_desc))"];
+"1000178" [label="(Call,pos / sizeof(struct user_desc))"];
+"1000101" [label="(MethodParameterIn,struct task_struct *target)"];
+"1000189" [label="(MethodReturn,int)"];
+"1000137" [label="(Call,info = kbuf)"];
+"1000107" [label="(Block,)"];
+"1000175" [label="(Identifier,target)"];
+"1000182" [label="(Identifier,info)"];
+"1000174" [label="(Call,set_tls_desc(target,\n \t\t     GDT_ENTRY_TLS_MIN + (pos / sizeof(struct user_desc)),\n \t\t     info, count / sizeof(struct user_desc)))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000189"  [label="DDG: target"];
+"1000101" -> "1000174"  [label="DDG: target"];
+"1000174" -> "1000107"  [label="AST: "];
+"1000174" -> "1000183"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000176" -> "1000174"  [label="AST: "];
+"1000182" -> "1000174"  [label="AST: "];
+"1000183" -> "1000174"  [label="AST: "];
+"1000188" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000189"  [label="DDG: info"];
+"1000174" -> "1000189"  [label="DDG: GDT_ENTRY_TLS_MIN + (pos / sizeof(struct user_desc))"];
+"1000174" -> "1000189"  [label="DDG: count / sizeof(struct user_desc)"];
+"1000174" -> "1000189"  [label="DDG: set_tls_desc(target,\n \t\t     GDT_ENTRY_TLS_MIN + (pos / sizeof(struct user_desc)),\n \t\t     info, count / sizeof(struct user_desc))"];
+"1000174" -> "1000189"  [label="DDG: target"];
+"1000178" -> "1000174"  [label="DDG: pos"];
+"1000150" -> "1000174"  [label="DDG: info"];
+"1000137" -> "1000174"  [label="DDG: info"];
+"1000183" -> "1000174"  [label="DDG: count"];
+}

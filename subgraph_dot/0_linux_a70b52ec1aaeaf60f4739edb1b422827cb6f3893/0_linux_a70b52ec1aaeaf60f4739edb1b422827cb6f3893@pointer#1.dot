@@ -1,0 +1,32 @@
+digraph "0_linux_a70b52ec1aaeaf60f4739edb1b422827cb6f3893@pointer" {
+"1000237" [label="(Call,file->f_mode & FMODE_READ)"];
+"1000236" [label="(Call,!(file->f_mode & FMODE_READ))"];
+"1000235" [label="(Call,unlikely(!(file->f_mode & FMODE_READ)))"];
+"1000244" [label="(Identifier,ret)"];
+"1000237" [label="(Call,file->f_mode & FMODE_READ)"];
+"1000236" [label="(Call,!(file->f_mode & FMODE_READ))"];
+"1000357" [label="(MethodReturn,static ssize_t)"];
+"1000241" [label="(Identifier,FMODE_READ)"];
+"1000235" [label="(Call,unlikely(!(file->f_mode & FMODE_READ)))"];
+"1000238" [label="(Call,file->f_mode)"];
+"1000234" [label="(ControlStructure,if (unlikely(!(file->f_mode & FMODE_READ))))"];
+"1000242" [label="(ControlStructure,break;)"];
+"1000237" -> "1000236"  [label="AST: "];
+"1000237" -> "1000241"  [label="CFG: "];
+"1000238" -> "1000237"  [label="AST: "];
+"1000241" -> "1000237"  [label="AST: "];
+"1000236" -> "1000237"  [label="CFG: "];
+"1000237" -> "1000357"  [label="DDG: file->f_mode"];
+"1000237" -> "1000357"  [label="DDG: FMODE_READ"];
+"1000237" -> "1000236"  [label="DDG: file->f_mode"];
+"1000237" -> "1000236"  [label="DDG: FMODE_READ"];
+"1000236" -> "1000235"  [label="AST: "];
+"1000235" -> "1000236"  [label="CFG: "];
+"1000236" -> "1000357"  [label="DDG: file->f_mode & FMODE_READ"];
+"1000236" -> "1000235"  [label="DDG: file->f_mode & FMODE_READ"];
+"1000235" -> "1000234"  [label="AST: "];
+"1000242" -> "1000235"  [label="CFG: "];
+"1000244" -> "1000235"  [label="CFG: "];
+"1000235" -> "1000357"  [label="DDG: !(file->f_mode & FMODE_READ)"];
+"1000235" -> "1000357"  [label="DDG: unlikely(!(file->f_mode & FMODE_READ))"];
+}

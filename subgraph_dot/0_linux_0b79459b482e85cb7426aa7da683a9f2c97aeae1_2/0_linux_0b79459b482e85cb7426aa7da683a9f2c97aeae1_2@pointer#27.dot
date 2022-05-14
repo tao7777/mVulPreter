@@ -1,0 +1,25 @@
+digraph "0_linux_0b79459b482e85cb7426aa7da683a9f2c97aeae1_2@pointer" {
+"1000215" [label="(Call,set_msr_mtrr(vcpu, msr, data))"];
+"1000214" [label="(Return,return set_msr_mtrr(vcpu, msr, data);)"];
+"1000133" [label="(Block,)"];
+"1000218" [label="(Identifier,data)"];
+"1000632" [label="(MethodReturn,int)"];
+"1000214" [label="(Return,return set_msr_mtrr(vcpu, msr, data);)"];
+"1000217" [label="(Identifier,msr)"];
+"1000216" [label="(Identifier,vcpu)"];
+"1000215" [label="(Call,set_msr_mtrr(vcpu, msr, data))"];
+"1000215" -> "1000214"  [label="AST: "];
+"1000215" -> "1000218"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000217" -> "1000215"  [label="AST: "];
+"1000218" -> "1000215"  [label="AST: "];
+"1000214" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000632"  [label="DDG: vcpu"];
+"1000215" -> "1000632"  [label="DDG: msr"];
+"1000215" -> "1000632"  [label="DDG: data"];
+"1000215" -> "1000632"  [label="DDG: set_msr_mtrr(vcpu, msr, data)"];
+"1000215" -> "1000214"  [label="DDG: set_msr_mtrr(vcpu, msr, data)"];
+"1000214" -> "1000133"  [label="AST: "];
+"1000632" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000632"  [label="DDG: <RET>"];
+}

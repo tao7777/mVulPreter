@@ -1,0 +1,24 @@
+digraph "0_linux_6094628bfd94323fc1cea05ec2c6affd98c18f7f@pointer" {
+"1000119" [label="(MethodParameterIn,struct rds_connection *conn)"];
+"1000933" [label="(Call,rds_ib_send_add_credits(conn, credit_alloc - i))"];
+"1000933" [label="(Call,rds_ib_send_add_credits(conn, credit_alloc - i))"];
+"1000925" [label="(ControlStructure,if (ic->i_flowctl && i < credit_alloc))"];
+"1000939" [label="(Identifier,nr_sig)"];
+"1000935" [label="(Call,credit_alloc - i)"];
+"1000119" [label="(MethodParameterIn,struct rds_connection *conn)"];
+"1001026" [label="(MethodReturn,int)"];
+"1000934" [label="(Identifier,conn)"];
+"1000119" -> "1000118"  [label="AST: "];
+"1000119" -> "1001026"  [label="DDG: conn"];
+"1000119" -> "1000933"  [label="DDG: conn"];
+"1000933" -> "1000925"  [label="AST: "];
+"1000933" -> "1000935"  [label="CFG: "];
+"1000934" -> "1000933"  [label="AST: "];
+"1000935" -> "1000933"  [label="AST: "];
+"1000939" -> "1000933"  [label="CFG: "];
+"1000933" -> "1001026"  [label="DDG: credit_alloc - i"];
+"1000933" -> "1001026"  [label="DDG: conn"];
+"1000933" -> "1001026"  [label="DDG: rds_ib_send_add_credits(conn, credit_alloc - i)"];
+"1000935" -> "1000933"  [label="DDG: credit_alloc"];
+"1000935" -> "1000933"  [label="DDG: i"];
+}

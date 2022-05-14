@@ -1,0 +1,24 @@
+digraph "0_linux_c131187db2d3fa2f8bf32fdf4e9a4ef805168467_0@API" {
+"1000185" [label="(Call,mutex_lock(&bpf_verifier_lock))"];
+"1000510" [label="(Call,mutex_unlock(&bpf_verifier_lock))"];
+"1000185" [label="(Call,mutex_lock(&bpf_verifier_lock))"];
+"1000510" [label="(Call,mutex_unlock(&bpf_verifier_lock))"];
+"1000515" [label="(Identifier,env)"];
+"1000112" [label="(Block,)"];
+"1000511" [label="(Call,&bpf_verifier_lock)"];
+"1000522" [label="(MethodReturn,int)"];
+"1000191" [label="(Identifier,attr)"];
+"1000186" [label="(Call,&bpf_verifier_lock)"];
+"1000185" -> "1000112"  [label="AST: "];
+"1000185" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000185"  [label="AST: "];
+"1000191" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000522"  [label="DDG: mutex_lock(&bpf_verifier_lock)"];
+"1000185" -> "1000510"  [label="DDG: &bpf_verifier_lock"];
+"1000510" -> "1000112"  [label="AST: "];
+"1000510" -> "1000511"  [label="CFG: "];
+"1000511" -> "1000510"  [label="AST: "];
+"1000515" -> "1000510"  [label="CFG: "];
+"1000510" -> "1000522"  [label="DDG: &bpf_verifier_lock"];
+"1000510" -> "1000522"  [label="DDG: mutex_unlock(&bpf_verifier_lock)"];
+}

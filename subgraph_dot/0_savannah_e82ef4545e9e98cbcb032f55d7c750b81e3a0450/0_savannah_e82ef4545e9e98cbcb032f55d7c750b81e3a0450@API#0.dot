@@ -1,0 +1,34 @@
+digraph "0_savannah_e82ef4545e9e98cbcb032f55d7c750b81e3a0450@API" {
+"1000170" [label="(Call,_gnutls_free_datum (&psession))"];
+"1000124" [label="(Call,_gnutls_session_pack (session, &psession))"];
+"1000101" [label="(MethodParameterIn,gnutls_session_t session)"];
+"1000171" [label="(Call,&psession)"];
+"1000122" [label="(Call,ret = _gnutls_session_pack (session, &psession))"];
+"1000174" [label="(Identifier,ret)"];
+"1000125" [label="(Identifier,session)"];
+"1000124" [label="(Call,_gnutls_session_pack (session, &psession))"];
+"1000175" [label="(MethodReturn,RET)"];
+"1000126" [label="(Call,&psession)"];
+"1000104" [label="(Block,)"];
+"1000170" [label="(Call,_gnutls_free_datum (&psession))"];
+"1000101" [label="(MethodParameterIn,gnutls_session_t session)"];
+"1000170" -> "1000104"  [label="AST: "];
+"1000170" -> "1000171"  [label="CFG: "];
+"1000171" -> "1000170"  [label="AST: "];
+"1000174" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000175"  [label="DDG: &psession"];
+"1000170" -> "1000175"  [label="DDG: _gnutls_free_datum (&psession)"];
+"1000124" -> "1000170"  [label="DDG: &psession"];
+"1000124" -> "1000122"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000175"  [label="DDG: session"];
+"1000124" -> "1000175"  [label="DDG: &psession"];
+"1000124" -> "1000122"  [label="DDG: session"];
+"1000124" -> "1000122"  [label="DDG: &psession"];
+"1000101" -> "1000124"  [label="DDG: session"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000175"  [label="DDG: session"];
+}

@@ -1,0 +1,1 @@
+void OffscreenCanvasSurfaceImpl::RequestSurfaceCreation(

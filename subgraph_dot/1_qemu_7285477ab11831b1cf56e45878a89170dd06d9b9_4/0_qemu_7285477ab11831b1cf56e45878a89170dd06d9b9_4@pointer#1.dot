@@ -1,0 +1,29 @@
+digraph "0_qemu_7285477ab11831b1cf56e45878a89170dd06d9b9_4@pointer" {
+"1000412" [label="(Call,r->req.cmd.xfer > 12)"];
+"1000402" [label="(Call,(long)r->req.cmd.xfer)"];
+"1000404" [label="(Call,r->req.cmd.xfer)"];
+"1000402" [label="(Call,(long)r->req.cmd.xfer)"];
+"1000420" [label="(Literal,12)"];
+"1000412" [label="(Call,r->req.cmd.xfer > 12)"];
+"1000413" [label="(Call,r->req.cmd.xfer)"];
+"1000650" [label="(MethodReturn,static int32_t)"];
+"1000423" [label="(ControlStructure,break;)"];
+"1000411" [label="(ControlStructure,if (r->req.cmd.xfer > 12))"];
+"1000422" [label="(ControlStructure,goto fail;)"];
+"1000400" [label="(Call,DPRINTF(\"Mode Select(6) (len %lu)\n\", (long)r->req.cmd.xfer))"];
+"1000412" -> "1000411"  [label="AST: "];
+"1000412" -> "1000420"  [label="CFG: "];
+"1000413" -> "1000412"  [label="AST: "];
+"1000420" -> "1000412"  [label="AST: "];
+"1000422" -> "1000412"  [label="CFG: "];
+"1000423" -> "1000412"  [label="CFG: "];
+"1000412" -> "1000650"  [label="DDG: r->req.cmd.xfer > 12"];
+"1000412" -> "1000650"  [label="DDG: r->req.cmd.xfer"];
+"1000402" -> "1000412"  [label="DDG: r->req.cmd.xfer"];
+"1000402" -> "1000400"  [label="AST: "];
+"1000402" -> "1000404"  [label="CFG: "];
+"1000403" -> "1000402"  [label="AST: "];
+"1000404" -> "1000402"  [label="AST: "];
+"1000400" -> "1000402"  [label="CFG: "];
+"1000402" -> "1000400"  [label="DDG: r->req.cmd.xfer"];
+}

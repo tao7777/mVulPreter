@@ -1,0 +1,35 @@
+digraph "0_tcpdump_5dc1860d8267b1e0cb78c9ffa2a40bea2fdb3ddc_4@pointer" {
+"1001322" [label="(Call,EXTRACT_32BITS(&bp[0]))"];
+"1001321" [label="(Call,EXTRACT_32BITS(&bp[0]) & 0x7fffffff)"];
+"1001333" [label="(Call,EXTRACT_32BITS(&bp[4]))"];
+"1001322" [label="(Call,EXTRACT_32BITS(&bp[0]))"];
+"1001334" [label="(Call,&bp[4])"];
+"1001331" [label="(Block,)"];
+"1001323" [label="(Call,&bp[0])"];
+"1001575" [label="(MethodReturn,RET)"];
+"1001316" [label="(Call,ND_PRINT((ndo, \" pref=%u\", EXTRACT_32BITS(&bp[0]) & 0x7fffffff)))"];
+"1001333" [label="(Call,EXTRACT_32BITS(&bp[4]))"];
+"1001328" [label="(Call,ND_PRINT((ndo, \" metric=%u\", EXTRACT_32BITS(&bp[4]))))"];
+"1001319" [label="(Block,)"];
+"1001327" [label="(Literal,0x7fffffff)"];
+"1001321" [label="(Call,EXTRACT_32BITS(&bp[0]) & 0x7fffffff)"];
+"1001322" -> "1001321"  [label="AST: "];
+"1001322" -> "1001323"  [label="CFG: "];
+"1001323" -> "1001322"  [label="AST: "];
+"1001327" -> "1001322"  [label="CFG: "];
+"1001322" -> "1001575"  [label="DDG: &bp[0]"];
+"1001322" -> "1001321"  [label="DDG: &bp[0]"];
+"1001322" -> "1001333"  [label="DDG: &bp[0]"];
+"1001321" -> "1001319"  [label="AST: "];
+"1001321" -> "1001327"  [label="CFG: "];
+"1001327" -> "1001321"  [label="AST: "];
+"1001316" -> "1001321"  [label="CFG: "];
+"1001321" -> "1001575"  [label="DDG: EXTRACT_32BITS(&bp[0]) & 0x7fffffff"];
+"1001321" -> "1001575"  [label="DDG: EXTRACT_32BITS(&bp[0])"];
+"1001333" -> "1001331"  [label="AST: "];
+"1001333" -> "1001334"  [label="CFG: "];
+"1001334" -> "1001333"  [label="AST: "];
+"1001328" -> "1001333"  [label="CFG: "];
+"1001333" -> "1001575"  [label="DDG: EXTRACT_32BITS(&bp[4])"];
+"1001333" -> "1001575"  [label="DDG: &bp[4]"];
+}

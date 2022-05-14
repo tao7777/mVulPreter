@@ -1,0 +1,29 @@
+digraph "0_mujs_da632ca08f240590d2dec786722ed08486ce1be6@array" {
+"1000292" [label="(Call,buf[ndigits++] = digits[u % radix])"];
+"1000163" [label="(Call,digits[] = \"0123456789abcdefghijklmnopqrstuvwxyz\")"];
+"1000165" [label="(Literal,\"0123456789abcdefghijklmnopqrstuvwxyz\")"];
+"1000164" [label="(Identifier,digits)"];
+"1000163" [label="(Call,digits[] = \"0123456789abcdefghijklmnopqrstuvwxyz\")"];
+"1000168" [label="(Identifier,number)"];
+"1000161" [label="(Block,)"];
+"1000292" [label="(Call,buf[ndigits++] = digits[u % radix])"];
+"1000293" [label="(Call,buf[ndigits++])"];
+"1000291" [label="(Block,)"];
+"1000297" [label="(Call,digits[u % radix])"];
+"1000303" [label="(Identifier,u)"];
+"1000417" [label="(MethodReturn,static void)"];
+"1000292" -> "1000291"  [label="AST: "];
+"1000292" -> "1000297"  [label="CFG: "];
+"1000293" -> "1000292"  [label="AST: "];
+"1000297" -> "1000292"  [label="AST: "];
+"1000303" -> "1000292"  [label="CFG: "];
+"1000292" -> "1000417"  [label="DDG: buf[ndigits++]"];
+"1000292" -> "1000417"  [label="DDG: digits[u % radix]"];
+"1000163" -> "1000292"  [label="DDG: digits"];
+"1000163" -> "1000161"  [label="AST: "];
+"1000163" -> "1000165"  [label="CFG: "];
+"1000164" -> "1000163"  [label="AST: "];
+"1000165" -> "1000163"  [label="AST: "];
+"1000168" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000417"  [label="DDG: digits"];
+}

@@ -1,0 +1,32 @@
+digraph "0_linux_58bdd544e2933a21a51eecf17c3f5f94038261b5@pointer" {
+"1000154" [label="(Call,sock->rw > LLCP_MAX_RW ? local->rw : sock->rw)"];
+"1000155" [label="(Call,sock->rw > LLCP_MAX_RW)"];
+"1000164" [label="(Identifier,sock)"];
+"1000163" [label="(Call,sock->rw)"];
+"1000161" [label="(Identifier,local)"];
+"1000255" [label="(MethodReturn,int)"];
+"1000160" [label="(Call,local->rw)"];
+"1000156" [label="(Call,sock->rw)"];
+"1000152" [label="(Call,rw = sock->rw > LLCP_MAX_RW ? local->rw : sock->rw)"];
+"1000155" [label="(Call,sock->rw > LLCP_MAX_RW)"];
+"1000159" [label="(Identifier,LLCP_MAX_RW)"];
+"1000154" [label="(Call,sock->rw > LLCP_MAX_RW ? local->rw : sock->rw)"];
+"1000154" -> "1000152"  [label="AST: "];
+"1000154" -> "1000160"  [label="CFG: "];
+"1000154" -> "1000163"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000160" -> "1000154"  [label="AST: "];
+"1000163" -> "1000154"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000255"  [label="DDG: local->rw"];
+"1000154" -> "1000255"  [label="DDG: sock->rw > LLCP_MAX_RW"];
+"1000154" -> "1000255"  [label="DDG: sock->rw"];
+"1000155" -> "1000154"  [label="DDG: sock->rw"];
+"1000155" -> "1000159"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000159" -> "1000155"  [label="AST: "];
+"1000161" -> "1000155"  [label="CFG: "];
+"1000164" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000255"  [label="DDG: LLCP_MAX_RW"];
+"1000155" -> "1000152"  [label="DDG: sock->rw"];
+}

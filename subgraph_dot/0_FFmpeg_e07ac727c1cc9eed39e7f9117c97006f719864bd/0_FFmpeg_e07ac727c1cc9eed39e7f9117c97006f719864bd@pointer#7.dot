@@ -1,0 +1,26 @@
+digraph "0_FFmpeg_e07ac727c1cc9eed39e7f9117c97006f719864bd@pointer" {
+"1000146" [label="(Call,av_free(c->framebuf))"];
+"1000106" [label="(Call,!c->framebuf)"];
+"1000125" [label="(Block,)"];
+"1000146" [label="(Call,av_free(c->framebuf))"];
+"1000298" [label="(MethodReturn,static int)"];
+"1000152" [label="(Identifier,c)"];
+"1000113" [label="(Identifier,c)"];
+"1000147" [label="(Call,c->framebuf)"];
+"1000105" [label="(Call,!c->framebuf || c->old_width < c->width || c->old_height < c->height)"];
+"1000106" [label="(Call,!c->framebuf)"];
+"1000107" [label="(Call,c->framebuf)"];
+"1000146" -> "1000125"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000152" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000298"  [label="DDG: av_free(c->framebuf)"];
+"1000106" -> "1000146"  [label="DDG: c->framebuf"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000113" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000298"  [label="DDG: c->framebuf"];
+"1000106" -> "1000105"  [label="DDG: c->framebuf"];
+}

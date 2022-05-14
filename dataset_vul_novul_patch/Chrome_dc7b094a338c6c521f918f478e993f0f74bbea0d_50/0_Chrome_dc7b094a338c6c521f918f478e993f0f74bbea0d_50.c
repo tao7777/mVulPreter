@@ -1,0 +1,1 @@
+bool ChromeOSSetImeConfig(InputMethodStatusConnection* connection,

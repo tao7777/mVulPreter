@@ -1,0 +1,32 @@
+digraph "1_Chrome_98095c718d7580b5d6715e5bfd8698234ecb4470_9@pointer" {
+"1000101" [label="(MethodParameterIn,WebGLShader* shader)"];
+"1000105" [label="(Call,!shader)"];
+"1000104" [label="(Call,!shader || isContextLost())"];
+"1000104" [label="(Call,!shader || isContextLost())"];
+"1000101" [label="(MethodParameterIn,WebGLShader* shader)"];
+"1000105" [label="(Call,!shader)"];
+"1000103" [label="(ControlStructure,if (!shader || isContextLost()))"];
+"1000109" [label="(Literal,0)"];
+"1000107" [label="(Call,isContextLost())"];
+"1000106" [label="(Identifier,shader)"];
+"1000113" [label="(MethodReturn,GLboolean)"];
+"1000112" [label="(Call,shader->Object())"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000113"  [label="DDG: shader"];
+"1000101" -> "1000105"  [label="DDG: shader"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="CFG: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000113"  [label="DDG: shader"];
+"1000105" -> "1000104"  [label="DDG: shader"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000104" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000112" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000113"  [label="DDG: isContextLost()"];
+"1000104" -> "1000113"  [label="DDG: !shader || isContextLost()"];
+"1000104" -> "1000113"  [label="DDG: !shader"];
+}

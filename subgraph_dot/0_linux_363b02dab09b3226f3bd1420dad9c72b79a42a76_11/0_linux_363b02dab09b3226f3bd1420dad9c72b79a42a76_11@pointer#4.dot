@@ -1,0 +1,29 @@
+digraph "0_linux_363b02dab09b3226f3bd1420dad9c72b79a42a76_11@pointer" {
+"1000189" [label="(Call,ctx->now.tv_sec >= key->expiry)"];
+"1000185" [label="(Call,key->expiry && ctx->now.tv_sec >= key->expiry)"];
+"1000185" [label="(Call,key->expiry && ctx->now.tv_sec >= key->expiry)"];
+"1000203" [label="(Identifier,ctx)"];
+"1000186" [label="(Call,key->expiry)"];
+"1000190" [label="(Call,ctx->now.tv_sec)"];
+"1000195" [label="(Call,key->expiry)"];
+"1000184" [label="(ControlStructure,if (key->expiry && ctx->now.tv_sec >= key->expiry))"];
+"1000189" [label="(Call,ctx->now.tv_sec >= key->expiry)"];
+"1000308" [label="(MethodReturn,static int)"];
+"1000222" [label="(Identifier,key)"];
+"1000189" -> "1000185"  [label="AST: "];
+"1000189" -> "1000195"  [label="CFG: "];
+"1000190" -> "1000189"  [label="AST: "];
+"1000195" -> "1000189"  [label="AST: "];
+"1000185" -> "1000189"  [label="CFG: "];
+"1000189" -> "1000308"  [label="DDG: ctx->now.tv_sec"];
+"1000189" -> "1000185"  [label="DDG: key->expiry"];
+"1000189" -> "1000185"  [label="DDG: ctx->now.tv_sec"];
+"1000185" -> "1000184"  [label="AST: "];
+"1000185" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000185"  [label="AST: "];
+"1000203" -> "1000185"  [label="CFG: "];
+"1000222" -> "1000185"  [label="CFG: "];
+"1000185" -> "1000308"  [label="DDG: key->expiry && ctx->now.tv_sec >= key->expiry"];
+"1000185" -> "1000308"  [label="DDG: key->expiry"];
+"1000185" -> "1000308"  [label="DDG: ctx->now.tv_sec >= key->expiry"];
+}

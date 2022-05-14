@@ -1,0 +1,30 @@
+digraph "0_Chrome_cc0bbcbe7c986094da8e58c37a21fdd179b686b0_2@API" {
+"1000247" [label="(Call,!result.matching_top_domain.domain.empty())"];
+"1000245" [label="(Call,enable_spoof_checks && !result.matching_top_domain.domain.empty())"];
+"1000260" [label="(MethodReturn,IDNConversionResult)"];
+"1000244" [label="(ControlStructure,if (enable_spoof_checks && !result.matching_top_domain.domain.empty()))"];
+"1000104" [label="(MethodParameterIn,bool enable_spoof_checks)"];
+"1000248" [label="(Call,result.matching_top_domain.domain.empty())"];
+"1000247" [label="(Call,!result.matching_top_domain.domain.empty())"];
+"1000190" [label="(Call,IDNToUnicodeOneComponent(\n          input16.data() + component_start, component_length, is_tld_ascii,\n           enable_spoof_checks, &out16, &has_idn_component))"];
+"1000259" [label="(Identifier,result)"];
+"1000246" [label="(Identifier,enable_spoof_checks)"];
+"1000251" [label="(Identifier,adjustments)"];
+"1000245" [label="(Call,enable_spoof_checks && !result.matching_top_domain.domain.empty())"];
+"1000247" -> "1000245"  [label="AST: "];
+"1000247" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000245" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000260"  [label="DDG: result.matching_top_domain.domain.empty()"];
+"1000247" -> "1000245"  [label="DDG: result.matching_top_domain.domain.empty()"];
+"1000245" -> "1000244"  [label="AST: "];
+"1000245" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000245"  [label="AST: "];
+"1000251" -> "1000245"  [label="CFG: "];
+"1000259" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000260"  [label="DDG: enable_spoof_checks && !result.matching_top_domain.domain.empty()"];
+"1000245" -> "1000260"  [label="DDG: enable_spoof_checks"];
+"1000245" -> "1000260"  [label="DDG: !result.matching_top_domain.domain.empty()"];
+"1000190" -> "1000245"  [label="DDG: enable_spoof_checks"];
+"1000104" -> "1000245"  [label="DDG: enable_spoof_checks"];
+}

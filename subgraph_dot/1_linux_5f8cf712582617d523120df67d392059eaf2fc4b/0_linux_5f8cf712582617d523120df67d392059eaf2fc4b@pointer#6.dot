@@ -1,0 +1,28 @@
+digraph "0_linux_5f8cf712582617d523120df67d392059eaf2fc4b@pointer" {
+"1000500" [label="(Call,atomic_dec(&chip->active))"];
+"1000255" [label="(Call,atomic_inc(&chip->active))"];
+"1000255" [label="(Call,atomic_inc(&chip->active))"];
+"1000229" [label="(Block,)"];
+"1000256" [label="(Call,&chip->active)"];
+"1000260" [label="(ControlStructure,break;)"];
+"1000500" [label="(Call,atomic_dec(&chip->active))"];
+"1000490" [label="(Block,)"];
+"1000501" [label="(Call,&chip->active)"];
+"1000477" [label="(Call,atomic_dec(&chip->active))"];
+"1000510" [label="(MethodReturn,static int)"];
+"1000507" [label="(Identifier,register_mutex)"];
+"1000500" -> "1000490"  [label="AST: "];
+"1000500" -> "1000501"  [label="CFG: "];
+"1000501" -> "1000500"  [label="AST: "];
+"1000507" -> "1000500"  [label="CFG: "];
+"1000500" -> "1000510"  [label="DDG: atomic_dec(&chip->active)"];
+"1000500" -> "1000510"  [label="DDG: &chip->active"];
+"1000255" -> "1000500"  [label="DDG: &chip->active"];
+"1000255" -> "1000229"  [label="AST: "];
+"1000255" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000255"  [label="AST: "];
+"1000260" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000510"  [label="DDG: atomic_inc(&chip->active)"];
+"1000255" -> "1000510"  [label="DDG: &chip->active"];
+"1000255" -> "1000477"  [label="DDG: &chip->active"];
+}

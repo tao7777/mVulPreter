@@ -1,0 +1,35 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_1@pointer" {
+"1000128" [label="(Call,*es = sbi->s_es)"];
+"1000151" [label="(Call,ext2_sync_super(sb, es, 1))"];
+"1000130" [label="(Call,sbi->s_es)"];
+"1000151" [label="(Call,ext2_sync_super(sb, es, 1))"];
+"1000153" [label="(Identifier,es)"];
+"1000126" [label="(Block,)"];
+"1000219" [label="(MethodReturn,static void)"];
+"1000101" [label="(MethodParameterIn,struct super_block * sb)"];
+"1000129" [label="(Identifier,es)"];
+"1000136" [label="(Identifier,sbi)"];
+"1000128" [label="(Call,*es = sbi->s_es)"];
+"1000152" [label="(Identifier,sb)"];
+"1000156" [label="(Identifier,db_count)"];
+"1000154" [label="(Literal,1)"];
+"1000117" [label="(Call,ext2_xattr_put_super(sb))"];
+"1000128" -> "1000126"  [label="AST: "];
+"1000128" -> "1000130"  [label="CFG: "];
+"1000129" -> "1000128"  [label="AST: "];
+"1000130" -> "1000128"  [label="AST: "];
+"1000136" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000219"  [label="DDG: sbi->s_es"];
+"1000128" -> "1000151"  [label="DDG: es"];
+"1000151" -> "1000126"  [label="AST: "];
+"1000151" -> "1000154"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000153" -> "1000151"  [label="AST: "];
+"1000154" -> "1000151"  [label="AST: "];
+"1000156" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000219"  [label="DDG: ext2_sync_super(sb, es, 1)"];
+"1000151" -> "1000219"  [label="DDG: es"];
+"1000151" -> "1000219"  [label="DDG: sb"];
+"1000117" -> "1000151"  [label="DDG: sb"];
+"1000101" -> "1000151"  [label="DDG: sb"];
+}

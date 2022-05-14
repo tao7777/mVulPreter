@@ -1,0 +1,26 @@
+digraph "0_linux_ae7b4e1f213aa659aedf9c6ecad0bf5f0476e1e2@pointer" {
+"1000303" [label="(Call,rt->rt6i_flags & RTF_CACHE)"];
+"1000302" [label="(Call,!(rt->rt6i_flags & RTF_CACHE))"];
+"1000426" [label="(MethodReturn,int)"];
+"1000302" [label="(Call,!(rt->rt6i_flags & RTF_CACHE))"];
+"1000310" [label="(Identifier,info)"];
+"1000303" [label="(Call,rt->rt6i_flags & RTF_CACHE)"];
+"1000304" [label="(Call,rt->rt6i_flags)"];
+"1000301" [label="(ControlStructure,if (!(rt->rt6i_flags & RTF_CACHE)))"];
+"1000307" [label="(Identifier,RTF_CACHE)"];
+"1000314" [label="(JumpTarget,out:)"];
+"1000303" -> "1000302"  [label="AST: "];
+"1000303" -> "1000307"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000307" -> "1000303"  [label="AST: "];
+"1000302" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000426"  [label="DDG: rt->rt6i_flags"];
+"1000303" -> "1000426"  [label="DDG: RTF_CACHE"];
+"1000303" -> "1000302"  [label="DDG: rt->rt6i_flags"];
+"1000303" -> "1000302"  [label="DDG: RTF_CACHE"];
+"1000302" -> "1000301"  [label="AST: "];
+"1000310" -> "1000302"  [label="CFG: "];
+"1000314" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000426"  [label="DDG: rt->rt6i_flags & RTF_CACHE"];
+"1000302" -> "1000426"  [label="DDG: !(rt->rt6i_flags & RTF_CACHE)"];
+}

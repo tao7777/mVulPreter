@@ -1,0 +1,22 @@
+digraph "0_php_b1bd4119bcafab6f9a8f84d92cd65eec3afeface@API" {
+"1000456" [label="(Call,strlen(ent1->varname)+1)"];
+"1000457" [label="(Call,strlen(ent1->varname))"];
+"1000464" [label="(Identifier,ent1)"];
+"1000528" [label="(MethodReturn,static void)"];
+"1000451" [label="(Call,zend_symtable_update(target_hash, ent1->varname, strlen(ent1->varname)+1, &ent1->data, sizeof(zval *), NULL))"];
+"1000457" [label="(Call,strlen(ent1->varname))"];
+"1000461" [label="(Literal,1)"];
+"1000456" [label="(Call,strlen(ent1->varname)+1)"];
+"1000458" [label="(Call,ent1->varname)"];
+"1000456" -> "1000451"  [label="AST: "];
+"1000456" -> "1000461"  [label="CFG: "];
+"1000457" -> "1000456"  [label="AST: "];
+"1000461" -> "1000456"  [label="AST: "];
+"1000464" -> "1000456"  [label="CFG: "];
+"1000456" -> "1000528"  [label="DDG: strlen(ent1->varname)"];
+"1000457" -> "1000456"  [label="DDG: ent1->varname"];
+"1000457" -> "1000458"  [label="CFG: "];
+"1000458" -> "1000457"  [label="AST: "];
+"1000461" -> "1000457"  [label="CFG: "];
+"1000457" -> "1000451"  [label="DDG: ent1->varname"];
+}

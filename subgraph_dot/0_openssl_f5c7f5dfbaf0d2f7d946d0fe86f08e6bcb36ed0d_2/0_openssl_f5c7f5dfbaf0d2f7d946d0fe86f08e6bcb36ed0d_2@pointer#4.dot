@@ -1,0 +1,29 @@
+digraph "0_openssl_f5c7f5dfbaf0d2f7d946d0fe86f08e6bcb36ed0d_2@pointer" {
+"1000156" [label="(Call,!s->server)"];
+"1000155" [label="(Call,!s->server || s->renegotiate == 2)"];
+"1000289" [label="(MethodReturn,WORK_STATE)"];
+"1000156" [label="(Call,!s->server)"];
+"1000154" [label="(ControlStructure,if (!s->server || s->renegotiate == 2))"];
+"1000162" [label="(Identifier,s)"];
+"1000157" [label="(Call,s->server)"];
+"1000168" [label="(Identifier,s)"];
+"1000160" [label="(Call,s->renegotiate == 2)"];
+"1000155" [label="(Call,!s->server || s->renegotiate == 2)"];
+"1000156" -> "1000155"  [label="AST: "];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000162" -> "1000156"  [label="CFG: "];
+"1000155" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000289"  [label="DDG: s->server"];
+"1000156" -> "1000155"  [label="DDG: s->server"];
+"1000155" -> "1000154"  [label="AST: "];
+"1000155" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000155"  [label="AST: "];
+"1000168" -> "1000155"  [label="CFG: "];
+"1000289" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000289"  [label="DDG: s->renegotiate == 2"];
+"1000155" -> "1000289"  [label="DDG: !s->server || s->renegotiate == 2"];
+"1000155" -> "1000289"  [label="DDG: !s->server"];
+"1000160" -> "1000155"  [label="DDG: s->renegotiate"];
+"1000160" -> "1000155"  [label="DDG: 2"];
+}

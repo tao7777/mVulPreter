@@ -1,0 +1,30 @@
+digraph "0_collectd_b589096f907052b3a4da2b9ccc9b0e2e888dfc18@API" {
+"1000140" [label="(Call,memset (&n, '\0', sizeof (n)))"];
+"1000755" [label="(Call,network_dispatch_notification (&n))"];
+"1000152" [label="(Identifier,status)"];
+"1000817" [label="(MethodReturn,static int)"];
+"1000755" [label="(Call,network_dispatch_notification (&n))"];
+"1000754" [label="(Block,)"];
+"1000111" [label="(Block,)"];
+"1000143" [label="(Literal,'\0')"];
+"1000144" [label="(Call,sizeof (n))"];
+"1000756" [label="(Call,&n)"];
+"1000147" [label="(Identifier,status)"];
+"1000141" [label="(Call,&n)"];
+"1000140" [label="(Call,memset (&n, '\0', sizeof (n)))"];
+"1000140" -> "1000111"  [label="AST: "];
+"1000140" -> "1000144"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000143" -> "1000140"  [label="AST: "];
+"1000144" -> "1000140"  [label="AST: "];
+"1000147" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000817"  [label="DDG: &n"];
+"1000140" -> "1000817"  [label="DDG: memset (&n, '\0', sizeof (n))"];
+"1000140" -> "1000755"  [label="DDG: &n"];
+"1000755" -> "1000754"  [label="AST: "];
+"1000755" -> "1000756"  [label="CFG: "];
+"1000756" -> "1000755"  [label="AST: "];
+"1000152" -> "1000755"  [label="CFG: "];
+"1000755" -> "1000817"  [label="DDG: network_dispatch_notification (&n)"];
+"1000755" -> "1000817"  [label="DDG: &n"];
+}

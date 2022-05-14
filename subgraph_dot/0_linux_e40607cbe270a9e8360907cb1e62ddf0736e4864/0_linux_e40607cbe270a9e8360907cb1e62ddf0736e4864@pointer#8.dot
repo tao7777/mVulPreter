@@ -1,0 +1,28 @@
+digraph "0_linux_e40607cbe270a9e8360907cb1e62ddf0736e4864@pointer" {
+"1000178" [label="(Call,af = sctp_get_af_specific(param_type2af(param.p->type)))"];
+"1000180" [label="(Call,sctp_get_af_specific(param_type2af(param.p->type)))"];
+"1000181" [label="(Call,param_type2af(param.p->type))"];
+"1000154" [label="(Block,)"];
+"1000189" [label="(Identifier,addr)"];
+"1000182" [label="(Call,param.p->type)"];
+"1000179" [label="(Identifier,af)"];
+"1000181" [label="(Call,param_type2af(param.p->type))"];
+"1000645" [label="(MethodReturn,static int)"];
+"1000178" [label="(Call,af = sctp_get_af_specific(param_type2af(param.p->type)))"];
+"1000180" [label="(Call,sctp_get_af_specific(param_type2af(param.p->type)))"];
+"1000178" -> "1000154"  [label="AST: "];
+"1000178" -> "1000180"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000180" -> "1000178"  [label="AST: "];
+"1000189" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000645"  [label="DDG: af"];
+"1000178" -> "1000645"  [label="DDG: sctp_get_af_specific(param_type2af(param.p->type))"];
+"1000180" -> "1000178"  [label="DDG: param_type2af(param.p->type)"];
+"1000180" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000180" -> "1000645"  [label="DDG: param_type2af(param.p->type)"];
+"1000181" -> "1000180"  [label="DDG: param.p->type"];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000181" -> "1000645"  [label="DDG: param.p->type"];
+}

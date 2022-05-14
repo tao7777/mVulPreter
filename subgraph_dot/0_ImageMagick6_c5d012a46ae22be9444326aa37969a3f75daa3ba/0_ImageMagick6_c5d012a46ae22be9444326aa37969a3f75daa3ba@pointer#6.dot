@@ -1,0 +1,30 @@
+digraph "0_ImageMagick6_c5d012a46ae22be9444326aa37969a3f75daa3ba@pointer" {
+"1000101" [label="(MethodParameterIn,BlobInfo *blob_info)"];
+"1000105" [label="(Call,blob_info != (BlobInfo *) NULL)"];
+"1000104" [label="(Call,assert(blob_info != (BlobInfo *) NULL))"];
+"1000102" [label="(Block,)"];
+"1000113" [label="(Identifier,blob_info)"];
+"1000107" [label="(Call,(BlobInfo *) NULL)"];
+"1000106" [label="(Identifier,blob_info)"];
+"1000105" [label="(Call,blob_info != (BlobInfo *) NULL)"];
+"1000101" [label="(MethodParameterIn,BlobInfo *blob_info)"];
+"1000220" [label="(MethodReturn,MagickExport void *)"];
+"1000104" [label="(Call,assert(blob_info != (BlobInfo *) NULL))"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000220"  [label="DDG: blob_info"];
+"1000101" -> "1000105"  [label="DDG: blob_info"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000220"  [label="DDG: (BlobInfo *) NULL"];
+"1000105" -> "1000220"  [label="DDG: blob_info"];
+"1000105" -> "1000104"  [label="DDG: blob_info"];
+"1000105" -> "1000104"  [label="DDG: (BlobInfo *) NULL"];
+"1000107" -> "1000105"  [label="DDG: NULL"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000113" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000220"  [label="DDG: blob_info != (BlobInfo *) NULL"];
+"1000104" -> "1000220"  [label="DDG: assert(blob_info != (BlobInfo *) NULL)"];
+}

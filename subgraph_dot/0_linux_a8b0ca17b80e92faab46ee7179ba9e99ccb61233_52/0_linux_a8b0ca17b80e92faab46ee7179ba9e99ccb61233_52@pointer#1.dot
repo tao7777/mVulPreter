@@ -1,0 +1,32 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_52@pointer" {
+"1000320" [label="(Call,vma->vm_flags & VM_GROWSDOWN)"];
+"1000319" [label="(Call,!(vma->vm_flags & VM_GROWSDOWN))"];
+"1000318" [label="(Call,unlikely(!(vma->vm_flags & VM_GROWSDOWN)))"];
+"1000324" [label="(Identifier,VM_GROWSDOWN)"];
+"1000327" [label="(Identifier,regs)"];
+"1000321" [label="(Call,vma->vm_flags)"];
+"1000317" [label="(ControlStructure,if (unlikely(!(vma->vm_flags & VM_GROWSDOWN))))"];
+"1000320" [label="(Call,vma->vm_flags & VM_GROWSDOWN)"];
+"1000333" [label="(Identifier,error_code)"];
+"1000319" [label="(Call,!(vma->vm_flags & VM_GROWSDOWN))"];
+"1000449" [label="(MethodReturn,RET)"];
+"1000318" [label="(Call,unlikely(!(vma->vm_flags & VM_GROWSDOWN)))"];
+"1000320" -> "1000319"  [label="AST: "];
+"1000320" -> "1000324"  [label="CFG: "];
+"1000321" -> "1000320"  [label="AST: "];
+"1000324" -> "1000320"  [label="AST: "];
+"1000319" -> "1000320"  [label="CFG: "];
+"1000320" -> "1000449"  [label="DDG: VM_GROWSDOWN"];
+"1000320" -> "1000449"  [label="DDG: vma->vm_flags"];
+"1000320" -> "1000319"  [label="DDG: vma->vm_flags"];
+"1000320" -> "1000319"  [label="DDG: VM_GROWSDOWN"];
+"1000319" -> "1000318"  [label="AST: "];
+"1000318" -> "1000319"  [label="CFG: "];
+"1000319" -> "1000449"  [label="DDG: vma->vm_flags & VM_GROWSDOWN"];
+"1000319" -> "1000318"  [label="DDG: vma->vm_flags & VM_GROWSDOWN"];
+"1000318" -> "1000317"  [label="AST: "];
+"1000327" -> "1000318"  [label="CFG: "];
+"1000333" -> "1000318"  [label="CFG: "];
+"1000318" -> "1000449"  [label="DDG: unlikely(!(vma->vm_flags & VM_GROWSDOWN))"];
+"1000318" -> "1000449"  [label="DDG: !(vma->vm_flags & VM_GROWSDOWN)"];
+}

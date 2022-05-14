@@ -1,0 +1,30 @@
+digraph "0_linux_82262a46627bebb0febcc26664746c25cef08563@pointer" {
+"1000174" [label="(Call,card->user_ctl_count >= MAX_USER_CONTROLS)"];
+"1000497" [label="(Call,card->user_ctl_count++)"];
+"1000498" [label="(Call,card->user_ctl_count)"];
+"1000508" [label="(MethodReturn,static int)"];
+"1000178" [label="(Identifier,MAX_USER_CONTROLS)"];
+"1000173" [label="(ControlStructure,if (card->user_ctl_count >= MAX_USER_CONTROLS))"];
+"1000185" [label="(Identifier,kctl)"];
+"1000104" [label="(Block,)"];
+"1000504" [label="(Identifier,card)"];
+"1000175" [label="(Call,card->user_ctl_count)"];
+"1000181" [label="(Identifier,ENOMEM)"];
+"1000497" [label="(Call,card->user_ctl_count++)"];
+"1000174" [label="(Call,card->user_ctl_count >= MAX_USER_CONTROLS)"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000174" -> "1000178"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000178" -> "1000174"  [label="AST: "];
+"1000181" -> "1000174"  [label="CFG: "];
+"1000185" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000508"  [label="DDG: MAX_USER_CONTROLS"];
+"1000174" -> "1000508"  [label="DDG: card->user_ctl_count >= MAX_USER_CONTROLS"];
+"1000174" -> "1000508"  [label="DDG: card->user_ctl_count"];
+"1000174" -> "1000497"  [label="DDG: card->user_ctl_count"];
+"1000497" -> "1000104"  [label="AST: "];
+"1000497" -> "1000498"  [label="CFG: "];
+"1000498" -> "1000497"  [label="AST: "];
+"1000504" -> "1000497"  [label="CFG: "];
+"1000497" -> "1000508"  [label="DDG: card->user_ctl_count"];
+}

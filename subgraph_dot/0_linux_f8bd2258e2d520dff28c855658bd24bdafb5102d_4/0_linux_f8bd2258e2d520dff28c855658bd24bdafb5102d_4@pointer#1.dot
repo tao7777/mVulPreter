@@ -1,0 +1,28 @@
+digraph "0_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_4@pointer" {
+"1000110" [label="(Call,*tp = ns_to_timespec(cpu.sched))"];
+"1000113" [label="(Call,ns_to_timespec(cpu.sched))"];
+"1000102" [label="(MethodParameterIn,union cpu_time_count cpu)"];
+"1000111" [label="(Call,*tp)"];
+"1000113" [label="(Call,ns_to_timespec(cpu.sched))"];
+"1000118" [label="(Call,cputime_to_timespec(cpu.cpu, tp))"];
+"1000102" [label="(MethodParameterIn,union cpu_time_count cpu)"];
+"1000105" [label="(ControlStructure,if (CPUCLOCK_WHICH(which_clock) == CPUCLOCK_SCHED))"];
+"1000123" [label="(MethodReturn,static void)"];
+"1000114" [label="(Call,cpu.sched)"];
+"1000110" [label="(Call,*tp = ns_to_timespec(cpu.sched))"];
+"1000110" -> "1000105"  [label="AST: "];
+"1000110" -> "1000113"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000113" -> "1000110"  [label="AST: "];
+"1000123" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000123"  [label="DDG: *tp"];
+"1000110" -> "1000123"  [label="DDG: ns_to_timespec(cpu.sched)"];
+"1000113" -> "1000110"  [label="DDG: cpu.sched"];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000113" -> "1000123"  [label="DDG: cpu.sched"];
+"1000102" -> "1000113"  [label="DDG: cpu"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000123"  [label="DDG: cpu"];
+"1000102" -> "1000118"  [label="DDG: cpu"];
+}

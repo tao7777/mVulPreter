@@ -1,0 +1,30 @@
+digraph "1_linux_fda4e2e85589191b123d31cdc21fd33ee70f50fd_1@pointer" {
+"1000190" [label="(Call,offset_in_page(vcpu->arch.apic->vapic_addr))"];
+"1000186" [label="(Call,(u32 *)(vapic + offset_in_page(vcpu->arch.apic->vapic_addr)))"];
+"1000188" [label="(Call,vapic + offset_in_page(vcpu->arch.apic->vapic_addr))"];
+"1000185" [label="(Call,*(u32 *)(vapic + offset_in_page(vcpu->arch.apic->vapic_addr)))"];
+"1000174" [label="(Call,vapic = kmap_atomic(vcpu->arch.apic->vapic_page))"];
+"1000189" [label="(Identifier,vapic)"];
+"1000186" [label="(Call,(u32 *)(vapic + offset_in_page(vcpu->arch.apic->vapic_addr)))"];
+"1000191" [label="(Call,vcpu->arch.apic->vapic_addr)"];
+"1000190" [label="(Call,offset_in_page(vcpu->arch.apic->vapic_addr))"];
+"1000188" [label="(Call,vapic + offset_in_page(vcpu->arch.apic->vapic_addr))"];
+"1000201" [label="(MethodReturn,void)"];
+"1000190" -> "1000188"  [label="AST: "];
+"1000190" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000190"  [label="AST: "];
+"1000188" -> "1000190"  [label="CFG: "];
+"1000190" -> "1000201"  [label="DDG: vcpu->arch.apic->vapic_addr"];
+"1000190" -> "1000186"  [label="DDG: vcpu->arch.apic->vapic_addr"];
+"1000190" -> "1000188"  [label="DDG: vcpu->arch.apic->vapic_addr"];
+"1000186" -> "1000185"  [label="AST: "];
+"1000186" -> "1000188"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000188" -> "1000186"  [label="AST: "];
+"1000185" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000201"  [label="DDG: vapic + offset_in_page(vcpu->arch.apic->vapic_addr)"];
+"1000174" -> "1000186"  [label="DDG: vapic"];
+"1000189" -> "1000188"  [label="AST: "];
+"1000188" -> "1000201"  [label="DDG: offset_in_page(vcpu->arch.apic->vapic_addr)"];
+"1000174" -> "1000188"  [label="DDG: vapic"];
+}

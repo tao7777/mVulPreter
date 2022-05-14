@@ -1,0 +1,33 @@
+digraph "0_linux_29ec90660d68bbdd69507c1c8b4e33aa299278b1_0@pointer" {
+"1000345" [label="(Call,wake_userfault(vma->vm_userfaultfd_ctx.ctx, &range))"];
+"1000303" [label="(Call,!vma->vm_userfaultfd_ctx.ctx)"];
+"1000345" [label="(Call,wake_userfault(vma->vm_userfaultfd_ctx.ctx, &range))"];
+"1000304" [label="(Call,vma->vm_userfaultfd_ctx.ctx)"];
+"1000345" [label="(Call,wake_userfault(vma->vm_userfaultfd_ctx.ctx, &range))"];
+"1000302" [label="(ControlStructure,if (!vma->vm_userfaultfd_ctx.ctx))"];
+"1000346" [label="(Call,vma->vm_userfaultfd_ctx.ctx)"];
+"1000354" [label="(Identifier,new_flags)"];
+"1000309" [label="(ControlStructure,goto skip;)"];
+"1000331" [label="(Block,)"];
+"1000303" [label="(Call,!vma->vm_userfaultfd_ctx.ctx)"];
+"1000313" [label="(Identifier,vma)"];
+"1000351" [label="(Call,&range)"];
+"1000467" [label="(MethodReturn,static int)"];
+"1000345" -> "1000331"  [label="AST: "];
+"1000345" -> "1000351"  [label="CFG: "];
+"1000346" -> "1000345"  [label="AST: "];
+"1000351" -> "1000345"  [label="AST: "];
+"1000354" -> "1000345"  [label="CFG: "];
+"1000345" -> "1000467"  [label="DDG: &range"];
+"1000345" -> "1000467"  [label="DDG: vma->vm_userfaultfd_ctx.ctx"];
+"1000345" -> "1000467"  [label="DDG: wake_userfault(vma->vm_userfaultfd_ctx.ctx, &range)"];
+"1000345" -> "1000303"  [label="DDG: vma->vm_userfaultfd_ctx.ctx"];
+"1000303" -> "1000345"  [label="DDG: vma->vm_userfaultfd_ctx.ctx"];
+"1000303" -> "1000302"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000309" -> "1000303"  [label="CFG: "];
+"1000313" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000467"  [label="DDG: vma->vm_userfaultfd_ctx.ctx"];
+"1000303" -> "1000467"  [label="DDG: !vma->vm_userfaultfd_ctx.ctx"];
+}

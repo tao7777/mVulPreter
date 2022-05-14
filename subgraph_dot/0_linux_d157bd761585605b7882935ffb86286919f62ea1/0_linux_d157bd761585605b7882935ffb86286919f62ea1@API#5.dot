@@ -1,0 +1,24 @@
+digraph "0_linux_d157bd761585605b7882935ffb86286919f62ea1@API" {
+"1000111" [label="(Call,sizeof(*info) + size)"];
+"1000102" [label="(MethodParameterIn,unsigned int size)"];
+"1000176" [label="(MethodReturn,struct xt_table_info *)"];
+"1000128" [label="(Call,SMP_ALIGN(size))"];
+"1000111" [label="(Call,sizeof(*info) + size)"];
+"1000102" [label="(MethodParameterIn,unsigned int size)"];
+"1000115" [label="(Identifier,size)"];
+"1000109" [label="(Call,sz = sizeof(*info) + size)"];
+"1000169" [label="(Call,info->size = size)"];
+"1000112" [label="(Call,sizeof(*info))"];
+"1000111" -> "1000109"  [label="AST: "];
+"1000111" -> "1000115"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000115" -> "1000111"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000176"  [label="DDG: size"];
+"1000102" -> "1000111"  [label="DDG: size"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000176"  [label="DDG: size"];
+"1000102" -> "1000109"  [label="DDG: size"];
+"1000102" -> "1000128"  [label="DDG: size"];
+"1000102" -> "1000169"  [label="DDG: size"];
+}

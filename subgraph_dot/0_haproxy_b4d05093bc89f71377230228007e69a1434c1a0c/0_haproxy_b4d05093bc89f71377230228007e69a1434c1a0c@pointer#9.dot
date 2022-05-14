@@ -1,0 +1,24 @@
+digraph "0_haproxy_b4d05093bc89f71377230228007e69a1434c1a0c@pointer" {
+"1000485" [label="(Call,s->req->total = s->req->buf->i)"];
+"1000479" [label="(Call,s->logs.bytes_in = s->req->total = s->req->buf->i)"];
+"1000485" [label="(Call,s->req->total = s->req->buf->i)"];
+"1000491" [label="(Call,s->req->buf->i)"];
+"1000903" [label="(MethodReturn,void)"];
+"1000486" [label="(Call,s->req->total)"];
+"1000501" [label="(Identifier,s)"];
+"1000479" [label="(Call,s->logs.bytes_in = s->req->total = s->req->buf->i)"];
+"1000118" [label="(Block,)"];
+"1000480" [label="(Call,s->logs.bytes_in)"];
+"1000485" -> "1000479"  [label="AST: "];
+"1000485" -> "1000491"  [label="CFG: "];
+"1000486" -> "1000485"  [label="AST: "];
+"1000491" -> "1000485"  [label="AST: "];
+"1000479" -> "1000485"  [label="CFG: "];
+"1000485" -> "1000903"  [label="DDG: s->req->total"];
+"1000485" -> "1000903"  [label="DDG: s->req->buf->i"];
+"1000485" -> "1000479"  [label="DDG: s->req->total"];
+"1000479" -> "1000118"  [label="AST: "];
+"1000480" -> "1000479"  [label="AST: "];
+"1000501" -> "1000479"  [label="CFG: "];
+"1000479" -> "1000903"  [label="DDG: s->logs.bytes_in"];
+}

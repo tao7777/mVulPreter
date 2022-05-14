@@ -1,0 +1,34 @@
+digraph "0_savannah_f958c48ee431bef8d4d466b40c9cb2d4dbcb7791@array" {
+"1002265" [label="(Call,zone->base + decoder->subrs_len[idx])"];
+"1002248" [label="(Call,zone->base = decoder->subrs[idx])"];
+"1002252" [label="(Call,decoder->subrs[idx])"];
+"1002266" [label="(Call,zone->base)"];
+"1002309" [label="(Call,!zone->base)"];
+"1002530" [label="(MethodReturn,RET)"];
+"1002259" [label="(Identifier,decoder)"];
+"1002249" [label="(Call,zone->base)"];
+"1002261" [label="(Call,zone->limit = zone->base + decoder->subrs_len[idx])"];
+"1002181" [label="(Block,)"];
+"1002248" [label="(Call,zone->base = decoder->subrs[idx])"];
+"1002301" [label="(Call,zone->cursor = zone->base)"];
+"1002269" [label="(Call,decoder->subrs_len[idx])"];
+"1002265" [label="(Call,zone->base + decoder->subrs_len[idx])"];
+"1002276" [label="(Call,zone->base  += ( decoder->lenIV >= 0 ? decoder->lenIV : 0 ))"];
+"1002265" -> "1002261"  [label="AST: "];
+"1002265" -> "1002269"  [label="CFG: "];
+"1002266" -> "1002265"  [label="AST: "];
+"1002269" -> "1002265"  [label="AST: "];
+"1002261" -> "1002265"  [label="CFG: "];
+"1002265" -> "1002530"  [label="DDG: decoder->subrs_len[idx]"];
+"1002248" -> "1002265"  [label="DDG: zone->base"];
+"1002248" -> "1002181"  [label="AST: "];
+"1002248" -> "1002252"  [label="CFG: "];
+"1002249" -> "1002248"  [label="AST: "];
+"1002252" -> "1002248"  [label="AST: "];
+"1002259" -> "1002248"  [label="CFG: "];
+"1002248" -> "1002530"  [label="DDG: decoder->subrs[idx]"];
+"1002248" -> "1002261"  [label="DDG: zone->base"];
+"1002248" -> "1002276"  [label="DDG: zone->base"];
+"1002248" -> "1002301"  [label="DDG: zone->base"];
+"1002248" -> "1002309"  [label="DDG: zone->base"];
+}

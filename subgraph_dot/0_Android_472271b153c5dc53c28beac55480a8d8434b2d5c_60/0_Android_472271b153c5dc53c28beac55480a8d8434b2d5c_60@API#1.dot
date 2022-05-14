@@ -1,0 +1,25 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_60@API" {
+"1000183" [label="(Call,strerror(errno))"];
+"1000180" [label="(Call,LOG_ERROR(\"%s unable to resetore flags for semaphore fd: %s\", __func__, strerror(errno)))"];
+"1000182" [label="(Identifier,__func__)"];
+"1000181" [label="(Literal,\"%s unable to resetore flags for semaphore fd: %s\")"];
+"1000187" [label="(MethodReturn,bool)"];
+"1000186" [label="(Identifier,true)"];
+"1000169" [label="(ControlStructure,if (TEMP_FAILURE_RETRY(fcntl(semaphore->fd, F_SETFL, flags)) == -1))"];
+"1000183" [label="(Call,strerror(errno))"];
+"1000184" [label="(Identifier,errno)"];
+"1000180" [label="(Call,LOG_ERROR(\"%s unable to resetore flags for semaphore fd: %s\", __func__, strerror(errno)))"];
+"1000183" -> "1000180"  [label="AST: "];
+"1000183" -> "1000184"  [label="CFG: "];
+"1000184" -> "1000183"  [label="AST: "];
+"1000180" -> "1000183"  [label="CFG: "];
+"1000183" -> "1000187"  [label="DDG: "];
+"1000183" -> "1000180"  [label="DDG: "];
+"1000180" -> "1000169"  [label="AST: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000182" -> "1000180"  [label="AST: "];
+"1000186" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000187"  [label="DDG: "];
+"1000180" -> "1000187"  [label="DDG: "];
+"1000180" -> "1000187"  [label="DDG: "];
+}

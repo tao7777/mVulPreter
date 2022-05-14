@@ -1,0 +1,32 @@
+digraph "0_jerryscript_03a8c630f015f63268639d3ed3bf82cff6fa77d8@pointer" {
+"1000209" [label="(Call,literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT)"];
+"1000207" [label="(Call,(uint8_t) (literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT))"];
+"1000203" [label="(Call,literal_p->status_flags = (uint8_t) (literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT))"];
+"1000204" [label="(Call,literal_p->status_flags)"];
+"1000186" [label="(Block,)"];
+"1000210" [label="(Call,literal_p->status_flags)"];
+"1000203" [label="(Call,literal_p->status_flags = (uint8_t) (literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT))"];
+"1000207" [label="(Call,(uint8_t) (literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT))"];
+"1000323" [label="(MethodReturn,RET)"];
+"1000214" [label="(Return,return;)"];
+"1000213" [label="(Identifier,~LEXER_FLAG_UNUSED_IDENT)"];
+"1000209" [label="(Call,literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT)"];
+"1000209" -> "1000207"  [label="AST: "];
+"1000209" -> "1000213"  [label="CFG: "];
+"1000210" -> "1000209"  [label="AST: "];
+"1000213" -> "1000209"  [label="AST: "];
+"1000207" -> "1000209"  [label="CFG: "];
+"1000209" -> "1000323"  [label="DDG: ~LEXER_FLAG_UNUSED_IDENT"];
+"1000209" -> "1000207"  [label="DDG: literal_p->status_flags"];
+"1000209" -> "1000207"  [label="DDG: ~LEXER_FLAG_UNUSED_IDENT"];
+"1000207" -> "1000203"  [label="AST: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000203" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000323"  [label="DDG: literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT"];
+"1000207" -> "1000203"  [label="DDG: literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT"];
+"1000203" -> "1000186"  [label="AST: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000214" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000323"  [label="DDG: (uint8_t) (literal_p->status_flags & ~LEXER_FLAG_UNUSED_IDENT)"];
+"1000203" -> "1000323"  [label="DDG: literal_p->status_flags"];
+}

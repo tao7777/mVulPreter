@@ -1,0 +1,24 @@
+digraph "0_linux_90481622d75715bfcb68501280a917dbfe516029_9@API" {
+"1000142" [label="(Call,mutex_lock(&mapping->i_mmap_mutex))"];
+"1000166" [label="(Call,mutex_unlock(&mapping->i_mmap_mutex))"];
+"1000142" [label="(Call,mutex_lock(&mapping->i_mmap_mutex))"];
+"1000143" [label="(Call,&mapping->i_mmap_mutex)"];
+"1000166" [label="(Call,mutex_unlock(&mapping->i_mmap_mutex))"];
+"1000109" [label="(Block,)"];
+"1000173" [label="(MethodReturn,static int)"];
+"1000167" [label="(Call,&mapping->i_mmap_mutex)"];
+"1000172" [label="(Literal,1)"];
+"1000150" [label="(Identifier,iter_vma)"];
+"1000142" -> "1000109"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000150" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000173"  [label="DDG: mutex_lock(&mapping->i_mmap_mutex)"];
+"1000142" -> "1000166"  [label="DDG: &mapping->i_mmap_mutex"];
+"1000166" -> "1000109"  [label="AST: "];
+"1000166" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000172" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000173"  [label="DDG: mutex_unlock(&mapping->i_mmap_mutex)"];
+"1000166" -> "1000173"  [label="DDG: &mapping->i_mmap_mutex"];
+}

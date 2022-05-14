@@ -1,0 +1,36 @@
+digraph "0_libsndfile_60b234301adf258786d8b90be5c1d437fc8799e0@pointer" {
+"1000551" [label="(Call,(uint32_t) buffer [j][pflac->bufferpos])"];
+"1000550" [label="(Call,((uint32_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000544" [label="(Call,retpcm [offset + j] = ((uint32_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000535" [label="(ControlStructure,for (j = 0 ; j < channels ; j++))"];
+"1000553" [label="(Call,buffer [j][pflac->bufferpos])"];
+"1000481" [label="(Call,shift = 32 - frame->header.bits_per_sample)"];
+"1000551" [label="(Call,(uint32_t) buffer [j][pflac->bufferpos])"];
+"1000543" [label="(Identifier,j)"];
+"1000808" [label="(MethodReturn,RET)"];
+"1000560" [label="(Identifier,shift)"];
+"1000545" [label="(Call,retpcm [offset + j])"];
+"1000544" [label="(Call,retpcm [offset + j] = ((uint32_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000550" [label="(Call,((uint32_t) buffer [j][pflac->bufferpos]) << shift)"];
+"1000551" -> "1000550"  [label="AST: "];
+"1000551" -> "1000553"  [label="CFG: "];
+"1000552" -> "1000551"  [label="AST: "];
+"1000553" -> "1000551"  [label="AST: "];
+"1000560" -> "1000551"  [label="CFG: "];
+"1000551" -> "1000808"  [label="DDG: buffer [j][pflac->bufferpos]"];
+"1000551" -> "1000550"  [label="DDG: buffer [j][pflac->bufferpos]"];
+"1000550" -> "1000544"  [label="AST: "];
+"1000550" -> "1000560"  [label="CFG: "];
+"1000560" -> "1000550"  [label="AST: "];
+"1000544" -> "1000550"  [label="CFG: "];
+"1000550" -> "1000808"  [label="DDG: shift"];
+"1000550" -> "1000808"  [label="DDG: (uint32_t) buffer [j][pflac->bufferpos]"];
+"1000550" -> "1000544"  [label="DDG: (uint32_t) buffer [j][pflac->bufferpos]"];
+"1000550" -> "1000544"  [label="DDG: shift"];
+"1000481" -> "1000550"  [label="DDG: shift"];
+"1000544" -> "1000535"  [label="AST: "];
+"1000545" -> "1000544"  [label="AST: "];
+"1000543" -> "1000544"  [label="CFG: "];
+"1000544" -> "1000808"  [label="DDG: ((uint32_t) buffer [j][pflac->bufferpos]) << shift"];
+"1000544" -> "1000808"  [label="DDG: retpcm [offset + j]"];
+}

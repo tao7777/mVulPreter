@@ -1,0 +1,29 @@
+digraph "0_Chrome_11bd4bc92f3fe704631e3e6ad1dd1a4351641f7c@API" {
+"1000303" [label="(Call,!slice.copying_memory_size.IsValid())"];
+"1000302" [label="(Call,!slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid())"];
+"1000302" [label="(Call,!slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid())"];
+"1000464" [label="(MethodReturn,RET)"];
+"1000313" [label="(Identifier,checked_total_memory_size)"];
+"1000306" [label="(Call,slice.total_memory_size.IsValid())"];
+"1000303" [label="(Call,!slice.copying_memory_size.IsValid())"];
+"1000304" [label="(Call,slice.copying_memory_size.IsValid())"];
+"1000301" [label="(ControlStructure,if (!slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid()))"];
+"1000305" [label="(Call,!slice.total_memory_size.IsValid())"];
+"1000309" [label="(Identifier,status)"];
+"1000303" -> "1000302"  [label="AST: "];
+"1000303" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000303"  [label="AST: "];
+"1000306" -> "1000303"  [label="CFG: "];
+"1000302" -> "1000303"  [label="CFG: "];
+"1000303" -> "1000464"  [label="DDG: slice.copying_memory_size.IsValid()"];
+"1000303" -> "1000302"  [label="DDG: slice.copying_memory_size.IsValid()"];
+"1000302" -> "1000301"  [label="AST: "];
+"1000302" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000302"  [label="AST: "];
+"1000309" -> "1000302"  [label="CFG: "];
+"1000313" -> "1000302"  [label="CFG: "];
+"1000302" -> "1000464"  [label="DDG: !slice.copying_memory_size.IsValid()"];
+"1000302" -> "1000464"  [label="DDG: !slice.total_memory_size.IsValid()"];
+"1000302" -> "1000464"  [label="DDG: !slice.copying_memory_size.IsValid() ||\n          !slice.total_memory_size.IsValid()"];
+"1000305" -> "1000302"  [label="DDG: slice.total_memory_size.IsValid()"];
+}

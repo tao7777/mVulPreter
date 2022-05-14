@@ -1,0 +1,31 @@
+digraph "0_gnupg_014b2103fcb12f261135e3954f26e9e07b39e342@pointer" {
+"1000215" [label="(Call,zfx->algo == 1)"];
+"1000211" [label="(Call,nread < count && zfx->algo == 1)"];
+"1000225" [label="(Identifier,zfx)"];
+"1000210" [label="(ControlStructure,if( nread < count && zfx->algo == 1 ))"];
+"1000215" [label="(Call,zfx->algo == 1)"];
+"1000329" [label="(MethodReturn,RET)"];
+"1000238" [label="(Identifier,zs)"];
+"1000212" [label="(Call,nread < count)"];
+"1000219" [label="(Literal,1)"];
+"1000211" [label="(Call,nread < count && zfx->algo == 1)"];
+"1000216" [label="(Call,zfx->algo)"];
+"1000215" -> "1000211"  [label="AST: "];
+"1000215" -> "1000219"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000219" -> "1000215"  [label="AST: "];
+"1000211" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000329"  [label="DDG: zfx->algo"];
+"1000215" -> "1000211"  [label="DDG: zfx->algo"];
+"1000215" -> "1000211"  [label="DDG: 1"];
+"1000211" -> "1000210"  [label="AST: "];
+"1000211" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000225" -> "1000211"  [label="CFG: "];
+"1000238" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000329"  [label="DDG: nread < count"];
+"1000211" -> "1000329"  [label="DDG: nread < count && zfx->algo == 1"];
+"1000211" -> "1000329"  [label="DDG: zfx->algo == 1"];
+"1000212" -> "1000211"  [label="DDG: nread"];
+"1000212" -> "1000211"  [label="DDG: count"];
+}

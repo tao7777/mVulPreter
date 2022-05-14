@@ -1,0 +1,35 @@
+digraph "1_Chrome_4c8b008f055f79e622344627fed7f820375a4f01@del" {
+"1000110" [label="(Call,m_frame->tree().childCount() == 0)"];
+"1000107" [label="(Call,!m_frame || m_frame->tree().childCount() == 0)"];
+"1000106" [label="(Call,ASSERT(!m_frame || m_frame->tree().childCount() == 0))"];
+"1000111" [label="(Call,m_frame->tree().childCount())"];
+"1000107" [label="(Call,!m_frame || m_frame->tree().childCount() == 0)"];
+"1000240" [label="(MethodReturn,void)"];
+"1000106" [label="(Call,ASSERT(!m_frame || m_frame->tree().childCount() == 0))"];
+"1000110" [label="(Call,m_frame->tree().childCount() == 0)"];
+"1000102" [label="(Block,)"];
+"1000112" [label="(Literal,0)"];
+"1000115" [label="(Call,isActive())"];
+"1000108" [label="(Call,!m_frame)"];
+"1000110" -> "1000107"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000107" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000240"  [label="DDG: m_frame->tree().childCount()"];
+"1000110" -> "1000107"  [label="DDG: m_frame->tree().childCount()"];
+"1000110" -> "1000107"  [label="DDG: 0"];
+"1000107" -> "1000106"  [label="AST: "];
+"1000107" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000240"  [label="DDG: !m_frame"];
+"1000107" -> "1000240"  [label="DDG: m_frame->tree().childCount() == 0"];
+"1000107" -> "1000106"  [label="DDG: !m_frame"];
+"1000107" -> "1000106"  [label="DDG: m_frame->tree().childCount() == 0"];
+"1000108" -> "1000107"  [label="DDG: m_frame"];
+"1000106" -> "1000102"  [label="AST: "];
+"1000115" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000240"  [label="DDG: !m_frame || m_frame->tree().childCount() == 0"];
+"1000106" -> "1000240"  [label="DDG: ASSERT(!m_frame || m_frame->tree().childCount() == 0)"];
+}

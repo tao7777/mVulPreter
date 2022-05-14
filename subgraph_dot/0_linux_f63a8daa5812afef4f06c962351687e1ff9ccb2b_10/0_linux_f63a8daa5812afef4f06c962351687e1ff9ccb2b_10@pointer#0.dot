@@ -1,0 +1,27 @@
+digraph "0_linux_f63a8daa5812afef4f06c962351687e1ff9ccb2b_10@pointer" {
+"1000148" [label="(Call,put_ctx(src_ctx))"];
+"1000112" [label="(Call,src_ctx = &per_cpu_ptr(pmu->pmu_cpu_context, src_cpu)->ctx)"];
+"1000141" [label="(Block,)"];
+"1000114" [label="(Call,&per_cpu_ptr(pmu->pmu_cpu_context, src_cpu)->ctx)"];
+"1000148" [label="(Call,put_ctx(src_ctx))"];
+"1000112" [label="(Call,src_ctx = &per_cpu_ptr(pmu->pmu_cpu_context, src_cpu)->ctx)"];
+"1000149" [label="(Identifier,src_ctx)"];
+"1000113" [label="(Identifier,src_ctx)"];
+"1000153" [label="(Identifier,event)"];
+"1000123" [label="(Identifier,dst_ctx)"];
+"1000194" [label="(MethodReturn,void)"];
+"1000105" [label="(Block,)"];
+"1000148" -> "1000141"  [label="AST: "];
+"1000148" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000148"  [label="AST: "];
+"1000153" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000194"  [label="DDG: src_ctx"];
+"1000148" -> "1000194"  [label="DDG: put_ctx(src_ctx)"];
+"1000112" -> "1000148"  [label="DDG: src_ctx"];
+"1000112" -> "1000105"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000123" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000194"  [label="DDG: &per_cpu_ptr(pmu->pmu_cpu_context, src_cpu)->ctx"];
+}

@@ -1,0 +1,38 @@
+digraph "0_Chrome_7614790c80996d32a28218f4d1605b0908e9ddf6@pointer" {
+"1000334" [label="(Call,parent_extension && parent_extension->is_platform_app())"];
+"1000329" [label="(Call,* parent_extension =\n        registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000331" [label="(Call,registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000341" [label="(MethodReturn,RET)"];
+"1000340" [label="(Identifier,content::NavigationThrottle::PROCEED)"];
+"1000333" [label="(ControlStructure,if (parent_extension && parent_extension->is_platform_app()))"];
+"1000329" [label="(Call,* parent_extension =\n        registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000335" [label="(Identifier,parent_extension)"];
+"1000338" [label="(Identifier,content::NavigationThrottle::BLOCK_REQUEST)"];
+"1000332" [label="(Call,parent->GetSiteInstance()->GetSiteURL())"];
+"1000330" [label="(Identifier,parent_extension)"];
+"1000336" [label="(Call,parent_extension->is_platform_app())"];
+"1000311" [label="(Block,)"];
+"1000334" [label="(Call,parent_extension && parent_extension->is_platform_app())"];
+"1000331" [label="(Call,registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL()))"];
+"1000334" -> "1000333"  [label="AST: "];
+"1000334" -> "1000335"  [label="CFG: "];
+"1000334" -> "1000336"  [label="CFG: "];
+"1000335" -> "1000334"  [label="AST: "];
+"1000336" -> "1000334"  [label="AST: "];
+"1000338" -> "1000334"  [label="CFG: "];
+"1000340" -> "1000334"  [label="CFG: "];
+"1000334" -> "1000341"  [label="DDG: parent_extension && parent_extension->is_platform_app()"];
+"1000334" -> "1000341"  [label="DDG: parent_extension->is_platform_app()"];
+"1000334" -> "1000341"  [label="DDG: parent_extension"];
+"1000329" -> "1000334"  [label="DDG: parent_extension"];
+"1000329" -> "1000311"  [label="AST: "];
+"1000329" -> "1000331"  [label="CFG: "];
+"1000330" -> "1000329"  [label="AST: "];
+"1000331" -> "1000329"  [label="AST: "];
+"1000335" -> "1000329"  [label="CFG: "];
+"1000329" -> "1000341"  [label="DDG: registry->enabled_extensions().GetExtensionOrAppByURL(\n            parent->GetSiteInstance()->GetSiteURL())"];
+"1000331" -> "1000329"  [label="DDG: parent->GetSiteInstance()->GetSiteURL()"];
+"1000331" -> "1000332"  [label="CFG: "];
+"1000332" -> "1000331"  [label="AST: "];
+"1000331" -> "1000341"  [label="DDG: parent->GetSiteInstance()->GetSiteURL()"];
+}

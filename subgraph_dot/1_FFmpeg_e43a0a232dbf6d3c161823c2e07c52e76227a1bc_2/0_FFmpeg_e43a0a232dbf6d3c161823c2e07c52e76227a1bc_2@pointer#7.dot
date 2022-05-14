@@ -1,0 +1,30 @@
+digraph "0_FFmpeg_e43a0a232dbf6d3c161823c2e07c52e76227a1bc_2@pointer" {
+"1000134" [label="(Call,!frame->interlaced_frame)"];
+"1000133" [label="(Call,!frame->interlaced_frame ||\n        frame->top_field_first == s->dst_tff)"];
+"1000150" [label="(Identifier,ctx)"];
+"1000138" [label="(Call,frame->top_field_first == s->dst_tff)"];
+"1000134" [label="(Call,!frame->interlaced_frame)"];
+"1000133" [label="(Call,!frame->interlaced_frame ||\n        frame->top_field_first == s->dst_tff)"];
+"1000147" [label="(Identifier,outlink)"];
+"1000299" [label="(MethodReturn,static int)"];
+"1000132" [label="(ControlStructure,if (!frame->interlaced_frame ||\n        frame->top_field_first == s->dst_tff))"];
+"1000135" [label="(Call,frame->interlaced_frame)"];
+"1000140" [label="(Identifier,frame)"];
+"1000134" -> "1000133"  [label="AST: "];
+"1000134" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000134"  [label="AST: "];
+"1000140" -> "1000134"  [label="CFG: "];
+"1000133" -> "1000134"  [label="CFG: "];
+"1000134" -> "1000299"  [label="DDG: frame->interlaced_frame"];
+"1000134" -> "1000133"  [label="DDG: frame->interlaced_frame"];
+"1000133" -> "1000132"  [label="AST: "];
+"1000133" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000133"  [label="AST: "];
+"1000147" -> "1000133"  [label="CFG: "];
+"1000150" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000299"  [label="DDG: !frame->interlaced_frame ||\n        frame->top_field_first == s->dst_tff"];
+"1000133" -> "1000299"  [label="DDG: !frame->interlaced_frame"];
+"1000133" -> "1000299"  [label="DDG: frame->top_field_first == s->dst_tff"];
+"1000138" -> "1000133"  [label="DDG: frame->top_field_first"];
+"1000138" -> "1000133"  [label="DDG: s->dst_tff"];
+}

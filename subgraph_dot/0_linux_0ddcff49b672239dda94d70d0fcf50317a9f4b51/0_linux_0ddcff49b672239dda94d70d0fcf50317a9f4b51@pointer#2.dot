@@ -1,0 +1,38 @@
+digraph "0_linux_0ddcff49b672239dda94d70d0fcf50317a9f4b51@pointer" {
+"1000255" [label="(Call,nla_get_u32(info->attrs[HWSIM_ATTR_REG_CUSTOM_REG]))"];
+"1000253" [label="(Call,idx = nla_get_u32(info->attrs[HWSIM_ATTR_REG_CUSTOM_REG]))"];
+"1000262" [label="(Call,idx >= ARRAY_SIZE(hwsim_world_regdom_custom))"];
+"1000256" [label="(Call,info->attrs[HWSIM_ATTR_REG_CUSTOM_REG])"];
+"1000253" [label="(Call,idx = nla_get_u32(info->attrs[HWSIM_ATTR_REG_CUSTOM_REG]))"];
+"1000254" [label="(Identifier,idx)"];
+"1000264" [label="(Call,ARRAY_SIZE(hwsim_world_regdom_custom))"];
+"1000262" [label="(Call,idx >= ARRAY_SIZE(hwsim_world_regdom_custom))"];
+"1000261" [label="(ControlStructure,if (idx >= ARRAY_SIZE(hwsim_world_regdom_custom)))"];
+"1000251" [label="(Block,)"];
+"1000255" [label="(Call,nla_get_u32(info->attrs[HWSIM_ATTR_REG_CUSTOM_REG]))"];
+"1000289" [label="(MethodReturn,static int)"];
+"1000263" [label="(Identifier,idx)"];
+"1000268" [label="(Identifier,hwname)"];
+"1000274" [label="(Identifier,param)"];
+"1000255" -> "1000253"  [label="AST: "];
+"1000255" -> "1000256"  [label="CFG: "];
+"1000256" -> "1000255"  [label="AST: "];
+"1000253" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000289"  [label="DDG: info->attrs[HWSIM_ATTR_REG_CUSTOM_REG]"];
+"1000255" -> "1000253"  [label="DDG: info->attrs[HWSIM_ATTR_REG_CUSTOM_REG]"];
+"1000253" -> "1000251"  [label="AST: "];
+"1000254" -> "1000253"  [label="AST: "];
+"1000263" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000289"  [label="DDG: nla_get_u32(info->attrs[HWSIM_ATTR_REG_CUSTOM_REG])"];
+"1000253" -> "1000262"  [label="DDG: idx"];
+"1000262" -> "1000261"  [label="AST: "];
+"1000262" -> "1000264"  [label="CFG: "];
+"1000263" -> "1000262"  [label="AST: "];
+"1000264" -> "1000262"  [label="AST: "];
+"1000268" -> "1000262"  [label="CFG: "];
+"1000274" -> "1000262"  [label="CFG: "];
+"1000262" -> "1000289"  [label="DDG: idx"];
+"1000262" -> "1000289"  [label="DDG: ARRAY_SIZE(hwsim_world_regdom_custom)"];
+"1000262" -> "1000289"  [label="DDG: idx >= ARRAY_SIZE(hwsim_world_regdom_custom)"];
+"1000264" -> "1000262"  [label="DDG: hwsim_world_regdom_custom"];
+}

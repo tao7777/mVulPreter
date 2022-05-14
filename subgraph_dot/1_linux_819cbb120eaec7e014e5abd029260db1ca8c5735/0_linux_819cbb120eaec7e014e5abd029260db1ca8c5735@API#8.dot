@@ -1,0 +1,36 @@
+digraph "0_linux_819cbb120eaec7e014e5abd029260db1ca8c5735@API" {
+"1000159" [label="(Call,memcpy(devinfo.board_name, dev->board_name, COMEDI_NAMELEN))"];
+"1000149" [label="(Call,memcpy(devinfo.driver_name, dev->driver->driver_name, COMEDI_NAMELEN))"];
+"1000153" [label="(Call,dev->driver->driver_name)"];
+"1000163" [label="(Call,dev->board_name)"];
+"1000168" [label="(Identifier,read_subdev)"];
+"1000159" [label="(Call,memcpy(devinfo.board_name, dev->board_name, COMEDI_NAMELEN))"];
+"1000166" [label="(Identifier,COMEDI_NAMELEN)"];
+"1000160" [label="(Call,devinfo.board_name)"];
+"1000149" [label="(Call,memcpy(devinfo.driver_name, dev->driver->driver_name, COMEDI_NAMELEN))"];
+"1000161" [label="(Identifier,devinfo)"];
+"1000215" [label="(MethodReturn,static int)"];
+"1000105" [label="(Block,)"];
+"1000150" [label="(Call,devinfo.driver_name)"];
+"1000158" [label="(Identifier,COMEDI_NAMELEN)"];
+"1000159" -> "1000105"  [label="AST: "];
+"1000159" -> "1000166"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000163" -> "1000159"  [label="AST: "];
+"1000166" -> "1000159"  [label="AST: "];
+"1000168" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000215"  [label="DDG: devinfo.board_name"];
+"1000159" -> "1000215"  [label="DDG: COMEDI_NAMELEN"];
+"1000159" -> "1000215"  [label="DDG: memcpy(devinfo.board_name, dev->board_name, COMEDI_NAMELEN)"];
+"1000159" -> "1000215"  [label="DDG: dev->board_name"];
+"1000149" -> "1000159"  [label="DDG: COMEDI_NAMELEN"];
+"1000149" -> "1000105"  [label="AST: "];
+"1000149" -> "1000158"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000153" -> "1000149"  [label="AST: "];
+"1000158" -> "1000149"  [label="AST: "];
+"1000161" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000215"  [label="DDG: memcpy(devinfo.driver_name, dev->driver->driver_name, COMEDI_NAMELEN)"];
+"1000149" -> "1000215"  [label="DDG: dev->driver->driver_name"];
+"1000149" -> "1000215"  [label="DDG: devinfo.driver_name"];
+}

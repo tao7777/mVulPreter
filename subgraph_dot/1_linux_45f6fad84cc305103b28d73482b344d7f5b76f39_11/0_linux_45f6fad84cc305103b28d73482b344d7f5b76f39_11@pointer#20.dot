@@ -1,0 +1,26 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_11@pointer" {
+"1001870" [label="(Call,ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1001869" [label="(Call,!ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1001871" [label="(Call,net->user_ns)"];
+"1001874" [label="(Identifier,CAP_NET_ADMIN)"];
+"1001869" [label="(Call,!ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1001870" [label="(Call,ns_capable(net->user_ns, CAP_NET_ADMIN))"];
+"1001868" [label="(ControlStructure,if (!ns_capable(net->user_ns, CAP_NET_ADMIN)))"];
+"1001875" [label="(ControlStructure,break;)"];
+"1002046" [label="(MethodReturn,static int)"];
+"1001877" [label="(Identifier,retv)"];
+"1001870" -> "1001869"  [label="AST: "];
+"1001870" -> "1001874"  [label="CFG: "];
+"1001871" -> "1001870"  [label="AST: "];
+"1001874" -> "1001870"  [label="AST: "];
+"1001869" -> "1001870"  [label="CFG: "];
+"1001870" -> "1002046"  [label="DDG: net->user_ns"];
+"1001870" -> "1002046"  [label="DDG: CAP_NET_ADMIN"];
+"1001870" -> "1001869"  [label="DDG: net->user_ns"];
+"1001870" -> "1001869"  [label="DDG: CAP_NET_ADMIN"];
+"1001869" -> "1001868"  [label="AST: "];
+"1001875" -> "1001869"  [label="CFG: "];
+"1001877" -> "1001869"  [label="CFG: "];
+"1001869" -> "1002046"  [label="DDG: ns_capable(net->user_ns, CAP_NET_ADMIN)"];
+"1001869" -> "1002046"  [label="DDG: !ns_capable(net->user_ns, CAP_NET_ADMIN)"];
+}

@@ -1,0 +1,22 @@
+digraph "0_pgbouncer_7ca3e5279d05fceb1e8a043c6f5b6f58dea3ed38@pointer" {
+"1000147" [label="(Call,sbuf_pause(&client->sbuf))"];
+"1000146" [label="(Call,!sbuf_pause(&client->sbuf))"];
+"1000155" [label="(Identifier,client)"];
+"1000145" [label="(ControlStructure,if (!sbuf_pause(&client->sbuf)))"];
+"1000148" [label="(Call,&client->sbuf)"];
+"1000146" [label="(Call,!sbuf_pause(&client->sbuf))"];
+"1000165" [label="(Identifier,client)"];
+"1000202" [label="(MethodReturn,static void)"];
+"1000147" [label="(Call,sbuf_pause(&client->sbuf))"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000202"  [label="DDG: &client->sbuf"];
+"1000147" -> "1000146"  [label="DDG: &client->sbuf"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000155" -> "1000146"  [label="CFG: "];
+"1000165" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000202"  [label="DDG: !sbuf_pause(&client->sbuf)"];
+"1000146" -> "1000202"  [label="DDG: sbuf_pause(&client->sbuf)"];
+}

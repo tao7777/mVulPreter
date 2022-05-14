@@ -1,0 +1,33 @@
+digraph "0_linux_e50293ef9775c5f1cf3fcc093037dd6a8c5684ea@pointer" {
+"1000568" [label="(Call,INIT_DELAYED_WORK(&hub->init_work, hub_init_func3))"];
+"1000574" [label="(Call,queue_delayed_work(system_power_efficient_wq,\n \t\t\t\t\t&hub->init_work,\n \t\t\t\t\tmsecs_to_jiffies(delay)))"];
+"1000584" [label="(Identifier,hub)"];
+"1000573" [label="(Identifier,hub_init_func3)"];
+"1000568" [label="(Call,INIT_DELAYED_WORK(&hub->init_work, hub_init_func3))"];
+"1000576" [label="(Call,&hub->init_work)"];
+"1000575" [label="(Identifier,system_power_efficient_wq)"];
+"1000567" [label="(Block,)"];
+"1000656" [label="(MethodReturn,static void)"];
+"1000574" [label="(Call,queue_delayed_work(system_power_efficient_wq,\n \t\t\t\t\t&hub->init_work,\n \t\t\t\t\tmsecs_to_jiffies(delay)))"];
+"1000580" [label="(Call,msecs_to_jiffies(delay))"];
+"1000569" [label="(Call,&hub->init_work)"];
+"1000568" -> "1000567"  [label="AST: "];
+"1000568" -> "1000573"  [label="CFG: "];
+"1000569" -> "1000568"  [label="AST: "];
+"1000573" -> "1000568"  [label="AST: "];
+"1000575" -> "1000568"  [label="CFG: "];
+"1000568" -> "1000656"  [label="DDG: INIT_DELAYED_WORK(&hub->init_work, hub_init_func3)"];
+"1000568" -> "1000656"  [label="DDG: hub_init_func3"];
+"1000568" -> "1000574"  [label="DDG: &hub->init_work"];
+"1000574" -> "1000567"  [label="AST: "];
+"1000574" -> "1000580"  [label="CFG: "];
+"1000575" -> "1000574"  [label="AST: "];
+"1000576" -> "1000574"  [label="AST: "];
+"1000580" -> "1000574"  [label="AST: "];
+"1000584" -> "1000574"  [label="CFG: "];
+"1000574" -> "1000656"  [label="DDG: system_power_efficient_wq"];
+"1000574" -> "1000656"  [label="DDG: msecs_to_jiffies(delay)"];
+"1000574" -> "1000656"  [label="DDG: queue_delayed_work(system_power_efficient_wq,\n \t\t\t\t\t&hub->init_work,\n \t\t\t\t\tmsecs_to_jiffies(delay))"];
+"1000574" -> "1000656"  [label="DDG: &hub->init_work"];
+"1000580" -> "1000574"  [label="DDG: delay"];
+}

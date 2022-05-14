@@ -1,0 +1,32 @@
+digraph "0_FreeRDP_7d58aac24fe20ffaad7bd9b40c9ddf457c1b06e7_0@API" {
+"1000130" [label="(Call,crypto_rc4_free(rdp->rc4_decrypt_key))"];
+"1000106" [label="(Call,rdp->rc4_decrypt_key == NULL)"];
+"1000131" [label="(Call,rdp->rc4_decrypt_key)"];
+"1000110" [label="(Identifier,NULL)"];
+"1000107" [label="(Call,rdp->rc4_decrypt_key)"];
+"1000130" [label="(Call,crypto_rc4_free(rdp->rc4_decrypt_key))"];
+"1000150" [label="(Call,crypto_rc4(rdp->rc4_decrypt_key, length, data, data))"];
+"1000116" [label="(Identifier,rdp)"];
+"1000119" [label="(Block,)"];
+"1000136" [label="(Identifier,rdp)"];
+"1000105" [label="(ControlStructure,if (rdp->rc4_decrypt_key == NULL))"];
+"1000106" [label="(Call,rdp->rc4_decrypt_key == NULL)"];
+"1000168" [label="(MethodReturn,BOOL)"];
+"1000112" [label="(Identifier,FALSE)"];
+"1000130" -> "1000119"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000136" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000168"  [label="DDG: crypto_rc4_free(rdp->rc4_decrypt_key)"];
+"1000106" -> "1000130"  [label="DDG: rdp->rc4_decrypt_key"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000106" -> "1000110"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000110" -> "1000106"  [label="AST: "];
+"1000112" -> "1000106"  [label="CFG: "];
+"1000116" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000168"  [label="DDG: rdp->rc4_decrypt_key == NULL"];
+"1000106" -> "1000168"  [label="DDG: rdp->rc4_decrypt_key"];
+"1000106" -> "1000168"  [label="DDG: NULL"];
+"1000106" -> "1000150"  [label="DDG: rdp->rc4_decrypt_key"];
+}

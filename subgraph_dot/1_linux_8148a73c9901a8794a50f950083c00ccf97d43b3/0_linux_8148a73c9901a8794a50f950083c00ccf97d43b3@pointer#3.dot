@@ -1,0 +1,22 @@
+digraph "0_linux_8148a73c9901a8794a50f950083c00ccf97d43b3@pointer" {
+"1000146" [label="(Call,atomic_inc_not_zero(&mm->mm_users))"];
+"1000145" [label="(Call,!atomic_inc_not_zero(&mm->mm_users))"];
+"1000151" [label="(ControlStructure,goto free;)"];
+"1000146" [label="(Call,atomic_inc_not_zero(&mm->mm_users))"];
+"1000145" [label="(Call,!atomic_inc_not_zero(&mm->mm_users))"];
+"1000144" [label="(ControlStructure,if (!atomic_inc_not_zero(&mm->mm_users)))"];
+"1000155" [label="(Identifier,mm)"];
+"1000260" [label="(MethodReturn,static ssize_t)"];
+"1000147" [label="(Call,&mm->mm_users)"];
+"1000146" -> "1000145"  [label="AST: "];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000260"  [label="DDG: &mm->mm_users"];
+"1000146" -> "1000145"  [label="DDG: &mm->mm_users"];
+"1000145" -> "1000144"  [label="AST: "];
+"1000151" -> "1000145"  [label="CFG: "];
+"1000155" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000260"  [label="DDG: !atomic_inc_not_zero(&mm->mm_users)"];
+"1000145" -> "1000260"  [label="DDG: atomic_inc_not_zero(&mm->mm_users)"];
+}

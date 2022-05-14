@@ -1,0 +1,30 @@
+digraph "0_Android_472271b153c5dc53c28beac55480a8d8434b2d5c_57@API" {
+"1000103" [label="(Call,assert(reader != NULL))"];
+"1000104" [label="(Call,reader != NULL)"];
+"1000101" [label="(MethodParameterIn,const eager_reader_t *reader)"];
+"1000101" [label="(MethodParameterIn,const eager_reader_t *reader)"];
+"1000104" [label="(Call,reader != NULL)"];
+"1000105" [label="(Identifier,reader)"];
+"1000110" [label="(Identifier,read_fds)"];
+"1000147" [label="(MethodReturn,static bool)"];
+"1000106" [label="(Identifier,NULL)"];
+"1000128" [label="(Call,select(reader->bytes_available_fd + 1, &read_fds, NULL, NULL, &timeout))"];
+"1000103" [label="(Call,assert(reader != NULL))"];
+"1000102" [label="(Block,)"];
+"1000103" -> "1000102"  [label="AST: "];
+"1000103" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000103"  [label="AST: "];
+"1000110" -> "1000103"  [label="CFG: "];
+"1000103" -> "1000147"  [label="DDG: reader != NULL"];
+"1000103" -> "1000147"  [label="DDG: assert(reader != NULL)"];
+"1000104" -> "1000103"  [label="DDG: reader"];
+"1000104" -> "1000103"  [label="DDG: NULL"];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000104" -> "1000147"  [label="DDG: reader"];
+"1000101" -> "1000104"  [label="DDG: reader"];
+"1000104" -> "1000128"  [label="DDG: NULL"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000147"  [label="DDG: reader"];
+}

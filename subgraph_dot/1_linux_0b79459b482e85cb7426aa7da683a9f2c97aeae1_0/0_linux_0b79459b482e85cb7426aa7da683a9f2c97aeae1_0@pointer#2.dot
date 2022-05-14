@@ -1,0 +1,24 @@
+digraph "0_linux_0b79459b482e85cb7426aa7da683a9f2c97aeae1_0@pointer" {
+"1000144" [label="(Call,spin_lock(&ka->pvclock_gtod_sync_lock))"];
+"1000167" [label="(Call,spin_unlock(&ka->pvclock_gtod_sync_lock))"];
+"1000150" [label="(Identifier,use_master_clock)"];
+"1000168" [label="(Call,&ka->pvclock_gtod_sync_lock)"];
+"1000173" [label="(Identifier,flags)"];
+"1000111" [label="(Block,)"];
+"1000144" [label="(Call,spin_lock(&ka->pvclock_gtod_sync_lock))"];
+"1000145" [label="(Call,&ka->pvclock_gtod_sync_lock)"];
+"1000167" [label="(Call,spin_unlock(&ka->pvclock_gtod_sync_lock))"];
+"1000431" [label="(MethodReturn,static int)"];
+"1000144" -> "1000111"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000150" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000431"  [label="DDG: spin_lock(&ka->pvclock_gtod_sync_lock)"];
+"1000144" -> "1000167"  [label="DDG: &ka->pvclock_gtod_sync_lock"];
+"1000167" -> "1000111"  [label="AST: "];
+"1000167" -> "1000168"  [label="CFG: "];
+"1000168" -> "1000167"  [label="AST: "];
+"1000173" -> "1000167"  [label="CFG: "];
+"1000167" -> "1000431"  [label="DDG: &ka->pvclock_gtod_sync_lock"];
+"1000167" -> "1000431"  [label="DDG: spin_unlock(&ka->pvclock_gtod_sync_lock)"];
+}

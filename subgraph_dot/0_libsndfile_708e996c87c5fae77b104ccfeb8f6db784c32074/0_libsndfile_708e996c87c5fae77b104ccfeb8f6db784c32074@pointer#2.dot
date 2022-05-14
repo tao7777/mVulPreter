@@ -1,0 +1,26 @@
+digraph "0_libsndfile_708e996c87c5fae77b104ccfeb8f6db784c32074@pointer" {
+"1000110" [label="(Call,psf->header.indx + bufsize)"];
+"1000104" [label="(MethodParameterIn,int bufsize)"];
+"1000133" [label="(Call,bufsize - 1)"];
+"1000104" [label="(MethodParameterIn,int bufsize)"];
+"1000111" [label="(Call,psf->header.indx)"];
+"1000109" [label="(Call,psf->header.indx + bufsize >= psf->header.len)"];
+"1000110" [label="(Call,psf->header.indx + bufsize)"];
+"1000122" [label="(Call,psf_bump_header_allocation (psf, bufsize))"];
+"1000119" [label="(Identifier,psf)"];
+"1000236" [label="(MethodReturn,RET)"];
+"1000116" [label="(Identifier,bufsize)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000116"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000116" -> "1000110"  [label="AST: "];
+"1000119" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000236"  [label="DDG: psf->header.indx"];
+"1000110" -> "1000236"  [label="DDG: bufsize"];
+"1000104" -> "1000110"  [label="DDG: bufsize"];
+"1000104" -> "1000101"  [label="AST: "];
+"1000104" -> "1000236"  [label="DDG: bufsize"];
+"1000104" -> "1000109"  [label="DDG: bufsize"];
+"1000104" -> "1000122"  [label="DDG: bufsize"];
+"1000104" -> "1000133"  [label="DDG: bufsize"];
+}

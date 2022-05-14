@@ -1,0 +1,28 @@
+digraph "0_Chrome_503bea2643350c6378de5f7a268b85cf2480e1ac@API" {
+"1000156" [label="(Call,sizeof(media::AudioInputBufferParameters) + buffer_size)"];
+"1000149" [label="(Call,buffer_size = audio_params.GetBytesPerBuffer())"];
+"1000155" [label="(Identifier,mem_size)"];
+"1000154" [label="(Call,mem_size = sizeof(media::AudioInputBufferParameters) + buffer_size)"];
+"1000156" [label="(Call,sizeof(media::AudioInputBufferParameters) + buffer_size)"];
+"1000106" [label="(Block,)"];
+"1000151" [label="(Call,audio_params.GetBytesPerBuffer())"];
+"1000150" [label="(Identifier,buffer_size)"];
+"1000159" [label="(Identifier,buffer_size)"];
+"1000157" [label="(Call,sizeof(media::AudioInputBufferParameters))"];
+"1000212" [label="(MethodReturn,void)"];
+"1000149" [label="(Call,buffer_size = audio_params.GetBytesPerBuffer())"];
+"1000156" -> "1000154"  [label="AST: "];
+"1000156" -> "1000159"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000159" -> "1000156"  [label="AST: "];
+"1000154" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000212"  [label="DDG: buffer_size"];
+"1000149" -> "1000156"  [label="DDG: buffer_size"];
+"1000149" -> "1000106"  [label="AST: "];
+"1000149" -> "1000151"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000151" -> "1000149"  [label="AST: "];
+"1000155" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000212"  [label="DDG: audio_params.GetBytesPerBuffer()"];
+"1000149" -> "1000154"  [label="DDG: buffer_size"];
+}

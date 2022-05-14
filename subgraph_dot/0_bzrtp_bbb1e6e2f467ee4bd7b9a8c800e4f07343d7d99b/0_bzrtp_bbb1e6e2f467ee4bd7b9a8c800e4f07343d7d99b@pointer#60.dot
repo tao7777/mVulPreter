@@ -1,0 +1,36 @@
+digraph "0_bzrtp_bbb1e6e2f467ee4bd7b9a8c800e4f07343d7d99b@pointer" {
+"1000260" [label="(Call,messageData->S = ((*messageContent)>>6)&0x01)"];
+"1000264" [label="(Call,((*messageContent)>>6)&0x01)"];
+"1000265" [label="(Call,(*messageContent)>>6)"];
+"1000268" [label="(Literal,6)"];
+"1000275" [label="(Call,(*messageContent)>>5)"];
+"1000260" [label="(Call,messageData->S = ((*messageContent)>>6)&0x01)"];
+"1000269" [label="(Literal,0x01)"];
+"1000261" [label="(Call,messageData->S)"];
+"1000266" [label="(Call,*messageContent)"];
+"1000264" [label="(Call,((*messageContent)>>6)&0x01)"];
+"1000215" [label="(Block,)"];
+"1001966" [label="(MethodReturn,int)"];
+"1000265" [label="(Call,(*messageContent)>>6)"];
+"1000272" [label="(Identifier,messageData)"];
+"1000260" -> "1000215"  [label="AST: "];
+"1000260" -> "1000264"  [label="CFG: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000264" -> "1000260"  [label="AST: "];
+"1000272" -> "1000260"  [label="CFG: "];
+"1000260" -> "1001966"  [label="DDG: ((*messageContent)>>6)&0x01"];
+"1000260" -> "1001966"  [label="DDG: messageData->S"];
+"1000264" -> "1000260"  [label="DDG: (*messageContent)>>6"];
+"1000264" -> "1000260"  [label="DDG: 0x01"];
+"1000264" -> "1000269"  [label="CFG: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000269" -> "1000264"  [label="AST: "];
+"1000264" -> "1001966"  [label="DDG: (*messageContent)>>6"];
+"1000265" -> "1000264"  [label="DDG: *messageContent"];
+"1000265" -> "1000264"  [label="DDG: 6"];
+"1000265" -> "1000268"  [label="CFG: "];
+"1000266" -> "1000265"  [label="AST: "];
+"1000268" -> "1000265"  [label="AST: "];
+"1000269" -> "1000265"  [label="CFG: "];
+"1000265" -> "1000275"  [label="DDG: *messageContent"];
+}

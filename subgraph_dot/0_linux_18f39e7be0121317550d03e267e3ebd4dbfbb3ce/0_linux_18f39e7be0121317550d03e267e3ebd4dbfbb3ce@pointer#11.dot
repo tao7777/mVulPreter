@@ -1,0 +1,34 @@
+digraph "0_linux_18f39e7be0121317550d03e267e3ebd4dbfbb3ce@pointer" {
+"1000443" [label="(Call,rsp->Capabilities & SMB2_SHARE_CAP_DFS)"];
+"1000442" [label="(Call,(rsp->Capabilities & SMB2_SHARE_CAP_DFS) &&\n\t    ((tcon->share_flags & SHI1005_FLAGS_DFS) == 0))"];
+"1000448" [label="(Call,(tcon->share_flags & SHI1005_FLAGS_DFS) == 0)"];
+"1000447" [label="(Identifier,SMB2_SHARE_CAP_DFS)"];
+"1000442" [label="(Call,(rsp->Capabilities & SMB2_SHARE_CAP_DFS) &&\n\t    ((tcon->share_flags & SHI1005_FLAGS_DFS) == 0))"];
+"1000441" [label="(ControlStructure,if ((rsp->Capabilities & SMB2_SHARE_CAP_DFS) &&\n\t    ((tcon->share_flags & SHI1005_FLAGS_DFS) == 0)))"];
+"1000456" [label="(Identifier,VFS)"];
+"1000459" [label="(Identifier,tcon)"];
+"1000451" [label="(Identifier,tcon)"];
+"1000505" [label="(MethodReturn,RET)"];
+"1000443" [label="(Call,rsp->Capabilities & SMB2_SHARE_CAP_DFS)"];
+"1000444" [label="(Call,rsp->Capabilities)"];
+"1000443" -> "1000442"  [label="AST: "];
+"1000443" -> "1000447"  [label="CFG: "];
+"1000444" -> "1000443"  [label="AST: "];
+"1000447" -> "1000443"  [label="AST: "];
+"1000451" -> "1000443"  [label="CFG: "];
+"1000442" -> "1000443"  [label="CFG: "];
+"1000443" -> "1000505"  [label="DDG: SMB2_SHARE_CAP_DFS"];
+"1000443" -> "1000505"  [label="DDG: rsp->Capabilities"];
+"1000443" -> "1000442"  [label="DDG: rsp->Capabilities"];
+"1000443" -> "1000442"  [label="DDG: SMB2_SHARE_CAP_DFS"];
+"1000442" -> "1000441"  [label="AST: "];
+"1000442" -> "1000448"  [label="CFG: "];
+"1000448" -> "1000442"  [label="AST: "];
+"1000456" -> "1000442"  [label="CFG: "];
+"1000459" -> "1000442"  [label="CFG: "];
+"1000442" -> "1000505"  [label="DDG: (rsp->Capabilities & SMB2_SHARE_CAP_DFS) &&\n\t    ((tcon->share_flags & SHI1005_FLAGS_DFS) == 0)"];
+"1000442" -> "1000505"  [label="DDG: rsp->Capabilities & SMB2_SHARE_CAP_DFS"];
+"1000442" -> "1000505"  [label="DDG: (tcon->share_flags & SHI1005_FLAGS_DFS) == 0"];
+"1000448" -> "1000442"  [label="DDG: tcon->share_flags & SHI1005_FLAGS_DFS"];
+"1000448" -> "1000442"  [label="DDG: 0"];
+}

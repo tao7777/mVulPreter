@@ -1,0 +1,37 @@
+digraph "0_OpenSC_8fe377e93b4b56060e5bbfb6f3142ceaeca744fa_10@API" {
+"1000135" [label="(Call,memset(&card->serialnr, 0, sizeof(card->serialnr)))"];
+"1000452" [label="(Call,memcpy(serial, &card->serialnr, sizeof(*serial)))"];
+"1000464" [label="(MethodReturn,RET)"];
+"1000458" [label="(Call,sizeof(*serial))"];
+"1000135" [label="(Call,memset(&card->serialnr, 0, sizeof(card->serialnr)))"];
+"1000454" [label="(Call,&card->serialnr)"];
+"1000452" [label="(Call,memcpy(serial, &card->serialnr, sizeof(*serial)))"];
+"1000453" [label="(Identifier,serial)"];
+"1000105" [label="(Block,)"];
+"1000104" [label="(MethodParameterIn,struct sc_serial_number *serial)"];
+"1000136" [label="(Call,&card->serialnr)"];
+"1000146" [label="(Identifier,card)"];
+"1000450" [label="(ControlStructure,if (serial))"];
+"1000140" [label="(Literal,0)"];
+"1000141" [label="(Call,sizeof(card->serialnr))"];
+"1000462" [label="(Identifier,ctx)"];
+"1000135" -> "1000105"  [label="AST: "];
+"1000135" -> "1000141"  [label="CFG: "];
+"1000136" -> "1000135"  [label="AST: "];
+"1000140" -> "1000135"  [label="AST: "];
+"1000141" -> "1000135"  [label="AST: "];
+"1000146" -> "1000135"  [label="CFG: "];
+"1000135" -> "1000464"  [label="DDG: memset(&card->serialnr, 0, sizeof(card->serialnr))"];
+"1000135" -> "1000464"  [label="DDG: &card->serialnr"];
+"1000135" -> "1000452"  [label="DDG: &card->serialnr"];
+"1000452" -> "1000450"  [label="AST: "];
+"1000452" -> "1000458"  [label="CFG: "];
+"1000453" -> "1000452"  [label="AST: "];
+"1000454" -> "1000452"  [label="AST: "];
+"1000458" -> "1000452"  [label="AST: "];
+"1000462" -> "1000452"  [label="CFG: "];
+"1000452" -> "1000464"  [label="DDG: memcpy(serial, &card->serialnr, sizeof(*serial))"];
+"1000452" -> "1000464"  [label="DDG: serial"];
+"1000452" -> "1000464"  [label="DDG: &card->serialnr"];
+"1000104" -> "1000452"  [label="DDG: serial"];
+}

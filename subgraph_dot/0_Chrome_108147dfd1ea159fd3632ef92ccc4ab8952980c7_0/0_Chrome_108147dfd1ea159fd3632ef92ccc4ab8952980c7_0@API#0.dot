@@ -1,0 +1,32 @@
+digraph "0_Chrome_108147dfd1ea159fd3632ef92ccc4ab8952980c7_0@API" {
+"1000182" [label="(Call,std::move(security_origin))"];
+"1000159" [label="(Call,security_origin =\n        SecurityOrigin::CreateUniqueOpaque())"];
+"1000181" [label="(Call,SetSecurityOrigin(std::move(security_origin)))"];
+"1000161" [label="(Call,SecurityOrigin::CreateUniqueOpaque())"];
+"1000154" [label="(Block,)"];
+"1000182" [label="(Call,std::move(security_origin))"];
+"1000164" [label="(Identifier,owner)"];
+"1000159" [label="(Call,security_origin =\n        SecurityOrigin::CreateUniqueOpaque())"];
+"1000160" [label="(Identifier,security_origin)"];
+"1000211" [label="(Call,initializer.IsHostedInReservedIPRange())"];
+"1000181" [label="(Call,SetSecurityOrigin(std::move(security_origin)))"];
+"1000272" [label="(MethodReturn,void)"];
+"1000183" [label="(Identifier,security_origin)"];
+"1000182" -> "1000181"  [label="AST: "];
+"1000182" -> "1000183"  [label="CFG: "];
+"1000183" -> "1000182"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000272"  [label="DDG: security_origin"];
+"1000182" -> "1000181"  [label="DDG: security_origin"];
+"1000159" -> "1000182"  [label="DDG: security_origin"];
+"1000159" -> "1000154"  [label="AST: "];
+"1000159" -> "1000161"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000159"  [label="AST: "];
+"1000164" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000272"  [label="DDG: SecurityOrigin::CreateUniqueOpaque()"];
+"1000181" -> "1000154"  [label="AST: "];
+"1000211" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000272"  [label="DDG: SetSecurityOrigin(std::move(security_origin))"];
+"1000181" -> "1000272"  [label="DDG: std::move(security_origin)"];
+}

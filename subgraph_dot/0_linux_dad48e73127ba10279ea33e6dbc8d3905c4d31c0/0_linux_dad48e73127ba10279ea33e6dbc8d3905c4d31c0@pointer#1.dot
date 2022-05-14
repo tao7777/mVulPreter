@@ -1,0 +1,24 @@
+digraph "0_linux_dad48e73127ba10279ea33e6dbc8d3905c4d31c0@pointer" {
+"1000174" [label="(Call,spin_lock(&sbi->extent_lock))"];
+"1000188" [label="(Call,spin_unlock(&sbi->extent_lock))"];
+"1000189" [label="(Call,&sbi->extent_lock)"];
+"1000201" [label="(MethodReturn,static bool)"];
+"1000175" [label="(Call,&sbi->extent_lock)"];
+"1000174" [label="(Call,spin_lock(&sbi->extent_lock))"];
+"1000188" [label="(Call,spin_unlock(&sbi->extent_lock))"];
+"1000173" [label="(Block,)"];
+"1000193" [label="(JumpTarget,out:)"];
+"1000182" [label="(Identifier,en)"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000174" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000182" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000201"  [label="DDG: spin_lock(&sbi->extent_lock)"];
+"1000174" -> "1000188"  [label="DDG: &sbi->extent_lock"];
+"1000188" -> "1000173"  [label="AST: "];
+"1000188" -> "1000189"  [label="CFG: "];
+"1000189" -> "1000188"  [label="AST: "];
+"1000193" -> "1000188"  [label="CFG: "];
+"1000188" -> "1000201"  [label="DDG: spin_unlock(&sbi->extent_lock)"];
+"1000188" -> "1000201"  [label="DDG: &sbi->extent_lock"];
+}

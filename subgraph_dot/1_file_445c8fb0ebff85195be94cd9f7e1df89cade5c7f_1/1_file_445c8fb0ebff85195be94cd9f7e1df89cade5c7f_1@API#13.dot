@@ -1,0 +1,30 @@
+digraph "1_file_445c8fb0ebff85195be94cd9f7e1df89cade5c7f_1@API" {
+"1000217" [label="(Call,strcmp(name, \".debug_info\"))"];
+"1000207" [label="(Call,name[sizeof(name) - 1] = '\0')"];
+"1000208" [label="(Call,name[sizeof(name) - 1])"];
+"1000191" [label="(Call,pread(fd, name, sizeof(name), name_off + xsh_name))"];
+"1000216" [label="(Call,strcmp(name, \".debug_info\") == 0)"];
+"1000207" [label="(Call,name[sizeof(name) - 1] = '\0')"];
+"1000214" [label="(Literal,'\0')"];
+"1000217" [label="(Call,strcmp(name, \".debug_info\"))"];
+"1000219" [label="(Literal,\".debug_info\")"];
+"1000699" [label="(MethodReturn,RET)"];
+"1000220" [label="(Literal,0)"];
+"1000218" [label="(Identifier,name)"];
+"1000188" [label="(Block,)"];
+"1000217" -> "1000216"  [label="AST: "];
+"1000217" -> "1000219"  [label="CFG: "];
+"1000218" -> "1000217"  [label="AST: "];
+"1000219" -> "1000217"  [label="AST: "];
+"1000220" -> "1000217"  [label="CFG: "];
+"1000217" -> "1000699"  [label="DDG: name"];
+"1000207" -> "1000217"  [label="DDG: name[sizeof(name) - 1]"];
+"1000207" -> "1000188"  [label="AST: "];
+"1000207" -> "1000214"  [label="CFG: "];
+"1000208" -> "1000207"  [label="AST: "];
+"1000214" -> "1000207"  [label="AST: "];
+"1000218" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000699"  [label="DDG: name[sizeof(name) - 1]"];
+"1000207" -> "1000191"  [label="DDG: name[sizeof(name) - 1]"];
+"1000207" -> "1000216"  [label="DDG: name[sizeof(name) - 1]"];
+}

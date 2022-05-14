@@ -1,0 +1,31 @@
+digraph "0_linux_8835ba4a39cf53f705417b3b3a94eb067673f2c9@pointer" {
+"1000920" [label="(Call,acm->rx_buflimit = num_rx_buf)"];
+"1000220" [label="(Call,num_rx_buf = (quirks == SINGLE_RX_URB) ? 1 : ACM_NR)"];
+"1000220" [label="(Call,num_rx_buf = (quirks == SINGLE_RX_URB) ? 1 : ACM_NR)"];
+"1000122" [label="(Block,)"];
+"1000921" [label="(Call,acm->rx_buflimit)"];
+"1001042" [label="(Call,i < num_rx_buf)"];
+"1000924" [label="(Identifier,num_rx_buf)"];
+"1000230" [label="(Identifier,quirks)"];
+"1000221" [label="(Identifier,num_rx_buf)"];
+"1000928" [label="(Identifier,acm)"];
+"1000222" [label="(Call,(quirks == SINGLE_RX_URB) ? 1 : ACM_NR)"];
+"1001615" [label="(MethodReturn,static int)"];
+"1000920" [label="(Call,acm->rx_buflimit = num_rx_buf)"];
+"1000920" -> "1000122"  [label="AST: "];
+"1000920" -> "1000924"  [label="CFG: "];
+"1000921" -> "1000920"  [label="AST: "];
+"1000924" -> "1000920"  [label="AST: "];
+"1000928" -> "1000920"  [label="CFG: "];
+"1000920" -> "1001615"  [label="DDG: acm->rx_buflimit"];
+"1000920" -> "1001615"  [label="DDG: num_rx_buf"];
+"1000220" -> "1000920"  [label="DDG: num_rx_buf"];
+"1000220" -> "1000122"  [label="AST: "];
+"1000220" -> "1000222"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000222" -> "1000220"  [label="AST: "];
+"1000230" -> "1000220"  [label="CFG: "];
+"1000220" -> "1001615"  [label="DDG: num_rx_buf"];
+"1000220" -> "1001615"  [label="DDG: (quirks == SINGLE_RX_URB) ? 1 : ACM_NR"];
+"1000220" -> "1001042"  [label="DDG: num_rx_buf"];
+}

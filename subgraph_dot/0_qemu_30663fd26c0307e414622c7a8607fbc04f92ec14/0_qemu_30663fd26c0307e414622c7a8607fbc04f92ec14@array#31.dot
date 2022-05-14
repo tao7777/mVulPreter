@@ -1,0 +1,34 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@array" {
+"1009412" [label="(Call,tcg_gen_trunc_tl_i32(cpu_tmp2_i32, cpu_regs[R_ECX]))"];
+"1009417" [label="(Call,gen_helper_wrpkru(cpu_env, cpu_tmp2_i32, cpu_tmp1_i64))"];
+"1009414" [label="(Call,cpu_regs[R_ECX])"];
+"1008502" [label="(Block,)"];
+"1009419" [label="(Identifier,cpu_tmp2_i32)"];
+"1009417" [label="(Call,gen_helper_wrpkru(cpu_env, cpu_tmp2_i32, cpu_tmp1_i64))"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1009404" [label="(Call,tcg_gen_concat_tl_i64(cpu_tmp1_i64, cpu_regs[R_EAX],\n                                  cpu_regs[R_EDX]))"];
+"1009421" [label="(ControlStructure,break;)"];
+"1009412" [label="(Call,tcg_gen_trunc_tl_i32(cpu_tmp2_i32, cpu_regs[R_ECX]))"];
+"1009420" [label="(Identifier,cpu_tmp1_i64)"];
+"1009418" [label="(Identifier,cpu_env)"];
+"1009413" [label="(Identifier,cpu_tmp2_i32)"];
+"1009412" -> "1008502"  [label="AST: "];
+"1009412" -> "1009414"  [label="CFG: "];
+"1009413" -> "1009412"  [label="AST: "];
+"1009414" -> "1009412"  [label="AST: "];
+"1009418" -> "1009412"  [label="CFG: "];
+"1009412" -> "1011840"  [label="DDG: cpu_regs[R_ECX]"];
+"1009412" -> "1011840"  [label="DDG: tcg_gen_trunc_tl_i32(cpu_tmp2_i32, cpu_regs[R_ECX])"];
+"1009412" -> "1009417"  [label="DDG: cpu_tmp2_i32"];
+"1009417" -> "1008502"  [label="AST: "];
+"1009417" -> "1009420"  [label="CFG: "];
+"1009418" -> "1009417"  [label="AST: "];
+"1009419" -> "1009417"  [label="AST: "];
+"1009420" -> "1009417"  [label="AST: "];
+"1009421" -> "1009417"  [label="CFG: "];
+"1009417" -> "1011840"  [label="DDG: gen_helper_wrpkru(cpu_env, cpu_tmp2_i32, cpu_tmp1_i64)"];
+"1009417" -> "1011840"  [label="DDG: cpu_env"];
+"1009417" -> "1011840"  [label="DDG: cpu_tmp1_i64"];
+"1009417" -> "1011840"  [label="DDG: cpu_tmp2_i32"];
+"1009404" -> "1009417"  [label="DDG: cpu_tmp1_i64"];
+}

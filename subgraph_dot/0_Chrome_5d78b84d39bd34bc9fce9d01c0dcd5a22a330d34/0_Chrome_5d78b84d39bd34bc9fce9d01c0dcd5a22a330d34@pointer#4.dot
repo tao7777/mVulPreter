@@ -1,0 +1,22 @@
+digraph "0_Chrome_5d78b84d39bd34bc9fce9d01c0dcd5a22a330d34@pointer" {
+"1000111" [label="(Call,data.ReadRootScrollOffset(&out->root_scroll_offset))"];
+"1000110" [label="(Call,!data.ReadRootScrollOffset(&out->root_scroll_offset))"];
+"1000109" [label="(ControlStructure,if (!data.ReadRootScrollOffset(&out->root_scroll_offset)))"];
+"1000117" [label="(Identifier,false)"];
+"1000110" [label="(Call,!data.ReadRootScrollOffset(&out->root_scroll_offset))"];
+"1000112" [label="(Call,&out->root_scroll_offset)"];
+"1000111" [label="(Call,data.ReadRootScrollOffset(&out->root_scroll_offset))"];
+"1000120" [label="(Identifier,out)"];
+"1000223" [label="(MethodReturn,RET)"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000223"  [label="DDG: &out->root_scroll_offset"];
+"1000111" -> "1000110"  [label="DDG: &out->root_scroll_offset"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000117" -> "1000110"  [label="CFG: "];
+"1000120" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000223"  [label="DDG: !data.ReadRootScrollOffset(&out->root_scroll_offset)"];
+"1000110" -> "1000223"  [label="DDG: data.ReadRootScrollOffset(&out->root_scroll_offset)"];
+}

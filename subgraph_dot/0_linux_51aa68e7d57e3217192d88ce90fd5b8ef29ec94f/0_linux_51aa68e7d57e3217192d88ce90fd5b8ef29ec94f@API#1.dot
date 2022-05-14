@@ -1,0 +1,30 @@
+digraph "0_linux_51aa68e7d57e3217192d88ce90fd5b8ef29ec94f@API" {
+"1000594" [label="(Call,vmcs_write32(VM_EXIT_MSR_LOAD_COUNT, vmx->msr_autoload.nr))"];
+"1000609" [label="(Call,vmcs_write32(VM_ENTRY_MSR_LOAD_COUNT, vmx->msr_autoload.nr))"];
+"1000611" [label="(Call,vmx->msr_autoload.nr)"];
+"1001021" [label="(MethodReturn,static int)"];
+"1000594" [label="(Call,vmcs_write32(VM_EXIT_MSR_LOAD_COUNT, vmx->msr_autoload.nr))"];
+"1000610" [label="(Identifier,VM_ENTRY_MSR_LOAD_COUNT)"];
+"1000596" [label="(Call,vmx->msr_autoload.nr)"];
+"1000595" [label="(Identifier,VM_EXIT_MSR_LOAD_COUNT)"];
+"1000126" [label="(Block,)"];
+"1000602" [label="(Identifier,VM_EXIT_MSR_LOAD_ADDR)"];
+"1000617" [label="(Identifier,VM_ENTRY_MSR_LOAD_ADDR)"];
+"1000609" [label="(Call,vmcs_write32(VM_ENTRY_MSR_LOAD_COUNT, vmx->msr_autoload.nr))"];
+"1000594" -> "1000126"  [label="AST: "];
+"1000594" -> "1000596"  [label="CFG: "];
+"1000595" -> "1000594"  [label="AST: "];
+"1000596" -> "1000594"  [label="AST: "];
+"1000602" -> "1000594"  [label="CFG: "];
+"1000594" -> "1001021"  [label="DDG: VM_EXIT_MSR_LOAD_COUNT"];
+"1000594" -> "1001021"  [label="DDG: vmcs_write32(VM_EXIT_MSR_LOAD_COUNT, vmx->msr_autoload.nr)"];
+"1000594" -> "1000609"  [label="DDG: vmx->msr_autoload.nr"];
+"1000609" -> "1000126"  [label="AST: "];
+"1000609" -> "1000611"  [label="CFG: "];
+"1000610" -> "1000609"  [label="AST: "];
+"1000611" -> "1000609"  [label="AST: "];
+"1000617" -> "1000609"  [label="CFG: "];
+"1000609" -> "1001021"  [label="DDG: VM_ENTRY_MSR_LOAD_COUNT"];
+"1000609" -> "1001021"  [label="DDG: vmx->msr_autoload.nr"];
+"1000609" -> "1001021"  [label="DDG: vmcs_write32(VM_ENTRY_MSR_LOAD_COUNT, vmx->msr_autoload.nr)"];
+}

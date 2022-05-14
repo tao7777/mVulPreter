@@ -1,0 +1,25 @@
+digraph "0_linux_d1442d85cc30ea75f7d399474ca738e0bc96f715_4@pointer" {
+"1000119" [label="(Call,tss->flag | 2)"];
+"1000115" [label="(Call,ctxt->eflags = tss->flag | 2)"];
+"1000307" [label="(MethodReturn,static int)"];
+"1000127" [label="(Identifier,ctxt)"];
+"1000105" [label="(Block,)"];
+"1000120" [label="(Call,tss->flag)"];
+"1000119" [label="(Call,tss->flag | 2)"];
+"1000123" [label="(Literal,2)"];
+"1000116" [label="(Call,ctxt->eflags)"];
+"1000115" [label="(Call,ctxt->eflags = tss->flag | 2)"];
+"1000119" -> "1000115"  [label="AST: "];
+"1000119" -> "1000123"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000123" -> "1000119"  [label="AST: "];
+"1000115" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000307"  [label="DDG: tss->flag"];
+"1000119" -> "1000115"  [label="DDG: tss->flag"];
+"1000119" -> "1000115"  [label="DDG: 2"];
+"1000115" -> "1000105"  [label="AST: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000127" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000307"  [label="DDG: tss->flag | 2"];
+"1000115" -> "1000307"  [label="DDG: ctxt->eflags"];
+}

@@ -1,0 +1,34 @@
+digraph "0_Chrome_27c68f543e5eba779902447445dfb05ec3f5bf75_15@pointer" {
+"1000228" [label="(Call,fhdr->intra_only = reader_.ReadBool())"];
+"1000379" [label="(Call,fhdr->IsKeyframe() || fhdr->intra_only)"];
+"1000236" [label="(Identifier,fhdr)"];
+"1000378" [label="(ControlStructure,if (fhdr->IsKeyframe() || fhdr->intra_only))"];
+"1000379" [label="(Call,fhdr->IsKeyframe() || fhdr->intra_only)"];
+"1000385" [label="(Call,ReadLoopFilter())"];
+"1000228" [label="(Call,fhdr->intra_only = reader_.ReadBool())"];
+"1000223" [label="(ControlStructure,if (!fhdr->show_frame))"];
+"1000380" [label="(Call,fhdr->IsKeyframe())"];
+"1000232" [label="(Call,reader_.ReadBool())"];
+"1000381" [label="(Call,fhdr->intra_only)"];
+"1000229" [label="(Call,fhdr->intra_only)"];
+"1000437" [label="(MethodReturn,bool)"];
+"1000384" [label="(Call,SetupPastIndependence())"];
+"1000228" -> "1000223"  [label="AST: "];
+"1000228" -> "1000232"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000232" -> "1000228"  [label="AST: "];
+"1000236" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000437"  [label="DDG: fhdr->intra_only"];
+"1000228" -> "1000437"  [label="DDG: reader_.ReadBool()"];
+"1000228" -> "1000379"  [label="DDG: fhdr->intra_only"];
+"1000379" -> "1000378"  [label="AST: "];
+"1000379" -> "1000380"  [label="CFG: "];
+"1000379" -> "1000381"  [label="CFG: "];
+"1000380" -> "1000379"  [label="AST: "];
+"1000381" -> "1000379"  [label="AST: "];
+"1000384" -> "1000379"  [label="CFG: "];
+"1000385" -> "1000379"  [label="CFG: "];
+"1000379" -> "1000437"  [label="DDG: fhdr->IsKeyframe()"];
+"1000379" -> "1000437"  [label="DDG: fhdr->IsKeyframe() || fhdr->intra_only"];
+"1000379" -> "1000437"  [label="DDG: fhdr->intra_only"];
+}

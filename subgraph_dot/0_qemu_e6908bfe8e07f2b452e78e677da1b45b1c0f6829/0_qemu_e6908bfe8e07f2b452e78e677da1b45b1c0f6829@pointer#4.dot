@@ -1,0 +1,36 @@
+digraph "0_qemu_e6908bfe8e07f2b452e78e677da1b45b1c0f6829@pointer" {
+"1000153" [label="(Call,vs->client_pf.bytes_per_pixel = bits_per_pixel / 8)"];
+"1000159" [label="(Call,bits_per_pixel / 8)"];
+"1000102" [label="(MethodParameterIn,int bits_per_pixel)"];
+"1000165" [label="(Identifier,vs)"];
+"1000153" [label="(Call,vs->client_pf.bytes_per_pixel = bits_per_pixel / 8)"];
+"1000168" [label="(Call,bits_per_pixel == 32 ? 24 : bits_per_pixel)"];
+"1000112" [label="(Block,)"];
+"1000159" [label="(Call,bits_per_pixel / 8)"];
+"1000169" [label="(Call,bits_per_pixel == 32)"];
+"1000161" [label="(Literal,8)"];
+"1000160" [label="(Identifier,bits_per_pixel)"];
+"1000162" [label="(Call,vs->client_pf.depth = bits_per_pixel == 32 ? 24 : bits_per_pixel)"];
+"1000185" [label="(MethodReturn,static void)"];
+"1000154" [label="(Call,vs->client_pf.bytes_per_pixel)"];
+"1000102" [label="(MethodParameterIn,int bits_per_pixel)"];
+"1000153" -> "1000112"  [label="AST: "];
+"1000153" -> "1000159"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000159" -> "1000153"  [label="AST: "];
+"1000165" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000185"  [label="DDG: vs->client_pf.bytes_per_pixel"];
+"1000153" -> "1000185"  [label="DDG: bits_per_pixel / 8"];
+"1000159" -> "1000153"  [label="DDG: bits_per_pixel"];
+"1000159" -> "1000153"  [label="DDG: 8"];
+"1000159" -> "1000161"  [label="CFG: "];
+"1000160" -> "1000159"  [label="AST: "];
+"1000161" -> "1000159"  [label="AST: "];
+"1000102" -> "1000159"  [label="DDG: bits_per_pixel"];
+"1000159" -> "1000169"  [label="DDG: bits_per_pixel"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000185"  [label="DDG: bits_per_pixel"];
+"1000102" -> "1000162"  [label="DDG: bits_per_pixel"];
+"1000102" -> "1000169"  [label="DDG: bits_per_pixel"];
+"1000102" -> "1000168"  [label="DDG: bits_per_pixel"];
+}

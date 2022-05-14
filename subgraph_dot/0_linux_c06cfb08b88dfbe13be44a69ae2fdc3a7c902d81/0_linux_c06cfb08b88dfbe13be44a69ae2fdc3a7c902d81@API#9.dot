@@ -1,0 +1,31 @@
+digraph "0_linux_c06cfb08b88dfbe13be44a69ae2fdc3a7c902d81@API" {
+"1000141" [label="(Call,strcmp(key->description, description))"];
+"1000112" [label="(Call,*description = match_data->raw_data)"];
+"1000142" [label="(Call,key->description)"];
+"1000201" [label="(MethodReturn,static int)"];
+"1000105" [label="(Block,)"];
+"1000112" [label="(Call,*description = match_data->raw_data)"];
+"1000114" [label="(Call,match_data->raw_data)"];
+"1000145" [label="(Identifier,description)"];
+"1000146" [label="(Literal,0)"];
+"1000118" [label="(Call,*spec = description)"];
+"1000140" [label="(Call,strcmp(key->description, description) == 0)"];
+"1000119" [label="(Identifier,spec)"];
+"1000113" [label="(Identifier,description)"];
+"1000141" [label="(Call,strcmp(key->description, description))"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000141" -> "1000145"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000145" -> "1000141"  [label="AST: "];
+"1000146" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000201"  [label="DDG: description"];
+"1000112" -> "1000141"  [label="DDG: description"];
+"1000112" -> "1000105"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000119" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000201"  [label="DDG: match_data->raw_data"];
+"1000112" -> "1000118"  [label="DDG: description"];
+"1000112" -> "1000140"  [label="DDG: description"];
+}

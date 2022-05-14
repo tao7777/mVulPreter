@@ -1,0 +1,31 @@
+digraph "0_linux_75ff39ccc1bd5d3c455b6822ab09e533c551f758@pointer" {
+"1000105" [label="(MethodParameterIn,const struct sk_buff *skb)"];
+"1000117" [label="(Call,tcp_oow_rate_limited(sock_net(sk), skb,\n \t\t\t\t LINUX_MIB_TCPACKSKIPPEDCHALLENGE,\n \t\t\t\t &tp->last_oow_ack_time))"];
+"1000116" [label="(ControlStructure,if (tcp_oow_rate_limited(sock_net(sk), skb,\n \t\t\t\t LINUX_MIB_TCPACKSKIPPEDCHALLENGE,\n \t\t\t\t &tp->last_oow_ack_time)))"];
+"1000117" [label="(Call,tcp_oow_rate_limited(sock_net(sk), skb,\n \t\t\t\t LINUX_MIB_TCPACKSKIPPEDCHALLENGE,\n \t\t\t\t &tp->last_oow_ack_time))"];
+"1000121" [label="(Identifier,LINUX_MIB_TCPACKSKIPPEDCHALLENGE)"];
+"1000105" [label="(MethodParameterIn,const struct sk_buff *skb)"];
+"1000128" [label="(Identifier,now)"];
+"1000122" [label="(Call,&tp->last_oow_ack_time)"];
+"1000126" [label="(Return,return;)"];
+"1000174" [label="(MethodReturn,static void)"];
+"1000120" [label="(Identifier,skb)"];
+"1000118" [label="(Call,sock_net(sk))"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000174"  [label="DDG: skb"];
+"1000105" -> "1000117"  [label="DDG: skb"];
+"1000117" -> "1000116"  [label="AST: "];
+"1000117" -> "1000122"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000120" -> "1000117"  [label="AST: "];
+"1000121" -> "1000117"  [label="AST: "];
+"1000122" -> "1000117"  [label="AST: "];
+"1000126" -> "1000117"  [label="CFG: "];
+"1000128" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000174"  [label="DDG: LINUX_MIB_TCPACKSKIPPEDCHALLENGE"];
+"1000117" -> "1000174"  [label="DDG: sock_net(sk)"];
+"1000117" -> "1000174"  [label="DDG: tcp_oow_rate_limited(sock_net(sk), skb,\n \t\t\t\t LINUX_MIB_TCPACKSKIPPEDCHALLENGE,\n \t\t\t\t &tp->last_oow_ack_time)"];
+"1000117" -> "1000174"  [label="DDG: skb"];
+"1000117" -> "1000174"  [label="DDG: &tp->last_oow_ack_time"];
+"1000118" -> "1000117"  [label="DDG: sk"];
+}

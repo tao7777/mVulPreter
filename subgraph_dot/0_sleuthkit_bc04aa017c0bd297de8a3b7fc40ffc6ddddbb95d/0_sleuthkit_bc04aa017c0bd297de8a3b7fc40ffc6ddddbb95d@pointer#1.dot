@@ -1,0 +1,23 @@
+digraph "0_sleuthkit_bc04aa017c0bd297de8a3b7fc40ffc6ddddbb95d@pointer" {
+"1000480" [label="(Call,(hfs_btree_index_record *) & node[rec_off +\n                        keylen])"];
+"1000478" [label="(Call,idx_rec =\n                        (hfs_btree_index_record *) & node[rec_off +\n                        keylen])"];
+"1000709" [label="(MethodReturn,RET)"];
+"1000435" [label="(Block,)"];
+"1000479" [label="(Identifier,idx_rec)"];
+"1000478" [label="(Call,idx_rec =\n                        (hfs_btree_index_record *) & node[rec_off +\n                        keylen])"];
+"1000480" [label="(Call,(hfs_btree_index_record *) & node[rec_off +\n                        keylen])"];
+"1000489" [label="(Identifier,next_node)"];
+"1000482" [label="(Call,& node[rec_off +\n                        keylen])"];
+"1000480" -> "1000478"  [label="AST: "];
+"1000480" -> "1000482"  [label="CFG: "];
+"1000481" -> "1000480"  [label="AST: "];
+"1000482" -> "1000480"  [label="AST: "];
+"1000478" -> "1000480"  [label="CFG: "];
+"1000480" -> "1000709"  [label="DDG: & node[rec_off +\n                        keylen]"];
+"1000480" -> "1000478"  [label="DDG: & node[rec_off +\n                        keylen]"];
+"1000478" -> "1000435"  [label="AST: "];
+"1000479" -> "1000478"  [label="AST: "];
+"1000489" -> "1000478"  [label="CFG: "];
+"1000478" -> "1000709"  [label="DDG: idx_rec"];
+"1000478" -> "1000709"  [label="DDG: (hfs_btree_index_record *) & node[rec_off +\n                        keylen]"];
+}

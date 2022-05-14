@@ -1,0 +1,31 @@
+digraph "1_linux_de9f869616dd95e95c00bdd6b0fcd3421e8a4323_1@pointer" {
+"1000142" [label="(Call,desc->type & BIT(3))"];
+"1000146" [label="(Call,BIT(3))"];
+"1000141" [label="(Call,!(desc->type & BIT(3)))"];
+"1000141" [label="(Call,!(desc->type & BIT(3)))"];
+"1000146" [label="(Call,BIT(3))"];
+"1000150" [label="(Identifier,EINVAL)"];
+"1000142" [label="(Call,desc->type & BIT(3))"];
+"1000143" [label="(Call,desc->type)"];
+"1000140" [label="(ControlStructure,if (!(desc->type & BIT(3))))"];
+"1000147" [label="(Literal,3)"];
+"1000182" [label="(MethodReturn,int)"];
+"1000155" [label="(Identifier,desc)"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000146"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000146" -> "1000142"  [label="AST: "];
+"1000141" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000182"  [label="DDG: BIT(3)"];
+"1000142" -> "1000182"  [label="DDG: desc->type"];
+"1000142" -> "1000141"  [label="DDG: desc->type"];
+"1000142" -> "1000141"  [label="DDG: BIT(3)"];
+"1000146" -> "1000142"  [label="DDG: 3"];
+"1000146" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000150" -> "1000141"  [label="CFG: "];
+"1000155" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000182"  [label="DDG: desc->type & BIT(3)"];
+"1000141" -> "1000182"  [label="DDG: !(desc->type & BIT(3))"];
+}

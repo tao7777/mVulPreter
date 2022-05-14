@@ -1,0 +1,31 @@
+digraph "0_Android_5a9753fca56f0eeb9f61e342b2fccffc364f9426_12@pointer" {
+"1000125" [label="(Call,exec_name = argv[0])"];
+"1000102" [label="(MethodParameterIn,char **argv)"];
+"1000126" [label="(Identifier,exec_name)"];
+"1000138" [label="(Call,vpx_video_reader_open(argv[1]))"];
+"1000154" [label="(Call,fopen(argv[2], \"wb\"))"];
+"1000125" [label="(Call,exec_name = argv[0])"];
+"1000127" [label="(Call,argv[0])"];
+"1000103" [label="(Block,)"];
+"1000275" [label="(MethodReturn,int)"];
+"1000102" [label="(MethodParameterIn,char **argv)"];
+"1000258" [label="(Call,printf(\"Play: ffplay -f rawvideo -pix_fmt yuv420p -s %dx%d %s\n\",\n         info->frame_width, info->frame_height, argv[2]))"];
+"1000132" [label="(Identifier,argc)"];
+"1000145" [label="(Call,die(\"Failed to open %s for reading.\", argv[1]))"];
+"1000159" [label="(Call,die(\"Failed to open %s for writing.\", argv[2]))"];
+"1000125" -> "1000103"  [label="AST: "];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000275"  [label="DDG: exec_name"];
+"1000125" -> "1000275"  [label="DDG: argv[0]"];
+"1000102" -> "1000125"  [label="DDG: argv"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000275"  [label="DDG: argv"];
+"1000102" -> "1000138"  [label="DDG: argv"];
+"1000102" -> "1000145"  [label="DDG: argv"];
+"1000102" -> "1000154"  [label="DDG: argv"];
+"1000102" -> "1000159"  [label="DDG: argv"];
+"1000102" -> "1000258"  [label="DDG: argv"];
+}

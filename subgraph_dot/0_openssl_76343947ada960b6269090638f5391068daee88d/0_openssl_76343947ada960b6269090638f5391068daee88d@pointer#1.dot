@@ -1,0 +1,30 @@
+digraph "0_openssl_76343947ada960b6269090638f5391068daee88d@pointer" {
+"1000177" [label="(Call,!s->cert->shared_sigalgs)"];
+"1000122" [label="(Call,s->cert->shared_sigalgs = NULL)"];
+"1000128" [label="(Identifier,NULL)"];
+"1000205" [label="(MethodReturn,int)"];
+"1000132" [label="(Identifier,s)"];
+"1000178" [label="(Call,s->cert->shared_sigalgs)"];
+"1000176" [label="(ControlStructure,if (!s->cert->shared_sigalgs))"];
+"1000185" [label="(Identifier,SSL_F_TLS1_SET_SERVER_SIGALGS)"];
+"1000197" [label="(Literal,1)"];
+"1000177" [label="(Call,!s->cert->shared_sigalgs)"];
+"1000122" [label="(Call,s->cert->shared_sigalgs = NULL)"];
+"1000115" [label="(Block,)"];
+"1000123" [label="(Call,s->cert->shared_sigalgs)"];
+"1000177" -> "1000176"  [label="AST: "];
+"1000177" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000185" -> "1000177"  [label="CFG: "];
+"1000197" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000205"  [label="DDG: s->cert->shared_sigalgs"];
+"1000177" -> "1000205"  [label="DDG: !s->cert->shared_sigalgs"];
+"1000122" -> "1000177"  [label="DDG: s->cert->shared_sigalgs"];
+"1000122" -> "1000115"  [label="AST: "];
+"1000122" -> "1000128"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000128" -> "1000122"  [label="AST: "];
+"1000132" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000205"  [label="DDG: NULL"];
+"1000122" -> "1000205"  [label="DDG: s->cert->shared_sigalgs"];
+}

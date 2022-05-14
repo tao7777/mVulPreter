@@ -1,0 +1,32 @@
+digraph "0_Android_2674a7218eaa3c87f2ee26d26da5b9170e10f859@API" {
+"1002604" [label="(Call,mDataSource->readAt(\n                        data_offset + 8, &buffer, 4) < 4)"];
+"1002605" [label="(Call,mDataSource->readAt(\n                        data_offset + 8, &buffer, 4))"];
+"1002618" [label="(Identifier,type)"];
+"1002605" [label="(Call,mDataSource->readAt(\n                        data_offset + 8, &buffer, 4))"];
+"1002606" [label="(Call,data_offset + 8)"];
+"1002612" [label="(Literal,4)"];
+"1002611" [label="(Literal,4)"];
+"1002609" [label="(Call,&buffer)"];
+"1002927" [label="(MethodReturn,status_t)"];
+"1002603" [label="(ControlStructure,if (mDataSource->readAt(\n                        data_offset + 8, &buffer, 4) < 4))"];
+"1002604" [label="(Call,mDataSource->readAt(\n                        data_offset + 8, &buffer, 4) < 4)"];
+"1002615" [label="(Identifier,ERROR_IO)"];
+"1002604" -> "1002603"  [label="AST: "];
+"1002604" -> "1002612"  [label="CFG: "];
+"1002605" -> "1002604"  [label="AST: "];
+"1002612" -> "1002604"  [label="AST: "];
+"1002615" -> "1002604"  [label="CFG: "];
+"1002618" -> "1002604"  [label="CFG: "];
+"1002604" -> "1002927"  [label="DDG: mDataSource->readAt(\n                        data_offset + 8, &buffer, 4) < 4"];
+"1002604" -> "1002927"  [label="DDG: mDataSource->readAt(\n                        data_offset + 8, &buffer, 4)"];
+"1002605" -> "1002604"  [label="DDG: data_offset + 8"];
+"1002605" -> "1002604"  [label="DDG: &buffer"];
+"1002605" -> "1002604"  [label="DDG: 4"];
+"1002605" -> "1002611"  [label="CFG: "];
+"1002606" -> "1002605"  [label="AST: "];
+"1002609" -> "1002605"  [label="AST: "];
+"1002611" -> "1002605"  [label="AST: "];
+"1002612" -> "1002605"  [label="CFG: "];
+"1002605" -> "1002927"  [label="DDG: &buffer"];
+"1002605" -> "1002927"  [label="DDG: data_offset + 8"];
+}

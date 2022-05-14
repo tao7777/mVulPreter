@@ -1,0 +1,29 @@
+digraph "0_ImageMagick6_614a257295bdcdeda347086761062ac7658b6830@pointer" {
+"1000143" [label="(Call,RelinquishMagickResource(MapResource,blob_info->length))"];
+"1000131" [label="(Call,UnmapBlob(blob_info->data,blob_info->length))"];
+"1000144" [label="(Identifier,MapResource)"];
+"1000150" [label="(Identifier,blob_info)"];
+"1000145" [label="(Call,blob_info->length)"];
+"1000143" [label="(Call,RelinquishMagickResource(MapResource,blob_info->length))"];
+"1000135" [label="(Call,blob_info->length)"];
+"1000131" [label="(Call,UnmapBlob(blob_info->data,blob_info->length))"];
+"1000213" [label="(MethodReturn,unsigned char *)"];
+"1000132" [label="(Call,blob_info->data)"];
+"1000129" [label="(Call,(void) UnmapBlob(blob_info->data,blob_info->length))"];
+"1000128" [label="(Block,)"];
+"1000143" -> "1000128"  [label="AST: "];
+"1000143" -> "1000145"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000145" -> "1000143"  [label="AST: "];
+"1000150" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000213"  [label="DDG: RelinquishMagickResource(MapResource,blob_info->length)"];
+"1000143" -> "1000213"  [label="DDG: MapResource"];
+"1000131" -> "1000143"  [label="DDG: blob_info->length"];
+"1000131" -> "1000129"  [label="AST: "];
+"1000131" -> "1000135"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000135" -> "1000131"  [label="AST: "];
+"1000129" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000129"  [label="DDG: blob_info->data"];
+"1000131" -> "1000129"  [label="DDG: blob_info->length"];
+}

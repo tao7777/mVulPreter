@@ -1,0 +1,25 @@
+digraph "0_qemu_3251bdcf1c67427d964517053c3d185b46e618e8_0@pointer" {
+"1000392" [label="(Call,blk_get_stats(s->blk))"];
+"1000391" [label="(Call,block_acct_done(blk_get_stats(s->blk), &s->acct))"];
+"1000403" [label="(MethodReturn,void)"];
+"1000391" [label="(Call,block_acct_done(blk_get_stats(s->blk), &s->acct))"];
+"1000390" [label="(Block,)"];
+"1000396" [label="(Call,&s->acct)"];
+"1000393" [label="(Call,s->blk)"];
+"1000392" [label="(Call,blk_get_stats(s->blk))"];
+"1000401" [label="(Identifier,s)"];
+"1000398" [label="(Identifier,s)"];
+"1000392" -> "1000391"  [label="AST: "];
+"1000392" -> "1000393"  [label="CFG: "];
+"1000393" -> "1000392"  [label="AST: "];
+"1000398" -> "1000392"  [label="CFG: "];
+"1000392" -> "1000403"  [label="DDG: s->blk"];
+"1000392" -> "1000391"  [label="DDG: s->blk"];
+"1000391" -> "1000390"  [label="AST: "];
+"1000391" -> "1000396"  [label="CFG: "];
+"1000396" -> "1000391"  [label="AST: "];
+"1000401" -> "1000391"  [label="CFG: "];
+"1000391" -> "1000403"  [label="DDG: &s->acct"];
+"1000391" -> "1000403"  [label="DDG: blk_get_stats(s->blk)"];
+"1000391" -> "1000403"  [label="DDG: block_acct_done(blk_get_stats(s->blk), &s->acct)"];
+}

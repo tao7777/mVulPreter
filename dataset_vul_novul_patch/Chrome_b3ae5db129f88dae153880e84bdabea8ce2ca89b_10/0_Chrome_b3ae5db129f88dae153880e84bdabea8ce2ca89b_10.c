@@ -1,0 +1,1 @@
+SyslogsLibrary* CrosLibrary::GetSyslogsLibrary() {

@@ -1,0 +1,26 @@
+digraph "0_samba_1ba49b8f389eda3414b14410c7fbcb4041ca06b1@pointer" {
+"1000257" [label="(Call,cli_shutdown(srv->cli))"];
+"1000219" [label="(Call,cli_state_has_tcon(srv->cli))"];
+"1000258" [label="(Call,srv->cli)"];
+"1000496" [label="(MethodReturn,RET)"];
+"1000253" [label="(Block,)"];
+"1000218" [label="(Call,!cli_state_has_tcon(srv->cli))"];
+"1000273" [label="(Call,cli_tree_connect(srv->cli,\n\t\t\t\t\t\t  srv->cli->share,\n\t\t\t\t\t\t  \"?????\",\n\t\t\t\t\t\t  *pp_password,\n\t\t\t\t\t\t  strlen(*pp_password)+1))"];
+"1000219" [label="(Call,cli_state_has_tcon(srv->cli))"];
+"1000263" [label="(Identifier,srv)"];
+"1000220" [label="(Call,srv->cli)"];
+"1000257" [label="(Call,cli_shutdown(srv->cli))"];
+"1000257" -> "1000253"  [label="AST: "];
+"1000257" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000257"  [label="AST: "];
+"1000263" -> "1000257"  [label="CFG: "];
+"1000257" -> "1000496"  [label="DDG: cli_shutdown(srv->cli)"];
+"1000219" -> "1000257"  [label="DDG: srv->cli"];
+"1000219" -> "1000218"  [label="AST: "];
+"1000219" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000219"  [label="AST: "];
+"1000218" -> "1000219"  [label="CFG: "];
+"1000219" -> "1000496"  [label="DDG: srv->cli"];
+"1000219" -> "1000218"  [label="DDG: srv->cli"];
+"1000219" -> "1000273"  [label="DDG: srv->cli"];
+}

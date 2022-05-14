@@ -1,0 +1,38 @@
+digraph "0_ImageMagick_437a35e57db5ec078f4a3ccbf71f941276e88430@API" {
+"1000214" [label="(Call,assert(exception->signature == MagickSignature))"];
+"1000215" [label="(Call,exception->signature == MagickSignature)"];
+"1000203" [label="(Call,image_info->signature == MagickSignature)"];
+"1000215" [label="(Call,exception->signature == MagickSignature)"];
+"1000207" [label="(Identifier,MagickSignature)"];
+"1000204" [label="(Call,image_info->signature)"];
+"1001838" [label="(MethodReturn,static Image *)"];
+"1000158" [label="(Block,)"];
+"1000221" [label="(Identifier,logging)"];
+"1000219" [label="(Identifier,MagickSignature)"];
+"1000202" [label="(Call,assert(image_info->signature == MagickSignature))"];
+"1000216" [label="(Call,exception->signature)"];
+"1000214" [label="(Call,assert(exception->signature == MagickSignature))"];
+"1000203" [label="(Call,image_info->signature == MagickSignature)"];
+"1000214" -> "1000158"  [label="AST: "];
+"1000214" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000221" -> "1000214"  [label="CFG: "];
+"1000214" -> "1001838"  [label="DDG: assert(exception->signature == MagickSignature)"];
+"1000214" -> "1001838"  [label="DDG: exception->signature == MagickSignature"];
+"1000215" -> "1000214"  [label="DDG: exception->signature"];
+"1000215" -> "1000214"  [label="DDG: MagickSignature"];
+"1000215" -> "1000219"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000219" -> "1000215"  [label="AST: "];
+"1000215" -> "1001838"  [label="DDG: exception->signature"];
+"1000215" -> "1001838"  [label="DDG: MagickSignature"];
+"1000203" -> "1000215"  [label="DDG: MagickSignature"];
+"1000203" -> "1000202"  [label="AST: "];
+"1000203" -> "1000207"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000207" -> "1000203"  [label="AST: "];
+"1000202" -> "1000203"  [label="CFG: "];
+"1000203" -> "1001838"  [label="DDG: image_info->signature"];
+"1000203" -> "1000202"  [label="DDG: image_info->signature"];
+"1000203" -> "1000202"  [label="DDG: MagickSignature"];
+}

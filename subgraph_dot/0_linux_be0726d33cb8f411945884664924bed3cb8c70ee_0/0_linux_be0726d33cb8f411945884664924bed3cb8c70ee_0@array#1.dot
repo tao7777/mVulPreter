@@ -1,0 +1,32 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_0@array" {
+"1001038" [label="(Call,brelse (sbi->s_group_desc[j]))"];
+"1001356" [label="(Call,kfree(sbi->s_group_desc))"];
+"1000956" [label="(Call,sbi->s_group_desc == NULL)"];
+"1001029" [label="(ControlStructure,for (j = 0; j < i; j++))"];
+"1001382" [label="(MethodReturn,static int)"];
+"1001038" [label="(Call,brelse (sbi->s_group_desc[j]))"];
+"1001357" [label="(Call,sbi->s_group_desc)"];
+"1000113" [label="(Block,)"];
+"1001349" [label="(Call,brelse(sbi->s_group_desc[i]))"];
+"1001356" [label="(Call,kfree(sbi->s_group_desc))"];
+"1001022" [label="(Call,!sbi->s_group_desc[i])"];
+"1001362" [label="(Identifier,sbi)"];
+"1001039" [label="(Call,sbi->s_group_desc[j])"];
+"1001037" [label="(Identifier,j)"];
+"1001038" -> "1001029"  [label="AST: "];
+"1001038" -> "1001039"  [label="CFG: "];
+"1001039" -> "1001038"  [label="AST: "];
+"1001037" -> "1001038"  [label="CFG: "];
+"1001038" -> "1001382"  [label="DDG: brelse (sbi->s_group_desc[j])"];
+"1001038" -> "1001382"  [label="DDG: sbi->s_group_desc[j]"];
+"1001038" -> "1001356"  [label="DDG: sbi->s_group_desc[j]"];
+"1001356" -> "1000113"  [label="AST: "];
+"1001356" -> "1001357"  [label="CFG: "];
+"1001357" -> "1001356"  [label="AST: "];
+"1001362" -> "1001356"  [label="CFG: "];
+"1001356" -> "1001382"  [label="DDG: sbi->s_group_desc"];
+"1001356" -> "1001382"  [label="DDG: kfree(sbi->s_group_desc)"];
+"1001349" -> "1001356"  [label="DDG: sbi->s_group_desc[i]"];
+"1000956" -> "1001356"  [label="DDG: sbi->s_group_desc"];
+"1001022" -> "1001356"  [label="DDG: sbi->s_group_desc[i]"];
+}

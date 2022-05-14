@@ -1,0 +1,22 @@
+digraph "0_linux_45f6fad84cc305103b28d73482b344d7f5b76f39_18@pointer" {
+"1000944" [label="(Call,skb_queue_empty(&sk->sk_write_queue))"];
+"1000943" [label="(Call,unlikely(skb_queue_empty(&sk->sk_write_queue)))"];
+"1000942" [label="(ControlStructure,if (unlikely(skb_queue_empty(&sk->sk_write_queue))))"];
+"1000944" [label="(Call,skb_queue_empty(&sk->sk_write_queue))"];
+"1000951" [label="(Identifier,up)"];
+"1000943" [label="(Call,unlikely(skb_queue_empty(&sk->sk_write_queue)))"];
+"1000956" [label="(Identifier,err)"];
+"1001034" [label="(MethodReturn,int)"];
+"1000945" [label="(Call,&sk->sk_write_queue)"];
+"1000944" -> "1000943"  [label="AST: "];
+"1000944" -> "1000945"  [label="CFG: "];
+"1000945" -> "1000944"  [label="AST: "];
+"1000943" -> "1000944"  [label="CFG: "];
+"1000944" -> "1001034"  [label="DDG: &sk->sk_write_queue"];
+"1000944" -> "1000943"  [label="DDG: &sk->sk_write_queue"];
+"1000943" -> "1000942"  [label="AST: "];
+"1000951" -> "1000943"  [label="CFG: "];
+"1000956" -> "1000943"  [label="CFG: "];
+"1000943" -> "1001034"  [label="DDG: unlikely(skb_queue_empty(&sk->sk_write_queue))"];
+"1000943" -> "1001034"  [label="DDG: skb_queue_empty(&sk->sk_write_queue)"];
+}

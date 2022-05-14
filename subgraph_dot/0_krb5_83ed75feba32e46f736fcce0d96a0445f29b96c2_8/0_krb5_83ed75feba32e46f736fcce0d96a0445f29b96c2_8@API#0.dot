@@ -1,0 +1,26 @@
+digraph "0_krb5_83ed75feba32e46f736fcce0d96a0445f29b96c2_8@API" {
+"1000123" [label="(Call,xdr_free(xdr_gpol_ret,  &ret))"];
+"1000357" [label="(Return,return &ret;)"];
+"1000358" [label="(Call,&ret)"];
+"1000357" [label="(Return,return &ret;)"];
+"1000360" [label="(MethodReturn,RET)"];
+"1000103" [label="(Block,)"];
+"1000124" [label="(Identifier,xdr_gpol_ret)"];
+"1000125" [label="(Call,&ret)"];
+"1000130" [label="(Identifier,ret)"];
+"1000123" [label="(Call,xdr_free(xdr_gpol_ret,  &ret))"];
+"1000123" -> "1000103"  [label="AST: "];
+"1000123" -> "1000125"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000125" -> "1000123"  [label="AST: "];
+"1000130" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000360"  [label="DDG: &ret"];
+"1000123" -> "1000360"  [label="DDG: xdr_free(xdr_gpol_ret,  &ret)"];
+"1000123" -> "1000360"  [label="DDG: xdr_gpol_ret"];
+"1000123" -> "1000357"  [label="DDG: &ret"];
+"1000357" -> "1000103"  [label="AST: "];
+"1000357" -> "1000358"  [label="CFG: "];
+"1000358" -> "1000357"  [label="AST: "];
+"1000360" -> "1000357"  [label="CFG: "];
+"1000357" -> "1000360"  [label="DDG: <RET>"];
+}

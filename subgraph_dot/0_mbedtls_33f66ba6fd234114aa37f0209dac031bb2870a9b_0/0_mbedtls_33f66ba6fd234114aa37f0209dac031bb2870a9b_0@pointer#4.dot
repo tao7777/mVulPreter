@@ -1,0 +1,35 @@
+digraph "0_mbedtls_33f66ba6fd234114aa37f0209dac031bb2870a9b_0@pointer" {
+"1000300" [label="(Call,rs_ctx->sig->state = ecdsa_sig_mul)"];
+"1000233" [label="(Call,rs_ctx->sig->state == ecdsa_sig_mul)"];
+"1000307" [label="(JumpTarget,mul:)"];
+"1000300" [label="(Call,rs_ctx->sig->state = ecdsa_sig_mul)"];
+"1000456" [label="(MethodReturn,static int)"];
+"1000301" [label="(Call,rs_ctx->sig->state)"];
+"1000234" [label="(Call,rs_ctx->sig->state)"];
+"1000245" [label="(Identifier,rs_ctx)"];
+"1000233" [label="(Call,rs_ctx->sig->state == ecdsa_sig_mul)"];
+"1000239" [label="(Identifier,ecdsa_sig_mul)"];
+"1000232" [label="(ControlStructure,if( rs_ctx->sig->state == ecdsa_sig_mul ))"];
+"1000242" [label="(Call,rs_ctx->sig->state == ecdsa_sig_modn)"];
+"1000306" [label="(Identifier,ecdsa_sig_mul)"];
+"1000240" [label="(ControlStructure,goto mul;)"];
+"1000290" [label="(ControlStructure,if( rs_ctx != NULL && rs_ctx->sig != NULL ))"];
+"1000300" -> "1000290"  [label="AST: "];
+"1000300" -> "1000306"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000306" -> "1000300"  [label="AST: "];
+"1000307" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000456"  [label="DDG: rs_ctx->sig->state"];
+"1000300" -> "1000456"  [label="DDG: ecdsa_sig_mul"];
+"1000233" -> "1000300"  [label="DDG: ecdsa_sig_mul"];
+"1000233" -> "1000232"  [label="AST: "];
+"1000233" -> "1000239"  [label="CFG: "];
+"1000234" -> "1000233"  [label="AST: "];
+"1000239" -> "1000233"  [label="AST: "];
+"1000240" -> "1000233"  [label="CFG: "];
+"1000245" -> "1000233"  [label="CFG: "];
+"1000233" -> "1000456"  [label="DDG: rs_ctx->sig->state == ecdsa_sig_mul"];
+"1000233" -> "1000456"  [label="DDG: ecdsa_sig_mul"];
+"1000233" -> "1000456"  [label="DDG: rs_ctx->sig->state"];
+"1000233" -> "1000242"  [label="DDG: rs_ctx->sig->state"];
+}

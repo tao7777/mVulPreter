@@ -1,0 +1,35 @@
+digraph "0_qemu_30663fd26c0307e414622c7a8607fbc04f92ec14@pointer" {
+"1007719" [label="(Call,s->cpl <= s->iopl)"];
+"1007710" [label="(Call,s->vm86 ? s->iopl == 3 : s->cpl <= s->iopl)"];
+"1011840" [label="(MethodReturn,static target_ulong)"];
+"1007720" [label="(Call,s->cpl)"];
+"1007711" [label="(Call,s->vm86)"];
+"1007709" [label="(ControlStructure,if (s->vm86 ? s->iopl == 3 : s->cpl <= s->iopl))"];
+"1007743" [label="(Identifier,s)"];
+"1007719" [label="(Call,s->cpl <= s->iopl)"];
+"1007728" [label="(Identifier,cpu_env)"];
+"1007714" [label="(Call,s->iopl == 3)"];
+"1007723" [label="(Call,s->iopl)"];
+"1007710" [label="(Call,s->vm86 ? s->iopl == 3 : s->cpl <= s->iopl)"];
+"1007719" -> "1007710"  [label="AST: "];
+"1007719" -> "1007723"  [label="CFG: "];
+"1007720" -> "1007719"  [label="AST: "];
+"1007723" -> "1007719"  [label="AST: "];
+"1007710" -> "1007719"  [label="CFG: "];
+"1007719" -> "1011840"  [label="DDG: s->iopl"];
+"1007719" -> "1011840"  [label="DDG: s->cpl"];
+"1007719" -> "1007710"  [label="DDG: s->cpl"];
+"1007719" -> "1007710"  [label="DDG: s->iopl"];
+"1007710" -> "1007709"  [label="AST: "];
+"1007710" -> "1007714"  [label="CFG: "];
+"1007711" -> "1007710"  [label="AST: "];
+"1007714" -> "1007710"  [label="AST: "];
+"1007728" -> "1007710"  [label="CFG: "];
+"1007743" -> "1007710"  [label="CFG: "];
+"1007710" -> "1011840"  [label="DDG: s->vm86"];
+"1007710" -> "1011840"  [label="DDG: s->cpl <= s->iopl"];
+"1007710" -> "1011840"  [label="DDG: s->iopl == 3"];
+"1007710" -> "1011840"  [label="DDG: s->vm86 ? s->iopl == 3 : s->cpl <= s->iopl"];
+"1007714" -> "1007710"  [label="DDG: s->iopl"];
+"1007714" -> "1007710"  [label="DDG: 3"];
+}

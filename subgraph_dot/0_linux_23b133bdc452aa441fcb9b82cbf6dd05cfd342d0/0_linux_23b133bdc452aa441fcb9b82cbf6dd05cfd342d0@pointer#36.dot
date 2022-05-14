@@ -1,0 +1,37 @@
+digraph "0_linux_23b133bdc452aa441fcb9b82cbf6dd05cfd342d0@pointer" {
+"1000939" [label="(Call,iinfo->i_unique = le64_to_cpu(efe->uniqueID))"];
+"1000943" [label="(Call,le64_to_cpu(efe->uniqueID))"];
+"1000971" [label="(Call,inode->i_generation = iinfo->i_unique)"];
+"1000975" [label="(Call,iinfo->i_unique)"];
+"1000972" [label="(Call,inode->i_generation)"];
+"1000940" [label="(Call,iinfo->i_unique)"];
+"1000111" [label="(Block,)"];
+"1000944" [label="(Call,efe->uniqueID)"];
+"1000943" [label="(Call,le64_to_cpu(efe->uniqueID))"];
+"1000821" [label="(Call,iinfo->i_unique = le64_to_cpu(fe->uniqueID))"];
+"1000949" [label="(Identifier,iinfo)"];
+"1000971" [label="(Call,inode->i_generation = iinfo->i_unique)"];
+"1000854" [label="(Block,)"];
+"1001231" [label="(MethodReturn,static int)"];
+"1000982" [label="(Identifier,iinfo)"];
+"1000939" [label="(Call,iinfo->i_unique = le64_to_cpu(efe->uniqueID))"];
+"1000939" -> "1000854"  [label="AST: "];
+"1000939" -> "1000943"  [label="CFG: "];
+"1000940" -> "1000939"  [label="AST: "];
+"1000943" -> "1000939"  [label="AST: "];
+"1000949" -> "1000939"  [label="CFG: "];
+"1000939" -> "1001231"  [label="DDG: le64_to_cpu(efe->uniqueID)"];
+"1000943" -> "1000939"  [label="DDG: efe->uniqueID"];
+"1000939" -> "1000971"  [label="DDG: iinfo->i_unique"];
+"1000943" -> "1000944"  [label="CFG: "];
+"1000944" -> "1000943"  [label="AST: "];
+"1000943" -> "1001231"  [label="DDG: efe->uniqueID"];
+"1000971" -> "1000111"  [label="AST: "];
+"1000971" -> "1000975"  [label="CFG: "];
+"1000972" -> "1000971"  [label="AST: "];
+"1000975" -> "1000971"  [label="AST: "];
+"1000982" -> "1000971"  [label="CFG: "];
+"1000971" -> "1001231"  [label="DDG: inode->i_generation"];
+"1000971" -> "1001231"  [label="DDG: iinfo->i_unique"];
+"1000821" -> "1000971"  [label="DDG: iinfo->i_unique"];
+}

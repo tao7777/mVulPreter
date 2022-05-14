@@ -1,0 +1,33 @@
+digraph "0_linux_d2f007dbe7e4c9583eea6eb04d60001e85c6f1bd@pointer" {
+"1000150" [label="(Call,*ppos != 0)"];
+"1000149" [label="(Call,(*ppos != 0) || (count >= PAGE_SIZE))"];
+"1000150" [label="(Call,*ppos != 0)"];
+"1000151" [label="(Call,*ppos)"];
+"1000154" [label="(Call,count >= PAGE_SIZE)"];
+"1000161" [label="(Identifier,kbuf)"];
+"1000148" [label="(ControlStructure,if ((*ppos != 0) || (count >= PAGE_SIZE)))"];
+"1000578" [label="(MethodReturn,static ssize_t)"];
+"1000159" [label="(Identifier,EINVAL)"];
+"1000149" [label="(Call,(*ppos != 0) || (count >= PAGE_SIZE))"];
+"1000155" [label="(Identifier,count)"];
+"1000153" [label="(Literal,0)"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000153"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000153" -> "1000150"  [label="AST: "];
+"1000155" -> "1000150"  [label="CFG: "];
+"1000149" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000578"  [label="DDG: *ppos"];
+"1000150" -> "1000149"  [label="DDG: *ppos"];
+"1000150" -> "1000149"  [label="DDG: 0"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000149"  [label="AST: "];
+"1000159" -> "1000149"  [label="CFG: "];
+"1000161" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000578"  [label="DDG: (*ppos != 0) || (count >= PAGE_SIZE)"];
+"1000149" -> "1000578"  [label="DDG: count >= PAGE_SIZE"];
+"1000149" -> "1000578"  [label="DDG: *ppos != 0"];
+"1000154" -> "1000149"  [label="DDG: count"];
+"1000154" -> "1000149"  [label="DDG: PAGE_SIZE"];
+}

@@ -1,0 +1,38 @@
+digraph "0_ImageMagick_aecd0ada163a4d6c769cec178955d5f3e9316f2f@API" {
+"1000179" [label="(Call,assert(cache_info->signature == MagickCoreSignature))"];
+"1000180" [label="(Call,cache_info->signature == MagickCoreSignature)"];
+"1000126" [label="(Call,image->signature == MagickCoreSignature)"];
+"1000179" [label="(Call,assert(cache_info->signature == MagickCoreSignature))"];
+"1000180" [label="(Call,cache_info->signature == MagickCoreSignature)"];
+"1000126" [label="(Call,image->signature == MagickCoreSignature)"];
+"1000125" [label="(Call,assert(image->signature == MagickCoreSignature))"];
+"1001283" [label="(MethodReturn,static MagickBooleanType)"];
+"1000127" [label="(Call,image->signature)"];
+"1000189" [label="(Identifier,WidthResource)"];
+"1000184" [label="(Identifier,MagickCoreSignature)"];
+"1000108" [label="(Block,)"];
+"1000181" [label="(Call,cache_info->signature)"];
+"1000130" [label="(Identifier,MagickCoreSignature)"];
+"1000179" -> "1000108"  [label="AST: "];
+"1000179" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000189" -> "1000179"  [label="CFG: "];
+"1000179" -> "1001283"  [label="DDG: assert(cache_info->signature == MagickCoreSignature)"];
+"1000179" -> "1001283"  [label="DDG: cache_info->signature == MagickCoreSignature"];
+"1000180" -> "1000179"  [label="DDG: cache_info->signature"];
+"1000180" -> "1000179"  [label="DDG: MagickCoreSignature"];
+"1000180" -> "1000184"  [label="CFG: "];
+"1000181" -> "1000180"  [label="AST: "];
+"1000184" -> "1000180"  [label="AST: "];
+"1000180" -> "1001283"  [label="DDG: MagickCoreSignature"];
+"1000180" -> "1001283"  [label="DDG: cache_info->signature"];
+"1000126" -> "1000180"  [label="DDG: MagickCoreSignature"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000130"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000130" -> "1000126"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1001283"  [label="DDG: image->signature"];
+"1000126" -> "1000125"  [label="DDG: image->signature"];
+"1000126" -> "1000125"  [label="DDG: MagickCoreSignature"];
+}

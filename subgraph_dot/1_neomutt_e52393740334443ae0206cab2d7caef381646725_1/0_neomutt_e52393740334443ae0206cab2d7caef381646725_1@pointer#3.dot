@@ -1,0 +1,35 @@
+digraph "0_neomutt_e52393740334443ae0206cab2d7caef381646725_1@pointer" {
+"1000275" [label="(Call,imap_quote_string(term, sizeof(term), pat->p.str))"];
+"1000284" [label="(Call,mutt_buffer_addstr(buf, term))"];
+"1000284" [label="(Call,mutt_buffer_addstr(buf, term))"];
+"1000286" [label="(Identifier,term)"];
+"1000287" [label="(ControlStructure,break;)"];
+"1000105" [label="(MethodParameterIn,struct Buffer *buf)"];
+"1000350" [label="(MethodReturn,static int)"];
+"1000285" [label="(Identifier,buf)"];
+"1000276" [label="(Identifier,term)"];
+"1000272" [label="(Call,mutt_buffer_addstr(buf, \"BODY \"))"];
+"1000206" [label="(Block,)"];
+"1000277" [label="(Call,sizeof(term))"];
+"1000279" [label="(Call,pat->p.str)"];
+"1000275" [label="(Call,imap_quote_string(term, sizeof(term), pat->p.str))"];
+"1000275" -> "1000206"  [label="AST: "];
+"1000275" -> "1000279"  [label="CFG: "];
+"1000276" -> "1000275"  [label="AST: "];
+"1000277" -> "1000275"  [label="AST: "];
+"1000279" -> "1000275"  [label="AST: "];
+"1000285" -> "1000275"  [label="CFG: "];
+"1000275" -> "1000350"  [label="DDG: imap_quote_string(term, sizeof(term), pat->p.str)"];
+"1000275" -> "1000350"  [label="DDG: pat->p.str"];
+"1000275" -> "1000284"  [label="DDG: term"];
+"1000284" -> "1000206"  [label="AST: "];
+"1000284" -> "1000286"  [label="CFG: "];
+"1000285" -> "1000284"  [label="AST: "];
+"1000286" -> "1000284"  [label="AST: "];
+"1000287" -> "1000284"  [label="CFG: "];
+"1000284" -> "1000350"  [label="DDG: term"];
+"1000284" -> "1000350"  [label="DDG: buf"];
+"1000284" -> "1000350"  [label="DDG: mutt_buffer_addstr(buf, term)"];
+"1000272" -> "1000284"  [label="DDG: buf"];
+"1000105" -> "1000284"  [label="DDG: buf"];
+}

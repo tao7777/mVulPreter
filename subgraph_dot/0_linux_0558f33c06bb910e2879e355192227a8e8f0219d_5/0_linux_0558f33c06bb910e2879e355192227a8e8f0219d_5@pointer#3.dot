@@ -1,0 +1,24 @@
+digraph "0_linux_0558f33c06bb910e2879e355192227a8e8f0219d_5@pointer" {
+"1000131" [label="(Call,mutex_lock(&ha->disco_mutex))"];
+"1000194" [label="(Call,mutex_unlock(&ha->disco_mutex))"];
+"1000103" [label="(Block,)"];
+"1000194" [label="(Call,mutex_unlock(&ha->disco_mutex))"];
+"1000205" [label="(MethodReturn,static void)"];
+"1000200" [label="(Identifier,port)"];
+"1000131" [label="(Call,mutex_lock(&ha->disco_mutex))"];
+"1000195" [label="(Call,&ha->disco_mutex)"];
+"1000132" [label="(Call,&ha->disco_mutex)"];
+"1000138" [label="(Identifier,SAS_HA_ATA_EH_ACTIVE)"];
+"1000131" -> "1000103"  [label="AST: "];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000138" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000205"  [label="DDG: mutex_lock(&ha->disco_mutex)"];
+"1000131" -> "1000194"  [label="DDG: &ha->disco_mutex"];
+"1000194" -> "1000103"  [label="AST: "];
+"1000194" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000200" -> "1000194"  [label="CFG: "];
+"1000194" -> "1000205"  [label="DDG: mutex_unlock(&ha->disco_mutex)"];
+"1000194" -> "1000205"  [label="DDG: &ha->disco_mutex"];
+}

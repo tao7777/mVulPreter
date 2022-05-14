@@ -1,0 +1,20 @@
+digraph "0_Chrome_6d2aef28cb0b677af468ebf3e32a176a7c37086e_1@API" {
+"1000120" [label="(Call,new AudioOutputDevice::AudioThreadCallback(\n       audio_parameters_, input_channels_, handle, length, callback_))"];
+"1000119" [label="(Call,audio_callback_.reset(new AudioOutputDevice::AudioThreadCallback(\n       audio_parameters_, input_channels_, handle, length, callback_)))"];
+"1000120" [label="(Call,new AudioOutputDevice::AudioThreadCallback(\n       audio_parameters_, input_channels_, handle, length, callback_))"];
+"1000119" [label="(Call,audio_callback_.reset(new AudioOutputDevice::AudioThreadCallback(\n       audio_parameters_, input_channels_, handle, length, callback_)))"];
+"1000104" [label="(Block,)"];
+"1000132" [label="(MethodReturn,void)"];
+"1000123" [label="(Call,audio_callback_.get())"];
+"1000121" [label="(Identifier,AudioOutputDevice::AudioThreadCallback)"];
+"1000120" -> "1000119"  [label="AST: "];
+"1000120" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000120"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000132"  [label="DDG: AudioOutputDevice::AudioThreadCallback"];
+"1000120" -> "1000119"  [label="DDG: AudioOutputDevice::AudioThreadCallback"];
+"1000119" -> "1000104"  [label="AST: "];
+"1000123" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000132"  [label="DDG: audio_callback_.reset(new AudioOutputDevice::AudioThreadCallback(\n       audio_parameters_, input_channels_, handle, length, callback_))"];
+"1000119" -> "1000132"  [label="DDG: new AudioOutputDevice::AudioThreadCallback(\n       audio_parameters_, input_channels_, handle, length, callback_)"];
+}

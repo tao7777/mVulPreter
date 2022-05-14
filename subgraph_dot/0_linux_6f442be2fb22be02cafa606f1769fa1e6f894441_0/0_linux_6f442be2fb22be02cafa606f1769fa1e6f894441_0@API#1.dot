@@ -1,0 +1,31 @@
+digraph "0_linux_6f442be2fb22be02cafa606f1769fa1e6f894441_0@API" {
+"1000211" [label="(Call,set_system_trap_gate(SYSCALL_VECTOR, &system_call))"];
+"1000215" [label="(Call,set_bit(SYSCALL_VECTOR, used_vectors))"];
+"1000213" [label="(Call,&system_call)"];
+"1000216" [label="(Identifier,SYSCALL_VECTOR)"];
+"1000219" [label="(Identifier,FIX_RO_IDT)"];
+"1000106" [label="(Block,)"];
+"1000211" [label="(Call,set_system_trap_gate(SYSCALL_VECTOR, &system_call))"];
+"1000247" [label="(MethodReturn,void __init)"];
+"1000217" [label="(Identifier,used_vectors)"];
+"1000208" [label="(Call,set_bit(IA32_SYSCALL_VECTOR, used_vectors))"];
+"1000212" [label="(Identifier,SYSCALL_VECTOR)"];
+"1000215" [label="(Call,set_bit(SYSCALL_VECTOR, used_vectors))"];
+"1000211" -> "1000106"  [label="AST: "];
+"1000211" -> "1000213"  [label="CFG: "];
+"1000212" -> "1000211"  [label="AST: "];
+"1000213" -> "1000211"  [label="AST: "];
+"1000216" -> "1000211"  [label="CFG: "];
+"1000211" -> "1000247"  [label="DDG: &system_call"];
+"1000211" -> "1000247"  [label="DDG: set_system_trap_gate(SYSCALL_VECTOR, &system_call)"];
+"1000211" -> "1000215"  [label="DDG: SYSCALL_VECTOR"];
+"1000215" -> "1000106"  [label="AST: "];
+"1000215" -> "1000217"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000217" -> "1000215"  [label="AST: "];
+"1000219" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000247"  [label="DDG: SYSCALL_VECTOR"];
+"1000215" -> "1000247"  [label="DDG: used_vectors"];
+"1000215" -> "1000247"  [label="DDG: set_bit(SYSCALL_VECTOR, used_vectors)"];
+"1000208" -> "1000215"  [label="DDG: used_vectors"];
+}

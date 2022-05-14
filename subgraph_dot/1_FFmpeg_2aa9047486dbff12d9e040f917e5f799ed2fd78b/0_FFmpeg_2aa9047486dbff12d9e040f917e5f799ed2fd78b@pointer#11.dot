@@ -1,0 +1,30 @@
+digraph "0_FFmpeg_2aa9047486dbff12d9e040f917e5f799ed2fd78b@pointer" {
+"1000127" [label="(Call,!s->studio_profile)"];
+"1000126" [label="(Call,!s->studio_profile && s->avctx->bits_per_raw_sample != 8)"];
+"1000125" [label="(ControlStructure,if (!s->studio_profile && s->avctx->bits_per_raw_sample != 8))"];
+"1000134" [label="(Identifier,s)"];
+"1000127" [label="(Call,!s->studio_profile)"];
+"1000149" [label="(Identifier,s)"];
+"1000126" [label="(Call,!s->studio_profile && s->avctx->bits_per_raw_sample != 8)"];
+"1000128" [label="(Call,s->studio_profile)"];
+"1000748" [label="(MethodReturn,int)"];
+"1000141" [label="(Identifier,s)"];
+"1000131" [label="(Call,s->avctx->bits_per_raw_sample != 8)"];
+"1000127" -> "1000126"  [label="AST: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000134" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000748"  [label="DDG: s->studio_profile"];
+"1000127" -> "1000126"  [label="DDG: s->studio_profile"];
+"1000126" -> "1000125"  [label="AST: "];
+"1000126" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000126"  [label="AST: "];
+"1000141" -> "1000126"  [label="CFG: "];
+"1000149" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000748"  [label="DDG: !s->studio_profile && s->avctx->bits_per_raw_sample != 8"];
+"1000126" -> "1000748"  [label="DDG: !s->studio_profile"];
+"1000126" -> "1000748"  [label="DDG: s->avctx->bits_per_raw_sample != 8"];
+"1000131" -> "1000126"  [label="DDG: s->avctx->bits_per_raw_sample"];
+"1000131" -> "1000126"  [label="DDG: 8"];
+}

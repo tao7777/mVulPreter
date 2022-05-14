@@ -1,0 +1,31 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_28@pointer" {
+"1000220" [label="(Call,srose = msg->msg_name)"];
+"1000213" [label="(Call,memset(msg->msg_name, 0, sizeof(struct full_sockaddr_rose)))"];
+"1000222" [label="(Call,msg->msg_name)"];
+"1000211" [label="(Block,)"];
+"1000214" [label="(Call,msg->msg_name)"];
+"1000227" [label="(Identifier,srose)"];
+"1000329" [label="(MethodReturn,static int)"];
+"1000221" [label="(Identifier,srose)"];
+"1000220" [label="(Call,srose = msg->msg_name)"];
+"1000217" [label="(Literal,0)"];
+"1000262" [label="(Call,(struct full_sockaddr_rose *)msg->msg_name)"];
+"1000218" [label="(Call,sizeof(struct full_sockaddr_rose))"];
+"1000213" [label="(Call,memset(msg->msg_name, 0, sizeof(struct full_sockaddr_rose)))"];
+"1000220" -> "1000211"  [label="AST: "];
+"1000220" -> "1000222"  [label="CFG: "];
+"1000221" -> "1000220"  [label="AST: "];
+"1000222" -> "1000220"  [label="AST: "];
+"1000227" -> "1000220"  [label="CFG: "];
+"1000220" -> "1000329"  [label="DDG: srose"];
+"1000220" -> "1000329"  [label="DDG: msg->msg_name"];
+"1000213" -> "1000220"  [label="DDG: msg->msg_name"];
+"1000213" -> "1000211"  [label="AST: "];
+"1000213" -> "1000218"  [label="CFG: "];
+"1000214" -> "1000213"  [label="AST: "];
+"1000217" -> "1000213"  [label="AST: "];
+"1000218" -> "1000213"  [label="AST: "];
+"1000221" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000329"  [label="DDG: memset(msg->msg_name, 0, sizeof(struct full_sockaddr_rose))"];
+"1000213" -> "1000262"  [label="DDG: msg->msg_name"];
+}

@@ -1,0 +1,1 @@
+bool BlockEntry::EOS() const

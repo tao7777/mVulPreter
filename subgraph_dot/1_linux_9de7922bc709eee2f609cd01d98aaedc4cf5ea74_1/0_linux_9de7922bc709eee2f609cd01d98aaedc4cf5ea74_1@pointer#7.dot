@@ -1,0 +1,29 @@
+digraph "0_linux_9de7922bc709eee2f609cd01d98aaedc4cf5ea74_1@pointer" {
+"1000154" [label="(Call,!net->sctp.addip_noauth)"];
+"1000153" [label="(Call,!net->sctp.addip_noauth && !chunk->auth)"];
+"1000152" [label="(ControlStructure,if (!net->sctp.addip_noauth && !chunk->auth))"];
+"1000175" [label="(Identifier,chunk)"];
+"1000154" [label="(Call,!net->sctp.addip_noauth)"];
+"1000166" [label="(Identifier,net)"];
+"1000162" [label="(Identifier,chunk)"];
+"1000153" [label="(Call,!net->sctp.addip_noauth && !chunk->auth)"];
+"1000160" [label="(Call,!chunk->auth)"];
+"1000155" [label="(Call,net->sctp.addip_noauth)"];
+"1000358" [label="(MethodReturn,sctp_disposition_t)"];
+"1000154" -> "1000153"  [label="AST: "];
+"1000154" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000162" -> "1000154"  [label="CFG: "];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000358"  [label="DDG: net->sctp.addip_noauth"];
+"1000154" -> "1000153"  [label="DDG: net->sctp.addip_noauth"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000153" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000153"  [label="AST: "];
+"1000166" -> "1000153"  [label="CFG: "];
+"1000175" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000358"  [label="DDG: !chunk->auth"];
+"1000153" -> "1000358"  [label="DDG: !net->sctp.addip_noauth && !chunk->auth"];
+"1000153" -> "1000358"  [label="DDG: !net->sctp.addip_noauth"];
+"1000160" -> "1000153"  [label="DDG: chunk->auth"];
+}

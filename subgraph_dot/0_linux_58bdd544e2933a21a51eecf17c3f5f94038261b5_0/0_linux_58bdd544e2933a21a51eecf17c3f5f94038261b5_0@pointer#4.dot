@@ -1,0 +1,30 @@
+digraph "0_linux_58bdd544e2933a21a51eecf17c3f5f94038261b5_0@pointer" {
+"1000175" [label="(Call,be16_to_cpu(sock->miux) > LLCP_MAX_MIUX ?\n\t\tlocal->miux : sock->miux)"];
+"1000177" [label="(Call,be16_to_cpu(sock->miux))"];
+"1000185" [label="(Call,sock->miux)"];
+"1000303" [label="(MethodReturn,int)"];
+"1000176" [label="(Call,be16_to_cpu(sock->miux) > LLCP_MAX_MIUX)"];
+"1000177" [label="(Call,be16_to_cpu(sock->miux))"];
+"1000181" [label="(Identifier,LLCP_MAX_MIUX)"];
+"1000178" [label="(Call,sock->miux)"];
+"1000182" [label="(Call,local->miux)"];
+"1000173" [label="(Call,miux = be16_to_cpu(sock->miux) > LLCP_MAX_MIUX ?\n\t\tlocal->miux : sock->miux)"];
+"1000175" [label="(Call,be16_to_cpu(sock->miux) > LLCP_MAX_MIUX ?\n\t\tlocal->miux : sock->miux)"];
+"1000175" -> "1000173"  [label="AST: "];
+"1000175" -> "1000182"  [label="CFG: "];
+"1000175" -> "1000185"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000182" -> "1000175"  [label="AST: "];
+"1000185" -> "1000175"  [label="AST: "];
+"1000173" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000303"  [label="DDG: sock->miux"];
+"1000175" -> "1000303"  [label="DDG: local->miux"];
+"1000175" -> "1000303"  [label="DDG: be16_to_cpu(sock->miux) > LLCP_MAX_MIUX"];
+"1000177" -> "1000175"  [label="DDG: sock->miux"];
+"1000177" -> "1000176"  [label="AST: "];
+"1000177" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000177"  [label="AST: "];
+"1000181" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000173"  [label="DDG: sock->miux"];
+"1000177" -> "1000176"  [label="DDG: sock->miux"];
+}

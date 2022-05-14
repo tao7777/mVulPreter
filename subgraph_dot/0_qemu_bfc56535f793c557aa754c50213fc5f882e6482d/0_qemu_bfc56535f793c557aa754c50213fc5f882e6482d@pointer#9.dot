@@ -1,0 +1,26 @@
+digraph "0_qemu_bfc56535f793c557aa754c50213fc5f882e6482d@pointer" {
+"1000357" [label="(Call,s->vram_ptr + (s->start_addr * 4))"];
+"1000361" [label="(Call,s->start_addr * 4)"];
+"1000658" [label="(Call,s->start_addr * 4)"];
+"1000357" [label="(Call,s->vram_ptr + (s->start_addr * 4))"];
+"1000358" [label="(Call,s->vram_ptr)"];
+"1000362" [label="(Call,s->start_addr)"];
+"1000361" [label="(Call,s->start_addr * 4)"];
+"1000939" [label="(MethodReturn,static void)"];
+"1000365" [label="(Literal,4)"];
+"1000350" [label="(Call,qemu_create_displaysurface_from(disp_width,\n                    height, format, s->line_offset,\n                    s->vram_ptr + (s->start_addr * 4)))"];
+"1000357" -> "1000350"  [label="AST: "];
+"1000357" -> "1000361"  [label="CFG: "];
+"1000358" -> "1000357"  [label="AST: "];
+"1000361" -> "1000357"  [label="AST: "];
+"1000350" -> "1000357"  [label="CFG: "];
+"1000357" -> "1000939"  [label="DDG: s->vram_ptr"];
+"1000361" -> "1000357"  [label="DDG: s->start_addr"];
+"1000361" -> "1000357"  [label="DDG: 4"];
+"1000361" -> "1000365"  [label="CFG: "];
+"1000362" -> "1000361"  [label="AST: "];
+"1000365" -> "1000361"  [label="AST: "];
+"1000361" -> "1000350"  [label="DDG: s->start_addr"];
+"1000361" -> "1000350"  [label="DDG: 4"];
+"1000361" -> "1000658"  [label="DDG: s->start_addr"];
+}

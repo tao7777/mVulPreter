@@ -1,0 +1,32 @@
+digraph "0_optee_os_a637243270fc1faae16de059091795c32d86e65e@array" {
+"1000247" [label="(Call,params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000243" [label="(Call,param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000248" [label="(Call,params[0].attributeID)"];
+"1000247" [label="(Call,params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000260" [label="(Identifier,alloc_size)"];
+"1000242" [label="(ControlStructure,if (param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE))"];
+"1000243" [label="(Call,param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000849" [label="(MethodReturn,TEE_Result)"];
+"1000253" [label="(Identifier,TEE_ATTR_DH_PUBLIC_VALUE)"];
+"1000244" [label="(Call,param_count != 1)"];
+"1000256" [label="(Identifier,res)"];
+"1000247" -> "1000243"  [label="AST: "];
+"1000247" -> "1000253"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000253" -> "1000247"  [label="AST: "];
+"1000243" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000849"  [label="DDG: params[0].attributeID"];
+"1000247" -> "1000849"  [label="DDG: TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000247" -> "1000243"  [label="DDG: params[0].attributeID"];
+"1000247" -> "1000243"  [label="DDG: TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000243" -> "1000242"  [label="AST: "];
+"1000243" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000243"  [label="AST: "];
+"1000256" -> "1000243"  [label="CFG: "];
+"1000260" -> "1000243"  [label="CFG: "];
+"1000243" -> "1000849"  [label="DDG: param_count != 1"];
+"1000243" -> "1000849"  [label="DDG: param_count != 1 ||\n\t\t    params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000243" -> "1000849"  [label="DDG: params[0].attributeID != TEE_ATTR_DH_PUBLIC_VALUE"];
+"1000244" -> "1000243"  [label="DDG: param_count"];
+"1000244" -> "1000243"  [label="DDG: 1"];
+}

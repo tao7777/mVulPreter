@@ -1,0 +1,22 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_8@pointer" {
+"1000244" [label="(Call,mntget(path->mnt))"];
+"1000238" [label="(Call,calldata->path.mnt = mntget(path->mnt))"];
+"1000244" [label="(Call,mntget(path->mnt))"];
+"1000105" [label="(Block,)"];
+"1000315" [label="(MethodReturn,int)"];
+"1000245" [label="(Call,path->mnt)"];
+"1000238" [label="(Call,calldata->path.mnt = mntget(path->mnt))"];
+"1000251" [label="(Identifier,calldata)"];
+"1000239" [label="(Call,calldata->path.mnt)"];
+"1000244" -> "1000238"  [label="AST: "];
+"1000244" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000244"  [label="AST: "];
+"1000238" -> "1000244"  [label="CFG: "];
+"1000244" -> "1000315"  [label="DDG: path->mnt"];
+"1000244" -> "1000238"  [label="DDG: path->mnt"];
+"1000238" -> "1000105"  [label="AST: "];
+"1000239" -> "1000238"  [label="AST: "];
+"1000251" -> "1000238"  [label="CFG: "];
+"1000238" -> "1000315"  [label="DDG: mntget(path->mnt)"];
+"1000238" -> "1000315"  [label="DDG: calldata->path.mnt"];
+}

@@ -1,0 +1,21 @@
+digraph "0_qemu_7285477ab11831b1cf56e45878a89170dd06d9b9_2@pointer" {
+"1000166" [label="(Call,r->qiov.size / 512)"];
+"1000165" [label="(Return,return r->qiov.size / 512;)"];
+"1000166" [label="(Call,r->qiov.size / 512)"];
+"1000172" [label="(Literal,512)"];
+"1000165" [label="(Return,return r->qiov.size / 512;)"];
+"1000102" [label="(Block,)"];
+"1000167" [label="(Call,r->qiov.size)"];
+"1000173" [label="(MethodReturn,static uint32_t)"];
+"1000166" -> "1000165"  [label="AST: "];
+"1000166" -> "1000172"  [label="CFG: "];
+"1000167" -> "1000166"  [label="AST: "];
+"1000172" -> "1000166"  [label="AST: "];
+"1000165" -> "1000166"  [label="CFG: "];
+"1000166" -> "1000173"  [label="DDG: r->qiov.size / 512"];
+"1000166" -> "1000173"  [label="DDG: r->qiov.size"];
+"1000166" -> "1000165"  [label="DDG: r->qiov.size / 512"];
+"1000165" -> "1000102"  [label="AST: "];
+"1000173" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000173"  [label="DDG: <RET>"];
+}

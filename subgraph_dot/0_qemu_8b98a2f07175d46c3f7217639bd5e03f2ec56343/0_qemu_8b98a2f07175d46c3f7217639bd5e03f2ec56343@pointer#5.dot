@@ -1,0 +1,27 @@
+digraph "0_qemu_8b98a2f07175d46c3f7217639bd5e03f2ec56343@pointer" {
+"1000338" [label="(Call,!s->looptest)"];
+"1000152" [label="(Call,!s->looptest)"];
+"1000149" [label="(Call,CSR_LOOP(s) && !s->looptest)"];
+"1000153" [label="(Call,s->looptest)"];
+"1000345" [label="(Identifier,size)"];
+"1000711" [label="(MethodReturn,ssize_t)"];
+"1000152" [label="(Call,!s->looptest)"];
+"1000338" [label="(Call,!s->looptest)"];
+"1000337" [label="(ControlStructure,if (!s->looptest))"];
+"1000339" [label="(Call,s->looptest)"];
+"1000397" [label="(Identifier,fcs)"];
+"1000338" -> "1000337"  [label="AST: "];
+"1000338" -> "1000339"  [label="CFG: "];
+"1000339" -> "1000338"  [label="AST: "];
+"1000345" -> "1000338"  [label="CFG: "];
+"1000397" -> "1000338"  [label="CFG: "];
+"1000338" -> "1000711"  [label="DDG: s->looptest"];
+"1000338" -> "1000711"  [label="DDG: !s->looptest"];
+"1000152" -> "1000338"  [label="DDG: s->looptest"];
+"1000152" -> "1000149"  [label="AST: "];
+"1000152" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000149" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000711"  [label="DDG: s->looptest"];
+"1000152" -> "1000149"  [label="DDG: s->looptest"];
+}

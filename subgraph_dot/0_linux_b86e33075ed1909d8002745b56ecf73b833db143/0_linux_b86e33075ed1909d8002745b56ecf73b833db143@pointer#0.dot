@@ -1,0 +1,25 @@
+digraph "0_linux_b86e33075ed1909d8002745b56ecf73b833db143@pointer" {
+"1000103" [label="(MethodParameterIn,struct buffer_head *bh)"];
+"1000143" [label="(Call,map_bh(bh, inode->i_sb, map.m_pblk))"];
+"1000144" [label="(Identifier,bh)"];
+"1000153" [label="(Identifier,bh)"];
+"1000143" [label="(Call,map_bh(bh, inode->i_sb, map.m_pblk))"];
+"1000103" [label="(MethodParameterIn,struct buffer_head *bh)"];
+"1000179" [label="(MethodReturn,static int)"];
+"1000142" [label="(Block,)"];
+"1000145" [label="(Call,inode->i_sb)"];
+"1000148" [label="(Call,map.m_pblk)"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000179"  [label="DDG: bh"];
+"1000103" -> "1000143"  [label="DDG: bh"];
+"1000143" -> "1000142"  [label="AST: "];
+"1000143" -> "1000148"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000145" -> "1000143"  [label="AST: "];
+"1000148" -> "1000143"  [label="AST: "];
+"1000153" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000179"  [label="DDG: map.m_pblk"];
+"1000143" -> "1000179"  [label="DDG: bh"];
+"1000143" -> "1000179"  [label="DDG: map_bh(bh, inode->i_sb, map.m_pblk)"];
+"1000143" -> "1000179"  [label="DDG: inode->i_sb"];
+}

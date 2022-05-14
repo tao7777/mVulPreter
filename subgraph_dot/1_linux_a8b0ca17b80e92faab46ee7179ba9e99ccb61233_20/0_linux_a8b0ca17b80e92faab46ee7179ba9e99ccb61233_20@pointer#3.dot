@@ -1,0 +1,33 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_20@pointer" {
+"1000280" [label="(Call,*uregs = current->thread.regs)"];
+"1000288" [label="(Call,uregs == NULL)"];
+"1000281" [label="(Identifier,uregs)"];
+"1000202" [label="(Call,mm == NULL)"];
+"1000288" [label="(Call,uregs == NULL)"];
+"1000289" [label="(Identifier,uregs)"];
+"1000557" [label="(MethodReturn,int __kprobes)"];
+"1000287" [label="(ControlStructure,if (uregs == NULL))"];
+"1000278" [label="(Block,)"];
+"1000296" [label="(Identifier,address)"];
+"1000282" [label="(Call,current->thread.regs)"];
+"1000291" [label="(ControlStructure,goto bad_area;)"];
+"1000280" [label="(Call,*uregs = current->thread.regs)"];
+"1000290" [label="(Identifier,NULL)"];
+"1000280" -> "1000278"  [label="AST: "];
+"1000280" -> "1000282"  [label="CFG: "];
+"1000281" -> "1000280"  [label="AST: "];
+"1000282" -> "1000280"  [label="AST: "];
+"1000289" -> "1000280"  [label="CFG: "];
+"1000280" -> "1000557"  [label="DDG: current->thread.regs"];
+"1000280" -> "1000288"  [label="DDG: uregs"];
+"1000288" -> "1000287"  [label="AST: "];
+"1000288" -> "1000290"  [label="CFG: "];
+"1000289" -> "1000288"  [label="AST: "];
+"1000290" -> "1000288"  [label="AST: "];
+"1000291" -> "1000288"  [label="CFG: "];
+"1000296" -> "1000288"  [label="CFG: "];
+"1000288" -> "1000557"  [label="DDG: NULL"];
+"1000288" -> "1000557"  [label="DDG: uregs"];
+"1000288" -> "1000557"  [label="DDG: uregs == NULL"];
+"1000202" -> "1000288"  [label="DDG: NULL"];
+}

@@ -1,0 +1,26 @@
+digraph "0_php_270a406ac94b5fc5cc9ef59fc61e3b4b95648a3e@API" {
+"1000304" [label="(Call,efree(iv))"];
+"1000218" [label="(Call,(unsigned char *)iv)"];
+"1000303" [label="(Block,)"];
+"1000218" [label="(Call,(unsigned char *)iv)"];
+"1000304" [label="(Call,efree(iv))"];
+"1000305" [label="(Identifier,iv)"];
+"1000220" [label="(Identifier,iv)"];
+"1000309" [label="(MethodReturn,RET)"];
+"1000308" [label="(Identifier,cipher_ctx)"];
+"1000212" [label="(Call,EVP_EncryptInit_ex(&cipher_ctx, NULL, NULL, key, (unsigned char *)iv))"];
+"1000304" -> "1000303"  [label="AST: "];
+"1000304" -> "1000305"  [label="CFG: "];
+"1000305" -> "1000304"  [label="AST: "];
+"1000308" -> "1000304"  [label="CFG: "];
+"1000304" -> "1000309"  [label="DDG: efree(iv)"];
+"1000304" -> "1000309"  [label="DDG: iv"];
+"1000218" -> "1000304"  [label="DDG: iv"];
+"1000218" -> "1000212"  [label="AST: "];
+"1000218" -> "1000220"  [label="CFG: "];
+"1000219" -> "1000218"  [label="AST: "];
+"1000220" -> "1000218"  [label="AST: "];
+"1000212" -> "1000218"  [label="CFG: "];
+"1000218" -> "1000309"  [label="DDG: iv"];
+"1000218" -> "1000212"  [label="DDG: iv"];
+}

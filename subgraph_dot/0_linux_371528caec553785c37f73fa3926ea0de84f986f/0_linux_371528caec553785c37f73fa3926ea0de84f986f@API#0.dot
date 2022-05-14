@@ -1,0 +1,23 @@
+digraph "0_linux_371528caec553785c37f73fa3926ea0de84f986f@API" {
+"1000130" [label="(Call,mutex_lock(&memcg->thresholds_lock))"];
+"1000282" [label="(Call,mutex_unlock(&memcg->thresholds_lock))"];
+"1000131" [label="(Call,&memcg->thresholds_lock)"];
+"1000137" [label="(Identifier,type)"];
+"1000287" [label="(MethodReturn,static void)"];
+"1000112" [label="(Block,)"];
+"1000130" [label="(Call,mutex_lock(&memcg->thresholds_lock))"];
+"1000283" [label="(Call,&memcg->thresholds_lock)"];
+"1000282" [label="(Call,mutex_unlock(&memcg->thresholds_lock))"];
+"1000130" -> "1000112"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000137" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000287"  [label="DDG: mutex_lock(&memcg->thresholds_lock)"];
+"1000130" -> "1000282"  [label="DDG: &memcg->thresholds_lock"];
+"1000282" -> "1000112"  [label="AST: "];
+"1000282" -> "1000283"  [label="CFG: "];
+"1000283" -> "1000282"  [label="AST: "];
+"1000287" -> "1000282"  [label="CFG: "];
+"1000282" -> "1000287"  [label="DDG: mutex_unlock(&memcg->thresholds_lock)"];
+"1000282" -> "1000287"  [label="DDG: &memcg->thresholds_lock"];
+}

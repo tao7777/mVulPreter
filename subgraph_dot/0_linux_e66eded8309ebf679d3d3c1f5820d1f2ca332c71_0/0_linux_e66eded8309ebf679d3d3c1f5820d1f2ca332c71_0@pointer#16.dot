@@ -1,0 +1,29 @@
+digraph "0_linux_e66eded8309ebf679d3d3c1f5820d1f2ca332c71_0@pointer" {
+"1000260" [label="(Call,atomic_read(&p->real_cred->user->processes))"];
+"1000259" [label="(Call,atomic_read(&p->real_cred->user->processes) >=\n\t\t\ttask_rlimit(p, RLIMIT_NPROC))"];
+"1000258" [label="(ControlStructure,if (atomic_read(&p->real_cred->user->processes) >=\n\t\t\ttask_rlimit(p, RLIMIT_NPROC)))"];
+"1000259" [label="(Call,atomic_read(&p->real_cred->user->processes) >=\n\t\t\ttask_rlimit(p, RLIMIT_NPROC))"];
+"1000277" [label="(Identifier,CAP_SYS_ADMIN)"];
+"1000261" [label="(Call,&p->real_cred->user->processes)"];
+"1000292" [label="(Identifier,current)"];
+"1000270" [label="(Identifier,p)"];
+"1000260" [label="(Call,atomic_read(&p->real_cred->user->processes))"];
+"1001227" [label="(MethodReturn,static struct task_struct *)"];
+"1000269" [label="(Call,task_rlimit(p, RLIMIT_NPROC))"];
+"1000260" -> "1000259"  [label="AST: "];
+"1000260" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000270" -> "1000260"  [label="CFG: "];
+"1000260" -> "1001227"  [label="DDG: &p->real_cred->user->processes"];
+"1000260" -> "1000259"  [label="DDG: &p->real_cred->user->processes"];
+"1000259" -> "1000258"  [label="AST: "];
+"1000259" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000259"  [label="AST: "];
+"1000277" -> "1000259"  [label="CFG: "];
+"1000292" -> "1000259"  [label="CFG: "];
+"1000259" -> "1001227"  [label="DDG: atomic_read(&p->real_cred->user->processes) >=\n\t\t\ttask_rlimit(p, RLIMIT_NPROC)"];
+"1000259" -> "1001227"  [label="DDG: atomic_read(&p->real_cred->user->processes)"];
+"1000259" -> "1001227"  [label="DDG: task_rlimit(p, RLIMIT_NPROC)"];
+"1000269" -> "1000259"  [label="DDG: p"];
+"1000269" -> "1000259"  [label="DDG: RLIMIT_NPROC"];
+}

@@ -1,0 +1,36 @@
+digraph "0_savannah_c15c42ccd1e2377945fd0414eca1a49294bff454@pointer" {
+"1000404" [label="(Call,file->stat_info->archive_file_size - file->dumped_size)"];
+"1000385" [label="(Call,file->dumped_size += BLOCKSIZE)"];
+"1000403" [label="(Call,mv_size_left (file->stat_info->archive_file_size - file->dumped_size))"];
+"1000507" [label="(MethodReturn,RET)"];
+"1000404" [label="(Call,file->stat_info->archive_file_size - file->dumped_size)"];
+"1000410" [label="(Call,file->dumped_size)"];
+"1000391" [label="(Identifier,count)"];
+"1000415" [label="(Identifier,file)"];
+"1000405" [label="(Call,file->stat_info->archive_file_size)"];
+"1000104" [label="(Block,)"];
+"1000403" [label="(Call,mv_size_left (file->stat_info->archive_file_size - file->dumped_size))"];
+"1000389" [label="(Identifier,BLOCKSIZE)"];
+"1000385" [label="(Call,file->dumped_size += BLOCKSIZE)"];
+"1000386" [label="(Call,file->dumped_size)"];
+"1000404" -> "1000403"  [label="AST: "];
+"1000404" -> "1000410"  [label="CFG: "];
+"1000405" -> "1000404"  [label="AST: "];
+"1000410" -> "1000404"  [label="AST: "];
+"1000403" -> "1000404"  [label="CFG: "];
+"1000404" -> "1000507"  [label="DDG: file->stat_info->archive_file_size"];
+"1000404" -> "1000507"  [label="DDG: file->dumped_size"];
+"1000404" -> "1000403"  [label="DDG: file->stat_info->archive_file_size"];
+"1000404" -> "1000403"  [label="DDG: file->dumped_size"];
+"1000385" -> "1000404"  [label="DDG: file->dumped_size"];
+"1000385" -> "1000104"  [label="AST: "];
+"1000385" -> "1000389"  [label="CFG: "];
+"1000386" -> "1000385"  [label="AST: "];
+"1000389" -> "1000385"  [label="AST: "];
+"1000391" -> "1000385"  [label="CFG: "];
+"1000385" -> "1000507"  [label="DDG: BLOCKSIZE"];
+"1000403" -> "1000104"  [label="AST: "];
+"1000415" -> "1000403"  [label="CFG: "];
+"1000403" -> "1000507"  [label="DDG: file->stat_info->archive_file_size - file->dumped_size"];
+"1000403" -> "1000507"  [label="DDG: mv_size_left (file->stat_info->archive_file_size - file->dumped_size)"];
+}

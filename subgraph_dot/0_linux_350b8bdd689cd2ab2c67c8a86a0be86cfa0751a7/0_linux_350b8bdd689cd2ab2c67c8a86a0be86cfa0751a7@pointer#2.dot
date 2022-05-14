@@ -1,0 +1,26 @@
+digraph "0_linux_350b8bdd689cd2ab2c67c8a86a0be86cfa0751a7@pointer" {
+"1000150" [label="(Call,slot->flags & KVM_MEM_READONLY)"];
+"1000149" [label="(Call,!(slot->flags & KVM_MEM_READONLY))"];
+"1000274" [label="(MethodReturn,int)"];
+"1000148" [label="(ControlStructure,if (!(slot->flags & KVM_MEM_READONLY)))"];
+"1000154" [label="(Identifier,KVM_MEM_READONLY)"];
+"1000150" [label="(Call,slot->flags & KVM_MEM_READONLY)"];
+"1000149" [label="(Call,!(slot->flags & KVM_MEM_READONLY))"];
+"1000162" [label="(Identifier,kvm)"];
+"1000151" [label="(Call,slot->flags)"];
+"1000156" [label="(Identifier,flags)"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000154"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000154" -> "1000150"  [label="AST: "];
+"1000149" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000274"  [label="DDG: slot->flags"];
+"1000150" -> "1000274"  [label="DDG: KVM_MEM_READONLY"];
+"1000150" -> "1000149"  [label="DDG: slot->flags"];
+"1000150" -> "1000149"  [label="DDG: KVM_MEM_READONLY"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000156" -> "1000149"  [label="CFG: "];
+"1000162" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000274"  [label="DDG: !(slot->flags & KVM_MEM_READONLY)"];
+"1000149" -> "1000274"  [label="DDG: slot->flags & KVM_MEM_READONLY"];
+}

@@ -1,0 +1,27 @@
+digraph "0_linux_aa93d1fee85c890a34f2510a310e55ee76a27848@pointer" {
+"1000341" [label="(Call,s->vdev.queue->lock = &s->vb_queue_lock)"];
+"1000138" [label="(Call,mutex_init(&s->vb_queue_lock))"];
+"1000108" [label="(Block,)"];
+"1000342" [label="(Call,s->vdev.queue->lock)"];
+"1000146" [label="(Identifier,s)"];
+"1000597" [label="(MethodReturn,static int)"];
+"1000356" [label="(Identifier,s)"];
+"1000139" [label="(Call,&s->vb_queue_lock)"];
+"1000341" [label="(Call,s->vdev.queue->lock = &s->vb_queue_lock)"];
+"1000349" [label="(Call,&s->vb_queue_lock)"];
+"1000138" [label="(Call,mutex_init(&s->vb_queue_lock))"];
+"1000341" -> "1000108"  [label="AST: "];
+"1000341" -> "1000349"  [label="CFG: "];
+"1000342" -> "1000341"  [label="AST: "];
+"1000349" -> "1000341"  [label="AST: "];
+"1000356" -> "1000341"  [label="CFG: "];
+"1000341" -> "1000597"  [label="DDG: &s->vb_queue_lock"];
+"1000341" -> "1000597"  [label="DDG: s->vdev.queue->lock"];
+"1000138" -> "1000341"  [label="DDG: &s->vb_queue_lock"];
+"1000138" -> "1000108"  [label="AST: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000146" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000597"  [label="DDG: &s->vb_queue_lock"];
+"1000138" -> "1000597"  [label="DDG: mutex_init(&s->vb_queue_lock)"];
+}

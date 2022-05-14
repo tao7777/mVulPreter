@@ -1,0 +1,26 @@
+digraph "0_pgbouncer_7ca3e5279d05fceb1e8a043c6f5b6f58dea3ed38@pointer" {
+"1000108" [label="(Call,client->pool = get_pool(client->db, client->db->auth_user))"];
+"1000112" [label="(Call,get_pool(client->db, client->db->auth_user))"];
+"1000109" [label="(Call,client->pool)"];
+"1000108" [label="(Call,client->pool = get_pool(client->db, client->db->auth_user))"];
+"1000113" [label="(Call,client->db)"];
+"1000112" [label="(Call,get_pool(client->db, client->db->auth_user))"];
+"1000105" [label="(Block,)"];
+"1000202" [label="(MethodReturn,static void)"];
+"1000124" [label="(Identifier,client)"];
+"1000116" [label="(Call,client->db->auth_user)"];
+"1000108" -> "1000105"  [label="AST: "];
+"1000108" -> "1000112"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000112" -> "1000108"  [label="AST: "];
+"1000124" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000202"  [label="DDG: get_pool(client->db, client->db->auth_user)"];
+"1000108" -> "1000202"  [label="DDG: client->pool"];
+"1000112" -> "1000108"  [label="DDG: client->db"];
+"1000112" -> "1000108"  [label="DDG: client->db->auth_user"];
+"1000112" -> "1000116"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000116" -> "1000112"  [label="AST: "];
+"1000112" -> "1000202"  [label="DDG: client->db"];
+"1000112" -> "1000202"  [label="DDG: client->db->auth_user"];
+}

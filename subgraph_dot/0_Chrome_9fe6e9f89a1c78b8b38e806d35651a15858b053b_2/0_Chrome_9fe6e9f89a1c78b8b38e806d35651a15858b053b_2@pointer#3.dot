@@ -1,0 +1,26 @@
+digraph "0_Chrome_9fe6e9f89a1c78b8b38e806d35651a15858b053b_2@pointer" {
+"1000123" [label="(Call,iter->ReadData(&bitmap_data, &bitmap_data_size))"];
+"1000122" [label="(Call,!iter->ReadData(&bitmap_data, &bitmap_data_size))"];
+"1000133" [label="(Identifier,image_info)"];
+"1000129" [label="(Identifier,false)"];
+"1000150" [label="(MethodReturn,RET)"];
+"1000122" [label="(Call,!iter->ReadData(&bitmap_data, &bitmap_data_size))"];
+"1000126" [label="(Call,&bitmap_data_size)"];
+"1000121" [label="(ControlStructure,if (!iter->ReadData(&bitmap_data, &bitmap_data_size)))"];
+"1000123" [label="(Call,iter->ReadData(&bitmap_data, &bitmap_data_size))"];
+"1000124" [label="(Call,&bitmap_data)"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000126"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000126" -> "1000123"  [label="AST: "];
+"1000122" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000150"  [label="DDG: &bitmap_data_size"];
+"1000123" -> "1000150"  [label="DDG: &bitmap_data"];
+"1000123" -> "1000122"  [label="DDG: &bitmap_data"];
+"1000123" -> "1000122"  [label="DDG: &bitmap_data_size"];
+"1000122" -> "1000121"  [label="AST: "];
+"1000129" -> "1000122"  [label="CFG: "];
+"1000133" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000150"  [label="DDG: iter->ReadData(&bitmap_data, &bitmap_data_size)"];
+"1000122" -> "1000150"  [label="DDG: !iter->ReadData(&bitmap_data, &bitmap_data_size)"];
+}

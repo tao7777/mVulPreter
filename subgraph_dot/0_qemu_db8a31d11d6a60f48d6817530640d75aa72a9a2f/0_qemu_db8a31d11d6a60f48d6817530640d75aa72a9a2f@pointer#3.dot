@@ -1,0 +1,32 @@
+digraph "0_qemu_db8a31d11d6a60f48d6817530640d75aa72a9a2f@pointer" {
+"1000181" [label="(Call,be16_to_cpu(refcount_block[block_index]))"];
+"1000179" [label="(Call,refcount = be16_to_cpu(refcount_block[block_index]))"];
+"1000203" [label="(Return,return refcount;)"];
+"1000179" [label="(Call,refcount = be16_to_cpu(refcount_block[block_index]))"];
+"1000182" [label="(Call,refcount_block[block_index])"];
+"1000203" [label="(Return,return refcount;)"];
+"1000205" [label="(MethodReturn,static int)"];
+"1000180" [label="(Identifier,refcount)"];
+"1000204" [label="(Identifier,refcount)"];
+"1000103" [label="(Block,)"];
+"1000181" [label="(Call,be16_to_cpu(refcount_block[block_index]))"];
+"1000186" [label="(Identifier,ret)"];
+"1000181" -> "1000179"  [label="AST: "];
+"1000181" -> "1000182"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000179" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000205"  [label="DDG: refcount_block[block_index]"];
+"1000181" -> "1000179"  [label="DDG: refcount_block[block_index]"];
+"1000179" -> "1000103"  [label="AST: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000186" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000205"  [label="DDG: be16_to_cpu(refcount_block[block_index])"];
+"1000179" -> "1000205"  [label="DDG: refcount"];
+"1000179" -> "1000203"  [label="DDG: refcount"];
+"1000203" -> "1000103"  [label="AST: "];
+"1000203" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000205"  [label="DDG: <RET>"];
+"1000204" -> "1000203"  [label="DDG: refcount"];
+}

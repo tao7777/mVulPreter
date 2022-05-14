@@ -1,0 +1,1 @@
+UpdateLibrary* CrosLibrary::GetUpdateLibrary() {

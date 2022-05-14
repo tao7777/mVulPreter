@@ -1,0 +1,38 @@
+digraph "0_optee_os_d5c5b0b77b2b589666024d219a8007b3f5b6faeb_0@pointer" {
+"1000102" [label="(MethodParameterIn,struct user_ta_ctx *utc)"];
+"1000202" [label="(Call,tee_mmu_check_access_rights(utc, flags, a, b))"];
+"1000209" [label="(ControlStructure,break;)"];
+"1000201" [label="(ControlStructure,if (tee_mmu_check_access_rights(utc, flags, a, b)))"];
+"1000129" [label="(Call,a = up->vals[n * 2])"];
+"1000206" [label="(Identifier,b)"];
+"1000163" [label="(Call,flags |= TEE_MEMORY_ACCESS_WRITE)"];
+"1000202" [label="(Call,tee_mmu_check_access_rights(utc, flags, a, b))"];
+"1000205" [label="(Identifier,a)"];
+"1000208" [label="(Identifier,TEE_ERROR_ACCESS_DENIED)"];
+"1000102" [label="(MethodParameterIn,struct user_ta_ctx *utc)"];
+"1000203" [label="(Identifier,utc)"];
+"1000151" [label="(Call,flags = TEE_MEMORY_ACCESS_READ |\n\t\t\t\t TEE_MEMORY_ACCESS_ANY_OWNER)"];
+"1000204" [label="(Identifier,flags)"];
+"1000139" [label="(Call,b = up->vals[n * 2 + 1])"];
+"1000253" [label="(MethodReturn,static TEE_Result)"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000253"  [label="DDG: utc"];
+"1000102" -> "1000202"  [label="DDG: utc"];
+"1000202" -> "1000201"  [label="AST: "];
+"1000202" -> "1000206"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000204" -> "1000202"  [label="AST: "];
+"1000205" -> "1000202"  [label="AST: "];
+"1000206" -> "1000202"  [label="AST: "];
+"1000208" -> "1000202"  [label="CFG: "];
+"1000209" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000253"  [label="DDG: b"];
+"1000202" -> "1000253"  [label="DDG: utc"];
+"1000202" -> "1000253"  [label="DDG: a"];
+"1000202" -> "1000253"  [label="DDG: flags"];
+"1000202" -> "1000253"  [label="DDG: tee_mmu_check_access_rights(utc, flags, a, b)"];
+"1000163" -> "1000202"  [label="DDG: flags"];
+"1000151" -> "1000202"  [label="DDG: flags"];
+"1000129" -> "1000202"  [label="DDG: a"];
+"1000139" -> "1000202"  [label="DDG: b"];
+}

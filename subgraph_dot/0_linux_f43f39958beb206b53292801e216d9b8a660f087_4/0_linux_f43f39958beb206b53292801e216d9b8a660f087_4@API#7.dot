@@ -1,0 +1,22 @@
+digraph "0_linux_f43f39958beb206b53292801e216d9b8a660f087_4@API" {
+"1000160" [label="(Call,refcount_read(&alg->cra_refcnt))"];
+"1000156" [label="(Call,ualg->cru_refcnt = refcount_read(&alg->cra_refcnt))"];
+"1000157" [label="(Call,ualg->cru_refcnt)"];
+"1000161" [label="(Call,&alg->cra_refcnt)"];
+"1000160" [label="(Call,refcount_read(&alg->cra_refcnt))"];
+"1000156" [label="(Call,ualg->cru_refcnt = refcount_read(&alg->cra_refcnt))"];
+"1000268" [label="(MethodReturn,static int)"];
+"1000167" [label="(Identifier,skb)"];
+"1000104" [label="(Block,)"];
+"1000160" -> "1000156"  [label="AST: "];
+"1000160" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000156" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000268"  [label="DDG: &alg->cra_refcnt"];
+"1000160" -> "1000156"  [label="DDG: &alg->cra_refcnt"];
+"1000156" -> "1000104"  [label="AST: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000167" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000268"  [label="DDG: ualg->cru_refcnt"];
+"1000156" -> "1000268"  [label="DDG: refcount_read(&alg->cra_refcnt)"];
+}

@@ -1,0 +1,32 @@
+digraph "0_linux_ea04efee7635c9120d015dcdeeeb6988130cb67a@pointer" {
+"1000161" [label="(Call,union_desc->bDescriptorSubType == USB_CDC_UNION_TYPE)"];
+"1000155" [label="(Call,union_desc->bDescriptorType == USB_DT_CS_INTERFACE &&\n \t\t    union_desc->bDescriptorSubType == USB_CDC_UNION_TYPE)"];
+"1000156" [label="(Call,union_desc->bDescriptorType == USB_DT_CS_INTERFACE)"];
+"1000176" [label="(Identifier,buflen)"];
+"1000154" [label="(ControlStructure,if (union_desc->bDescriptorType == USB_DT_CS_INTERFACE &&\n \t\t    union_desc->bDescriptorSubType == USB_CDC_UNION_TYPE))"];
+"1000155" [label="(Call,union_desc->bDescriptorType == USB_DT_CS_INTERFACE &&\n \t\t    union_desc->bDescriptorSubType == USB_CDC_UNION_TYPE)"];
+"1000170" [label="(Identifier,intf)"];
+"1000161" [label="(Call,union_desc->bDescriptorSubType == USB_CDC_UNION_TYPE)"];
+"1000193" [label="(MethodReturn,RET)"];
+"1000165" [label="(Identifier,USB_CDC_UNION_TYPE)"];
+"1000162" [label="(Call,union_desc->bDescriptorSubType)"];
+"1000161" -> "1000155"  [label="AST: "];
+"1000161" -> "1000165"  [label="CFG: "];
+"1000162" -> "1000161"  [label="AST: "];
+"1000165" -> "1000161"  [label="AST: "];
+"1000155" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000193"  [label="DDG: union_desc->bDescriptorSubType"];
+"1000161" -> "1000193"  [label="DDG: USB_CDC_UNION_TYPE"];
+"1000161" -> "1000155"  [label="DDG: union_desc->bDescriptorSubType"];
+"1000161" -> "1000155"  [label="DDG: USB_CDC_UNION_TYPE"];
+"1000155" -> "1000154"  [label="AST: "];
+"1000155" -> "1000156"  [label="CFG: "];
+"1000156" -> "1000155"  [label="AST: "];
+"1000170" -> "1000155"  [label="CFG: "];
+"1000176" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000193"  [label="DDG: union_desc->bDescriptorType == USB_DT_CS_INTERFACE"];
+"1000155" -> "1000193"  [label="DDG: union_desc->bDescriptorSubType == USB_CDC_UNION_TYPE"];
+"1000155" -> "1000193"  [label="DDG: union_desc->bDescriptorType == USB_DT_CS_INTERFACE &&\n \t\t    union_desc->bDescriptorSubType == USB_CDC_UNION_TYPE"];
+"1000156" -> "1000155"  [label="DDG: union_desc->bDescriptorType"];
+"1000156" -> "1000155"  [label="DDG: USB_DT_CS_INTERFACE"];
+}

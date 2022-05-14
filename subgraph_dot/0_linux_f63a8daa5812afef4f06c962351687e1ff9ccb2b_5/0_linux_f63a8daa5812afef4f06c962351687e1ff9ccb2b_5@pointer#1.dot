@@ -1,0 +1,31 @@
+digraph "0_linux_f63a8daa5812afef4f06c962351687e1ff9ccb2b_5@pointer" {
+"1000124" [label="(Call,_perf_event_enable(event))"];
+"1000113" [label="(Call,is_sampling_event(event))"];
+"1000102" [label="(MethodParameterIn,struct perf_event *event)"];
+"1000104" [label="(Block,)"];
+"1000112" [label="(Call,!is_sampling_event(event))"];
+"1000114" [label="(Identifier,event)"];
+"1000124" [label="(Call,_perf_event_enable(event))"];
+"1000127" [label="(Literal,0)"];
+"1000125" [label="(Identifier,event)"];
+"1000102" [label="(MethodParameterIn,struct perf_event *event)"];
+"1000113" [label="(Call,is_sampling_event(event))"];
+"1000128" [label="(MethodReturn,static int)"];
+"1000124" -> "1000104"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000127" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000128"  [label="DDG: event"];
+"1000124" -> "1000128"  [label="DDG: _perf_event_enable(event)"];
+"1000113" -> "1000124"  [label="DDG: event"];
+"1000102" -> "1000124"  [label="DDG: event"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000128"  [label="DDG: event"];
+"1000113" -> "1000112"  [label="DDG: event"];
+"1000102" -> "1000113"  [label="DDG: event"];
+"1000102" -> "1000101"  [label="AST: "];
+"1000102" -> "1000128"  [label="DDG: event"];
+}

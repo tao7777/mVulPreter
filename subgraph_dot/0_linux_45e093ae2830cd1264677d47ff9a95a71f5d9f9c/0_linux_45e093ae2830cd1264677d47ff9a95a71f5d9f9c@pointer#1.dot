@@ -1,0 +1,37 @@
+digraph "0_linux_45e093ae2830cd1264677d47ff9a95a71f5d9f9c@pointer" {
+"1000145" [label="(Call,tipc_nlmsg_parse(cb->nlh, &attrs))"];
+"1000143" [label="(Call,err = tipc_nlmsg_parse(cb->nlh, &attrs))"];
+"1000153" [label="(Return,return err;)"];
+"1000143" [label="(Call,err = tipc_nlmsg_parse(cb->nlh, &attrs))"];
+"1000144" [label="(Identifier,err)"];
+"1000152" [label="(Identifier,err)"];
+"1000149" [label="(Call,&attrs)"];
+"1000140" [label="(Block,)"];
+"1000145" [label="(Call,tipc_nlmsg_parse(cb->nlh, &attrs))"];
+"1000153" [label="(Return,return err;)"];
+"1000151" [label="(ControlStructure,if (err))"];
+"1000146" [label="(Call,cb->nlh)"];
+"1000154" [label="(Identifier,err)"];
+"1000259" [label="(MethodReturn,int)"];
+"1000145" -> "1000143"  [label="AST: "];
+"1000145" -> "1000149"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000149" -> "1000145"  [label="AST: "];
+"1000143" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000259"  [label="DDG: &attrs"];
+"1000145" -> "1000259"  [label="DDG: cb->nlh"];
+"1000145" -> "1000143"  [label="DDG: cb->nlh"];
+"1000145" -> "1000143"  [label="DDG: &attrs"];
+"1000143" -> "1000140"  [label="AST: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000152" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000259"  [label="DDG: err"];
+"1000143" -> "1000259"  [label="DDG: tipc_nlmsg_parse(cb->nlh, &attrs)"];
+"1000143" -> "1000153"  [label="DDG: err"];
+"1000153" -> "1000151"  [label="AST: "];
+"1000153" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000259" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000259"  [label="DDG: <RET>"];
+"1000154" -> "1000153"  [label="DDG: err"];
+}

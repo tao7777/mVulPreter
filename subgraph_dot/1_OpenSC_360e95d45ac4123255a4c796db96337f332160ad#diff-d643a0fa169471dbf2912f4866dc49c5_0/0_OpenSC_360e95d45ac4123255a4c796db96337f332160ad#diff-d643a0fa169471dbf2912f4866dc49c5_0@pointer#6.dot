@@ -1,0 +1,32 @@
+digraph "0_OpenSC_360e95d45ac4123255a4c796db96337f332160ad#diff-d643a0fa169471dbf2912f4866dc49c5_0@pointer" {
+"1000108" [label="(MethodParameterIn,unsigned char *out)"];
+"1000298" [label="(Call,memcpy(out, plaintext, cipher_len - 2))"];
+"1000299" [label="(Identifier,out)"];
+"1000300" [label="(Identifier,plaintext)"];
+"1000301" [label="(Call,cipher_len - 2)"];
+"1000306" [label="(Identifier,out_len)"];
+"1000277" [label="(Call,0x80 != plaintext[cipher_len - 2])"];
+"1000261" [label="(Call,des3_decrypt_cbc(exdata->sk_enc, 16, iv, &in[i], cipher_len - 1, plaintext))"];
+"1000110" [label="(Block,)"];
+"1000246" [label="(Call,aes128_decrypt_cbc(exdata->sk_enc, 16, iv, &in[i], cipher_len - 1, plaintext))"];
+"1000108" [label="(MethodParameterIn,unsigned char *out)"];
+"1000298" [label="(Call,memcpy(out, plaintext, cipher_len - 2))"];
+"1000312" [label="(MethodReturn,RET)"];
+"1000108" -> "1000104"  [label="AST: "];
+"1000108" -> "1000312"  [label="DDG: "];
+"1000108" -> "1000298"  [label="DDG: "];
+"1000298" -> "1000110"  [label="AST: "];
+"1000298" -> "1000301"  [label="CFG: "];
+"1000299" -> "1000298"  [label="AST: "];
+"1000300" -> "1000298"  [label="AST: "];
+"1000301" -> "1000298"  [label="AST: "];
+"1000306" -> "1000298"  [label="CFG: "];
+"1000298" -> "1000312"  [label="DDG: "];
+"1000298" -> "1000312"  [label="DDG: "];
+"1000298" -> "1000312"  [label="DDG: "];
+"1000246" -> "1000298"  [label="DDG: "];
+"1000261" -> "1000298"  [label="DDG: "];
+"1000277" -> "1000298"  [label="DDG: "];
+"1000301" -> "1000298"  [label="DDG: "];
+"1000301" -> "1000298"  [label="DDG: "];
+}

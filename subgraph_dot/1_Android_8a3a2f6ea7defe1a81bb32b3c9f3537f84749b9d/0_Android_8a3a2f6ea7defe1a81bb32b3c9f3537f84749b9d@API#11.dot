@@ -1,0 +1,27 @@
+digraph "0_Android_8a3a2f6ea7defe1a81bb32b3c9f3537f84749b9d@API" {
+"1002340" [label="(Call,!strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC))"];
+"1002335" [label="(Call,!strcmp(mime, MEDIA_MIMETYPE_VIDEO_AVC)\n || !strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC))"];
+"1002346" [label="(Identifier,max_size)"];
+"1002363" [label="(Identifier,max_size)"];
+"1002340" [label="(Call,!strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC))"];
+"1002341" [label="(Call,strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC))"];
+"1002335" [label="(Call,!strcmp(mime, MEDIA_MIMETYPE_VIDEO_AVC)\n || !strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC))"];
+"1002336" [label="(Call,!strcmp(mime, MEDIA_MIMETYPE_VIDEO_AVC))"];
+"1002334" [label="(ControlStructure,if (!strcmp(mime, MEDIA_MIMETYPE_VIDEO_AVC)\n || !strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC)))"];
+"1003903" [label="(MethodReturn,status_t)"];
+"1002340" -> "1002335"  [label="AST: "];
+"1002340" -> "1002341"  [label="CFG: "];
+"1002341" -> "1002340"  [label="AST: "];
+"1002335" -> "1002340"  [label="CFG: "];
+"1002340" -> "1003903"  [label="DDG: strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC)"];
+"1002340" -> "1002335"  [label="DDG: strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC)"];
+"1002335" -> "1002334"  [label="AST: "];
+"1002335" -> "1002336"  [label="CFG: "];
+"1002336" -> "1002335"  [label="AST: "];
+"1002346" -> "1002335"  [label="CFG: "];
+"1002363" -> "1002335"  [label="CFG: "];
+"1002335" -> "1003903"  [label="DDG: !strcmp(mime, MEDIA_MIMETYPE_VIDEO_AVC)"];
+"1002335" -> "1003903"  [label="DDG: !strcmp(mime, MEDIA_MIMETYPE_VIDEO_AVC)\n || !strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC)"];
+"1002335" -> "1003903"  [label="DDG: !strcmp(mime, MEDIA_MIMETYPE_VIDEO_HEVC)"];
+"1002336" -> "1002335"  [label="DDG: strcmp(mime, MEDIA_MIMETYPE_VIDEO_AVC)"];
+}

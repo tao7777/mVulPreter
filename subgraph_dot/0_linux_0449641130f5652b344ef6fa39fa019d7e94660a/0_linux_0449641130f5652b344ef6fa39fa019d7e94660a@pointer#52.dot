@@ -1,0 +1,29 @@
+digraph "0_linux_0449641130f5652b344ef6fa39fa019d7e94660a@pointer" {
+"1001679" [label="(Call,percpu_counter_set(&sbi->s_dirtyblocks_counter, 0))"];
+"1002155" [label="(Call,percpu_counter_destroy(&sbi->s_dirtyblocks_counter))"];
+"1002227" [label="(MethodReturn,RET)"];
+"1002160" [label="(JumpTarget,failed_mount2:)"];
+"1002155" [label="(Call,percpu_counter_destroy(&sbi->s_dirtyblocks_counter))"];
+"1002156" [label="(Call,&sbi->s_dirtyblocks_counter)"];
+"1001396" [label="(Call,percpu_counter_init(&sbi->s_dirtyblocks_counter, 0))"];
+"1001684" [label="(Literal,0)"];
+"1000124" [label="(Block,)"];
+"1001685" [label="(JumpTarget,no_journal:)"];
+"1001680" [label="(Call,&sbi->s_dirtyblocks_counter)"];
+"1001679" [label="(Call,percpu_counter_set(&sbi->s_dirtyblocks_counter, 0))"];
+"1001679" -> "1000124"  [label="AST: "];
+"1001679" -> "1001684"  [label="CFG: "];
+"1001680" -> "1001679"  [label="AST: "];
+"1001684" -> "1001679"  [label="AST: "];
+"1001685" -> "1001679"  [label="CFG: "];
+"1001679" -> "1002227"  [label="DDG: percpu_counter_set(&sbi->s_dirtyblocks_counter, 0)"];
+"1001679" -> "1002227"  [label="DDG: &sbi->s_dirtyblocks_counter"];
+"1001679" -> "1002155"  [label="DDG: &sbi->s_dirtyblocks_counter"];
+"1002155" -> "1000124"  [label="AST: "];
+"1002155" -> "1002156"  [label="CFG: "];
+"1002156" -> "1002155"  [label="AST: "];
+"1002160" -> "1002155"  [label="CFG: "];
+"1002155" -> "1002227"  [label="DDG: &sbi->s_dirtyblocks_counter"];
+"1002155" -> "1002227"  [label="DDG: percpu_counter_destroy(&sbi->s_dirtyblocks_counter)"];
+"1001396" -> "1002155"  [label="DDG: &sbi->s_dirtyblocks_counter"];
+}

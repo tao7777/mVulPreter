@@ -1,0 +1,1 @@
+void GuestViewBase::RegisterGuestViewType(

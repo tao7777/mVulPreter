@@ -1,0 +1,26 @@
+digraph "0_linux_a8b0ca17b80e92faab46ee7179ba9e99ccb61233_26@pointer" {
+"1000282" [label="(Call,regs->regs[destreg] = lo | hi)"];
+"1000288" [label="(Call,lo | hi)"];
+"1000290" [label="(Identifier,hi)"];
+"1000304" [label="(MethodReturn,static int)"];
+"1000282" [label="(Call,regs->regs[destreg] = lo | hi)"];
+"1000258" [label="(Block,)"];
+"1000288" [label="(Call,lo | hi)"];
+"1000289" [label="(Identifier,lo)"];
+"1000291" [label="(ControlStructure,break;)"];
+"1000283" [label="(Call,regs->regs[destreg])"];
+"1000282" -> "1000258"  [label="AST: "];
+"1000282" -> "1000288"  [label="CFG: "];
+"1000283" -> "1000282"  [label="AST: "];
+"1000288" -> "1000282"  [label="AST: "];
+"1000291" -> "1000282"  [label="CFG: "];
+"1000282" -> "1000304"  [label="DDG: lo | hi"];
+"1000282" -> "1000304"  [label="DDG: regs->regs[destreg]"];
+"1000288" -> "1000282"  [label="DDG: lo"];
+"1000288" -> "1000282"  [label="DDG: hi"];
+"1000288" -> "1000290"  [label="CFG: "];
+"1000289" -> "1000288"  [label="AST: "];
+"1000290" -> "1000288"  [label="AST: "];
+"1000288" -> "1000304"  [label="DDG: hi"];
+"1000288" -> "1000304"  [label="DDG: lo"];
+}

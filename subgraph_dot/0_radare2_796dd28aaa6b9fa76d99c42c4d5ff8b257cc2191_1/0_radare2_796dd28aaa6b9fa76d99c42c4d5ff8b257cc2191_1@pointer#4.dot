@@ -1,0 +1,38 @@
+digraph "0_radare2_796dd28aaa6b9fa76d99c42c4d5ff8b257cc2191_1@pointer" {
+"1000268" [label="(Call,grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000266" [label="(Call,blknr = grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000427" [label="(Return,return blknr;)"];
+"1000268" [label="(Call,grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000412" [label="(Call,blknr = grub_le_to_cpu32 (indir[rblock % perblock]))"];
+"1000429" [label="(MethodReturn,RET)"];
+"1000427" [label="(Return,return blknr;)"];
+"1000107" [label="(Block,)"];
+"1000269" [label="(Call,inode->blocks.dir_blocks[fileblock])"];
+"1000316" [label="(Call,blknr = grub_le_to_cpu32 (indir[fileblock - INDIRECT_BLOCKS]))"];
+"1000266" [label="(Call,blknr = grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock]))"];
+"1000267" [label="(Identifier,blknr)"];
+"1000428" [label="(Identifier,blknr)"];
+"1000122" [label="(Call,blknr = -1)"];
+"1000265" [label="(Block,)"];
+"1000268" -> "1000266"  [label="AST: "];
+"1000268" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000268"  [label="AST: "];
+"1000266" -> "1000268"  [label="CFG: "];
+"1000268" -> "1000429"  [label="DDG: inode->blocks.dir_blocks[fileblock]"];
+"1000268" -> "1000266"  [label="DDG: inode->blocks.dir_blocks[fileblock]"];
+"1000266" -> "1000265"  [label="AST: "];
+"1000267" -> "1000266"  [label="AST: "];
+"1000428" -> "1000266"  [label="CFG: "];
+"1000266" -> "1000429"  [label="DDG: grub_le_to_cpu32 (inode->blocks.dir_blocks[fileblock])"];
+"1000266" -> "1000429"  [label="DDG: blknr"];
+"1000266" -> "1000427"  [label="DDG: blknr"];
+"1000427" -> "1000107"  [label="AST: "];
+"1000427" -> "1000428"  [label="CFG: "];
+"1000428" -> "1000427"  [label="AST: "];
+"1000429" -> "1000427"  [label="CFG: "];
+"1000427" -> "1000429"  [label="DDG: <RET>"];
+"1000428" -> "1000427"  [label="DDG: blknr"];
+"1000122" -> "1000427"  [label="DDG: blknr"];
+"1000412" -> "1000427"  [label="DDG: blknr"];
+"1000316" -> "1000427"  [label="DDG: blknr"];
+}

@@ -1,0 +1,25 @@
+digraph "0_Android_f490fc335772a9b14e78997486f4a572b0594c04@API" {
+"1000387" [label="(Call,cmd->data + sizeof(int32_t))"];
+"1000379" [label="(Call,(int32_t *)cmd->data)"];
+"1000388" [label="(Call,cmd->data)"];
+"1000387" [label="(Call,cmd->data + sizeof(int32_t))"];
+"1000379" [label="(Call,(int32_t *)cmd->data)"];
+"1000378" [label="(Call,*(int32_t *)cmd->data)"];
+"1000391" [label="(Call,sizeof(int32_t))"];
+"1000585" [label="(MethodReturn,static int)"];
+"1000376" [label="(Call,Downmix_setParameter(pDownmixer, *(int32_t *)cmd->data,\n                 cmd->vsize, cmd->data + sizeof(int32_t)))"];
+"1000381" [label="(Call,cmd->data)"];
+"1000387" -> "1000376"  [label="AST: "];
+"1000387" -> "1000391"  [label="CFG: "];
+"1000388" -> "1000387"  [label="AST: "];
+"1000391" -> "1000387"  [label="AST: "];
+"1000376" -> "1000387"  [label="CFG: "];
+"1000387" -> "1000585"  [label="DDG: cmd->data"];
+"1000379" -> "1000387"  [label="DDG: cmd->data"];
+"1000379" -> "1000378"  [label="AST: "];
+"1000379" -> "1000381"  [label="CFG: "];
+"1000380" -> "1000379"  [label="AST: "];
+"1000381" -> "1000379"  [label="AST: "];
+"1000378" -> "1000379"  [label="CFG: "];
+"1000379" -> "1000376"  [label="DDG: cmd->data"];
+}

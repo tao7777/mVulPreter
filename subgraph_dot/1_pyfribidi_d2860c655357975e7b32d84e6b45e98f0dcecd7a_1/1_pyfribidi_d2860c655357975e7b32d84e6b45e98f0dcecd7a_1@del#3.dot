@@ -1,0 +1,29 @@
+digraph "1_pyfribidi_d2860c655357975e7b32d84e6b45e98f0dcecd7a_1@del" {
+"1000117" [label="(Call,*result = NULL)"];
+"1000176" [label="(Return,return result;)"];
+"1000178" [label="(MethodReturn,RET)"];
+"1000119" [label="(Identifier,NULL)"];
+"1000177" [label="(Identifier,result)"];
+"1000118" [label="(Identifier,result)"];
+"1000117" [label="(Call,*result = NULL)"];
+"1000141" [label="(Call,result = log2vis_utf8 (string,\n\t\t\t\t       PyUnicode_GET_SIZE (logical),\n\t\t\t\t       base_direction, clean, reordernsm))"];
+"1000121" [label="(Identifier,logical)"];
+"1000111" [label="(Block,)"];
+"1000163" [label="(Call,result = PyUnicode_Encode (PyUnicode_AS_UNICODE\n\t\t\t\t\t\t   (visual),\n\t\t\t\t\t\t   PyUnicode_GET_SIZE (visual),\n\t\t\t\t\t\t   encoding, \"strict\"))"];
+"1000176" [label="(Return,return result;)"];
+"1000117" -> "1000111"  [label="AST: "];
+"1000117" -> "1000119"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000119" -> "1000117"  [label="AST: "];
+"1000121" -> "1000117"  [label="CFG: "];
+"1000117" -> "1000178"  [label="DDG: result"];
+"1000117" -> "1000176"  [label="DDG: result"];
+"1000176" -> "1000111"  [label="AST: "];
+"1000176" -> "1000177"  [label="CFG: "];
+"1000177" -> "1000176"  [label="AST: "];
+"1000178" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000178"  [label="DDG: <RET>"];
+"1000177" -> "1000176"  [label="DDG: result"];
+"1000163" -> "1000176"  [label="DDG: result"];
+"1000141" -> "1000176"  [label="DDG: result"];
+}

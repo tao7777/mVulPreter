@@ -1,0 +1,38 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_17@pointer" {
+"1000178" [label="(Call,p->dir = parent)"];
+"1000108" [label="(Call,*parent = dget_parent(path->dentry))"];
+"1000110" [label="(Call,dget_parent(path->dentry))"];
+"1000185" [label="(Identifier,p)"];
+"1000108" [label="(Call,*parent = dget_parent(path->dentry))"];
+"1000174" [label="(Call,dget(path->dentry))"];
+"1000179" [label="(Call,p->dir)"];
+"1000110" [label="(Call,dget_parent(path->dentry))"];
+"1000389" [label="(MethodReturn,static struct nfs4_opendata *)"];
+"1000109" [label="(Identifier,parent)"];
+"1000116" [label="(Identifier,dir)"];
+"1000106" [label="(Block,)"];
+"1000385" [label="(Call,dput(parent))"];
+"1000178" [label="(Call,p->dir = parent)"];
+"1000182" [label="(Identifier,parent)"];
+"1000111" [label="(Call,path->dentry)"];
+"1000178" -> "1000106"  [label="AST: "];
+"1000178" -> "1000182"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000182" -> "1000178"  [label="AST: "];
+"1000185" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000389"  [label="DDG: parent"];
+"1000178" -> "1000389"  [label="DDG: p->dir"];
+"1000108" -> "1000178"  [label="DDG: parent"];
+"1000108" -> "1000106"  [label="AST: "];
+"1000108" -> "1000110"  [label="CFG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000110" -> "1000108"  [label="AST: "];
+"1000116" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000389"  [label="DDG: dget_parent(path->dentry)"];
+"1000110" -> "1000108"  [label="DDG: path->dentry"];
+"1000108" -> "1000385"  [label="DDG: parent"];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000110" -> "1000389"  [label="DDG: path->dentry"];
+"1000110" -> "1000174"  [label="DDG: path->dentry"];
+}

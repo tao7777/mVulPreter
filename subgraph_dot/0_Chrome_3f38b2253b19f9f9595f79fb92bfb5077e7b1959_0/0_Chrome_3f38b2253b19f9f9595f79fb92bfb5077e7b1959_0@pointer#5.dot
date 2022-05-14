@@ -1,0 +1,35 @@
+digraph "0_Chrome_3f38b2253b19f9f9595f79fb92bfb5077e7b1959_0@pointer" {
+"1000208" [label="(Call,* ranges_data =\n            memory_allocator_->GetAsArray<HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count))"];
+"1000210" [label="(Call,memory_allocator_->GetAsArray<HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count))"];
+"1000214" [label="(Call,HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count))"];
+"1000209" [label="(Identifier,ranges_data)"];
+"1000343" [label="(MethodReturn,std::unique_ptr<HistogramBase>)"];
+"1000208" [label="(Call,* ranges_data =\n            memory_allocator_->GetAsArray<HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count))"];
+"1000216" [label="(Block,)"];
+"1000222" [label="(Identifier,ranges_data)"];
+"1000214" [label="(Call,HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count))"];
+"1000220" [label="(Identifier,ranges_count)"];
+"1000211" [label="(Call,memory_allocator_->GetAsArray)"];
+"1000215" [label="(Identifier,HistogramBase::Sample)"];
+"1000206" [label="(Block,)"];
+"1000210" [label="(Call,memory_allocator_->GetAsArray<HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count))"];
+"1000208" -> "1000206"  [label="AST: "];
+"1000208" -> "1000210"  [label="CFG: "];
+"1000209" -> "1000208"  [label="AST: "];
+"1000210" -> "1000208"  [label="AST: "];
+"1000222" -> "1000208"  [label="CFG: "];
+"1000208" -> "1000343"  [label="DDG: ranges_data"];
+"1000208" -> "1000343"  [label="DDG: memory_allocator_->GetAsArray<HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count)"];
+"1000210" -> "1000208"  [label="DDG: memory_allocator_->GetAsArray"];
+"1000210" -> "1000208"  [label="DDG: HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count)"];
+"1000210" -> "1000214"  [label="CFG: "];
+"1000211" -> "1000210"  [label="AST: "];
+"1000214" -> "1000210"  [label="AST: "];
+"1000210" -> "1000343"  [label="DDG: HistogramBase::Sample>(\n                ranges_ref, kTypeIdRangesArray, ranges_count)"];
+"1000210" -> "1000343"  [label="DDG: memory_allocator_->GetAsArray"];
+"1000214" -> "1000210"  [label="DDG: HistogramBase::Sample"];
+"1000214" -> "1000220"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000216" -> "1000214"  [label="AST: "];
+"1000214" -> "1000343"  [label="DDG: HistogramBase::Sample"];
+}

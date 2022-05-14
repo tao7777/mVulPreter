@@ -1,0 +1,36 @@
+digraph "0_FFmpeg_8312e3fc9041027a33c8bc667bb99740fdf41dd5@pointer" {
+"1000512" [label="(Call,av_log(s, AV_LOG_ERROR, \"No frames in the file!\n\"))"];
+"1000109" [label="(MethodParameterIn,AVFormatContext * s)"];
+"1000511" [label="(Block,)"];
+"1000512" [label="(Call,av_log(s, AV_LOG_ERROR, \"No frames in the file!\n\"))"];
+"1000518" [label="(Identifier,EINVAL)"];
+"1000109" [label="(MethodParameterIn,AVFormatContext * s)"];
+"1000870" [label="(Call,ape_dumpinfo(s, ape))"];
+"1000878" [label="(Call,ff_ape_parse_tag(s))"];
+"1000529" [label="(Call,av_log(s, AV_LOG_ERROR, \"Too many frames: %d\n\", ape->totalframes))"];
+"1001121" [label="(MethodReturn,static int)"];
+"1000168" [label="(Call,av_log(s, AV_LOG_ERROR, \"Unsupported file version - %d.%02d\n\", ape->fileversion / 1000, (ape->fileversion % 1000) / 10))"];
+"1000905" [label="(Call,av_new_stream(s, 0))"];
+"1000884" [label="(Call,av_log(s, AV_LOG_DEBUG, \"Decoding file - v%d.%02d, compression level %d\n\", ape->fileversion / 1000, (ape->fileversion % 1000) / 10, ape->compressiontype))"];
+"1000514" [label="(Identifier,AV_LOG_ERROR)"];
+"1000515" [label="(Literal,\"No frames in the file!\n\")"];
+"1000513" [label="(Identifier,s)"];
+"1000512" -> "1000511"  [label="AST: "];
+"1000512" -> "1000515"  [label="CFG: "];
+"1000513" -> "1000512"  [label="AST: "];
+"1000514" -> "1000512"  [label="AST: "];
+"1000515" -> "1000512"  [label="AST: "];
+"1000518" -> "1000512"  [label="CFG: "];
+"1000512" -> "1001121"  [label="DDG: "];
+"1000512" -> "1001121"  [label="DDG: "];
+"1000512" -> "1001121"  [label="DDG: "];
+"1000109" -> "1000512"  [label="DDG: "];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1001121"  [label="DDG: "];
+"1000109" -> "1000168"  [label="DDG: "];
+"1000109" -> "1000529"  [label="DDG: "];
+"1000109" -> "1000870"  [label="DDG: "];
+"1000109" -> "1000878"  [label="DDG: "];
+"1000109" -> "1000884"  [label="DDG: "];
+"1000109" -> "1000905"  [label="DDG: "];
+}

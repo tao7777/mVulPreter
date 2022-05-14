@@ -1,0 +1,24 @@
+digraph "0_Chrome_ac149a8d4371c0e01e0934fdd57b09e86f96b5b9_9@pointer" {
+"1000116" [label="(Call,*handle_priv = _device_handle_priv(\n\t\ttransfer->dev_handle))"];
+"1000118" [label="(Call,_device_handle_priv(\n\t\ttransfer->dev_handle))"];
+"1000246" [label="(MethodReturn,static int)"];
+"1000180" [label="(Call,libusb_claim_interface(transfer->dev_handle, current_interface))"];
+"1000117" [label="(Identifier,handle_priv)"];
+"1000119" [label="(Call,transfer->dev_handle)"];
+"1000105" [label="(Block,)"];
+"1000124" [label="(Identifier,priv)"];
+"1000116" [label="(Call,*handle_priv = _device_handle_priv(\n\t\ttransfer->dev_handle))"];
+"1000118" [label="(Call,_device_handle_priv(\n\t\ttransfer->dev_handle))"];
+"1000116" -> "1000105"  [label="AST: "];
+"1000116" -> "1000118"  [label="CFG: "];
+"1000117" -> "1000116"  [label="AST: "];
+"1000118" -> "1000116"  [label="AST: "];
+"1000124" -> "1000116"  [label="CFG: "];
+"1000116" -> "1000246"  [label="DDG: handle_priv"];
+"1000116" -> "1000246"  [label="DDG: _device_handle_priv(\n\t\ttransfer->dev_handle)"];
+"1000118" -> "1000116"  [label="DDG: transfer->dev_handle"];
+"1000118" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000118"  [label="AST: "];
+"1000118" -> "1000246"  [label="DDG: transfer->dev_handle"];
+"1000118" -> "1000180"  [label="DDG: transfer->dev_handle"];
+}

@@ -1,0 +1,36 @@
+digraph "0_file_6713ca45e7757297381f4b4cdb9cf5e624a9ad36@pointer" {
+"1000142" [label="(Call,file_oomem(ms, len))"];
+"1000101" [label="(MethodParameterIn,struct magic_set *ms)"];
+"1000114" [label="(Call,len = (ms->c.len = 20 + level) * sizeof(*ms->c.li))"];
+"1000115" [label="(Identifier,len)"];
+"1000183" [label="(MethodReturn,RET)"];
+"1000114" [label="(Call,len = (ms->c.len = 20 + level) * sizeof(*ms->c.li))"];
+"1000141" [label="(Block,)"];
+"1000113" [label="(Block,)"];
+"1000137" [label="(Identifier,ms)"];
+"1000142" [label="(Call,file_oomem(ms, len))"];
+"1000101" [label="(MethodParameterIn,struct magic_set *ms)"];
+"1000147" [label="(Literal,1)"];
+"1000116" [label="(Call,(ms->c.len = 20 + level) * sizeof(*ms->c.li))"];
+"1000143" [label="(Identifier,ms)"];
+"1000144" [label="(Identifier,len)"];
+"1000142" -> "1000141"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000144" -> "1000142"  [label="AST: "];
+"1000147" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000183"  [label="DDG: file_oomem(ms, len)"];
+"1000142" -> "1000183"  [label="DDG: len"];
+"1000142" -> "1000183"  [label="DDG: ms"];
+"1000101" -> "1000142"  [label="DDG: ms"];
+"1000114" -> "1000142"  [label="DDG: len"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000183"  [label="DDG: ms"];
+"1000114" -> "1000113"  [label="AST: "];
+"1000114" -> "1000116"  [label="CFG: "];
+"1000115" -> "1000114"  [label="AST: "];
+"1000116" -> "1000114"  [label="AST: "];
+"1000137" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000183"  [label="DDG: (ms->c.len = 20 + level) * sizeof(*ms->c.li)"];
+"1000114" -> "1000183"  [label="DDG: len"];
+}

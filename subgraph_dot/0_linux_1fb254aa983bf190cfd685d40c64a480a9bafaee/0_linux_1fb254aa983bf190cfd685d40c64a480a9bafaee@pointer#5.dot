@@ -1,0 +1,28 @@
+digraph "0_linux_1fb254aa983bf190cfd685d40c64a480a9bafaee@pointer" {
+"1000160" [label="(Call,*olddquot1 = NULL)"];
+"1000521" [label="(Call,xfs_qm_dqrele(olddquot1))"];
+"1000522" [label="(Identifier,olddquot1)"];
+"1000115" [label="(Block,)"];
+"1000569" [label="(MethodReturn,RET)"];
+"1000406" [label="(Call,olddquot1 = xfs_qm_vop_chown(tp, ip,\n\t\t\t\t\t\t\t&ip->i_udquot, udqp))"];
+"1000521" [label="(Call,xfs_qm_dqrele(olddquot1))"];
+"1000165" [label="(Identifier,olddquot2)"];
+"1000162" [label="(Identifier,NULL)"];
+"1000524" [label="(Identifier,olddquot2)"];
+"1000160" [label="(Call,*olddquot1 = NULL)"];
+"1000161" [label="(Identifier,olddquot1)"];
+"1000160" -> "1000115"  [label="AST: "];
+"1000160" -> "1000162"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000162" -> "1000160"  [label="AST: "];
+"1000165" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000569"  [label="DDG: olddquot1"];
+"1000160" -> "1000521"  [label="DDG: olddquot1"];
+"1000521" -> "1000115"  [label="AST: "];
+"1000521" -> "1000522"  [label="CFG: "];
+"1000522" -> "1000521"  [label="AST: "];
+"1000524" -> "1000521"  [label="CFG: "];
+"1000521" -> "1000569"  [label="DDG: olddquot1"];
+"1000521" -> "1000569"  [label="DDG: xfs_qm_dqrele(olddquot1)"];
+"1000406" -> "1000521"  [label="DDG: olddquot1"];
+}

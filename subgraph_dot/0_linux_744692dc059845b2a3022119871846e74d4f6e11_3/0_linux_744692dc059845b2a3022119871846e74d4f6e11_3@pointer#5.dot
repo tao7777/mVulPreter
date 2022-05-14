@@ -1,0 +1,30 @@
+digraph "0_linux_744692dc059845b2a3022119871846e74d4f6e11_3@pointer" {
+"1000191" [label="(Call,spin_lock_irqsave(&ei->i_completed_io_lock, flags))"];
+"1000206" [label="(Call,spin_unlock_irqrestore(&ei->i_completed_io_lock, flags))"];
+"1000196" [label="(Identifier,flags)"];
+"1000109" [label="(Block,)"];
+"1000192" [label="(Call,&ei->i_completed_io_lock)"];
+"1000211" [label="(Identifier,flags)"];
+"1000217" [label="(MethodReturn,static void)"];
+"1000206" [label="(Call,spin_unlock_irqrestore(&ei->i_completed_io_lock, flags))"];
+"1000191" [label="(Call,spin_lock_irqsave(&ei->i_completed_io_lock, flags))"];
+"1000207" [label="(Call,&ei->i_completed_io_lock)"];
+"1000200" [label="(Identifier,io_end)"];
+"1000214" [label="(Identifier,iocb)"];
+"1000191" -> "1000109"  [label="AST: "];
+"1000191" -> "1000196"  [label="CFG: "];
+"1000192" -> "1000191"  [label="AST: "];
+"1000196" -> "1000191"  [label="AST: "];
+"1000200" -> "1000191"  [label="CFG: "];
+"1000191" -> "1000217"  [label="DDG: spin_lock_irqsave(&ei->i_completed_io_lock, flags)"];
+"1000191" -> "1000206"  [label="DDG: &ei->i_completed_io_lock"];
+"1000191" -> "1000206"  [label="DDG: flags"];
+"1000206" -> "1000109"  [label="AST: "];
+"1000206" -> "1000211"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000211" -> "1000206"  [label="AST: "];
+"1000214" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000217"  [label="DDG: &ei->i_completed_io_lock"];
+"1000206" -> "1000217"  [label="DDG: spin_unlock_irqrestore(&ei->i_completed_io_lock, flags)"];
+"1000206" -> "1000217"  [label="DDG: flags"];
+}

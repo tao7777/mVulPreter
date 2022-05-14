@@ -1,0 +1,26 @@
+digraph "0_linux_4442dc8a92b8f9ad8ee9e7f8438f4c04c03a22dc_0@array" {
+"1000124" [label="(Call,sg = sg_table[i].sg_table)"];
+"1000162" [label="(Call,kfree(sg))"];
+"1000168" [label="(MethodReturn,static u32)"];
+"1000122" [label="(Identifier,i)"];
+"1000125" [label="(Identifier,sg)"];
+"1000123" [label="(Block,)"];
+"1000124" [label="(Call,sg = sg_table[i].sg_table)"];
+"1000126" [label="(Call,sg_table[i].sg_table)"];
+"1000132" [label="(Identifier,sg_per_table)"];
+"1000163" [label="(Identifier,sg)"];
+"1000162" [label="(Call,kfree(sg))"];
+"1000124" -> "1000123"  [label="AST: "];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="AST: "];
+"1000132" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000168"  [label="DDG: sg_table[i].sg_table"];
+"1000124" -> "1000162"  [label="DDG: sg"];
+"1000162" -> "1000123"  [label="AST: "];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000122" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000168"  [label="DDG: sg"];
+"1000162" -> "1000168"  [label="DDG: kfree(sg)"];
+}

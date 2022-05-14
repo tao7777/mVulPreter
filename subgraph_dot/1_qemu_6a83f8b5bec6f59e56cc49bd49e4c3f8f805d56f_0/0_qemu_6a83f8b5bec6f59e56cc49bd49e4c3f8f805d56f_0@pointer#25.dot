@@ -1,0 +1,32 @@
+digraph "0_qemu_6a83f8b5bec6f59e56cc49bd49e4c3f8f805d56f_0@pointer" {
+"1001370" [label="(Call,s->overlap_check = 0)"];
+"1001385" [label="(Call,s->overlap_check |=\n            qemu_opt_get_bool(opts, overlap_bool_option_names[i],\n                              overlap_check_template & (1 << i)) << i)"];
+"1001483" [label="(MethodReturn,static int)"];
+"1000126" [label="(Block,)"];
+"1001371" [label="(Call,s->overlap_check)"];
+"1001384" [label="(Block,)"];
+"1001370" [label="(Call,s->overlap_check = 0)"];
+"1001385" [label="(Call,s->overlap_check |=\n            qemu_opt_get_bool(opts, overlap_bool_option_names[i],\n                              overlap_check_template & (1 << i)) << i)"];
+"1001383" [label="(Identifier,i)"];
+"1001377" [label="(Identifier,i)"];
+"1001386" [label="(Call,s->overlap_check)"];
+"1001374" [label="(Literal,0)"];
+"1001389" [label="(Call,qemu_opt_get_bool(opts, overlap_bool_option_names[i],\n                              overlap_check_template & (1 << i)) << i)"];
+"1001370" -> "1000126"  [label="AST: "];
+"1001370" -> "1001374"  [label="CFG: "];
+"1001371" -> "1001370"  [label="AST: "];
+"1001374" -> "1001370"  [label="AST: "];
+"1001377" -> "1001370"  [label="CFG: "];
+"1001370" -> "1001483"  [label="DDG: s->overlap_check"];
+"1001370" -> "1001385"  [label="DDG: s->overlap_check"];
+"1001385" -> "1001384"  [label="AST: "];
+"1001385" -> "1001389"  [label="CFG: "];
+"1001386" -> "1001385"  [label="AST: "];
+"1001389" -> "1001385"  [label="AST: "];
+"1001383" -> "1001385"  [label="CFG: "];
+"1001385" -> "1001483"  [label="DDG: s->overlap_check |=\n            qemu_opt_get_bool(opts, overlap_bool_option_names[i],\n                              overlap_check_template & (1 << i)) << i"];
+"1001385" -> "1001483"  [label="DDG: qemu_opt_get_bool(opts, overlap_bool_option_names[i],\n                              overlap_check_template & (1 << i)) << i"];
+"1001385" -> "1001483"  [label="DDG: s->overlap_check"];
+"1001389" -> "1001385"  [label="DDG: qemu_opt_get_bool(opts, overlap_bool_option_names[i],\n                              overlap_check_template & (1 << i))"];
+"1001389" -> "1001385"  [label="DDG: i"];
+}

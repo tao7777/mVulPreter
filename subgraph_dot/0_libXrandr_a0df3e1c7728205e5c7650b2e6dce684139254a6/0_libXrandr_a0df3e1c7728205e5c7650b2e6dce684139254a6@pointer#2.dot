@@ -1,0 +1,36 @@
+digraph "0_libXrandr_a0df3e1c7728205e5c7650b2e6dce684139254a6@pointer" {
+"1000461" [label="(Call,Xfree(buf_head))"];
+"1000268" [label="(Call,buf_head = Xmalloc (nbytesRead))"];
+"1000270" [label="(Call,Xmalloc (nbytesRead))"];
+"1000271" [label="(Identifier,nbytesRead)"];
+"1000462" [label="(Identifier,buf_head)"];
+"1000463" [label="(MethodReturn,RET)"];
+"1000270" [label="(Call,Xmalloc (nbytesRead))"];
+"1000266" [label="(Call,buf = buf_head = Xmalloc (nbytesRead))"];
+"1000269" [label="(Identifier,buf_head)"];
+"1000299" [label="(Call,_XReadPad(dpy, buf, nbytesRead))"];
+"1000268" [label="(Call,buf_head = Xmalloc (nbytesRead))"];
+"1000105" [label="(Block,)"];
+"1000461" [label="(Call,Xfree(buf_head))"];
+"1000461" -> "1000105"  [label="AST: "];
+"1000461" -> "1000462"  [label="CFG: "];
+"1000462" -> "1000461"  [label="AST: "];
+"1000463" -> "1000461"  [label="CFG: "];
+"1000461" -> "1000463"  [label="DDG: Xfree(buf_head)"];
+"1000461" -> "1000463"  [label="DDG: buf_head"];
+"1000268" -> "1000461"  [label="DDG: buf_head"];
+"1000268" -> "1000266"  [label="AST: "];
+"1000268" -> "1000270"  [label="CFG: "];
+"1000269" -> "1000268"  [label="AST: "];
+"1000270" -> "1000268"  [label="AST: "];
+"1000266" -> "1000268"  [label="CFG: "];
+"1000268" -> "1000463"  [label="DDG: buf_head"];
+"1000268" -> "1000463"  [label="DDG: Xmalloc (nbytesRead)"];
+"1000268" -> "1000266"  [label="DDG: buf_head"];
+"1000270" -> "1000268"  [label="DDG: nbytesRead"];
+"1000270" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000270"  [label="AST: "];
+"1000270" -> "1000463"  [label="DDG: nbytesRead"];
+"1000270" -> "1000266"  [label="DDG: nbytesRead"];
+"1000270" -> "1000299"  [label="DDG: nbytesRead"];
+}

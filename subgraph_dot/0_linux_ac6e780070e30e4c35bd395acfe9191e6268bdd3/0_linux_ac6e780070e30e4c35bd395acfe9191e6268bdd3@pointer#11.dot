@@ -1,0 +1,26 @@
+digraph "0_linux_ac6e780070e30e4c35bd395acfe9191e6268bdd3@pointer" {
+"1000383" [label="(Call,iph->ttl < inet_sk(sk)->min_ttl)"];
+"1000382" [label="(Call,unlikely(iph->ttl < inet_sk(sk)->min_ttl))"];
+"1000387" [label="(Call,inet_sk(sk)->min_ttl)"];
+"1000609" [label="(MethodReturn,int)"];
+"1000393" [label="(Identifier,net)"];
+"1000384" [label="(Call,iph->ttl)"];
+"1000382" [label="(Call,unlikely(iph->ttl < inet_sk(sk)->min_ttl))"];
+"1000383" [label="(Call,iph->ttl < inet_sk(sk)->min_ttl)"];
+"1000381" [label="(ControlStructure,if (unlikely(iph->ttl < inet_sk(sk)->min_ttl)))"];
+"1000399" [label="(Identifier,sk)"];
+"1000383" -> "1000382"  [label="AST: "];
+"1000383" -> "1000387"  [label="CFG: "];
+"1000384" -> "1000383"  [label="AST: "];
+"1000387" -> "1000383"  [label="AST: "];
+"1000382" -> "1000383"  [label="CFG: "];
+"1000383" -> "1000609"  [label="DDG: iph->ttl"];
+"1000383" -> "1000609"  [label="DDG: inet_sk(sk)->min_ttl"];
+"1000383" -> "1000382"  [label="DDG: iph->ttl"];
+"1000383" -> "1000382"  [label="DDG: inet_sk(sk)->min_ttl"];
+"1000382" -> "1000381"  [label="AST: "];
+"1000393" -> "1000382"  [label="CFG: "];
+"1000399" -> "1000382"  [label="CFG: "];
+"1000382" -> "1000609"  [label="DDG: iph->ttl < inet_sk(sk)->min_ttl"];
+"1000382" -> "1000609"  [label="DDG: unlikely(iph->ttl < inet_sk(sk)->min_ttl)"];
+}

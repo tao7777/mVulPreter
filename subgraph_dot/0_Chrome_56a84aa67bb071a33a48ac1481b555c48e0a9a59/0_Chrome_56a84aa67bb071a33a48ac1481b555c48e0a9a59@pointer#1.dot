@@ -1,0 +1,24 @@
+digraph "0_Chrome_56a84aa67bb071a33a48ac1481b555c48e0a9a59@pointer" {
+"1000145" [label="(Call,* extension_prefs = ExtensionPrefs::Get(profile_))"];
+"1000147" [label="(Call,ExtensionPrefs::Get(profile_))"];
+"1000151" [label="(Call,extension->id())"];
+"1000102" [label="(Block,)"];
+"1000148" [label="(Identifier,profile_)"];
+"1000165" [label="(Call,ExtensionInstallPrompt::GetReEnablePromptTypeForExtension(profile_,\n                                                                  extension))"];
+"1000147" [label="(Call,ExtensionPrefs::Get(profile_))"];
+"1000145" [label="(Call,* extension_prefs = ExtensionPrefs::Get(profile_))"];
+"1000181" [label="(MethodReturn,void)"];
+"1000146" [label="(Identifier,extension_prefs)"];
+"1000145" -> "1000102"  [label="AST: "];
+"1000145" -> "1000147"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000147" -> "1000145"  [label="AST: "];
+"1000151" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000181"  [label="DDG: extension_prefs"];
+"1000145" -> "1000181"  [label="DDG: ExtensionPrefs::Get(profile_)"];
+"1000147" -> "1000145"  [label="DDG: profile_"];
+"1000147" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000147" -> "1000181"  [label="DDG: profile_"];
+"1000147" -> "1000165"  [label="DDG: profile_"];
+}

@@ -1,0 +1,31 @@
+digraph "0_linux_a2c118bfab8bc6b8bb213abfc35201e441693d55@pointer" {
+"1000174" [label="(Call,ioapic->ioregsel & 0x1)"];
+"1000147" [label="(Call,ioapic->ioregsel - 0x10)"];
+"1000173" [label="(Call,(ioapic->ioregsel & 0x1) ?\n \t\t\t    (redir_content >> 32) & 0xffffffff :\n \t\t\t    redir_content & 0xffffffff)"];
+"1000190" [label="(MethodReturn,static unsigned long)"];
+"1000152" [label="(Literal,1)"];
+"1000174" [label="(Call,ioapic->ioregsel & 0x1)"];
+"1000146" [label="(Call,(ioapic->ioregsel - 0x10) >> 1)"];
+"1000147" [label="(Call,ioapic->ioregsel - 0x10)"];
+"1000181" [label="(Identifier,redir_content)"];
+"1000185" [label="(Identifier,redir_content)"];
+"1000151" [label="(Literal,0x10)"];
+"1000175" [label="(Call,ioapic->ioregsel)"];
+"1000148" [label="(Call,ioapic->ioregsel)"];
+"1000178" [label="(Literal,0x1)"];
+"1000174" -> "1000173"  [label="AST: "];
+"1000174" -> "1000178"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000178" -> "1000174"  [label="AST: "];
+"1000181" -> "1000174"  [label="CFG: "];
+"1000185" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000190"  [label="DDG: ioapic->ioregsel"];
+"1000147" -> "1000174"  [label="DDG: ioapic->ioregsel"];
+"1000147" -> "1000146"  [label="AST: "];
+"1000147" -> "1000151"  [label="CFG: "];
+"1000148" -> "1000147"  [label="AST: "];
+"1000151" -> "1000147"  [label="AST: "];
+"1000152" -> "1000147"  [label="CFG: "];
+"1000147" -> "1000146"  [label="DDG: ioapic->ioregsel"];
+"1000147" -> "1000146"  [label="DDG: 0x10"];
+}

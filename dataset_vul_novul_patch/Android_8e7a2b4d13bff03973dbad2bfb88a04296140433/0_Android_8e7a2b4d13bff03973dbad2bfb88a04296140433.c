@@ -1,0 +1,1 @@
+size_t calculate_camera_metadata_entry_data_size(uint8_t type,

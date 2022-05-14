@@ -1,0 +1,33 @@
+digraph "0_linux_b9a41d21dceadf8104812626ef85dc56ee8a60ed@pointer" {
+"1000109" [label="(Call,test_bit(DMF_FREEING, &md->flags))"];
+"1000108" [label="(Call,test_bit(DMF_FREEING, &md->flags) || dm_deleting_md(md))"];
+"1000107" [label="(ControlStructure,if (test_bit(DMF_FREEING, &md->flags) || dm_deleting_md(md)))"];
+"1000130" [label="(MethodReturn,struct mapped_device *)"];
+"1000119" [label="(Identifier,md)"];
+"1000123" [label="(Identifier,md)"];
+"1000110" [label="(Identifier,DMF_FREEING)"];
+"1000111" [label="(Call,&md->flags)"];
+"1000108" [label="(Call,test_bit(DMF_FREEING, &md->flags) || dm_deleting_md(md))"];
+"1000115" [label="(Call,dm_deleting_md(md))"];
+"1000109" [label="(Call,test_bit(DMF_FREEING, &md->flags))"];
+"1000116" [label="(Identifier,md)"];
+"1000109" -> "1000108"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000116" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000130"  [label="DDG: &md->flags"];
+"1000109" -> "1000130"  [label="DDG: DMF_FREEING"];
+"1000109" -> "1000108"  [label="DDG: DMF_FREEING"];
+"1000109" -> "1000108"  [label="DDG: &md->flags"];
+"1000108" -> "1000107"  [label="AST: "];
+"1000108" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000108"  [label="AST: "];
+"1000119" -> "1000108"  [label="CFG: "];
+"1000123" -> "1000108"  [label="CFG: "];
+"1000108" -> "1000130"  [label="DDG: test_bit(DMF_FREEING, &md->flags) || dm_deleting_md(md)"];
+"1000108" -> "1000130"  [label="DDG: dm_deleting_md(md)"];
+"1000108" -> "1000130"  [label="DDG: test_bit(DMF_FREEING, &md->flags)"];
+"1000115" -> "1000108"  [label="DDG: md"];
+}

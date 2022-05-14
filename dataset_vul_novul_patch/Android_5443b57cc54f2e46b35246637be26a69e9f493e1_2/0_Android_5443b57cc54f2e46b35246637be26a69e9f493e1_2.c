@@ -1,0 +1,9 @@
+ SoftMPEG4Encoder::~SoftMPEG4Encoder() {
+     ALOGV("Destruct SoftMPEG4Encoder");
+    onReset();
+     releaseEncoder();
+     List<BufferInfo *> &outQueue = getPortQueue(1);
+     List<BufferInfo *> &inQueue = getPortQueue(0);
+    CHECK(outQueue.empty());
+    CHECK(inQueue.empty());
+}

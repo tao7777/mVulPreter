@@ -1,0 +1,36 @@
+digraph "0_linux_71105998845fb012937332fe2e806d443c09e026@pointer" {
+"1000176" [label="(Call,client->type == KERNEL_CLIENT)"];
+"1000151" [label="(Call,client->type == USER_CLIENT)"];
+"1000151" [label="(Call,client->type == USER_CLIENT)"];
+"1000284" [label="(MethodReturn,static int)"];
+"1000150" [label="(Call,client->type == USER_CLIENT && info->kernel)"];
+"1000180" [label="(Identifier,KERNEL_CLIENT)"];
+"1000152" [label="(Call,client->type)"];
+"1000185" [label="(Identifier,callback)"];
+"1000157" [label="(Identifier,info)"];
+"1000175" [label="(ControlStructure,if (client->type == KERNEL_CLIENT))"];
+"1000261" [label="(Identifier,info)"];
+"1000176" [label="(Call,client->type == KERNEL_CLIENT)"];
+"1000155" [label="(Identifier,USER_CLIENT)"];
+"1000177" [label="(Call,client->type)"];
+"1000176" -> "1000175"  [label="AST: "];
+"1000176" -> "1000180"  [label="CFG: "];
+"1000177" -> "1000176"  [label="AST: "];
+"1000180" -> "1000176"  [label="AST: "];
+"1000185" -> "1000176"  [label="CFG: "];
+"1000261" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000284"  [label="DDG: KERNEL_CLIENT"];
+"1000176" -> "1000284"  [label="DDG: client->type == KERNEL_CLIENT"];
+"1000176" -> "1000284"  [label="DDG: client->type"];
+"1000151" -> "1000176"  [label="DDG: client->type"];
+"1000151" -> "1000150"  [label="AST: "];
+"1000151" -> "1000155"  [label="CFG: "];
+"1000152" -> "1000151"  [label="AST: "];
+"1000155" -> "1000151"  [label="AST: "];
+"1000157" -> "1000151"  [label="CFG: "];
+"1000150" -> "1000151"  [label="CFG: "];
+"1000151" -> "1000284"  [label="DDG: client->type"];
+"1000151" -> "1000284"  [label="DDG: USER_CLIENT"];
+"1000151" -> "1000150"  [label="DDG: client->type"];
+"1000151" -> "1000150"  [label="DDG: USER_CLIENT"];
+}

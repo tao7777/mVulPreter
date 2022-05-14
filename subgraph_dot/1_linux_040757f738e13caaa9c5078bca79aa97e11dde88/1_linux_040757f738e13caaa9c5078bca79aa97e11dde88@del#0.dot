@@ -1,0 +1,29 @@
+digraph "1_linux_040757f738e13caaa9c5078bca79aa97e11dde88@del" {
+"1000150" [label="(Call,atomic_add_unless(&ucounts->count, 1, INT_MAX))"];
+"1000149" [label="(Call,!atomic_add_unless(&ucounts->count, 1, INT_MAX))"];
+"1000156" [label="(Identifier,INT_MAX)"];
+"1000162" [label="(Identifier,ucounts_lock)"];
+"1000149" [label="(Call,!atomic_add_unless(&ucounts->count, 1, INT_MAX))"];
+"1000148" [label="(ControlStructure,if (!atomic_add_unless(&ucounts->count, 1, INT_MAX)))"];
+"1000150" [label="(Call,atomic_add_unless(&ucounts->count, 1, INT_MAX))"];
+"1000158" [label="(Identifier,ucounts)"];
+"1000155" [label="(Literal,1)"];
+"1000165" [label="(MethodReturn,static struct ucounts *)"];
+"1000151" [label="(Call,&ucounts->count)"];
+"1000150" -> "1000149"  [label="AST: "];
+"1000150" -> "1000156"  [label="CFG: "];
+"1000151" -> "1000150"  [label="AST: "];
+"1000155" -> "1000150"  [label="AST: "];
+"1000156" -> "1000150"  [label="AST: "];
+"1000149" -> "1000150"  [label="CFG: "];
+"1000150" -> "1000165"  [label="DDG: &ucounts->count"];
+"1000150" -> "1000165"  [label="DDG: INT_MAX"];
+"1000150" -> "1000149"  [label="DDG: &ucounts->count"];
+"1000150" -> "1000149"  [label="DDG: 1"];
+"1000150" -> "1000149"  [label="DDG: INT_MAX"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000158" -> "1000149"  [label="CFG: "];
+"1000162" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000165"  [label="DDG: !atomic_add_unless(&ucounts->count, 1, INT_MAX)"];
+"1000149" -> "1000165"  [label="DDG: atomic_add_unless(&ucounts->count, 1, INT_MAX)"];
+}

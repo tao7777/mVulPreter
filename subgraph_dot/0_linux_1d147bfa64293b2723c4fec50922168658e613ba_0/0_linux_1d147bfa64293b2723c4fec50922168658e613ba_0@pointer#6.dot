@@ -1,0 +1,22 @@
+digraph "0_linux_1d147bfa64293b2723c4fec50922168658e613ba_0@pointer" {
+"1000138" [label="(Call,tx_latency = rcu_dereference(local->tx_latency))"];
+"1000140" [label="(Call,rcu_dereference(local->tx_latency))"];
+"1000528" [label="(MethodReturn,struct sta_info *)"];
+"1000141" [label="(Call,local->tx_latency)"];
+"1000145" [label="(Identifier,tx_latency)"];
+"1000140" [label="(Call,rcu_dereference(local->tx_latency))"];
+"1000108" [label="(Block,)"];
+"1000139" [label="(Identifier,tx_latency)"];
+"1000138" [label="(Call,tx_latency = rcu_dereference(local->tx_latency))"];
+"1000138" -> "1000108"  [label="AST: "];
+"1000138" -> "1000140"  [label="CFG: "];
+"1000139" -> "1000138"  [label="AST: "];
+"1000140" -> "1000138"  [label="AST: "];
+"1000145" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000528"  [label="DDG: tx_latency"];
+"1000138" -> "1000528"  [label="DDG: rcu_dereference(local->tx_latency)"];
+"1000140" -> "1000138"  [label="DDG: local->tx_latency"];
+"1000140" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000140" -> "1000528"  [label="DDG: local->tx_latency"];
+}

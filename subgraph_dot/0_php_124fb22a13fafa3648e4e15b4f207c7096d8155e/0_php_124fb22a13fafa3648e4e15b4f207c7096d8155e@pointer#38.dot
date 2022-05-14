@@ -1,0 +1,32 @@
+digraph "0_php_124fb22a13fafa3648e4e15b4f207c7096d8155e@pointer" {
+"1001414" [label="(Call,zend_llist_clean(&ch->to_free->post))"];
+"1001421" [label="(Call,zend_llist_add_element(&ch->to_free->post, &first))"];
+"1001063" [label="(Block,)"];
+"1001329" [label="(Call,curl_formadd(&first, &last,\n\t\t\t\t\t\t\t\t\t\tCURLFORM_COPYNAME, string_key->val,\n\t\t\t\t\t\t\t\t\t\tCURLFORM_NAMELENGTH, string_key->len,\n\t\t\t\t\t\t\t\t\t\tCURLFORM_FILENAME, filename ? filename + sizeof(\";filename=\") - 1 : name,\n\t\t\t\t\t\t\t\t\t\tCURLFORM_CONTENTTYPE, type ? type + sizeof(\";type=\") - 1 : \"application/octet-stream\",\n\t\t\t\t\t\t\t\t\t\tCURLFORM_FILE, name,\n\t\t\t\t\t\t\t\t\t\tCURLFORM_END))"];
+"1001413" [label="(Block,)"];
+"1001415" [label="(Call,&ch->to_free->post)"];
+"1001421" [label="(Call,zend_llist_add_element(&ch->to_free->post, &first))"];
+"1001431" [label="(Identifier,error)"];
+"1001422" [label="(Call,&ch->to_free->post)"];
+"1001428" [label="(Call,&first)"];
+"1001371" [label="(Call,curl_formadd(&first, &last,\n\t\t\t\t\t\t\t\t\t\t\t CURLFORM_COPYNAME, string_key->val,\n\t\t\t\t\t\t\t\t\t\t\t CURLFORM_NAMELENGTH, (zend_long)string_key->len,\n\t\t\t\t\t\t\t\t\t\t\t CURLFORM_COPYCONTENTS, postval,\n\t\t\t\t\t\t\t\t\t\t\t CURLFORM_CONTENTSLENGTH, (zend_long)Z_STRLEN_P(current),\n\t\t\t\t\t\t\t\t\t\t\t CURLFORM_END))"];
+"1001414" [label="(Call,zend_llist_clean(&ch->to_free->post))"];
+"1001425" [label="(Identifier,ch)"];
+"1001927" [label="(MethodReturn,static int)"];
+"1001414" -> "1001413"  [label="AST: "];
+"1001414" -> "1001415"  [label="CFG: "];
+"1001415" -> "1001414"  [label="AST: "];
+"1001425" -> "1001414"  [label="CFG: "];
+"1001414" -> "1001927"  [label="DDG: zend_llist_clean(&ch->to_free->post)"];
+"1001414" -> "1001421"  [label="DDG: &ch->to_free->post"];
+"1001421" -> "1001063"  [label="AST: "];
+"1001421" -> "1001428"  [label="CFG: "];
+"1001422" -> "1001421"  [label="AST: "];
+"1001428" -> "1001421"  [label="AST: "];
+"1001431" -> "1001421"  [label="CFG: "];
+"1001421" -> "1001927"  [label="DDG: &ch->to_free->post"];
+"1001421" -> "1001927"  [label="DDG: zend_llist_add_element(&ch->to_free->post, &first)"];
+"1001421" -> "1001927"  [label="DDG: &first"];
+"1001329" -> "1001421"  [label="DDG: &first"];
+"1001371" -> "1001421"  [label="DDG: &first"];
+}

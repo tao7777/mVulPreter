@@ -1,0 +1,30 @@
+digraph "0_linux_2da424b0773cea3db47e1e81db71eeebde8269d4@pointer" {
+"1000143" [label="(Call,spin_lock_irqsave(&priv->shrd->sta_lock, flags))"];
+"1000251" [label="(Call,spin_unlock_irqrestore(&priv->shrd->sta_lock, flags))"];
+"1000144" [label="(Call,&priv->shrd->sta_lock)"];
+"1000155" [label="(Identifier,pkt)"];
+"1000260" [label="(Identifier,ret)"];
+"1000105" [label="(Block,)"];
+"1000150" [label="(Identifier,flags)"];
+"1000252" [label="(Call,&priv->shrd->sta_lock)"];
+"1000261" [label="(MethodReturn,static int)"];
+"1000258" [label="(Identifier,flags)"];
+"1000251" [label="(Call,spin_unlock_irqrestore(&priv->shrd->sta_lock, flags))"];
+"1000143" [label="(Call,spin_lock_irqsave(&priv->shrd->sta_lock, flags))"];
+"1000143" -> "1000105"  [label="AST: "];
+"1000143" -> "1000150"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000150" -> "1000143"  [label="AST: "];
+"1000155" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000261"  [label="DDG: spin_lock_irqsave(&priv->shrd->sta_lock, flags)"];
+"1000143" -> "1000251"  [label="DDG: &priv->shrd->sta_lock"];
+"1000143" -> "1000251"  [label="DDG: flags"];
+"1000251" -> "1000105"  [label="AST: "];
+"1000251" -> "1000258"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000258" -> "1000251"  [label="AST: "];
+"1000260" -> "1000251"  [label="CFG: "];
+"1000251" -> "1000261"  [label="DDG: spin_unlock_irqrestore(&priv->shrd->sta_lock, flags)"];
+"1000251" -> "1000261"  [label="DDG: flags"];
+"1000251" -> "1000261"  [label="DDG: &priv->shrd->sta_lock"];
+}

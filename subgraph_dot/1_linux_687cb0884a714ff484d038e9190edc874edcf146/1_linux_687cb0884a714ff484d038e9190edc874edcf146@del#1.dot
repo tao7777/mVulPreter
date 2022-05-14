@@ -1,0 +1,37 @@
+digraph "1_linux_687cb0884a714ff484d038e9190edc874edcf146@del" {
+"1000204" [label="(Call,vma->vm_flags & VM_SHARED)"];
+"1000203" [label="(Call,!(vma->vm_flags & VM_SHARED))"];
+"1000200" [label="(Call,vma_is_anonymous(vma) || !(vma->vm_flags & VM_SHARED))"];
+"1000208" [label="(Identifier,VM_SHARED)"];
+"1000200" [label="(Call,vma_is_anonymous(vma) || !(vma->vm_flags & VM_SHARED))"];
+"1000204" [label="(Call,vma->vm_flags & VM_SHARED)"];
+"1000205" [label="(Call,vma->vm_flags)"];
+"1000201" [label="(Call,vma_is_anonymous(vma))"];
+"1000189" [label="(Identifier,vma)"];
+"1000203" [label="(Call,!(vma->vm_flags & VM_SHARED))"];
+"1000199" [label="(ControlStructure,if (vma_is_anonymous(vma) || !(vma->vm_flags & VM_SHARED)))"];
+"1000211" [label="(Identifier,tlb)"];
+"1000260" [label="(MethodReturn,static bool)"];
+"1000204" -> "1000203"  [label="AST: "];
+"1000204" -> "1000208"  [label="CFG: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000208" -> "1000204"  [label="AST: "];
+"1000203" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000260"  [label="DDG: VM_SHARED"];
+"1000204" -> "1000260"  [label="DDG: vma->vm_flags"];
+"1000204" -> "1000203"  [label="DDG: vma->vm_flags"];
+"1000204" -> "1000203"  [label="DDG: VM_SHARED"];
+"1000203" -> "1000200"  [label="AST: "];
+"1000200" -> "1000203"  [label="CFG: "];
+"1000203" -> "1000260"  [label="DDG: vma->vm_flags & VM_SHARED"];
+"1000203" -> "1000200"  [label="DDG: vma->vm_flags & VM_SHARED"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000211" -> "1000200"  [label="CFG: "];
+"1000189" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000260"  [label="DDG: vma_is_anonymous(vma)"];
+"1000200" -> "1000260"  [label="DDG: vma_is_anonymous(vma) || !(vma->vm_flags & VM_SHARED)"];
+"1000200" -> "1000260"  [label="DDG: !(vma->vm_flags & VM_SHARED)"];
+"1000201" -> "1000200"  [label="DDG: vma"];
+}

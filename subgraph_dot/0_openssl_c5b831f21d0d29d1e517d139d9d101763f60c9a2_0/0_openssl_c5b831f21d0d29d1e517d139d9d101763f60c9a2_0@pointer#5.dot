@@ -1,0 +1,29 @@
+digraph "0_openssl_c5b831f21d0d29d1e517d139d9d101763f60c9a2_0@pointer" {
+"1000255" [label="(Call,cert->dh_tmp != NULL)"];
+"1000260" [label="(Call,DH_free(cert->dh_tmp))"];
+"1000262" [label="(Identifier,cert)"];
+"1000261" [label="(Call,cert->dh_tmp)"];
+"1000265" [label="(Literal,1)"];
+"1000266" [label="(MethodReturn,long)"];
+"1000256" [label="(Call,cert->dh_tmp)"];
+"1000259" [label="(Identifier,NULL)"];
+"1000255" [label="(Call,cert->dh_tmp != NULL)"];
+"1000260" [label="(Call,DH_free(cert->dh_tmp))"];
+"1000254" [label="(ControlStructure,if (cert->dh_tmp != NULL))"];
+"1000255" -> "1000254"  [label="AST: "];
+"1000255" -> "1000259"  [label="CFG: "];
+"1000256" -> "1000255"  [label="AST: "];
+"1000259" -> "1000255"  [label="AST: "];
+"1000262" -> "1000255"  [label="CFG: "];
+"1000265" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000266"  [label="DDG: NULL"];
+"1000255" -> "1000266"  [label="DDG: cert->dh_tmp != NULL"];
+"1000255" -> "1000266"  [label="DDG: cert->dh_tmp"];
+"1000255" -> "1000260"  [label="DDG: cert->dh_tmp"];
+"1000260" -> "1000254"  [label="AST: "];
+"1000260" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000260"  [label="AST: "];
+"1000265" -> "1000260"  [label="CFG: "];
+"1000260" -> "1000266"  [label="DDG: DH_free(cert->dh_tmp)"];
+"1000260" -> "1000266"  [label="DDG: cert->dh_tmp"];
+}

@@ -1,0 +1,34 @@
+digraph "0_jansson_8f80c2d83808150724d31793e6ade92749b1faa4_6@pointer" {
+"1000201" [label="(Call,list_init(&pair->list))"];
+"1000206" [label="(Call,insert_to_bucket(hashtable, bucket, &pair->list))"];
+"1000163" [label="(Block,)"];
+"1000209" [label="(Call,&pair->list)"];
+"1000201" [label="(Call,list_init(&pair->list))"];
+"1000208" [label="(Identifier,bucket)"];
+"1000103" [label="(MethodParameterIn,hashtable_t *hashtable)"];
+"1000202" [label="(Call,&pair->list)"];
+"1000219" [label="(MethodReturn,int)"];
+"1000206" [label="(Call,insert_to_bucket(hashtable, bucket, &pair->list))"];
+"1000145" [label="(Call,hashtable_find_pair(hashtable, bucket, key, hash))"];
+"1000215" [label="(Identifier,hashtable)"];
+"1000207" [label="(Identifier,hashtable)"];
+"1000201" -> "1000163"  [label="AST: "];
+"1000201" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000207" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000219"  [label="DDG: list_init(&pair->list)"];
+"1000201" -> "1000206"  [label="DDG: &pair->list"];
+"1000206" -> "1000163"  [label="AST: "];
+"1000206" -> "1000209"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000208" -> "1000206"  [label="AST: "];
+"1000209" -> "1000206"  [label="AST: "];
+"1000215" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000219"  [label="DDG: &pair->list"];
+"1000206" -> "1000219"  [label="DDG: insert_to_bucket(hashtable, bucket, &pair->list)"];
+"1000206" -> "1000219"  [label="DDG: bucket"];
+"1000206" -> "1000219"  [label="DDG: hashtable"];
+"1000145" -> "1000206"  [label="DDG: hashtable"];
+"1000145" -> "1000206"  [label="DDG: bucket"];
+"1000103" -> "1000206"  [label="DDG: hashtable"];
+}

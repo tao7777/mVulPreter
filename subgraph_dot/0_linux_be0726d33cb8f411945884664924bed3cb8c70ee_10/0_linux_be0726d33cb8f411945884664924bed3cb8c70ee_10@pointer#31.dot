@@ -1,0 +1,33 @@
+digraph "0_linux_be0726d33cb8f411945884664924bed3cb8c70ee_10@pointer" {
+"1000667" [label="(Call,header->h_magic = cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000671" [label="(Call,cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000264" [label="(Call,cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000641" [label="(Block,)"];
+"1000260" [label="(Call,header->h_magic != cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000667" [label="(Call,header->h_magic = cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000671" [label="(Call,cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000668" [label="(Call,header->h_magic)"];
+"1001017" [label="(MethodReturn,RET)"];
+"1000264" [label="(Call,cpu_to_le32(EXT2_XATTR_MAGIC))"];
+"1000672" [label="(Identifier,EXT2_XATTR_MAGIC)"];
+"1000265" [label="(Identifier,EXT2_XATTR_MAGIC)"];
+"1000675" [label="(Identifier,header)"];
+"1000667" -> "1000641"  [label="AST: "];
+"1000667" -> "1000671"  [label="CFG: "];
+"1000668" -> "1000667"  [label="AST: "];
+"1000671" -> "1000667"  [label="AST: "];
+"1000675" -> "1000667"  [label="CFG: "];
+"1000667" -> "1001017"  [label="DDG: header->h_magic"];
+"1000667" -> "1001017"  [label="DDG: cpu_to_le32(EXT2_XATTR_MAGIC)"];
+"1000671" -> "1000667"  [label="DDG: EXT2_XATTR_MAGIC"];
+"1000671" -> "1000672"  [label="CFG: "];
+"1000672" -> "1000671"  [label="AST: "];
+"1000671" -> "1001017"  [label="DDG: EXT2_XATTR_MAGIC"];
+"1000264" -> "1000671"  [label="DDG: EXT2_XATTR_MAGIC"];
+"1000264" -> "1000260"  [label="AST: "];
+"1000264" -> "1000265"  [label="CFG: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000260" -> "1000264"  [label="CFG: "];
+"1000264" -> "1001017"  [label="DDG: EXT2_XATTR_MAGIC"];
+"1000264" -> "1000260"  [label="DDG: EXT2_XATTR_MAGIC"];
+}

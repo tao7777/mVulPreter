@@ -1,0 +1,1 @@
+bool FrameSelection::IsHandleVisible() const {

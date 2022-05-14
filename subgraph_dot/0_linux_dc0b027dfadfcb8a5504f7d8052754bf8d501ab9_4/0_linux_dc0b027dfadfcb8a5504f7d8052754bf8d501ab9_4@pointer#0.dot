@@ -1,0 +1,35 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_4@pointer" {
+"1000106" [label="(Call,delegation->type & fmode)"];
+"1000102" [label="(MethodParameterIn,fmode_t fmode)"];
+"1000105" [label="(Call,(delegation->type & fmode) != fmode)"];
+"1000116" [label="(Identifier,NFS_DELEGATION_NEED_RECLAIM)"];
+"1000104" [label="(ControlStructure,if ((delegation->type & fmode) != fmode))"];
+"1000105" [label="(Call,(delegation->type & fmode) != fmode)"];
+"1000111" [label="(Identifier,fmode)"];
+"1000110" [label="(Identifier,fmode)"];
+"1000107" [label="(Call,delegation->type)"];
+"1000106" [label="(Call,delegation->type & fmode)"];
+"1000127" [label="(MethodReturn,static int)"];
+"1000102" [label="(MethodParameterIn,fmode_t fmode)"];
+"1000113" [label="(Literal,0)"];
+"1000106" -> "1000105"  [label="AST: "];
+"1000106" -> "1000110"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000110" -> "1000106"  [label="AST: "];
+"1000111" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000127"  [label="DDG: delegation->type"];
+"1000106" -> "1000105"  [label="DDG: delegation->type"];
+"1000106" -> "1000105"  [label="DDG: fmode"];
+"1000102" -> "1000106"  [label="DDG: fmode"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000127"  [label="DDG: fmode"];
+"1000102" -> "1000105"  [label="DDG: fmode"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000105"  [label="AST: "];
+"1000113" -> "1000105"  [label="CFG: "];
+"1000116" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000127"  [label="DDG: (delegation->type & fmode) != fmode"];
+"1000105" -> "1000127"  [label="DDG: delegation->type & fmode"];
+"1000105" -> "1000127"  [label="DDG: fmode"];
+}

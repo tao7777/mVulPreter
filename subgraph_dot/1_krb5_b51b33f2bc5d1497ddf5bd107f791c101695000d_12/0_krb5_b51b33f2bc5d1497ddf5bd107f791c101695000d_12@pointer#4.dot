@@ -1,0 +1,31 @@
+digraph "0_krb5_b51b33f2bc5d1497ddf5bd107f791c101695000d_12@pointer" {
+"1000398" [label="(Call,*ret_flags = spnego_ctx->ctx_flags)"];
+"1000300" [label="(Call,spnego_ctx->ctx_flags & GSS_C_INTEG_FLAG)"];
+"1000300" [label="(Call,spnego_ctx->ctx_flags & GSS_C_INTEG_FLAG)"];
+"1000399" [label="(Call,*ret_flags)"];
+"1000301" [label="(Call,spnego_ctx->ctx_flags)"];
+"1000394" [label="(ControlStructure,if (ret_flags != NULL))"];
+"1000401" [label="(Call,spnego_ctx->ctx_flags)"];
+"1000296" [label="(Call,spnego_ctx->mech_complete &&\n\t    (spnego_ctx->ctx_flags & GSS_C_INTEG_FLAG))"];
+"1000468" [label="(MethodReturn,RET)"];
+"1000398" [label="(Call,*ret_flags = spnego_ctx->ctx_flags)"];
+"1000304" [label="(Identifier,GSS_C_INTEG_FLAG)"];
+"1000406" [label="(Identifier,spnego_ctx)"];
+"1000398" -> "1000394"  [label="AST: "];
+"1000398" -> "1000401"  [label="CFG: "];
+"1000399" -> "1000398"  [label="AST: "];
+"1000401" -> "1000398"  [label="AST: "];
+"1000406" -> "1000398"  [label="CFG: "];
+"1000398" -> "1000468"  [label="DDG: spnego_ctx->ctx_flags"];
+"1000398" -> "1000468"  [label="DDG: *ret_flags"];
+"1000300" -> "1000398"  [label="DDG: spnego_ctx->ctx_flags"];
+"1000300" -> "1000296"  [label="AST: "];
+"1000300" -> "1000304"  [label="CFG: "];
+"1000301" -> "1000300"  [label="AST: "];
+"1000304" -> "1000300"  [label="AST: "];
+"1000296" -> "1000300"  [label="CFG: "];
+"1000300" -> "1000468"  [label="DDG: GSS_C_INTEG_FLAG"];
+"1000300" -> "1000468"  [label="DDG: spnego_ctx->ctx_flags"];
+"1000300" -> "1000296"  [label="DDG: spnego_ctx->ctx_flags"];
+"1000300" -> "1000296"  [label="DDG: GSS_C_INTEG_FLAG"];
+}

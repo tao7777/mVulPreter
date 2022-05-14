@@ -1,0 +1,28 @@
+digraph "0_musl_45ca5d3fcb6f874bf5ba55d0e9651cef68515395@pointer" {
+"1000143" [label="(Call,memcpy(ctx->addrs[ctx->cnt++].addr, data, 4))"];
+"1000103" [label="(MethodParameterIn,const void *data)"];
+"1000187" [label="(Call,memcpy(ctx->addrs[ctx->cnt++].addr, data, 16))"];
+"1000123" [label="(Block,)"];
+"1000155" [label="(Literal,4)"];
+"1000156" [label="(ControlStructure,break;)"];
+"1000205" [label="(Call,__dn_expand(packet, (const unsigned char *)packet + 512,\n\t\t    data, tmp, sizeof tmp))"];
+"1000227" [label="(MethodReturn,static int)"];
+"1000144" [label="(Call,ctx->addrs[ctx->cnt++].addr)"];
+"1000154" [label="(Identifier,data)"];
+"1000143" [label="(Call,memcpy(ctx->addrs[ctx->cnt++].addr, data, 4))"];
+"1000103" [label="(MethodParameterIn,const void *data)"];
+"1000143" -> "1000123"  [label="AST: "];
+"1000143" -> "1000155"  [label="CFG: "];
+"1000144" -> "1000143"  [label="AST: "];
+"1000154" -> "1000143"  [label="AST: "];
+"1000155" -> "1000143"  [label="AST: "];
+"1000156" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000227"  [label="DDG: ctx->addrs[ctx->cnt++].addr"];
+"1000143" -> "1000227"  [label="DDG: data"];
+"1000143" -> "1000227"  [label="DDG: memcpy(ctx->addrs[ctx->cnt++].addr, data, 4)"];
+"1000103" -> "1000143"  [label="DDG: data"];
+"1000103" -> "1000100"  [label="AST: "];
+"1000103" -> "1000227"  [label="DDG: data"];
+"1000103" -> "1000187"  [label="DDG: data"];
+"1000103" -> "1000205"  [label="DDG: data"];
+}

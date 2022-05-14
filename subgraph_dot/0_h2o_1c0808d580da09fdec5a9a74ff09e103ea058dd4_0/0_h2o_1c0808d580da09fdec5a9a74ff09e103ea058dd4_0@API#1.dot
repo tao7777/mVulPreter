@@ -1,0 +1,27 @@
+digraph "0_h2o_1c0808d580da09fdec5a9a74ff09e103ea058dd4_0@API" {
+"1000140" [label="(Call,h2o_timeout_unlink(&conn->_write.timeout_entry))"];
+"1000132" [label="(Call,h2o_timeout_is_linked(&conn->_write.timeout_entry))"];
+"1000139" [label="(Block,)"];
+"1000133" [label="(Call,&conn->_write.timeout_entry)"];
+"1000132" [label="(Call,h2o_timeout_is_linked(&conn->_write.timeout_entry))"];
+"1000141" [label="(Call,&conn->_write.timeout_entry)"];
+"1000131" [label="(ControlStructure,if (h2o_timeout_is_linked(&conn->_write.timeout_entry)))"];
+"1000140" [label="(Call,h2o_timeout_unlink(&conn->_write.timeout_entry))"];
+"1000148" [label="(Identifier,conn)"];
+"1000149" [label="(MethodReturn,static void)"];
+"1000144" [label="(Identifier,conn)"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000148" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000149"  [label="DDG: h2o_timeout_unlink(&conn->_write.timeout_entry)"];
+"1000140" -> "1000149"  [label="DDG: &conn->_write.timeout_entry"];
+"1000132" -> "1000140"  [label="DDG: &conn->_write.timeout_entry"];
+"1000132" -> "1000131"  [label="AST: "];
+"1000132" -> "1000133"  [label="CFG: "];
+"1000133" -> "1000132"  [label="AST: "];
+"1000144" -> "1000132"  [label="CFG: "];
+"1000149" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000149"  [label="DDG: h2o_timeout_is_linked(&conn->_write.timeout_entry)"];
+"1000132" -> "1000149"  [label="DDG: &conn->_write.timeout_entry"];
+}

@@ -1,0 +1,33 @@
+digraph "0_openssl_77c77f0a1b9f15b869ca3342186dfbedd1119d0e@pointer" {
+"1000745" [label="(Call,s->mode & SSL_MODE_RELEASE_BUFFERS)"];
+"1000744" [label="(Call,s->mode & SSL_MODE_RELEASE_BUFFERS && !SSL_IS_DTLS(s))"];
+"1000746" [label="(Call,s->mode)"];
+"1000756" [label="(Identifier,tot)"];
+"1000749" [label="(Identifier,SSL_MODE_RELEASE_BUFFERS)"];
+"1000856" [label="(MethodReturn,int)"];
+"1000754" [label="(Identifier,s)"];
+"1000750" [label="(Call,!SSL_IS_DTLS(s))"];
+"1000752" [label="(Identifier,s)"];
+"1000743" [label="(ControlStructure,if (s->mode & SSL_MODE_RELEASE_BUFFERS && !SSL_IS_DTLS(s)))"];
+"1000745" [label="(Call,s->mode & SSL_MODE_RELEASE_BUFFERS)"];
+"1000744" [label="(Call,s->mode & SSL_MODE_RELEASE_BUFFERS && !SSL_IS_DTLS(s))"];
+"1000745" -> "1000744"  [label="AST: "];
+"1000745" -> "1000749"  [label="CFG: "];
+"1000746" -> "1000745"  [label="AST: "];
+"1000749" -> "1000745"  [label="AST: "];
+"1000752" -> "1000745"  [label="CFG: "];
+"1000744" -> "1000745"  [label="CFG: "];
+"1000745" -> "1000856"  [label="DDG: s->mode"];
+"1000745" -> "1000856"  [label="DDG: SSL_MODE_RELEASE_BUFFERS"];
+"1000745" -> "1000744"  [label="DDG: s->mode"];
+"1000745" -> "1000744"  [label="DDG: SSL_MODE_RELEASE_BUFFERS"];
+"1000744" -> "1000743"  [label="AST: "];
+"1000744" -> "1000750"  [label="CFG: "];
+"1000750" -> "1000744"  [label="AST: "];
+"1000754" -> "1000744"  [label="CFG: "];
+"1000756" -> "1000744"  [label="CFG: "];
+"1000744" -> "1000856"  [label="DDG: s->mode & SSL_MODE_RELEASE_BUFFERS && !SSL_IS_DTLS(s)"];
+"1000744" -> "1000856"  [label="DDG: !SSL_IS_DTLS(s)"];
+"1000744" -> "1000856"  [label="DDG: s->mode & SSL_MODE_RELEASE_BUFFERS"];
+"1000750" -> "1000744"  [label="DDG: SSL_IS_DTLS(s)"];
+}

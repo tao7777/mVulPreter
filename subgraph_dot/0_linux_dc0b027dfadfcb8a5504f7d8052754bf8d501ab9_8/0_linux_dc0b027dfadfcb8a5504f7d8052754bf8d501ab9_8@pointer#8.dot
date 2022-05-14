@@ -1,0 +1,22 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_8@pointer" {
+"1000248" [label="(Call,calldata->path.dentry = dget(path->dentry))"];
+"1000254" [label="(Call,dget(path->dentry))"];
+"1000255" [label="(Call,path->dentry)"];
+"1000105" [label="(Block,)"];
+"1000254" [label="(Call,dget(path->dentry))"];
+"1000315" [label="(MethodReturn,int)"];
+"1000248" [label="(Call,calldata->path.dentry = dget(path->dentry))"];
+"1000261" [label="(Identifier,msg)"];
+"1000249" [label="(Call,calldata->path.dentry)"];
+"1000248" -> "1000105"  [label="AST: "];
+"1000248" -> "1000254"  [label="CFG: "];
+"1000249" -> "1000248"  [label="AST: "];
+"1000254" -> "1000248"  [label="AST: "];
+"1000261" -> "1000248"  [label="CFG: "];
+"1000248" -> "1000315"  [label="DDG: dget(path->dentry)"];
+"1000248" -> "1000315"  [label="DDG: calldata->path.dentry"];
+"1000254" -> "1000248"  [label="DDG: path->dentry"];
+"1000254" -> "1000255"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000254" -> "1000315"  [label="DDG: path->dentry"];
+}

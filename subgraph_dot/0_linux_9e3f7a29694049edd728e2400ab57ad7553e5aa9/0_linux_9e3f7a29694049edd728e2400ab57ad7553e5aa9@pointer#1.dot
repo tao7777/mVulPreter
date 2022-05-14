@@ -1,0 +1,36 @@
+digraph "0_linux_9e3f7a29694049edd728e2400ab57ad7553e5aa9@pointer" {
+"1000106" [label="(MethodParameterIn,struct sys_reg_params *p)"];
+"1000115" [label="(Call,trap_raz_wi(vcpu, p, r))"];
+"1000114" [label="(Return,return trap_raz_wi(vcpu, p, r);)"];
+"1000116" [label="(Identifier,vcpu)"];
+"1000106" [label="(MethodParameterIn,struct sys_reg_params *p)"];
+"1000117" [label="(Identifier,p)"];
+"1000105" [label="(MethodParameterIn,struct kvm_vcpu *vcpu)"];
+"1000110" [label="(ControlStructure,if (!kvm_arm_pmu_v3_ready(vcpu)))"];
+"1000118" [label="(Identifier,r)"];
+"1000112" [label="(Call,kvm_arm_pmu_v3_ready(vcpu))"];
+"1000107" [label="(MethodParameterIn,const struct sys_reg_desc *r)"];
+"1000267" [label="(MethodReturn,static bool)"];
+"1000114" [label="(Return,return trap_raz_wi(vcpu, p, r);)"];
+"1000115" [label="(Call,trap_raz_wi(vcpu, p, r))"];
+"1000106" -> "1000104"  [label="AST: "];
+"1000106" -> "1000267"  [label="DDG: p"];
+"1000106" -> "1000115"  [label="DDG: p"];
+"1000115" -> "1000114"  [label="AST: "];
+"1000115" -> "1000118"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000118" -> "1000115"  [label="AST: "];
+"1000114" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000267"  [label="DDG: r"];
+"1000115" -> "1000267"  [label="DDG: p"];
+"1000115" -> "1000267"  [label="DDG: trap_raz_wi(vcpu, p, r)"];
+"1000115" -> "1000267"  [label="DDG: vcpu"];
+"1000115" -> "1000114"  [label="DDG: trap_raz_wi(vcpu, p, r)"];
+"1000112" -> "1000115"  [label="DDG: vcpu"];
+"1000105" -> "1000115"  [label="DDG: vcpu"];
+"1000107" -> "1000115"  [label="DDG: r"];
+"1000114" -> "1000110"  [label="AST: "];
+"1000267" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000267"  [label="DDG: <RET>"];
+}

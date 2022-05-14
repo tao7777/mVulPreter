@@ -1,0 +1,31 @@
+digraph "0_linux_48900cb6af4282fa0fb6ff4d72a81aa3dadb5c39@API" {
+"1000427" [label="(Call,vi->hdr_len = sizeof(struct virtio_net_hdr))"];
+"1000459" [label="(Call,dev->needed_headroom = vi->hdr_len)"];
+"1000468" [label="(Identifier,vi)"];
+"1000428" [label="(Call,vi->hdr_len)"];
+"1000642" [label="(MethodReturn,static int)"];
+"1000431" [label="(Call,sizeof(struct virtio_net_hdr))"];
+"1000455" [label="(ControlStructure,if (vi->any_header_sg))"];
+"1000460" [label="(Call,dev->needed_headroom)"];
+"1000427" [label="(Call,vi->hdr_len = sizeof(struct virtio_net_hdr))"];
+"1000426" [label="(ControlStructure,else)"];
+"1000420" [label="(Call,vi->hdr_len = sizeof(struct virtio_net_hdr_mrg_rxbuf))"];
+"1000436" [label="(Identifier,vdev)"];
+"1000459" [label="(Call,dev->needed_headroom = vi->hdr_len)"];
+"1000463" [label="(Call,vi->hdr_len)"];
+"1000427" -> "1000426"  [label="AST: "];
+"1000427" -> "1000431"  [label="CFG: "];
+"1000428" -> "1000427"  [label="AST: "];
+"1000431" -> "1000427"  [label="AST: "];
+"1000436" -> "1000427"  [label="CFG: "];
+"1000427" -> "1000642"  [label="DDG: vi->hdr_len"];
+"1000427" -> "1000459"  [label="DDG: vi->hdr_len"];
+"1000459" -> "1000455"  [label="AST: "];
+"1000459" -> "1000463"  [label="CFG: "];
+"1000460" -> "1000459"  [label="AST: "];
+"1000463" -> "1000459"  [label="AST: "];
+"1000468" -> "1000459"  [label="CFG: "];
+"1000459" -> "1000642"  [label="DDG: dev->needed_headroom"];
+"1000459" -> "1000642"  [label="DDG: vi->hdr_len"];
+"1000420" -> "1000459"  [label="DDG: vi->hdr_len"];
+}

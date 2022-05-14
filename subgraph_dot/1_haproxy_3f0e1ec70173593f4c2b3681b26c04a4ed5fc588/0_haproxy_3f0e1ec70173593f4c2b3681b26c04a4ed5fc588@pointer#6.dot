@@ -1,0 +1,32 @@
+digraph "0_haproxy_3f0e1ec70173593f4c2b3681b26c04a4ed5fc588@pointer" {
+"1000835" [label="(Call,h2c->rcvd_c > 0)"];
+"1000834" [label="(Call,h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)))"];
+"1000836" [label="(Call,h2c->rcvd_c)"];
+"1000851" [label="(Identifier,h2c)"];
+"1000843" [label="(Identifier,h2c)"];
+"1000852" [label="(JumpTarget,fail:)"];
+"1000854" [label="(MethodReturn,static void)"];
+"1000833" [label="(ControlStructure,if (h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM))))"];
+"1000839" [label="(Literal,0)"];
+"1000835" [label="(Call,h2c->rcvd_c > 0)"];
+"1000834" [label="(Call,h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)))"];
+"1000840" [label="(Call,!(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)))"];
+"1000835" -> "1000834"  [label="AST: "];
+"1000835" -> "1000839"  [label="CFG: "];
+"1000836" -> "1000835"  [label="AST: "];
+"1000839" -> "1000835"  [label="AST: "];
+"1000843" -> "1000835"  [label="CFG: "];
+"1000834" -> "1000835"  [label="CFG: "];
+"1000835" -> "1000854"  [label="DDG: h2c->rcvd_c"];
+"1000835" -> "1000834"  [label="DDG: h2c->rcvd_c"];
+"1000835" -> "1000834"  [label="DDG: 0"];
+"1000834" -> "1000833"  [label="AST: "];
+"1000834" -> "1000840"  [label="CFG: "];
+"1000840" -> "1000834"  [label="AST: "];
+"1000851" -> "1000834"  [label="CFG: "];
+"1000852" -> "1000834"  [label="CFG: "];
+"1000834" -> "1000854"  [label="DDG: h2c->rcvd_c > 0 &&\n\t    !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM))"];
+"1000834" -> "1000854"  [label="DDG: h2c->rcvd_c > 0"];
+"1000834" -> "1000854"  [label="DDG: !(h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM))"];
+"1000840" -> "1000834"  [label="DDG: h2c->flags & (H2_CF_MUX_MFULL | H2_CF_DEM_MBUSY | H2_CF_DEM_MROOM)"];
+}

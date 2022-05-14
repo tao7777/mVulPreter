@@ -1,0 +1,28 @@
+digraph "0_linux_819cbb120eaec7e014e5abd029260db1ca8c5735@pointer" {
+"1000103" [label="(MethodParameterIn,struct comedi_devinfo __user *arg)"];
+"1000204" [label="(Call,copy_to_user(arg, &devinfo, sizeof(struct comedi_devinfo)))"];
+"1000204" [label="(Call,copy_to_user(arg, &devinfo, sizeof(struct comedi_devinfo)))"];
+"1000205" [label="(Identifier,arg)"];
+"1000206" [label="(Call,&devinfo)"];
+"1000103" [label="(MethodParameterIn,struct comedi_devinfo __user *arg)"];
+"1000208" [label="(Call,sizeof(struct comedi_devinfo))"];
+"1000215" [label="(MethodReturn,static int)"];
+"1000203" [label="(ControlStructure,if (copy_to_user(arg, &devinfo, sizeof(struct comedi_devinfo))))"];
+"1000214" [label="(Literal,0)"];
+"1000131" [label="(Call,memset(&devinfo, 0, sizeof(devinfo)))"];
+"1000212" [label="(Identifier,EFAULT)"];
+"1000103" -> "1000101"  [label="AST: "];
+"1000103" -> "1000215"  [label="DDG: arg"];
+"1000103" -> "1000204"  [label="DDG: arg"];
+"1000204" -> "1000203"  [label="AST: "];
+"1000204" -> "1000208"  [label="CFG: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000206" -> "1000204"  [label="AST: "];
+"1000208" -> "1000204"  [label="AST: "];
+"1000212" -> "1000204"  [label="CFG: "];
+"1000214" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000215"  [label="DDG: &devinfo"];
+"1000204" -> "1000215"  [label="DDG: arg"];
+"1000204" -> "1000215"  [label="DDG: copy_to_user(arg, &devinfo, sizeof(struct comedi_devinfo))"];
+"1000131" -> "1000204"  [label="DDG: &devinfo"];
+}

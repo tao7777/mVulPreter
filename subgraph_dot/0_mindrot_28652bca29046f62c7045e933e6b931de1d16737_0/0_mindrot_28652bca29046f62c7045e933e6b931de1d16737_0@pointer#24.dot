@@ -1,0 +1,26 @@
+digraph "0_mindrot_28652bca29046f62c7045e933e6b931de1d16737_0@pointer" {
+"1000745" [label="(Call,ssh->compat & SSH_BUG_NOREKEY)"];
+"1000744" [label="(Call,!(ssh->compat & SSH_BUG_NOREKEY))"];
+"1000746" [label="(Call,ssh->compat)"];
+"1000749" [label="(Identifier,SSH_BUG_NOREKEY)"];
+"1000751" [label="(Identifier,SSH_ERR_NEED_REKEY)"];
+"1000743" [label="(ControlStructure,if (!(ssh->compat & SSH_BUG_NOREKEY)))"];
+"1001000" [label="(MethodReturn,RET)"];
+"1000755" [label="(Identifier,state)"];
+"1000745" [label="(Call,ssh->compat & SSH_BUG_NOREKEY)"];
+"1000744" [label="(Call,!(ssh->compat & SSH_BUG_NOREKEY))"];
+"1000745" -> "1000744"  [label="AST: "];
+"1000745" -> "1000749"  [label="CFG: "];
+"1000746" -> "1000745"  [label="AST: "];
+"1000749" -> "1000745"  [label="AST: "];
+"1000744" -> "1000745"  [label="CFG: "];
+"1000745" -> "1001000"  [label="DDG: ssh->compat"];
+"1000745" -> "1001000"  [label="DDG: SSH_BUG_NOREKEY"];
+"1000745" -> "1000744"  [label="DDG: ssh->compat"];
+"1000745" -> "1000744"  [label="DDG: SSH_BUG_NOREKEY"];
+"1000744" -> "1000743"  [label="AST: "];
+"1000751" -> "1000744"  [label="CFG: "];
+"1000755" -> "1000744"  [label="CFG: "];
+"1000744" -> "1001000"  [label="DDG: !(ssh->compat & SSH_BUG_NOREKEY)"];
+"1000744" -> "1001000"  [label="DDG: ssh->compat & SSH_BUG_NOREKEY"];
+}

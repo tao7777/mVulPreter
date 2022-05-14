@@ -1,0 +1,32 @@
+digraph "0_qemu_e3737b820b45e54b059656dc3f914f895ac7a88b@pointer" {
+"1000190" [label="(Call,bs->total_sectors = le64_to_cpu(bochs.extra.redolog_v1.disk) / 512)"];
+"1000194" [label="(Call,le64_to_cpu(bochs.extra.redolog_v1.disk) / 512)"];
+"1000195" [label="(Call,le64_to_cpu(bochs.extra.redolog_v1.disk))"];
+"1000203" [label="(Literal,512)"];
+"1000190" [label="(Call,bs->total_sectors = le64_to_cpu(bochs.extra.redolog_v1.disk) / 512)"];
+"1000195" [label="(Call,le64_to_cpu(bochs.extra.redolog_v1.disk))"];
+"1000189" [label="(Block,)"];
+"1000194" [label="(Call,le64_to_cpu(bochs.extra.redolog_v1.disk) / 512)"];
+"1000449" [label="(MethodReturn,static int)"];
+"1000222" [label="(Identifier,s)"];
+"1000191" [label="(Call,bs->total_sectors)"];
+"1000196" [label="(Call,bochs.extra.redolog_v1.disk)"];
+"1000190" -> "1000189"  [label="AST: "];
+"1000190" -> "1000194"  [label="CFG: "];
+"1000191" -> "1000190"  [label="AST: "];
+"1000194" -> "1000190"  [label="AST: "];
+"1000222" -> "1000190"  [label="CFG: "];
+"1000190" -> "1000449"  [label="DDG: le64_to_cpu(bochs.extra.redolog_v1.disk) / 512"];
+"1000190" -> "1000449"  [label="DDG: bs->total_sectors"];
+"1000194" -> "1000190"  [label="DDG: le64_to_cpu(bochs.extra.redolog_v1.disk)"];
+"1000194" -> "1000190"  [label="DDG: 512"];
+"1000194" -> "1000203"  [label="CFG: "];
+"1000195" -> "1000194"  [label="AST: "];
+"1000203" -> "1000194"  [label="AST: "];
+"1000194" -> "1000449"  [label="DDG: le64_to_cpu(bochs.extra.redolog_v1.disk)"];
+"1000195" -> "1000194"  [label="DDG: bochs.extra.redolog_v1.disk"];
+"1000195" -> "1000196"  [label="CFG: "];
+"1000196" -> "1000195"  [label="AST: "];
+"1000203" -> "1000195"  [label="CFG: "];
+"1000195" -> "1000449"  [label="DDG: bochs.extra.redolog_v1.disk"];
+}

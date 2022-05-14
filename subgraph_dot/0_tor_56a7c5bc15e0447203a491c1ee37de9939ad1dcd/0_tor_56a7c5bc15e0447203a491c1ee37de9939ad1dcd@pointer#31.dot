@@ -1,0 +1,24 @@
+digraph "0_tor_56a7c5bc15e0447203a491c1ee37de9939ad1dcd@pointer" {
+"1000416" [label="(Call,--conn->deliver_window)"];
+"1000415" [label="(Call,--conn->deliver_window < 0)"];
+"1000415" [label="(Call,--conn->deliver_window < 0)"];
+"1001064" [label="(MethodReturn,RET)"];
+"1000417" [label="(Call,conn->deliver_window)"];
+"1000423" [label="(Identifier,LOG_PROTOCOL_WARN)"];
+"1000414" [label="(ControlStructure,if (--conn->deliver_window < 0))"];
+"1000430" [label="(Identifier,stats_n_data_bytes_received)"];
+"1000420" [label="(Literal,0)"];
+"1000416" [label="(Call,--conn->deliver_window)"];
+"1000416" -> "1000415"  [label="AST: "];
+"1000416" -> "1000417"  [label="CFG: "];
+"1000417" -> "1000416"  [label="AST: "];
+"1000420" -> "1000416"  [label="CFG: "];
+"1000416" -> "1001064"  [label="DDG: conn->deliver_window"];
+"1000416" -> "1000415"  [label="DDG: conn->deliver_window"];
+"1000415" -> "1000414"  [label="AST: "];
+"1000415" -> "1000420"  [label="CFG: "];
+"1000420" -> "1000415"  [label="AST: "];
+"1000423" -> "1000415"  [label="CFG: "];
+"1000430" -> "1000415"  [label="CFG: "];
+"1000415" -> "1001064"  [label="DDG: --conn->deliver_window < 0"];
+}

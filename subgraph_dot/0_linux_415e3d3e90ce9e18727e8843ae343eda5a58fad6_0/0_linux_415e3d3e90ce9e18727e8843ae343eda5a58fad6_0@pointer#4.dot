@@ -1,0 +1,22 @@
+digraph "0_linux_415e3d3e90ce9e18727e8843ae343eda5a58fad6_0@pointer" {
+"1000247" [label="(Call,fpl->user = get_uid(current_user()))"];
+"1000251" [label="(Call,get_uid(current_user()))"];
+"1000242" [label="(ControlStructure,if (!fpl->user))"];
+"1000248" [label="(Call,fpl->user)"];
+"1000251" [label="(Call,get_uid(current_user()))"];
+"1000255" [label="(MethodReturn,static int)"];
+"1000247" [label="(Call,fpl->user = get_uid(current_user()))"];
+"1000252" [label="(Call,current_user())"];
+"1000254" [label="(Identifier,num)"];
+"1000247" -> "1000242"  [label="AST: "];
+"1000247" -> "1000251"  [label="CFG: "];
+"1000248" -> "1000247"  [label="AST: "];
+"1000251" -> "1000247"  [label="AST: "];
+"1000254" -> "1000247"  [label="CFG: "];
+"1000247" -> "1000255"  [label="DDG: fpl->user"];
+"1000247" -> "1000255"  [label="DDG: get_uid(current_user())"];
+"1000251" -> "1000247"  [label="DDG: current_user()"];
+"1000251" -> "1000252"  [label="CFG: "];
+"1000252" -> "1000251"  [label="AST: "];
+"1000251" -> "1000255"  [label="DDG: current_user()"];
+}

@@ -1,0 +1,26 @@
+digraph "0_linux_979d63d50c0c0f7bc537bf821e056cc9fe5abd38_5@pointer" {
+"1000161" [label="(Call,func_states_equal(old->frame[i], cur->frame[i]))"];
+"1000160" [label="(Call,!func_states_equal(old->frame[i], cur->frame[i]))"];
+"1000176" [label="(MethodReturn,static bool)"];
+"1000139" [label="(Identifier,i)"];
+"1000161" [label="(Call,func_states_equal(old->frame[i], cur->frame[i]))"];
+"1000160" [label="(Call,!func_states_equal(old->frame[i], cur->frame[i]))"];
+"1000167" [label="(Call,cur->frame[i])"];
+"1000159" [label="(ControlStructure,if (!func_states_equal(old->frame[i], cur->frame[i])))"];
+"1000173" [label="(Identifier,false)"];
+"1000162" [label="(Call,old->frame[i])"];
+"1000161" -> "1000160"  [label="AST: "];
+"1000161" -> "1000167"  [label="CFG: "];
+"1000162" -> "1000161"  [label="AST: "];
+"1000167" -> "1000161"  [label="AST: "];
+"1000160" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000176"  [label="DDG: old->frame[i]"];
+"1000161" -> "1000176"  [label="DDG: cur->frame[i]"];
+"1000161" -> "1000160"  [label="DDG: old->frame[i]"];
+"1000161" -> "1000160"  [label="DDG: cur->frame[i]"];
+"1000160" -> "1000159"  [label="AST: "];
+"1000173" -> "1000160"  [label="CFG: "];
+"1000139" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000176"  [label="DDG: !func_states_equal(old->frame[i], cur->frame[i])"];
+"1000160" -> "1000176"  [label="DDG: func_states_equal(old->frame[i], cur->frame[i])"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_3e4c56d41eef5595035872a2ec5a483f42e8917f@API" {
+"1000463" [label="(Call,up_write(&oi->ip_alloc_sem))"];
+"1000293" [label="(Call,down_write(&oi->ip_alloc_sem))"];
+"1000469" [label="(Identifier,inode)"];
+"1000293" [label="(Call,down_write(&oi->ip_alloc_sem))"];
+"1000463" [label="(Call,up_write(&oi->ip_alloc_sem))"];
+"1000299" [label="(Identifier,first_get_block)"];
+"1000111" [label="(Block,)"];
+"1000294" [label="(Call,&oi->ip_alloc_sem)"];
+"1000464" [label="(Call,&oi->ip_alloc_sem)"];
+"1000484" [label="(MethodReturn,static int)"];
+"1000463" -> "1000111"  [label="AST: "];
+"1000463" -> "1000464"  [label="CFG: "];
+"1000464" -> "1000463"  [label="AST: "];
+"1000469" -> "1000463"  [label="CFG: "];
+"1000463" -> "1000484"  [label="DDG: up_write(&oi->ip_alloc_sem)"];
+"1000463" -> "1000484"  [label="DDG: &oi->ip_alloc_sem"];
+"1000293" -> "1000463"  [label="DDG: &oi->ip_alloc_sem"];
+"1000293" -> "1000111"  [label="AST: "];
+"1000293" -> "1000294"  [label="CFG: "];
+"1000294" -> "1000293"  [label="AST: "];
+"1000299" -> "1000293"  [label="CFG: "];
+"1000293" -> "1000484"  [label="DDG: down_write(&oi->ip_alloc_sem)"];
+}

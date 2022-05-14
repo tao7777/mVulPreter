@@ -1,0 +1,26 @@
+digraph "0_samba_4278ef25f64d5fdbf432ff1534e275416ec9561e@pointer" {
+"1000319" [label="(Call,check_same_stat(&smb_fname_cwd->st, &priv_paths->parent_name.st))"];
+"1000318" [label="(Call,!check_same_stat(&smb_fname_cwd->st, &priv_paths->parent_name.st))"];
+"1000361" [label="(MethodReturn,NTSTATUS)"];
+"1000345" [label="(Identifier,conn_rootdir)"];
+"1000318" [label="(Call,!check_same_stat(&smb_fname_cwd->st, &priv_paths->parent_name.st))"];
+"1000317" [label="(ControlStructure,if (!check_same_stat(&smb_fname_cwd->st, &priv_paths->parent_name.st)))"];
+"1000332" [label="(Literal,0)"];
+"1000324" [label="(Call,&priv_paths->parent_name.st)"];
+"1000319" [label="(Call,check_same_stat(&smb_fname_cwd->st, &priv_paths->parent_name.st))"];
+"1000320" [label="(Call,&smb_fname_cwd->st)"];
+"1000319" -> "1000318"  [label="AST: "];
+"1000319" -> "1000324"  [label="CFG: "];
+"1000320" -> "1000319"  [label="AST: "];
+"1000324" -> "1000319"  [label="AST: "];
+"1000318" -> "1000319"  [label="CFG: "];
+"1000319" -> "1000361"  [label="DDG: &priv_paths->parent_name.st"];
+"1000319" -> "1000361"  [label="DDG: &smb_fname_cwd->st"];
+"1000319" -> "1000318"  [label="DDG: &smb_fname_cwd->st"];
+"1000319" -> "1000318"  [label="DDG: &priv_paths->parent_name.st"];
+"1000318" -> "1000317"  [label="AST: "];
+"1000332" -> "1000318"  [label="CFG: "];
+"1000345" -> "1000318"  [label="CFG: "];
+"1000318" -> "1000361"  [label="DDG: !check_same_stat(&smb_fname_cwd->st, &priv_paths->parent_name.st)"];
+"1000318" -> "1000361"  [label="DDG: check_same_stat(&smb_fname_cwd->st, &priv_paths->parent_name.st)"];
+}

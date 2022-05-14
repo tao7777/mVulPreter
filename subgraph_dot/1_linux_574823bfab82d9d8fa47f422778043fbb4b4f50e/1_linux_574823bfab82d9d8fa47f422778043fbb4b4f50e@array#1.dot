@@ -1,0 +1,22 @@
+digraph "1_linux_574823bfab82d9d8fa47f422778043fbb4b4f50e@array" {
+"1000160" [label="(Call,vec[i] = 0)"];
+"1000104" [label="(MethodParameterIn,unsigned char *vec)"];
+"1000164" [label="(Literal,0)"];
+"1000138" [label="(Call,vec[i] = mincore_page(vma->vm_file->f_mapping, pgoff))"];
+"1000161" [label="(Call,vec[i])"];
+"1000167" [label="(MethodReturn,static int)"];
+"1000159" [label="(Identifier,i)"];
+"1000104" [label="(MethodParameterIn,unsigned char *vec)"];
+"1000151" [label="(ControlStructure,for (i = 0; i < nr; i++))"];
+"1000160" [label="(Call,vec[i] = 0)"];
+"1000160" -> "1000151"  [label="AST: "];
+"1000160" -> "1000164"  [label="CFG: "];
+"1000161" -> "1000160"  [label="AST: "];
+"1000164" -> "1000160"  [label="AST: "];
+"1000159" -> "1000160"  [label="CFG: "];
+"1000160" -> "1000167"  [label="DDG: vec[i]"];
+"1000104" -> "1000160"  [label="DDG: vec"];
+"1000104" -> "1000100"  [label="AST: "];
+"1000104" -> "1000167"  [label="DDG: vec"];
+"1000104" -> "1000138"  [label="DDG: vec"];
+}

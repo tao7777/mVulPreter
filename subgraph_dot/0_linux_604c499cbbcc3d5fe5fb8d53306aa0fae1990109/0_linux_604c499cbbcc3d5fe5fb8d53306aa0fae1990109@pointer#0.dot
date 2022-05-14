@@ -1,0 +1,29 @@
+digraph "0_linux_604c499cbbcc3d5fe5fb8d53306aa0fae1990109@pointer" {
+"1000170" [label="(Call,req->u.discard.flag & BLKIF_DISCARD_SECURE)"];
+"1000164" [label="(Call,blkif->vbd.discard_secure &&\n\t\t (req->u.discard.flag & BLKIF_DISCARD_SECURE))"];
+"1000234" [label="(MethodReturn,static int)"];
+"1000180" [label="(Literal,0)"];
+"1000171" [label="(Call,req->u.discard.flag)"];
+"1000164" [label="(Call,blkif->vbd.discard_secure &&\n\t\t (req->u.discard.flag & BLKIF_DISCARD_SECURE))"];
+"1000178" [label="(Identifier,BLKIF_DISCARD_SECURE)"];
+"1000179" [label="(Identifier,BLKDEV_DISCARD_SECURE)"];
+"1000163" [label="(Call,(blkif->vbd.discard_secure &&\n\t\t (req->u.discard.flag & BLKIF_DISCARD_SECURE)) ?\n\t\t BLKDEV_DISCARD_SECURE : 0)"];
+"1000165" [label="(Call,blkif->vbd.discard_secure)"];
+"1000170" [label="(Call,req->u.discard.flag & BLKIF_DISCARD_SECURE)"];
+"1000170" -> "1000164"  [label="AST: "];
+"1000170" -> "1000178"  [label="CFG: "];
+"1000171" -> "1000170"  [label="AST: "];
+"1000178" -> "1000170"  [label="AST: "];
+"1000164" -> "1000170"  [label="CFG: "];
+"1000170" -> "1000234"  [label="DDG: BLKIF_DISCARD_SECURE"];
+"1000170" -> "1000234"  [label="DDG: req->u.discard.flag"];
+"1000170" -> "1000164"  [label="DDG: req->u.discard.flag"];
+"1000170" -> "1000164"  [label="DDG: BLKIF_DISCARD_SECURE"];
+"1000164" -> "1000163"  [label="AST: "];
+"1000164" -> "1000165"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000179" -> "1000164"  [label="CFG: "];
+"1000180" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000234"  [label="DDG: req->u.discard.flag & BLKIF_DISCARD_SECURE"];
+"1000164" -> "1000234"  [label="DDG: blkif->vbd.discard_secure"];
+}

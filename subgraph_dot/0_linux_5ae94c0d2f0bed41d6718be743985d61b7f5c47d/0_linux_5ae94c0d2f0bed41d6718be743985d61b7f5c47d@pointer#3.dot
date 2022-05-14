@@ -1,0 +1,34 @@
+digraph "0_linux_5ae94c0d2f0bed41d6718be743985d61b7f5c47d@pointer" {
+"1000115" [label="(Call,*self = irda_sk(sk))"];
+"1000117" [label="(Call,irda_sk(sk))"];
+"1000109" [label="(Call,*sk = sock->sk)"];
+"1000118" [label="(Identifier,sk)"];
+"1000109" [label="(Call,*sk = sock->sk)"];
+"1000123" [label="(Literal,4)"];
+"1000111" [label="(Call,sock->sk)"];
+"1000110" [label="(Identifier,sk)"];
+"1000115" [label="(Call,*self = irda_sk(sk))"];
+"1000133" [label="(Call,skb_recv_datagram(sk, flags & ~MSG_DONTWAIT,\n \t\t\t\tflags & MSG_DONTWAIT, &err))"];
+"1000107" [label="(Block,)"];
+"1000116" [label="(Identifier,self)"];
+"1000220" [label="(MethodReturn,static int)"];
+"1000117" [label="(Call,irda_sk(sk))"];
+"1000115" -> "1000107"  [label="AST: "];
+"1000115" -> "1000117"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000123" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000220"  [label="DDG: irda_sk(sk)"];
+"1000115" -> "1000220"  [label="DDG: self"];
+"1000117" -> "1000115"  [label="DDG: sk"];
+"1000117" -> "1000118"  [label="CFG: "];
+"1000118" -> "1000117"  [label="AST: "];
+"1000109" -> "1000117"  [label="DDG: sk"];
+"1000117" -> "1000133"  [label="DDG: sk"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000116" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000220"  [label="DDG: sock->sk"];
+}

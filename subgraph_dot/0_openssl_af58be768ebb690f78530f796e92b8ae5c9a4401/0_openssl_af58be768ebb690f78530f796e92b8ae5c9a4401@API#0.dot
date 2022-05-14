@@ -1,0 +1,36 @@
+digraph "0_openssl_af58be768ebb690f78530f796e92b8ae5c9a4401@API" {
+"1000291" [label="(Call,OPENSSL_free(item->data))"];
+"1000271" [label="(Call,(DTLS1_RECORD_DATA *)item->data)"];
+"1000291" [label="(Call,OPENSSL_free(item->data))"];
+"1000269" [label="(Call,*rdata = (DTLS1_RECORD_DATA *)item->data)"];
+"1000367" [label="(MethodReturn,int)"];
+"1000278" [label="(Identifier,s)"];
+"1000292" [label="(Call,item->data)"];
+"1000296" [label="(Identifier,item)"];
+"1000271" [label="(Call,(DTLS1_RECORD_DATA *)item->data)"];
+"1000269" [label="(Call,*rdata = (DTLS1_RECORD_DATA *)item->data)"];
+"1000273" [label="(Call,item->data)"];
+"1000267" [label="(Block,)"];
+"1000262" [label="(Block,)"];
+"1000270" [label="(Identifier,rdata)"];
+"1000291" [label="(Call,OPENSSL_free(item->data))"];
+"1000291" -> "1000262"  [label="AST: "];
+"1000291" -> "1000292"  [label="CFG: "];
+"1000292" -> "1000291"  [label="AST: "];
+"1000296" -> "1000291"  [label="CFG: "];
+"1000291" -> "1000367"  [label="DDG: OPENSSL_free(item->data)"];
+"1000291" -> "1000367"  [label="DDG: item->data"];
+"1000291" -> "1000271"  [label="DDG: item->data"];
+"1000271" -> "1000291"  [label="DDG: item->data"];
+"1000271" -> "1000269"  [label="AST: "];
+"1000271" -> "1000273"  [label="CFG: "];
+"1000272" -> "1000271"  [label="AST: "];
+"1000273" -> "1000271"  [label="AST: "];
+"1000269" -> "1000271"  [label="CFG: "];
+"1000271" -> "1000269"  [label="DDG: item->data"];
+"1000269" -> "1000267"  [label="AST: "];
+"1000270" -> "1000269"  [label="AST: "];
+"1000278" -> "1000269"  [label="CFG: "];
+"1000269" -> "1000367"  [label="DDG: rdata"];
+"1000269" -> "1000367"  [label="DDG: (DTLS1_RECORD_DATA *)item->data"];
+}

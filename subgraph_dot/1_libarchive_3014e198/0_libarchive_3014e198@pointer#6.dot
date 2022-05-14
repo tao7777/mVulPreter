@@ -1,0 +1,36 @@
+digraph "0_libarchive_3014e198@pointer" {
+"1000249" [label="(Call,archive_set_error(&a->archive, ENOMEM,\n\t\t\t    \"Can't allocate memory\"))"];
+"1000400" [label="(Call,errno == ENOMEM)"];
+"1000250" [label="(Call,&a->archive)"];
+"1000542" [label="(MethodReturn,RET)"];
+"1000400" [label="(Call,errno == ENOMEM)"];
+"1000248" [label="(Block,)"];
+"1000257" [label="(Identifier,ARCHIVE_FATAL)"];
+"1000401" [label="(Identifier,errno)"];
+"1000404" [label="(Call,archive_set_error(&a->archive, errno,\n\t\t\t\t    \"No memory\"))"];
+"1000255" [label="(Literal,\"Can't allocate memory\")"];
+"1000383" [label="(Call,archive_strncpy_l(&iso9660->mbs,\n \t\t\t    (const char *)np->identifier, l,\n \t\t\t\tiso9660->sconv_from_utf16be) != 0 &&\n\t\t\t    errno == ENOMEM)"];
+"1000254" [label="(Identifier,ENOMEM)"];
+"1000249" [label="(Call,archive_set_error(&a->archive, ENOMEM,\n\t\t\t    \"Can't allocate memory\"))"];
+"1000402" [label="(Identifier,ENOMEM)"];
+"1000249" -> "1000248"  [label="AST: "];
+"1000249" -> "1000255"  [label="CFG: "];
+"1000250" -> "1000249"  [label="AST: "];
+"1000254" -> "1000249"  [label="AST: "];
+"1000255" -> "1000249"  [label="AST: "];
+"1000257" -> "1000249"  [label="CFG: "];
+"1000249" -> "1000542"  [label="DDG: "];
+"1000249" -> "1000542"  [label="DDG: "];
+"1000249" -> "1000542"  [label="DDG: "];
+"1000400" -> "1000249"  [label="DDG: "];
+"1000400" -> "1000383"  [label="AST: "];
+"1000400" -> "1000402"  [label="CFG: "];
+"1000401" -> "1000400"  [label="AST: "];
+"1000402" -> "1000400"  [label="AST: "];
+"1000383" -> "1000400"  [label="CFG: "];
+"1000400" -> "1000542"  [label="DDG: "];
+"1000400" -> "1000542"  [label="DDG: "];
+"1000400" -> "1000383"  [label="DDG: "];
+"1000400" -> "1000383"  [label="DDG: "];
+"1000400" -> "1000404"  [label="DDG: "];
+}

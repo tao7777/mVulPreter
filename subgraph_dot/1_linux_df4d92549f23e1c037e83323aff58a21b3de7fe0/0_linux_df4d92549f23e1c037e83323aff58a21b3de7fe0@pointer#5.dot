@@ -1,0 +1,22 @@
+digraph "0_linux_df4d92549f23e1c037e83323aff58a21b3de7fe0@pointer" {
+"1000258" [label="(Call,skb->priority = rt_tos2priority(iph->tos))"];
+"1000262" [label="(Call,rt_tos2priority(iph->tos))"];
+"1000268" [label="(Identifier,NFPROTO_IPV4)"];
+"1000259" [label="(Call,skb->priority)"];
+"1000111" [label="(Block,)"];
+"1000258" [label="(Call,skb->priority = rt_tos2priority(iph->tos))"];
+"1000262" [label="(Call,rt_tos2priority(iph->tos))"];
+"1000263" [label="(Call,iph->tos)"];
+"1000305" [label="(MethodReturn,int)"];
+"1000258" -> "1000111"  [label="AST: "];
+"1000258" -> "1000262"  [label="CFG: "];
+"1000259" -> "1000258"  [label="AST: "];
+"1000262" -> "1000258"  [label="AST: "];
+"1000268" -> "1000258"  [label="CFG: "];
+"1000258" -> "1000305"  [label="DDG: skb->priority"];
+"1000258" -> "1000305"  [label="DDG: rt_tos2priority(iph->tos)"];
+"1000262" -> "1000258"  [label="DDG: iph->tos"];
+"1000262" -> "1000263"  [label="CFG: "];
+"1000263" -> "1000262"  [label="AST: "];
+"1000262" -> "1000305"  [label="DDG: iph->tos"];
+}

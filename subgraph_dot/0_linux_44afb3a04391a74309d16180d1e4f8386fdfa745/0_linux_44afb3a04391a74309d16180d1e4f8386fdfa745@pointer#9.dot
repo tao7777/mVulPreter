@@ -1,0 +1,31 @@
+digraph "0_linux_44afb3a04391a74309d16180d1e4f8386fdfa745@pointer" {
+"1000125" [label="(Call,*cliprects = NULL)"];
+"1000830" [label="(Call,kfree(cliprects))"];
+"1000834" [label="(MethodReturn,RET)"];
+"1000833" [label="(Identifier,ret)"];
+"1000370" [label="(Call,cliprects == NULL)"];
+"1000114" [label="(Block,)"];
+"1000139" [label="(Identifier,args)"];
+"1000127" [label="(Identifier,NULL)"];
+"1000830" [label="(Call,kfree(cliprects))"];
+"1000125" [label="(Call,*cliprects = NULL)"];
+"1000380" [label="(Call,copy_from_user(cliprects,\n\t\t\t\t     (struct drm_clip_rect __user *)(uintptr_t)\n\t\t\t\t     args->cliprects_ptr,\n\t\t\t\t     sizeof(*cliprects)*args->num_cliprects))"];
+"1000126" [label="(Identifier,cliprects)"];
+"1000831" [label="(Identifier,cliprects)"];
+"1000125" -> "1000114"  [label="AST: "];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000139" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000834"  [label="DDG: cliprects"];
+"1000125" -> "1000834"  [label="DDG: NULL"];
+"1000125" -> "1000830"  [label="DDG: cliprects"];
+"1000830" -> "1000114"  [label="AST: "];
+"1000830" -> "1000831"  [label="CFG: "];
+"1000831" -> "1000830"  [label="AST: "];
+"1000833" -> "1000830"  [label="CFG: "];
+"1000830" -> "1000834"  [label="DDG: kfree(cliprects)"];
+"1000830" -> "1000834"  [label="DDG: cliprects"];
+"1000380" -> "1000830"  [label="DDG: cliprects"];
+"1000370" -> "1000830"  [label="DDG: cliprects"];
+}

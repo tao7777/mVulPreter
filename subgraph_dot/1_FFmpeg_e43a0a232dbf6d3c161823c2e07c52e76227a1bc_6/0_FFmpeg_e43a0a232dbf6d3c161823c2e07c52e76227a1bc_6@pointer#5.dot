@@ -1,0 +1,32 @@
+digraph "0_FFmpeg_e43a0a232dbf6d3c161823c2e07c52e76227a1bc_6@pointer" {
+"1000380" [label="(Call,outrow = out->data[plane])"];
+"1000430" [label="(Call,outrow += out->linesize[plane])"];
+"1000389" [label="(Identifier,i)"];
+"1000380" [label="(Call,outrow = out->data[plane])"];
+"1000447" [label="(MethodReturn,static int)"];
+"1000326" [label="(Block,)"];
+"1000414" [label="(Call,outrow[j] = tab[inrow[j]])"];
+"1000381" [label="(Identifier,outrow)"];
+"1000430" [label="(Call,outrow += out->linesize[plane])"];
+"1000382" [label="(Call,out->data[plane])"];
+"1000396" [label="(Block,)"];
+"1000431" [label="(Identifier,outrow)"];
+"1000432" [label="(Call,out->linesize[plane])"];
+"1000395" [label="(Identifier,i)"];
+"1000380" -> "1000326"  [label="AST: "];
+"1000380" -> "1000382"  [label="CFG: "];
+"1000381" -> "1000380"  [label="AST: "];
+"1000382" -> "1000380"  [label="AST: "];
+"1000389" -> "1000380"  [label="CFG: "];
+"1000380" -> "1000447"  [label="DDG: out->data[plane]"];
+"1000380" -> "1000447"  [label="DDG: outrow"];
+"1000380" -> "1000430"  [label="DDG: outrow"];
+"1000430" -> "1000396"  [label="AST: "];
+"1000430" -> "1000432"  [label="CFG: "];
+"1000431" -> "1000430"  [label="AST: "];
+"1000432" -> "1000430"  [label="AST: "];
+"1000395" -> "1000430"  [label="CFG: "];
+"1000430" -> "1000447"  [label="DDG: out->linesize[plane]"];
+"1000430" -> "1000447"  [label="DDG: outrow"];
+"1000414" -> "1000430"  [label="DDG: outrow[j]"];
+}

@@ -1,0 +1,38 @@
+digraph "0_linux_90481622d75715bfcb68501280a917dbfe516029_2@API" {
+"1000124" [label="(Call,kfree(sbi))"];
+"1000104" [label="(Call,*sbi = HUGETLBFS_SB(sb))"];
+"1000106" [label="(Call,HUGETLBFS_SB(sb))"];
+"1000101" [label="(MethodParameterIn,struct super_block *sb)"];
+"1000107" [label="(Identifier,sb)"];
+"1000110" [label="(Block,)"];
+"1000109" [label="(Identifier,sbi)"];
+"1000125" [label="(Identifier,sbi)"];
+"1000124" [label="(Call,kfree(sbi))"];
+"1000102" [label="(Block,)"];
+"1000126" [label="(MethodReturn,static void)"];
+"1000104" [label="(Call,*sbi = HUGETLBFS_SB(sb))"];
+"1000106" [label="(Call,HUGETLBFS_SB(sb))"];
+"1000101" [label="(MethodParameterIn,struct super_block *sb)"];
+"1000105" [label="(Identifier,sbi)"];
+"1000124" -> "1000110"  [label="AST: "];
+"1000124" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000126"  [label="DDG: sbi"];
+"1000124" -> "1000126"  [label="DDG: kfree(sbi)"];
+"1000104" -> "1000124"  [label="DDG: sbi"];
+"1000104" -> "1000102"  [label="AST: "];
+"1000104" -> "1000106"  [label="CFG: "];
+"1000105" -> "1000104"  [label="AST: "];
+"1000106" -> "1000104"  [label="AST: "];
+"1000109" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000126"  [label="DDG: sbi"];
+"1000104" -> "1000126"  [label="DDG: HUGETLBFS_SB(sb)"];
+"1000106" -> "1000104"  [label="DDG: sb"];
+"1000106" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000106"  [label="AST: "];
+"1000106" -> "1000126"  [label="DDG: sb"];
+"1000101" -> "1000106"  [label="DDG: sb"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000126"  [label="DDG: sb"];
+}

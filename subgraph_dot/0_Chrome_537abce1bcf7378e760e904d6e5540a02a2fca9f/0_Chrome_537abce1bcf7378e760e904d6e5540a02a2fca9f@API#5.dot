@@ -1,0 +1,29 @@
+digraph "0_Chrome_537abce1bcf7378e760e904d6e5540a02a2fca9f@API" {
+"1000241" [label="(Call,exit_code = main_runner_->Run())"];
+"1000245" [label="(Return,return exit_code;)"];
+"1000236" [label="(Call,exit_code = 0)"];
+"1000247" [label="(MethodReturn,int)"];
+"1000246" [label="(Identifier,exit_code)"];
+"1000244" [label="(Call,main_runner_->Shutdown())"];
+"1000104" [label="(Block,)"];
+"1000245" [label="(Return,return exit_code;)"];
+"1000243" [label="(Call,main_runner_->Run())"];
+"1000242" [label="(Identifier,exit_code)"];
+"1000241" [label="(Call,exit_code = main_runner_->Run())"];
+"1000240" [label="(Block,)"];
+"1000241" -> "1000240"  [label="AST: "];
+"1000241" -> "1000243"  [label="CFG: "];
+"1000242" -> "1000241"  [label="AST: "];
+"1000243" -> "1000241"  [label="AST: "];
+"1000244" -> "1000241"  [label="CFG: "];
+"1000241" -> "1000247"  [label="DDG: exit_code"];
+"1000241" -> "1000247"  [label="DDG: main_runner_->Run()"];
+"1000241" -> "1000245"  [label="DDG: exit_code"];
+"1000245" -> "1000104"  [label="AST: "];
+"1000245" -> "1000246"  [label="CFG: "];
+"1000246" -> "1000245"  [label="AST: "];
+"1000247" -> "1000245"  [label="CFG: "];
+"1000245" -> "1000247"  [label="DDG: <RET>"];
+"1000246" -> "1000245"  [label="DDG: exit_code"];
+"1000236" -> "1000245"  [label="DDG: exit_code"];
+}

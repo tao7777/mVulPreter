@@ -1,0 +1,22 @@
+digraph "0_Chrome_0328261c41b1b7495e1d4d4cf958f41a08aff38b@pointer" {
+"1000189" [label="(Call,* new_tab_tracker =\n          feature_engagement::NewTabTrackerFactory::GetInstance()\n              ->GetForProfile(profile()))"];
+"1000191" [label="(Call,feature_engagement::NewTabTrackerFactory::GetInstance()\n              ->GetForProfile(profile()))"];
+"1000190" [label="(Identifier,new_tab_tracker)"];
+"1000189" [label="(Call,* new_tab_tracker =\n          feature_engagement::NewTabTrackerFactory::GetInstance()\n              ->GetForProfile(profile()))"];
+"1000193" [label="(Call,new_tab_tracker->OnNewTabOpened())"];
+"1000185" [label="(Block,)"];
+"1000192" [label="(Call,profile())"];
+"1000616" [label="(MethodReturn,bool)"];
+"1000191" [label="(Call,feature_engagement::NewTabTrackerFactory::GetInstance()\n              ->GetForProfile(profile()))"];
+"1000189" -> "1000185"  [label="AST: "];
+"1000189" -> "1000191"  [label="CFG: "];
+"1000190" -> "1000189"  [label="AST: "];
+"1000191" -> "1000189"  [label="AST: "];
+"1000193" -> "1000189"  [label="CFG: "];
+"1000189" -> "1000616"  [label="DDG: new_tab_tracker"];
+"1000189" -> "1000616"  [label="DDG: feature_engagement::NewTabTrackerFactory::GetInstance()\n              ->GetForProfile(profile())"];
+"1000191" -> "1000189"  [label="DDG: profile()"];
+"1000191" -> "1000192"  [label="CFG: "];
+"1000192" -> "1000191"  [label="AST: "];
+"1000191" -> "1000616"  [label="DDG: profile()"];
+}

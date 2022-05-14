@@ -1,0 +1,36 @@
+digraph "0_wireshark_11edc83b98a61e890d7bb01855389d40e984ea82@pointer" {
+"1000214" [label="(Call,phdr->len = pkt_len)"];
+"1000181" [label="(Call,pkt_len > WTAP_MAX_PACKET_SIZE)"];
+"1000214" [label="(Call,phdr->len = pkt_len)"];
+"1000219" [label="(Call,ws_buffer_assure_space(buf, pkt_len))"];
+"1000218" [label="(Identifier,pkt_len)"];
+"1000406" [label="(MethodReturn,RET)"];
+"1000220" [label="(Identifier,buf)"];
+"1000183" [label="(Identifier,WTAP_MAX_PACKET_SIZE)"];
+"1000215" [label="(Call,phdr->len)"];
+"1000119" [label="(Block,)"];
+"1000181" [label="(Call,pkt_len > WTAP_MAX_PACKET_SIZE)"];
+"1000182" [label="(Identifier,pkt_len)"];
+"1000201" [label="(Identifier,phdr)"];
+"1000180" [label="(ControlStructure,if (pkt_len > WTAP_MAX_PACKET_SIZE))"];
+"1000187" [label="(Identifier,err)"];
+"1000192" [label="(Call,g_strdup_printf(\"netscreen: File has %u-byte packet, bigger than maximum of %u\",\n\t\t    pkt_len, WTAP_MAX_PACKET_SIZE))"];
+"1000214" -> "1000119"  [label="AST: "];
+"1000214" -> "1000218"  [label="CFG: "];
+"1000215" -> "1000214"  [label="AST: "];
+"1000218" -> "1000214"  [label="AST: "];
+"1000220" -> "1000214"  [label="CFG: "];
+"1000214" -> "1000406"  [label="DDG: phdr->len"];
+"1000181" -> "1000214"  [label="DDG: pkt_len"];
+"1000181" -> "1000180"  [label="AST: "];
+"1000181" -> "1000183"  [label="CFG: "];
+"1000182" -> "1000181"  [label="AST: "];
+"1000183" -> "1000181"  [label="AST: "];
+"1000187" -> "1000181"  [label="CFG: "];
+"1000201" -> "1000181"  [label="CFG: "];
+"1000181" -> "1000406"  [label="DDG: pkt_len > WTAP_MAX_PACKET_SIZE"];
+"1000181" -> "1000406"  [label="DDG: WTAP_MAX_PACKET_SIZE"];
+"1000181" -> "1000192"  [label="DDG: pkt_len"];
+"1000181" -> "1000192"  [label="DDG: WTAP_MAX_PACKET_SIZE"];
+"1000181" -> "1000219"  [label="DDG: pkt_len"];
+}

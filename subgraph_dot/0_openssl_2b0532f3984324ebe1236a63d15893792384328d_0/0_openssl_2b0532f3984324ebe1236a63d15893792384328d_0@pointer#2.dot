@@ -1,0 +1,33 @@
+digraph "0_openssl_2b0532f3984324ebe1236a63d15893792384328d_0@pointer" {
+"1000152" [label="(Call,s->tlsext_heartbeat &= ~(SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS))"];
+"1000156" [label="(Call,~(SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS))"];
+"1000157" [label="(Call,SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS)"];
+"1000152" [label="(Call,s->tlsext_heartbeat &= ~(SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS))"];
+"1000117" [label="(Block,)"];
+"1000159" [label="(Identifier,SSL_TLSEXT_HB_DONT_SEND_REQUESTS)"];
+"1000158" [label="(Identifier,SSL_TLSEXT_HB_ENABLED)"];
+"1000156" [label="(Call,~(SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS))"];
+"1000163" [label="(Identifier,s)"];
+"1000157" [label="(Call,SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS)"];
+"1000153" [label="(Call,s->tlsext_heartbeat)"];
+"1000192" [label="(MethodReturn,int)"];
+"1000152" -> "1000117"  [label="AST: "];
+"1000152" -> "1000156"  [label="CFG: "];
+"1000153" -> "1000152"  [label="AST: "];
+"1000156" -> "1000152"  [label="AST: "];
+"1000163" -> "1000152"  [label="CFG: "];
+"1000152" -> "1000192"  [label="DDG: s->tlsext_heartbeat &= ~(SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS)"];
+"1000152" -> "1000192"  [label="DDG: s->tlsext_heartbeat"];
+"1000152" -> "1000192"  [label="DDG: ~(SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS)"];
+"1000156" -> "1000152"  [label="DDG: SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS"];
+"1000156" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000156"  [label="AST: "];
+"1000156" -> "1000192"  [label="DDG: SSL_TLSEXT_HB_ENABLED |\n\t                       SSL_TLSEXT_HB_DONT_SEND_REQUESTS"];
+"1000157" -> "1000156"  [label="DDG: SSL_TLSEXT_HB_ENABLED"];
+"1000157" -> "1000156"  [label="DDG: SSL_TLSEXT_HB_DONT_SEND_REQUESTS"];
+"1000157" -> "1000159"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000159" -> "1000157"  [label="AST: "];
+"1000157" -> "1000192"  [label="DDG: SSL_TLSEXT_HB_DONT_SEND_REQUESTS"];
+"1000157" -> "1000192"  [label="DDG: SSL_TLSEXT_HB_ENABLED"];
+}

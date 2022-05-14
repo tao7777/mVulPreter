@@ -1,0 +1,33 @@
+digraph "0_linux_b71812168571fa55e44cdd0254471331b9c4c4c6_0@pointer" {
+"1000139" [label="(Call,*total -= sizeof(struct ebt_entries))"];
+"1000125" [label="(Call,*total < sizeof(struct ebt_entries))"];
+"1000426" [label="(MethodReturn,static int)"];
+"1000138" [label="(Block,)"];
+"1000152" [label="(Call,*total < sizeof(*entry))"];
+"1000132" [label="(Identifier,EINVAL)"];
+"1000126" [label="(Call,*total)"];
+"1000146" [label="(Identifier,state)"];
+"1000136" [label="(Identifier,entry)"];
+"1000140" [label="(Call,*total)"];
+"1000125" [label="(Call,*total < sizeof(struct ebt_entries))"];
+"1000124" [label="(ControlStructure,if (*total < sizeof(struct ebt_entries)))"];
+"1000128" [label="(Call,sizeof(struct ebt_entries))"];
+"1000142" [label="(Call,sizeof(struct ebt_entries))"];
+"1000139" [label="(Call,*total -= sizeof(struct ebt_entries))"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000142"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000142" -> "1000139"  [label="AST: "];
+"1000146" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000426"  [label="DDG: *total"];
+"1000125" -> "1000139"  [label="DDG: *total"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000128"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000128" -> "1000125"  [label="AST: "];
+"1000132" -> "1000125"  [label="CFG: "];
+"1000136" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000426"  [label="DDG: *total"];
+"1000125" -> "1000426"  [label="DDG: *total < sizeof(struct ebt_entries)"];
+"1000125" -> "1000152"  [label="DDG: *total"];
+}

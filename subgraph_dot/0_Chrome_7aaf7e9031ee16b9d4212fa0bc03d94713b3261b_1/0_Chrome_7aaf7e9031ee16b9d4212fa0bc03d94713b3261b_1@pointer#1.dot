@@ -1,0 +1,27 @@
+digraph "0_Chrome_7aaf7e9031ee16b9d4212fa0bc03d94713b3261b_1@pointer" {
+"1000105" [label="(Call,ShouldAllowSession(session))"];
+"1000101" [label="(MethodParameterIn,DevToolsSession* session)"];
+"1000104" [label="(Call,!ShouldAllowSession(session))"];
+"1000108" [label="(Identifier,false)"];
+"1000203" [label="(MethodReturn,bool)"];
+"1000111" [label="(Identifier,emulation_handler)"];
+"1000104" [label="(Call,!ShouldAllowSession(session))"];
+"1000106" [label="(Identifier,session)"];
+"1000105" [label="(Call,ShouldAllowSession(session))"];
+"1000103" [label="(ControlStructure,if (!ShouldAllowSession(session)))"];
+"1000101" [label="(MethodParameterIn,DevToolsSession* session)"];
+"1000105" -> "1000104"  [label="AST: "];
+"1000105" -> "1000106"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000104" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000203"  [label="DDG: session"];
+"1000105" -> "1000104"  [label="DDG: session"];
+"1000101" -> "1000105"  [label="DDG: session"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000203"  [label="DDG: session"];
+"1000104" -> "1000103"  [label="AST: "];
+"1000108" -> "1000104"  [label="CFG: "];
+"1000111" -> "1000104"  [label="CFG: "];
+"1000104" -> "1000203"  [label="DDG: ShouldAllowSession(session)"];
+"1000104" -> "1000203"  [label="DDG: !ShouldAllowSession(session)"];
+}

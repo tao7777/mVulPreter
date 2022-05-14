@@ -1,0 +1,33 @@
+digraph "0_Android_45c97f878bee15cd97262fe7f57ecea71990fed7@pointer" {
+"1001123" [label="(Call,0 != ps_codec->i4_first_pic_done)"];
+"1001122" [label="(Call,(0 != ps_codec->i4_first_pic_done) &&\n ((ps_codec->i4_wd != ps_sps->i2_pic_width_in_luma_samples) ||\n (ps_codec->i4_ht != ps_sps->i2_pic_height_in_luma_samples)))"];
+"1001124" [label="(Literal,0)"];
+"1001125" [label="(Call,ps_codec->i4_first_pic_done)"];
+"1001123" [label="(Call,0 != ps_codec->i4_first_pic_done)"];
+"1001121" [label="(ControlStructure,if((0 != ps_codec->i4_first_pic_done) &&\n ((ps_codec->i4_wd != ps_sps->i2_pic_width_in_luma_samples) ||\n (ps_codec->i4_ht != ps_sps->i2_pic_height_in_luma_samples))))"];
+"1001319" [label="(MethodReturn,IHEVCD_ERROR_T)"];
+"1001159" [label="(Identifier,crop_unit_x)"];
+"1001131" [label="(Identifier,ps_codec)"];
+"1001122" [label="(Call,(0 != ps_codec->i4_first_pic_done) &&\n ((ps_codec->i4_wd != ps_sps->i2_pic_width_in_luma_samples) ||\n (ps_codec->i4_ht != ps_sps->i2_pic_height_in_luma_samples)))"];
+"1001128" [label="(Call,(ps_codec->i4_wd != ps_sps->i2_pic_width_in_luma_samples) ||\n (ps_codec->i4_ht != ps_sps->i2_pic_height_in_luma_samples))"];
+"1001146" [label="(Identifier,ps_codec)"];
+"1001123" -> "1001122"  [label="AST: "];
+"1001123" -> "1001125"  [label="CFG: "];
+"1001124" -> "1001123"  [label="AST: "];
+"1001125" -> "1001123"  [label="AST: "];
+"1001131" -> "1001123"  [label="CFG: "];
+"1001122" -> "1001123"  [label="CFG: "];
+"1001123" -> "1001319"  [label="DDG: ps_codec->i4_first_pic_done"];
+"1001123" -> "1001122"  [label="DDG: 0"];
+"1001123" -> "1001122"  [label="DDG: ps_codec->i4_first_pic_done"];
+"1001122" -> "1001121"  [label="AST: "];
+"1001122" -> "1001128"  [label="CFG: "];
+"1001128" -> "1001122"  [label="AST: "];
+"1001146" -> "1001122"  [label="CFG: "];
+"1001159" -> "1001122"  [label="CFG: "];
+"1001122" -> "1001319"  [label="DDG: 0 != ps_codec->i4_first_pic_done"];
+"1001122" -> "1001319"  [label="DDG: (ps_codec->i4_wd != ps_sps->i2_pic_width_in_luma_samples) ||\n (ps_codec->i4_ht != ps_sps->i2_pic_height_in_luma_samples)"];
+"1001122" -> "1001319"  [label="DDG: (0 != ps_codec->i4_first_pic_done) &&\n ((ps_codec->i4_wd != ps_sps->i2_pic_width_in_luma_samples) ||\n (ps_codec->i4_ht != ps_sps->i2_pic_height_in_luma_samples))"];
+"1001128" -> "1001122"  [label="DDG: ps_codec->i4_wd != ps_sps->i2_pic_width_in_luma_samples"];
+"1001128" -> "1001122"  [label="DDG: ps_codec->i4_ht != ps_sps->i2_pic_height_in_luma_samples"];
+}

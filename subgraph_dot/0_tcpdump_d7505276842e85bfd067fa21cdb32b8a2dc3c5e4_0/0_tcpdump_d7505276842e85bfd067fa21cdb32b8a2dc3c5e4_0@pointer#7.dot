@@ -1,0 +1,20 @@
+digraph "0_tcpdump_d7505276842e85bfd067fa21cdb32b8a2dc3c5e4_0@pointer" {
+"1000278" [label="(Call,EXTRACT_32BITS(&opp->nd_opt_pi_valid_time))"];
+"1000277" [label="(Call,get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_valid_time)))"];
+"1000648" [label="(MethodReturn,RET)"];
+"1000278" [label="(Call,EXTRACT_32BITS(&opp->nd_opt_pi_valid_time))"];
+"1000279" [label="(Call,&opp->nd_opt_pi_valid_time)"];
+"1000270" [label="(Block,)"];
+"1000245" [label="(Call,ND_PRINT((ndo,\"%s/%u%s, Flags [%s], valid time %s\",\n                                  ip6addr_string(ndo, &opp->nd_opt_pi_prefix),\n                                  opp->nd_opt_pi_prefix_len,\n                                  (op->nd_opt_len != 4) ? \"badlen\" : \"\",\n                                  bittok2str(icmp6_opt_pi_flag_values, \"none\", opp->nd_opt_pi_flags_reserved),\n                                  get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_valid_time)))))"];
+"1000277" [label="(Call,get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_valid_time)))"];
+"1000278" -> "1000277"  [label="AST: "];
+"1000278" -> "1000279"  [label="CFG: "];
+"1000279" -> "1000278"  [label="AST: "];
+"1000277" -> "1000278"  [label="CFG: "];
+"1000278" -> "1000648"  [label="DDG: &opp->nd_opt_pi_valid_time"];
+"1000278" -> "1000277"  [label="DDG: &opp->nd_opt_pi_valid_time"];
+"1000277" -> "1000270"  [label="AST: "];
+"1000245" -> "1000277"  [label="CFG: "];
+"1000277" -> "1000648"  [label="DDG: EXTRACT_32BITS(&opp->nd_opt_pi_valid_time)"];
+"1000277" -> "1000648"  [label="DDG: get_lifetime(EXTRACT_32BITS(&opp->nd_opt_pi_valid_time))"];
+}

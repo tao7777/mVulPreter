@@ -1,0 +1,28 @@
+digraph "0_Chrome_df831400bcb63db4259b5858281b1727ba972a2a_3@API" {
+"1000121" [label="(Call,* frame = m_page->mainFrame())"];
+"1000125" [label="(Call,!frame)"];
+"1000122" [label="(Identifier,frame)"];
+"1000121" [label="(Call,* frame = m_page->mainFrame())"];
+"1000125" [label="(Call,!frame)"];
+"1000123" [label="(Call,m_page->mainFrame())"];
+"1000103" [label="(Block,)"];
+"1000130" [label="(Identifier,view)"];
+"1000152" [label="(MethodReturn,void)"];
+"1000126" [label="(Identifier,frame)"];
+"1000124" [label="(ControlStructure,if (!frame))"];
+"1000127" [label="(Return,return;)"];
+"1000121" -> "1000103"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000152"  [label="DDG: m_page->mainFrame()"];
+"1000121" -> "1000125"  [label="DDG: frame"];
+"1000125" -> "1000124"  [label="AST: "];
+"1000125" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="CFG: "];
+"1000130" -> "1000125"  [label="CFG: "];
+"1000125" -> "1000152"  [label="DDG: frame"];
+"1000125" -> "1000152"  [label="DDG: !frame"];
+}

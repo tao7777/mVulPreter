@@ -1,0 +1,25 @@
+digraph "0_openssl_77c77f0a1b9f15b869ca3342186dfbedd1119d0e@API" {
+"1000145" [label="(Call,OPENSSL_assert(s->s3->wnum <= INT_MAX))"];
+"1000146" [label="(Call,s->s3->wnum <= INT_MAX)"];
+"1000154" [label="(Identifier,tot)"];
+"1000121" [label="(Block,)"];
+"1000152" [label="(Identifier,INT_MAX)"];
+"1000145" [label="(Call,OPENSSL_assert(s->s3->wnum <= INT_MAX))"];
+"1000153" [label="(Call,tot = s->s3->wnum)"];
+"1000845" [label="(MethodReturn,int)"];
+"1000146" [label="(Call,s->s3->wnum <= INT_MAX)"];
+"1000147" [label="(Call,s->s3->wnum)"];
+"1000145" -> "1000121"  [label="AST: "];
+"1000145" -> "1000146"  [label="CFG: "];
+"1000146" -> "1000145"  [label="AST: "];
+"1000154" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000845"  [label="DDG: OPENSSL_assert(s->s3->wnum <= INT_MAX)"];
+"1000145" -> "1000845"  [label="DDG: s->s3->wnum <= INT_MAX"];
+"1000146" -> "1000145"  [label="DDG: s->s3->wnum"];
+"1000146" -> "1000145"  [label="DDG: INT_MAX"];
+"1000146" -> "1000152"  [label="CFG: "];
+"1000147" -> "1000146"  [label="AST: "];
+"1000152" -> "1000146"  [label="AST: "];
+"1000146" -> "1000845"  [label="DDG: INT_MAX"];
+"1000146" -> "1000153"  [label="DDG: s->s3->wnum"];
+}

@@ -1,0 +1,37 @@
+digraph "1_Chrome_5c437bcc7a51edbef45242c5173cf7871fde2866@del" {
+"1000139" [label="(Call,url.SchemeIs(url::kAboutScheme))"];
+"1000138" [label="(Call,url.SchemeIs(url::kAboutScheme) ||\n             extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url())"];
+"1000137" [label="(Call,!((url.SchemeIs(url::kAboutScheme) ||\n             extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url())))"];
+"1000139" [label="(Call,url.SchemeIs(url::kAboutScheme))"];
+"1000149" [label="(Identifier,false)"];
+"1000143" [label="(Identifier,url)"];
+"1000136" [label="(ControlStructure,if (!((url.SchemeIs(url::kAboutScheme) ||\n             extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url()))))"];
+"1000137" [label="(Call,!((url.SchemeIs(url::kAboutScheme) ||\n             extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url())))"];
+"1000150" [label="(ControlStructure,break;)"];
+"1000141" [label="(Call,extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url())"];
+"1000138" [label="(Call,url.SchemeIs(url::kAboutScheme) ||\n             extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url())"];
+"1000140" [label="(Identifier,url::kAboutScheme)"];
+"1000160" [label="(MethodReturn,bool)"];
+"1000139" -> "1000138"  [label="AST: "];
+"1000139" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000139"  [label="AST: "];
+"1000143" -> "1000139"  [label="CFG: "];
+"1000138" -> "1000139"  [label="CFG: "];
+"1000139" -> "1000160"  [label="DDG: url::kAboutScheme"];
+"1000139" -> "1000138"  [label="DDG: url::kAboutScheme"];
+"1000138" -> "1000137"  [label="AST: "];
+"1000138" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000138"  [label="AST: "];
+"1000137" -> "1000138"  [label="CFG: "];
+"1000138" -> "1000160"  [label="DDG: extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url()"];
+"1000138" -> "1000160"  [label="DDG: url.SchemeIs(url::kAboutScheme)"];
+"1000138" -> "1000137"  [label="DDG: url.SchemeIs(url::kAboutScheme)"];
+"1000138" -> "1000137"  [label="DDG: extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url()"];
+"1000141" -> "1000138"  [label="DDG: extension->permissions_data()->HasHostPermission(url)"];
+"1000141" -> "1000138"  [label="DDG: url.GetOrigin() == extension->url()"];
+"1000137" -> "1000136"  [label="AST: "];
+"1000149" -> "1000137"  [label="CFG: "];
+"1000150" -> "1000137"  [label="CFG: "];
+"1000137" -> "1000160"  [label="DDG: url.SchemeIs(url::kAboutScheme) ||\n             extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url()"];
+"1000137" -> "1000160"  [label="DDG: !((url.SchemeIs(url::kAboutScheme) ||\n             extension->permissions_data()->HasHostPermission(url) ||\n             url.GetOrigin() == extension->url()))"];
+}

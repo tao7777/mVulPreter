@@ -1,0 +1,28 @@
+digraph "0_infradead_9ed437c50d89eabae763dd422579f73fdebf288d_0@pointer" {
+"1000415" [label="(Call,d_instantiate(dentry, old_dentry->d_inode))"];
+"1000317" [label="(Call,JFFS2_INODE_INFO(old_dentry->d_inode))"];
+"1000416" [label="(Identifier,dentry)"];
+"1000493" [label="(MethodReturn,static int)"];
+"1000315" [label="(Call,*f = JFFS2_INODE_INFO(old_dentry->d_inode))"];
+"1000392" [label="(Block,)"];
+"1000318" [label="(Call,old_dentry->d_inode)"];
+"1000317" [label="(Call,JFFS2_INODE_INFO(old_dentry->d_inode))"];
+"1000422" [label="(Identifier,dir_i)"];
+"1000417" [label="(Call,old_dentry->d_inode)"];
+"1000415" [label="(Call,d_instantiate(dentry, old_dentry->d_inode))"];
+"1000415" -> "1000392"  [label="AST: "];
+"1000415" -> "1000417"  [label="CFG: "];
+"1000416" -> "1000415"  [label="AST: "];
+"1000417" -> "1000415"  [label="AST: "];
+"1000422" -> "1000415"  [label="CFG: "];
+"1000415" -> "1000493"  [label="DDG: dentry"];
+"1000415" -> "1000493"  [label="DDG: d_instantiate(dentry, old_dentry->d_inode)"];
+"1000415" -> "1000493"  [label="DDG: old_dentry->d_inode"];
+"1000317" -> "1000415"  [label="DDG: old_dentry->d_inode"];
+"1000317" -> "1000315"  [label="AST: "];
+"1000317" -> "1000318"  [label="CFG: "];
+"1000318" -> "1000317"  [label="AST: "];
+"1000315" -> "1000317"  [label="CFG: "];
+"1000317" -> "1000493"  [label="DDG: old_dentry->d_inode"];
+"1000317" -> "1000315"  [label="DDG: old_dentry->d_inode"];
+}

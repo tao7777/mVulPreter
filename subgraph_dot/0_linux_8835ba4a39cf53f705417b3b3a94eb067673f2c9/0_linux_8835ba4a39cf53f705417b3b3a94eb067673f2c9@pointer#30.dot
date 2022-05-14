@@ -1,0 +1,36 @@
+digraph "0_linux_8835ba4a39cf53f705417b3b3a94eb067673f2c9@pointer" {
+"1000687" [label="(Call,control_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t== CDC_DATA_INTERFACE_TYPE)"];
+"1000676" [label="(Call,data_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t!= CDC_DATA_INTERFACE_TYPE)"];
+"1000686" [label="(ControlStructure,if (control_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t== CDC_DATA_INTERFACE_TYPE))"];
+"1000714" [label="(Identifier,combined_interfaces)"];
+"1000700" [label="(Identifier,intf)"];
+"1000687" [label="(Call,control_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t== CDC_DATA_INTERFACE_TYPE)"];
+"1000675" [label="(ControlStructure,if (data_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t!= CDC_DATA_INTERFACE_TYPE))"];
+"1000710" [label="(Identifier,EINVAL)"];
+"1000684" [label="(Identifier,CDC_DATA_INTERFACE_TYPE)"];
+"1000695" [label="(Identifier,CDC_DATA_INTERFACE_TYPE)"];
+"1000677" [label="(Call,data_interface->cur_altsetting->desc.bInterfaceClass)"];
+"1000691" [label="(Identifier,control_interface)"];
+"1000676" [label="(Call,data_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t!= CDC_DATA_INTERFACE_TYPE)"];
+"1000688" [label="(Call,control_interface->cur_altsetting->desc.bInterfaceClass)"];
+"1001615" [label="(MethodReturn,static int)"];
+"1000687" -> "1000686"  [label="AST: "];
+"1000687" -> "1000695"  [label="CFG: "];
+"1000688" -> "1000687"  [label="AST: "];
+"1000695" -> "1000687"  [label="AST: "];
+"1000700" -> "1000687"  [label="CFG: "];
+"1000710" -> "1000687"  [label="CFG: "];
+"1000687" -> "1001615"  [label="DDG: CDC_DATA_INTERFACE_TYPE"];
+"1000687" -> "1001615"  [label="DDG: control_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t== CDC_DATA_INTERFACE_TYPE"];
+"1000687" -> "1001615"  [label="DDG: control_interface->cur_altsetting->desc.bInterfaceClass"];
+"1000676" -> "1000687"  [label="DDG: CDC_DATA_INTERFACE_TYPE"];
+"1000676" -> "1000675"  [label="AST: "];
+"1000676" -> "1000684"  [label="CFG: "];
+"1000677" -> "1000676"  [label="AST: "];
+"1000684" -> "1000676"  [label="AST: "];
+"1000691" -> "1000676"  [label="CFG: "];
+"1000714" -> "1000676"  [label="CFG: "];
+"1000676" -> "1001615"  [label="DDG: CDC_DATA_INTERFACE_TYPE"];
+"1000676" -> "1001615"  [label="DDG: data_interface->cur_altsetting->desc.bInterfaceClass\n\t\t\t\t\t\t!= CDC_DATA_INTERFACE_TYPE"];
+"1000676" -> "1001615"  [label="DDG: data_interface->cur_altsetting->desc.bInterfaceClass"];
+}

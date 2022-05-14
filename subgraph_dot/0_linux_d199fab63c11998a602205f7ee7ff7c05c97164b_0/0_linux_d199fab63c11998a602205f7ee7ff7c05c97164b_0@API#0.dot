@@ -1,0 +1,37 @@
+digraph "0_linux_d199fab63c11998a602205f7ee7ff7c05c97164b_0@API" {
+"1000144" [label="(Call,kfree(f))"];
+"1000142" [label="(Call,fanout_release_data(f))"];
+"1000112" [label="(Call,f = po->fanout)"];
+"1000113" [label="(Identifier,f)"];
+"1000131" [label="(Block,)"];
+"1000145" [label="(Identifier,f)"];
+"1000148" [label="(Identifier,po)"];
+"1000158" [label="(MethodReturn,static void)"];
+"1000102" [label="(Block,)"];
+"1000118" [label="(Identifier,f)"];
+"1000144" [label="(Call,kfree(f))"];
+"1000143" [label="(Identifier,f)"];
+"1000142" [label="(Call,fanout_release_data(f))"];
+"1000112" [label="(Call,f = po->fanout)"];
+"1000114" [label="(Call,po->fanout)"];
+"1000144" -> "1000131"  [label="AST: "];
+"1000144" -> "1000145"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000148" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000158"  [label="DDG: f"];
+"1000144" -> "1000158"  [label="DDG: kfree(f)"];
+"1000142" -> "1000144"  [label="DDG: f"];
+"1000142" -> "1000131"  [label="AST: "];
+"1000142" -> "1000143"  [label="CFG: "];
+"1000143" -> "1000142"  [label="AST: "];
+"1000145" -> "1000142"  [label="CFG: "];
+"1000142" -> "1000158"  [label="DDG: fanout_release_data(f)"];
+"1000112" -> "1000142"  [label="DDG: f"];
+"1000112" -> "1000102"  [label="AST: "];
+"1000112" -> "1000114"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000114" -> "1000112"  [label="AST: "];
+"1000118" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000158"  [label="DDG: po->fanout"];
+"1000112" -> "1000158"  [label="DDG: f"];
+}

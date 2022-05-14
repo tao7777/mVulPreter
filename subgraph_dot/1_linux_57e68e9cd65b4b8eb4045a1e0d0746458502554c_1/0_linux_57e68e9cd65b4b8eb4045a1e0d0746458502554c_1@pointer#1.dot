@@ -1,0 +1,38 @@
+digraph "0_linux_57e68e9cd65b4b8eb4045a1e0d0746458502554c_1@pointer" {
+"1000206" [label="(Call,vma->vm_flags & VM_LOCKED)"];
+"1000204" [label="(Call,locked_vma = (vma->vm_flags & VM_LOCKED))"];
+"1000212" [label="(Call,!locked_vma)"];
+"1000210" [label="(Identifier,VM_LOCKED)"];
+"1000212" [label="(Call,!locked_vma)"];
+"1000222" [label="(Identifier,pte)"];
+"1000213" [label="(Identifier,locked_vma)"];
+"1000205" [label="(Identifier,locked_vma)"];
+"1000203" [label="(Block,)"];
+"1000353" [label="(MethodReturn,static int)"];
+"1000207" [label="(Call,vma->vm_flags)"];
+"1000206" [label="(Call,vma->vm_flags & VM_LOCKED)"];
+"1000204" [label="(Call,locked_vma = (vma->vm_flags & VM_LOCKED))"];
+"1000218" [label="(Identifier,vma)"];
+"1000211" [label="(ControlStructure,if (!locked_vma))"];
+"1000206" -> "1000204"  [label="AST: "];
+"1000206" -> "1000210"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000210" -> "1000206"  [label="AST: "];
+"1000204" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000353"  [label="DDG: VM_LOCKED"];
+"1000206" -> "1000353"  [label="DDG: vma->vm_flags"];
+"1000206" -> "1000204"  [label="DDG: vma->vm_flags"];
+"1000206" -> "1000204"  [label="DDG: VM_LOCKED"];
+"1000204" -> "1000203"  [label="AST: "];
+"1000205" -> "1000204"  [label="AST: "];
+"1000213" -> "1000204"  [label="CFG: "];
+"1000204" -> "1000353"  [label="DDG: vma->vm_flags & VM_LOCKED"];
+"1000204" -> "1000212"  [label="DDG: locked_vma"];
+"1000212" -> "1000211"  [label="AST: "];
+"1000212" -> "1000213"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000218" -> "1000212"  [label="CFG: "];
+"1000222" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000353"  [label="DDG: !locked_vma"];
+"1000212" -> "1000353"  [label="DDG: locked_vma"];
+}

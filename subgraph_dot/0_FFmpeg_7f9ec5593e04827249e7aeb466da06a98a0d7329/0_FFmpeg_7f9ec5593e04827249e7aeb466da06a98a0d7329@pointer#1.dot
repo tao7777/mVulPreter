@@ -1,0 +1,27 @@
+digraph "0_FFmpeg_7f9ec5593e04827249e7aeb466da06a98a0d7329@pointer" {
+"1000174" [label="(Call,asf->hdr.preroll * 10000)"];
+"1000172" [label="(Call,pres_time -= asf->hdr.preroll * 10000)"];
+"1000212" [label="(MethodReturn,static int)"];
+"1000173" [label="(Identifier,pres_time)"];
+"1000182" [label="(Identifier,pb)"];
+"1000172" [label="(Call,pres_time -= asf->hdr.preroll * 10000)"];
+"1000168" [label="(Call,pres_time = avio_rl64(pb))"];
+"1000180" [label="(Literal,10000)"];
+"1000158" [label="(Block,)"];
+"1000175" [label="(Call,asf->hdr.preroll)"];
+"1000174" [label="(Call,asf->hdr.preroll * 10000)"];
+"1000174" -> "1000172"  [label="AST: "];
+"1000174" -> "1000180"  [label="CFG: "];
+"1000175" -> "1000174"  [label="AST: "];
+"1000180" -> "1000174"  [label="AST: "];
+"1000172" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000212"  [label="DDG: asf->hdr.preroll"];
+"1000174" -> "1000172"  [label="DDG: asf->hdr.preroll"];
+"1000174" -> "1000172"  [label="DDG: 10000"];
+"1000172" -> "1000158"  [label="AST: "];
+"1000173" -> "1000172"  [label="AST: "];
+"1000182" -> "1000172"  [label="CFG: "];
+"1000172" -> "1000212"  [label="DDG: pres_time"];
+"1000172" -> "1000212"  [label="DDG: asf->hdr.preroll * 10000"];
+"1000168" -> "1000172"  [label="DDG: pres_time"];
+}

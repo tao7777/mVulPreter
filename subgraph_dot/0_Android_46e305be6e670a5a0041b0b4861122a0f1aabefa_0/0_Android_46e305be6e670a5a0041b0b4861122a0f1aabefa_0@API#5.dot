@@ -1,0 +1,27 @@
+digraph "0_Android_46e305be6e670a5a0041b0b4861122a0f1aabefa_0@API" {
+"1000405" [label="(Call,sizeof(struct nativebuffer) * MAX_NUM_INPUT_OUTPUT_BUFFERS)"];
+"1000401" [label="(Call,memset(&native_buffer, 0 ,(sizeof(struct nativebuffer) * MAX_NUM_INPUT_OUTPUT_BUFFERS)))"];
+"1000441" [label="(MethodReturn,OMX_ERRORTYPE)"];
+"1000410" [label="(Identifier,OMX_CommandPortDisable)"];
+"1000401" [label="(Call,memset(&native_buffer, 0 ,(sizeof(struct nativebuffer) * MAX_NUM_INPUT_OUTPUT_BUFFERS)))"];
+"1000398" [label="(Block,)"];
+"1000405" [label="(Call,sizeof(struct nativebuffer) * MAX_NUM_INPUT_OUTPUT_BUFFERS)"];
+"1000408" [label="(Identifier,MAX_NUM_INPUT_OUTPUT_BUFFERS)"];
+"1000406" [label="(Call,sizeof(struct nativebuffer))"];
+"1000404" [label="(Literal,0)"];
+"1000402" [label="(Call,&native_buffer)"];
+"1000405" -> "1000401"  [label="AST: "];
+"1000405" -> "1000408"  [label="CFG: "];
+"1000406" -> "1000405"  [label="AST: "];
+"1000408" -> "1000405"  [label="AST: "];
+"1000401" -> "1000405"  [label="CFG: "];
+"1000405" -> "1000441"  [label="DDG: MAX_NUM_INPUT_OUTPUT_BUFFERS"];
+"1000405" -> "1000401"  [label="DDG: MAX_NUM_INPUT_OUTPUT_BUFFERS"];
+"1000401" -> "1000398"  [label="AST: "];
+"1000402" -> "1000401"  [label="AST: "];
+"1000404" -> "1000401"  [label="AST: "];
+"1000410" -> "1000401"  [label="CFG: "];
+"1000401" -> "1000441"  [label="DDG: sizeof(struct nativebuffer) * MAX_NUM_INPUT_OUTPUT_BUFFERS"];
+"1000401" -> "1000441"  [label="DDG: memset(&native_buffer, 0 ,(sizeof(struct nativebuffer) * MAX_NUM_INPUT_OUTPUT_BUFFERS))"];
+"1000401" -> "1000441"  [label="DDG: &native_buffer"];
+}

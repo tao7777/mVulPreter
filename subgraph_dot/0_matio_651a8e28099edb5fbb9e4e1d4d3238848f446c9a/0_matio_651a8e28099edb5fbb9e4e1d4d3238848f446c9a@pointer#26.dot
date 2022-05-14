@@ -1,0 +1,25 @@
+digraph "0_matio_651a8e28099edb5fbb9e4e1d4d3238848f446c9a@pointer" {
+"1000202" [label="(Call,mat->byteswap = endian.c[0] != 4)"];
+"1000206" [label="(Call,endian.c[0] != 4)"];
+"1000665" [label="(MethodReturn,RET)"];
+"1000202" [label="(Call,mat->byteswap = endian.c[0] != 4)"];
+"1000200" [label="(Block,)"];
+"1000213" [label="(ControlStructure,break;)"];
+"1000212" [label="(Literal,4)"];
+"1000207" [label="(Call,endian.c[0])"];
+"1000206" [label="(Call,endian.c[0] != 4)"];
+"1000203" [label="(Call,mat->byteswap)"];
+"1000202" -> "1000200"  [label="AST: "];
+"1000202" -> "1000206"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000206" -> "1000202"  [label="AST: "];
+"1000213" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000665"  [label="DDG: endian.c[0] != 4"];
+"1000202" -> "1000665"  [label="DDG: mat->byteswap"];
+"1000206" -> "1000202"  [label="DDG: endian.c[0]"];
+"1000206" -> "1000202"  [label="DDG: 4"];
+"1000206" -> "1000212"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000212" -> "1000206"  [label="AST: "];
+"1000206" -> "1000665"  [label="DDG: endian.c[0]"];
+}

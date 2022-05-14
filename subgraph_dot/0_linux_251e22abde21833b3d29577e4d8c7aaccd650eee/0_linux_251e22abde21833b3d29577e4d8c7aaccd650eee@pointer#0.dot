@@ -1,0 +1,35 @@
+digraph "0_linux_251e22abde21833b3d29577e4d8c7aaccd650eee@pointer" {
+"1000141" [label="(Call,dev_err(&pdev->dev, \"Failed to get gpio io resource.\n\"))"];
+"1000112" [label="(Call,devm_kzalloc(&pdev->dev,\n\t\t\t\tsizeof(struct amd_gpio), GFP_KERNEL))"];
+"1000113" [label="(Call,&pdev->dev)"];
+"1000141" [label="(Call,dev_err(&pdev->dev, \"Failed to get gpio io resource.\n\"))"];
+"1000149" [label="(Identifier,EINVAL)"];
+"1000140" [label="(Block,)"];
+"1000429" [label="(MethodReturn,static int)"];
+"1000119" [label="(Identifier,GFP_KERNEL)"];
+"1000112" [label="(Call,devm_kzalloc(&pdev->dev,\n\t\t\t\tsizeof(struct amd_gpio), GFP_KERNEL))"];
+"1000146" [label="(Literal,\"Failed to get gpio io resource.\n\")"];
+"1000142" [label="(Call,&pdev->dev)"];
+"1000154" [label="(Call,devm_ioremap_nocache(&pdev->dev, res->start,\n\t\t\t\t\t\tresource_size(res)))"];
+"1000117" [label="(Call,sizeof(struct amd_gpio))"];
+"1000110" [label="(Call,gpio_dev = devm_kzalloc(&pdev->dev,\n\t\t\t\tsizeof(struct amd_gpio), GFP_KERNEL))"];
+"1000141" -> "1000140"  [label="AST: "];
+"1000141" -> "1000146"  [label="CFG: "];
+"1000142" -> "1000141"  [label="AST: "];
+"1000146" -> "1000141"  [label="AST: "];
+"1000149" -> "1000141"  [label="CFG: "];
+"1000141" -> "1000429"  [label="DDG: "];
+"1000141" -> "1000429"  [label="DDG: "];
+"1000112" -> "1000141"  [label="DDG: "];
+"1000112" -> "1000110"  [label="AST: "];
+"1000112" -> "1000119"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000117" -> "1000112"  [label="AST: "];
+"1000119" -> "1000112"  [label="AST: "];
+"1000110" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000429"  [label="DDG: "];
+"1000112" -> "1000429"  [label="DDG: "];
+"1000112" -> "1000110"  [label="DDG: "];
+"1000112" -> "1000110"  [label="DDG: "];
+"1000112" -> "1000154"  [label="DDG: "];
+}

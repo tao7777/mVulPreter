@@ -1,0 +1,30 @@
+digraph "0_samba_530d50a1abdcdf4d1775652d4c456c1274d83d8d_1@array" {
+"1000379" [label="(Call,! tree->u.substring.chunks[i + 1])"];
+"1000378" [label="(Call,( ! tree->u.substring.chunks[i + 1]) &&\n\t\t\t\t    (tree->u.substring.end_with_wildcard == 0))"];
+"1000380" [label="(Call,tree->u.substring.chunks[i + 1])"];
+"1000402" [label="(Identifier,ctx)"];
+"1000377" [label="(ControlStructure,if (( ! tree->u.substring.chunks[i + 1]) &&\n\t\t\t\t    (tree->u.substring.end_with_wildcard == 0)))"];
+"1000395" [label="(Identifier,tree)"];
+"1000379" [label="(Call,! tree->u.substring.chunks[i + 1])"];
+"1000378" [label="(Call,( ! tree->u.substring.chunks[i + 1]) &&\n\t\t\t\t    (tree->u.substring.end_with_wildcard == 0))"];
+"1000820" [label="(MethodReturn,static bool)"];
+"1000407" [label="(Identifier,ctx)"];
+"1000391" [label="(Call,tree->u.substring.end_with_wildcard == 0)"];
+"1000379" -> "1000378"  [label="AST: "];
+"1000379" -> "1000380"  [label="CFG: "];
+"1000380" -> "1000379"  [label="AST: "];
+"1000395" -> "1000379"  [label="CFG: "];
+"1000378" -> "1000379"  [label="CFG: "];
+"1000379" -> "1000820"  [label="DDG: tree->u.substring.chunks[i + 1]"];
+"1000379" -> "1000378"  [label="DDG: tree->u.substring.chunks[i + 1]"];
+"1000378" -> "1000377"  [label="AST: "];
+"1000378" -> "1000391"  [label="CFG: "];
+"1000391" -> "1000378"  [label="AST: "];
+"1000402" -> "1000378"  [label="CFG: "];
+"1000407" -> "1000378"  [label="CFG: "];
+"1000378" -> "1000820"  [label="DDG: ! tree->u.substring.chunks[i + 1]"];
+"1000378" -> "1000820"  [label="DDG: ( ! tree->u.substring.chunks[i + 1]) &&\n\t\t\t\t    (tree->u.substring.end_with_wildcard == 0)"];
+"1000378" -> "1000820"  [label="DDG: tree->u.substring.end_with_wildcard == 0"];
+"1000391" -> "1000378"  [label="DDG: tree->u.substring.end_with_wildcard"];
+"1000391" -> "1000378"  [label="DDG: 0"];
+}

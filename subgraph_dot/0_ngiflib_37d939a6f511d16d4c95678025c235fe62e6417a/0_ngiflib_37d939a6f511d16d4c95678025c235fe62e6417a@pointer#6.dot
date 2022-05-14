@@ -1,0 +1,28 @@
+digraph "0_ngiflib_37d939a6f511d16d4c95678025c235fe62e6417a@pointer" {
+"1000127" [label="(Call,!i->gce.transparent_flag)"];
+"1000119" [label="(Call,v!=i->gce.transparent_color || !i->gce.transparent_flag)"];
+"1000120" [label="(Call,v!=i->gce.transparent_color)"];
+"1000137" [label="(Identifier,p)"];
+"1000127" [label="(Call,!i->gce.transparent_flag)"];
+"1000118" [label="(ControlStructure,if(v!=i->gce.transparent_color || !i->gce.transparent_flag))"];
+"1000119" [label="(Call,v!=i->gce.transparent_color || !i->gce.transparent_flag)"];
+"1000166" [label="(Identifier,context)"];
+"1000392" [label="(MethodReturn,static void)"];
+"1000128" [label="(Call,i->gce.transparent_flag)"];
+"1000127" -> "1000119"  [label="AST: "];
+"1000127" -> "1000128"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000119" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000392"  [label="DDG: i->gce.transparent_flag"];
+"1000127" -> "1000119"  [label="DDG: i->gce.transparent_flag"];
+"1000119" -> "1000118"  [label="AST: "];
+"1000119" -> "1000120"  [label="CFG: "];
+"1000120" -> "1000119"  [label="AST: "];
+"1000137" -> "1000119"  [label="CFG: "];
+"1000166" -> "1000119"  [label="CFG: "];
+"1000119" -> "1000392"  [label="DDG: !i->gce.transparent_flag"];
+"1000119" -> "1000392"  [label="DDG: v!=i->gce.transparent_color"];
+"1000119" -> "1000392"  [label="DDG: v!=i->gce.transparent_color || !i->gce.transparent_flag"];
+"1000120" -> "1000119"  [label="DDG: v"];
+"1000120" -> "1000119"  [label="DDG: i->gce.transparent_color"];
+}

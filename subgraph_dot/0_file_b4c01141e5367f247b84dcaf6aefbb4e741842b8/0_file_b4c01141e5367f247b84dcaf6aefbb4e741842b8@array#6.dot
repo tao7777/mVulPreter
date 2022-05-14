@@ -1,0 +1,35 @@
+digraph "0_file_b4c01141e5367f247b84dcaf6aefbb4e741842b8@array" {
+"1001167" [label="(Call,isprint(nbuf[no]))"];
+"1001165" [label="(Call,adjust\n\t\t\t\t\t\t         && isprint(nbuf[no]))"];
+"1001163" [label="(Call,adjust = adjust\n\t\t\t\t\t\t         && isprint(nbuf[no]))"];
+"1001148" [label="(ControlStructure,for (no = doff + prpsoffsets(k);\n\t\t\t\t\t     no < doff + prpsoffsets(i); no++))"];
+"1001237" [label="(MethodReturn,RET)"];
+"1001167" [label="(Call,isprint(nbuf[no]))"];
+"1001168" [label="(Call,nbuf[no])"];
+"1001138" [label="(Call,adjust = 1)"];
+"1001162" [label="(Identifier,no)"];
+"1001166" [label="(Identifier,adjust)"];
+"1001165" [label="(Call,adjust\n\t\t\t\t\t\t         && isprint(nbuf[no]))"];
+"1001163" [label="(Call,adjust = adjust\n\t\t\t\t\t\t         && isprint(nbuf[no]))"];
+"1001164" [label="(Identifier,adjust)"];
+"1001167" -> "1001165"  [label="AST: "];
+"1001167" -> "1001168"  [label="CFG: "];
+"1001168" -> "1001167"  [label="AST: "];
+"1001165" -> "1001167"  [label="CFG: "];
+"1001167" -> "1001237"  [label="DDG: nbuf[no]"];
+"1001167" -> "1001165"  [label="DDG: nbuf[no]"];
+"1001165" -> "1001163"  [label="AST: "];
+"1001165" -> "1001166"  [label="CFG: "];
+"1001166" -> "1001165"  [label="AST: "];
+"1001163" -> "1001165"  [label="CFG: "];
+"1001165" -> "1001237"  [label="DDG: isprint(nbuf[no])"];
+"1001165" -> "1001163"  [label="DDG: adjust"];
+"1001165" -> "1001163"  [label="DDG: isprint(nbuf[no])"];
+"1001163" -> "1001165"  [label="DDG: adjust"];
+"1001138" -> "1001165"  [label="DDG: adjust"];
+"1001163" -> "1001148"  [label="AST: "];
+"1001164" -> "1001163"  [label="AST: "];
+"1001162" -> "1001163"  [label="CFG: "];
+"1001163" -> "1001237"  [label="DDG: adjust\n\t\t\t\t\t\t         && isprint(nbuf[no])"];
+"1001163" -> "1001237"  [label="DDG: adjust"];
+}

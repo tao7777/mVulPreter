@@ -1,0 +1,31 @@
+digraph "0_krb5_ffb35baac6981f9e8914f8f3bffd37f284b85970_3@pointer" {
+"1000186" [label="(Call,(*s4u_x509_user)->user_id.subject_cert.length != 0)"];
+"1000175" [label="(Call,krb5_princ_size(context, (*s4u_x509_user)->user_id.user) == 0 ||\n        (*s4u_x509_user)->user_id.subject_cert.length != 0)"];
+"1000186" [label="(Call,(*s4u_x509_user)->user_id.subject_cert.length != 0)"];
+"1000176" [label="(Call,krb5_princ_size(context, (*s4u_x509_user)->user_id.user) == 0)"];
+"1000187" [label="(Call,(*s4u_x509_user)->user_id.subject_cert.length)"];
+"1000212" [label="(Literal,0)"];
+"1000174" [label="(ControlStructure,if (krb5_princ_size(context, (*s4u_x509_user)->user_id.user) == 0 ||\n        (*s4u_x509_user)->user_id.subject_cert.length != 0))"];
+"1000213" [label="(MethodReturn,RET)"];
+"1000175" [label="(Call,krb5_princ_size(context, (*s4u_x509_user)->user_id.user) == 0 ||\n        (*s4u_x509_user)->user_id.subject_cert.length != 0)"];
+"1000199" [label="(Identifier,status)"];
+"1000195" [label="(Literal,0)"];
+"1000186" -> "1000175"  [label="AST: "];
+"1000186" -> "1000195"  [label="CFG: "];
+"1000187" -> "1000186"  [label="AST: "];
+"1000195" -> "1000186"  [label="AST: "];
+"1000175" -> "1000186"  [label="CFG: "];
+"1000186" -> "1000213"  [label="DDG: (*s4u_x509_user)->user_id.subject_cert.length"];
+"1000186" -> "1000175"  [label="DDG: (*s4u_x509_user)->user_id.subject_cert.length"];
+"1000186" -> "1000175"  [label="DDG: 0"];
+"1000175" -> "1000174"  [label="AST: "];
+"1000175" -> "1000176"  [label="CFG: "];
+"1000176" -> "1000175"  [label="AST: "];
+"1000199" -> "1000175"  [label="CFG: "];
+"1000212" -> "1000175"  [label="CFG: "];
+"1000175" -> "1000213"  [label="DDG: (*s4u_x509_user)->user_id.subject_cert.length != 0"];
+"1000175" -> "1000213"  [label="DDG: krb5_princ_size(context, (*s4u_x509_user)->user_id.user) == 0"];
+"1000175" -> "1000213"  [label="DDG: krb5_princ_size(context, (*s4u_x509_user)->user_id.user) == 0 ||\n        (*s4u_x509_user)->user_id.subject_cert.length != 0"];
+"1000176" -> "1000175"  [label="DDG: krb5_princ_size(context, (*s4u_x509_user)->user_id.user)"];
+"1000176" -> "1000175"  [label="DDG: 0"];
+}

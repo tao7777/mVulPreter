@@ -1,0 +1,26 @@
+digraph "0_linux_f54e18f1b831c92f6512d2eedb224cd63d607d3d@pointer" {
+"1000121" [label="(Call,rs->buffer = NULL)"];
+"1000264" [label="(Call,kfree(rs->buffer))"];
+"1000102" [label="(Block,)"];
+"1000122" [label="(Call,rs->buffer)"];
+"1000270" [label="(Identifier,rs)"];
+"1000178" [label="(Call,!rs->buffer)"];
+"1000125" [label="(Identifier,NULL)"];
+"1000265" [label="(Call,rs->buffer)"];
+"1000264" [label="(Call,kfree(rs->buffer))"];
+"1000275" [label="(MethodReturn,static int)"];
+"1000121" [label="(Call,rs->buffer = NULL)"];
+"1000121" -> "1000102"  [label="AST: "];
+"1000121" -> "1000125"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000125" -> "1000121"  [label="AST: "];
+"1000130" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000275"  [label="DDG: NULL"];
+"1000121" -> "1000264"  [label="DDG: rs->buffer"];
+"1000264" -> "1000102"  [label="AST: "];
+"1000264" -> "1000265"  [label="CFG: "];
+"1000265" -> "1000264"  [label="AST: "];
+"1000270" -> "1000264"  [label="CFG: "];
+"1000264" -> "1000275"  [label="DDG: kfree(rs->buffer)"];
+"1000178" -> "1000264"  [label="DDG: rs->buffer"];
+}

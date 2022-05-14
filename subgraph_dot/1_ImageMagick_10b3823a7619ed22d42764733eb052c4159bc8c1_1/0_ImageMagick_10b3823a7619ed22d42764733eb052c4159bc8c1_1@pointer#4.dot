@@ -1,0 +1,33 @@
+digraph "0_ImageMagick_10b3823a7619ed22d42764733eb052c4159bc8c1_1@pointer" {
+"1000201" [label="(Call,image->storage_class == DirectClass)"];
+"1000200" [label="(Call,(image->storage_class == DirectClass) || (image->colors > 256))"];
+"1000205" [label="(Identifier,DirectClass)"];
+"1000199" [label="(ControlStructure,if ((image->storage_class == DirectClass) || (image->colors > 256)))"];
+"1000206" [label="(Call,image->colors > 256)"];
+"1000418" [label="(Identifier,i)"];
+"1000590" [label="(MethodReturn,static MagickBooleanType)"];
+"1000200" [label="(Call,(image->storage_class == DirectClass) || (image->colors > 256))"];
+"1000201" [label="(Call,image->storage_class == DirectClass)"];
+"1000208" [label="(Identifier,image)"];
+"1000202" [label="(Call,image->storage_class)"];
+"1000201" -> "1000200"  [label="AST: "];
+"1000201" -> "1000205"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000205" -> "1000201"  [label="AST: "];
+"1000208" -> "1000201"  [label="CFG: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000590"  [label="DDG: DirectClass"];
+"1000201" -> "1000590"  [label="DDG: image->storage_class"];
+"1000201" -> "1000200"  [label="DDG: image->storage_class"];
+"1000201" -> "1000200"  [label="DDG: DirectClass"];
+"1000200" -> "1000199"  [label="AST: "];
+"1000200" -> "1000206"  [label="CFG: "];
+"1000206" -> "1000200"  [label="AST: "];
+"1000212" -> "1000200"  [label="CFG: "];
+"1000418" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000590"  [label="DDG: image->storage_class == DirectClass"];
+"1000200" -> "1000590"  [label="DDG: (image->storage_class == DirectClass) || (image->colors > 256)"];
+"1000200" -> "1000590"  [label="DDG: image->colors > 256"];
+"1000206" -> "1000200"  [label="DDG: image->colors"];
+"1000206" -> "1000200"  [label="DDG: 256"];
+}

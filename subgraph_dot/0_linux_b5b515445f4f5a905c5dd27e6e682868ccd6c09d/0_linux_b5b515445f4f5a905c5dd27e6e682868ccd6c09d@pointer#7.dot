@@ -1,0 +1,33 @@
+digraph "0_linux_b5b515445f4f5a905c5dd27e6e682868ccd6c09d@pointer" {
+"1000362" [label="(Call,ioarcb->request_flags0 = buffer->ioarcb.request_flags0)"];
+"1000229" [label="(Call,buffer->ioarcb.request_flags0 & TRANSFER_DIR_WRITE)"];
+"1000238" [label="(Identifier,access)"];
+"1000363" [label="(Call,ioarcb->request_flags0)"];
+"1000228" [label="(ControlStructure,if (buffer->ioarcb.request_flags0 & TRANSFER_DIR_WRITE))"];
+"1000229" [label="(Call,buffer->ioarcb.request_flags0 & TRANSFER_DIR_WRITE)"];
+"1000362" [label="(Call,ioarcb->request_flags0 = buffer->ioarcb.request_flags0)"];
+"1000755" [label="(MethodReturn,static long)"];
+"1000230" [label="(Call,buffer->ioarcb.request_flags0)"];
+"1000366" [label="(Call,buffer->ioarcb.request_flags0)"];
+"1000235" [label="(Identifier,TRANSFER_DIR_WRITE)"];
+"1000118" [label="(Block,)"];
+"1000373" [label="(Identifier,ioarcb)"];
+"1000246" [label="(Identifier,access)"];
+"1000362" -> "1000118"  [label="AST: "];
+"1000362" -> "1000366"  [label="CFG: "];
+"1000363" -> "1000362"  [label="AST: "];
+"1000366" -> "1000362"  [label="AST: "];
+"1000373" -> "1000362"  [label="CFG: "];
+"1000362" -> "1000755"  [label="DDG: buffer->ioarcb.request_flags0"];
+"1000362" -> "1000755"  [label="DDG: ioarcb->request_flags0"];
+"1000229" -> "1000362"  [label="DDG: buffer->ioarcb.request_flags0"];
+"1000229" -> "1000228"  [label="AST: "];
+"1000229" -> "1000235"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000235" -> "1000229"  [label="AST: "];
+"1000238" -> "1000229"  [label="CFG: "];
+"1000246" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000755"  [label="DDG: TRANSFER_DIR_WRITE"];
+"1000229" -> "1000755"  [label="DDG: buffer->ioarcb.request_flags0 & TRANSFER_DIR_WRITE"];
+"1000229" -> "1000755"  [label="DDG: buffer->ioarcb.request_flags0"];
+}

@@ -1,0 +1,30 @@
+digraph "0_krb5_56f7b1bc95a2a3eeb420e069e7655fb181ade5cf_5@pointer" {
+"1000196" [label="(Call,targ_name ? &localTargName : NULL)"];
+"1000106" [label="(MethodParameterIn,gss_name_t *targ_name)"];
+"1000106" [label="(MethodParameterIn,gss_name_t *targ_name)"];
+"1000186" [label="(Call,mech->gss_inquire_context(\n\t\t\tminor_status,\n\t\t\tctx->internal_ctx_id,\n\t\t\t(src_name ? &localSourceName : NULL),\n\t\t\t(targ_name ? &localTargName : NULL),\n\t\t\tlifetime_rec,\n\t\t\t&actual_mech,\n\t\t\tctx_flags,\n\t\t\tlocally_initiated,\n\t\t\topened))"];
+"1000258" [label="(Call,gssint_convert_name_to_union_name(minor_status, mech,\n\t\t\t\t\t\t      localTargName, targ_name))"];
+"1000200" [label="(Identifier,NULL)"];
+"1000198" [label="(Call,&localTargName)"];
+"1000197" [label="(Identifier,targ_name)"];
+"1000201" [label="(Identifier,lifetime_rec)"];
+"1000128" [label="(Call,val_inq_ctx_args(minor_status,\n\t\t\t      context_handle,\n\t\t\t      src_name, targ_name,\n\t\t\t      lifetime_rec,\n\t\t\t      mech_type, ctx_flags,\n\t\t\t      locally_initiated, opened))"];
+"1000293" [label="(MethodReturn,RET)"];
+"1000196" [label="(Call,targ_name ? &localTargName : NULL)"];
+"1000196" -> "1000186"  [label="AST: "];
+"1000196" -> "1000198"  [label="CFG: "];
+"1000196" -> "1000200"  [label="CFG: "];
+"1000197" -> "1000196"  [label="AST: "];
+"1000198" -> "1000196"  [label="AST: "];
+"1000200" -> "1000196"  [label="AST: "];
+"1000201" -> "1000196"  [label="CFG: "];
+"1000196" -> "1000293"  [label="DDG: NULL"];
+"1000196" -> "1000293"  [label="DDG: targ_name"];
+"1000196" -> "1000293"  [label="DDG: &localTargName"];
+"1000106" -> "1000196"  [label="DDG: targ_name"];
+"1000106" -> "1000102"  [label="AST: "];
+"1000106" -> "1000293"  [label="DDG: targ_name"];
+"1000106" -> "1000128"  [label="DDG: targ_name"];
+"1000106" -> "1000186"  [label="DDG: targ_name"];
+"1000106" -> "1000258"  [label="DDG: targ_name"];
+}

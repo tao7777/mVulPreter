@@ -1,0 +1,33 @@
+digraph "1_linux_8176cced706b5e5d15887584150764894e94e02f@del" {
+"1000105" [label="(Call,event_id = event->attr.config)"];
+"1000140" [label="(Call,event_id >= PERF_COUNT_SW_MAX)"];
+"1000139" [label="(ControlStructure,if (event_id >= PERF_COUNT_SW_MAX))"];
+"1000149" [label="(Identifier,event)"];
+"1000107" [label="(Call,event->attr.config)"];
+"1000173" [label="(MethodReturn,static int)"];
+"1000106" [label="(Identifier,event_id)"];
+"1000145" [label="(Identifier,ENOENT)"];
+"1000116" [label="(Identifier,event)"];
+"1000141" [label="(Identifier,event_id)"];
+"1000103" [label="(Block,)"];
+"1000142" [label="(Identifier,PERF_COUNT_SW_MAX)"];
+"1000105" [label="(Call,event_id = event->attr.config)"];
+"1000140" [label="(Call,event_id >= PERF_COUNT_SW_MAX)"];
+"1000105" -> "1000103"  [label="AST: "];
+"1000105" -> "1000107"  [label="CFG: "];
+"1000106" -> "1000105"  [label="AST: "];
+"1000107" -> "1000105"  [label="AST: "];
+"1000116" -> "1000105"  [label="CFG: "];
+"1000105" -> "1000173"  [label="DDG: event->attr.config"];
+"1000105" -> "1000173"  [label="DDG: event_id"];
+"1000105" -> "1000140"  [label="DDG: event_id"];
+"1000140" -> "1000139"  [label="AST: "];
+"1000140" -> "1000142"  [label="CFG: "];
+"1000141" -> "1000140"  [label="AST: "];
+"1000142" -> "1000140"  [label="AST: "];
+"1000145" -> "1000140"  [label="CFG: "];
+"1000149" -> "1000140"  [label="CFG: "];
+"1000140" -> "1000173"  [label="DDG: PERF_COUNT_SW_MAX"];
+"1000140" -> "1000173"  [label="DDG: event_id"];
+"1000140" -> "1000173"  [label="DDG: event_id >= PERF_COUNT_SW_MAX"];
+}

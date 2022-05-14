@@ -1,0 +1,21 @@
+digraph "0_linux_82262a46627bebb0febcc26664746c25cef08563@array" {
+"1000510" [label="(Call,_kctl->vd[idx].owner = file)"];
+"1000101" [label="(MethodParameterIn,struct snd_ctl_file *file)"];
+"1000509" [label="(Identifier,idx)"];
+"1000101" [label="(MethodParameterIn,struct snd_ctl_file *file)"];
+"1000499" [label="(ControlStructure,for (idx = 0; idx < _kctl->count; idx++))"];
+"1000546" [label="(MethodReturn,static int)"];
+"1000510" [label="(Call,_kctl->vd[idx].owner = file)"];
+"1000511" [label="(Call,_kctl->vd[idx].owner)"];
+"1000518" [label="(Identifier,file)"];
+"1000510" -> "1000499"  [label="AST: "];
+"1000510" -> "1000518"  [label="CFG: "];
+"1000511" -> "1000510"  [label="AST: "];
+"1000518" -> "1000510"  [label="AST: "];
+"1000509" -> "1000510"  [label="CFG: "];
+"1000510" -> "1000546"  [label="DDG: _kctl->vd[idx].owner"];
+"1000510" -> "1000546"  [label="DDG: file"];
+"1000101" -> "1000510"  [label="DDG: file"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000546"  [label="DDG: file"];
+}

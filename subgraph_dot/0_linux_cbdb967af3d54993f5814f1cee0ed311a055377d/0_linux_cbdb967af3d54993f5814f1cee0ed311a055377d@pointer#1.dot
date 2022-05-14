@@ -1,0 +1,27 @@
+digraph "0_linux_cbdb967af3d54993f5814f1cee0ed311a055377d@pointer" {
+"1000123" [label="(Call,!svm->nmi_singlestep)"];
+"1000112" [label="(Call,!(svm->vcpu.guest_debug &\n\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)) &&\n\t\t!svm->nmi_singlestep)"];
+"1000221" [label="(MethodReturn,static int)"];
+"1000138" [label="(Identifier,svm)"];
+"1000123" [label="(Call,!svm->nmi_singlestep)"];
+"1000112" [label="(Call,!(svm->vcpu.guest_debug &\n\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)) &&\n\t\t!svm->nmi_singlestep)"];
+"1000124" [label="(Call,svm->nmi_singlestep)"];
+"1000111" [label="(ControlStructure,if (!(svm->vcpu.guest_debug &\n\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)) &&\n\t\t!svm->nmi_singlestep))"];
+"1000113" [label="(Call,!(svm->vcpu.guest_debug &\n\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)))"];
+"1000131" [label="(Identifier,svm)"];
+"1000123" -> "1000112"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000112" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000221"  [label="DDG: svm->nmi_singlestep"];
+"1000123" -> "1000112"  [label="DDG: svm->nmi_singlestep"];
+"1000112" -> "1000111"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000112"  [label="AST: "];
+"1000131" -> "1000112"  [label="CFG: "];
+"1000138" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000221"  [label="DDG: !svm->nmi_singlestep"];
+"1000112" -> "1000221"  [label="DDG: !(svm->vcpu.guest_debug &\n\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)) &&\n\t\t!svm->nmi_singlestep"];
+"1000112" -> "1000221"  [label="DDG: !(svm->vcpu.guest_debug &\n\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP))"];
+"1000113" -> "1000112"  [label="DDG: svm->vcpu.guest_debug &\n\t      (KVM_GUESTDBG_SINGLESTEP | KVM_GUESTDBG_USE_HW_BP)"];
+}

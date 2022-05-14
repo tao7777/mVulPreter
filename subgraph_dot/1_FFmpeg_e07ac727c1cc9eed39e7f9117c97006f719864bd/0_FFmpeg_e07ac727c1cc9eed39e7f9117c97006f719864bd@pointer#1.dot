@@ -1,0 +1,26 @@
+digraph "0_FFmpeg_e07ac727c1cc9eed39e7f9117c97006f719864bd@pointer" {
+"1000215" [label="(Call,av_free(c->jpeg_tile))"];
+"1000173" [label="(Call,!c->jpeg_tile)"];
+"1000215" [label="(Call,av_free(c->jpeg_tile))"];
+"1000221" [label="(Identifier,c)"];
+"1000173" [label="(Call,!c->jpeg_tile)"];
+"1000180" [label="(Identifier,c)"];
+"1000216" [label="(Call,c->jpeg_tile)"];
+"1000174" [label="(Call,c->jpeg_tile)"];
+"1000192" [label="(Block,)"];
+"1000296" [label="(MethodReturn,static int)"];
+"1000172" [label="(Call,!c->jpeg_tile ||\n        c->old_tile_w < c->tile_width ||\n        c->old_tile_h < c->tile_height)"];
+"1000215" -> "1000192"  [label="AST: "];
+"1000215" -> "1000216"  [label="CFG: "];
+"1000216" -> "1000215"  [label="AST: "];
+"1000221" -> "1000215"  [label="CFG: "];
+"1000215" -> "1000296"  [label="DDG: av_free(c->jpeg_tile)"];
+"1000173" -> "1000215"  [label="DDG: c->jpeg_tile"];
+"1000173" -> "1000172"  [label="AST: "];
+"1000173" -> "1000174"  [label="CFG: "];
+"1000174" -> "1000173"  [label="AST: "];
+"1000180" -> "1000173"  [label="CFG: "];
+"1000172" -> "1000173"  [label="CFG: "];
+"1000173" -> "1000296"  [label="DDG: c->jpeg_tile"];
+"1000173" -> "1000172"  [label="DDG: c->jpeg_tile"];
+}

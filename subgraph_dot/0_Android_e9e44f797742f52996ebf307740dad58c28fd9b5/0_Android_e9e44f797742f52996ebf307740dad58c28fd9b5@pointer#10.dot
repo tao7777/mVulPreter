@@ -1,0 +1,27 @@
+digraph "0_Android_e9e44f797742f52996ebf307740dad58c28fd9b5@pointer" {
+"1000261" [label="(Call,dst->flags |= src->flags & FLAG_SORTED)"];
+"1000265" [label="(Call,src->flags & FLAG_SORTED)"];
+"1000266" [label="(Call,src->flags)"];
+"1000307" [label="(MethodReturn,int)"];
+"1000261" [label="(Call,dst->flags |= src->flags & FLAG_SORTED)"];
+"1000260" [label="(Block,)"];
+"1000287" [label="(Identifier,dst)"];
+"1000265" [label="(Call,src->flags & FLAG_SORTED)"];
+"1000262" [label="(Call,dst->flags)"];
+"1000269" [label="(Identifier,FLAG_SORTED)"];
+"1000261" -> "1000260"  [label="AST: "];
+"1000261" -> "1000265"  [label="CFG: "];
+"1000262" -> "1000261"  [label="AST: "];
+"1000265" -> "1000261"  [label="AST: "];
+"1000287" -> "1000261"  [label="CFG: "];
+"1000261" -> "1000307"  [label="DDG: src->flags & FLAG_SORTED"];
+"1000261" -> "1000307"  [label="DDG: dst->flags"];
+"1000261" -> "1000307"  [label="DDG: dst->flags |= src->flags & FLAG_SORTED"];
+"1000265" -> "1000261"  [label="DDG: src->flags"];
+"1000265" -> "1000261"  [label="DDG: FLAG_SORTED"];
+"1000265" -> "1000269"  [label="CFG: "];
+"1000266" -> "1000265"  [label="AST: "];
+"1000269" -> "1000265"  [label="AST: "];
+"1000265" -> "1000307"  [label="DDG: FLAG_SORTED"];
+"1000265" -> "1000307"  [label="DDG: src->flags"];
+}

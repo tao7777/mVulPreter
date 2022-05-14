@@ -1,0 +1,10 @@
+ PasswordGenerationDialogViewAndroid::PasswordGenerationDialogViewAndroid(
+    PasswordAccessoryController* controller)
+     : controller_(controller) {
+  ui::WindowAndroid* window_android = controller_->native_window();
+ 
+   DCHECK(window_android);
+   java_object_.Reset(Java_PasswordGenerationDialogBridge_create(
+      base::android::AttachCurrentThread(), window_android->GetJavaObject(),
+      reinterpret_cast<long>(this)));
+}

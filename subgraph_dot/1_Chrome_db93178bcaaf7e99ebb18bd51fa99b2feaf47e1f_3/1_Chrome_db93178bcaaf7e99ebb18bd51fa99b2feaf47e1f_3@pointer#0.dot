@@ -1,0 +1,32 @@
+digraph "1_Chrome_db93178bcaaf7e99ebb18bd51fa99b2feaf47e1f_3@pointer" {
+"1000111" [label="(Return,return extension;)"];
+"1000112" [label="(Identifier,extension)"];
+"1000107" [label="(Call,* extension = service->GetInstalledExtension(extension_id_))"];
+"1000109" [label="(Call,service->GetInstalledExtension(extension_id_))"];
+"1000110" [label="(Identifier,extension_id_)"];
+"1000112" [label="(Identifier,extension)"];
+"1000101" [label="(Block,)"];
+"1000109" [label="(Call,service->GetInstalledExtension(extension_id_))"];
+"1000113" [label="(MethodReturn,const Extension*)"];
+"1000107" [label="(Call,* extension = service->GetInstalledExtension(extension_id_))"];
+"1000108" [label="(Identifier,extension)"];
+"1000111" [label="(Return,return extension;)"];
+"1000111" -> "1000101"  [label="AST: "];
+"1000111" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000113"  [label="DDG: <RET>"];
+"1000112" -> "1000111"  [label="DDG: extension"];
+"1000107" -> "1000111"  [label="DDG: extension"];
+"1000112" -> "1000107"  [label="CFG: "];
+"1000107" -> "1000101"  [label="AST: "];
+"1000107" -> "1000109"  [label="CFG: "];
+"1000108" -> "1000107"  [label="AST: "];
+"1000109" -> "1000107"  [label="AST: "];
+"1000107" -> "1000113"  [label="DDG: extension"];
+"1000107" -> "1000113"  [label="DDG: service->GetInstalledExtension(extension_id_)"];
+"1000109" -> "1000107"  [label="DDG: extension_id_"];
+"1000109" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000109" -> "1000113"  [label="DDG: extension_id_"];
+}

@@ -1,0 +1,28 @@
+digraph "0_Chrome_fcd3a7a671ecf2d5f46ea34787d27507a914d2f5_5@API" {
+"1000508" [label="(Call,server_update << entry)"];
+"1000501" [label="(Call,CHECK(server_update.Get(syncable::META_HANDLE) !=\n            entry.Get(syncable::META_HANDLE))\n          << server_update << entry)"];
+"1000501" [label="(Call,CHECK(server_update.Get(syncable::META_HANDLE) !=\n            entry.Get(syncable::META_HANDLE))\n          << server_update << entry)"];
+"1000508" [label="(Call,server_update << entry)"];
+"1000517" [label="(MethodReturn,RET)"];
+"1000509" [label="(Identifier,server_update)"];
+"1000502" [label="(Call,CHECK(server_update.Get(syncable::META_HANDLE) !=\n            entry.Get(syncable::META_HANDLE)))"];
+"1000510" [label="(Identifier,entry)"];
+"1000512" [label="(Literal,\"Sync.ResolveSimpleConflict\")"];
+"1000493" [label="(Block,)"];
+"1000508" -> "1000501"  [label="AST: "];
+"1000508" -> "1000510"  [label="CFG: "];
+"1000509" -> "1000508"  [label="AST: "];
+"1000510" -> "1000508"  [label="AST: "];
+"1000501" -> "1000508"  [label="CFG: "];
+"1000508" -> "1000517"  [label="DDG: server_update"];
+"1000508" -> "1000517"  [label="DDG: entry"];
+"1000508" -> "1000501"  [label="DDG: server_update"];
+"1000508" -> "1000501"  [label="DDG: entry"];
+"1000501" -> "1000493"  [label="AST: "];
+"1000502" -> "1000501"  [label="AST: "];
+"1000512" -> "1000501"  [label="CFG: "];
+"1000501" -> "1000517"  [label="DDG: CHECK(server_update.Get(syncable::META_HANDLE) !=\n            entry.Get(syncable::META_HANDLE))"];
+"1000501" -> "1000517"  [label="DDG: CHECK(server_update.Get(syncable::META_HANDLE) !=\n            entry.Get(syncable::META_HANDLE))\n          << server_update << entry"];
+"1000501" -> "1000517"  [label="DDG: server_update << entry"];
+"1000502" -> "1000501"  [label="DDG: server_update.Get(syncable::META_HANDLE) !=\n            entry.Get(syncable::META_HANDLE)"];
+}

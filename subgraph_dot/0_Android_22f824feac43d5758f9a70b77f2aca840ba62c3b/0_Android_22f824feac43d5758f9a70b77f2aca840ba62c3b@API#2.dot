@@ -1,0 +1,31 @@
+digraph "0_Android_22f824feac43d5758f9a70b77f2aca840ba62c3b@API" {
+"1000130" [label="(Call,reply->writeInt32(isCryptoSchemeSupported(uuid)))"];
+"1000131" [label="(Call,isCryptoSchemeSupported(uuid))"];
+"1000126" [label="(Call,data.read(uuid, sizeof(uuid)))"];
+"1000131" [label="(Call,isCryptoSchemeSupported(uuid))"];
+"1000483" [label="(MethodReturn,status_t)"];
+"1000132" [label="(Identifier,uuid)"];
+"1000130" [label="(Call,reply->writeInt32(isCryptoSchemeSupported(uuid)))"];
+"1000127" [label="(Identifier,uuid)"];
+"1000120" [label="(Block,)"];
+"1000128" [label="(Call,sizeof(uuid))"];
+"1000134" [label="(Identifier,OK)"];
+"1000126" [label="(Call,data.read(uuid, sizeof(uuid)))"];
+"1000130" -> "1000120"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000134" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000483"  [label="DDG: reply->writeInt32(isCryptoSchemeSupported(uuid))"];
+"1000130" -> "1000483"  [label="DDG: isCryptoSchemeSupported(uuid)"];
+"1000131" -> "1000130"  [label="DDG: uuid"];
+"1000131" -> "1000132"  [label="CFG: "];
+"1000132" -> "1000131"  [label="AST: "];
+"1000131" -> "1000483"  [label="DDG: uuid"];
+"1000126" -> "1000131"  [label="DDG: uuid"];
+"1000126" -> "1000120"  [label="AST: "];
+"1000126" -> "1000128"  [label="CFG: "];
+"1000127" -> "1000126"  [label="AST: "];
+"1000128" -> "1000126"  [label="AST: "];
+"1000132" -> "1000126"  [label="CFG: "];
+"1000126" -> "1000483"  [label="DDG: data.read(uuid, sizeof(uuid))"];
+}

@@ -1,0 +1,37 @@
+digraph "0_radare2_224e6bc13fa353dd3b7f7a2334588f1c4229e58d@pointer" {
+"1000276" [label="(Call,caseop->bb_ref_from = addr)"];
+"1000104" [label="(MethodParameterIn,ut64 addr)"];
+"1000268" [label="(Block,)"];
+"1000269" [label="(Call,caseop->bb_ref_to = addr+offset)"];
+"1000273" [label="(Call,addr+offset)"];
+"1000228" [label="(Identifier,pos)"];
+"1000276" [label="(Call,caseop->bb_ref_from = addr)"];
+"1000104" [label="(MethodParameterIn,ut64 addr)"];
+"1000283" [label="(Call,eprintf (\"Invalid switch boundaries at 0x%\"PFMT64x\"\n\", addr))"];
+"1000280" [label="(Identifier,addr)"];
+"1000295" [label="(MethodReturn,static int)"];
+"1000263" [label="(Call,addr + offset)"];
+"1000277" [label="(Call,caseop->bb_ref_from)"];
+"1000193" [label="(Call,r_anal_switch_op_new (addr, min_val, default_loc))"];
+"1000117" [label="(Call,addr - java_get_method_start ())"];
+"1000257" [label="(Call,addr + pos)"];
+"1000253" [label="(Call,r_anal_switch_op_add_case (op->switch_op,\n\t\t\t\t\taddr + pos, cur_case + min_val, addr + offset))"];
+"1000276" -> "1000268"  [label="AST: "];
+"1000276" -> "1000280"  [label="CFG: "];
+"1000277" -> "1000276"  [label="AST: "];
+"1000280" -> "1000276"  [label="AST: "];
+"1000228" -> "1000276"  [label="CFG: "];
+"1000276" -> "1000295"  [label="DDG: addr"];
+"1000276" -> "1000295"  [label="DDG: caseop->bb_ref_from"];
+"1000104" -> "1000276"  [label="DDG: addr"];
+"1000104" -> "1000101"  [label="AST: "];
+"1000104" -> "1000295"  [label="DDG: addr"];
+"1000104" -> "1000117"  [label="DDG: addr"];
+"1000104" -> "1000193"  [label="DDG: addr"];
+"1000104" -> "1000253"  [label="DDG: addr"];
+"1000104" -> "1000257"  [label="DDG: addr"];
+"1000104" -> "1000263"  [label="DDG: addr"];
+"1000104" -> "1000269"  [label="DDG: addr"];
+"1000104" -> "1000273"  [label="DDG: addr"];
+"1000104" -> "1000283"  [label="DDG: addr"];
+}

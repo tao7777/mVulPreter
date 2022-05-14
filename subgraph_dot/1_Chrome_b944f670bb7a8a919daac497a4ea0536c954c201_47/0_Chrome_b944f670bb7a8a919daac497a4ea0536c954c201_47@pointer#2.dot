@@ -1,0 +1,23 @@
+digraph "0_Chrome_b944f670bb7a8a919daac497a4ea0536c954c201_47@pointer" {
+"1000122" [label="(Call,* impl = static_cast<TestObj*>(castedThis->impl()))"];
+"1000124" [label="(Call,static_cast<TestObj*>(castedThis->impl()))"];
+"1000148" [label="(MethodReturn,static EncodedJSValue JSC_HOST_CALL)"];
+"1000123" [label="(Identifier,impl)"];
+"1000102" [label="(Block,)"];
+"1000122" [label="(Call,* impl = static_cast<TestObj*>(castedThis->impl()))"];
+"1000129" [label="(Call,exec->argumentCount())"];
+"1000124" [label="(Call,static_cast<TestObj*>(castedThis->impl()))"];
+"1000126" [label="(Call,castedThis->impl())"];
+"1000122" -> "1000102"  [label="AST: "];
+"1000122" -> "1000124"  [label="CFG: "];
+"1000123" -> "1000122"  [label="AST: "];
+"1000124" -> "1000122"  [label="AST: "];
+"1000129" -> "1000122"  [label="CFG: "];
+"1000122" -> "1000148"  [label="DDG: static_cast<TestObj*>(castedThis->impl())"];
+"1000122" -> "1000148"  [label="DDG: impl"];
+"1000124" -> "1000122"  [label="DDG: castedThis->impl()"];
+"1000124" -> "1000126"  [label="CFG: "];
+"1000125" -> "1000124"  [label="AST: "];
+"1000126" -> "1000124"  [label="AST: "];
+"1000124" -> "1000148"  [label="DDG: castedThis->impl()"];
+}

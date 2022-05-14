@@ -1,0 +1,25 @@
+digraph "0_linux_a5598bd9c087dc0efc250a5221e5d0e6f584ee88@pointer" {
+"1000212" [label="(Call,sk->sk_shutdown = sk->sk_shutdown | RCV_SHUTDOWN)"];
+"1000216" [label="(Call,sk->sk_shutdown | RCV_SHUTDOWN)"];
+"1000217" [label="(Call,sk->sk_shutdown)"];
+"1000220" [label="(Identifier,RCV_SHUTDOWN)"];
+"1000460" [label="(MethodReturn,static int)"];
+"1000216" [label="(Call,sk->sk_shutdown | RCV_SHUTDOWN)"];
+"1000213" [label="(Call,sk->sk_shutdown)"];
+"1000209" [label="(ControlStructure,if (!rlen))"];
+"1000212" [label="(Call,sk->sk_shutdown = sk->sk_shutdown | RCV_SHUTDOWN)"];
+"1000222" [label="(Identifier,cskb)"];
+"1000212" -> "1000209"  [label="AST: "];
+"1000212" -> "1000216"  [label="CFG: "];
+"1000213" -> "1000212"  [label="AST: "];
+"1000216" -> "1000212"  [label="AST: "];
+"1000222" -> "1000212"  [label="CFG: "];
+"1000212" -> "1000460"  [label="DDG: sk->sk_shutdown | RCV_SHUTDOWN"];
+"1000212" -> "1000460"  [label="DDG: sk->sk_shutdown"];
+"1000216" -> "1000212"  [label="DDG: sk->sk_shutdown"];
+"1000216" -> "1000212"  [label="DDG: RCV_SHUTDOWN"];
+"1000216" -> "1000220"  [label="CFG: "];
+"1000217" -> "1000216"  [label="AST: "];
+"1000220" -> "1000216"  [label="AST: "];
+"1000216" -> "1000460"  [label="DDG: RCV_SHUTDOWN"];
+}

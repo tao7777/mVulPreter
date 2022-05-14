@@ -1,0 +1,30 @@
+digraph "0_linux_f8bd2258e2d520dff28c855658bd24bdafb5102d_8@pointer" {
+"1000568" [label="(Call,txc->offset = save_adjust)"];
+"1000222" [label="(Call,save_adjust = time_adjust)"];
+"1000684" [label="(MethodReturn,int)"];
+"1000224" [label="(Identifier,time_adjust)"];
+"1000226" [label="(Identifier,time_status)"];
+"1000568" [label="(Call,txc->offset = save_adjust)"];
+"1000123" [label="(Block,)"];
+"1000223" [label="(Identifier,save_adjust)"];
+"1000589" [label="(Identifier,txc)"];
+"1000572" [label="(Identifier,save_adjust)"];
+"1000222" [label="(Call,save_adjust = time_adjust)"];
+"1000569" [label="(Call,txc->offset)"];
+"1000556" [label="(ControlStructure,if ((txc->modes == ADJ_OFFSET_SINGLESHOT) ||\n\t\t\t(txc->modes == ADJ_OFFSET_SS_READ)))"];
+"1000568" -> "1000556"  [label="AST: "];
+"1000568" -> "1000572"  [label="CFG: "];
+"1000569" -> "1000568"  [label="AST: "];
+"1000572" -> "1000568"  [label="AST: "];
+"1000589" -> "1000568"  [label="CFG: "];
+"1000568" -> "1000684"  [label="DDG: txc->offset"];
+"1000568" -> "1000684"  [label="DDG: save_adjust"];
+"1000222" -> "1000568"  [label="DDG: save_adjust"];
+"1000222" -> "1000123"  [label="AST: "];
+"1000222" -> "1000224"  [label="CFG: "];
+"1000223" -> "1000222"  [label="AST: "];
+"1000224" -> "1000222"  [label="AST: "];
+"1000226" -> "1000222"  [label="CFG: "];
+"1000222" -> "1000684"  [label="DDG: save_adjust"];
+"1000222" -> "1000684"  [label="DDG: time_adjust"];
+}

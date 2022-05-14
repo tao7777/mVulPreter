@@ -1,0 +1,28 @@
+digraph "0_optee_os_a637243270fc1faae16de059091795c32d86e65e@pointer" {
+"1000569" [label="(Call,ik + 1)"];
+"1000559" [label="(Call,*ik = ko->attr)"];
+"1000567" [label="(Call,(const uint8_t *)(ik + 1))"];
+"1000570" [label="(Identifier,ik)"];
+"1000849" [label="(MethodReturn,TEE_Result)"];
+"1000545" [label="(Block,)"];
+"1000571" [label="(Literal,1)"];
+"1000561" [label="(Call,ko->attr)"];
+"1000569" [label="(Call,ik + 1)"];
+"1000560" [label="(Identifier,ik)"];
+"1000566" [label="(Identifier,ikm)"];
+"1000559" [label="(Call,*ik = ko->attr)"];
+"1000569" -> "1000567"  [label="AST: "];
+"1000569" -> "1000571"  [label="CFG: "];
+"1000570" -> "1000569"  [label="AST: "];
+"1000571" -> "1000569"  [label="AST: "];
+"1000567" -> "1000569"  [label="CFG: "];
+"1000569" -> "1000849"  [label="DDG: ik"];
+"1000559" -> "1000569"  [label="DDG: ik"];
+"1000559" -> "1000545"  [label="AST: "];
+"1000559" -> "1000561"  [label="CFG: "];
+"1000560" -> "1000559"  [label="AST: "];
+"1000561" -> "1000559"  [label="AST: "];
+"1000566" -> "1000559"  [label="CFG: "];
+"1000559" -> "1000849"  [label="DDG: ko->attr"];
+"1000559" -> "1000567"  [label="DDG: ik"];
+}

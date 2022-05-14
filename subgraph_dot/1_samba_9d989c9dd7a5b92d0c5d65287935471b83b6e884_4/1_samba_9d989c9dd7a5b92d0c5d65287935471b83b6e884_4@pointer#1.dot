@@ -1,0 +1,19 @@
+digraph "1_samba_9d989c9dd7a5b92d0c5d65287935471b83b6e884_4@pointer" {
+"1000113" [label="(Call,!data->has_error)"];
+"1000112" [label="(Return,return !data->has_error;)"];
+"1000113" [label="(Call,!data->has_error)"];
+"1000117" [label="(MethodReturn,bool)"];
+"1000114" [label="(Call,data->has_error)"];
+"1000103" [label="(Block,)"];
+"1000112" [label="(Return,return !data->has_error;)"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000117"  [label="DDG: data->has_error"];
+"1000113" -> "1000117"  [label="DDG: !data->has_error"];
+"1000113" -> "1000112"  [label="DDG: !data->has_error"];
+"1000112" -> "1000103"  [label="AST: "];
+"1000117" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000117"  [label="DDG: <RET>"];
+}

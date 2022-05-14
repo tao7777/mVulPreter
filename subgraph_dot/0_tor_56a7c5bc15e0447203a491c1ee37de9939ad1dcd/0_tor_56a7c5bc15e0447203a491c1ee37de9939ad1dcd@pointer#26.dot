@@ -1,0 +1,26 @@
+digraph "0_tor_56a7c5bc15e0447203a491c1ee37de9939ad1dcd@pointer" {
+"1000501" [label="(Call,!entry_conn->socks_request->has_finished)"];
+"1000497" [label="(Call,entry_conn->socks_request &&\n            !entry_conn->socks_request->has_finished)"];
+"1000508" [label="(Identifier,LD_BUG)"];
+"1000498" [label="(Call,entry_conn->socks_request)"];
+"1000512" [label="(Identifier,conn)"];
+"1000496" [label="(ControlStructure,if (entry_conn->socks_request &&\n            !entry_conn->socks_request->has_finished))"];
+"1001064" [label="(MethodReturn,RET)"];
+"1000502" [label="(Call,entry_conn->socks_request->has_finished)"];
+"1000497" [label="(Call,entry_conn->socks_request &&\n            !entry_conn->socks_request->has_finished)"];
+"1000501" [label="(Call,!entry_conn->socks_request->has_finished)"];
+"1000501" -> "1000497"  [label="AST: "];
+"1000501" -> "1000502"  [label="CFG: "];
+"1000502" -> "1000501"  [label="AST: "];
+"1000497" -> "1000501"  [label="CFG: "];
+"1000501" -> "1001064"  [label="DDG: entry_conn->socks_request->has_finished"];
+"1000501" -> "1000497"  [label="DDG: entry_conn->socks_request->has_finished"];
+"1000497" -> "1000496"  [label="AST: "];
+"1000497" -> "1000498"  [label="CFG: "];
+"1000498" -> "1000497"  [label="AST: "];
+"1000508" -> "1000497"  [label="CFG: "];
+"1000512" -> "1000497"  [label="CFG: "];
+"1000497" -> "1001064"  [label="DDG: entry_conn->socks_request"];
+"1000497" -> "1001064"  [label="DDG: entry_conn->socks_request &&\n            !entry_conn->socks_request->has_finished"];
+"1000497" -> "1001064"  [label="DDG: !entry_conn->socks_request->has_finished"];
+}

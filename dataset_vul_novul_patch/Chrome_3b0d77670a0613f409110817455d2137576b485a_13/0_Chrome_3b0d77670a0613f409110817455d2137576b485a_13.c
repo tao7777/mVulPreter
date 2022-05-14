@@ -1,0 +1,1 @@
+IPC::PlatformFileForTransit ProxyChannelDelegate::ShareHandleWithRemote(

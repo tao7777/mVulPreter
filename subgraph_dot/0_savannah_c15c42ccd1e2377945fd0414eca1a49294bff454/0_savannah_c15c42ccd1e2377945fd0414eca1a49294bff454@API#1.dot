@@ -1,0 +1,30 @@
+digraph "0_savannah_c15c42ccd1e2377945fd0414eca1a49294bff454@API" {
+"1000445" [label="(Call,mv_begin_write (file.stat_info->file_name,\n\t\t          file.stat_info->stat.st_size,\n\t\t          file.stat_info->archive_file_size - file.dumped_size))"];
+"1000458" [label="(Call,file.stat_info->archive_file_size - file.dumped_size)"];
+"1000458" [label="(Call,file.stat_info->archive_file_size - file.dumped_size)"];
+"1000489" [label="(Call,file.stat_info->archive_file_size - file.dumped_size)"];
+"1000507" [label="(MethodReturn,RET)"];
+"1000446" [label="(Call,file.stat_info->file_name)"];
+"1000469" [label="(Identifier,i)"];
+"1000443" [label="(Block,)"];
+"1000445" [label="(Call,mv_begin_write (file.stat_info->file_name,\n\t\t          file.stat_info->stat.st_size,\n\t\t          file.stat_info->archive_file_size - file.dumped_size))"];
+"1000459" [label="(Call,file.stat_info->archive_file_size)"];
+"1000464" [label="(Call,file.dumped_size)"];
+"1000451" [label="(Call,file.stat_info->stat.st_size)"];
+"1000445" -> "1000443"  [label="AST: "];
+"1000445" -> "1000458"  [label="CFG: "];
+"1000446" -> "1000445"  [label="AST: "];
+"1000451" -> "1000445"  [label="AST: "];
+"1000458" -> "1000445"  [label="AST: "];
+"1000469" -> "1000445"  [label="CFG: "];
+"1000445" -> "1000507"  [label="DDG: file.stat_info->file_name"];
+"1000445" -> "1000507"  [label="DDG: mv_begin_write (file.stat_info->file_name,\n\t\t          file.stat_info->stat.st_size,\n\t\t          file.stat_info->archive_file_size - file.dumped_size)"];
+"1000445" -> "1000507"  [label="DDG: file.stat_info->stat.st_size"];
+"1000458" -> "1000445"  [label="DDG: file.stat_info->archive_file_size"];
+"1000458" -> "1000445"  [label="DDG: file.dumped_size"];
+"1000458" -> "1000464"  [label="CFG: "];
+"1000459" -> "1000458"  [label="AST: "];
+"1000464" -> "1000458"  [label="AST: "];
+"1000458" -> "1000489"  [label="DDG: file.stat_info->archive_file_size"];
+"1000458" -> "1000489"  [label="DDG: file.dumped_size"];
+}

@@ -1,0 +1,38 @@
+digraph "0_Chrome_a06c5187775536a68f035f16cdb8bc47b9bfad24@API" {
+"1000162" [label="(Call,sqlite3_close(db_))"];
+"1000154" [label="(Call,sqlite3_errmsg(db_))"];
+"1000144" [label="(Call,sqlite3_extended_result_codes(db_, 1))"];
+"1000144" [label="(Call,sqlite3_extended_result_codes(db_, 1))"];
+"1000223" [label="(MethodReturn,bool)"];
+"1000145" [label="(Identifier,db_)"];
+"1000142" [label="(Call,open_error_ = sqlite3_extended_result_codes(db_, 1))"];
+"1000155" [label="(Identifier,db_)"];
+"1000163" [label="(Identifier,db_)"];
+"1000151" [label="(Block,)"];
+"1000165" [label="(Identifier,db_)"];
+"1000146" [label="(Literal,1)"];
+"1000171" [label="(Call,sqlite3_db_config(db_, SQLITE_DBCONFIG_DEFENSIVE, 1, nullptr))"];
+"1000152" [label="(Call,open_error_message_ = sqlite3_errmsg(db_))"];
+"1000154" [label="(Call,sqlite3_errmsg(db_))"];
+"1000162" [label="(Call,sqlite3_close(db_))"];
+"1000162" -> "1000151"  [label="AST: "];
+"1000162" -> "1000163"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000165" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000223"  [label="DDG: sqlite3_close(db_)"];
+"1000154" -> "1000162"  [label="DDG: db_"];
+"1000154" -> "1000152"  [label="AST: "];
+"1000154" -> "1000155"  [label="CFG: "];
+"1000155" -> "1000154"  [label="AST: "];
+"1000152" -> "1000154"  [label="CFG: "];
+"1000154" -> "1000152"  [label="DDG: db_"];
+"1000144" -> "1000154"  [label="DDG: db_"];
+"1000144" -> "1000142"  [label="AST: "];
+"1000144" -> "1000146"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000146" -> "1000144"  [label="AST: "];
+"1000142" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000142"  [label="DDG: db_"];
+"1000144" -> "1000142"  [label="DDG: 1"];
+"1000144" -> "1000171"  [label="DDG: db_"];
+}

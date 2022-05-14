@@ -1,0 +1,27 @@
+digraph "0_openssl_f5c7f5dfbaf0d2f7d946d0fe86f08e6bcb36ed0d_0@API" {
+"1000500" [label="(Call,memset(timeleft, 0, sizeof(*timeleft)))"];
+"1000506" [label="(Return,return timeleft;)"];
+"1000501" [label="(Identifier,timeleft)"];
+"1000500" [label="(Call,memset(timeleft, 0, sizeof(*timeleft)))"];
+"1000714" [label="(MethodReturn,void)"];
+"1000499" [label="(Block,)"];
+"1000502" [label="(Literal,0)"];
+"1000507" [label="(Identifier,timeleft)"];
+"1000503" [label="(Call,sizeof(*timeleft))"];
+"1000506" [label="(Return,return timeleft;)"];
+"1000500" -> "1000499"  [label="AST: "];
+"1000500" -> "1000503"  [label="CFG: "];
+"1000501" -> "1000500"  [label="AST: "];
+"1000502" -> "1000500"  [label="AST: "];
+"1000503" -> "1000500"  [label="AST: "];
+"1000507" -> "1000500"  [label="CFG: "];
+"1000500" -> "1000714"  [label="DDG: memset(timeleft, 0, sizeof(*timeleft))"];
+"1000500" -> "1000714"  [label="DDG: timeleft"];
+"1000500" -> "1000506"  [label="DDG: timeleft"];
+"1000506" -> "1000499"  [label="AST: "];
+"1000506" -> "1000507"  [label="CFG: "];
+"1000507" -> "1000506"  [label="AST: "];
+"1000714" -> "1000506"  [label="CFG: "];
+"1000506" -> "1000714"  [label="DDG: <RET>"];
+"1000507" -> "1000506"  [label="DDG: timeleft"];
+}

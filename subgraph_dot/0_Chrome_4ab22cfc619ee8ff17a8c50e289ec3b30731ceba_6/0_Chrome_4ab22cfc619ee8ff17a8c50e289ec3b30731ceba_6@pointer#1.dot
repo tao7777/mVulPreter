@@ -1,0 +1,24 @@
+digraph "0_Chrome_4ab22cfc619ee8ff17a8c50e289ec3b30731ceba_6@pointer" {
+"1000101" [label="(MethodParameterIn,struct mg_connection* connection)"];
+"1000115" [label="(Call,mg_write(connection, response.data(), response.length()))"];
+"1000116" [label="(Identifier,connection)"];
+"1000115" [label="(Call,mg_write(connection, response.data(), response.length()))"];
+"1000103" [label="(Block,)"];
+"1000101" [label="(MethodParameterIn,struct mg_connection* connection)"];
+"1000117" [label="(Call,response.data())"];
+"1000118" [label="(Call,response.length())"];
+"1000119" [label="(MethodReturn,void)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000119"  [label="DDG: connection"];
+"1000101" -> "1000115"  [label="DDG: connection"];
+"1000115" -> "1000103"  [label="AST: "];
+"1000115" -> "1000118"  [label="CFG: "];
+"1000116" -> "1000115"  [label="AST: "];
+"1000117" -> "1000115"  [label="AST: "];
+"1000118" -> "1000115"  [label="AST: "];
+"1000119" -> "1000115"  [label="CFG: "];
+"1000115" -> "1000119"  [label="DDG: response.data()"];
+"1000115" -> "1000119"  [label="DDG: mg_write(connection, response.data(), response.length())"];
+"1000115" -> "1000119"  [label="DDG: response.length()"];
+"1000115" -> "1000119"  [label="DDG: connection"];
+}

@@ -1,0 +1,31 @@
+digraph "0_busybox_352f79acbd759c14399e39baef21fc4ffe180ac2@API" {
+"1000178" [label="(Call,strlen(opt_name) + 2)"];
+"1000179" [label="(Call,strlen(opt_name))"];
+"1000126" [label="(MethodParameterIn,const char *opt_name)"];
+"1000572" [label="(MethodReturn,static NOINLINE char *)"];
+"1000179" [label="(Call,strlen(opt_name))"];
+"1000178" [label="(Call,strlen(opt_name) + 2)"];
+"1000176" [label="(Call,upper_length + strlen(opt_name) + 2)"];
+"1000180" [label="(Identifier,opt_name)"];
+"1000175" [label="(Call,xmalloc(upper_length + strlen(opt_name) + 2))"];
+"1000126" [label="(MethodParameterIn,const char *opt_name)"];
+"1000184" [label="(Call,sprintf(ret, \"%s=\", opt_name))"];
+"1000181" [label="(Literal,2)"];
+"1000178" -> "1000176"  [label="AST: "];
+"1000178" -> "1000181"  [label="CFG: "];
+"1000179" -> "1000178"  [label="AST: "];
+"1000181" -> "1000178"  [label="AST: "];
+"1000176" -> "1000178"  [label="CFG: "];
+"1000178" -> "1000572"  [label="DDG: strlen(opt_name)"];
+"1000179" -> "1000178"  [label="DDG: opt_name"];
+"1000179" -> "1000180"  [label="CFG: "];
+"1000180" -> "1000179"  [label="AST: "];
+"1000181" -> "1000179"  [label="CFG: "];
+"1000179" -> "1000175"  [label="DDG: opt_name"];
+"1000179" -> "1000176"  [label="DDG: opt_name"];
+"1000126" -> "1000179"  [label="DDG: opt_name"];
+"1000179" -> "1000184"  [label="DDG: opt_name"];
+"1000126" -> "1000123"  [label="AST: "];
+"1000126" -> "1000572"  [label="DDG: opt_name"];
+"1000126" -> "1000184"  [label="DDG: opt_name"];
+}

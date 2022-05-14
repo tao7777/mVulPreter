@@ -1,0 +1,22 @@
+digraph "0_neomutt_9bfab35522301794483f8f9ed60820bdec9be59e_2@API" {
+"1000527" [label="(Call,crypt_query(h->content))"];
+"1000523" [label="(Call,h->security = crypt_query(h->content))"];
+"1000527" [label="(Call,crypt_query(h->content))"];
+"1000520" [label="(ControlStructure,if (!WithCrypto))"];
+"1000538" [label="(MethodReturn,static int)"];
+"1000524" [label="(Call,h->security)"];
+"1000528" [label="(Call,h->content)"];
+"1000523" [label="(Call,h->security = crypt_query(h->content))"];
+"1000531" [label="(Call,mutt_clear_error())"];
+"1000527" -> "1000523"  [label="AST: "];
+"1000527" -> "1000528"  [label="CFG: "];
+"1000528" -> "1000527"  [label="AST: "];
+"1000523" -> "1000527"  [label="CFG: "];
+"1000527" -> "1000538"  [label="DDG: h->content"];
+"1000527" -> "1000523"  [label="DDG: h->content"];
+"1000523" -> "1000520"  [label="AST: "];
+"1000524" -> "1000523"  [label="AST: "];
+"1000531" -> "1000523"  [label="CFG: "];
+"1000523" -> "1000538"  [label="DDG: h->security"];
+"1000523" -> "1000538"  [label="DDG: crypt_query(h->content)"];
+}

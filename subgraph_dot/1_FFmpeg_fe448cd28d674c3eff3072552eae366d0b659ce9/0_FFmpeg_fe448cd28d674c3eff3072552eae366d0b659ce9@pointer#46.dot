@@ -1,0 +1,26 @@
+digraph "0_FFmpeg_fe448cd28d674c3eff3072552eae366d0b659ce9@pointer" {
+"1000120" [label="(MethodParameterIn,Jpeg2000Tile *tile)"];
+"1000405" [label="(Call,mct_decode(s, tile))"];
+"1000298" [label="(Call,decode_cblk(s, codsty, &t1, cblk,\n                                    cblk->coord[0][1] - cblk->coord[0][0],\n                                    cblk->coord[1][1] - cblk->coord[1][0],\n                                    bandpos))"];
+"1000397" [label="(ControlStructure,if (tile->codsty[0].mct))"];
+"1000120" [label="(MethodParameterIn,Jpeg2000Tile *tile)"];
+"1000406" [label="(Identifier,s)"];
+"1000405" [label="(Call,mct_decode(s, tile))"];
+"1000407" [label="(Identifier,tile)"];
+"1000119" [label="(MethodParameterIn,Jpeg2000DecoderContext *s)"];
+"1001090" [label="(MethodReturn,static int)"];
+"1000412" [label="(Identifier,s)"];
+"1000120" -> "1000118"  [label="AST: "];
+"1000120" -> "1001090"  [label="DDG: tile"];
+"1000120" -> "1000405"  [label="DDG: tile"];
+"1000405" -> "1000397"  [label="AST: "];
+"1000405" -> "1000407"  [label="CFG: "];
+"1000406" -> "1000405"  [label="AST: "];
+"1000407" -> "1000405"  [label="AST: "];
+"1000412" -> "1000405"  [label="CFG: "];
+"1000405" -> "1001090"  [label="DDG: mct_decode(s, tile)"];
+"1000405" -> "1001090"  [label="DDG: tile"];
+"1000405" -> "1001090"  [label="DDG: s"];
+"1000298" -> "1000405"  [label="DDG: s"];
+"1000119" -> "1000405"  [label="DDG: s"];
+}

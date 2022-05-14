@@ -1,0 +1,25 @@
+digraph "0_linux_b69f2292063d2caf37ca9aec7d63ded203701bf3_1@pointer" {
+"1000385" [label="(Call,p->lock_depth = -1)"];
+"1000389" [label="(Call,-1)"];
+"1000130" [label="(Block,)"];
+"1000390" [label="(Literal,1)"];
+"1000394" [label="(Identifier,p)"];
+"1001151" [label="(MethodReturn,static struct task_struct *)"];
+"1000772" [label="(Call,p->exit_signal = (clone_flags & CLONE_THREAD) ? -1 : (clone_flags & CSIGNAL))"];
+"1000389" [label="(Call,-1)"];
+"1000776" [label="(Call,(clone_flags & CLONE_THREAD) ? -1 : (clone_flags & CSIGNAL))"];
+"1000385" [label="(Call,p->lock_depth = -1)"];
+"1000386" [label="(Call,p->lock_depth)"];
+"1000385" -> "1000130"  [label="AST: "];
+"1000385" -> "1000389"  [label="CFG: "];
+"1000386" -> "1000385"  [label="AST: "];
+"1000389" -> "1000385"  [label="AST: "];
+"1000394" -> "1000385"  [label="CFG: "];
+"1000385" -> "1001151"  [label="DDG: -1"];
+"1000385" -> "1001151"  [label="DDG: p->lock_depth"];
+"1000389" -> "1000385"  [label="DDG: 1"];
+"1000389" -> "1000390"  [label="CFG: "];
+"1000390" -> "1000389"  [label="AST: "];
+"1000389" -> "1000772"  [label="DDG: 1"];
+"1000389" -> "1000776"  [label="DDG: 1"];
+}

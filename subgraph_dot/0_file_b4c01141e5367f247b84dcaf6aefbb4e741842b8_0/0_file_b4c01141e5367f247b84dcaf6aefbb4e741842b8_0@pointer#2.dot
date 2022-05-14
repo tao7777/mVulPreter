@@ -1,0 +1,29 @@
+digraph "0_file_b4c01141e5367f247b84dcaf6aefbb4e741842b8_0@pointer" {
+"1000123" [label="(Call,ms->flags & (MAGIC_MIME|MAGIC_APPLE))"];
+"1000127" [label="(Call,MAGIC_MIME|MAGIC_APPLE)"];
+"1000123" [label="(Call,ms->flags & (MAGIC_MIME|MAGIC_APPLE))"];
+"1000131" [label="(Literal,0)"];
+"1000136" [label="(Identifier,buf)"];
+"1000231" [label="(MethodReturn,RET)"];
+"1000122" [label="(ControlStructure,if (ms->flags & (MAGIC_MIME|MAGIC_APPLE)))"];
+"1000128" [label="(Identifier,MAGIC_MIME)"];
+"1000127" [label="(Call,MAGIC_MIME|MAGIC_APPLE)"];
+"1000124" [label="(Call,ms->flags)"];
+"1000129" [label="(Identifier,MAGIC_APPLE)"];
+"1000123" -> "1000122"  [label="AST: "];
+"1000123" -> "1000127"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000127" -> "1000123"  [label="AST: "];
+"1000131" -> "1000123"  [label="CFG: "];
+"1000136" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000231"  [label="DDG: ms->flags & (MAGIC_MIME|MAGIC_APPLE)"];
+"1000123" -> "1000231"  [label="DDG: MAGIC_MIME|MAGIC_APPLE"];
+"1000123" -> "1000231"  [label="DDG: ms->flags"];
+"1000127" -> "1000123"  [label="DDG: MAGIC_MIME"];
+"1000127" -> "1000123"  [label="DDG: MAGIC_APPLE"];
+"1000127" -> "1000129"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000129" -> "1000127"  [label="AST: "];
+"1000127" -> "1000231"  [label="DDG: MAGIC_APPLE"];
+"1000127" -> "1000231"  [label="DDG: MAGIC_MIME"];
+}

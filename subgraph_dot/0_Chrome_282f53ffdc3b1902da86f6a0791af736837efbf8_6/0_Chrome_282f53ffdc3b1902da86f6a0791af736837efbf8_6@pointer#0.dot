@@ -1,0 +1,33 @@
+digraph "0_Chrome_282f53ffdc3b1902da86f6a0791af736837efbf8_6@pointer" {
+"1000121" [label="(Call,* signin_manager =\n        SigninManagerFactory::GetForProfile(profile_))"];
+"1000123" [label="(Call,SigninManagerFactory::GetForProfile(profile_))"];
+"1000113" [label="(Call,signin_util::IsUserSignoutAllowedForProfile(profile_))"];
+"1000157" [label="(MethodReturn,void)"];
+"1000126" [label="(Call,signin_manager->IsAuthenticated())"];
+"1000122" [label="(Identifier,signin_manager)"];
+"1000119" [label="(Block,)"];
+"1000123" [label="(Call,SigninManagerFactory::GetForProfile(profile_))"];
+"1000114" [label="(Identifier,profile_)"];
+"1000124" [label="(Identifier,profile_)"];
+"1000112" [label="(Call,!signin_util::IsUserSignoutAllowedForProfile(profile_))"];
+"1000113" [label="(Call,signin_util::IsUserSignoutAllowedForProfile(profile_))"];
+"1000121" [label="(Call,* signin_manager =\n        SigninManagerFactory::GetForProfile(profile_))"];
+"1000121" -> "1000119"  [label="AST: "];
+"1000121" -> "1000123"  [label="CFG: "];
+"1000122" -> "1000121"  [label="AST: "];
+"1000123" -> "1000121"  [label="AST: "];
+"1000126" -> "1000121"  [label="CFG: "];
+"1000121" -> "1000157"  [label="DDG: SigninManagerFactory::GetForProfile(profile_)"];
+"1000121" -> "1000157"  [label="DDG: signin_manager"];
+"1000123" -> "1000121"  [label="DDG: profile_"];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000123" -> "1000157"  [label="DDG: profile_"];
+"1000113" -> "1000123"  [label="DDG: profile_"];
+"1000113" -> "1000112"  [label="AST: "];
+"1000113" -> "1000114"  [label="CFG: "];
+"1000114" -> "1000113"  [label="AST: "];
+"1000112" -> "1000113"  [label="CFG: "];
+"1000113" -> "1000157"  [label="DDG: profile_"];
+"1000113" -> "1000112"  [label="DDG: profile_"];
+}

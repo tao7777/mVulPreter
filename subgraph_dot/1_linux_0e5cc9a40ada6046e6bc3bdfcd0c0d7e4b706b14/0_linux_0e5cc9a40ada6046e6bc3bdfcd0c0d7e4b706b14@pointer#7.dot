@@ -1,0 +1,33 @@
+digraph "0_linux_0e5cc9a40ada6046e6bc3bdfcd0c0d7e4b706b14@pointer" {
+"1000127" [label="(Call,*fname = NULL)"];
+"1000693" [label="(Call,kfree(fname))"];
+"1000656" [label="(Call,dir_emit(ctx, fname, flen, iblock, DT_UNKNOWN))"];
+"1000696" [label="(Identifier,ret)"];
+"1000127" [label="(Call,*fname = NULL)"];
+"1000693" [label="(Call,kfree(fname))"];
+"1000128" [label="(Identifier,fname)"];
+"1000626" [label="(Call,udf_get_filename(dir->i_sb, nameptr, fname, lfi))"];
+"1000135" [label="(Identifier,size)"];
+"1000195" [label="(Call,!fname)"];
+"1000105" [label="(Block,)"];
+"1000129" [label="(Identifier,NULL)"];
+"1000697" [label="(MethodReturn,static int)"];
+"1000694" [label="(Identifier,fname)"];
+"1000127" -> "1000105"  [label="AST: "];
+"1000127" -> "1000129"  [label="CFG: "];
+"1000128" -> "1000127"  [label="AST: "];
+"1000129" -> "1000127"  [label="AST: "];
+"1000135" -> "1000127"  [label="CFG: "];
+"1000127" -> "1000697"  [label="DDG: NULL"];
+"1000127" -> "1000697"  [label="DDG: fname"];
+"1000127" -> "1000693"  [label="DDG: fname"];
+"1000693" -> "1000105"  [label="AST: "];
+"1000693" -> "1000694"  [label="CFG: "];
+"1000694" -> "1000693"  [label="AST: "];
+"1000696" -> "1000693"  [label="CFG: "];
+"1000693" -> "1000697"  [label="DDG: kfree(fname)"];
+"1000693" -> "1000697"  [label="DDG: fname"];
+"1000626" -> "1000693"  [label="DDG: fname"];
+"1000656" -> "1000693"  [label="DDG: fname"];
+"1000195" -> "1000693"  [label="DDG: fname"];
+}

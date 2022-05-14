@@ -1,0 +1,36 @@
+digraph "0_linux_f63a8daa5812afef4f06c962351687e1ff9ccb2b_0@pointer" {
+"1000162" [label="(Call,event->state == PERF_EVENT_STATE_INACTIVE)"];
+"1000144" [label="(Call,event->state == PERF_EVENT_STATE_ACTIVE)"];
+"1000166" [label="(Identifier,PERF_EVENT_STATE_INACTIVE)"];
+"1000162" [label="(Call,event->state == PERF_EVENT_STATE_INACTIVE)"];
+"1000164" [label="(Identifier,event)"];
+"1000180" [label="(MethodReturn,static void)"];
+"1000178" [label="(Identifier,ctx)"];
+"1000144" [label="(Call,event->state == PERF_EVENT_STATE_ACTIVE)"];
+"1000143" [label="(ControlStructure,if (event->state == PERF_EVENT_STATE_ACTIVE))"];
+"1000163" [label="(Call,event->state)"];
+"1000148" [label="(Identifier,PERF_EVENT_STATE_ACTIVE)"];
+"1000169" [label="(Identifier,event)"];
+"1000145" [label="(Call,event->state)"];
+"1000161" [label="(ControlStructure,if (event->state == PERF_EVENT_STATE_INACTIVE))"];
+"1000153" [label="(Identifier,ctx)"];
+"1000162" -> "1000161"  [label="AST: "];
+"1000162" -> "1000166"  [label="CFG: "];
+"1000163" -> "1000162"  [label="AST: "];
+"1000166" -> "1000162"  [label="AST: "];
+"1000169" -> "1000162"  [label="CFG: "];
+"1000178" -> "1000162"  [label="CFG: "];
+"1000162" -> "1000180"  [label="DDG: PERF_EVENT_STATE_INACTIVE"];
+"1000162" -> "1000180"  [label="DDG: event->state"];
+"1000162" -> "1000180"  [label="DDG: event->state == PERF_EVENT_STATE_INACTIVE"];
+"1000144" -> "1000162"  [label="DDG: event->state"];
+"1000144" -> "1000143"  [label="AST: "];
+"1000144" -> "1000148"  [label="CFG: "];
+"1000145" -> "1000144"  [label="AST: "];
+"1000148" -> "1000144"  [label="AST: "];
+"1000153" -> "1000144"  [label="CFG: "];
+"1000164" -> "1000144"  [label="CFG: "];
+"1000144" -> "1000180"  [label="DDG: event->state == PERF_EVENT_STATE_ACTIVE"];
+"1000144" -> "1000180"  [label="DDG: PERF_EVENT_STATE_ACTIVE"];
+"1000144" -> "1000180"  [label="DDG: event->state"];
+}

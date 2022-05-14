@@ -1,0 +1,34 @@
+digraph "0_gstreamer_bc2cdd57d549ab3ba59782e9b395d0cd683fd3ac@pointer" {
+"1001307" [label="(Call,bswapLE16(*pSampleW))"];
+"1001305" [label="(Call,s = bswapLE16(*pSampleW))"];
+"1001310" [label="(Call,*pSampleW++ = s)"];
+"1001311" [label="(Call,*pSampleW++)"];
+"1001306" [label="(Identifier,s)"];
+"1001301" [label="(Identifier,j)"];
+"1001313" [label="(Identifier,pSampleW)"];
+"1002047" [label="(MethodReturn,UINT)"];
+"1001310" [label="(Call,*pSampleW++ = s)"];
+"1001314" [label="(Identifier,s)"];
+"1001308" [label="(Call,*pSampleW)"];
+"1001303" [label="(Block,)"];
+"1001307" [label="(Call,bswapLE16(*pSampleW))"];
+"1001305" [label="(Call,s = bswapLE16(*pSampleW))"];
+"1001307" -> "1001305"  [label="AST: "];
+"1001307" -> "1001308"  [label="CFG: "];
+"1001308" -> "1001307"  [label="AST: "];
+"1001305" -> "1001307"  [label="CFG: "];
+"1001307" -> "1002047"  [label="DDG: *pSampleW"];
+"1001307" -> "1001305"  [label="DDG: *pSampleW"];
+"1001305" -> "1001303"  [label="AST: "];
+"1001306" -> "1001305"  [label="AST: "];
+"1001313" -> "1001305"  [label="CFG: "];
+"1001305" -> "1002047"  [label="DDG: bswapLE16(*pSampleW)"];
+"1001305" -> "1001310"  [label="DDG: s"];
+"1001310" -> "1001303"  [label="AST: "];
+"1001310" -> "1001314"  [label="CFG: "];
+"1001311" -> "1001310"  [label="AST: "];
+"1001314" -> "1001310"  [label="AST: "];
+"1001301" -> "1001310"  [label="CFG: "];
+"1001310" -> "1002047"  [label="DDG: *pSampleW++"];
+"1001310" -> "1002047"  [label="DDG: s"];
+}

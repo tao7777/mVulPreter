@@ -1,0 +1,38 @@
+digraph "0_linux_f54e18f1b831c92f6512d2eedb224cd63d607d3d@API" {
+"1000202" [label="(Call,sb_bread(rs->inode->i_sb, rs->cont_extent))"];
+"1000200" [label="(Call,bh = sb_bread(rs->inode->i_sb, rs->cont_extent))"];
+"1000228" [label="(Call,put_bh(bh))"];
+"1000208" [label="(Call,rs->cont_extent)"];
+"1000212" [label="(Identifier,bh)"];
+"1000228" [label="(Call,put_bh(bh))"];
+"1000229" [label="(Identifier,bh)"];
+"1000202" [label="(Call,sb_bread(rs->inode->i_sb, rs->cont_extent))"];
+"1000166" [label="(Block,)"];
+"1000200" [label="(Call,bh = sb_bread(rs->inode->i_sb, rs->cont_extent))"];
+"1000232" [label="(Identifier,rs)"];
+"1000201" [label="(Identifier,bh)"];
+"1000203" [label="(Call,rs->inode->i_sb)"];
+"1000275" [label="(MethodReturn,static int)"];
+"1000213" [label="(Block,)"];
+"1000202" -> "1000200"  [label="AST: "];
+"1000202" -> "1000208"  [label="CFG: "];
+"1000203" -> "1000202"  [label="AST: "];
+"1000208" -> "1000202"  [label="AST: "];
+"1000200" -> "1000202"  [label="CFG: "];
+"1000202" -> "1000275"  [label="DDG: rs->inode->i_sb"];
+"1000202" -> "1000275"  [label="DDG: rs->cont_extent"];
+"1000202" -> "1000200"  [label="DDG: rs->inode->i_sb"];
+"1000202" -> "1000200"  [label="DDG: rs->cont_extent"];
+"1000200" -> "1000166"  [label="AST: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000212" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000275"  [label="DDG: bh"];
+"1000200" -> "1000275"  [label="DDG: sb_bread(rs->inode->i_sb, rs->cont_extent)"];
+"1000200" -> "1000228"  [label="DDG: bh"];
+"1000228" -> "1000213"  [label="AST: "];
+"1000228" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000228"  [label="AST: "];
+"1000232" -> "1000228"  [label="CFG: "];
+"1000228" -> "1000275"  [label="DDG: put_bh(bh)"];
+"1000228" -> "1000275"  [label="DDG: bh"];
+}

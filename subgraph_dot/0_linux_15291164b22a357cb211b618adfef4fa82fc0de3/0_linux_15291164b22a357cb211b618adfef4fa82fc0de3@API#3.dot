@@ -1,0 +1,31 @@
+digraph "0_linux_15291164b22a357cb211b618adfef4fa82fc0de3@API" {
+"1000200" [label="(Call,write_unlock(&journal->j_state_lock))"];
+"1000130" [label="(Call,write_lock(&journal->j_state_lock))"];
+"1000200" [label="(Call,write_unlock(&journal->j_state_lock))"];
+"1000201" [label="(Call,&journal->j_state_lock)"];
+"1000114" [label="(Block,)"];
+"1000206" [label="(Identifier,ret)"];
+"1000180" [label="(Block,)"];
+"1000316" [label="(Call,write_unlock(&journal->j_state_lock))"];
+"1000131" [label="(Call,&journal->j_state_lock)"];
+"1000281" [label="(Call,write_unlock(&journal->j_state_lock))"];
+"1000346" [label="(MethodReturn,static int)"];
+"1000136" [label="(Identifier,bh)"];
+"1000130" [label="(Call,write_lock(&journal->j_state_lock))"];
+"1000233" [label="(Call,write_unlock(&journal->j_state_lock))"];
+"1000200" -> "1000180"  [label="AST: "];
+"1000200" -> "1000201"  [label="CFG: "];
+"1000201" -> "1000200"  [label="AST: "];
+"1000206" -> "1000200"  [label="CFG: "];
+"1000200" -> "1000346"  [label="DDG: &journal->j_state_lock"];
+"1000200" -> "1000346"  [label="DDG: write_unlock(&journal->j_state_lock)"];
+"1000130" -> "1000200"  [label="DDG: &journal->j_state_lock"];
+"1000130" -> "1000114"  [label="AST: "];
+"1000130" -> "1000131"  [label="CFG: "];
+"1000131" -> "1000130"  [label="AST: "];
+"1000136" -> "1000130"  [label="CFG: "];
+"1000130" -> "1000346"  [label="DDG: write_lock(&journal->j_state_lock)"];
+"1000130" -> "1000233"  [label="DDG: &journal->j_state_lock"];
+"1000130" -> "1000281"  [label="DDG: &journal->j_state_lock"];
+"1000130" -> "1000316"  [label="DDG: &journal->j_state_lock"];
+}

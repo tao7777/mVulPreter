@@ -1,0 +1,28 @@
+digraph "0_linux_b69f2292063d2caf37ca9aec7d63ded203701bf3_1@pointer" {
+"1000871" [label="(Call,p->real_parent = current)"];
+"1000206" [label="(Call,dup_task_struct(current))"];
+"1000204" [label="(Call,p = dup_task_struct(current))"];
+"1000207" [label="(Identifier,current)"];
+"1000875" [label="(Identifier,current)"];
+"1001149" [label="(MethodReturn,static struct task_struct *)"];
+"1000878" [label="(Identifier,p)"];
+"1000870" [label="(Block,)"];
+"1000892" [label="(Call,signal_pending(current))"];
+"1000872" [label="(Call,p->real_parent)"];
+"1000871" [label="(Call,p->real_parent = current)"];
+"1000206" [label="(Call,dup_task_struct(current))"];
+"1000871" -> "1000870"  [label="AST: "];
+"1000871" -> "1000875"  [label="CFG: "];
+"1000872" -> "1000871"  [label="AST: "];
+"1000875" -> "1000871"  [label="AST: "];
+"1000878" -> "1000871"  [label="CFG: "];
+"1000871" -> "1001149"  [label="DDG: p->real_parent"];
+"1000206" -> "1000871"  [label="DDG: current"];
+"1000206" -> "1000204"  [label="AST: "];
+"1000206" -> "1000207"  [label="CFG: "];
+"1000207" -> "1000206"  [label="AST: "];
+"1000204" -> "1000206"  [label="CFG: "];
+"1000206" -> "1001149"  [label="DDG: current"];
+"1000206" -> "1000204"  [label="DDG: current"];
+"1000206" -> "1000892"  [label="DDG: current"];
+}

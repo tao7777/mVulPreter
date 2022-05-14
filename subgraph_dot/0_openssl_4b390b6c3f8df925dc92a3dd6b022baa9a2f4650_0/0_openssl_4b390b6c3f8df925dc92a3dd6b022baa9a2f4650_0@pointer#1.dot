@@ -1,0 +1,24 @@
+digraph "0_openssl_4b390b6c3f8df925dc92a3dd6b022baa9a2f4650_0@pointer" {
+"1000193" [label="(Call,s->s3->tmp.message_type = *mt = SSL3_MT_CHANGE_CIPHER_SPEC)"];
+"1000201" [label="(Call,*mt = SSL3_MT_CHANGE_CIPHER_SPEC)"];
+"1000193" [label="(Call,s->s3->tmp.message_type = *mt = SSL3_MT_CHANGE_CIPHER_SPEC)"];
+"1000372" [label="(MethodReturn,int)"];
+"1000204" [label="(Identifier,SSL3_MT_CHANGE_CIPHER_SPEC)"];
+"1000168" [label="(Block,)"];
+"1000201" [label="(Call,*mt = SSL3_MT_CHANGE_CIPHER_SPEC)"];
+"1000207" [label="(Identifier,s)"];
+"1000202" [label="(Call,*mt)"];
+"1000194" [label="(Call,s->s3->tmp.message_type)"];
+"1000193" -> "1000168"  [label="AST: "];
+"1000193" -> "1000201"  [label="CFG: "];
+"1000194" -> "1000193"  [label="AST: "];
+"1000201" -> "1000193"  [label="AST: "];
+"1000207" -> "1000193"  [label="CFG: "];
+"1000193" -> "1000372"  [label="DDG: s->s3->tmp.message_type"];
+"1000201" -> "1000193"  [label="DDG: *mt"];
+"1000201" -> "1000204"  [label="CFG: "];
+"1000202" -> "1000201"  [label="AST: "];
+"1000204" -> "1000201"  [label="AST: "];
+"1000201" -> "1000372"  [label="DDG: *mt"];
+"1000201" -> "1000372"  [label="DDG: SSL3_MT_CHANGE_CIPHER_SPEC"];
+}

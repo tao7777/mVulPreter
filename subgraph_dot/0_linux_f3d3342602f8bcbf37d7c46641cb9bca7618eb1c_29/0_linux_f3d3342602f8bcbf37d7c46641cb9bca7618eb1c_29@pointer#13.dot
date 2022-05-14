@@ -1,0 +1,33 @@
+digraph "0_linux_f3d3342602f8bcbf37d7c46641cb9bca7618eb1c_29@pointer" {
+"1000125" [label="(Call,*call = NULL)"];
+"1000711" [label="(Call,rxrpc_put_call(call))"];
+"1000658" [label="(Call,call = NULL)"];
+"1000709" [label="(ControlStructure,if (call))"];
+"1000130" [label="(Identifier,continue_call)"];
+"1000125" [label="(Call,*call = NULL)"];
+"1000122" [label="(Block,)"];
+"1000712" [label="(Identifier,call)"];
+"1000127" [label="(Identifier,NULL)"];
+"1000395" [label="(Call,rxrpc_get_call(call))"];
+"1000714" [label="(Identifier,continue_call)"];
+"1000711" [label="(Call,rxrpc_put_call(call))"];
+"1001014" [label="(MethodReturn,int)"];
+"1000321" [label="(Call,call != NULL)"];
+"1000126" [label="(Identifier,call)"];
+"1000125" -> "1000122"  [label="AST: "];
+"1000125" -> "1000127"  [label="CFG: "];
+"1000126" -> "1000125"  [label="AST: "];
+"1000127" -> "1000125"  [label="AST: "];
+"1000130" -> "1000125"  [label="CFG: "];
+"1000125" -> "1001014"  [label="DDG: call"];
+"1000125" -> "1000711"  [label="DDG: call"];
+"1000711" -> "1000709"  [label="AST: "];
+"1000711" -> "1000712"  [label="CFG: "];
+"1000712" -> "1000711"  [label="AST: "];
+"1000714" -> "1000711"  [label="CFG: "];
+"1000711" -> "1001014"  [label="DDG: rxrpc_put_call(call)"];
+"1000711" -> "1001014"  [label="DDG: call"];
+"1000395" -> "1000711"  [label="DDG: call"];
+"1000658" -> "1000711"  [label="DDG: call"];
+"1000321" -> "1000711"  [label="DDG: call"];
+}

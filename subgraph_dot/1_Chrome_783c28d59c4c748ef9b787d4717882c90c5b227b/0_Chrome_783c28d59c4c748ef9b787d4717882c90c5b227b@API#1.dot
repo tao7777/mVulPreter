@@ -1,0 +1,36 @@
+digraph "0_Chrome_783c28d59c4c748ef9b787d4717882c90c5b227b@API" {
+"1000157" [label="(Call,buffer_read_write_index_ + frames_to_process)"];
+"1000101" [label="(MethodParameterIn,size_t frames_to_process)"];
+"1000157" [label="(Call,buffer_read_write_index_ + frames_to_process)"];
+"1000159" [label="(Identifier,frames_to_process)"];
+"1000156" [label="(Call,buffer_read_write_index_ + frames_to_process <= BufferSize())"];
+"1000184" [label="(Call,BufferSize() >= frames_to_process)"];
+"1000188" [label="(Call,BufferSize() % frames_to_process)"];
+"1000227" [label="(Call,internal_input_bus_->SetChannelMemory(\n        i,\n        input_buffer->getChannelData(i).View()->Data() +\n            buffer_read_write_index_,\n        frames_to_process))"];
+"1000101" [label="(MethodParameterIn,size_t frames_to_process)"];
+"1000254" [label="(Call,sizeof(float) * frames_to_process)"];
+"1000261" [label="(Call,buffer_read_write_index_ + frames_to_process)"];
+"1000160" [label="(Call,BufferSize())"];
+"1000304" [label="(MethodReturn,void)"];
+"1000260" [label="(Call,(buffer_read_write_index_ + frames_to_process) % BufferSize())"];
+"1000158" [label="(Identifier,buffer_read_write_index_)"];
+"1000181" [label="(Call,frames_to_process &&\n                                   BufferSize() >= frames_to_process &&\n                                   !(BufferSize() % frames_to_process))"];
+"1000157" -> "1000156"  [label="AST: "];
+"1000157" -> "1000159"  [label="CFG: "];
+"1000158" -> "1000157"  [label="AST: "];
+"1000159" -> "1000157"  [label="AST: "];
+"1000160" -> "1000157"  [label="CFG: "];
+"1000157" -> "1000304"  [label="DDG: frames_to_process"];
+"1000157" -> "1000304"  [label="DDG: buffer_read_write_index_"];
+"1000101" -> "1000157"  [label="DDG: frames_to_process"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000304"  [label="DDG: frames_to_process"];
+"1000101" -> "1000156"  [label="DDG: frames_to_process"];
+"1000101" -> "1000181"  [label="DDG: frames_to_process"];
+"1000101" -> "1000184"  [label="DDG: frames_to_process"];
+"1000101" -> "1000188"  [label="DDG: frames_to_process"];
+"1000101" -> "1000227"  [label="DDG: frames_to_process"];
+"1000101" -> "1000254"  [label="DDG: frames_to_process"];
+"1000101" -> "1000260"  [label="DDG: frames_to_process"];
+"1000101" -> "1000261"  [label="DDG: frames_to_process"];
+}

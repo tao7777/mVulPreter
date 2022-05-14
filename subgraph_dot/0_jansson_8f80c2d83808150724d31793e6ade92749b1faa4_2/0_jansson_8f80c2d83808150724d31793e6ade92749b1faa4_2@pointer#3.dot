@@ -1,0 +1,23 @@
+digraph "0_jansson_8f80c2d83808150724d31793e6ade92749b1faa4_2@pointer" {
+"1000161" [label="(Call,hashtable->buckets[i].last =\n             &hashtable->list)"];
+"1000153" [label="(Call,hashtable->buckets[i].first = hashtable->buckets[i].last =\n             &hashtable->list)"];
+"1000226" [label="(MethodReturn,static int)"];
+"1000152" [label="(Block,)"];
+"1000161" [label="(Call,hashtable->buckets[i].last =\n             &hashtable->list)"];
+"1000169" [label="(Call,&hashtable->list)"];
+"1000162" [label="(Call,hashtable->buckets[i].last)"];
+"1000153" [label="(Call,hashtable->buckets[i].first = hashtable->buckets[i].last =\n             &hashtable->list)"];
+"1000154" [label="(Call,hashtable->buckets[i].first)"];
+"1000151" [label="(Identifier,i)"];
+"1000161" -> "1000153"  [label="AST: "];
+"1000161" -> "1000169"  [label="CFG: "];
+"1000162" -> "1000161"  [label="AST: "];
+"1000169" -> "1000161"  [label="AST: "];
+"1000153" -> "1000161"  [label="CFG: "];
+"1000161" -> "1000226"  [label="DDG: hashtable->buckets[i].last"];
+"1000161" -> "1000153"  [label="DDG: hashtable->buckets[i].last"];
+"1000153" -> "1000152"  [label="AST: "];
+"1000154" -> "1000153"  [label="AST: "];
+"1000151" -> "1000153"  [label="CFG: "];
+"1000153" -> "1000226"  [label="DDG: hashtable->buckets[i].first"];
+}

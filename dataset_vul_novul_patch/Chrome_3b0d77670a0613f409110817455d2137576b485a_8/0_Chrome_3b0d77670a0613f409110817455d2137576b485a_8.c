@@ -1,0 +1,1 @@
+base::MessageLoopProxy* ProxyChannelDelegate::GetIPCMessageLoop() {

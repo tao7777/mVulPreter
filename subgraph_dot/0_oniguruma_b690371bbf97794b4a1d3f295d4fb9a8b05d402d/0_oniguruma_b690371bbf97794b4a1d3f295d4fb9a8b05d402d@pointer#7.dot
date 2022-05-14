@@ -1,0 +1,30 @@
+digraph "0_oniguruma_b690371bbf97794b4a1d3f295d4fb9a8b05d402d@pointer" {
+"1000476" [label="(Call,IS_NULL(*low_prev))"];
+"1000474" [label="(Call,low_prev && IS_NULL(*low_prev))"];
+"1000542" [label="(MethodReturn,RET)"];
+"1000475" [label="(Identifier,low_prev)"];
+"1000112" [label="(MethodParameterIn,UChar** low_prev)"];
+"1000476" [label="(Call,IS_NULL(*low_prev))"];
+"1000470" [label="(Call,(const UChar** )low_prev)"];
+"1000473" [label="(ControlStructure,if (low_prev && IS_NULL(*low_prev)))"];
+"1000474" [label="(Call,low_prev && IS_NULL(*low_prev))"];
+"1000477" [label="(Call,*low_prev)"];
+"1000481" [label="(Identifier,low_prev)"];
+"1000511" [label="(Identifier,high)"];
+"1000476" -> "1000474"  [label="AST: "];
+"1000476" -> "1000477"  [label="CFG: "];
+"1000477" -> "1000476"  [label="AST: "];
+"1000474" -> "1000476"  [label="CFG: "];
+"1000476" -> "1000542"  [label="DDG: *low_prev"];
+"1000476" -> "1000474"  [label="DDG: *low_prev"];
+"1000474" -> "1000473"  [label="AST: "];
+"1000474" -> "1000475"  [label="CFG: "];
+"1000475" -> "1000474"  [label="AST: "];
+"1000481" -> "1000474"  [label="CFG: "];
+"1000511" -> "1000474"  [label="CFG: "];
+"1000474" -> "1000542"  [label="DDG: IS_NULL(*low_prev)"];
+"1000474" -> "1000542"  [label="DDG: low_prev && IS_NULL(*low_prev)"];
+"1000474" -> "1000542"  [label="DDG: low_prev"];
+"1000470" -> "1000474"  [label="DDG: low_prev"];
+"1000112" -> "1000474"  [label="DDG: low_prev"];
+}

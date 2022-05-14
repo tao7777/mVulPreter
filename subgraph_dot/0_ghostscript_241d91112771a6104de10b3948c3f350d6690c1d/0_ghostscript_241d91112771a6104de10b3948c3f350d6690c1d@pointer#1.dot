@@ -1,0 +1,33 @@
+digraph "0_ghostscript_241d91112771a6104de10b3948c3f350d6690c1d@pointer" {
+"1000413" [label="(Call,*h = i_ctx_p->plugin_list)"];
+"1000437" [label="(Call,i_plugin_finit(mem_raw, h))"];
+"1000445" [label="(Identifier,minst)"];
+"1000403" [label="(Call,*mem_raw = i_ctx_p->memory.current->non_gc_memory)"];
+"1000414" [label="(Identifier,h)"];
+"1000419" [label="(Identifier,dmem)"];
+"1000437" [label="(Call,i_plugin_finit(mem_raw, h))"];
+"1000564" [label="(MethodReturn,RET)"];
+"1000439" [label="(Identifier,h)"];
+"1000413" [label="(Call,*h = i_ctx_p->plugin_list)"];
+"1000401" [label="(Block,)"];
+"1000430" [label="(Call,emprintf1(mem_raw,\n                      \"ERROR %d while the final restore. See gs/psi/ierrors.h for code explanation.\n\",\n                      code))"];
+"1000438" [label="(Identifier,mem_raw)"];
+"1000415" [label="(Call,i_ctx_p->plugin_list)"];
+"1000413" -> "1000401"  [label="AST: "];
+"1000413" -> "1000415"  [label="CFG: "];
+"1000414" -> "1000413"  [label="AST: "];
+"1000415" -> "1000413"  [label="AST: "];
+"1000419" -> "1000413"  [label="CFG: "];
+"1000413" -> "1000564"  [label="DDG: i_ctx_p->plugin_list"];
+"1000413" -> "1000437"  [label="DDG: h"];
+"1000437" -> "1000401"  [label="AST: "];
+"1000437" -> "1000439"  [label="CFG: "];
+"1000438" -> "1000437"  [label="AST: "];
+"1000439" -> "1000437"  [label="AST: "];
+"1000445" -> "1000437"  [label="CFG: "];
+"1000437" -> "1000564"  [label="DDG: i_plugin_finit(mem_raw, h)"];
+"1000437" -> "1000564"  [label="DDG: mem_raw"];
+"1000437" -> "1000564"  [label="DDG: h"];
+"1000403" -> "1000437"  [label="DDG: mem_raw"];
+"1000430" -> "1000437"  [label="DDG: mem_raw"];
+}

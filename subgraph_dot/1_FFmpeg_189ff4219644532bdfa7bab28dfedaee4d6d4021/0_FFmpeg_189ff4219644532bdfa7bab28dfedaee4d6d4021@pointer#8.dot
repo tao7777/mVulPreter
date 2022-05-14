@@ -1,0 +1,26 @@
+digraph "0_FFmpeg_189ff4219644532bdfa7bab28dfedaee4d6d4021@pointer" {
+"1000254" [label="(Call,s->flags & AVFMT_FLAG_CUSTOM_IO)"];
+"1000253" [label="(Call,!(s->flags & AVFMT_FLAG_CUSTOM_IO))"];
+"1000252" [label="(ControlStructure,if (!(s->flags & AVFMT_FLAG_CUSTOM_IO)))"];
+"1000302" [label="(MethodReturn,static int)"];
+"1000261" [label="(Identifier,pb)"];
+"1000269" [label="(Identifier,new_cookies)"];
+"1000253" [label="(Call,!(s->flags & AVFMT_FLAG_CUSTOM_IO))"];
+"1000254" [label="(Call,s->flags & AVFMT_FLAG_CUSTOM_IO)"];
+"1000258" [label="(Identifier,AVFMT_FLAG_CUSTOM_IO)"];
+"1000255" [label="(Call,s->flags)"];
+"1000254" -> "1000253"  [label="AST: "];
+"1000254" -> "1000258"  [label="CFG: "];
+"1000255" -> "1000254"  [label="AST: "];
+"1000258" -> "1000254"  [label="AST: "];
+"1000253" -> "1000254"  [label="CFG: "];
+"1000254" -> "1000302"  [label="DDG: s->flags"];
+"1000254" -> "1000302"  [label="DDG: AVFMT_FLAG_CUSTOM_IO"];
+"1000254" -> "1000253"  [label="DDG: s->flags"];
+"1000254" -> "1000253"  [label="DDG: AVFMT_FLAG_CUSTOM_IO"];
+"1000253" -> "1000252"  [label="AST: "];
+"1000261" -> "1000253"  [label="CFG: "];
+"1000269" -> "1000253"  [label="CFG: "];
+"1000253" -> "1000302"  [label="DDG: !(s->flags & AVFMT_FLAG_CUSTOM_IO)"];
+"1000253" -> "1000302"  [label="DDG: s->flags & AVFMT_FLAG_CUSTOM_IO"];
+}

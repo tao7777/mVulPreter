@@ -1,0 +1,28 @@
+digraph "0_mindrot_2fecfd486bdba9f51b3a789277bb0733ca36e1c0@pointer" {
+"1000946" [label="(Call,!state->server_side)"];
+"1000941" [label="(Call,*typep == SSH2_MSG_USERAUTH_SUCCESS && !state->server_side)"];
+"1000941" [label="(Call,*typep == SSH2_MSG_USERAUTH_SUCCESS && !state->server_side)"];
+"1000951" [label="(Identifier,r)"];
+"1000956" [label="(Identifier,r)"];
+"1000946" [label="(Call,!state->server_side)"];
+"1000940" [label="(ControlStructure,if (*typep == SSH2_MSG_USERAUTH_SUCCESS && !state->server_side))"];
+"1000947" [label="(Call,state->server_side)"];
+"1000942" [label="(Call,*typep == SSH2_MSG_USERAUTH_SUCCESS)"];
+"1000976" [label="(MethodReturn,RET)"];
+"1000946" -> "1000941"  [label="AST: "];
+"1000946" -> "1000947"  [label="CFG: "];
+"1000947" -> "1000946"  [label="AST: "];
+"1000941" -> "1000946"  [label="CFG: "];
+"1000946" -> "1000976"  [label="DDG: state->server_side"];
+"1000946" -> "1000941"  [label="DDG: state->server_side"];
+"1000941" -> "1000940"  [label="AST: "];
+"1000941" -> "1000942"  [label="CFG: "];
+"1000942" -> "1000941"  [label="AST: "];
+"1000951" -> "1000941"  [label="CFG: "];
+"1000956" -> "1000941"  [label="CFG: "];
+"1000941" -> "1000976"  [label="DDG: *typep == SSH2_MSG_USERAUTH_SUCCESS"];
+"1000941" -> "1000976"  [label="DDG: !state->server_side"];
+"1000941" -> "1000976"  [label="DDG: *typep == SSH2_MSG_USERAUTH_SUCCESS && !state->server_side"];
+"1000942" -> "1000941"  [label="DDG: *typep"];
+"1000942" -> "1000941"  [label="DDG: SSH2_MSG_USERAUTH_SUCCESS"];
+}

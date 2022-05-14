@@ -1,0 +1,30 @@
+digraph "0_src_779974d35b4859c07bc3cb8a12c74b43b0a7d1e0_1@pointer" {
+"1000589" [label="(Call,!authctxt->valid)"];
+"1000588" [label="(Call,!authctxt->valid || authctxt->user == NULL)"];
+"1000587" [label="(ControlStructure,if (!authctxt->valid || authctxt->user == NULL))"];
+"1000589" [label="(Call,!authctxt->valid)"];
+"1000600" [label="(Literal,\"%s: disabled because of invalid user\")"];
+"1000590" [label="(Call,authctxt->valid)"];
+"1000588" [label="(Call,!authctxt->valid || authctxt->user == NULL)"];
+"1000595" [label="(Identifier,authctxt)"];
+"1000606" [label="(Identifier,ssh)"];
+"1000702" [label="(MethodReturn,RET)"];
+"1000593" [label="(Call,authctxt->user == NULL)"];
+"1000589" -> "1000588"  [label="AST: "];
+"1000589" -> "1000590"  [label="CFG: "];
+"1000590" -> "1000589"  [label="AST: "];
+"1000595" -> "1000589"  [label="CFG: "];
+"1000588" -> "1000589"  [label="CFG: "];
+"1000589" -> "1000702"  [label="DDG: authctxt->valid"];
+"1000589" -> "1000588"  [label="DDG: authctxt->valid"];
+"1000588" -> "1000587"  [label="AST: "];
+"1000588" -> "1000593"  [label="CFG: "];
+"1000593" -> "1000588"  [label="AST: "];
+"1000600" -> "1000588"  [label="CFG: "];
+"1000606" -> "1000588"  [label="CFG: "];
+"1000588" -> "1000702"  [label="DDG: !authctxt->valid"];
+"1000588" -> "1000702"  [label="DDG: !authctxt->valid || authctxt->user == NULL"];
+"1000588" -> "1000702"  [label="DDG: authctxt->user == NULL"];
+"1000593" -> "1000588"  [label="DDG: authctxt->user"];
+"1000593" -> "1000588"  [label="DDG: NULL"];
+}

@@ -1,0 +1,24 @@
+digraph "0_linux_dc0b027dfadfcb8a5504f7d8052754bf8d501ab9_26@pointer" {
+"1000229" [label="(Call,spin_unlock(&owner->so_lock))"];
+"1000123" [label="(Call,spin_lock(&owner->so_lock))"];
+"1000130" [label="(Identifier,mode)"];
+"1000229" [label="(Call,spin_unlock(&owner->so_lock))"];
+"1000236" [label="(Identifier,call_close)"];
+"1000124" [label="(Call,&owner->so_lock)"];
+"1000247" [label="(MethodReturn,static void)"];
+"1000230" [label="(Call,&owner->so_lock)"];
+"1000106" [label="(Block,)"];
+"1000123" [label="(Call,spin_lock(&owner->so_lock))"];
+"1000229" -> "1000106"  [label="AST: "];
+"1000229" -> "1000230"  [label="CFG: "];
+"1000230" -> "1000229"  [label="AST: "];
+"1000236" -> "1000229"  [label="CFG: "];
+"1000229" -> "1000247"  [label="DDG: spin_unlock(&owner->so_lock)"];
+"1000229" -> "1000247"  [label="DDG: &owner->so_lock"];
+"1000123" -> "1000229"  [label="DDG: &owner->so_lock"];
+"1000123" -> "1000106"  [label="AST: "];
+"1000123" -> "1000124"  [label="CFG: "];
+"1000124" -> "1000123"  [label="AST: "];
+"1000130" -> "1000123"  [label="CFG: "];
+"1000123" -> "1000247"  [label="DDG: spin_lock(&owner->so_lock)"];
+}

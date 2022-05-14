@@ -1,0 +1,32 @@
+digraph "0_savannah_b3500af717010137046ec4076d1e1c0641e33727_2@pointer" {
+"1000421" [label="(Call,bitmap->pitch < 0)"];
+"1000331" [label="(Call,bitmap->pitch > 0)"];
+"1000331" [label="(Call,bitmap->pitch > 0)"];
+"1000378" [label="(Identifier,len)"];
+"1000421" [label="(Call,bitmap->pitch < 0)"];
+"1000437" [label="(MethodReturn,RET)"];
+"1000427" [label="(Identifier,new_pitch)"];
+"1000335" [label="(Literal,0)"];
+"1000339" [label="(Identifier,len)"];
+"1000420" [label="(ControlStructure,if ( bitmap->pitch < 0 ))"];
+"1000425" [label="(Literal,0)"];
+"1000432" [label="(Identifier,bitmap)"];
+"1000330" [label="(ControlStructure,if ( bitmap->pitch > 0 ))"];
+"1000332" [label="(Call,bitmap->pitch)"];
+"1000422" [label="(Call,bitmap->pitch)"];
+"1000421" -> "1000420"  [label="AST: "];
+"1000421" -> "1000425"  [label="CFG: "];
+"1000422" -> "1000421"  [label="AST: "];
+"1000425" -> "1000421"  [label="AST: "];
+"1000427" -> "1000421"  [label="CFG: "];
+"1000432" -> "1000421"  [label="CFG: "];
+"1000421" -> "1000437"  [label="DDG: bitmap->pitch < 0"];
+"1000331" -> "1000421"  [label="DDG: bitmap->pitch"];
+"1000331" -> "1000330"  [label="AST: "];
+"1000331" -> "1000335"  [label="CFG: "];
+"1000332" -> "1000331"  [label="AST: "];
+"1000335" -> "1000331"  [label="AST: "];
+"1000339" -> "1000331"  [label="CFG: "];
+"1000378" -> "1000331"  [label="CFG: "];
+"1000331" -> "1000437"  [label="DDG: bitmap->pitch > 0"];
+}

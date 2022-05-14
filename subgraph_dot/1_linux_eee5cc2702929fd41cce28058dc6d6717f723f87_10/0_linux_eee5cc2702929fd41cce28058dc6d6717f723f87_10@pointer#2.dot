@@ -1,0 +1,28 @@
+digraph "0_linux_eee5cc2702929fd41cce28058dc6d6717f723f87_10@pointer" {
+"1000149" [label="(Call,percpu_counter_init(&s->s_writers.counter[i], 0))"];
+"1000148" [label="(Call,percpu_counter_init(&s->s_writers.counter[i], 0) < 0)"];
+"1000159" [label="(Literal,0)"];
+"1000158" [label="(Literal,0)"];
+"1000369" [label="(MethodReturn,static struct super_block *)"];
+"1000147" [label="(ControlStructure,if (percpu_counter_init(&s->s_writers.counter[i], 0) < 0))"];
+"1000166" [label="(Identifier,s)"];
+"1000149" [label="(Call,percpu_counter_init(&s->s_writers.counter[i], 0))"];
+"1000148" [label="(Call,percpu_counter_init(&s->s_writers.counter[i], 0) < 0)"];
+"1000160" [label="(ControlStructure,goto fail;)"];
+"1000150" [label="(Call,&s->s_writers.counter[i])"];
+"1000149" -> "1000148"  [label="AST: "];
+"1000149" -> "1000158"  [label="CFG: "];
+"1000150" -> "1000149"  [label="AST: "];
+"1000158" -> "1000149"  [label="AST: "];
+"1000159" -> "1000149"  [label="CFG: "];
+"1000149" -> "1000369"  [label="DDG: &s->s_writers.counter[i]"];
+"1000149" -> "1000148"  [label="DDG: &s->s_writers.counter[i]"];
+"1000149" -> "1000148"  [label="DDG: 0"];
+"1000148" -> "1000147"  [label="AST: "];
+"1000148" -> "1000159"  [label="CFG: "];
+"1000159" -> "1000148"  [label="AST: "];
+"1000160" -> "1000148"  [label="CFG: "];
+"1000166" -> "1000148"  [label="CFG: "];
+"1000148" -> "1000369"  [label="DDG: percpu_counter_init(&s->s_writers.counter[i], 0)"];
+"1000148" -> "1000369"  [label="DDG: percpu_counter_init(&s->s_writers.counter[i], 0) < 0"];
+}

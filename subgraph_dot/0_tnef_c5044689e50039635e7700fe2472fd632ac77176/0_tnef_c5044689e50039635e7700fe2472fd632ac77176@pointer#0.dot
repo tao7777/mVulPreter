@@ -1,0 +1,26 @@
+digraph "0_tnef_c5044689e50039635e7700fe2472fd632ac77176@pointer" {
+"1000101" [label="(MethodParameterIn,char *fn_name)"];
+"1000111" [label="(Call,alloc_limit_failure (fn_name, size))"];
+"1000102" [label="(MethodParameterIn,size_t size)"];
+"1000117" [label="(MethodReturn,RET)"];
+"1000110" [label="(Block,)"];
+"1000112" [label="(Identifier,fn_name)"];
+"1000111" [label="(Call,alloc_limit_failure (fn_name, size))"];
+"1000113" [label="(Identifier,size)"];
+"1000101" [label="(MethodParameterIn,char *fn_name)"];
+"1000116" [label="(Literal,1)"];
+"1000107" [label="(Call,size > alloc_limit)"];
+"1000101" -> "1000100"  [label="AST: "];
+"1000101" -> "1000117"  [label="DDG: fn_name"];
+"1000101" -> "1000111"  [label="DDG: fn_name"];
+"1000111" -> "1000110"  [label="AST: "];
+"1000111" -> "1000113"  [label="CFG: "];
+"1000112" -> "1000111"  [label="AST: "];
+"1000113" -> "1000111"  [label="AST: "];
+"1000116" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000117"  [label="DDG: alloc_limit_failure (fn_name, size)"];
+"1000111" -> "1000117"  [label="DDG: fn_name"];
+"1000111" -> "1000117"  [label="DDG: size"];
+"1000107" -> "1000111"  [label="DDG: size"];
+"1000102" -> "1000111"  [label="DDG: size"];
+}

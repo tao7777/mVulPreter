@@ -1,0 +1,33 @@
+digraph "0_linux_132c94e31b8bca8ea921f9f96a57d684fa4ae0a9_1@pointer" {
+"1000164" [label="(Call,m->mnt_ns->user_ns != user_ns)"];
+"1000109" [label="(Call,*user_ns = current->nsproxy->mnt_ns->user_ns)"];
+"1000110" [label="(Identifier,user_ns)"];
+"1000107" [label="(Block,)"];
+"1000111" [label="(Call,current->nsproxy->mnt_ns->user_ns)"];
+"1000163" [label="(ControlStructure,if (m->mnt_ns->user_ns != user_ns))"];
+"1000164" [label="(Call,m->mnt_ns->user_ns != user_ns)"];
+"1000172" [label="(Identifier,type)"];
+"1000175" [label="(Identifier,child)"];
+"1000109" [label="(Call,*user_ns = current->nsproxy->mnt_ns->user_ns)"];
+"1000170" [label="(Identifier,user_ns)"];
+"1000122" [label="(Identifier,ret)"];
+"1000255" [label="(MethodReturn,int)"];
+"1000165" [label="(Call,m->mnt_ns->user_ns)"];
+"1000164" -> "1000163"  [label="AST: "];
+"1000164" -> "1000170"  [label="CFG: "];
+"1000165" -> "1000164"  [label="AST: "];
+"1000170" -> "1000164"  [label="AST: "];
+"1000172" -> "1000164"  [label="CFG: "];
+"1000175" -> "1000164"  [label="CFG: "];
+"1000164" -> "1000255"  [label="DDG: m->mnt_ns->user_ns != user_ns"];
+"1000164" -> "1000255"  [label="DDG: user_ns"];
+"1000164" -> "1000255"  [label="DDG: m->mnt_ns->user_ns"];
+"1000109" -> "1000164"  [label="DDG: user_ns"];
+"1000109" -> "1000107"  [label="AST: "];
+"1000109" -> "1000111"  [label="CFG: "];
+"1000110" -> "1000109"  [label="AST: "];
+"1000111" -> "1000109"  [label="AST: "];
+"1000122" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000255"  [label="DDG: user_ns"];
+"1000109" -> "1000255"  [label="DDG: current->nsproxy->mnt_ns->user_ns"];
+}

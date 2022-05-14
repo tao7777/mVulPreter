@@ -1,0 +1,30 @@
+digraph "0_Chrome_673ce95d481ea9368c4d4d43ac756ba1d6d9e608_29@API" {
+"1000110" [label="(Call,std::move(socket_handle))"];
+"1000102" [label="(MethodParameterIn,mojo::ScopedHandle socket_handle)"];
+"1000109" [label="(Call,mojo::UnwrapPlatformFile(std::move(socket_handle), &fd))"];
+"1000115" [label="(Identifier,socket_)"];
+"1000111" [label="(Identifier,socket_handle)"];
+"1000109" [label="(Call,mojo::UnwrapPlatformFile(std::move(socket_handle), &fd))"];
+"1000110" [label="(Call,std::move(socket_handle))"];
+"1000150" [label="(MethodReturn,void)"];
+"1000113" [label="(Identifier,fd)"];
+"1000103" [label="(Block,)"];
+"1000112" [label="(Call,&fd)"];
+"1000102" [label="(MethodParameterIn,mojo::ScopedHandle socket_handle)"];
+"1000110" -> "1000109"  [label="AST: "];
+"1000110" -> "1000111"  [label="CFG: "];
+"1000111" -> "1000110"  [label="AST: "];
+"1000113" -> "1000110"  [label="CFG: "];
+"1000110" -> "1000150"  [label="DDG: socket_handle"];
+"1000110" -> "1000109"  [label="DDG: socket_handle"];
+"1000102" -> "1000110"  [label="DDG: socket_handle"];
+"1000102" -> "1000100"  [label="AST: "];
+"1000102" -> "1000150"  [label="DDG: socket_handle"];
+"1000109" -> "1000103"  [label="AST: "];
+"1000109" -> "1000112"  [label="CFG: "];
+"1000112" -> "1000109"  [label="AST: "];
+"1000115" -> "1000109"  [label="CFG: "];
+"1000109" -> "1000150"  [label="DDG: &fd"];
+"1000109" -> "1000150"  [label="DDG: std::move(socket_handle)"];
+"1000109" -> "1000150"  [label="DDG: mojo::UnwrapPlatformFile(std::move(socket_handle), &fd)"];
+}

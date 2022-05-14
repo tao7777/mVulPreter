@@ -1,0 +1,22 @@
+digraph "0_libarchive_bfcfe6f04ed20db2504db8a254d1f40a1d84eb28_0@pointer" {
+"1000448" [label="(Call,rar->file_crc = archive_le32dec(file_header.file_crc))"];
+"1000452" [label="(Call,archive_le32dec(file_header.file_crc))"];
+"1000121" [label="(Block,)"];
+"1000449" [label="(Call,rar->file_crc)"];
+"1000452" [label="(Call,archive_le32dec(file_header.file_crc))"];
+"1000459" [label="(Identifier,rar)"];
+"1001754" [label="(MethodReturn,RET)"];
+"1000448" [label="(Call,rar->file_crc = archive_le32dec(file_header.file_crc))"];
+"1000453" [label="(Call,file_header.file_crc)"];
+"1000448" -> "1000121"  [label="AST: "];
+"1000448" -> "1000452"  [label="CFG: "];
+"1000449" -> "1000448"  [label="AST: "];
+"1000452" -> "1000448"  [label="AST: "];
+"1000459" -> "1000448"  [label="CFG: "];
+"1000448" -> "1001754"  [label="DDG: archive_le32dec(file_header.file_crc)"];
+"1000448" -> "1001754"  [label="DDG: rar->file_crc"];
+"1000452" -> "1000448"  [label="DDG: file_header.file_crc"];
+"1000452" -> "1000453"  [label="CFG: "];
+"1000453" -> "1000452"  [label="AST: "];
+"1000452" -> "1001754"  [label="DDG: file_header.file_crc"];
+}
