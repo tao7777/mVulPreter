@@ -1,0 +1,5 @@
+n_identifier = 'features'
+g_identifier = 'graph'
+l_identifier = 'label'
+s_identifier = 'subpdg'
+sn_identifier = 'subpdg_num'
